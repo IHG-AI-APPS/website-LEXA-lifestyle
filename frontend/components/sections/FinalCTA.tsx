@@ -1,12 +1,17 @@
 'use client'
 
+import { useState } from 'react'
 import { motion } from 'framer-motion'
 import { Button } from '@/components/ui/button'
+import ConsultationForm from '@/components/forms/ConsultationForm'
 import Link from 'next/link'
 
 export default function FinalCTA() {
+  const [showConsultationForm, setShowConsultationForm] = useState(false)
+
   return (
-    <section className="py-24 bg-lexa-black" data-testid="final-cta-section">
+    <>
+      <section className="py-24 bg-lexa-black" data-testid="final-cta-section">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -69,5 +74,6 @@ export default function FinalCTA() {
         onClose={() => setShowConsultationForm(false)}
       />
     </section>
+    </>
   )
 }
