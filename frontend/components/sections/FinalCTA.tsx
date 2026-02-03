@@ -22,7 +22,11 @@ export default function FinalCTA() {
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-            <Button size="lg" data-testid="cta-book-consultation-btn">
+            <Button 
+              size="lg" 
+              onClick={() => setShowConsultationForm(true)}
+              data-testid="cta-book-consultation-btn"
+            >
               BOOK A CONSULTATION
             </Button>
             <Link href="/company/experience-center">
@@ -58,6 +62,12 @@ export default function FinalCTA() {
           </div>
         </motion.div>
       </div>
+
+      {/* Consultation Form Modal */}
+      <ConsultationForm
+        isOpen={showConsultationForm}
+        onClose={() => setShowConsultationForm(false)}
+      />
     </section>
   )
 }
