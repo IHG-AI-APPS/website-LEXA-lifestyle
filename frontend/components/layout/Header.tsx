@@ -4,10 +4,12 @@ import Link from 'next/link'
 import { useState, useEffect } from 'react'
 import { Button } from '@/components/ui/button'
 import { Menu, X } from 'lucide-react'
+import ConsultationForm from '@/components/forms/ConsultationForm'
 
 export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false)
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
+  const [showConsultationForm, setShowConsultationForm] = useState(false)
 
   useEffect(() => {
     const handleScroll = () => {
@@ -58,7 +60,11 @@ export default function Header() {
 
           {/* CTA Button - Desktop */}
           <div className="hidden lg:block">
-            <Button size="default" data-testid="header-book-consultation-btn">
+            <Button 
+              size="default" 
+              onClick={() => setShowConsultationForm(true)}
+              data-testid="header-book-consultation-btn"
+            >
               BOOK A CONSULTATION
             </Button>
           </div>
@@ -87,13 +93,27 @@ export default function Header() {
               </Link>
             ))}
             <div className="pt-4">
-              <Button size="default" className="w-full" data-testid="mobile-book-consultation-btn">
+              <Button 
+                size="default" 
+                className="w-full" 
+                onClick={() => {
+                  setShowConsultationForm(true)
+                  setIsMobileMenuOpen(false)
+                }}
+                data-testid="mobile-book-consultation-btn"
+              >
                 BOOK A CONSULTATION
               </Button>
             </div>
           </nav>
         )}
       </div>
+
+      {/* Consultation Form Modal */}
+      <ConsultationForm
+        isOpen={showConsultationForm}
+        onClose={() => setShowConsultationForm(false)}
+      />
     </header>
   )
 }
