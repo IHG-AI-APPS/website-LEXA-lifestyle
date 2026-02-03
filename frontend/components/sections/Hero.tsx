@@ -4,10 +4,12 @@ import { useState, useEffect } from 'react'
 import Image from 'next/image'
 import { Button } from '@/components/ui/button'
 import PersonaModal from './PersonaModal'
+import ConsultationForm from '@/components/forms/ConsultationForm'
 import { motion } from 'framer-motion'
 
 export default function Hero() {
   const [showPersonaModal, setShowPersonaModal] = useState(false)
+  const [showConsultationForm, setShowConsultationForm] = useState(false)
 
   useEffect(() => {
     // Show persona modal after 2 seconds on first visit
@@ -55,8 +57,12 @@ export default function Hero() {
               we deliver unparalleled luxury living experiences in Dubai.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-              <Button size="lg" data-testid="hero-explore-btn">
-                EXPLORE SOLUTIONS
+              <Button 
+                size="lg" 
+                onClick={() => setShowConsultationForm(true)}
+                data-testid="hero-explore-btn"
+              >
+                BOOK CONSULTATION
               </Button>
               <Button
                 size="lg"
@@ -92,6 +98,12 @@ export default function Hero() {
       <PersonaModal
         isOpen={showPersonaModal}
         onClose={() => setShowPersonaModal(false)}
+      />
+
+      {/* Consultation Form Modal */}
+      <ConsultationForm
+        isOpen={showConsultationForm}
+        onClose={() => setShowConsultationForm(false)}
       />
     </>
   )
