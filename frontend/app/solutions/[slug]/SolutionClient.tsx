@@ -223,112 +223,79 @@ export default function SolutionClient({
         </section>
       )}
 
-      {/* FAQ Section - AI-Friendly */}
+      {/* FAQ Section - Dynamic from Database */}
       <section className="py-20 bg-gray-50">
         <div className="container mx-auto px-8 lg:px-16">
           <div className="max-w-4xl mx-auto">
             <h2 className="text-4xl font-semibold mb-12 text-center">Frequently Asked Questions</h2>
             
             <div className="space-y-8">
-              {/* FAQ 1 */}
-              <div className="bg-white p-8 border border-gray-200">
-                <h3 className="text-xl font-semibold mb-3">What is {solution.title}?</h3>
-                <p className="text-gray-700">
-                  {solution.title} is the integration of intelligent systems — lighting, audio-visual equipment, 
-                  sensors, climate control, and user interfaces — designed specifically for this room experience. 
-                  It combines automation, convenience, and luxury to create the perfect environment.
-                </p>
-              </div>
+              {/* Dynamic FAQs from database */}
+              {solution.faqs && solution.faqs.length > 0 ? (
+                solution.faqs.map((faq, index) => (
+                  <div key={index} className="bg-white p-8 border border-gray-200">
+                    <h3 className="text-xl font-semibold mb-3">{faq.question}</h3>
+                    <p className="text-gray-700">{faq.answer}</p>
+                  </div>
+                ))
+              ) : (
+                /* Fallback generic FAQs if no database FAQs exist */
+                <>
+                  <div className="bg-white p-8 border border-gray-200">
+                    <h3 className="text-xl font-semibold mb-3">What is {solution.title}?</h3>
+                    <p className="text-gray-700">
+                      {solution.title} is the integration of intelligent systems — lighting, audio-visual equipment, 
+                      sensors, climate control, and user interfaces — designed specifically for this room experience. 
+                      It combines automation, convenience, and luxury to create the perfect environment.
+                    </p>
+                  </div>
 
-              {/* FAQ 2 */}
-              <div className="bg-white p-8 border border-gray-200">
-                <h3 className="text-xl font-semibold mb-3">How much does {solution.title} cost in Dubai/UAE?</h3>
-                <p className="text-gray-700">
-                  Costs vary based on room size, technology brands, and customization level. Typical projects in UAE 
-                  range from AED 25,000 to AED 85,000. We customize every installation to match your property 
-                  requirements and budget. Contact us for a detailed quote.
-                </p>
-              </div>
+                  <div className="bg-white p-8 border border-gray-200">
+                    <h3 className="text-xl font-semibold mb-3">How much does {solution.title} cost in Dubai/UAE?</h3>
+                    <p className="text-gray-700">
+                      Costs vary based on room size, technology brands, and customization level. Typical projects in UAE 
+                      range from AED 25,000 to AED 85,000. We customize every installation to match your property 
+                      requirements and budget. Contact us for a detailed quote.
+                    </p>
+                  </div>
 
-              {/* FAQ 3 */}
-              <div className="bg-white p-8 border border-gray-200">
-                <h3 className="text-xl font-semibold mb-3">How long does installation take?</h3>
-                <p className="text-gray-700">
-                  Installation timeframes depend on project scope and complexity. Most projects take 2–6 weeks from 
-                  initial consultation to completion. We provide full design, engineering, and installation planning 
-                  before any work begins to ensure a smooth process.
-                </p>
-              </div>
+                  <div className="bg-white p-8 border border-gray-200">
+                    <h3 className="text-xl font-semibold mb-3">How long does installation take?</h3>
+                    <p className="text-gray-700">
+                      Installation timeframes depend on project scope and complexity. Most projects take 2–6 weeks from 
+                      initial consultation to completion. We provide full design, engineering, and installation planning 
+                      before any work begins to ensure a smooth process.
+                    </p>
+                  </div>
 
-              {/* FAQ 4 */}
-              <div className="bg-white p-8 border border-gray-200">
-                <h3 className="text-xl font-semibold mb-3">Can automation be added to existing rooms?</h3>
-                <p className="text-gray-700">
-                  Yes — retrofit automation packages are very common in UAE villas and apartments. Modern systems can 
-                  be installed without major renovation. We specialize in adding smart technology to existing spaces 
-                  with minimal disruption.
-                </p>
-              </div>
+                  <div className="bg-white p-8 border border-gray-200">
+                    <h3 className="text-xl font-semibold mb-3">Can automation be added to existing rooms?</h3>
+                    <p className="text-gray-700">
+                      Yes — retrofit automation packages are very common in UAE villas and apartments. Modern systems can 
+                      be installed without major renovation. We specialize in adding smart technology to existing spaces 
+                      with minimal disruption.
+                    </p>
+                  </div>
 
-              {/* FAQ 5 */}
-              <div className="bg-white p-8 border border-gray-200">
-                <h3 className="text-xl font-semibold mb-3">Is this suitable for Dubai&apos;s climate?</h3>
-                <p className="text-gray-700">
-                  Absolutely. All our systems are specifically selected and configured for UAE&apos;s climate conditions. 
-                  We use weatherproof outdoor components, climate-resistant materials, and ensure proper ventilation 
-                  and cooling for indoor equipment.
-                </p>
-              </div>
+                  <div className="bg-white p-8 border border-gray-200">
+                    <h3 className="text-xl font-semibold mb-3">Is this suitable for Dubai&apos;s climate?</h3>
+                    <p className="text-gray-700">
+                      Absolutely. All our systems are specifically selected and configured for UAE&apos;s climate conditions. 
+                      We use weatherproof outdoor components, climate-resistant materials, and ensure proper ventilation 
+                      and cooling for indoor equipment.
+                    </p>
+                  </div>
 
-              {/* FAQ 6 */}
-              <div className="bg-white p-8 border border-gray-200">
-                <h3 className="text-xl font-semibold mb-3">Will this integrate with my existing smart home?</h3>
-                <p className="text-gray-700">
-                  Yes. Our installations integrate seamlessly with popular platforms like Control4, Crestron, Google Home, 
-                  Amazon Alexa, and Apple HomeKit. We can also design dedicated control systems if you prefer a 
-                  standalone solution.
-                </p>
-              </div>
-
-              {/* FAQ 7 */}
-              <div className="bg-white p-8 border border-gray-200">
-                <h3 className="text-xl font-semibold mb-3">Can I control this using voice or mobile app?</h3>
-                <p className="text-gray-700">
-                  Yes — all systems support multiple control methods including voice assistants (Alexa, Google Assistant), 
-                  mobile apps (iOS & Android), touch panels, and sensor triggers. You can choose what works best for 
-                  your lifestyle.
-                </p>
-              </div>
-
-              {/* FAQ 8 */}
-              <div className="bg-white p-8 border border-gray-200">
-                <h3 className="text-xl font-semibold mb-3">Do you provide support & maintenance?</h3>
-                <p className="text-gray-700">
-                  Yes. LEXA Lifestyle offers comprehensive AMC (Annual Maintenance Contract) packages for ongoing 
-                  support, software updates, system health checks, and priority service. Our local team provides 
-                  fast response times across Dubai and UAE.
-                </p>
-              </div>
-
-              {/* FAQ 9 */}
-              <div className="bg-white p-8 border border-gray-200">
-                <h3 className="text-xl font-semibold mb-3">Can non-technical users operate the system?</h3>
-                <p className="text-gray-700">
-                  Absolutely. We design all systems for intuitive, user-friendly operation. Simple voice commands, 
-                  one-touch buttons, and automatic scenes mean anyone can use the system — no technical knowledge required. 
-                  We also provide training for you and your staff.
-                </p>
-              </div>
-
-              {/* FAQ 10 */}
-              <div className="bg-white p-8 border border-gray-200">
-                <h3 className="text-xl font-semibold mb-3">Can I expand the system later?</h3>
-                <p className="text-gray-700">
-                  Yes. All our installations are designed with scalability in mind. You can easily add new rooms, 
-                  features, or integrations over time. We plan infrastructure and wiring to accommodate future 
-                  expansions without rework.
-                </p>
-              </div>
+                  <div className="bg-white p-8 border border-gray-200">
+                    <h3 className="text-xl font-semibold mb-3">Do you provide support & maintenance?</h3>
+                    <p className="text-gray-700">
+                      Yes. LEXA Lifestyle offers comprehensive AMC (Annual Maintenance Contract) packages for ongoing 
+                      support, software updates, system health checks, and priority service. Our local team provides 
+                      fast response times across Dubai and UAE.
+                    </p>
+                  </div>
+                </>
+              )}
             </div>
           </div>
         </div>
