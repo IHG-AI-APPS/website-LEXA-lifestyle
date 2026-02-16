@@ -136,6 +136,77 @@ export default function ServiceDetailPage() {
     }
   }, [params.slug])
 
+  // Inject FAQ Schema.org structured data for SEO
+  useEffect(() => {
+    if (!service) return
+    
+    const faqs = service.faqs || service.faq || []
+    if (faqs.length === 0) return
+    
+    // Create FAQ Schema
+    const faqSchema = {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": faqs.map((faq) => ({
+        "@type": "Question",
+        "name": faq.question,
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": faq.answer
+        }
+      }))
+    }
+    
+    // Create Service Schema
+    const serviceSchema = {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "serviceType": service.title,
+      "name": `${service.title} - LEXA Lifestyle`,
+      "description": service.description,
+      "provider": {
+        "@type": "Organization",
+        "name": "LEXA Lifestyle",
+        "url": "https://lexalifestyle.com",
+        "logo": "https://lexalifestyle.com/lexa-logo.png",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Dubai",
+          "addressCountry": "AE"
+        }
+      },
+      "areaServed": {
+        "@type": "Country",
+        "name": "United Arab Emirates"
+      },
+      "image": service.image
+    }
+    
+    // Remove any existing schema scripts
+    document.querySelectorAll('script[data-schema="faq"]').forEach(el => el.remove())
+    document.querySelectorAll('script[data-schema="service"]').forEach(el => el.remove())
+    
+    // Add FAQ schema script
+    const faqScript = document.createElement('script')
+    faqScript.type = 'application/ld+json'
+    faqScript.setAttribute('data-schema', 'faq')
+    faqScript.textContent = JSON.stringify(faqSchema)
+    document.head.appendChild(faqScript)
+    
+    // Add Service schema script
+    const serviceScript = document.createElement('script')
+    serviceScript.type = 'application/ld+json'
+    serviceScript.setAttribute('data-schema', 'service')
+    serviceScript.textContent = JSON.stringify(serviceSchema)
+    document.head.appendChild(serviceScript)
+    
+    // Cleanup on unmount
+    return () => {
+      document.querySelectorAll('script[data-schema="faq"]').forEach(el => el.remove())
+      document.querySelectorAll('script[data-schema="service"]').forEach(el => el.remove())
+    }
+  }, [service])
+
   if (loading) {
     return (
       <div className="min-h-screen bg-white pt-20">
