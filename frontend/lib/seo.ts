@@ -6,8 +6,8 @@ const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://lexalifestyle.com'
 export const defaultMetadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: 'LEXA Lifestyle | #1 Smart Home Automation Dubai | Control4 & Crestron',
-    template: '%s | LEXA Lifestyle Dubai'
+    default: 'LEXA Lifestyle | Smart Home Automation Dubai',
+    template: '%s | LEXA Dubai'
   },
   // Optimized meta description - under 160 characters
   description: 'Dubai\'s #1 luxury smart home company. Control4 & Crestron dealer. 500+ villas automated. Expert lighting, cinema & AV integration.',
