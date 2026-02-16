@@ -1,7 +1,7 @@
 'use client'
 
 import { useState, useEffect } from 'react'
-import Image from 'next/image'
+import SafeImage from '@/components/ui/SafeImage'
 import { Button } from '@/components/ui/button'
 import PersonaModal from './PersonaModal'
 import ConsultationForm from '@/components/forms/ConsultationForm'

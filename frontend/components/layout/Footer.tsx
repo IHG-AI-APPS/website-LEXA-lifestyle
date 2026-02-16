@@ -1,7 +1,7 @@
 'use client'
 
 import Link from 'next/link'
-import Image from 'next/image'
+import SafeImage from '@/components/ui/SafeImage'
 import { ArrowUpRight } from 'lucide-react'
 import { useLanguage } from '@/contexts/LanguageContext'
 
@@ -18,7 +18,7 @@ export default function Footer() {
           {/* Brand Section */}
           <div className="lg:col-span-4 space-y-6">
             <Link href="/">
-              <Image 
+              <SafeImage 
                 src="/lexa-black.png" 
                 alt="LEXA Lifestyle" 
                 width={140} 

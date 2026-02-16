@@ -19,7 +19,7 @@ import {
   ChevronDown,
   Loader2
 } from 'lucide-react'
-import Image from 'next/image'
+import SafeImage from '@/components/ui/SafeImage'
 
 const BACKEND_URL = process.env.NEXT_PUBLIC_BACKEND_URL || 'http://localhost:8001'
 

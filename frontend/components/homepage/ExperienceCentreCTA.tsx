@@ -20,7 +20,7 @@ import {
   Camera
 } from 'lucide-react'
 import Link from 'next/link'
-import Image from 'next/image'
+import SafeImage from '@/components/ui/SafeImage'
 
 const timeSlots = [
   '10:00 AM', '11:00 AM', '12:00 PM',

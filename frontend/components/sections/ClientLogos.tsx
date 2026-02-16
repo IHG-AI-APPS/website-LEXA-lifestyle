@@ -1,6 +1,6 @@
 'use client'
 
-import Image from 'next/image'
+import SafeImage from '@/components/ui/SafeImage'
 
 const clients = [
   { name: 'Eagle Hills', logo: 'https://images.unsplash.com/photo-1560179707-f14e90ef3623?w=150&h=80&fit=crop' },

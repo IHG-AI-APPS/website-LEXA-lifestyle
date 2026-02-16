@@ -1,4 +1,4 @@
-import Image from 'next/image'
+import SafeImage from '@/components/ui/SafeImage'
 
 interface TeamMember {
   name: string

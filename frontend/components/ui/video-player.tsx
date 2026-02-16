@@ -1,7 +1,7 @@
 'use client'
 
 import { useState } from 'react'
-import Image from 'next/image'
+import SafeImage from '@/components/ui/SafeImage'
 import { Play, X } from 'lucide-react'
 
 interface VideoPlayerProps {
@@ -51,7 +51,7 @@ export default function VideoPlayer({
         className={`relative group cursor-pointer overflow-hidden rounded-lg ${className}`}
         onClick={handlePlay}
       >
-        <Image 
+        <SafeImage 
           src={thumbnailUrl} 
           alt={title}
           fill

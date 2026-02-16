@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
-import Image from 'next/image'
+import SafeImage from '@/components/ui/SafeImage'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Sparkles, ArrowRight, Lightbulb } from 'lucide-react'
 import { useRecentlyViewed } from '@/hooks/useRecentlyViewed'
