@@ -864,8 +864,8 @@ export default function IndustryCalculatorPage() {
         </div>
       </section>
 
-      {/* Progress Bar */}
-      <div className="bg-white border-b sticky top-0 z-40">
+      {/* Progress Bar - Below main navigation */}
+      <div className="bg-white border-b sticky top-16 sm:top-18 md:top-20 z-40">
         <div className="container mx-auto px-8 lg:px-16">
           <div className="max-w-6xl mx-auto py-4">
             <div className="flex items-center justify-between">
