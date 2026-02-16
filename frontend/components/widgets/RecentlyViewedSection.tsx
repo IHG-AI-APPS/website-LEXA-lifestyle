@@ -2,7 +2,7 @@
 
 import { useEffect, useRef } from 'react'
 import Link from 'next/link'
-import Image from 'next/image'
+import SafeImage from '@/components/ui/SafeImage'
 import { motion, AnimatePresence } from 'framer-motion'
 import { X, Clock, ArrowRight, Trash2 } from 'lucide-react'
 import { useRecentlyViewed, RecentlyViewedItem } from '@/hooks/useRecentlyViewed'
