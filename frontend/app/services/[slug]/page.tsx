@@ -200,7 +200,7 @@ export default function ServiceDetailPage() {
     <div className="min-h-screen bg-white">
       {/* Hero Section */}
       <section className="relative h-[60vh] min-h-[500px]">
-        <Image
+        <SafeImage
           src={service.image}
           alt={service.title}
           fill
