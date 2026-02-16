@@ -224,7 +224,7 @@ export default function RecentlyViewedSection({
                     <Link href={getHref(item)}>
                       {/* Image */}
                       <div className="relative h-28 md:h-32 overflow-hidden">
-                        <Image
+                        <SafeImage
                           src={getImageUrl(item.image)}
                           alt={item.title}
                           fill
