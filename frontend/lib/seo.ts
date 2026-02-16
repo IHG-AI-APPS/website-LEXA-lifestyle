@@ -143,9 +143,9 @@ export const organizationSchema = {
 export const localBusinessSchema = {
   '@context': 'https://schema.org',
   '@type': 'LocalBusiness',
-  '@id': 'https://launch-ready-app-6.preview.emergentagent.com',
+  '@id': 'https://lexalifestyle.com',
   name: 'LEXA Lifestyle',
-  image: 'https://launch-ready-app-6.preview.emergentagent.com/lexa-black.png',
+  image: 'https://lexalifestyle.com/lexa-black.png',
   telephone: '+971-42-670-470',
   address: {
     '@type': 'PostalAddress',
@@ -160,7 +160,7 @@ export const localBusinessSchema = {
     latitude: 25.2048,
     longitude: 55.2708
   },
-  url: 'https://launch-ready-app-6.preview.emergentagent.com',
+  url: 'https://lexalifestyle.com',
   priceRange: 'AED 50,000 - 500,000+',
   openingHoursSpecification: {
     '@type': 'OpeningHoursSpecification',
@@ -513,7 +513,7 @@ export function generateProductSchema(packageData: {
     '@type': 'Product',
     name: packageData.name,
     description: packageData.description,
-    image: packageData.image || 'https://launch-ready-app-6.preview.emergentagent.com/og-image.jpg',
+    image: packageData.image || 'https://lexalifestyle.com/og-image.jpg',
     brand: {
       '@type': 'Brand',
       name: 'LEXA Lifestyle'
@@ -525,7 +525,7 @@ export function generateProductSchema(packageData: {
       highPrice: packageData.price.max,
       priceValidUntil: '2026-12-31',
       availability: 'https://schema.org/InStock',
-      url: `https://launch-ready-app-6.preview.emergentagent.com/packages/${packageData.slug}`,
+      url: `https://lexalifestyle.com/packages/${packageData.slug}`,
       seller: {
         '@type': 'Organization',
         name: 'LEXA Lifestyle'
@@ -560,25 +560,25 @@ export function generateArticleSchema(article: {
     '@type': 'Article',
     headline: article.title,
     description: article.description,
-    image: article.image || 'https://launch-ready-app-6.preview.emergentagent.com/og-image.jpg',
+    image: article.image || 'https://lexalifestyle.com/og-image.jpg',
     author: {
       '@type': 'Person',
       name: article.author || 'LEXA Lifestyle Team',
-      url: 'https://launch-ready-app-6.preview.emergentagent.com/about'
+      url: 'https://lexalifestyle.com/about'
     },
     publisher: {
       '@type': 'Organization',
       name: 'LEXA Lifestyle',
       logo: {
         '@type': 'ImageObject',
-        url: 'https://launch-ready-app-6.preview.emergentagent.com/lexa-black.png'
+        url: 'https://lexalifestyle.com/lexa-black.png'
       }
     },
     datePublished: article.publishDate,
     dateModified: article.modifiedDate || article.publishDate,
     mainEntityOfPage: {
       '@type': 'WebPage',
-      '@id': `https://launch-ready-app-6.preview.emergentagent.com/blog/${article.slug}`
+      '@id': `https://lexalifestyle.com/blog/${article.slug}`
     },
     articleSection: article.category || 'Smart Home Automation',
     keywords: 'smart home Dubai, home automation UAE, Control4, Crestron, luxury villa automation',
@@ -614,7 +614,7 @@ export function generateVideoSchema(video: {
       name: 'LEXA Lifestyle',
       logo: {
         '@type': 'ImageObject',
-        url: 'https://launch-ready-app-6.preview.emergentagent.com/lexa-black.png'
+        url: 'https://lexalifestyle.com/lexa-black.png'
       }
     },
     inLanguage: 'en-AE'
@@ -665,16 +665,16 @@ export function generateHowToSchema(guide: {
 export const googleBusinessSchema = {
   '@context': 'https://schema.org',
   '@type': ['Organization', 'LocalBusiness', 'Store'],
-  '@id': 'https://launch-ready-app-6.preview.emergentagent.com/#organization',
+  '@id': 'https://lexalifestyle.com/#organization',
   name: 'LEXA Lifestyle - Smart Home Automation Dubai',
   alternateName: ['LEXA Life Style', 'Lexa Lifestyle Dubai'],
   legalName: 'LEXA Lifestyle LLC',
-  url: 'https://launch-ready-app-6.preview.emergentagent.com',
-  logo: 'https://launch-ready-app-6.preview.emergentagent.com/lexa-black.png',
+  url: 'https://lexalifestyle.com',
+  logo: 'https://lexalifestyle.com/lexa-black.png',
   image: [
-    'https://launch-ready-app-6.preview.emergentagent.com/showroom-1.jpg',
-    'https://launch-ready-app-6.preview.emergentagent.com/villa-automation.jpg',
-    'https://launch-ready-app-6.preview.emergentagent.com/home-cinema.jpg'
+    'https://lexalifestyle.com/showroom-1.jpg',
+    'https://lexalifestyle.com/villa-automation.jpg',
+    'https://lexalifestyle.com/home-cinema.jpg'
   ],
   description: 'Leading luxury smart home automation company in Dubai, UAE. Official Control4 and Crestron dealer. Expert integration of lighting, climate, security, and home cinema systems.',
   slogan: 'Integrated Luxury Living',
@@ -785,7 +785,7 @@ export const googleBusinessSchema = {
   brand: {
     '@type': 'Brand',
     name: 'LEXA Lifestyle',
-    logo: 'https://launch-ready-app-6.preview.emergentagent.com/lexa-black.png'
+    logo: 'https://lexalifestyle.com/lexa-black.png'
   },
   
   // Contact Points
