@@ -1,6 +1,8 @@
 # LEXA Lifestyle Robots.txt
 # Smart Home Automation Dubai
+# https://lexalifestyle.com
 
+# Default rules for all crawlers
 User-agent: *
 Allow: /
 
@@ -10,35 +12,46 @@ Sitemap: https://lexalifestyle.com/sitemap.xml
 # Allow all major search engines
 User-agent: Googlebot
 Allow: /
+Crawl-delay: 1
 
 User-agent: Bingbot
 Allow: /
+Crawl-delay: 1
 
 User-agent: Slurp
 Allow: /
+Crawl-delay: 2
 
 User-agent: DuckDuckBot
 Allow: /
+Crawl-delay: 1
 
 User-agent: Baiduspider
 Allow: /
+Crawl-delay: 2
 
 User-agent: YandexBot
 Allow: /
+Crawl-delay: 2
 
 # Block admin and private areas
 Disallow: /admin/
 Disallow: /api/
 Disallow: /dashboard/
-Disallow: /_next/
+Disallow: /_next/static/
 Disallow: /static/
 
-# Block development/preview URLs from being indexed
+# Block query parameters that create duplicate content
+Disallow: /*?*
+Allow: /*?page=
+
+# Block development/staging URLs
 User-agent: *
 Disallow: /*preview.emergentagent.com
+Disallow: /*stage-preview.emergentagent.com
 
-# Crawl-delay for polite crawling
-Crawl-delay: 1
-
-# Host directive
+# Host directive - canonical domain
 Host: https://lexalifestyle.com
+
+# Crawl-delay for polite crawling (in seconds)
+Crawl-delay: 1
