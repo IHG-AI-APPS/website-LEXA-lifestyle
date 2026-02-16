@@ -240,7 +240,7 @@ async def get_analytics_dashboard(
         
         # Get referrer sources
         pipeline_referrers = [
-            {"$match": {"type": "pageview", "referrer": {"$ne": None, "$ne": ""}, "timestamp": {"$gte": start_date}}},
+            {"$match": {"type": "pageview", "referrer": {"$nin": [None, ""]}, "timestamp": {"$gte": start_date}}},
             {"$group": {"_id": "$referrer", "count": {"$sum": 1}}},
             {"$sort": {"count": -1}},
             {"$limit": 10}
