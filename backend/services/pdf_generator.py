@@ -124,15 +124,6 @@ class PDFQuoteGenerator:
             fontName='Helvetica'
         )
         
-        small_style = ParagraphStyle(
-            'Small',
-            parent=styles['Normal'],
-            fontSize=8,
-            textColor=BRAND_LIGHT_GRAY,
-            spaceAfter=2,
-            fontName='Helvetica'
-        )
-        
         # ===== HEADER =====
         # Brand Logo
         header_data = [[
