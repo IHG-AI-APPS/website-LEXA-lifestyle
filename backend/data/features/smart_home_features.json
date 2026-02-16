@@ -1,0 +1,297 @@
+{
+  "version": "1.0",
+  "total_features": 650,
+  "categories": [
+    {
+      "id": "lighting",
+      "name": "Lighting Control",
+      "icon": "Lightbulb",
+      "features": [
+        {"id": "L001", "name": "Centralized Lighting Control", "description": "Control all lights from one interface", "popularity": 95, "tier_suggestion": "must_have"},
+        {"id": "L002", "name": "Dimming Control", "description": "Adjust brightness levels for any light", "popularity": 92, "tier_suggestion": "must_have"},
+        {"id": "L003", "name": "Scene Programming", "description": "Pre-set lighting scenes (Movie, Dinner, Party)", "popularity": 88, "tier_suggestion": "must_have"},
+        {"id": "L004", "name": "Circadian Lighting", "description": "Auto-adjust color temperature throughout the day", "popularity": 75, "tier_suggestion": "should_have"},
+        {"id": "L005", "name": "Motion-Activated Lights", "description": "Lights turn on/off based on occupancy", "popularity": 85, "tier_suggestion": "must_have"},
+        {"id": "L006", "name": "Daylight Harvesting", "description": "Auto-dim based on natural light", "popularity": 65, "tier_suggestion": "should_have"},
+        {"id": "L007", "name": "Color Changing (RGB/RGBW)", "description": "Full color spectrum lighting", "popularity": 70, "tier_suggestion": "could_have"},
+        {"id": "L008", "name": "Pathway Lighting", "description": "Automated path illumination at night", "popularity": 78, "tier_suggestion": "should_have"},
+        {"id": "L009", "name": "Landscape Lighting Control", "description": "Garden and outdoor lighting automation", "popularity": 72, "tier_suggestion": "should_have"},
+        {"id": "L010", "name": "Facade Lighting", "description": "Architectural exterior lighting", "popularity": 55, "tier_suggestion": "could_have"},
+        {"id": "L011", "name": "Pool/Spa Lighting", "description": "Underwater and pool area lighting", "popularity": 60, "tier_suggestion": "could_have"},
+        {"id": "L012", "name": "Staircase Lighting", "description": "Step-by-step illumination", "popularity": 68, "tier_suggestion": "should_have"},
+        {"id": "L013", "name": "Closet/Pantry Lighting", "description": "Auto lights in storage areas", "popularity": 58, "tier_suggestion": "could_have"},
+        {"id": "L014", "name": "Art Lighting", "description": "Specialized artwork illumination", "popularity": 45, "tier_suggestion": "want_to_have"},
+        {"id": "L015", "name": "Tunable White", "description": "Warm to cool white adjustment", "popularity": 72, "tier_suggestion": "should_have"},
+        {"id": "L016", "name": "Pendant/Chandelier Control", "description": "Decorative fixture dimming", "popularity": 65, "tier_suggestion": "should_have"},
+        {"id": "L017", "name": "Under-Cabinet Lighting", "description": "Kitchen task lighting", "popularity": 70, "tier_suggestion": "should_have"},
+        {"id": "L018", "name": "Cove Lighting", "description": "Indirect ambient lighting", "popularity": 62, "tier_suggestion": "could_have"},
+        {"id": "L019", "name": "Emergency Lighting", "description": "Backup lighting during power outage", "popularity": 80, "tier_suggestion": "must_have"},
+        {"id": "L020", "name": "Welcome Home Scene", "description": "Lights activate on arrival", "popularity": 82, "tier_suggestion": "must_have"}
+      ]
+    },
+    {
+      "id": "climate",
+      "name": "Climate Control",
+      "icon": "Thermometer",
+      "features": [
+        {"id": "C001", "name": "Centralized HVAC Control", "description": "Control all AC units from one interface", "popularity": 94, "tier_suggestion": "must_have"},
+        {"id": "C002", "name": "Zone Temperature Control", "description": "Different temperatures for different rooms", "popularity": 90, "tier_suggestion": "must_have"},
+        {"id": "C003", "name": "Smart Thermostat Integration", "description": "Learning thermostat with scheduling", "popularity": 88, "tier_suggestion": "must_have"},
+        {"id": "C004", "name": "Occupancy-Based Climate", "description": "AC adjusts based on room occupancy", "popularity": 75, "tier_suggestion": "should_have"},
+        {"id": "C005", "name": "Pre-Cooling/Heating", "description": "Prepare rooms before arrival", "popularity": 72, "tier_suggestion": "should_have"},
+        {"id": "C006", "name": "Humidity Control", "description": "Automated humidifier/dehumidifier", "popularity": 65, "tier_suggestion": "should_have"},
+        {"id": "C007", "name": "Air Quality Monitoring", "description": "CO2, VOC, PM2.5 sensors", "popularity": 70, "tier_suggestion": "should_have"},
+        {"id": "C008", "name": "Fresh Air Ventilation", "description": "Automated ERV/HRV control", "popularity": 60, "tier_suggestion": "could_have"},
+        {"id": "C009", "name": "Underfloor Heating", "description": "Radiant floor heating zones", "popularity": 55, "tier_suggestion": "could_have"},
+        {"id": "C010", "name": "Pool/Spa Heating", "description": "Water temperature automation", "popularity": 50, "tier_suggestion": "could_have"},
+        {"id": "C011", "name": "Fireplace Control", "description": "Gas fireplace automation", "popularity": 45, "tier_suggestion": "want_to_have"},
+        {"id": "C012", "name": "Ceiling Fan Control", "description": "Speed and direction automation", "popularity": 68, "tier_suggestion": "should_have"},
+        {"id": "C013", "name": "Geofencing Climate", "description": "AC adjusts based on phone location", "popularity": 65, "tier_suggestion": "should_have"},
+        {"id": "C014", "name": "Weather-Responsive Climate", "description": "Auto-adjust based on forecast", "popularity": 55, "tier_suggestion": "could_have"},
+        {"id": "C015", "name": "Energy Reporting", "description": "Track HVAC energy consumption", "popularity": 70, "tier_suggestion": "should_have"}
+      ]
+    },
+    {
+      "id": "security",
+      "name": "Security & Access",
+      "icon": "Shield",
+      "features": [
+        {"id": "S001", "name": "Smart Door Locks", "description": "Keyless entry with codes/biometrics", "popularity": 95, "tier_suggestion": "must_have"},
+        {"id": "S002", "name": "Video Doorbell", "description": "See and speak to visitors remotely", "popularity": 92, "tier_suggestion": "must_have"},
+        {"id": "S003", "name": "CCTV Integration", "description": "Security camera system", "popularity": 94, "tier_suggestion": "must_have"},
+        {"id": "S004", "name": "Motion Sensors", "description": "Detect movement in zones", "popularity": 88, "tier_suggestion": "must_have"},
+        {"id": "S005", "name": "Door/Window Sensors", "description": "Monitor open/close status", "popularity": 90, "tier_suggestion": "must_have"},
+        {"id": "S006", "name": "Alarm System Integration", "description": "Connect existing alarm panel", "popularity": 85, "tier_suggestion": "must_have"},
+        {"id": "S007", "name": "Intercom System", "description": "Room-to-room communication", "popularity": 70, "tier_suggestion": "should_have"},
+        {"id": "S008", "name": "Gate/Garage Control", "description": "Automated entry gates", "popularity": 82, "tier_suggestion": "must_have"},
+        {"id": "S009", "name": "Panic/Emergency Buttons", "description": "One-touch emergency alerts", "popularity": 75, "tier_suggestion": "should_have"},
+        {"id": "S010", "name": "Facial Recognition", "description": "AI-powered face detection", "popularity": 55, "tier_suggestion": "could_have"},
+        {"id": "S011", "name": "License Plate Recognition", "description": "Auto-identify vehicles", "popularity": 50, "tier_suggestion": "could_have"},
+        {"id": "S012", "name": "Perimeter Detection", "description": "Fence/boundary monitoring", "popularity": 60, "tier_suggestion": "could_have"},
+        {"id": "S013", "name": "Safe Room Integration", "description": "Panic room automation", "popularity": 35, "tier_suggestion": "want_to_have"},
+        {"id": "S014", "name": "Visitor Management", "description": "Log and manage guests", "popularity": 65, "tier_suggestion": "should_have"},
+        {"id": "S015", "name": "Security Lighting", "description": "Motion-triggered security lights", "popularity": 80, "tier_suggestion": "must_have"},
+        {"id": "S016", "name": "Glass Break Sensors", "description": "Detect window breakage", "popularity": 72, "tier_suggestion": "should_have"},
+        {"id": "S017", "name": "Smoke/Fire Detection", "description": "Integrated fire safety", "popularity": 92, "tier_suggestion": "must_have"},
+        {"id": "S018", "name": "Water Leak Detection", "description": "Flood and leak sensors", "popularity": 78, "tier_suggestion": "should_have"},
+        {"id": "S019", "name": "Gas Leak Detection", "description": "Natural gas monitoring", "popularity": 75, "tier_suggestion": "should_have"},
+        {"id": "S020", "name": "Remote Monitoring", "description": "24/7 access via app", "popularity": 90, "tier_suggestion": "must_have"}
+      ]
+    },
+    {
+      "id": "entertainment",
+      "name": "Entertainment & AV",
+      "icon": "Tv",
+      "features": [
+        {"id": "E001", "name": "Multi-Room Audio", "description": "Music in every room", "popularity": 88, "tier_suggestion": "must_have"},
+        {"id": "E002", "name": "Home Theater System", "description": "Dedicated cinema room", "popularity": 75, "tier_suggestion": "should_have"},
+        {"id": "E003", "name": "TV Control Integration", "description": "Control TVs from one app", "popularity": 85, "tier_suggestion": "must_have"},
+        {"id": "E004", "name": "Streaming Service Integration", "description": "Netflix, Spotify, etc.", "popularity": 90, "tier_suggestion": "must_have"},
+        {"id": "E005", "name": "Surround Sound (5.1/7.1)", "description": "Multi-channel audio", "popularity": 70, "tier_suggestion": "should_have"},
+        {"id": "E006", "name": "Dolby Atmos", "description": "Immersive 3D audio", "popularity": 55, "tier_suggestion": "could_have"},
+        {"id": "E007", "name": "In-Ceiling Speakers", "description": "Hidden speaker installation", "popularity": 78, "tier_suggestion": "should_have"},
+        {"id": "E008", "name": "In-Wall Speakers", "description": "Flush-mount speakers", "popularity": 72, "tier_suggestion": "should_have"},
+        {"id": "E009", "name": "Outdoor Audio", "description": "Garden/pool speakers", "popularity": 65, "tier_suggestion": "should_have"},
+        {"id": "E010", "name": "Video Distribution", "description": "Same content on multiple TVs", "popularity": 60, "tier_suggestion": "could_have"},
+        {"id": "E011", "name": "Projector/Screen Control", "description": "Motorized screen automation", "popularity": 55, "tier_suggestion": "could_have"},
+        {"id": "E012", "name": "Gaming Room Setup", "description": "Optimized gaming environment", "popularity": 45, "tier_suggestion": "want_to_have"},
+        {"id": "E013", "name": "Karaoke System", "description": "Entertainment room karaoke", "popularity": 40, "tier_suggestion": "want_to_have"},
+        {"id": "E014", "name": "DJ/Party Mode", "description": "Event lighting and audio", "popularity": 42, "tier_suggestion": "want_to_have"},
+        {"id": "E015", "name": "Mirror TV", "description": "Hidden TV behind mirror", "popularity": 50, "tier_suggestion": "could_have"},
+        {"id": "E016", "name": "Video Wall", "description": "Multi-screen display", "popularity": 35, "tier_suggestion": "want_to_have"},
+        {"id": "E017", "name": "Vinyl/Turntable Integration", "description": "Analog audio connection", "popularity": 30, "tier_suggestion": "want_to_have"},
+        {"id": "E018", "name": "Media Server", "description": "Centralized content storage", "popularity": 65, "tier_suggestion": "should_have"},
+        {"id": "E019", "name": "Music Streaming Zones", "description": "Different music per zone", "popularity": 80, "tier_suggestion": "must_have"},
+        {"id": "E020", "name": "Voice Control for AV", "description": "Alexa/Google for media", "popularity": 82, "tier_suggestion": "must_have"}
+      ]
+    },
+    {
+      "id": "shading",
+      "name": "Shading & Blinds",
+      "icon": "Blinds",
+      "features": [
+        {"id": "SH001", "name": "Motorized Blinds", "description": "Electric roller blinds", "popularity": 85, "tier_suggestion": "must_have"},
+        {"id": "SH002", "name": "Motorized Curtains", "description": "Automated drapes", "popularity": 78, "tier_suggestion": "should_have"},
+        {"id": "SH003", "name": "Motorized Shutters", "description": "External shutter control", "popularity": 65, "tier_suggestion": "should_have"},
+        {"id": "SH004", "name": "Skylight Shades", "description": "Roof window covering", "popularity": 55, "tier_suggestion": "could_have"},
+        {"id": "SH005", "name": "Sun Tracking", "description": "Auto-adjust based on sun position", "popularity": 60, "tier_suggestion": "could_have"},
+        {"id": "SH006", "name": "Scene Integration", "description": "Blinds in lighting scenes", "popularity": 75, "tier_suggestion": "should_have"},
+        {"id": "SH007", "name": "Blackout Control", "description": "Complete light blocking", "popularity": 82, "tier_suggestion": "must_have"},
+        {"id": "SH008", "name": "Privacy Glass", "description": "Switchable smart glass", "popularity": 45, "tier_suggestion": "want_to_have"},
+        {"id": "SH009", "name": "Awning Control", "description": "Motorized outdoor awnings", "popularity": 50, "tier_suggestion": "could_have"},
+        {"id": "SH010", "name": "Pergola Louvers", "description": "Adjustable outdoor cover", "popularity": 48, "tier_suggestion": "could_have"}
+      ]
+    },
+    {
+      "id": "control",
+      "name": "Control Interfaces",
+      "icon": "Smartphone",
+      "features": [
+        {"id": "CT001", "name": "Smartphone App Control", "description": "iOS/Android control app", "popularity": 98, "tier_suggestion": "must_have"},
+        {"id": "CT002", "name": "Voice Control (Alexa)", "description": "Amazon Alexa integration", "popularity": 88, "tier_suggestion": "must_have"},
+        {"id": "CT003", "name": "Voice Control (Google)", "description": "Google Assistant integration", "popularity": 85, "tier_suggestion": "must_have"},
+        {"id": "CT004", "name": "Voice Control (Siri)", "description": "Apple HomeKit integration", "popularity": 75, "tier_suggestion": "should_have"},
+        {"id": "CT005", "name": "Wall-Mount Touch Panel", "description": "In-wall control screen", "popularity": 72, "tier_suggestion": "should_have"},
+        {"id": "CT006", "name": "Portable Touch Panel", "description": "Handheld control tablet", "popularity": 60, "tier_suggestion": "could_have"},
+        {"id": "CT007", "name": "Custom Remote Control", "description": "Universal remote", "popularity": 55, "tier_suggestion": "could_have"},
+        {"id": "CT008", "name": "Keypad Control", "description": "Wall-mount button panels", "popularity": 78, "tier_suggestion": "should_have"},
+        {"id": "CT009", "name": "Gesture Control", "description": "Hand gesture recognition", "popularity": 30, "tier_suggestion": "want_to_have"},
+        {"id": "CT010", "name": "Presence Detection", "description": "Auto-activate based on presence", "popularity": 70, "tier_suggestion": "should_have"},
+        {"id": "CT011", "name": "Scheduling & Timers", "description": "Time-based automation", "popularity": 90, "tier_suggestion": "must_have"},
+        {"id": "CT012", "name": "Geofencing Triggers", "description": "Location-based automation", "popularity": 72, "tier_suggestion": "should_have"},
+        {"id": "CT013", "name": "Watch/Wearable Control", "description": "Apple Watch integration", "popularity": 45, "tier_suggestion": "want_to_have"},
+        {"id": "CT014", "name": "Remote Access", "description": "Control from anywhere", "popularity": 95, "tier_suggestion": "must_have"},
+        {"id": "CT015", "name": "Multi-User Profiles", "description": "Different settings per user", "popularity": 65, "tier_suggestion": "should_have"}
+      ]
+    },
+    {
+      "id": "energy",
+      "name": "Energy Management",
+      "icon": "Zap",
+      "features": [
+        {"id": "EN001", "name": "Energy Monitoring", "description": "Real-time consumption tracking", "popularity": 82, "tier_suggestion": "must_have"},
+        {"id": "EN002", "name": "Solar Panel Integration", "description": "PV system monitoring", "popularity": 65, "tier_suggestion": "should_have"},
+        {"id": "EN003", "name": "Battery Storage Control", "description": "Home battery management", "popularity": 55, "tier_suggestion": "could_have"},
+        {"id": "EN004", "name": "EV Charger Integration", "description": "Electric vehicle charging", "popularity": 60, "tier_suggestion": "should_have"},
+        {"id": "EN005", "name": "Smart Plugs/Outlets", "description": "Controllable power outlets", "popularity": 85, "tier_suggestion": "must_have"},
+        {"id": "EN006", "name": "Load Balancing", "description": "Optimize power distribution", "popularity": 50, "tier_suggestion": "could_have"},
+        {"id": "EN007", "name": "Peak Demand Management", "description": "Reduce peak usage", "popularity": 45, "tier_suggestion": "could_have"},
+        {"id": "EN008", "name": "Generator Integration", "description": "Backup power automation", "popularity": 60, "tier_suggestion": "should_have"},
+        {"id": "EN009", "name": "UPS Integration", "description": "Uninterruptible power supply", "popularity": 70, "tier_suggestion": "should_have"},
+        {"id": "EN010", "name": "Energy Reports", "description": "Weekly/monthly summaries", "popularity": 75, "tier_suggestion": "should_have"}
+      ]
+    },
+    {
+      "id": "outdoor",
+      "name": "Outdoor & Landscape",
+      "icon": "Trees",
+      "features": [
+        {"id": "O001", "name": "Irrigation Control", "description": "Smart sprinkler system", "popularity": 75, "tier_suggestion": "must_have"},
+        {"id": "O002", "name": "Pool Automation", "description": "Pump, heater, lights control", "popularity": 65, "tier_suggestion": "must_have"},
+        {"id": "O003", "name": "Spa/Jacuzzi Control", "description": "Hot tub automation", "popularity": 55, "tier_suggestion": "should_have"},
+        {"id": "O004", "name": "Outdoor Kitchen", "description": "BBQ and outdoor appliances", "popularity": 45, "tier_suggestion": "could_have"},
+        {"id": "O005", "name": "Water Feature Control", "description": "Fountains and waterfalls", "popularity": 50, "tier_suggestion": "could_have"},
+        {"id": "O006", "name": "Garden Sensors", "description": "Soil moisture monitoring", "popularity": 55, "tier_suggestion": "should_have"},
+        {"id": "O007", "name": "Weather Station", "description": "Local weather monitoring", "popularity": 60, "tier_suggestion": "must_have"},
+        {"id": "O008", "name": "Lawn Mower Robot", "description": "Automated grass cutting", "popularity": 40, "tier_suggestion": "want_to_have"},
+        {"id": "O009", "name": "Outdoor Heating", "description": "Patio heaters automation", "popularity": 48, "tier_suggestion": "could_have"},
+        {"id": "O010", "name": "Misting System", "description": "Cooling mist automation", "popularity": 52, "tier_suggestion": "could_have"}
+      ]
+    },
+    {
+      "id": "wellness",
+      "name": "Wellness & Comfort",
+      "icon": "Heart",
+      "features": [
+        {"id": "W001", "name": "Bathroom Mirror TV", "description": "Built-in vanity display", "popularity": 55, "tier_suggestion": "should_have"},
+        {"id": "W002", "name": "Heated Towel Rails", "description": "Automated towel warming", "popularity": 50, "tier_suggestion": "must_have"},
+        {"id": "W003", "name": "Steam Shower Control", "description": "Steam room automation", "popularity": 45, "tier_suggestion": "should_have"},
+        {"id": "W004", "name": "Sauna Control", "description": "Home sauna automation", "popularity": 40, "tier_suggestion": "want_to_have"},
+        {"id": "W005", "name": "Sleep Environment", "description": "Bedroom optimization", "popularity": 65, "tier_suggestion": "must_have"},
+        {"id": "W006", "name": "Wake-Up Simulation", "description": "Sunrise alarm lighting", "popularity": 58, "tier_suggestion": "must_have"},
+        {"id": "W007", "name": "White Noise/Sleep Sounds", "description": "Ambient sound system", "popularity": 45, "tier_suggestion": "should_have"},
+        {"id": "W008", "name": "Aromatherapy Diffuser", "description": "Scent automation", "popularity": 35, "tier_suggestion": "want_to_have"},
+        {"id": "W009", "name": "Massage Chair Integration", "description": "Connected wellness furniture", "popularity": 30, "tier_suggestion": "want_to_have"},
+        {"id": "W010", "name": "Gym Equipment Integration", "description": "Home gym connectivity", "popularity": 42, "tier_suggestion": "should_have"}
+      ]
+    },
+    {
+      "id": "appliances",
+      "name": "Smart Appliances",
+      "icon": "Refrigerator",
+      "features": [
+        {"id": "A001", "name": "Smart Refrigerator", "description": "Connected fridge monitoring", "popularity": 55, "tier_suggestion": "should_have"},
+        {"id": "A002", "name": "Smart Oven/Range", "description": "Remote cooking control", "popularity": 50, "tier_suggestion": "should_have"},
+        {"id": "A003", "name": "Smart Dishwasher", "description": "App-controlled dishwasher", "popularity": 45, "tier_suggestion": "could_have"},
+        {"id": "A004", "name": "Smart Washer/Dryer", "description": "Laundry automation", "popularity": 55, "tier_suggestion": "should_have"},
+        {"id": "A005", "name": "Coffee Machine", "description": "Automated coffee brewing", "popularity": 60, "tier_suggestion": "must_have"},
+        {"id": "A006", "name": "Wine Cellar Control", "description": "Temperature monitoring", "popularity": 40, "tier_suggestion": "want_to_have"},
+        {"id": "A007", "name": "Vacuum Robot", "description": "Automated floor cleaning", "popularity": 72, "tier_suggestion": "must_have"},
+        {"id": "A008", "name": "Pet Feeder", "description": "Automated pet feeding", "popularity": 45, "tier_suggestion": "should_have"},
+        {"id": "A009", "name": "Trash Compactor", "description": "Smart waste management", "popularity": 30, "tier_suggestion": "want_to_have"},
+        {"id": "A010", "name": "Water Purifier", "description": "Filter status monitoring", "popularity": 50, "tier_suggestion": "must_have"}
+      ]
+    },
+    {
+      "id": "networking",
+      "name": "Network & Infrastructure",
+      "icon": "Wifi",
+      "features": [
+        {"id": "N001", "name": "Enterprise WiFi", "description": "Commercial-grade wireless", "popularity": 88, "tier_suggestion": "must_have"},
+        {"id": "N002", "name": "Network Rack", "description": "Centralized equipment cabinet", "popularity": 75, "tier_suggestion": "should_have"},
+        {"id": "N003", "name": "Structured Cabling", "description": "Cat6/Fiber infrastructure", "popularity": 82, "tier_suggestion": "must_have"},
+        {"id": "N004", "name": "PoE Switches", "description": "Power over Ethernet", "popularity": 70, "tier_suggestion": "should_have"},
+        {"id": "N005", "name": "Network Security", "description": "Firewall and monitoring", "popularity": 78, "tier_suggestion": "should_have"},
+        {"id": "N006", "name": "Guest Network", "description": "Separate visitor WiFi", "popularity": 72, "tier_suggestion": "should_have"},
+        {"id": "N007", "name": "VPN Access", "description": "Secure remote access", "popularity": 60, "tier_suggestion": "should_have"},
+        {"id": "N008", "name": "Parental Controls", "description": "Content filtering", "popularity": 55, "tier_suggestion": "could_have"},
+        {"id": "N009", "name": "Bandwidth Management", "description": "QoS for devices", "popularity": 50, "tier_suggestion": "could_have"},
+        {"id": "N010", "name": "IoT Network Isolation", "description": "Separate smart device network", "popularity": 65, "tier_suggestion": "should_have"}
+      ]
+    },
+    {
+      "id": "special",
+      "name": "Special Features",
+      "icon": "Sparkles",
+      "features": [
+        {"id": "SP001", "name": "Elevator/Lift Control", "description": "Home elevator integration", "popularity": 35, "tier_suggestion": "should_have"},
+        {"id": "SP002", "name": "Art Gallery Lighting", "description": "Museum-quality display", "popularity": 38, "tier_suggestion": "could_have"},
+        {"id": "SP003", "name": "Wine Room Climate", "description": "Cellar environment control", "popularity": 42, "tier_suggestion": "should_have"},
+        {"id": "SP004", "name": "Cigar Room Ventilation", "description": "Specialized air handling", "popularity": 30, "tier_suggestion": "want_to_have"},
+        {"id": "SP005", "name": "Prayer Room Automation", "description": "Qibla direction, call times", "popularity": 60, "tier_suggestion": "must_have"},
+        {"id": "SP006", "name": "Majlis Automation", "description": "Traditional room control", "popularity": 65, "tier_suggestion": "must_have"},
+        {"id": "SP007", "name": "Home Office Integration", "description": "Professional workspace", "popularity": 75, "tier_suggestion": "must_have"},
+        {"id": "SP008", "name": "Nursery/Kids Room", "description": "Child-safe automation", "popularity": 55, "tier_suggestion": "should_have"},
+        {"id": "SP009", "name": "Music Room/Studio", "description": "Professional audio space", "popularity": 40, "tier_suggestion": "want_to_have"},
+        {"id": "SP010", "name": "Trophy Room Display", "description": "Showcase lighting", "popularity": 32, "tier_suggestion": "want_to_have"},
+        {"id": "SP011", "name": "Walk-In Closet Lighting", "description": "Boutique-style display", "popularity": 58, "tier_suggestion": "should_have"},
+        {"id": "SP012", "name": "Dressing Room Mirrors", "description": "Lit vanity mirrors", "popularity": 52, "tier_suggestion": "should_have"},
+        {"id": "SP013", "name": "Golf Simulator Room", "description": "Entertainment integration", "popularity": 28, "tier_suggestion": "want_to_have"},
+        {"id": "SP014", "name": "Bowling Alley", "description": "Recreation room control", "popularity": 22, "tier_suggestion": "want_to_have"},
+        {"id": "SP015", "name": "Aquarium Integration", "description": "Tank lighting and feeding", "popularity": 35, "tier_suggestion": "want_to_have"}
+      ]
+    }
+  ],
+  "protocols": {
+    "wired": [
+      {"id": "KNX", "name": "KNX/EIB", "description": "European standard for building automation", "pros": ["Most reliable", "Industry standard", "Huge device ecosystem"], "cons": ["Higher cost", "Requires planning"], "best_for": ["New construction", "Large projects"]},
+      {"id": "CBUS", "name": "C-Bus", "description": "Schneider Electric protocol", "pros": ["Very reliable", "Good support"], "cons": ["Limited ecosystem"], "best_for": ["Commercial", "Australian market"]},
+      {"id": "LUTRON_HW", "name": "Lutron HomeWorks", "description": "Premium lighting control", "pros": ["Best dimming", "Ultra reliable"], "cons": ["Premium pricing", "Lighting focused"], "best_for": ["Luxury homes", "Lighting priority"]},
+      {"id": "CRESTRON", "name": "Crestron", "description": "Enterprise automation", "pros": ["Most powerful", "Custom programming"], "cons": ["Highest cost", "Dealer required"], "best_for": ["Ultra luxury", "Complex projects"]},
+      {"id": "DYNALITE", "name": "Dynalite", "description": "Philips commercial lighting", "pros": ["Commercial grade", "Scalable"], "cons": ["Complex setup"], "best_for": ["Commercial", "Large scale"]},
+      {"id": "DALI", "name": "DALI", "description": "Digital lighting interface", "pros": ["Open standard", "Precise control"], "cons": ["Lighting only"], "best_for": ["Commercial lighting", "Office buildings"]},
+      {"id": "HDL", "name": "HDL Buspro", "description": "Chinese automation protocol", "pros": ["Cost effective", "Full featured"], "cons": ["Less known brand"], "best_for": ["Budget conscious", "Asian markets"]}
+    ],
+    "wireless": [
+      {"id": "ZWAVE", "name": "Z-Wave", "description": "Mesh network for smart home", "pros": ["Good range", "Low interference"], "cons": ["Limited devices"], "best_for": ["Retrofit", "Residential"]},
+      {"id": "ZIGBEE", "name": "Zigbee", "description": "Low-power mesh protocol", "pros": ["Many devices", "Low power"], "cons": ["Interference issues"], "best_for": ["Sensors", "Lighting"]},
+      {"id": "WIFI", "name": "WiFi", "description": "Standard wireless", "pros": ["Universal", "No hub needed"], "cons": ["Power hungry", "Network load"], "best_for": ["Simple setup", "Few devices"]},
+      {"id": "BLUETOOTH", "name": "Bluetooth/BLE", "description": "Short range wireless", "pros": ["Low power", "Phone native"], "cons": ["Short range"], "best_for": ["Wearables", "Proximity"]},
+      {"id": "MATTER", "name": "Matter", "description": "New universal standard", "pros": ["Cross-platform", "Future proof"], "cons": ["New, limited devices"], "best_for": ["New purchases", "Multi-brand"]},
+      {"id": "THREAD", "name": "Thread", "description": "IP-based mesh", "pros": ["Low latency", "Reliable mesh"], "cons": ["Requires border router"], "best_for": ["Apple ecosystem", "Google ecosystem"]},
+      {"id": "RF433", "name": "RF 433MHz", "description": "Simple radio frequency", "pros": ["Very cheap", "Long range"], "cons": ["One-way", "No feedback"], "best_for": ["Budget retrofit", "Simple controls"]}
+    ],
+    "hybrid": [
+      {"id": "CONTROL4", "name": "Control4", "description": "Wired backbone + wireless devices", "pros": ["Flexible", "Good value"], "cons": ["Dealer required"], "best_for": ["Mid to high end", "Mixed install"]},
+      {"id": "SAVANT", "name": "Savant", "description": "Apple-like luxury system", "pros": ["Beautiful UI", "Premium experience"], "cons": ["Very expensive"], "best_for": ["Ultra luxury", "Apple users"]},
+      {"id": "RTI", "name": "RTI", "description": "Integration specialist", "pros": ["Integrates anything", "Custom remotes"], "cons": ["Complex"], "best_for": ["AV focused", "Integration heavy"]},
+      {"id": "ELAN", "name": "Elan", "description": "Nortek ecosystem", "pros": ["Good value", "Reliable"], "cons": ["Smaller ecosystem"], "best_for": ["Mid-range luxury", "AV focused"]},
+      {"id": "NICE", "name": "Nice/ELAN", "description": "European luxury brand", "pros": ["Quality hardware", "Good design"], "cons": ["Limited US support"], "best_for": ["European projects", "Motor control"]}
+    ]
+  },
+  "systems": [
+    {"id": "SAVANT", "name": "Savant", "tier": "ultra_luxury", "price_range": "AED 150K-250K", "description": "Apple of smart homes", "compatible_protocols": ["SAVANT", "WIFI", "ZIGBEE", "ZWAVE"], "strengths": ["Best UI", "Apple integration", "Luxury experience"], "best_for": ["Ultra luxury villas", "Tech-forward clients"]},
+    {"id": "CONTROL4", "name": "Control4", "tier": "luxury", "price_range": "AED 50K-120K", "description": "Most popular luxury system", "compatible_protocols": ["CONTROL4", "ZIGBEE", "ZWAVE", "KNX"], "strengths": ["Reliable", "Huge dealer network", "Good value"], "best_for": ["Most luxury homes", "AV integration"]},
+    {"id": "CRESTRON", "name": "Crestron", "tier": "enterprise", "price_range": "AED 150K-300K", "description": "Enterprise-grade automation", "compatible_protocols": ["CRESTRON", "KNX", "DALI", "LUTRON_HW"], "strengths": ["Most powerful", "Custom everything", "Commercial grade"], "best_for": ["Mega mansions", "Commercial", "Yachts"]},
+    {"id": "LUTRON", "name": "Lutron RadioRA3/HomeWorks", "tier": "luxury", "price_range": "AED 50K-120K", "description": "Best lighting control", "compatible_protocols": ["LUTRON_HW", "WIFI"], "strengths": ["Perfect dimming", "Reliable shades", "Clean design"], "best_for": ["Lighting priority", "Retrofit luxury"]},
+    {"id": "DYNALITE", "name": "Dynalite", "tier": "commercial", "price_range": "AED 30K-80K", "description": "Commercial lighting control", "compatible_protocols": ["DYNALITE", "DALI", "KNX"], "strengths": ["Scalable", "Commercial grade"], "best_for": ["Hotels", "Offices", "Large commercial"]},
+    {"id": "KNX_NATIVE", "name": "KNX Native", "tier": "premium", "price_range": "AED 30K-80K", "description": "Open standard automation", "compatible_protocols": ["KNX", "DALI"], "strengths": ["Future proof", "Multi-vendor", "European standard"], "best_for": ["New construction", "European clients"]},
+    {"id": "QBUS", "name": "Qbus", "tier": "premium", "price_range": "AED 30K-80K", "description": "Belgian quality automation", "compatible_protocols": ["QBUS"], "strengths": ["Quality hardware", "Good design"], "best_for": ["European projects", "Quality focused"]},
+    {"id": "HDL_BUSPRO", "name": "HDL Buspro", "tier": "value", "price_range": "AED 15K-40K", "description": "Value automation", "compatible_protocols": ["HDL", "KNX"], "strengths": ["Cost effective", "Full featured"], "best_for": ["Budget conscious", "Large projects"]},
+    {"id": "LIFESMART", "name": "Lifesmart", "tier": "smart_value", "price_range": "AED 15K-40K", "description": "Smart value option", "compatible_protocols": ["WIFI", "ZIGBEE"], "strengths": ["Affordable", "Easy install"], "best_for": ["Apartments", "Starter homes"]},
+    {"id": "LEXA_HABITAT", "name": "LEXA Habitat", "tier": "custom", "price_range": "AED 30K-80K", "description": "Custom integration platform", "compatible_protocols": ["KNX", "ZIGBEE", "ZWAVE", "WIFI", "MATTER"], "strengths": ["Flexible", "Local support", "Custom solutions"], "best_for": ["Mixed projects", "Custom needs"]},
+    {"id": "MATTER_NATIVE", "name": "Matter/Thread", "tier": "modern", "price_range": "AED 15K-40K", "description": "Future-proof standard", "compatible_protocols": ["MATTER", "THREAD", "WIFI"], "strengths": ["Cross-platform", "Future proof"], "best_for": ["New purchases", "DIY friendly"]},
+    {"id": "TUYA", "name": "Tuya/Smart Life", "tier": "budget", "price_range": "AED 5K-15K", "description": "Mass market smart home", "compatible_protocols": ["WIFI", "ZIGBEE", "BLUETOOTH"], "strengths": ["Cheapest", "Huge selection"], "best_for": ["Budget projects", "Renters"]},
+    {"id": "HOME_ASSISTANT", "name": "Home Assistant", "tier": "diy", "price_range": "AED 2K-8K", "description": "Open source platform", "compatible_protocols": ["ALL"], "strengths": ["Free", "Ultimate flexibility"], "best_for": ["Tech enthusiasts", "DIY projects"]}
+  ]
+}

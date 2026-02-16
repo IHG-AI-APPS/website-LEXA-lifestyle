@@ -1,0 +1,4 @@
+# Google AdSense (if you use ads in future)
+# google.com, pub-0000000000000000, DIRECT, f08c47fec0942fa0
+
+# Placeholder - add your publisher IDs when using ad networks

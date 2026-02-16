@@ -1,0 +1,192 @@
+{
+  "project_name": "LEXA Smart Project Builder - The Intelligence Engine",
+  "version": "1.0.0",
+  "last_updated": "2026-05-20",
+  "identity": {
+    "persona": "E1 - The Anti-AI Designer",
+    "core_philosophy": "Consultative Intelligence over Linear Forms. The user is an architect, not a data entry clerk.",
+    "emotional_tone": "Professional, Exclusive, Intelligent, Trustworthy (High-Agency)",
+    "visual_archetype": "Luxury Technical (Archetype 5 + 2)",
+    "anti_patterns": [
+      "No 'Wizard' Steppers (Step 1 of 7)",
+      "No generic 'Success' modals with confetti",
+      "No 'Spinners' - Use data visualization for loading states",
+      "No 'Primary Blue' buttons - Use Gold or Monochrome",
+      "No 'Lorem Ipsum' - Use industry-specific terminology"
+    ]
+  },
+  "design_system": {
+    "colors": {
+      "base": {
+        "background": "#050505",
+        "surface": "#121212",
+        "surface_highlight": "#1E1E1E",
+        "border": "#2A2A2A"
+      },
+      "brand": {
+        "primary": "#D4AF37",
+        "primary_dim": "#8A7030",
+        "secondary": "#E2E8F0",
+        "accent_glow": "rgba(212, 175, 55, 0.15)"
+      },
+      "functional": {
+        "success": "#10B981",
+        "warning": "#F59E0B",
+        "error": "#EF4444",
+        "text_primary": "#F8FAFC",
+        "text_secondary": "#94A3B8",
+        "text_tertiary": "#475569"
+      }
+    },
+    "typography": {
+      "headings": {
+        "family": "Cormorant Garamond, serif",
+        "weights": ["Light (300)", "Medium (500)"],
+        "usage": "Hero titles, high-impact statements"
+      },
+      "body": {
+        "family": "DM Sans, sans-serif",
+        "weights": ["Regular (400)", "Medium (500)"],
+        "usage": "General UI text, inputs, explanations"
+      },
+      "technical": {
+        "family": "JetBrains Mono, monospace",
+        "weights": ["Regular (400)"],
+        "usage": "Specs, pricing, BOQ data, confidence scores"
+      }
+    },
+    "shadows": {
+      "gold_glow": "0 0 20px rgba(212, 175, 55, 0.1)",
+      "gold_glow_hover": "0 0 30px rgba(212, 175, 55, 0.25)",
+      "glass_surface": "0 8px 32px 0 rgba(0, 0, 0, 0.37)"
+    },
+    "radius": {
+      "xs": "2px",
+      "sm": "4px",
+      "md": "8px",
+      "lg": "12px",
+      "xl": "24px"
+    },
+    "layout": {
+      "grid_system": "CSS Grid / Bento Grid",
+      "spacing_scale": "Tailwind Base (p-4, p-8, p-12)",
+      "max_width": "max-w-7xl mx-auto"
+    }
+  },
+  "components": {
+    "common": {
+      "Button": {
+        "styles": {
+          "primary": "bg-[#D4AF37] text-black hover:bg-[#FAD02C] transition-all duration-300 font-medium rounded-none uppercase tracking-widest text-xs px-8 py-3",
+          "secondary": "bg-transparent border border-[#2A2A2A] text-[#94A3B8] hover:border-[#D4AF37] hover:text-[#D4AF37] transition-all duration-300 rounded-none uppercase tracking-widest text-xs px-8 py-3",
+          "ghost": "text-[#94A3B8] hover:text-white transition-colors uppercase tracking-widest text-[10px]"
+        }
+      },
+      "Card": {
+        "style": "bg-[#121212]/80 backdrop-blur-md border border-[#2A2A2A] hover:border-[#D4AF37]/50 transition-colors duration-500",
+        "interaction": "Scale 1.01 on hover, Gold Glow shadow"
+      },
+      "Input": {
+        "style": "bg-transparent border-b border-[#2A2A2A] focus:border-[#D4AF37] outline-none text-[#F8FAFC] placeholder-[#475569] py-3 text-lg font-light transition-colors rounded-none",
+        "label": "text-xs uppercase tracking-widest text-[#94A3B8] mb-1 block"
+      }
+    },
+    "views": {
+      "Landing_ConsultantIntro": {
+        "concept": "The Digital Architect",
+        "elements": [
+          "Hero: 'Design Intelligence for Luxury Spaces' (Cormorant, 5xl)",
+          "Sub: 'A logic-driven engine for project specification. Not a catalog.' (DM Sans)",
+          "CTA: 'Initialize Project DNA' (Primary Button)",
+          "Visual: Abstract slowly rotating 3D node structure (Spline or CSS lines) in background"
+        ]
+      },
+      "ProjectDNA_Capture": {
+        "concept": "The Specification Sheet (Not a Form)",
+        "layout": "Two-column split. Left: Questions. Right: Real-time 'DNA String' construction.",
+        "interaction": "As user selects 'Villa', the 3D model/icon on right morphs into a Villa structure.",
+        "fields": [
+          "Segment (Residential/Commercial)",
+          "Property Type (Villa/Penthouse)",
+          "Stage (Concept/Construction)",
+      "Toast": {
+        "library": "Sonner",
+        "style": "bg-[#121212] border border-[#D4AF37]/30 text-[#F8FAFC]",
+        "success_icon": "CheckCircle (Gold)",
+        "error_icon": "AlertTriangle (Red)"
+      },
+          "Dimensions (Area, Floors)"
+        ]
+      },
+      "Objective_Selector": {
+        "concept": "The Strategic Priorities",
+        "layout": "Bento Grid of Cards",
+        "cards": [
+          "Comfort (Icon: Sun/Thermometer)",
+          "Security (Icon: Shield/Eye)",
+          "Entertainment (Icon: Note/Film)",
+          "Wellness (Icon: Lotus/Drop)",
+          "Energy (Icon: Leaf/Bolt)"
+        ],
+        "behavior": "Multi-select. Selected cards glow Gold. Non-selected fade to 30% opacity."
+      },
+      "Intelligence_Engine": {
+        "concept": "The Brain at Work",
+        "visual": "A force-directed graph (using D3 or React Flow) where nodes pop up as dependencies are calculated.",
+        "nodes": ["Lighting", "HVAC", "Network", "Security", "Cinema"],
+        "edges": "Gold lines connecting dependent systems (e.g., Cinema -> requires -> Network).",
+        "tooltip": "Hovering a link explains 'Why?': 'Cinema projectors require hardwired Cat6 connection.'"
+      },
+      "Proposal_Comparison": {
+        "concept": "The Executive Summary",
+        "layout": "Three vertical columns (Value, Balanced, Flagship).",
+        "highlight": "The 'Balanced' or 'Flagship' column is slightly elevated (z-10) with a subtle gold border.",
+        "features": "Accordion lists for features. Price estimates in blurred text (reveal on hover) or ranges.",
+        "action": "Select 'Architecture' to proceed to BOQ."
+      }
+    }
+  },
+  "implementation_guide": {
+    "tech_stack": {
+      "frontend": "Next.js (React)",
+      "styling": "Tailwind CSS",
+      "icons": "Lucide React (Technical), Phosphor (UI)",
+      "animation": "Framer Motion (for page transitions and graph nodes)"
+    },
+    "file_extension_rule": "Use .js / .jsx for all new component files as requested. Use PropTypes for type checking if needed.",
+    "accessibility": {
+      "contrast": "Ensure Gold text is readable on Black (use #D4AF37 minimum).",
+      "aria": "All graph nodes must be keyboard navigable.",
+      "motion": "Respect prefers-reduced-motion."
+    }
+  },
+  "asset_requirements": {
+    "images": [
+      {
+        "key": "luxury_villa_night",
+        "query": "modern luxury villa night lighting architecture gold",
+        "usage": "Hero Background (overlay with 90% opacity black)"
+      },
+      {
+        "key": "smart_home_interface",
+        "query": "futuristic smart home interface hologram dark",
+        "usage": "Abstract Graph Background"
+      },
+      {
+        "key": "server_rack_artistic",
+        "query": "server rack data center artistic lighting dark",
+        "usage": "Network System Card"
+      },
+      {
+        "key": "home_cinema_luxury",
+        "query": "luxury home cinema dark moody lighting",
+        "usage": "Entertainment System Card"
+      }
+    ]
+  },
+  "universal_guidelines": {
+    "do_not_use": ["Gradients on text", "Neumorphism (Soft UI)", "Default Shadcn Slate colors"],
+    "must_use": ["1px Borders", "Backdrop Blur", "Monospace numbers"],
+    "interactions": "Hover states must be instantaneous (duration-200). Page transitions should be smooth (opacity/y-axis)."
+  }
+}

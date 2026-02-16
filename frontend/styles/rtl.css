@@ -1,0 +1,177 @@
+/**
+ * RTL (Right-to-Left) Styles for Arabic Language Support
+ * Automatically applied when [dir="rtl"] is set on html element
+ */
+
+/* Text Alignment */
+[dir="rtl"] {
+  text-align: right;
+}
+
+[dir="rtl"] .text-left {
+  text-align: right;
+}
+
+[dir="rtl"] .text-right {
+  text-align: left;
+}
+
+/* Flexbox Direction */
+[dir="rtl"] .flex-row {
+  flex-direction: row-reverse;
+}
+
+[dir="rtl"] .flex-row-reverse {
+  flex-direction: row;
+}
+
+/* Margins & Padding */
+[dir="rtl"] .ml-auto {
+  margin-left: unset;
+  margin-right: auto;
+}
+
+[dir="rtl"] .mr-auto {
+  margin-right: unset;
+  margin-left: auto;
+}
+
+/* Borders */
+[dir="rtl"] .border-l {
+  border-left: none;
+  border-right: 1px solid;
+}
+
+[dir="rtl"] .border-r {
+  border-right: none;
+  border-left: 1px solid;
+}
+
+/* Rounded Corners */
+[dir="rtl"] .rounded-l-lg {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  border-top-right-radius: 0.5rem;
+  border-bottom-right-radius: 0.5rem;
+}
+
+[dir="rtl"] .rounded-r-lg {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  border-top-left-radius: 0.5rem;
+  border-bottom-left-radius: 0.5rem;
+}
+
+/* Icons & Chevrons */
+[dir="rtl"] .rotate-180 {
+  transform: rotate(180deg) scaleX(-1);
+}
+
+[dir="rtl"] svg.chevron-right {
+  transform: scaleX(-1);
+}
+
+/* Navigation */
+[dir="rtl"] nav ul {
+  flex-direction: row-reverse;
+}
+
+/* Grid */
+[dir="rtl"] .grid {
+  direction: rtl;
+}
+
+/* Forms */
+[dir="rtl"] input[type="text"],
+[dir="rtl"] input[type="email"],
+[dir="rtl"] input[type="tel"],
+[dir="rtl"] textarea,
+[dir="rtl"] select {
+  text-align: right;
+  direction: rtl;
+}
+
+/* Dropdown Menus */
+[dir="rtl"] .dropdown-menu {
+  left: auto;
+  right: 0;
+}
+
+/* Mega Menu Adjustments */
+[dir="rtl"] .mega-menu {
+  direction: rtl;
+}
+
+[dir="rtl"] .mega-menu-item {
+  text-align: right;
+}
+
+/* Animations */
+[dir="rtl"] .slide-in-right {
+  animation: slide-in-left 0.3s ease-out;
+}
+
+[dir="rtl"] .slide-in-left {
+  animation: slide-in-right 0.3s ease-out;
+}
+
+/* Arabic Font Optimization */
+[dir="rtl"] body {
+  font-family: var(--font-tajawal), 'Tajawal', 'Noto Sans Arabic', 'DM Sans', 'Arial', 'Tahoma', sans-serif;
+}
+
+[dir="rtl"] h1, [dir="rtl"] h2, [dir="rtl"] h3, [dir="rtl"] h4, [dir="rtl"] h5, [dir="rtl"] h6 {
+  font-family: var(--font-tajawal), 'Tajawal', 'Noto Sans Arabic', sans-serif;
+  font-weight: 700;
+  letter-spacing: 0;
+}
+
+/* Arabic specific typography */
+[dir="rtl"] .font-arabic {
+  font-family: 'Noto Sans Arabic', sans-serif;
+}
+
+/* Fix spacing for Arabic text */
+[dir="rtl"] .tracking-tight,
+[dir="rtl"] .tracking-tighter {
+  letter-spacing: 0;
+}
+
+[dir="rtl"] .tracking-widest,
+[dir="rtl"] .tracking-wider {
+  letter-spacing: 0.05em;
+}
+
+/* Header RTL adjustments */
+[dir="rtl"] header nav {
+  flex-direction: row-reverse;
+}
+
+[dir="rtl"] header .logo {
+  order: 1;
+}
+
+/* Footer RTL */
+[dir="rtl"] footer {
+  text-align: right;
+}
+
+[dir="rtl"] footer .social-icons {
+  flex-direction: row-reverse;
+}
+
+/* Cards RTL */
+[dir="rtl"] .card-content {
+  text-align: right;
+}
+
+/* Button icon spacing for RTL */
+[dir="rtl"] button svg:first-child {
+  margin-left: 0.5rem;
+  margin-right: 0;
+}
+
+[dir="rtl"] button svg:last-child {
+  margin-right: 0.5rem;
+  margin-left: 0;
+}

@@ -1,0 +1,25 @@
+import { MetadataRoute } from 'next'
+
+export default function manifest(): MetadataRoute.Manifest {
+  return {
+    name: 'LEXA Lifestyle - Smart Home Automation Dubai',
+    short_name: 'LEXA',
+    description: 'Dubai\'s leading smart home automation company. Control4, Crestron, and Lutron integration for luxury villas and apartments.',
+    start_url: '/',
+    display: 'standalone',
+    background_color: '#ffffff',
+    theme_color: '#1a1a1a',
+    icons: [
+      {
+        src: '/lexa-black.png',
+        sizes: '192x192',
+        type: 'image/png',
+      },
+      {
+        src: '/lexa-black.png',
+        sizes: '512x512',
+        type: 'image/png',
+      },
+    ],
+  }
+}

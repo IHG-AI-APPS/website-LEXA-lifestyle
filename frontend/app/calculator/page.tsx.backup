@@ -1,0 +1,1418 @@
+'use client'
+
+import { useState, useEffect } from 'react'
+import { useSearchParams } from 'next/navigation'
+import { motion, AnimatePresence } from 'framer-motion'
+import { Button } from '@/components/ui/button'
+import { Input } from '@/components/ui/input'
+import { 
+  Calculator, 
+  CheckCircle2, 
+  ChevronRight,
+  ChevronLeft,
+  Home,
+  Building2,
+  Hotel,
+  Hospital,
+  GraduationCap,
+  ShoppingBag,
+  Building,
+  Sparkles,
+  Calendar
+} from 'lucide-react'
+import { submitCalculator } from '@/lib/calculator-api'
+import BookingModal from '@/components/modals/BookingModal'
+import TabbyWidget from '@/components/TabbyWidget'
+import FloorPlanUploader from '@/components/FloorPlanUploader'
+
+// Project Types with Sub-categories
+const PROJECT_TYPES = [
+  {
+    id: 'residential',
+    label: 'Residential',
+    icon: Home,
+    description: 'Homes, villas, apartments',
+    subCategories: [
+      { id: 'single-family', label: 'Single-Family Home / Villa' },
+      { id: 'multi-family', label: 'Multi-Family Unit / Apartment' },
+      { id: 'luxury-estate', label: 'Luxury Estate / Mansion' },
+      { id: 'penthouse', label: 'Penthouse' }
+    ]
+  },
+  {
+    id: 'commercial-office',
+    label: 'Commercial Office',
+    icon: Building2,
+    description: 'Offices, workspaces',
+    subCategories: [
+      { id: 'corporate-office', label: 'Corporate Office' },
+      { id: 'coworking', label: 'Co-working Space' },
+      { id: 'business-park', label: 'Business Park' },
+      { id: 'professional-services', label: 'Professional Services Office' }
+    ]
+  },
+  {
+    id: 'hospitality',
+    label: 'Hospitality',
+    icon: Hotel,
+    description: 'Hotels, resorts',
+    subCategories: [
+      { id: 'hotel', label: 'Hotel / Resort' },
+      { id: 'serviced-apartments', label: 'Serviced Apartments' },
+      { id: 'boutique-hotel', label: 'Boutique Hotel' },
+      { id: 'vacation-rental', label: 'Vacation Rental Property' }
+    ]
+  },
+  {
+    id: 'healthcare',
+    label: 'Healthcare',
+    icon: Hospital,
+    description: 'Hospitals, clinics',
+    subCategories: [
+      { id: 'hospital', label: 'Hospital' },
+      { id: 'clinic', label: 'Clinic / Medical Center' },
+      { id: 'senior-living', label: 'Senior Living Facility' },
+      { id: 'wellness-center', label: 'Wellness Center' }
+    ]
+  },
+  {
+    id: 'education',
+    label: 'Education',
+    icon: GraduationCap,
+    description: 'Schools, universities',
+    subCategories: [
+      { id: 'university', label: 'University / College' },
+      { id: 'k12-school', label: 'K-12 School' },
+      { id: 'training-center', label: 'Training Center' },
+      { id: 'library', label: 'Library' }
+    ]
+  },
+  {
+    id: 'retail',
+    label: 'Retail',
+    icon: ShoppingBag,
+    description: 'Stores, malls, F&B',
+    subCategories: [
+      { id: 'shopping-mall', label: 'Shopping Mall' },
+      { id: 'standalone-store', label: 'Standalone Store' },
+      { id: 'showroom', label: 'Showroom' },
+      { id: 'restaurant', label: 'Restaurant / F&B' }
+    ]
+  },
+  {
+    id: 'mixed-use',
+    label: 'Mixed-Use',
+    icon: Building,
+    description: 'Multi-purpose developments',
+    subCategories: [
+      { id: 'residential-commercial', label: 'Residential + Commercial' },
+      { id: 'residential-retail', label: 'Residential + Retail' },
+      { id: 'multi-purpose', label: 'Multi-Purpose Complex' }
+    ]
+  }
+]
+
+// Solutions Matrix by Project Type
+const SOLUTIONS_MATRIX = {
+  residential: [
+    { id: 'security-access', label: 'Security & Access Control', basePrice: 100000, levels: [
+      { id: 'basic', label: 'Basic (Smart Locks + Cameras)', price: 50000 },
+      { id: 'standard', label: 'Standard (AI Detection + Access Control)', price: 100000 },
+      { id: 'premium', label: 'Premium (Biometric + Full Integration)', price: 200000 }
+    ]},
+    { id: 'lighting', label: 'Lighting Automation', basePrice: 80000, levels: [
+      { id: 'basic', label: 'Basic (Wireless Smart Lights)', price: 40000 },
+      { id: 'standard', label: 'Standard (Wired with Scenes)', price: 80000 },
+      { id: 'premium', label: 'Premium (Lutron HomeWorks)', price: 150000 }
+    ]},
+    { id: 'climate', label: 'Climate Control (HVAC)', basePrice: 70000, levels: [
+      { id: 'basic', label: 'Basic (Smart Thermostats)', price: 35000 },
+      { id: 'standard', label: 'Standard (Zone Control)', price: 70000 },
+      { id: 'premium', label: 'Premium (Full HVAC Integration)', price: 120000 }
+    ]},
+    { id: 'entertainment', label: 'Entertainment Systems', basePrice: 150000, levels: [
+      { id: 'basic', label: 'Basic (Multi-Room Audio)', price: 60000 },
+      { id: 'standard', label: 'Standard (Home Cinema 7.1)', price: 150000 },
+      { id: 'premium', label: 'Premium (Dolby Atmos 9.2.4)', price: 280000 }
+    ]},
+    { id: 'energy', label: 'Energy Management', basePrice: 50000, levels: [
+      { id: 'basic', label: 'Basic (Monitoring)', price: 25000 },
+      { id: 'standard', label: 'Standard (Solar Integration)', price: 50000 },
+      { id: 'premium', label: 'Premium (Full Energy + EV)', price: 100000 }
+    ]},
+    { id: 'shades', label: 'Motorized Shades', basePrice: 50000, levels: [
+      { id: 'basic', label: 'Basic (5-8 Windows)', price: 30000 },
+      { id: 'standard', label: 'Standard (10-15 Windows)', price: 50000 },
+      { id: 'premium', label: 'Premium (15+ Windows)', price: 90000 }
+    ]},
+    { id: 'wellness', label: 'Wellness Systems', basePrice: 40000, levels: [
+      { id: 'basic', label: 'Basic (Air Quality Monitoring)', price: 20000 },
+      { id: 'standard', label: 'Standard (Air + Water Quality)', price: 40000 },
+      { id: 'premium', label: 'Premium (Full Wellness Suite)', price: 80000 }
+    ]},
+    { id: 'integration', label: 'System Integration Platform', basePrice: 80000, levels: [
+      { id: 'control4', label: 'Control4 Standard', price: 50000 },
+      { id: 'control4-pro', label: 'Control4 Pro', price: 80000 },
+      { id: 'crestron', label: 'Crestron', price: 150000 }
+    ]}
+  ],
+  'commercial-office': [
+    { id: 'hvac', label: 'HVAC Systems', basePrice: 150000, levels: [
+      { id: 'basic', label: 'Basic (Zone Control)', price: 80000 },
+      { id: 'standard', label: 'Standard (Smart HVAC + CO2)', price: 150000 },
+      { id: 'premium', label: 'Premium (Predictive + Analytics)', price: 250000 }
+    ]},
+    { id: 'lighting', label: 'Lighting Control', basePrice: 100000, levels: [
+      { id: 'basic', label: 'Basic (Occupancy Sensors)', price: 50000 },
+      { id: 'standard', label: 'Standard (Daylight Harvesting)', price: 100000 },
+      { id: 'premium', label: 'Premium (Full Automation)', price: 180000 }
+    ]},
+    { id: 'security-access', label: 'Security & Access Control', basePrice: 200000, levels: [
+      { id: 'basic', label: 'Basic (Card Access)', price: 100000 },
+      { id: 'standard', label: 'Standard (Badge + Visitor Mgmt)', price: 200000 },
+      { id: 'enterprise', label: 'Enterprise (Full Integration)', price: 350000 }
+    ]},
+    { id: 'fire-safety', label: 'Fire Safety & Life Safety', basePrice: 120000, levels: [
+      { id: 'standard', label: 'Standard (Code Compliant)', price: 120000 },
+      { id: 'premium', label: 'Premium (Integrated Protocols)', price: 200000 }
+    ]},
+    { id: 'energy-analytics', label: 'Energy Analytics & Reporting', basePrice: 80000, levels: [
+      { id: 'basic', label: 'Basic (Monitoring)', price: 40000 },
+      { id: 'standard', label: 'Standard (LEED Tracking)', price: 80000 },
+      { id: 'enterprise', label: 'Enterprise (Full Analytics)', price: 150000 }
+    ]},
+    { id: 'network', label: 'Network Infrastructure', basePrice: 100000, levels: [
+      { id: 'standard', label: 'Standard (Enterprise WiFi 6E)', price: 100000 },
+      { id: 'premium', label: 'Premium (Full IoT + Cloud)', price: 180000 }
+    ]},
+    { id: 'meeting-rooms', label: 'Meeting Room Management', basePrice: 60000, levels: [
+      { id: 'basic', label: 'Basic (Booking System)', price: 30000 },
+      { id: 'standard', label: 'Standard (AV Control)', price: 60000 },
+      { id: 'premium', label: 'Premium (Full Automation)', price: 120000 }
+    ]}
+  ],
+  hospitality: [
+    { id: 'guest-room', label: 'Guest Room Automation', basePrice: 120000, levels: [
+      { id: 'basic', label: 'Basic (Smart Thermostat + Lights)', price: 60000 },
+      { id: 'standard', label: 'Standard (Welcome Scenes)', price: 120000 },
+      { id: 'premium', label: 'Premium (Full Personalization)', price: 200000 }
+    ]},
+    { id: 'energy', label: 'Energy Management', basePrice: 150000, levels: [
+      { id: 'standard', label: 'Standard (Occupancy-based)', price: 150000 },
+      { id: 'premium', label: 'Premium (Smart Grid + 30% Savings)', price: 280000 }
+    ]},
+    { id: 'security-access', label: 'Security & Access', basePrice: 180000, levels: [
+      { id: 'basic', label: 'Basic (Card Keys)', price: 90000 },
+      { id: 'standard', label: 'Standard (Mobile Keys)', price: 180000 },
+      { id: 'premium', label: 'Premium (Biometric + Master)', price: 320000 }
+    ]},
+    { id: 'entertainment', label: 'In-Room Entertainment', basePrice: 100000, levels: [
+      { id: 'basic', label: 'Basic (Smart TVs)', price: 50000 },
+      { id: 'standard', label: 'Standard (Casting + Streaming)', price: 100000 },
+      { id: 'premium', label: 'Premium (Full Control)', price: 180000 }
+    ]},
+    { id: 'operations', label: 'Operational Efficiency', basePrice: 100000, levels: [
+      { id: 'standard', label: 'Standard (Housekeeping Status)', price: 100000 },
+      { id: 'premium', label: 'Premium (Predictive + Maintenance)', price: 180000 }
+    ]},
+    { id: 'common-areas', label: 'Common Area Management', basePrice: 120000, levels: [
+      { id: 'standard', label: 'Standard (Lobby + Restaurant)', price: 120000 },
+      { id: 'premium', label: 'Premium (Full Property)', price: 220000 }
+    ]}
+  ],
+  healthcare: [
+    { id: 'hvac-air', label: 'HVAC & Air Quality', basePrice: 250000, levels: [
+      { id: 'standard', label: 'Standard (Infection Control)', price: 250000 },
+      { id: 'premium', label: 'Premium (Negative Pressure + HEPA)', price: 450000 }
+    ]},
+    { id: 'lighting', label: 'Healthcare Lighting', basePrice: 120000, levels: [
+      { id: 'standard', label: 'Standard (Circadian + Patient Care)', price: 120000 },
+      { id: 'premium', label: 'Premium (Surgical + Full Control)', price: 220000 }
+    ]},
+    { id: 'security-access', label: 'Security & Access Control', basePrice: 280000, levels: [
+      { id: 'standard', label: 'Standard (Staff Badge + RTLS)', price: 280000 },
+      { id: 'enterprise', label: 'Enterprise (Patient Tracking)', price: 480000 }
+    ]},
+    { id: 'nurse-call', label: 'Nurse Call Integration', basePrice: 150000, levels: [
+      { id: 'standard', label: 'Standard (Patient Alerts)', price: 150000 },
+      { id: 'premium', label: 'Premium (Workflow Integration)', price: 280000 }
+    ]},
+    { id: 'medical-equipment', label: 'Medical Equipment Monitoring', basePrice: 180000, levels: [
+      { id: 'standard', label: 'Standard (Asset Tracking)', price: 180000 },
+      { id: 'premium', label: 'Premium (Full Monitoring)', price: 320000 }
+    ]}
+  ],
+  education: [
+    { id: 'campus-security', label: 'Campus Security', basePrice: 200000, levels: [
+      { id: 'standard', label: 'Standard (Access + Surveillance)', price: 200000 },
+      { id: 'premium', label: 'Premium (Lockdown Protocols)', price: 350000 }
+    ]},
+    { id: 'hvac-energy', label: 'HVAC & Energy', basePrice: 180000, levels: [
+      { id: 'standard', label: 'Standard (Classroom Control)', price: 180000 },
+      { id: 'premium', label: 'Premium (Green Building)', price: 320000 }
+    ]},
+    { id: 'lighting', label: 'Lighting Control', basePrice: 100000, levels: [
+      { id: 'standard', label: 'Standard (Classroom Automation)', price: 100000 },
+      { id: 'premium', label: 'Premium (Campus-wide)', price: 180000 }
+    ]},
+    { id: 'fire-safety', label: 'Fire Safety', basePrice: 120000, levels: [
+      { id: 'standard', label: 'Standard (Code Compliant)', price: 120000 }
+    ]},
+    { id: 'classroom-tech', label: 'Classroom Technology', basePrice: 100000, levels: [
+      { id: 'basic', label: 'Basic (AV Systems)', price: 50000 },
+      { id: 'standard', label: 'Standard (Smart Boards)', price: 100000 },
+      { id: 'premium', label: 'Premium (Full Integration)', price: 180000 }
+    ]}
+  ],
+  retail: [
+    { id: 'hvac-refrigeration', label: 'HVAC & Refrigeration', basePrice: 200000, levels: [
+      { id: 'standard', label: 'Standard (Zone + Cooler Monitoring)', price: 200000 },
+      { id: 'premium', label: 'Premium (Predictive + 30% Savings)', price: 350000 }
+    ]},
+    { id: 'lighting', label: 'Retail Lighting', basePrice: 120000, levels: [
+      { id: 'standard', label: 'Standard (Display Lighting)', price: 120000 },
+      { id: 'premium', label: 'Premium (Full Automation)', price: 220000 }
+    ]},
+    { id: 'security', label: 'Security Systems', basePrice: 150000, levels: [
+      { id: 'standard', label: 'Standard (Surveillance + Loss Prevention)', price: 150000 },
+      { id: 'premium', label: 'Premium (Integrated Security)', price: 280000 }
+    ]},
+    { id: 'customer-experience', label: 'Customer Experience', basePrice: 80000, levels: [
+      { id: 'standard', label: 'Standard (Digital Signage + Music)', price: 80000 },
+      { id: 'premium', label: 'Premium (Full Ambiance Control)', price: 150000 }
+    ]},
+    { id: 'energy', label: 'Energy Management', basePrice: 100000, levels: [
+      { id: 'standard', label: 'Standard (Monitoring)', price: 100000 },
+      { id: 'premium', label: 'Premium (Demand Response)', price: 180000 }
+    ]}
+  ],
+  'mixed-use': [
+    { id: 'integrated-systems', label: 'Integrated Systems', basePrice: 300000, levels: [
+      { id: 'standard', label: 'Standard (Unified Platform)', price: 300000 },
+      { id: 'premium', label: 'Premium (Full Integration)', price: 550000 }
+    ]},
+    { id: 'security-access', label: 'Security & Access', basePrice: 250000, levels: [
+      { id: 'standard', label: 'Standard (Multi-Zone)', price: 250000 },
+      { id: 'enterprise', label: 'Enterprise (Complex-wide)', price: 450000 }
+    ]},
+    { id: 'energy', label: 'Energy Management', basePrice: 180000, levels: [
+      { id: 'standard', label: 'Standard (Multi-Use Monitoring)', price: 180000 },
+      { id: 'premium', label: 'Premium (Full Analytics)', price: 320000 }
+    ]},
+    { id: 'hvac-climate', label: 'HVAC & Climate', basePrice: 220000, levels: [
+      { id: 'standard', label: 'Standard (Zone Control)', price: 220000 },
+      { id: 'premium', label: 'Premium (Integrated Control)', price: 400000 }
+    ]}
+  ]
+}
+
+// Additional Features
+const ADDITIONAL_FEATURES = [
+  { id: 'voice-control', label: 'Voice Control Integration (Alexa/Google)', price: 15000 },
+  { id: 'outdoor-entertainment', label: 'Outdoor Entertainment Area', price: 45000 },
+  { id: 'pool-spa', label: 'Pool & Spa Automation', price: 35000 },
+  { id: 'landscape-lighting', label: 'Landscape Lighting', price: 25000 },
+  { id: 'solar', label: 'Solar/Renewable Integration', price: 50000 },
+  { id: 'backup-power', label: 'Backup Generator Integration', price: 60000 },
+  { id: 'ev-charging', label: 'EV Charging Infrastructure', price: 30000 },
+  { id: 'future-wiring', label: 'Future Expansion Pre-wiring', price: 20000 }
+]
+
+// Brands
+const CONTROL_PLATFORMS = ['Control4', 'Crestron', 'KNX', 'Savant', 'No Preference']
+const SECURITY_BRANDS = ['Hikvision', 'Axis', 'Hanwha', 'Bosch', 'No Preference']
+const LIGHTING_BRANDS = ['Lutron', 'KNX', 'DALI', 'Wireless (Zigbee/Z-Wave)', 'No Preference']
+
+// UAE Emirates & Cities
+const LOCATIONS = {
+  'Dubai': ['Downtown Dubai', 'Dubai Marina', 'Palm Jumeirah', 'Emirates Hills', 'Arabian Ranches', 'Business Bay', 'JBR', 'Other'],
+  'Abu Dhabi': ['Saadiyat Island', 'Yas Island', 'Al Reem Island', 'Corniche', 'Al Raha Beach', 'Other'],
+  'Sharjah': ['Al Majaz', 'Al Khan', 'Muwaileh', 'Other'],
+  'Ajman': ['Ajman Downtown', 'Al Nuaimia', 'Other'],
+  'RAK': ['Al Hamra', 'Mina Al Arab', 'Other'],
+  'Fujairah': ['City Center', 'Dibba', 'Other'],
+  'UAQ': ['City Center', 'Other']
+}
+
+export default function IndustryCalculatorPage() {
+  const searchParams = useSearchParams()
+  const [step, setStep] = useState(1)
+  
+  // Step 1: Project Type
+  const [projectType, setProjectType] = useState('')
+  
+  // Step 2: Sub-category
+  const [subCategory, setSubCategory] = useState('')
+  
+  // Step 3: Project Details
+  const [squareFootage, setSquareFootage] = useState('')
+  const [numRooms, setNumRooms] = useState('')
+  const [numFloors, setNumFloors] = useState('')
+  const [constructionStage, setConstructionStage] = useState('')
+  
+  // Step 4: Solutions
+  const [selectedSolutions, setSelectedSolutions] = useState<Record<string, string>>({})
+  
+  // Step 5: Feature levels (handled in step 4)
+  
+  // Step 6: Brands
+  const [controlPlatform, setControlPlatform] = useState('')
+  const [securityBrand, setSecurityBrand] = useState('')
+  const [lightingBrand, setLightingBrand] = useState('')
+  
+  // Step 7: Timeline & Budget
+  const [timeline, setTimeline] = useState('')
+  const [budgetRange, setBudgetRange] = useState('')
+  
+  // Step 8: Location & Contact
+  const [emirate, setEmirate] = useState('')
+  const [city, setCity] = useState('')
+  const [propertyName, setPropertyName] = useState('')
+  const [contactName, setContactName] = useState('')
+  const [contactEmail, setContactEmail] = useState('')
+  const [contactPhone, setContactPhone] = useState('')
+  const [contactCompany, setContactCompany] = useState('')
+  const [contactRole, setContactRole] = useState('')
+
+  // Privilege card discount
+  const [privilegeCard, setPrivilegeCard] = useState('')
+  
+  // Floor plan
+  const [floorPlanImage, setFloorPlanImage] = useState('')
+  const [floorPlanAnnotations, setFloorPlanAnnotations] = useState<any[]>([])
+  
+  // Step 9: Additional Features
+  const [additionalFeatures, setAdditionalFeatures] = useState<string[]>([])
+  
+  // Results
+  const [totalCost, setTotalCost] = useState(0)
+  const [breakdown, setBreakdown] = useState<any[]>([])
+  const [estimatedTimeline, setEstimatedTimeline] = useState(0)
+  const [submitting, setSubmitting] = useState(false)
+  const [submitError, setSubmitError] = useState('')
+  const [submissionId, setSubmissionId] = useState('')
+  const [showBookingModal, setShowBookingModal] = useState(false)
+
+  const currentSolutions = projectType ? SOLUTIONS_MATRIX[projectType as keyof typeof SOLUTIONS_MATRIX] || [] : []
+  const currentProjectType = PROJECT_TYPES.find(pt => pt.id === projectType)
+
+  const calculateTotal = () => {
+    let total = 0
+    const items: any[] = []
+    
+    // Size multiplier
+    const size = parseInt(squareFootage) || 0
+    const sizeMultiplier = size > 10000 ? 1.4 : size > 5000 ? 1.3 : size > 3000 ? 1.15 : 1
+    
+    // Solutions cost
+    Object.entries(selectedSolutions).forEach(([solutionId, level]) => {
+      const solution = currentSolutions.find(s => s.id === solutionId)
+      if (solution && level) {
+        const levelData = solution.levels.find(l => l.id === level)
+        const systemCost = (levelData?.price || solution.basePrice) * sizeMultiplier
+        total += systemCost
+        items.push({
+          name: `${solution.label} (${levelData?.label || level})`,
+          cost: systemCost
+        })
+      }
+    })
+    
+    // Additional features
+    additionalFeatures.forEach(featureId => {
+      const feature = ADDITIONAL_FEATURES.find(f => f.id === featureId)
+      if (feature) {
+        total += feature.price
+        items.push({
+          name: feature.label,
+          cost: feature.price
+        })
+      }
+    })
+    
+    // Construction stage adjustment
+    if (constructionStage === 'retrofit') {
+      const retrofitCost = total * 0.25
+      total += retrofitCost
+      items.push({
+        name: 'Retrofit Installation Premium',
+        cost: retrofitCost
+      })
+    }
+    
+    // Timeline estimation
+    const systemCount = Object.keys(selectedSolutions).length
+    const baseTimeline = projectType === 'residential' ? 12 : projectType === 'commercial-office' ? 16 : 20
+    const timelineCalc = baseTimeline + (systemCount * 2) + (size > 10000 ? 8 : size > 5000 ? 4 : 0)
+    
+    setTotalCost(total)
+    setBreakdown(items)
+    setEstimatedTimeline(timelineCalc)
+  }
+
+  useEffect(() => {
+    if (step === 10) {
+      calculateTotal()
+    }
+  }, [step])
+
+  const formatCurrency = (amount: number) => {
+    return new Intl.NumberFormat('en-AE', {
+      style: 'currency',
+      currency: 'AED',
+      minimumFractionDigits: 0,
+      maximumFractionDigits: 0
+    }).format(amount)
+  }
+
+  const nextStep = async () => {
+    // If moving from step 9 to 10, submit to backend
+    if (step === 9) {
+      setSubmitting(true)
+      setSubmitError('')
+      
+      try {
+        const submissionData = {
+          project_type: projectType,
+          sub_category: subCategory,
+          total_area: parseInt(squareFootage),
+          num_rooms: parseInt(numRooms),
+          num_floors: parseInt(numFloors),
+          construction_stage: constructionStage,
+          selected_solutions: selectedSolutions,
+          control_platform: controlPlatform,
+          security_brand: securityBrand,
+          lighting_system: lightingBrand,
+          timeline: timeline,
+          budget_range: budgetRange,
+          emirate: emirate,
+          city: city,
+          property_name: propertyName,
+          contact_name: contactName,
+          contact_email: contactEmail,
+          contact_phone: contactPhone,
+          contact_company: contactCompany,
+          contact_role: contactRole,
+          additional_features: additionalFeatures,
+          privilege_card: privilegeCard,
+        }
+        
+        const response = await submitCalculator(submissionData)
+        
+        // Update state with real backend data
+        setTotalCost(response.total_cost)
+        setBreakdown(response.cost_breakdown)
+        setEstimatedTimeline(response.estimated_timeline_weeks)
+        setSubmissionId(response.id)
+        
+        setStep(10)
+        window.scrollTo({ top: 0, behavior: 'smooth' })
+      } catch (error: any) {
+        setSubmitError(error.message || 'Failed to submit calculator. Please try again.')
+        console.error('Calculator submission error:', error)
+      } finally {
+        setSubmitting(false)
+      }
+    } else {
+      setStep(Math.min(step + 1, 10))
+      window.scrollTo({ top: 0, behavior: 'smooth' })
+    }
+  }
+  
+  const prevStep = () => {
+    setStep(Math.max(step - 1, 1))
+    window.scrollTo({ top: 0, behavior: 'smooth' })
+  }
+
+  const canProceed = () => {
+    if (step === 1) return projectType !== ''
+    if (step === 2) return subCategory !== ''
+    if (step === 3) return squareFootage && numRooms && constructionStage
+    if (step === 4) return Object.keys(selectedSolutions).length > 0
+    if (step === 5) return true // Brands optional
+    if (step === 6) return timeline && budgetRange
+    if (step === 7) return emirate && contactName && contactEmail && contactPhone
+    if (step === 8) return true // Additional features optional
+    return true
+  }
+
+  return (
+    <div className="min-h-screen bg-gradient-to-b from-gray-50 to-white pt-20">
+      {/* Header */}
+      <section className="py-12 bg-gradient-to-br from-gray-900 via-gray-800 to-black text-white">
+        <div className="container mx-auto px-8 lg:px-16">
+          <div className="max-w-4xl mx-auto text-center">
+            <div className="inline-flex items-center justify-center w-16 h-16 mb-4 bg-white/10 backdrop-blur-sm rounded-full">
+              <Calculator size={28} strokeWidth={2} />
+            </div>
+            
+            <h1 className="text-5xl sm:text-6xl font-bold mb-4">
+              PROJECT CALCULATOR
+            </h1>
+            
+            <p className="text-xl text-gray-300">
+              Industry-standard estimation tool for smart building automation
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Progress Bar */}
+      <div className="bg-white border-b sticky top-0 z-40">
+        <div className="container mx-auto px-8 lg:px-16">
+          <div className="max-w-6xl mx-auto py-4">
+            <div className="flex items-center justify-between">
+              {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((s) => (
+                <div key={s} className="flex items-center flex-1">
+                  <div className={`w-8 h-8 rounded-full flex items-center justify-center text-xs font-semibold transition-all ${
+                    s === step ? 'bg-black text-white scale-110' : 
+                    s < step ? 'bg-green-500 text-white' : 
+                    'bg-gray-200 text-gray-500'
+                  }`}>
+                    {s < step ? <CheckCircle2 size={16} /> : s}
+                  </div>
+                  {s < 10 && (
+                    <div className={`h-1 flex-1 mx-1 transition-all ${
+                      s < step ? 'bg-green-500' : 'bg-gray-200'
+                    }`} />
+                  )}
+                </div>
+              ))}
+            </div>
+            <div className="flex justify-between mt-2 px-1">
+              <span className="text-[10px] font-medium text-gray-600">Type</span>
+              <span className="text-[10px] font-medium text-gray-600">Sub</span>
+              <span className="text-[10px] font-medium text-gray-600">Details</span>
+              <span className="text-[10px] font-medium text-gray-600">Solutions</span>
+              <span className="text-[10px] font-medium text-gray-600">Brands</span>
+              <span className="text-[10px] font-medium text-gray-600">Timeline</span>
+              <span className="text-[10px] font-medium text-gray-600">Location</span>
+              <span className="text-[10px] font-medium text-gray-600">Extras</span>
+              <span className="text-[10px] font-medium text-gray-600">Review</span>
+              <span className="text-[10px] font-medium text-gray-600">Results</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Form Content */}
+      <section className="py-12">
+        <div className="container mx-auto px-8 lg:px-16">
+          <div className="max-w-6xl mx-auto">
+            <AnimatePresence mode="wait">
+              {/* STEP 1: Project Type */}
+              {step === 1 && (
+                <motion.div
+                  key="step1"
+                  initial={{ opacity: 0, x: 20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  exit={{ opacity: 0, x: -20 }}
+                  className="space-y-8"
+                >
+                  <h2 className="text-3xl font-bold mb-8">Select Your Project Type</h2>
+
+                  <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+                    {PROJECT_TYPES.map((type) => (
+                      <button
+                        key={type.id}
+                        onClick={() => setProjectType(type.id)}
+                        className={`p-6 border-2 rounded-lg transition-all text-left ${
+                          projectType === type.id
+                            ? 'border-black bg-gray-50 shadow-lg'
+                            : 'border-gray-200 hover:border-gray-400'
+                        }`}
+                      >
+                        <type.icon className="w-10 h-10 mb-3" />
+                        <div className="font-semibold text-lg mb-1">{type.label}</div>
+                        <div className="text-sm text-gray-600">{type.description}</div>
+                      </button>
+                    ))}
+                  </div>
+                </motion.div>
+              )}
+
+              {/* STEP 2: Sub-Category */}
+              {step === 2 && currentProjectType && (
+                <motion.div
+                  key="step2"
+                  initial={{ opacity: 0, x: 20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  exit={{ opacity: 0, x: -20 }}
+                  className="space-y-8"
+                >
+                  <h2 className="text-3xl font-bold mb-8">Select {currentProjectType.label} Type</h2>
+
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    {currentProjectType.subCategories.map((sub) => (
+                      <button
+                        key={sub.id}
+                        onClick={() => setSubCategory(sub.id)}
+                        className={`p-6 border-2 rounded-lg transition-all text-left ${
+                          subCategory === sub.id
+                            ? 'border-black bg-gray-50 shadow-lg'
+                            : 'border-gray-200 hover:border-gray-400'
+                        }`}
+                      >
+                        <div className="font-semibold text-lg">{sub.label}</div>
+                      </button>
+                    ))}
+                  </div>
+                </motion.div>
+              )}
+
+              {/* STEP 3: Project Details */}
+              {step === 3 && (
+                <motion.div
+                  key="step3"
+                  initial={{ opacity: 0, x: 20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  exit={{ opacity: 0, x: -20 }}
+                  className="space-y-8"
+                >
+                  <h2 className="text-3xl font-bold mb-8">Project Details</h2>
+
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div>
+                      <label className="block text-sm font-semibold uppercase tracking-wide mb-3">
+                        Total Area (sq ft) *
+                      </label>
+                      <Input
+                        type="number"
+                        placeholder="e.g., 5000"
+                        value={squareFootage}
+                        onChange={(e) => setSquareFootage(e.target.value)}
+                        className="text-lg py-6"
+                      />
+                    </div>
+
+                    <div>
+                      <label className="block text-sm font-semibold uppercase tracking-wide mb-3">
+                        Number of Rooms/Zones *
+                      </label>
+                      <Input
+                        type="number"
+                        placeholder="e.g., 8"
+                        value={numRooms}
+                        onChange={(e) => setNumRooms(e.target.value)}
+                        className="text-lg py-6"
+                      />
+                    </div>
+
+                    <div>
+                      <label className="block text-sm font-semibold uppercase tracking-wide mb-3">
+                        Number of Floors
+                      </label>
+                      <Input
+                        type="number"
+                        placeholder="e.g., 2"
+                        value={numFloors}
+                        onChange={(e) => setNumFloors(e.target.value)}
+                        className="text-lg py-6"
+                      />
+                    </div>
+
+                    <div>
+                      <label className="block text-sm font-semibold uppercase tracking-wide mb-3">
+                        Construction Stage *
+                      </label>
+                      <select
+                        value={constructionStage}
+                        onChange={(e) => setConstructionStage(e.target.value)}
+                        className="w-full border-2 border-gray-200 px-4 py-3 rounded-lg text-base focus:outline-none focus:border-black"
+                      >
+                        <option value="">Select stage</option>
+                        <option value="new">New Construction</option>
+                        <option value="renovation">Major Renovation</option>
+                        <option value="retrofit">Retrofit / Existing Property</option>
+                      </select>
+                    </div>
+                  </div>
+                </motion.div>
+              )}
+
+              {/* STEP 4: Solutions Selection */}
+              {step === 4 && (
+                <motion.div
+                  key="step4"
+                  initial={{ opacity: 0, x: 20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  exit={{ opacity: 0, x: -20 }}
+                  className="space-y-6"
+                >
+                  <h2 className="text-3xl font-bold mb-6">
+                    Select Solutions ({Object.keys(selectedSolutions).length} selected)
+                  </h2>
+
+                  <div className="space-y-4">
+                    {currentSolutions.map((solution) => (
+                      <div
+                        key={solution.id}
+                        className={`border-2 rounded-lg overflow-hidden transition-all ${
+                          selectedSolutions[solution.id]
+                            ? 'border-black bg-gray-50'
+                            : 'border-gray-200'
+                        }`}
+                      >
+                        <div className="p-5">
+                          <div className="flex items-start justify-between mb-4">
+                            <div className="flex-1">
+                              <h3 className="text-xl font-semibold mb-2">{solution.label}</h3>
+                              <p className="text-sm text-gray-600 mb-3">
+                                Starting from {formatCurrency(solution.levels[0].price)}
+                              </p>
+                            </div>
+                            <input
+                              type="checkbox"
+                              checked={!!selectedSolutions[solution.id]}
+                              onChange={(e) => {
+                                const newSolutions = { ...selectedSolutions }
+                                if (e.target.checked) {
+                                  newSolutions[solution.id] = solution.levels[0].id
+                                } else {
+                                  delete newSolutions[solution.id]
+                                }
+                                setSelectedSolutions(newSolutions)
+                              }}
+                              className="w-6 h-6 mt-1"
+                            />
+                          </div>
+
+                          {selectedSolutions[solution.id] && (
+                            <div className="grid grid-cols-1 md:grid-cols-3 gap-3 pt-4 border-t">
+                              {solution.levels.map((level) => (
+                                <button
+                                  key={level.id}
+                                  onClick={() => setSelectedSolutions({
+                                    ...selectedSolutions,
+                                    [solution.id]: level.id
+                                  })}
+                                  className={`p-4 border-2 rounded-lg text-left transition-all ${
+                                    selectedSolutions[solution.id] === level.id
+                                      ? 'border-black bg-white shadow-md'
+                                      : 'border-gray-200 hover:border-gray-400'
+                                  }`}
+                                >
+                                  <div className="font-semibold text-sm mb-2">{level.label}</div>
+                                  <div className="text-xl font-bold text-gray-900">
+                                    {formatCurrency(level.price)}
+                                  </div>
+                                </button>
+                              ))}
+                            </div>
+                          )}
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </motion.div>
+              )}
+
+              {/* STEP 5: Brand Preferences */}
+              {step === 5 && (
+                <motion.div
+                  key="step5"
+                  initial={{ opacity: 0, x: 20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  exit={{ opacity: 0, x: -20 }}
+                  className="space-y-8"
+                >
+                  <h2 className="text-3xl font-bold mb-6">Brand & Protocol Preferences</h2>
+                  <p className="text-gray-600 mb-8">Optional: Select your preferred brands or skip this step</p>
+
+                  <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <div>
+                      <label className="block text-sm font-semibold uppercase tracking-wide mb-3">
+                        Control Platform
+                      </label>
+                      <select
+                        value={controlPlatform}
+                        onChange={(e) => setControlPlatform(e.target.value)}
+                        className="w-full border-2 border-gray-200 px-4 py-3 rounded-lg focus:border-black"
+                      >
+                        <option value="">Select platform</option>
+                        {CONTROL_PLATFORMS.map(brand => (
+                          <option key={brand} value={brand}>{brand}</option>
+                        ))}
+                      </select>
+                    </div>
+
+                    <div>
+                      <label className="block text-sm font-semibold uppercase tracking-wide mb-3">
+                        Security Brand
+                      </label>
+                      <select
+                        value={securityBrand}
+                        onChange={(e) => setSecurityBrand(e.target.value)}
+                        className="w-full border-2 border-gray-200 px-4 py-3 rounded-lg focus:border-black"
+                      >
+                        <option value="">Select brand</option>
+                        {SECURITY_BRANDS.map(brand => (
+                          <option key={brand} value={brand}>{brand}</option>
+                        ))}
+                      </select>
+                    </div>
+
+                    <div>
+                      <label className="block text-sm font-semibold uppercase tracking-wide mb-3">
+                        Lighting System
+                      </label>
+                      <select
+                        value={lightingBrand}
+                        onChange={(e) => setLightingBrand(e.target.value)}
+                        className="w-full border-2 border-gray-200 px-4 py-3 rounded-lg focus:border-black"
+                      >
+                        <option value="">Select system</option>
+                        {LIGHTING_BRANDS.map(brand => (
+                          <option key={brand} value={brand}>{brand}</option>
+                        ))}
+                      </select>
+                    </div>
+                  </div>
+                </motion.div>
+              )}
+
+              {/* STEP 6: Timeline & Budget */}
+              {step === 6 && (
+                <motion.div
+                  key="step6"
+                  initial={{ opacity: 0, x: 20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  exit={{ opacity: 0, x: -20 }}
+                  className="space-y-8"
+                >
+                  <h2 className="text-3xl font-bold mb-8">Timeline & Budget</h2>
+
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div>
+                      <label className="block text-sm font-semibold uppercase tracking-wide mb-3">
+                        Desired Timeline *
+                      </label>
+                      <select
+                        value={timeline}
+                        onChange={(e) => setTimeline(e.target.value)}
+                        className="w-full border-2 border-gray-200 px-4 py-3 rounded-lg focus:border-black"
+                      >
+                        <option value="">Select timeline</option>
+                        <option value="asap">ASAP (Less than 2 months)</option>
+                        <option value="3-6">3-6 months</option>
+                        <option value="6-12">6-12 months</option>
+                        <option value="12+">12+ months / Phased</option>
+                      </select>
+                    </div>
+
+                    <div>
+                      <label className="block text-sm font-semibold uppercase tracking-wide mb-3">
+                        Budget Range *
+                      </label>
+                      <select
+                        value={budgetRange}
+                        onChange={(e) => setBudgetRange(e.target.value)}
+                        className="w-full border-2 border-gray-200 px-4 py-3 rounded-lg focus:border-black"
+                      >
+                        <option value="">Select budget range</option>
+                        <option value="under-200k">Under AED 200,000</option>
+                        <option value="200k-500k">AED 200,000 - 500,000</option>
+                        <option value="500k-1m">AED 500,000 - 1,000,000</option>
+                        <option value="1m-2.5m">AED 1,000,000 - 2,500,000</option>
+                        <option value="2.5m+">AED 2,500,000+</option>
+                        <option value="no-say">Prefer not to say</option>
+                      </select>
+                    </div>
+                  </div>
+
+                  {/* Privilege Card Section */}
+                  <div className="mt-8 pt-8 border-t">
+                    <h3 className="text-xl font-semibold mb-4">Special Discounts</h3>
+                    <div>
+                      <label className="block text-sm font-semibold uppercase tracking-wide mb-3">
+                        Government Privilege Card (Optional)
+                      </label>
+                      <select
+                        value={privilegeCard}
+                        onChange={(e) => setPrivilegeCard(e.target.value)}
+                        className="w-full border-2 border-gray-200 px-4 py-3 rounded-lg focus:border-black"
+                      >
+                        <option value="">None</option>
+                        <option value="esaad">Esaad Card (10% Discount)</option>
+                        <option value="fazaa">Fazaa Card (10% Discount)</option>
+                        <option value="corporate">Corporate Partner (Negotiable)</option>
+                      </select>
+                      {privilegeCard && (
+                        <p className="text-sm text-green-600 mt-2 flex items-center gap-2">
+                          <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                            <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                          </svg>
+                          Discount will be applied to your final quote
+                        </p>
+                      )}
+                    </div>
+                  </div>
+                </motion.div>
+              )}
+
+              {/* STEP 7: Location & Contact */}
+              {step === 7 && (
+                <motion.div
+                  key="step7"
+                  initial={{ opacity: 0, x: 20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  exit={{ opacity: 0, x: -20 }}
+                  className="space-y-8"
+                >
+                  <h2 className="text-3xl font-bold mb-8">Location & Contact Details</h2>
+
+                  <div className="space-y-6">
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                      <div>
+                        <label className="block text-sm font-semibold uppercase tracking-wide mb-3">
+                          Emirate *
+                        </label>
+                        <select
+                          value={emirate}
+                          onChange={(e) => {
+                            setEmirate(e.target.value)
+                            setCity('')
+                          }}
+                          className="w-full border-2 border-gray-200 px-4 py-3 rounded-lg focus:border-black"
+                        >
+                          <option value="">Select emirate</option>
+                          {Object.keys(LOCATIONS).map(em => (
+                            <option key={em} value={em}>{em}</option>
+                          ))}
+                        </select>
+                      </div>
+
+                      {emirate && (
+                        <div>
+                          <label className="block text-sm font-semibold uppercase tracking-wide mb-3">
+                            City/Area
+                          </label>
+                          <select
+                            value={city}
+                            onChange={(e) => setCity(e.target.value)}
+                            className="w-full border-2 border-gray-200 px-4 py-3 rounded-lg focus:border-black"
+                          >
+                            <option value="">Select city/area</option>
+                            {LOCATIONS[emirate as keyof typeof LOCATIONS]?.map(c => (
+                              <option key={c} value={c}>{c}</option>
+                            ))}
+                          </select>
+                        </div>
+                      )}
+
+                      <div className="md:col-span-2">
+                        <label className="block text-sm font-semibold uppercase tracking-wide mb-3">
+                          Property Name / Address (Optional)
+                        </label>
+                        <Input
+                          type="text"
+                          placeholder="Building or property name"
+                          value={propertyName}
+                          onChange={(e) => setPropertyName(e.target.value)}
+                          className="text-base py-3"
+                        />
+                      </div>
+                    </div>
+
+                    <div className="border-t pt-6 mt-8">
+                      <h3 className="text-xl font-semibold mb-4">Your Contact Information</h3>
+                      
+                      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div>
+                          <label className="block text-sm font-semibold uppercase tracking-wide mb-3">
+                            Full Name *
+                          </label>
+                          <Input
+                            type="text"
+                            placeholder="John Doe"
+                            value={contactName}
+                            onChange={(e) => setContactName(e.target.value)}
+                            className="text-base py-3"
+                          />
+                        </div>
+
+                        <div>
+                          <label className="block text-sm font-semibold uppercase tracking-wide mb-3">
+                            Email *
+                          </label>
+                          <Input
+                            type="email"
+                            placeholder="john@example.com"
+                            value={contactEmail}
+                            onChange={(e) => setContactEmail(e.target.value)}
+                            className="text-base py-3"
+                          />
+                        </div>
+
+                        <div>
+                          <label className="block text-sm font-semibold uppercase tracking-wide mb-3">
+                            Phone *
+                          </label>
+                          <Input
+                            type="tel"
+                            placeholder="+971 XX XXX XXXX"
+                            value={contactPhone}
+                            onChange={(e) => setContactPhone(e.target.value)}
+                            className="text-base py-3"
+                          />
+                        </div>
+
+                        <div>
+                          <label className="block text-sm font-semibold uppercase tracking-wide mb-3">
+                            Company (Optional)
+                          </label>
+                          <Input
+                            type="text"
+                            placeholder="Company name"
+                            value={contactCompany}
+                            onChange={(e) => setContactCompany(e.target.value)}
+                            className="text-base py-3"
+                          />
+                        </div>
+
+                        <div className="md:col-span-2">
+                          <label className="block text-sm font-semibold uppercase tracking-wide mb-3">
+                            Your Role
+                          </label>
+                          <select
+                            value={contactRole}
+                            onChange={(e) => setContactRole(e.target.value)}
+                            className="w-full border-2 border-gray-200 px-4 py-3 rounded-lg focus:border-black"
+                          >
+                            <option value="">Select your role</option>
+                            <option value="owner">Property Owner</option>
+                            <option value="developer">Developer</option>
+                            <option value="architect">Architect / Designer</option>
+                            <option value="facility-manager">Facility Manager</option>
+                            <option value="contractor">Contractor</option>
+                            <option value="other">Other</option>
+                          </select>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </motion.div>
+              )}
+
+              {/* STEP 8: Additional Features */}
+              {step === 8 && (
+                <motion.div
+                  key="step8"
+                  initial={{ opacity: 0, x: 20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  exit={{ opacity: 0, x: -20 }}
+                  className="space-y-6"
+                >
+                  <h2 className="text-3xl font-bold mb-6">
+                    Additional Features ({additionalFeatures.length} selected)
+                  </h2>
+
+                  <p className="text-gray-600 mb-6">
+                    Optional: Enhance your smart home with these features or skip to see results
+                  </p>
+
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    {ADDITIONAL_FEATURES.map((feature) => (
+                      <button
+                        key={feature.id}
+                        onClick={() => {
+                          setAdditionalFeatures(prev =>
+                            prev.includes(feature.id)
+                              ? prev.filter(f => f !== feature.id)
+                              : [...prev, feature.id]
+                          )
+                        }}
+                        className={`p-5 border-2 rounded-lg text-left transition-all ${
+                          additionalFeatures.includes(feature.id)
+                            ? 'border-black bg-gray-50'
+                            : 'border-gray-200 hover:border-gray-400'
+                        }`}
+                      >
+                        <div className="flex items-start justify-between mb-2">
+                          <div className="font-semibold flex-1">{feature.label}</div>
+                          {additionalFeatures.includes(feature.id) && (
+                            <CheckCircle2 size={20} className="text-green-500 flex-shrink-0" />
+                          )}
+                        </div>
+                        <div className="text-lg font-bold text-gray-700">
+                          +{formatCurrency(feature.price)}
+                        </div>
+                      </button>
+                    ))}
+                  </div>
+                  
+                  {/* Floor Plan Upload */}
+                  <div className="mt-8 pt-8 border-t">
+                    <h3 className="text-xl font-semibold mb-2">Upload Floor Plan (Optional)</h3>
+                    <p className="text-gray-600 mb-4">Mark exact locations where you want smart devices installed</p>
+                    <FloorPlanUploader
+                      onSave={(imageUrl, annotations) => {
+                        setFloorPlanImage(imageUrl)
+                        setFloorPlanAnnotations(annotations)
+                      }}
+                      initialImage={floorPlanImage}
+                      initialAnnotations={floorPlanAnnotations}
+                    />
+                  </div>
+
+                </motion.div>
+              )}
+
+              {/* STEP 9: Review */}
+              {step === 9 && (
+                <motion.div
+                  key="step9"
+                  initial={{ opacity: 0, x: 20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  exit={{ opacity: 0, x: -20 }}
+                  className="space-y-6"
+                >
+                  <h2 className="text-3xl font-bold mb-6">Review Your Selections</h2>
+
+                  <div className="bg-gray-50 border-2 border-gray-200 rounded-lg p-6 space-y-4">
+                    <div>
+                      <div className="text-sm font-semibold text-gray-600 uppercase">Project Type</div>
+                      <div className="text-lg">{currentProjectType?.label} - {subCategory}</div>
+                    </div>
+
+                    <div>
+                      <div className="text-sm font-semibold text-gray-600 uppercase">Area</div>
+                      <div className="text-lg">{squareFootage} sq ft • {numRooms} rooms</div>
+                    </div>
+
+                    <div>
+                      <div className="text-sm font-semibold text-gray-600 uppercase">Selected Solutions</div>
+                      <div className="text-lg">{Object.keys(selectedSolutions).length} systems selected</div>
+                    </div>
+
+                    <div>
+                      <div className="text-sm font-semibold text-gray-600 uppercase">Timeline</div>
+                      <div className="text-lg">{timeline}</div>
+                    </div>
+
+                    <div>
+                      <div className="text-sm font-semibold text-gray-600 uppercase">Location</div>
+                      <div className="text-lg">{emirate}{city ? `, ${city}` : ''}</div>
+                    </div>
+                  </div>
+
+                  <div className="bg-blue-50 border-2 border-blue-200 rounded-lg p-6">
+                    <h3 className="font-semibold text-lg mb-2">Ready to see your estimate?</h3>
+                    <p className="text-gray-700">
+                      Click "View Results" to see your detailed project estimate with itemized breakdown, timeline, and next steps.
+                    </p>
+                  </div>
+                </motion.div>
+              )}
+
+              {/* STEP 10: Results */}
+              {step === 10 && (
+                <motion.div
+                  key="step10"
+                  initial={{ opacity: 0, x: 20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  exit={{ opacity: 0, x: -20 }}
+                  className="space-y-8"
+                >
+                  {/* Success Message */}
+                  <div className="bg-green-50 border-2 border-green-200 rounded-lg p-6 text-center">
+                    <CheckCircle2 size={48} className="text-green-600 mx-auto mb-3" />
+                    <h3 className="text-xl font-bold text-green-900 mb-2">Submission Successful!</h3>
+                    <p className="text-green-700">
+                      We've received your request and sent a confirmation email to <strong>{contactEmail}</strong>
+                    </p>
+                    {submissionId && (
+                      <p className="text-sm text-green-600 mt-2">
+                        Reference ID: <code className="bg-green-100 px-2 py-1 rounded">{submissionId}</code>
+                      </p>
+                    )}
+                  </div>
+
+                  <div className="text-center mb-8">
+                    <div className="inline-flex items-center justify-center w-16 h-16 mb-4 bg-black rounded-full">
+                      <Sparkles size={32} className="text-white" />
+                    </div>
+                    <h2 className="text-4xl font-bold mb-3">Your Custom Estimate</h2>
+                    <p className="text-gray-600">Based on your selections, here's your detailed project estimate</p>
+                  </div>
+
+                  {/* Total Cost Card */}
+                  <div className="bg-gradient-to-br from-black to-gray-800 text-white rounded-2xl p-8 mb-6">
+                    <div className="text-center">
+                      <div className="text-sm uppercase tracking-wider text-gray-400 mb-2">Estimated Total Investment</div>
+                      <div className="text-5xl font-bold mb-4">{formatCurrency(totalCost)}</div>
+                      <div className="flex items-center justify-center gap-8 text-sm">
+                        <div>
+                          <span className="text-gray-400">Timeline:</span> <span className="font-semibold">{estimatedTimeline} weeks</span>
+                        </div>
+                        <div>
+                          <span className="text-gray-400">Systems:</span> <span className="font-semibold">{Object.keys(selectedSolutions).length}</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Cost Breakdown */}
+                  <div className="bg-white border-2 border-gray-200 rounded-lg p-6 mb-6">
+                    <h3 className="text-xl font-bold mb-4">Cost Breakdown</h3>
+                    <div className="space-y-3">
+                      {breakdown.map((item, index) => (
+                        <div key={index} className="flex justify-between items-center py-3 border-b border-gray-100">
+                          <span className="text-gray-700">{item.name}</span>
+                          <span className={`font-semibold ${item.cost < 0 ? 'text-green-600' : ''}`}>{formatCurrency(item.cost)}</span>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+
+                  {/* Financing Options */}
+                  <div className="mb-6">
+                    <TabbyWidget totalAmount={totalCost} />
+                  </div>
+
+                  {/* Next Steps */}
+                  <div className="bg-blue-50 border-2 border-blue-200 rounded-lg p-6">
+                    <h3 className="text-xl font-bold mb-3">Next Steps</h3>
+                    <ul className="space-y-2 text-gray-700">
+                      <li className="flex items-start gap-2">
+                        <CheckCircle2 size={20} className="text-blue-500 mt-0.5 flex-shrink-0" />
+                        <span>Our team will contact you within 24 hours</span>
+                      </li>
+                      <li className="flex items-start gap-2">
+                        <CheckCircle2 size={20} className="text-blue-500 mt-0.5 flex-shrink-0" />
+                        <span>Free site survey and detailed proposal</span>
+                      </li>
+                      <li className="flex items-start gap-2">
+                        <CheckCircle2 size={20} className="text-blue-500 mt-0.5 flex-shrink-0" />
+                        <span>Flexible payment plans available</span>
+                      </li>
+                    </ul>
+                  </div>
+
+                  {/* CTA Buttons */}
+                  <div className="space-y-4">
+                    <div className="flex gap-4 justify-center">
+                      <Button
+                        size="lg"
+                        className="bg-black text-white px-8 py-6 text-lg hover:bg-gray-800"
+                        onClick={() => {
+                          if (submissionId) {
+                            const API_URL = process.env.REACT_APP_BACKEND_URL || process.env.NEXT_PUBLIC_BACKEND_URL
+                            window.open(`${API_URL}/api/calculator/submission/${submissionId}/pdf`, '_blank')
+                          }
+                        }}
+                        disabled={!submissionId}
+                      >
+                        Download PDF Quote
+                      </Button>
+                      <Button
+                        size="lg"
+                        variant="outline"
+                        className="border-2 border-black px-8 py-6 text-lg"
+                        onClick={() => {
+                          setStep(1)
+                          setSubmissionId('')
+                          setSubmitError('')
+                        }}
+                      >
+                        Start New Estimate
+                      </Button>
+                    </div>
+                    
+                    {/* WhatsApp Share */}
+                    <div className="text-center space-y-3">
+                      <Button
+                        size="lg"
+                        className="bg-green-600 hover:bg-green-700 text-white px-8 py-4 w-full md:w-auto"
+                        onClick={() => {
+                          const message = `Hi LEXA! I just received my smart home quote (ID: ${submissionId?.slice(0, 8)}) for AED ${totalCost.toLocaleString()}. I'd like to discuss the next steps.`
+                          const whatsappUrl = `https://wa.me/00971554452224?text=${encodeURIComponent(message)}`
+                          window.open(whatsappUrl, '_blank')
+                        }}
+                      >
+                        <svg className="w-6 h-6 mr-2" fill="currentColor" viewBox="0 0 24 24">
+                          <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.890-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
+                        </svg>
+                        Get Quote on WhatsApp
+                      </Button>
+                      
+                      <Button
+                        size="lg"
+                        variant="outline"
+                        className="border-2 border-blue-600 text-blue-600 hover:bg-blue-50 px-8 py-4 w-full md:w-auto"
+                        onClick={() => setShowBookingModal(true)}
+                      >
+                        <Calendar className="w-6 h-6 mr-2" />
+                        Schedule Site Visit
+                      </Button>
+                      
+                      <p className="text-sm text-gray-500">Get personalized assistance from our team</p>
+                    </div>
+                  </div>
+                </motion.div>
+              )}
+            </AnimatePresence>
+
+            {/* Navigation Buttons */}
+            {step < 10 && (
+              <div className="space-y-4">
+                {/* Error message */}
+                {submitError && (
+                  <div className="bg-red-50 border-2 border-red-200 rounded-lg p-4 text-center">
+                    <p className="text-red-700 font-semibold">{submitError}</p>
+                  </div>
+                )}
+                
+                <div className="flex justify-between items-center mt-12 pt-8 border-t">
+                  {step > 1 ? (
+                    <Button
+                      variant="outline"
+                      size="lg"
+                      onClick={prevStep}
+                      className="px-6"
+                      disabled={submitting}
+                    >
+                      <ChevronLeft size={20} className="mr-2" />
+                      Back
+                    </Button>
+                  ) : <div />}
+
+                  <Button
+                    size="lg"
+                    onClick={nextStep}
+                    disabled={!canProceed() || submitting}
+                    className="bg-black text-white px-8 disabled:opacity-50"
+                  >
+                    {submitting ? (
+                      <>
+                        <svg className="animate-spin -ml-1 mr-3 h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                          <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                          <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                        </svg>
+                        Submitting...
+                      </>
+                    ) : (
+                      <>
+                        {step === 9 ? 'Submit & View Results' : 'Continue'}
+                        <ChevronRight size={20} className="ml-2" />
+                      </>
+                    )}
+                  </Button>
+                </div>
+              </div>
+            )}
+          </div>
+        </div>
+      </section>
+      
+      {/* Booking Modal */}
+      <BookingModal
+        isOpen={showBookingModal}
+        onClose={() => setShowBookingModal(false)}
+        submissionId={submissionId}
+        customerName={contactName}
+        customerEmail={contactEmail}
+      />
+    </div>
+  )
+}

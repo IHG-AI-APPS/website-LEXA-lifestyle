@@ -1,0 +1,353 @@
+/**
+ * Admin API utility for authenticated requests
+ */
+
+const BACKEND_URL = process.env.NEXT_PUBLIC_BACKEND_URL || ''
+
+// Token management
+export const getToken = (): string | null => {
+  if (typeof window !== 'undefined') {
+    return localStorage.getItem('admin_token')
+  }
+  return null
+}
+
+export const setToken = (token: string) => {
+  if (typeof window !== 'undefined') {
+    localStorage.setItem('admin_token', token)
+  }
+}
+
+export const removeToken = () => {
+  if (typeof window !== 'undefined') {
+    localStorage.removeItem('admin_token')
+  }
+}
+
+const getAuthHeaders = () => {
+  const token = getToken()
+  return {
+    'Content-Type': 'application/json',
+    ...(token && { 'Authorization': `Bearer ${token}` })
+  }
+}
+
+// Admin Authentication
+export async function adminLogin(username: string, password: string) {
+  const response = await fetch(`${BACKEND_URL}/api/admin/login`, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ username, password })
+  })
+  if (!response.ok) {
+    throw new Error('Login failed')
+  }
+  const data = await response.json()
+  setToken(data.access_token)
+  return data
+}
+
+export async function verifyToken() {
+  const response = await fetch(`${BACKEND_URL}/api/admin/verify`, {
+    headers: getAuthHeaders()
+  })
+  if (!response.ok) {
+    removeToken()
+    return false
+  }
+  return true
+}
+
+export function logout() {
+  removeToken()
+  window.location.href = '/admin/login'
+}
+
+// Dashboard Stats
+export async function getAdminStats() {
+  const response = await fetch(`${BACKEND_URL}/api/admin/stats`, {
+    headers: getAuthHeaders()
+  })
+  if (!response.ok) throw new Error('Failed to fetch stats')
+  return response.json()
+}
+
+// Solutions Management
+export async function createSolution(solution: any) {
+  const response = await fetch(`${BACKEND_URL}/api/admin/solutions`, {
+    method: 'POST',
+    headers: getAuthHeaders(),
+    body: JSON.stringify(solution)
+  })
+  if (!response.ok) throw new Error('Failed to create solution')
+  return response.json()
+}
+
+export async function updateSolution(id: string, solution: any) {
+  const response = await fetch(`${BACKEND_URL}/api/admin/solutions/${id}`, {
+    method: 'PUT',
+    headers: getAuthHeaders(),
+    body: JSON.stringify(solution)
+  })
+  if (!response.ok) throw new Error('Failed to update solution')
+  return response.json()
+}
+
+export async function deleteSolution(id: string) {
+  const response = await fetch(`${BACKEND_URL}/api/admin/solutions/${id}`, {
+    method: 'DELETE',
+    headers: getAuthHeaders()
+  })
+  if (!response.ok) throw new Error('Failed to delete solution')
+  return response.json()
+}
+
+// Projects Management
+export async function createProject(project: any) {
+  const response = await fetch(`${BACKEND_URL}/api/admin/projects`, {
+    method: 'POST',
+    headers: getAuthHeaders(),
+    body: JSON.stringify(project)
+  })
+  if (!response.ok) throw new Error('Failed to create project')
+  return response.json()
+}
+
+export async function updateProject(id: string, project: any) {
+  const response = await fetch(`${BACKEND_URL}/api/admin/projects/${id}`, {
+    method: 'PUT',
+    headers: getAuthHeaders(),
+    body: JSON.stringify(project)
+  })
+  if (!response.ok) throw new Error('Failed to update project')
+  return response.json()
+}
+
+export async function deleteProject(id: string) {
+  const response = await fetch(`${BACKEND_URL}/api/admin/projects/${id}`, {
+    method: 'DELETE',
+    headers: getAuthHeaders()
+  })
+  if (!response.ok) throw new Error('Failed to delete project')
+  return response.json()
+}
+
+// Form Submissions
+export async function getConsultationSubmissions() {
+  const response = await fetch(`${BACKEND_URL}/api/admin/submissions/consultations`, {
+    headers: getAuthHeaders()
+  })
+  if (!response.ok) throw new Error('Failed to fetch consultations')
+  return response.json()
+}
+
+export async function getContactSubmissions() {
+  const response = await fetch(`${BACKEND_URL}/api/admin/submissions/contacts`, {
+    headers: getAuthHeaders()
+  })
+  if (!response.ok) throw new Error('Failed to fetch contacts')
+  return response.json()
+}
+
+// Articles Management
+export async function createArticle(article: any) {
+  const response = await fetch(`${BACKEND_URL}/api/admin/articles`, {
+    method: 'POST',
+    headers: getAuthHeaders(),
+    body: JSON.stringify(article)
+  })
+  if (!response.ok) throw new Error('Failed to create article')
+  return response.json()
+}
+
+export async function updateArticle(id: string, article: any) {
+  const response = await fetch(`${BACKEND_URL}/api/admin/articles/${id}`, {
+    method: 'PUT',
+    headers: getAuthHeaders(),
+    body: JSON.stringify(article)
+  })
+  if (!response.ok) throw new Error('Failed to update article')
+  return response.json()
+}
+
+export async function deleteArticle(id: string) {
+  const response = await fetch(`${BACKEND_URL}/api/admin/articles/${id}`, {
+    method: 'DELETE',
+    headers: getAuthHeaders()
+  })
+  if (!response.ok) throw new Error('Failed to delete article')
+  return response.json()
+}
+
+// Brands Management
+export async function createBrand(brand: any) {
+  const response = await fetch(`${BACKEND_URL}/api/admin/brands`, {
+    method: 'POST',
+    headers: getAuthHeaders(),
+    body: JSON.stringify(brand)
+  })
+  if (!response.ok) throw new Error('Failed to create brand')
+  return response.json()
+}
+
+export async function updateBrand(id: string, brand: any) {
+  const response = await fetch(`${BACKEND_URL}/api/admin/brands/${id}`, {
+    method: 'PUT',
+    headers: getAuthHeaders(),
+    body: JSON.stringify(brand)
+  })
+  if (!response.ok) throw new Error('Failed to update brand')
+  return response.json()
+}
+
+export async function deleteBrand(id: string) {
+  const response = await fetch(`${BACKEND_URL}/api/admin/brands/${id}`, {
+    method: 'DELETE',
+    headers: getAuthHeaders()
+  })
+  if (!response.ok) throw new Error('Failed to delete brand')
+  return response.json()
+}
+
+// Products Management
+export async function createProduct(product: any) {
+  const response = await fetch(`${BACKEND_URL}/api/admin/products`, {
+    method: 'POST',
+    headers: getAuthHeaders(),
+    body: JSON.stringify(product)
+  })
+  if (!response.ok) throw new Error('Failed to create product')
+  return response.json()
+}
+
+export async function updateProduct(id: string, product: any) {
+  const response = await fetch(`${BACKEND_URL}/api/admin/products/${id}`, {
+    method: 'PUT',
+    headers: getAuthHeaders(),
+    body: JSON.stringify(product)
+  })
+  if (!response.ok) throw new Error('Failed to update product')
+  return response.json()
+}
+
+export async function deleteProduct(id: string) {
+  const response = await fetch(`${BACKEND_URL}/api/admin/products/${id}`, {
+    method: 'DELETE',
+    headers: getAuthHeaders()
+  })
+  if (!response.ok) throw new Error('Failed to delete product')
+  return response.json()
+}
+
+// Enhanced Solutions Management (Full CRUD with SEO & Priority)
+export async function getSolutionsFull() {
+  const response = await fetch(`${BACKEND_URL}/api/admin/solutions-full`, {
+    headers: getAuthHeaders()
+  })
+  if (!response.ok) throw new Error('Failed to fetch solutions')
+  return response.json()
+}
+
+export async function getSolutionFull(id: string) {
+  const response = await fetch(`${BACKEND_URL}/api/admin/solutions-full/${id}`, {
+    headers: getAuthHeaders()
+  })
+  if (!response.ok) throw new Error('Failed to fetch solution')
+  return response.json()
+}
+
+export async function createSolutionFull(solution: any) {
+  const response = await fetch(`${BACKEND_URL}/api/admin/solutions-full`, {
+    method: 'POST',
+    headers: getAuthHeaders(),
+    body: JSON.stringify(solution)
+  })
+  if (!response.ok) throw new Error('Failed to create solution')
+  return response.json()
+}
+
+export async function updateSolutionFull(id: string, solution: any) {
+  const response = await fetch(`${BACKEND_URL}/api/admin/solutions-full/${id}`, {
+    method: 'PUT',
+    headers: getAuthHeaders(),
+    body: JSON.stringify(solution)
+  })
+  if (!response.ok) throw new Error('Failed to update solution')
+  return response.json()
+}
+
+export async function deleteSolutionFull(id: string) {
+  const response = await fetch(`${BACKEND_URL}/api/admin/solutions-full/${id}`, {
+    method: 'DELETE',
+    headers: getAuthHeaders()
+  })
+  if (!response.ok) throw new Error('Failed to delete solution')
+  return response.json()
+}
+
+export async function reorderSolutions(items: {id: string, priority: number}[]) {
+  const response = await fetch(`${BACKEND_URL}/api/admin/solutions-full/reorder`, {
+    method: 'PUT',
+    headers: getAuthHeaders(),
+    body: JSON.stringify({ items })
+  })
+  if (!response.ok) throw new Error('Failed to reorder solutions')
+  return response.json()
+}
+
+// Enhanced Services Management (Full CRUD with SEO & Priority)
+export async function getServicesFull() {
+  const response = await fetch(`${BACKEND_URL}/api/admin/services`, {
+    headers: getAuthHeaders()
+  })
+  if (!response.ok) throw new Error('Failed to fetch services')
+  return response.json()
+}
+
+export async function getServiceFull(id: string) {
+  const response = await fetch(`${BACKEND_URL}/api/admin/services/${id}`, {
+    headers: getAuthHeaders()
+  })
+  if (!response.ok) throw new Error('Failed to fetch service')
+  return response.json()
+}
+
+export async function createServiceFull(service: any) {
+  const response = await fetch(`${BACKEND_URL}/api/admin/services`, {
+    method: 'POST',
+    headers: getAuthHeaders(),
+    body: JSON.stringify(service)
+  })
+  if (!response.ok) throw new Error('Failed to create service')
+  return response.json()
+}
+
+export async function updateServiceFull(id: string, service: any) {
+  const response = await fetch(`${BACKEND_URL}/api/admin/services/${id}`, {
+    method: 'PUT',
+    headers: getAuthHeaders(),
+    body: JSON.stringify(service)
+  })
+  if (!response.ok) throw new Error('Failed to update service')
+  return response.json()
+}
+
+export async function deleteServiceFull(id: string) {
+  const response = await fetch(`${BACKEND_URL}/api/admin/services/${id}`, {
+    method: 'DELETE',
+    headers: getAuthHeaders()
+  })
+  if (!response.ok) throw new Error('Failed to delete service')
+  return response.json()
+}
+
+export async function reorderServices(items: {id: string, priority: number}[]) {
+  const response = await fetch(`${BACKEND_URL}/api/admin/services/reorder`, {
+    method: 'PUT',
+    headers: getAuthHeaders(),
+    body: JSON.stringify({ items })
+  })
+  if (!response.ok) throw new Error('Failed to reorder services')
+  return response.json()
+}
+
