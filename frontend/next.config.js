@@ -51,6 +51,19 @@ const nextConfig = {
         protocol: 'https',
         hostname: '**.lexalifestyle.com',
       },
+      // Emergent preview domains for uploaded images
+      {
+        protocol: 'https',
+        hostname: '**.emergentagent.com',
+      },
+      {
+        protocol: 'https',
+        hostname: '**.preview.emergentagent.com',
+      },
+      {
+        protocol: 'https',
+        hostname: 'launch-ready-app-6.preview.emergentagent.com',
+      },
     ],
   },
   
