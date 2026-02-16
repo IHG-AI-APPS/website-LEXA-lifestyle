@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
-import Image from 'next/image'
+import SafeImage from '@/components/ui/SafeImage'
 import Link from 'next/link'
 import { getProjects, type Project } from '@/lib/api'
 
@@ -119,7 +119,7 @@ export default function ProjectsPage() {
               >
                 <Link href={`/projects/${project.slug || project.id}`}>
                   <div className="relative h-[300px] sm:h-[350px] md:h-[400px] overflow-hidden mb-4 md:mb-6">
-                    <Image
+                    <SafeImage
                       src={project.image || project.images?.[0] || '/images/placeholder-project.jpg'}
                       alt={project.title}
                       fill

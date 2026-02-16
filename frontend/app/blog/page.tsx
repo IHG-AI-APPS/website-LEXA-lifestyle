@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
-import Image from 'next/image'
+import SafeImage from '@/components/ui/SafeImage'
 import Link from 'next/link'
 import { Calendar, Clock, Tag } from 'lucide-react'
 import { Badge } from '@/components/ui/badge'
@@ -111,7 +111,7 @@ export default function BlogPage() {
                         {/* Image */}
                         <div className="relative h-64 overflow-hidden bg-gradient-to-br from-gray-100 to-gray-200">
                           {(article.featured_image || article.image) ? (
-                            <Image
+                            <SafeImage
                               src={article.featured_image || article.image}
                               alt={article.title}
                               fill

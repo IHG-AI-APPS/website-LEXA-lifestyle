@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
-import Image from 'next/image'
+import SafeImage from '@/components/ui/SafeImage'
 import Link from 'next/link'
 import { Calendar, ArrowRight } from 'lucide-react'
 
@@ -79,7 +79,7 @@ export default function NewsPage() {
               className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center"
             >
               <div className="relative h-96 lg:h-[500px] overflow-hidden bg-lexa-surface">
-                <Image
+                <SafeImage
                   src={featuredNews.image}
                   alt={featuredNews.title}
                   fill
@@ -127,7 +127,7 @@ export default function NewsPage() {
               >
                 <Link href={`/news/${article.slug}`} className="group block">
                   <div className="relative h-64 overflow-hidden bg-lexa-surface mb-6">
-                    <Image
+                    <SafeImage
                       src={article.image}
                       alt={article.title}
                       fill
