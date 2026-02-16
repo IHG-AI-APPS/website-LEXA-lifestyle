@@ -21,7 +21,7 @@ interface Service {
   description: string
   long_description?: string
   image: string
-  features: string[]
+  features?: string[]
   process_steps?: Array<{
     title: string
     description: string
@@ -76,7 +76,7 @@ interface Service {
     answer: string
   }>
   icon?: string
-  tags: string[]
+  tags?: string[]
 }
 
 export default function ServiceDetailPage() {
