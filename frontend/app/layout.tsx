@@ -55,6 +55,11 @@ export default function RootLayout({
         <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
         <meta name="apple-mobile-web-app-title" content="LEXA" />
         
+        {/* Hreflang for multilingual SEO */}
+        <link rel="alternate" hrefLang="en-AE" href="https://lexalifestyle.com" />
+        <link rel="alternate" hrefLang="ar-AE" href="https://lexalifestyle.com/ar" />
+        <link rel="alternate" hrefLang="x-default" href="https://lexalifestyle.com" />
+        
         {/* DNS Prefetch for external domains */}
         <link rel="dns-prefetch" href="https://images.unsplash.com" />
         <link rel="dns-prefetch" href="https://images.pexels.com" />
