@@ -206,8 +206,8 @@ export default function SmartBuilderFlow() {
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-gray-50 to-white">
-      {/* Progress Header */}
-      <div className="bg-white border-b border-gray-200 sticky top-0 z-50">
+      {/* Progress Header - Below main navigation */}
+      <div className="bg-white border-b border-gray-200 sticky top-16 sm:top-18 md:top-20 z-40">
         <div className="max-w-7xl mx-auto px-4 py-3">
           {/* Desktop Progress - Compact */}
           <div className="hidden lg:flex items-center justify-between">
