@@ -325,7 +325,6 @@ def calculate_system_match(system: Dict, features: List) -> int:
         return 0
     
     # Enhanced matching logic based on feature categories
-    system_name_lower = system.get("name", "").lower()
     system_desc_lower = system.get("description", "").lower()
     
     # Get system capabilities

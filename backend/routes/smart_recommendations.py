@@ -306,8 +306,6 @@ def generate_recommendation_reason(
 ) -> str:
     """Generate a human-readable reason for the recommendation"""
     
-    solution_title = solution.get("title", "")
-    
     reasons_en = {
         "entertainment": "Pairs perfectly with your entertainment setup",
         "security": "Enhances your security system",

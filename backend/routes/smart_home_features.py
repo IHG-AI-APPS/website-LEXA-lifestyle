@@ -252,7 +252,6 @@ async def recommend_systems(
 @router.post("/calculate-package")
 async def calculate_package(selections: ProjectSelections):
     """Calculate recommended package based on all selections and project details"""
-    data = load_features_data()
     
     # Count features by tier
     feature_counts = {

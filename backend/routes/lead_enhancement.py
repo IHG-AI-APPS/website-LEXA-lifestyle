@@ -478,7 +478,6 @@ async def get_lead_stats():
     try:
         today = datetime.now(timezone.utc).replace(hour=0, minute=0, second=0, microsecond=0)
         this_week = today - timedelta(days=7)
-        this_month = today - timedelta(days=30)
         
         # Count leads from different sources
         smart_home_today = await db.smart_home_leads.count_documents({"created_at": {"$gte": today}})
