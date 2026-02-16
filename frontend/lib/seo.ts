@@ -1,12 +1,16 @@
 import type { Metadata } from 'next'
 
+// Production domain - update this when going live
+const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://lexalifestyle.com'
+
 export const defaultMetadata: Metadata = {
-  metadataBase: new URL('https://launch-ready-app-6.preview.emergentagent.com'),
+  metadataBase: new URL(SITE_URL),
   title: {
     default: 'LEXA Lifestyle | #1 Smart Home Automation Dubai | Control4 & Crestron',
     template: '%s | LEXA Lifestyle Dubai'
   },
-  description: 'Dubai\'s #1 luxury smart home automation company. Official Control4 & Crestron dealer. 500+ villas automated. Expert integration for lighting, climate, cinema, security & AV systems. Visit our Experience Centre.',
+  // Optimized meta description - under 160 characters
+  description: 'Dubai\'s #1 luxury smart home company. Control4 & Crestron dealer. 500+ villas automated. Expert lighting, cinema & AV integration.',
   keywords: [
     'LEXA Lifestyle Dubai',
     'best smart home company Dubai',
@@ -38,7 +42,7 @@ export const defaultMetadata: Metadata = {
     'تركيب منزل ذكي الإمارات',
     'أنظمة المنزل الذكي دبي'
   ],
-  authors: [{ name: 'LEXA Lifestyle', url: 'https://launch-ready-app-6.preview.emergentagent.com' }],
+  authors: [{ name: 'LEXA Lifestyle', url: SITE_URL }],
   creator: 'LEXA Lifestyle',
   publisher: 'LEXA Lifestyle',
   formatDetection: {
