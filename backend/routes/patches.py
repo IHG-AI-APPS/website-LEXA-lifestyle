@@ -204,7 +204,7 @@ async def apply_patch(patch_id: str, background_tasks: BackgroundTasks):
                     target_file = os.path.join('/app', file_path)
                     if os.path.exists(backup_file):
                         shutil.copy2(backup_file, target_file)
-                except:
+                except Exception:
                     pass
             
             # Update status to failed
