@@ -14,7 +14,10 @@ const nextConfig = {
     minimumCacheTTL: 86400, // 24 hours
     dangerouslyAllowSVG: true,
     contentSecurityPolicy: "default-src 'self'; script-src 'none'; sandbox;",
+    // Allow images from any HTTPS source for dynamic content
+    // This prevents "unconfigured host" errors for user-uploaded images
     remotePatterns: [
+      // Stock photo services
       {
         protocol: 'https',
         hostname: 'images.unsplash.com',
@@ -27,6 +30,7 @@ const nextConfig = {
         protocol: 'https',
         hostname: 'upload.wikimedia.org',
       },
+      // CDN services
       {
         protocol: 'https',
         hostname: '**.cloudinary.com',
@@ -43,6 +47,7 @@ const nextConfig = {
         protocol: 'https',
         hostname: '**.amazonaws.com',
       },
+      // Production domain
       {
         protocol: 'https',
         hostname: 'lexalifestyle.com',
@@ -51,7 +56,7 @@ const nextConfig = {
         protocol: 'https',
         hostname: '**.lexalifestyle.com',
       },
-      // Emergent preview domains for uploaded images
+      // Emergent platform - covers all preview/staging environments
       {
         protocol: 'https',
         hostname: '**.emergentagent.com',
@@ -62,7 +67,12 @@ const nextConfig = {
       },
       {
         protocol: 'https',
-        hostname: 'launch-ready-app-6.preview.emergentagent.com',
+        hostname: '**.stage-preview.emergentagent.com',
+      },
+      // Catch-all for any other HTTPS images (user uploads, external sources)
+      {
+        protocol: 'https',
+        hostname: '**',
       },
     ],
   },
