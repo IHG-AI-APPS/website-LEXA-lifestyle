@@ -149,7 +149,7 @@ export default function Header() {
           <div className="flex items-center justify-between h-16 sm:h-18 md:h-20">
             <Link href="/" className="relative group">
               <div className="relative w-24 h-10 sm:w-28 sm:h-12 lg:w-36 lg:h-14 transition-opacity duration-300 group-hover:opacity-70">
-                <Image
+                <SafeImage
                   src={shouldUseDarkText ? "/lexa-black.png" : "/lexa-white.png"}
                   alt="LEXA"
                   fill
