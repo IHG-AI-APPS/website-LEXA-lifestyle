@@ -79,7 +79,7 @@ export default function RelatedItemsCarousel({ items, title, basePath }: Related
             >
               <Link href={`${basePath}/${item.slug}`} className="group block">
                 <div className="relative h-64 overflow-hidden bg-gray-200 mb-4">
-                  <Image
+                  <SafeImage
                     src={item.image}
                     alt={item.title || item.name || ''}
                     fill
