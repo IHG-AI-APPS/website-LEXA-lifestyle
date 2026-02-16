@@ -260,7 +260,7 @@ export default function ServiceDetailPage() {
             <div className="bg-gray-50 p-8 rounded-lg border-2 border-gray-200">
               <h3 className="text-2xl font-bold mb-6">Key Features</h3>
               <ul className="space-y-3">
-                {service.features.map((feature, index) => (
+                {(service.features || []).map((feature, index) => (
                   <motion.li
                     key={index}
                     initial={{ opacity: 0, x: -20 }}
