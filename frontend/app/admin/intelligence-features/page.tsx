@@ -359,6 +359,396 @@ export default function IntelligenceFeaturesAdmin() {
           </div>
         </div>
       )}
+
+      {/* Add New Feature Modal */}
+      {showAddModal && (
+        <AddFeatureModal 
+          categories={categories}
+          scoringCategories={scoringCategories}
+          lifestyleTags={lifestyleTags}
+          onClose={() => setShowAddModal(false)}
+          onSave={() => {
+            fetchFeatures()
+            fetchStats()
+            setShowAddModal(false)
+          }}
+        />
+      )}
+    </div>
+  )
+}
+
+// Add Feature Modal Component
+function AddFeatureModal({ 
+  categories, 
+  scoringCategories, 
+  lifestyleTags,
+  onClose, 
+  onSave 
+}: { 
+  categories: string[]
+  scoringCategories: string[]
+  lifestyleTags: string[]
+  onClose: () => void
+  onSave: () => void 
+}) {
+  const [saving, setSaving] = useState(false)
+  const [error, setError] = useState('')
+  const [formData, setFormData] = useState({
+    title: '',
+    slug: '',
+    category: categories[0] || '',
+    icon: '🏠',
+    short_description: '',
+    detailed_description: '',
+    iq_points: 10,
+    scoring_category: scoringCategories[0] || '',
+    benefits: [''],
+    required_devices: [''],
+    compatible_systems: ['Control4', 'Crestron'],
+    lifestyle_tags: [] as string[],
+    is_premium: false,
+    featured: false,
+    display_order: 0
+  })
+
+  const generateSlug = (title: string) => {
+    return title.toLowerCase()
+      .replace(/[^a-z0-9]+/g, '-')
+      .replace(/(^-|-$)/g, '')
+  }
+
+  const handleTitleChange = (value: string) => {
+    setFormData(prev => ({
+      ...prev,
+      title: value,
+      slug: generateSlug(value)
+    }))
+  }
+
+  const handleArrayChange = (field: 'benefits' | 'required_devices', index: number, value: string) => {
+    setFormData(prev => {
+      const arr = [...prev[field]]
+      arr[index] = value
+      return { ...prev, [field]: arr }
+    })
+  }
+
+  const addArrayItem = (field: 'benefits' | 'required_devices') => {
+    setFormData(prev => ({
+      ...prev,
+      [field]: [...prev[field], '']
+    }))
+  }
+
+  const removeArrayItem = (field: 'benefits' | 'required_devices', index: number) => {
+    setFormData(prev => ({
+      ...prev,
+      [field]: prev[field].filter((_, i) => i !== index)
+    }))
+  }
+
+  const toggleLifestyleTag = (tag: string) => {
+    setFormData(prev => ({
+      ...prev,
+      lifestyle_tags: prev.lifestyle_tags.includes(tag)
+        ? prev.lifestyle_tags.filter(t => t !== tag)
+        : [...prev.lifestyle_tags, tag]
+    }))
+  }
+
+  const handleSave = async () => {
+    if (!formData.title.trim()) {
+      setError('Title is required')
+      return
+    }
+    if (!formData.short_description.trim()) {
+      setError('Short description is required')
+      return
+    }
+
+    setSaving(true)
+    setError('')
+
+    try {
+      const token = localStorage.getItem('admin_token')
+      const backendUrl = process.env.NEXT_PUBLIC_BACKEND_URL || ''
+      
+      // Filter out empty strings from arrays
+      const cleanedData = {
+        ...formData,
+        benefits: formData.benefits.filter(b => b.trim()),
+        required_devices: formData.required_devices.filter(d => d.trim())
+      }
+
+      const response = await fetch(`${backendUrl}/api/intelligence/admin/features`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': `Bearer ${token}`
+        },
+        body: JSON.stringify(cleanedData)
+      })
+
+      if (response.ok) {
+        onSave()
+      } else {
+        const data = await response.json()
+        setError(data.detail || 'Failed to create feature')
+      }
+    } catch (error) {
+      console.error('Error creating feature:', error)
+      setError('Network error. Please try again.')
+    } finally {
+      setSaving(false)
+    }
+  }
+
+  return (
+    <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4">
+      <div className="bg-white max-w-3xl w-full max-h-[90vh] overflow-y-auto p-6 border-2 border-gray-200">
+        <div className="flex justify-between items-center mb-6">
+          <h2 className="text-2xl font-bold text-[#1A1A1A]">Add New Intelligence Feature</h2>
+          <button onClick={onClose} className="p-2 hover:bg-gray-100 rounded">
+            <X className="w-5 h-5" />
+          </button>
+        </div>
+
+        {error && (
+          <div className="mb-4 p-3 bg-red-50 border border-red-200 text-red-700 text-sm rounded">
+            {error}
+          </div>
+        )}
+
+        <div className="space-y-4">
+          {/* Title & Slug */}
+          <div className="grid grid-cols-2 gap-4">
+            <div>
+              <label className="block text-sm font-medium text-gray-700 mb-1">Title *</label>
+              <Input
+                value={formData.title}
+                onChange={(e) => handleTitleChange(e.target.value)}
+                placeholder="e.g., Automated Scene Control"
+                className="w-full"
+              />
+            </div>
+            <div>
+              <label className="block text-sm font-medium text-gray-700 mb-1">Slug (auto-generated)</label>
+              <Input
+                value={formData.slug}
+                onChange={(e) => setFormData(prev => ({ ...prev, slug: e.target.value }))}
+                placeholder="automated-scene-control"
+                className="w-full bg-gray-50"
+              />
+            </div>
+          </div>
+
+          {/* Category & Icon */}
+          <div className="grid grid-cols-2 gap-4">
+            <div>
+              <label className="block text-sm font-medium text-gray-700 mb-1">Category *</label>
+              <select
+                value={formData.category}
+                onChange={(e) => setFormData(prev => ({ ...prev, category: e.target.value }))}
+                className="w-full h-10 px-3 border border-gray-300 rounded-md bg-white text-sm"
+              >
+                {categories.map(cat => (
+                  <option key={cat} value={cat}>{cat.replace(/_/g, ' ').toUpperCase()}</option>
+                ))}
+              </select>
+            </div>
+            <div>
+              <label className="block text-sm font-medium text-gray-700 mb-1">Icon (Emoji)</label>
+              <Input
+                value={formData.icon}
+                onChange={(e) => setFormData(prev => ({ ...prev, icon: e.target.value }))}
+                placeholder="🏠"
+                className="w-full text-2xl"
+              />
+            </div>
+          </div>
+
+          {/* Short Description */}
+          <div>
+            <label className="block text-sm font-medium text-gray-700 mb-1">Short Description *</label>
+            <Input
+              value={formData.short_description}
+              onChange={(e) => setFormData(prev => ({ ...prev, short_description: e.target.value }))}
+              placeholder="Brief description for cards and lists"
+              className="w-full"
+            />
+          </div>
+
+          {/* Detailed Description */}
+          <div>
+            <label className="block text-sm font-medium text-gray-700 mb-1">Detailed Description</label>
+            <textarea
+              value={formData.detailed_description}
+              onChange={(e) => setFormData(prev => ({ ...prev, detailed_description: e.target.value }))}
+              placeholder="Full description with details..."
+              rows={3}
+              className="w-full px-3 py-2 border border-gray-300 rounded-md text-sm"
+            />
+          </div>
+
+          {/* IQ Points & Scoring Category */}
+          <div className="grid grid-cols-2 gap-4">
+            <div>
+              <label className="block text-sm font-medium text-gray-700 mb-1">IQ Points</label>
+              <Input
+                type="number"
+                value={formData.iq_points}
+                onChange={(e) => setFormData(prev => ({ ...prev, iq_points: parseInt(e.target.value) || 0 }))}
+                min={0}
+                max={100}
+                className="w-full"
+              />
+            </div>
+            <div>
+              <label className="block text-sm font-medium text-gray-700 mb-1">Scoring Category</label>
+              <select
+                value={formData.scoring_category}
+                onChange={(e) => setFormData(prev => ({ ...prev, scoring_category: e.target.value }))}
+                className="w-full h-10 px-3 border border-gray-300 rounded-md bg-white text-sm"
+              >
+                {scoringCategories.map(cat => (
+                  <option key={cat} value={cat}>{cat.replace(/_/g, ' ').toUpperCase()}</option>
+                ))}
+              </select>
+            </div>
+          </div>
+
+          {/* Benefits */}
+          <div>
+            <label className="block text-sm font-medium text-gray-700 mb-1">Benefits</label>
+            {formData.benefits.map((benefit, index) => (
+              <div key={index} className="flex gap-2 mb-2">
+                <Input
+                  value={benefit}
+                  onChange={(e) => handleArrayChange('benefits', index, e.target.value)}
+                  placeholder="Enter a benefit..."
+                  className="flex-1"
+                />
+                <button
+                  onClick={() => removeArrayItem('benefits', index)}
+                  className="p-2 text-red-600 hover:bg-red-50 rounded"
+                  type="button"
+                >
+                  <X className="w-4 h-4" />
+                </button>
+              </div>
+            ))}
+            <button
+              onClick={() => addArrayItem('benefits')}
+              className="text-sm text-blue-600 hover:underline"
+              type="button"
+            >
+              + Add Benefit
+            </button>
+          </div>
+
+          {/* Required Devices */}
+          <div>
+            <label className="block text-sm font-medium text-gray-700 mb-1">Required Devices</label>
+            {formData.required_devices.map((device, index) => (
+              <div key={index} className="flex gap-2 mb-2">
+                <Input
+                  value={device}
+                  onChange={(e) => handleArrayChange('required_devices', index, e.target.value)}
+                  placeholder="Enter a device..."
+                  className="flex-1"
+                />
+                <button
+                  onClick={() => removeArrayItem('required_devices', index)}
+                  className="p-2 text-red-600 hover:bg-red-50 rounded"
+                  type="button"
+                >
+                  <X className="w-4 h-4" />
+                </button>
+              </div>
+            ))}
+            <button
+              onClick={() => addArrayItem('required_devices')}
+              className="text-sm text-blue-600 hover:underline"
+              type="button"
+            >
+              + Add Device
+            </button>
+          </div>
+
+          {/* Lifestyle Tags */}
+          <div>
+            <label className="block text-sm font-medium text-gray-700 mb-2">Lifestyle Tags</label>
+            <div className="flex flex-wrap gap-2">
+              {lifestyleTags.map(tag => (
+                <button
+                  key={tag}
+                  onClick={() => toggleLifestyleTag(tag)}
+                  type="button"
+                  className={`px-3 py-1 rounded-full text-sm font-medium transition-colors ${
+                    formData.lifestyle_tags.includes(tag)
+                      ? 'bg-[#1A1A1A] text-white'
+                      : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
+                  }`}
+                >
+                  {tag}
+                </button>
+              ))}
+            </div>
+          </div>
+
+          {/* Toggles */}
+          <div className="flex gap-6">
+            <label className="flex items-center gap-2 cursor-pointer">
+              <input
+                type="checkbox"
+                checked={formData.is_premium}
+                onChange={(e) => setFormData(prev => ({ ...prev, is_premium: e.target.checked }))}
+                className="w-4 h-4"
+              />
+              <span className="text-sm">Premium Feature</span>
+            </label>
+            <label className="flex items-center gap-2 cursor-pointer">
+              <input
+                type="checkbox"
+                checked={formData.featured}
+                onChange={(e) => setFormData(prev => ({ ...prev, featured: e.target.checked }))}
+                className="w-4 h-4"
+              />
+              <span className="text-sm">Featured</span>
+            </label>
+          </div>
+        </div>
+
+        {/* Action Buttons */}
+        <div className="flex gap-4 mt-8">
+          <Button
+            onClick={onClose}
+            variant="outline"
+            className="flex-1"
+            disabled={saving}
+          >
+            Cancel
+          </Button>
+          <Button
+            onClick={handleSave}
+            className="flex-1 bg-[#1A1A1A] hover:bg-[#2A2A2A] text-white"
+            disabled={saving}
+          >
+            {saving ? (
+              <>
+                <div className="w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin mr-2" />
+                Saving...
+              </>
+            ) : (
+              <>
+                <Save className="w-4 h-4 mr-2" />
+                Save Feature
+              </>
+            )}
+          </Button>
+        </div>
+      </div>
     </div>
   )
 }
