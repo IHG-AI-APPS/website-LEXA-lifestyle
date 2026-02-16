@@ -6,7 +6,7 @@
 'use client'
 
 import Link from 'next/link'
-import Image from 'next/image'
+import SafeImage from '@/components/ui/SafeImage'
 import { motion } from 'framer-motion'
 import { ArrowRight, Zap, Building2, Home, Sparkles, Film, Shield } from 'lucide-react'
 

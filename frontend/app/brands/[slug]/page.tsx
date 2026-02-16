@@ -2,7 +2,7 @@
 
 import { useState, useEffect, useCallback } from 'react'
 import { motion } from 'framer-motion'
-import Image from 'next/image'
+import SafeImage from '@/components/ui/SafeImage'
 import Link from 'next/link'
 import Head from 'next/head'
 import { Button } from '@/components/ui/button'

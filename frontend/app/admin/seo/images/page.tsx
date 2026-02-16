@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from 'react'
 import { motion } from 'framer-motion'
-import Image from 'next/image'
+import SafeImage from '@/components/ui/SafeImage'
 import { 
   Image as ImageIcon, AlertCircle, CheckCircle, Download, 
   RefreshCw, Search, Edit2, Save, X, Filter, Eye
@@ -311,7 +311,7 @@ export default function ImageSEOPage() {
                   >
                     <td className="px-6 py-4">
                       <div className="relative w-16 h-16 bg-gray-100 rounded flex items-center justify-center overflow-hidden">
-                        <Image 
+                        <SafeImage 
                           src={image.url} 
                           alt={image.alt || 'Preview'} 
                           fill

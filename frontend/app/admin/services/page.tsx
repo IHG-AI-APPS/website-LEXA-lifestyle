@@ -1,7 +1,7 @@
 'use client'
 
 import { useEffect, useState } from 'react'
-import Image from 'next/image'
+import SafeImage from '@/components/ui/SafeImage'
 import { Plus, Edit, Trash2, X, ChevronDown, ChevronUp, Save, Search, Package, Star, Eye, GripVertical } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'

@@ -1,7 +1,7 @@
 'use client'
 
 import { useEffect, useState } from 'react'
-import Image from 'next/image'
+import SafeImage from '@/components/ui/SafeImage'
 import { Plus, Edit, Trash2, X, ChevronDown, ChevronUp, Save, Search, Package, Star, Eye } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
@@ -831,7 +831,7 @@ export default function SolutionsAdminPage() {
                     <div className="flex items-center gap-3">
                       {solution.image && (
                         <div className="relative w-12 h-12 flex-shrink-0 bg-gray-100 rounded">
-                          <Image src={solution.image} alt={solution.title} fill className="object-cover rounded" />
+                          <SafeImage src={solution.image} alt={solution.title} fill className="object-cover rounded" />
                         </div>
                       )}
                       <div>

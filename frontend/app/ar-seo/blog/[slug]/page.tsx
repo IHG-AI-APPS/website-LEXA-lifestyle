@@ -1,6 +1,6 @@
 import { Metadata } from 'next'
 import Link from 'next/link'
-import Image from 'next/image'
+import SafeImage from '@/components/ui/SafeImage'
 import { Phone, Mail, MapPin, CheckCircle, ArrowLeft, Calendar, User } from 'lucide-react'
 import { notFound } from 'next/navigation'
 
@@ -83,7 +83,7 @@ export default async function DynamicArabicPage({ params }: { params: { slug: st
       <header className="border-b py-4 bg-white sticky top-0 z-50">
         <div className="container mx-auto px-4 max-w-7xl flex justify-between items-center">
           <Link href="/">
-            <Image src="/lexa-black.png" alt="LEXA Lifestyle" width={120} height={48} className="h-10 md:h-12 w-auto" style={{ width: 'auto' }} />
+            <SafeImage src="/lexa-black.png" alt="LEXA Lifestyle" width={120} height={48} className="h-10 md:h-12 w-auto" style={{ width: 'auto' }} />
           </Link>
           <div className="flex gap-4 items-center">
             {page.english_alternate_url && (

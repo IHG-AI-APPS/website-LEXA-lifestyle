@@ -1,7 +1,7 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import Image from 'next/image'
+import SafeImage from '@/components/ui/SafeImage'
 import Link from 'next/link'
 import { MapPin, Calendar, DollarSign, Home } from 'lucide-react'
 import VideoGallery from '@/components/sections/VideoGallery'

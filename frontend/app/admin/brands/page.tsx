@@ -1,7 +1,7 @@
 'use client'
 
 import { useEffect, useState } from 'react'
-import Image from 'next/image'
+import SafeImage from '@/components/ui/SafeImage'
 import { Plus, Edit, Trash2, X, GripVertical, Save, Package, ChevronDown, ChevronUp } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
@@ -615,7 +615,7 @@ export default function BrandsAdminPage() {
                   <td className="px-4 py-4">
                     <div className="flex items-center gap-3">
                       <div className="relative w-12 h-12 flex-shrink-0 bg-gray-100 rounded">
-                        <Image src={brand.logo} alt={brand.name} fill className="object-contain p-1" />
+                        <SafeImage src={brand.logo} alt={brand.name} fill className="object-contain p-1" />
                       </div>
                       <div>
                         <div className="font-medium">{brand.name}</div>

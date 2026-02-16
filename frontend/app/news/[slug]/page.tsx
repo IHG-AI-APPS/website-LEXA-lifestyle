@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
-import Image from 'next/image'
+import SafeImage from '@/components/ui/SafeImage'
 import { useParams } from 'next/navigation'
 import { Breadcrumb } from '@/components/ui/breadcrumb'
 import { Calendar, Tag } from 'lucide-react'

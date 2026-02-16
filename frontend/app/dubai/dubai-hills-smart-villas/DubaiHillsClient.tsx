@@ -1,7 +1,7 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import Image from 'next/image'
+import SafeImage from '@/components/ui/SafeImage'
 import Link from 'next/link'
 import { Phone, MapPin, ArrowRight, Home, Users } from 'lucide-react'
 import { Button } from '@/components/ui/button'
@@ -31,7 +31,7 @@ export default function DubaiHillsClient() {
     <div className={`min-h-screen transition-colors duration-300 ${isDark ? 'bg-gray-900 text-white' : 'bg-white text-gray-900'}`}>
       <section className="relative min-h-[80vh] flex items-center">
         <div className="absolute inset-0 z-0">
-          <Image src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1920" alt="Dubai Hills Villa" fill className="object-cover" priority />
+          <SafeImage src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1920" alt="Dubai Hills Villa" fill className="object-cover" priority />
           <div className={`absolute inset-0 ${isDark ? 'bg-gradient-to-r from-gray-900/90 via-gray-900/70 to-transparent' : 'bg-gradient-to-r from-white/90 via-white/70 to-transparent'}`} />
         </div>
         <div className="relative z-10 container mx-auto px-4 py-20">

@@ -6,7 +6,7 @@ import { Button } from '@/components/ui/button'
 import { ArrowRight, ArrowLeft, Sparkles, CheckCircle2 } from 'lucide-react'
 import { getSolutions, type Solution } from '@/lib/api'
 import { useEffect } from 'react'
-import Image from 'next/image'
+import SafeImage from '@/components/ui/SafeImage'
 import Link from 'next/link'
 
 interface QuizQuestion {

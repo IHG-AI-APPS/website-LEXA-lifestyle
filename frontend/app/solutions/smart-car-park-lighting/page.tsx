@@ -2,7 +2,7 @@
 
 import { useState } from 'react'
 import { motion } from 'framer-motion'
-import Image from 'next/image'
+import SafeImage from '@/components/ui/SafeImage'
 import { 
   Lightbulb, Zap, TrendingDown, Shield, Smartphone, BarChart3, 
   CheckCircle2, ArrowRight, Clock, DollarSign, Wifi, Activity,

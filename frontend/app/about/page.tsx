@@ -2,7 +2,7 @@
 
 import { useState } from 'react'
 import { motion } from 'framer-motion'
-import Image from 'next/image'
+import SafeImage from '@/components/ui/SafeImage'
 import { Button } from '@/components/ui/button'
 import TeamSection from '@/components/sections/TeamSection'
 import ConsultationForm from '@/components/forms/ConsultationForm'

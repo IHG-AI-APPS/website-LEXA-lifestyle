@@ -1,7 +1,7 @@
 'use client'
 
 import { useEffect, useState } from 'react'
-import Image from 'next/image'
+import SafeImage from '@/components/ui/SafeImage'
 import { Plus, Edit, Trash2, X } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
@@ -288,7 +288,7 @@ export default function ProductsAdminPage() {
                   <td className="px-6 py-4">
                     <div className="flex items-center gap-3">
                       <div className="relative w-16 h-12 rounded overflow-hidden bg-gray-100">
-                        <Image src={product.image} alt={product.name} fill className="object-cover" />
+                        <SafeImage src={product.image} alt={product.name} fill className="object-cover" />
                       </div>
                       <div>
                         <div className="flex items-center gap-2">

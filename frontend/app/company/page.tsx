@@ -1,7 +1,7 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import Image from 'next/image'
+import SafeImage from '@/components/ui/SafeImage'
 import { Award, Users, Building, Target } from 'lucide-react'
 import RelatedPagesNav from '@/components/navigation/RelatedPagesNav'
 

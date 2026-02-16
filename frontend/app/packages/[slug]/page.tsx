@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from 'react'
 import { useParams, useRouter } from 'next/navigation'
-import Image from 'next/image'
+import SafeImage from '@/components/ui/SafeImage'
 import { motion } from 'framer-motion'
 import { 
   Check, 

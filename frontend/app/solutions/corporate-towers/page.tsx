@@ -18,7 +18,7 @@ import {
 import { Button } from '@/components/ui/button'
 import { useState } from 'react'
 import ConsultationForm from '@/components/forms/ConsultationForm'
-import Image from 'next/image'
+import SafeImage from '@/components/ui/SafeImage'
 
 export default function CorporateTowersPage() {
   const [showConsultationForm, setShowConsultationForm] = useState(false)

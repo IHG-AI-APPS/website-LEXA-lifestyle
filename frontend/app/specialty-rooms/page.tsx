@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
-import Image from 'next/image'
+import SafeImage from '@/components/ui/SafeImage'
 import { motion } from 'framer-motion'
 import { Wine, Shield, Gamepad2, Music, Briefcase, Sparkles, Dumbbell, Baby, Bed, Users, Waves, Speaker, Plus } from 'lucide-react'
 

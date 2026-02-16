@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from 'react'
 import { motion } from 'framer-motion'
-import Image from 'next/image'
+import SafeImage from '@/components/ui/SafeImage'
 import Link from 'next/link'
 import { Clock, ArrowRight, Search } from 'lucide-react'
 import { getArticles, getArticleCategories, type Article } from '@/lib/api'
