@@ -396,7 +396,6 @@ class LEXAEmailTemplate:
     ) -> str:
         """Experience Centre booking notification"""
         
-        current_date = datetime.now().strftime("%B %d, %Y at %I:%M %p")
         interests_str = ", ".join(interests) if interests else "Not specified"
         
         content = f'''

@@ -211,9 +211,7 @@ Generate concise reasoning (2-3 sentences) for why this feature is recommended f
         score: float
     ) -> str:
         """Rule-based system-level reasoning"""
-        property_type = project_context.get('property_type', 'property')
         objectives = project_context.get('selected_objectives', [])
-        area_sqft = project_context.get('area_sqft', 0)
         
         reasoning_parts = []
         
