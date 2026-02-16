@@ -38,8 +38,15 @@ export default function ClientLayout({ children }: { children: React.ReactNode }
     <ThemeProvider>
       <LanguageProvider>
         <SmoothScrollProvider>
+          {/* Skip to main content - Accessibility */}
+          <a 
+            href="#main-content" 
+            className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-[100] focus:bg-black focus:text-white focus:px-4 focus:py-2 focus:rounded"
+          >
+            Skip to main content
+          </a>
           {!isAdminPage && <Header />}
-          <main className={isAdminPage ? '' : 'pb-20 lg:pb-0'}>{children}</main>
+          <main id="main-content" className={isAdminPage ? '' : 'pb-20 lg:pb-0'}>{children}</main>
           {!isAdminPage && <Footer />}
           {!isAdminPage && <MobileTabBar />}
           {!isAdminPage && <CommandPalette />}
