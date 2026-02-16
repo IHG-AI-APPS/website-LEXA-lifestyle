@@ -75,6 +75,10 @@ interface Service {
     question: string
     answer: string
   }>
+  faqs?: Array<{
+    question: string
+    answer: string
+  }>
   icon?: string
   tags?: string[]
 }
