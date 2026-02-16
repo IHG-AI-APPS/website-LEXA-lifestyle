@@ -18,7 +18,7 @@ interface SafeImageProps extends Omit<ImageProps, 'onError'> {
 export default function SafeImage({
   src,
   alt,
-  fallbackSrc = '/images/placeholder.jpg',
+  fallbackSrc = '/images/solutions/smart-lighting-1.jpg',
   ...props
 }: SafeImageProps) {
   const [imgSrc, setImgSrc] = useState(src)
@@ -72,7 +72,7 @@ export default function SafeImage({
 export function UnoptimizedImage({
   src,
   alt,
-  fallbackSrc = '/images/placeholder.jpg',
+  fallbackSrc = '/images/solutions/smart-lighting-1.jpg',
   className,
   style,
   ...props
