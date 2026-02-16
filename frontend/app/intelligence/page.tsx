@@ -204,39 +204,90 @@ export default function IntelligencePage() {
           </div>
         </section>
 
-        {/* Category Filter */}
-        <section className="py-8 bg-gray-50 dark:bg-gray-800 border-b border-gray-200 dark:border-gray-700 sticky top-0 z-30">
+        {/* Category Filter with Previous/Next Navigation */}
+        <section className="py-8 bg-gray-50 dark:bg-gray-800 border-b border-gray-200 dark:border-gray-700 sticky top-16 sm:top-18 md:top-20 z-30">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
-            <div className="flex items-center gap-4 overflow-x-auto pb-2 scrollbar-hide">
+            <div className="flex items-center justify-between gap-4">
+              {/* Previous Button */}
+              <button
+                onClick={() => {
+                  const currentIndex = selectedCategory ? categories.indexOf(selectedCategory) : -1
+                  if (currentIndex > 0) {
+                    setSelectedCategory(categories[currentIndex - 1])
+                  } else if (currentIndex === 0) {
+                    setSelectedCategory(null)
+                  }
+                }}
+                disabled={selectedCategory === null}
+                className="flex-shrink-0 flex items-center gap-2 px-4 py-2 rounded-full text-sm font-medium transition-all bg-white dark:bg-gray-700 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-600 disabled:opacity-40 disabled:cursor-not-allowed border border-gray-200 dark:border-gray-600"
+              >
+                <ArrowRight className="h-4 w-4 rotate-180" />
+                <span className="hidden sm:inline">{language === 'ar' ? 'السابق' : 'Previous'}</span>
+              </button>
+
+              {/* Current Category Display */}
+              <div className="flex-1 flex items-center justify-center">
+                <div className="flex items-center gap-3 px-6 py-3 bg-[#1A1A1A] text-white rounded-full">
+                  {selectedCategory ? (
+                    <>
+                      {(() => {
+                        const Icon = categoryIcons[selectedCategory] || Brain
+                        return <Icon className="h-5 w-5" />
+                      })()}
+                      <span className="font-medium">
+                        {categoryNames[selectedCategory]?.[language === 'ar' ? 'ar' : 'en'] || selectedCategory}
+                      </span>
+                      <span className="text-xs opacity-70 bg-white/20 px-2 py-0.5 rounded-full">
+                        {features.filter(f => f.category === selectedCategory).length}
+                      </span>
+                    </>
+                  ) : (
+                    <>
+                      <Brain className="h-5 w-5" />
+                      <span className="font-medium">{language === 'ar' ? 'جميع الفئات' : 'All Categories'}</span>
+                      <span className="text-xs opacity-70 bg-white/20 px-2 py-0.5 rounded-full">
+                        {features.length}
+                      </span>
+                    </>
+                  )}
+                </div>
+              </div>
+
+              {/* Next Button */}
+              <button
+                onClick={() => {
+                  const currentIndex = selectedCategory ? categories.indexOf(selectedCategory) : -1
+                  if (currentIndex < categories.length - 1) {
+                    setSelectedCategory(categories[currentIndex + 1])
+                  }
+                }}
+                disabled={selectedCategory === categories[categories.length - 1]}
+                className="flex-shrink-0 flex items-center gap-2 px-4 py-2 rounded-full text-sm font-medium transition-all bg-white dark:bg-gray-700 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-600 disabled:opacity-40 disabled:cursor-not-allowed border border-gray-200 dark:border-gray-600"
+              >
+                <span className="hidden sm:inline">{language === 'ar' ? 'التالي' : 'Next'}</span>
+                <ArrowRight className="h-4 w-4" />
+              </button>
+            </div>
+
+            {/* Category Progress Indicator */}
+            <div className="flex items-center justify-center gap-1 mt-4">
               <button
                 onClick={() => setSelectedCategory(null)}
-                className={`flex-shrink-0 px-4 py-2 rounded-full text-sm font-medium transition-all ${
-                  selectedCategory === null
-                    ? 'bg-[#1A1A1A] text-white'
-                    : 'bg-white dark:bg-gray-700 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-600'
+                className={`w-2 h-2 rounded-full transition-all ${
+                  selectedCategory === null ? 'bg-[#1A1A1A] w-4' : 'bg-gray-300 hover:bg-gray-400'
                 }`}
-              >
-                {language === 'ar' ? 'الكل' : 'All'} ({features.length})
-              </button>
-              {categories.map(cat => {
-                const Icon = categoryIcons[cat] || Brain
-                const count = features.filter(f => f.category === cat).length
-                return (
-                  <button
-                    key={cat}
-                    onClick={() => setSelectedCategory(cat)}
-                    className={`flex-shrink-0 flex items-center gap-2 px-4 py-2 rounded-full text-sm font-medium transition-all ${
-                      selectedCategory === cat
-                        ? 'bg-[#1A1A1A] text-white'
-                        : 'bg-white dark:bg-gray-700 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-600'
-                    }`}
-                  >
-                    <Icon className="h-4 w-4" />
-                    <span>{categoryNames[cat]?.[language === 'ar' ? 'ar' : 'en'] || cat}</span>
-                    <span className="text-xs opacity-70">({count})</span>
-                  </button>
-                )
-              })}
+                title={language === 'ar' ? 'الكل' : 'All'}
+              />
+              {categories.map((cat, index) => (
+                <button
+                  key={cat}
+                  onClick={() => setSelectedCategory(cat)}
+                  className={`w-2 h-2 rounded-full transition-all ${
+                    selectedCategory === cat ? 'bg-[#1A1A1A] w-4' : 'bg-gray-300 hover:bg-gray-400'
+                  }`}
+                  title={categoryNames[cat]?.[language === 'ar' ? 'ar' : 'en'] || cat}
+                />
+              ))}
             </div>
           </div>
         </section>
