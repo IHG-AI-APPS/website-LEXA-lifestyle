@@ -69,17 +69,17 @@ export const defaultMetadata: Metadata = {
     // bing: 'your-bing-verification-code',
   },
   alternates: {
-    canonical: 'https://launch-ready-app-6.preview.emergentagent.com',
+    canonical: '/',
     languages: {
-      'en-AE': 'https://launch-ready-app-6.preview.emergentagent.com',
-      'ar-AE': 'https://launch-ready-app-6.preview.emergentagent.com/ar',
+      'en-AE': '/',
+      'ar-AE': '/ar',
     }
   },
   openGraph: {
     type: 'website',
     locale: 'en_AE',
     alternateLocale: ['ar_AE'],
-    url: 'https://launch-ready-app-6.preview.emergentagent.com',
+    url: '/',
     title: 'LEXA Lifestyle | Luxury Smart Home Automation Dubai',
     description: 'Leading luxury home automation company in Dubai. Expert smart home solutions for lighting, climate, cinema & security.',
     siteName: 'LEXA Lifestyle',
@@ -112,8 +112,8 @@ export const organizationSchema = {
   '@type': 'Organization',
   name: 'LEXA Lifestyle',
   alternateName: 'LEXA Life Style',
-  url: 'https://launch-ready-app-6.preview.emergentagent.com',
-  logo: 'https://launch-ready-app-6.preview.emergentagent.com/lexa-black.png',
+  url: 'https://lexalifestyle.com',
+  logo: 'https://lexalifestyle.com/lexa-black.png',
   description: 'Leading luxury home automation and smart living solutions provider in Dubai, UAE',
   address: {
     '@type': 'PostalAddress',
