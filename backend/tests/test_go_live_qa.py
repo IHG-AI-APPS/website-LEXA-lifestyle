@@ -16,7 +16,7 @@ import os
 import time
 from datetime import datetime
 
-BASE_URL = os.environ.get('REACT_APP_BACKEND_URL', 'https://launch-ready-app-6.preview.emergentagent.com')
+BASE_URL = os.environ.get('REACT_APP_BACKEND_URL', 'https://lexa-golive-prep.preview.emergentagent.com')
 
 class TestPhase7APIEndpoints:
     """Phase 7: API Endpoints Testing"""

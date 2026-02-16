@@ -55,7 +55,7 @@ export default function robots(): MetadataRoute.Robots {
         disallow: ['/admin/', '/api/'],
       }
     ],
-    sitemap: 'https://launch-ready-app-6.preview.emergentagent.com/sitemap.xml',
-    host: 'https://launch-ready-app-6.preview.emergentagent.com'
+    sitemap: 'https://lexa-golive-prep.preview.emergentagent.com/sitemap.xml',
+    host: 'https://lexa-golive-prep.preview.emergentagent.com'
   }
 }

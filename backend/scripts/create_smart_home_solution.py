@@ -312,7 +312,7 @@ async def create_smart_home_solution():
         print(f"   FAQs: {len(SMART_HOME_SOLUTION['faqs'])}")
         print(f"   Use Cases: {len(SMART_HOME_SOLUTION['use_cases'])}")
         print(f"   Price Range: {SMART_HOME_SOLUTION['price_range']}")
-        print("\n🌐 URL: https://launch-ready-app-6.preview.emergentagent.com/solutions/smart-home")
+        print("\n🌐 URL: https://lexa-golive-prep.preview.emergentagent.com/solutions/smart-home")
         
         client.close()
         
