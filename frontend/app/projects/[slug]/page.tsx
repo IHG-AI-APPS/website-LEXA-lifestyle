@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from 'react'
 import { useParams } from 'next/navigation'
-import Image from 'next/image'
+import SafeImage from '@/components/ui/SafeImage'
 import Link from 'next/link'
 import { Button } from '@/components/ui/button'
 import { ArrowLeft, X, ChevronLeft, ChevronRight, Share2, Heart, ExternalLink } from 'lucide-react'
@@ -136,7 +136,7 @@ export default function ProjectDetailPage() {
       {/* Hero Image - Shorter with Title Overlay */}
       <section className="pt-20">
         <div className="relative w-full aspect-[21/9] md:aspect-[3/1] bg-gray-900">
-          <Image
+          <SafeImage
             src={project.image}
             alt={project.title}
             fill
@@ -258,7 +258,7 @@ export default function ProjectDetailPage() {
                           }`}
                           onClick={() => openLightbox(idx)}
                         >
-                          <Image
+                          <SafeImage
                             src={img}
                             alt={`${project.title} - Image ${idx + 1}`}
                             fill
@@ -389,7 +389,7 @@ export default function ProjectDetailPage() {
                         <div key={idx} className="flex items-center gap-3">
                           {brand.logo ? (
                             <div className="relative w-12 h-12 bg-gray-50 rounded flex items-center justify-center p-1">
-                              <Image 
+                              <SafeImage 
                                 src={brand.logo} 
                                 alt={brand.name} 
                                 width={40} 
@@ -449,7 +449,7 @@ export default function ProjectDetailPage() {
                   className="group"
                 >
                   <div className="relative aspect-[4/3] bg-gray-200 overflow-hidden mb-3">
-                    <Image
+                    <SafeImage
                       src={rp.image}
                       alt={rp.title}
                       fill
@@ -502,7 +502,7 @@ export default function ProjectDetailPage() {
           {/* Image */}
           <div className="w-full h-full flex items-center justify-center p-4">
             <div className="relative w-full h-full max-w-6xl max-h-[90vh]">
-              <Image
+              <SafeImage
                 src={allImages[lightboxIndex]}
                 alt={`${project.title} - Image ${lightboxIndex + 1}`}
                 fill
@@ -522,7 +522,7 @@ export default function ProjectDetailPage() {
                     idx === lightboxIndex ? 'ring-2 ring-white' : 'opacity-50 hover:opacity-80'
                   }`}
                 >
-                  <Image src={img} alt="" fill className="object-cover" />
+                  <SafeImage src={img} alt="" fill className="object-cover" />
                 </button>
               ))}
             </div>
