@@ -137,7 +137,7 @@ async def add_faq_to_solution(slug: str, faq: FAQItem):
             raise HTTPException(status_code=404, detail="Solution not found")
         
         # Add new FAQ to existing array
-        result = await db.solutions.update_one(
+        await db.solutions.update_one(
             {"slug": slug},
             {"$push": {"faqs": faq.model_dump()}}
         )
@@ -168,7 +168,7 @@ async def delete_faq_from_solution(slug: str, faq_index: int):
         # Remove FAQ at index
         faqs.pop(faq_index)
         
-        result = await db.solutions.update_one(
+        await db.solutions.update_one(
             {"slug": slug},
             {"$set": {"faqs": faqs}}
         )
@@ -253,7 +253,7 @@ async def update_solution_mega_menu_config(slug: str, config: UpdateMegaMenuConf
         if not update_data:
             return {"success": True, "message": "No changes to apply"}
         
-        result = await db.solutions.update_one(
+        await db.solutions.update_one(
             {"slug": slug},
             {"$set": update_data}
         )
@@ -393,7 +393,7 @@ async def get_setting(key: str):
 async def update_setting(key: str, data: dict):
     """Update a specific setting"""
     try:
-        result = await db.settings.update_one(
+        await db.settings.update_one(
             {"key": key},
             {"$set": {"key": key, "value": data.get("value")}},
             upsert=True
