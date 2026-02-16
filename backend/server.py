@@ -1220,7 +1220,7 @@ async def update_setting(key: str, setting: Dict[str, Any], request: Request, us
             "updated_at": datetime.now(timezone.utc).isoformat()
         }
         
-        result = await db.settings.update_one(
+        await db.settings.update_one(
             {"key": key},
             {"$set": setting_doc},
             upsert=True
@@ -1449,7 +1449,6 @@ async def get_seo_audit(user: dict = Depends(verify_token)):
             })
         
         # Calculate scores
-        total_checks = 10
         errors = len([i for i in issues if i["type"] == "error"])
         warnings = len([i for i in issues if i["type"] == "warning"])
         
