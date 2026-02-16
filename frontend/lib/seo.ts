@@ -79,16 +79,16 @@ export const defaultMetadata: Metadata = {
     type: 'website',
     locale: 'en_AE',
     alternateLocale: ['ar_AE'],
-    url: '/',
+    url: SITE_URL,
     title: 'LEXA Lifestyle | Luxury Smart Home Automation Dubai',
     description: 'Leading luxury home automation company in Dubai. Expert smart home solutions for lighting, climate, cinema & security.',
     siteName: 'LEXA Lifestyle',
     images: [
       {
-        url: '/og-image.jpg',
+        url: `${SITE_URL}/og-image.jpg`,
         width: 1200,
         height: 630,
-        alt: 'LEXA Lifestyle - Luxury Smart Home Automation'
+        alt: 'LEXA Lifestyle - Luxury Smart Home Automation Dubai'
       }
     ]
   },
@@ -96,7 +96,9 @@ export const defaultMetadata: Metadata = {
     card: 'summary_large_image',
     title: 'LEXA Lifestyle | Luxury Smart Home Automation Dubai',
     description: 'Leading luxury home automation company in Dubai. Expert solutions for smart living.',
-    images: ['/og-image.jpg']
+    images: [`${SITE_URL}/og-image.jpg`],
+    site: '@lexalifestyle',
+    creator: '@lexalifestyle'
   },
   other: {
     'geo.region': 'AE-DU',
