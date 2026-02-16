@@ -77,7 +77,7 @@ def generate_ics_content(
         end_utc = f"{end_dt.strftime('%Y%m%d')}T{end_dt.strftime('%H%M%S')}"
         now_utc = datetime.now(timezone.utc).strftime('%Y%m%dT%H%M%SZ')
         
-    except Exception as e:
+    except Exception:
         # Fallback to current date if parsing fails
         now = datetime.now()
         start_utc = now.strftime('%Y%m%dT100000')

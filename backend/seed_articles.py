@@ -267,7 +267,7 @@ async def seed_articles():
         
         # Verify
         count = await db.articles.count_documents({})
-        print(f"\n✅ Articles seeded successfully!")
+        print("\n✅ Articles seeded successfully!")
         print(f"   Total articles: {count}")
         
     except Exception as e:

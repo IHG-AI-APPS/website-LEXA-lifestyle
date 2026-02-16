@@ -309,25 +309,25 @@ def generate_recommendation_reason(
     solution_title = solution.get("title", "")
     
     reasons_en = {
-        "entertainment": f"Pairs perfectly with your entertainment setup",
-        "security": f"Enhances your security system",
-        "comfort": f"Complements your comfort solutions",
-        "marine": f"Ideal for your marine setup",
-        "commercial": f"Great addition to your commercial space"
+        "entertainment": "Pairs perfectly with your entertainment setup",
+        "security": "Enhances your security system",
+        "comfort": "Complements your comfort solutions",
+        "marine": "Ideal for your marine setup",
+        "commercial": "Great addition to your commercial space"
     }
     
     reasons_ar = {
-        "entertainment": f"يتناسب تماماً مع إعدادات الترفيه الخاصة بك",
-        "security": f"يعزز نظام الأمان الخاص بك",
-        "comfort": f"يكمل حلول الراحة الخاصة بك",
-        "marine": f"مثالي لإعداد يختك",
-        "commercial": f"إضافة رائعة لمساحتك التجارية"
+        "entertainment": "يتناسب تماماً مع إعدادات الترفيه الخاصة بك",
+        "security": "يعزز نظام الأمان الخاص بك",
+        "comfort": "يكمل حلول الراحة الخاصة بك",
+        "marine": "مثالي لإعداد يختك",
+        "commercial": "إضافة رائعة لمساحتك التجارية"
     }
     
     if language == "ar":
-        return reasons_ar.get(interest_cluster, f"موصى به بناءً على اهتماماتك")
+        return reasons_ar.get(interest_cluster, "موصى به بناءً على اهتماماتك")
     
-    return reasons_en.get(interest_cluster, f"Recommended based on your interests")
+    return reasons_en.get(interest_cluster, "Recommended based on your interests")
 
 
 def get_cross_sell_message(interest_cluster: str, language: str) -> str:

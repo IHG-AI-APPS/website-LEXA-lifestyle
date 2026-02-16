@@ -950,7 +950,7 @@ async def create_article(article: Article, user: dict = Depends(verify_token)):
         await db.articles.insert_one(article_dict)
         
         # Invalidate articles cache
-        await cache.delete(f"articles:cat=None:limit=None")
+        await cache.delete("articles:cat=None:limit=None")
         
         return {"message": "Article created successfully", "id": article.id}
     except Exception as e:

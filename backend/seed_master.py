@@ -70,7 +70,7 @@ class SeedOrchestrator:
         start_time = datetime.utcnow()
         
         print(f"\n{'#'*60}")
-        print(f"# LEXA LIFESTYLE - MASTER SEED ORCHESTRATOR")
+        print("# LEXA LIFESTYLE - MASTER SEED ORCHESTRATOR")
         print(f"# Database: {DB_NAME}")
         print(f"# Started: {start_time.strftime('%Y-%m-%d %H:%M:%S UTC')}")
         print(f"{'#'*60}\n")
@@ -160,7 +160,7 @@ class SeedOrchestrator:
         duration = (end_time - start_time).total_seconds()
         
         print(f"\n\n{'#'*60}")
-        print(f"# SEEDING COMPLETE")
+        print("# SEEDING COMPLETE")
         print(f"# Duration: {duration:.2f} seconds")
         print(f"{'#'*60}\n")
         

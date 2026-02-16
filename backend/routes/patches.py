@@ -28,7 +28,6 @@ os.makedirs(BACKUPS_DIR, exist_ok=True)
 
 # Get database
 def get_db():
-    from motor.motor_asyncio import AsyncIOMotorClient
     client = AsyncIOMotorClient(os.getenv('MONGO_URL'))
     return client[os.getenv('DB_NAME', 'smart_home_db')]
 

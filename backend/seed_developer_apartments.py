@@ -436,12 +436,12 @@ async def seed_developer_apartment_packages():
             print(f"✅ Created: {pkg['title']}")
     
     # Summary
-    print(f"\n📊 Developer Apartment Packages Summary:")
-    print(f"   Studio: AED 8K-25K per unit")
-    print(f"   1BR: AED 12K-40K per unit")
-    print(f"   2BR: AED 18K-60K per unit")
-    print(f"   3BR: AED 28K-95K per unit")
-    print(f"\n💰 Bulk Discounts: 10-25% off for 20-50+ units")
+    print("\n📊 Developer Apartment Packages Summary:")
+    print("   Studio: AED 8K-25K per unit")
+    print("   1BR: AED 12K-40K per unit")
+    print("   2BR: AED 18K-60K per unit")
+    print("   3BR: AED 28K-95K per unit")
+    print("\n💰 Bulk Discounts: 10-25% off for 20-50+ units")
     
     total = await db.property_packages.count_documents({})
     print(f"\n📈 Total property packages in system: {total}")

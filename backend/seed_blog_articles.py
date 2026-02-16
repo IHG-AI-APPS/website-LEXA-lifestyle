@@ -671,7 +671,7 @@ async def seed_database():
                 else:
                     print(f"⏭️ Skipped (already exists): {article['title']}")
             
-            print(f"🎉 Article seeding completed!")
+            print("🎉 Article seeding completed!")
         
     except Exception as e:
         print(f"❌ Error during seeding: {str(e)}")

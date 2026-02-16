@@ -122,8 +122,8 @@ async def seed_new_pages():
             await solutions_collection.insert_one(solution)
     
     print("\n✅ Successfully seeded Smart Car Park Lighting and AI Staff Accountability pages!")
-    print(f"   - Smart Car Park Lighting: /solutions/smart-car-park-lighting")
-    print(f"   - AI Staff Accountability: /intelligence/staff-accountability")
+    print("   - Smart Car Park Lighting: /solutions/smart-car-park-lighting")
+    print("   - AI Staff Accountability: /intelligence/staff-accountability")
     
     client.close()
 

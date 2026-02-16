@@ -180,7 +180,7 @@ async def update_control_systems_and_pricing():
             {'$set': {'base_price_aed': new_price}}
         )
     
-    print(f"✅ Reduced specialty room prices by 55% (22 rooms updated)")
+    print("✅ Reduced specialty room prices by 55% (22 rooms updated)")
     
     # 3. Update Solution Prices (where applicable)
     # Note: Solutions don't have prices in the model, but let's ensure AED is mentioned in descriptions

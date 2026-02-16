@@ -512,7 +512,7 @@ async def enhance_remaining_services():
             
             updated += 1
         
-        print(f"✨ Enhancement complete!")
+        print("✨ Enhancement complete!")
         print(f"📈 Updated {updated} service pages")
         
         client.close()

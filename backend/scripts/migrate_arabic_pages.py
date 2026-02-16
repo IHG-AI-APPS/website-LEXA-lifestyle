@@ -192,7 +192,7 @@ async def migrate_arabic_pages():
             print(f"✅ Migrated: {page_data['slug']}")
             migrated += 1
         
-        print(f"\n✨ Migration complete!")
+        print("\n✨ Migration complete!")
         print(f"📈 Migrated: {migrated} pages")
         print(f"⏭️  Skipped: {skipped} pages (already existed)")
         print(f"📊 Total in database: {await db.arabic_seo_pages.count_documents({})}")

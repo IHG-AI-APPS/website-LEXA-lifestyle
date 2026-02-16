@@ -144,7 +144,7 @@ class TestPhase4IntelligenceBuilderValidation:
         # Accept 200 or 404 (endpoint may not exist)
         if response.status_code == 200:
             data = response.json()
-            print(f"✅ Smart home features endpoint working")
+            print("✅ Smart home features endpoint working")
         else:
             print(f"⚠️ Smart home features endpoint returned {response.status_code}")
     
@@ -153,7 +153,7 @@ class TestPhase4IntelligenceBuilderValidation:
         response = requests.get(f"{BASE_URL}/api/project-builder/systems", timeout=10)
         if response.status_code == 200:
             data = response.json()
-            print(f"✅ Project builder systems endpoint working")
+            print("✅ Project builder systems endpoint working")
         else:
             print(f"⚠️ Project builder systems endpoint returned {response.status_code}")
 
@@ -177,7 +177,7 @@ class TestPhase5FormsLeadCapture:
         if response.status_code == 429:
             print("⚠️ Booking endpoint rate limited (expected behavior)")
         else:
-            print(f"✅ Experience centre booking API working")
+            print("✅ Experience centre booking API working")
     
     def test_consultation_booking_api(self):
         """Test consultation booking endpoint"""
@@ -193,7 +193,7 @@ class TestPhase5FormsLeadCapture:
         if response.status_code == 429:
             print("⚠️ Consultation endpoint rate limited (expected behavior)")
         else:
-            print(f"✅ Consultation booking API working")
+            print("✅ Consultation booking API working")
 
 
 class TestGeoPagesFrontend:

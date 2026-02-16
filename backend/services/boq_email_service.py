@@ -77,7 +77,7 @@ class BOQEmailService:
             message = MIMEMultipart("mixed")
             message["From"] = f"{self.sender_name} <{self.sender_email}>"
             message["To"] = recipient_email
-            message["Subject"] = f"Your Smart Home Project Proposal | LEXA Lifestyle"
+            message["Subject"] = "Your Smart Home Project Proposal | LEXA Lifestyle"
             
             # Generate HTML content
             html_content = self._generate_boq_html(

@@ -286,14 +286,14 @@ async def create_outdoor_living_solution():
             await db.solutions.insert_one(OUTDOOR_LIVING_SOLUTION)
             print("✅ Solution created!")
         
-        print(f"\n📊 Solution Details:")
-        print(f"   Slug: outdoor-automation")
+        print("\n📊 Solution Details:")
+        print("   Slug: outdoor-automation")
         print(f"   Title: {OUTDOOR_LIVING_SOLUTION['title']}")
         print(f"   Features: {len(OUTDOOR_LIVING_SOLUTION['features'])}")
         print(f"   Feature Cards: {len(OUTDOOR_LIVING_SOLUTION['feature_cards'])}")
         print(f"   FAQs: {len(OUTDOOR_LIVING_SOLUTION['faqs'])}")
         print(f"   Price Range: {OUTDOOR_LIVING_SOLUTION['price_range']}")
-        print(f"\n🌐 URL: https://launch-ready-app-6.preview.emergentagent.com/solutions/outdoor-automation")
+        print("\n🌐 URL: https://launch-ready-app-6.preview.emergentagent.com/solutions/outdoor-automation")
         
         client.close()
         

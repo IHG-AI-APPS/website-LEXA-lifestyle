@@ -452,9 +452,9 @@ async def enhance_services():
             
             updated += 1
         
-        print(f"\n✨ Enhancement complete!")
+        print("\n✨ Enhancement complete!")
         print(f"📈 Updated {updated} service pages")
-        print(f"🌐 Visit: https://launch-ready-app-6.preview.emergentagent.com/services")
+        print("🌐 Visit: https://launch-ready-app-6.preview.emergentagent.com/services")
         
         client.close()
         

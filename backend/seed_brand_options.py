@@ -544,7 +544,7 @@ async def seed_brand_options():
         print(f"✅ Created: {option['product_type']}")
     
     print(f"\n📊 Total brand option categories: {len(brand_options)}")
-    print(f"💰 Total customization value range: AED -3K to +119K")
+    print("💰 Total customization value range: AED -3K to +119K")
     print(f"🎯 Total brand choices: {sum(len(opt['options']) for opt in brand_options)}")
     
     client.close()

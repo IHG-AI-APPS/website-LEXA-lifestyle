@@ -230,8 +230,8 @@ async def seed_control_systems():
         print(f"✅ Created: {system['name']} ({system['type']}) {partner_badge}")
     
     print(f"\n📊 Total control systems: {len(control_systems)}")
-    print(f"💰 Price range: AED 2K - 100K")
-    print(f"🏢 LEXA Partners: Savant, Qbus, Lifesmart")
+    print("💰 Price range: AED 2K - 100K")
+    print("🏢 LEXA Partners: Savant, Qbus, Lifesmart")
     
     client.close()
 

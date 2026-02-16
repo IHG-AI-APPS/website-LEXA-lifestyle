@@ -1223,10 +1223,10 @@ async def enhance_top_solutions():
             
             updated += 1
         
-        print(f"\\n✨ Enhancement complete!")
+        print("\\n✨ Enhancement complete!")
         print(f"📈 Updated: {updated} solutions")
         print(f"⏭️  Skipped: {skipped} solutions")
-        print(f"🌐 Visit: https://launch-ready-app-6.preview.emergentagent.com/solutions")
+        print("🌐 Visit: https://launch-ready-app-6.preview.emergentagent.com/solutions")
         
         client.close()
         

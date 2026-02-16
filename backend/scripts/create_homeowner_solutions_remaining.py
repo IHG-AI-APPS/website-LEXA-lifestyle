@@ -339,7 +339,7 @@ async def create_remaining_solutions():
             print(f"✗ Error: {solution['slug']}: {e}")
     
     print(f"\n✅ Batch 4 complete: {len(solutions_batch4)} solutions")
-    print(f"\n🎉 ALL 20 homeowner solutions created successfully!")
+    print("\n🎉 ALL 20 homeowner solutions created successfully!")
     
     client.close()
 
