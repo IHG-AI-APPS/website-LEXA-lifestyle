@@ -70,7 +70,7 @@ async def update_tracking_settings(
     try:
         settings_dict = settings.model_dump()
         
-        result = await db.settings.update_one(
+        await db.settings.update_one(
             {"type": "tracking"},
             {
                 "$set": {
