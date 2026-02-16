@@ -208,8 +208,8 @@ export default function PackageBuilderPage() {
 
   return (
     <div className="min-h-screen bg-white">
-      {/* Header */}
-      <div className="border-b bg-white sticky top-0 z-40">
+      {/* Header - Below main navigation */}
+      <div className="border-b bg-white sticky top-16 sm:top-18 md:top-20 z-40">
         <div className="container mx-auto px-4 py-6">
           <div className="flex items-center justify-between max-w-6xl mx-auto">
             <Link href="/packages" className="text-gray-600 hover:text-gray-900">
