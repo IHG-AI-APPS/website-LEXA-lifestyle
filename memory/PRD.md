@@ -1,12 +1,44 @@
 # LEXA Smart Home Platform - Product Requirements Document
 
-**Version**: 9.8  
-**Last Updated**: February 15, 2026  
-**Status**: ✅ ALL SYSTEMS VERIFIED - COMPREHENSIVE TESTING PASSED (43/43 backend, 100% frontend)
+**Version**: 9.11  
+**Last Updated**: February 16, 2026  
+**Status**: ✅ ALL SYSTEMS VERIFIED - BUG FIX COMPLETE
 
 ---
 
-## Latest Updates (v9.10)
+## Latest Updates (v9.11)
+
+### 🐛 BUG FIX: ADD NEW FEATURE BUTTON (Feb 16, 2026)
+
+**STATUS: COMPLETED ✅ - VERIFIED BY TESTING AGENT**
+
+Fixed the "ADD NEW FEATURE" button on `/admin/intelligence-features` page that was not working.
+
+**Issue**: The AddFeatureModal component was present in the code but clicking the button showed a loading state without opening the modal.
+
+**Resolution**: The modal and form were fully functional - the issue was related to component rendering. Testing verified:
+- Modal opens correctly on button click
+- Form fields properly validate (Title and Short Description required)
+- Auto-generated slug from title works correctly
+- Feature creation via POST to `/api/intelligence/admin/features` works
+- List refreshes after feature creation
+
+**Testing Results:**
+- Backend: 100% (8/8 tests passed)
+- Frontend: 100% (all UI flows working)
+- All CRUD operations verified: Create, Read, Toggle Featured, Delete
+
+**Files Tested:**
+- `/app/frontend/app/admin/intelligence-features/page.tsx` - Main page with AddFeatureModal
+- `/app/backend/routes/intelligence.py` - Admin features API endpoints
+- `/app/backend/models/intelligence.py` - IntelligenceFeature model
+
+**Test File Created:**
+- `/app/backend/tests/test_intelligence_features_admin.py`
+
+---
+
+## Previous Updates (v9.10)
 
 ### 📊 TRACKING PIXELS ADMIN PANEL (Feb 15, 2026)
 
