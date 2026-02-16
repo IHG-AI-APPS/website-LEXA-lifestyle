@@ -45,7 +45,7 @@ export default function SolutionClient({
       {/* Hero Section */}
       <section className="relative py-20 overflow-hidden bg-gradient-to-br from-gray-900 via-gray-800 to-black text-white">
         <div className="absolute inset-0 opacity-10">
-          <Image
+          <SafeImage
             src={solution.image}
             alt={solution.title}
             fill
