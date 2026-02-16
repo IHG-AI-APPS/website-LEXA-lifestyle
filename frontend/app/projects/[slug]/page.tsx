@@ -522,7 +522,7 @@ export default function ProjectDetailPage() {
                     idx === lightboxIndex ? 'ring-2 ring-white' : 'opacity-50 hover:opacity-80'
                   }`}
                 >
-                  <SafeImage src={img} alt="" fill className="object-cover" />
+                  <SafeImage src={img} alt={`${project?.title || 'Project'} gallery image ${idx + 1}`} fill className="object-cover" />
                 </button>
               ))}
             </div>
