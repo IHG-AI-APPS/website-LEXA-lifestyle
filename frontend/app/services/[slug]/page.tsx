@@ -3,7 +3,7 @@
 import { useEffect, useState } from 'react'
 import { useParams } from 'next/navigation'
 import Link from 'next/link'
-import Image from 'next/image'
+import SafeImage from '@/components/ui/SafeImage'
 import { motion } from 'framer-motion'
 import { ArrowLeft, CheckCircle2, Phone, Clock, Award, Users, Target, FileText, Download } from 'lucide-react'
 import { Button } from '@/components/ui/button'
