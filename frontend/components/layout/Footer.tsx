@@ -4,6 +4,7 @@ import Link from 'next/link'
 import SafeImage from '@/components/ui/SafeImage'
 import { ArrowUpRight } from 'lucide-react'
 import { useLanguage } from '@/contexts/LanguageContext'
+import FooterSearch from '@/components/search/FooterSearch'
 
 export default function Footer() {
   const currentYear = new Date().getFullYear()
@@ -33,6 +34,11 @@ export default function Footer() {
                 : 'Luxury Smart Living, Designed & Delivered End-to-End. Dubai\'s premier smart home integrator.'
               }
             </p>
+
+            {/* Search Bar */}
+            <div className="pt-2">
+              <FooterSearch />
+            </div>
 
             {/* Social Links */}
             <div className="flex gap-3 pt-2">
