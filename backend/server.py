@@ -1411,7 +1411,7 @@ async def get_seo_audit(user: dict = Depends(verify_token)):
                     "message": "Sitemap file missing",
                     "fix": "Create sitemap.ts in app directory"
                 })
-        except:
+        except Exception:
             pass
         
         # Check robots.txt
@@ -1424,7 +1424,7 @@ async def get_seo_audit(user: dict = Depends(verify_token)):
                     "message": "robots.txt file not found",
                     "fix": "Create robots.txt in public directory"
                 })
-        except:
+        except Exception:
             pass
         
         # Check meta descriptions in database
