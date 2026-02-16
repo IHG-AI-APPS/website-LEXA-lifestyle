@@ -47,6 +47,51 @@ export async function generateStaticParams() {
   }
 }
 
+// Generate FAQ Schema for Google Rich Results
+function generateFAQSchema(solution: any) {
+  if (!solution.faqs || solution.faqs.length === 0) return null
+  
+  return {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": solution.faqs.map((faq: { question: string; answer: string }) => ({
+      "@type": "Question",
+      "name": faq.question,
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": faq.answer
+      }
+    }))
+  }
+}
+
+// Generate Service Schema for Google Rich Results
+function generateServiceSchema(solution: any) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "serviceType": solution.title,
+    "name": `${solution.title} - LEXA Lifestyle`,
+    "description": solution.meta_description || solution.description,
+    "provider": {
+      "@type": "Organization",
+      "name": "LEXA Lifestyle",
+      "url": "https://lexalifestyle.com",
+      "logo": "https://lexalifestyle.com/lexa-logo.png",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Dubai",
+        "addressCountry": "AE"
+      }
+    },
+    "areaServed": {
+      "@type": "Country",
+      "name": "United Arab Emirates"
+    },
+    "image": solution.image
+  }
+}
+
 // Main Server Component
 export default async function SolutionPage({ params }: { params: { slug: string } }) {
   try {
@@ -69,12 +114,32 @@ export default async function SolutionPage({ params }: { params: { slug: string 
       .filter(s => s.slug !== params.slug)
       .slice(0, 4)
     
+    // Generate structured data
+    const faqSchema = generateFAQSchema(solution)
+    const serviceSchema = generateServiceSchema(solution)
+    
     return (
-      <SolutionClient
-        solution={solution}
-        relatedProjects={relatedProjects}
-        otherSolutions={otherSolutions}
-      />
+      <>
+        {/* FAQ Schema.org Structured Data */}
+        {faqSchema && (
+          <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+          />
+        )}
+        
+        {/* Service Schema.org Structured Data */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }}
+        />
+        
+        <SolutionClient
+          solution={solution}
+          relatedProjects={relatedProjects}
+          otherSolutions={otherSolutions}
+        />
+      </>
     )
   } catch (error) {
     console.error('Error loading solution:', error)
