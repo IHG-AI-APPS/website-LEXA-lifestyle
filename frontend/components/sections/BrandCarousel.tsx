@@ -61,7 +61,7 @@ export default function BrandCarousel() {
               key={`${brand.id}-${index}`}
               className="flex-shrink-0 w-32 h-24 relative grayscale opacity-50 hover:grayscale-0 hover:opacity-100 transition-all duration-500"
             >
-              <Image
+              <SafeImage
                 src={brand.logo}
                 alt={brand.name}
                 fill

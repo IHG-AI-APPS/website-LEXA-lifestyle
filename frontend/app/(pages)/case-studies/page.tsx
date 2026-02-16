@@ -148,7 +148,7 @@ export default function CaseStudiesPage() {
                 <div className={`grid md:grid-cols-2 gap-12 items-center ${index % 2 === 1 ? 'md:flex-row-reverse' : ''}`}>
                   {/* Image */}
                   <div className={`relative h-[400px] overflow-hidden ${index % 2 === 1 ? 'md:order-2' : ''}`}>
-                    <Image
+                    <SafeImage
                       src={project.image}
                       alt={project.title}
                       fill

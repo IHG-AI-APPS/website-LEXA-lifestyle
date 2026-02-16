@@ -105,7 +105,7 @@ export default function Hero() {
             >
               {/* Large Image */}
               <div className="lg:col-span-2 relative h-[500px] lg:h-[600px] overflow-hidden group">
-                <Image
+                <SafeImage
                   src="/images/premium/hero/hero-1.jpg"
                   alt="Luxury smart living"
                   fill
@@ -120,7 +120,7 @@ export default function Hero() {
               {/* Small Image + Stats */}
               <div className="space-y-6">
                 <div className="relative h-[240px] lg:h-[280px] overflow-hidden group">
-                  <Image
+                  <SafeImage
                     src="/images/premium/hero/hero-2.jpg"
                     alt="Smart automation"
                     fill

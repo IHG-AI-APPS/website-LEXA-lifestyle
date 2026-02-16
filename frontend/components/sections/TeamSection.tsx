@@ -35,7 +35,7 @@ export default function TeamSection() {
             {teamMembers.map((member) => (
               <div key={member.name} className="group">
                 <div className="relative h-80 overflow-hidden mb-4">
-                  <Image
+                  <SafeImage
                     src={member.image}
                     alt={member.name}
                     fill

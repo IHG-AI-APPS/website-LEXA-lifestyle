@@ -150,7 +150,7 @@ export default function SpecialtyRoomsPage() {
                   >
                     {/* Image */}
                     <div className="relative h-56 overflow-hidden">
-                      <Image
+                      <SafeImage
                         src={room.image}
                         alt={room.name}
                         fill

@@ -107,7 +107,7 @@ export default function CaseStudyPage() {
                 transition={{ duration: 0.8, delay: 0.2 }}
                 className="relative h-[500px]"
               >
-                <Image
+                <SafeImage
                   src={project.image}
                   alt={project.title}
                   fill
@@ -253,7 +253,7 @@ export default function CaseStudyPage() {
                     viewport={{ once: true }}
                     className="relative h-[400px]"
                   >
-                    <Image
+                    <SafeImage
                       src={image}
                       alt={`Gallery image ${index + 1}`}
                       fill

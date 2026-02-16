@@ -112,7 +112,7 @@ export default function ArchitectResourcePortalPage() {
       {/* HERO */}
       <section className="relative min-h-[70vh] flex items-center justify-center">
         <div className="absolute inset-0 z-0">
-          <Image
+          <SafeImage
             src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=1920"
             alt="Architecture workspace"
             fill
@@ -405,7 +405,7 @@ export default function ArchitectResourcePortalPage() {
                   }`}
                 >
                   <div className="aspect-video relative overflow-hidden">
-                    <Image
+                    <SafeImage
                       src={project.image}
                       alt={project.name}
                       fill

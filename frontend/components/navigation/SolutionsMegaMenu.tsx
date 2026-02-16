@@ -257,7 +257,7 @@ export default function SolutionsMegaMenu({ isOpen, onClose, onMouseEnter, onMou
                     className="group block h-full"
                   >
                     <div className="relative h-full min-h-[300px] overflow-hidden rounded-xl border border-white/10">
-                      <Image
+                      <SafeImage
                         src="https://images.unsplash.com/photo-1598899134739-24c46f58b8c0"
                         alt="Luxury Home Cinema"
                         fill

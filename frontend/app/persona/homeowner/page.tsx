@@ -136,7 +136,7 @@ export default function HomeownerPage() {
                 transition={{ duration: 0.8, delay: 0.2 }}
                 className="relative h-[500px]"
               >
-                <Image
+                <SafeImage
                   src="/images/premium/hero/hero-1.jpg"
                   alt="Luxury home interior"
                   fill

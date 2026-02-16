@@ -37,7 +37,7 @@ export default function ClientLogos() {
               key={`${client.name}-${index}`}
               className="flex-shrink-0 w-40 h-20 relative grayscale opacity-40 hover:grayscale-0 hover:opacity-100 transition-all duration-500 flex items-center justify-center"
             >
-              <Image
+              <SafeImage
                 src={client.logo}
                 alt={client.name}
                 width={150}

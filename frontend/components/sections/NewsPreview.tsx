@@ -60,7 +60,7 @@ export default function NewsPreview() {
             >
               <Link href={`/news/${article.slug}`} className="group block">
                 <div className="relative h-64 overflow-hidden bg-lexa-surface mb-6">
-                  <Image
+                  <SafeImage
                     src={article.image}
                     alt={article.title}
                     fill

@@ -61,7 +61,7 @@ export default function AlReemIslandClient() {
       {/* Hero Section */}
       <section className="relative min-h-[80vh] flex items-center">
         <div className="absolute inset-0 z-0">
-          <Image
+          <SafeImage
             src="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=1920"
             alt="Al Reem Island Skyline"
             fill

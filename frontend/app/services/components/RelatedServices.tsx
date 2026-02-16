@@ -87,7 +87,7 @@ export default function RelatedServices({ services, currentSlug }: RelatedServic
                     {/* Image Poster */}
                     <div className="relative h-64 overflow-hidden">
                       {service.image ? (
-                        <Image
+                        <SafeImage
                           src={service.image}
                           alt={service.title}
                           fill

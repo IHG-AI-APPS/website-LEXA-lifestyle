@@ -152,7 +152,7 @@ export default function BlogArticlePage({ params }: { params: { slug: string } }
         <section className="container mx-auto px-4 sm:px-8 lg:px-16 -mt-4">
           <div className="max-w-4xl mx-auto">
             <div className="relative aspect-[16/9] rounded-xl overflow-hidden shadow-xl">
-              <Image
+              <SafeImage
                 src={article.image}
                 alt={article.title}
                 fill
@@ -268,7 +268,7 @@ export default function BlogArticlePage({ params }: { params: { slug: string } }
                     <div className="group bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-lg transition-all border border-gray-100">
                       <div className="relative h-40 overflow-hidden bg-gradient-to-br from-blue-100 to-blue-50">
                         {relatedArticle.featured_image && !relatedArticle.featured_image.includes('photo-180') ? (
-                          <Image
+                          <SafeImage
                             src={relatedArticle.featured_image}
                             alt={relatedArticle.title}
                             fill

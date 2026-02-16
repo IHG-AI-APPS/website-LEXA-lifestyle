@@ -96,7 +96,7 @@ export default function EnhancedServicePage({
       <section className="relative h-[60vh] min-h-[500px] flex items-center overflow-hidden">
         {/* Background Image */}
         {service.heroImage ? (
-          <Image
+          <SafeImage
             src={service.heroImage}
             alt={service.title}
             fill

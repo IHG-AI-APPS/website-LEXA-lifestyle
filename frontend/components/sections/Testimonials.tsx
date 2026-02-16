@@ -59,7 +59,7 @@ export default function Testimonials() {
 
               <div className="flex items-center gap-4 pt-6 border-t border-gray-200">
                 <div className="relative w-12 h-12 rounded-full overflow-hidden">
-                  <Image
+                  <SafeImage
                     src={testimonial.image}
                     alt={testimonial.name}
                     fill

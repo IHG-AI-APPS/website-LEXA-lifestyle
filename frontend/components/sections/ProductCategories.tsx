@@ -83,7 +83,7 @@ export default function ProductCategories() {
             >
               <Link href={`/products?category=${category.slug}`} className="group block">
                 <div className="relative h-64 overflow-hidden mb-4 bg-gray-100">
-                  <Image
+                  <SafeImage
                     src={category.image}
                     alt={category.name}
                     fill

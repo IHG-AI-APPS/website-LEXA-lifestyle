@@ -61,7 +61,7 @@ export default function SaadiyatIslandClient() {
       {/* Hero Section */}
       <section className="relative min-h-[80vh] flex items-center">
         <div className="absolute inset-0 z-0">
-          <Image
+          <SafeImage
             src="https://images.unsplash.com/photo-1582407947304-fd86f028f716?w=1920"
             alt="Saadiyat Island Luxury Villa"
             fill

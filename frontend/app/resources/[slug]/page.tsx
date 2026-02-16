@@ -129,7 +129,7 @@ export default function ArticleDetailPage() {
               transition={{ duration: 0.8, delay: 0.2 }}
               className="relative h-[400px] md:h-[500px] overflow-hidden"
             >
-              <Image
+              <SafeImage
                 src={article.image}
                 alt={article.title}
                 fill
@@ -278,7 +278,7 @@ export default function ArticleDetailPage() {
                     <Link href={`/resources/${relatedArticle.slug}`}>
                       <div className="group">
                         <div className="relative h-48 overflow-hidden mb-4">
-                          <Image
+                          <SafeImage
                             src={relatedArticle.image}
                             alt={relatedArticle.title}
                             fill

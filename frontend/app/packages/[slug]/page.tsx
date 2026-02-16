@@ -120,7 +120,7 @@ export default function PropertyPackageDetailPage() {
     <div className="min-h-screen bg-white">
       {/* Hero Section */}
       <section className="relative h-[60vh] min-h-[400px]">
-        <Image
+        <SafeImage
           src={packageData.hero_image}
           alt={packageData.title}
           fill

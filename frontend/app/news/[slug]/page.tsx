@@ -103,7 +103,7 @@ export default function NewsDetailPage() {
             </div>
 
             <div className="relative h-96 md:h-[500px] overflow-hidden bg-lexa-surface mb-12">
-              <Image
+              <SafeImage
                 src={article.image}
                 alt={article.title}
                 fill

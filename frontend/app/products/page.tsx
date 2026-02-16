@@ -96,7 +96,7 @@ export default function ProductsPage() {
                       <div className="group h-full bg-white border border-gray-200 hover:border-charcoal transition-all">
                         {/* Image */}
                         <div className="relative h-[250px] overflow-hidden">
-                          <Image
+                          <SafeImage
                             src={category.image}
                             alt={category.name}
                             fill

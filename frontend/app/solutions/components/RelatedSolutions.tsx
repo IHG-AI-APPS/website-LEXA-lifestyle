@@ -87,7 +87,7 @@ export default function RelatedSolutions({ solutions, currentSlug }: RelatedSolu
                     {/* Image Poster */}
                     <div className="relative h-64 overflow-hidden">
                       {solution.image ? (
-                        <Image
+                        <SafeImage
                           src={solution.image}
                           alt={solution.title}
                           fill

@@ -127,7 +127,7 @@ export default function DeveloperToolkitPage() {
       {/* HERO */}
       <section className="relative min-h-[70vh] flex items-center justify-center">
         <div className="absolute inset-0 z-0">
-          <Image
+          <SafeImage
             src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=1920"
             alt="Luxury development"
             fill

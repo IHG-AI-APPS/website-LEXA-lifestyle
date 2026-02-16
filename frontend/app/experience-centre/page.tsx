@@ -114,7 +114,7 @@ export default function ExperienceCentrePage() {
       {/* Hero Section */}
       <section className="relative h-[70vh] overflow-hidden bg-white">
         <div className="absolute inset-0">
-          <Image
+          <SafeImage
             src="https://images.unsplash.com/photo-1735320858258-12fbcefcb3a7?crop=entropy&cs=srgb&fm=jpg&q=85"
             alt="LEXA PREMIER Showroom"
             fill
@@ -266,7 +266,7 @@ export default function ExperienceCentrePage() {
                 className="group"
               >
                 <div className="relative h-[300px] overflow-hidden mb-6">
-                  <Image
+                  <SafeImage
                     src={facility.image}
                     alt={facility.title}
                     fill

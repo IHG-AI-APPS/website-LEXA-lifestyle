@@ -98,7 +98,7 @@ export default function RelatedPackages({ currentSlug, currentTitle }: RelatedPa
                     {/* Image Poster */}
                     <div className="relative h-64 overflow-hidden">
                       {pkg.image_url ? (
-                        <Image
+                        <SafeImage
                           src={pkg.image_url}
                           alt={pkg.title}
                           fill

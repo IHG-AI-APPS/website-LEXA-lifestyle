@@ -206,7 +206,7 @@ export default function SolutionsBentoGrid() {
                 >
                   {/* Background Image */}
                   <div className="absolute inset-0">
-                    <Image
+                    <SafeImage
                       src={imageUrl}
                       alt={solution.title}
                       fill

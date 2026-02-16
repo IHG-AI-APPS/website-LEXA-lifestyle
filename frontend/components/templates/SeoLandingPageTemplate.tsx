@@ -214,7 +214,7 @@ export default function SeoLandingPageTemplate({
       {/* 1. HERO */}
       <section className="relative min-h-screen flex items-center justify-center">
         <div className="absolute inset-0 z-0">
-          <Image
+          <SafeImage
             src={hero.image}
             alt={hero.title}
             fill

@@ -90,7 +90,7 @@ export default function ProductDetailPage({ params }: { params: { slug: string }
 
       {/* Hero */}
       <section className="relative h-[500px] overflow-hidden">
-        <Image
+        <SafeImage
           src={product.image}
           alt={product.name}
           fill

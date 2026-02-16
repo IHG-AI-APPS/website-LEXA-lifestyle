@@ -135,7 +135,7 @@ export default function ArchitectPage() {
                 transition={{ duration: 0.8, delay: 0.2 }}
                 className="relative h-[500px]"
               >
-                <Image
+                <SafeImage
                   src="/images/premium/solutions/penthouse-3.jpg"
                   alt="Architectural design"
                   fill

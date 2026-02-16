@@ -29,7 +29,7 @@ export default function VideoTestimonial() {
             className="relative"
           >
             <div className="relative h-[600px] overflow-hidden group cursor-pointer">
-              <Image
+              <SafeImage
                 src={testimonial.image}
                 alt={testimonial.name}
                 fill

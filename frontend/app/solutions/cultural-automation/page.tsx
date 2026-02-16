@@ -49,7 +49,7 @@ export default function CulturalAutomationPage() {
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center justify-center">
         <div className="absolute inset-0 z-0">
-          <Image
+          <SafeImage
             src="https://images.unsplash.com/photo-1590073844006-33fa9c818a2c"
             alt="Cultural Automation"
             fill

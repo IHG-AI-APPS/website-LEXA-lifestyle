@@ -100,7 +100,7 @@ export default function FinalCTA() {
                 viewport={{ once: true }}
                 className="relative h-[500px] lg:h-[600px] overflow-hidden"
               >
-                <Image
+                <SafeImage
                   src="/images/premium/technology/tech-1.jpg"
                   alt="LEXA Experience Center"
                   fill

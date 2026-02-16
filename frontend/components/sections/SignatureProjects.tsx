@@ -59,7 +59,7 @@ export default function SignatureProjects() {
               <div className={`relative h-[600px] overflow-hidden group ${
                 index % 2 === 1 ? 'lg:col-start-2' : ''
               }`}>
-                <Image
+                <SafeImage
                   src={project.image}
                   alt={project.title}
                   fill

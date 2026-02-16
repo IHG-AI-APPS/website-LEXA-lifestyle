@@ -65,7 +65,7 @@ export default function AbuDhabiLuxuryAutomationClient() {
       {/* Hero Section */}
       <section className="relative min-h-[80vh] flex items-center">
         <div className="absolute inset-0 z-0">
-          <Image
+          <SafeImage
             src="https://images.unsplash.com/photo-1512453979798-5ea266f8880c?w=1920"
             alt="Abu Dhabi Skyline"
             fill

@@ -152,7 +152,7 @@ export default function SmartRecommendations({
                   <Link href={`/solutions/${rec.slug}`}>
                     <div className="group relative bg-white dark:bg-gray-800 rounded-xl overflow-hidden shadow-sm hover:shadow-lg transition-all duration-300 border border-gray-100 dark:border-gray-700">
                       <div className="relative h-24 overflow-hidden">
-                        <Image
+                        <SafeImage
                           src={getImageUrl(rec.image)}
                           alt={rec.title}
                           fill
@@ -189,7 +189,7 @@ export default function SmartRecommendations({
                       </div>
                       
                       <div className="relative h-40 overflow-hidden">
-                        <Image
+                        <SafeImage
                           src={getImageUrl(rec.image)}
                           alt={rec.title}
                           fill
@@ -245,7 +245,7 @@ export default function SmartRecommendations({
                       </div>
                       
                       <div className="relative h-44 overflow-hidden">
-                        <Image
+                        <SafeImage
                           src={getImageUrl(rec.image)}
                           alt={rec.title}
                           fill

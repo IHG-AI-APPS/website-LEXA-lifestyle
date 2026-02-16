@@ -120,7 +120,7 @@ export default function BrandsPage() {
                       <div className="group relative bg-white border border-gray-200 hover:border-gray-400 hover:shadow-md transition-all p-4 h-28 flex flex-col items-center justify-center text-center">
                         {brand.logo ? (
                           <div className="relative w-full h-12 mb-2">
-                            <Image
+                            <SafeImage
                               src={brand.logo}
                               alt={brand.name}
                               fill
@@ -224,7 +224,7 @@ export default function BrandsPage() {
                             <div className="w-16 h-16 flex-shrink-0 bg-gray-50 border border-gray-100 flex items-center justify-center p-2">
                               {brand.logo ? (
                                 <div className="relative w-full h-full">
-                                  <Image
+                                  <SafeImage
                                     src={brand.logo}
                                     alt={brand.name}
                                     fill

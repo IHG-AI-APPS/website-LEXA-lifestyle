@@ -73,7 +73,7 @@ export default function SolutionsPreview() {
                       {/* Image */}
                       <div className={`lg:col-span-7 ${index % 2 === 1 ? 'lg:col-start-6' : ''}`}>
                         <div className="relative h-[400px] lg:h-[500px] overflow-hidden">
-                          <Image
+                          <SafeImage
                             src={solution.image}
                             alt={solution.title}
                             fill

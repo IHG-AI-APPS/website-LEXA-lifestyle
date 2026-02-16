@@ -71,7 +71,7 @@ export default function SpecialtyRoomDetailPage() {
     <div className="min-h-screen bg-white">
       {/* Hero Image */}
       <section className="relative h-[50vh] min-h-[400px]">
-        <Image
+        <SafeImage
           src={room.image}
           alt={room.name}
           fill

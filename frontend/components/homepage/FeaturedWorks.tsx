@@ -50,7 +50,7 @@ export default function FeaturedWorks() {
               className="group relative overflow-hidden h-[350px]"
             >
               <Link href={`/projects/${project.slug || project.id}`}>
-                <Image
+                <SafeImage
                   src={project.image || 'https://images.unsplash.com/photo-1697137663650-f0f95349aed3?crop=entropy&cs=srgb&fm=jpg&q=85'}
                   alt={project.title}
                   fill

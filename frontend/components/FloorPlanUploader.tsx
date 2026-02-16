@@ -219,7 +219,7 @@ export default function FloorPlanUploader({ onSave, initialImage, initialAnnotat
 
           <div className="p-4">
             <div className="relative w-full h-auto">
-              <Image
+              <SafeImage
                 src={floorPlanImage}
                 alt="Floor plan"
                 width={1200}

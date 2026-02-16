@@ -150,7 +150,7 @@ export default function ExperienceCentreCTA() {
                     transition={{ duration: 0.5 }}
                     className="absolute inset-0"
                   >
-                    <Image
+                    <SafeImage
                       src={galleryImages[currentImage].src}
                       alt={galleryImages[currentImage].title}
                       fill

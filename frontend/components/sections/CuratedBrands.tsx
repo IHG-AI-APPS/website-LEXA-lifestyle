@@ -55,7 +55,7 @@ export default function CuratedBrands() {
               className="flex items-center justify-center"
             >
               <div className="relative w-full h-20 grayscale opacity-50 hover:grayscale-0 hover:opacity-100 transition-all duration-500">
-                <Image
+                <SafeImage
                   src={brand.logo}
                   alt={brand.name}
                   fill

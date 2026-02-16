@@ -107,7 +107,7 @@ export default function AboutPage() {
                 transition={{ duration: 0.8, delay: 0.2 }}
                 className="relative h-[500px]"
               >
-                <Image
+                <SafeImage
                   src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?crop=entropy&cs=srgb&fm=jpg&q=85"
                   alt="LEXA Lifestyle - Modern Luxury Interior"
                   fill

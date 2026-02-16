@@ -157,7 +157,7 @@ export default function VendorSupplierPage() {
       {/* Hero Section */}
       <section className="relative bg-[#1A1A1A] py-20 md:py-28 overflow-hidden">
         <div className="absolute inset-0 opacity-20">
-          <Image
+          <SafeImage
             src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=1920&q=80"
             alt="Warehouse distribution"
             fill

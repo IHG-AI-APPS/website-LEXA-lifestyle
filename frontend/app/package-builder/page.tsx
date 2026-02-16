@@ -278,7 +278,7 @@ export default function PackageBuilderPage() {
                       className="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300"
                     >
                       <div className="relative h-64">
-                        <Image
+                        <SafeImage
                           src={property.hero_image}
                           alt={property.title}
                           fill
@@ -850,7 +850,7 @@ export default function PackageBuilderPage() {
                       )}
 
                       <div className="relative h-40 mb-4 rounded-lg overflow-hidden">
-                        <Image
+                        <SafeImage
                           src={room.image}
                           alt={room.name}
                           fill

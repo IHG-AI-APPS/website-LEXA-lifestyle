@@ -61,7 +61,7 @@ export default function YasIslandClient() {
       {/* Hero Section */}
       <section className="relative min-h-[80vh] flex items-center">
         <div className="absolute inset-0 z-0">
-          <Image
+          <SafeImage
             src="https://images.unsplash.com/photo-1613490493576-7fde63acd811?w=1920"
             alt="Yas Island Modern Villa"
             fill

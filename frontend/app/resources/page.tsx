@@ -124,7 +124,7 @@ export default function ResourcesPage() {
                       <div className="group h-full flex flex-col">
                         {/* Image */}
                         <div className="relative h-64 overflow-hidden mb-6">
-                          <Image
+                          <SafeImage
                             src={article.image}
                             alt={article.title}
                             fill

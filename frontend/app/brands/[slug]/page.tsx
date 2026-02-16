@@ -133,7 +133,7 @@ export default function BrandDetailPage({ params }: { params: { slug: string } }
 
       {/* Hero */}
       <section className="relative h-[400px] md:h-[500px] overflow-hidden">
-        <Image
+        <SafeImage
           src={brand.hero_image || brand.logo}
           alt={brand.name}
           fill
@@ -150,7 +150,7 @@ export default function BrandDetailPage({ params }: { params: { slug: string } }
             >
               <div className="bg-white p-6 md:p-8 rounded-lg shadow-2xl mb-6 inline-block">
                 <div className="relative w-32 md:w-48 h-16 md:h-24">
-                  <Image
+                  <SafeImage
                     src={brand.logo}
                     alt={brand.name}
                     fill
@@ -342,7 +342,7 @@ export default function BrandDetailPage({ params }: { params: { slug: string } }
                   >
                     {product.image && (
                       <div className="relative h-48 md:h-56 bg-gray-100">
-                        <Image
+                        <SafeImage
                           src={product.image}
                           alt={product.name}
                           fill

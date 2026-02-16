@@ -131,7 +131,7 @@ export default function SolutionDetailPage() {
                 transition={{ duration: 0.8, delay: 0.2 }}
                 className="relative h-[500px] lg:h-[600px] overflow-hidden"
               >
-                <Image
+                <SafeImage
                   src={solution.image}
                   alt={solution.title}
                   fill
@@ -529,7 +529,7 @@ export default function SolutionDetailPage() {
                     <Link href={`/projects/${project.id}`}>
                       <div className="group">
                         <div className="relative h-64 overflow-hidden mb-4">
-                          <Image
+                          <SafeImage
                             src={project.image}
                             alt={project.title}
                             fill

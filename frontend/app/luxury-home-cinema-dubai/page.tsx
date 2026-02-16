@@ -22,7 +22,7 @@ export default function LuxuryHomeCinemaDubaiPage() {
       {/* HERO */}
       <section className="relative min-h-screen flex items-center justify-center">
         <div className="absolute inset-0 z-0">
-          <Image
+          <SafeImage
             src="https://images.unsplash.com/photo-1673512703111-c38c42a1f1a3"
             alt="Luxury Home Cinema Dubai"
             fill

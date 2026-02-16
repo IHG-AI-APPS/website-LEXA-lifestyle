@@ -179,7 +179,7 @@ export default function VirtualShowroomPage() {
                   onClick={() => setSelectedImage(area)}
                 >
                   <div className="relative h-[400px] overflow-hidden mb-4">
-                    <Image
+                    <SafeImage
                       src={area.image}
                       alt={area.title}
                       fill
@@ -248,7 +248,7 @@ export default function VirtualShowroomPage() {
 
           <div className="max-w-6xl w-full" onClick={(e) => e.stopPropagation()}>
             <div className="relative h-[70vh] mb-6">
-              <Image
+              <SafeImage
                 src={selectedImage.image}
                 alt={selectedImage.title}
                 fill

@@ -42,7 +42,7 @@ export default function FeaturedWorks() {
               className="group"
             >
               <div className="relative h-80 overflow-hidden bg-gray-200 mb-4">
-                <Image
+                <SafeImage
                   src={project.image}
                   alt={project.title}
                   fill

@@ -407,7 +407,7 @@ export default function SolutionFinderPage() {
                         <div className="group border-2 border-gray-200 hover:border-charcoal transition-all duration-300 overflow-hidden">
                           {/* Image */}
                           <div className="relative h-64 overflow-hidden">
-                            <Image
+                            <SafeImage
                               src={rec.solution.image}
                               alt={rec.solution.title}
                               fill
