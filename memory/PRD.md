@@ -1,12 +1,57 @@
 # LEXA Smart Home Platform - Product Requirements Document
 
-**Version**: 9.14  
+**Version**: 9.15  
 **Last Updated**: February 20, 2026  
-**Status**: ✅ I18N REFACTORING COMPLETE
+**Status**: ✅ SORA 2 HERO VIDEO COMPLETE
 
 ---
 
-## Latest Updates (v9.14)
+## Latest Updates (v9.15)
+
+### 🎬 SORA 2 CINEMATIC HERO VIDEO (Feb 20, 2026)
+
+**STATUS: COMPLETED ✅**
+
+Generated ultra-premium cinematic video content using Sora 2 for the homepage hero section. The video follows a European luxury design house aesthetic with slow camera movements, soft lighting, and high-end materials.
+
+**7 Cinematic Clips Generated:**
+| # | Clip | Description | Size |
+|---|------|-------------|------|
+| 1 | 01_arrival | Villa entrance at dusk, slow dolly forward | 2.1MB |
+| 2 | 02_interior_reveal | Living room with smart lighting activation | 2.2MB |
+| 3 | 03_details | Close-up of brass, marble, wood textures | 1.9MB |
+| 4 | 04_living_tech | Modern living room with ambient lighting | 2.1MB |
+| 5 | 05_cinema_room | Private home cinema atmosphere | 2.3MB |
+| 6 | 06_silhouette | Architect & client in showroom | 2.3MB |
+| 7 | 07_villa_night | Exterior night shot with warm glow | 2.4MB |
+
+**Total Video Content: 15.3MB (7 clips × 12 seconds = 84 seconds)**
+
+**Technical Implementation:**
+- Videos stored at `/app/frontend/public/videos/hero/`
+- HeroCurator component updated to use video carousel
+- Automatic clip cycling with smooth fade transitions
+- Muted autoplay with playsInline for mobile compatibility
+- Fallback overlay gradients for text readability
+
+**Files Modified:**
+- `/app/frontend/components/gallery/HeroCurator.tsx` - Updated to use video background
+- `/app/frontend/components/HeroVideo.tsx` - New standalone video component
+
+**Files Created:**
+- `/app/backend/scripts/generate_hero_videos.py` - Sora 2 generation script
+- `/app/frontend/public/videos/hero/*.mp4` - 7 video clips
+
+**Style DNA Used:**
+- Ultra-premium cinematic architectural film
+- Scandinavian minimalism meets Italian high-end aesthetics
+- Slow camera movements, soft natural lighting
+- Museum-like atmosphere, film grain
+- Leica lens look, design award winner aesthetic
+
+---
+
+## Previous Updates (v9.14)
 
 ### 🌐 LANGUAGECONTEXT REFACTORING (Feb 20, 2026)
 
