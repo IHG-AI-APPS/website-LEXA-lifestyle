@@ -1,12 +1,58 @@
 # LEXA Smart Home Platform - Product Requirements Document
 
-**Version**: 9.15  
+**Version**: 9.16  
 **Last Updated**: February 20, 2026  
-**Status**: ✅ SORA 2 HERO VIDEO COMPLETE
+**Status**: ✅ AI IMAGE REPLACEMENT COMPLETE (85/85 SOLUTIONS)
 
 ---
 
-## Latest Updates (v9.15)
+## Latest Updates (v9.16)
+
+### 🖼️ AI IMAGE REPLACEMENT - SITE-WIDE COMPLETE (Feb 20, 2026)
+
+**STATUS: COMPLETED ✅**
+
+Replaced ALL 85 generic Unsplash stock photos with custom AI-generated images across all solution pages. Each image was specifically designed to match the solution's theme and LEXA's luxury brand aesthetic.
+
+**Scope:**
+- **85 solutions** updated with custom AI-generated images
+- Images generated using Gemini Imagen 4.0
+- All images sized at 1536x1024 for high-quality display
+- Categories covered: Residential, Commercial, Marine, Entertainment, Security, Specialty Rooms, Cultural Automation, and more
+
+**Categories Updated:**
+- Residential Automation (smart-home, lighting, climate, audio, security)
+- Entertainment (home-cinema, home-theater, multi-room, media lounge)
+- Commercial (office, retail, healthcare, education, industrial)
+- Marine (yacht automation, marine audio/video)
+- Specialty Rooms (wine cellar, cigar lounge, home gym, library, walk-in closet)
+- Cultural (majlis, masjid, prayer room)
+- Outdoor (pool-spa, landscape lighting, rooftop terrace, patio)
+- Smart Living (kitchen, laundry, nursery, pet care, garage)
+
+**Technical Implementation:**
+- Images stored on Emergent CDN at `static.prod-images.emergentagent.com`
+- Database updated via MongoDB direct updates
+- All solution detail pages now display AI imagery in hero backgrounds
+
+**Quality Assurance:**
+- Each prompt crafted to match luxury Dubai smart home aesthetic
+- Professional architectural/interior photography style
+- Consistent visual language across all solutions
+
+---
+
+### 🐛 BUG FIXES VERIFIED (Feb 20, 2026)
+
+**Pages Previously Reported as Broken - NOW WORKING:**
+- ✅ `/experience-centre` - Returns 200 OK (Experience Centre page loads correctly)
+- ✅ `/services/consultation-design` - Returns 200 OK (Service pages functional)
+
+**Note:** The `/experience` 404 error was a false positive - the actual page is `/experience-centre` and all navigation links correctly point to it.
+
+---
+
+## Previous Updates (v9.15)
 
 ### 🎬 SORA 2 CINEMATIC HERO VIDEO (Feb 20, 2026)
 
