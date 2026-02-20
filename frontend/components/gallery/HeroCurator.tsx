@@ -1,5 +1,6 @@
 'use client'
 
+import { useState, useEffect, useRef } from 'react'
 import { motion } from 'framer-motion'
 import { Button } from '@/components/ui/button'
 import { ArrowRight, Users, MessageCircle } from 'lucide-react'
@@ -11,26 +12,61 @@ interface HeroCuratorProps {
   onPersonaClick?: () => void
 }
 
+// Cinematic hero video clips - European design house aesthetic
+const HERO_CLIPS = [
+  '/videos/hero/01_arrival.mp4',
+  '/videos/hero/02_interior_reveal.mp4',
+  '/videos/hero/03_details.mp4',
+  '/videos/hero/04_living_tech.mp4',
+  '/videos/hero/05_cinema_room.mp4',
+  '/videos/hero/06_silhouette.mp4',
+  '/videos/hero/07_villa_night.mp4',
+]
+
 export default function HeroCurator({ onPersonaClick }: HeroCuratorProps) {
   const { t, language } = useLanguage()
+  const [currentClip, setCurrentClip] = useState(0)
+  const [isFading, setIsFading] = useState(false)
+  const videoRef = useRef<HTMLVideoElement>(null)
+
+  // Handle video end - transition to next clip
+  const handleVideoEnd = () => {
+    setIsFading(true)
+    setTimeout(() => {
+      setCurrentClip((prev) => (prev + 1) % HERO_CLIPS.length)
+      setIsFading(false)
+    }, 500)
+  }
+
+  // Load and play new clip when index changes
+  useEffect(() => {
+    if (videoRef.current) {
+      videoRef.current.load()
+      videoRef.current.play().catch(() => {})
+    }
+  }, [currentClip])
   
   return (
     <section className="relative min-h-[100svh] w-full overflow-hidden">
-      {/* Background Image with Parallax Effect */}
+      {/* Cinematic Video Background */}
       <motion.div 
         className="absolute inset-0 z-0"
-        initial={{ scale: 1.1 }}
+        initial={{ scale: 1.05 }}
         animate={{ scale: 1 }}
-        transition={{ duration: 1.5, ease: [0.25, 0.1, 0.25, 1] }}
+        transition={{ duration: 2, ease: [0.25, 0.1, 0.25, 1] }}
       >
-        <div 
-          className="h-full w-full bg-cover bg-center bg-no-repeat"
-          style={{
-            backgroundImage: 'url("https://images.unsplash.com/photo-1757439402268-1da284675170?crop=entropy&cs=srgb&fm=jpg&q=85")',
-          }}
-        />
-        {/* Gradient Overlay */}
-        <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent" />
+        <video
+          ref={videoRef}
+          className={`h-full w-full object-cover transition-opacity duration-500 ${isFading ? 'opacity-0' : 'opacity-100'}`}
+          autoPlay
+          muted
+          playsInline
+          onEnded={handleVideoEnd}
+        >
+          <source src={HERO_CLIPS[currentClip]} type="video/mp4" />
+        </video>
+        {/* Cinematic Gradient Overlay */}
+        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-black/40" />
       </motion.div>
 
       {/* Content */}
