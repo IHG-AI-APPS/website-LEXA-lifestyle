@@ -34,7 +34,44 @@ User-agent: YandexBot
 Allow: /
 Crawl-delay: 2
 
+# AI Crawlers - Allow for AI-powered search and assistants
+User-agent: GPTBot
+Allow: /
+Disallow: /admin/
+Disallow: /api/
+
+User-agent: ChatGPT-User
+Allow: /
+Disallow: /admin/
+Disallow: /api/
+
+User-agent: Google-Extended
+Allow: /
+Disallow: /admin/
+Disallow: /api/
+
+User-agent: PerplexityBot
+Allow: /
+Disallow: /admin/
+Disallow: /api/
+
+User-agent: ClaudeBot
+Allow: /
+Disallow: /admin/
+Disallow: /api/
+
+User-agent: anthropic-ai
+Allow: /
+Disallow: /admin/
+Disallow: /api/
+
+User-agent: Applebot
+Allow: /
+Disallow: /admin/
+Disallow: /api/
+
 # Block admin and private areas
+User-agent: *
 Disallow: /admin/
 Disallow: /api/
 Disallow: /dashboard/
@@ -44,11 +81,6 @@ Disallow: /static/
 # Block query parameters that create duplicate content
 Disallow: /*?*
 Allow: /*?page=
-
-# Block development/staging URLs
-User-agent: *
-Disallow: /*preview.emergentagent.com
-Disallow: /*stage-preview.emergentagent.com
 
 # Host directive - canonical domain
 Host: https://lexalifestyle.com
