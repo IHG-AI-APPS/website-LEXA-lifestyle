@@ -26,3 +26,8 @@
 --- CLIP 5/7 ---
 [2026-02-20 12:17:06] Starting generation: 05_home_cinema
 [2026-02-20 12:17:06] Prompt: High-end private home cinema room, plush leather recliner seats, indirect ceiling lighting, acoustic...
+[2026-02-20 12:19:50] FAILED: 05_home_cinema - No video bytes returned
+[2026-02-20 12:19:55] 
+--- CLIP 6/7 ---
+[2026-02-20 12:19:55] Starting generation: 06_silhouette
+[2026-02-20 12:19:55] Prompt: Silhouetted architect and client walking through luxury interior showroom, discussing design, soft b...
