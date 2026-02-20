@@ -21,3 +21,8 @@
 --- CLIP 4/7 ---
 [2026-02-20 12:01:36] Starting generation: 04_technology_art
 [2026-02-20 12:01:36] Prompt: Luxury smart home wall control panel close-up, finger gently activating lighting scene, ambient ligh...
+[2026-02-20 12:17:01] FAILED: 04_technology_art - No video bytes returned
+[2026-02-20 12:17:06] 
+--- CLIP 5/7 ---
+[2026-02-20 12:17:06] Starting generation: 05_home_cinema
+[2026-02-20 12:17:06] Prompt: High-end private home cinema room, plush leather recliner seats, indirect ceiling lighting, acoustic...
