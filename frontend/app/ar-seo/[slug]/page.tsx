@@ -208,6 +208,42 @@ export default async function DynamicArabicPage({ params }: { params: { slug: st
         </div>
       )}
 
+      {/* FAQ Section */}
+      {page.faqs && page.faqs.length > 0 && (
+        <section className="py-16 bg-gray-50">
+          <div className="container mx-auto px-4 max-w-4xl">
+            <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center">الأسئلة الشائعة</h2>
+            <div className="space-y-6">
+              {page.faqs.map((faq: { question: string; answer: string }, index: number) => (
+                <div key={index} className="bg-white p-6 rounded-lg shadow-sm border border-gray-100">
+                  <h3 className="text-xl font-semibold mb-3 text-gray-900">{faq.question}</h3>
+                  <p className="text-gray-700 leading-relaxed">{faq.answer}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+          
+          {/* FAQ Schema.org JSON-LD */}
+          <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{
+              __html: JSON.stringify({
+                "@context": "https://schema.org",
+                "@type": "FAQPage",
+                "mainEntity": page.faqs.map((faq: { question: string; answer: string }) => ({
+                  "@type": "Question",
+                  "name": faq.question,
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": faq.answer
+                  }
+                }))
+              })
+            }}
+          />
+        </section>
+      )}
+
       {/* CTA Section */}
       {!isBlogPost && (
         <section className="py-20 bg-gradient-to-br from-gray-900 via-black to-gray-900 text-white">
