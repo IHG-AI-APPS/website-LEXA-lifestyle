@@ -24,8 +24,13 @@ async def get_property_types():
         packages = await db.property_packages.find(
             {"featured": True},
             {"_id": 0, "slug": 1, "title": 1, "subtitle": 1, "description": 1, 
-             "hero_image": 1, "display_order": 1}
+             "hero_image": 1, "image": 1, "display_order": 1}
         ).sort("display_order", 1).to_list(20)
+        
+        # Normalize image field
+        for pkg in packages:
+            if not pkg.get('image') and pkg.get('hero_image'):
+                pkg['image'] = pkg['hero_image']
         
         return {"packages": packages}
     except Exception as e:
