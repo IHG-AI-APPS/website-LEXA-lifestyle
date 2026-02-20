@@ -1,68 +1,68 @@
-[2026-02-20 14:45:58] ============================================================
-[2026-02-20 14:45:58] LEXA HERO V3 - DARK LUXURY THEME
-[2026-02-20 14:45:58] Dramatic Architectural Lighting
-[2026-02-20 14:45:58] Generating 7 clips
-[2026-02-20 14:45:58] ============================================================
-[2026-02-20 14:45:58] 
+[2026-02-20 14:46:29] ============================================================
+[2026-02-20 14:46:29] LEXA HERO V3 - DARK LUXURY THEME
+[2026-02-20 14:46:29] Dramatic Architectural Lighting
+[2026-02-20 14:46:29] Generating 7 clips
+[2026-02-20 14:46:29] ============================================================
+[2026-02-20 14:46:29] 
 ========================================
-[2026-02-20 14:45:58] CLIP 1/7
-[2026-02-20 14:45:58] ========================================
-[2026-02-20 14:45:58] Generating: v3_01_dramatic_entrance
-[2026-02-20 14:45:58] Scene: Dramatic luxury villa foyer at night, statement chandelier slowly illuminating, ...
-[2026-02-20 14:45:58] ERROR: v3_01_dramatic_entrance - Invalid duration: 10. Must be one of [4, 8, 12]
-[2026-02-20 14:46:01] 
+[2026-02-20 14:46:29] CLIP 1/7
+[2026-02-20 14:46:29] ========================================
+[2026-02-20 14:46:29] Generating: v3_01_dramatic_entrance
+[2026-02-20 14:46:29] Scene: Dramatic luxury villa foyer at night, statement chandelier slowly illuminating, ...
+[2026-02-20 14:49:15] SUCCESS: v3_01_dramatic_entrance (165.2s)
+[2026-02-20 14:49:18] 
 ========================================
-[2026-02-20 14:46:01] CLIP 2/7
-[2026-02-20 14:46:01] ========================================
-[2026-02-20 14:46:01] Generating: v3_02_living_ambiance
-[2026-02-20 14:46:01] Scene: Dark luxury living room with layered lighting activating, recessed ceiling light...
-[2026-02-20 14:46:01] ERROR: v3_02_living_ambiance - Invalid duration: 10. Must be one of [4, 8, 12]
-[2026-02-20 14:46:04] 
+[2026-02-20 14:49:18] CLIP 2/7
+[2026-02-20 14:49:18] ========================================
+[2026-02-20 14:49:18] Generating: v3_02_living_ambiance
+[2026-02-20 14:49:18] Scene: Dark luxury living room with layered lighting activating, recessed ceiling light...
+[2026-02-20 14:49:18] FAILED: v3_02_living_ambiance
+[2026-02-20 14:49:21] 
 ========================================
-[2026-02-20 14:46:04] CLIP 3/7
-[2026-02-20 14:46:04] ========================================
-[2026-02-20 14:46:04] Generating: v3_03_savant_panel
-[2026-02-20 14:46:04] Scene: Elegant Savant-style smart home control panel on dark wall, sleek glass touchscr...
-[2026-02-20 14:46:04] ERROR: v3_03_savant_panel - Invalid duration: 10. Must be one of [4, 8, 12]
-[2026-02-20 14:46:07] 
+[2026-02-20 14:49:21] CLIP 3/7
+[2026-02-20 14:49:21] ========================================
+[2026-02-20 14:49:21] Generating: v3_03_savant_panel
+[2026-02-20 14:49:21] Scene: Elegant Savant-style smart home control panel on dark wall, sleek glass touchscr...
+[2026-02-20 14:49:21] FAILED: v3_03_savant_panel
+[2026-02-20 14:49:24] 
 ========================================
-[2026-02-20 14:46:07] CLIP 4/7
-[2026-02-20 14:46:07] ========================================
-[2026-02-20 14:46:07] Generating: v3_04_speaker_lounge
-[2026-02-20 14:46:07] Scene: Audiophile listening room with dramatic lighting, high-end floor standing speake...
-[2026-02-20 14:46:07] ERROR: v3_04_speaker_lounge - Invalid duration: 10. Must be one of [4, 8, 12]
-[2026-02-20 14:46:10] 
+[2026-02-20 14:49:24] CLIP 4/7
+[2026-02-20 14:49:24] ========================================
+[2026-02-20 14:49:24] Generating: v3_04_speaker_lounge
+[2026-02-20 14:49:24] Scene: Audiophile listening room with dramatic lighting, high-end floor standing speake...
+[2026-02-20 14:49:24] FAILED: v3_04_speaker_lounge
+[2026-02-20 14:49:27] 
 ========================================
-[2026-02-20 14:46:10] CLIP 5/7
-[2026-02-20 14:46:10] ========================================
-[2026-02-20 14:46:10] Generating: v3_05_cinema_palace
-[2026-02-20 14:46:10] Scene: Ultra-luxury private cinema room, plush theater seating in deep burgundy leather...
-[2026-02-20 14:46:10] ERROR: v3_05_cinema_palace - Invalid duration: 10. Must be one of [4, 8, 12]
-[2026-02-20 14:46:13] 
+[2026-02-20 14:49:27] CLIP 5/7
+[2026-02-20 14:49:27] ========================================
+[2026-02-20 14:49:27] Generating: v3_05_cinema_palace
+[2026-02-20 14:49:27] Scene: Ultra-luxury private cinema room, plush theater seating in deep burgundy leather...
+[2026-02-20 14:49:27] FAILED: v3_05_cinema_palace
+[2026-02-20 14:49:30] 
 ========================================
-[2026-02-20 14:46:13] CLIP 6/7
-[2026-02-20 14:46:13] ========================================
-[2026-02-20 14:46:13] Generating: v3_06_outdoor_gazebo
-[2026-02-20 14:46:13] Scene: Luxury outdoor gazebo at twilight, elegant pergola with string lights, large out...
-[2026-02-20 14:46:13] ERROR: v3_06_outdoor_gazebo - Invalid duration: 10. Must be one of [4, 8, 12]
-[2026-02-20 14:46:16] 
+[2026-02-20 14:49:30] CLIP 6/7
+[2026-02-20 14:49:30] ========================================
+[2026-02-20 14:49:30] Generating: v3_06_outdoor_gazebo
+[2026-02-20 14:49:30] Scene: Luxury outdoor gazebo at twilight, elegant pergola with string lights, large out...
+[2026-02-20 14:49:30] FAILED: v3_06_outdoor_gazebo
+[2026-02-20 14:49:33] 
 ========================================
-[2026-02-20 14:46:16] CLIP 7/7
-[2026-02-20 14:46:16] ========================================
-[2026-02-20 14:46:16] Generating: v3_07_master_suite
-[2026-02-20 14:46:16] Scene: Luxury master bedroom with motorized curtains opening to night cityscape, indire...
-[2026-02-20 14:46:16] ERROR: v3_07_master_suite - Invalid duration: 10. Must be one of [4, 8, 12]
-[2026-02-20 14:46:16] 
+[2026-02-20 14:49:33] CLIP 7/7
+[2026-02-20 14:49:33] ========================================
+[2026-02-20 14:49:33] Generating: v3_07_master_suite
+[2026-02-20 14:49:33] Scene: Luxury master bedroom with motorized curtains opening to night cityscape, indire...
+[2026-02-20 14:49:33] FAILED: v3_07_master_suite
+[2026-02-20 14:49:33] 
 ============================================================
-[2026-02-20 14:46:16] GENERATION COMPLETE
-[2026-02-20 14:46:16] ============================================================
-[2026-02-20 14:46:16]   ✗ v3_01_dramatic_entrance
-[2026-02-20 14:46:16]   ✗ v3_02_living_ambiance
-[2026-02-20 14:46:16]   ✗ v3_03_savant_panel
-[2026-02-20 14:46:16]   ✗ v3_04_speaker_lounge
-[2026-02-20 14:46:16]   ✗ v3_05_cinema_palace
-[2026-02-20 14:46:16]   ✗ v3_06_outdoor_gazebo
-[2026-02-20 14:46:16]   ✗ v3_07_master_suite
-[2026-02-20 14:46:16] 
-Total: 0/7 clips generated
-[2026-02-20 14:46:16] Output: /app/frontend/public/videos/hero-v3
+[2026-02-20 14:49:33] GENERATION COMPLETE
+[2026-02-20 14:49:33] ============================================================
+[2026-02-20 14:49:33]   ✓ v3_01_dramatic_entrance
+[2026-02-20 14:49:33]   ✗ v3_02_living_ambiance
+[2026-02-20 14:49:33]   ✗ v3_03_savant_panel
+[2026-02-20 14:49:33]   ✗ v3_04_speaker_lounge
+[2026-02-20 14:49:33]   ✗ v3_05_cinema_palace
+[2026-02-20 14:49:33]   ✗ v3_06_outdoor_gazebo
+[2026-02-20 14:49:33]   ✗ v3_07_master_suite
+[2026-02-20 14:49:33] 
+Total: 1/7 clips generated
+[2026-02-20 14:49:33] Output: /app/frontend/public/videos/hero-v3
