@@ -1,0 +1,13 @@
+[2026-02-20 12:38:55] ============================================================
+[2026-02-20 12:38:55] LEXA HERO VIDEO RETRY - STARTING
+[2026-02-20 12:38:55] Clips to retry: 4
+[2026-02-20 12:38:55] ============================================================
+[2026-02-20 12:38:55] 
+--- RETRY CLIP 1/4 ---
+[2026-02-20 12:38:55] Starting generation: 03_material_details
+[2026-02-20 12:38:55] Prompt: Cinematic close-up of luxury interior materials, brushed brass light fixture detail, white marble su...
+[2026-02-20 12:41:38] FAILED: 03_material_details - No video bytes returned
+[2026-02-20 12:41:43] 
+--- RETRY CLIP 2/4 ---
+[2026-02-20 12:41:43] Starting generation: 04_smart_interface
+[2026-02-20 12:41:43] Prompt: Modern minimalist smart home control panel on elegant wall, person's hand touching sleek touchscreen...
