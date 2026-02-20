@@ -1,0 +1,228 @@
+{
+  "header": {
+    "cta": "جلسة تصميم خاصة"
+  },
+  "nav": {
+    "home": "الرئيسية",
+    "solutions": "الحلول",
+    "services": "الخدمات",
+    "brands": "العلامات التجارية",
+    "projects": "المشاريع",
+    "experience": "التجربة",
+    "media": "الإعلام",
+    "blog": "المدونة",
+    "contact": "اتصل بنا",
+    "builder": "منشئ المشاريع",
+    "dashboard": "مشاريعي",
+    "about": "حول",
+    "calculator": "الحاسبة"
+  },
+  "hero": {
+    "title1": "متكامل",
+    "title2": "فاخر",
+    "title3": "العيش",
+    "subtitle": "أتمتة المنزل الذكي للمميزين",
+    "cta": {
+      "primary": "اكتشف حلولنا",
+      "secondary": "احجز استشارة"
+    }
+  },
+  "home": {
+    "solutions": {
+      "title": "الحلول الذكية",
+      "subtitle": "ارتقِ بتجربة معيشتك"
+    },
+    "projects": {
+      "title": "المشاريع المميزة",
+      "subtitle": "التميز في كل التفاصيل"
+    },
+    "testimonials": {
+      "title": "قصص العملاء",
+      "subtitle": "ماذا يقول عملاؤنا"
+    }
+  },
+  "services": {
+    "title": "خدماتنا",
+    "subtitle": "حلول منزلية ذكية شاملة",
+    "design": {
+      "title": "التصميم"
+    },
+    "integration": {
+      "title": "التكامل"
+    },
+    "commissioning": {
+      "title": "التشغيل"
+    },
+    "support": {
+      "title": "الدعم"
+    },
+    "other": {
+      "title": "خدمات أخرى"
+    }
+  },
+  "solutions": {
+    "title": "حلول المنزل الذكي",
+    "subtitle": "تقنية تعزز نمط حياتك",
+    "lighting": "التحكم في الإضاءة",
+    "climate": "التحكم في المناخ",
+    "security": "أنظمة الأمان",
+    "entertainment": "الترفيه",
+    "shading": "الستائر والتظليل"
+  },
+  "projects": {
+    "title": "مشاريعنا",
+    "subtitle": "منازل استثنائية، تقنية استثنائية",
+    "filter": {
+      "all": "الكل",
+      "villa": "الفلل",
+      "apartment": "الشقق",
+      "penthouse": "البنتهاوس"
+    },
+    "viewProject": "عرض المشروع"
+  },
+  "contact": {
+    "title": "اتصل بنا",
+    "subtitle": "تواصل مع فريقنا",
+    "name": "اسمك",
+    "email": "البريد الإلكتروني",
+    "phone": "رقم الهاتف",
+    "subject": "الموضوع",
+    "message": "الرسالة",
+    "send": "إرسال الرسالة",
+    "address": "العنوان",
+    "hours": "ساعات العمل",
+    "followUs": "تابعنا"
+  },
+  "about": {
+    "title": "عن ليكسا",
+    "subtitle": "إعادة تعريف العيش الفاخر من خلال التقنية",
+    "mission": {
+      "title": "مهمتنا"
+    },
+    "vision": {
+      "title": "رؤيتنا"
+    },
+    "values": {
+      "title": "قيمنا"
+    },
+    "team": {
+      "title": "فريقنا"
+    }
+  },
+  "experience": {
+    "title": "مركز التجربة",
+    "subtitle": "شاهد، المس، وجرّب العيش الذكي",
+    "bookVisit": "احجز زيارة",
+    "virtualTour": "جولة افتراضية",
+    "location": "الموقع",
+    "openingHours": "ساعات العمل"
+  },
+  "calculator": {
+    "title": "حاسبة المنزل الذكي",
+    "subtitle": "احصل على تقدير فوري لمشروعك",
+    "step": "الخطوة",
+    "next": "التالي",
+    "previous": "السابق",
+    "submit": "احصل على عرض سعر",
+    "result": "تقديرك",
+    "downloadPdf": "تحميل PDF"
+  },
+  "footer": {
+    "newsletter": "اشترك في نشرتنا الإخبارية",
+    "emailPlaceholder": "أدخل بريدك الإلكتروني",
+    "subscribe": "اشترك",
+    "quickLinks": "روابط سريعة",
+    "legal": "قانوني",
+    "privacy": "سياسة الخصوصية",
+    "terms": "شروط الخدمة",
+    "copyright": "جميع الحقوق محفوظة"
+  },
+  "builder": {
+    "title": "منشئ المشاريع الذكي",
+    "subtitle": "أنشئ مشروع منزلك الذكي",
+    "step": {
+      "dna": "بيانات المشروع",
+      "objectives": "الأهداف",
+      "priorities": "الأولويات",
+      "intelligence": "تحليل الذكاء الاصطناعي",
+      "proposals": "المقترحات",
+      "services": "الخدمات",
+      "summary": "الملخص",
+      "complete": "مكتمل"
+    },
+    "segment": "القطاع",
+    "segmentTypes": {
+      "residential": "سكني",
+      "commercial": "تجاري",
+      "hospitality": "ضيافة"
+    },
+    "propertyType": "نوع العقار",
+    "propertyTypes": {
+      "villa": "فيلا/منزل",
+      "apartment": "شقة",
+      "penthouse": "بنتهاوس",
+      "estate": "قصر/عقار"
+    },
+    "area": "المساحة (قدم مربع)",
+    "floors": "عدد الطوابق",
+    "rooms": "عدد الغرف"
+  },
+  "action": {
+    "continue": "متابعة",
+    "back": "رجوع",
+    "submit": "إرسال",
+    "download": "تحميل PDF",
+    "email": "إرسال بالبريد الإلكتروني",
+    "save": "حفظ التقدم",
+    "startNew": "بدء مشروع جديد",
+    "viewAll": "عرض الكل",
+    "readMore": "اقرأ المزيد"
+  },
+  "dashboard": {
+    "title": "مشاريعي",
+    "subtitle": "تتبع وإدارة مشاريع منزلك الذكي",
+    "noProjects": "لا توجد مشاريع بعد",
+    "totalProjects": "إجمالي المشاريع",
+    "inProgress": "قيد التنفيذ",
+    "completed": "مكتملة"
+  },
+  "whatsapp": {
+    "quickConnect": "اتصال سريع",
+    "chooseStarter": "اختر بداية المحادثة",
+    "openChat": "فتح محادثة واتساب",
+    "villa": {
+      "title": "مفهوم أتمتة الفيلا",
+      "message": "مرحباً LEXA، أود الحصول على مفهوم منزل ذكي لفيلتي. حجم العقار: ___ متر مربع"
+    },
+    "visit": {
+      "title": "زيارة مركز التجربة",
+      "message": "مرحباً LEXA، أود تحديد موعد لزيارة خاصة إلى مركز التجربة الخاص بكم"
+    },
+    "tech": {
+      "title": "استشارة فنية",
+      "message": "مرحباً LEXA، أحتاج إلى استشارة فنية لمشروعي"
+    },
+    "quote": {
+      "title": "عرض سعر للمشروع",
+      "message": "مرحباً LEXA، أحتاج إلى عرض سعر تفصيلي لأتمتة المنزل. الموقع: ___"
+    },
+    "emergency": {
+      "title": "دعم طوارئ",
+      "message": "مرحباً LEXA، أحتاج إلى دعم طوارئ لنظام منزلي الذكي"
+    }
+  },
+  "common": {
+    "getStarted": "ابدأ الآن",
+    "learnMore": "اعرف المزيد",
+    "viewProjects": "عرض المشاريع",
+    "getQuote": "احصل على عرض سعر",
+    "search": "بحث...",
+    "loading": "جارٍ التحميل...",
+    "error": "حدث خطأ",
+    "success": "نجاح",
+    "free": "مجاني",
+    "new": "جديد",
+    "featured": "مميز",
+    "popular": "شائع"
+  }
+}

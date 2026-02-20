@@ -1,0 +1,228 @@
+{
+  "header": {
+    "cta": "Private Design Session"
+  },
+  "nav": {
+    "home": "Home",
+    "solutions": "Solutions",
+    "services": "Services",
+    "brands": "Brands",
+    "projects": "Projects",
+    "experience": "Experience",
+    "media": "Media",
+    "blog": "Blog",
+    "contact": "Contact",
+    "builder": "Project Builder",
+    "dashboard": "My Projects",
+    "about": "About",
+    "calculator": "Calculator"
+  },
+  "hero": {
+    "title1": "INTEGRATED",
+    "title2": "LUXURY",
+    "title3": "LIVING",
+    "subtitle": "Smart home automation for the discerning few",
+    "cta": {
+      "primary": "Discover Our Solutions",
+      "secondary": "Book Consultation"
+    }
+  },
+  "home": {
+    "solutions": {
+      "title": "Smart Solutions",
+      "subtitle": "Elevate your living experience"
+    },
+    "projects": {
+      "title": "Featured Projects",
+      "subtitle": "Excellence in every detail"
+    },
+    "testimonials": {
+      "title": "Client Stories",
+      "subtitle": "What our clients say"
+    }
+  },
+  "services": {
+    "title": "Our Services",
+    "subtitle": "Comprehensive smart home solutions",
+    "design": {
+      "title": "Design"
+    },
+    "integration": {
+      "title": "Integration"
+    },
+    "commissioning": {
+      "title": "Commissioning"
+    },
+    "support": {
+      "title": "Support"
+    },
+    "other": {
+      "title": "Other Services"
+    }
+  },
+  "solutions": {
+    "title": "Smart Home Solutions",
+    "subtitle": "Technology that enhances your lifestyle",
+    "lighting": "Lighting Control",
+    "climate": "Climate Control",
+    "security": "Security Systems",
+    "entertainment": "Entertainment",
+    "shading": "Shading & Blinds"
+  },
+  "projects": {
+    "title": "Our Projects",
+    "subtitle": "Exceptional homes, exceptional technology",
+    "filter": {
+      "all": "All",
+      "villa": "Villas",
+      "apartment": "Apartments",
+      "penthouse": "Penthouses"
+    },
+    "viewProject": "View Project"
+  },
+  "contact": {
+    "title": "Contact Us",
+    "subtitle": "Get in touch with our team",
+    "name": "Your Name",
+    "email": "Email Address",
+    "phone": "Phone Number",
+    "subject": "Subject",
+    "message": "Message",
+    "send": "Send Message",
+    "address": "Address",
+    "hours": "Business Hours",
+    "followUs": "Follow Us"
+  },
+  "about": {
+    "title": "About LEXA",
+    "subtitle": "Redefining luxury living through technology",
+    "mission": {
+      "title": "Our Mission"
+    },
+    "vision": {
+      "title": "Our Vision"
+    },
+    "values": {
+      "title": "Our Values"
+    },
+    "team": {
+      "title": "Our Team"
+    }
+  },
+  "experience": {
+    "title": "Experience Centre",
+    "subtitle": "See, touch, and experience smart living",
+    "bookVisit": "Book a Visit",
+    "virtualTour": "Virtual Tour",
+    "location": "Location",
+    "openingHours": "Opening Hours"
+  },
+  "calculator": {
+    "title": "Smart Home Calculator",
+    "subtitle": "Get an instant estimate for your project",
+    "step": "Step",
+    "next": "Next",
+    "previous": "Previous",
+    "submit": "Get Quote",
+    "result": "Your Estimate",
+    "downloadPdf": "Download PDF"
+  },
+  "footer": {
+    "newsletter": "Subscribe to our newsletter",
+    "emailPlaceholder": "Enter your email",
+    "subscribe": "Subscribe",
+    "quickLinks": "Quick Links",
+    "legal": "Legal",
+    "privacy": "Privacy Policy",
+    "terms": "Terms of Service",
+    "copyright": "All rights reserved"
+  },
+  "builder": {
+    "title": "Smart Project Builder",
+    "subtitle": "Build your smart home project",
+    "step": {
+      "dna": "Project DNA",
+      "objectives": "Objectives",
+      "priorities": "Priorities",
+      "intelligence": "AI Analysis",
+      "proposals": "Proposals",
+      "services": "Services",
+      "summary": "Summary",
+      "complete": "Complete"
+    },
+    "segment": "Segment",
+    "segmentTypes": {
+      "residential": "Residential",
+      "commercial": "Commercial",
+      "hospitality": "Hospitality"
+    },
+    "propertyType": "Property Type",
+    "propertyTypes": {
+      "villa": "Villa/House",
+      "apartment": "Apartment/Flat",
+      "penthouse": "Penthouse",
+      "estate": "Estate/Mansion"
+    },
+    "area": "Area (sqft)",
+    "floors": "Number of Floors",
+    "rooms": "Number of Rooms"
+  },
+  "action": {
+    "continue": "Continue",
+    "back": "Back",
+    "submit": "Submit",
+    "download": "Download PDF",
+    "email": "Email Proposal",
+    "save": "Save Progress",
+    "startNew": "Start New Project",
+    "viewAll": "View All",
+    "readMore": "Read More"
+  },
+  "dashboard": {
+    "title": "My Projects",
+    "subtitle": "Track and manage your smart home projects",
+    "noProjects": "No Projects Yet",
+    "totalProjects": "Total Projects",
+    "inProgress": "In Progress",
+    "completed": "Completed"
+  },
+  "whatsapp": {
+    "quickConnect": "Quick Connect",
+    "chooseStarter": "Choose a conversation starter",
+    "openChat": "Open WhatsApp Chat",
+    "villa": {
+      "title": "Villa Automation Concept",
+      "message": "Hi LEXA, I would like a smart home concept for my villa. Property size: ___ sqm"
+    },
+    "visit": {
+      "title": "Experience Centre Visit",
+      "message": "Hi LEXA, I would like to schedule a private visit to your Experience Centre"
+    },
+    "tech": {
+      "title": "Technical Consultation",
+      "message": "Hi LEXA, I need technical consultation for my project"
+    },
+    "quote": {
+      "title": "Project Quote",
+      "message": "Hi LEXA, I need a detailed quote for home automation. Location: ___"
+    },
+    "emergency": {
+      "title": "Emergency Support",
+      "message": "Hi LEXA, I need emergency support for my smart home system"
+    }
+  },
+  "common": {
+    "getStarted": "Get Started",
+    "learnMore": "Learn More",
+    "viewProjects": "View Projects",
+    "getQuote": "Get Quote",
+    "search": "Search...",
+    "loading": "Loading...",
+    "error": "An error occurred",
+    "success": "Success",
+    "free": "Free",
+    "new": "New",
+    "featured": "Featured",
+    "popular": "Popular"
+  }
+}
