@@ -75,9 +75,10 @@ export default function BrandsPage() {
             <span className="text-xs tracking-[0.3em] uppercase text-gray-400 font-medium mb-4 block">
               Our Partners
             </span>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
+            <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6">
               Premium <span className="text-gray-400">Brands</span>
             </h1>
+            <div className="h-px w-32 bg-[#9F8B65] mb-6 mx-auto" />
             <div className="flex items-center justify-center gap-6 text-sm">
               <div className="flex items-center gap-2">
                 <Award className="text-gray-400" size={20} />
