@@ -118,7 +118,7 @@ export default function PropertyPackageDetailPage() {
 
   return (
     <div className="min-h-screen bg-white">
-      {/* Hero Section */}
+      {/* Hero Section - Centered */}
       <section className="relative h-[60vh] min-h-[400px]">
         <SafeImage
           src={packageData.hero_image}
@@ -129,19 +129,19 @@ export default function PropertyPackageDetailPage() {
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent" />
         
-        <div className="absolute inset-0 flex items-end">
+        <div className="absolute inset-0 flex items-end justify-center">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 pb-12 lg:pb-20">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
-              className="max-w-3xl"
+              className="max-w-4xl mx-auto text-center"
             >
-              <p className="text-blue-400 font-medium mb-2">{packageData.subtitle}</p>
+              <p className="text-blue-400 font-medium mb-2 uppercase tracking-wider text-sm">{packageData.subtitle}</p>
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-4">
                 {packageData.title}
               </h1>
-              <p className="text-xl text-gray-200">
+              <p className="text-xl text-gray-200 max-w-2xl mx-auto">
                 {packageData.description}
               </p>
             </motion.div>
