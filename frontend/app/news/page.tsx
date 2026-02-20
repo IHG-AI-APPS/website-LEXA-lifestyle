@@ -73,39 +73,39 @@ export default function NewsPage() {
 
       {/* Featured News */}
       {featuredNews && (
-        <section className="py-16 bg-lexa-black border-b border-white/5">
-          <div className="container mx-auto px-4 md:px-8 max-w-7xl">
+        <section className="py-16 bg-white border-b border-gray-100">
+          <div className="container mx-auto px-6 lg:px-12 max-w-7xl">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
               className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center"
             >
-              <div className="relative h-96 lg:h-[500px] overflow-hidden bg-lexa-surface">
+              <div className="relative h-96 lg:h-[500px] overflow-hidden bg-gray-100 rounded-lg">
                 <SafeImage
                   src={featuredNews.image}
                   alt={featuredNews.title}
                   fill
-                  className="object-cover grayscale hover:grayscale-0 transition-all duration-700"
+                  className="object-cover hover:scale-105 transition-all duration-700"
                 />
               </div>
               <div>
-                <div className="inline-block px-3 py-1 mb-6 text-xs tracking-widest uppercase bg-white/10 text-gray-300">
+                <div className="inline-block px-3 py-1 mb-6 text-xs tracking-widest uppercase bg-[#9F8B65]/10 text-[#9F8B65]">
                   Featured
                 </div>
-                <h2 className="text-3xl md:text-4xl font-heading font-semibold text-white mb-6">
+                <h2 className="text-3xl md:text-4xl font-bold text-[#1A1A1A] mb-6">
                   {featuredNews.title}
                 </h2>
                 <div className="flex items-center gap-2 text-sm text-gray-500 mb-6">
                   <Calendar size={16} strokeWidth={1.5} />
                   <time>{new Date(featuredNews.published_date).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })}</time>
                 </div>
-                <p className="text-gray-400 leading-relaxed mb-8">
+                <p className="text-gray-600 leading-relaxed mb-8">
                   {featuredNews.excerpt}
                 </p>
                 <Link
                   href={`/news/${featuredNews.slug}`}
-                  className="inline-flex items-center gap-2 text-white hover:text-gray-300 transition-colors uppercase tracking-widest text-sm font-medium"
+                  className="inline-flex items-center gap-2 text-[#1A1A1A] hover:text-[#9F8B65] transition-colors uppercase tracking-widest text-sm font-medium"
                 >
                   Read More
                   <ArrowRight size={16} strokeWidth={2} />
