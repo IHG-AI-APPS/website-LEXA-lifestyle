@@ -454,7 +454,7 @@ async def enhance_services():
         
         print("\n✨ Enhancement complete!")
         print(f"📈 Updated {updated} service pages")
-        print("🌐 Visit: https://lexa-golive-prep.preview.emergentagent.com/services")
+        print("🌐 Visit: https://launch-prep-hub.preview.emergentagent.com/services")
         
         client.close()
         
