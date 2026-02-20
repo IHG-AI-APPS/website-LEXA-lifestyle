@@ -71,6 +71,7 @@ export default function SolutionsPage() {
 
   return (
     <div className="min-h-screen bg-white pt-20">
+      {/* Hero - Centered */}
       <section className="py-16 md:py-20 bg-gray-50">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
           <div className="mx-auto">
@@ -78,20 +79,16 @@ export default function SolutionsPage() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
-              className="max-w-6xl mx-auto"
+              className="max-w-4xl mx-auto text-center"
             >
-              <span className="text-xs tracking-[0.5em] uppercase text-gray-400 font-medium mb-6 block">
+              <span className="text-xs tracking-[0.3em] uppercase text-gray-400 font-medium mb-4 block">
                 {language === 'ar' ? 'حلولنا' : 'Our Solutions'}
               </span>
-              <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-semibold tracking-[-0.04em] leading-[0.95] mb-8">
-                {language === 'ar' ? 'أنظمة' : 'INTEGRATED'}
-                <br />
-                <span className="text-transparent bg-clip-text metallic-gradient">
-                  {language === 'ar' ? 'متكاملة' : 'SYSTEMS'}
-                </span>
+              <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6">
+                {language === 'ar' ? 'أنظمة متكاملة' : 'Integrated'} <span className="text-gray-400">{language === 'ar' ? '' : 'Systems'}</span>
               </h1>
-              <div className="h-px w-32 bg-gradient-to-r from-platinum to-transparent mb-8" />
-              <p className="text-sm sm:text-base text-gray-600 leading-relaxed max-w-2xl">
+              <div className="h-px w-32 bg-[#9F8B65] mb-6 mx-auto" />
+              <p className="text-base md:text-lg text-gray-600 leading-relaxed max-w-2xl mx-auto">
                 {language === 'ar' 
                   ? 'كل حل مصمم للعمل معًا بسلاسة. واجهة واحدة. تحكم كامل.'
                   : 'Every solution designed to work together seamlessly. One interface. Total control.'
