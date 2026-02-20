@@ -1,5 +1,6 @@
 'use client'
 
+import { useState, useEffect, useRef } from 'react'
 import { motion } from 'framer-motion'
 import { Button } from '@/components/ui/button'
 import { ArrowRight, Users, MessageCircle } from 'lucide-react'
@@ -11,27 +12,57 @@ interface HeroCuratorProps {
   onPersonaClick?: () => void
 }
 
+// Smart Home Automation Video Clips - V2
+const HERO_CLIPS = [
+  '/videos/hero-v2/v2_01_lights_on.mp4',
+  '/videos/hero-v2/v2_02_shades_open.mp4',
+  '/videos/hero-v2/v2_03_display_screen.mp4',
+  '/videos/hero-v2/v2_04_speaker_system.mp4',
+  '/videos/hero-v2/v2_05_cinema_experience.mp4',
+  '/videos/hero-v2/v2_06_control_interface.mp4',
+  '/videos/hero-v2/v2_07_pool_area.mp4',
+]
+
 export default function HeroCurator({ onPersonaClick }: HeroCuratorProps) {
   const { t, language } = useLanguage()
+  const [currentClip, setCurrentClip] = useState(0)
+  const [isFading, setIsFading] = useState(false)
+  const videoRef = useRef<HTMLVideoElement>(null)
+
+  // Handle video end - smooth transition to next clip
+  const handleVideoEnd = () => {
+    setIsFading(true)
+    setTimeout(() => {
+      setCurrentClip((prev) => (prev + 1) % HERO_CLIPS.length)
+      setIsFading(false)
+    }, 300)
+  }
+
+  // Load and play new clip when index changes
+  useEffect(() => {
+    if (videoRef.current) {
+      videoRef.current.load()
+      videoRef.current.play().catch(() => {})
+    }
+  }, [currentClip])
   
   return (
     <section className="relative min-h-[100svh] w-full overflow-hidden">
-      {/* Background Image with Parallax Effect */}
-      <motion.div 
-        className="absolute inset-0 z-0"
-        initial={{ scale: 1.1 }}
-        animate={{ scale: 1 }}
-        transition={{ duration: 1.5, ease: [0.25, 0.1, 0.25, 1] }}
-      >
-        <div 
-          className="h-full w-full bg-cover bg-center bg-no-repeat"
-          style={{
-            backgroundImage: 'url("https://images.unsplash.com/photo-1757439402268-1da284675170?crop=entropy&cs=srgb&fm=jpg&q=85")',
-          }}
-        />
-        {/* Gradient Overlay */}
-        <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent" />
-      </motion.div>
+      {/* Video Background */}
+      <div className="absolute inset-0 z-0">
+        <video
+          ref={videoRef}
+          className={`h-full w-full object-cover transition-opacity duration-300 ${isFading ? 'opacity-0' : 'opacity-100'}`}
+          autoPlay
+          muted
+          playsInline
+          onEnded={handleVideoEnd}
+        >
+          <source src={HERO_CLIPS[currentClip]} type="video/mp4" />
+        </video>
+        {/* Cinematic Gradient Overlay for text readability */}
+        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-black/50" />
+      </div>
 
       {/* Content */}
       <div className="relative z-10 flex h-full min-h-[100svh] items-end pt-20 md:pt-24">
