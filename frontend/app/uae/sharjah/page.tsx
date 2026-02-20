@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   description: 'Leading smart home automation in Sharjah. Serving Al Majaz, Al Qasimia, Muwailih, and all Sharjah communities. Official Control4 & Crestron dealer in UAE.',
   keywords: ['smart home Sharjah', 'home automation Sharjah', 'Control4 Sharjah', 'Crestron Sharjah', 'villa automation Sharjah', 'أتمتة المنزل الشارقة'],
   alternates: {
-    canonical: 'https://lexa-golive-prep.preview.emergentagent.com/uae/sharjah'
+    canonical: 'https://lexalifestyle.com/uae/sharjah'
   }
 }
 

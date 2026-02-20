@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   description: 'Abu Dhabi\'s premier smart home automation company. Serving Saadiyat Island, Yas Island, Al Reem, Khalifa City. Control4 & Crestron dealer. Expert villa automation.',
   keywords: ['smart home Abu Dhabi', 'home automation Abu Dhabi', 'Control4 Abu Dhabi', 'villa automation Abu Dhabi', 'أتمتة المنزل أبوظبي'],
   alternates: {
-    canonical: 'https://lexa-golive-prep.preview.emergentagent.com/uae/abu-dhabi'
+    canonical: 'https://lexalifestyle.com/uae/abu-dhabi'
   }
 }
 
