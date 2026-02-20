@@ -160,6 +160,20 @@ export default function HeroCurator({ onPersonaClick }: HeroCuratorProps) {
           <div className="h-8 w-[1px] bg-white/40" />
         </motion.div>
       </motion.div>
+
+      {/* Subtle Video Progress Dots */}
+      <div className="absolute bottom-24 left-1/2 z-10 -translate-x-1/2 flex gap-1.5">
+        {HERO_CLIPS.map((_, index) => (
+          <div
+            key={index}
+            className={`h-1 rounded-full transition-all duration-500 ${
+              index === currentClip 
+                ? 'w-6 bg-[#C19A2E]' 
+                : 'w-1 bg-white/30'
+            }`}
+          />
+        ))}
+      </div>
     </section>
   )
 }
