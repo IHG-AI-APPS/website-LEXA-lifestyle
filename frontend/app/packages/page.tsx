@@ -50,27 +50,26 @@ export default function PackagesPage() {
 
   return (
     <div className="min-h-screen bg-white pt-20">
-      {/* Compact Hero */}
-      <section className="py-10 border-b bg-gray-50">
+      {/* Hero - Centered */}
+      <section className="py-16 border-b bg-gray-50">
         <div className="container mx-auto px-6 lg:px-12">
-          <div className="max-w-7xl mx-auto">
-            <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
-              <div>
-                <span className="text-xs tracking-[0.3em] uppercase text-gray-400 font-medium mb-2 block">
-                  Smart Home Solutions
-                </span>
-                <h1 className="text-3xl md:text-4xl font-semibold tracking-tight">
-                  All Packages
-                </h1>
-              </div>
-              <Link
-                href="/package-builder"
-                className="inline-flex items-center gap-2 px-5 py-2.5 bg-black text-white text-sm font-medium rounded-lg hover:bg-gray-800 transition-colors"
-              >
-                <Sparkles className="h-4 w-4" />
-                Build Custom Package
-              </Link>
-            </div>
+          <div className="max-w-4xl mx-auto text-center">
+            <span className="text-xs tracking-[0.3em] uppercase text-gray-400 font-medium mb-4 block">
+              Smart Home Solutions
+            </span>
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
+              All Packages
+            </h1>
+            <p className="text-lg text-gray-600 max-w-2xl mx-auto mb-8">
+              Pre-configured smart home packages tailored for every property type and budget
+            </p>
+            <Link
+              href="/package-builder"
+              className="inline-flex items-center gap-2 px-6 py-3 bg-black text-white font-medium rounded-lg hover:bg-gray-800 transition-colors"
+            >
+              <Sparkles className="h-5 w-5" />
+              Build Custom Package
+            </Link>
           </div>
         </div>
       </section>
