@@ -57,3 +57,19 @@
 [2026-02-20 13:43:11] ========================================
 [2026-02-20 13:43:11] Generating: v2_08_whole_home
 [2026-02-20 13:43:11] Scene: Wide shot of modern luxury home at dusk, windows glowing warmly from inside, ext...
+[2026-02-20 13:44:56] FAILED: v2_08_whole_home - No video returned
+[2026-02-20 13:44:56] 
+============================================================
+[2026-02-20 13:44:56] GENERATION COMPLETE
+[2026-02-20 13:44:56] ============================================================
+[2026-02-20 13:44:56]   ✓ v2_01_lights_on
+[2026-02-20 13:44:56]   ✓ v2_02_shades_open
+[2026-02-20 13:44:56]   ✗ v2_03_tv_reveal
+[2026-02-20 13:44:56]   ✓ v2_04_speaker_system
+[2026-02-20 13:44:56]   ✓ v2_05_cinema_experience
+[2026-02-20 13:44:56]   ✗ v2_06_touch_panel
+[2026-02-20 13:44:56]   ✗ v2_07_outdoor_living
+[2026-02-20 13:44:56]   ✗ v2_08_whole_home
+[2026-02-20 13:44:56] 
+Total: 4/8 clips generated
+[2026-02-20 13:44:56] Output: /app/frontend/public/videos/hero-v2
