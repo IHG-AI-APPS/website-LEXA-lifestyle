@@ -56,12 +56,35 @@ export async function generateMetadata({ params }: { params: { slug: string } })
     keywords: page.meta_keywords,
     alternates: {
       canonical: page.canonical_url,
-      ...(page.english_alternate_url && {
-        languages: {
+      languages: {
+        'ar-AE': page.canonical_url,
+        'ar-SA': page.canonical_url,
+        'ar': page.canonical_url,
+        ...(page.english_alternate_url && {
           'en-AE': page.english_alternate_url,
-          'ar-AE': page.canonical_url
-        }
-      })
+          'en': page.english_alternate_url,
+          'x-default': page.english_alternate_url
+        })
+      }
+    },
+    openGraph: {
+      title: page.meta_title,
+      description: page.meta_description,
+      url: page.canonical_url,
+      siteName: 'LEXA Lifestyle',
+      locale: 'ar_AE',
+      alternateLocale: ['en_AE'],
+      type: 'website',
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: page.meta_title,
+      description: page.meta_description,
+    },
+    other: {
+      'content-language': 'ar',
+      'geo.region': 'AE-DU',
+      'geo.placename': 'Dubai',
     }
   }
   
