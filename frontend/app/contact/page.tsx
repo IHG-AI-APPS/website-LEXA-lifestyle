@@ -90,10 +90,11 @@ export default function ContactPage() {
             <span className="text-xs tracking-[0.3em] uppercase text-gray-400 font-medium mb-4 block">
               {language === 'ar' ? 'تواصل معنا' : 'Get In Touch'}
             </span>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
-              {language === 'ar' ? 'لنبدأ مشروعك' : "Let's Start Your Project"}
+            <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6">
+              {language === 'ar' ? 'لنبدأ مشروعك' : "Let's Start"} <span className="text-gray-400">{language === 'ar' ? '' : 'Your Project'}</span>
             </h1>
-            <p className="text-gray-300 text-lg mb-8 max-w-2xl mx-auto">
+            <div className="h-px w-32 bg-[#9F8B65] mb-6 mx-auto" />
+            <p className="text-gray-300 text-base md:text-lg mb-8 max-w-2xl mx-auto">
               {language === 'ar' 
                 ? 'هل أنت مستعد لتحويل مساحتك؟ فريقنا هنا لمساعدتك في إنشاء تجربة المنزل الذكي المثالية.'
                 : 'Ready to transform your space? Our team is here to help you create the perfect smart home experience.'
