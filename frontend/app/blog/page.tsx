@@ -40,25 +40,23 @@ export default function BlogPage() {
 
   return (
     <div className="min-h-screen bg-white pt-20">
-      {/* Hero */}
-      <section className="py-20 bg-gray-50">
-        <div className="container mx-auto px-8 lg:px-16">
-          <div className="max-w-7xl mx-auto text-center">
+      {/* Hero - Centered */}
+      <section className="py-16 md:py-20 bg-gray-50">
+        <div className="container mx-auto px-6 lg:px-12">
+          <div className="max-w-4xl mx-auto text-center">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.3 }}
             >
-              <span className="text-xs tracking-[0.5em] uppercase text-gray-400 font-medium mb-6 block">
+              <span className="text-xs tracking-[0.3em] uppercase text-gray-400 font-medium mb-4 block">
                 Insights & Articles
               </span>
-              <h1 className="text-6xl sm:text-7xl font-semibold tracking-[-0.04em] leading-[0.9] mb-8">
-                SMART LIVING
-                <br />
-                <span className="text-transparent bg-clip-text metallic-gradient">INSIGHTS</span>
+              <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6">
+                Smart Living <span className="text-gray-400">Insights</span>
               </h1>
-              <div className="h-px w-24 bg-gradient-to-r from-platinum to-transparent mb-8 mx-auto" />
-              <p className="text-xl text-gray-600 font-normal leading-relaxed max-w-3xl mx-auto">
+              <div className="h-px w-32 bg-[#9F8B65] mb-6 mx-auto" />
+              <p className="text-base md:text-lg text-gray-600 leading-relaxed max-w-2xl mx-auto">
                 Expert insights, guides, and trends in smart home technology, automation, and luxury living from the Middle East&apos;s leading integrator.
               </p>
             </motion.div>
