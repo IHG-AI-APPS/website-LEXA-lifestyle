@@ -77,7 +77,7 @@ def generate_video(shot, api_key):
         video_bytes = video_gen.text_to_video(
             prompt=full_prompt,
             model="sora-2",
-            size="1792x1024",  # Widescreen cinematic
+            size="1280x720",   # HD Widescreen cinematic
             duration=12,       # 12 seconds per clip
             max_wait_time=900  # 15 min timeout for quality
         )
