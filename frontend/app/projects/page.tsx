@@ -61,23 +61,23 @@ export default function ProjectsPage() {
 
   return (
     <div className="min-h-screen bg-[#F9F9F7] pt-20">
-      {/* Header */}
+      {/* Header - Centered */}
       <section className="py-12 md:py-16 lg:py-20 bg-white">
         <div className="content-container">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            className="max-w-4xl"
+            className="max-w-4xl mx-auto text-center"
           >
             <span className="text-xs tracking-widest uppercase text-[#9F8B65] font-medium mb-4 md:mb-6 block">
               Portfolio
             </span>
-            <h1 className="h1 mb-6 md:mb-8">
+            <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 md:mb-8">
               Our Projects
             </h1>
-            <div className="h-px w-32 bg-[#9F8B65] mb-6 md:mb-8" />
-            <p className="text-base md:text-lg text-[#4A4A4A] leading-relaxed">
+            <div className="h-px w-32 bg-[#9F8B65] mb-6 md:mb-8 mx-auto" />
+            <p className="text-base md:text-lg text-[#4A4A4A] leading-relaxed max-w-2xl mx-auto">
               A comprehensive showcase of our luxury smart living installations across the region.
             </p>
           </motion.div>

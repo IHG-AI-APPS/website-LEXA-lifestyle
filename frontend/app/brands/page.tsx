@@ -68,28 +68,24 @@ export default function BrandsPage() {
 
   return (
     <div className="min-h-screen bg-white pt-20">
-      {/* Hero - Compact */}
-      <section className="py-12 bg-gray-50 border-b">
+      {/* Hero - Centered */}
+      <section className="py-16 bg-gray-50 border-b">
         <div className="container mx-auto px-6 lg:px-12">
-          <div className="max-w-7xl mx-auto">
-            <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6">
-              <div>
-                <span className="text-xs tracking-[0.3em] uppercase text-gray-400 font-medium mb-3 block">
-                  Our Partners
-                </span>
-                <h1 className="text-4xl md:text-5xl font-semibold tracking-tight">
-                  Premium <span className="text-gray-400">Brands</span>
-                </h1>
+          <div className="max-w-4xl mx-auto text-center">
+            <span className="text-xs tracking-[0.3em] uppercase text-gray-400 font-medium mb-4 block">
+              Our Partners
+            </span>
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
+              Premium <span className="text-gray-400">Brands</span>
+            </h1>
+            <div className="flex items-center justify-center gap-6 text-sm">
+              <div className="flex items-center gap-2">
+                <Award className="text-gray-400" size={20} />
+                <span className="text-gray-600">Authorized Dealer</span>
               </div>
-              <div className="flex items-center gap-6 text-sm">
-                <div className="flex items-center gap-2">
-                  <Award className="text-gray-400" size={20} />
-                  <span className="text-gray-600">Authorized Dealer</span>
-                </div>
-                <div className="text-gray-400">|</div>
-                <div className="text-gray-600">
-                  <span className="font-semibold text-black">{brands.length}</span> Brands
-                </div>
+              <div className="text-gray-400">|</div>
+              <div className="text-gray-600">
+                <span className="font-semibold text-black">{brands.length}</span> Brands
               </div>
             </div>
           </div>

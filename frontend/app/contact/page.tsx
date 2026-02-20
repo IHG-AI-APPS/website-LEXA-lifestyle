@@ -83,43 +83,39 @@ export default function ContactPage() {
 
   return (
     <div className="min-h-screen bg-white pt-20">
-      {/* Hero Section - Compact */}
-      <section className="py-12 bg-gray-900 text-white">
+      {/* Hero Section - Centered */}
+      <section className="py-16 bg-gray-900 text-white">
         <div className="container mx-auto px-6 lg:px-12">
-          <div className="max-w-7xl mx-auto">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
-              <div>
-                <span className="text-xs tracking-[0.3em] uppercase text-gray-400 font-medium mb-3 block">
-                  {language === 'ar' ? 'تواصل معنا' : 'Get In Touch'}
-                </span>
-                <h1 className="text-4xl md:text-5xl font-bold mb-4">
-                  {language === 'ar' ? 'لنبدأ مشروعك' : "Let's Start Your Project"}
-                </h1>
-                <p className="text-gray-300 text-lg">
-                  {language === 'ar' 
-                    ? 'هل أنت مستعد لتحويل مساحتك؟ فريقنا هنا لمساعدتك في إنشاء تجربة المنزل الذكي المثالية.'
-                    : 'Ready to transform your space? Our team is here to help you create the perfect smart home experience.'
-                  }
-                </p>
-              </div>
-              <div className="flex flex-wrap gap-4 lg:justify-end">
-                <a 
-                  href="tel:+97142670470" 
-                  className="inline-flex items-center gap-2 px-5 py-3 bg-white text-gray-900 font-medium rounded-lg hover:bg-gray-100 transition-colors"
-                >
-                  <Phone className="h-5 w-5" />
-                  {language === 'ar' ? 'اتصل بنا' : 'Call Us'}
-                </a>
-                <a 
-                  href="https://wa.me/971521782109" 
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 px-5 py-3 bg-green-500 text-white font-medium rounded-lg hover:bg-green-600 transition-colors"
-                >
-                  <MessageCircle className="h-5 w-5" />
-                  {language === 'ar' ? 'واتساب' : 'WhatsApp'}
-                </a>
-              </div>
+          <div className="max-w-4xl mx-auto text-center">
+            <span className="text-xs tracking-[0.3em] uppercase text-gray-400 font-medium mb-4 block">
+              {language === 'ar' ? 'تواصل معنا' : 'Get In Touch'}
+            </span>
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
+              {language === 'ar' ? 'لنبدأ مشروعك' : "Let's Start Your Project"}
+            </h1>
+            <p className="text-gray-300 text-lg mb-8 max-w-2xl mx-auto">
+              {language === 'ar' 
+                ? 'هل أنت مستعد لتحويل مساحتك؟ فريقنا هنا لمساعدتك في إنشاء تجربة المنزل الذكي المثالية.'
+                : 'Ready to transform your space? Our team is here to help you create the perfect smart home experience.'
+              }
+            </p>
+            <div className="flex flex-wrap gap-4 justify-center">
+              <a 
+                href="tel:+97142670470" 
+                className="inline-flex items-center gap-2 px-6 py-3 bg-white text-gray-900 font-medium rounded-lg hover:bg-gray-100 transition-colors"
+              >
+                <Phone className="h-5 w-5" />
+                {language === 'ar' ? 'اتصل بنا' : 'Call Us'}
+              </a>
+              <a 
+                href="https://wa.me/971521782109" 
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 px-6 py-3 bg-green-500 text-white font-medium rounded-lg hover:bg-green-600 transition-colors"
+              >
+                <MessageCircle className="h-5 w-5" />
+                {language === 'ar' ? 'واتساب' : 'WhatsApp'}
+              </a>
             </div>
           </div>
         </div>
