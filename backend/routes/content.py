@@ -106,6 +106,7 @@ async def get_services():
                 "description": s.get("short_description", s.get("description", "")),
                 "features": s.get("key_features", s.get("features", [])),
                 "icon": s.get("icon", ""),
+                "image": s.get("image", ""),  # Include image for cards
                 "featured": s.get("featured", False),
                 "order": s.get("order", s.get("priority", 100))
             })
