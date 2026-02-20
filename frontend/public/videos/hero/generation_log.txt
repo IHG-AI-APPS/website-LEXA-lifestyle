@@ -36,3 +36,18 @@
 --- CLIP 7/7 ---
 [2026-02-20 12:22:46] Starting generation: 07_finale_hero
 [2026-02-20 12:22:46] Prompt: Exterior night shot of modern luxury villa, architectural lighting glowing warmly, reflections in gl...
+[2026-02-20 12:38:12] FAILED: 07_finale_hero - No video bytes returned
+[2026-02-20 12:38:12] 
+============================================================
+[2026-02-20 12:38:12] GENERATION COMPLETE - SUMMARY
+[2026-02-20 12:38:12] ============================================================
+[2026-02-20 12:38:12]   01_arrival: OK
+[2026-02-20 12:38:12]   02_interior_reveal: OK
+[2026-02-20 12:38:12]   03_detail_obsession: FAILED
+[2026-02-20 12:38:12]   04_technology_art: FAILED
+[2026-02-20 12:38:12]   05_home_cinema: FAILED
+[2026-02-20 12:38:12]   06_silhouette: OK
+[2026-02-20 12:38:12]   07_finale_hero: FAILED
+[2026-02-20 12:38:12] 
+Total: 3/7 clips generated
+[2026-02-20 12:38:12] Output directory: /app/frontend/public/videos/hero
