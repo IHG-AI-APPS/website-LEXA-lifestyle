@@ -43,3 +43,10 @@
 [2026-02-20 13:31:01] ========================================
 [2026-02-20 13:31:01] Generating: v2_06_touch_panel
 [2026-02-20 13:31:01] Scene: Elegant hand touching sleek wall-mounted smart home control panel, modern touchs...
+[2026-02-20 13:41:22] FAILED: v2_06_touch_panel - No video returned
+[2026-02-20 13:41:25] 
+========================================
+[2026-02-20 13:41:25] CLIP 7/8
+[2026-02-20 13:41:25] ========================================
+[2026-02-20 13:41:25] Generating: v2_07_outdoor_living
+[2026-02-20 13:41:25] Scene: Luxury outdoor terrace at sunset, landscape lighting activating along pathways, ...
