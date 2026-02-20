@@ -11,3 +11,8 @@
 --- RETRY CLIP 2/4 ---
 [2026-02-20 12:41:43] Starting generation: 04_smart_interface
 [2026-02-20 12:41:43] Prompt: Modern minimalist smart home control panel on elegant wall, person's hand touching sleek touchscreen...
+[2026-02-20 12:44:27] FAILED: 04_smart_interface - No video bytes returned
+[2026-02-20 12:44:32] 
+--- RETRY CLIP 3/4 ---
+[2026-02-20 12:44:32] Starting generation: 05_cinema_room
+[2026-02-20 12:44:32] Prompt: Elegant private screening room interior, comfortable designer seating arrangement, indirect ambient ...
