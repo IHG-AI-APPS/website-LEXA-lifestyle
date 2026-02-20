@@ -1,0 +1,53 @@
+[2026-02-20 11:52:02] ============================================================
+[2026-02-20 11:52:02] LEXA HERO VIDEO GENERATION - STARTING
+[2026-02-20 11:52:02] Total clips to generate: 7
+[2026-02-20 11:52:02] ============================================================
+[2026-02-20 11:52:02] 
+--- CLIP 1/7 ---
+[2026-02-20 11:52:02] Starting generation: 01_arrival
+[2026-02-20 11:52:02] Prompt: Modern luxury villa entrance at dusk, architectural lighting softly illuminating stone walls and gla...
+[2026-02-20 11:52:03] FAILED: 01_arrival - No video bytes returned
+[2026-02-20 11:52:08] 
+--- CLIP 2/7 ---
+[2026-02-20 11:52:08] Starting generation: 02_interior_reveal
+[2026-02-20 11:52:08] Prompt: Wide interior reveal of luxury smart home living room, layered lighting activating gently, marble fl...
+[2026-02-20 11:52:08] FAILED: 02_interior_reveal - No video bytes returned
+[2026-02-20 11:52:13] 
+--- CLIP 3/7 ---
+[2026-02-20 11:52:13] Starting generation: 03_detail_obsession
+[2026-02-20 11:52:13] Prompt: Extreme close-up shots of brushed brass lighting fixture, marble texture, wood grain, smart lighting...
+[2026-02-20 11:52:13] FAILED: 03_detail_obsession - No video bytes returned
+[2026-02-20 11:52:18] 
+--- CLIP 4/7 ---
+[2026-02-20 11:52:18] Starting generation: 04_technology_art
+[2026-02-20 11:52:18] Prompt: Luxury smart home wall control panel close-up, finger gently activating lighting scene, ambient ligh...
+[2026-02-20 11:52:18] FAILED: 04_technology_art - No video bytes returned
+[2026-02-20 11:52:23] 
+--- CLIP 5/7 ---
+[2026-02-20 11:52:23] Starting generation: 05_home_cinema
+[2026-02-20 11:52:23] Prompt: High-end private home cinema room, plush leather recliner seats, indirect ceiling lighting, acoustic...
+[2026-02-20 11:52:24] FAILED: 05_home_cinema - No video bytes returned
+[2026-02-20 11:52:29] 
+--- CLIP 6/7 ---
+[2026-02-20 11:52:29] Starting generation: 06_silhouette
+[2026-02-20 11:52:29] Prompt: Silhouetted architect and client walking through luxury interior showroom, discussing design, soft b...
+[2026-02-20 11:52:29] FAILED: 06_silhouette - No video bytes returned
+[2026-02-20 11:52:34] 
+--- CLIP 7/7 ---
+[2026-02-20 11:52:34] Starting generation: 07_finale_hero
+[2026-02-20 11:52:34] Prompt: Exterior night shot of modern luxury villa, architectural lighting glowing warmly, reflections in gl...
+[2026-02-20 11:52:34] FAILED: 07_finale_hero - No video bytes returned
+[2026-02-20 11:52:34] 
+============================================================
+[2026-02-20 11:52:34] GENERATION COMPLETE - SUMMARY
+[2026-02-20 11:52:34] ============================================================
+[2026-02-20 11:52:34]   01_arrival: FAILED
+[2026-02-20 11:52:34]   02_interior_reveal: FAILED
+[2026-02-20 11:52:34]   03_detail_obsession: FAILED
+[2026-02-20 11:52:34]   04_technology_art: FAILED
+[2026-02-20 11:52:34]   05_home_cinema: FAILED
+[2026-02-20 11:52:34]   06_silhouette: FAILED
+[2026-02-20 11:52:34]   07_finale_hero: FAILED
+[2026-02-20 11:52:34] 
+Total: 0/7 clips generated
+[2026-02-20 11:52:34] Output directory: /app/frontend/public/videos/hero
