@@ -7,6 +7,9 @@ import StatsSection from '@/components/homepage/StatsSection'
 import PersonaModal from '@/components/sections/PersonaModal'
 
 // Lazy load below-the-fold components for performance
+const SmartHomeVideoShowcase = dynamic(() => import('@/components/SmartHomeVideoShowcase'), {
+  loading: () => <div className="h-[600px] bg-black" />
+})
 const SolutionsBentoGrid = dynamic(() => import('@/components/homepage/SolutionsBentoGrid'), {
   loading: () => <div className="h-[600px] bg-gray-50" />
 })
@@ -37,6 +40,9 @@ export default function HomePage() {
     <>
       {/* HERO - Above the Fold */}
       <HeroCurator onPersonaClick={() => setShowPersonaModal(true)} />
+      
+      {/* SMART HOME VIDEO SHOWCASE - AI-Generated Cinematic Experience */}
+      <SmartHomeVideoShowcase />
       
       {/* RECENTLY VIEWED - Personalized re-engagement (shows only if user has history) */}
       <RecentlyViewedSection maxItems={4} variant="horizontal" className="bg-gray-50 dark:bg-gray-900/50" />
