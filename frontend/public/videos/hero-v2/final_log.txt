@@ -1,0 +1,4 @@
+Starting: v2_07_pool_area
+SUCCESS: v2_07_pool_area
+Starting: v2_08_home_exterior
+FAILED: v2_08_home_exterior
