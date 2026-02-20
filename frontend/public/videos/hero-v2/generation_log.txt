@@ -50,3 +50,10 @@
 [2026-02-20 13:41:25] ========================================
 [2026-02-20 13:41:25] Generating: v2_07_outdoor_living
 [2026-02-20 13:41:25] Scene: Luxury outdoor terrace at sunset, landscape lighting activating along pathways, ...
+[2026-02-20 13:43:08] FAILED: v2_07_outdoor_living - No video returned
+[2026-02-20 13:43:11] 
+========================================
+[2026-02-20 13:43:11] CLIP 8/8
+[2026-02-20 13:43:11] ========================================
+[2026-02-20 13:43:11] Generating: v2_08_whole_home
+[2026-02-20 13:43:11] Scene: Wide shot of modern luxury home at dusk, windows glowing warmly from inside, ext...
