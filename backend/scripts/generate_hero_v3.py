@@ -75,7 +75,7 @@ def generate_video(shot, api_key):
             prompt=full_prompt,
             model="sora-2",
             size="1280x720",
-            duration=10,  # 10 seconds for more dramatic pacing
+            duration=12,  # 12 seconds for dramatic pacing
             max_wait_time=600
         )
         
