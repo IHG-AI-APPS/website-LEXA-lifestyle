@@ -21,3 +21,14 @@
 --- RETRY CLIP 4/4 ---
 [2026-02-20 12:47:23] Starting generation: 07_night_exterior
 [2026-02-20 12:47:23] Prompt: Modern architectural villa exterior at night, warm interior lighting visible through large glass win...
+[2026-02-20 12:57:43] FAILED: 07_night_exterior - No video bytes returned
+[2026-02-20 12:57:43] 
+============================================================
+[2026-02-20 12:57:43] RETRY COMPLETE - SUMMARY
+[2026-02-20 12:57:43] ============================================================
+[2026-02-20 12:57:43]   03_material_details: FAILED
+[2026-02-20 12:57:43]   04_smart_interface: FAILED
+[2026-02-20 12:57:43]   05_cinema_room: OK
+[2026-02-20 12:57:43]   07_night_exterior: FAILED
+[2026-02-20 12:57:43] 
+Retry Total: 1/4 clips generated
