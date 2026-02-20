@@ -47,24 +47,27 @@ export default function NewsPage() {
 
   return (
     <div className="min-h-screen bg-lexa-black pt-20">
-      {/* Hero */}
-      <section className="py-24 bg-lexa-surface border-b border-white/5">
-        <div className="container mx-auto px-4 md:px-8 max-w-7xl">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-          >
-            <span className="text-xs md:text-sm tracking-[0.2em] uppercase text-gray-400 font-bold block mb-6">
-              Latest Updates
-            </span>
-            <h1 className="text-6xl md:text-8xl font-heading font-bold tracking-tight text-white mb-8">
-              NEWS
-            </h1>
-            <p className="text-lg text-gray-400 max-w-2xl">
-              Company announcements, product launches, and industry updates from LEXA Lifestyle.
-            </p>
-          </motion.div>
+      {/* Hero - Centered */}
+      <section className="py-16 md:py-20 bg-gray-50">
+        <div className="container mx-auto px-6 lg:px-12">
+          <div className="max-w-4xl mx-auto text-center">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+            >
+              <span className="text-xs tracking-[0.3em] uppercase text-gray-400 font-medium mb-4 block">
+                Latest Updates
+              </span>
+              <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 text-[#1A1A1A]">
+                Company <span className="text-gray-400">News</span>
+              </h1>
+              <div className="h-px w-32 bg-[#9F8B65] mb-6 mx-auto" />
+              <p className="text-base md:text-lg text-gray-600 leading-relaxed max-w-2xl mx-auto">
+                Company announcements, product launches, and industry updates from LEXA Lifestyle.
+              </p>
+            </motion.div>
+          </div>
         </div>
       </section>
 
