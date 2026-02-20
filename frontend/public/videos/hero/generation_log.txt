@@ -16,3 +16,8 @@
 --- CLIP 3/7 ---
 [2026-02-20 11:58:48] Starting generation: 03_detail_obsession
 [2026-02-20 11:58:48] Prompt: Extreme close-up shots of brushed brass lighting fixture, marble texture, wood grain, smart lighting...
+[2026-02-20 12:01:31] FAILED: 03_detail_obsession - No video bytes returned
+[2026-02-20 12:01:36] 
+--- CLIP 4/7 ---
+[2026-02-20 12:01:36] Starting generation: 04_technology_art
+[2026-02-20 12:01:36] Prompt: Luxury smart home wall control panel close-up, finger gently activating lighting scene, ambient ligh...
