@@ -117,8 +117,8 @@ export default function NewsPage() {
       )}
 
       {/* News Grid */}
-      <section className="py-24">
-        <div className="container mx-auto px-4 md:px-8 max-w-7xl">
+      <section className="py-16">
+        <div className="container mx-auto px-6 lg:px-12 max-w-7xl">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {otherNews.map((article, index) => (
               <motion.div
@@ -129,28 +129,28 @@ export default function NewsPage() {
                 transition={{ duration: 0.6, delay: 0.2 }}
               >
                 <Link href={`/news/${article.slug}`} className="group block">
-                  <div className="relative h-64 overflow-hidden bg-lexa-surface mb-6">
+                  <div className="relative h-64 overflow-hidden bg-gray-100 rounded-lg mb-6">
                     <SafeImage
                       src={article.image}
                       alt={article.title}
                       fill
-                      className="object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700"
+                      className="object-cover group-hover:scale-105 transition-all duration-700"
                     />
                   </div>
                   <div className="flex items-center gap-2 text-xs text-gray-500 mb-3">
                     <Calendar size={14} strokeWidth={1.5} />
                     <time>{new Date(article.published_date).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })}</time>
                   </div>
-                  <h3 className="text-xl font-heading font-semibold text-white mb-3 group-hover:text-gray-300 transition-colors">
+                  <h3 className="text-xl font-bold text-[#1A1A1A] mb-3 group-hover:text-[#9F8B65] transition-colors">
                     {article.title}
                   </h3>
-                  <p className="text-sm text-gray-400 leading-relaxed">
+                  <p className="text-sm text-gray-600 leading-relaxed">
                     {article.excerpt}
                   </p>
                   {article.tags && article.tags.length > 0 && (
                     <div className="flex flex-wrap gap-2 mt-4">
                       {article.tags.map(tag => (
-                        <span key={tag} className="text-xs text-gray-500 border border-white/10 px-2 py-1">
+                        <span key={tag} className="text-xs text-gray-500 border border-gray-200 px-2 py-1 rounded">
                           {tag}
                         </span>
                       ))}
