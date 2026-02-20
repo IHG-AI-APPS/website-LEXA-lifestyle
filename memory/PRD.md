@@ -1,12 +1,55 @@
 # LEXA Smart Home Platform - Product Requirements Document
 
-**Version**: 9.13  
-**Last Updated**: February 16, 2026  
-**Status**: ✅ COMPREHENSIVE SEO AUDIT COMPLETE
+**Version**: 9.14  
+**Last Updated**: February 20, 2026  
+**Status**: ✅ I18N REFACTORING COMPLETE
 
 ---
 
-## Latest Updates (v9.13)
+## Latest Updates (v9.14)
+
+### 🌐 LANGUAGECONTEXT REFACTORING (Feb 20, 2026)
+
+**STATUS: COMPLETED ✅**
+
+Refactored `LanguageContext.tsx` to move large hardcoded translation objects into dedicated JSON locale files for better i18n management and maintainability.
+
+**Changes Made:**
+- Created `/app/frontend/locales/en.json` - English translations (~220 translation keys)
+- Created `/app/frontend/locales/ar.json` - Arabic translations (~220 translation keys)
+- Refactored `/app/frontend/contexts/LanguageContext.tsx`:
+  - Reduced from ~264 lines to ~75 lines
+  - Now imports translations from JSON files
+  - Added `getNestedValue()` function for dot-notation key access
+  - Added `useCallback` optimization for `t()` and `setLanguage` functions
+  - Maintains full backwards compatibility with existing `t('key.subkey')` syntax
+
+**Benefits:**
+- ✅ Cleaner separation of concerns (code vs. content)
+- ✅ Easier to add new translations without touching React code
+- ✅ JSON files can be edited by translators without developer help
+- ✅ Better IDE support for JSON editing
+- ✅ Reduced component complexity
+
+**Files Created:**
+- `/app/frontend/locales/en.json`
+- `/app/frontend/locales/ar.json`
+
+**Files Modified:**
+- `/app/frontend/contexts/LanguageContext.tsx`
+
+**Files Removed:**
+- `/app/frontend/lib/translations/ar.ts` (deprecated, replaced by JSON)
+
+**Testing:**
+- ✅ Homepage renders correctly with English translations
+- ✅ Navigation menu items display properly
+- ✅ No console errors related to imports
+- ✅ Frontend service running without issues
+
+---
+
+## Previous Updates (v9.13)
 
 ### 🔍 FULL SEO AUDIT: AI-FRIENDLY FAQs + SCHEMA MARKUP (Feb 16, 2026)
 
