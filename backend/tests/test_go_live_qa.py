@@ -16,7 +16,7 @@ import os
 import time
 from datetime import datetime
 
-BASE_URL = os.environ.get('REACT_APP_BACKEND_URL', 'https://go-live-hub.preview.emergentagent.com')
+BASE_URL = os.environ.get('REACT_APP_BACKEND_URL', 'https://project-gallery-139.preview.emergentagent.com')
 
 class TestPhase7APIEndpoints:
     """Phase 7: API Endpoints Testing"""

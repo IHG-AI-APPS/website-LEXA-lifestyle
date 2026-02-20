@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   title: 'How to Install Smart Home in Dubai | 8-Step Installation Guide | LEXA',
   description: 'Complete step-by-step guide to installing smart home automation in Dubai. From consultation to commissioning. Timeline, costs, and expert tips from 500+ projects.',
   alternates: {
-    canonical: 'https://go-live-hub.preview.emergentagent.com/guides/how-to-install-smart-home-dubai'
+    canonical: 'https://project-gallery-139.preview.emergentagent.com/guides/how-to-install-smart-home-dubai'
   }
 }
 

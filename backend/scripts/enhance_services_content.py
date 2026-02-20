@@ -454,7 +454,7 @@ async def enhance_services():
         
         print("\n✨ Enhancement complete!")
         print(f"📈 Updated {updated} service pages")
-        print("🌐 Visit: https://go-live-hub.preview.emergentagent.com/services")
+        print("🌐 Visit: https://project-gallery-139.preview.emergentagent.com/services")
         
         client.close()
         

@@ -293,7 +293,7 @@ async def create_outdoor_living_solution():
         print(f"   Feature Cards: {len(OUTDOOR_LIVING_SOLUTION['feature_cards'])}")
         print(f"   FAQs: {len(OUTDOOR_LIVING_SOLUTION['faqs'])}")
         print(f"   Price Range: {OUTDOOR_LIVING_SOLUTION['price_range']}")
-        print("\n🌐 URL: https://go-live-hub.preview.emergentagent.com/solutions/outdoor-automation")
+        print("\n🌐 URL: https://project-gallery-139.preview.emergentagent.com/solutions/outdoor-automation")
         
         client.close()
         
