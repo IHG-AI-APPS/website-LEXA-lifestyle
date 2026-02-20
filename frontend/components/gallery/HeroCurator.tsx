@@ -12,21 +12,22 @@ interface HeroCuratorProps {
   onPersonaClick?: () => void
 }
 
-// Smart Home Automation Video Clips - V2
+// Curated Dark Luxury Video Sequence - Maximum Impact
 const HERO_CLIPS = [
-  '/videos/hero-v2/v2_01_lights_on.mp4',
-  '/videos/hero-v2/v2_02_shades_open.mp4',
-  '/videos/hero-v2/v2_03_display_screen.mp4',
-  '/videos/hero-v2/v2_04_speaker_system.mp4',
-  '/videos/hero-v2/v2_05_cinema_experience.mp4',
-  '/videos/hero-v2/v2_06_control_interface.mp4',
-  '/videos/hero-v2/v2_07_pool_area.mp4',
+  '/videos/hero-v3/v3_01_dramatic_entrance.mp4',  // Hook: Dramatic chandelier entrance
+  '/videos/hero/01_arrival.mp4',                   // Architectural villa exterior
+  '/videos/hero-v2/v2_01_lights_on.mp4',          // Dramatic lighting sequence
+  '/videos/hero-v2/v2_04_speaker_system.mp4',     // Luxury audiophile room
+  '/videos/hero/05_cinema_room.mp4',              // Home cinema experience
+  '/videos/hero-v2/v2_06_control_interface.mp4', // Smart control panel
+  '/videos/hero-v2/v2_07_pool_area.mp4',         // Outdoor living with pool
 ]
 
 export default function HeroCurator({ onPersonaClick }: HeroCuratorProps) {
   const { t, language } = useLanguage()
   const [currentClip, setCurrentClip] = useState(0)
   const [isFading, setIsFading] = useState(false)
+  const [isLoaded, setIsLoaded] = useState(false)
   const videoRef = useRef<HTMLVideoElement>(null)
 
   // Handle video end - smooth transition to next clip
@@ -35,33 +36,37 @@ export default function HeroCurator({ onPersonaClick }: HeroCuratorProps) {
     setTimeout(() => {
       setCurrentClip((prev) => (prev + 1) % HERO_CLIPS.length)
       setIsFading(false)
-    }, 300)
+    }, 400)
   }
 
   // Load and play new clip when index changes
   useEffect(() => {
     if (videoRef.current) {
+      setIsLoaded(false)
       videoRef.current.load()
       videoRef.current.play().catch(() => {})
     }
   }, [currentClip])
   
   return (
-    <section className="relative min-h-[100svh] w-full overflow-hidden">
+    <section className="relative min-h-[100svh] w-full overflow-hidden bg-black">
       {/* Video Background */}
       <div className="absolute inset-0 z-0">
         <video
           ref={videoRef}
-          className={`h-full w-full object-cover transition-opacity duration-300 ${isFading ? 'opacity-0' : 'opacity-100'}`}
+          className={`h-full w-full object-cover transition-opacity duration-500 ${isFading ? 'opacity-0' : 'opacity-100'}`}
           autoPlay
           muted
           playsInline
+          onLoadedData={() => setIsLoaded(true)}
           onEnded={handleVideoEnd}
         >
           <source src={HERO_CLIPS[currentClip]} type="video/mp4" />
         </video>
-        {/* Cinematic Gradient Overlay for text readability */}
-        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-black/50" />
+        
+        {/* Dark Luxury Overlay - Enhanced for dramatic feel */}
+        <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-black/60" />
+        <div className="absolute inset-0 bg-gradient-to-r from-black/50 via-transparent to-black/30" />
       </div>
 
       {/* Content */}
