@@ -121,7 +121,7 @@ export default function PropertyPackageDetailPage() {
       {/* Hero Section - Centered */}
       <section className="relative h-[60vh] min-h-[400px]">
         <SafeImage
-          src={packageData.hero_image}
+          src={packageData.image || packageData.hero_image}
           alt={packageData.title}
           fill
           className="object-cover"
