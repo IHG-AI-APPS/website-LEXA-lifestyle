@@ -1,12 +1,43 @@
 # LEXA Smart Home Platform - Product Requirements Document
 
-**Version**: 9.16  
+**Version**: 9.17  
 **Last Updated**: February 20, 2026  
-**Status**: ✅ AI IMAGE REPLACEMENT COMPLETE (85/85 SOLUTIONS)
+**Status**: ✅ SITE-WIDE CONSISTENCY AUDIT COMPLETE
 
 ---
 
-## Latest Updates (v9.16)
+## Latest Updates (v9.17)
+
+### 🎨 SITE-WIDE CONSISTENCY AUDIT COMPLETE (Feb 20, 2026)
+
+**STATUS: COMPLETED ✅**
+
+Standardized hero sections across all 7 main pages for visual consistency:
+
+**Pages Updated:**
+1. **Services** - Hero now centered with gold accent line
+2. **Solutions** - Hero now centered with gold accent line  
+3. **Blog** - Typography standardized, title case headings
+4. **News** - Converted from dark to light theme, centered hero
+5. **Brands** - Typography standardized, gold accent line added
+6. **Contact** - Typography standardized, gold accent line added (kept dark hero for visual impact)
+7. **Projects** - Already consistent (verified)
+
+**Design System Applied:**
+- **Hero Alignment:** Centered (`text-center`, `mx-auto max-w-4xl`)
+- **Typography:** `text-3xl md:text-4xl lg:text-5xl font-bold`
+- **Headings:** Title Case with secondary text in gray-400
+- **Accent Line:** 32px width, `#9F8B65` gold color
+- **Subheading Label:** `text-xs tracking-[0.3em] uppercase text-gray-400`
+
+**Testing Status:**
+- ✅ Testing Agent verified all 7 pages consistent
+- ✅ All navigation links working
+- ✅ AI-generated images loading correctly
+
+---
+
+## Previous Updates (v9.16)
 
 ### 🖼️ AI IMAGE REPLACEMENT - SITE-WIDE COMPLETE (Feb 20, 2026)
 
@@ -20,26 +51,6 @@ Replaced ALL 85 generic Unsplash stock photos with custom AI-generated images ac
 - All images sized at 1536x1024 for high-quality display
 - Categories covered: Residential, Commercial, Marine, Entertainment, Security, Specialty Rooms, Cultural Automation, and more
 
-**Categories Updated:**
-- Residential Automation (smart-home, lighting, climate, audio, security)
-- Entertainment (home-cinema, home-theater, multi-room, media lounge)
-- Commercial (office, retail, healthcare, education, industrial)
-- Marine (yacht automation, marine audio/video)
-- Specialty Rooms (wine cellar, cigar lounge, home gym, library, walk-in closet)
-- Cultural (majlis, masjid, prayer room)
-- Outdoor (pool-spa, landscape lighting, rooftop terrace, patio)
-- Smart Living (kitchen, laundry, nursery, pet care, garage)
-
-**Technical Implementation:**
-- Images stored on Emergent CDN at `static.prod-images.emergentagent.com`
-- Database updated via MongoDB direct updates
-- All solution detail pages now display AI imagery in hero backgrounds
-
-**Quality Assurance:**
-- Each prompt crafted to match luxury Dubai smart home aesthetic
-- Professional architectural/interior photography style
-- Consistent visual language across all solutions
-
 ---
 
 ### 🐛 BUG FIXES VERIFIED (Feb 20, 2026)
@@ -47,8 +58,6 @@ Replaced ALL 85 generic Unsplash stock photos with custom AI-generated images ac
 **Pages Previously Reported as Broken - NOW WORKING:**
 - ✅ `/experience-centre` - Returns 200 OK (Experience Centre page loads correctly)
 - ✅ `/services/consultation-design` - Returns 200 OK (Service pages functional)
-
-**Note:** The `/experience` 404 error was a false positive - the actual page is `/experience-centre` and all navigation links correctly point to it.
 
 ---
 
