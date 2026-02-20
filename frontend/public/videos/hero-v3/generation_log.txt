@@ -66,3 +66,71 @@
 [2026-02-20 14:49:33] 
 Total: 1/7 clips generated
 [2026-02-20 14:49:33] Output: /app/frontend/public/videos/hero-v3
+[2026-02-20 14:51:56] ============================================================
+[2026-02-20 14:51:56] LEXA HERO V3 - DARK LUXURY THEME
+[2026-02-20 14:51:56] Dramatic Architectural Lighting
+[2026-02-20 14:51:56] Generating 7 clips
+[2026-02-20 14:51:56] ============================================================
+[2026-02-20 14:51:56] 
+========================================
+[2026-02-20 14:51:56] CLIP 1/7
+[2026-02-20 14:51:56] ========================================
+[2026-02-20 14:51:56] Generating: v3_01_dramatic_entrance
+[2026-02-20 14:51:56] Scene: Dramatic luxury villa foyer at night, statement chandelier slowly illuminating, ...
+[2026-02-20 14:51:56] FAILED: v3_01_dramatic_entrance
+[2026-02-20 14:51:59] 
+========================================
+[2026-02-20 14:51:59] CLIP 2/7
+[2026-02-20 14:51:59] ========================================
+[2026-02-20 14:51:59] Generating: v3_02_living_ambiance
+[2026-02-20 14:51:59] Scene: Dark luxury living room with layered lighting activating, recessed ceiling light...
+[2026-02-20 14:51:59] FAILED: v3_02_living_ambiance
+[2026-02-20 14:52:02] 
+========================================
+[2026-02-20 14:52:02] CLIP 3/7
+[2026-02-20 14:52:02] ========================================
+[2026-02-20 14:52:02] Generating: v3_03_savant_panel
+[2026-02-20 14:52:02] Scene: Elegant Savant-style smart home control panel on dark wall, sleek glass touchscr...
+[2026-02-20 14:52:02] FAILED: v3_03_savant_panel
+[2026-02-20 14:52:05] 
+========================================
+[2026-02-20 14:52:05] CLIP 4/7
+[2026-02-20 14:52:05] ========================================
+[2026-02-20 14:52:05] Generating: v3_04_speaker_lounge
+[2026-02-20 14:52:05] Scene: Audiophile listening room with dramatic lighting, high-end floor standing speake...
+[2026-02-20 14:52:05] FAILED: v3_04_speaker_lounge
+[2026-02-20 14:52:08] 
+========================================
+[2026-02-20 14:52:08] CLIP 5/7
+[2026-02-20 14:52:08] ========================================
+[2026-02-20 14:52:08] Generating: v3_05_cinema_palace
+[2026-02-20 14:52:08] Scene: Ultra-luxury private cinema room, plush theater seating in deep burgundy leather...
+[2026-02-20 14:52:08] FAILED: v3_05_cinema_palace
+[2026-02-20 14:52:11] 
+========================================
+[2026-02-20 14:52:11] CLIP 6/7
+[2026-02-20 14:52:11] ========================================
+[2026-02-20 14:52:11] Generating: v3_06_outdoor_gazebo
+[2026-02-20 14:52:11] Scene: Luxury outdoor gazebo at twilight, elegant pergola with string lights, large out...
+[2026-02-20 14:52:12] FAILED: v3_06_outdoor_gazebo
+[2026-02-20 14:52:15] 
+========================================
+[2026-02-20 14:52:15] CLIP 7/7
+[2026-02-20 14:52:15] ========================================
+[2026-02-20 14:52:15] Generating: v3_07_master_suite
+[2026-02-20 14:52:15] Scene: Luxury master bedroom with motorized curtains opening to night cityscape, indire...
+[2026-02-20 14:52:15] FAILED: v3_07_master_suite
+[2026-02-20 14:52:15] 
+============================================================
+[2026-02-20 14:52:15] GENERATION COMPLETE
+[2026-02-20 14:52:15] ============================================================
+[2026-02-20 14:52:15]   ✗ v3_01_dramatic_entrance
+[2026-02-20 14:52:15]   ✗ v3_02_living_ambiance
+[2026-02-20 14:52:15]   ✗ v3_03_savant_panel
+[2026-02-20 14:52:15]   ✗ v3_04_speaker_lounge
+[2026-02-20 14:52:15]   ✗ v3_05_cinema_palace
+[2026-02-20 14:52:15]   ✗ v3_06_outdoor_gazebo
+[2026-02-20 14:52:15]   ✗ v3_07_master_suite
+[2026-02-20 14:52:15] 
+Total: 0/7 clips generated
+[2026-02-20 14:52:15] Output: /app/frontend/public/videos/hero-v3
