@@ -14,7 +14,9 @@ from uuid import uuid4
 import os
 import logging
 import jwt
+import asyncio
 from motor.motor_asyncio import AsyncIOMotorClient
+from services.email_service import EmailService
 
 router = APIRouter(prefix="/api/sales-intelligence", tags=["sales-intelligence"])
 logger = logging.getLogger(__name__)
