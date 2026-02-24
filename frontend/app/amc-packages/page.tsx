@@ -176,7 +176,7 @@ export default function AMCPackagesPage() {
                 </span>
               </div>
               
-              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
+              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-heading font-bold mb-6 leading-tight">
                 Protect Your<br />
                 <span className="text-gray-300">Investment</span>
               </h1>
