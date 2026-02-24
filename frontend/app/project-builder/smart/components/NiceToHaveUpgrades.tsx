@@ -228,10 +228,10 @@ export default function NiceToHaveUpgrades({
       <div className="max-w-4xl mx-auto px-4 py-12">
         <div className="animate-pulse">
           <div className="h-8 bg-gray-200 rounded w-1/3 mb-4 mx-auto"></div>
-          <div className="h-4 bg-gray-100 rounded w-1/2 mb-8 mx-auto"></div>
+          <div className="h-4 bg-gray-100 dark:bg-gray-800 rounded w-1/2 mb-8 mx-auto"></div>
           <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
             {[...Array(6)].map((_, i) => (
-              <div key={i} className="h-24 bg-gray-100 rounded-lg"></div>
+              <div key={i} className="h-24 bg-gray-100 dark:bg-gray-800 rounded-lg"></div>
             ))}
           </div>
         </div>
@@ -273,7 +273,7 @@ export default function NiceToHaveUpgrades({
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.3 }}
-          className="mt-4 inline-flex items-center gap-3 px-5 py-3 bg-gray-100 rounded-xl text-sm"
+          className="mt-4 inline-flex items-center gap-3 px-5 py-3 bg-gray-100 dark:bg-gray-800 rounded-xl text-sm"
         >
           <div>
             <span className="text-gray-500">Your Package:</span>

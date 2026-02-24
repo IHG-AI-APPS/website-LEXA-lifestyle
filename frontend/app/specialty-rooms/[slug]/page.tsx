@@ -42,10 +42,10 @@ export default function SpecialtyRoomDetailPage() {
           <div className="h-[50vh] bg-gray-200"></div>
           <div className="container mx-auto px-4 py-8">
             <div className="h-10 bg-gray-200 rounded w-1/2 mb-4"></div>
-            <div className="h-4 bg-gray-100 rounded w-3/4 mb-8"></div>
+            <div className="h-4 bg-gray-100 dark:bg-gray-800 rounded w-3/4 mb-8"></div>
             <div className="grid grid-cols-2 gap-4">
               {[...Array(4)].map((_, i) => (
-                <div key={i} className="h-20 bg-gray-100 rounded"></div>
+                <div key={i} className="h-20 bg-gray-100 dark:bg-gray-800 rounded"></div>
               ))}
             </div>
           </div>

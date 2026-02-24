@@ -29,7 +29,7 @@ export default function KNXvsControl4Page() {
             </p>
             <div className="flex flex-wrap gap-4">
               <Link href="/calculator">
-                <Button size="lg" className="bg-white text-black hover:bg-gray-100 uppercase tracking-widest">
+                <Button size="lg" className="bg-white text-black hover:bg-gray-100 dark:bg-gray-800 uppercase tracking-widest">
                   Compare Pricing
                 </Button>
               </Link>
@@ -68,7 +68,7 @@ export default function KNXvsControl4Page() {
             <div className="overflow-x-auto">
               <table className="w-full border-collapse">
                 <thead>
-                  <tr className="bg-gray-100">
+                  <tr className="bg-gray-100 dark:bg-gray-800">
                     <th className="p-4 text-left font-bold">Feature</th>
                     <th className="p-4 text-center font-bold">KNX</th>
                     <th className="p-4 text-center font-bold">Control4</th>
@@ -329,7 +329,7 @@ export default function KNXvsControl4Page() {
               </div>
             </div>
 
-            <div className="mt-8 bg-gray-100 rounded-xl p-8">
+            <div className="mt-8 bg-gray-100 dark:bg-gray-800 rounded-xl p-8">
               <h3 className="text-2xl font-bold mb-4">Hybrid Approach</h3>
               <p className="text-gray-700 dark:text-gray-300 dark:text-gray-300">
                 Many of our luxury villa clients choose <strong>KNX for infrastructure</strong> (lighting, HVAC, shades) and 
@@ -353,7 +353,7 @@ export default function KNXvsControl4Page() {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link href="/consultation">
-                <Button size="lg" className="bg-white text-black hover:bg-gray-100 uppercase tracking-widest">
+                <Button size="lg" className="bg-white text-black hover:bg-gray-100 dark:bg-gray-800 uppercase tracking-widest">
                   Book Free Consultation
                 </Button>
               </Link>

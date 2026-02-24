@@ -102,13 +102,13 @@ export default function ProjectDetailPage() {
     return (
       <div className="min-h-screen bg-white pt-20">
         <div className="animate-pulse">
-          <div className="w-full h-64 bg-gray-100"></div>
+          <div className="w-full h-64 bg-gray-100 dark:bg-gray-800"></div>
           <div className="container mx-auto px-4 py-8">
-            <div className="h-8 bg-gray-100 rounded w-1/3 mb-4"></div>
-            <div className="h-4 bg-gray-100 rounded w-2/3 mb-8"></div>
+            <div className="h-8 bg-gray-100 dark:bg-gray-800 rounded w-1/3 mb-4"></div>
+            <div className="h-4 bg-gray-100 dark:bg-gray-800 rounded w-2/3 mb-8"></div>
             <div className="grid grid-cols-2 gap-4">
-              <div className="h-48 bg-gray-100 rounded"></div>
-              <div className="h-48 bg-gray-100 rounded"></div>
+              <div className="h-48 bg-gray-100 dark:bg-gray-800 rounded"></div>
+              <div className="h-48 bg-gray-100 dark:bg-gray-800 rounded"></div>
             </div>
           </div>
         </div>
@@ -253,7 +253,7 @@ export default function ProjectDetailPage() {
                       return (
                         <div 
                           key={idx}
-                          className={`relative cursor-pointer overflow-hidden bg-gray-100 ${
+                          className={`relative cursor-pointer overflow-hidden bg-gray-100 dark:bg-gray-800 ${
                             isWide ? 'col-span-2 aspect-[16/9]' : 'aspect-[4/3]'
                           }`}
                           onClick={() => openLightbox(idx)}
@@ -294,7 +294,7 @@ export default function ProjectDetailPage() {
                     {project.systems.map((system, idx) => (
                       <span 
                         key={idx}
-                        className="px-4 py-2 bg-gray-100 text-gray-700 dark:text-gray-300 text-sm rounded-full"
+                        className="px-4 py-2 bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 text-sm rounded-full"
                       >
                         {system}
                       </span>
@@ -398,7 +398,7 @@ export default function ProjectDetailPage() {
                               />
                             </div>
                           ) : (
-                            <div className="w-12 h-12 bg-gray-100 rounded flex items-center justify-center">
+                            <div className="w-12 h-12 bg-gray-100 dark:bg-gray-800 rounded flex items-center justify-center">
                               <span className="text-xs font-bold text-gray-400">
                                 {brand.name.substring(0, 2).toUpperCase()}
                               </span>
@@ -423,7 +423,7 @@ export default function ProjectDetailPage() {
                     Let's create something similar for your space.
                   </p>
                   <Link href="/contact" className="block">
-                    <Button className="w-full bg-white text-black hover:bg-gray-100">
+                    <Button className="w-full bg-white text-black hover:bg-gray-100 dark:bg-gray-800">
                       Get Free Consultation
                     </Button>
                   </Link>

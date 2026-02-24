@@ -130,7 +130,7 @@ export default function DeveloperToolkitPage() {
                     {resource.formats.map((format) => (
                       <span
                         key={format}
-                        className="px-3 py-1 bg-gray-100 text-gray-700 dark:text-gray-300 text-xs font-semibold rounded-full"
+                        className="px-3 py-1 bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 text-xs font-semibold rounded-full"
                       >
                         {format}
                       </span>
@@ -249,7 +249,7 @@ export default function DeveloperToolkitPage() {
                 </div>
 
                 <Link href="/developers">
-                  <Button size="lg" className="w-full bg-white text-black hover:bg-gray-100 uppercase tracking-widest">
+                  <Button size="lg" className="w-full bg-white text-black hover:bg-gray-100 dark:bg-gray-800 uppercase tracking-widest">
                     Request Toolkit Access
                   </Button>
                 </Link>

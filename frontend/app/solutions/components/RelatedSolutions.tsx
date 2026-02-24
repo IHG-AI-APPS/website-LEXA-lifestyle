@@ -131,7 +131,7 @@ export default function RelatedSolutions({ solutions, currentSlug }: RelatedSolu
                           {solution.tags.slice(0, 3).map((tag) => (
                             <span
                               key={tag}
-                              className="text-xs px-2 py-1 bg-gray-100 text-gray-700 dark:text-gray-300 rounded-full"
+                              className="text-xs px-2 py-1 bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 rounded-full"
                             >
                               {tag}
                             </span>

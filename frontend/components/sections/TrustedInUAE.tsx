@@ -242,7 +242,7 @@ export default function TrustedInUAE({
                 className={`px-6 py-3 rounded-full ${
                   isDark 
                     ? 'bg-gray-800/50 border border-gray-700/50 text-gray-300' 
-                    : 'bg-gray-100 border border-gray-200 dark:border-gray-700 text-gray-700'
+                    : 'bg-gray-100 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 text-gray-700'
                 }`}
               >
                 <span className="font-medium">{client.name}</span>

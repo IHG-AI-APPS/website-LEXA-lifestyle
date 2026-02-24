@@ -100,7 +100,7 @@ export function GridSkeleton({
  */
 export function HeroSkeleton() {
   return (
-    <div className="relative h-[70vh] bg-gray-100 animate-pulse">
+    <div className="relative h-[70vh] bg-gray-100 dark:bg-gray-800 animate-pulse">
       <div className="absolute inset-0 flex flex-col items-center justify-center space-y-6 px-4">
         <Skeleton variant="text" width={200} height={12} />
         <Skeleton variant="text" width={400} height={48} className="max-w-full" />

@@ -306,7 +306,7 @@ export default function SmartApartmentPackagesPage() {
                         className={`w-full ${
                           pkg.popular
                             ? 'bg-amber-500 hover:bg-amber-600 text-white'
-                            : 'bg-gray-100 hover:bg-gray-200 text-gray-900'
+                            : 'bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 text-gray-900'
                         }`}
                       >
                         Get Quote

@@ -774,7 +774,7 @@ export default function FinalSummary({
         {/* Quote Reference */}
         <button
           onClick={copyQuoteRef}
-          className="inline-flex items-center gap-2 px-4 py-2 bg-gray-100 hover:bg-gray-200 rounded-full transition-colors"
+          className="inline-flex items-center gap-2 px-4 py-2 bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 rounded-full transition-colors"
         >
           <span className="text-sm text-gray-500">Quote Reference:</span>
           <span className="font-mono font-bold text-gray-900 dark:text-white dark:text-white">{quoteRef}</span>
@@ -1006,7 +1006,7 @@ export default function FinalSummary({
                   <h3 className="text-xl font-bold text-gray-900 dark:text-white dark:text-white">Book Consultation</h3>
                   <button
                     onClick={() => setShowBookingModal(false)}
-                    className="p-2 hover:bg-gray-100 rounded-full"
+                    className="p-2 hover:bg-gray-100 dark:bg-gray-800 rounded-full"
                   >
                     <X className="w-5 h-5" />
                   </button>

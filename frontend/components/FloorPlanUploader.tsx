@@ -10,7 +10,7 @@ import dynamic from 'next/dynamic'
 // Dynamically import ReactImageAnnotate to avoid SSR issues
 const ReactImageAnnotate = dynamic(
   () => import('react-image-annotate').then((mod: any) => mod.default || mod),
-  { ssr: false, loading: () => <div className="h-[600px] flex items-center justify-center bg-gray-100 rounded-lg">Loading annotation tool...</div> }
+  { ssr: false, loading: () => <div className="h-[600px] flex items-center justify-center bg-gray-100 dark:bg-gray-800 rounded-lg">Loading annotation tool...</div> }
 ) as any
 
 interface FloorPlanUploaderProps {
@@ -113,7 +113,7 @@ export default function FloorPlanUploader({ onSave, initialImage, initialAnnotat
                   onClick={() => setSelectedDeviceType(device.id)}
                   className={`p-3 text-center rounded-lg border-2 transition-all text-sm ${
                     selectedDeviceType === device.id
-                      ? 'border-black bg-gray-100 scale-105'
+                      ? 'border-black bg-gray-100 dark:bg-gray-800 scale-105'
                       : 'border-gray-200 dark:border-gray-700 hover:border-gray-400'
                   }`}
                   style={selectedDeviceType === device.id ? { borderColor: device.color } : {}}

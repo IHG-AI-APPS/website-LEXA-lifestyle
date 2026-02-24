@@ -239,7 +239,7 @@ export default function ScheduleVisitModal({
                           className={`p-2 rounded-lg text-center transition-all ${
                             formData.date === formatDate(date)
                               ? 'bg-[#1A1A1A] dark:bg-[#E8DCC8] text-white dark:text-[#1A1A1A]'
-                              : 'bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 dark:text-gray-300 hover:bg-gray-200'
+                              : 'bg-gray-100 dark:bg-gray-800 dark:bg-gray-800 text-gray-700 dark:text-gray-300 dark:text-gray-300 hover:bg-gray-200'
                           }`}
                         >
                           <div className="text-[10px] opacity-70">{date.toLocaleDateString('en-US', { weekday: 'short' })}</div>
@@ -263,7 +263,7 @@ export default function ScheduleVisitModal({
                             className={`p-1.5 rounded-lg text-xs transition-all ${
                               formData.time === time
                                 ? 'bg-[#1A1A1A] dark:bg-[#E8DCC8] text-white dark:text-[#1A1A1A]'
-                                : 'bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 dark:text-gray-300 hover:bg-gray-200'
+                                : 'bg-gray-100 dark:bg-gray-800 dark:bg-gray-800 text-gray-700 dark:text-gray-300 dark:text-gray-300 hover:bg-gray-200'
                             }`}
                           >
                             {time}

@@ -33,7 +33,7 @@ export default function RetailAutomationPage() {
                 Transform your retail space with AI-driven customer analytics, smart energy management, and automated operations that boost sales while reducing costs.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
-                <Button size="lg" onClick={() => setShowForm(true)} className="bg-white text-[#1A1A1A] dark:text-white hover:bg-gray-100 px-8 py-6 text-sm font-semibold uppercase">
+                <Button size="lg" onClick={() => setShowForm(true)} className="bg-white text-[#1A1A1A] dark:text-white hover:bg-gray-100 dark:bg-gray-800 px-8 py-6 text-sm font-semibold uppercase">
                   Request Demo
                 </Button>
               </div>

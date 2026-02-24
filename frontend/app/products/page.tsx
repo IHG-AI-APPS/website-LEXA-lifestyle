@@ -158,7 +158,7 @@ export default function ProductsPage() {
               <p className="text-xl text-gray-400 mb-10">
                 Our experts will specify the ideal equipment for your requirements and budget.
               </p>
-              <Button size="lg" className="bg-white hover:bg-gray-100 text-charcoal px-12" onClick={() => setShowConsultationForm(true)}>
+              <Button size="lg" className="bg-white hover:bg-gray-100 dark:bg-gray-800 text-charcoal px-12" onClick={() => setShowConsultationForm(true)}>
                 Get Equipment Specification
               </Button>
             </motion.div>

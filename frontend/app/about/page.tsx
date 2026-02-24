@@ -274,7 +274,7 @@ export default function AboutPage() {
               </div>
               <Button
                 size="lg"
-                className="bg-white dark:bg-gray-800 hover:bg-gray-100 dark:hover:bg-gray-700 text-charcoal dark:text-gray-200 px-12"
+                className="bg-white dark:bg-gray-800 hover:bg-gray-100 dark:bg-gray-800 dark:hover:bg-gray-700 text-charcoal dark:text-gray-200 px-12"
                 onClick={() => setShowConsultationForm(true)}
               >
                 {language === 'ar' ? 'احجز زيارة للصالة' : 'Book Showroom Visit'}

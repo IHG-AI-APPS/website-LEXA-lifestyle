@@ -290,7 +290,7 @@ export default function IntelligenceEngine({ sessionId, projectData, onComplete 
           <h3 className="text-lg font-medium uppercase tracking-widest text-gray-900 dark:text-white dark:text-white">
             System Analysis
           </h3>
-          <div className="flex items-center gap-2 bg-gray-100 p-1 rounded-lg">
+          <div className="flex items-center gap-2 bg-gray-100 dark:bg-gray-800 p-1 rounded-lg">
             <button
               onClick={() => setViewMode('list')}
               className={`px-4 py-2 text-sm font-medium rounded transition-all ${

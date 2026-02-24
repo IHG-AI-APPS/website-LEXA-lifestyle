@@ -477,8 +477,8 @@ export default function AIRecommendation({
             <span className="font-semibold text-lg">AI is calculating your package...</span>
           </div>
           <div className="mt-8 animate-pulse">
-            <div className="h-32 bg-gray-100 rounded-xl mb-4 max-w-md mx-auto"></div>
-            <div className="h-4 bg-gray-100 rounded w-48 mx-auto"></div>
+            <div className="h-32 bg-gray-100 dark:bg-gray-800 rounded-xl mb-4 max-w-md mx-auto"></div>
+            <div className="h-4 bg-gray-100 dark:bg-gray-800 rounded w-48 mx-auto"></div>
           </div>
         </div>
       </div>
@@ -806,7 +806,7 @@ export default function AIRecommendation({
                 <h3 className="text-xl font-bold text-gray-900 dark:text-white dark:text-white">Book a Consultation</h3>
                 <button
                   onClick={() => setShowConsultationModal(false)}
-                  className="p-2 hover:bg-gray-100 rounded-full"
+                  className="p-2 hover:bg-gray-100 dark:bg-gray-800 rounded-full"
                 >
                   <X className="w-5 h-5" />
                 </button>
@@ -931,7 +931,7 @@ export default function AIRecommendation({
                 </div>
                 <button
                   onClick={() => setShowCompareModal(false)}
-                  className="p-2 hover:bg-gray-100 rounded-full"
+                  className="p-2 hover:bg-gray-100 dark:bg-gray-800 rounded-full"
                 >
                   <X className="w-6 h-6" />
                 </button>

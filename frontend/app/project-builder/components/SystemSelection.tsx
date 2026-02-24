@@ -189,7 +189,7 @@ export default function SystemSelection({
       {loading ? (
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
           {[1, 2, 3, 4, 5, 6].map(i => (
-            <div key={i} className="h-64 bg-gray-100 animate-pulse rounded-xl" />
+            <div key={i} className="h-64 bg-gray-100 dark:bg-gray-800 animate-pulse rounded-xl" />
           ))}
         </div>
       ) : error ? (

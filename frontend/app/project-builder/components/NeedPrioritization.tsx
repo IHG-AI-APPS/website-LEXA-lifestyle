@@ -453,7 +453,7 @@ export default function NeedPrioritization({
                             ? 'bg-blue-600 text-white border-2 border-blue-600 shadow-lg scale-[1.02]' 
                             : aiRec
                               ? 'bg-amber-50 border-2 border-amber-300 hover:border-amber-400'
-                              : 'bg-gray-100 border-2 border-gray-200 dark:border-gray-700 hover:border-gray-400 active:scale-95'
+                              : 'bg-gray-100 dark:bg-gray-800 border-2 border-gray-200 dark:border-gray-700 hover:border-gray-400 active:scale-95'
                         }`}
                       >
                         {aiRec && !isSelected && (
@@ -592,7 +592,7 @@ export default function NeedPrioritization({
                         className={`relative border rounded-xl p-4 cursor-move hover:shadow-lg transition-all ${
                           aiRec 
                             ? 'bg-amber-50 border-amber-300 hover:bg-amber-100' 
-                            : 'bg-gray-100 border-gray-300 dark:border-gray-600 hover:bg-white'
+                            : 'bg-gray-100 dark:bg-gray-800 border-gray-300 dark:border-gray-600 hover:bg-white'
                         }`}
                       >
                         {aiRec && (

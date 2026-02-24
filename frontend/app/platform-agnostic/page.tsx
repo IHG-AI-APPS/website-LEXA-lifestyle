@@ -134,7 +134,7 @@ export default function PlatformAgnosticPage() {
                 <Button
                   size="lg"
                   onClick={() => setShowConsultationForm(true)}
-                  className="bg-white text-[#1A1A1A] dark:text-white hover:bg-gray-100 px-8 py-6 text-sm font-semibold uppercase tracking-wider"
+                  className="bg-white text-[#1A1A1A] dark:text-white hover:bg-gray-100 dark:bg-gray-800 px-8 py-6 text-sm font-semibold uppercase tracking-wider"
                 >
                   Learn Our Approach
                 </Button>
@@ -255,7 +255,7 @@ export default function PlatformAgnosticPage() {
             </motion.div>
 
             <div className="bg-white border-2 border-gray-200 dark:border-gray-700 overflow-hidden">
-              <div className="grid grid-cols-3 bg-gray-100 font-semibold text-sm">
+              <div className="grid grid-cols-3 bg-gray-100 dark:bg-gray-800 font-semibold text-sm">
                 <div className="p-4 border-r border-gray-200 dark:border-gray-700 dark:border-gray-700">Aspect</div>
                 <div className="p-4 border-r border-gray-200 dark:border-gray-700 text-center">Proprietary Systems</div>
                 <div className="p-4 text-center">Platform Agnostic</div>
@@ -291,7 +291,7 @@ export default function PlatformAgnosticPage() {
               <Button
                 size="lg"
                 onClick={() => setShowConsultationForm(true)}
-                className="bg-white text-[#1A1A1A] dark:text-white hover:bg-gray-100 px-8 py-6 text-sm font-semibold uppercase tracking-wider"
+                className="bg-white text-[#1A1A1A] dark:text-white hover:bg-gray-100 dark:bg-gray-800 px-8 py-6 text-sm font-semibold uppercase tracking-wider"
               >
                 Schedule Consultation
                 <ArrowRight className="ml-2 h-4 w-4" />

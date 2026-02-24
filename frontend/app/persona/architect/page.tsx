@@ -175,7 +175,7 @@ export default function ArchitectPage() {
                     transition={{ duration: 0.2 }}
                     className="text-center"
                   >
-                    <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-gray-100 mb-6">
+                    <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-gray-100 dark:bg-gray-800 mb-6">
                       <Icon size={32} className="text-charcoal" />
                     </div>
                     <h3 className="text-xl font-semibold mb-3">{benefit.title}</h3>
@@ -271,7 +271,7 @@ export default function ArchitectPage() {
                 <Link href="/home-intelligence-builder">
                   <Button
                     size="lg"
-                    className="bg-white text-blue-600 hover:bg-gray-100 px-8 py-6 text-lg font-semibold shadow-2xl"
+                    className="bg-white text-blue-600 hover:bg-gray-100 dark:bg-gray-800 px-8 py-6 text-lg font-semibold shadow-2xl"
                   >
                     Launch Project Builder
                     <ArrowRight className="ml-2" size={20} />
@@ -301,7 +301,7 @@ export default function ArchitectPage() {
                 <Link href="/partners/architects">
                   <Button
                     size="lg"
-                    className="bg-white text-black hover:bg-gray-100"
+                    className="bg-white text-black hover:bg-gray-100 dark:bg-gray-800"
                   >
                     Access Resources
                   </Button>

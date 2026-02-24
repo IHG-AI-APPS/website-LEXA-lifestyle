@@ -505,7 +505,7 @@ export default function EnterprisePerformanceOSPage() {
                     className={`w-full ${
                       tier.popular
                         ? 'bg-blue-600 hover:bg-blue-700 text-white'
-                        : 'bg-gray-100 hover:bg-gray-200 text-gray-900'
+                        : 'bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 text-gray-900'
                     }`}
                   >
                     Request Quote
@@ -555,7 +555,7 @@ export default function EnterprisePerformanceOSPage() {
         </section>
 
         {/* Disclaimer */}
-        <section className="py-6 bg-gray-100 border-t border-gray-200 dark:border-gray-700 dark:border-gray-700">
+        <section className="py-6 bg-gray-100 dark:bg-gray-800 border-t border-gray-200 dark:border-gray-700 dark:border-gray-700">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
             <p className="text-xs text-gray-500 text-center">
               * Performance metrics shown are industry benchmarks and expected outcomes based on typical implementations of intelligent building management systems. 

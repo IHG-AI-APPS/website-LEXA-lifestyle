@@ -204,7 +204,7 @@ export default function CaseStudiesPage() {
                       <h4 className="text-sm font-semibold text-gray-900 dark:text-white mb-3">KEY FEATURES</h4>
                       <div className="flex flex-wrap gap-2">
                         {project.features.map((feature, i) => (
-                          <span key={i} className="text-xs px-3 py-1 bg-gray-100 text-gray-700 dark:text-gray-300 dark:text-gray-300">
+                          <span key={i} className="text-xs px-3 py-1 bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 dark:text-gray-300">
                             {feature}
                           </span>
                         ))}
@@ -259,7 +259,7 @@ export default function CaseStudiesPage() {
           </p>
           <a
             href="/contact"
-            className="inline-block bg-white text-gray-900 dark:text-white px-8 py-4 text-lg font-semibold hover:bg-gray-100 transition-colors"
+            className="inline-block bg-white text-gray-900 dark:text-white px-8 py-4 text-lg font-semibold hover:bg-gray-100 dark:bg-gray-800 transition-colors"
           >
             Book Free Consultation
           </a>

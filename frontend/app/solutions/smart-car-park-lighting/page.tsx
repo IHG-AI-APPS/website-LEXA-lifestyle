@@ -620,7 +620,7 @@ export default function SmartCarParkLightingPage() {
               <Button 
                 size="lg"
                 onClick={() => setShowConsultationForm(true)}
-                className="bg-white text-blue-600 hover:bg-gray-100 px-8 py-6 text-lg"
+                className="bg-white text-blue-600 hover:bg-gray-100 dark:bg-gray-800 px-8 py-6 text-lg"
               >
                 Schedule ROI Consultation
                 <ArrowRight className="ml-2 w-5 h-5" />

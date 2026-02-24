@@ -133,7 +133,7 @@ export default function SocialProofWidget() {
           </div>
 
           {/* Progress bar */}
-          <div className="h-1 bg-gray-100">
+          <div className="h-1 bg-gray-100 dark:bg-gray-800">
             <motion.div
               className="h-full bg-gradient-to-r from-green-400 to-blue-500"
               initial={{ width: '100%' }}

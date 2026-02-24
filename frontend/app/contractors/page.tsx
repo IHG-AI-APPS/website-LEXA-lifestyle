@@ -143,7 +143,7 @@ export default function ContractorsPage() {
               <Button
                 size="lg"
                 onClick={() => setShowForm(true)}
-                className="bg-white text-black hover:bg-gray-100 px-10 py-7 text-lg font-semibold uppercase tracking-widest"
+                className="bg-white text-black hover:bg-gray-100 dark:bg-gray-800 px-10 py-7 text-lg font-semibold uppercase tracking-widest"
               >
                 Start Your Project
               </Button>
@@ -185,7 +185,7 @@ export default function ContractorsPage() {
                 viewport={{ once: true }}
                 className="text-center"
               >
-                <div className="inline-flex items-center justify-center w-16 h-16 mb-4 bg-gray-100 rounded-full">
+                <div className="inline-flex items-center justify-center w-16 h-16 mb-4 bg-gray-100 dark:bg-gray-800 rounded-full">
                   <Clock size={32} className="text-gallery-black" />
                 </div>
                 <h3 className="font-bold text-lg mb-2">Fast Response</h3>
@@ -201,7 +201,7 @@ export default function ContractorsPage() {
                 transition={{ delay: 0.1 }}
                 className="text-center"
               >
-                <div className="inline-flex items-center justify-center w-16 h-16 mb-4 bg-gray-100 rounded-full">
+                <div className="inline-flex items-center justify-center w-16 h-16 mb-4 bg-gray-100 dark:bg-gray-800 rounded-full">
                   <FileText size={32} className="text-gallery-black" />
                 </div>
                 <h3 className="font-bold text-lg mb-2">Clear Scope</h3>
@@ -217,7 +217,7 @@ export default function ContractorsPage() {
                 transition={{ delay: 0.2 }}
                 className="text-center"
               >
-                <div className="inline-flex items-center justify-center w-16 h-16 mb-4 bg-gray-100 rounded-full">
+                <div className="inline-flex items-center justify-center w-16 h-16 mb-4 bg-gray-100 dark:bg-gray-800 rounded-full">
                   <Users size={32} className="text-gallery-black" />
                 </div>
                 <h3 className="font-bold text-lg mb-2">Dedicated PM</h3>
@@ -233,7 +233,7 @@ export default function ContractorsPage() {
                 transition={{ delay: 0.3 }}
                 className="text-center"
               >
-                <div className="inline-flex items-center justify-center w-16 h-16 mb-4 bg-gray-100 rounded-full">
+                <div className="inline-flex items-center justify-center w-16 h-16 mb-4 bg-gray-100 dark:bg-gray-800 rounded-full">
                   <Wrench size={32} className="text-gallery-black" />
                 </div>
                 <h3 className="font-bold text-lg mb-2">MEP Coordination</h3>
@@ -254,7 +254,7 @@ export default function ContractorsPage() {
 
             <div className="space-y-6">
               <div className="bg-white dark:bg-gray-800 rounded-xl p-6 shadow-lg flex items-start gap-4">
-                <div className="w-12 h-12 bg-gray-100 rounded-full flex items-center justify-center flex-shrink-0">
+                <div className="w-12 h-12 bg-gray-100 dark:bg-gray-800 rounded-full flex items-center justify-center flex-shrink-0">
                   <DollarSign size={24} className="text-gallery-black" />
                 </div>
                 <div>
@@ -266,7 +266,7 @@ export default function ContractorsPage() {
               </div>
 
               <div className="bg-white dark:bg-gray-800 rounded-xl p-6 shadow-lg flex items-start gap-4">
-                <div className="w-12 h-12 bg-gray-100 rounded-full flex items-center justify-center flex-shrink-0">
+                <div className="w-12 h-12 bg-gray-100 dark:bg-gray-800 rounded-full flex items-center justify-center flex-shrink-0">
                   <FileText size={24} className="text-gallery-black" />
                 </div>
                 <div>
@@ -278,7 +278,7 @@ export default function ContractorsPage() {
               </div>
 
               <div className="bg-white dark:bg-gray-800 rounded-xl p-6 shadow-lg flex items-start gap-4">
-                <div className="w-12 h-12 bg-gray-100 rounded-full flex items-center justify-center flex-shrink-0">
+                <div className="w-12 h-12 bg-gray-100 dark:bg-gray-800 rounded-full flex items-center justify-center flex-shrink-0">
                   <Users size={24} className="text-gallery-black" />
                 </div>
                 <div>
@@ -290,7 +290,7 @@ export default function ContractorsPage() {
               </div>
 
               <div className="bg-white dark:bg-gray-800 rounded-xl p-6 shadow-lg flex items-start gap-4">
-                <div className="w-12 h-12 bg-gray-100 rounded-full flex items-center justify-center flex-shrink-0">
+                <div className="w-12 h-12 bg-gray-100 dark:bg-gray-800 rounded-full flex items-center justify-center flex-shrink-0">
                   <Wrench size={24} className="text-gallery-black" />
                 </div>
                 <div>
@@ -318,7 +318,7 @@ export default function ContractorsPage() {
             <Button
               size="lg"
               onClick={() => setShowForm(true)}
-              className="bg-white text-black hover:bg-gray-100 px-10 py-7 text-lg font-semibold uppercase tracking-widest"
+              className="bg-white text-black hover:bg-gray-100 dark:bg-gray-800 px-10 py-7 text-lg font-semibold uppercase tracking-widest"
             >
               Start Your Project
             </Button>

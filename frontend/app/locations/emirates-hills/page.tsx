@@ -40,7 +40,7 @@ export default function EmiratesHillsPage() {
 
             <div className="flex flex-wrap gap-4">
               <Link href="/consultation">
-                <Button size="lg" className="bg-white text-black hover:bg-gray-100 uppercase tracking-widest">
+                <Button size="lg" className="bg-white text-black hover:bg-gray-100 dark:bg-gray-800 uppercase tracking-widest">
                   Private Design Session
                 </Button>
               </Link>
@@ -105,7 +105,7 @@ export default function EmiratesHillsPage() {
               Book a private villa technology review
             </p>
             <Link href="/consultation">
-              <Button size="lg" className="bg-white text-black hover:bg-gray-100 uppercase tracking-widest">
+              <Button size="lg" className="bg-white text-black hover:bg-gray-100 dark:bg-gray-800 uppercase tracking-widest">
                 Schedule Site Visit
               </Button>
             </Link>

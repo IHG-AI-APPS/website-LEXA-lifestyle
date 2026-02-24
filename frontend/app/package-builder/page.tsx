@@ -194,10 +194,10 @@ export default function PackageBuilderPage() {
         <div className="container mx-auto px-4 py-12">
           <div className="animate-pulse max-w-5xl mx-auto">
             <div className="h-10 bg-gray-200 rounded w-1/2 mb-4 mx-auto"></div>
-            <div className="h-4 bg-gray-100 rounded w-1/3 mb-8 mx-auto"></div>
+            <div className="h-4 bg-gray-100 dark:bg-gray-800 rounded w-1/3 mb-8 mx-auto"></div>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               {[...Array(3)].map((_, i) => (
-                <div key={i} className="bg-gray-100 rounded-2xl h-64"></div>
+                <div key={i} className="bg-gray-100 dark:bg-gray-800 rounded-2xl h-64"></div>
               ))}
             </div>
           </div>
@@ -367,7 +367,7 @@ export default function PackageBuilderPage() {
                       className={`w-full py-4 rounded-lg font-bold transition-all ${
                         tier.recommended
                           ? 'bg-purple-500 text-white hover:bg-purple-600 shadow-lg'
-                          : 'bg-gray-100 text-gray-900 dark:text-white hover:bg-gray-200'
+                          : 'bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-white hover:bg-gray-200'
                       }`}
                     >
                       Select {tier.tier_name}
@@ -487,7 +487,7 @@ export default function PackageBuilderPage() {
                         </p>
                       </div>
 
-                      <button className="mt-4 w-full px-6 py-3 bg-gray-100 group-hover:bg-blue-600 text-gray-900 dark:text-white group-hover:text-white rounded-lg font-bold transition-all">
+                      <button className="mt-4 w-full px-6 py-3 bg-gray-100 dark:bg-gray-800 group-hover:bg-blue-600 text-gray-900 dark:text-white group-hover:text-white rounded-lg font-bold transition-all">
                         Select {system.name}
                       </button>
                     </div>
@@ -623,7 +623,7 @@ export default function PackageBuilderPage() {
               <div className="flex justify-center gap-4">
                 <button
                   onClick={() => setStep(5)}
-                  className="px-8 py-4 bg-gray-100 text-gray-700 dark:text-gray-300 rounded-xl hover:bg-gray-200 font-bold text-lg"
+                  className="px-8 py-4 bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 rounded-xl hover:bg-gray-200 font-bold text-lg"
                 >
                   Skip Enhancements
                 </button>
@@ -781,7 +781,7 @@ export default function PackageBuilderPage() {
               <div className="flex justify-center gap-4">
                 <button
                   onClick={() => setStep(6)}
-                  className="px-8 py-4 bg-gray-100 text-gray-700 dark:text-gray-300 rounded-xl hover:bg-gray-200 font-bold text-lg"
+                  className="px-8 py-4 bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 rounded-xl hover:bg-gray-200 font-bold text-lg"
                 >
                   Use Default Brands
                 </button>
@@ -1158,7 +1158,7 @@ export default function PackageBuilderPage() {
                 </button>
                 <button
                   onClick={() => window.location.reload()}
-                  className="px-8 py-4 bg-gray-100 text-gray-900 dark:text-white rounded-xl hover:bg-gray-200 font-bold text-lg"
+                  className="px-8 py-4 bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-white rounded-xl hover:bg-gray-200 font-bold text-lg"
                 >
                   Calculate Another Quote
                 </button>

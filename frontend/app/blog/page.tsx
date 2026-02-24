@@ -76,7 +76,7 @@ export default function BlogPage() {
                   className={`px-6 py-3 rounded-full text-sm font-medium transition-all ${
                     selectedCategory === category
                       ? 'bg-charcoal text-white'
-                      : 'bg-gray-100 text-gray-700 dark:text-gray-300 hover:bg-gray-200'
+                      : 'bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:bg-gray-200'
                   }`}
                 >
                   {category}
@@ -150,7 +150,7 @@ export default function BlogPage() {
                           {article.tags && article.tags.length > 0 && (
                             <div className="flex flex-wrap gap-2 mb-4">
                               {article.tags.slice(0, 3).map((tag: string) => (
-                                <span key={tag} className="text-xs px-2 py-1 bg-gray-100 rounded">
+                                <span key={tag} className="text-xs px-2 py-1 bg-gray-100 dark:bg-gray-800 rounded">
                                   {tag}
                                 </span>
                               ))}

@@ -159,8 +159,8 @@ export default function FAQPage() {
                 <div key={i} className="animate-pulse">
                   <div className="h-6 bg-gray-200 dark:bg-gray-700 rounded w-48 mb-4" />
                   <div className="space-y-3">
-                    <div className="h-14 bg-gray-100 dark:bg-gray-800 rounded" />
-                    <div className="h-14 bg-gray-100 dark:bg-gray-800 rounded" />
+                    <div className="h-14 bg-gray-100 dark:bg-gray-800 dark:bg-gray-800 rounded" />
+                    <div className="h-14 bg-gray-100 dark:bg-gray-800 dark:bg-gray-800 rounded" />
                   </div>
                 </div>
               ))}

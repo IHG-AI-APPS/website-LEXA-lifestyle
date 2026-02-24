@@ -336,7 +336,7 @@ export default function FeatureSelectionFlow({
                   isSelected(feature.id)
                     ? 'bg-green-500 text-white'
                     : isSelectedInOtherTier(feature.id)
-                    ? 'bg-gray-100 text-gray-400 cursor-not-allowed'
+                    ? 'bg-gray-100 dark:bg-gray-800 text-gray-400 cursor-not-allowed'
                     : 'bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 hover:border-amber-400 text-gray-700'
                 }`}
               >
@@ -352,7 +352,7 @@ export default function FeatureSelectionFlow({
       {loading ? (
         <div className="space-y-4">
           {[1, 2, 3].map(i => (
-            <div key={i} className="h-24 bg-gray-100 animate-pulse rounded-xl" />
+            <div key={i} className="h-24 bg-gray-100 dark:bg-gray-800 animate-pulse rounded-xl" />
           ))}
         </div>
       ) : (
@@ -367,7 +367,7 @@ export default function FeatureSelectionFlow({
                 {/* Category Header */}
                 <button
                   onClick={() => toggleCategory(category.category_id)}
-                  className="w-full flex items-center justify-between p-4 bg-gray-50 hover:bg-gray-100 transition-colors"
+                  className="w-full flex items-center justify-between p-4 bg-gray-50 hover:bg-gray-100 dark:bg-gray-800 transition-colors"
                 >
                   <div className="flex items-center gap-3">
                     <div className={`w-10 h-10 rounded-lg bg-gradient-to-br ${currentTier.color} flex items-center justify-center`}>

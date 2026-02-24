@@ -186,7 +186,7 @@ export default function SolutionClient({
                 {solution.brands.map((brand, index) => (
                   <span
                     key={index}
-                    className="px-6 py-3 bg-gray-100 text-gray-800 dark:text-gray-200 font-medium rounded-full"
+                    className="px-6 py-3 bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-gray-200 font-medium rounded-full"
                   >
                     {brand}
                   </span>

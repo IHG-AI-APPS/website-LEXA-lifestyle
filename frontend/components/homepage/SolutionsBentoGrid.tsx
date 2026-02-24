@@ -153,7 +153,7 @@ export default function SolutionsBentoGrid() {
           </div>
           <div className="grid grid-cols-1 md:grid-cols-4 auto-rows-fr gap-3 md:gap-4 max-h-[800px]">
             {[...Array(4)].map((_, i) => (
-              <div key={i} className={`${GRID_CLASSES[i]} bg-gray-100 dark:bg-gray-800 animate-pulse rounded-xl`} />
+              <div key={i} className={`${GRID_CLASSES[i]} bg-gray-100 dark:bg-gray-800 dark:bg-gray-800 animate-pulse rounded-xl`} />
             ))}
           </div>
         </div>

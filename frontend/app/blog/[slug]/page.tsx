@@ -53,14 +53,14 @@ export default function BlogArticlePage({ params }: { params: { slug: string } }
       <div className="min-h-screen bg-white dark:bg-gray-900 pt-20">
         <div className="container mx-auto px-4 py-8 max-w-4xl">
           <div className="animate-pulse">
-            <div className="h-6 bg-gray-100 rounded w-1/4 mb-4"></div>
+            <div className="h-6 bg-gray-100 dark:bg-gray-800 rounded w-1/4 mb-4"></div>
             <div className="h-80 bg-gray-200 rounded-xl mb-8"></div>
             <div className="h-10 bg-gray-200 rounded w-3/4 mb-4"></div>
-            <div className="h-4 bg-gray-100 rounded w-1/4 mb-8"></div>
+            <div className="h-4 bg-gray-100 dark:bg-gray-800 rounded w-1/4 mb-8"></div>
             <div className="space-y-3">
-              <div className="h-4 bg-gray-100 rounded"></div>
-              <div className="h-4 bg-gray-100 rounded"></div>
-              <div className="h-4 bg-gray-100 rounded w-5/6"></div>
+              <div className="h-4 bg-gray-100 dark:bg-gray-800 rounded"></div>
+              <div className="h-4 bg-gray-100 dark:bg-gray-800 rounded"></div>
+              <div className="h-4 bg-gray-100 dark:bg-gray-800 rounded w-5/6"></div>
             </div>
           </div>
         </div>
@@ -137,7 +137,7 @@ export default function BlogArticlePage({ params }: { params: { slug: string } }
               {article.tags && article.tags.length > 0 && (
                 <div className="flex flex-wrap gap-2">
                   {article.tags.map((tag: string) => (
-                    <span key={tag} className="px-3 py-1 bg-gray-100 hover:bg-gray-200 transition-colors rounded-full text-sm text-gray-600 dark:text-gray-400 dark:text-gray-400">
+                    <span key={tag} className="px-3 py-1 bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 transition-colors rounded-full text-sm text-gray-600 dark:text-gray-400 dark:text-gray-400">
                       #{tag}
                     </span>
                   ))}
@@ -183,10 +183,10 @@ export default function BlogArticlePage({ params }: { params: { slug: string } }
                 prose-ol:my-4 prose-ol:pl-6
                 prose-li:text-gray-700 dark:text-gray-300 prose-li:mb-2
                 prose-blockquote:border-l-4 prose-blockquote:border-blue-500 prose-blockquote:bg-blue-50 prose-blockquote:py-2 prose-blockquote:px-4 prose-blockquote:italic prose-blockquote:text-gray-700
-                prose-code:bg-gray-100 prose-code:px-1.5 prose-code:py-0.5 prose-code:rounded prose-code:text-sm
+                prose-code:bg-gray-100 dark:bg-gray-800 prose-code:px-1.5 prose-code:py-0.5 prose-code:rounded prose-code:text-sm
                 prose-pre:bg-gray-900 prose-pre:text-gray-100 prose-pre:rounded-lg prose-pre:overflow-x-auto
                 prose-table:w-full prose-table:border-collapse
-                prose-th:bg-gray-100 prose-th:border prose-th:border-gray-300 dark:border-gray-600 prose-th:px-4 prose-th:py-2 prose-th:text-left prose-th:font-semibold
+                prose-th:bg-gray-100 dark:bg-gray-800 prose-th:border prose-th:border-gray-300 dark:border-gray-600 prose-th:px-4 prose-th:py-2 prose-th:text-left prose-th:font-semibold
                 prose-td:border prose-td:border-gray-300 dark:border-gray-600 prose-td:px-4 prose-td:py-2
                 prose-img:rounded-lg prose-img:shadow-md
               "
@@ -213,7 +213,7 @@ export default function BlogArticlePage({ params }: { params: { slug: string } }
                       </table>
                     </div>
                   ),
-                  th: ({ children }) => <th className="bg-gray-100 dark:bg-gray-800 border border-gray-300 dark:border-gray-600 dark:border-gray-600 px-4 py-3 text-left font-semibold text-gray-900 dark:text-white dark:text-white">{children}</th>,
+                  th: ({ children }) => <th className="bg-gray-100 dark:bg-gray-800 dark:bg-gray-800 border border-gray-300 dark:border-gray-600 dark:border-gray-600 px-4 py-3 text-left font-semibold text-gray-900 dark:text-white dark:text-white">{children}</th>,
                   td: ({ children }) => <td className="border border-gray-300 dark:border-gray-600 px-4 py-3 text-gray-700 dark:text-gray-300 dark:text-gray-300">{children}</td>,
                   a: ({ href, children }) => (
                     <a href={href} className="text-blue-600 hover:text-blue-800 hover:underline transition-colors" target="_blank" rel="noopener noreferrer">
@@ -224,7 +224,7 @@ export default function BlogArticlePage({ params }: { params: { slug: string } }
                   code: ({ children, className }) => {
                     const isInline = !className
                     return isInline ? (
-                      <code className="bg-gray-100 px-1.5 py-0.5 rounded text-sm font-mono text-gray-800 dark:text-gray-200 dark:text-gray-100">{children}</code>
+                      <code className="bg-gray-100 dark:bg-gray-800 px-1.5 py-0.5 rounded text-sm font-mono text-gray-800 dark:text-gray-200 dark:text-gray-100">{children}</code>
                     ) : (
                       <code className={className}>{children}</code>
                     )
@@ -244,11 +244,11 @@ export default function BlogArticlePage({ params }: { params: { slug: string } }
             <div className="mt-12 pt-8 border-t border-gray-200 dark:border-gray-700 flex items-center justify-between">
               <div className="flex items-center gap-4">
                 <span className="text-sm text-gray-500">Share this article:</span>
-                <button className="p-2 rounded-full bg-gray-100 hover:bg-gray-200 transition-colors">
+                <button className="p-2 rounded-full bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 transition-colors">
                   <Share2 className="h-5 w-5 text-gray-600 dark:text-gray-400 dark:text-gray-400" />
                 </button>
               </div>
-              <button className="flex items-center gap-2 px-4 py-2 rounded-full bg-gray-100 hover:bg-gray-200 transition-colors text-sm font-medium">
+              <button className="flex items-center gap-2 px-4 py-2 rounded-full bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 transition-colors text-sm font-medium">
                 <BookmarkPlus className="h-4 w-4" />
                 Save for later
               </button>
@@ -316,7 +316,7 @@ export default function BlogArticlePage({ params }: { params: { slug: string } }
                 Let our experts design the perfect smart home solution for you.
               </p>
               <Link href="/contact">
-                <Button size="lg" className="bg-white dark:bg-gray-800 hover:bg-gray-100 dark:hover:bg-gray-700 text-charcoal dark:text-gray-200 px-12">
+                <Button size="lg" className="bg-white dark:bg-gray-800 hover:bg-gray-100 dark:bg-gray-800 dark:hover:bg-gray-700 text-charcoal dark:text-gray-200 px-12">
                   Get in Touch
                 </Button>
               </Link>

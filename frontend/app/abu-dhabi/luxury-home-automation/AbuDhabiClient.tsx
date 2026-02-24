@@ -190,7 +190,7 @@ export default function AbuDhabiLuxuryAutomationClient() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1 }}
-                className="p-6 bg-gray-50 dark:bg-gray-800 rounded-xl hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors"
+                className="p-6 bg-gray-50 dark:bg-gray-800 rounded-xl hover:bg-gray-100 dark:bg-gray-800 dark:hover:bg-gray-700 transition-colors"
               >
                 <service.icon className="h-10 w-10 text-[#C9A962] mb-4" />
                 <h3 className="text-xl font-bold text-gray-900 dark:text-white dark:text-white mb-2">{service.title}</h3>

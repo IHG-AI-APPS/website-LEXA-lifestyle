@@ -127,7 +127,7 @@ export default function Workflow() {
             <p className="text-lg text-gray-600 dark:text-gray-400 font-light mb-8 max-w-2xl mx-auto">
               Every project follows our proven methodology, ensuring predictable outcomes and exceptional results.
             </p>
-            <button className="px-10 py-5 border border-gray-300 dark:border-gray-600 hover:border-charcoal hover:bg-gray-100 text-charcoal text-sm font-medium tracking-wide transition-all duration-300">
+            <button className="px-10 py-5 border border-gray-300 dark:border-gray-600 hover:border-charcoal hover:bg-gray-100 dark:bg-gray-800 text-charcoal text-sm font-medium tracking-wide transition-all duration-300">
               Learn More About Our Process
             </button>
           </motion.div>

@@ -120,7 +120,7 @@ export default function DeveloperPartnerToolkitPage() {
                 <Button 
                   onClick={handleUnlock}
                   size="lg"
-                  className="w-full bg-white text-black hover:bg-gray-100"
+                  className="w-full bg-white text-black hover:bg-gray-100 dark:bg-gray-800"
                 >
                   Unlock Toolkit
                 </Button>
@@ -215,7 +215,7 @@ export default function DeveloperPartnerToolkitPage() {
                 {section.items.map((item, itemIndex) => (
                   <div 
                     key={itemIndex}
-                    className="flex items-center justify-between p-4 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors cursor-pointer group"
+                    className="flex items-center justify-between p-4 bg-gray-50 rounded-lg hover:bg-gray-100 dark:bg-gray-800 transition-colors cursor-pointer group"
                   >
                     <div className="flex items-center gap-4">
                       <div className="w-12 h-12 bg-black rounded-lg flex items-center justify-center text-white text-xs font-bold">
@@ -251,7 +251,7 @@ export default function DeveloperPartnerToolkitPage() {
           <p className="text-xl text-gray-400 mb-8 max-w-2xl mx-auto">
             Our developer partnerships team can provide project-specific consultations and custom technical documentation.
           </p>
-          <Button size="lg" className="bg-white text-black hover:bg-gray-100">
+          <Button size="lg" className="bg-white text-black hover:bg-gray-100 dark:bg-gray-800">
             Schedule Developer Consultation
           </Button>
         </motion.div>

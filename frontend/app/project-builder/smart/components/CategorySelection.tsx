@@ -224,7 +224,7 @@ export default function CategorySelection({
       {loading ? (
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
           {[...Array(12)].map((_, i) => (
-            <div key={i} className="h-40 bg-gray-100 animate-pulse rounded-xl" />
+            <div key={i} className="h-40 bg-gray-100 dark:bg-gray-800 animate-pulse rounded-xl" />
           ))}
         </div>
       ) : error ? (
@@ -293,7 +293,7 @@ export default function CategorySelection({
                 <div className={`w-12 h-12 rounded-xl flex items-center justify-center mb-3 ${
                   isSelected 
                     ? 'bg-green-500 text-white' 
-                    : 'bg-gray-100 text-gray-600'
+                    : 'bg-gray-100 dark:bg-gray-800 text-gray-600'
                 }`}>
                   <IconComponent className="w-6 h-6" />
                 </div>

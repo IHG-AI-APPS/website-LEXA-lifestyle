@@ -84,7 +84,7 @@ export default function NewsPage() {
               transition={{ duration: 0.8, delay: 0.2 }}
               className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center"
             >
-              <div className="relative h-96 lg:h-[500px] overflow-hidden bg-gray-100 rounded-lg">
+              <div className="relative h-96 lg:h-[500px] overflow-hidden bg-gray-100 dark:bg-gray-800 rounded-lg">
                 <SafeImage
                   src={featuredNews.image}
                   alt={featuredNews.title}
@@ -132,7 +132,7 @@ export default function NewsPage() {
                 transition={{ duration: 0.6, delay: 0.2 }}
               >
                 <Link href={`/news/${article.slug}`} className="group block">
-                  <div className="relative h-64 overflow-hidden bg-gray-100 rounded-lg mb-6">
+                  <div className="relative h-64 overflow-hidden bg-gray-100 dark:bg-gray-800 rounded-lg mb-6">
                     <SafeImage
                       src={article.image}
                       alt={article.title}

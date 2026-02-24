@@ -111,7 +111,7 @@ export default function AlAinClient() {
           <h2 className="text-3xl font-bold text-white mb-6">Ready to Automate Your Al Ain Home?</h2>
           <p className="text-white/80 mb-8 max-w-2xl mx-auto">Schedule a free consultation with our Al Ain smart home specialists. We&apos;ll visit your property and provide a detailed proposal.</p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" className="bg-white text-[#C9A962] hover:bg-gray-100 px-8 rounded-xl" asChild><a href="tel:+97142670470"><Phone className="mr-2 h-5 w-5" />Call +971 4 267 0470</a></Button>
+            <Button size="lg" className="bg-white text-[#C9A962] hover:bg-gray-100 dark:bg-gray-800 px-8 rounded-xl" asChild><a href="tel:+97142670470"><Phone className="mr-2 h-5 w-5" />Call +971 4 267 0470</a></Button>
             <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-[#C9A962] rounded-xl" asChild><a href="https://wa.me/971501234567?text=Hi%20LEXA%2C%20I%20need%20smart%20home%20automation%20for%20my%20Al%20Ain%20property." target="_blank">WhatsApp Us</a></Button>
           </div>
         </div>

@@ -29,7 +29,7 @@ export default function BestHomeAutomationUAEPage() {
             </p>
             <div className="flex flex-wrap gap-4">
               <Link href="/consultation">
-                <Button size="lg" className="bg-white text-black hover:bg-gray-100 uppercase tracking-widest">
+                <Button size="lg" className="bg-white text-black hover:bg-gray-100 dark:bg-gray-800 uppercase tracking-widest">
                   Private Design Session
                 </Button>
               </Link>
@@ -320,7 +320,7 @@ export default function BestHomeAutomationUAEPage() {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link href="/consultation">
-                <Button size="lg" className="bg-white text-black hover:bg-gray-100 uppercase tracking-widest">
+                <Button size="lg" className="bg-white text-black hover:bg-gray-100 dark:bg-gray-800 uppercase tracking-widest">
                   Book Free Consultation
                 </Button>
               </Link>

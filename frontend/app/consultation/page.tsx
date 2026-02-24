@@ -123,7 +123,7 @@ export default function ConsultationPage() {
 
               <Button
                 size="lg"
-                className="bg-white text-black hover:bg-gray-100 px-10 py-7 text-lg font-semibold"
+                className="bg-white text-black hover:bg-gray-100 dark:bg-gray-800 px-10 py-7 text-lg font-semibold"
                 onClick={() => setShowBookingModal(true)}
               >
                 <Calendar className="mr-3" size={24} />
@@ -389,7 +389,7 @@ export default function ConsultationPage() {
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button
                 size="lg"
-                className="bg-white text-black hover:bg-gray-100 px-10 py-7 text-lg font-semibold"
+                className="bg-white text-black hover:bg-gray-100 dark:bg-gray-800 px-10 py-7 text-lg font-semibold"
                 onClick={() => setShowBookingModal(true)}
               >
                 <Calendar className="mr-2" size={24} />

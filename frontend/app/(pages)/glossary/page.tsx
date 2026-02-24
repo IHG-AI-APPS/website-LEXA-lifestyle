@@ -336,7 +336,7 @@ export default function GlossaryPage() {
           </p>
           <a
             href="/contact"
-            className="inline-block bg-white text-gray-900 dark:text-white px-8 py-4 text-lg font-semibold hover:bg-gray-100 transition-colors"
+            className="inline-block bg-white text-gray-900 dark:text-white px-8 py-4 text-lg font-semibold hover:bg-gray-100 dark:bg-gray-800 transition-colors"
           >
             Schedule Consultation
           </a>

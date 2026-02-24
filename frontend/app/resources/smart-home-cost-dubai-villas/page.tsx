@@ -29,7 +29,7 @@ export default function SmartHomeCostDubaiPage() {
             </p>
             <div className="flex flex-wrap gap-4">
               <Link href="/calculator">
-                <Button size="lg" className="bg-white text-black hover:bg-gray-100 uppercase tracking-widest">
+                <Button size="lg" className="bg-white text-black hover:bg-gray-100 dark:bg-gray-800 uppercase tracking-widest">
                   <Calculator className="mr-2" size={20} />
                   Calculate Your Cost
                 </Button>
@@ -335,7 +335,7 @@ export default function SmartHomeCostDubaiPage() {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link href="/calculator">
-                <Button size="lg" className="bg-white text-black hover:bg-gray-100 uppercase tracking-widest">
+                <Button size="lg" className="bg-white text-black hover:bg-gray-100 dark:bg-gray-800 uppercase tracking-widest">
                   <Calculator className="mr-2" size={20} />
                   Calculate Cost
                 </Button>

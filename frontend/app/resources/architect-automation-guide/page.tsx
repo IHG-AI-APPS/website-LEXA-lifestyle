@@ -29,7 +29,7 @@ export default function ArchitectAutomationGuidePage() {
             </p>
             <div className="flex flex-wrap gap-4">
               <Link href="/architects">
-                <Button size="lg" className="bg-white text-black hover:bg-gray-100 uppercase tracking-widest">
+                <Button size="lg" className="bg-white text-black hover:bg-gray-100 dark:bg-gray-800 uppercase tracking-widest">
                   <Download className="mr-2" size={20} />
                   Get Resources
                 </Button>
@@ -295,7 +295,7 @@ export default function ArchitectAutomationGuidePage() {
               </Link>
             </div>
 
-            <div className="mt-8 bg-gray-100 rounded-xl p-8">
+            <div className="mt-8 bg-gray-100 dark:bg-gray-800 rounded-xl p-8">
               <h3 className="text-2xl font-bold mb-4">Need Project Support?</h3>
               <p className="text-gray-700 dark:text-gray-300 mb-4">
                 Our engineering team provides free technical consultations for architects during design phase. 
@@ -323,7 +323,7 @@ export default function ArchitectAutomationGuidePage() {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link href="/architects">
-                <Button size="lg" className="bg-white text-black hover:bg-gray-100 uppercase tracking-widest">
+                <Button size="lg" className="bg-white text-black hover:bg-gray-100 dark:bg-gray-800 uppercase tracking-widest">
                   <Download className="mr-2" size={20} />
                   Get All Resources
                 </Button>

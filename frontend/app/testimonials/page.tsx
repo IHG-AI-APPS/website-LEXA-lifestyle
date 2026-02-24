@@ -75,7 +75,7 @@ export default function TestimonialsPage() {
               {[1, 2, 3, 4].map(i => (
                 <div key={i} className="animate-pulse border border-gray-200 dark:border-gray-700 dark:border-gray-700 rounded-lg p-6">
                   <div className="h-4 bg-gray-200 dark:bg-gray-700 rounded w-24 mb-4" />
-                  <div className="h-20 bg-gray-100 dark:bg-gray-800 rounded mb-4" />
+                  <div className="h-20 bg-gray-100 dark:bg-gray-800 dark:bg-gray-800 rounded mb-4" />
                   <div className="h-4 bg-gray-200 dark:bg-gray-700 rounded w-32" />
                 </div>
               ))}
@@ -157,7 +157,7 @@ export default function TestimonialsPage() {
                     {/* Project Type Badge */}
                     {t.project_type && (
                       <div className="mt-4 pt-4 border-t border-gray-100 dark:border-gray-800 dark:border-gray-700">
-                        <span className="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-medium bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400 dark:text-gray-400">
+                        <span className="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-medium bg-gray-100 dark:bg-gray-800 dark:bg-gray-800 text-gray-600 dark:text-gray-400 dark:text-gray-400">
                           {t.project_type}
                         </span>
                       </div>

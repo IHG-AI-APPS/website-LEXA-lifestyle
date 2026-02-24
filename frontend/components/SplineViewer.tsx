@@ -117,7 +117,7 @@ export default function SplineViewer({ sceneUrl, title, description }: SplineVie
         </p>
         <Button
           size="lg"
-          className="bg-white text-black hover:bg-gray-100"
+          className="bg-white text-black hover:bg-gray-100 dark:bg-gray-800"
           onClick={() => window.location.href = '/contact'}
         >
           Book Your Visit

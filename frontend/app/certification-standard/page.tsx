@@ -578,7 +578,7 @@ export default function CertificationStandardPage() {
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link href="/consultation">
-                <Button size="lg" className="bg-white text-black hover:bg-gray-100 px-10 py-7 text-lg font-semibold">
+                <Button size="lg" className="bg-white text-black hover:bg-gray-100 dark:bg-gray-800 px-10 py-7 text-lg font-semibold">
                   Book Free Consultation
                 </Button>
               </Link>

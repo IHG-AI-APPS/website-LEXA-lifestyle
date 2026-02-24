@@ -89,7 +89,7 @@ export default function CookieConsent() {
             </button>
             <button
               onClick={acceptEssential}
-              className="flex-1 px-3 py-2 bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 dark:text-gray-300 font-medium text-xs rounded-lg hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors"
+              className="flex-1 px-3 py-2 bg-gray-100 dark:bg-gray-800 dark:bg-gray-700 text-gray-700 dark:text-gray-300 dark:text-gray-300 font-medium text-xs rounded-lg hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors"
             >
               Essential Only
             </button>

@@ -89,10 +89,10 @@ export default function BrandDetailPage({ params }: { params: { slug: string } }
           <div className="animate-pulse">
             <div className="h-64 bg-gray-200 rounded-xl mb-8"></div>
             <div className="h-10 bg-gray-200 rounded w-1/3 mb-4"></div>
-            <div className="h-4 bg-gray-100 rounded w-2/3 mb-8"></div>
+            <div className="h-4 bg-gray-100 dark:bg-gray-800 rounded w-2/3 mb-8"></div>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               {[...Array(6)].map((_, i) => (
-                <div key={i} className="bg-gray-100 rounded-lg h-48"></div>
+                <div key={i} className="bg-gray-100 dark:bg-gray-800 rounded-lg h-48"></div>
               ))}
             </div>
           </div>
@@ -341,7 +341,7 @@ export default function BrandDetailPage({ params }: { params: { slug: string } }
                     className="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 dark:border-gray-700 overflow-hidden group hover:shadow-lg transition-shadow"
                   >
                     {product.image && (
-                      <div className="relative h-48 md:h-56 bg-gray-100">
+                      <div className="relative h-48 md:h-56 bg-gray-100 dark:bg-gray-800">
                         <SafeImage
                           src={product.image}
                           alt={product.name}
@@ -405,7 +405,7 @@ export default function BrandDetailPage({ params }: { params: { slug: string } }
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Button 
                   size="lg" 
-                  className="bg-white dark:bg-gray-800 hover:bg-gray-100 dark:hover:bg-gray-700 text-charcoal dark:text-gray-200 px-8 md:px-12"
+                  className="bg-white dark:bg-gray-800 hover:bg-gray-100 dark:bg-gray-800 dark:hover:bg-gray-700 text-charcoal dark:text-gray-200 px-8 md:px-12"
                   onClick={() => setShowConsultationForm(true)}
                 >
                   Villa Technology Review

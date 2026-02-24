@@ -167,8 +167,8 @@ export default function DashboardPage() {
         {loading && (
           <div className="py-8">
             <div className="animate-pulse space-y-4">
-              <div className="h-32 bg-gray-100 rounded-xl"></div>
-              <div className="h-32 bg-gray-100 rounded-xl"></div>
+              <div className="h-32 bg-gray-100 dark:bg-gray-800 rounded-xl"></div>
+              <div className="h-32 bg-gray-100 dark:bg-gray-800 rounded-xl"></div>
             </div>
           </div>
         )}
@@ -180,7 +180,7 @@ export default function DashboardPage() {
             animate={{ opacity: 1, scale: 1 }}
             className="bg-white dark:bg-gray-800 rounded-xl border border-gray-200 dark:border-gray-700 p-12 text-center"
           >
-            <div className="w-16 h-16 bg-gray-100 rounded-full flex items-center justify-center mx-auto mb-4">
+            <div className="w-16 h-16 bg-gray-100 dark:bg-gray-800 rounded-full flex items-center justify-center mx-auto mb-4">
               <FolderOpen className="w-8 h-8 text-gray-400" />
             </div>
             <h2 className="text-xl font-semibold text-gray-900 dark:text-white mb-2">No Projects Yet</h2>
@@ -253,7 +253,7 @@ export default function DashboardPage() {
                         <span>Progress</span>
                         <span>{getStepProgress(session)}%</span>
                       </div>
-                      <div className="h-2 bg-gray-100 rounded-full overflow-hidden">
+                      <div className="h-2 bg-gray-100 dark:bg-gray-800 rounded-full overflow-hidden">
                         <div 
                           className="h-full bg-blue-600 rounded-full transition-all"
                           style={{ width: `${getStepProgress(session)}%` }}

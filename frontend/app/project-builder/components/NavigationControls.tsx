@@ -80,13 +80,13 @@ export default function NavigationControls({
             {/* Keyboard Hint */}
             <div className="hidden xl:flex items-center gap-6 text-xs text-gray-500">
               <div className="flex items-center gap-2">
-                <kbd className="px-2 py-1 bg-gray-100 border border-gray-300 dark:border-gray-600 rounded text-xs font-mono">⌘</kbd>
-                <kbd className="px-2 py-1 bg-gray-100 border border-gray-300 dark:border-gray-600 rounded text-xs font-mono">←</kbd>
+                <kbd className="px-2 py-1 bg-gray-100 dark:bg-gray-800 border border-gray-300 dark:border-gray-600 rounded text-xs font-mono">⌘</kbd>
+                <kbd className="px-2 py-1 bg-gray-100 dark:bg-gray-800 border border-gray-300 dark:border-gray-600 rounded text-xs font-mono">←</kbd>
                 <span>Back</span>
               </div>
               <div className="flex items-center gap-2">
-                <kbd className="px-2 py-1 bg-gray-100 border border-gray-300 dark:border-gray-600 rounded text-xs font-mono">⌘</kbd>
-                <kbd className="px-2 py-1 bg-gray-100 border border-gray-300 dark:border-gray-600 rounded text-xs font-mono">→</kbd>
+                <kbd className="px-2 py-1 bg-gray-100 dark:bg-gray-800 border border-gray-300 dark:border-gray-600 rounded text-xs font-mono">⌘</kbd>
+                <kbd className="px-2 py-1 bg-gray-100 dark:bg-gray-800 border border-gray-300 dark:border-gray-600 rounded text-xs font-mono">→</kbd>
                 <span>Forward</span>
               </div>
             </div>

@@ -117,7 +117,7 @@ export default function PackagesPage() {
                     <Link key={pkg.slug} href={`/packages/${pkg.slug}`}>
                       <div className="group h-full border border-gray-200 dark:border-gray-700 hover:border-gray-400 hover:shadow-md rounded-lg p-5 transition-all bg-white">
                         <div className="flex items-start justify-between mb-3">
-                          <div className="w-10 h-10 rounded-lg bg-gray-100 flex items-center justify-center">
+                          <div className="w-10 h-10 rounded-lg bg-gray-100 dark:bg-gray-800 flex items-center justify-center">
                             <Home className="h-5 w-5 text-gray-600 dark:text-gray-400 dark:text-gray-400" />
                           </div>
                           <ChevronRight className="h-5 w-5 text-gray-300 group-hover:text-gray-600 dark:text-gray-400 transition-colors" />

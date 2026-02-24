@@ -82,7 +82,7 @@ export default function ProductCategories() {
               transition={{ duration: 0.6, delay: index * 0.1 }}
             >
               <Link href={`/products?category=${category.slug}`} className="group block">
-                <div className="relative h-64 overflow-hidden mb-4 bg-gray-100">
+                <div className="relative h-64 overflow-hidden mb-4 bg-gray-100 dark:bg-gray-800">
                   <SafeImage
                     src={category.image}
                     alt={category.name}

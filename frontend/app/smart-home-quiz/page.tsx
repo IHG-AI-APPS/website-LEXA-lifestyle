@@ -474,7 +474,7 @@ export default function SmartHomeQuizPage() {
                       <div className="flex-1">
                         <div className="flex items-center gap-2">
                           <h4 className="font-semibold text-gray-900 dark:text-white dark:text-white">{rec.feature_title}</h4>
-                          <span className="px-2 py-0.5 bg-gray-100 text-gray-600 dark:text-gray-400 text-xs rounded-full">
+                          <span className="px-2 py-0.5 bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400 text-xs rounded-full">
                             {rec.category}
                           </span>
                         </div>
@@ -557,7 +557,7 @@ export default function SmartHomeQuizPage() {
                             </div>
                             <button
                               onClick={() => setShowSaveModal(false)}
-                              className="p-1 hover:bg-gray-100 rounded-full"
+                              className="p-1 hover:bg-gray-100 dark:bg-gray-800 rounded-full"
                             >
                               <X className="h-5 w-5 text-gray-500" />
                             </button>

@@ -225,7 +225,7 @@ export default function ProductDetailPage({ params }: { params: { slug: string }
               </p>
               <Button 
                 size="lg" 
-                className="bg-white hover:bg-gray-100 text-charcoal px-12"
+                className="bg-white hover:bg-gray-100 dark:bg-gray-800 text-charcoal px-12"
                 onClick={() => setShowConsultationForm(true)}
               >
                 Get Product Recommendation

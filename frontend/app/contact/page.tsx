@@ -103,7 +103,7 @@ export default function ContactPage() {
             <div className="flex flex-wrap gap-4 justify-center">
               <a 
                 href="tel:+97142670470" 
-                className="inline-flex items-center gap-2 px-6 py-3 bg-white text-gray-900 dark:text-white font-medium rounded-lg hover:bg-gray-100 transition-colors"
+                className="inline-flex items-center gap-2 px-6 py-3 bg-white text-gray-900 dark:text-white font-medium rounded-lg hover:bg-gray-100 dark:bg-gray-800 transition-colors"
               >
                 <Phone className="h-5 w-5" />
                 {language === 'ar' ? 'اتصل بنا' : 'Call Us'}
@@ -502,19 +502,19 @@ export default function ContactPage() {
         <div className="container mx-auto px-6 lg:px-12">
           <div className="max-w-7xl mx-auto">
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-              <Link href="/calculator" className="p-4 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors text-center">
+              <Link href="/calculator" className="p-4 bg-gray-50 rounded-lg hover:bg-gray-100 dark:bg-gray-800 transition-colors text-center">
                 <p className="font-medium text-gray-900 dark:text-white dark:text-white">{language === 'ar' ? 'حاسبة التكلفة' : 'Cost Calculator'}</p>
                 <p className="text-sm text-gray-500">{language === 'ar' ? 'قدّر مشروعك' : 'Estimate your project'}</p>
               </Link>
-              <Link href="/smart-home-quiz" className="p-4 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors text-center">
+              <Link href="/smart-home-quiz" className="p-4 bg-gray-50 rounded-lg hover:bg-gray-100 dark:bg-gray-800 transition-colors text-center">
                 <p className="font-medium text-gray-900 dark:text-white dark:text-white">{language === 'ar' ? 'اختبار الذكاء الاصطناعي' : 'AI Quiz'}</p>
                 <p className="text-sm text-gray-500">{language === 'ar' ? 'احصل على توصيات' : 'Get recommendations'}</p>
               </Link>
-              <Link href="/projects" className="p-4 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors text-center">
+              <Link href="/projects" className="p-4 bg-gray-50 rounded-lg hover:bg-gray-100 dark:bg-gray-800 transition-colors text-center">
                 <p className="font-medium text-gray-900 dark:text-white dark:text-white">{language === 'ar' ? 'مشاريعنا' : 'Our Projects'}</p>
                 <p className="text-sm text-gray-500">{language === 'ar' ? 'عرض المعرض' : 'View portfolio'}</p>
               </Link>
-              <Link href="/packages" className="p-4 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors text-center">
+              <Link href="/packages" className="p-4 bg-gray-50 rounded-lg hover:bg-gray-100 dark:bg-gray-800 transition-colors text-center">
                 <p className="font-medium text-gray-900 dark:text-white dark:text-white">{language === 'ar' ? 'الباقات' : 'Packages'}</p>
                 <p className="text-sm text-gray-500">{language === 'ar' ? 'تصفح الخيارات' : 'Browse options'}</p>
               </Link>

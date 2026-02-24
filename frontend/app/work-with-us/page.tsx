@@ -401,7 +401,7 @@ export default function WorkWithUsPage() {
                   {area.skills.map((skill) => (
                     <span 
                       key={skill}
-                      className="text-xs bg-gray-100 dark:bg-gray-600 text-gray-700 dark:text-gray-300 dark:text-gray-200 px-2 py-1 rounded-full"
+                      className="text-xs bg-gray-100 dark:bg-gray-800 dark:bg-gray-600 text-gray-700 dark:text-gray-300 dark:text-gray-200 px-2 py-1 rounded-full"
                     >
                       {skill}
                     </span>
@@ -501,7 +501,7 @@ export default function WorkWithUsPage() {
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a
                 href="mailto:info@lexalifestyle.com?subject=Career%20Inquiry%20-%20LEXA%20Lifestyle&body=Hi%20LEXA%20Team%2C%0A%0AI%20am%20interested%20in%20joining%20your%20team.%0A%0AName%3A%20%0APosition%20of%20Interest%3A%20%0AExperience%3A%20%0A%0APlease%20find%20my%20CV%20attached.%0A%0ABest%20regards"
-                className="bg-white text-[#C9A962] hover:bg-gray-100 px-8 py-4 rounded-lg font-semibold flex items-center justify-center gap-2 transition-colors"
+                className="bg-white text-[#C9A962] hover:bg-gray-100 dark:bg-gray-800 px-8 py-4 rounded-lg font-semibold flex items-center justify-center gap-2 transition-colors"
               >
                 <Mail className="w-5 h-5" />
                 info@lexalifestyle.com

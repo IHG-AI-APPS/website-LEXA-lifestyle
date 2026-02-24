@@ -163,7 +163,7 @@ export default function InvestmentPricingPage() {
                 <Button
                   size="lg"
                   onClick={() => setShowConsultationForm(true)}
-                  className="bg-white text-[#1A1A1A] dark:text-white hover:bg-gray-100 px-8 py-6 text-sm font-semibold uppercase tracking-wider"
+                  className="bg-white text-[#1A1A1A] dark:text-white hover:bg-gray-100 dark:bg-gray-800 px-8 py-6 text-sm font-semibold uppercase tracking-wider"
                 >
                   Get Custom Quote
                 </Button>
@@ -246,7 +246,7 @@ export default function InvestmentPricingPage() {
                     className={`w-full ${
                       tier.popular
                         ? 'bg-[#1A1A1A] hover:bg-[#1A1A1A]/90 text-white'
-                        : 'bg-gray-100 hover:bg-gray-200 text-[#1A1A1A]'
+                        : 'bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 text-[#1A1A1A]'
                     }`}
                   >
                     Get Detailed Quote
@@ -373,7 +373,7 @@ export default function InvestmentPricingPage() {
                 <Button
                   size="lg"
                   onClick={() => setShowConsultationForm(true)}
-                  className="bg-white text-[#1A1A1A] dark:text-white hover:bg-gray-100 px-8 py-6 text-sm font-semibold uppercase tracking-wider"
+                  className="bg-white text-[#1A1A1A] dark:text-white hover:bg-gray-100 dark:bg-gray-800 px-8 py-6 text-sm font-semibold uppercase tracking-wider"
                 >
                   Request Custom Quote
                   <ArrowRight className="ml-2 h-4 w-4" />

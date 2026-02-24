@@ -251,7 +251,7 @@ export default function ProtocolSelection({
             {loading ? (
               <div className="grid md:grid-cols-2 gap-4">
                 {[1, 2, 3, 4].map(i => (
-                  <div key={i} className="h-48 bg-gray-100 animate-pulse rounded-xl" />
+                  <div key={i} className="h-48 bg-gray-100 dark:bg-gray-800 animate-pulse rounded-xl" />
                 ))}
               </div>
             ) : (

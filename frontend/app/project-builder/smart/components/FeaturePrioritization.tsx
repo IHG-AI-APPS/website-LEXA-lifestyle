@@ -248,10 +248,10 @@ export default function FeaturePrioritization({
       <div className="max-w-4xl mx-auto px-4 py-12">
         <div className="animate-pulse">
           <div className="h-8 bg-gray-200 rounded w-1/3 mb-4 mx-auto"></div>
-          <div className="h-4 bg-gray-100 rounded w-1/2 mb-8 mx-auto"></div>
+          <div className="h-4 bg-gray-100 dark:bg-gray-800 rounded w-1/2 mb-8 mx-auto"></div>
           <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
             {[...Array(6)].map((_, i) => (
-              <div key={i} className="h-24 bg-gray-100 rounded-lg"></div>
+              <div key={i} className="h-24 bg-gray-100 dark:bg-gray-800 rounded-lg"></div>
             ))}
           </div>
         </div>
@@ -381,7 +381,7 @@ export default function FeaturePrioritization({
                       className={`py-2 px-3 rounded-lg text-sm font-medium transition-all flex items-center justify-center gap-1.5 ${
                         isSelected 
                           ? `${option.color} text-white shadow-md` 
-                          : `bg-gray-100 text-gray-600 dark:text-gray-400 hover:bg-gray-200`
+                          : `bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400 hover:bg-gray-200`
                       }`}
                     >
                       <Icon className="w-4 h-4" />
@@ -407,7 +407,7 @@ export default function FeaturePrioritization({
               <div className="text-xs text-gray-500">{opt.label}</div>
             </div>
           ))}
-          <div className="p-3 rounded-lg bg-gray-100">
+          <div className="p-3 rounded-lg bg-gray-100 dark:bg-gray-800">
             <div className="text-2xl font-bold text-gray-600 dark:text-gray-400 dark:text-gray-400">{summary.skip}</div>
             <div className="text-xs text-gray-500">Skipped</div>
           </div>

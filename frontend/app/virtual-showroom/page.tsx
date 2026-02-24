@@ -152,7 +152,7 @@ export default function VirtualShowroomPage() {
                   className={`px-6 py-2 text-sm font-medium transition-all ${
                     selectedCategory === category
                       ? 'bg-charcoal text-white'
-                      : 'bg-gray-100 text-gray-600 dark:text-gray-400 hover:bg-gray-200'
+                      : 'bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400 hover:bg-gray-200'
                   }`}
                 >
                   {category}
@@ -223,7 +223,7 @@ export default function VirtualShowroomPage() {
               </p>
               <Button
                 size="lg"
-                className="bg-white hover:bg-gray-100 text-charcoal px-12"
+                className="bg-white hover:bg-gray-100 dark:bg-gray-800 text-charcoal px-12"
                 onClick={() => setShowConsultationForm(true)}
               >
                 Schedule Visit

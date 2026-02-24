@@ -99,7 +99,7 @@ export default function PropertyPackageDetailPage() {
           <div className="container mx-auto px-4 py-12">
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
               {[...Array(3)].map((_, i) => (
-                <div key={i} className="bg-gray-100 rounded-2xl h-96"></div>
+                <div key={i} className="bg-gray-100 dark:bg-gray-800 rounded-2xl h-96"></div>
               ))}
             </div>
           </div>
@@ -268,7 +268,7 @@ export default function PropertyPackageDetailPage() {
                       className={`w-full py-4 px-6 rounded-lg font-bold text-lg transition-all flex items-center justify-center gap-2 ${
                         isRecommended
                           ? `${colors.bg} text-white ${colors.bgHover} shadow-lg hover:shadow-xl`
-                          : `bg-gray-100 text-gray-900 dark:text-white hover:bg-gray-200`
+                          : `bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-white hover:bg-gray-200`
                       }`}
                     >
                       Select {tier.tier_name}

@@ -343,7 +343,7 @@ export default function AIStaffAccountabilityPage() {
                 className={`px-6 py-3 rounded-lg font-semibold transition-all ${
                   selectedStage === stage.id
                     ? `bg-${stage.color}-600 text-white shadow-lg`
-                    : 'bg-gray-100 text-gray-700 dark:text-gray-300 hover:bg-gray-200'
+                    : 'bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:bg-gray-200'
                 }`}
               >
                 Stage {stage.id}: {stage.name}
@@ -538,7 +538,7 @@ export default function AIStaffAccountabilityPage() {
               <Button 
                 size="lg"
                 onClick={() => setShowConsultationForm(true)}
-                className="bg-white text-blue-600 hover:bg-gray-100 px-8 py-6 text-lg"
+                className="bg-white text-blue-600 hover:bg-gray-100 dark:bg-gray-800 px-8 py-6 text-lg"
               >
                 Schedule Demo
                 <PlayCircle className="ml-2 w-5 h-5" />

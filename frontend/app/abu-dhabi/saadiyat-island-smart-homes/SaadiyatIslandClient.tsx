@@ -240,7 +240,7 @@ export default function SaadiyatIslandClient() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button 
               size="lg"
-              className="bg-white text-[#C9A962] hover:bg-gray-100 font-semibold px-8 rounded-xl"
+              className="bg-white text-[#C9A962] hover:bg-gray-100 dark:bg-gray-800 font-semibold px-8 rounded-xl"
               asChild
             >
               <a href="tel:+97142670470">

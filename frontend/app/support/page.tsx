@@ -50,7 +50,7 @@ export default function EmergencySupportPage() {
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
               <a href={`https://wa.me/${process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || '971501234567'}?text=Emergency%20Support%20Request`}>
-                <Button size="lg" className="bg-white text-red-600 hover:bg-gray-100 text-lg font-bold">
+                <Button size="lg" className="bg-white text-red-600 hover:bg-gray-100 dark:bg-gray-800 text-lg font-bold">
                   <Phone className="mr-2" size={20} />
                   Emergency WhatsApp
                 </Button>
@@ -230,7 +230,7 @@ export default function EmergencySupportPage() {
               Our support team is standing by 24/7 to assist you
             </p>
             <a href={`https://wa.me/${process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || '971501234567'}?text=Emergency%20Support%20Request`}>
-              <Button size="lg" className="bg-white text-red-600 hover:bg-gray-100 text-lg font-bold px-12 py-8">
+              <Button size="lg" className="bg-white text-red-600 hover:bg-gray-100 dark:bg-gray-800 text-lg font-bold px-12 py-8">
                 <Phone className="mr-2" size={24} />
                 Contact Emergency Support
               </Button>
