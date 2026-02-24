@@ -260,7 +260,7 @@ export default function CommercialPage() {
               <div className="inline-block bg-white/20 backdrop-blur-sm px-6 py-2 rounded-full mb-6">
                 <p className="text-sm font-semibold uppercase tracking-wider">Plan Your Project</p>
               </div>
-              <h2 className="text-5xl font-bold mb-6">Interactive Project Builder</h2>
+              <h2 className="text-5xl font-heading font-bold mb-6">Interactive Project Builder</h2>
               <p className="text-2xl text-white/90 mb-4">
                 Design your commercial automation system with instant pricing
               </p>
