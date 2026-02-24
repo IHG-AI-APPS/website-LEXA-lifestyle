@@ -151,7 +151,7 @@ export default function ProjectBuilderFlow() {
         onStepClick={goToStep}
       />
 
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-12 max-w-7xl">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 pt-8 pb-12 max-w-7xl">
         {/* Content */}
         <AnimatePresence mode="wait">
           <motion.div
