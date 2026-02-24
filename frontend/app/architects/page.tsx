@@ -182,7 +182,7 @@ export default function ArchitectsPage() {
         <div className="container mx-auto px-8 lg:px-16">
           <div className="max-w-7xl mx-auto">
             <div className="text-center mb-16">
-              <h2 className="text-4xl sm:text-5xl font-bold mb-4 ">Technical Resources</h2>
+              <h2 className="text-4xl sm:text-5xl font-heading font-bold mb-4 ">Technical Resources</h2>
               <p className="text-xl text-gray-600">
                 Click on any resource to request instant access
               </p>
