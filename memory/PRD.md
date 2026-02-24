@@ -13,12 +13,14 @@
 **STATUS: COMPLETED & TESTED (100%)**
 
 #### Logo Fix:
-- **Problem**: LEXA logo was not adapting correctly to backgrounds across pages/themes
-- **Solution**: Replaced JS theme-state-dependent logo switching with CSS `dark:invert` approach
+- **Root Cause**: `SafeImage` component used `useState(src)` but never synced when the `src` prop changed. During client-side navigation (e.g., homepage → experience centre), the Header didn't unmount, so SafeImage kept the stale white logo even though the prop changed to black.
+- **Fix 1**: Added `useEffect` in `SafeImage.tsx` to sync internal state when `src` prop changes
+- **Fix 2**: Replaced JS theme-state-dependent logo switching with CSS `dark:invert` approach
   - Uses `/lexa-black.png` as the base on scrolled/non-homepage header (light mode)
   - CSS `dark:invert` automatically inverts to white in dark mode
   - White logo remains for homepage hero (transparent header over dark background)
 - **Files Modified**:
+  - `/app/frontend/components/ui/SafeImage.tsx` - Added useEffect to sync src prop changes
   - `/app/frontend/components/layout/Header.tsx` - Line 153: CSS-based dark mode adaptation
   - `/app/frontend/app/ar-seo/[slug]/page.tsx` - Added `dark:invert` class
   - `/app/frontend/app/ar-seo/blog/[slug]/page.tsx` - Added `dark:invert` class
