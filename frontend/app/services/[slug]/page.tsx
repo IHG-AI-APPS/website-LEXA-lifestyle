@@ -356,7 +356,7 @@ export default function ServiceDetailPage() {
 
       {/* Process Section */}
       {service.process_steps && service.process_steps.length > 0 && (
-        <section className="bg-white">
+        <section className="bg-white dark:bg-gray-900">
           <div className="max-w-7xl mx-auto px-6 py-4">
             <h2 className="text-3xl md:text-4xl font-bold text-center mb-4">Our Process</h2>
             <p className="text-center text-gray-600 mb-8 max-w-2xl mx-auto">
