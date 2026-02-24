@@ -281,8 +281,8 @@ export default function ContactPage() {
               {/* Contact Info Sidebar */}
               <div className="lg:col-span-1 space-y-6">
                 {/* Quick Contact */}
-                <div className="bg-gray-50 rounded-xl p-6">
-                  <h3 className="text-lg font-bold text-gray-900 mb-4">
+                <div className="bg-gray-50 dark:bg-gray-800 rounded-xl p-6">
+                  <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-4">
                     {language === 'ar' ? 'معلومات الاتصال' : 'Contact Information'}
                   </h3>
                   
@@ -326,10 +326,10 @@ export default function ContactPage() {
                 </div>
 
                 {/* Business Hours */}
-                <div className="bg-gray-50 rounded-xl p-6">
+                <div className="bg-gray-50 dark:bg-gray-800 rounded-xl p-6">
                   <div className="flex items-center gap-2 mb-4">
-                    <Clock className="h-5 w-5 text-gray-600" />
-                    <h3 className="text-lg font-bold text-gray-900">
+                    <Clock className="h-5 w-5 text-gray-600 dark:text-gray-400" />
+                    <h3 className="text-lg font-bold text-gray-900 dark:text-white">
                       {language === 'ar' ? 'ساعات العمل' : 'Business Hours'}
                     </h3>
                   </div>
