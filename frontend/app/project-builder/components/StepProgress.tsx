@@ -125,12 +125,12 @@ export default function StepProgress({
                     )}
 
                     {/* Label */}
-                    <div className="absolute top-full left-1/2 -translate-x-1/2 mt-2 whitespace-nowrap">
+                    <div className="absolute top-full left-1/2 -translate-x-1/2 mt-3 whitespace-nowrap">
                       <span
                         className={`
-                          text-xs font-medium
+                          text-[10px] font-medium uppercase tracking-wide
                           ${state === 'current' ? 'text-black' : ''}
-                          ${state === 'completed' ? 'text-gray-700' : ''}
+                          ${state === 'completed' ? 'text-gray-600' : ''}
                           ${state === 'upcoming' ? 'text-gray-400' : ''}
                         `}
                       >
