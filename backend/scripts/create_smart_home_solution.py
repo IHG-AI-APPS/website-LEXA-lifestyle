@@ -312,7 +312,7 @@ async def create_smart_home_solution():
         print(f"   FAQs: {len(SMART_HOME_SOLUTION['faqs'])}")
         print(f"   Use Cases: {len(SMART_HOME_SOLUTION['use_cases'])}")
         print(f"   Price Range: {SMART_HOME_SOLUTION['price_range']}")
-        print("\n🌐 URL: https://project-gallery-139.preview.emergentagent.com/solutions/smart-home")
+        print("\n🌐 URL: https://smart-builder-launch.preview.emergentagent.com/solutions/smart-home")
         
         client.close()
         
