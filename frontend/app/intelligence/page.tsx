@@ -323,7 +323,7 @@ export default function IntelligencePage() {
               </div>
             ) : (
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-                {filteredFeatures.slice(0, 20).map((feature, index) => {
+                {(showAll ? filteredFeatures : filteredFeatures.slice(0, 20)).map((feature, index) => {
                   const Icon = categoryIcons[feature.category] || Brain
                   return (
                     <motion.div
