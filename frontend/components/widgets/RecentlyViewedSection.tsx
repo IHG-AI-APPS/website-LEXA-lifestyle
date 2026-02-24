@@ -85,13 +85,71 @@ export default function RecentlyViewedSection({
   const { language } = useLanguage()
   const { items, isLoaded, removeItem, clearAll } = useRecentlyViewed()
   const scrollRef = useRef<HTMLDivElement>(null)
+  const [validatedItems, setValidatedItems] = useState<RecentlyViewedItem[]>([])
+  const [isValidating, setIsValidating] = useState(true)
+
+  // Validate items against backend to filter out deleted ones
+  useEffect(() => {
+    if (!isLoaded || items.length === 0) {
+      setIsValidating(false)
+      return
+    }
+
+    const validateItems = async () => {
+      try {
+        const validItems: RecentlyViewedItem[] = []
+        
+        for (const item of items) {
+          try {
+            let endpoint = ''
+            switch (item.type) {
+              case 'solution':
+                endpoint = `${BACKEND_URL}/api/solutions/${item.slug}`
+                break
+              case 'project':
+                endpoint = `${BACKEND_URL}/api/projects/${item.slug}`
+                break
+              case 'service':
+                endpoint = `${BACKEND_URL}/api/services/${item.slug}`
+                break
+              case 'package':
+                endpoint = `${BACKEND_URL}/api/property-packages/${item.slug}`
+                break
+            }
+            
+            if (endpoint) {
+              const res = await fetch(endpoint, { method: 'HEAD' })
+              if (res.ok) {
+                validItems.push(item)
+              } else {
+                // Item doesn't exist anymore, remove from localStorage
+                removeItem(item.id, item.type)
+              }
+            }
+          } catch {
+            // Keep item if validation fails (network error)
+            validItems.push(item)
+          }
+        }
+        
+        setValidatedItems(validItems)
+      } catch (error) {
+        console.error('Error validating recently viewed items:', error)
+        setValidatedItems(items) // Fallback to all items on error
+      } finally {
+        setIsValidating(false)
+      }
+    }
+
+    validateItems()
+  }, [isLoaded, items, removeItem])
 
   // Don't render if no items or not loaded
-  if (!isLoaded || items.length === 0) {
+  if (!isLoaded || isValidating || validatedItems.length === 0) {
     return null
   }
 
-  const displayItems = items.slice(0, maxItems)
+  const displayItems = validatedItems.slice(0, maxItems)
 
   return (
     <motion.section
