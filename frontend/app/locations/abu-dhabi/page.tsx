@@ -21,7 +21,7 @@ export default function AbuDhabiPage() {
   ]
 
   return (
-    <div className="min-h-screen bg-white pt-20">
+    <div className="min-h-screen bg-white dark:bg-gray-900 pt-20">
       <section className="py-24 md:py-32 bg-gradient-to-br from-black via-gray-900 to-black text-white">
         <div className="container mx-auto px-8 lg:px-16">
           <div className="max-w-4xl mx-auto">

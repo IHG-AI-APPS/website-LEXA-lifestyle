@@ -78,7 +78,7 @@ export default async function DynamicArabicPage({ params }: { params: { slug: st
   const isBlogPost = page.page_type === 'blog'
   
   return (
-    <div dir="rtl" lang="ar" className="min-h-screen bg-white">
+    <div dir="rtl" lang="ar" className="min-h-screen bg-white dark:bg-gray-900">
       {/* Simple Header */}
       <header className="border-b py-4 bg-white sticky top-0 z-50">
         <div className="container mx-auto px-4 max-w-7xl flex justify-between items-center">

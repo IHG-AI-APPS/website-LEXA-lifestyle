@@ -86,7 +86,7 @@ export default function ArchitectPage() {
   ]
 
   return (
-    <div className="min-h-screen bg-white pt-20">
+    <div className="min-h-screen bg-white dark:bg-gray-900 pt-20">
       {/* Hero */}
       <section className="py-20 bg-gray-50">
         <div className="container mx-auto px-8 lg:px-16">

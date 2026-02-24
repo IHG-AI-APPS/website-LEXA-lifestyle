@@ -31,7 +31,7 @@ export default function EmergencySupportPage() {
   ]
 
   return (
-    <div className="min-h-screen bg-white pt-20">
+    <div className="min-h-screen bg-white dark:bg-gray-900 pt-20">
       {/* Hero */}
       <section className="py-24 md:py-32 bg-gradient-to-br from-red-600 via-orange-600 to-red-600 text-white">
         <div className="container mx-auto px-8 lg:px-16">
