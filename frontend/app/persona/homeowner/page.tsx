@@ -261,7 +261,7 @@ export default function HomeownerPage() {
               <div className="inline-block bg-white/20 backdrop-blur-sm px-6 py-2 rounded-full mb-6">
                 <p className="text-sm font-semibold uppercase tracking-wider">Plan Your Project</p>
               </div>
-              <h2 className="text-5xl font-bold mb-6">Build Your Custom Smart Home</h2>
+              <h2 className="text-5xl font-heading font-bold mb-6">Build Your Custom Smart Home</h2>
               <p className="text-2xl text-white/90 mb-4">
                 Use our interactive Project Builder to design your ideal smart home
               </p>
