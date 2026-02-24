@@ -59,7 +59,7 @@ export default function StepProgress({
   return (
     <>
       {/* Desktop Progress Bar - Below main navigation */}
-      <div className="hidden lg:block w-full bg-white border-b border-gray-200 elevation-2 sticky top-16 sm:top-18 md:top-20 z-40">
+      <div className="hidden lg:block w-full bg-white border-b border-gray-200 shadow-sm sticky top-[72px] z-30">
         <div className="max-w-7xl mx-auto px-6 py-4">
           <div className="flex items-center justify-between">
             {BUILDER_STEPS.map((step, index) => {
