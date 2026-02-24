@@ -295,7 +295,7 @@ export default function ContactPage() {
                         <p className="text-xs text-gray-400 uppercase tracking-wider mb-0.5">
                           {language === 'ar' ? 'الهاتف' : 'Phone'}
                         </p>
-                        <p className="font-semibold text-gray-900 group-hover:text-blue-600 transition-colors">+971 42 670 470</p>
+                        <p className="font-semibold text-gray-900 dark:text-white group-hover:text-blue-600 transition-colors">+971 42 670 470</p>
                       </div>
                     </a>
 
@@ -307,7 +307,7 @@ export default function ContactPage() {
                         <p className="text-xs text-gray-400 uppercase tracking-wider mb-0.5">
                           {language === 'ar' ? 'واتساب' : 'WhatsApp'}
                         </p>
-                        <p className="font-semibold text-gray-900 group-hover:text-green-600 transition-colors">+971 52 178 2109</p>
+                        <p className="font-semibold text-gray-900 dark:text-white group-hover:text-green-600 transition-colors">+971 52 178 2109</p>
                       </div>
                     </a>
 
@@ -319,7 +319,7 @@ export default function ContactPage() {
                         <p className="text-xs text-gray-400 uppercase tracking-wider mb-0.5">
                           {language === 'ar' ? 'البريد الإلكتروني' : 'Email'}
                         </p>
-                        <p className="font-semibold text-gray-900 group-hover:text-blue-600 transition-colors">sales@lexalifestyle.com</p>
+                        <p className="font-semibold text-gray-900 dark:text-white group-hover:text-blue-600 transition-colors">sales@lexalifestyle.com</p>
                       </div>
                     </a>
                   </div>
@@ -335,7 +335,7 @@ export default function ContactPage() {
                   </div>
                   <div className="space-y-2 text-sm">
                     <div className="flex justify-between">
-                      <span className="text-gray-600">
+                      <span className="text-gray-600 dark:text-gray-400">
                         {language === 'ar' ? 'السبت - الخميس' : 'Saturday - Thursday'}
                       </span>
                       <span className="font-medium">
@@ -343,7 +343,7 @@ export default function ContactPage() {
                       </span>
                     </div>
                     <div className="flex justify-between">
-                      <span className="text-gray-600">
+                      <span className="text-gray-600 dark:text-gray-400">
                         {language === 'ar' ? 'الجمعة' : 'Friday'}
                       </span>
                       <span className="font-medium">
