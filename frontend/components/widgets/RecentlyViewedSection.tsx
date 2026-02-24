@@ -311,7 +311,7 @@ export default function RecentlyViewedSection({
         )}
 
         {/* View all link if there are more items */}
-        {items.length > maxItems && (
+        {validatedItems.length > maxItems && (
           <div className="mt-4 text-center">
             <button className="text-sm text-[#C9A962] hover:text-[#1A1A1A] dark:hover:text-white font-medium transition-colors">
               {language === 'ar' 
