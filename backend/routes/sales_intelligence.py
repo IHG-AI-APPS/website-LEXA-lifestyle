@@ -318,6 +318,27 @@ async def aggregate_all_leads() -> list:
             lead["notes"] = []
             lead["stage_history"] = []
 
+            # Persist to sales_pipeline so we don't re-score
+            await db.sales_pipeline.update_one(
+                {"lead_id": lead["id"]},
+                {"$set": {
+                    "lead_id": lead["id"],
+                    "lead_score": lead["lead_score"],
+                    "score_breakdown": lead["score_breakdown"],
+                    "assigned_to": lead["assigned_to"],
+                    "status": lead.get("status", "new"),
+                    "stage_history": [],
+                    "notes": [],
+                    "email_sent": False,
+                    "created_at": datetime.now(timezone.utc).isoformat(),
+                }},
+                upsert=True
+            )
+
+            # Fire hot lead alert for score >= 70
+            if lead["lead_score"] >= 70 and lead.get("email"):
+                asyncio.create_task(_send_hot_lead_emails(lead))
+
     # Sort by timestamp descending
     all_leads.sort(key=lambda x: str(x.get("timestamp", "")), reverse=True)
     return all_leads
