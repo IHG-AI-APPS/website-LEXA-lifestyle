@@ -65,7 +65,7 @@ export default function CalculatorCardsSection() {
           transition={{ duration: 0.6 }}
           className="text-center mb-12"
         >
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-[#1A1A1A] dark:text-white mb-4 font-heading">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-[#1A1A1A] dark:text-white dark:text-white mb-4 font-heading">
             Planning & Design Tools
           </h2>
           <p className="text-base md:text-lg text-gray-600 dark:text-gray-400 dark:text-gray-300 max-w-2xl mx-auto">
@@ -131,7 +131,7 @@ export default function CalculatorCardsSection() {
                   </div>
 
                   <Button 
-                    className="bg-white hover:bg-[#E8DCC8] text-[#1A1A1A] font-semibold py-6 px-8 transition-all duration-300 group-hover:shadow-lg"
+                    className="bg-white hover:bg-[#E8DCC8] text-[#1A1A1A] dark:text-white font-semibold py-6 px-8 transition-all duration-300 group-hover:shadow-lg"
                     size="lg"
                     data-testid="homepage-project-builder-cta"
                   >
@@ -184,7 +184,7 @@ export default function CalculatorCardsSection() {
 
                     {/* CTA Button */}
                     <Button 
-                      className="w-full bg-white hover:bg-[#E8DCC8] text-[#1A1A1A] font-semibold py-6 transition-all duration-300 group-hover:shadow-lg"
+                      className="w-full bg-white hover:bg-[#E8DCC8] text-[#1A1A1A] dark:text-white font-semibold py-6 transition-all duration-300 group-hover:shadow-lg"
                       size="lg"
                     >
                       <span>{tool.cta}</span>
@@ -209,7 +209,7 @@ export default function CalculatorCardsSection() {
           className="text-center mt-10"
         >
           <p className="text-sm text-gray-500 dark:text-gray-400">
-            Need expert guidance? <Link href="/consultation" className="text-[#1A1A1A] dark:text-white font-semibold hover:underline">Schedule a consultation</Link> with our team
+            Need expert guidance? <Link href="/consultation" className="text-[#1A1A1A] dark:text-white dark:text-white font-semibold hover:underline">Schedule a consultation</Link> with our team
           </p>
         </motion.div>
       </div>

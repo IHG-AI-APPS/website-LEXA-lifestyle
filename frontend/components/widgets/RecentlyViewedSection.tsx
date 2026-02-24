@@ -162,7 +162,7 @@ export default function RecentlyViewedSection({
         <div className="flex items-center justify-between mb-6">
           <div className="flex items-center gap-3">
             <div className="p-2 bg-[#E8DCC8]/20 dark:bg-[#E8DCC8]/10 rounded-lg">
-              <Clock className="h-5 w-5 text-[#1A1A1A] dark:text-[#E8DCC8]" />
+              <Clock className="h-5 w-5 text-[#1A1A1A] dark:text-white dark:text-[#E8DCC8]" />
             </div>
             <div>
               <h2 className="text-lg font-bold text-gray-900 dark:text-white dark:text-white">
@@ -313,7 +313,7 @@ export default function RecentlyViewedSection({
         {/* View all link if there are more items */}
         {validatedItems.length > maxItems && (
           <div className="mt-4 text-center">
-            <button className="text-sm text-[#C9A962] hover:text-[#1A1A1A] dark:hover:text-white font-medium transition-colors">
+            <button className="text-sm text-[#C9A962] hover:text-[#1A1A1A] dark:text-white dark:hover:text-white font-medium transition-colors">
               {language === 'ar' 
                 ? `عرض الكل (${validatedItems.length})` 
                 : `View all (${validatedItems.length})`}

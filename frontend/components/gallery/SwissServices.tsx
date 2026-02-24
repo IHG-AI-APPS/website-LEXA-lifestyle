@@ -76,10 +76,10 @@ export default function SwissServices() {
               className="group relative bg-[#F9F9F7] p-6 transition-all hover:bg-[#1A1A1A]"
             >
               <Link href="/services" className="block">
-                <span className="font-mono text-sm text-[#1A1A1A] opacity-30 group-hover:text-white/40 transition-colors">
+                <span className="font-mono text-sm text-[#1A1A1A] dark:text-white opacity-30 group-hover:text-white/40 transition-colors">
                   {String(index + 1).padStart(2, '0')}
                 </span>
-                <h3 className="h4 text-[#1A1A1A] mt-3 mb-2 group-hover:text-white transition-colors">
+                <h3 className="h4 text-[#1A1A1A] dark:text-white mt-3 mb-2 group-hover:text-white transition-colors">
                   {service.name || service.title}
                 </h3>
                 <p className="text-sm text-[#4A4A4A] group-hover:text-white/70 transition-colors">

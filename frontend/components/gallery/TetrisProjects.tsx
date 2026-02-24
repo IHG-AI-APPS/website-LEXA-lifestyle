@@ -61,7 +61,7 @@ export default function TetrisProjects() {
           className="mb-10 text-center md:text-left"
         >
           <div className="section-label mb-3 dark:text-gray-400">OUR PORTFOLIO</div>
-          <h2 className="h2 text-[#1A1A1A] dark:text-white mb-4">
+          <h2 className="h2 text-[#1A1A1A] dark:text-white dark:text-white mb-4">
             Featured Projects
           </h2>
           <p className="text-base text-[#4A4A4A] dark:text-gray-300 max-w-xl">
@@ -90,7 +90,7 @@ export default function TetrisProjects() {
         >
           <Link 
             href="/projects"
-            className="group inline-flex items-center gap-2 text-sm uppercase tracking-widest text-[#1A1A1A] dark:text-white transition-all hover:gap-4"
+            className="group inline-flex items-center gap-2 text-sm uppercase tracking-widest text-[#1A1A1A] dark:text-white dark:text-white transition-all hover:gap-4"
           >
             View All Projects
             <ArrowUpRight className="h-4 w-4 transition-transform group-hover:rotate-45" />

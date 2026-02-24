@@ -162,7 +162,7 @@ export default function ExperienceCentrePage() {
             >
               <MapPin className="h-6 w-6 text-[#9F8B65] flex-shrink-0 mt-1" />
               <div>
-                <h3 className="font-medium text-[#1A1A1A] mb-2">Location</h3>
+                <h3 className="font-medium text-[#1A1A1A] dark:text-white mb-2">Location</h3>
                 <p className="text-[#4A4A4A] text-sm">
                   Al Quoz 1, Sheikh Zayed Road<br />
                   3rd Interchange, Dubai, UAE
@@ -179,7 +179,7 @@ export default function ExperienceCentrePage() {
             >
               <Calendar className="h-6 w-6 text-[#9F8B65] flex-shrink-0 mt-1" />
               <div>
-                <h3 className="font-medium text-[#1A1A1A] mb-2">Opening Hours</h3>
+                <h3 className="font-medium text-[#1A1A1A] dark:text-white mb-2">Opening Hours</h3>
                 <p className="text-[#4A4A4A] text-sm">
                   Saturday - Thursday: 9 AM - 6 PM<br />
                   Friday: 10 AM - 4 PM
@@ -196,7 +196,7 @@ export default function ExperienceCentrePage() {
             >
               <Mail className="h-6 w-6 text-[#9F8B65] flex-shrink-0 mt-1" />
               <div>
-                <h3 className="font-medium text-[#1A1A1A] mb-2">Book a Visit</h3>
+                <h3 className="font-medium text-[#1A1A1A] dark:text-white mb-2">Book a Visit</h3>
                 <p className="text-[#4A4A4A] text-sm mb-3">
                   Schedule a private tour with our experts
                 </p>
@@ -223,7 +223,7 @@ export default function ExperienceCentrePage() {
               viewport={{ once: true }}
               transition={{ duration: 0.8 }}
             >
-              <h2 className="h2 text-[#1A1A1A] mb-6">
+              <h2 className="h2 text-[#1A1A1A] dark:text-white mb-6">
                 Our Capabilities
               </h2>
               <p className="text-base text-[#4A4A4A] leading-relaxed mb-6">
@@ -250,7 +250,7 @@ export default function ExperienceCentrePage() {
             transition={{ duration: 0.8 }}
             className="mb-16"
           >
-            <h2 className="h2 text-[#1A1A1A] dark:text-white">
+            <h2 className="h2 text-[#1A1A1A] dark:text-white dark:text-white">
               What You&apos;ll Experience
             </h2>
           </motion.div>
@@ -275,7 +275,7 @@ export default function ExperienceCentrePage() {
                   <div className="absolute inset-0 bg-black/0 transition-all duration-500 group-hover:bg-black/20" />
                 </div>
 
-                <h3 className="font-heading text-2xl font-normal text-[#1A1A1A] mb-3">
+                <h3 className="font-heading text-2xl font-normal text-[#1A1A1A] dark:text-white mb-3">
                   {facility.title}
                 </h3>
                 <p className="text-[#4A4A4A] mb-4 leading-relaxed">
@@ -317,7 +317,7 @@ export default function ExperienceCentrePage() {
                 data-testid={`trust-stat-${i}`}
               >
                 <stat.icon className="w-6 h-6 text-[#9F8B65] mx-auto mb-2" />
-                <div className="text-2xl font-bold text-[#1A1A1A] dark:text-white">{stat.value}</div>
+                <div className="text-2xl font-bold text-[#1A1A1A] dark:text-white dark:text-white">{stat.value}</div>
                 <div className="text-sm text-[#4A4A4A] dark:text-gray-300">{stat.label}</div>
               </motion.div>
             ))}

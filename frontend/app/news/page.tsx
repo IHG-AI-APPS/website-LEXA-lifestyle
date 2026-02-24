@@ -62,7 +62,7 @@ export default function NewsPage() {
               <span className="text-xs tracking-[0.3em] uppercase text-gray-400 font-medium mb-4 block">
                 Latest Updates
               </span>
-              <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 text-[#1A1A1A] dark:text-white">
+              <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 text-[#1A1A1A] dark:text-white dark:text-white">
                 Company <span className="text-gray-400">News</span>
               </h1>
               <div className="h-px w-32 bg-[#9F8B65] mb-6 mx-auto" />
@@ -96,7 +96,7 @@ export default function NewsPage() {
                 <div className="inline-block px-3 py-1 mb-6 text-xs tracking-widest uppercase bg-[#9F8B65]/10 text-[#9F8B65]">
                   Featured
                 </div>
-                <h2 className="text-3xl md:text-4xl font-bold text-[#1A1A1A] mb-6">
+                <h2 className="text-3xl md:text-4xl font-bold text-[#1A1A1A] dark:text-white mb-6">
                   {featuredNews.title}
                 </h2>
                 <div className="flex items-center gap-2 text-sm text-gray-500 mb-6">
@@ -108,7 +108,7 @@ export default function NewsPage() {
                 </p>
                 <Link
                   href={`/news/${featuredNews.slug}`}
-                  className="inline-flex items-center gap-2 text-[#1A1A1A] hover:text-[#9F8B65] transition-colors uppercase tracking-widest text-sm font-medium"
+                  className="inline-flex items-center gap-2 text-[#1A1A1A] dark:text-white hover:text-[#9F8B65] transition-colors uppercase tracking-widest text-sm font-medium"
                 >
                   Read More
                   <ArrowRight size={16} strokeWidth={2} />
@@ -144,7 +144,7 @@ export default function NewsPage() {
                     <Calendar size={14} strokeWidth={1.5} />
                     <time>{new Date(article.published_date).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })}</time>
                   </div>
-                  <h3 className="text-xl font-bold text-[#1A1A1A] mb-3 group-hover:text-[#9F8B65] transition-colors">
+                  <h3 className="text-xl font-bold text-[#1A1A1A] dark:text-white mb-3 group-hover:text-[#9F8B65] transition-colors">
                     {article.title}
                   </h3>
                   <p className="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">

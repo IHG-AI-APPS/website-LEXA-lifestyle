@@ -33,7 +33,7 @@ export default function FeaturedWorks() {
           className="mb-16"
         >
           <div className="section-label mb-4">PORTFOLIO</div>
-          <h2 className="h2 text-[#1A1A1A] mb-6">Featured Works</h2>
+          <h2 className="h2 text-[#1A1A1A] dark:text-white mb-6">Featured Works</h2>
           <p className="text-base text-gray-600 dark:text-gray-400 max-w-2xl">
             Showcasing our finest luxury smart living installations across the region.
           </p>
@@ -73,7 +73,7 @@ export default function FeaturedWorks() {
         </div>
 
         <div className="text-center mt-12">
-          <Link href="/projects" className="inline-flex items-center gap-2 text-sm uppercase tracking-wider text-[#1A1A1A] hover:text-[#E8DCC8] transition-colors">
+          <Link href="/projects" className="inline-flex items-center gap-2 text-sm uppercase tracking-wider text-[#1A1A1A] dark:text-white hover:text-[#E8DCC8] transition-colors">
             View All Projects
             <ArrowUpRight className="h-4 w-4" />
           </Link>

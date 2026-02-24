@@ -95,7 +95,7 @@ export default function ProjectsPage() {
                 className={`px-5 py-2.5 md:px-6 md:py-3 text-xs md:text-sm font-medium tracking-widest uppercase transition-all duration-300 rounded-none ${
                   filter === f
                     ? 'bg-[#1A1A1A] text-white'
-                    : 'border border-black/20 text-[#1A1A1A] hover:bg-[#1A1A1A] hover:text-white'
+                    : 'border border-black/20 text-[#1A1A1A] dark:text-white hover:bg-[#1A1A1A] hover:text-white'
                 }`}
               >
                 {f}
@@ -128,12 +128,12 @@ export default function ProjectsPage() {
                       priority={index < 3}
                     />
                     <div className="absolute inset-0 bg-black/0 transition-all duration-500 group-hover:bg-black/20" />
-                    <div className="absolute top-3 left-3 md:top-4 md:left-4 px-3 py-1 bg-white/90 backdrop-blur-sm text-[#1A1A1A] text-xs tracking-wider uppercase">
+                    <div className="absolute top-3 left-3 md:top-4 md:left-4 px-3 py-1 bg-white/90 backdrop-blur-sm text-[#1A1A1A] dark:text-white text-xs tracking-wider uppercase">
                       {project.year}
                     </div>
                   </div>
 
-                  <h3 className="font-heading text-xl md:text-2xl font-normal text-[#1A1A1A] mb-2 group-hover:text-[#9F8B65] transition-colors">
+                  <h3 className="font-heading text-xl md:text-2xl font-normal text-[#1A1A1A] dark:text-white mb-2 group-hover:text-[#9F8B65] transition-colors">
                     {project.title}
                   </h3>
                   <p className="text-xs md:text-sm text-[#4A4A4A] mb-3 uppercase tracking-wider">{project.location}</p>

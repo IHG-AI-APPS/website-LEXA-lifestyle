@@ -35,7 +35,7 @@ export default function GalleryFooterCTA() {
                 <Link href="/contact" className="block">
                   <Button
                     size="lg"
-                    className="w-full sm:w-auto bg-[#E8DCC8] text-[#1A1A1A] uppercase tracking-widest hover:bg-[#E8DCC8]/90 rounded-none px-8 py-4 sm:px-10 sm:py-5 text-xs sm:text-sm font-bold transition-all"
+                    className="w-full sm:w-auto bg-[#E8DCC8] text-[#1A1A1A] dark:text-white uppercase tracking-widest hover:bg-[#E8DCC8]/90 rounded-none px-8 py-4 sm:px-10 sm:py-5 text-xs sm:text-sm font-bold transition-all"
                   >
                     Start Your Project
                     <ArrowRight className="ml-2 h-4 w-4" />

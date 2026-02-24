@@ -185,7 +185,7 @@ export default function PartnerWithUsPage() {
             <div className="flex flex-wrap gap-4">
               <Button 
                 size="lg"
-                className="bg-[#E8DCC8] text-[#1A1A1A] hover:bg-[#E8DCC8]/90 rounded-none px-8"
+                className="bg-[#E8DCC8] text-[#1A1A1A] dark:text-white hover:bg-[#E8DCC8]/90 rounded-none px-8"
                 onClick={() => document.getElementById('application-form')?.scrollIntoView({ behavior: 'smooth' })}
               >
                 Apply Now
@@ -209,19 +209,19 @@ export default function PartnerWithUsPage() {
         <div className="container mx-auto px-4 max-w-6xl">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
             <div>
-              <div className="text-3xl md:text-4xl font-bold text-[#1A1A1A] dark:text-white">150+</div>
+              <div className="text-3xl md:text-4xl font-bold text-[#1A1A1A] dark:text-white dark:text-white">150+</div>
               <div className="text-sm text-[#1A1A1A]/70">Active Partners</div>
             </div>
             <div>
-              <div className="text-3xl md:text-4xl font-bold text-[#1A1A1A] dark:text-white">6</div>
+              <div className="text-3xl md:text-4xl font-bold text-[#1A1A1A] dark:text-white dark:text-white">6</div>
               <div className="text-sm text-[#1A1A1A]/70">GCC Countries</div>
             </div>
             <div>
-              <div className="text-3xl md:text-4xl font-bold text-[#1A1A1A] dark:text-white">32+</div>
+              <div className="text-3xl md:text-4xl font-bold text-[#1A1A1A] dark:text-white dark:text-white">32+</div>
               <div className="text-sm text-[#1A1A1A]/70">Premium Brands</div>
             </div>
             <div>
-              <div className="text-3xl md:text-4xl font-bold text-[#1A1A1A] dark:text-white">15+</div>
+              <div className="text-3xl md:text-4xl font-bold text-[#1A1A1A] dark:text-white dark:text-white">15+</div>
               <div className="text-sm text-[#1A1A1A]/70">Years Experience</div>
             </div>
           </div>
@@ -300,7 +300,7 @@ export default function PartnerWithUsPage() {
                 className="flex gap-4"
               >
                 <div className="w-12 h-12 bg-[#E8DCC8]/20 rounded-lg flex items-center justify-center flex-shrink-0">
-                  <benefit.icon className="h-6 w-6 text-[#1A1A1A] dark:text-white" />
+                  <benefit.icon className="h-6 w-6 text-[#1A1A1A] dark:text-white dark:text-white" />
                 </div>
                 <div>
                   <h3 className="font-bold text-gray-900 dark:text-white mb-1">{benefit.title}</h3>
@@ -668,7 +668,7 @@ export default function PartnerWithUsPage() {
           <div className="flex flex-wrap justify-center gap-4">
             <Button 
               size="lg"
-              className="bg-[#E8DCC8] text-[#1A1A1A] hover:bg-[#E8DCC8]/90 rounded-none px-8"
+              className="bg-[#E8DCC8] text-[#1A1A1A] dark:text-white hover:bg-[#E8DCC8]/90 rounded-none px-8"
               onClick={() => document.getElementById('application-form')?.scrollIntoView({ behavior: 'smooth' })}
             >
               Apply Now

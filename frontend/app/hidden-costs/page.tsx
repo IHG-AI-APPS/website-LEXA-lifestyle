@@ -86,7 +86,7 @@ export default function HiddenCostsPage() {
               <Button
                 size="lg"
                 onClick={() => setShowConsultationForm(true)}
-                className="bg-white text-[#1A1A1A] hover:bg-gray-100 px-8 py-6 text-sm font-semibold uppercase tracking-wider"
+                className="bg-white text-[#1A1A1A] dark:text-white hover:bg-gray-100 px-8 py-6 text-sm font-semibold uppercase tracking-wider"
               >
                 Calculate Your Savings
               </Button>
@@ -104,7 +104,7 @@ export default function HiddenCostsPage() {
               viewport={{ once: true }}
               className="text-center mb-16"
             >
-              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4 text-[#1A1A1A] dark:text-white">
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4 text-[#1A1A1A] dark:text-white dark:text-white">
                 The True Cost of Doing Nothing
               </h2>
               <p className="text-base sm:text-lg text-gray-600 dark:text-gray-400 max-w-3xl mx-auto">
@@ -128,7 +128,7 @@ export default function HiddenCostsPage() {
                       <div className="p-3 bg-red-50">
                         <Icon className="h-6 w-6 text-red-600" />
                       </div>
-                      <h3 className="text-xl font-bold text-[#1A1A1A] dark:text-white">{cost.title}</h3>
+                      <h3 className="text-xl font-bold text-[#1A1A1A] dark:text-white dark:text-white">{cost.title}</h3>
                     </div>
                     <div className="space-y-3">
                       <div className="flex items-start gap-2">
@@ -178,7 +178,7 @@ export default function HiddenCostsPage() {
               <Button
                 size="lg"
                 onClick={() => setShowConsultationForm(true)}
-                className="bg-white text-[#1A1A1A] hover:bg-gray-100 px-8 py-6 text-sm font-semibold uppercase tracking-wider"
+                className="bg-white text-[#1A1A1A] dark:text-white hover:bg-gray-100 px-8 py-6 text-sm font-semibold uppercase tracking-wider"
               >
                 Calculate Your Savings
                 <ArrowRight className="ml-2 h-4 w-4" />

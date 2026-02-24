@@ -223,7 +223,7 @@ export default function IntelligenceDetailPage() {
                   <Button
                     size="lg"
                     onClick={() => setShowConsultationForm(true)}
-                    className="bg-[#E8DCC8] text-[#1A1A1A] hover:bg-[#E8DCC8]/90 px-8"
+                    className="bg-[#E8DCC8] text-[#1A1A1A] dark:text-white hover:bg-[#E8DCC8]/90 px-8"
                   >
                     {language === 'ar' ? 'احصل على عرض سعر' : 'Get a Quote'}
                   </Button>
@@ -231,7 +231,7 @@ export default function IntelligenceDetailPage() {
                     size="lg"
                     variant="outline"
                     asChild
-                    className="border-2 border-white text-white hover:bg-white hover:text-[#1A1A1A] dark:text-white"
+                    className="border-2 border-white text-white hover:bg-white hover:text-[#1A1A1A] dark:text-white dark:text-white"
                   >
                     <a href="tel:+971503267227">
                       <Phone className="h-4 w-4 mr-2" />
@@ -261,7 +261,7 @@ export default function IntelligenceDetailPage() {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
               {/* Key Features */}
               <div>
-                <h2 className="text-2xl font-bold text-[#1A1A1A] dark:text-white mb-6">
+                <h2 className="text-2xl font-bold text-[#1A1A1A] dark:text-white dark:text-white mb-6">
                   {language === 'ar' ? 'الميزات الرئيسية' : 'Key Features'}
                 </h2>
                 <div className="space-y-4">
@@ -282,7 +282,7 @@ export default function IntelligenceDetailPage() {
               
               {/* Benefits */}
               <div>
-                <h2 className="text-2xl font-bold text-[#1A1A1A] dark:text-white mb-6">
+                <h2 className="text-2xl font-bold text-[#1A1A1A] dark:text-white dark:text-white mb-6">
                   {language === 'ar' ? 'الفوائد' : 'Benefits'}
                 </h2>
                 <div className="space-y-4">
@@ -312,7 +312,7 @@ export default function IntelligenceDetailPage() {
             <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
               <div className="flex items-center justify-between mb-8">
                 <div>
-                  <h2 className="text-2xl font-bold text-[#1A1A1A] dark:text-white mb-2">
+                  <h2 className="text-2xl font-bold text-[#1A1A1A] dark:text-white dark:text-white mb-2">
                     {language === 'ar' ? 'ميزات ذكية ذات صلة' : 'Related Intelligence Features'}
                   </h2>
                   <p className="text-gray-600 dark:text-gray-400 dark:text-gray-400">
@@ -323,7 +323,7 @@ export default function IntelligenceDetailPage() {
                 </div>
                 <Link 
                   href={`/intelligence?category=${feature.category}`}
-                  className="hidden sm:flex items-center gap-2 text-sm font-medium text-[#C9A962] hover:text-[#1A1A1A] dark:hover:text-white transition-colors"
+                  className="hidden sm:flex items-center gap-2 text-sm font-medium text-[#C9A962] hover:text-[#1A1A1A] dark:text-white dark:hover:text-white transition-colors"
                 >
                   {language === 'ar' ? 'عرض الكل' : 'View all'}
                   <ArrowRight className="h-4 w-4" />
@@ -347,11 +347,11 @@ export default function IntelligenceDetailPage() {
                       >
                         <div className="relative h-32 bg-gradient-to-br from-gray-100 to-gray-200 dark:from-gray-700 dark:to-gray-800 flex items-center justify-center">
                           <div className="p-4 bg-white/80 dark:bg-gray-900/80 rounded-xl group-hover:scale-110 transition-transform">
-                            <RelatedIcon className="h-8 w-8 text-[#1A1A1A] dark:text-[#E8DCC8]" />
+                            <RelatedIcon className="h-8 w-8 text-[#1A1A1A] dark:text-white dark:text-[#E8DCC8]" />
                           </div>
                         </div>
                         <div className="p-4">
-                          <h3 className="font-semibold text-[#1A1A1A] dark:text-white mb-2 line-clamp-2 group-hover:text-[#C9A962] transition-colors">
+                          <h3 className="font-semibold text-[#1A1A1A] dark:text-white dark:text-white mb-2 line-clamp-2 group-hover:text-[#C9A962] transition-colors">
                             {related.title}
                           </h3>
                           <p className="text-sm text-gray-600 dark:text-gray-400 dark:text-gray-400 line-clamp-2">
@@ -386,7 +386,7 @@ export default function IntelligenceDetailPage() {
             <Button
               size="lg"
               onClick={() => setShowConsultationForm(true)}
-              className="bg-[#E8DCC8] text-[#1A1A1A] hover:bg-[#E8DCC8]/90"
+              className="bg-[#E8DCC8] text-[#1A1A1A] dark:text-white hover:bg-[#E8DCC8]/90"
             >
               {language === 'ar' ? 'احجز استشارة مجانية' : 'Book Free Consultation'}
             </Button>

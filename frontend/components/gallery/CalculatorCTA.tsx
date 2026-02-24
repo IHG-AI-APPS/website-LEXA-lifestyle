@@ -28,7 +28,7 @@ export default function CalculatorCTA() {
               <div className="w-20 h-0.5 bg-gradient-to-r from-[#E8DCC8] to-transparent"></div>
             </div>
 
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-heading font-bold text-[#1A1A1A] mb-4 leading-tight">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-heading font-bold text-[#1A1A1A] dark:text-white mb-4 leading-tight">
               Calculate Your Investment
             </h2>
 
@@ -50,7 +50,7 @@ export default function CalculatorCTA() {
                 <Button
                   size="lg"
                   variant="outline"
-                  className="border-black/20 text-[#1A1A1A] uppercase tracking-widest hover:bg-[#1A1A1A] hover:text-white rounded-none px-10 py-6 text-sm font-medium transition-all"
+                  className="border-black/20 text-[#1A1A1A] dark:text-white uppercase tracking-widest hover:bg-[#1A1A1A] hover:text-white rounded-none px-10 py-6 text-sm font-medium transition-all"
                 >
                   View Sample Projects
                 </Button>

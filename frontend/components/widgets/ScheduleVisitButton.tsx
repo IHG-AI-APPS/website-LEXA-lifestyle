@@ -38,7 +38,7 @@ export default function ScheduleVisitButton() {
             <span className="absolute inset-0 rounded-full bg-[#E8DCC8] animate-ping opacity-25" />
             
             {/* Button */}
-            <div className="relative flex items-center gap-2 bg-gradient-to-r from-[#1A1A1A] to-[#2a2a2a] dark:from-[#E8DCC8] dark:to-[#d4c4a8] text-white dark:text-[#1A1A1A] px-4 py-3 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105">
+            <div className="relative flex items-center gap-2 bg-gradient-to-r from-[#1A1A1A] to-[#2a2a2a] dark:from-[#E8DCC8] dark:to-[#d4c4a8] text-white dark:text-[#1A1A1A] dark:text-white px-4 py-3 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105">
               <CalendarDays className="h-5 w-5" />
               <span className="font-medium text-sm whitespace-nowrap hidden sm:inline">
                 {language === 'ar' ? 'حجز زيارة' : 'Schedule Visit'}

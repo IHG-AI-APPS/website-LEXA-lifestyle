@@ -186,7 +186,7 @@ export default function VendorSupplierPage() {
             <div className="flex flex-wrap gap-4">
               <Button 
                 size="lg"
-                className="bg-[#E8DCC8] text-[#1A1A1A] hover:bg-[#E8DCC8]/90 rounded-none px-8"
+                className="bg-[#E8DCC8] text-[#1A1A1A] dark:text-white hover:bg-[#E8DCC8]/90 rounded-none px-8"
                 onClick={() => document.getElementById('vendor-form')?.scrollIntoView({ behavior: 'smooth' })}
               >
                 Register as Vendor
@@ -362,7 +362,7 @@ export default function VendorSupplierPage() {
                   <div className={`md:w-1/2 ${index % 2 === 0 ? 'md:pr-12 md:text-right' : 'md:pl-12'}`}>
                     <div className="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-md border border-gray-100 dark:border-gray-800 dark:border-gray-800">
                       <div className="flex items-center gap-3 mb-2 md:justify-start">
-                        <span className="w-8 h-8 bg-[#E8DCC8] text-[#1A1A1A] rounded-full flex items-center justify-center font-bold text-sm">
+                        <span className="w-8 h-8 bg-[#E8DCC8] text-[#1A1A1A] dark:text-white rounded-full flex items-center justify-center font-bold text-sm">
                           {step.step}
                         </span>
                         <h3 className="font-bold text-gray-900 dark:text-white dark:text-white">{step.title}</h3>
@@ -720,7 +720,7 @@ export default function VendorSupplierPage() {
           <div className="flex flex-wrap justify-center gap-4">
             <Button 
               size="lg"
-              className="bg-[#E8DCC8] text-[#1A1A1A] hover:bg-[#E8DCC8]/90 rounded-none px-8"
+              className="bg-[#E8DCC8] text-[#1A1A1A] dark:text-white hover:bg-[#E8DCC8]/90 rounded-none px-8"
               onClick={() => document.getElementById('vendor-form')?.scrollIntoView({ behavior: 'smooth' })}
             >
               Register Now

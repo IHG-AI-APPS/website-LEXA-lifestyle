@@ -131,7 +131,7 @@ export default function SmartRecommendations({
           
           <Link 
             href="/solutions"
-            className="hidden sm:flex items-center gap-1.5 text-sm text-[#C9A962] hover:text-[#1A1A1A] dark:hover:text-white font-medium transition-colors group"
+            className="hidden sm:flex items-center gap-1.5 text-sm text-[#C9A962] hover:text-[#1A1A1A] dark:text-white dark:hover:text-white font-medium transition-colors group"
           >
             {language === 'ar' ? 'عرض الكل' : 'View all'}
             <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />

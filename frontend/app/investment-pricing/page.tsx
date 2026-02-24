@@ -163,7 +163,7 @@ export default function InvestmentPricingPage() {
                 <Button
                   size="lg"
                   onClick={() => setShowConsultationForm(true)}
-                  className="bg-white text-[#1A1A1A] hover:bg-gray-100 px-8 py-6 text-sm font-semibold uppercase tracking-wider"
+                  className="bg-white text-[#1A1A1A] dark:text-white hover:bg-gray-100 px-8 py-6 text-sm font-semibold uppercase tracking-wider"
                 >
                   Get Custom Quote
                 </Button>
@@ -171,7 +171,7 @@ export default function InvestmentPricingPage() {
                   size="lg"
                   variant="outline"
                   asChild
-                  className="border-2 border-white text-white hover:bg-white hover:text-[#1A1A1A] px-8 py-6 text-sm font-semibold uppercase tracking-wider"
+                  className="border-2 border-white text-white hover:bg-white hover:text-[#1A1A1A] dark:text-white px-8 py-6 text-sm font-semibold uppercase tracking-wider"
                 >
                   <Link href="/calculator">
                     Calculate ROI
@@ -192,7 +192,7 @@ export default function InvestmentPricingPage() {
               viewport={{ once: true }}
               className="text-center mb-16"
             >
-              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4 text-[#1A1A1A] dark:text-white">
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4 text-[#1A1A1A] dark:text-white dark:text-white">
                 Investment Packages
               </h2>
               <p className="text-base sm:text-lg text-gray-600 dark:text-gray-400 max-w-3xl mx-auto">
@@ -217,15 +217,15 @@ export default function InvestmentPricingPage() {
                       Most Popular
                     </div>
                   )}
-                  <h3 className="text-2xl font-bold mb-1 text-[#1A1A1A] dark:text-white">{tier.name}</h3>
+                  <h3 className="text-2xl font-bold mb-1 text-[#1A1A1A] dark:text-white dark:text-white">{tier.name}</h3>
                   <p className="text-sm text-gray-600 dark:text-gray-400 mb-4">{tier.subtitle}</p>
-                  <div className="text-3xl font-bold mb-2 text-[#1A1A1A] dark:text-white">{tier.price}</div>
+                  <div className="text-3xl font-bold mb-2 text-[#1A1A1A] dark:text-white dark:text-white">{tier.price}</div>
                   <p className="text-sm text-gray-600 dark:text-gray-400 mb-6">{tier.description}</p>
                   
                   <div className="space-y-3 mb-6">
                     {tier.features.map((feature) => (
                       <div key={feature} className="flex items-start gap-2">
-                        <CheckCircle2 className="h-5 w-5 text-[#1A1A1A] flex-shrink-0 mt-0.5" />
+                        <CheckCircle2 className="h-5 w-5 text-[#1A1A1A] dark:text-white flex-shrink-0 mt-0.5" />
                         <span className="text-sm text-gray-700 dark:text-gray-300 dark:text-gray-300">{feature}</span>
                       </div>
                     ))}
@@ -233,12 +233,12 @@ export default function InvestmentPricingPage() {
 
                   <div className="border-t border-gray-200 dark:border-gray-700 pt-4 mb-6">
                     <div className="text-sm text-gray-600 dark:text-gray-400 mb-1">Ideal for:</div>
-                    <div className="text-sm font-semibold text-[#1A1A1A] dark:text-white">{tier.ideal}</div>
+                    <div className="text-sm font-semibold text-[#1A1A1A] dark:text-white dark:text-white">{tier.ideal}</div>
                   </div>
 
                   <div className="bg-gray-50 p-3 mb-6">
                     <div className="text-xs text-gray-600 dark:text-gray-400 mb-1">Typical ROI Period:</div>
-                    <div className="text-lg font-bold text-[#1A1A1A] dark:text-white">{tier.roi}</div>
+                    <div className="text-lg font-bold text-[#1A1A1A] dark:text-white dark:text-white">{tier.roi}</div>
                   </div>
 
                   <Button
@@ -267,7 +267,7 @@ export default function InvestmentPricingPage() {
               viewport={{ once: true }}
               className="text-center mb-16"
             >
-              <h2 className="text-3xl sm:text-4xl font-bold mb-4 text-[#1A1A1A] dark:text-white">
+              <h2 className="text-3xl sm:text-4xl font-bold mb-4 text-[#1A1A1A] dark:text-white dark:text-white">
                 Investment Breakdown
               </h2>
               <p className="text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
@@ -286,13 +286,13 @@ export default function InvestmentPricingPage() {
                   className="bg-gray-50 p-6 border-l-4 border-[#1A1A1A]"
                 >
                   <div className="flex items-center justify-between mb-4">
-                    <h3 className="text-xl font-bold text-[#1A1A1A] dark:text-white">{item.category}</h3>
-                    <span className="text-2xl font-bold text-[#1A1A1A] dark:text-white">{item.percentage}</span>
+                    <h3 className="text-xl font-bold text-[#1A1A1A] dark:text-white dark:text-white">{item.category}</h3>
+                    <span className="text-2xl font-bold text-[#1A1A1A] dark:text-white dark:text-white">{item.percentage}</span>
                   </div>
                   <ul className="space-y-2">
                     {item.items.map((subItem) => (
                       <li key={subItem} className="flex items-start gap-2 text-sm text-gray-600 dark:text-gray-400 dark:text-gray-400">
-                        <CheckCircle2 className="h-4 w-4 text-[#1A1A1A] flex-shrink-0 mt-0.5" />
+                        <CheckCircle2 className="h-4 w-4 text-[#1A1A1A] dark:text-white flex-shrink-0 mt-0.5" />
                         <span>{subItem}</span>
                       </li>
                     ))}
@@ -313,7 +313,7 @@ export default function InvestmentPricingPage() {
               viewport={{ once: true }}
               className="text-center mb-16"
             >
-              <h2 className="text-3xl sm:text-4xl font-bold mb-4 text-[#1A1A1A] dark:text-white">
+              <h2 className="text-3xl sm:text-4xl font-bold mb-4 text-[#1A1A1A] dark:text-white dark:text-white">
                 How You Earn Returns
               </h2>
               <p className="text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
@@ -335,10 +335,10 @@ export default function InvestmentPricingPage() {
                   >
                     <div className="flex items-start gap-4 mb-4">
                       <div className="p-3 bg-gray-50 dark:bg-gray-800">
-                        <Icon className="h-6 w-6 text-[#1A1A1A] dark:text-white" />
+                        <Icon className="h-6 w-6 text-[#1A1A1A] dark:text-white dark:text-white" />
                       </div>
                       <div className="flex-1">
-                        <h3 className="text-xl font-bold mb-2 text-[#1A1A1A] dark:text-white">{factor.title}</h3>
+                        <h3 className="text-xl font-bold mb-2 text-[#1A1A1A] dark:text-white dark:text-white">{factor.title}</h3>
                         <p className="text-gray-600 dark:text-gray-400 mb-3">{factor.description}</p>
                         <div className="inline-block px-3 py-1 bg-emerald-50 text-emerald-800 text-sm font-semibold">
                           {factor.typical}
@@ -373,7 +373,7 @@ export default function InvestmentPricingPage() {
                 <Button
                   size="lg"
                   onClick={() => setShowConsultationForm(true)}
-                  className="bg-white text-[#1A1A1A] hover:bg-gray-100 px-8 py-6 text-sm font-semibold uppercase tracking-wider"
+                  className="bg-white text-[#1A1A1A] dark:text-white hover:bg-gray-100 px-8 py-6 text-sm font-semibold uppercase tracking-wider"
                 >
                   Request Custom Quote
                   <ArrowRight className="ml-2 h-4 w-4" />
@@ -382,7 +382,7 @@ export default function InvestmentPricingPage() {
                   size="lg"
                   variant="outline"
                   asChild
-                  className="border-2 border-white text-white hover:bg-white hover:text-[#1A1A1A] px-8 py-6 text-sm font-semibold uppercase tracking-wider"
+                  className="border-2 border-white text-white hover:bg-white hover:text-[#1A1A1A] dark:text-white px-8 py-6 text-sm font-semibold uppercase tracking-wider"
                 >
                   <Link href="/calculator">
                     <Calculator className="mr-2 h-4 w-4" />

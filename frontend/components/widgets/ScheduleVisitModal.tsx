@@ -219,7 +219,7 @@ export default function ScheduleVisitModal({
                   <Button
                     onClick={handleClose}
                     size="sm"
-                    className="w-full bg-[#1A1A1A] dark:bg-[#E8DCC8] text-white dark:text-[#1A1A1A] text-xs"
+                    className="w-full bg-[#1A1A1A] dark:bg-[#E8DCC8] text-white dark:text-[#1A1A1A] dark:text-white text-xs"
                   >
                     {language === 'ar' ? 'إغلاق' : 'Close'}
                   </Button>
@@ -277,7 +277,7 @@ export default function ScheduleVisitModal({
                     onClick={() => setStep(2)}
                     disabled={!formData.date || !formData.time}
                     size="sm"
-                    className="w-full bg-[#1A1A1A] dark:bg-[#E8DCC8] text-white dark:text-[#1A1A1A] disabled:opacity-50 text-xs"
+                    className="w-full bg-[#1A1A1A] dark:bg-[#E8DCC8] text-white dark:text-[#1A1A1A] dark:text-white disabled:opacity-50 text-xs"
                   >
                     {language === 'ar' ? 'التالي' : 'Continue'}
                   </Button>
@@ -293,7 +293,7 @@ export default function ScheduleVisitModal({
                   </button>
                   
                   <div className="bg-[#E8DCC8]/20 rounded-lg p-2 flex items-center gap-2">
-                    <Calendar className="h-4 w-4 text-[#1A1A1A] dark:text-[#E8DCC8]" />
+                    <Calendar className="h-4 w-4 text-[#1A1A1A] dark:text-white dark:text-[#E8DCC8]" />
                     <span className="text-xs font-medium text-gray-700 dark:text-gray-300 dark:text-gray-300">
                       {formData.date} at {formData.time}
                     </span>
@@ -345,7 +345,7 @@ export default function ScheduleVisitModal({
                     onClick={handleSubmit}
                     disabled={isSubmitting || !formData.name || !formData.email || !formData.phone}
                     size="sm"
-                    className="w-full bg-[#1A1A1A] dark:bg-[#E8DCC8] text-white dark:text-[#1A1A1A] disabled:opacity-50 text-xs"
+                    className="w-full bg-[#1A1A1A] dark:bg-[#E8DCC8] text-white dark:text-[#1A1A1A] dark:text-white disabled:opacity-50 text-xs"
                   >
                     {isSubmitting ? (
                       <span className="flex items-center gap-2">

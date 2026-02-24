@@ -109,7 +109,7 @@ export default function CorporateTowersPage() {
                 <Button
                   size="lg"
                   onClick={() => setShowConsultationForm(true)}
-                  className="bg-white text-[#1A1A1A] hover:bg-gray-100 px-8 py-6 text-sm font-semibold uppercase tracking-wider"
+                  className="bg-white text-[#1A1A1A] dark:text-white hover:bg-gray-100 px-8 py-6 text-sm font-semibold uppercase tracking-wider"
                 >
                   Schedule Assessment
                 </Button>
@@ -117,7 +117,7 @@ export default function CorporateTowersPage() {
                   size="lg"
                   variant="outline"
                   asChild
-                  className="border-2 border-white text-white hover:bg-white hover:text-[#1A1A1A] px-8 py-6 text-sm font-semibold uppercase tracking-wider"
+                  className="border-2 border-white text-white hover:bg-white hover:text-[#1A1A1A] dark:text-white px-8 py-6 text-sm font-semibold uppercase tracking-wider"
                 >
                   <Link href="/contact">
                     Download Case Study
@@ -137,7 +137,7 @@ export default function CorporateTowersPage() {
               transition={{ duration: 0.6 }}
               viewport={{ once: true }}
               className="text-center mb-16">
-              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4 text-[#1A1A1A] dark:text-white">
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4 text-[#1A1A1A] dark:text-white dark:text-white">
                 Complete Building Intelligence
               </h2>
               <p className="text-base sm:text-lg text-gray-600 dark:text-gray-400 max-w-3xl mx-auto">
@@ -159,10 +159,10 @@ export default function CorporateTowersPage() {
                   >
                     <div className="flex items-start gap-4">
                       <div className="flex-shrink-0 p-3 bg-gray-50 dark:bg-gray-800">
-                        <Icon className="h-6 w-6 text-[#1A1A1A] dark:text-white" />
+                        <Icon className="h-6 w-6 text-[#1A1A1A] dark:text-white dark:text-white" />
                       </div>
                       <div>
-                        <h3 className="text-lg font-semibold mb-2 text-[#1A1A1A] dark:text-white">
+                        <h3 className="text-lg font-semibold mb-2 text-[#1A1A1A] dark:text-white dark:text-white">
                           {feature.title}
                         </h3>
                         <p className="text-gray-600 dark:text-gray-400 text-sm leading-relaxed">
@@ -187,7 +187,7 @@ export default function CorporateTowersPage() {
               viewport={{ once: true }}
               className="text-center mb-16"
             >
-              <h2 className="text-3xl sm:text-4xl font-bold mb-4 text-[#1A1A1A] dark:text-white">
+              <h2 className="text-3xl sm:text-4xl font-bold mb-4 text-[#1A1A1A] dark:text-white dark:text-white">
                 Measurable Business Impact
               </h2>
               <p className="text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
@@ -207,8 +207,8 @@ export default function CorporateTowersPage() {
                     viewport={{ once: true }}
                     className="text-center p-6 bg-gray-50 dark:bg-gray-800"
                   >
-                    <Icon className="h-10 w-10 mx-auto mb-4 text-[#1A1A1A] dark:text-white" />
-                    <div className="text-4xl font-bold mb-2 text-[#1A1A1A] dark:text-white">{benefit.metric}</div>
+                    <Icon className="h-10 w-10 mx-auto mb-4 text-[#1A1A1A] dark:text-white dark:text-white" />
+                    <div className="text-4xl font-bold mb-2 text-[#1A1A1A] dark:text-white dark:text-white">{benefit.metric}</div>
                     <div className="text-sm text-gray-600 dark:text-gray-400 dark:text-gray-400">{benefit.label}</div>
                   </motion.div>
                 )
@@ -240,7 +240,7 @@ export default function CorporateTowersPage() {
                 <Button
                   size="lg"
                   onClick={() => setShowConsultationForm(true)}
-                  className="bg-white text-[#1A1A1A] hover:bg-gray-100 px-8 py-6 text-sm font-semibold uppercase tracking-wider"
+                  className="bg-white text-[#1A1A1A] dark:text-white hover:bg-gray-100 px-8 py-6 text-sm font-semibold uppercase tracking-wider"
                 >
                   Get Similar Results
                   <ArrowRight className="ml-2 h-4 w-4" />
@@ -275,8 +275,8 @@ export default function CorporateTowersPage() {
               viewport={{ once: true }}
               className="text-center"
             >
-              <Building2 className="h-16 w-16 mx-auto mb-6 text-[#1A1A1A] dark:text-white" />
-              <h2 className="text-3xl sm:text-4xl font-bold mb-4 text-[#1A1A1A] dark:text-white">
+              <Building2 className="h-16 w-16 mx-auto mb-6 text-[#1A1A1A] dark:text-white dark:text-white" />
+              <h2 className="text-3xl sm:text-4xl font-bold mb-4 text-[#1A1A1A] dark:text-white dark:text-white">
                 Ready to Transform Your Corporate Tower?
               </h2>
               <p className="text-lg text-gray-600 dark:text-gray-400 mb-8 max-w-2xl mx-auto">

@@ -164,7 +164,7 @@ export default function IntelligencePage() {
                 <Button
                   size="lg"
                   onClick={() => setShowConsultationForm(true)}
-                  className="bg-white text-[#1A1A1A] hover:bg-gray-100 px-8 py-6 text-sm font-semibold uppercase tracking-wider"
+                  className="bg-white text-[#1A1A1A] dark:text-white hover:bg-gray-100 px-8 py-6 text-sm font-semibold uppercase tracking-wider"
                 >
                   {language === 'ar' ? 'جدولة تدقيق ذكي' : 'Schedule Intelligence Audit'}
                 </Button>
@@ -172,7 +172,7 @@ export default function IntelligencePage() {
                   size="lg"
                   variant="outline"
                   asChild
-                  className="border-2 border-white text-white hover:bg-white hover:text-[#1A1A1A] px-8 py-6 text-sm font-semibold uppercase tracking-wider"
+                  className="border-2 border-white text-white hover:bg-white hover:text-[#1A1A1A] dark:text-white px-8 py-6 text-sm font-semibold uppercase tracking-wider"
                 >
                   <Link href="/contact">
                     {language === 'ar' ? 'طلب عرض توضيحي' : 'Request Demo'}
@@ -303,7 +303,7 @@ export default function IntelligencePage() {
               viewport={{ once: true }}
               className="text-center mb-12"
             >
-              <h2 className="text-3xl sm:text-4xl font-bold mb-4 text-[#1A1A1A] dark:text-white">
+              <h2 className="text-3xl sm:text-4xl font-bold mb-4 text-[#1A1A1A] dark:text-white dark:text-white">
                 {selectedCategory 
                   ? categoryNames[selectedCategory]?.[language === 'ar' ? 'ar' : 'en'] || selectedCategory
                   : (language === 'ar' ? 'جميع الميزات الذكية' : 'All Intelligence Features')}
@@ -340,7 +340,7 @@ export default function IntelligencePage() {
                         {/* Image/Icon Header */}
                         <div className="relative h-32 bg-gradient-to-br from-gray-100 to-gray-200 dark:from-gray-700 dark:to-gray-800 flex items-center justify-center">
                           <div className="p-4 bg-white/80 dark:bg-gray-900/80 rounded-xl group-hover:scale-110 transition-transform">
-                            <Icon className="h-10 w-10 text-[#1A1A1A] dark:text-[#E8DCC8]" />
+                            <Icon className="h-10 w-10 text-[#1A1A1A] dark:text-white dark:text-[#E8DCC8]" />
                           </div>
                           <div className="absolute top-3 right-3 px-2 py-1 bg-black/60 rounded-md text-[10px] text-white font-medium uppercase">
                             {categoryNames[feature.category]?.[language === 'ar' ? 'ar' : 'en'] || feature.category}
@@ -349,7 +349,7 @@ export default function IntelligencePage() {
                         
                         {/* Content */}
                         <div className="p-4">
-                          <h3 className="font-semibold text-[#1A1A1A] dark:text-white mb-2 line-clamp-2 group-hover:text-[#C9A962] transition-colors">
+                          <h3 className="font-semibold text-[#1A1A1A] dark:text-white dark:text-white mb-2 line-clamp-2 group-hover:text-[#C9A962] transition-colors">
                             {feature.title}
                           </h3>
                           <p className="text-sm text-gray-600 dark:text-gray-400 dark:text-gray-400 line-clamp-2 mb-3">
@@ -380,7 +380,7 @@ export default function IntelligencePage() {
                   variant="outline"
                   size="lg"
                   onClick={() => setShowAll(true)}
-                  className="border-2 border-[#1A1A1A] dark:border-white text-[#1A1A1A] dark:text-white hover:bg-[#1A1A1A] hover:text-white dark:hover:bg-white dark:hover:text-[#1A1A1A] dark:text-white"
+                  className="border-2 border-[#1A1A1A] dark:border-white text-[#1A1A1A] dark:text-white dark:text-white hover:bg-[#1A1A1A] hover:text-white dark:hover:bg-white dark:hover:text-[#1A1A1A] dark:text-white dark:text-white"
                 >
                   {language === 'ar' ? `عرض الكل (${filteredFeatures.length})` : `View All (${filteredFeatures.length})`}
                 </Button>
@@ -399,7 +399,7 @@ export default function IntelligencePage() {
                 transition={{ duration: 0.6 }}
                 viewport={{ once: true }}
               >
-                <h2 className="text-3xl sm:text-4xl font-bold mb-6 text-[#1A1A1A] dark:text-white">
+                <h2 className="text-3xl sm:text-4xl font-bold mb-6 text-[#1A1A1A] dark:text-white dark:text-white">
                   {language === 'ar' ? 'ذكاء يحقق النتائج' : 'Intelligence That Delivers Results'}
                 </h2>
                 <p className="text-lg text-gray-600 dark:text-gray-400 dark:text-gray-400 mb-8 leading-relaxed">
@@ -487,7 +487,7 @@ export default function IntelligencePage() {
               <Button
                 size="lg"
                 onClick={() => setShowConsultationForm(true)}
-                className="bg-[#E8DCC8] text-[#1A1A1A] hover:bg-[#E8DCC8]/90 px-8 py-6 text-sm font-semibold uppercase tracking-wider"
+                className="bg-[#E8DCC8] text-[#1A1A1A] dark:text-white hover:bg-[#E8DCC8]/90 px-8 py-6 text-sm font-semibold uppercase tracking-wider"
               >
                 {language === 'ar' ? 'ابدأ مشروعك' : 'Start Your Project'}
               </Button>

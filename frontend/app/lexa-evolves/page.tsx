@@ -117,7 +117,7 @@ export default function LexaEvolvesPage() {
                 <Button
                   size="lg"
                   onClick={() => setShowConsultationForm(true)}
-                  className="bg-white text-[#1A1A1A] hover:bg-gray-100 px-8 py-6 text-sm font-semibold uppercase tracking-wider"
+                  className="bg-white text-[#1A1A1A] dark:text-white hover:bg-gray-100 px-8 py-6 text-sm font-semibold uppercase tracking-wider"
                 >
                   Start Your Journey
                 </Button>
@@ -136,7 +136,7 @@ export default function LexaEvolvesPage() {
               viewport={{ once: true }}
               className="text-center mb-16"
             >
-              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4 text-[#1A1A1A] dark:text-white">
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4 text-[#1A1A1A] dark:text-white dark:text-white">
                 Four Stages of Evolution
               </h2>
               <p className="text-base sm:text-lg text-gray-600 dark:text-gray-400 max-w-3xl mx-auto">
@@ -162,7 +162,7 @@ export default function LexaEvolvesPage() {
                     </div>
                     <div className="flex-1">
                       <div className="flex items-center justify-between mb-2">
-                        <h3 className="text-2xl font-bold text-[#1A1A1A] dark:text-white">{stage.title}</h3>
+                        <h3 className="text-2xl font-bold text-[#1A1A1A] dark:text-white dark:text-white">{stage.title}</h3>
                         <span className="text-sm font-semibold text-violet-600 px-3 py-1 bg-violet-50">
                           {stage.stage}
                         </span>
@@ -197,7 +197,7 @@ export default function LexaEvolvesPage() {
               viewport={{ once: true }}
               className="text-center mb-16"
             >
-              <h2 className="text-3xl sm:text-4xl font-bold mb-4 text-[#1A1A1A] dark:text-white">
+              <h2 className="text-3xl sm:text-4xl font-bold mb-4 text-[#1A1A1A] dark:text-white dark:text-white">
                 Why Evolution Works
               </h2>
             </motion.div>
@@ -219,7 +219,7 @@ export default function LexaEvolvesPage() {
                         <Icon className="h-6 w-6 text-violet-600" />
                       </div>
                       <div>
-                        <h3 className="text-xl font-bold mb-2 text-[#1A1A1A] dark:text-white">{benefit.title}</h3>
+                        <h3 className="text-xl font-bold mb-2 text-[#1A1A1A] dark:text-white dark:text-white">{benefit.title}</h3>
                         <p className="text-gray-600 dark:text-gray-400 dark:text-gray-400">{benefit.description}</p>
                       </div>
                     </div>
@@ -240,7 +240,7 @@ export default function LexaEvolvesPage() {
               viewport={{ once: true }}
               className="text-center mb-16"
             >
-              <h2 className="text-3xl sm:text-4xl font-bold mb-4 text-[#1A1A1A] dark:text-white">
+              <h2 className="text-3xl sm:text-4xl font-bold mb-4 text-[#1A1A1A] dark:text-white dark:text-white">
                 Typical Evolution Timeline
               </h2>
             </motion.div>
@@ -256,7 +256,7 @@ export default function LexaEvolvesPage() {
                   className="bg-white dark:bg-gray-800 p-6 text-center border-2 border-gray-200 dark:border-gray-700 dark:border-gray-700"
                 >
                   <div className="text-3xl font-bold text-violet-600 mb-2">{milestone.year}</div>
-                  <div className="text-lg font-semibold text-[#1A1A1A] mb-2">{milestone.focus}</div>
+                  <div className="text-lg font-semibold text-[#1A1A1A] dark:text-white mb-2">{milestone.focus}</div>
                   <div className="text-sm text-green-600 font-semibold">{milestone.savings}</div>
                 </motion.div>
               ))}
@@ -284,7 +284,7 @@ export default function LexaEvolvesPage() {
               <Button
                 size="lg"
                 onClick={() => setShowConsultationForm(true)}
-                className="bg-white text-[#1A1A1A] hover:bg-gray-100 px-8 py-6 text-sm font-semibold uppercase tracking-wider"
+                className="bg-white text-[#1A1A1A] dark:text-white hover:bg-gray-100 px-8 py-6 text-sm font-semibold uppercase tracking-wider"
               >
                 Plan Your Journey
                 <ArrowRight className="ml-2 h-4 w-4" />

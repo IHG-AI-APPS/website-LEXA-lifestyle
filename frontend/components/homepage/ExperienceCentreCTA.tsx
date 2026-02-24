@@ -183,7 +183,7 @@ export default function ExperienceCentreCTA() {
                     <span className="text-white text-xs uppercase tracking-wider">Sneak Peek</span>
                   </div>
                   <div className="flex items-center gap-1.5 bg-[#E8DCC8] px-2.5 py-1.5" data-testid="photo-counter">
-                    <span className="text-[#1A1A1A] text-xs font-bold">{currentImage + 1}/{galleryImages.length}</span>
+                    <span className="text-[#1A1A1A] dark:text-white text-xs font-bold">{currentImage + 1}/{galleryImages.length}</span>
                     <span className="text-[#1A1A1A]/70 text-xs">photos</span>
                   </div>
                 </div>
@@ -202,7 +202,7 @@ export default function ExperienceCentreCTA() {
                   key={`zone-${currentImage}`}
                   initial={{ opacity: 0, y: 10 }}
                   animate={{ opacity: 1, y: 0 }}
-                  className="absolute top-4 left-1/2 -translate-x-1/2 bg-[#E8DCC8] text-[#1A1A1A] px-4 py-1.5 text-xs font-bold uppercase tracking-wider"
+                  className="absolute top-4 left-1/2 -translate-x-1/2 bg-[#E8DCC8] text-[#1A1A1A] dark:text-white px-4 py-1.5 text-xs font-bold uppercase tracking-wider"
                 >
                   {galleryImages[currentImage].zone}
                 </motion.div>
@@ -325,7 +325,7 @@ export default function ExperienceCentreCTA() {
                     <div className="space-y-3 mt-4">
                       <Button
                         onClick={() => setShowBooking(true)}
-                        className="w-full bg-[#E8DCC8] text-[#1A1A1A] hover:bg-[#E8DCC8]/90 rounded-none py-5 text-xs uppercase tracking-widest font-bold"
+                        className="w-full bg-[#E8DCC8] text-[#1A1A1A] dark:text-white hover:bg-[#E8DCC8]/90 rounded-none py-5 text-xs uppercase tracking-widest font-bold"
                         data-testid="book-visit-btn"
                       >
                         <Calendar className="h-4 w-4 mr-2" />
@@ -455,7 +455,7 @@ export default function ExperienceCentreCTA() {
                     <Button
                       onClick={handleQuickBook}
                       disabled={isSubmitting || !bookingData.date || !bookingData.time || !bookingData.name || !bookingData.phone}
-                      className="w-full bg-[#E8DCC8] text-[#1A1A1A] hover:bg-[#E8DCC8]/90 rounded-none py-5 text-xs uppercase tracking-widest font-bold mt-4 disabled:opacity-50"
+                      className="w-full bg-[#E8DCC8] text-[#1A1A1A] dark:text-white hover:bg-[#E8DCC8]/90 rounded-none py-5 text-xs uppercase tracking-widest font-bold mt-4 disabled:opacity-50"
                       data-testid="confirm-booking-btn"
                     >
                       {isSubmitting ? 'Booking...' : 'Confirm Booking'}

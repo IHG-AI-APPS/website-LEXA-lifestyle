@@ -77,7 +77,7 @@ export default function RelatedPagesNav({
           >
             <Link
               href="/contact"
-              className="inline-flex items-center gap-2 text-sm font-semibold text-[#1A1A1A] hover:text-[#E8DCC8] transition-colors group"
+              className="inline-flex items-center gap-2 text-sm font-semibold text-[#1A1A1A] dark:text-white hover:text-[#E8DCC8] transition-colors group"
             >
               Ready to Start Your Project?
               <ArrowRight className="h-4 w-4 transform group-hover:translate-x-1 transition-transform" />

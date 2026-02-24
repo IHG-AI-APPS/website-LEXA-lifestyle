@@ -134,7 +134,7 @@ export default function PlatformAgnosticPage() {
                 <Button
                   size="lg"
                   onClick={() => setShowConsultationForm(true)}
-                  className="bg-white text-[#1A1A1A] hover:bg-gray-100 px-8 py-6 text-sm font-semibold uppercase tracking-wider"
+                  className="bg-white text-[#1A1A1A] dark:text-white hover:bg-gray-100 px-8 py-6 text-sm font-semibold uppercase tracking-wider"
                 >
                   Learn Our Approach
                 </Button>
@@ -153,7 +153,7 @@ export default function PlatformAgnosticPage() {
               viewport={{ once: true }}
               className="text-center mb-16"
             >
-              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4 text-[#1A1A1A] dark:text-white">
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4 text-[#1A1A1A] dark:text-white dark:text-white">
                 Why Platform Agnostic Matters
               </h2>
               <p className="text-base sm:text-lg text-gray-600 dark:text-gray-400 max-w-3xl mx-auto">
@@ -178,7 +178,7 @@ export default function PlatformAgnosticPage() {
                         <Icon className="h-6 w-6 text-indigo-600" />
                       </div>
                       <div className="flex-1">
-                        <h3 className="text-xl font-bold mb-2 text-[#1A1A1A] dark:text-white">{benefit.title}</h3>
+                        <h3 className="text-xl font-bold mb-2 text-[#1A1A1A] dark:text-white dark:text-white">{benefit.title}</h3>
                         <p className="text-gray-600 dark:text-gray-400 mb-3">{benefit.description}</p>
                         <div className="bg-indigo-50 p-3 border-l-4 border-indigo-600">
                           <div className="text-xs text-indigo-600 font-semibold mb-1">Example:</div>
@@ -203,7 +203,7 @@ export default function PlatformAgnosticPage() {
               viewport={{ once: true }}
               className="text-center mb-16"
             >
-              <h2 className="text-3xl sm:text-4xl font-bold mb-4 text-[#1A1A1A] dark:text-white">
+              <h2 className="text-3xl sm:text-4xl font-bold mb-4 text-[#1A1A1A] dark:text-white dark:text-white">
                 Four-Layer Integration Architecture
               </h2>
               <p className="text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
@@ -222,7 +222,7 @@ export default function PlatformAgnosticPage() {
                   className="bg-gray-50 p-6 border-l-4 border-indigo-600"
                 >
                   <div className="flex items-center justify-between mb-3">
-                    <h3 className="text-xl font-bold text-[#1A1A1A] dark:text-white">{layer.layer}</h3>
+                    <h3 className="text-xl font-bold text-[#1A1A1A] dark:text-white dark:text-white">{layer.layer}</h3>
                     <span className="text-sm text-gray-500">Layer {index + 1}</span>
                   </div>
                   <p className="text-gray-600 dark:text-gray-400 mb-4">{layer.description}</p>
@@ -249,7 +249,7 @@ export default function PlatformAgnosticPage() {
               viewport={{ once: true }}
               className="text-center mb-16"
             >
-              <h2 className="text-3xl sm:text-4xl font-bold mb-4 text-[#1A1A1A] dark:text-white">
+              <h2 className="text-3xl sm:text-4xl font-bold mb-4 text-[#1A1A1A] dark:text-white dark:text-white">
                 Platform Agnostic vs Proprietary
               </h2>
             </motion.div>
@@ -291,7 +291,7 @@ export default function PlatformAgnosticPage() {
               <Button
                 size="lg"
                 onClick={() => setShowConsultationForm(true)}
-                className="bg-white text-[#1A1A1A] hover:bg-gray-100 px-8 py-6 text-sm font-semibold uppercase tracking-wider"
+                className="bg-white text-[#1A1A1A] dark:text-white hover:bg-gray-100 px-8 py-6 text-sm font-semibold uppercase tracking-wider"
               >
                 Schedule Consultation
                 <ArrowRight className="ml-2 h-4 w-4" />

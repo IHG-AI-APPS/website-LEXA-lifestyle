@@ -90,7 +90,7 @@ export default function Breadcrumb({ items, className = '', showHome = true }: B
             return (
               <li key={item.href} className="flex items-center">
                 {isLast ? (
-                  <span className="text-[#1A1A1A] font-medium" aria-current="page">
+                  <span className="text-[#1A1A1A] dark:text-white font-medium" aria-current="page">
                     {item.label}
                   </span>
                 ) : (
