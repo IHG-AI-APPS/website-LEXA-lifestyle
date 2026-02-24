@@ -173,7 +173,7 @@ export default function Header() {
                   href="/solutions"
                   className={`text-[11px] xl:text-xs 2xl:text-sm font-medium uppercase tracking-wide xl:tracking-wider transition-colors duration-300 flex items-center gap-1 whitespace-nowrap ${
                     shouldUseDarkText
-                      ? 'text-gray-700 hover:text-[#1A1A1A]'
+                      ? 'text-gray-700 dark:text-gray-200 hover:text-[#1A1A1A] dark:hover:text-white'
                       : 'text-white hover:text-white'
                   }`}
                   style={{
@@ -195,7 +195,7 @@ export default function Header() {
                   href="/services"
                   className={`text-[11px] xl:text-xs 2xl:text-sm font-medium uppercase tracking-wide xl:tracking-wider transition-colors duration-300 flex items-center gap-1 whitespace-nowrap ${
                     shouldUseDarkText
-                      ? 'text-gray-700 hover:text-[#1A1A1A]'
+                      ? 'text-gray-700 dark:text-gray-200 hover:text-[#1A1A1A] dark:hover:text-white'
                       : 'text-white hover:text-white'
                   }`}
                   style={{
@@ -217,7 +217,7 @@ export default function Header() {
                   href="/intelligence"
                   className={`text-[11px] xl:text-xs 2xl:text-sm font-medium uppercase tracking-wide xl:tracking-wider transition-colors duration-300 flex items-center gap-1 whitespace-nowrap ${
                     shouldUseDarkText
-                      ? 'text-gray-700 hover:text-[#1A1A1A]'
+                      ? 'text-gray-700 dark:text-gray-200 hover:text-[#1A1A1A] dark:hover:text-white'
                       : 'text-white hover:text-white'
                   }`}
                   style={{
@@ -239,7 +239,7 @@ export default function Header() {
                   href="/packages"
                   className={`text-[11px] xl:text-xs 2xl:text-sm font-medium uppercase tracking-wide xl:tracking-wider transition-colors duration-300 flex items-center gap-1 whitespace-nowrap ${
                     shouldUseDarkText
-                      ? 'text-gray-700 hover:text-[#1A1A1A]'
+                      ? 'text-gray-700 dark:text-gray-200 hover:text-[#1A1A1A] dark:hover:text-white'
                       : 'text-white hover:text-white'
                   }`}
                   style={{
@@ -257,7 +257,7 @@ export default function Header() {
                   href={item.href}
                   className={`text-[11px] xl:text-xs 2xl:text-sm font-medium uppercase tracking-wide xl:tracking-wider transition-colors duration-300 link-underline whitespace-nowrap ${
                     shouldUseDarkText
-                      ? 'text-gray-700 hover:text-[#1A1A1A]' 
+                      ? 'text-gray-700 dark:text-gray-200 hover:text-[#1A1A1A] dark:hover:text-white' 
                       : 'text-white hover:text-white'
                   }`}
                   style={{
