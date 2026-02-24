@@ -41,7 +41,7 @@ export default function SolutionClient({
   }, [solution, addItem])
 
   return (
-    <div className="min-h-screen bg-white pt-20">
+    <div className="min-h-screen bg-white dark:bg-gray-900 pt-20">
       {/* Hero Section */}
       <section className="relative py-20 overflow-hidden bg-gradient-to-br from-gray-900 via-gray-800 to-black text-white">
         <div className="absolute inset-0 opacity-10">

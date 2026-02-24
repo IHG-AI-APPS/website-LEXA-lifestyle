@@ -84,7 +84,7 @@ export default function BrandDetailPage({ params }: { params: { slug: string } }
 
   if (loading) {
     return (
-      <div className="min-h-screen bg-white pt-20">
+      <div className="min-h-screen bg-white dark:bg-gray-900 pt-20">
         <div className="container mx-auto px-4 py-8">
           <div className="animate-pulse">
             <div className="h-64 bg-gray-200 rounded-xl mb-8"></div>
@@ -103,7 +103,7 @@ export default function BrandDetailPage({ params }: { params: { slug: string } }
 
   if (!brand) {
     return (
-      <div className="min-h-screen bg-white pt-20 flex items-center justify-center">
+      <div className="min-h-screen bg-white dark:bg-gray-900 pt-20 flex items-center justify-center">
         <div className="text-center">
           <h2 className="text-3xl font-semibold mb-6">Brand Not Found</h2>
           <Link href="/brands">
@@ -118,7 +118,7 @@ export default function BrandDetailPage({ params }: { params: { slug: string } }
   }
 
   return (
-    <div className="min-h-screen bg-white pt-20">
+    <div className="min-h-screen bg-white dark:bg-gray-900 pt-20">
       {/* SEO Meta Tags would be handled by Next.js metadata */}
       
       {/* Breadcrumb Navigation */}

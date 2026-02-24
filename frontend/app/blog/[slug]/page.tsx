@@ -50,7 +50,7 @@ export default function BlogArticlePage({ params }: { params: { slug: string } }
 
   if (loading) {
     return (
-      <div className="min-h-screen bg-white pt-20">
+      <div className="min-h-screen bg-white dark:bg-gray-900 pt-20">
         <div className="container mx-auto px-4 py-8 max-w-4xl">
           <div className="animate-pulse">
             <div className="h-6 bg-gray-100 rounded w-1/4 mb-4"></div>
@@ -70,7 +70,7 @@ export default function BlogArticlePage({ params }: { params: { slug: string } }
 
   if (!article) {
     return (
-      <div className="min-h-screen bg-white pt-20 flex items-center justify-center">
+      <div className="min-h-screen bg-white dark:bg-gray-900 pt-20 flex items-center justify-center">
         <div className="text-center">
           <h2 className="text-3xl font-semibold mb-6">Article Not Found</h2>
           <Link href="/blog">
@@ -85,7 +85,7 @@ export default function BlogArticlePage({ params }: { params: { slug: string } }
   }
 
   return (
-    <div className="min-h-screen bg-white pt-20">
+    <div className="min-h-screen bg-white dark:bg-gray-900 pt-20">
       {/* Breadcrumb Navigation */}
       <div className="container mx-auto px-8 lg:px-16">
         <Breadcrumb 
