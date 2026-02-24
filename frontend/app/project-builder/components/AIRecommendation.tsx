@@ -687,7 +687,7 @@ export default function AIRecommendation({
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ delay: 0.9 + index * 0.1 }}
-              className="flex items-start gap-3 bg-white rounded-lg p-4"
+              className="flex items-start gap-3 bg-white dark:bg-gray-800 rounded-lg p-4"
             >
               <div className="w-8 h-8 bg-purple-100 rounded-full flex items-center justify-center flex-shrink-0">
                 <Sparkles className="w-4 h-4 text-purple-600" />
@@ -800,7 +800,7 @@ export default function AIRecommendation({
               animate={{ scale: 1, opacity: 1 }}
               exit={{ scale: 0.9, opacity: 0 }}
               onClick={(e) => e.stopPropagation()}
-              className="bg-white rounded-2xl p-6 max-w-md w-full shadow-2xl"
+              className="bg-white dark:bg-gray-800 rounded-2xl p-6 max-w-md w-full shadow-2xl"
             >
               <div className="flex items-center justify-between mb-6">
                 <h3 className="text-xl font-bold text-gray-900 dark:text-white">Book a Consultation</h3>
@@ -922,7 +922,7 @@ export default function AIRecommendation({
               animate={{ scale: 1, opacity: 1 }}
               exit={{ scale: 0.9, opacity: 0 }}
               onClick={(e) => e.stopPropagation()}
-              className="bg-white rounded-2xl p-6 max-w-5xl w-full shadow-2xl my-8"
+              className="bg-white dark:bg-gray-800 rounded-2xl p-6 max-w-5xl w-full shadow-2xl my-8"
             >
               <div className="flex items-center justify-between mb-6">
                 <div>

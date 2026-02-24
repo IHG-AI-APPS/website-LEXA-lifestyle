@@ -253,7 +253,7 @@ export default function ContractorsPage() {
             <h2 className="text-4xl sm:text-5xl font-bold text-center mb-12 ">What We Deliver</h2>
 
             <div className="space-y-6">
-              <div className="bg-white rounded-xl p-6 shadow-lg flex items-start gap-4">
+              <div className="bg-white dark:bg-gray-800 rounded-xl p-6 shadow-lg flex items-start gap-4">
                 <div className="w-12 h-12 bg-gray-100 rounded-full flex items-center justify-center flex-shrink-0">
                   <DollarSign size={24} className="text-gallery-black" />
                 </div>
@@ -265,7 +265,7 @@ export default function ContractorsPage() {
                 </div>
               </div>
 
-              <div className="bg-white rounded-xl p-6 shadow-lg flex items-start gap-4">
+              <div className="bg-white dark:bg-gray-800 rounded-xl p-6 shadow-lg flex items-start gap-4">
                 <div className="w-12 h-12 bg-gray-100 rounded-full flex items-center justify-center flex-shrink-0">
                   <FileText size={24} className="text-gallery-black" />
                 </div>
@@ -277,7 +277,7 @@ export default function ContractorsPage() {
                 </div>
               </div>
 
-              <div className="bg-white rounded-xl p-6 shadow-lg flex items-start gap-4">
+              <div className="bg-white dark:bg-gray-800 rounded-xl p-6 shadow-lg flex items-start gap-4">
                 <div className="w-12 h-12 bg-gray-100 rounded-full flex items-center justify-center flex-shrink-0">
                   <Users size={24} className="text-gallery-black" />
                 </div>
@@ -289,7 +289,7 @@ export default function ContractorsPage() {
                 </div>
               </div>
 
-              <div className="bg-white rounded-xl p-6 shadow-lg flex items-start gap-4">
+              <div className="bg-white dark:bg-gray-800 rounded-xl p-6 shadow-lg flex items-start gap-4">
                 <div className="w-12 h-12 bg-gray-100 rounded-full flex items-center justify-center flex-shrink-0">
                   <Wrench size={24} className="text-gallery-black" />
                 </div>
@@ -332,7 +332,7 @@ export default function ContractorsPage() {
           <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
-            className="bg-white rounded-2xl max-w-3xl w-full my-8"
+            className="bg-white dark:bg-gray-800 rounded-2xl max-w-3xl w-full my-8"
           >
             {showSuccess ? (
               <div className="p-12 text-center">

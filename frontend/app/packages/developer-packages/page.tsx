@@ -272,7 +272,7 @@ export default function DeveloperPackagesPage() {
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: 0.15 }}
                   viewport={{ once: true }}
-                  className="bg-white p-6 border border-gray-200 hover:shadow-lg transition-shadow"
+                  className="bg-white dark:bg-gray-800 p-6 border border-gray-200 hover:shadow-lg transition-shadow"
                 >
                   <div className="inline-flex p-3 bg-amber-100 mb-4">
                     <Icon className="h-6 w-6 text-amber-600" />

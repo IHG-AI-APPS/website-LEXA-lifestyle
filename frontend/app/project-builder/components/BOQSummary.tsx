@@ -285,7 +285,7 @@ export default function BOQSummary({ sessionId, selectedProposal, onComplete }: 
           <motion.div
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
-            className="bg-white rounded-lg p-6 max-w-md w-full"
+            className="bg-white dark:bg-gray-800 rounded-lg p-6 max-w-md w-full"
           >
             <h3 className="text-lg font-semibold mb-4">Email Your Proposal</h3>
             <p className="text-sm text-gray-600 mb-4">

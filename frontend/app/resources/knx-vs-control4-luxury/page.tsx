@@ -46,7 +46,7 @@ export default function KNXvsControl4Page() {
       {/* Quick Answer */}
       <section className="py-16 bg-gallery-base">
         <div className="container mx-auto px-8 lg:px-16">
-          <div className="max-w-4xl mx-auto bg-white rounded-2xl p-8 shadow-lg border-l-4 border-black">
+          <div className="max-w-4xl mx-auto bg-white dark:bg-gray-800 rounded-2xl p-8 shadow-lg border-l-4 border-black">
             <h2 className="text-2xl font-bold mb-4">Quick Answer</h2>
             <p className="text-lg text-gray-700 mb-4">
               <strong>KNX</strong> is the gold standard for large villas (10,000+ sq ft) requiring maximum reliability, scalability, and future-proofing. 
@@ -143,7 +143,7 @@ export default function KNXvsControl4Page() {
               <div>
                 <h3 className="text-3xl font-bold mb-6">KNX: The European Standard</h3>
                 
-                <div className="bg-white rounded-xl p-8 mb-6">
+                <div className="bg-white dark:bg-gray-800 rounded-xl p-8 mb-6">
                   <h4 className="text-xl font-bold mb-4 flex items-center gap-2">
                     <Check className="text-green-600" size={24} />
                     Strengths
@@ -172,7 +172,7 @@ export default function KNXvsControl4Page() {
                   </ul>
                 </div>
 
-                <div className="bg-white rounded-xl p-8">
+                <div className="bg-white dark:bg-gray-800 rounded-xl p-8">
                   <h4 className="text-xl font-bold mb-4 flex items-center gap-2">
                     <X className="text-red-600" size={24} />
                     Weaknesses
@@ -202,7 +202,7 @@ export default function KNXvsControl4Page() {
               <div>
                 <h3 className="text-3xl font-bold mb-6">Control4: The Smart Choice</h3>
                 
-                <div className="bg-white rounded-xl p-8 mb-6">
+                <div className="bg-white dark:bg-gray-800 rounded-xl p-8 mb-6">
                   <h4 className="text-xl font-bold mb-4 flex items-center gap-2">
                     <Check className="text-green-600" size={24} />
                     Strengths
@@ -231,7 +231,7 @@ export default function KNXvsControl4Page() {
                   </ul>
                 </div>
 
-                <div className="bg-white rounded-xl p-8">
+                <div className="bg-white dark:bg-gray-800 rounded-xl p-8">
                   <h4 className="text-xl font-bold mb-4 flex items-center gap-2">
                     <X className="text-red-600" size={24} />
                     Weaknesses

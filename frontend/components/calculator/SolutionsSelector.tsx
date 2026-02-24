@@ -28,7 +28,7 @@ export default function SolutionsSelector({
           return (
             <motion.div
               key={solution.id}
-              className="bg-white rounded-xl border-2 border-gray-200 p-6"
+              className="bg-white dark:bg-gray-800 rounded-xl border-2 border-gray-200 p-6"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
             >

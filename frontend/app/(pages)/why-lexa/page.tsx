@@ -193,7 +193,7 @@ export default function WhyLexaPage() {
               <p className="text-xl text-gray-600 dark:text-gray-400">See how we compare to competitors</p>
             </div>
 
-            <div className="bg-white rounded-lg shadow-lg overflow-hidden">
+            <div className="bg-white dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden">
               <table className="w-full">
                 <thead className="bg-gray-900 text-white">
                   <tr>
@@ -242,7 +242,7 @@ export default function WhyLexaPage() {
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: 0.2 }}
                   viewport={{ once: true }}
-                  className="bg-white p-6 rounded-lg shadow-lg"
+                  className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg"
                 >
                   <div className="flex gap-1 mb-4">
                     {[...Array(5)].map((_, i) => (

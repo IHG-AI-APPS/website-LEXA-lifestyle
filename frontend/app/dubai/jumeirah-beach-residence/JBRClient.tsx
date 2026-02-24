@@ -98,7 +98,7 @@ export default function JBRClient() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1 }}
-                className="bg-white p-6 rounded-xl shadow-sm hover:shadow-lg transition-shadow"
+                className="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-sm hover:shadow-lg transition-shadow"
               >
                 <system.icon className="text-[#C9A962] mb-4" size={32} />
                 <h3 className="text-xl font-bold mb-2">{system.title}</h3>

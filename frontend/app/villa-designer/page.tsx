@@ -137,7 +137,7 @@ export default function VillaDesignerPage() {
           transition={{ duration: 0.6 }}
           className="max-w-2xl w-full text-center"
         >
-          <div className="bg-white rounded-3xl p-12 shadow-2xl">
+          <div className="bg-white dark:bg-gray-800 rounded-3xl p-12 shadow-2xl">
             <div className="inline-flex items-center justify-center w-20 h-20 bg-green-100 rounded-full mb-6">
               <Check size={40} className="text-green-600" />
             </div>

@@ -101,7 +101,7 @@ export default function FloorPlanUploader({ onSave, initialImage, initialAnnotat
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          className="bg-white rounded-xl shadow-2xl overflow-hidden"
+          className="bg-white dark:bg-gray-800 rounded-xl shadow-2xl overflow-hidden"
         >
           {/* Device Type Selector */}
           <div className="bg-gray-50 border-b p-4">
@@ -196,7 +196,7 @@ export default function FloorPlanUploader({ onSave, initialImage, initialAnnotat
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          className="bg-white rounded-xl shadow-lg overflow-hidden"
+          className="bg-white dark:bg-gray-800 rounded-xl shadow-lg overflow-hidden"
         >
           <div className="p-4 bg-green-50 border-b border-green-200">
             <div className="flex items-center justify-between">

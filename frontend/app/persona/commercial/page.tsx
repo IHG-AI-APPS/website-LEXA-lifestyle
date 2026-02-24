@@ -226,7 +226,7 @@ export default function CommercialPage() {
                           whileInView={{ opacity: 1, y: 0 }}
                           viewport={{ once: true }}
                           transition={{ delay: itemIndex * 0.05 }}
-                          className="bg-white p-6 border border-gray-200 hover:border-charcoal transition-all hover:shadow-lg"
+                          className="bg-white dark:bg-gray-800 p-6 border border-gray-200 hover:border-charcoal transition-all hover:shadow-lg"
                         >
                           <h4 className="text-lg font-semibold mb-2 group-hover:text-charcoal transition-colors">
                             {item.name}

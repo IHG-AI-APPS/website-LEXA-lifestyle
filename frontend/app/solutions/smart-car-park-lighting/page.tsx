@@ -289,7 +289,7 @@ export default function SmartCarParkLightingPage() {
                   </li>
                 </ul>
 
-                <div className="mt-6 p-4 bg-white rounded-lg border border-blue-200">
+                <div className="mt-6 p-4 bg-white dark:bg-gray-800 rounded-lg border border-blue-200">
                   <div className="text-sm text-gray-600 mb-1">Average Monthly Savings per Lamp</div>
                   <div className="text-3xl font-bold text-blue-600">AED 7.93</div>
                 </div>
@@ -315,7 +315,7 @@ export default function SmartCarParkLightingPage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.2 }}
-                className="bg-white rounded-xl p-6 border border-gray-200 hover:border-blue-300 hover:shadow-lg transition-all"
+                className="bg-white dark:bg-gray-800 rounded-xl p-6 border border-gray-200 hover:border-blue-300 hover:shadow-lg transition-all"
               >
                 <div className="w-14 h-14 bg-blue-100 rounded-xl flex items-center justify-center mb-4">
                   <feature.icon className="w-7 h-7 text-blue-600" />
@@ -564,7 +564,7 @@ export default function SmartCarParkLightingPage() {
                     {step.step}
                   </div>
                 </div>
-                <div className="flex-grow bg-white rounded-xl p-6 border border-gray-200 dark:border-gray-700">
+                <div className="flex-grow bg-white dark:bg-gray-800 rounded-xl p-6 border border-gray-200 dark:border-gray-700">
                   <h3 className="text-xl font-bold text-gray-900 mb-2">{step.title}</h3>
                   <p className="text-gray-600 dark:text-gray-400">{step.desc}</p>
                 </div>

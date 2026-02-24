@@ -203,7 +203,7 @@ export default function VillaOperatingModelPage() {
                   transition={{ duration: 0.6, delay: 0.2 }}
                   className="text-center"
                 >
-                  <div className="inline-flex p-4 bg-white rounded-lg shadow-sm mb-4">
+                  <div className="inline-flex p-4 bg-white dark:bg-gray-800 rounded-lg shadow-sm mb-4">
                     <Icon className="w-8 h-8 text-black" strokeWidth={1.5} />
                   </div>
                   <h3 className="text-lg font-semibold mb-2">{benefit.title}</h3>

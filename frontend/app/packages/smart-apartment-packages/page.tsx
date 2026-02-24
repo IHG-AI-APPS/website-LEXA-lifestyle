@@ -396,7 +396,7 @@ export default function SmartApartmentPackagesPage() {
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.6, delay: 0.2 }}
                     viewport={{ once: true }}
-                    className="bg-white p-8 text-center"
+                    className="bg-white dark:bg-gray-800 p-8 text-center"
                   >
                     <Icon className="h-12 w-12 mx-auto mb-4 text-blue-600" />
                     <h3 className="text-xl font-bold mb-2 text-gray-900 dark:text-white">{benefit.title}</h3>

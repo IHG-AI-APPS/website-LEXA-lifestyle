@@ -287,7 +287,7 @@ export default function IntegrationsPage() {
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: 0.15 }}
-                className="bg-white p-6 border-2 border-gray-200 hover:border-blue-400 transition-all duration-300"
+                className="bg-white dark:bg-gray-800 p-6 border-2 border-gray-200 hover:border-blue-400 transition-all duration-300"
               >
                 <div className="flex items-center justify-between mb-2">
                   <h3 className="text-lg font-bold">{protocol.name}</h3>

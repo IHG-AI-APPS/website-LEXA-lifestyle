@@ -152,7 +152,7 @@ export default function LexaEvolvesPage() {
                   whileInView={{ opacity: 1, x: 0 }}
                   transition={{ duration: 0.6, delay: 0.2 }}
                   viewport={{ once: true }}
-                  className="bg-white p-8 border-2 border-gray-200 hover:border-violet-600 transition-all"
+                  className="bg-white dark:bg-gray-800 p-8 border-2 border-gray-200 hover:border-violet-600 transition-all"
                 >
                   <div className="flex items-start gap-6">
                     <div className="flex-shrink-0">
@@ -253,7 +253,7 @@ export default function LexaEvolvesPage() {
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: 0.2 }}
                   viewport={{ once: true }}
-                  className="bg-white p-6 text-center border-2 border-gray-200 dark:border-gray-700"
+                  className="bg-white dark:bg-gray-800 p-6 text-center border-2 border-gray-200 dark:border-gray-700"
                 >
                   <div className="text-3xl font-bold text-violet-600 mb-2">{milestone.year}</div>
                   <div className="text-lg font-semibold text-[#1A1A1A] mb-2">{milestone.focus}</div>

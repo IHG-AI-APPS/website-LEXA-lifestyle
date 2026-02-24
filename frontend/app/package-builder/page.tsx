@@ -537,7 +537,7 @@ export default function PackageBuilderPage() {
                   if (applicableItems.length === 0) return null
 
                   return (
-                    <div key={category} className="bg-white rounded-2xl border-2 border-gray-200 p-6">
+                    <div key={category} className="bg-white dark:bg-gray-800 rounded-2xl border-2 border-gray-200 p-6">
                       <h3 className="text-2xl font-bold text-gray-900 mb-4 flex items-center gap-2">
                         {category}
                         <span className="text-sm font-normal text-gray-500">
@@ -702,7 +702,7 @@ export default function PackageBuilderPage() {
                     const defaultOption = category.options?.[0] || null
                     
                     return (
-                      <div key={category.id} className="bg-white rounded-2xl border-2 border-gray-200 p-6">
+                      <div key={category.id} className="bg-white dark:bg-gray-800 rounded-2xl border-2 border-gray-200 p-6">
                         <div className="mb-6">
                           <h3 className="text-2xl font-bold text-gray-900 mb-2">
                             {category.product_type}

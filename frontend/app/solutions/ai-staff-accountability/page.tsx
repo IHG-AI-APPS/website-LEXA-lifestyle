@@ -372,7 +372,7 @@ export default function AIStaffAccountabilityPage() {
               {/* Benefits Metrics */}
               <div className="grid md:grid-cols-3 gap-4 mb-8">
                 {Object.entries(currentStage.benefits).map(([key, value], index) => (
-                  <div key={index} className="bg-white rounded-xl p-6 border border-gray-200 dark:border-gray-700">
+                  <div key={index} className="bg-white dark:bg-gray-800 rounded-xl p-6 border border-gray-200 dark:border-gray-700">
                     <div className="text-3xl font-bold text-blue-600 mb-2">{value}</div>
                     <div className="text-sm text-gray-600 capitalize">{key.replace('_', ' ')}</div>
                   </div>
@@ -427,7 +427,7 @@ export default function AIStaffAccountabilityPage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.2 }}
-                className="bg-white rounded-xl p-6 border border-gray-200 hover:border-blue-300 hover:shadow-lg transition-all"
+                className="bg-white dark:bg-gray-800 rounded-xl p-6 border border-gray-200 hover:border-blue-300 hover:shadow-lg transition-all"
               >
                 <div className="w-14 h-14 bg-blue-100 rounded-xl flex items-center justify-center mb-4">
                   <layer.icon className="w-7 h-7 text-blue-600" />

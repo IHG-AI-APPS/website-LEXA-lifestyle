@@ -176,7 +176,7 @@ export default function ConsultationPage() {
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: 0.2 }}
                   viewport={{ once: true }}
-                  className={`relative bg-white rounded-2xl shadow-xl overflow-hidden ${
+                  className={`relative bg-white dark:bg-gray-800 rounded-2xl shadow-xl overflow-hidden ${
                     type.popular ? 'ring-4 ring-green-500' : ''
                   }`}
                 >
@@ -285,7 +285,7 @@ export default function ConsultationPage() {
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <div className="bg-white rounded-xl p-6 shadow-lg">
+              <div className="bg-white dark:bg-gray-800 rounded-xl p-6 shadow-lg">
                 <Shield className="text-blue-600 mb-4" size={32} />
                 <h3 className="font-bold text-lg mb-2">No Pressure, Just Guidance</h3>
                 <p className="text-gray-600 text-sm">
@@ -293,7 +293,7 @@ export default function ConsultationPage() {
                 </p>
               </div>
 
-              <div className="bg-white rounded-xl p-6 shadow-lg">
+              <div className="bg-white dark:bg-gray-800 rounded-xl p-6 shadow-lg">
                 <Award className="text-purple-600 mb-4" size={32} />
                 <h3 className="font-bold text-lg mb-2">Expert Knowledge</h3>
                 <p className="text-gray-600 text-sm">
@@ -301,7 +301,7 @@ export default function ConsultationPage() {
                 </p>
               </div>
 
-              <div className="bg-white rounded-xl p-6 shadow-lg">
+              <div className="bg-white dark:bg-gray-800 rounded-xl p-6 shadow-lg">
                 <FileText className="text-green-600 mb-4" size={32} />
                 <h3 className="font-bold text-lg mb-2">Detailed Proposal</h3>
                 <p className="text-gray-600 text-sm">
@@ -309,7 +309,7 @@ export default function ConsultationPage() {
                 </p>
               </div>
 
-              <div className="bg-white rounded-xl p-6 shadow-lg">
+              <div className="bg-white dark:bg-gray-800 rounded-xl p-6 shadow-lg">
                 <Phone className="text-orange-600 mb-4" size={32} />
                 <h3 className="font-bold text-lg mb-2">Ongoing Support</h3>
                 <p className="text-gray-600 text-sm">

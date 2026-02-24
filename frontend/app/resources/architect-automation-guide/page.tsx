@@ -167,7 +167,7 @@ export default function ArchitectAutomationGuidePage() {
             <h2 className="text-4xl sm:text-5xl font-bold mb-12">7 Costly Mistakes to Avoid</h2>
             
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <div className="bg-white rounded-xl p-6 border-l-4 border-red-500">
+              <div className="bg-white dark:bg-gray-800 rounded-xl p-6 border-l-4 border-red-500">
                 <div className="flex items-start gap-3 mb-3">
                   <AlertTriangle className="text-red-600 flex-shrink-0" size={24} />
                   <h3 className="font-bold text-lg">Insufficient Conduit Sizing</h3>
@@ -177,7 +177,7 @@ export default function ArchitectAutomationGuidePage() {
                 </p>
               </div>
 
-              <div className="bg-white rounded-xl p-6 border-l-4 border-red-500">
+              <div className="bg-white dark:bg-gray-800 rounded-xl p-6 border-l-4 border-red-500">
                 <div className="flex items-start gap-3 mb-3">
                   <AlertTriangle className="text-red-600 flex-shrink-0" size={24} />
                   <h3 className="font-bold text-lg">No Server Room Cooling</h3>
@@ -187,7 +187,7 @@ export default function ArchitectAutomationGuidePage() {
                 </p>
               </div>
 
-              <div className="bg-white rounded-xl p-6 border-l-4 border-red-500">
+              <div className="bg-white dark:bg-gray-800 rounded-xl p-6 border-l-4 border-red-500">
                 <div className="flex items-start gap-3 mb-3">
                   <AlertTriangle className="text-red-600 flex-shrink-0" size={24} />
                   <h3 className="font-bold text-lg">Late Network Planning</h3>
@@ -197,7 +197,7 @@ export default function ArchitectAutomationGuidePage() {
                 </p>
               </div>
 
-              <div className="bg-white rounded-xl p-6 border-l-4 border-red-500">
+              <div className="bg-white dark:bg-gray-800 rounded-xl p-6 border-l-4 border-red-500">
                 <div className="flex items-start gap-3 mb-3">
                   <AlertTriangle className="text-red-600 flex-shrink-0" size={24} />
                   <h3 className="font-bold text-lg">Ignoring False Ceiling Depth</h3>
@@ -207,7 +207,7 @@ export default function ArchitectAutomationGuidePage() {
                 </p>
               </div>
 
-              <div className="bg-white rounded-xl p-6 border-l-4 border-red-500">
+              <div className="bg-white dark:bg-gray-800 rounded-xl p-6 border-l-4 border-red-500">
                 <div className="flex items-start gap-3 mb-3">
                   <AlertTriangle className="text-red-600 flex-shrink-0" size={24} />
                   <h3 className="font-bold text-lg">Over-Specifying Brands</h3>
@@ -217,7 +217,7 @@ export default function ArchitectAutomationGuidePage() {
                 </p>
               </div>
 
-              <div className="bg-white rounded-xl p-6 border-l-4 border-red-500">
+              <div className="bg-white dark:bg-gray-800 rounded-xl p-6 border-l-4 border-red-500">
                 <div className="flex items-start gap-3 mb-3">
                   <AlertTriangle className="text-red-600 flex-shrink-0" size={24} />
                   <h3 className="font-bold text-lg">No Cable Management Strategy</h3>
@@ -227,7 +227,7 @@ export default function ArchitectAutomationGuidePage() {
                 </p>
               </div>
 
-              <div className="bg-white rounded-xl p-6 border-l-4 border-red-500">
+              <div className="bg-white dark:bg-gray-800 rounded-xl p-6 border-l-4 border-red-500">
                 <div className="flex items-start gap-3 mb-3">
                   <AlertTriangle className="text-red-600 flex-shrink-0" size={24} />
                   <h3 className="font-bold text-lg">Forgetting Power Backup</h3>
@@ -237,7 +237,7 @@ export default function ArchitectAutomationGuidePage() {
                 </p>
               </div>
 
-              <div className="bg-white rounded-xl p-6 border-l-4 border-red-500">
+              <div className="bg-white dark:bg-gray-800 rounded-xl p-6 border-l-4 border-red-500">
                 <div className="flex items-start gap-3 mb-3">
                   <AlertTriangle className="text-red-600 flex-shrink-0" size={24} />
                   <h3 className="font-bold text-lg">No Integration Budget</h3>

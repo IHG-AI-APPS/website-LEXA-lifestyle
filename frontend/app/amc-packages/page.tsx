@@ -233,7 +233,7 @@ export default function AMCPackagesPage() {
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: 0.2 }}
                   viewport={{ once: true }}
-                  className={`bg-white p-8 border-2 transition-all duration-300 hover:shadow-2xl ${
+                  className={`bg-white dark:bg-gray-800 p-8 border-2 transition-all duration-300 hover:shadow-2xl ${
                     pkg.popular ? 'border-[#1A1A1A] shadow-xl scale-105' : 'border-gray-200'
                   }`}
                 >

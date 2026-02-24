@@ -317,7 +317,7 @@ export default function EnterprisePerformanceOSPage() {
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.6, delay: 0.2 }}
                     viewport={{ once: true }}
-                    className="bg-white p-8 border-2 border-gray-200 hover:border-blue-500 transition-all"
+                    className="bg-white dark:bg-gray-800 p-8 border-2 border-gray-200 hover:border-blue-500 transition-all"
                   >
                     <div className="flex items-start gap-4 mb-6">
                       <div className={`p-4 bg-${layer.color}-100`}>
@@ -397,7 +397,7 @@ export default function EnterprisePerformanceOSPage() {
               
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 {selectedCase.benefits.map((benefit) => (
-                  <div key={benefit.label} className="bg-white p-6 border border-gray-200 dark:border-gray-700">
+                  <div key={benefit.label} className="bg-white dark:bg-gray-800 p-6 border border-gray-200 dark:border-gray-700">
                     <div className="font-semibold text-gray-900 mb-2">{benefit.label}</div>
                     <div className="text-sm text-blue-600 font-semibold">{benefit.value}</div>
                   </div>
@@ -478,7 +478,7 @@ export default function EnterprisePerformanceOSPage() {
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: 0.2 }}
                   viewport={{ once: true }}
-                  className={`bg-white p-8 border-2 transition-all hover:shadow-xl ${
+                  className={`bg-white dark:bg-gray-800 p-8 border-2 transition-all hover:shadow-xl ${
                     tier.popular ? 'border-blue-600 shadow-lg scale-105' : 'border-gray-200'
                   }`}
                 >

@@ -122,7 +122,7 @@ export default function HiddenCostsPage() {
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.6, delay: 0.2 }}
                     viewport={{ once: true }}
-                    className="bg-white p-8 border-2 border-gray-200 dark:border-gray-700"
+                    className="bg-white dark:bg-gray-800 p-8 border-2 border-gray-200 dark:border-gray-700"
                   >
                     <div className="flex items-start gap-4 mb-4">
                       <div className="p-3 bg-red-50">

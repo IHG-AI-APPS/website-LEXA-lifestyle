@@ -120,7 +120,7 @@ export default function WhatsAppWidget() {
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 20, scale: 0.9 }}
             transition={{ duration: 0.2 }}
-            className="fixed bottom-24 sm:bottom-28 right-4 sm:right-6 z-[55] w-[calc(100vw-32px)] sm:w-80 max-w-80 bg-white rounded-2xl shadow-2xl border border-gray-200 overflow-hidden"
+            className="fixed bottom-24 sm:bottom-28 right-4 sm:right-6 z-[55] w-[calc(100vw-32px)] sm:w-80 max-w-80 bg-white dark:bg-gray-800 rounded-2xl shadow-2xl border border-gray-200 overflow-hidden"
           >
             <div className="bg-green-500 p-4 text-white">
               <div className="flex items-center justify-between mb-2">

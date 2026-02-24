@@ -406,7 +406,7 @@ export default function SolutionDetailPage() {
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.6, delay: 0.2 }}
                     viewport={{ once: true }}
-                    className="bg-white p-8 border border-gray-200 dark:border-gray-700"
+                    className="bg-white dark:bg-gray-800 p-8 border border-gray-200 dark:border-gray-700"
                   >
                     <h3 className="text-xl font-semibold mb-3">{faq.question}</h3>
                     <p className="text-gray-600 leading-relaxed">{faq.answer}</p>

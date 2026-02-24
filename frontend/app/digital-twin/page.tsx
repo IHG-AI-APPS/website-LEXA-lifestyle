@@ -145,7 +145,7 @@ export default function DigitalTwinPage() {
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.6, delay: 0.2 }}
                     viewport={{ once: true }}
-                    className="bg-white p-8 border-2 border-gray-200 hover:border-[#1A1A1A] transition-all duration-300 hover:shadow-xl"
+                    className="bg-white dark:bg-gray-800 p-8 border-2 border-gray-200 hover:border-[#1A1A1A] transition-all duration-300 hover:shadow-xl"
                   >
                     <div className="flex items-start gap-4">
                       <div className="flex-shrink-0 p-3 bg-gradient-to-br from-cyan-50 to-blue-50">

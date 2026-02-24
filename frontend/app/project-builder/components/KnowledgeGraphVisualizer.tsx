@@ -274,7 +274,7 @@ export default function KnowledgeGraphVisualizer({
               </h4>
               <div className="space-y-2">
                 {graphData.warnings?.slice(0, 3).map((warning: any, index: number) => (
-                  <div key={index} className="text-xs text-gray-700 bg-white p-3 rounded border border-orange-200">
+                  <div key={index} className="text-xs text-gray-700 bg-white dark:bg-gray-800 p-3 rounded border border-orange-200">
                     <span className="font-medium text-orange-900">{warning.system}:</span> {warning.message}
                   </div>
                 ))}

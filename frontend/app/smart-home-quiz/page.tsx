@@ -253,7 +253,7 @@ export default function SmartHomeQuizPage() {
               initial={{ opacity: 0, x: 20 }}
               animate={{ opacity: 1, x: 0 }}
               exit={{ opacity: 0, x: -20 }}
-              className="bg-white rounded-2xl shadow-xl p-8"
+              className="bg-white dark:bg-gray-800 rounded-2xl shadow-xl p-8"
             >
               <h2 className="text-2xl font-bold text-gray-900 mb-2">What matters most to you?</h2>
               <p className="text-gray-600 mb-6">Select up to 3 priorities for your smart home</p>
@@ -316,7 +316,7 @@ export default function SmartHomeQuizPage() {
               initial={{ opacity: 0, x: 20 }}
               animate={{ opacity: 1, x: 0 }}
               exit={{ opacity: 0, x: -20 }}
-              className="bg-white rounded-2xl shadow-xl p-8"
+              className="bg-white dark:bg-gray-800 rounded-2xl shadow-xl p-8"
             >
               <h2 className="text-2xl font-bold text-gray-900 mb-2">What type of property?</h2>
               <p className="text-gray-600 mb-6">This helps us tailor recommendations to your space</p>
@@ -369,7 +369,7 @@ export default function SmartHomeQuizPage() {
               initial={{ opacity: 0, x: 20 }}
               animate={{ opacity: 1, x: 0 }}
               exit={{ opacity: 0, x: -20 }}
-              className="bg-white rounded-2xl shadow-xl p-8"
+              className="bg-white dark:bg-gray-800 rounded-2xl shadow-xl p-8"
             >
               <h2 className="text-2xl font-bold text-gray-900 mb-2">What's your budget range?</h2>
               <p className="text-gray-600 mb-6">We'll recommend features that fit your investment</p>
@@ -454,7 +454,7 @@ export default function SmartHomeQuizPage() {
               </div>
 
               {/* Recommendations */}
-              <div className="bg-white rounded-2xl shadow-xl p-8">
+              <div className="bg-white dark:bg-gray-800 rounded-2xl shadow-xl p-8">
                 <h3 className="text-lg font-bold text-gray-900 mb-4">
                   Top {Math.min(recommendations.length, 10)} Recommended Features
                 </h3>
@@ -539,7 +539,7 @@ export default function SmartHomeQuizPage() {
                       initial={{ scale: 0.9, opacity: 0 }}
                       animate={{ scale: 1, opacity: 1 }}
                       exit={{ scale: 0.9, opacity: 0 }}
-                      className="bg-white rounded-2xl p-6 max-w-md w-full shadow-2xl"
+                      className="bg-white dark:bg-gray-800 rounded-2xl p-6 max-w-md w-full shadow-2xl"
                       onClick={(e) => e.stopPropagation()}
                     >
                       {saved ? (

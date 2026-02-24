@@ -208,7 +208,7 @@ export default function InvestmentPricingPage() {
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: 0.2 }}
                   viewport={{ once: true }}
-                  className={`bg-white p-8 border-2 transition-all duration-300 hover:shadow-2xl ${
+                  className={`bg-white dark:bg-gray-800 p-8 border-2 transition-all duration-300 hover:shadow-2xl ${
                     tier.popular ? 'border-[#1A1A1A] shadow-xl scale-105' : 'border-gray-200'
                   }`}
                 >
@@ -331,7 +331,7 @@ export default function InvestmentPricingPage() {
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.6, delay: 0.2 }}
                     viewport={{ once: true }}
-                    className="bg-white p-8 border-2 border-gray-200 hover:border-[#1A1A1A] transition-all"
+                    className="bg-white dark:bg-gray-800 p-8 border-2 border-gray-200 hover:border-[#1A1A1A] transition-all"
                   >
                     <div className="flex items-start gap-4 mb-4">
                       <div className="p-3 bg-gray-50 dark:bg-gray-800">

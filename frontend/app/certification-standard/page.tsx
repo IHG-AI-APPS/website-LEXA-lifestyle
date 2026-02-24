@@ -170,7 +170,7 @@ export default function CertificationStandardPage() {
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              <div className="bg-white rounded-xl p-8 shadow-lg border-t-4 border-red-500">
+              <div className="bg-white dark:bg-gray-800 rounded-xl p-8 shadow-lg border-t-4 border-red-500">
                 <h3 className="text-2xl font-bold mb-4 text-red-600">Random Installer</h3>
                 <ul className="space-y-3 text-gray-600 dark:text-gray-400">
                   <li className="flex items-start gap-2">
@@ -225,7 +225,7 @@ export default function CertificationStandardPage() {
                 </ul>
               </div>
 
-              <div className="bg-white rounded-xl p-8 shadow-lg border-t-4 border-gray-300">
+              <div className="bg-white dark:bg-gray-800 rounded-xl p-8 shadow-lg border-t-4 border-gray-300">
                 <h3 className="text-2xl font-bold mb-4 text-gray-600 dark:text-gray-400">Typical Contractor</h3>
                 <ul className="space-y-3 text-gray-500">
                   <li className="flex items-start gap-2">

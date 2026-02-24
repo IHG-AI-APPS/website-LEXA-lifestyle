@@ -114,7 +114,7 @@ export default function ResumePage() {
         <motion.div
           initial={{ opacity: 0, scale: 0.95 }}
           animate={{ opacity: 1, scale: 1 }}
-          className="bg-white rounded-lg shadow-lg p-8 max-w-md w-full text-center"
+          className="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-8 max-w-md w-full text-center"
         >
           <AlertCircle className="w-16 h-16 text-red-500 mx-auto mb-4" />
           <h1 className="text-2xl font-semibold text-gray-900 mb-2">Session Unavailable</h1>
@@ -134,7 +134,7 @@ export default function ResumePage() {
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          className="bg-white rounded-lg shadow-lg overflow-hidden"
+          className="bg-white dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden"
         >
           {/* Header */}
           <div className="bg-gradient-to-r from-blue-600 to-purple-600 p-6 text-white">

@@ -226,7 +226,7 @@ export default function VendorSupplierPage() {
                 ))}
               </ul>
             </div>
-            <div className="bg-white p-8 rounded-xl shadow-lg">
+            <div className="bg-white dark:bg-gray-800 p-8 rounded-xl shadow-lg">
               <h3 className="text-xl font-bold text-gray-900 mb-6">Current Sourcing Priorities</h3>
               <div className="space-y-4">
                 <div className="flex items-center gap-4 p-4 bg-green-50 rounded-lg border border-green-200">
@@ -360,7 +360,7 @@ export default function VendorSupplierPage() {
                   className={`md:flex items-center ${index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'}`}
                 >
                   <div className={`md:w-1/2 ${index % 2 === 0 ? 'md:pr-12 md:text-right' : 'md:pl-12'}`}>
-                    <div className="bg-white p-6 rounded-xl shadow-md border border-gray-100 dark:border-gray-800">
+                    <div className="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-md border border-gray-100 dark:border-gray-800">
                       <div className="flex items-center gap-3 mb-2 md:justify-start">
                         <span className="w-8 h-8 bg-[#E8DCC8] text-[#1A1A1A] rounded-full flex items-center justify-center font-bold text-sm">
                           {step.step}
@@ -419,7 +419,7 @@ export default function VendorSupplierPage() {
               </Button>
             </motion.div>
           ) : (
-            <form onSubmit={handleSubmit} className="bg-white rounded-xl shadow-lg p-6 md:p-8 space-y-6">
+            <form onSubmit={handleSubmit} className="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-6 md:p-8 space-y-6">
               {/* Company Information */}
               <div>
                 <h3 className="text-lg font-bold text-gray-900 mb-4 pb-2 border-b">Company Information</h3>
@@ -653,7 +653,7 @@ export default function VendorSupplierPage() {
           </h2>
           
           <div className="space-y-6">
-            <div className="bg-white p-6 rounded-xl border border-gray-200 dark:border-gray-700">
+            <div className="bg-white dark:bg-gray-800 p-6 rounded-xl border border-gray-200 dark:border-gray-700">
               <h3 className="font-bold text-gray-900 mb-2">
                 What volume do you typically order?
               </h3>
@@ -663,7 +663,7 @@ export default function VendorSupplierPage() {
               </p>
             </div>
             
-            <div className="bg-white p-6 rounded-xl border border-gray-200 dark:border-gray-700">
+            <div className="bg-white dark:bg-gray-800 p-6 rounded-xl border border-gray-200 dark:border-gray-700">
               <h3 className="font-bold text-gray-900 mb-2">
                 Do you require exclusivity for the GCC region?
               </h3>
@@ -674,7 +674,7 @@ export default function VendorSupplierPage() {
               </p>
             </div>
             
-            <div className="bg-white p-6 rounded-xl border border-gray-200 dark:border-gray-700">
+            <div className="bg-white dark:bg-gray-800 p-6 rounded-xl border border-gray-200 dark:border-gray-700">
               <h3 className="font-bold text-gray-900 mb-2">
                 What certifications are required for GCC markets?
               </h3>
@@ -685,7 +685,7 @@ export default function VendorSupplierPage() {
               </p>
             </div>
             
-            <div className="bg-white p-6 rounded-xl border border-gray-200 dark:border-gray-700">
+            <div className="bg-white dark:bg-gray-800 p-6 rounded-xl border border-gray-200 dark:border-gray-700">
               <h3 className="font-bold text-gray-900 mb-2">
                 How long does the evaluation process take?
               </h3>
@@ -695,7 +695,7 @@ export default function VendorSupplierPage() {
               </p>
             </div>
             
-            <div className="bg-white p-6 rounded-xl border border-gray-200 dark:border-gray-700">
+            <div className="bg-white dark:bg-gray-800 p-6 rounded-xl border border-gray-200 dark:border-gray-700">
               <h3 className="font-bold text-gray-900 mb-2">
                 Do you provide marketing support for vendor brands?
               </h3>

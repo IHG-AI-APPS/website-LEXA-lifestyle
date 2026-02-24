@@ -253,7 +253,7 @@ export default function PartnerWithUsPage() {
                   setSelectedType(type.id)
                   document.getElementById('application-form')?.scrollIntoView({ behavior: 'smooth' })
                 }}
-                className={`p-6 bg-white rounded-xl cursor-pointer transition-all hover:shadow-lg border-2 ${
+                className={`p-6 bg-white dark:bg-gray-800 rounded-xl cursor-pointer transition-all hover:shadow-lg border-2 ${
                   selectedType === type.id ? 'border-[#E8DCC8] shadow-lg' : 'border-transparent'
                 }`}
               >
@@ -362,7 +362,7 @@ export default function PartnerWithUsPage() {
                 ))}
               </div>
             </div>
-            <div className="bg-white p-8 rounded-xl shadow-lg">
+            <div className="bg-white dark:bg-gray-800 p-8 rounded-xl shadow-lg">
               <h3 className="text-xl font-bold text-gray-900 mb-4">Territory Opportunities</h3>
               <ul className="space-y-4">
                 <li className="flex items-start gap-3">
@@ -427,7 +427,7 @@ export default function PartnerWithUsPage() {
               </Button>
             </motion.div>
           ) : (
-            <form onSubmit={handleSubmit} className="bg-white rounded-xl shadow-lg p-6 md:p-8 space-y-6">
+            <form onSubmit={handleSubmit} className="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-6 md:p-8 space-y-6">
               {/* Partner Type Selection */}
               <div>
                 <label className="block text-sm font-semibold text-gray-700 mb-3">
@@ -599,7 +599,7 @@ export default function PartnerWithUsPage() {
           </h2>
           
           <div className="space-y-6">
-            <div className="bg-white p-6 rounded-xl">
+            <div className="bg-white dark:bg-gray-800 p-6 rounded-xl">
               <h3 className="font-bold text-gray-900 mb-2">
                 What are the requirements to become a LEXA dealer?
               </h3>
@@ -610,7 +610,7 @@ export default function PartnerWithUsPage() {
               </p>
             </div>
             
-            <div className="bg-white p-6 rounded-xl">
+            <div className="bg-white dark:bg-gray-800 p-6 rounded-xl">
               <h3 className="font-bold text-gray-900 mb-2">
                 What brands can I sell as a LEXA partner?
               </h3>
@@ -620,7 +620,7 @@ export default function PartnerWithUsPage() {
               </p>
             </div>
             
-            <div className="bg-white p-6 rounded-xl">
+            <div className="bg-white dark:bg-gray-800 p-6 rounded-xl">
               <h3 className="font-bold text-gray-900 mb-2">
                 Do you offer exclusive territories?
               </h3>
@@ -631,7 +631,7 @@ export default function PartnerWithUsPage() {
               </p>
             </div>
             
-            <div className="bg-white p-6 rounded-xl">
+            <div className="bg-white dark:bg-gray-800 p-6 rounded-xl">
               <h3 className="font-bold text-gray-900 mb-2">
                 What support do partners receive?
               </h3>
@@ -642,7 +642,7 @@ export default function PartnerWithUsPage() {
               </p>
             </div>
             
-            <div className="bg-white p-6 rounded-xl">
+            <div className="bg-white dark:bg-gray-800 p-6 rounded-xl">
               <h3 className="font-bold text-gray-900 mb-2">
                 How long does the application process take?
               </h3>

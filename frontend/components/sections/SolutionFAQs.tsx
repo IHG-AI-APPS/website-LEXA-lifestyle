@@ -80,7 +80,7 @@ export default function SolutionFAQs({ solutionSlug, title = "Frequently Asked Q
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
                 viewport={{ once: true }}
-                className="bg-white p-8 border border-gray-200 rounded-lg shadow-sm hover:shadow-md transition-shadow"
+                className="bg-white dark:bg-gray-800 p-8 border border-gray-200 rounded-lg shadow-sm hover:shadow-md transition-shadow"
               >
                 <h3 className="text-xl font-semibold mb-3 text-gray-900 dark:text-white">{faq.question}</h3>
                 <p className="text-gray-600 leading-relaxed">{faq.answer}</p>

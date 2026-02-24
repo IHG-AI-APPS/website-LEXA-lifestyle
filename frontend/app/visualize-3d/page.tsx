@@ -38,7 +38,7 @@ export default function Visualize3DPage() {
           <h2 className="text-3xl font-bold text-center mb-12">Why Visualize in 3D?</h2>
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            <div className="bg-white rounded-xl p-6 shadow-lg text-center">
+            <div className="bg-white dark:bg-gray-800 rounded-xl p-6 shadow-lg text-center">
               <div className="inline-flex items-center justify-center w-14 h-14 mb-4 bg-purple-100 rounded-full">
                 <Eye className="text-purple-600" size={28} />
               </div>
@@ -48,7 +48,7 @@ export default function Visualize3DPage() {
               </p>
             </div>
 
-            <div className="bg-white rounded-xl p-6 shadow-lg text-center">
+            <div className="bg-white dark:bg-gray-800 rounded-xl p-6 shadow-lg text-center">
               <div className="inline-flex items-center justify-center w-14 h-14 mb-4 bg-blue-100 rounded-full">
                 <Lightbulb className="text-blue-600" size={28} />
               </div>
@@ -58,7 +58,7 @@ export default function Visualize3DPage() {
               </p>
             </div>
 
-            <div className="bg-white rounded-xl p-6 shadow-lg text-center">
+            <div className="bg-white dark:bg-gray-800 rounded-xl p-6 shadow-lg text-center">
               <div className="inline-flex items-center justify-center w-14 h-14 mb-4 bg-green-100 rounded-full">
                 <Zap className="text-green-600" size={28} />
               </div>
@@ -68,7 +68,7 @@ export default function Visualize3DPage() {
               </p>
             </div>
 
-            <div className="bg-white rounded-xl p-6 shadow-lg text-center">
+            <div className="bg-white dark:bg-gray-800 rounded-xl p-6 shadow-lg text-center">
               <div className="inline-flex items-center justify-center w-14 h-14 mb-4 bg-pink-100 rounded-full">
                 <Sparkles className="text-pink-600" size={28} />
               </div>
@@ -107,7 +107,7 @@ export default function Visualize3DPage() {
                 gradient: 'from-purple-500 to-pink-600'
               },
             ].map((room, idx) => (
-              <div key={idx} className="bg-white rounded-xl shadow-lg overflow-hidden">
+              <div key={idx} className="bg-white dark:bg-gray-800 rounded-xl shadow-lg overflow-hidden">
                 <div className={`h-32 bg-gradient-to-br ${room.gradient}`} />
                 <div className="p-6">
                   <h3 className="text-xl font-bold mb-2">{room.title}</h3>

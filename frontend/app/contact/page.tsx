@@ -416,7 +416,7 @@ export default function ContactPage() {
                     {language === 'ar' ? 'زُر صالة العرض' : 'Visit Our Showroom'}
                   </h2>
                 </div>
-                <div className="bg-white rounded-xl p-6 border border-gray-200 dark:border-gray-700">
+                <div className="bg-white dark:bg-gray-800 rounded-xl p-6 border border-gray-200 dark:border-gray-700">
                   <p className="text-lg text-gray-700 mb-4">
                     <strong>LEXA Lifestyle LLC</strong><br />
                     <span className="text-sm text-gray-500">

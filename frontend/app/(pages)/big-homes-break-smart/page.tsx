@@ -200,7 +200,7 @@ export default function BigHomesBreakSmartPage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: 0.2 }}
-                className="bg-white p-6 border-l-4 border-red-500"
+                className="bg-white dark:bg-gray-800 p-6 border-l-4 border-red-500"
               >
                 <div className="flex justify-between items-start mb-3">
                   <h3 className="text-xl font-semibold">{item.category}</h3>

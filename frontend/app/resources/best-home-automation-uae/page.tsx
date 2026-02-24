@@ -46,7 +46,7 @@ export default function BestHomeAutomationUAEPage() {
       {/* Quick Answer */}
       <section className="py-16 bg-gallery-base">
         <div className="container mx-auto px-8 lg:px-16">
-          <div className="max-w-4xl mx-auto bg-white rounded-2xl p-8 shadow-lg border-l-4 border-black">
+          <div className="max-w-4xl mx-auto bg-white dark:bg-gray-800 rounded-2xl p-8 shadow-lg border-l-4 border-black">
             <h2 className="text-2xl font-bold mb-4">Quick Answer</h2>
             <p className="text-lg text-gray-700 mb-4">
               The best home automation integrator in UAE should have: <strong>CEDIA certification</strong>, proven luxury villa experience, multi-brand expertise (KNX, Control4, Crestron), local project portfolio, and full post-installation support.
@@ -181,42 +181,42 @@ export default function BestHomeAutomationUAEPage() {
             <h2 className="text-4xl sm:text-5xl font-bold mb-12">Red Flags to Avoid</h2>
             
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <div className="bg-white rounded-xl p-6 border-2 border-red-200">
+              <div className="bg-white dark:bg-gray-800 rounded-xl p-6 border-2 border-red-200">
                 <div className="text-red-600 font-bold mb-2">🚩 No Physical Office</div>
                 <p className="text-sm text-gray-700 dark:text-gray-300">
                   Fly-by-night operators without local presence disappear when you need support.
                 </p>
               </div>
 
-              <div className="bg-white rounded-xl p-6 border-2 border-red-200">
+              <div className="bg-white dark:bg-gray-800 rounded-xl p-6 border-2 border-red-200">
                 <div className="text-red-600 font-bold mb-2">🚩 Pushes One Brand Only</div>
                 <p className="text-sm text-gray-700 dark:text-gray-300">
                   They&apos;re resellers, not consultants. You deserve unbiased recommendations.
                 </p>
               </div>
 
-              <div className="bg-white rounded-xl p-6 border-2 border-red-200">
+              <div className="bg-white dark:bg-gray-800 rounded-xl p-6 border-2 border-red-200">
                 <div className="text-red-600 font-bold mb-2">🚩 No Villa Portfolio</div>
                 <p className="text-sm text-gray-700 dark:text-gray-300">
                   Apartment experience doesn&apos;t translate to 20,000 sq ft estates.
                 </p>
               </div>
 
-              <div className="bg-white rounded-xl p-6 border-2 border-red-200">
+              <div className="bg-white dark:bg-gray-800 rounded-xl p-6 border-2 border-red-200">
                 <div className="text-red-600 font-bold mb-2">🚩 Verbal Quotes Only</div>
                 <p className="text-sm text-gray-700 dark:text-gray-300">
                   Professional integrators always provide written, itemized proposals.
                 </p>
               </div>
 
-              <div className="bg-white rounded-xl p-6 border-2 border-red-200">
+              <div className="bg-white dark:bg-gray-800 rounded-xl p-6 border-2 border-red-200">
                 <div className="text-red-600 font-bold mb-2">🚩 No Post-Install Support</div>
                 <p className="text-sm text-gray-700 dark:text-gray-300">
                   &quot;We&apos;ll train you and leave&quot; is not acceptable for complex systems.
                 </p>
               </div>
 
-              <div className="bg-white rounded-xl p-6 border-2 border-red-200">
+              <div className="bg-white dark:bg-gray-800 rounded-xl p-6 border-2 border-red-200">
                 <div className="text-red-600 font-bold mb-2">🚩 Unrealistic Timelines</div>
                 <p className="text-sm text-gray-700 dark:text-gray-300">
                   Quality villa automation takes 8-16 weeks. Promises of 2-week installs are suspicious.
@@ -279,7 +279,7 @@ export default function BestHomeAutomationUAEPage() {
               </div>
             </div>
 
-            <div className="mt-12 bg-white rounded-2xl p-8 shadow-lg">
+            <div className="mt-12 bg-white dark:bg-gray-800 rounded-2xl p-8 shadow-lg">
               <h3 className="text-2xl font-bold mb-6">Our Guarantee</h3>
               <div className="space-y-4">
                 <div className="flex items-start gap-3">

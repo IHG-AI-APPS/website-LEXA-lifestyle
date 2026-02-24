@@ -47,7 +47,7 @@ export default function SmartHomeCostDubaiPage() {
       {/* Quick Answer */}
       <section className="py-16 bg-gallery-base">
         <div className="container mx-auto px-8 lg:px-16">
-          <div className="max-w-4xl mx-auto bg-white rounded-2xl p-8 shadow-lg border-l-4 border-black">
+          <div className="max-w-4xl mx-auto bg-white dark:bg-gray-800 rounded-2xl p-8 shadow-lg border-l-4 border-black">
             <h2 className="text-2xl font-bold mb-4">Quick Answer</h2>
             <p className="text-lg text-gray-700 mb-4">
               Smart home automation for a Dubai villa typically costs between <strong>AED 50,000 to AED 500,000+</strong> depending on property size, systems chosen, and automation level.
@@ -193,7 +193,7 @@ export default function SmartHomeCostDubaiPage() {
             <h2 className="text-4xl sm:text-5xl font-bold mb-12">Real Dubai Villa Projects</h2>
             
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              <div className="bg-white rounded-xl p-6 shadow-lg">
+              <div className="bg-white dark:bg-gray-800 rounded-xl p-6 shadow-lg">
                 <div className="text-sm text-gray-600 mb-2">4BR Villa, Arabian Ranches</div>
                 <div className="text-3xl font-bold mb-4">AED 85,000</div>
                 <ul className="space-y-2 text-sm text-gray-700 dark:text-gray-300">
@@ -216,7 +216,7 @@ export default function SmartHomeCostDubaiPage() {
                 </ul>
               </div>
 
-              <div className="bg-white rounded-xl p-6 shadow-lg border-2 border-black">
+              <div className="bg-white dark:bg-gray-800 rounded-xl p-6 shadow-lg border-2 border-black">
                 <div className="text-sm text-gray-600 mb-2">6BR Villa, Emirates Hills</div>
                 <div className="text-3xl font-bold mb-4">AED 225,000</div>
                 <ul className="space-y-2 text-sm text-gray-700 dark:text-gray-300">
@@ -246,7 +246,7 @@ export default function SmartHomeCostDubaiPage() {
                 </div>
               </div>
 
-              <div className="bg-white rounded-xl p-6 shadow-lg">
+              <div className="bg-white dark:bg-gray-800 rounded-xl p-6 shadow-lg">
                 <div className="text-sm text-gray-600 mb-2">8BR Palace, Palm Jumeirah</div>
                 <div className="text-3xl font-bold mb-4">AED 480,000</div>
                 <ul className="space-y-2 text-sm text-gray-700 dark:text-gray-300">
