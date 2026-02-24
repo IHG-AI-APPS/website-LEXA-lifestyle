@@ -1393,6 +1393,142 @@ class EmailService:
         
         return admin_sent and customer_sent
 
+    @staticmethod
+    async def send_hot_lead_alert(
+        lead_name: str,
+        lead_email: str,
+        lead_phone: str,
+        lead_score: int,
+        lead_source: str,
+        score_breakdown: dict,
+        assigned_to: str,
+        budget_range: str = "",
+        property_type: str = "",
+        timeline: str = "",
+        message: str = "",
+    ) -> bool:
+        """Send internal alert to sales team for hot leads (score 70+).
+        From: webadmin@lexalifestyle.com  To: sales@lexalifestyle.com"""
+
+        score_rows = "".join(
+            f'<tr><td style="padding:6px 12px;color:#6B7280;text-transform:capitalize;">{k.replace("_"," ")}</td>'
+            f'<td style="padding:6px 12px;font-weight:600;color:#1A1A1A;">+{v}</td></tr>'
+            for k, v in score_breakdown.items() if v > 0
+        )
+
+        details_rows = ""
+        if budget_range:
+            details_rows += f'<tr><td style="padding:6px 12px;color:#6B7280;">Budget</td><td style="padding:6px 12px;font-weight:600;">{budget_range}</td></tr>'
+        if property_type:
+            details_rows += f'<tr><td style="padding:6px 12px;color:#6B7280;">Property</td><td style="padding:6px 12px;font-weight:600;">{property_type}</td></tr>'
+        if timeline:
+            details_rows += f'<tr><td style="padding:6px 12px;color:#6B7280;">Timeline</td><td style="padding:6px 12px;font-weight:600;">{timeline}</td></tr>'
+
+        html = f'''
+        <div style="font-family:'Inter',sans-serif;max-width:600px;margin:0 auto;background:#fff;">
+            <div style="height:3px;background:linear-gradient(90deg,#C9A962,#E8D5A3,#C9A962);"></div>
+            <div style="background:#1A1A1A;padding:24px 32px;">
+                <h1 style="color:#fff;margin:0;font-size:22px;letter-spacing:4px;">LEXA</h1>
+                <p style="color:#C9A962;margin:2px 0 0;font-size:9px;letter-spacing:3px;text-transform:uppercase;">SALES INTELLIGENCE</p>
+            </div>
+            <div style="padding:32px;">
+                <div style="background:#FEF3C7;border-left:4px solid #F59E0B;padding:16px 20px;margin-bottom:24px;border-radius:0 8px 8px 0;">
+                    <p style="margin:0;font-weight:700;color:#92400E;font-size:16px;">HOT LEAD ALERT — Score {lead_score}/100</p>
+                    <p style="margin:4px 0 0;color:#B45309;font-size:13px;">Auto-routed to: {assigned_to}</p>
+                </div>
+                <h2 style="color:#1A1A1A;margin:0 0 4px;font-size:20px;">{lead_name or "Unknown"}</h2>
+                <p style="color:#6B7280;margin:0 0 20px;font-size:14px;">via {lead_source.replace("_"," ").title()}</p>
+                <table style="width:100%;border-collapse:collapse;margin-bottom:20px;">
+                    <tr><td style="padding:6px 12px;color:#6B7280;">Email</td><td style="padding:6px 12px;font-weight:600;"><a href="mailto:{lead_email}" style="color:#1A1A1A;">{lead_email}</a></td></tr>
+                    <tr><td style="padding:6px 12px;color:#6B7280;">Phone</td><td style="padding:6px 12px;font-weight:600;"><a href="tel:{lead_phone}" style="color:#1A1A1A;">{lead_phone or "—"}</a></td></tr>
+                    {details_rows}
+                </table>
+                {"<p style='color:#4B5563;font-size:14px;background:#F9F9F7;padding:12px 16px;border-radius:8px;'>" + message[:300] + "</p>" if message else ""}
+                <h3 style="color:#1A1A1A;font-size:14px;margin:24px 0 8px;">Score Breakdown</h3>
+                <table style="width:100%;border-collapse:collapse;background:#F9F9F7;border-radius:8px;overflow:hidden;">
+                    {score_rows}
+                    <tr style="border-top:1px solid #E5E7EB;"><td style="padding:8px 12px;font-weight:700;">Total</td><td style="padding:8px 12px;font-weight:700;color:#059669;">{lead_score}/100</td></tr>
+                </table>
+                <div style="margin-top:24px;text-align:center;">
+                    <a href="https://lexalifestyle.com/admin/sales-dashboard" style="display:inline-block;padding:12px 32px;background:#1A1A1A;color:#fff;text-decoration:none;border-radius:6px;font-weight:600;font-size:14px;">View in Dashboard</a>
+                </div>
+            </div>
+            <div style="padding:16px 32px;background:#F9F9F7;text-align:center;font-size:11px;color:#9CA3AF;">
+                Automated alert from LEXA Sales Intelligence &middot; Do not reply to this email
+            </div>
+        </div>
+        '''
+
+        return await EmailService.send_email(
+            to_email=SALES_EMAIL,
+            subject=f"[HOT LEAD {lead_score}/100] {lead_name or 'New Lead'} — {lead_source.replace('_',' ').title()}",
+            html_content=html,
+            from_name="LEXA Web Admin",
+            from_email=SENDER_EMAIL,
+        )
+
+    @staticmethod
+    async def send_lead_acknowledgement(
+        customer_name: str,
+        customer_email: str,
+        lead_source: str,
+    ) -> bool:
+        """Send acknowledgement to customer, CC sales team.
+        From: webadmin@lexalifestyle.com  To: customer  CC: sales@lexalifestyle.com"""
+
+        source_label = lead_source.replace("_", " ").title()
+
+        html = f'''
+        <div style="font-family:'Inter',sans-serif;max-width:600px;margin:0 auto;background:#fff;">
+            <div style="height:3px;background:linear-gradient(90deg,#C9A962,#E8D5A3,#C9A962);"></div>
+            <div style="background:#1A1A1A;padding:24px 32px;">
+                <h1 style="color:#fff;margin:0;font-size:22px;letter-spacing:4px;">LEXA</h1>
+                <p style="color:#C9A962;margin:2px 0 0;font-size:9px;letter-spacing:3px;text-transform:uppercase;">LIFE STYLE</p>
+            </div>
+            <div style="padding:32px;">
+                <h2 style="color:#1A1A1A;margin:0 0 16px;font-size:20px;">Thank you, {customer_name or "there"}!</h2>
+                <p style="color:#4B5563;font-size:14px;line-height:1.6;">
+                    We've received your enquiry via our {source_label} and a member of our team will be in touch shortly.
+                </p>
+                <p style="color:#4B5563;font-size:14px;line-height:1.6;">
+                    At LEXA, we specialise in transforming spaces with intelligent automation solutions tailored to your lifestyle.
+                    Our consultants are ready to guide you through every step.
+                </p>
+                <div style="margin:24px 0;padding:16px 20px;background:#F9F9F7;border-radius:8px;">
+                    <p style="margin:0 0 8px;font-weight:600;color:#1A1A1A;font-size:14px;">What happens next?</p>
+                    <p style="margin:0;color:#6B7280;font-size:13px;">1. A dedicated consultant will review your requirements</p>
+                    <p style="margin:4px 0 0;color:#6B7280;font-size:13px;">2. We'll reach out within 24 hours to discuss your project</p>
+                    <p style="margin:4px 0 0;color:#6B7280;font-size:13px;">3. If you'd like, we can arrange a visit to our Experience Centre</p>
+                </div>
+                <p style="color:#4B5563;font-size:14px;">
+                    In the meantime, feel free to explore our <a href="https://lexalifestyle.com/solutions" style="color:#C9A962;font-weight:600;">solutions</a> 
+                    or call us directly at <a href="tel:+97142670470" style="color:#1A1A1A;font-weight:600;">+971 42 670 470</a>.
+                </p>
+                <p style="color:#4B5563;font-size:14px;margin-top:24px;">
+                    Warm regards,<br>
+                    <strong style="color:#1A1A1A;">The LEXA Team</strong>
+                </p>
+            </div>
+            <div style="padding:16px 32px;background:#F9F9F7;border-top:1px solid #E5E7EB;">
+                <table width="100%" style="font-size:11px;color:#9CA3AF;">
+                    <tr>
+                        <td>LEXA Lifestyle &middot; Dubai, UAE</td>
+                        <td style="text-align:right;"><a href="https://lexalifestyle.com" style="color:#C9A962;">lexalifestyle.com</a></td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        '''
+
+        return await EmailService.send_email(
+            to_email=customer_email,
+            subject=f"Thank you for your interest — LEXA Lifestyle",
+            html_content=html,
+            from_name="LEXA Web Admin",
+            from_email=SENDER_EMAIL,
+            cc_email=SALES_EMAIL,
+        )
+
 
 # Backwards compatibility - keep old class name as alias
 EmailTemplates = LEXAEmailTemplate
