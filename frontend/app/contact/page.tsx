@@ -404,7 +404,7 @@ export default function ContactPage() {
       </section>
 
       {/* Location Section with Map */}
-      <section className="py-12 bg-gray-50">
+      <section className="py-12 bg-gray-50 dark:bg-gray-800">
         <div className="container mx-auto px-6 lg:px-12">
           <div className="max-w-7xl mx-auto">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">

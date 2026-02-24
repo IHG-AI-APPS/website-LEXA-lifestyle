@@ -183,7 +183,7 @@ export default function InvestmentPricingPage() {
         </section>
 
         {/* Pricing Tiers */}
-        <section className="py-20 bg-gray-50">
+        <section className="py-20 bg-gray-50 dark:bg-gray-800">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -304,7 +304,7 @@ export default function InvestmentPricingPage() {
         </section>
 
         {/* ROI Factors */}
-        <section className="py-20 bg-gray-50">
+        <section className="py-20 bg-gray-50 dark:bg-gray-800">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -334,7 +334,7 @@ export default function InvestmentPricingPage() {
                     className="bg-white p-8 border-2 border-gray-200 hover:border-[#1A1A1A] transition-all"
                   >
                     <div className="flex items-start gap-4 mb-4">
-                      <div className="p-3 bg-gray-50">
+                      <div className="p-3 bg-gray-50 dark:bg-gray-800">
                         <Icon className="h-6 w-6 text-[#1A1A1A]" />
                       </div>
                       <div className="flex-1">

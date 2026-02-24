@@ -126,7 +126,7 @@ export default function MajlisAudioPage() {
         </section>
 
         {/* Features */}
-        <section className="py-20 bg-gray-50">
+        <section className="py-20 bg-gray-50 dark:bg-gray-800">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
             <motion.div
               initial={{ opacity: 0, y: 20 }}

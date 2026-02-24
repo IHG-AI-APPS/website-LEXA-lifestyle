@@ -15,7 +15,7 @@ export default function CompanyPage() {
 
   return (
     <div className="min-h-screen bg-white pt-20">
-      <section className="py-20 bg-gray-50">
+      <section className="py-20 bg-gray-50 dark:bg-gray-800">
         <div className="container mx-auto px-8 lg:px-16">
           <div className="max-w-7xl mx-auto">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">

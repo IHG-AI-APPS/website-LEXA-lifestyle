@@ -206,7 +206,7 @@ export default function VendorSupplierPage() {
       </section>
 
       {/* What We're Looking For */}
-      <section className="py-16 md:py-24 bg-gray-50">
+      <section className="py-16 md:py-24 bg-gray-50 dark:bg-gray-800">
         <div className="container mx-auto px-4 max-w-6xl">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
@@ -387,7 +387,7 @@ export default function VendorSupplierPage() {
       </section>
 
       {/* Registration Form */}
-      <section id="vendor-form" className="py-16 md:py-24 bg-gray-50">
+      <section id="vendor-form" className="py-16 md:py-24 bg-gray-50 dark:bg-gray-800">
         <div className="container mx-auto px-4 max-w-3xl">
           <div className="text-center mb-12">
             <h2 className="text-2xl md:text-4xl font-bold text-gray-900 mb-4">

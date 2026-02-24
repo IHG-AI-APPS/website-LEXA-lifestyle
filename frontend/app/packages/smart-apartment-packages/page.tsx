@@ -250,7 +250,7 @@ export default function SmartApartmentPackagesPage() {
         </section>
 
         {/* Package Comparison */}
-        <section className="py-20 bg-gray-50">
+        <section className="py-20 bg-gray-50 dark:bg-gray-800">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
               {packages.map((pkg) => {
@@ -503,7 +503,7 @@ export default function SmartApartmentPackagesPage() {
         </section>
 
         {/* Pricing Disclaimer */}
-        <PricingDisclaimer variant="minimal" className="bg-gray-50" />
+        <PricingDisclaimer variant="minimal" className="bg-gray-50 dark:bg-gray-800" />
       </div>
 
       <ConsultationForm 

@@ -199,7 +199,7 @@ export default function SpecialtyRoomsPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-16 bg-gray-50">
+      <section className="py-16 bg-gray-50 dark:bg-gray-800">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl font-bold text-gray-900 mb-4">
             Ready to Customize Your Smart Home?

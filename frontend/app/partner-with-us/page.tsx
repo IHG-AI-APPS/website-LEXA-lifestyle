@@ -229,7 +229,7 @@ export default function PartnerWithUsPage() {
       </section>
 
       {/* Partner Types */}
-      <section className="py-16 md:py-24 bg-gray-50">
+      <section className="py-16 md:py-24 bg-gray-50 dark:bg-gray-800">
         <div className="container mx-auto px-4 max-w-6xl">
           <div className="text-center mb-12">
             <h2 className="text-2xl md:text-4xl font-bold text-gray-900 mb-4">
@@ -341,7 +341,7 @@ export default function PartnerWithUsPage() {
       </section>
 
       {/* GCC Coverage */}
-      <section className="py-16 md:py-24 bg-gray-50">
+      <section className="py-16 md:py-24 bg-gray-50 dark:bg-gray-800">
         <div className="container mx-auto px-4 max-w-6xl">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
@@ -592,7 +592,7 @@ export default function PartnerWithUsPage() {
       </section>
 
       {/* FAQ Section for SEO */}
-      <section className="py-16 md:py-24 bg-gray-50">
+      <section className="py-16 md:py-24 bg-gray-50 dark:bg-gray-800">
         <div className="container mx-auto px-4 max-w-4xl">
           <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-8 text-center">
             Frequently Asked Questions

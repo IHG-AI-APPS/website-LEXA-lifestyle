@@ -80,7 +80,7 @@ export default function KNXvsControl4Page() {
                     <td className="p-4 text-center">Open protocol, wired bus</td>
                     <td className="p-4 text-center">Proprietary, IP-based</td>
                   </tr>
-                  <tr className="border-b bg-gray-50">
+                  <tr className="border-b bg-gray-50 dark:bg-gray-800">
                     <td className="p-4 font-semibold">Best For</td>
                     <td className="p-4 text-center">10,000+ sq ft villas</td>
                     <td className="p-4 text-center">4,000-10,000 sq ft homes</td>
@@ -90,7 +90,7 @@ export default function KNXvsControl4Page() {
                     <td className="p-4 text-center">99.9% uptime (wired)</td>
                     <td className="p-4 text-center">98% uptime (network dependent)</td>
                   </tr>
-                  <tr className="border-b bg-gray-50">
+                  <tr className="border-b bg-gray-50 dark:bg-gray-800">
                     <td className="p-4 font-semibold">AV Integration</td>
                     <td className="p-4 text-center">Good (requires gateways)</td>
                     <td className="p-4 text-center">Excellent (native)</td>
@@ -100,7 +100,7 @@ export default function KNXvsControl4Page() {
                     <td className="p-4 text-center">Functional</td>
                     <td className="p-4 text-center">Intuitive, consumer-friendly</td>
                   </tr>
-                  <tr className="border-b bg-gray-50">
+                  <tr className="border-b bg-gray-50 dark:bg-gray-800">
                     <td className="p-4 font-semibold">Scalability</td>
                     <td className="p-4 text-center">Unlimited (modular)</td>
                     <td className="p-4 text-center">Very good (200+ devices)</td>
@@ -110,7 +110,7 @@ export default function KNXvsControl4Page() {
                     <td className="p-4 text-center">AED 80K - 200K+</td>
                     <td className="p-4 text-center">AED 50K - 120K</td>
                   </tr>
-                  <tr className="border-b bg-gray-50">
+                  <tr className="border-b bg-gray-50 dark:bg-gray-800">
                     <td className="p-4 font-semibold">Programming Time</td>
                     <td className="p-4 text-center">3-6 weeks</td>
                     <td className="p-4 text-center">1-3 weeks</td>
@@ -120,7 +120,7 @@ export default function KNXvsControl4Page() {
                     <td className="p-4 text-center">30+ year lifespan</td>
                     <td className="p-4 text-center">10-15 year lifespan</td>
                   </tr>
-                  <tr className="border-b bg-gray-50">
+                  <tr className="border-b bg-gray-50 dark:bg-gray-800">
                     <td className="p-4 font-semibold">Integrator Lock-in</td>
                     <td className="p-4 text-center">No (any KNX partner)</td>
                     <td className="p-4 text-center">Yes (certified dealers only)</td>

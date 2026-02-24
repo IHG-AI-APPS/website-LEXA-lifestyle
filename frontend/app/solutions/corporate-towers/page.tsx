@@ -129,7 +129,7 @@ export default function CorporateTowersPage() {
         </section>
 
         {/* Features Grid */}
-        <section className="py-20 bg-gray-50">
+        <section className="py-20 bg-gray-50 dark:bg-gray-800">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -158,7 +158,7 @@ export default function CorporateTowersPage() {
                     className="bg-white p-8 border-2 border-gray-200 hover:border-[#1A1A1A] transition-all duration-300 hover:shadow-xl"
                   >
                     <div className="flex items-start gap-4">
-                      <div className="flex-shrink-0 p-3 bg-gray-50">
+                      <div className="flex-shrink-0 p-3 bg-gray-50 dark:bg-gray-800">
                         <Icon className="h-6 w-6 text-[#1A1A1A]" />
                       </div>
                       <div>
@@ -205,7 +205,7 @@ export default function CorporateTowersPage() {
                     whileInView={{ opacity: 1, scale: 1 }}
                     transition={{ duration: 0.6, delay: 0.2 }}
                     viewport={{ once: true }}
-                    className="text-center p-6 bg-gray-50"
+                    className="text-center p-6 bg-gray-50 dark:bg-gray-800"
                   >
                     <Icon className="h-10 w-10 mx-auto mb-4 text-[#1A1A1A]" />
                     <div className="text-4xl font-bold mb-2 text-[#1A1A1A]">{benefit.metric}</div>
@@ -266,7 +266,7 @@ export default function CorporateTowersPage() {
         </section>
 
         {/* CTA Section */}
-        <section className="py-20 bg-gray-50">
+        <section className="py-20 bg-gray-50 dark:bg-gray-800">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
             <motion.div
               initial={{ opacity: 0, y: 20 }}

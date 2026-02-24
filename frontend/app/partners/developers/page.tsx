@@ -189,7 +189,7 @@ export default function DeveloperToolkitPage() {
       </section>
 
       {/* WHAT'S INCLUDED */}
-      <section className={`py-20 ${isDark ? "bg-gray-800/50" : "bg-gray-50"}`}>
+      <section className={`py-20 ${isDark ? "bg-gray-800/50" : "bg-gray-50 dark:bg-gray-800"}`}>
         <div className="container mx-auto px-6 lg:px-12">
           <div className="max-w-6xl mx-auto">
             <motion.div

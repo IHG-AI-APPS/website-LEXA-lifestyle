@@ -63,7 +63,7 @@ export default function AjmanPage() {
         </section>
 
         {/* Stats */}
-        <section className="py-12 bg-gray-50">
+        <section className="py-12 bg-gray-50 dark:bg-gray-800">
           <div className="container mx-auto px-4 max-w-7xl">
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
               <div>
@@ -98,7 +98,7 @@ export default function AjmanPage() {
         </section>
 
         {/* Services */}
-        <section className="py-16 bg-gray-50">
+        <section className="py-16 bg-gray-50 dark:bg-gray-800">
           <div className="container mx-auto px-4 max-w-7xl">
             <h2 className="text-3xl font-bold mb-12 text-center">Our Services in Ajman</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">

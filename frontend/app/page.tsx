@@ -10,7 +10,7 @@ const TrustBadges = dynamic(() => import('@/components/social-proof/TrustBadges'
 
 // Lazy load below-the-fold components for performance
 const SolutionsBentoGrid = dynamic(() => import('@/components/homepage/SolutionsBentoGrid'), {
-  loading: () => <div className="h-[600px] bg-gray-50" />
+  loading: () => <div className="h-[600px] bg-gray-50 dark:bg-gray-800" />
 })
 const TetrisProjects = dynamic(() => import('@/components/gallery/TetrisProjects'))
 const CalculatorCardsSection = dynamic(() => import('@/components/homepage/CalculatorCardsSection'))
@@ -22,7 +22,7 @@ const SmartRecommendations = dynamic(() => import('@/components/widgets/SmartRec
   ssr: false
 })
 const TrustedInUAE = dynamic(() => import('@/components/sections/TrustedInUAE'), {
-  loading: () => <div className="h-[300px] bg-gray-50" />
+  loading: () => <div className="h-[300px] bg-gray-50 dark:bg-gray-800" />
 })
 
 export default function HomePage() {

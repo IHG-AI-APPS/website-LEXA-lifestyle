@@ -282,7 +282,7 @@ export default function PropertyPackageDetailPage() {
                       initial={{ opacity: 0, height: 0 }}
                       animate={{ opacity: 1, height: 'auto' }}
                       exit={{ opacity: 0, height: 0 }}
-                      className="border-t border-gray-200 p-6 lg:p-8 bg-gray-50"
+                      className="border-t border-gray-200 p-6 lg:p-8 bg-gray-50 dark:bg-gray-800"
                     >
                       <DetailedFeatureList title="Lighting Features" features={tier.lighting_features || []} />
                       <DetailedFeatureList title="Climate Features" features={tier.climate_features || []} />

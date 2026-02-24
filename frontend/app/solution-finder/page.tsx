@@ -363,7 +363,7 @@ export default function SolutionFinderPage() {
         /* Results Page */
         <>
           {/* Results Header */}
-          <section className="py-20 bg-gray-50">
+          <section className="py-20 bg-gray-50 dark:bg-gray-800">
             <div className="container mx-auto px-8 lg:px-16">
               <div className="max-w-6xl mx-auto text-center">
                 <motion.div

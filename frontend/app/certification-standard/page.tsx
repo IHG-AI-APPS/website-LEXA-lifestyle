@@ -157,7 +157,7 @@ export default function CertificationStandardPage() {
       </section>
 
       {/* Why Standards Matter */}
-      <section className="py-20 bg-gray-50">
+      <section className="py-20 bg-gray-50 dark:bg-gray-800">
         <div className="container mx-auto px-8 lg:px-16">
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-16">
@@ -330,7 +330,7 @@ export default function CertificationStandardPage() {
       </section>
 
       {/* Partner Certifications */}
-      <section className="py-20 bg-gray-50">
+      <section className="py-20 bg-gray-50 dark:bg-gray-800">
         <div className="container mx-auto px-8 lg:px-16">
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-16">

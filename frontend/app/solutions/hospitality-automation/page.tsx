@@ -138,7 +138,7 @@ export default function HospitalityAutomationPage() {
         </section>
 
         {/* Features Grid */}
-        <section className="py-20 bg-gray-50">
+        <section className="py-20 bg-gray-50 dark:bg-gray-800">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -168,7 +168,7 @@ export default function HospitalityAutomationPage() {
                     className="bg-white p-8 border-2 border-gray-200 hover:border-[#1A1A1A] transition-all duration-300 hover:shadow-xl"
                   >
                     <div className="flex items-start gap-4">
-                      <div className="flex-shrink-0 p-3 bg-gray-50">
+                      <div className="flex-shrink-0 p-3 bg-gray-50 dark:bg-gray-800">
                         <Icon className="h-6 w-6 text-[#1A1A1A]" />
                       </div>
                       <div>
@@ -234,7 +234,7 @@ export default function HospitalityAutomationPage() {
         </section>
 
         {/* Benefits */}
-        <section className="py-20 bg-gray-50">
+        <section className="py-20 bg-gray-50 dark:bg-gray-800">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
             <motion.div
               initial={{ opacity: 0, y: 20 }}

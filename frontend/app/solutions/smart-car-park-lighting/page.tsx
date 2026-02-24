@@ -300,7 +300,7 @@ export default function SmartCarParkLightingPage() {
       </section>
 
       {/* Key Features */}
-      <section className="py-20 bg-gray-50">
+      <section className="py-20 bg-gray-50 dark:bg-gray-800">
         <div className="container mx-auto px-6">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-gray-900 mb-4">Intelligent Features</h2>
@@ -542,7 +542,7 @@ export default function SmartCarParkLightingPage() {
       </section>
 
       {/* Implementation Process */}
-      <section className="py-20 bg-gray-50">
+      <section className="py-20 bg-gray-50 dark:bg-gray-800">
         <div className="container mx-auto px-6">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-gray-900 mb-4">Implementation Process</h2>

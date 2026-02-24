@@ -49,7 +49,7 @@ export default function CaseStudyPage() {
   return (
     <div className="min-h-screen bg-white pt-20">
       {/* Hero */}
-      <section className="py-20 bg-gray-50">
+      <section className="py-20 bg-gray-50 dark:bg-gray-800">
         <div className="container mx-auto px-8 lg:px-16">
           <div className="max-w-7xl mx-auto">
             <Link href="/projects" className="inline-flex items-center gap-2 text-gray-600 hover:text-charcoal mb-8">
@@ -189,7 +189,7 @@ export default function CaseStudyPage() {
 
       {/* Outcome */}
       {project.outcome && (
-        <section className="py-20 bg-gray-50">
+        <section className="py-20 bg-gray-50 dark:bg-gray-800">
           <div className="container mx-auto px-8 lg:px-16">
             <div className="max-w-4xl mx-auto">
               <motion.div
@@ -239,7 +239,7 @@ export default function CaseStudyPage() {
 
       {/* Gallery */}
       {project.gallery && project.gallery.length > 0 && (
-        <section className="py-20 bg-gray-50">
+        <section className="py-20 bg-gray-50 dark:bg-gray-800">
           <div className="container mx-auto px-8 lg:px-16">
             <div className="max-w-7xl mx-auto">
               <h2 className="text-4xl font-semibold mb-12 text-center">Project Gallery</h2>

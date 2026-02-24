@@ -436,7 +436,7 @@ export default function ProjectDetailPage() {
 
       {/* Similar Projects */}
       {relatedProjects.length > 0 && (
-        <section className="py-12 border-t bg-gray-50">
+        <section className="py-12 border-t bg-gray-50 dark:bg-gray-800">
           <div className="container mx-auto px-4 md:px-6 max-w-7xl">
             <h2 className="text-xs font-bold uppercase tracking-wider text-gray-400 mb-8">
               Similar Projects
