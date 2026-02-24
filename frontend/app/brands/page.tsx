@@ -67,7 +67,7 @@ export default function BrandsPage() {
   const getStyle = (category: string) => categoryStyles[category] || categoryStyles['default']
 
   return (
-    <div className="min-h-screen bg-white pt-20">
+    <div className="min-h-screen bg-white dark:bg-gray-900 pt-20">
       {/* Hero - Centered */}
       <section className="py-16 bg-gray-50 border-b">
         <div className="container mx-auto px-6 lg:px-12">

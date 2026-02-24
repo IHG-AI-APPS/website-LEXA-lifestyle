@@ -82,7 +82,7 @@ export default function ContactPage() {
   ]
 
   return (
-    <div className="min-h-screen bg-white pt-20">
+    <div className="min-h-screen bg-white dark:bg-gray-900 pt-20">
       {/* Hero Section - Centered */}
       <section className="py-16 bg-gray-900 text-white">
         <div className="container mx-auto px-6 lg:px-12">
@@ -130,8 +130,8 @@ export default function ContactPage() {
               
               {/* Contact Form - Takes 2 columns */}
               <div className="lg:col-span-2">
-                <div className="bg-white border border-gray-200 rounded-xl p-6 md:p-8 shadow-sm">
-                  <h2 className="text-2xl font-bold text-gray-900 mb-2">
+                <div className="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-xl p-6 md:p-8 shadow-sm">
+                  <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-2">
                     {language === 'ar' ? 'أرسل لنا رسالة' : 'Send us a Message'}
                   </h2>
                   <p className="text-gray-500 mb-6">
@@ -219,7 +219,7 @@ export default function ContactPage() {
                           value={formData.subject}
                           onChange={handleChange}
                           required
-                          className="w-full h-12 px-3 rounded-md border border-gray-200 bg-white text-gray-900 focus:outline-none focus:ring-2 focus:ring-gray-900 focus:border-transparent"
+                          className="w-full h-12 px-3 rounded-md border border-gray-200 dark:border-gray-600 bg-white dark:bg-gray-800 text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-gray-900 dark:focus:ring-gray-400 focus:border-transparent"
                         >
                           <option value="">{language === 'ar' ? 'اختر موضوعاً...' : 'Select a subject...'}</option>
                           <option value="New Project Inquiry">{language === 'ar' ? 'استفسار عن مشروع جديد' : 'New Project Inquiry'}</option>
