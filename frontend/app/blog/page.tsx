@@ -105,7 +105,7 @@ export default function BlogPage() {
                     transition={{ duration: 0.3 }}
                   >
                     <Link href={`/blog/${article.slug}`}>
-                      <div className="group h-full border border-gray-200 hover:border-charcoal transition-all bg-white rounded-lg overflow-hidden">
+                      <div className="group h-full border border-gray-200 dark:border-gray-700 hover:border-charcoal transition-all bg-white dark:bg-gray-800 rounded-lg overflow-hidden">
                         {/* Image */}
                         <div className="relative h-64 overflow-hidden bg-gradient-to-br from-gray-100 to-gray-200">
                           {(article.featured_image || article.image) ? (
