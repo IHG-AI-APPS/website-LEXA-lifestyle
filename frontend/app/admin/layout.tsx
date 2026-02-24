@@ -37,12 +37,14 @@ import {
   ChevronDown,
   BarChart3,
   FlaskConical,
-  MapPin
+  MapPin,
+  TrendingUp
 } from 'lucide-react'
 import { verifyToken, logout } from '@/lib/adminApi'
 
 const navigation = [
   { name: 'Dashboard', href: '/admin/dashboard', icon: LayoutDashboard },
+  { name: 'Sales Intelligence', href: '/admin/sales-dashboard', icon: TrendingUp },
   { name: 'Analytics', href: '/admin/analytics', icon: BarChart3 },
   { name: 'Tracking Pixels', href: '/admin/tracking', icon: Activity },
   { name: 'A/B Testing', href: '/admin/ab-testing', icon: FlaskConical },
