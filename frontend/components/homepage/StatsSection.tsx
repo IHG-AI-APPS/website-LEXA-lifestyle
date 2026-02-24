@@ -38,7 +38,7 @@ function AnimatedCounter({ value, suffix }: { value: number; suffix: string }) {
     })
   }, [springValue, suffix])
 
-  return <div ref={ref} className="h2 text-[#1A1A1A] mb-2" />
+  return <div ref={ref} className="h2 text-[#1A1A1A] dark:text-white mb-2" />
 }
 
 export default function StatsSection() {
@@ -70,15 +70,15 @@ export default function StatsSection() {
 
   if (loading) {
     return (
-      <section className="py-16 md:py-20 bg-white">
+      <section className="py-16 md:py-20 bg-white dark:bg-gray-900">
         <div className="px-6 md:px-12 lg:px-24">
-          <div className="text-center">Loading...</div>
+          <div className="text-center dark:text-gray-400">Loading...</div>
         </div>
       </section>
     )
   }
   return (
-    <section className="py-8 md:py-10 bg-white">
+    <section className="py-8 md:py-10 bg-white dark:bg-gray-900">
       <div className="content-container">
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
           {stats.map((stat, index) => {
@@ -99,7 +99,7 @@ export default function StatsSection() {
                   <Icon className="h-7 w-7 sm:h-8 sm:w-8 mx-auto mb-3 sm:mb-4 text-[#E8DCC8] transition-colors group-hover:text-[#B8942F]" />
                 </motion.div>
                 <AnimatedCounter value={stat.value} suffix={stat.suffix} />
-                <p className="text-xs sm:text-sm text-gray-600 uppercase tracking-wider transition-colors group-hover:text-[#1A1A1A]">
+                <p className="text-xs sm:text-sm text-gray-600 dark:text-gray-400 uppercase tracking-wider transition-colors group-hover:text-[#1A1A1A] dark:group-hover:text-white">
                   {stat.label}
                 </p>
               </motion.div>
