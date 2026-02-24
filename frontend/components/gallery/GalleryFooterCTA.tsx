@@ -25,7 +25,7 @@ export default function GalleryFooterCTA() {
               {/* Left Side - CTA */}
               <div className="text-center lg:text-left">
                 <div className="section-label text-[#E8DCC8] mb-4">GET IN TOUCH</div>
-                <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4 leading-tight">
+                <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-heading font-bold text-white mb-4 leading-tight">
                   LET&apos;S TALK
                 </h2>
                 <p className="text-sm sm:text-base text-white/80 mb-6 max-w-md mx-auto lg:mx-0">
