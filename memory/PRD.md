@@ -1,114 +1,90 @@
 # LEXA Smart Home Platform - Product Requirements Document
 
-**Version**: 9.23  
+**Version**: 9.24  
 **Last Updated**: February 24, 2026  
-**Status**: Go-Live Phase 3 Complete
+**Status**: Sales Intelligence + Email Automation Complete
 
 ---
 
-## Latest Updates (v9.23)
+## Latest Updates (v9.24)
 
-### Go-Live Phase 3: Sales Intelligence System (Feb 24, 2026)
+### Automated Email Notifications for Hot Leads (Feb 24, 2026)
 
 **STATUS: COMPLETED & TESTED (100%)**
 
-#### Backend API (`/api/sales-intelligence/`)
-1. **Unified Lead Pipeline** - Aggregates leads from 7 sources:
-   - leads (10), contact_messages (16), consultation_bookings (5)
-   - experience_centre_bookings (26), calculator_submissions (54)
-   - exit_intent_leads (1), ai_chat_leads (1) = **113 total leads**
+#### Email Flow:
+1. **Internal Alert** (webadmin@ → sales@):
+   - Triggers when a lead is first scored at 70+ (hot)
+   - LEXA branded HTML with amber "HOT LEAD ALERT" banner
+   - Shows: score breakdown, budget, timeline, property type, message
+   - Includes "View in Dashboard" CTA button
+   - Displays auto-routed assignment (e.g. "Senior Consultant")
 
-2. **Lead Scoring Engine** - Auto-scores 0-100 based on:
-   - Budget tier (0-30pts), Timeline urgency (0-25pts)
-   - Property type (0-15pts), Source quality (0-25pts)
-   - Engagement level (0-15pts based on fields filled)
+2. **Customer Acknowledgement** (webadmin@ → customer, CC sales@):
+   - Triggers simultaneously with internal alert
+   - LEXA branded HTML with thank-you message
+   - Shows "What happens next?" steps
+   - Includes contact info and solutions link
+   - CC to sales@ so team stays in loop
 
-3. **Automated Lead Routing** - 5 default rules:
-   - High-Value Villas (score 70+) → Senior Consultant
-   - Experience Centre Leads → EC Manager
-   - Calculator High Budget (score 50+) → Project Specialist
-   - Consultation Requests → Consultation Team
-   - Default Round-Robin → Sales Team
+#### Technical Details:
+- Emails fire as `asyncio.create_task` (non-blocking background tasks)
+- `email_sent` flag in `sales_pipeline` collection prevents duplicate sends
+- `send_email` method updated with `from_email` and `cc_email` optional params
+- Gmail SMTP (smtp.gmail.com:587) with TLS
 
-4. **API Endpoints:**
-   - `GET /dashboard-stats` - KPIs, stage counts, score distribution, source breakdown
-   - `GET /pipeline` - Full lead list with filters (status, source, min_score, assigned_to)
-   - `GET /lead/{id}` - Detailed lead with score breakdown
-   - `PUT /lead/{id}/status` - Update pipeline stage
-   - `PUT /lead/{id}/assign` - Assign to team member
-   - `PUT /lead/{id}/score` - Re-score a lead
-   - `GET /routing-rules` - View routing rules
-   - `POST /routing-rules` - Create routing rule
-   - `DELETE /routing-rules/{id}` - Delete routing rule
-   - `GET /activity-feed` - Recent pipeline activities
-
-#### Frontend Dashboard (`/admin/sales-dashboard`)
-- **KPI Cards**: Total Leads (113), Avg Score (51.8), Pipeline Value (AED 17.4M), New This Week
-- **Pipeline Funnel**: Visual bar chart of stage distribution
-- **Lead Quality**: Hot (49) / Warm (5) / Cold (59) breakdown
-- **Source Breakdown**: Leads by origin channel
-- **Lead Table**: Sortable, filterable table with search, status filter, source filter
-- **Lead Detail Modal**: Slide-out panel with score breakdown, contact info, stage controls
-- **Stage Management**: Click-to-update stage buttons (New → Contacted → Qualified → Proposal → Won/Lost)
-
-#### Testing:
-- Backend: 20/20 tests passed (auth, stats, pipeline, filters, CRUD, routing)
-- Frontend: All UI elements verified
-- Test report: `/app/test_reports/iteration_12.json`
+#### Files Modified:
+- `/app/backend/services/email_service.py` - Added `send_hot_lead_alert`, `send_lead_acknowledgement`, CC support
+- `/app/backend/routes/sales_intelligence.py` - Added `_send_hot_lead_emails` background task, pipeline persistence
 
 ---
 
 ## Previous Updates
 
+### v9.23 - Go-Live Phase 3: Sales Intelligence (Feb 24, 2026)
+- Unified lead pipeline (113 leads from 7 sources)
+- Lead scoring engine (0-100, 5 weighted dimensions)
+- Automated routing (5 rules)
+- Sales Dashboard with KPIs, funnel, lead table, detail modal
+
 ### v9.22 - Dark Mode Audit (Feb 24, 2026)
-- Fixed ~1,500 hardcoded color instances across 100+ pages and 50+ components
-- Header logo switching, all widgets, all customer-facing pages
+- ~1,500 fixes across 100+ pages and 50+ components
 
 ### v9.21 - PPT Bug Fixes + Go-Live Phase 2 (Feb 24, 2026)
-- Fixed hero video, created /faq and /testimonials pages
-- Added TrustBadges to homepage and consultation page
-- Enhanced Experience Centre with social proof
+- Hero video, FAQ/testimonials pages, TrustBadges, social proof
+
+---
+
+## All Go-Live Phases Status
+
+| Phase | Focus | Status |
+|-------|-------|--------|
+| Phase 1 | Tracking, WhatsApp, Geo-SEO | COMPLETE |
+| Phase 2 | Social Proof, Partner Portals, Experience Centre | COMPLETE |
+| Phase 3 | Lead Routing, Scoring, Sales Dashboard, Email Alerts | COMPLETE |
 
 ---
 
 ## Upcoming Tasks
 
 ### P1: Client Portal
-- Build out client portal feature for customers to track their projects
+- Customer-facing portal to track project progress
 
-### P2: Remaining Minor Issues
-- Image 404s from external URLs (unsplash, old preview URLs)
+### P2: Enhancements
+- Lead export to CSV/Excel
+- Follow-up reminders/automation
+- Sales dashboard charts (conversion over time)
 
 ---
 
 ## Admin Access
-
-**URL**: `/admin`  
-**Username**: `admin`  
-**Password**: `lexa2026`
-
----
-
-## Key Technical Info
-
-- **Frontend**: Next.js, Tailwind CSS (class-based dark mode), Framer Motion
-- **Backend**: FastAPI with MongoDB (motor async driver)
-- **Database**: MongoDB `lexa_lifestyle` with 40+ collections
-- **Auth**: JWT via `JWT_SECRET_KEY` env variable
-- **Dark Mode**: ThemeContext with localStorage persistence
-- **Tracking**: GA4, Meta Pixel, Google Ads
-- **Booking**: Custom BookingModal (replaced Calendly)
-- **Sales Intelligence**: Unified pipeline across 7 lead sources
-
----
+**URL**: `/admin` | **Username**: `admin` | **Password**: `lexa2026`
 
 ## Version History
 
 | Version | Date | Changes |
 |---------|------|---------|
-| 9.23 | Feb 24, 2026 | Go-Live Phase 3: Sales Intelligence (scoring, routing, dashboard) |
+| 9.24 | Feb 24, 2026 | Hot lead email alerts (internal + customer ACK with CC) |
+| 9.23 | Feb 24, 2026 | Sales Intelligence system (scoring, routing, dashboard) |
 | 9.22 | Feb 24, 2026 | Site-wide dark mode audit (~1,500 fixes) |
-| 9.21 | Feb 24, 2026 | PPT bug fixes, Go-Live Phase 2 (TrustBadges, social proof) |
-| 9.20 | Feb 20, 2026 | Project galleries, font audit, speed optimization |
-| 9.15 | Feb 20, 2026 | Sora 2 hero video |
-| 9.13 | Feb 16, 2026 | Full SEO audit (760 FAQs, Schema markup) |
+| 9.21 | Feb 24, 2026 | PPT bug fixes, Go-Live Phase 2 |
