@@ -82,7 +82,7 @@ export default function FujairahClient() {
 
       <section className="py-20 bg-[#C9A962]">
         <div className="container mx-auto px-4 text-center">
-          <h2 className="text-3xl font-bold text-white mb-6">Ready for Fujairah Smart Living?</h2>
+          <h2 className="text-3xl font-heading font-bold text-white mb-6">Ready for Fujairah Smart Living?</h2>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button size="lg" className="bg-white text-[#C9A962] px-8 rounded-xl" asChild><a href="tel:+97142670470"><Phone className="mr-2 h-5 w-5" />Call Now</a></Button>
             <Button size="lg" variant="outline" className="border-white text-white rounded-xl" asChild><a href="https://wa.me/971501234567" target="_blank">WhatsApp Us</a></Button>
