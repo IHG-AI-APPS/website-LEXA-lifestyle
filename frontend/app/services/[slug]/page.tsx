@@ -332,7 +332,7 @@ export default function ServiceDetailPage() {
             </div>
 
             {/* Key Features */}
-            <div className="bg-gray-50 p-8 rounded-lg border-2 border-gray-200">
+            <div className="bg-gray-50 dark:bg-gray-800 p-8 rounded-lg border-2 border-gray-200 dark:border-gray-700">
               <h3 className="text-2xl font-bold mb-6">Key Features</h3>
               <ul className="space-y-3">
                 {(service.features || []).map((feature, index) => (
@@ -379,7 +379,7 @@ export default function ServiceDetailPage() {
             <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">Support Plans</h2>
             <div className="grid md:grid-cols-3 gap-6">
               {service.support_tiers.map((tier, index) => (
-                <div key={index} className="bg-white p-6 rounded-lg border-2 border-gray-200 hover:border-[#E8DCC8] transition">
+                <div key={index} className="bg-white dark:bg-gray-800 p-6 rounded-lg border-2 border-gray-200 dark:border-gray-700 hover:border-[#E8DCC8] transition">
                   <h3 className="text-xl font-bold mb-3">{tier.tier}</h3>
                   <p className="text-sm text-gray-600 mb-4">{tier.description}</p>
                   <div className="text-2xl font-bold text-[#E8DCC8]">{tier.price}</div>
@@ -434,7 +434,7 @@ export default function ServiceDetailPage() {
                   whileInView={{ opacity: 1, scale: 1 }}
                   transition={{ duration: 0.2 }}
                   viewport={{ once: true }}
-                  className="flex items-start gap-3 p-4 bg-gray-50 rounded-lg border border-gray-200"
+                  className="flex items-start gap-3 p-4 bg-gray-50 dark:bg-gray-800 rounded-lg border border-gray-200 dark:border-gray-700"
                 >
                   <FileText className="w-5 h-5 text-[#E8DCC8] flex-shrink-0 mt-0.5" />
                   <span className="text-sm text-gray-700">{item}</span>
@@ -457,24 +457,24 @@ export default function ServiceDetailPage() {
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
-                  className="bg-white p-8 rounded-lg border-2 border-gray-200"
+                  className="bg-white dark:bg-gray-800 p-8 rounded-lg border-2 border-gray-200 dark:border-gray-700"
                 >
                   <h3 className="text-2xl font-bold mb-4">{study.title}</h3>
                   {study.challenge && (
                     <div className="mb-4">
-                      <h4 className="font-semibold text-gray-900 mb-2">Challenge:</h4>
+                      <h4 className="font-semibold text-gray-900 dark:text-white mb-2">Challenge:</h4>
                       <p className="text-gray-700">{study.challenge}</p>
                     </div>
                   )}
                   {study.solution && (
                     <div className="mb-4">
-                      <h4 className="font-semibold text-gray-900 mb-2">Solution:</h4>
+                      <h4 className="font-semibold text-gray-900 dark:text-white mb-2">Solution:</h4>
                       <p className="text-gray-700">{study.solution}</p>
                     </div>
                   )}
                   {study.result && (
                     <div>
-                      <h4 className="font-semibold text-gray-900 mb-2">Result:</h4>
+                      <h4 className="font-semibold text-gray-900 dark:text-white mb-2">Result:</h4>
                       <p className="text-gray-700 font-medium">{study.result}</p>
                     </div>
                   )}
@@ -490,7 +490,7 @@ export default function ServiceDetailPage() {
         <section className="py-16">
           <div className="max-w-4xl mx-auto px-6">
             <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">Investment & Timeline</h2>
-            <div className="bg-gradient-to-br from-gray-50 to-white p-8 rounded-lg border-2 border-gray-200">
+            <div className="bg-gradient-to-br from-gray-50 dark:from-gray-800 to-white dark:to-gray-900 p-8 rounded-lg border-2 border-gray-200 dark:border-gray-700">
               <div className="grid md:grid-cols-2 gap-8">
                 {(service.pricing_guide.starting_from || service.pricing_guide.typical_range || service.pricing_guide.price_range) && (
                   <div>
@@ -526,7 +526,7 @@ export default function ServiceDetailPage() {
                 )}
               </div>
               {service.pricing_guide.includes && (
-                <div className="mt-6 pt-6 border-t border-gray-200">
+                <div className="mt-6 pt-6 border-t border-gray-200 dark:border-gray-700">
                   <h4 className="font-semibold mb-2">What&apos;s Included:</h4>
                   <p className="text-gray-700 text-sm">{service.pricing_guide.includes}</p>
                 </div>
@@ -549,7 +549,7 @@ export default function ServiceDetailPage() {
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.2 }}
                   viewport={{ once: true }}
-                  className="bg-white p-6 rounded-lg border border-gray-200"
+                  className="bg-white dark:bg-gray-800 p-6 rounded-lg border border-gray-200 dark:border-gray-700"
                 >
                   <h3 className="font-bold text-lg mb-3">{item.question}</h3>
                   <p className="text-gray-700 leading-relaxed">{item.answer}</p>
