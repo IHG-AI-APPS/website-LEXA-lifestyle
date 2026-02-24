@@ -1,117 +1,104 @@
 # LEXA Smart Home Platform - Product Requirements Document
 
-**Version**: 9.21  
+**Version**: 9.22  
 **Last Updated**: February 24, 2026  
-**Status**: Go-Live Phase 2 Complete
+**Status**: Dark Mode Audit Complete
 
 ---
 
-## Latest Updates (v9.21)
+## Latest Updates (v9.22)
 
-### PPT Bug Fixes + Go-Live Phase 2 (Feb 24, 2026)
+### Site-Wide Dark Mode Audit (Feb 24, 2026)
 
 **STATUS: COMPLETED**
 
-#### Bug Fixes Resolved:
+#### Scope
+Comprehensive audit and fix of **100+ pages** and **50+ components** for dark mode compatibility.
 
-1. **Hero Video Not Displaying (FIXED)**
-   - Root cause: Single video clip with `loop` attribute preventing clip cycling
-   - Fix: Added 6 video clips from `/videos/hero-v3/` and `/videos/hero/` directories
-   - Removed `loop` attribute, added `onError` handler for fallback
-   - Lightened overlay gradients for better video visibility
+#### Changes Made:
+1. **Shared Components (Batch 1):**
+   - `Header.tsx` - Logo switching (light/dark), nav link colors, CTA button, backdrop blur
+   - `StatsSection.tsx` - Section bg, counter text, label colors
+   - `SolutionsBentoGrid.tsx` - Grid bg, card borders, link colors
+   - `PageSkeleton.tsx` - Full rewrite with dark mode for all 5 variants
+   - `AIChatWidget.tsx` - Chat window, messages, input, suggestions
+   - `CookieConsent.tsx` - Banner bg, text, buttons
+   - `ExitIntentPopup.tsx` - Modal bg, text, bullet items
+   - `CommandPalette.tsx` - Dialog bg, search input, result items, footer
+   - `SocialProofWidget.tsx` - Floating widget bg and border
+   - `PackageComparison.tsx` - Section bg, card bg
+   - `TabbyWidget.tsx` - Widget bg, tab states
+   - `ProcessWheel.tsx` - Step card bg and borders
+   - `SwissServices.tsx` - Section backgrounds
+   - `Skeleton.tsx` - Loading states
 
-2. **/faq Page 404 (FIXED)**
-   - Created `/app/frontend/app/faq/page.tsx`
-   - Features: Search functionality, expandable accordion, 46 FAQs
-   - Sources: General FAQs + dynamic FAQs from solutions and services APIs
-   - Dark mode support included
+2. **Customer-Facing Pages (Batch 2):**
+   - `/contact` - Form, contact cards, business hours, social links
+   - `/about` - Timeline, values, partner grid, CTA
+   - `/brands`, `/brands/[slug]` - Brand cards, category filter, detail pages
+   - `/blog`, `/blog/[slug]` - Article cards, prose content, related articles
+   - `/solutions`, `/solutions/[slug]` - Solution cards, feature grids, FAQ sections
+   - `/services`, `/services/[slug]` - Service cards, process steps, case studies
+   - `/projects`, `/projects/[slug]` - Project grid, detail pages
+   - `/packages`, `/packages/[slug]` - Package cards, comparison tables
+   - `/consultation` - TrustBadges, consultation types
+   - `/experience-centre` - Social proof section, booking
+   - `/amc-packages` - Package tiers, feature lists
+   - `/careers` - Job listings, benefits
+   - `/intelligence` - Feature grid
+   - `/faq` - Already had dark mode
+   - `/testimonials` - Already had dark mode
 
-3. **/testimonials Page 404 (FIXED)**
-   - Created `/app/frontend/app/testimonials/page.tsx`
-   - Fetches 4 testimonials from `/api/testimonials`
-   - Star ratings, author info, project type badges
-   - Dark mode support included
+3. **Secondary Pages (Batch 3):**
+   - All location pages (7 cities)
+   - All persona pages (4 types)
+   - All (pages) directory pages (6 pages)
+   - Partner pages, resource pages, geo-SEO pages
+   - Privacy, terms, warranty, support pages
 
-4. **Admin Intelligence Features (VERIFIED WORKING)**
-   - All admin APIs functional (693 features, 5 control systems)
-   - Admin pages load correctly with CRUD operations
-   - Public intelligence page displays features with category filter
+#### Pattern Fixes Applied:
+| Pattern | Fix | Count |
+|---------|-----|-------|
+| `bg-white` | `→ dark:bg-gray-900/800` | ~550 instances |
+| `bg-gray-50` | `→ dark:bg-gray-800` | ~160 instances |
+| `bg-gray-100` | `→ dark:bg-gray-800` | ~80 instances |
+| `text-[#1A1A1A]` | `→ dark:text-white` | ~190 instances |
+| `text-gray-900` | `→ dark:text-white` | ~280 instances |
+| `text-gray-600/700` | `→ dark:text-gray-400/300` | ~200 instances |
+| `border-gray-200` | `→ dark:border-gray-700` | ~180 instances |
 
-#### Go-Live Phase 2 Implemented:
-
-1. **TrustBadges on Homepage**
-   - Compact variant added below hero section
-   - Shows: 15+ Years, 500+ Projects, 4.9 Rating
-
-2. **TrustBadges on Consultation Page**
-   - Compact variant after hero section
-   - Provides social proof before booking CTA
-
-3. **Experience Centre Social Proof Enhancement**
-   - Added trust stats section (4 metrics with icons)
-   - Added "What To Expect" row (Private Tour, Live Demos, Expert Consultation, No Obligation)
-   - Placed strategically before the booking CTA
-
-4. **One-time Scripts Cleanup**
-   - Deleted 24 one-time database migration/seed scripts from `/app/backend/scripts/`
-
-**Testing Status:**
-- Backend: 100% (32/32 tests passed across 2 test runs)
-- Frontend: 100% (all pages load, UI verified)
-- Test reports: `/app/test_reports/iteration_9.json`, `/app/test_reports/iteration_10.json`
-
-**Files Created:**
-- `/app/frontend/app/faq/page.tsx`
-- `/app/frontend/app/testimonials/page.tsx`
-- `/app/backend/tests/test_ppt_bug_fixes.py`
-- `/app/backend/tests/test_phase2_social_proof.py`
-
-**Files Modified:**
-- `/app/frontend/components/gallery/HeroCurator.tsx` - Multi-clip video, lighter overlay
-- `/app/frontend/app/page.tsx` - Added TrustBadges import and placement
-- `/app/frontend/app/consultation/page.tsx` - Added TrustBadges
-- `/app/frontend/app/experience-centre/page.tsx` - Added social proof section
-
----
-
-## Previous Updates
-
-See version history below for all previous changes (v9.0 - v9.20).
+#### Testing:
+- Test report: `/app/test_reports/iteration_11.json`
+- 19/19 main pages return HTTP 200
+- Theme toggle verified working
+- Logo correctly switches between light/dark variants
+- No action items from testing agent
 
 ---
 
-## Site Architecture
+## Previous Session Updates (v9.21)
 
-### Total Pages: 195+ (added /faq, /testimonials)
-
-**Main Sections:**
-- Solutions: 50+ pages
-- Services: 15+ pages
-- Packages: 10+ pages
-- Intelligence: 5+ pages
-- Admin: 25+ pages
-- Other (About, Contact, Blog, FAQ, Testimonials, etc.): 85+ pages
+### PPT Bug Fixes + Go-Live Phase 2 (Feb 24, 2026)
+- Fixed hero video (6 clips, lighter overlay)
+- Created /faq page (searchable, 46 FAQs)
+- Created /testimonials page (4 dynamic cards)
+- Verified admin intelligence features working
+- Added TrustBadges to homepage and consultation page
+- Enhanced Experience Centre with social proof section
+- Cleaned up 24 one-time migration scripts
 
 ---
 
 ## Remaining Issues
 
-### Dark Mode (P1 - In Progress)
-- Many components across the site still use hardcoded colors without `dark:` variants
-- Key affected pages: /contact, /amc-packages, some admin pages
-- New pages (/faq, /testimonials) already have dark mode support
-
-### Minor Issues (P2)
-- Image warning: '/lexa-black.png' has width/height modified
-- ChunkLoadError for SocialProofWidget during automated testing (not affecting real users)
+### P2: Minor Aesthetic Gaps
+- Some `text-black` classes in location pages on intentionally dark sections
+- ROI Calculator uses intentional dark UI with glass morphism effects
+- Solution/service number text-gray-300 is aesthetic, not a dark mode bug
 
 ---
 
 ## Upcoming Tasks
-
-### P0: Complete Dark Mode Audit
-- Systematic grep for hardcoded `bg-white`, `text-black`, `#1A1A1A` without `dark:` variants
-- Fix contact page, amc-packages page, and remaining components
 
 ### P1: Go-Live Phase 3
 - Automated lead routing
@@ -120,9 +107,6 @@ See version history below for all previous changes (v9.0 - v9.20).
 
 ### P2: Client Portal
 - Build out client portal feature
-
-### P2: Minor Cleanup
-- Fix '/lexa-black.png' image warning (add width: auto)
 
 ---
 
@@ -136,23 +120,12 @@ See version history below for all previous changes (v9.0 - v9.20).
 
 ## Key Technical Info
 
-- **Frontend**: Next.js with Tailwind CSS, Framer Motion
+- **Frontend**: Next.js with Tailwind CSS (dark mode via `class` strategy), Framer Motion
 - **Backend**: FastAPI with MongoDB
-- **Video**: Sora 2 generated hero clips (7 videos, 15.3MB total)
-- **Images**: 215+ AI-generated images (solutions, services, projects, galleries)
-- **Tracking**: GA4, Meta Pixel, Google Ads (configurable via admin)
+- **Dark Mode**: ThemeContext.tsx manages state, stored in localStorage as `lexa-theme`, respects system preference
+- **Tracking**: GA4, Meta Pixel, Google Ads
 - **Booking**: Custom BookingModal (replaced Calendly)
 - **i18n**: English/Arabic with JSON locale files
-
----
-
-## 3rd Party Integrations
-
-- Sora 2 (video generation via emergentintegrations)
-- OpenAI GPT Image Generation (product imagery)
-- Gmail SMTP (email notifications)
-- Google Maps (contact page)
-- GA4, Meta Pixel, Google Ads (tracking)
 
 ---
 
@@ -160,16 +133,10 @@ See version history below for all previous changes (v9.0 - v9.20).
 
 | Version | Date | Changes |
 |---------|------|---------|
-| 9.21 | Feb 24, 2026 | PPT bug fixes (hero video, FAQ, testimonials), Go-Live Phase 2 (TrustBadges, social proof) |
-| 9.20 | Feb 20, 2026 | Project gallery images (100 total), font audit, speed optimization |
-| 9.19 | Feb 20, 2026 | Project AI images (20 projects) |
-| 9.18 | Feb 20, 2026 | Service AI images (10 services) |
-| 9.17 | Feb 20, 2026 | Site-wide consistency audit |
-| 9.16 | Feb 20, 2026 | AI image replacement (85 solutions) |
-| 9.15 | Feb 20, 2026 | Sora 2 hero video |
-| 9.14 | Feb 20, 2026 | Language context refactoring |
+| 9.22 | Feb 24, 2026 | Site-wide dark mode audit (100+ pages, 50+ components, ~1500 fixes) |
+| 9.21 | Feb 24, 2026 | PPT bug fixes (hero video, FAQ, testimonials), Go-Live Phase 2 |
+| 9.20 | Feb 20, 2026 | Project gallery images, font audit, speed optimization |
+| 9.15 | Feb 20, 2026 | Sora 2 hero video, language refactoring |
 | 9.13 | Feb 16, 2026 | Full SEO audit (760 FAQs, Schema markup) |
-| 9.11 | Feb 16, 2026 | Add Feature button fix |
 | 9.10 | Feb 15, 2026 | Tracking pixels admin |
 | 9.9 | Feb 15, 2026 | Footer redesign, FAQ enhancement |
-| 9.8 | Feb 15, 2026 | Work With Us page |
