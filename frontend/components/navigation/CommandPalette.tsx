@@ -414,17 +414,17 @@ export default function CommandPalette() {
                           key={command.id}
                           value={command.title}
                           onSelect={command.action}
-                          className="flex items-center gap-3 px-3 py-2 rounded-lg cursor-pointer hover:bg-gray-100 data-[selected=true]:bg-gray-100"
+                          className="flex items-center gap-3 px-3 py-2 rounded-lg cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-800 data-[selected=true]:bg-gray-100 dark:data-[selected=true]:bg-gray-800"
                         >
-                          <div className="flex items-center justify-center w-8 h-8 bg-blue-50 rounded-lg text-blue-600">
+                          <div className="flex items-center justify-center w-8 h-8 bg-blue-50 dark:bg-blue-900/30 rounded-lg text-blue-600 dark:text-blue-400">
                             {command.icon}
                           </div>
                           <div className="flex-1">
-                            <div className="text-sm font-medium text-gray-900">
+                            <div className="text-sm font-medium text-gray-900 dark:text-white">
                               {command.title}
                             </div>
                             {command.description && (
-                              <div className="text-xs text-gray-500">
+                              <div className="text-xs text-gray-500 dark:text-gray-400">
                                 {command.description}
                               </div>
                             )}
@@ -444,17 +444,17 @@ export default function CommandPalette() {
                           key={command.id}
                           value={command.title}
                           onSelect={command.action}
-                          className="flex items-center gap-3 px-3 py-2 rounded-lg cursor-pointer hover:bg-gray-100 data-[selected=true]:bg-gray-100"
+                          className="flex items-center gap-3 px-3 py-2 rounded-lg cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-800 data-[selected=true]:bg-gray-100 dark:data-[selected=true]:bg-gray-800"
                         >
-                          <div className="flex items-center justify-center w-8 h-8 bg-green-50 rounded-lg text-green-600">
+                          <div className="flex items-center justify-center w-8 h-8 bg-green-50 dark:bg-green-900/30 rounded-lg text-green-600 dark:text-green-400">
                             {command.icon}
                           </div>
                           <div className="flex-1">
-                            <div className="text-sm font-medium text-gray-900">
+                            <div className="text-sm font-medium text-gray-900 dark:text-white">
                               {command.title}
                             </div>
                             {command.description && (
-                              <div className="text-xs text-gray-500">
+                              <div className="text-xs text-gray-500 dark:text-gray-400">
                                 {command.description}
                               </div>
                             )}
@@ -474,17 +474,17 @@ export default function CommandPalette() {
                           key={command.id}
                           value={command.title}
                           onSelect={command.action}
-                          className="flex items-center gap-3 px-3 py-2 rounded-lg cursor-pointer hover:bg-gray-100 data-[selected=true]:bg-gray-100"
+                          className="flex items-center gap-3 px-3 py-2 rounded-lg cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-800 data-[selected=true]:bg-gray-100 dark:data-[selected=true]:bg-gray-800"
                         >
-                          <div className="flex items-center justify-center w-8 h-8 bg-purple-50 rounded-lg text-purple-600">
+                          <div className="flex items-center justify-center w-8 h-8 bg-purple-50 dark:bg-purple-900/30 rounded-lg text-purple-600 dark:text-purple-400">
                             {command.icon}
                           </div>
                           <div className="flex-1">
-                            <div className="text-sm font-medium text-gray-900">
+                            <div className="text-sm font-medium text-gray-900 dark:text-white">
                               {command.title}
                             </div>
                             {command.description && (
-                              <div className="text-xs text-gray-500">
+                              <div className="text-xs text-gray-500 dark:text-gray-400">
                                 {command.description}
                               </div>
                             )}
@@ -504,13 +504,13 @@ export default function CommandPalette() {
                           key={command.id}
                           value={command.title}
                           onSelect={command.action}
-                          className="flex items-center gap-3 px-3 py-2 rounded-lg cursor-pointer hover:bg-gray-100 data-[selected=true]:bg-gray-100"
+                          className="flex items-center gap-3 px-3 py-2 rounded-lg cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-800 data-[selected=true]:bg-gray-100 dark:data-[selected=true]:bg-gray-800"
                         >
-                          <div className="flex items-center justify-center w-8 h-8 bg-orange-50 rounded-lg text-orange-600">
+                          <div className="flex items-center justify-center w-8 h-8 bg-orange-50 dark:bg-orange-900/30 rounded-lg text-orange-600 dark:text-orange-400">
                             {command.icon}
                           </div>
                           <div className="flex-1">
-                            <div className="text-sm font-medium text-gray-900">
+                            <div className="text-sm font-medium text-gray-900 dark:text-white">
                               {command.title}
                             </div>
                             {command.description && (
