@@ -33,21 +33,21 @@ export default function CareersPage() {
           <h2 className="text-3xl font-bold mb-12">Why LEXA Lifestyle?</h2>
           
           <div className="grid md:grid-cols-3 gap-8">
-            <div className="p-6 bg-gray-50">
+            <div className="p-6 bg-gray-50 dark:bg-gray-800">
               <h3 className="text-xl font-semibold mb-3">Innovation & Excellence</h3>
               <p className="text-gray-600">
                 Work with cutting-edge technologies from world-leading brands like Savant, Crestron, Bowers & Wilkins, and Sony.
               </p>
             </div>
             
-            <div className="p-6 bg-gray-50">
+            <div className="p-6 bg-gray-50 dark:bg-gray-800">
               <h3 className="text-xl font-semibold mb-3">Growth & Learning</h3>
               <p className="text-gray-600">
                 Continuous training, certifications, and career development opportunities in smart home and AV technologies.
               </p>
             </div>
             
-            <div className="p-6 bg-gray-50">
+            <div className="p-6 bg-gray-50 dark:bg-gray-800">
               <h3 className="text-xl font-semibold mb-3">Prestigious Projects</h3>
               <p className="text-gray-600">
                 Work on high-end residential villas, luxury hotels, and commercial projects across Dubai and the UAE.
