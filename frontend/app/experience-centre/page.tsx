@@ -318,13 +318,13 @@ export default function ExperienceCentrePage() {
               >
                 <stat.icon className="w-6 h-6 text-[#9F8B65] mx-auto mb-2" />
                 <div className="text-2xl font-bold text-[#1A1A1A] dark:text-white">{stat.value}</div>
-                <div className="text-sm text-[#4A4A4A]">{stat.label}</div>
+                <div className="text-sm text-[#4A4A4A] dark:text-gray-300">{stat.label}</div>
               </motion.div>
             ))}
           </div>
           <div className="text-center">
             <p className="text-xs uppercase tracking-[0.3em] text-[#9F8B65] mb-3">What To Expect</p>
-            <div className="flex flex-wrap justify-center gap-4 text-sm text-[#4A4A4A]">
+            <div className="flex flex-wrap justify-center gap-4 text-sm text-[#4A4A4A] dark:text-gray-300">
               {['Private 1-on-1 Tour', 'Live System Demos', 'Expert Consultation', 'No Obligation'].map((item, i) => (
                 <span key={i} className="flex items-center gap-1.5">
                   <CheckCircle className="w-4 h-4 text-green-600" />
