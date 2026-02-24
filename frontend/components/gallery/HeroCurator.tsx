@@ -52,6 +52,7 @@ export default function HeroCurator({ onPersonaClick }: HeroCuratorProps) {
           className={`h-full w-full object-cover transition-opacity duration-500 ${isFading ? 'opacity-0' : 'opacity-100'}`}
           autoPlay
           muted
+          loop
           playsInline
           preload="metadata"
           onLoadedData={() => setIsLoaded(true)}
