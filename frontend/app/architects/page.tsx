@@ -237,7 +237,7 @@ export default function ArchitectsPage() {
         <div className="container mx-auto px-8 lg:px-16">
           <div className="max-w-4xl mx-auto">
             <div className="text-center mb-12">
-              <h2 className="text-4xl sm:text-5xl font-bold mb-4 ">Why Architects Trust LEXA</h2>
+              <h2 className="text-4xl sm:text-5xl font-heading font-bold mb-4 ">Why Architects Trust LEXA</h2>
               <p className="text-xl text-gray-600">
                 We speak your language - technical, precise, reliable
               </p>
