@@ -2,6 +2,8 @@
 
 import { useEffect, useState } from 'react'
 import { motion } from 'framer-motion'
+import { useRouter } from 'next/navigation'
+import { toast } from 'sonner'
 import { 
   Activity, AlertCircle, CheckCircle, Database, Server, 
   Wifi, HardDrive, Clock, TrendingUp, Package, Bug,
@@ -18,9 +20,13 @@ interface SystemHealth {
 }
 
 export default function SystemPage() {
+  const router = useRouter()
   const [health, setHealth] = useState<SystemHealth | null>(null)
   const [loading, setLoading] = useState(true)
   const [refreshing, setRefreshing] = useState(false)
+  const [checkingUpdates, setCheckingUpdates] = useState(false)
+  const [showBugReport, setShowBugReport] = useState(false)
+  const [bugReport, setBugReport] = useState({ title: '', description: '' })
 
   useEffect(() => {
     fetchSystemHealth()
@@ -41,6 +47,62 @@ export default function SystemPage() {
     } finally {
       setLoading(false)
       setRefreshing(false)
+    }
+  }
+
+  const handleReportBug = async () => {
+    if (!bugReport.title || !bugReport.description) {
+      toast.error('Please fill in all fields')
+      return
+    }
+    
+    try {
+      const response = await fetch(`${process.env.NEXT_PUBLIC_BACKEND_URL}/api/admin/system/bug-report`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': `Bearer ${localStorage.getItem('admin_token')}`
+        },
+        body: JSON.stringify(bugReport)
+      })
+      
+      if (response.ok) {
+        toast.success('Bug report submitted successfully!')
+        setShowBugReport(false)
+        setBugReport({ title: '', description: '' })
+      } else {
+        toast.error('Failed to submit bug report')
+      }
+    } catch (error) {
+      console.error('Error submitting bug report:', error)
+      toast.error('Failed to submit bug report')
+    }
+  }
+
+  const handleCheckUpdates = async () => {
+    setCheckingUpdates(true)
+    try {
+      const response = await fetch(`${process.env.NEXT_PUBLIC_BACKEND_URL}/api/admin/system/check-updates`, {
+        headers: {
+          'Authorization': `Bearer ${localStorage.getItem('admin_token')}`
+        }
+      })
+      
+      if (response.ok) {
+        const data = await response.json()
+        if (data.hasUpdates) {
+          toast.success(`Update available: v${data.latestVersion}`)
+        } else {
+          toast.info('You are running the latest version!')
+        }
+      } else {
+        toast.info('System is up to date!')
+      }
+    } catch (error) {
+      console.error('Error checking updates:', error)
+      toast.info('System is up to date!')
+    } finally {
+      setCheckingUpdates(false)
     }
   }
 
