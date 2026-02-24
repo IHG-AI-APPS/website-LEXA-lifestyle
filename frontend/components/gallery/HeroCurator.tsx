@@ -56,11 +56,14 @@ export default function HeroCurator({ onPersonaClick }: HeroCuratorProps) {
           className={`h-full w-full object-cover transition-opacity duration-500 ${isFading ? 'opacity-0' : 'opacity-100'}`}
           autoPlay
           muted
-          loop
           playsInline
-          preload="metadata"
+          preload="auto"
           onLoadedData={() => setIsLoaded(true)}
           onEnded={handleVideoEnd}
+          onError={() => {
+            // Skip to next clip on error
+            setCurrentClip((prev) => (prev + 1) % HERO_CLIPS.length)
+          }}
         >
           <source src={HERO_CLIPS[currentClip]} type="video/mp4" />
         </video>
