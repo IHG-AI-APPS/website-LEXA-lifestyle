@@ -90,7 +90,7 @@ export default function ContactPage() {
             <span className="text-xs tracking-[0.3em] uppercase text-gray-400 font-medium mb-4 block">
               {language === 'ar' ? 'تواصل معنا' : 'Get In Touch'}
             </span>
-            <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6">
+            <h1 className="text-3xl md:text-4xl lg:text-5xl font-heading font-bold mb-6">
               {language === 'ar' ? 'لنبدأ مشروعك' : "Let's Start"} <span className="text-gray-400">{language === 'ar' ? '' : 'Your Project'}</span>
             </h1>
             <div className="h-px w-32 bg-[#9F8B65] mb-6 mx-auto" />
