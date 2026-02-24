@@ -1738,6 +1738,7 @@ app.include_router(lead_enhancement.router)  # Social proof & lead capture
 app.include_router(seo_enhancement.router)  # SEO schema markup
 app.include_router(uploads.router)  # File uploads
 app.include_router(analytics.router)  # Analytics tracking
+app.include_router(sales_intelligence.router)  # Sales intelligence & lead routing
 app.include_router(schedule_visit.router)  # Schedule visit booking
 app.include_router(smart_recommendations.router)  # Smart AI recommendations
 app.include_router(geo_pages.router)  # Geo pages management
