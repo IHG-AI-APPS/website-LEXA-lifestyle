@@ -239,7 +239,7 @@ export default function PackagesPage() {
       </section>
 
       {/* CTA */}
-      <section className="py-10 bg-gray-50 border-t">
+      <section className="py-10 bg-gray-50 dark:bg-gray-800 border-t dark:border-gray-700">
         <div className="container mx-auto px-6 lg:px-12">
           <div className="max-w-7xl mx-auto">
             <div className="flex flex-col md:flex-row items-center justify-between gap-6">

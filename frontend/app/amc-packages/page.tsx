@@ -155,7 +155,7 @@ export default function AMCPackagesPage() {
 
   return (
     <>
-      <div className="min-h-screen bg-white">
+      <div className="min-h-screen bg-white dark:bg-gray-900">
         {/* Hero Section */}
         <section className="relative bg-gradient-to-br from-blue-900 via-[#1A1A1A] to-gray-900 text-white py-20 sm:py-32 overflow-hidden">
           <div className="absolute inset-0 opacity-10">

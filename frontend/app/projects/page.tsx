@@ -44,7 +44,7 @@ export default function ProjectsPage() {
 
   if (loading) {
     return (
-      <div className="min-h-screen bg-[#F9F9F7] pt-20">
+      <div className="min-h-screen bg-[#F9F9F7] dark:bg-gray-900 pt-20">
         <div className="container mx-auto px-4 py-8">
           <div className="animate-pulse">
             <div className="h-8 bg-gray-200 rounded w-1/4 mb-6"></div>

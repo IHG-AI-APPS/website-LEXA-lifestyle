@@ -63,7 +63,7 @@ export default function SolutionsPage() {
 
   if (loading) {
     return (
-      <div className="min-h-screen bg-white pt-20 flex items-center justify-center">
+      <div className="min-h-screen bg-white dark:bg-gray-900 pt-20 flex items-center justify-center">
         <div className="text-gray-400">Loading solutions...</div>
       </div>
     )
