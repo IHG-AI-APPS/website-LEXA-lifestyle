@@ -180,7 +180,7 @@ export default function ROICalculatorPage() {
               <span className="text-sm text-emerald-400 font-medium">Dubai Smart Home Investment Analysis</span>
             </div>
             
-            <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold tracking-tight mb-6">
+            <h1 className="text-5xl sm:text-6xl lg:text-7xl font-heading font-bold tracking-tight mb-6">
               <span className="text-white">Calculate Your</span>
               <br />
               <span className="bg-gradient-to-r from-emerald-400 via-teal-400 to-cyan-400 bg-clip-text text-transparent">
