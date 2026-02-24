@@ -225,7 +225,7 @@ export default function AboutPage() {
                   whileInView={{ opacity: 1, scale: 1 }}
                   transition={{ duration: 0.5, delay: 0.15 }}
                   viewport={{ once: true }}
-                  className="border border-gray-200 p-6 flex items-center justify-center text-center"
+                  className="border border-gray-200 dark:border-gray-700 p-6 flex items-center justify-center text-center"
                 >
                   <span className="text-lg font-medium text-gray-600">{partner}</span>
                 </motion.div>
@@ -274,7 +274,7 @@ export default function AboutPage() {
               </div>
               <Button
                 size="lg"
-                className="bg-white hover:bg-gray-100 text-charcoal px-12"
+                className="bg-white dark:bg-gray-800 hover:bg-gray-100 dark:hover:bg-gray-700 text-charcoal dark:text-gray-200 px-12"
                 onClick={() => setShowConsultationForm(true)}
               >
                 {language === 'ar' ? 'احجز زيارة للصالة' : 'Book Showroom Visit'}
