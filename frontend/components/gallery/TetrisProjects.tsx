@@ -37,11 +37,11 @@ export default function TetrisProjects() {
 
   if (loading) {
     return (
-      <section className="bg-[#F9F9F7] py-10 md:py-12">
+      <section className="bg-[#F9F9F7] dark:bg-[#0a0f1a] py-10 md:py-12">
         <div className="content-container">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
             {[1, 2, 3, 4].map((i) => (
-              <div key={i} className="h-[380px] animate-pulse bg-zinc-200 rounded-lg" />
+              <div key={i} className="h-[380px] animate-pulse bg-zinc-200 dark:bg-zinc-800 rounded-lg" />
             ))}
           </div>
         </div>
@@ -50,7 +50,7 @@ export default function TetrisProjects() {
   }
 
   return (
-    <section className="bg-[#F9F9F7] py-10 md:py-12">
+    <section className="bg-[#F9F9F7] dark:bg-[#0a0f1a] py-10 md:py-12">
       <div className="content-container">
         {/* Section Header - Compact */}
         <motion.div
@@ -60,11 +60,11 @@ export default function TetrisProjects() {
           transition={{ duration: 0.6 }}
           className="mb-10 text-center md:text-left"
         >
-          <div className="section-label mb-3">OUR PORTFOLIO</div>
-          <h2 className="h2 text-[#1A1A1A] mb-4">
+          <div className="section-label mb-3 dark:text-gray-400">OUR PORTFOLIO</div>
+          <h2 className="h2 text-[#1A1A1A] dark:text-white mb-4">
             Featured Projects
           </h2>
-          <p className="text-base text-[#4A4A4A] max-w-xl">
+          <p className="text-base text-[#4A4A4A] dark:text-gray-300 max-w-xl">
             A curated collection of distinguished projects across the region.
           </p>
         </motion.div>
