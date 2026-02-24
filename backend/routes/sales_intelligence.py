@@ -352,6 +352,42 @@ async def get_routing_rules() -> list:
     return rules if rules else DEFAULT_ROUTING_RULES
 
 
+async def _send_hot_lead_emails(lead: dict):
+    """Background task: send hot lead alert to sales + acknowledgement to customer."""
+    try:
+        # 1. Internal alert: webadmin@ → sales@
+        await EmailService.send_hot_lead_alert(
+            lead_name=lead.get("name", ""),
+            lead_email=lead.get("email", ""),
+            lead_phone=lead.get("phone", ""),
+            lead_score=lead.get("lead_score", 0),
+            lead_source=lead.get("source", "direct"),
+            score_breakdown=lead.get("score_breakdown", {}),
+            assigned_to=lead.get("assigned_to", "Sales Team"),
+            budget_range=lead.get("budget_range", ""),
+            property_type=lead.get("property_type", ""),
+            timeline=lead.get("timeline", ""),
+            message=lead.get("message", ""),
+        )
+
+        # 2. Customer acknowledgement: webadmin@ → customer, CC sales@
+        if lead.get("email"):
+            await EmailService.send_lead_acknowledgement(
+                customer_name=lead.get("name", ""),
+                customer_email=lead["email"],
+                lead_source=lead.get("source", "direct"),
+            )
+
+        # Mark email as sent
+        await db.sales_pipeline.update_one(
+            {"lead_id": lead["id"]},
+            {"$set": {"email_sent": True}}
+        )
+        logger.info(f"Hot lead emails sent for {lead.get('email')} (score: {lead.get('lead_score')})")
+    except Exception as e:
+        logger.error(f"Failed to send hot lead emails: {e}")
+
+
 # ===== ENDPOINTS =====
 
 @router.get("/pipeline")
