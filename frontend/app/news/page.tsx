@@ -22,7 +22,10 @@ export default function NewsPage() {
   const [loading, setLoading] = useState(true)
 
   useEffect(() => {
-    fetch(`${process.env.NEXT_PUBLIC_BACKEND_URL}/api/news`)
+    fetch(`${process.env.NEXT_PUBLIC_BACKEND_URL}/api/news?_t=${Date.now()}`, {
+      cache: 'no-store',
+      headers: { 'Cache-Control': 'no-cache' }
+    })
       .then(res => res.json())
       .then(data => {
         setNews(data)
