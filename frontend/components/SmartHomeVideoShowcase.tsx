@@ -106,7 +106,7 @@ export default function SmartHomeVideoShowcase({ className = '', autoPlay = true
           viewport={{ once: true }}
           className="text-center mb-12"
         >
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-heading font-bold text-white mb-4">
             Experience Intelligent Living
           </h2>
           <p className="text-lg text-white/70 max-w-2xl mx-auto">
