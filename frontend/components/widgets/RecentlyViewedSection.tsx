@@ -315,8 +315,8 @@ export default function RecentlyViewedSection({
           <div className="mt-4 text-center">
             <button className="text-sm text-[#C9A962] hover:text-[#1A1A1A] dark:hover:text-white font-medium transition-colors">
               {language === 'ar' 
-                ? `عرض الكل (${items.length})` 
-                : `View all (${items.length})`}
+                ? `عرض الكل (${validatedItems.length})` 
+                : `View all (${validatedItems.length})`}
             </button>
           </div>
         )}
