@@ -148,7 +148,7 @@ export default function BrandDetailPage({ params }: { params: { slug: string } }
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
             >
-              <div className="bg-white p-6 md:p-8 rounded-lg shadow-2xl mb-6 inline-block">
+              <div className="bg-white dark:bg-gray-800 p-6 md:p-8 rounded-lg shadow-2xl mb-6 inline-block">
                 <div className="relative w-32 md:w-48 h-16 md:h-24">
                   <SafeImage
                     src={brand.logo}
@@ -190,7 +190,7 @@ export default function BrandDetailPage({ params }: { params: { slug: string } }
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6 }}
-                  className="border border-gray-200 p-4 md:p-8 text-center"
+                  className="border border-gray-200 dark:border-gray-700 p-4 md:p-8 text-center"
                 >
                   <MapPin className="w-8 h-8 md:w-10 md:h-10 mx-auto mb-3 md:mb-4 text-charcoal" />
                   <div className="text-xs tracking-wider uppercase text-gray-400 mb-1 md:mb-2">Origin</div>
@@ -202,7 +202,7 @@ export default function BrandDetailPage({ params }: { params: { slug: string } }
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: 0.1 }}
-                  className="border border-gray-200 p-4 md:p-8 text-center"
+                  className="border border-gray-200 dark:border-gray-700 p-4 md:p-8 text-center"
                 >
                   <Calendar className="w-8 h-8 md:w-10 md:h-10 mx-auto mb-3 md:mb-4 text-charcoal" />
                   <div className="text-xs tracking-wider uppercase text-gray-400 mb-1 md:mb-2">Est.</div>
@@ -213,7 +213,7 @@ export default function BrandDetailPage({ params }: { params: { slug: string } }
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.2 }}
-                className="border border-gray-200 p-4 md:p-8 text-center"
+                className="border border-gray-200 dark:border-gray-700 p-4 md:p-8 text-center"
               >
                 <Award className="w-8 h-8 md:w-10 md:h-10 mx-auto mb-3 md:mb-4 text-charcoal" />
                 <div className="text-xs tracking-wider uppercase text-gray-400 mb-1 md:mb-2">Status</div>
@@ -224,7 +224,7 @@ export default function BrandDetailPage({ params }: { params: { slug: string } }
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: 0.3 }}
-                  className="border border-gray-200 p-4 md:p-8 text-center"
+                  className="border border-gray-200 dark:border-gray-700 p-4 md:p-8 text-center"
                 >
                   <ExternalLink className="w-8 h-8 md:w-10 md:h-10 mx-auto mb-3 md:mb-4 text-charcoal" />
                   <div className="text-xs tracking-wider uppercase text-gray-400 mb-1 md:mb-2">Website</div>
@@ -246,7 +246,7 @@ export default function BrandDetailPage({ params }: { params: { slug: string } }
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.4 }}
-                className="bg-gray-50 border border-gray-200 p-6 md:p-8 mb-8 md:mb-12"
+                className="bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 p-6 md:p-8 mb-8 md:mb-12"
               >
                 <h2 className="text-xl md:text-2xl font-semibold mb-4 md:mb-6">Why Choose {brand.name}?</h2>
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 md:gap-4">
@@ -265,7 +265,7 @@ export default function BrandDetailPage({ params }: { params: { slug: string } }
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.5 }}
-              className="border border-gray-200 p-6 md:p-12 mb-8 md:mb-12"
+              className="border border-gray-200 dark:border-gray-700 p-6 md:p-12 mb-8 md:mb-12"
             >
               <h2 className="text-2xl md:text-4xl font-semibold mb-4 md:mb-6">About {brand.name}</h2>
               <div className="h-px w-24 bg-gradient-to-r from-charcoal to-transparent mb-4 md:mb-6" />
@@ -287,14 +287,14 @@ export default function BrandDetailPage({ params }: { params: { slug: string } }
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.6 }}
-                className="border border-gray-200 p-6 md:p-12 mb-8 md:mb-12"
+                className="border border-gray-200 dark:border-gray-700 p-6 md:p-12 mb-8 md:mb-12"
               >
                 <h2 className="text-2xl md:text-4xl font-semibold mb-4 md:mb-6">Product Categories</h2>
                 <div className="h-px w-24 bg-gradient-to-r from-charcoal to-transparent mb-4 md:mb-6" />
                 <div className="flex flex-wrap gap-2 md:gap-3">
                   {brand.categories.map((category: string) => (
                     <Link key={category} href={`/products?category=${category}`}>
-                      <div className="px-4 md:px-6 py-2 md:py-3 border border-gray-300 hover:border-charcoal hover:bg-gray-50 transition-all cursor-pointer">
+                      <div className="px-4 md:px-6 py-2 md:py-3 border border-gray-300 dark:border-gray-600 hover:border-charcoal hover:bg-gray-50 dark:hover:bg-gray-700 transition-all cursor-pointer">
                         <span className="font-medium text-sm md:text-base">{category}</span>
                       </div>
                     </Link>
@@ -338,7 +338,7 @@ export default function BrandDetailPage({ params }: { params: { slug: string } }
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.5, delay: 0.2 }}
                     viewport={{ once: true }}
-                    className="bg-white border border-gray-200 overflow-hidden group hover:shadow-lg transition-shadow"
+                    className="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 overflow-hidden group hover:shadow-lg transition-shadow"
                   >
                     {product.image && (
                       <div className="relative h-48 md:h-56 bg-gray-100">
@@ -405,7 +405,7 @@ export default function BrandDetailPage({ params }: { params: { slug: string } }
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Button 
                   size="lg" 
-                  className="bg-white hover:bg-gray-100 text-charcoal px-8 md:px-12"
+                  className="bg-white dark:bg-gray-800 hover:bg-gray-100 dark:hover:bg-gray-700 text-charcoal dark:text-gray-200 px-8 md:px-12"
                   onClick={() => setShowConsultationForm(true)}
                 >
                   Villa Technology Review
