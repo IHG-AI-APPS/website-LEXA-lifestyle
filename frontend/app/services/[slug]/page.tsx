@@ -209,7 +209,7 @@ export default function ServiceDetailPage() {
 
   if (loading) {
     return (
-      <div className="min-h-screen bg-white pt-20">
+      <div className="min-h-screen bg-white dark:bg-gray-900 pt-20">
         <div className="container mx-auto px-4 py-8">
           <div className="animate-pulse">
             <div className="h-64 bg-gray-200 rounded-xl mb-8"></div>
@@ -272,7 +272,7 @@ export default function ServiceDetailPage() {
   }
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-white dark:bg-gray-900">
       {/* Hero Section */}
       <section className="relative h-[60vh] min-h-[500px]">
         <SafeImage
