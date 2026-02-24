@@ -41,7 +41,7 @@ export default function BlogPage() {
   return (
     <div className="min-h-screen bg-white dark:bg-gray-900 pt-20">
       {/* Hero - Centered */}
-      <section className="py-16 md:py-20 bg-gray-50">
+      <section className="py-16 md:py-20 bg-gray-50 dark:bg-gray-800">
         <div className="container mx-auto px-6 lg:px-12">
           <div className="max-w-4xl mx-auto text-center">
             <motion.div
@@ -65,7 +65,7 @@ export default function BlogPage() {
       </section>
 
       {/* Category Filter */}
-      <section className="py-12 bg-white border-b">
+      <section className="py-12 bg-white dark:bg-gray-900 border-b dark:border-gray-700">
         <div className="container mx-auto px-8 lg:px-16">
           <div className="max-w-7xl mx-auto">
             <div className="flex flex-wrap gap-3 justify-center">

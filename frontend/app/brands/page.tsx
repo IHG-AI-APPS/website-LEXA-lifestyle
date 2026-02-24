@@ -69,7 +69,7 @@ export default function BrandsPage() {
   return (
     <div className="min-h-screen bg-white dark:bg-gray-900 pt-20">
       {/* Hero - Centered */}
-      <section className="py-16 bg-gray-50 border-b">
+      <section className="py-16 bg-gray-50 dark:bg-gray-800 border-b dark:border-gray-700">
         <div className="container mx-auto px-6 lg:px-12">
           <div className="max-w-4xl mx-auto text-center">
             <span className="text-xs tracking-[0.3em] uppercase text-gray-400 font-medium mb-4 block">
