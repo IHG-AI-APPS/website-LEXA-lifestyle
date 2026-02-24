@@ -887,20 +887,20 @@ export default function IndustryCalculatorPage() {
               ))}
             </div>
             <div className="hidden sm:flex justify-between mt-2 px-1">
-              <span className="text-[10px] font-medium text-gray-600 dark:text-gray-400">Type</span>
-              <span className="text-[10px] font-medium text-gray-600 dark:text-gray-400">Sub</span>
-              <span className="text-[10px] font-medium text-gray-600 dark:text-gray-400">Details</span>
-              <span className="text-[10px] font-medium text-gray-600 dark:text-gray-400">Solutions</span>
-              <span className="text-[10px] font-medium text-gray-600 dark:text-gray-400">Brands</span>
-              <span className="text-[10px] font-medium text-gray-600 dark:text-gray-400">Timeline</span>
-              <span className="text-[10px] font-medium text-gray-600 dark:text-gray-400">Location</span>
-              <span className="text-[10px] font-medium text-gray-600 dark:text-gray-400">Extras</span>
-              <span className="text-[10px] font-medium text-gray-600 dark:text-gray-400">Review</span>
-              <span className="text-[10px] font-medium text-gray-600 dark:text-gray-400">Results</span>
+              <span className="text-[10px] font-medium text-gray-600 dark:text-gray-400 dark:text-gray-400">Type</span>
+              <span className="text-[10px] font-medium text-gray-600 dark:text-gray-400 dark:text-gray-400">Sub</span>
+              <span className="text-[10px] font-medium text-gray-600 dark:text-gray-400 dark:text-gray-400">Details</span>
+              <span className="text-[10px] font-medium text-gray-600 dark:text-gray-400 dark:text-gray-400">Solutions</span>
+              <span className="text-[10px] font-medium text-gray-600 dark:text-gray-400 dark:text-gray-400">Brands</span>
+              <span className="text-[10px] font-medium text-gray-600 dark:text-gray-400 dark:text-gray-400">Timeline</span>
+              <span className="text-[10px] font-medium text-gray-600 dark:text-gray-400 dark:text-gray-400">Location</span>
+              <span className="text-[10px] font-medium text-gray-600 dark:text-gray-400 dark:text-gray-400">Extras</span>
+              <span className="text-[10px] font-medium text-gray-600 dark:text-gray-400 dark:text-gray-400">Review</span>
+              <span className="text-[10px] font-medium text-gray-600 dark:text-gray-400 dark:text-gray-400">Results</span>
             </div>
             {/* Mobile: Show current step name only */}
             <div className="sm:hidden text-center mt-2">
-              <span className="text-xs font-medium text-gray-700 dark:text-gray-300">
+              <span className="text-xs font-medium text-gray-700 dark:text-gray-300 dark:text-gray-300">
                 Step {step} of 10: {['Project Type', 'Sub Category', 'Property Details', 'Solutions', 'Brands', 'Timeline', 'Location', 'Extras', 'Review', 'Results'][step - 1]}
               </span>
             </div>
@@ -986,7 +986,7 @@ export default function IndustryCalculatorPage() {
                       >
                         <type.icon className="w-10 h-10 mb-3" />
                         <div className="font-semibold text-lg mb-1">{type.label}</div>
-                        <div className="text-sm text-gray-600 dark:text-gray-400">{type.description}</div>
+                        <div className="text-sm text-gray-600 dark:text-gray-400 dark:text-gray-400">{type.description}</div>
                       </button>
                     ))}
                   </div>
@@ -1184,7 +1184,7 @@ export default function IndustryCalculatorPage() {
                             }`}
                           >
                             <div className="font-bold text-lg mb-1">{bundle.name}</div>
-                            <div className="text-sm text-gray-600 mb-2">{bundle.description}</div>
+                            <div className="text-sm text-gray-600 dark:text-gray-400 mb-2">{bundle.description}</div>
                             <div className="text-xl font-bold text-green-600 mb-2">{bundle.priceRange}</div>
                             <div className="text-xs text-gray-500">Best for: {bundle.bestFor}</div>
                           </button>
@@ -1211,7 +1211,7 @@ export default function IndustryCalculatorPage() {
                         <div className="flex justify-between items-start">
                           <div>
                             <div className="font-bold text-lg mb-1">{PACKAGE_BUNDLES['smart-office'].name}</div>
-                            <div className="text-sm text-gray-600 mb-2">{PACKAGE_BUNDLES['smart-office'].description}</div>
+                            <div className="text-sm text-gray-600 dark:text-gray-400 mb-2">{PACKAGE_BUNDLES['smart-office'].description}</div>
                             <div className="text-xs text-gray-500">Best for: {PACKAGE_BUNDLES['smart-office'].bestFor}</div>
                           </div>
                           <div className="text-xl font-bold text-green-600">{PACKAGE_BUNDLES['smart-office'].priceRange}</div>
@@ -1234,7 +1234,7 @@ export default function IndustryCalculatorPage() {
                           <div className="flex items-start justify-between mb-4">
                             <div className="flex-1">
                               <h3 className="text-xl font-semibold mb-2">{solution.label}</h3>
-                              <p className="text-sm text-gray-600 mb-3">
+                              <p className="text-sm text-gray-600 dark:text-gray-400 mb-3">
                                 Starting from {formatPriceRange(solution.levels[0].price)}
                               </p>
                             </div>
@@ -1298,7 +1298,7 @@ export default function IndustryCalculatorPage() {
                   className="space-y-8"
                 >
                   <h2 className="text-3xl font-bold mb-6">Brand & Protocol Preferences</h2>
-                  <p className="text-gray-600 mb-8">Optional: Select your preferred brands or skip this step</p>
+                  <p className="text-gray-600 dark:text-gray-400 mb-8">Optional: Select your preferred brands or skip this step</p>
 
                   <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                     <div>
@@ -1588,7 +1588,7 @@ export default function IndustryCalculatorPage() {
                     Additional Features ({additionalFeatures.length} selected)
                   </h2>
 
-                  <p className="text-gray-600 mb-6">
+                  <p className="text-gray-600 dark:text-gray-400 mb-6">
                     Optional: Enhance your smart home with these features or skip to see results
                   </p>
 
@@ -1615,7 +1615,7 @@ export default function IndustryCalculatorPage() {
                             <CheckCircle2 size={20} className="text-green-500 flex-shrink-0" />
                           )}
                         </div>
-                        <div className="text-lg font-bold text-gray-700 dark:text-gray-300">
+                        <div className="text-lg font-bold text-gray-700 dark:text-gray-300 dark:text-gray-300">
                           +{formatCurrency(feature.price)}
                         </div>
                       </button>
@@ -1625,7 +1625,7 @@ export default function IndustryCalculatorPage() {
                   {/* Floor Plan Upload */}
                   <div className="mt-8 pt-8 border-t">
                     <h3 className="text-xl font-semibold mb-2">Upload Floor Plan (Optional)</h3>
-                    <p className="text-gray-600 mb-4">Mark exact locations where you want smart devices installed</p>
+                    <p className="text-gray-600 dark:text-gray-400 mb-4">Mark exact locations where you want smart devices installed</p>
                     <FloorPlanUploader
                       onSave={(imageUrl, annotations) => {
                         setFloorPlanImage(imageUrl)
@@ -1652,34 +1652,34 @@ export default function IndustryCalculatorPage() {
 
                   <div className="bg-gray-50 border-2 border-gray-200 rounded-lg p-6 space-y-4">
                     <div>
-                      <div className="text-sm font-semibold text-gray-600 uppercase">Project Type</div>
+                      <div className="text-sm font-semibold text-gray-600 dark:text-gray-400 uppercase">Project Type</div>
                       <div className="text-lg">{currentProjectType?.label} - {subCategory}</div>
                     </div>
 
                     <div>
-                      <div className="text-sm font-semibold text-gray-600 uppercase">Area</div>
+                      <div className="text-sm font-semibold text-gray-600 dark:text-gray-400 uppercase">Area</div>
                       <div className="text-lg">{squareFootage} sq ft • {numRooms} rooms</div>
                     </div>
 
                     <div>
-                      <div className="text-sm font-semibold text-gray-600 uppercase">Selected Solutions</div>
+                      <div className="text-sm font-semibold text-gray-600 dark:text-gray-400 uppercase">Selected Solutions</div>
                       <div className="text-lg">{Object.keys(selectedSolutions).length} systems selected</div>
                     </div>
 
                     <div>
-                      <div className="text-sm font-semibold text-gray-600 uppercase">Timeline</div>
+                      <div className="text-sm font-semibold text-gray-600 dark:text-gray-400 uppercase">Timeline</div>
                       <div className="text-lg">{timeline}</div>
                     </div>
 
                     <div>
-                      <div className="text-sm font-semibold text-gray-600 uppercase">Location</div>
+                      <div className="text-sm font-semibold text-gray-600 dark:text-gray-400 uppercase">Location</div>
                       <div className="text-lg">{emirate}{city ? `, ${city}` : ''}</div>
                     </div>
                   </div>
 
                   <div className="bg-blue-50 border-2 border-blue-200 rounded-lg p-6">
                     <h3 className="font-semibold text-lg mb-2">Ready to see your estimate?</h3>
-                    <p className="text-gray-700 dark:text-gray-300">
+                    <p className="text-gray-700 dark:text-gray-300 dark:text-gray-300">
                       Click &quot;View Results&quot; to see your detailed project estimate with itemized breakdown, timeline, and next steps.
                     </p>
                   </div>
@@ -1714,7 +1714,7 @@ export default function IndustryCalculatorPage() {
                       <Sparkles size={32} className="text-white" />
                     </div>
                     <h2 className="text-4xl font-bold mb-3">Your Custom Estimate</h2>
-                    <p className="text-gray-600 dark:text-gray-400">Based on your selections, here&apos;s your detailed project estimate</p>
+                    <p className="text-gray-600 dark:text-gray-400 dark:text-gray-400">Based on your selections, here&apos;s your detailed project estimate</p>
                   </div>
 
                   {/* Total Cost Card */}
@@ -1739,7 +1739,7 @@ export default function IndustryCalculatorPage() {
                     <div className="space-y-3">
                       {breakdown.map((item, index) => (
                         <div key={index} className="flex justify-between items-center py-3 border-b border-gray-100 dark:border-gray-800">
-                          <span className="text-gray-700 dark:text-gray-300">{item.name}</span>
+                          <span className="text-gray-700 dark:text-gray-300 dark:text-gray-300">{item.name}</span>
                           <span className={`font-semibold ${item.cost < 0 ? 'text-green-600' : ''}`}>{formatCurrency(item.cost)}</span>
                         </div>
                       ))}
@@ -1754,7 +1754,7 @@ export default function IndustryCalculatorPage() {
                   {/* Next Steps */}
                   <div className="bg-blue-50 border-2 border-blue-200 rounded-lg p-6">
                     <h3 className="text-xl font-bold mb-3">Next Steps</h3>
-                    <ul className="space-y-2 text-gray-700 dark:text-gray-300">
+                    <ul className="space-y-2 text-gray-700 dark:text-gray-300 dark:text-gray-300">
                       <li className="flex items-start gap-2">
                         <CheckCircle2 size={20} className="text-blue-500 mt-0.5 flex-shrink-0" />
                         <span>Our team will contact you within 24 hours</span>

@@ -27,7 +27,7 @@ export default function Step8Extras({
     <div className="space-y-8">
       <div className="text-center mb-8">
         <h2 className="text-3xl font-bold mb-3">Additional Features</h2>
-        <p className="text-gray-600 dark:text-gray-400">
+        <p className="text-gray-600 dark:text-gray-400 dark:text-gray-400">
           Select any extra features you&apos;d like to include
         </p>
       </div>
@@ -56,7 +56,7 @@ export default function Step8Extras({
       {/* Floor Plan Upload */}
       <div className="mt-8 pt-8 border-t">
         <h3 className="text-xl font-semibold mb-2">Upload Floor Plan (Optional)</h3>
-        <p className="text-gray-600 mb-4">Mark exact locations where you want smart devices installed</p>
+        <p className="text-gray-600 dark:text-gray-400 mb-4">Mark exact locations where you want smart devices installed</p>
         <FloorPlanUploader
           onSave={onFloorPlanSave}
           initialImage={floorPlanImage}

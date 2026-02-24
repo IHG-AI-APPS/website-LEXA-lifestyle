@@ -87,13 +87,13 @@ export default function AboutPage() {
                 </h1>
                 
                 <div className="h-px w-24 bg-[#E8DCC8] mb-8" />
-                <p className="text-base text-gray-600 leading-relaxed mb-6">
+                <p className="text-base text-gray-600 dark:text-gray-400 leading-relaxed mb-6">
                   {language === 'ar' 
                     ? 'في ليكسا لايف ستايل، نؤمن بأن الفخامة تُعرَّف بالتجارب السلسة والتصميم الذكي والعيش الراقي. ومقرنا في دبي، نتخصص في أنظمة الصوت والصورة الراقية وأتمتة المنزل الذكي وحلول نمط الحياة المخصصة التي تمزج التقنية المتطورة بالأناقة الخالدة.'
                     : 'At Lexa Lifestyle, we believe luxury is defined by seamless experiences, intelligent design, and refined living. Based in Dubai, we specialize in high-end audio-visual systems, smart home automation, and bespoke lifestyle solutions that blend cutting-edge technology with timeless elegance.'
                   }
                 </p>
-                <p className="text-base text-gray-600 leading-relaxed">
+                <p className="text-base text-gray-600 dark:text-gray-400 leading-relaxed">
                   {language === 'ar'
                     ? 'نحن لا نركّب الأنظمة فحسب – بل ننسّق تجارب ترتقي بالحياة اليومية إلى شيء استثنائي. في ليكسا لايف ستايل، تلتقي التقنية بنمط الحياة، ويصبح نمط الحياة فناً.'
                     : "We don't just install systems—we curate experiences that elevate everyday living into something extraordinary. At Lexa Lifestyle, technology meets lifestyle, and lifestyle becomes art."
@@ -131,7 +131,7 @@ export default function AboutPage() {
               className="text-center mb-16"
             >
               <h2 className="h2 mb-6">{language === 'ar' ? 'قيمنا' : 'Our Values'}</h2>
-              <p className="text-base text-gray-600 max-w-2xl mx-auto">
+              <p className="text-base text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
                 {language === 'ar' ? 'المبادئ التي توجه كل قرار ومشروع.' : 'Principles that guide every decision and project.'}
               </p>
             </motion.div>
@@ -152,7 +152,7 @@ export default function AboutPage() {
                       <Icon size={32} className="text-charcoal" strokeWidth={1.5} />
                     </div>
                     <h3 className="h3 mb-3">{value.title}</h3>
-                    <p className="text-sm text-gray-600 leading-relaxed">{value.description}</p>
+                    <p className="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">{value.description}</p>
                   </motion.div>
                 )
               })}
@@ -188,7 +188,7 @@ export default function AboutPage() {
                   viewport={{ once: true }}
                   className="flex gap-8 items-start border-b border-gray-800 pb-8"
                 >
-                  <span className="text-4xl font-semibold text-gray-600 min-w-[100px]">{milestone.year}</span>
+                  <span className="text-4xl font-semibold text-gray-600 dark:text-gray-400 min-w-[100px]">{milestone.year}</span>
                   <div>
                     <h3 className="h3 text-white mb-2">{milestone.title}</h3>
                     <p className="text-sm text-gray-400">{milestone.description}</p>
@@ -212,7 +212,7 @@ export default function AboutPage() {
               className="text-center mb-16"
             >
               <h2 className="text-5xl font-semibold mb-6">{language === 'ar' ? 'شركاء العلامات التجارية' : 'Brand Partners'}</h2>
-              <p className="text-lg text-gray-600 font-normal max-w-2xl mx-auto">
+              <p className="text-lg text-gray-600 dark:text-gray-400 font-normal max-w-2xl mx-auto">
                 {language === 'ar' ? 'مدمجون معتمدون لأبرز علامات المنزل الذكي في العالم.' : "Authorized integrators for the world's leading smart home brands."}
               </p>
             </motion.div>
@@ -227,7 +227,7 @@ export default function AboutPage() {
                   viewport={{ once: true }}
                   className="border border-gray-200 dark:border-gray-700 p-6 flex items-center justify-center text-center"
                 >
-                  <span className="text-lg font-medium text-gray-600 dark:text-gray-400">{partner}</span>
+                  <span className="text-lg font-medium text-gray-600 dark:text-gray-400 dark:text-gray-400">{partner}</span>
                 </motion.div>
               ))}
             </div>
@@ -297,7 +297,7 @@ export default function AboutPage() {
               <h2 className="text-5xl font-semibold mb-6">
                 {language === 'ar' ? 'ابدأ مشروعك' : 'Start Your Project'}
               </h2>
-              <p className="text-xl text-gray-600 font-normal mb-10">
+              <p className="text-xl text-gray-600 dark:text-gray-400 font-normal mb-10">
                 {language === 'ar' ? 'دعنا نناقش كيف يمكننا تحويل مساحتك.' : "Let's discuss how we can transform your space."}
               </p>
               <Button

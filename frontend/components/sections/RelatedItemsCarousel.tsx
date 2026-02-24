@@ -86,11 +86,11 @@ export default function RelatedItemsCarousel({ items, title, basePath }: Related
                     className="object-cover grayscale opacity-70 group-hover:grayscale-0 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700"
                   />
                 </div>
-                <h3 className="text-lg font-heading font-semibold text-black mb-2 group-hover:text-gray-600 transition-colors">
+                <h3 className="text-lg font-heading font-semibold text-black mb-2 group-hover:text-gray-600 dark:text-gray-400 transition-colors">
                   {item.title || item.name}
                 </h3>
                 {(item.description || item.excerpt) && (
-                  <p className="text-sm text-gray-600 line-clamp-2">
+                  <p className="text-sm text-gray-600 dark:text-gray-400 line-clamp-2">
                     {item.description || item.excerpt}
                   </p>
                 )}

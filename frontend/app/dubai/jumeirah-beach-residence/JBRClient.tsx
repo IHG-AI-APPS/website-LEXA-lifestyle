@@ -84,7 +84,7 @@ export default function JBRClient() {
             <h2 className="text-3xl md:text-4xl font-heading font-bold mb-4">
               Smart Home Solutions for JBR Living
             </h2>
-            <p className="text-gray-600 max-w-2xl mx-auto">
+            <p className="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
               JBR's beachfront towers require specialized automation solutions that withstand 
               coastal conditions while maximizing your stunning ocean views.
             </p>
@@ -102,7 +102,7 @@ export default function JBRClient() {
               >
                 <system.icon className="text-[#C9A962] mb-4" size={32} />
                 <h3 className="text-xl font-bold mb-2">{system.title}</h3>
-                <p className="text-gray-600 dark:text-gray-400">{system.desc}</p>
+                <p className="text-gray-600 dark:text-gray-400 dark:text-gray-400">{system.desc}</p>
               </motion.div>
             ))}
           </div>
@@ -117,7 +117,7 @@ export default function JBRClient() {
               <h2 className="text-3xl md:text-4xl font-heading font-bold mb-6">
                 Why Choose LEXA for JBR?
               </h2>
-              <p className="text-gray-600 mb-8">
+              <p className="text-gray-600 dark:text-gray-400 mb-8">
                 With over 15 years of experience in Dubai's premium properties, 
                 we understand the unique requirements of beachfront high-rise living.
               </p>

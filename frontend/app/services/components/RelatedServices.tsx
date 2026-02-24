@@ -54,13 +54,13 @@ export default function RelatedServices({ services, currentSlug }: RelatedServic
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <span className="text-sm font-semibold uppercase tracking-wider text-gray-600 mb-2 block">
+            <span className="text-sm font-semibold uppercase tracking-wider text-gray-600 dark:text-gray-400 mb-2 block">
               Complete Your Project
             </span>
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 dark:text-white mb-4">
               Related Services
             </h2>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+            <p className="text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
               End-to-end support for your smart home journey
             </p>
           </motion.div>
@@ -127,7 +127,7 @@ export default function RelatedServices({ services, currentSlug }: RelatedServic
                     {/* Content Section */}
                     <div className="p-6">
                       {/* Description */}
-                      <p className="text-sm text-gray-600 mb-4 line-clamp-3">
+                      <p className="text-sm text-gray-600 dark:text-gray-400 mb-4 line-clamp-3">
                         {service.description}
                       </p>
 
@@ -137,7 +137,7 @@ export default function RelatedServices({ services, currentSlug }: RelatedServic
                           {service.tags.slice(0, 3).map((tag) => (
                             <span
                               key={tag}
-                              className="text-xs px-2 py-1 bg-gray-100 text-gray-700 rounded-full"
+                              className="text-xs px-2 py-1 bg-gray-100 text-gray-700 dark:text-gray-300 rounded-full"
                             >
                               {tag}
                             </span>
@@ -147,10 +147,10 @@ export default function RelatedServices({ services, currentSlug }: RelatedServic
 
                       {/* CTA */}
                       <div className="flex items-center justify-between pt-4 border-t border-gray-100 dark:border-gray-800">
-                        <span className="text-sm font-semibold text-gray-700 group-hover:text-black transition-colors">
+                        <span className="text-sm font-semibold text-gray-700 dark:text-gray-300 group-hover:text-black transition-colors">
                           Learn More
                         </span>
-                        <ArrowRight className="h-5 w-5 text-gray-700 group-hover:translate-x-2 transition-transform" />
+                        <ArrowRight className="h-5 w-5 text-gray-700 dark:text-gray-300 group-hover:translate-x-2 transition-transform" />
                       </div>
                     </div>
                   </div>

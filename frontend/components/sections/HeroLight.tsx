@@ -55,7 +55,7 @@ export default function HeroLight() {
             {/* Subtitle */}
             <div className="flex items-start gap-8 mb-12 max-w-3xl">
               <div className="h-px w-16 md:w-24 bg-gradient-to-r from-gray-400 to-transparent mt-3" />
-              <p className="text-base md:text-lg text-gray-600 font-light leading-relaxed">
+              <p className="text-base md:text-lg text-gray-600 dark:text-gray-400 font-light leading-relaxed">
                 Experience the pinnacle of smart home automation. From luxury villas to premium developments, we create spaces where technology becomes invisible, effortless, and unforgettable.
               </p>
             </div>

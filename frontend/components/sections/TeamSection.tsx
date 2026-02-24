@@ -26,7 +26,7 @@ export default function TeamSection() {
               Meet the Team
             </span>
             <h2 className="text-5xl font-semibold mb-6">Our Team</h2>
-            <p className="text-lg text-gray-600 font-light max-w-2xl mx-auto">
+            <p className="text-lg text-gray-600 dark:text-gray-400 font-light max-w-2xl mx-auto">
               Get to know the minds behind our success.
             </p>
           </div>
@@ -43,7 +43,7 @@ export default function TeamSection() {
                   />
                 </div>
                 <h3 className="text-xl font-semibold mb-1">{member.name}</h3>
-                <p className="text-sm text-gray-600 dark:text-gray-400">{member.role}</p>
+                <p className="text-sm text-gray-600 dark:text-gray-400 dark:text-gray-400">{member.role}</p>
               </div>
             ))}
           </div>

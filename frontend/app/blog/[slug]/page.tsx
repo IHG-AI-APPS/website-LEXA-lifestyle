@@ -110,7 +110,7 @@ export default function BlogArticlePage({ params }: { params: { slug: string } }
               </h1>
               
               {article.excerpt && (
-                <p className="text-lg text-gray-600 mb-6 leading-relaxed">
+                <p className="text-lg text-gray-600 dark:text-gray-400 mb-6 leading-relaxed">
                   {article.excerpt}
                 </p>
               )}
@@ -118,9 +118,9 @@ export default function BlogArticlePage({ params }: { params: { slug: string } }
               <div className="flex flex-wrap items-center gap-4 text-sm text-gray-500 mb-6">
                 <div className="flex items-center gap-2">
                   <div className="w-8 h-8 rounded-full bg-gray-200 flex items-center justify-center">
-                    <User size={16} className="text-gray-600 dark:text-gray-400" />
+                    <User size={16} className="text-gray-600 dark:text-gray-400 dark:text-gray-400" />
                   </div>
-                  <span className="font-medium text-gray-700 dark:text-gray-300">{article.author}</span>
+                  <span className="font-medium text-gray-700 dark:text-gray-300 dark:text-gray-300">{article.author}</span>
                 </div>
                 <span className="text-gray-300">•</span>
                 <div className="flex items-center gap-1.5">
@@ -137,7 +137,7 @@ export default function BlogArticlePage({ params }: { params: { slug: string } }
               {article.tags && article.tags.length > 0 && (
                 <div className="flex flex-wrap gap-2">
                   {article.tags.map((tag: string) => (
-                    <span key={tag} className="px-3 py-1 bg-gray-100 hover:bg-gray-200 transition-colors rounded-full text-sm text-gray-600 dark:text-gray-400">
+                    <span key={tag} className="px-3 py-1 bg-gray-100 hover:bg-gray-200 transition-colors rounded-full text-sm text-gray-600 dark:text-gray-400 dark:text-gray-400">
                       #{tag}
                     </span>
                   ))}
@@ -176,12 +176,12 @@ export default function BlogArticlePage({ params }: { params: { slug: string } }
                 prose-h1:text-3xl prose-h1:mt-8 prose-h1:mb-4
                 prose-h2:text-2xl prose-h2:mt-8 prose-h2:mb-4 prose-h2:border-b prose-h2:border-gray-200 prose-h2:pb-2
                 prose-h3:text-xl prose-h3:mt-6 prose-h3:mb-3
-                prose-p:text-gray-700 prose-p:leading-relaxed prose-p:mb-4
+                prose-p:text-gray-700 dark:text-gray-300 prose-p:leading-relaxed prose-p:mb-4
                 prose-a:text-blue-600 prose-a:no-underline hover:prose-a:underline
                 prose-strong:text-gray-900 dark:text-white dark:prose-strong:text-white prose-strong:font-semibold
                 prose-ul:my-4 prose-ul:pl-6
                 prose-ol:my-4 prose-ol:pl-6
-                prose-li:text-gray-700 prose-li:mb-2
+                prose-li:text-gray-700 dark:text-gray-300 prose-li:mb-2
                 prose-blockquote:border-l-4 prose-blockquote:border-blue-500 prose-blockquote:bg-blue-50 prose-blockquote:py-2 prose-blockquote:px-4 prose-blockquote:italic prose-blockquote:text-gray-700
                 prose-code:bg-gray-100 prose-code:px-1.5 prose-code:py-0.5 prose-code:rounded prose-code:text-sm
                 prose-pre:bg-gray-900 prose-pre:text-gray-100 prose-pre:rounded-lg prose-pre:overflow-x-auto
@@ -197,12 +197,12 @@ export default function BlogArticlePage({ params }: { params: { slug: string } }
                   h1: ({ children }) => <h1 className="text-3xl font-bold mt-8 mb-4 text-gray-900 dark:text-white dark:text-white">{children}</h1>,
                   h2: ({ children }) => <h2 className="text-2xl font-bold mt-8 mb-4 text-gray-900 dark:text-white dark:text-white border-b border-gray-200 dark:border-gray-700 pb-2">{children}</h2>,
                   h3: ({ children }) => <h3 className="text-xl font-bold mt-6 mb-3 text-gray-900 dark:text-white dark:text-white">{children}</h3>,
-                  p: ({ children }) => <p className="text-gray-700 leading-relaxed mb-4">{children}</p>,
+                  p: ({ children }) => <p className="text-gray-700 dark:text-gray-300 leading-relaxed mb-4">{children}</p>,
                   ul: ({ children }) => <ul className="list-disc pl-6 my-4 space-y-2">{children}</ul>,
                   ol: ({ children }) => <ol className="list-decimal pl-6 my-4 space-y-2">{children}</ol>,
-                  li: ({ children }) => <li className="text-gray-700 dark:text-gray-300">{children}</li>,
+                  li: ({ children }) => <li className="text-gray-700 dark:text-gray-300 dark:text-gray-300">{children}</li>,
                   blockquote: ({ children }) => (
-                    <blockquote className="border-l-4 border-blue-500 bg-blue-50 py-3 px-4 my-4 italic text-gray-700 rounded-r-lg">
+                    <blockquote className="border-l-4 border-blue-500 bg-blue-50 py-3 px-4 my-4 italic text-gray-700 dark:text-gray-300 rounded-r-lg">
                       {children}
                     </blockquote>
                   ),
@@ -214,7 +214,7 @@ export default function BlogArticlePage({ params }: { params: { slug: string } }
                     </div>
                   ),
                   th: ({ children }) => <th className="bg-gray-100 dark:bg-gray-800 border border-gray-300 dark:border-gray-600 px-4 py-3 text-left font-semibold text-gray-900 dark:text-white dark:text-white">{children}</th>,
-                  td: ({ children }) => <td className="border border-gray-300 px-4 py-3 text-gray-700 dark:text-gray-300">{children}</td>,
+                  td: ({ children }) => <td className="border border-gray-300 px-4 py-3 text-gray-700 dark:text-gray-300 dark:text-gray-300">{children}</td>,
                   a: ({ href, children }) => (
                     <a href={href} className="text-blue-600 hover:text-blue-800 hover:underline transition-colors" target="_blank" rel="noopener noreferrer">
                       {children}
@@ -224,7 +224,7 @@ export default function BlogArticlePage({ params }: { params: { slug: string } }
                   code: ({ children, className }) => {
                     const isInline = !className
                     return isInline ? (
-                      <code className="bg-gray-100 px-1.5 py-0.5 rounded text-sm font-mono text-gray-800 dark:text-gray-100">{children}</code>
+                      <code className="bg-gray-100 px-1.5 py-0.5 rounded text-sm font-mono text-gray-800 dark:text-gray-200 dark:text-gray-100">{children}</code>
                     ) : (
                       <code className={className}>{children}</code>
                     )
@@ -245,7 +245,7 @@ export default function BlogArticlePage({ params }: { params: { slug: string } }
               <div className="flex items-center gap-4">
                 <span className="text-sm text-gray-500">Share this article:</span>
                 <button className="p-2 rounded-full bg-gray-100 hover:bg-gray-200 transition-colors">
-                  <Share2 className="h-5 w-5 text-gray-600 dark:text-gray-400" />
+                  <Share2 className="h-5 w-5 text-gray-600 dark:text-gray-400 dark:text-gray-400" />
                 </button>
               </div>
               <button className="flex items-center gap-2 px-4 py-2 rounded-full bg-gray-100 hover:bg-gray-200 transition-colors text-sm font-medium">

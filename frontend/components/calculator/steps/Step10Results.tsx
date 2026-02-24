@@ -59,7 +59,7 @@ export default function Step10Results({
           <Sparkles size={32} className="text-white" />
         </div>
         <h2 className="text-4xl font-bold mb-3">Your Custom Estimate</h2>
-        <p className="text-gray-600 dark:text-gray-400">Based on your selections, here&apos;s your detailed project estimate</p>
+        <p className="text-gray-600 dark:text-gray-400 dark:text-gray-400">Based on your selections, here&apos;s your detailed project estimate</p>
       </div>
 
       {/* Total Cost Card */}
@@ -84,7 +84,7 @@ export default function Step10Results({
         <div className="space-y-3">
           {breakdown.map((item, index) => (
             <div key={index} className="flex justify-between items-center py-3 border-b border-gray-100 dark:border-gray-800">
-              <span className="text-gray-700 dark:text-gray-300">{item.name}</span>
+              <span className="text-gray-700 dark:text-gray-300 dark:text-gray-300">{item.name}</span>
               <span className={`font-semibold ${item.cost < 0 ? 'text-green-600' : ''}`}>
                 {formatCurrency(item.cost)}
               </span>

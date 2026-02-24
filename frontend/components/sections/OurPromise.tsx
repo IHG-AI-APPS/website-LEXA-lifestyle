@@ -41,7 +41,7 @@ export default function OurPromise() {
     <section className="py-24 md:py-32 bg-gray-50">
       <div className="container mx-auto px-4 md:px-8 max-w-7xl">
         <div className="mb-16 text-center">
-          <span className="text-xs md:text-sm tracking-[0.2em] uppercase text-gray-600 font-bold block mb-6">
+          <span className="text-xs md:text-sm tracking-[0.2em] uppercase text-gray-600 dark:text-gray-400 font-bold block mb-6">
             Why Choose LEXA
           </span>
           <h2 className="text-4xl md:text-5xl font-heading font-semibold tracking-tight text-black">
@@ -59,11 +59,11 @@ export default function OurPromise() {
               transition={{ duration: 0.6, delay: index * 0.1 }}
               className="bg-white dark:bg-gray-800 border border-gray-200 p-8 group hover:border-gray-400 transition-all duration-300"
             >
-              <promise.icon className="w-12 h-12 text-gray-600 mb-6 stroke-[1.5] group-hover:text-black transition-colors" />
+              <promise.icon className="w-12 h-12 text-gray-600 dark:text-gray-400 mb-6 stroke-[1.5] group-hover:text-black transition-colors" />
               <h3 className="text-xl font-heading font-semibold text-black mb-4">
                 {promise.title}
               </h3>
-              <p className="text-sm text-gray-600 leading-relaxed">
+              <p className="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">
                 {promise.description}
               </p>
             </motion.div>

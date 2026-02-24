@@ -173,7 +173,7 @@ export default function ContractorsPage() {
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-16">
               <h2 className="text-4xl sm:text-5xl font-bold mb-4 ">Speed + Simplicity + Support</h2>
-              <p className="text-xl text-gray-600 dark:text-gray-400">
+              <p className="text-xl text-gray-600 dark:text-gray-400 dark:text-gray-400">
                 We make automation easy for contractors
               </p>
             </div>
@@ -189,7 +189,7 @@ export default function ContractorsPage() {
                   <Clock size={32} className="text-gallery-black" />
                 </div>
                 <h3 className="font-bold text-lg mb-2">Fast Response</h3>
-                <p className="text-gray-600 text-sm">
+                <p className="text-gray-600 dark:text-gray-400 text-sm">
                   BOQ and scope within 24-48 hours
                 </p>
               </motion.div>
@@ -205,7 +205,7 @@ export default function ContractorsPage() {
                   <FileText size={32} className="text-gallery-black" />
                 </div>
                 <h3 className="font-bold text-lg mb-2">Clear Scope</h3>
-                <p className="text-gray-600 text-sm">
+                <p className="text-gray-600 dark:text-gray-400 text-sm">
                   Detailed breakdown, no hidden costs
                 </p>
               </motion.div>
@@ -221,7 +221,7 @@ export default function ContractorsPage() {
                   <Users size={32} className="text-gallery-black" />
                 </div>
                 <h3 className="font-bold text-lg mb-2">Dedicated PM</h3>
-                <p className="text-gray-600 text-sm">
+                <p className="text-gray-600 dark:text-gray-400 text-sm">
                   Single point of contact throughout
                 </p>
               </motion.div>
@@ -237,7 +237,7 @@ export default function ContractorsPage() {
                   <Wrench size={32} className="text-gallery-black" />
                 </div>
                 <h3 className="font-bold text-lg mb-2">MEP Coordination</h3>
-                <p className="text-gray-600 text-sm">
+                <p className="text-gray-600 dark:text-gray-400 text-sm">
                   We handle all MEP + automation coordination
                 </p>
               </motion.div>
@@ -259,7 +259,7 @@ export default function ContractorsPage() {
                 </div>
                 <div>
                   <h3 className="font-bold text-lg mb-2">Comprehensive BOQ</h3>
-                  <p className="text-gray-600 dark:text-gray-400">
+                  <p className="text-gray-600 dark:text-gray-400 dark:text-gray-400">
                     Detailed Bill of Quantities with material specs, labor, and timelines
                   </p>
                 </div>
@@ -271,7 +271,7 @@ export default function ContractorsPage() {
                 </div>
                 <div>
                   <h3 className="font-bold text-lg mb-2">Coordinated Scope</h3>
-                  <p className="text-gray-600 dark:text-gray-400">
+                  <p className="text-gray-600 dark:text-gray-400 dark:text-gray-400">
                     Clear scope with MEP coordination points and installation sequence
                   </p>
                 </div>
@@ -283,7 +283,7 @@ export default function ContractorsPage() {
                 </div>
                 <div>
                   <h3 className="font-bold text-lg mb-2">Project Management</h3>
-                  <p className="text-gray-600 dark:text-gray-400">
+                  <p className="text-gray-600 dark:text-gray-400 dark:text-gray-400">
                     Dedicated PM from start to handover with regular updates
                   </p>
                 </div>
@@ -295,7 +295,7 @@ export default function ContractorsPage() {
                 </div>
                 <div>
                   <h3 className="font-bold text-lg mb-2">Professional Installation</h3>
-                  <p className="text-gray-600 dark:text-gray-400">
+                  <p className="text-gray-600 dark:text-gray-400 dark:text-gray-400">
                     Certified technicians with proper commissioning and testing
                   </p>
                 </div>
@@ -340,10 +340,10 @@ export default function ContractorsPage() {
                   <Check size={40} className="text-green-600" />
                 </div>
                 <h2 className="text-3xl font-bold mb-4">Project Request Received!</h2>
-                <p className="text-xl text-gray-700 mb-2">
+                <p className="text-xl text-gray-700 dark:text-gray-300 mb-2">
                   Your dedicated Project Manager will contact you within 24 hours with a comprehensive BOQ and project timeline.
                 </p>
-                <p className="text-gray-600 mb-8">
+                <p className="text-gray-600 dark:text-gray-400 mb-8">
                   Check your email at <strong>{formData.email}</strong>
                 </p>
                 <Button onClick={handleClose} className="bg-black hover:bg-gray-800 uppercase tracking-widest">
@@ -366,7 +366,7 @@ export default function ContractorsPage() {
                 <form onSubmit={handleSubmit} className="p-8 space-y-6 max-h-[60vh] overflow-y-auto">
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div>
-                      <label className="block text-sm font-semibold text-gray-700 mb-2">
+                      <label className="block text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">
                         Full Name *
                       </label>
                       <Input
@@ -379,7 +379,7 @@ export default function ContractorsPage() {
                     </div>
 
                     <div>
-                      <label className="block text-sm font-semibold text-gray-700 mb-2">
+                      <label className="block text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">
                         Company Name *
                       </label>
                       <Input
@@ -394,7 +394,7 @@ export default function ContractorsPage() {
 
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div>
-                      <label className="block text-sm font-semibold text-gray-700 mb-2">
+                      <label className="block text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">
                         Email Address *
                       </label>
                       <Input
@@ -407,7 +407,7 @@ export default function ContractorsPage() {
                     </div>
 
                     <div>
-                      <label className="block text-sm font-semibold text-gray-700 mb-2">
+                      <label className="block text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">
                         Phone Number *
                       </label>
                       <Input
@@ -421,7 +421,7 @@ export default function ContractorsPage() {
                   </div>
 
                   <div>
-                    <label className="block text-sm font-semibold text-gray-700 mb-3">
+                    <label className="block text-sm font-semibold text-gray-700 dark:text-gray-300 mb-3">
                       Project Type *
                     </label>
                     <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
@@ -443,7 +443,7 @@ export default function ContractorsPage() {
                   </div>
 
                   <div>
-                    <label className="block text-sm font-semibold text-gray-700 mb-3">
+                    <label className="block text-sm font-semibold text-gray-700 dark:text-gray-300 mb-3">
                       Systems Needed * (Select all that apply)
                     </label>
                     <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
@@ -466,7 +466,7 @@ export default function ContractorsPage() {
                   </div>
 
                   <div>
-                    <label className="block text-sm font-semibold text-gray-700 mb-3">
+                    <label className="block text-sm font-semibold text-gray-700 dark:text-gray-300 mb-3">
                       Project Timeline *
                     </label>
                     <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
@@ -488,7 +488,7 @@ export default function ContractorsPage() {
                   </div>
 
                   <div>
-                    <label className="block text-sm font-semibold text-gray-700 mb-2">
+                    <label className="block text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">
                       Additional Details
                     </label>
                     <Textarea

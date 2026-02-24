@@ -55,7 +55,7 @@ export default function ProductDetailPage({ params }: { params: { slug: string }
   if (loading) {
     return (
       <div className="min-h-screen bg-white pt-20 flex items-center justify-center">
-        <div className="text-gray-600 dark:text-gray-400">Loading...</div>
+        <div className="text-gray-600 dark:text-gray-400 dark:text-gray-400">Loading...</div>
       </div>
     )
   }
@@ -141,7 +141,7 @@ export default function ProductDetailPage({ params }: { params: { slug: string }
                     {product.specifications.map((spec: string, index: number) => (
                       <div key={index} className="flex items-start gap-3">
                         <CheckCircle size={24} className="text-charcoal mt-1 flex-shrink-0" strokeWidth={1.5} />
-                        <p className="text-lg text-gray-700 dark:text-gray-300">{spec}</p>
+                        <p className="text-lg text-gray-700 dark:text-gray-300 dark:text-gray-300">{spec}</p>
                       </div>
                     ))}
                   </div>
@@ -180,7 +180,7 @@ export default function ProductDetailPage({ params }: { params: { slug: string }
                 >
                   <h3 className="text-2xl font-semibold mb-4">Available Brands</h3>
                   <div className="h-px w-16 bg-gradient-to-r from-charcoal to-transparent mb-6" />
-                  <p className="text-sm text-gray-600 mb-6">
+                  <p className="text-sm text-gray-600 dark:text-gray-400 mb-6">
                     We carry {product.brands.length} premium brands in this category
                   </p>
                   <div className="space-y-3 max-h-96 overflow-y-auto">

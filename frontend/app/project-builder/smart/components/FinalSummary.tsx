@@ -769,7 +769,7 @@ export default function FinalSummary({
           <CheckCircle2 className="w-10 h-10 text-green-600" />
         </div>
         <h1 className="text-3xl font-bold text-gray-900 dark:text-white mb-2">Your Smart Home Package is Ready!</h1>
-        <p className="text-gray-600 mb-4">Here&apos;s a summary of your personalized automation solution</p>
+        <p className="text-gray-600 dark:text-gray-400 mb-4">Here&apos;s a summary of your personalized automation solution</p>
         
         {/* Quote Reference */}
         <button
@@ -860,7 +860,7 @@ export default function FinalSummary({
               <Zap className="w-5 h-5 text-blue-500" />
               <span className="font-semibold text-gray-900 dark:text-white dark:text-white">Protocol</span>
             </div>
-            <div className="text-gray-600 dark:text-gray-400">{formatLabel(protocolType)}</div>
+            <div className="text-gray-600 dark:text-gray-400 dark:text-gray-400">{formatLabel(protocolType)}</div>
             <div className="text-sm text-gray-500 mt-1">{selectedProtocols.join(', ')}</div>
           </div>
           <div className="p-4 bg-gray-50 rounded-xl">
@@ -868,7 +868,7 @@ export default function FinalSummary({
               <Settings className="w-5 h-5 text-purple-500" />
               <span className="font-semibold text-gray-900 dark:text-white dark:text-white">Control System</span>
             </div>
-            <div className="text-gray-600 dark:text-gray-400">{selectedSystems.join(', ')}</div>
+            <div className="text-gray-600 dark:text-gray-400 dark:text-gray-400">{selectedSystems.join(', ')}</div>
           </div>
         </div>
       </motion.div>
@@ -1014,7 +1014,7 @@ export default function FinalSummary({
 
                 <div className="space-y-4">
                   <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-1">Full Name *</label>
+                    <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Full Name *</label>
                     <Input
                       value={bookingForm.name}
                       onChange={(e) => setBookingForm({...bookingForm, name: e.target.value})}
@@ -1022,7 +1022,7 @@ export default function FinalSummary({
                     />
                   </div>
                   <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-1">Email *</label>
+                    <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Email *</label>
                     <Input
                       type="email"
                       value={bookingForm.email}
@@ -1031,7 +1031,7 @@ export default function FinalSummary({
                     />
                   </div>
                   <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-1">Phone *</label>
+                    <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Phone *</label>
                     <Input
                       type="tel"
                       value={bookingForm.phone}
@@ -1040,7 +1040,7 @@ export default function FinalSummary({
                     />
                   </div>
                   <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-1">Preferred Date</label>
+                    <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Preferred Date</label>
                     <Input
                       type="date"
                       value={bookingForm.preferredDate}
@@ -1048,7 +1048,7 @@ export default function FinalSummary({
                     />
                   </div>
                   <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-1">Preferred Time</label>
+                    <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Preferred Time</label>
                     <div className="grid grid-cols-3 gap-2">
                       {['morning', 'afternoon', 'evening'].map((time) => (
                         <button
@@ -1101,11 +1101,11 @@ export default function FinalSummary({
                 <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2">Consultation Booked!</h3>
                 {bookingConfirmation && (
                   <div className="mb-4 p-3 bg-green-50 rounded-lg">
-                    <p className="text-sm text-gray-600 mb-1">Confirmation Number:</p>
+                    <p className="text-sm text-gray-600 dark:text-gray-400 mb-1">Confirmation Number:</p>
                     <p className="font-mono font-bold text-green-700 text-lg">{bookingConfirmation}</p>
                   </div>
                 )}
-                <p className="text-gray-600 mb-6">
+                <p className="text-gray-600 dark:text-gray-400 mb-6">
                   Our team will contact you within 24 hours to confirm your consultation.
                 </p>
                 <Button onClick={() => setShowBookingModal(false)}>

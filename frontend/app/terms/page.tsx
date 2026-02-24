@@ -21,7 +21,7 @@ export default function TermsPage() {
         <h1 className="text-4xl md:text-5xl font-bold mb-8">Terms & Conditions</h1>
         
         <div className="prose prose-lg max-w-none">
-          <p className="lead text-xl text-gray-600 mb-8">
+          <p className="lead text-xl text-gray-600 dark:text-gray-400 mb-8">
             Welcome to LEXA Lifestyle, a premium provider of luxury home automation, audio-visual systems, integrated smart home solutions, and intelligent lifestyle technologies. By accessing our website, visiting our premises, or engaging our services, you agree to comply with the terms outlined below.
           </p>
 
@@ -76,7 +76,7 @@ export default function TermsPage() {
           </p>
 
           <div className="mt-12 p-6 bg-gray-50 rounded-lg">
-            <p className="text-sm text-gray-600 dark:text-gray-400">
+            <p className="text-sm text-gray-600 dark:text-gray-400 dark:text-gray-400">
               Last updated: February 2026
             </p>
           </div>

@@ -68,7 +68,7 @@ export default function FinalSubmission({ sessionId, projectData, onComplete }: 
           Project <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600">Submitted</span>
         </h2>
         <p className="text-sm text-gray-500 uppercase tracking-widest mb-2">Intelligence Analysis Complete</p>
-        <p className="text-gray-600 text-sm">Our team will contact you within 24 hours</p>
+        <p className="text-gray-600 dark:text-gray-400 text-sm">Our team will contact you within 24 hours</p>
       </div>
     )
   }
@@ -94,7 +94,7 @@ export default function FinalSubmission({ sessionId, projectData, onComplete }: 
           <p className="text-sm text-gray-500 uppercase tracking-widest mb-2">
             Expert Consultation
           </p>
-          <p className="text-gray-600 text-sm">
+          <p className="text-gray-600 dark:text-gray-400 text-sm">
             Our specialists will review your project and create a detailed proposal
           </p>
         </div>
@@ -103,7 +103,7 @@ export default function FinalSubmission({ sessionId, projectData, onComplete }: 
         <div className="bg-white dark:bg-gray-800 border border-gray-200 p-8 mb-12">
           <div className="space-y-6">
             <div>
-              <label className="text-xs uppercase tracking-widest text-gray-600 mb-2 block">Full Name *</label>
+              <label className="text-xs uppercase tracking-widest text-gray-600 dark:text-gray-400 mb-2 block">Full Name *</label>
               <Input
                 type="text"
                 value={formData.contact_name}
@@ -114,7 +114,7 @@ export default function FinalSubmission({ sessionId, projectData, onComplete }: 
             </div>
 
             <div>
-              <label className="text-xs uppercase tracking-widest text-gray-600 mb-2 block">Email Address *</label>
+              <label className="text-xs uppercase tracking-widest text-gray-600 dark:text-gray-400 mb-2 block">Email Address *</label>
               <Input
                 type="email"
                 value={formData.contact_email}
@@ -125,7 +125,7 @@ export default function FinalSubmission({ sessionId, projectData, onComplete }: 
             </div>
 
             <div>
-              <label className="text-xs uppercase tracking-widest text-gray-600 mb-2 block">Phone Number *</label>
+              <label className="text-xs uppercase tracking-widest text-gray-600 dark:text-gray-400 mb-2 block">Phone Number *</label>
               <Input
                 type="tel"
                 value={formData.contact_phone}
@@ -136,7 +136,7 @@ export default function FinalSubmission({ sessionId, projectData, onComplete }: 
             </div>
 
             <div>
-              <label className="text-xs uppercase tracking-widest text-gray-600 mb-2 block">Preferred Timeline</label>
+              <label className="text-xs uppercase tracking-widest text-gray-600 dark:text-gray-400 mb-2 block">Preferred Timeline</label>
               <Input
                 type="text"
                 value={formData.timeline}
@@ -147,7 +147,7 @@ export default function FinalSubmission({ sessionId, projectData, onComplete }: 
             </div>
 
             <div>
-              <label className="text-xs uppercase tracking-widest text-gray-600 mb-2 block">Budget Range (Optional)</label>
+              <label className="text-xs uppercase tracking-widest text-gray-600 dark:text-gray-400 mb-2 block">Budget Range (Optional)</label>
               <Input
                 type="text"
                 value={formData.budget_band}
@@ -158,7 +158,7 @@ export default function FinalSubmission({ sessionId, projectData, onComplete }: 
             </div>
 
             <div>
-              <label className="text-xs uppercase tracking-widest text-gray-600 mb-2 block">Additional Notes</label>
+              <label className="text-xs uppercase tracking-widest text-gray-600 dark:text-gray-400 mb-2 block">Additional Notes</label>
               <textarea
                 value={formData.notes}
                 onChange={(e) => setFormData({ ...formData, notes: e.target.value })}
@@ -179,7 +179,7 @@ export default function FinalSubmission({ sessionId, projectData, onComplete }: 
           >
             {loading ? 'Submitting...' : 'Submit Project for Review'}
           </Button>
-          <p className="text-xs text-gray-600 mt-4">
+          <p className="text-xs text-gray-600 dark:text-gray-400 mt-4">
             Your project information is secure and will only be used for consultation purposes
           </p>
         </div>

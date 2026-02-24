@@ -35,7 +35,7 @@ export default function StatsLight() {
               <div className="text-4xl md:text-6xl font-heading font-bold tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-gray-900 via-gray-700 to-gray-500 mb-3">
                 {stat.value}
               </div>
-              <div className="text-xs md:text-sm tracking-[0.2em] uppercase text-gray-600 font-medium">
+              <div className="text-xs md:text-sm tracking-[0.2em] uppercase text-gray-600 dark:text-gray-400 font-medium">
                 {stat.label}
               </div>
             </motion.div>

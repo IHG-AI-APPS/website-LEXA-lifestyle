@@ -211,7 +211,7 @@ export default function FAQPage() {
                           </button>
                           {isOpen && (
                             <div className="px-5 pb-4">
-                              <p className="text-gray-600 dark:text-gray-300 text-sm leading-relaxed">
+                              <p className="text-gray-600 dark:text-gray-400 dark:text-gray-300 text-sm leading-relaxed">
                                 {faq.answer}
                               </p>
                             </div>

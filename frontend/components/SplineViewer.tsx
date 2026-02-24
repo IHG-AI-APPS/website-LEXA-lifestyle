@@ -30,7 +30,7 @@ export default function SplineViewer({ sceneUrl, title, description }: SplineVie
       <div className="flex flex-col sm:flex-row gap-4 items-start sm:items-center justify-between">
         <div>
           <h3 className="text-2xl font-bold mb-1">{title || '3D Smart Home Visualization'}</h3>
-          <p className="text-gray-600 dark:text-gray-400">{description || 'Explore our smart home solutions in 3D'}</p>
+          <p className="text-gray-600 dark:text-gray-400 dark:text-gray-400">{description || 'Explore our smart home solutions in 3D'}</p>
         </div>
         
         <select
@@ -82,15 +82,15 @@ export default function SplineViewer({ sceneUrl, title, description }: SplineVie
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
         <div className="bg-blue-50 border-2 border-blue-200 rounded-lg p-4">
           <div className="text-blue-600 font-semibold mb-1">Interactive</div>
-          <p className="text-sm text-gray-700 dark:text-gray-300">Click and drag to rotate the 3D model</p>
+          <p className="text-sm text-gray-700 dark:text-gray-300 dark:text-gray-300">Click and drag to rotate the 3D model</p>
         </div>
         <div className="bg-purple-50 border-2 border-purple-200 rounded-lg p-4">
           <div className="text-purple-600 font-semibold mb-1">Explore</div>
-          <p className="text-sm text-gray-700 dark:text-gray-300">Zoom in to see device details and placement</p>
+          <p className="text-sm text-gray-700 dark:text-gray-300 dark:text-gray-300">Zoom in to see device details and placement</p>
         </div>
         <div className="bg-green-50 border-2 border-green-200 rounded-lg p-4">
           <div className="text-green-600 font-semibold mb-1">Realistic</div>
-          <p className="text-sm text-gray-700 dark:text-gray-300">See how smart devices integrate in real spaces</p>
+          <p className="text-sm text-gray-700 dark:text-gray-300 dark:text-gray-300">See how smart devices integrate in real spaces</p>
         </div>
       </div>
 

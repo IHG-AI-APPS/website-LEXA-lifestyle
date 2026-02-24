@@ -235,7 +235,7 @@ export default function PartnerWithUsPage() {
             <h2 className="text-2xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">
               Partnership Opportunities
             </h2>
-            <p className="text-gray-600 max-w-2xl mx-auto">
+            <p className="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
               Choose the partnership model that fits your business. We support dealers, 
               distributors, integrators, and contractors across the GCC region.
             </p>
@@ -261,10 +261,10 @@ export default function PartnerWithUsPage() {
                   <type.icon className="h-6 w-6 text-[#E8DCC8]" />
                 </div>
                 <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-2">{type.title}</h3>
-                <p className="text-sm text-gray-600 mb-4">{type.description}</p>
+                <p className="text-sm text-gray-600 dark:text-gray-400 mb-4">{type.description}</p>
                 <ul className="space-y-2">
                   {type.benefits.map((benefit, i) => (
-                    <li key={i} className="flex items-center gap-2 text-sm text-gray-700 dark:text-gray-300">
+                    <li key={i} className="flex items-center gap-2 text-sm text-gray-700 dark:text-gray-300 dark:text-gray-300">
                       <CheckCircle className="h-4 w-4 text-green-500 flex-shrink-0" />
                       {benefit}
                     </li>
@@ -283,7 +283,7 @@ export default function PartnerWithUsPage() {
             <h2 className="text-2xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">
               Why Partner With LEXA?
             </h2>
-            <p className="text-gray-600 max-w-2xl mx-auto">
+            <p className="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
               As the GCC&apos;s premier smart home distributor, we provide everything you need 
               to succeed in the rapidly growing home automation market.
             </p>
@@ -304,7 +304,7 @@ export default function PartnerWithUsPage() {
                 </div>
                 <div>
                   <h3 className="font-bold text-gray-900 dark:text-white mb-1">{benefit.title}</h3>
-                  <p className="text-sm text-gray-600 dark:text-gray-400">{benefit.description}</p>
+                  <p className="text-sm text-gray-600 dark:text-gray-400 dark:text-gray-400">{benefit.description}</p>
                 </div>
               </motion.div>
             ))}
@@ -348,7 +348,7 @@ export default function PartnerWithUsPage() {
               <h2 className="text-2xl md:text-4xl font-bold text-gray-900 dark:text-white mb-6">
                 Expanding Across the GCC
               </h2>
-              <p className="text-gray-600 mb-6">
+              <p className="text-gray-600 dark:text-gray-400 mb-6">
                 We&apos;re actively seeking qualified partners in all GCC countries. Whether you&apos;re 
                 an established AV integrator or an electrical contractor looking to add smart home 
                 services, we have a partnership program for you.
@@ -357,7 +357,7 @@ export default function PartnerWithUsPage() {
                 {gccCountries.map((country, index) => (
                   <div key={index} className="flex items-center gap-2">
                     <CheckCircle className="h-5 w-5 text-green-500" />
-                    <span className="text-gray-700 dark:text-gray-300">{country}</span>
+                    <span className="text-gray-700 dark:text-gray-300 dark:text-gray-300">{country}</span>
                   </div>
                 ))}
               </div>
@@ -371,7 +371,7 @@ export default function PartnerWithUsPage() {
                   </div>
                   <div>
                     <div className="font-semibold text-gray-900 dark:text-white dark:text-white">Saudi Arabia - NEOM & Riyadh</div>
-                    <div className="text-sm text-gray-600 dark:text-gray-400">High demand for Vision 2030 smart city projects</div>
+                    <div className="text-sm text-gray-600 dark:text-gray-400 dark:text-gray-400">High demand for Vision 2030 smart city projects</div>
                   </div>
                 </li>
                 <li className="flex items-start gap-3">
@@ -380,7 +380,7 @@ export default function PartnerWithUsPage() {
                   </div>
                   <div>
                     <div className="font-semibold text-gray-900 dark:text-white dark:text-white">Qatar - Lusail & The Pearl</div>
-                    <div className="text-sm text-gray-600 dark:text-gray-400">Luxury residential developments seeking partners</div>
+                    <div className="text-sm text-gray-600 dark:text-gray-400 dark:text-gray-400">Luxury residential developments seeking partners</div>
                   </div>
                 </li>
                 <li className="flex items-start gap-3">
@@ -389,7 +389,7 @@ export default function PartnerWithUsPage() {
                   </div>
                   <div>
                     <div className="font-semibold text-gray-900 dark:text-white dark:text-white">Kuwait & Bahrain</div>
-                    <div className="text-sm text-gray-600 dark:text-gray-400">Growing market with limited competition</div>
+                    <div className="text-sm text-gray-600 dark:text-gray-400 dark:text-gray-400">Growing market with limited competition</div>
                   </div>
                 </li>
               </ul>
@@ -405,7 +405,7 @@ export default function PartnerWithUsPage() {
             <h2 className="text-2xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">
               Apply to Become a Partner
             </h2>
-            <p className="text-gray-600 dark:text-gray-400">
+            <p className="text-gray-600 dark:text-gray-400 dark:text-gray-400">
               Fill out the form below and our partnership team will contact you within 48 hours.
             </p>
           </div>
@@ -418,7 +418,7 @@ export default function PartnerWithUsPage() {
             >
               <CheckCircle className="h-16 w-16 text-green-500 mx-auto mb-4" />
               <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2">Application Submitted!</h3>
-              <p className="text-gray-600 mb-6">
+              <p className="text-gray-600 dark:text-gray-400 mb-6">
                 Thank you for your interest in partnering with LEXA. Our team will review your 
                 application and contact you within 48 business hours.
               </p>
@@ -430,7 +430,7 @@ export default function PartnerWithUsPage() {
             <form onSubmit={handleSubmit} className="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-6 md:p-8 space-y-6">
               {/* Partner Type Selection */}
               <div>
-                <label className="block text-sm font-semibold text-gray-700 mb-3">
+                <label className="block text-sm font-semibold text-gray-700 dark:text-gray-300 mb-3">
                   Partnership Type *
                 </label>
                 <div className="grid grid-cols-2 gap-3">
@@ -453,7 +453,7 @@ export default function PartnerWithUsPage() {
 
               <div className="grid md:grid-cols-2 gap-6">
                 <div>
-                  <label className="block text-sm font-semibold text-gray-700 mb-2">
+                  <label className="block text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">
                     Company Name *
                   </label>
                   <Input
@@ -465,7 +465,7 @@ export default function PartnerWithUsPage() {
                   />
                 </div>
                 <div>
-                  <label className="block text-sm font-semibold text-gray-700 mb-2">
+                  <label className="block text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">
                     Contact Name *
                   </label>
                   <Input
@@ -480,7 +480,7 @@ export default function PartnerWithUsPage() {
 
               <div className="grid md:grid-cols-2 gap-6">
                 <div>
-                  <label className="block text-sm font-semibold text-gray-700 mb-2">
+                  <label className="block text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">
                     Email *
                   </label>
                   <Input
@@ -493,7 +493,7 @@ export default function PartnerWithUsPage() {
                   />
                 </div>
                 <div>
-                  <label className="block text-sm font-semibold text-gray-700 mb-2">
+                  <label className="block text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">
                     Phone *
                   </label>
                   <Input
@@ -508,7 +508,7 @@ export default function PartnerWithUsPage() {
 
               <div className="grid md:grid-cols-2 gap-6">
                 <div>
-                  <label className="block text-sm font-semibold text-gray-700 mb-2">
+                  <label className="block text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">
                     Country *
                   </label>
                   <select
@@ -525,7 +525,7 @@ export default function PartnerWithUsPage() {
                   </select>
                 </div>
                 <div>
-                  <label className="block text-sm font-semibold text-gray-700 mb-2">
+                  <label className="block text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">
                     City *
                   </label>
                   <Input
@@ -539,7 +539,7 @@ export default function PartnerWithUsPage() {
               </div>
 
               <div>
-                <label className="block text-sm font-semibold text-gray-700 mb-2">
+                <label className="block text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">
                   Current Business Description
                 </label>
                 <textarea
@@ -603,7 +603,7 @@ export default function PartnerWithUsPage() {
               <h3 className="font-bold text-gray-900 dark:text-white mb-2">
                 What are the requirements to become a LEXA dealer?
               </h3>
-              <p className="text-gray-600 dark:text-gray-400">
+              <p className="text-gray-600 dark:text-gray-400 dark:text-gray-400">
                 We look for partners with relevant experience in electrical, AV, or home automation. 
                 You&apos;ll need a valid trade license, showroom or office space, and commitment to 
                 completing our product training program.
@@ -614,7 +614,7 @@ export default function PartnerWithUsPage() {
               <h3 className="font-bold text-gray-900 dark:text-white mb-2">
                 What brands can I sell as a LEXA partner?
               </h3>
-              <p className="text-gray-600 dark:text-gray-400">
+              <p className="text-gray-600 dark:text-gray-400 dark:text-gray-400">
                 Partners get access to our full portfolio including Control4, Crestron, Lutron, 
                 Sonos, Samsung, Sony, Bowers & Wilkins, McIntosh, KEF, and 20+ more premium brands.
               </p>
@@ -624,7 +624,7 @@ export default function PartnerWithUsPage() {
               <h3 className="font-bold text-gray-900 dark:text-white mb-2">
                 Do you offer exclusive territories?
               </h3>
-              <p className="text-gray-600 dark:text-gray-400">
+              <p className="text-gray-600 dark:text-gray-400 dark:text-gray-400">
                 Yes, for qualifying distributors we offer exclusive territory rights in specific 
                 regions. This is evaluated based on your business plan, investment capability, 
                 and market potential.
@@ -635,7 +635,7 @@ export default function PartnerWithUsPage() {
               <h3 className="font-bold text-gray-900 dark:text-white mb-2">
                 What support do partners receive?
               </h3>
-              <p className="text-gray-600 dark:text-gray-400">
+              <p className="text-gray-600 dark:text-gray-400 dark:text-gray-400">
                 All partners receive product training, technical support, marketing materials, 
                 lead referrals, co-marketing funds, and access to our Experience Centre for 
                 client demonstrations.
@@ -646,7 +646,7 @@ export default function PartnerWithUsPage() {
               <h3 className="font-bold text-gray-900 dark:text-white mb-2">
                 How long does the application process take?
               </h3>
-              <p className="text-gray-600 dark:text-gray-400">
+              <p className="text-gray-600 dark:text-gray-400 dark:text-gray-400">
                 We review all applications within 48 hours. The full onboarding process, including 
                 training and certification, typically takes 2-4 weeks depending on your chosen 
                 partnership level.

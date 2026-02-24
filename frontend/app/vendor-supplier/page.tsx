@@ -213,7 +213,7 @@ export default function VendorSupplierPage() {
               <h2 className="text-2xl md:text-4xl font-bold text-gray-900 dark:text-white mb-6">
                 What We Look For in Vendors
               </h2>
-              <p className="text-gray-600 mb-8">
+              <p className="text-gray-600 dark:text-gray-400 mb-8">
                 LEXA partners with leading global brands and innovative manufacturers. We evaluate 
                 vendors based on product quality, market positioning, and partnership potential.
               </p>
@@ -221,7 +221,7 @@ export default function VendorSupplierPage() {
                 {lookingFor.map((item, index) => (
                   <li key={index} className="flex items-start gap-3">
                     <CheckCircle className="h-5 w-5 text-green-500 flex-shrink-0 mt-0.5" />
-                    <span className="text-gray-700 dark:text-gray-300">{item}</span>
+                    <span className="text-gray-700 dark:text-gray-300 dark:text-gray-300">{item}</span>
                   </li>
                 ))}
               </ul>
@@ -233,21 +233,21 @@ export default function VendorSupplierPage() {
                   <div className="w-3 h-3 bg-green-500 rounded-full animate-pulse" />
                   <div>
                     <div className="font-semibold text-gray-900 dark:text-white dark:text-white">High Priority</div>
-                    <div className="text-sm text-gray-600 dark:text-gray-400">AI-powered automation systems, Voice control platforms</div>
+                    <div className="text-sm text-gray-600 dark:text-gray-400 dark:text-gray-400">AI-powered automation systems, Voice control platforms</div>
                   </div>
                 </div>
                 <div className="flex items-center gap-4 p-4 bg-yellow-50 rounded-lg border border-yellow-200">
                   <div className="w-3 h-3 bg-yellow-500 rounded-full" />
                   <div>
                     <div className="font-semibold text-gray-900 dark:text-white dark:text-white">Medium Priority</div>
-                    <div className="text-sm text-gray-600 dark:text-gray-400">Outdoor audio, Motorized shading, EV charging</div>
+                    <div className="text-sm text-gray-600 dark:text-gray-400 dark:text-gray-400">Outdoor audio, Motorized shading, EV charging</div>
                   </div>
                 </div>
                 <div className="flex items-center gap-4 p-4 bg-blue-50 rounded-lg border border-blue-200">
                   <div className="w-3 h-3 bg-blue-500 rounded-full" />
                   <div>
                     <div className="font-semibold text-gray-900 dark:text-white dark:text-white">Open Categories</div>
-                    <div className="text-sm text-gray-600 dark:text-gray-400">Smart appliances, Wellness tech, Energy management</div>
+                    <div className="text-sm text-gray-600 dark:text-gray-400 dark:text-gray-400">Smart appliances, Wellness tech, Energy management</div>
                   </div>
                 </div>
               </div>
@@ -263,7 +263,7 @@ export default function VendorSupplierPage() {
             <h2 className="text-2xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">
               Product Categories We Source
             </h2>
-            <p className="text-gray-600 max-w-2xl mx-auto">
+            <p className="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
               Select the categories that match your product offering. We evaluate vendors 
               across all smart home and AV integration categories.
             </p>
@@ -339,7 +339,7 @@ export default function VendorSupplierPage() {
             <h2 className="text-2xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">
               Vendor Onboarding Process
             </h2>
-            <p className="text-gray-600 max-w-2xl mx-auto">
+            <p className="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
               Our structured evaluation process ensures we partner with vendors who meet our 
               quality standards and can serve the GCC market effectively.
             </p>
@@ -367,7 +367,7 @@ export default function VendorSupplierPage() {
                         </span>
                         <h3 className="font-bold text-gray-900 dark:text-white dark:text-white">{step.title}</h3>
                       </div>
-                      <p className="text-sm text-gray-600 md:ml-11">{step.description}</p>
+                      <p className="text-sm text-gray-600 dark:text-gray-400 md:ml-11">{step.description}</p>
                     </div>
                   </div>
                   <div className="hidden md:flex w-4 h-4 bg-[#E8DCC8] rounded-full absolute left-1/2 -translate-x-1/2" 
@@ -393,7 +393,7 @@ export default function VendorSupplierPage() {
             <h2 className="text-2xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">
               Vendor Registration Form
             </h2>
-            <p className="text-gray-600 dark:text-gray-400">
+            <p className="text-gray-600 dark:text-gray-400 dark:text-gray-400">
               Complete the form below to start the vendor evaluation process. Our procurement 
               team will review your submission within 5 business days.
             </p>
@@ -407,7 +407,7 @@ export default function VendorSupplierPage() {
             >
               <CheckCircle className="h-16 w-16 text-green-500 mx-auto mb-4" />
               <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2">Registration Submitted!</h3>
-              <p className="text-gray-600 mb-6">
+              <p className="text-gray-600 dark:text-gray-400 mb-6">
                 Thank you for your interest in becoming a LEXA vendor. Our procurement team will 
                 review your submission and contact you within 5 business days.
               </p>
@@ -425,7 +425,7 @@ export default function VendorSupplierPage() {
                 <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-4 pb-2 border-b">Company Information</h3>
                 <div className="grid md:grid-cols-2 gap-6">
                   <div>
-                    <label className="block text-sm font-semibold text-gray-700 mb-2">
+                    <label className="block text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">
                       Company Name *
                     </label>
                     <Input
@@ -437,7 +437,7 @@ export default function VendorSupplierPage() {
                     />
                   </div>
                   <div>
-                    <label className="block text-sm font-semibold text-gray-700 mb-2">
+                    <label className="block text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">
                       Website
                     </label>
                     <Input
@@ -455,7 +455,7 @@ export default function VendorSupplierPage() {
                 <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-4 pb-2 border-b">Contact Information</h3>
                 <div className="grid md:grid-cols-2 gap-6">
                   <div>
-                    <label className="block text-sm font-semibold text-gray-700 mb-2">
+                    <label className="block text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">
                       Contact Name *
                     </label>
                     <Input
@@ -467,7 +467,7 @@ export default function VendorSupplierPage() {
                     />
                   </div>
                   <div>
-                    <label className="block text-sm font-semibold text-gray-700 mb-2">
+                    <label className="block text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">
                       Job Title
                     </label>
                     <Input
@@ -476,7 +476,7 @@ export default function VendorSupplierPage() {
                     />
                   </div>
                   <div>
-                    <label className="block text-sm font-semibold text-gray-700 mb-2">
+                    <label className="block text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">
                       Email *
                     </label>
                     <Input
@@ -489,7 +489,7 @@ export default function VendorSupplierPage() {
                     />
                   </div>
                   <div>
-                    <label className="block text-sm font-semibold text-gray-700 mb-2">
+                    <label className="block text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">
                       Phone *
                     </label>
                     <Input
@@ -502,7 +502,7 @@ export default function VendorSupplierPage() {
                   </div>
                 </div>
                 <div className="mt-6">
-                  <label className="block text-sm font-semibold text-gray-700 mb-2">
+                  <label className="block text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">
                     Country of Operation *
                   </label>
                   <Input
@@ -520,7 +520,7 @@ export default function VendorSupplierPage() {
                 <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-4 pb-2 border-b">Product Information</h3>
                 
                 <div className="mb-6">
-                  <label className="block text-sm font-semibold text-gray-700 mb-3">
+                  <label className="block text-sm font-semibold text-gray-700 dark:text-gray-300 mb-3">
                     Product Categories * <span className="font-normal text-gray-500">(Select all that apply)</span>
                   </label>
                   <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
@@ -552,7 +552,7 @@ export default function VendorSupplierPage() {
 
                 <div className="grid md:grid-cols-2 gap-6">
                   <div>
-                    <label className="block text-sm font-semibold text-gray-700 mb-2">
+                    <label className="block text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">
                       Brand Names *
                     </label>
                     <Input
@@ -564,7 +564,7 @@ export default function VendorSupplierPage() {
                     />
                   </div>
                   <div>
-                    <label className="block text-sm font-semibold text-gray-700 mb-2">
+                    <label className="block text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">
                       Current Markets
                     </label>
                     <Input
@@ -579,7 +579,7 @@ export default function VendorSupplierPage() {
 
               {/* Additional Information */}
               <div>
-                <label className="block text-sm font-semibold text-gray-700 mb-2">
+                <label className="block text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">
                   Additional Information
                 </label>
                 <textarea
@@ -657,7 +657,7 @@ export default function VendorSupplierPage() {
               <h3 className="font-bold text-gray-900 dark:text-white mb-2">
                 What volume do you typically order?
               </h3>
-              <p className="text-gray-600 dark:text-gray-400">
+              <p className="text-gray-600 dark:text-gray-400 dark:text-gray-400">
                 Order volumes vary by product category and brand. Initial orders typically range from 
                 $10,000-$50,000 depending on the product line, with regular reorders based on demand.
               </p>
@@ -667,7 +667,7 @@ export default function VendorSupplierPage() {
               <h3 className="font-bold text-gray-900 dark:text-white mb-2">
                 Do you require exclusivity for the GCC region?
               </h3>
-              <p className="text-gray-600 dark:text-gray-400">
+              <p className="text-gray-600 dark:text-gray-400 dark:text-gray-400">
                 We prefer exclusive or semi-exclusive arrangements for new brands, but we evaluate 
                 each opportunity individually. Strong existing distribution in the region may also 
                 be considered.
@@ -678,7 +678,7 @@ export default function VendorSupplierPage() {
               <h3 className="font-bold text-gray-900 dark:text-white mb-2">
                 What certifications are required for GCC markets?
               </h3>
-              <p className="text-gray-600 dark:text-gray-400">
+              <p className="text-gray-600 dark:text-gray-400 dark:text-gray-400">
                 Products should have CE marking at minimum. UAE market may require ESMA compliance 
                 for certain categories. Saudi Arabia requires SASO certification. We can guide you 
                 through specific requirements.
@@ -689,7 +689,7 @@ export default function VendorSupplierPage() {
               <h3 className="font-bold text-gray-900 dark:text-white mb-2">
                 How long does the evaluation process take?
               </h3>
-              <p className="text-gray-600 dark:text-gray-400">
+              <p className="text-gray-600 dark:text-gray-400 dark:text-gray-400">
                 From initial application to partnership agreement, the process typically takes 4-8 weeks. 
                 This includes documentation review, sample testing, and commercial negotiations.
               </p>
@@ -699,7 +699,7 @@ export default function VendorSupplierPage() {
               <h3 className="font-bold text-gray-900 dark:text-white mb-2">
                 Do you provide marketing support for vendor brands?
               </h3>
-              <p className="text-gray-600 dark:text-gray-400">
+              <p className="text-gray-600 dark:text-gray-400 dark:text-gray-400">
                 Yes, we offer comprehensive marketing support including product displays at our Experience 
                 Centre, digital marketing campaigns, dealer training, and co-branded marketing materials.
               </p>

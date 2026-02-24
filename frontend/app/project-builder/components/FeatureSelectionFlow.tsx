@@ -302,7 +302,7 @@ export default function FeatureSelectionFlow({
         <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-2">
           Select Your {currentTier.name} Features
         </h2>
-        <p className="text-gray-600 max-w-2xl mx-auto">
+        <p className="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
           {currentTier.instruction}
         </p>
       </motion.div>

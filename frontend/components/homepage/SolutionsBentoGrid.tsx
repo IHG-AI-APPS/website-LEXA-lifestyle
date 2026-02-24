@@ -177,7 +177,7 @@ export default function SolutionsBentoGrid() {
           <h2 className="h2 mb-4">
             Technology That Transforms Spaces
           </h2>
-          <p className="text-base md:text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
+          <p className="text-base md:text-lg text-gray-600 dark:text-gray-400 dark:text-gray-400 max-w-2xl mx-auto">
             From private cinemas to complete home automation, discover our flagship solutions.
           </p>
         </motion.div>

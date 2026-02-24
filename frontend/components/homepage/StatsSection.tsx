@@ -99,7 +99,7 @@ export default function StatsSection() {
                   <Icon className="h-7 w-7 sm:h-8 sm:w-8 mx-auto mb-3 sm:mb-4 text-[#E8DCC8] transition-colors group-hover:text-[#B8942F]" />
                 </motion.div>
                 <AnimatedCounter value={stat.value} suffix={stat.suffix} />
-                <p className="text-xs sm:text-sm text-gray-600 dark:text-gray-400 uppercase tracking-wider transition-colors group-hover:text-[#1A1A1A] dark:group-hover:text-white">
+                <p className="text-xs sm:text-sm text-gray-600 dark:text-gray-400 dark:text-gray-400 uppercase tracking-wider transition-colors group-hover:text-[#1A1A1A] dark:group-hover:text-white">
                   {stat.label}
                 </p>
               </motion.div>

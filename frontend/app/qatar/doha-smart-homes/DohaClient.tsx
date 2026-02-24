@@ -51,7 +51,7 @@ export default function DohaClient() {
             {communities.map((c, i) => (
               <div key={i} className="bg-white dark:bg-gray-700 p-6 rounded-xl shadow-lg">
                 <h3 className="text-xl font-semibold text-gray-900 dark:text-white dark:text-white">{c.name}</h3>
-                <p className="text-gray-600 dark:text-gray-300">{c.type} • {c.projects}</p>
+                <p className="text-gray-600 dark:text-gray-400 dark:text-gray-300">{c.type} • {c.projects}</p>
               </div>
             ))}
           </div>
@@ -64,7 +64,7 @@ export default function DohaClient() {
             {faqs.map((faq, i) => (
               <div key={i} className="bg-white dark:bg-gray-700 p-6 rounded-xl shadow">
                 <h3 className="text-lg font-semibold mb-2 text-gray-900 dark:text-white dark:text-white">{faq.q}</h3>
-                <p className="text-gray-600 dark:text-gray-300">{faq.a}</p>
+                <p className="text-gray-600 dark:text-gray-400 dark:text-gray-300">{faq.a}</p>
               </div>
             ))}
           </div>

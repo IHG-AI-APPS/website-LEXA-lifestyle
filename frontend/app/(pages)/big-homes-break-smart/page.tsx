@@ -112,7 +112,7 @@ export default function BigHomesBreakSmartPage() {
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-600 to-orange-600">BREAK SMART</span>
             </h1>
             <div className="h-px w-32 bg-gradient-to-r from-red-400 to-transparent mb-8 mx-auto" />
-            <p className="text-xl text-gray-700 leading-relaxed max-w-3xl mx-auto">
+            <p className="text-xl text-gray-700 dark:text-gray-300 leading-relaxed max-w-3xl mx-auto">
               Traditional &quot;smart home&quot; solutions work fine for apartments. But luxury villas over 5,000 sq ft? 
               They collapse under their own complexity. Here&apos;s why—and how LEXA solves it.
             </p>
@@ -130,7 +130,7 @@ export default function BigHomesBreakSmartPage() {
             className="text-center mb-16"
           >
             <h2 className="text-3xl md:text-4xl font-bold mb-4">The 5 Critical Failures</h2>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+            <p className="text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
               Why traditional smart home setups fail in luxury estates
             </p>
           </motion.div>
@@ -158,11 +158,11 @@ export default function BigHomesBreakSmartPage() {
                       <div className="space-y-3">
                         <div>
                           <span className="text-sm uppercase tracking-wider text-red-600 font-semibold">Problem:</span>
-                          <p className="text-gray-700 mt-1">{problem.problem}</p>
+                          <p className="text-gray-700 dark:text-gray-300 mt-1">{problem.problem}</p>
                         </div>
                         <div>
                           <span className="text-sm uppercase tracking-wider text-orange-600 font-semibold">Impact:</span>
-                          <p className="text-gray-700 mt-1">{problem.impact}</p>
+                          <p className="text-gray-700 dark:text-gray-300 mt-1">{problem.impact}</p>
                         </div>
                         <div className="pt-3 border-t border-gray-200 dark:border-gray-700">
                           <div className="text-sm text-gray-500 italic">📊 {problem.stat}</div>
@@ -187,7 +187,7 @@ export default function BigHomesBreakSmartPage() {
             className="text-center mb-12"
           >
             <h2 className="text-3xl md:text-4xl font-bold mb-4">Hidden Cost of &quot;No Intelligence&quot;</h2>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+            <p className="text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
               What you&apos;re paying for systems that don&apos;t communicate, learn, or protect
             </p>
           </motion.div>
@@ -206,10 +206,10 @@ export default function BigHomesBreakSmartPage() {
                   <h3 className="text-xl font-semibold">{item.category}</h3>
                   <span className="text-red-600 font-bold text-lg">{item.cost}</span>
                 </div>
-                <p className="text-gray-600 text-sm mb-4">{item.description}</p>
+                <p className="text-gray-600 dark:text-gray-400 text-sm mb-4">{item.description}</p>
                 <div className="pt-3 border-t border-gray-200 dark:border-gray-700">
                   <span className="text-xs uppercase tracking-wider text-green-600 font-semibold">LEXA Solution:</span>
-                  <p className="text-sm text-gray-700 mt-1">{item.solution}</p>
+                  <p className="text-sm text-gray-700 dark:text-gray-300 mt-1">{item.solution}</p>
                 </div>
               </motion.div>
             ))}
@@ -224,7 +224,7 @@ export default function BigHomesBreakSmartPage() {
             <DollarSign className="w-12 h-12 text-red-600 mx-auto mb-4" />
             <h3 className="text-2xl font-bold mb-2">Total Annual Hidden Cost</h3>
             <div className="text-4xl font-bold text-red-600 mb-2">AED 100,000 - 150,000</div>
-            <p className="text-gray-700 dark:text-gray-300">
+            <p className="text-gray-700 dark:text-gray-300 dark:text-gray-300">
               Plus catastrophic risk exposure of AED 500K - 2M from undetected water damage
             </p>
           </motion.div>
@@ -241,7 +241,7 @@ export default function BigHomesBreakSmartPage() {
             className="text-center mb-12"
           >
             <h2 className="text-3xl md:text-4xl font-bold mb-4">Traditional vs LEXA Approach</h2>
-            <p className="text-lg text-gray-600 dark:text-gray-400">
+            <p className="text-lg text-gray-600 dark:text-gray-400 dark:text-gray-400">
               The difference between installed and orchestrated
             </p>
           </motion.div>
@@ -259,7 +259,7 @@ export default function BigHomesBreakSmartPage() {
                 {comparison.traditional.map((item, i) => (
                   <div key={i} className="flex items-start gap-3">
                     <X className="w-5 h-5 text-red-500 flex-shrink-0 mt-0.5" strokeWidth={2.5} />
-                    <span className="text-gray-700 dark:text-gray-300">{item.feature}</span>
+                    <span className="text-gray-700 dark:text-gray-300 dark:text-gray-300">{item.feature}</span>
                   </div>
                 ))}
               </div>
@@ -277,7 +277,7 @@ export default function BigHomesBreakSmartPage() {
                 {comparison.lexa.map((item, i) => (
                   <div key={i} className="flex items-start gap-3">
                     <Check className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" strokeWidth={2.5} />
-                    <span className="text-gray-700 dark:text-gray-300">{item.feature}</span>
+                    <span className="text-gray-700 dark:text-gray-300 dark:text-gray-300">{item.feature}</span>
                   </div>
                 ))}
               </div>

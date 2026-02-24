@@ -48,7 +48,7 @@ export default function ProjectBuilderLanding() {
               {/* Separator + Subtitle */}
               <div className="flex items-center gap-8 mb-12">
                 <div className="h-px w-24 bg-gradient-to-r from-gray-300 to-transparent" />
-                <p className="text-xl text-gray-600 font-light max-w-2xl">
+                <p className="text-xl text-gray-600 dark:text-gray-400 font-light max-w-2xl">
                   Intelligence-driven specification for luxury automation.
                   <br className="hidden sm:block" />
                   693 features · Dependency resolution · Instant proposals
@@ -72,7 +72,7 @@ export default function ProjectBuilderLanding() {
                   <Button
                     size="lg"
                     variant="outline"
-                    className="border-gray-300 text-gray-700 hover:bg-gray-50 px-10 py-7 text-sm font-medium tracking-wide transition-all duration-300 group"
+                    className="border-gray-300 text-gray-700 dark:text-gray-300 hover:bg-gray-50 px-10 py-7 text-sm font-medium tracking-wide transition-all duration-300 group"
                   >
                     Classic Builder
                     <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
@@ -108,7 +108,7 @@ export default function ProjectBuilderLanding() {
               <h2 className="text-4xl sm:text-5xl font-semibold tracking-tight text-gray-900 dark:text-white mb-4">
                 How It Works
               </h2>
-              <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+              <p className="text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
                 From concept to specification in minutes
               </p>
             </div>
@@ -153,7 +153,7 @@ export default function ProjectBuilderLanding() {
 
                   {/* Content */}
                   <h3 className="text-xl font-medium text-gray-900 dark:text-white mb-3">{step.title}</h3>
-                  <p className="text-sm text-gray-600 leading-relaxed">{step.description}</p>
+                  <p className="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">{step.description}</p>
                 </motion.div>
               ))}
             </div>
@@ -178,7 +178,7 @@ export default function ProjectBuilderLanding() {
                 >
                   <feature.icon className="w-6 h-6 text-blue-600 mb-4" />
                   <h4 className="text-sm font-medium text-gray-900 dark:text-white mb-2 uppercase tracking-widest">{feature.label}</h4>
-                  <p className="text-xs text-gray-600 dark:text-gray-400">{feature.desc}</p>
+                  <p className="text-xs text-gray-600 dark:text-gray-400 dark:text-gray-400">{feature.desc}</p>
                 </div>
               ))}
             </div>

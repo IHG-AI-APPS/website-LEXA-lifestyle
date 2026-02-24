@@ -25,7 +25,7 @@ export default function Step5Brands({
     <div className="space-y-8 max-w-3xl mx-auto">
       <div className="text-center mb-8">
         <h2 className="text-3xl font-bold mb-3">Brand & Protocol Preferences</h2>
-        <p className="text-gray-600 dark:text-gray-400">
+        <p className="text-gray-600 dark:text-gray-400 dark:text-gray-400">
           Select your preferred brands and control platforms
         </p>
       </div>

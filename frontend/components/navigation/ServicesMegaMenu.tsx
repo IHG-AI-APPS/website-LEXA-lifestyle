@@ -134,7 +134,7 @@ export default function ServicesMegaMenu({ isOpen, onClose, onMouseEnter, onMous
                                 {item.label}
                               </span>
                             </div>
-                            <ChevronRight className="h-4 w-4 text-gray-600 opacity-0 transition-all group-hover:opacity-100 group-hover:translate-x-1 flex-shrink-0" />
+                            <ChevronRight className="h-4 w-4 text-gray-600 dark:text-gray-400 opacity-0 transition-all group-hover:opacity-100 group-hover:translate-x-1 flex-shrink-0" />
                           </div>
                         </Link>
                       )
@@ -168,7 +168,7 @@ export default function ServicesMegaMenu({ isOpen, onClose, onMouseEnter, onMous
                                 {item.label}
                               </span>
                             </div>
-                            <ChevronRight className="h-4 w-4 text-gray-600 opacity-0 transition-all group-hover:opacity-100 group-hover:translate-x-1 flex-shrink-0" />
+                            <ChevronRight className="h-4 w-4 text-gray-600 dark:text-gray-400 opacity-0 transition-all group-hover:opacity-100 group-hover:translate-x-1 flex-shrink-0" />
                           </div>
                         </Link>
                       )
@@ -214,7 +214,7 @@ export default function ServicesMegaMenu({ isOpen, onClose, onMouseEnter, onMous
                                 {item.label}
                               </span>
                             </div>
-                            <ChevronRight className="h-4 w-4 text-gray-600 opacity-0 transition-all group-hover:opacity-100 group-hover:translate-x-1 flex-shrink-0" />
+                            <ChevronRight className="h-4 w-4 text-gray-600 dark:text-gray-400 opacity-0 transition-all group-hover:opacity-100 group-hover:translate-x-1 flex-shrink-0" />
                           </div>
                         </Link>
                       )

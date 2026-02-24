@@ -65,7 +65,7 @@ export default function AbuDhabiPage() {
               {features.map((feature, index) => (
                 <div key={index} className="flex items-start gap-3">
                   <CheckCircle2 className="text-green-600 flex-shrink-0 mt-1" size={20} />
-                  <span className="text-gray-700 font-medium">{feature}</span>
+                  <span className="text-gray-700 dark:text-gray-300 font-medium">{feature}</span>
                 </div>
               ))}
             </div>

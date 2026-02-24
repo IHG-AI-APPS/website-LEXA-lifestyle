@@ -84,7 +84,7 @@ export default function DubaiMarinaClient() {
             <h2 className="text-3xl md:text-4xl font-heading font-bold mb-4">
               Smart Systems for Marina Living
             </h2>
-            <p className="text-gray-600 max-w-2xl mx-auto">
+            <p className="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
               Dubai Marina's iconic towers deserve the finest automation technology. 
               We specialize in high-rise smart home installations.
             </p>
@@ -102,7 +102,7 @@ export default function DubaiMarinaClient() {
               >
                 <system.icon className="text-[#C9A962] mb-4" size={32} />
                 <h3 className="text-xl font-bold mb-2">{system.title}</h3>
-                <p className="text-gray-600 dark:text-gray-400">{system.desc}</p>
+                <p className="text-gray-600 dark:text-gray-400 dark:text-gray-400">{system.desc}</p>
               </motion.div>
             ))}
           </div>
@@ -119,7 +119,7 @@ export default function DubaiMarinaClient() {
             {towers.map((tower, index) => (
               <span 
                 key={index}
-                className="px-6 py-3 bg-gray-100 rounded-full text-gray-700 font-medium"
+                className="px-6 py-3 bg-gray-100 rounded-full text-gray-700 dark:text-gray-300 font-medium"
               >
                 {tower}
               </span>

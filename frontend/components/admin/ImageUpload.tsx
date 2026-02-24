@@ -117,7 +117,7 @@ export function ImageUpload({
   return (
     <div className={`space-y-3 ${className}`}>
       {label && (
-        <label className="block text-sm font-medium text-gray-700 dark:text-gray-300">{label}</label>
+        <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 dark:text-gray-300">{label}</label>
       )}
 
       {/* Mode Toggle */}
@@ -128,7 +128,7 @@ export function ImageUpload({
           className={`flex items-center gap-2 px-3 py-1.5 text-sm rounded-md transition-colors ${
             mode === 'upload'
               ? 'bg-white text-gray-900 dark:text-white shadow-sm'
-              : 'text-gray-600 hover:text-gray-900'
+              : 'text-gray-600 dark:text-gray-400 hover:text-gray-900'
           }`}
         >
           <Upload className="w-4 h-4" />
@@ -140,7 +140,7 @@ export function ImageUpload({
           className={`flex items-center gap-2 px-3 py-1.5 text-sm rounded-md transition-colors ${
             mode === 'url'
               ? 'bg-white text-gray-900 dark:text-white shadow-sm'
-              : 'text-gray-600 hover:text-gray-900'
+              : 'text-gray-600 dark:text-gray-400 hover:text-gray-900'
           }`}
         >
           <Link className="w-4 h-4" />
@@ -173,12 +173,12 @@ export function ImageUpload({
           {uploading ? (
             <div className="flex flex-col items-center gap-2">
               <Loader2 className="w-8 h-8 text-blue-500 animate-spin" />
-              <p className="text-sm text-gray-600 dark:text-gray-400">Uploading...</p>
+              <p className="text-sm text-gray-600 dark:text-gray-400 dark:text-gray-400">Uploading...</p>
             </div>
           ) : (
             <>
               <Upload className="w-10 h-10 text-gray-400 mx-auto mb-3" />
-              <p className="text-sm text-gray-600 mb-1">
+              <p className="text-sm text-gray-600 dark:text-gray-400 mb-1">
                 <span className="font-medium text-blue-600">Click to upload</span> or drag and drop
               </p>
               <p className="text-xs text-gray-500">PNG, JPG, GIF, WebP up to 10MB</p>
@@ -201,7 +201,7 @@ export function ImageUpload({
             <button
               type="button"
               onClick={clearImage}
-              className="absolute right-2 top-1/2 -translate-y-1/2 p-1 text-gray-400 hover:text-gray-600 dark:text-gray-400"
+              className="absolute right-2 top-1/2 -translate-y-1/2 p-1 text-gray-400 hover:text-gray-600 dark:text-gray-400 dark:text-gray-400"
             >
               <X className="w-4 h-4" />
             </button>
@@ -330,7 +330,7 @@ export function MultiImageUpload({
   return (
     <div className={`space-y-3 ${className}`}>
       {label && (
-        <label className="block text-sm font-medium text-gray-700 dark:text-gray-300">
+        <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 dark:text-gray-300">
           {label} ({values.length}/{maxImages})
         </label>
       )}

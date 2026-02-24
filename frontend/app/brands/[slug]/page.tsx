@@ -253,7 +253,7 @@ export default function BrandDetailPage({ params }: { params: { slug: string } }
                   {brand.key_features.map((feature, index) => (
                     <div key={index} className="flex items-center gap-3">
                       <CheckCircle className="w-5 h-5 text-green-600 flex-shrink-0" />
-                      <span className="text-sm md:text-base text-gray-700 dark:text-gray-300">{feature}</span>
+                      <span className="text-sm md:text-base text-gray-700 dark:text-gray-300 dark:text-gray-300">{feature}</span>
                     </div>
                   ))}
                 </div>
@@ -269,12 +269,12 @@ export default function BrandDetailPage({ params }: { params: { slug: string } }
             >
               <h2 className="text-2xl md:text-4xl font-semibold mb-4 md:mb-6">About {brand.name}</h2>
               <div className="h-px w-24 bg-gradient-to-r from-charcoal to-transparent mb-4 md:mb-6" />
-              <p className="text-base md:text-lg text-gray-600 leading-relaxed font-normal mb-6">
+              <p className="text-base md:text-lg text-gray-600 dark:text-gray-400 leading-relaxed font-normal mb-6">
                 {brand.description}
               </p>
               {brand.long_description && (
                 <div className="prose prose-gray max-w-none">
-                  <p className="text-base text-gray-600 leading-relaxed">
+                  <p className="text-base text-gray-600 dark:text-gray-400 leading-relaxed">
                     {brand.long_description}
                   </p>
                 </div>
@@ -325,7 +325,7 @@ export default function BrandDetailPage({ params }: { params: { slug: string } }
                 <h2 className="text-3xl md:text-4xl font-semibold mb-4">
                   Popular {brand.name} Products
                 </h2>
-                <p className="text-base md:text-lg text-gray-600 max-w-2xl mx-auto">
+                <p className="text-base md:text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
                   Discover our best-selling {brand.name} products, trusted by homeowners across the UAE.
                 </p>
               </motion.div>
@@ -356,7 +356,7 @@ export default function BrandDetailPage({ params }: { params: { slug: string } }
                         <Star className="w-5 h-5 text-yellow-500 flex-shrink-0" fill="currentColor" />
                       </div>
                       {product.description && (
-                        <p className="text-sm md:text-base text-gray-600 mb-4 line-clamp-2">
+                        <p className="text-sm md:text-base text-gray-600 dark:text-gray-400 mb-4 line-clamp-2">
                           {product.description}
                         </p>
                       )}

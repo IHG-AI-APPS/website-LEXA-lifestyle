@@ -68,15 +68,15 @@ export default function AjmanPage() {
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
               <div>
                 <div className="text-4xl font-bold text-[#E8DCC8] mb-2">{ajmanData.projectCount}+</div>
-                <div className="text-gray-600 dark:text-gray-400">Homes Automated in Ajman</div>
+                <div className="text-gray-600 dark:text-gray-400 dark:text-gray-400">Homes Automated in Ajman</div>
               </div>
               <div>
                 <div className="text-4xl font-bold text-[#E8DCC8] mb-2">{ajmanData.avgProjectValue}</div>
-                <div className="text-gray-600 dark:text-gray-400">Average Project Value</div>
+                <div className="text-gray-600 dark:text-gray-400 dark:text-gray-400">Average Project Value</div>
               </div>
               <div>
                 <div className="text-4xl font-bold text-[#E8DCC8] mb-2">4.9/5</div>
-                <div className="text-gray-600 dark:text-gray-400">Customer Rating</div>
+                <div className="text-gray-600 dark:text-gray-400 dark:text-gray-400">Customer Rating</div>
               </div>
             </div>
           </div>
@@ -122,7 +122,7 @@ export default function AjmanPage() {
         <section className="py-16">
           <div className="container mx-auto px-4 max-w-7xl text-center">
             <h2 className="text-3xl font-bold mb-8">Ready to Automate Your Ajman Home?</h2>
-            <p className="text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
+            <p className="text-xl text-gray-600 dark:text-gray-400 mb-8 max-w-2xl mx-auto">
               Contact LEXA Lifestyle for a free consultation and quote for your Ajman property
             </p>
             <div className="flex flex-col md:flex-row gap-4 justify-center items-center">
@@ -146,7 +146,7 @@ function ServiceCard({ title, description }: { title: string; description: strin
   return (
     <div className="p-6 bg-white dark:bg-gray-800 border border-gray-200 rounded-lg hover:shadow-lg transition">
       <h3 className="text-xl font-bold mb-3">{title}</h3>
-      <p className="text-gray-600 dark:text-gray-400">{description}</p>
+      <p className="text-gray-600 dark:text-gray-400 dark:text-gray-400">{description}</p>
     </div>
   )
 }

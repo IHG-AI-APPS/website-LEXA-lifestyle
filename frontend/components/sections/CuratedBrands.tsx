@@ -39,7 +39,7 @@ export default function CuratedBrands() {
           <h2 className="text-5xl md:text-7xl font-heading font-bold tracking-tight mb-6">
             WORLD-CLASS BRANDS
           </h2>
-          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+          <p className="text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
             We partner with the world&apos;s leading audio, automation, and technology brands.
           </p>
         </motion.div>
@@ -75,7 +75,7 @@ export default function CuratedBrands() {
         >
           <Link
             href="/brands"
-            className="inline-flex items-center gap-2 text-black hover:text-gray-600 transition-colors font-medium uppercase tracking-wider text-sm"
+            className="inline-flex items-center gap-2 text-black hover:text-gray-600 dark:text-gray-400 transition-colors font-medium uppercase tracking-wider text-sm"
           >
             View All 32 Brands
             <ArrowRight size={16} strokeWidth={2} />

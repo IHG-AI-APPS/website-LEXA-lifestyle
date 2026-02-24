@@ -26,7 +26,7 @@ export default function Error({
         >
           <h1 className="text-6xl font-bold text-gray-900 dark:text-white mb-4">Oops!</h1>
           <h2 className="text-3xl font-semibold mb-4">Something went wrong</h2>
-          <p className="text-xl text-gray-600 mb-8">
+          <p className="text-xl text-gray-600 dark:text-gray-400 mb-8">
             We&apos;re sorry for the inconvenience. An unexpected error occurred.
           </p>
 
@@ -54,7 +54,7 @@ export default function Error({
             </div>
           )}
 
-          <div className="mt-12 text-gray-600 dark:text-gray-400">
+          <div className="mt-12 text-gray-600 dark:text-gray-400 dark:text-gray-400">
             <p className="mb-4">If this problem persists, please contact our support team:</p>
             <p className="font-semibold">+971 42 670 470</p>
             <p className="text-sm">Available Saturday-Thursday, 9AM-6PM GST</p>

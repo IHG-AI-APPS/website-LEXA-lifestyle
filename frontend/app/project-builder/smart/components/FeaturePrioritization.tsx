@@ -291,7 +291,7 @@ export default function FeaturePrioritization({
         >
           Prioritize Your Features
         </motion.h2>
-        <p className="text-gray-600 dark:text-gray-400">
+        <p className="text-gray-600 dark:text-gray-400 dark:text-gray-400">
           For each feature, select how important it is to you
         </p>
       </div>
@@ -381,7 +381,7 @@ export default function FeaturePrioritization({
                       className={`py-2 px-3 rounded-lg text-sm font-medium transition-all flex items-center justify-center gap-1.5 ${
                         isSelected 
                           ? `${option.color} text-white shadow-md` 
-                          : `bg-gray-100 text-gray-600 hover:bg-gray-200`
+                          : `bg-gray-100 text-gray-600 dark:text-gray-400 hover:bg-gray-200`
                       }`}
                     >
                       <Icon className="w-4 h-4" />
@@ -397,7 +397,7 @@ export default function FeaturePrioritization({
 
       {/* Summary */}
       <div className="bg-gray-50 rounded-xl p-4 mb-6">
-        <div className="text-sm font-medium text-gray-700 mb-3">Your Selections Summary</div>
+        <div className="text-sm font-medium text-gray-700 dark:text-gray-300 mb-3">Your Selections Summary</div>
         <div className="grid grid-cols-4 gap-3">
           {PRIORITY_OPTIONS.filter(o => o.id !== 'skip').map(opt => (
             <div key={opt.id} className={`p-3 rounded-lg ${opt.bgLight}`}>
@@ -408,7 +408,7 @@ export default function FeaturePrioritization({
             </div>
           ))}
           <div className="p-3 rounded-lg bg-gray-100">
-            <div className="text-2xl font-bold text-gray-600 dark:text-gray-400">{summary.skip}</div>
+            <div className="text-2xl font-bold text-gray-600 dark:text-gray-400 dark:text-gray-400">{summary.skip}</div>
             <div className="text-xs text-gray-500">Skipped</div>
           </div>
         </div>

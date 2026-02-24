@@ -75,7 +75,7 @@ export default function FloorPlanUploader({ onSave, initialImage, initialAnnotat
         <div className="border-2 border-dashed border-gray-300 rounded-xl p-12 text-center hover:border-gray-400 transition-colors">
           <Upload className="mx-auto mb-4 text-gray-400" size={48} />
           <h3 className="text-xl font-semibold mb-2">Upload Your Floor Plan</h3>
-          <p className="text-gray-600 mb-6">
+          <p className="text-gray-600 dark:text-gray-400 mb-6">
             Upload an image of your floor plan to mark device locations
           </p>
           <label className="inline-block">
@@ -164,7 +164,7 @@ export default function FloorPlanUploader({ onSave, initialImage, initialAnnotat
 
           {/* Action Buttons */}
           <div className="bg-gray-50 border-t p-4 flex justify-between items-center">
-            <div className="text-sm text-gray-600 dark:text-gray-400">
+            <div className="text-sm text-gray-600 dark:text-gray-400 dark:text-gray-400">
               <strong>{annotations.length}</strong> devices marked
             </div>
             <div className="flex gap-3">

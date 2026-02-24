@@ -440,7 +440,7 @@ export default function ArchitectResourcePortalPage() {
           >
             <button
               onClick={() => setShowResourceForm(false)}
-              className="absolute top-4 right-4 text-gray-400 hover:text-gray-600 z-10 p-2"
+              className="absolute top-4 right-4 text-gray-400 hover:text-gray-600 dark:text-gray-400 z-10 p-2"
             >
               <X size={24} />
             </button>
@@ -449,7 +449,7 @@ export default function ArchitectResourcePortalPage() {
               <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-2">
                 Request Architect Resources
               </h2>
-              <p className="text-gray-600 mb-8">
+              <p className="text-gray-600 dark:text-gray-400 mb-8">
                 Fill in your details and we&apos;ll send the requested resources to your email within 24 hours.
               </p>
 
@@ -459,7 +459,7 @@ export default function ArchitectResourcePortalPage() {
                     <CheckCircle className="text-green-600" size={32} />
                   </div>
                   <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2">Request Received!</h3>
-                  <p className="text-gray-600 dark:text-gray-400">
+                  <p className="text-gray-600 dark:text-gray-400 dark:text-gray-400">
                     We&apos;ll send your requested resources within 24 hours. Check your email inbox.
                   </p>
                 </div>
@@ -467,7 +467,7 @@ export default function ArchitectResourcePortalPage() {
                 <form onSubmit={handleSubmit} className="space-y-5">
                   <div className="grid md:grid-cols-2 gap-5">
                     <div>
-                      <label className="block text-sm font-medium text-gray-700 mb-2">Name *</label>
+                      <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Name *</label>
                       <Input
                         required
                         value={formData.name}
@@ -477,7 +477,7 @@ export default function ArchitectResourcePortalPage() {
                       />
                     </div>
                     <div>
-                      <label className="block text-sm font-medium text-gray-700 mb-2">Firm/Company</label>
+                      <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Firm/Company</label>
                       <Input
                         value={formData.company}
                         onChange={(e) => setFormData({ ...formData, company: e.target.value })}
@@ -489,7 +489,7 @@ export default function ArchitectResourcePortalPage() {
 
                   <div className="grid md:grid-cols-2 gap-5">
                     <div>
-                      <label className="block text-sm font-medium text-gray-700 mb-2">Email *</label>
+                      <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Email *</label>
                       <Input
                         type="email"
                         required
@@ -500,7 +500,7 @@ export default function ArchitectResourcePortalPage() {
                       />
                     </div>
                     <div>
-                      <label className="block text-sm font-medium text-gray-700 mb-2">Phone *</label>
+                      <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Phone *</label>
                       <Input
                         required
                         value={formData.phone}
@@ -512,7 +512,7 @@ export default function ArchitectResourcePortalPage() {
                   </div>
 
                   <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">Resource Needed *</label>
+                    <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Resource Needed *</label>
                     <select
                       required
                       value={formData.resource_type}
@@ -530,7 +530,7 @@ export default function ArchitectResourcePortalPage() {
                   </div>
 
                   <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">Project Details (Optional)</label>
+                    <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Project Details (Optional)</label>
                     <Textarea
                       value={formData.message}
                       onChange={(e) => setFormData({ ...formData, message: e.target.value })}

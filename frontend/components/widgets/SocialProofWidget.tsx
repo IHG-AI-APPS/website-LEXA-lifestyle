@@ -103,12 +103,12 @@ export default function SocialProofWidget() {
               
               {/* Content */}
               <div className="flex-1 min-w-0">
-                <p className="text-sm text-gray-800 dark:text-gray-100">
+                <p className="text-sm text-gray-800 dark:text-gray-200 dark:text-gray-100">
                   <span className="font-semibold">{currentEvent.name}</span>
                   {' '}from{' '}
                   <span className="font-medium text-blue-600">{currentEvent.location}</span>
                 </p>
-                <p className="text-sm text-gray-600 mt-0.5">
+                <p className="text-sm text-gray-600 dark:text-gray-400 mt-0.5">
                   {currentEvent.action}
                 </p>
                 <div className="flex items-center gap-2 mt-1.5 text-xs text-gray-400">
@@ -122,7 +122,7 @@ export default function SocialProofWidget() {
               {/* Close button */}
               <button 
                 onClick={dismiss}
-                className="text-gray-400 hover:text-gray-600 p-1 -mt-1 -mr-1"
+                className="text-gray-400 hover:text-gray-600 dark:text-gray-400 p-1 -mt-1 -mr-1"
               >
                 <span className="sr-only">Dismiss</span>
                 <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">

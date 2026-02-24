@@ -51,7 +51,7 @@ export default function ProcessWheel({ steps }: ProcessWheelProps) {
 
                 {/* Duration Badge */}
                 <div className="text-center mb-3">
-                  <span className="inline-block px-3 py-1 bg-gray-100 text-gray-700 text-xs font-medium rounded-full">
+                  <span className="inline-block px-3 py-1 bg-gray-100 text-gray-700 dark:text-gray-300 text-xs font-medium rounded-full">
                     {step.duration}
                   </span>
                 </div>
@@ -62,7 +62,7 @@ export default function ProcessWheel({ steps }: ProcessWheelProps) {
                 </h3>
 
                 {/* Step Description */}
-                <p className="text-sm text-gray-600 text-center leading-relaxed">
+                <p className="text-sm text-gray-600 dark:text-gray-400 text-center leading-relaxed">
                   {step.description}
                 </p>
               </div>

@@ -106,7 +106,7 @@ export default function HomeownerPage() {
                   <span className="text-transparent bg-clip-text metallic-gradient">ELEVATED</span>
                 </h1>
                 <div className="h-px w-24 bg-gradient-to-r from-platinum to-transparent mb-8" />
-                <p className="text-xl text-gray-600 font-normal leading-relaxed mb-10">
+                <p className="text-xl text-gray-600 dark:text-gray-400 font-normal leading-relaxed mb-10">
                   Transform your villa or apartment into an intelligent sanctuary. 
                   One-touch control for lighting, climate, entertainment, and security.
                 </p>
@@ -159,7 +159,7 @@ export default function HomeownerPage() {
               className="text-center mb-16"
             >
               <h2 className="text-4xl font-semibold mb-4">Why Smart Home Automation?</h2>
-              <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+              <p className="text-lg text-gray-600 dark:text-gray-400 max-w-3xl mx-auto">
                 Enhance comfort, security, and efficiency in your home
               </p>
             </motion.div>
@@ -180,7 +180,7 @@ export default function HomeownerPage() {
                       <Icon size={32} className="text-charcoal" />
                     </div>
                     <h3 className="text-xl font-semibold mb-3">{benefit.title}</h3>
-                    <p className="text-gray-600 dark:text-gray-400">{benefit.description}</p>
+                    <p className="text-gray-600 dark:text-gray-400 dark:text-gray-400">{benefit.description}</p>
                   </motion.div>
                 )
               })}
@@ -200,7 +200,7 @@ export default function HomeownerPage() {
               className="text-center mb-16"  
             >
               <h2 className="text-4xl font-semibold mb-4">Explore Our Solutions</h2>
-              <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+              <p className="text-lg text-gray-600 dark:text-gray-400 max-w-3xl mx-auto">
                 Comprehensive smart home systems tailored for luxury living
               </p>
             </motion.div>
@@ -232,7 +232,7 @@ export default function HomeownerPage() {
                           <h4 className="text-lg font-semibold mb-2 group-hover:text-charcoal transition-colors">
                             {item.name}
                           </h4>
-                          <p className="text-sm text-gray-600 mb-3">{item.description}</p>
+                          <p className="text-sm text-gray-600 dark:text-gray-400 mb-3">{item.description}</p>
                           <div className="flex items-center text-sm text-charcoal font-medium">
                             Learn More <ArrowRight size={16} className="ml-2 group-hover:translate-x-1 transition-transform" />
                           </div>

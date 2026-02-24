@@ -156,7 +156,7 @@ export default function PlatformAgnosticPage() {
               <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4 text-[#1A1A1A] dark:text-white">
                 Why Platform Agnostic Matters
               </h2>
-              <p className="text-base sm:text-lg text-gray-600 max-w-3xl mx-auto">
+              <p className="text-base sm:text-lg text-gray-600 dark:text-gray-400 max-w-3xl mx-auto">
                 The advantages of open architecture over proprietary systems
               </p>
             </motion.div>
@@ -179,10 +179,10 @@ export default function PlatformAgnosticPage() {
                       </div>
                       <div className="flex-1">
                         <h3 className="text-xl font-bold mb-2 text-[#1A1A1A] dark:text-white">{benefit.title}</h3>
-                        <p className="text-gray-600 mb-3">{benefit.description}</p>
+                        <p className="text-gray-600 dark:text-gray-400 mb-3">{benefit.description}</p>
                         <div className="bg-indigo-50 p-3 border-l-4 border-indigo-600">
                           <div className="text-xs text-indigo-600 font-semibold mb-1">Example:</div>
-                          <div className="text-sm text-gray-700 dark:text-gray-300">{benefit.example}</div>
+                          <div className="text-sm text-gray-700 dark:text-gray-300 dark:text-gray-300">{benefit.example}</div>
                         </div>
                       </div>
                     </div>
@@ -206,7 +206,7 @@ export default function PlatformAgnosticPage() {
               <h2 className="text-3xl sm:text-4xl font-bold mb-4 text-[#1A1A1A] dark:text-white">
                 Four-Layer Integration Architecture
               </h2>
-              <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+              <p className="text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
                 How we create unified systems from diverse technologies
               </p>
             </motion.div>
@@ -225,10 +225,10 @@ export default function PlatformAgnosticPage() {
                     <h3 className="text-xl font-bold text-[#1A1A1A] dark:text-white">{layer.layer}</h3>
                     <span className="text-sm text-gray-500">Layer {index + 1}</span>
                   </div>
-                  <p className="text-gray-600 mb-4">{layer.description}</p>
+                  <p className="text-gray-600 dark:text-gray-400 mb-4">{layer.description}</p>
                   <div className="flex flex-wrap gap-2">
                     {layer.examples.map((example) => (
-                      <span key={example} className="px-3 py-1 bg-white text-sm text-gray-700 border border-gray-200 dark:border-gray-700">
+                      <span key={example} className="px-3 py-1 bg-white text-sm text-gray-700 dark:text-gray-300 border border-gray-200 dark:border-gray-700">
                         {example}
                       </span>
                     ))}
@@ -262,7 +262,7 @@ export default function PlatformAgnosticPage() {
               </div>
               {comparison.map((row, index) => (
                 <div key={row.aspect} className={`grid grid-cols-3 border-t border-gray-200 ${index % 2 === 0 ? 'bg-gray-50' : 'bg-white'}`}>
-                  <div className="p-4 border-r border-gray-200 font-semibold text-gray-700 dark:text-gray-300">{row.aspect}</div>
+                  <div className="p-4 border-r border-gray-200 font-semibold text-gray-700 dark:text-gray-300 dark:text-gray-300">{row.aspect}</div>
                   <div className="p-4 border-r border-gray-200 text-center text-red-600 text-sm">{row.proprietary}</div>
                   <div className="p-4 text-center text-green-600 font-semibold text-sm">{row.agnostic}</div>
                 </div>

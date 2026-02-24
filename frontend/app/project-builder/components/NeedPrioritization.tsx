@@ -289,7 +289,7 @@ export default function NeedPrioritization({
               <p className="text-xs md:text-sm uppercase tracking-[0.2em] md:tracking-[0.3em] text-gray-500 mb-3 md:mb-4">
                 Understanding What Matters Most
               </p>
-              <p className="text-gray-600 text-base md:text-lg max-w-3xl mx-auto leading-relaxed">
+              <p className="text-gray-600 dark:text-gray-400 text-base md:text-lg max-w-3xl mx-auto leading-relaxed">
                 Not all features are created equal. Let&apos;s help you distinguish between 
                 what you absolutely need versus what would be nice to have.
               </p>
@@ -315,12 +315,12 @@ export default function NeedPrioritization({
                         <h3 className="text-lg md:text-2xl font-bold text-gray-900 dark:text-white mb-1 md:mb-2">
                           {tier.label}
                         </h3>
-                        <p className="text-gray-600 text-xs md:text-sm mb-2 md:mb-3">
+                        <p className="text-gray-600 dark:text-gray-400 text-xs md:text-sm mb-2 md:mb-3">
                           {tier.description}
                         </p>
                         <div className="bg-gray-50 rounded-lg p-2 md:p-3 mb-2 md:mb-3">
                           <p className="text-[10px] md:text-xs text-gray-500 font-medium mb-1">EXAMPLES:</p>
-                          <p className="text-xs md:text-sm text-gray-700 dark:text-gray-300">{tier.examples}</p>
+                          <p className="text-xs md:text-sm text-gray-700 dark:text-gray-300 dark:text-gray-300">{tier.examples}</p>
                         </div>
                         <div className="flex items-start gap-2">
                           <Info className="w-3 h-3 md:w-4 md:h-4 text-gray-400 flex-shrink-0 mt-0.5" />
@@ -343,10 +343,10 @@ export default function NeedPrioritization({
               className="bg-gray-50 border border-gray-200 rounded-xl md:rounded-2xl p-5 md:p-8 mb-8 md:mb-12"
             >
               <h3 className="text-lg md:text-xl font-bold text-gray-900 dark:text-white mb-3 md:mb-4 flex items-center gap-2 md:gap-3">
-                <Sparkles className="w-5 h-5 md:w-6 md:h-6 text-gray-700 dark:text-gray-300" />
+                <Sparkles className="w-5 h-5 md:w-6 md:h-6 text-gray-700 dark:text-gray-300 dark:text-gray-300" />
                 Why This Matters
               </h3>
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6 text-xs md:text-sm text-gray-600 dark:text-gray-400">
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6 text-xs md:text-sm text-gray-600 dark:text-gray-400 dark:text-gray-400">
                 <div>
                   <div className="font-semibold text-gray-900 dark:text-white mb-1 md:mb-2">Budget Optimization</div>
                   <p>Invest where it matters most, save where you can phase later</p>
@@ -397,11 +397,11 @@ export default function NeedPrioritization({
               </h2>
               
               {/* Mobile instructions */}
-              <p className="md:hidden text-gray-600 text-sm">
+              <p className="md:hidden text-gray-600 dark:text-gray-400 text-sm">
                 Tap a feature below, then tap a category to add it
               </p>
               {/* Desktop instructions */}
-              <p className="hidden md:block text-gray-600 text-base">
+              <p className="hidden md:block text-gray-600 dark:text-gray-400 text-base">
                 Based on your project, drag each feature into the tier that best represents its priority
               </p>
               
@@ -530,7 +530,7 @@ export default function NeedPrioritization({
                             <div className="flex items-center gap-2 md:gap-3">
                               {/* Grip icon - desktop only */}
                               <GripVertical className="hidden md:block w-4 h-4 text-gray-400" />
-                              <FeatureIcon className="w-4 h-4 md:w-5 md:h-5 text-gray-600 flex-shrink-0" />
+                              <FeatureIcon className="w-4 h-4 md:w-5 md:h-5 text-gray-600 dark:text-gray-400 flex-shrink-0" />
                               <div className="flex-1 min-w-0">
                                 <div className="text-xs md:text-sm font-medium text-gray-900 dark:text-white truncate">{feature.name}</div>
                               </div>
@@ -601,7 +601,7 @@ export default function NeedPrioritization({
                           </span>
                         )}
                         <div className="flex flex-col items-center text-center gap-2">
-                          <FeatureIcon className="w-6 h-6 text-gray-600 dark:text-gray-400" />
+                          <FeatureIcon className="w-6 h-6 text-gray-600 dark:text-gray-400 dark:text-gray-400" />
                           <div className="text-xs font-medium text-gray-900 dark:text-white dark:text-white">{feature.name}</div>
                         </div>
                       </div>
@@ -647,7 +647,7 @@ export default function NeedPrioritization({
               <h2 className="text-2xl md:text-4xl font-bold text-gray-900 dark:text-white mb-2 md:mb-4">
                 Your Priority Framework
               </h2>
-              <p className="text-gray-600 text-sm md:text-base">
+              <p className="text-gray-600 dark:text-gray-400 text-sm md:text-base">
                 Here&apos;s how your needs are prioritized. The AI will use this to optimize your proposals.
               </p>
             </div>
@@ -678,7 +678,7 @@ export default function NeedPrioritization({
 
                         return (
                           <div key={featureId} className="flex items-center gap-2 md:gap-3 bg-gray-50 rounded-lg p-3 md:p-4">
-                            <FeatureIcon className="w-4 h-4 md:w-5 md:h-5 text-gray-600 flex-shrink-0" />
+                            <FeatureIcon className="w-4 h-4 md:w-5 md:h-5 text-gray-600 dark:text-gray-400 flex-shrink-0" />
                             <span className="text-xs md:text-sm font-medium text-gray-900 dark:text-white dark:text-white">{feature.name}</span>
                           </div>
                         )

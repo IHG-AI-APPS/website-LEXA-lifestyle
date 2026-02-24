@@ -127,7 +127,7 @@ export default function HighEndAudioClient() {
           <h2 className="text-3xl font-bold text-center mb-4 text-gray-900 dark:text-white dark:text-white">
             World-Class Audio Brands We Install
           </h2>
-          <p className="text-center text-gray-600 dark:text-gray-300 mb-12 max-w-2xl mx-auto">
+          <p className="text-center text-gray-600 dark:text-gray-400 dark:text-gray-300 mb-12 max-w-2xl mx-auto">
             Authorized dealer and installer for the world's most prestigious high-fidelity audio manufacturers
           </p>
           <div className="grid md:grid-cols-3 gap-6">
@@ -135,7 +135,7 @@ export default function HighEndAudioClient() {
               <div key={i} className="bg-white dark:bg-gray-700 p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow">
                 <h3 className="text-xl font-semibold text-gray-900 dark:text-white dark:text-white">{brand.name}</h3>
                 <p className="text-purple-600 dark:text-purple-400 font-medium">{brand.type}</p>
-                <p className="text-gray-600 dark:text-gray-300 mt-2">Specialty: {brand.specialty}</p>
+                <p className="text-gray-600 dark:text-gray-400 dark:text-gray-300 mt-2">Specialty: {brand.specialty}</p>
               </div>
             ))}
           </div>
@@ -155,7 +155,7 @@ export default function HighEndAudioClient() {
                   <service.icon className="w-8 h-8 text-purple-600 dark:text-purple-400" />
                 </div>
                 <h3 className="text-lg font-semibold mb-2 text-gray-900 dark:text-white dark:text-white">{service.title}</h3>
-                <p className="text-gray-600 dark:text-gray-300">{service.desc}</p>
+                <p className="text-gray-600 dark:text-gray-400 dark:text-gray-300">{service.desc}</p>
               </div>
             ))}
           </div>
@@ -172,7 +172,7 @@ export default function HighEndAudioClient() {
             {faqs.map((faq, i) => (
               <div key={i} className="bg-white dark:bg-gray-700 p-6 rounded-xl shadow">
                 <h3 className="text-lg font-semibold mb-2 text-gray-900 dark:text-white dark:text-white">{faq.q}</h3>
-                <p className="text-gray-600 dark:text-gray-300">{faq.a}</p>
+                <p className="text-gray-600 dark:text-gray-400 dark:text-gray-300">{faq.a}</p>
               </div>
             ))}
           </div>

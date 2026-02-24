@@ -111,7 +111,7 @@ export default function SolutionsPreview() {
                           <div className="h-px w-16 bg-gradient-to-r from-platinum to-transparent" />
 
                           {/* Description */}
-                          <p className="text-lg text-gray-600 leading-relaxed font-light max-w-md">
+                          <p className="text-lg text-gray-600 dark:text-gray-400 leading-relaxed font-light max-w-md">
                             {solution.description}
                           </p>
 

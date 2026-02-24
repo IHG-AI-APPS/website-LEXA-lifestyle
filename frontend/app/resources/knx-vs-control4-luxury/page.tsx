@@ -48,11 +48,11 @@ export default function KNXvsControl4Page() {
         <div className="container mx-auto px-8 lg:px-16">
           <div className="max-w-4xl mx-auto bg-white dark:bg-gray-800 rounded-2xl p-8 shadow-lg border-l-4 border-black">
             <h2 className="text-2xl font-bold mb-4">Quick Answer</h2>
-            <p className="text-lg text-gray-700 mb-4">
+            <p className="text-lg text-gray-700 dark:text-gray-300 mb-4">
               <strong>KNX</strong> is the gold standard for large villas (10,000+ sq ft) requiring maximum reliability, scalability, and future-proofing. 
               <strong>Control4</strong> excels in 4,000-10,000 sq ft homes where user experience, AV integration, and value matter most.
             </p>
-            <p className="text-gray-700 dark:text-gray-300">
+            <p className="text-gray-700 dark:text-gray-300 dark:text-gray-300">
               Both are excellent—the right choice depends on your priorities, budget, and property size.
             </p>
           </div>
@@ -148,7 +148,7 @@ export default function KNXvsControl4Page() {
                     <Check className="text-green-600" size={24} />
                     Strengths
                   </h4>
-                  <ul className="space-y-3 text-gray-700 dark:text-gray-300">
+                  <ul className="space-y-3 text-gray-700 dark:text-gray-300 dark:text-gray-300">
                     <li className="flex items-start gap-3">
                       <Check className="text-green-600 flex-shrink-0 mt-1" size={20} />
                       <span><strong>Rock-solid reliability:</strong> Wired bus topology immune to Wi-Fi issues</span>
@@ -177,7 +177,7 @@ export default function KNXvsControl4Page() {
                     <X className="text-red-600" size={24} />
                     Weaknesses
                   </h4>
-                  <ul className="space-y-3 text-gray-700 dark:text-gray-300">
+                  <ul className="space-y-3 text-gray-700 dark:text-gray-300 dark:text-gray-300">
                     <li className="flex items-start gap-3">
                       <X className="text-red-600 flex-shrink-0 mt-1" size={20} />
                       <span><strong>Higher upfront cost:</strong> 30-50% more expensive than Control4</span>
@@ -207,7 +207,7 @@ export default function KNXvsControl4Page() {
                     <Check className="text-green-600" size={24} />
                     Strengths
                   </h4>
-                  <ul className="space-y-3 text-gray-700 dark:text-gray-300">
+                  <ul className="space-y-3 text-gray-700 dark:text-gray-300 dark:text-gray-300">
                     <li className="flex items-start gap-3">
                       <Check className="text-green-600 flex-shrink-0 mt-1" size={20} />
                       <span><strong>Best AV experience:</strong> Native integration with all major cinema brands</span>
@@ -236,7 +236,7 @@ export default function KNXvsControl4Page() {
                     <X className="text-red-600" size={24} />
                     Weaknesses
                   </h4>
-                  <ul className="space-y-3 text-gray-700 dark:text-gray-300">
+                  <ul className="space-y-3 text-gray-700 dark:text-gray-300 dark:text-gray-300">
                     <li className="flex items-start gap-3">
                       <X className="text-red-600 flex-shrink-0 mt-1" size={20} />
                       <span><strong>Network dependent:</strong> Wi-Fi issues = system issues</span>
@@ -270,7 +270,7 @@ export default function KNXvsControl4Page() {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               <div className="bg-white border-2 border-gray-300 rounded-2xl p-8">
                 <h3 className="text-2xl font-bold mb-4">Choose KNX If...</h3>
-                <ul className="space-y-3 text-gray-700 dark:text-gray-300">
+                <ul className="space-y-3 text-gray-700 dark:text-gray-300 dark:text-gray-300">
                   <li className="flex items-start gap-2">
                     <span className="text-green-600">✓</span>
                     <span>Villa is 10,000+ sq ft</span>
@@ -300,7 +300,7 @@ export default function KNXvsControl4Page() {
 
               <div className="bg-white border-2 border-gray-300 rounded-2xl p-8">
                 <h3 className="text-2xl font-bold mb-4">Choose Control4 If...</h3>
-                <ul className="space-y-3 text-gray-700 dark:text-gray-300">
+                <ul className="space-y-3 text-gray-700 dark:text-gray-300 dark:text-gray-300">
                   <li className="flex items-start gap-2">
                     <span className="text-green-600">✓</span>
                     <span>Villa is 4,000-10,000 sq ft</span>
@@ -331,7 +331,7 @@ export default function KNXvsControl4Page() {
 
             <div className="mt-8 bg-gray-100 rounded-xl p-8">
               <h3 className="text-2xl font-bold mb-4">Hybrid Approach</h3>
-              <p className="text-gray-700 dark:text-gray-300">
+              <p className="text-gray-700 dark:text-gray-300 dark:text-gray-300">
                 Many of our luxury villa clients choose <strong>KNX for infrastructure</strong> (lighting, HVAC, shades) and 
                 <strong>Control4 for AV</strong>. This gives you KNX&apos;s reliability where it matters plus Control4&apos;s superior cinema experience. 
                 Total cost: AED 150K-250K for typical 8,000 sq ft villa.

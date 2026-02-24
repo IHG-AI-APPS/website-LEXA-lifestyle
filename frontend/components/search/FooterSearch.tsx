@@ -239,7 +239,7 @@ export default function FooterSearch() {
                         </p>
                       )}
                     </div>
-                    <ArrowRight className="w-4 h-4 text-gray-600 group-hover:text-[#C9A962] transition-colors flex-shrink-0 mt-1" />
+                    <ArrowRight className="w-4 h-4 text-gray-600 dark:text-gray-400 group-hover:text-[#C9A962] transition-colors flex-shrink-0 mt-1" />
                   </Link>
                 ))}
               </div>

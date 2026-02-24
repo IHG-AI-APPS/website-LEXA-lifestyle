@@ -58,7 +58,7 @@ export default function SpecialtyRoomDetailPage() {
     return (
       <div className="min-h-screen flex items-center justify-center">
         <div className="text-center">
-          <p className="text-gray-600 mb-4">Specialty room not found</p>
+          <p className="text-gray-600 dark:text-gray-400 mb-4">Specialty room not found</p>
           <Link href="/specialty-rooms" className="text-blue-600 hover:underline">
             View all specialty rooms
           </Link>
@@ -105,22 +105,22 @@ export default function SpecialtyRoomDetailPage() {
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-5xl mx-auto">
             <div className="text-center">
               <DollarSign className="h-8 w-8 mx-auto mb-2 text-blue-600" />
-              <p className="text-sm text-gray-600 dark:text-gray-400">Starting Price</p>
+              <p className="text-sm text-gray-600 dark:text-gray-400 dark:text-gray-400">Starting Price</p>
               <p className="font-bold text-gray-900 dark:text-white dark:text-white">AED {(room.base_price_aed / 1000).toFixed(0)}K</p>
             </div>
             <div className="text-center">
               <Package className="h-8 w-8 mx-auto mb-2 text-purple-600" />
-              <p className="text-sm text-gray-600 dark:text-gray-400">Features Included</p>
+              <p className="text-sm text-gray-600 dark:text-gray-400 dark:text-gray-400">Features Included</p>
               <p className="font-bold text-gray-900 dark:text-white dark:text-white">{room.features?.length || 0}</p>
             </div>
             <div className="text-center">
               <Sparkles className="h-8 w-8 mx-auto mb-2 text-amber-600" />
-              <p className="text-sm text-gray-600 dark:text-gray-400">Typical Size</p>
+              <p className="text-sm text-gray-600 dark:text-gray-400 dark:text-gray-400">Typical Size</p>
               <p className="font-bold text-gray-900 dark:text-white dark:text-white">{room.typical_size}</p>
             </div>
             <div className="text-center">
               <Check className="h-8 w-8 mx-auto mb-2 text-green-600" />
-              <p className="text-sm text-gray-600 dark:text-gray-400">Installation</p>
+              <p className="text-sm text-gray-600 dark:text-gray-400 dark:text-gray-400">Installation</p>
               <p className="font-bold text-gray-900 dark:text-white dark:text-white">Professional</p>
             </div>
           </div>
@@ -134,7 +134,7 @@ export default function SpecialtyRoomDetailPage() {
             {/* Description */}
             <div className="mb-12">
               <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-4">Overview</h2>
-              <p className="text-lg text-gray-700 leading-relaxed">
+              <p className="text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
                 {room.long_description}
               </p>
             </div>
@@ -148,7 +148,7 @@ export default function SpecialtyRoomDetailPage() {
                 {room.features?.map((feature: string, i: number) => (
                   <div key={i} className="flex items-start gap-3 p-4 bg-gray-50 rounded-lg">
                     <Check className="h-5 w-5 text-green-600 mt-0.5 flex-shrink-0" />
-                    <span className="text-gray-700 dark:text-gray-300">{feature}</span>
+                    <span className="text-gray-700 dark:text-gray-300 dark:text-gray-300">{feature}</span>
                   </div>
                 ))}
               </div>
@@ -163,7 +163,7 @@ export default function SpecialtyRoomDetailPage() {
                 <div className="bg-blue-50 rounded-xl p-6">
                   <ul className="space-y-3">
                     {room.typical_components.map((component: string, i: number) => (
-                      <li key={i} className="flex items-center gap-3 text-gray-700 dark:text-gray-300">
+                      <li key={i} className="flex items-center gap-3 text-gray-700 dark:text-gray-300 dark:text-gray-300">
                         <div className="w-2 h-2 bg-blue-600 rounded-full" />
                         {component}
                       </li>
@@ -197,7 +197,7 @@ export default function SpecialtyRoomDetailPage() {
               <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">
                 Add This to Your Package
               </h3>
-              <p className="text-gray-700 mb-6">
+              <p className="text-gray-700 dark:text-gray-300 mb-6">
                 This specialty room can be added to any smart home package. 
                 High-End tier customers choose 3 specialty rooms at no additional cost.
               </p>

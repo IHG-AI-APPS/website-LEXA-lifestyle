@@ -100,7 +100,7 @@ export default function DeveloperToolkitPage() {
               {benefits.map((benefit, index) => (
                 <div key={index} className="flex items-start gap-3 bg-gallery-base p-4 rounded-lg">
                   <CheckCircle2 className="text-green-600 flex-shrink-0 mt-1" size={20} />
-                  <span className="text-gray-700 font-medium">{benefit}</span>
+                  <span className="text-gray-700 dark:text-gray-300 font-medium">{benefit}</span>
                 </div>
               ))}
             </div>
@@ -124,13 +124,13 @@ export default function DeveloperToolkitPage() {
                   </div>
 
                   <h3 className="text-xl font-bold mb-3">{resource.title}</h3>
-                  <p className="text-gray-600 mb-4 text-sm">{resource.description}</p>
+                  <p className="text-gray-600 dark:text-gray-400 mb-4 text-sm">{resource.description}</p>
 
                   <div className="flex flex-wrap gap-2 mb-4">
                     {resource.formats.map((format) => (
                       <span
                         key={format}
-                        className="px-3 py-1 bg-gray-100 text-gray-700 text-xs font-semibold rounded-full"
+                        className="px-3 py-1 bg-gray-100 text-gray-700 dark:text-gray-300 text-xs font-semibold rounded-full"
                       >
                         {format}
                       </span>
@@ -163,7 +163,7 @@ export default function DeveloperToolkitPage() {
                 </div>
                 <div>
                   <h3 className="text-2xl font-bold mb-2">Initial Meeting</h3>
-                  <p className="text-gray-700 dark:text-gray-300">
+                  <p className="text-gray-700 dark:text-gray-300 dark:text-gray-300">
                     Schedule a developer partnership consultation. We review your project, unit types, and target market.
                   </p>
                 </div>
@@ -175,7 +175,7 @@ export default function DeveloperToolkitPage() {
                 </div>
                 <div>
                   <h3 className="text-2xl font-bold mb-2">Package Design</h3>
-                  <p className="text-gray-700 dark:text-gray-300">
+                  <p className="text-gray-700 dark:text-gray-300 dark:text-gray-300">
                     We create tiered automation packages (Silver/Gold/Platinum) tailored to your units and price points.
                   </p>
                 </div>
@@ -187,7 +187,7 @@ export default function DeveloperToolkitPage() {
                 </div>
                 <div>
                   <h3 className="text-2xl font-bold mb-2">Toolkit Access</h3>
-                  <p className="text-gray-700 dark:text-gray-300">
+                  <p className="text-gray-700 dark:text-gray-300 dark:text-gray-300">
                     Receive full access to marketing materials, technical docs, and Smart-Ready certification for your project.
                   </p>
                 </div>
@@ -199,7 +199,7 @@ export default function DeveloperToolkitPage() {
                 </div>
                 <div>
                   <h3 className="text-2xl font-bold mb-2">Sales Enablement</h3>
-                  <p className="text-gray-700 dark:text-gray-300">
+                  <p className="text-gray-700 dark:text-gray-300 dark:text-gray-300">
                     We train your sales team on automation value proposition and handle technical queries from buyers.
                   </p>
                 </div>
@@ -211,7 +211,7 @@ export default function DeveloperToolkitPage() {
                 </div>
                 <div>
                   <h3 className="text-2xl font-bold mb-2">Installation & Handover</h3>
-                  <p className="text-gray-700 dark:text-gray-300">
+                  <p className="text-gray-700 dark:text-gray-300 dark:text-gray-300">
                     We handle all installations, commissioning, and buyer handover documentation. Post-sale support included.
                   </p>
                 </div>

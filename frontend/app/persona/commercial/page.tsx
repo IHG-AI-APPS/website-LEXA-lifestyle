@@ -106,7 +106,7 @@ export default function CommercialPage() {
                   <span className="text-transparent bg-clip-text metallic-gradient">WORKSPACES</span>
                 </h1>
                 <div className="h-px w-24 bg-gradient-to-r from-platinum to-transparent mb-8" />
-                <p className="text-xl text-gray-600 font-normal leading-relaxed mb-10">
+                <p className="text-xl text-gray-600 dark:text-gray-400 font-normal leading-relaxed mb-10">
                   Enterprise automation for offices, hotels, retail, and commercial buildings. Enhance operations, reduce costs, and improve experiences.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4">
@@ -158,7 +158,7 @@ export default function CommercialPage() {
               className="text-center mb-16"
             >
               <h2 className="text-4xl font-semibold mb-4">Commercial Automation Benefits</h2>
-              <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+              <p className="text-lg text-gray-600 dark:text-gray-400 max-w-3xl mx-auto">
                 Drive efficiency, security, and employee satisfaction with intelligent building systems
               </p>
             </motion.div>
@@ -179,7 +179,7 @@ export default function CommercialPage() {
                       <Icon size={32} className="text-charcoal" />
                     </div>
                     <h3 className="text-xl font-semibold mb-3">{benefit.title}</h3>
-                    <p className="text-gray-600 dark:text-gray-400">{benefit.description}</p>
+                    <p className="text-gray-600 dark:text-gray-400 dark:text-gray-400">{benefit.description}</p>
                   </motion.div>
                 )
               })}
@@ -199,7 +199,7 @@ export default function CommercialPage() {
               className="text-center mb-16"
             >
               <h2 className="text-4xl font-semibold mb-4">Commercial Solutions</h2>
-              <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+              <p className="text-lg text-gray-600 dark:text-gray-400 max-w-3xl mx-auto">
                 Industry-specific automation for every commercial environment
               </p>
             </motion.div>
@@ -231,7 +231,7 @@ export default function CommercialPage() {
                           <h4 className="text-lg font-semibold mb-2 group-hover:text-charcoal transition-colors">
                             {item.name}
                           </h4>
-                          <p className="text-sm text-gray-600 mb-3">{item.description}</p>
+                          <p className="text-sm text-gray-600 dark:text-gray-400 mb-3">{item.description}</p>
                           <div className="flex items-center text-sm text-charcoal font-medium">
                             Learn More <ArrowRight size={16} className="ml-2 group-hover:translate-x-1 transition-transform" />
                           </div>

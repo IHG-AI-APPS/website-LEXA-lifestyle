@@ -246,7 +246,7 @@ export default function SmartCarParkLightingPage() {
                     className="bg-red-50 border-l-4 border-red-500 p-4 rounded-r-lg"
                   >
                     <h3 className="font-bold text-gray-900 dark:text-white mb-1">{challenge.problem}</h3>
-                    <p className="text-sm text-gray-700 dark:text-gray-300">{challenge.impact}</p>
+                    <p className="text-sm text-gray-700 dark:text-gray-300 dark:text-gray-300">{challenge.impact}</p>
                   </motion.div>
                 ))}
               </div>
@@ -262,35 +262,35 @@ export default function SmartCarParkLightingPage() {
                   </div>
                   <div>
                     <h3 className="font-bold text-xl text-gray-900 dark:text-white dark:text-white">IoT-Powered Intelligence</h3>
-                    <p className="text-sm text-gray-600 dark:text-gray-400">AI + Radar + Cloud Management</p>
+                    <p className="text-sm text-gray-600 dark:text-gray-400 dark:text-gray-400">AI + Radar + Cloud Management</p>
                   </div>
                 </div>
 
                 <ul className="space-y-3">
                   <li className="flex items-start gap-3">
                     <CheckCircle2 className="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" />
-                    <span className="text-gray-700 dark:text-gray-300"><strong>83% energy reduction</strong> compared to traditional LEDs</span>
+                    <span className="text-gray-700 dark:text-gray-300 dark:text-gray-300"><strong>83% energy reduction</strong> compared to traditional LEDs</span>
                   </li>
                   <li className="flex items-start gap-3">
                     <CheckCircle2 className="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" />
-                    <span className="text-gray-700 dark:text-gray-300"><strong>Motion-activated</strong> lighting with 5-7m detection radius</span>
+                    <span className="text-gray-700 dark:text-gray-300 dark:text-gray-300"><strong>Motion-activated</strong> lighting with 5-7m detection radius</span>
                   </li>
                   <li className="flex items-start gap-3">
                     <CheckCircle2 className="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" />
-                    <span className="text-gray-700 dark:text-gray-300"><strong>Real-time monitoring</strong> with automated fault detection</span>
+                    <span className="text-gray-700 dark:text-gray-300 dark:text-gray-300"><strong>Real-time monitoring</strong> with automated fault detection</span>
                   </li>
                   <li className="flex items-start gap-3">
                     <CheckCircle2 className="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" />
-                    <span className="text-gray-700 dark:text-gray-300"><strong>Guaranteed 30%+ savings</strong> after rental fees</span>
+                    <span className="text-gray-700 dark:text-gray-300 dark:text-gray-300"><strong>Guaranteed 30%+ savings</strong> after rental fees</span>
                   </li>
                   <li className="flex items-start gap-3">
                     <CheckCircle2 className="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" />
-                    <span className="text-gray-700 dark:text-gray-300"><strong>Extended lifespan</strong> through smart dimming</span>
+                    <span className="text-gray-700 dark:text-gray-300 dark:text-gray-300"><strong>Extended lifespan</strong> through smart dimming</span>
                   </li>
                 </ul>
 
                 <div className="mt-6 p-4 bg-white dark:bg-gray-800 rounded-lg border border-blue-200">
-                  <div className="text-sm text-gray-600 mb-1">Average Monthly Savings per Lamp</div>
+                  <div className="text-sm text-gray-600 dark:text-gray-400 mb-1">Average Monthly Savings per Lamp</div>
                   <div className="text-3xl font-bold text-blue-600">AED 7.93</div>
                 </div>
               </div>
@@ -304,7 +304,7 @@ export default function SmartCarParkLightingPage() {
         <div className="container mx-auto px-6">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-gray-900 dark:text-white mb-4">Intelligent Features</h2>
-            <p className="text-xl text-gray-600 dark:text-gray-400">Next-generation IoT lighting for modern parking facilities</p>
+            <p className="text-xl text-gray-600 dark:text-gray-400 dark:text-gray-400">Next-generation IoT lighting for modern parking facilities</p>
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -321,7 +321,7 @@ export default function SmartCarParkLightingPage() {
                   <feature.icon className="w-7 h-7 text-blue-600" />
                 </div>
                 <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-3">{feature.title}</h3>
-                <p className="text-gray-600 leading-relaxed">{feature.description}</p>
+                <p className="text-gray-600 dark:text-gray-400 leading-relaxed">{feature.description}</p>
               </motion.div>
             ))}
           </div>
@@ -333,7 +333,7 @@ export default function SmartCarParkLightingPage() {
         <div className="container mx-auto px-6">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-gray-900 dark:text-white mb-4">Proven ROI & Energy Savings</h2>
-            <p className="text-xl text-gray-600 dark:text-gray-400">Real numbers from real implementations</p>
+            <p className="text-xl text-gray-600 dark:text-gray-400 dark:text-gray-400">Real numbers from real implementations</p>
           </div>
 
           {/* Comparison Table */}
@@ -347,19 +347,19 @@ export default function SmartCarParkLightingPage() {
                 <table className="w-full">
                   <thead>
                     <tr className="border-b-2 border-gray-300">
-                      <th className="text-left py-4 px-4 text-gray-700 font-semibold">System</th>
-                      <th className="text-right py-4 px-4 text-gray-700 font-semibold">Monthly Cost</th>
-                      <th className="text-right py-4 px-4 text-gray-700 font-semibold">Yearly Cost</th>
-                      <th className="text-right py-4 px-4 text-gray-700 font-semibold">5-Year Total</th>
-                      <th className="text-center py-4 px-4 text-gray-700 font-semibold">Savings</th>
+                      <th className="text-left py-4 px-4 text-gray-700 dark:text-gray-300 font-semibold">System</th>
+                      <th className="text-right py-4 px-4 text-gray-700 dark:text-gray-300 font-semibold">Monthly Cost</th>
+                      <th className="text-right py-4 px-4 text-gray-700 dark:text-gray-300 font-semibold">Yearly Cost</th>
+                      <th className="text-right py-4 px-4 text-gray-700 dark:text-gray-300 font-semibold">5-Year Total</th>
+                      <th className="text-center py-4 px-4 text-gray-700 dark:text-gray-300 font-semibold">Savings</th>
                     </tr>
                   </thead>
                   <tbody>
                     {roiComparison.map((row, index) => (
                       <tr key={index} className={`border-b border-gray-200 ${index === 1 ? 'bg-green-50' : ''}`}>
                         <td className="py-4 px-4 font-medium text-gray-900 dark:text-white dark:text-white">{row.metric}</td>
-                        <td className="py-4 px-4 text-right text-gray-700 dark:text-gray-300">{row.monthly}</td>
-                        <td className="py-4 px-4 text-right text-gray-700 dark:text-gray-300">{row.yearly}</td>
+                        <td className="py-4 px-4 text-right text-gray-700 dark:text-gray-300 dark:text-gray-300">{row.monthly}</td>
+                        <td className="py-4 px-4 text-right text-gray-700 dark:text-gray-300 dark:text-gray-300">{row.yearly}</td>
                         <td className="py-4 px-4 text-right font-bold text-gray-900 dark:text-white dark:text-white">{row.fiveYear}</td>
                         <td className="py-4 px-4 text-center">
                           {row.savings && (
@@ -498,7 +498,7 @@ export default function SmartCarParkLightingPage() {
         <div className="container mx-auto px-6">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-gray-900 dark:text-white mb-4">Technical Specifications</h2>
-            <p className="text-xl text-gray-600 dark:text-gray-400">Enterprise-grade hardware and connectivity</p>
+            <p className="text-xl text-gray-600 dark:text-gray-400 dark:text-gray-400">Enterprise-grade hardware and connectivity</p>
           </div>
 
           <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
@@ -513,7 +513,7 @@ export default function SmartCarParkLightingPage() {
               <div className="space-y-3">
                 {technicalSpecs.ledTube.map((item, index) => (
                   <div key={index} className="flex justify-between items-center py-2 border-b border-gray-200 dark:border-gray-700">
-                    <span className="text-gray-600 dark:text-gray-400">{item.spec}</span>
+                    <span className="text-gray-600 dark:text-gray-400 dark:text-gray-400">{item.spec}</span>
                     <span className="font-semibold text-gray-900 dark:text-white dark:text-white">{item.value}</span>
                   </div>
                 ))}
@@ -531,7 +531,7 @@ export default function SmartCarParkLightingPage() {
               <div className="space-y-3">
                 {technicalSpecs.gateway.map((item, index) => (
                   <div key={index} className="flex justify-between items-center py-2 border-b border-gray-200 dark:border-gray-700">
-                    <span className="text-gray-600 dark:text-gray-400">{item.spec}</span>
+                    <span className="text-gray-600 dark:text-gray-400 dark:text-gray-400">{item.spec}</span>
                     <span className="font-semibold text-gray-900 dark:text-white dark:text-white">{item.value}</span>
                   </div>
                 ))}
@@ -546,7 +546,7 @@ export default function SmartCarParkLightingPage() {
         <div className="container mx-auto px-6">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-gray-900 dark:text-white mb-4">Implementation Process</h2>
-            <p className="text-xl text-gray-600 dark:text-gray-400">From assessment to go-live in 6 simple steps</p>
+            <p className="text-xl text-gray-600 dark:text-gray-400 dark:text-gray-400">From assessment to go-live in 6 simple steps</p>
           </div>
 
           <div className="max-w-4xl mx-auto">
@@ -566,7 +566,7 @@ export default function SmartCarParkLightingPage() {
                 </div>
                 <div className="flex-grow bg-white dark:bg-gray-800 rounded-xl p-6 border border-gray-200 dark:border-gray-700">
                   <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2">{step.title}</h3>
-                  <p className="text-gray-600 dark:text-gray-400">{step.desc}</p>
+                  <p className="text-gray-600 dark:text-gray-400 dark:text-gray-400">{step.desc}</p>
                 </div>
               </motion.div>
             ))}
@@ -579,7 +579,7 @@ export default function SmartCarParkLightingPage() {
         <div className="container mx-auto px-6">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-gray-900 dark:text-white mb-4">Perfect For</h2>
-            <p className="text-xl text-gray-600 dark:text-gray-400">Proven solutions across industries</p>
+            <p className="text-xl text-gray-600 dark:text-gray-400 dark:text-gray-400">Proven solutions across industries</p>
           </div>
 
           <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
@@ -594,7 +594,7 @@ export default function SmartCarParkLightingPage() {
               >
                 <div className="text-5xl mb-4">{useCase.icon}</div>
                 <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-2">{useCase.title}</h3>
-                <p className="text-sm text-gray-600 dark:text-gray-400">{useCase.desc}</p>
+                <p className="text-sm text-gray-600 dark:text-gray-400 dark:text-gray-400">{useCase.desc}</p>
               </motion.div>
             ))}
           </div>

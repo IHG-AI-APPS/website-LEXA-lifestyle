@@ -117,7 +117,7 @@ export default function TestimonialsPage() {
                     </div>
 
                     {/* Content */}
-                    <p className="text-gray-700 dark:text-gray-300 leading-relaxed mb-6 text-sm sm:text-base">
+                    <p className="text-gray-700 dark:text-gray-300 dark:text-gray-300 leading-relaxed mb-6 text-sm sm:text-base">
                       &ldquo;{text}&rdquo;
                     </p>
 
@@ -134,7 +134,7 @@ export default function TestimonialsPage() {
                           {t.role && <span>{t.role}</span>}
                           {t.company && (
                             <>
-                              <span className="text-gray-300 dark:text-gray-600 dark:text-gray-400">|</span>
+                              <span className="text-gray-300 dark:text-gray-600 dark:text-gray-400 dark:text-gray-400">|</span>
                               <span className="flex items-center gap-1">
                                 <Building2 className="h-3 w-3" />
                                 {t.company}
@@ -143,7 +143,7 @@ export default function TestimonialsPage() {
                           )}
                           {t.location && (
                             <>
-                              <span className="text-gray-300 dark:text-gray-600 dark:text-gray-400">|</span>
+                              <span className="text-gray-300 dark:text-gray-600 dark:text-gray-400 dark:text-gray-400">|</span>
                               <span className="flex items-center gap-1">
                                 <MapPin className="h-3 w-3" />
                                 {t.location}
@@ -157,7 +157,7 @@ export default function TestimonialsPage() {
                     {/* Project Type Badge */}
                     {t.project_type && (
                       <div className="mt-4 pt-4 border-t border-gray-100 dark:border-gray-700">
-                        <span className="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-medium bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400">
+                        <span className="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-medium bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400 dark:text-gray-400">
                           {t.project_type}
                         </span>
                       </div>

@@ -139,7 +139,7 @@ export default function LuxuryCinemaPage() {
               <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4 text-[#1A1A1A] dark:text-white">
                 Cinema-Grade Technology
               </h2>
-              <p className="text-base sm:text-lg text-gray-600 max-w-3xl mx-auto">
+              <p className="text-base sm:text-lg text-gray-600 dark:text-gray-400 max-w-3xl mx-auto">
                 Every element engineered for the ultimate viewing experience
               </p>
             </motion.div>
@@ -164,7 +164,7 @@ export default function LuxuryCinemaPage() {
                         <h3 className="text-lg font-semibold mb-2 text-[#1A1A1A] dark:text-white">
                           {feature.title}
                         </h3>
-                        <p className="text-gray-600 text-sm leading-relaxed">
+                        <p className="text-gray-600 dark:text-gray-400 text-sm leading-relaxed">
                           {feature.description}
                         </p>
                       </div>
@@ -189,7 +189,7 @@ export default function LuxuryCinemaPage() {
               <h2 className="text-3xl sm:text-4xl font-bold mb-4 text-[#1A1A1A] dark:text-white">
                 Bespoke Cinema Themes
               </h2>
-              <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+              <p className="text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
                 Choose from curated themes or create your custom design
               </p>
             </motion.div>
@@ -205,7 +205,7 @@ export default function LuxuryCinemaPage() {
                   className="bg-gray-50 p-6 border-l-4 border-purple-600"
                 >
                   <h3 className="text-xl font-bold mb-2 text-[#1A1A1A] dark:text-white">{theme.name}</h3>
-                  <p className="text-gray-600 text-sm">{theme.description}</p>
+                  <p className="text-gray-600 dark:text-gray-400 text-sm">{theme.description}</p>
                 </motion.div>
               ))}
             </div>
@@ -263,7 +263,7 @@ export default function LuxuryCinemaPage() {
               <h2 className="text-3xl sm:text-4xl font-bold mb-4 text-[#1A1A1A] dark:text-white">
                 Ready to Create Your Private Cinema?
               </h2>
-              <p className="text-lg text-gray-600 mb-8 max-w-2xl mx-auto">
+              <p className="text-lg text-gray-600 dark:text-gray-400 mb-8 max-w-2xl mx-auto">
                 Schedule a consultation with our cinema design experts and experience reference-grade entertainment.
               </p>
               <Button

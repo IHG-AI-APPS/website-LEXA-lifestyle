@@ -118,7 +118,7 @@ export default function ResumePage() {
         >
           <AlertCircle className="w-16 h-16 text-red-500 mx-auto mb-4" />
           <h1 className="text-2xl font-semibold text-gray-900 dark:text-white mb-2">Session Unavailable</h1>
-          <p className="text-gray-600 mb-6">{error}</p>
+          <p className="text-gray-600 dark:text-gray-400 mb-6">{error}</p>
           <Button onClick={() => router.push('/project-builder')} className="gap-2">
             Start New Project
             <ArrowRight className="w-4 h-4" />
@@ -158,15 +158,15 @@ export default function ResumePage() {
                   </h2>
                   <div className="bg-gray-50 rounded-lg p-4 space-y-2">
                     <div className="flex justify-between text-sm">
-                      <span className="text-gray-600 dark:text-gray-400">Property Type:</span>
+                      <span className="text-gray-600 dark:text-gray-400 dark:text-gray-400">Property Type:</span>
                       <span className="font-medium">{sessionState.project_data.property_type || 'Not set'}</span>
                     </div>
                     <div className="flex justify-between text-sm">
-                      <span className="text-gray-600 dark:text-gray-400">Segment:</span>
+                      <span className="text-gray-600 dark:text-gray-400 dark:text-gray-400">Segment:</span>
                       <span className="font-medium">{sessionState.project_data.segment || 'Not set'}</span>
                     </div>
                     <div className="flex justify-between text-sm">
-                      <span className="text-gray-600 dark:text-gray-400">Area:</span>
+                      <span className="text-gray-600 dark:text-gray-400 dark:text-gray-400">Area:</span>
                       <span className="font-medium">
                         {sessionState.project_data.area_sqft 
                           ? `${sessionState.project_data.area_sqft.toLocaleString()} sqft` 

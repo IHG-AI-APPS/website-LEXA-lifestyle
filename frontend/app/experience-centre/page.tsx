@@ -377,7 +377,7 @@ export default function ExperienceCentrePage() {
                 setBookingStep('date')
                 setSubmitStatus('idle')
               }}
-              className="absolute top-4 right-4 text-gray-600 hover:text-black z-10"
+              className="absolute top-4 right-4 text-gray-600 dark:text-gray-400 hover:text-black z-10"
             >
               <X size={24} />
             </button>
@@ -386,10 +386,10 @@ export default function ExperienceCentrePage() {
               {bookingStep === 'date' && (
                 <>
                   <h2 className="text-3xl font-bold text-black mb-2">SELECT DATE & TIME</h2>
-                  <p className="text-gray-600 mb-8">Choose your preferred visit date and time slot</p>
+                  <p className="text-gray-600 dark:text-gray-400 mb-8">Choose your preferred visit date and time slot</p>
 
                   <div className="mb-8">
-                    <label className="block text-sm font-semibold text-gray-700 mb-3">Preferred Date</label>
+                    <label className="block text-sm font-semibold text-gray-700 dark:text-gray-300 mb-3">Preferred Date</label>
                     <Input
                       type="date"
                       value={bookingData.date}
@@ -400,7 +400,7 @@ export default function ExperienceCentrePage() {
                   </div>
 
                   <div className="mb-8">
-                    <label className="block text-sm font-semibold text-gray-700 mb-3">Time Slot</label>
+                    <label className="block text-sm font-semibold text-gray-700 dark:text-gray-300 mb-3">Time Slot</label>
                     <div className="grid grid-cols-3 gap-3">
                       {timeSlots.map(slot => (
                         <button
@@ -431,11 +431,11 @@ export default function ExperienceCentrePage() {
               {bookingStep === 'details' && (
                 <>
                   <h2 className="text-3xl font-bold text-black mb-2">YOUR DETAILS</h2>
-                  <p className="text-gray-600 mb-8">Tell us about yourself and your interests</p>
+                  <p className="text-gray-600 dark:text-gray-400 mb-8">Tell us about yourself and your interests</p>
 
                   <div className="space-y-6 mb-8">
                     <div>
-                      <label className="block text-sm font-semibold text-gray-700 mb-2">Name *</label>
+                      <label className="block text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">Name *</label>
                       <Input
                         required
                         value={bookingData.name}
@@ -445,7 +445,7 @@ export default function ExperienceCentrePage() {
 
                     <div className="grid md:grid-cols-2 gap-6">
                       <div>
-                        <label className="block text-sm font-semibold text-gray-700 mb-2">Email *</label>
+                        <label className="block text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">Email *</label>
                         <Input
                           type="email"
                           required
@@ -454,7 +454,7 @@ export default function ExperienceCentrePage() {
                         />
                       </div>
                       <div>
-                        <label className="block text-sm font-semibold text-gray-700 mb-2">Phone *</label>
+                        <label className="block text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">Phone *</label>
                         <Input
                           required
                           value={bookingData.phone}
@@ -464,7 +464,7 @@ export default function ExperienceCentrePage() {
                     </div>
 
                     <div>
-                      <label className="block text-sm font-semibold text-gray-700 mb-3">Areas of Interest</label>
+                      <label className="block text-sm font-semibold text-gray-700 dark:text-gray-300 mb-3">Areas of Interest</label>
                       <div className="grid grid-cols-2 gap-3">
                         {['Lighting', 'Climate', 'Audio', 'Cinema', 'Security', 'Automation'].map(interest => (
                           <button
@@ -483,7 +483,7 @@ export default function ExperienceCentrePage() {
                     </div>
 
                     <div>
-                      <label className="block text-sm font-semibold text-gray-700 mb-2">Additional Notes</label>
+                      <label className="block text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">Additional Notes</label>
                       <Textarea
                         value={bookingData.message}
                         onChange={(e) => setBookingData({ ...bookingData, message: e.target.value })}
@@ -537,10 +537,10 @@ export default function ExperienceCentrePage() {
                   <CheckCircle size={64} className="text-green-600 mx-auto mb-6" />
                   <h3 className="text-2xl font-bold text-black mb-4">Booking Confirmed!</h3>
                   <div className="bg-gray-50 p-6 rounded mb-6">
-                    <p className="text-sm text-gray-600 mb-2">Date & Time:</p>
+                    <p className="text-sm text-gray-600 dark:text-gray-400 mb-2">Date & Time:</p>
                     <p className="text-lg font-semibold">{bookingData.date} at {bookingData.time}</p>
                   </div>
-                  <p className="text-gray-600 mb-8">
+                  <p className="text-gray-600 dark:text-gray-400 mb-8">
                     We&apos;ve sent a confirmation email to <strong>{bookingData.email}</strong>
                   </p>
                   <Button

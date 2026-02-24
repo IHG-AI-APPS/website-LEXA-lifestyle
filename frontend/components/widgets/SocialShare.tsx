@@ -122,7 +122,7 @@ export default function SocialShare({
       <button
         onClick={copyToClipboard}
         className={`${buttonBaseClass} ${getButtonSize()} ${
-          copied ? 'bg-green-500 text-white' : 'bg-gray-200 text-gray-700 hover:bg-gray-300'
+          copied ? 'bg-green-500 text-white' : 'bg-gray-200 text-gray-700 dark:text-gray-300 hover:bg-gray-300'
         }`}
         title={copied ? 'Copied!' : 'Copy Link'}
         aria-label="Copy link to clipboard"

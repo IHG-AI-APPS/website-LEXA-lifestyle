@@ -103,7 +103,7 @@ export default function AnalyticsDashboard() {
           return (
             <div key={key}>
               <div className="flex justify-between text-sm mb-1">
-                <span className="text-gray-600 capitalize">{key.replace(/_/g, ' ')}</span>
+                <span className="text-gray-600 dark:text-gray-400 capitalize">{key.replace(/_/g, ' ')}</span>
                 <span className="text-gray-900 dark:text-white font-medium">{value} ({percentage}%)</span>
               </div>
               <div className="h-2 bg-gray-100 rounded-full overflow-hidden">

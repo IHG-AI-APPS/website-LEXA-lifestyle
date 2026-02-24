@@ -25,7 +25,7 @@ export default function Step3ProjectDetails({
     <div className="space-y-6 max-w-2xl mx-auto">
       <div className="text-center mb-8">
         <h2 className="text-3xl font-bold mb-3">Project Details</h2>
-        <p className="text-gray-600 dark:text-gray-400">
+        <p className="text-gray-600 dark:text-gray-400 dark:text-gray-400">
           Tell us about your property specifications
         </p>
       </div>

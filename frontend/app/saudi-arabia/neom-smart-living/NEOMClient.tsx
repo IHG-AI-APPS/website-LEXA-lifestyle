@@ -46,7 +46,7 @@ export default function NEOMClient() {
             {zones.map((z, i) => (
               <div key={i} className="bg-white dark:bg-gray-700 p-6 rounded-xl shadow-lg border-l-4 border-purple-500">
                 <h3 className="text-xl font-semibold text-gray-900 dark:text-white dark:text-white">{z.name}</h3>
-                <p className="text-gray-600 dark:text-gray-300">{z.type}</p>
+                <p className="text-gray-600 dark:text-gray-400 dark:text-gray-300">{z.type}</p>
                 <span className="inline-block mt-2 bg-purple-100 dark:bg-purple-900 text-purple-800 dark:text-purple-200 px-3 py-1 rounded-full text-sm">{z.status}</span>
               </div>
             ))}

@@ -47,7 +47,7 @@ export default function RiyadhClient() {
             {communities.map((c, i) => (
               <div key={i} className="bg-white dark:bg-gray-700 p-6 rounded-xl shadow-lg">
                 <h3 className="text-xl font-semibold text-gray-900 dark:text-white dark:text-white">{c.name}</h3>
-                <p className="text-gray-600 dark:text-gray-300">{c.type}</p>
+                <p className="text-gray-600 dark:text-gray-400 dark:text-gray-300">{c.type}</p>
                 <span className="inline-block mt-2 bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 px-3 py-1 rounded-full text-sm">{c.projects}</span>
               </div>
             ))}

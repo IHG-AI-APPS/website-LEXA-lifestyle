@@ -164,7 +164,7 @@ export default function ProtocolSelection({
               <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-3">
                 Choose Your Infrastructure Type
               </h2>
-              <p className="text-gray-600 max-w-2xl mx-auto">
+              <p className="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
                 This determines how your smart home devices will communicate. Choose based on your property type and installation preferences.
               </p>
             </div>
@@ -188,14 +188,14 @@ export default function ProtocolSelection({
 
                     {/* Title & Description */}
                     <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2">{type.name}</h3>
-                    <p className="text-gray-600 text-sm mb-4">{type.description}</p>
+                    <p className="text-gray-600 dark:text-gray-400 text-sm mb-4">{type.description}</p>
 
                     {/* Pros */}
                     <div className="space-y-2 mb-4">
                       {type.pros.slice(0, 3).map((pro, i) => (
                         <div key={i} className="flex items-center gap-2 text-sm">
                           <CheckCircle2 className="w-4 h-4 text-green-500 flex-shrink-0" />
-                          <span className="text-gray-700 dark:text-gray-300">{pro}</span>
+                          <span className="text-gray-700 dark:text-gray-300 dark:text-gray-300">{pro}</span>
                         </div>
                       ))}
                     </div>
@@ -203,12 +203,12 @@ export default function ProtocolSelection({
                     {/* Best For */}
                     <div className="pt-4 border-t border-gray-100 dark:border-gray-800">
                       <span className="text-xs font-semibold text-gray-500 uppercase tracking-wide">Best for:</span>
-                      <p className="text-sm text-gray-700 mt-1">{type.best_for}</p>
+                      <p className="text-sm text-gray-700 dark:text-gray-300 mt-1">{type.best_for}</p>
                     </div>
 
                     {/* Selection Arrow */}
                     <div className="absolute top-6 right-6">
-                      <ChevronRight className="w-5 h-5 text-gray-300 group-hover:text-gray-600 transition-colors" />
+                      <ChevronRight className="w-5 h-5 text-gray-300 group-hover:text-gray-600 dark:text-gray-400 transition-colors" />
                     </div>
                   </motion.button>
                 )
@@ -242,7 +242,7 @@ export default function ProtocolSelection({
               <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-3">
                 Select Your Preferred Protocols
               </h2>
-              <p className="text-gray-600 max-w-2xl mx-auto">
+              <p className="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
                 Choose one or more protocols. We recommend selecting protocols that best match your needs - we&apos;ll recommend compatible systems next.
               </p>
             </div>

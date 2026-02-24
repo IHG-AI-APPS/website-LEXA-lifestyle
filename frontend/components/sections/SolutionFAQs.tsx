@@ -67,7 +67,7 @@ export default function SolutionFAQs({ solutionSlug, title = "Frequently Asked Q
             className="mb-12 text-center"
           >
             <h2 className="text-4xl font-heading font-semibold mb-4">{title}</h2>
-            <p className="text-xl text-gray-600 dark:text-gray-400">
+            <p className="text-xl text-gray-600 dark:text-gray-400 dark:text-gray-400">
               Everything you need to know about this solution
             </p>
           </motion.div>
@@ -83,7 +83,7 @@ export default function SolutionFAQs({ solutionSlug, title = "Frequently Asked Q
                 className="bg-white dark:bg-gray-800 p-8 border border-gray-200 rounded-lg shadow-sm hover:shadow-md transition-shadow"
               >
                 <h3 className="text-xl font-semibold mb-3 text-gray-900 dark:text-white dark:text-white">{faq.question}</h3>
-                <p className="text-gray-600 leading-relaxed">{faq.answer}</p>
+                <p className="text-gray-600 dark:text-gray-400 leading-relaxed">{faq.answer}</p>
               </motion.div>
             ))}
           </div>

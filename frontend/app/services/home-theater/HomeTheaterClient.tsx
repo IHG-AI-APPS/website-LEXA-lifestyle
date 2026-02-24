@@ -125,7 +125,7 @@ export default function HomeTheaterClient() {
                   <f.icon className="w-8 h-8 text-red-600 dark:text-red-400" />
                 </div>
                 <h3 className="text-lg font-semibold mb-2 text-gray-900 dark:text-white dark:text-white">{f.title}</h3>
-                <p className="text-gray-600 dark:text-gray-300">{f.desc}</p>
+                <p className="text-gray-600 dark:text-gray-400 dark:text-gray-300">{f.desc}</p>
               </div>
             ))}
           </div>
@@ -140,7 +140,7 @@ export default function HomeTheaterClient() {
               <div key={i} className="bg-white dark:bg-gray-700 p-6 rounded-xl shadow-lg">
                 <h3 className="text-xl font-semibold text-gray-900 dark:text-white dark:text-white">{p.name}</h3>
                 <p className="text-red-600 dark:text-red-400">{p.type}</p>
-                <p className="text-gray-600 dark:text-gray-300 mt-2">{p.location}</p>
+                <p className="text-gray-600 dark:text-gray-400 dark:text-gray-300 mt-2">{p.location}</p>
               </div>
             ))}
           </div>
@@ -154,7 +154,7 @@ export default function HomeTheaterClient() {
             {faqs.map((faq, i) => (
               <div key={i} className="bg-white dark:bg-gray-700 p-6 rounded-xl shadow">
                 <h3 className="text-lg font-semibold mb-2 text-gray-900 dark:text-white dark:text-white">{faq.q}</h3>
-                <p className="text-gray-600 dark:text-gray-300">{faq.a}</p>
+                <p className="text-gray-600 dark:text-gray-400 dark:text-gray-300">{faq.a}</p>
               </div>
             ))}
           </div>

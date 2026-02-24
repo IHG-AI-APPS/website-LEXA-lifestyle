@@ -162,7 +162,7 @@ export default function SystemSelection({
         <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-3">
           Choose Your Control System
         </h2>
-        <p className="text-gray-600 max-w-2xl mx-auto">
+        <p className="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
           Based on your {totalFeatures} selected features and {selectedProtocols.length} protocols, 
           we&apos;ve ranked the best systems for your project.
         </p>
@@ -197,7 +197,7 @@ export default function SystemSelection({
           <div className="text-red-400 mb-4">
             <Settings className="w-16 h-16 mx-auto opacity-50" />
           </div>
-          <h3 className="text-lg font-semibold text-gray-700 mb-2">Unable to Load Systems</h3>
+          <h3 className="text-lg font-semibold text-gray-700 dark:text-gray-300 mb-2">Unable to Load Systems</h3>
           <p className="text-gray-500 mb-4">{error}</p>
           <Button 
             variant="outline" 
@@ -212,7 +212,7 @@ export default function SystemSelection({
           <div className="text-gray-400 mb-4">
             <Settings className="w-16 h-16 mx-auto opacity-50" />
           </div>
-          <h3 className="text-lg font-semibold text-gray-700 mb-2">No Systems Available</h3>
+          <h3 className="text-lg font-semibold text-gray-700 dark:text-gray-300 mb-2">No Systems Available</h3>
           <p className="text-gray-500 mb-4">Please try refreshing the page.</p>
           <Button 
             variant="outline" 
@@ -275,7 +275,7 @@ export default function SystemSelection({
                       <div className="text-sm text-gray-500 mb-3">{system.price_range}</div>
 
                       {/* Description */}
-                      <p className="text-sm text-gray-600 mb-4">{system.description}</p>
+                      <p className="text-sm text-gray-600 dark:text-gray-400 mb-4">{system.description}</p>
 
                       {/* Compatibility Score */}
                       {system.compatibility_score && (
@@ -297,7 +297,7 @@ export default function SystemSelection({
                         {system.strengths.slice(0, 3).map((strength, i) => (
                           <div key={i} className="flex items-center gap-2 text-sm">
                             <Check className="w-4 h-4 text-green-500 flex-shrink-0" />
-                            <span className="text-gray-700 dark:text-gray-300">{strength}</span>
+                            <span className="text-gray-700 dark:text-gray-300 dark:text-gray-300">{strength}</span>
                           </div>
                         ))}
                       </div>
@@ -350,7 +350,7 @@ export default function SystemSelection({
                       <div className="text-sm text-gray-500 mb-2">{system.price_range}</div>
 
                       {/* Description */}
-                      <p className="text-sm text-gray-600 mb-3 line-clamp-2">{system.description}</p>
+                      <p className="text-sm text-gray-600 dark:text-gray-400 mb-3 line-clamp-2">{system.description}</p>
 
                       {/* Best For */}
                       <div className="text-xs text-gray-400">

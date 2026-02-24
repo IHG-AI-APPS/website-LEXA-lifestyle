@@ -164,7 +164,7 @@ export default function SmartParkingPage() {
               <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4 text-[#1A1A1A] dark:text-white">
                 Complete Parking Intelligence
               </h2>
-              <p className="text-base sm:text-lg text-gray-600 max-w-3xl mx-auto">
+              <p className="text-base sm:text-lg text-gray-600 dark:text-gray-400 max-w-3xl mx-auto">
                 End-to-end solution from entry to payment with real-time monitoring and analytics
               </p>
             </motion.div>
@@ -189,7 +189,7 @@ export default function SmartParkingPage() {
                         <h3 className="text-lg font-semibold mb-2 text-[#1A1A1A] dark:text-white">
                           {feature.title}
                         </h3>
-                        <p className="text-gray-600 text-sm leading-relaxed">
+                        <p className="text-gray-600 dark:text-gray-400 text-sm leading-relaxed">
                           {feature.description}
                         </p>
                       </div>
@@ -214,7 +214,7 @@ export default function SmartParkingPage() {
               <h2 className="text-3xl sm:text-4xl font-bold mb-4 text-[#1A1A1A] dark:text-white">
                 Measurable Impact
               </h2>
-              <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+              <p className="text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
                 Real results from smart parking implementations
               </p>
             </motion.div>
@@ -233,7 +233,7 @@ export default function SmartParkingPage() {
                   >
                     <Icon className="h-10 w-10 mx-auto mb-4 text-[#1A1A1A] dark:text-white" />
                     <div className="text-4xl font-bold mb-2 text-[#1A1A1A] dark:text-white">{benefit.metric}</div>
-                    <div className="text-sm text-gray-600 dark:text-gray-400">{benefit.label}</div>
+                    <div className="text-sm text-gray-600 dark:text-gray-400 dark:text-gray-400">{benefit.label}</div>
                   </motion.div>
                 )
               })}
@@ -254,7 +254,7 @@ export default function SmartParkingPage() {
               <h2 className="text-3xl sm:text-4xl font-bold mb-4 text-[#1A1A1A] dark:text-white">
                 Perfect For Any Facility
               </h2>
-              <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+              <p className="text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
                 Flexible solutions adapted to your specific parking needs
               </p>
             </motion.div>
@@ -271,7 +271,7 @@ export default function SmartParkingPage() {
                 >
                   <div className="text-4xl mb-4">{useCase.icon}</div>
                   <h3 className="text-xl font-semibold mb-2 text-[#1A1A1A] dark:text-white">{useCase.title}</h3>
-                  <p className="text-gray-600 text-sm">{useCase.description}</p>
+                  <p className="text-gray-600 dark:text-gray-400 text-sm">{useCase.description}</p>
                 </motion.div>
               ))}
             </div>

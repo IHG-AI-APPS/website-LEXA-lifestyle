@@ -34,7 +34,7 @@ export default function FeaturedWorks() {
         >
           <div className="section-label mb-4">PORTFOLIO</div>
           <h2 className="h2 text-[#1A1A1A] mb-6">Featured Works</h2>
-          <p className="text-base text-gray-600 max-w-2xl">
+          <p className="text-base text-gray-600 dark:text-gray-400 max-w-2xl">
             Showcasing our finest luxury smart living installations across the region.
           </p>
         </motion.div>

@@ -212,7 +212,7 @@ export default function SmartHomeQuizPage() {
               Find Your Perfect<br />
               <span className="text-blue-600">Smart Home</span>
             </h1>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+            <p className="text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
               Answer a few questions and our AI will recommend the best smart home features for your lifestyle
             </p>
           </motion.div>
@@ -256,7 +256,7 @@ export default function SmartHomeQuizPage() {
               className="bg-white dark:bg-gray-800 rounded-2xl shadow-xl p-8"
             >
               <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-2">What matters most to you?</h2>
-              <p className="text-gray-600 mb-6">Select up to 3 priorities for your smart home</p>
+              <p className="text-gray-600 dark:text-gray-400 mb-6">Select up to 3 priorities for your smart home</p>
               
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
                 {lifestylePriorities.map((priority) => {
@@ -285,7 +285,7 @@ export default function SmartHomeQuizPage() {
                             </h3>
                             {isSelected && <CheckCircle2 className={`h-5 w-5 ${colors.text}`} />}
                           </div>
-                          <p className="text-sm text-gray-600 mt-1">{priority.description}</p>
+                          <p className="text-sm text-gray-600 dark:text-gray-400 mt-1">{priority.description}</p>
                         </div>
                       </div>
                     </button>
@@ -319,7 +319,7 @@ export default function SmartHomeQuizPage() {
               className="bg-white dark:bg-gray-800 rounded-2xl shadow-xl p-8"
             >
               <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-2">What type of property?</h2>
-              <p className="text-gray-600 mb-6">This helps us tailor recommendations to your space</p>
+              <p className="text-gray-600 dark:text-gray-400 mb-6">This helps us tailor recommendations to your space</p>
               
               <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
                 {propertyTypes.map((type) => {
@@ -372,7 +372,7 @@ export default function SmartHomeQuizPage() {
               className="bg-white dark:bg-gray-800 rounded-2xl shadow-xl p-8"
             >
               <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-2">What's your budget range?</h2>
-              <p className="text-gray-600 mb-6">We'll recommend features that fit your investment</p>
+              <p className="text-gray-600 dark:text-gray-400 mb-6">We'll recommend features that fit your investment</p>
               
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
                 {budgetRanges.map((budget) => {
@@ -391,7 +391,7 @@ export default function SmartHomeQuizPage() {
                       <h3 className={`font-bold text-lg ${isSelected ? 'text-blue-600' : 'text-gray-900'}`}>
                         {budget.name}
                       </h3>
-                      <p className="text-sm text-gray-600 mt-1">{budget.range}</p>
+                      <p className="text-sm text-gray-600 dark:text-gray-400 mt-1">{budget.range}</p>
                     </button>
                   )
                 })}
@@ -474,7 +474,7 @@ export default function SmartHomeQuizPage() {
                       <div className="flex-1">
                         <div className="flex items-center gap-2">
                           <h4 className="font-semibold text-gray-900 dark:text-white dark:text-white">{rec.feature_title}</h4>
-                          <span className="px-2 py-0.5 bg-gray-100 text-gray-600 text-xs rounded-full">
+                          <span className="px-2 py-0.5 bg-gray-100 text-gray-600 dark:text-gray-400 text-xs rounded-full">
                             {rec.category}
                           </span>
                         </div>
@@ -546,7 +546,7 @@ export default function SmartHomeQuizPage() {
                         <div className="text-center py-8">
                           <CheckCircle2 className="h-16 w-16 mx-auto text-green-500 mb-4" />
                           <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2">Results Saved!</h3>
-                          <p className="text-gray-600 dark:text-gray-400">Check your email for your personalized recommendations.</p>
+                          <p className="text-gray-600 dark:text-gray-400 dark:text-gray-400">Check your email for your personalized recommendations.</p>
                         </div>
                       ) : (
                         <>
@@ -563,13 +563,13 @@ export default function SmartHomeQuizPage() {
                             </button>
                           </div>
                           
-                          <p className="text-gray-600 mb-6">
+                          <p className="text-gray-600 dark:text-gray-400 mb-6">
                             We'll save your quiz results and send you a summary with your top {recommendations.length} recommended features.
                           </p>
                           
                           <div className="space-y-4">
                             <div>
-                              <label className="block text-sm font-medium text-gray-700 mb-1">Name (optional)</label>
+                              <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Name (optional)</label>
                               <input
                                 type="text"
                                 value={saveName}
@@ -579,7 +579,7 @@ export default function SmartHomeQuizPage() {
                               />
                             </div>
                             <div>
-                              <label className="block text-sm font-medium text-gray-700 mb-1">Email *</label>
+                              <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Email *</label>
                               <input
                                 type="email"
                                 required

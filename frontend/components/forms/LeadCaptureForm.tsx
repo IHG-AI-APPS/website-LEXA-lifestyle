@@ -67,7 +67,7 @@ export default function LeadCaptureForm({ calculatorData, onSubmit, onSkip }: Le
           <CheckCircle className="text-green-600" size={32} />
         </div>
         <h3 className="text-2xl font-heading font-semibold mb-3">Thank You!</h3>
-        <p className="text-gray-600 mb-6">
+        <p className="text-gray-600 dark:text-gray-400 mb-6">
           We&apos;ve received your information. Our team will contact you within 24 hours to discuss your project.
         </p>
         <Button
@@ -85,7 +85,7 @@ export default function LeadCaptureForm({ calculatorData, onSubmit, onSkip }: Le
     <div className="p-8 bg-white dark:bg-gray-800 rounded-lg border border-gray-200 dark:border-gray-700">
       <div className="mb-6">
         <h3 className="text-2xl font-heading font-semibold mb-2">Get Your Detailed Quote</h3>
-        <p className="text-sm text-gray-600 dark:text-gray-400">
+        <p className="text-sm text-gray-600 dark:text-gray-400 dark:text-gray-400">
           Share your details and we&apos;ll send you a personalized proposal with exact pricing.
         </p>
       </div>

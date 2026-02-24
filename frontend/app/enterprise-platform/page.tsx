@@ -302,7 +302,7 @@ export default function EnterprisePerformanceOSPage() {
               <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4 text-gray-900 dark:text-white dark:text-white">
                 Four-Layer Architecture
               </h2>
-              <p className="text-base sm:text-lg text-gray-600 max-w-3xl mx-auto">
+              <p className="text-base sm:text-lg text-gray-600 dark:text-gray-400 max-w-3xl mx-auto">
                 Complete building intelligence from infrastructure to ESG reporting
               </p>
             </motion.div>
@@ -332,7 +332,7 @@ export default function EnterprisePerformanceOSPage() {
                       {layer.features.map((feature) => (
                         <div key={feature} className="flex items-start gap-2">
                           <CheckCircle2 className="h-5 w-5 text-blue-600 flex-shrink-0 mt-0.5" />
-                          <span className="text-sm text-gray-700 dark:text-gray-300">{feature}</span>
+                          <span className="text-sm text-gray-700 dark:text-gray-300 dark:text-gray-300">{feature}</span>
                         </div>
                       ))}
                     </div>
@@ -356,7 +356,7 @@ export default function EnterprisePerformanceOSPage() {
               <h2 className="text-3xl sm:text-4xl font-bold mb-4 text-gray-900 dark:text-white dark:text-white">
                 Enterprise Use Cases
               </h2>
-              <p className="text-lg text-gray-600 dark:text-gray-400">
+              <p className="text-lg text-gray-600 dark:text-gray-400 dark:text-gray-400">
                 Designed for diverse building portfolios across the UAE
               </p>
             </motion.div>
@@ -371,7 +371,7 @@ export default function EnterprisePerformanceOSPage() {
                     className={`px-6 py-3 border-2 font-semibold transition-all flex items-center gap-2 ${
                       selectedUseCase === useCase.id
                         ? 'border-blue-600 bg-blue-50 text-blue-700'
-                        : 'border-gray-200 bg-white text-gray-700 hover:border-blue-300'
+                        : 'border-gray-200 bg-white text-gray-700 dark:text-gray-300 hover:border-blue-300'
                     }`}
                   >
                     <Icon className="h-5 w-5" />
@@ -465,7 +465,7 @@ export default function EnterprisePerformanceOSPage() {
               <h2 className="text-3xl sm:text-4xl font-bold mb-4 text-gray-900 dark:text-white dark:text-white">
                 Enterprise Investment Tiers
               </h2>
-              <p className="text-lg text-gray-600 dark:text-gray-400">
+              <p className="text-lg text-gray-600 dark:text-gray-400 dark:text-gray-400">
                 Scalable solutions for every building size
               </p>
             </motion.div>
@@ -488,14 +488,14 @@ export default function EnterprisePerformanceOSPage() {
                     </div>
                   )}
                   <h3 className="text-2xl font-bold mb-2 text-gray-900 dark:text-white dark:text-white">{tier.name}</h3>
-                  <div className="text-sm text-gray-600 mb-4">{tier.size}</div>
+                  <div className="text-sm text-gray-600 dark:text-gray-400 mb-4">{tier.size}</div>
                   <div className="text-3xl font-bold text-blue-600 mb-6">{tier.investment}</div>
                   
                   <div className="space-y-3 mb-8">
                     {tier.includes.map((item) => (
                       <div key={item} className="flex items-start gap-2">
                         <CheckCircle2 className="h-5 w-5 text-blue-600 flex-shrink-0 mt-0.5" />
-                        <span className="text-sm text-gray-700 dark:text-gray-300">{item}</span>
+                        <span className="text-sm text-gray-700 dark:text-gray-300 dark:text-gray-300">{item}</span>
                       </div>
                     ))}
                   </div>
@@ -515,7 +515,7 @@ export default function EnterprisePerformanceOSPage() {
             </div>
 
             <div className="mt-12 text-center">
-              <p className="text-gray-600 mb-4">
+              <p className="text-gray-600 dark:text-gray-400 mb-4">
                 <strong>Typical ROI:</strong> 18-24 months through energy savings alone
               </p>
               <p className="text-sm text-gray-500">

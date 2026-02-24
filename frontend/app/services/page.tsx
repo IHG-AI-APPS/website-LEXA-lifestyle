@@ -129,7 +129,7 @@ export default function ServicesPage() {
                 {language === 'ar' ? 'خدمة متكاملة' : 'Full-Service'} <span className="text-gray-400">{language === 'ar' ? '' : 'Integration'}</span>
               </h1>
               <div className="h-px w-32 bg-[#9F8B65] mb-6 mx-auto" />
-              <p className="text-base md:text-lg text-gray-600 leading-relaxed max-w-2xl mx-auto">
+              <p className="text-base md:text-lg text-gray-600 dark:text-gray-400 leading-relaxed max-w-2xl mx-auto">
                 {language === 'ar' ? (
                   <>التصميم. التكامل. التشغيل. الدعم. أربع مراحل من التميز لتقديم الفخامة المنسقة.</>
                 ) : (
@@ -165,7 +165,7 @@ export default function ServicesPage() {
                   <h2 className="text-3xl md:text-4xl font-bold mb-2">
                     {language === 'ar' ? groupConfig.titleAr : groupConfig.title}
                   </h2>
-                  <p className="text-lg text-gray-600 dark:text-gray-400">
+                  <p className="text-lg text-gray-600 dark:text-gray-400 dark:text-gray-400">
                     {language === 'ar' ? groupConfig.subtitleAr : groupConfig.subtitle}
                   </p>
                 </motion.div>
@@ -196,7 +196,7 @@ export default function ServicesPage() {
                               </h3>
                             </div>
                             <div className="lg:col-span-5">
-                              <p className="text-gray-600 leading-relaxed">
+                              <p className="text-gray-600 dark:text-gray-400 leading-relaxed">
                                 {service.description}
                               </p>
                             </div>
@@ -233,7 +233,7 @@ export default function ServicesPage() {
                 <h2 className="text-3xl md:text-4xl font-bold mb-2">
                   {language === 'ar' ? 'خدمات أخرى' : 'Other Services'}
                 </h2>
-                <p className="text-lg text-gray-600 dark:text-gray-400">
+                <p className="text-lg text-gray-600 dark:text-gray-400 dark:text-gray-400">
                   {language === 'ar' ? 'خدمات متخصصة إضافية نقدمها' : 'Additional specialized services we offer'}
                 </p>
               </motion.div>
@@ -264,7 +264,7 @@ export default function ServicesPage() {
                             </h3>
                           </div>
                           <div className="lg:col-span-5">
-                            <p className="text-gray-600 leading-relaxed">
+                            <p className="text-gray-600 dark:text-gray-400 leading-relaxed">
                               {service.description}
                             </p>
                           </div>

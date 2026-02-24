@@ -46,7 +46,7 @@ export default function MuscatClient() {
             {communities.map((c, i) => (
               <div key={i} className="bg-white dark:bg-gray-700 p-6 rounded-xl shadow-lg">
                 <h3 className="text-xl font-semibold text-gray-900 dark:text-white dark:text-white">{c.name}</h3>
-                <p className="text-gray-600 dark:text-gray-300">{c.type} • {c.projects}</p>
+                <p className="text-gray-600 dark:text-gray-400 dark:text-gray-300">{c.type} • {c.projects}</p>
               </div>
             ))}
           </div>

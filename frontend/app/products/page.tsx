@@ -53,7 +53,7 @@ export default function ProductsPage() {
                 <span className="text-transparent bg-clip-text metallic-gradient">EQUIPMENT</span>
               </h1>
               <div className="h-px w-32 bg-gradient-to-r from-platinum to-transparent mb-8" />
-              <p className="text-xl text-gray-600 font-normal leading-relaxed">
+              <p className="text-xl text-gray-600 dark:text-gray-400 font-normal leading-relaxed">
                 Explore our comprehensive product catalog featuring equipment from the world&apos;s most prestigious smart home brands.
               </p>
             </motion.div>
@@ -73,16 +73,16 @@ export default function ProductsPage() {
               className="text-center mb-16"
             >
               <h2 className="text-5xl font-semibold mb-6">Product Categories</h2>
-              <p className="text-lg text-gray-600 font-normal max-w-2xl mx-auto">
+              <p className="text-lg text-gray-600 dark:text-gray-400 font-normal max-w-2xl mx-auto">
                 Browse by equipment type to find the perfect components for your system.
               </p>
             </motion.div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               {loading ? (
-                <div className="col-span-2 text-center py-12 text-gray-600 dark:text-gray-400">Loading products...</div>
+                <div className="col-span-2 text-center py-12 text-gray-600 dark:text-gray-400 dark:text-gray-400">Loading products...</div>
               ) : products.length === 0 ? (
-                <div className="col-span-2 text-center py-12 text-gray-600 dark:text-gray-400">No products available.</div>
+                <div className="col-span-2 text-center py-12 text-gray-600 dark:text-gray-400 dark:text-gray-400">No products available.</div>
               ) : (
                 products.map((category: any, index: number) => (
                   <motion.div
@@ -116,11 +116,11 @@ export default function ProductsPage() {
 
                         {/* Content */}
                         <div className="p-8">
-                          <h3 className="text-2xl font-semibold group-hover:text-gray-600 transition-colors mb-4">
+                          <h3 className="text-2xl font-semibold group-hover:text-gray-600 dark:text-gray-400 transition-colors mb-4">
                             {category.name}
                           </h3>
 
-                          <p className="text-base text-gray-600 mb-6 leading-relaxed">
+                          <p className="text-base text-gray-600 dark:text-gray-400 mb-6 leading-relaxed">
                             {category.description}
                           </p>
 

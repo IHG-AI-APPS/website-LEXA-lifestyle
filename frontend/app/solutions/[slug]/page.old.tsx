@@ -66,7 +66,7 @@ export default function SolutionDetailPage() {
       <div className="min-h-screen bg-white pt-20 flex items-center justify-center">
         <div className="text-center">
           <h1 className="text-4xl font-semibold mb-4">Solution Not Found</h1>
-          <p className="text-gray-600 mb-8">The solution you&apos;re looking for doesn&apos;t exist.</p>
+          <p className="text-gray-600 dark:text-gray-400 mb-8">The solution you&apos;re looking for doesn&apos;t exist.</p>
           <Link href="/solutions">
             <Button>View All Solutions</Button>
           </Link>
@@ -98,7 +98,7 @@ export default function SolutionDetailPage() {
                 
                 <div className="h-px w-32 bg-gradient-to-r from-platinum to-transparent mb-8" />
                 
-                <p className="text-lg text-gray-600 leading-relaxed mb-8">
+                <p className="text-lg text-gray-600 dark:text-gray-400 leading-relaxed mb-8">
                   {solution.description}
                 </p>
 
@@ -167,7 +167,7 @@ export default function SolutionDetailPage() {
                 viewport={{ once: true }}
               >
                 <h2 className="text-4xl font-semibold mb-6">Overview</h2>
-                <p className="text-xl text-gray-600 leading-relaxed">
+                <p className="text-xl text-gray-600 dark:text-gray-400 leading-relaxed">
                   {solution.long_description}
                 </p>
               </motion.div>
@@ -189,7 +189,7 @@ export default function SolutionDetailPage() {
                 className="mb-12 text-center"
               >
                 <h2 className="text-5xl font-semibold mb-4">Comprehensive Features</h2>
-                <p className="text-xl text-gray-600 dark:text-gray-400">
+                <p className="text-xl text-gray-600 dark:text-gray-400 dark:text-gray-400">
                   Everything you need for the ultimate {solution.title.toLowerCase()} experience
                 </p>
               </motion.div>
@@ -208,11 +208,11 @@ export default function SolutionDetailPage() {
                       <Sparkles className="text-charcoal" size={32} strokeWidth={1.5} />
                     </div>
                     <h3 className="text-2xl font-semibold mb-3">{card.title}</h3>
-                    <p className="text-gray-600 mb-6 leading-relaxed">{card.description}</p>
+                    <p className="text-gray-600 dark:text-gray-400 mb-6 leading-relaxed">{card.description}</p>
                     {card.benefits && card.benefits.length > 0 && (
                       <ul className="space-y-2">
                         {card.benefits.map((benefit, bIndex) => (
-                          <li key={bIndex} className="flex items-start gap-2 text-sm text-gray-700 dark:text-gray-300">
+                          <li key={bIndex} className="flex items-start gap-2 text-sm text-gray-700 dark:text-gray-300 dark:text-gray-300">
                             <CheckCircle2 size={16} className="text-charcoal flex-shrink-0 mt-0.5" />
                             <span>{benefit}</span>
                           </li>
@@ -239,7 +239,7 @@ export default function SolutionDetailPage() {
               className="mb-12"
             >
               <h2 className="text-5xl font-semibold mb-4">Key Features</h2>
-              <p className="text-xl text-gray-600 dark:text-gray-400">
+              <p className="text-xl text-gray-600 dark:text-gray-400 dark:text-gray-400">
                 Everything you need for the ultimate {solution.title.toLowerCase()} experience
               </p>
             </motion.div>
@@ -278,7 +278,7 @@ export default function SolutionDetailPage() {
                 className="text-center mb-12"
               >
                 <h2 className="text-4xl font-semibold mb-4">Premium Technology Partners</h2>
-                <p className="text-xl text-gray-600 dark:text-gray-400">
+                <p className="text-xl text-gray-600 dark:text-gray-400 dark:text-gray-400">
                   We work with the world&apos;s leading brands
                 </p>
               </motion.div>
@@ -393,7 +393,7 @@ export default function SolutionDetailPage() {
                 className="mb-12"
               >
                 <h2 className="text-4xl font-semibold mb-4">Frequently Asked Questions</h2>
-                <p className="text-xl text-gray-600 dark:text-gray-400">
+                <p className="text-xl text-gray-600 dark:text-gray-400 dark:text-gray-400">
                   Everything you need to know about {solution.title.toLowerCase()}
                 </p>
               </motion.div>
@@ -409,7 +409,7 @@ export default function SolutionDetailPage() {
                     className="bg-white dark:bg-gray-800 p-8 border border-gray-200 dark:border-gray-700"
                   >
                     <h3 className="text-xl font-semibold mb-3">{faq.question}</h3>
-                    <p className="text-gray-600 leading-relaxed">{faq.answer}</p>
+                    <p className="text-gray-600 dark:text-gray-400 leading-relaxed">{faq.answer}</p>
                   </motion.div>
                 ))}
               </div>
@@ -431,7 +431,7 @@ export default function SolutionDetailPage() {
                 className="mb-12 text-center"
               >
                 <h2 className="text-4xl font-semibold mb-4">Real-World Applications</h2>
-                <p className="text-xl text-gray-600 dark:text-gray-400">
+                <p className="text-xl text-gray-600 dark:text-gray-400 dark:text-gray-400">
                   See how {solution.title} transforms different properties
                 </p>
               </motion.div>
@@ -447,7 +447,7 @@ export default function SolutionDetailPage() {
                     className="bg-white border-2 border-gray-200 p-8 hover:border-charcoal transition-colors"
                   >
                     <h3 className="text-2xl font-semibold mb-4">{useCase.title}</h3>
-                    <p className="text-gray-600 leading-relaxed">{useCase.description}</p>
+                    <p className="text-gray-600 dark:text-gray-400 leading-relaxed">{useCase.description}</p>
                   </motion.div>
                 ))}
               </div>
@@ -469,7 +469,7 @@ export default function SolutionDetailPage() {
                 className="mb-12 text-center"
               >
                 <h2 className="text-4xl font-semibold mb-4">Technical Specifications</h2>
-                <p className="text-xl text-gray-600 dark:text-gray-400">
+                <p className="text-xl text-gray-600 dark:text-gray-400 dark:text-gray-400">
                   Industry-leading technology and components
                 </p>
               </motion.div>
@@ -489,7 +489,7 @@ export default function SolutionDetailPage() {
                       <h3 className="text-lg font-semibold mb-1 capitalize">
                         {key.replace(/_/g, ' ')}
                       </h3>
-                      <p className="text-gray-600 dark:text-gray-400">{value}</p>
+                      <p className="text-gray-600 dark:text-gray-400 dark:text-gray-400">{value}</p>
                     </div>
                   </motion.div>
                 ))}
@@ -512,7 +512,7 @@ export default function SolutionDetailPage() {
                 className="mb-12"
               >
                 <h2 className="text-4xl font-semibold mb-4">Featured Projects</h2>
-                <p className="text-xl text-gray-600 dark:text-gray-400">
+                <p className="text-xl text-gray-600 dark:text-gray-400 dark:text-gray-400">
                   See how we&apos;ve implemented {solution.title} in real projects
                 </p>
               </motion.div>
@@ -536,7 +536,7 @@ export default function SolutionDetailPage() {
                             className="object-cover grayscale-[20%] group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700"
                           />
                         </div>
-                        <h3 className="text-xl font-semibold mb-2 group-hover:text-gray-600 transition-colors">
+                        <h3 className="text-xl font-semibold mb-2 group-hover:text-gray-600 dark:text-gray-400 transition-colors">
                           {project.title}
                         </h3>
                         <p className="text-sm text-gray-500">{project.location}</p>
@@ -563,7 +563,7 @@ export default function SolutionDetailPage() {
               <h2 className="text-5xl font-semibold mb-6">
                 Ready to Transform Your Space?
               </h2>
-              <p className="text-xl text-gray-600 mb-8">
+              <p className="text-xl text-gray-600 dark:text-gray-400 mb-8">
                 Book a free consultation with our experts to discuss your {solution.title.toLowerCase()} project
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">

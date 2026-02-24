@@ -38,7 +38,7 @@ export default function SignatureProjects() {
           <h2 className="text-5xl md:text-7xl font-heading font-bold tracking-tight mb-6">
             SIGNATURE PROJECTS
           </h2>
-          <p className="text-lg text-gray-600 dark:text-gray-400">
+          <p className="text-lg text-gray-600 dark:text-gray-400 dark:text-gray-400">
             Exceptional spaces where technology becomes invisible, effortless, and unforgettable.
           </p>
         </motion.div>
@@ -79,13 +79,13 @@ export default function SignatureProjects() {
                   <h3 className="text-4xl md:text-5xl font-heading font-bold tracking-tight">
                     {project.title}
                   </h3>
-                  <p className="text-xl text-gray-600 leading-relaxed">
+                  <p className="text-xl text-gray-600 dark:text-gray-400 leading-relaxed">
                     {project.description}
                   </p>
                   {project.systems && project.systems.length > 0 && (
                     <div className="flex flex-wrap gap-2">
                       {project.systems.slice(0, 4).map((system: string) => (
-                        <span key={system} className="text-xs px-3 py-1 border border-gray-300 text-gray-600 dark:text-gray-400">
+                        <span key={system} className="text-xs px-3 py-1 border border-gray-300 text-gray-600 dark:text-gray-400 dark:text-gray-400">
                           {system}
                         </span>
                       ))}

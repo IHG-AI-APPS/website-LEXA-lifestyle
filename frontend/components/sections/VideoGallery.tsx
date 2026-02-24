@@ -104,7 +104,7 @@ export default function VideoGallery({
         <div className="text-center mb-12">
           <h2 className="text-4xl font-heading font-bold mb-4">{title}</h2>
           {description && (
-            <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+            <p className="text-lg text-gray-600 dark:text-gray-400 max-w-3xl mx-auto">
               {description}
             </p>
           )}
@@ -123,7 +123,7 @@ export default function VideoGallery({
               />
               <div className="mt-3">
                 <p className="text-sm text-gray-500 capitalize mb-1">{video.category.replace('-', ' ')}</p>
-                <p className="text-sm text-gray-600 line-clamp-2">{video.description}</p>
+                <p className="text-sm text-gray-600 dark:text-gray-400 line-clamp-2">{video.description}</p>
               </div>
             </div>
           ))}

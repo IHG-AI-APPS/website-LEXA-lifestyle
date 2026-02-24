@@ -265,7 +265,7 @@ export default function GlossaryPage() {
               <h1 className="h1 uppercase mb-6">
                 SMART HOME GLOSSARY
               </h1>
-              <p className="text-xl text-gray-600 mb-8">
+              <p className="text-xl text-gray-600 dark:text-gray-400 mb-8">
                 Complete guide to smart home automation terminology for UAE homeowners. 
                 Understanding these terms will help you make informed decisions about your luxury smart home project in Dubai.
               </p>
@@ -309,7 +309,7 @@ export default function GlossaryPage() {
                       <h3 className="text-2xl uppercase font-semibold text-gray-900 dark:text-white mb-2">
                         {item.term}
                       </h3>
-                      <p className="text-gray-600 leading-relaxed">
+                      <p className="text-gray-600 dark:text-gray-400 leading-relaxed">
                         {item.definition}
                       </p>
                     </div>
@@ -320,7 +320,7 @@ export default function GlossaryPage() {
 
             {filteredTerms.length === 0 && (
               <div className="text-center py-20">
-                <p className="text-xl text-gray-600 dark:text-gray-400">No terms found matching &quot;{searchTerm}&quot;</p>
+                <p className="text-xl text-gray-600 dark:text-gray-400 dark:text-gray-400">No terms found matching &quot;{searchTerm}&quot;</p>
               </div>
             )}
           </div>

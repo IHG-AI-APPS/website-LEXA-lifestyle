@@ -71,7 +71,7 @@ export default function RelatedPackages({ currentSlug, currentTitle }: RelatedPa
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 dark:text-white mb-4">
               Other Smart Home Packages
             </h2>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+            <p className="text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
               Discover the perfect solution for every property type and lifestyle
             </p>
           </motion.div>
@@ -135,7 +135,7 @@ export default function RelatedPackages({ currentSlug, currentTitle }: RelatedPa
                     {/* Content Section */}
                     <div className="p-6">
                       {/* Description */}
-                      <p className="text-sm text-gray-600 mb-4 line-clamp-2">
+                      <p className="text-sm text-gray-600 dark:text-gray-400 mb-4 line-clamp-2">
                         {pkg.description || `Intelligent automation designed specifically for ${pkg.title.toLowerCase()}`}
                       </p>
 

@@ -257,7 +257,7 @@ export default function DeveloperPackagesPage() {
             <h2 className="text-3xl sm:text-4xl font-bold mb-4 text-gray-900 dark:text-white dark:text-white">
               Why Developers Choose LEXA
             </h2>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+            <p className="text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
               Comprehensive benefits designed for large-scale smart home deployments
             </p>
           </motion.div>
@@ -281,7 +281,7 @@ export default function DeveloperPackagesPage() {
                     {benefit.highlight}
                   </div>
                   <h3 className="text-lg font-bold mb-2 text-gray-900 dark:text-white dark:text-white">{benefit.title}</h3>
-                  <p className="text-sm text-gray-600 dark:text-gray-400">{benefit.description}</p>
+                  <p className="text-sm text-gray-600 dark:text-gray-400 dark:text-gray-400">{benefit.description}</p>
                 </motion.div>
               )
             })}
@@ -302,7 +302,7 @@ export default function DeveloperPackagesPage() {
             <h2 className="text-3xl sm:text-4xl font-bold mb-4 text-gray-900 dark:text-white dark:text-white">
               Scalable Package Options
             </h2>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+            <p className="text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
               From basic automation to luxury smart living - packages for every project tier
             </p>
           </motion.div>
@@ -356,20 +356,20 @@ export default function DeveloperPackagesPage() {
                   {pkg.features.map((feature) => (
                     <div key={feature} className="flex items-center gap-2">
                       <CheckCircle2 className="h-4 w-4 text-amber-500 flex-shrink-0" />
-                      <span className="text-sm text-gray-700 dark:text-gray-300">{feature}</span>
+                      <span className="text-sm text-gray-700 dark:text-gray-300 dark:text-gray-300">{feature}</span>
                     </div>
                   ))}
                 </div>
                 <div className="border-t border-gray-200 pt-4">
                   <div className="text-xs text-gray-500">Ideal for:</div>
-                  <div className="text-sm font-semibold text-gray-700 dark:text-gray-300">{pkg.ideal}</div>
+                  <div className="text-sm font-semibold text-gray-700 dark:text-gray-300 dark:text-gray-300">{pkg.ideal}</div>
                 </div>
               </motion.div>
             ))}
           </div>
 
           <div className="text-center">
-            <p className="text-gray-600 mb-4">
+            <p className="text-gray-600 dark:text-gray-400 mb-4">
               All packages include bulk pricing discounts. Contact us for customized quotes.
             </p>
             <Button

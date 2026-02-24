@@ -518,7 +518,7 @@ export default function AIRecommendation({
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.2 }}
-          className="text-gray-600 max-w-2xl mx-auto"
+          className="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto"
         >
           Based on your {recommendation.summary.total_features} selected features, 
           we have curated the perfect package options for your project.
@@ -533,7 +533,7 @@ export default function AIRecommendation({
           transition={{ delay: 0.25 }}
           className="bg-gradient-to-r from-gray-50 to-gray-100 rounded-2xl p-5 mb-8"
         >
-          <h3 className="text-sm font-bold text-gray-700 mb-3 flex items-center gap-2">
+          <h3 className="text-sm font-bold text-gray-700 dark:text-gray-300 mb-3 flex items-center gap-2">
             <Building2 className="w-4 h-4" />
             Your Project
           </h3>
@@ -657,9 +657,9 @@ export default function AIRecommendation({
 
                 <h4 className="text-xl font-bold text-gray-900 dark:text-white mb-1">{pkg.name}</h4>
                 <div className="text-2xl font-bold text-gray-900 dark:text-white mb-3">{pkg.price_indicator}</div>
-                <p className="text-sm text-gray-600 mb-4">{pkg.description}</p>
+                <p className="text-sm text-gray-600 dark:text-gray-400 mb-4">{pkg.description}</p>
 
-                <div className="flex items-center gap-2 text-sm font-medium text-gray-700 dark:text-gray-300">
+                <div className="flex items-center gap-2 text-sm font-medium text-gray-700 dark:text-gray-300 dark:text-gray-300">
                   <Check className="w-4 h-4 text-green-500" />
                   {pkg.features_included} features included
                 </div>
@@ -692,7 +692,7 @@ export default function AIRecommendation({
               <div className="w-8 h-8 bg-purple-100 rounded-full flex items-center justify-center flex-shrink-0">
                 <Sparkles className="w-4 h-4 text-purple-600" />
               </div>
-              <p className="text-gray-700 dark:text-gray-300">{insight}</p>
+              <p className="text-gray-700 dark:text-gray-300 dark:text-gray-300">{insight}</p>
             </motion.div>
           ))}
         </div>
@@ -814,7 +814,7 @@ export default function AIRecommendation({
 
               <div className="space-y-4">
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-1">Full Name *</label>
+                  <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Full Name *</label>
                   <Input
                     value={consultationForm.name}
                     onChange={(e) => setConsultationForm({...consultationForm, name: e.target.value})}
@@ -823,7 +823,7 @@ export default function AIRecommendation({
                 </div>
                 
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-1">Email *</label>
+                  <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Email *</label>
                   <Input
                     type="email"
                     value={consultationForm.email}
@@ -833,7 +833,7 @@ export default function AIRecommendation({
                 </div>
                 
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-1">Phone Number *</label>
+                  <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Phone Number *</label>
                   <Input
                     type="tel"
                     value={consultationForm.phone}
@@ -843,7 +843,7 @@ export default function AIRecommendation({
                 </div>
                 
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-1">Preferred Date</label>
+                  <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Preferred Date</label>
                   <Input
                     type="date"
                     value={consultationForm.preferredDate}
@@ -852,7 +852,7 @@ export default function AIRecommendation({
                 </div>
                 
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-1">Preferred Time</label>
+                  <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Preferred Time</label>
                   <div className="grid grid-cols-3 gap-2">
                     {['morning', 'afternoon', 'evening'].map((time) => (
                       <button
@@ -871,7 +871,7 @@ export default function AIRecommendation({
                 </div>
 
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-1">Additional Notes</label>
+                  <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Additional Notes</label>
                   <textarea
                     value={consultationForm.notes}
                     onChange={(e) => setConsultationForm({...consultationForm, notes: e.target.value})}
@@ -971,7 +971,7 @@ export default function AIRecommendation({
               <div className="border border-gray-200 rounded-xl overflow-hidden">
                 {/* Features Included */}
                 <div className="grid grid-cols-4 gap-4 p-4 bg-gray-50 border-b border-gray-200 dark:border-gray-700">
-                  <div className="font-medium text-gray-700 dark:text-gray-300">Features Included</div>
+                  <div className="font-medium text-gray-700 dark:text-gray-300 dark:text-gray-300">Features Included</div>
                   {recommendation.packages.map((pkg) => (
                     <div key={pkg.name} className="text-center font-bold text-gray-900 dark:text-white dark:text-white">
                       {pkg.features_included}
@@ -983,7 +983,7 @@ export default function AIRecommendation({
                 <div className="grid grid-cols-4 gap-4 p-4 border-b border-gray-100 dark:border-gray-800">
                   <div className="flex items-center gap-2">
                     <div className="w-3 h-3 rounded-full bg-red-500" />
-                    <span className="text-gray-700 dark:text-gray-300">Must-Have Features</span>
+                    <span className="text-gray-700 dark:text-gray-300 dark:text-gray-300">Must-Have Features</span>
                   </div>
                   {recommendation.packages.map((pkg, idx) => (
                     <div key={pkg.name} className="flex justify-center">
@@ -996,7 +996,7 @@ export default function AIRecommendation({
                 <div className="grid grid-cols-4 gap-4 p-4 border-b border-gray-100 dark:border-gray-800">
                   <div className="flex items-center gap-2">
                     <div className="w-3 h-3 rounded-full bg-orange-500" />
-                    <span className="text-gray-700 dark:text-gray-300">Should-Have Features</span>
+                    <span className="text-gray-700 dark:text-gray-300 dark:text-gray-300">Should-Have Features</span>
                   </div>
                   {recommendation.packages.map((pkg, idx) => (
                     <div key={pkg.name} className="flex justify-center">
@@ -1013,7 +1013,7 @@ export default function AIRecommendation({
                 <div className="grid grid-cols-4 gap-4 p-4 border-b border-gray-100 dark:border-gray-800">
                   <div className="flex items-center gap-2">
                     <div className="w-3 h-3 rounded-full bg-purple-500" />
-                    <span className="text-gray-700 dark:text-gray-300">Nice-to-Have Upgrades</span>
+                    <span className="text-gray-700 dark:text-gray-300 dark:text-gray-300">Nice-to-Have Upgrades</span>
                   </div>
                   {recommendation.packages.map((pkg, idx) => (
                     <div key={pkg.name} className="flex justify-center">
@@ -1030,7 +1030,7 @@ export default function AIRecommendation({
                 <div className="grid grid-cols-4 gap-4 p-4 border-b border-gray-100 dark:border-gray-800">
                   <div className="flex items-center gap-2">
                     <Shield className="w-4 h-4 text-gray-400" />
-                    <span className="text-gray-700 dark:text-gray-300">Premium Hardware</span>
+                    <span className="text-gray-700 dark:text-gray-300 dark:text-gray-300">Premium Hardware</span>
                   </div>
                   {recommendation.packages.map((pkg, idx) => (
                     <div key={pkg.name} className="flex justify-center">
@@ -1047,7 +1047,7 @@ export default function AIRecommendation({
                 <div className="grid grid-cols-4 gap-4 p-4 border-b border-gray-100 dark:border-gray-800">
                   <div className="flex items-center gap-2">
                     <CheckCircle2 className="w-4 h-4 text-gray-400" />
-                    <span className="text-gray-700 dark:text-gray-300">Extended Warranty</span>
+                    <span className="text-gray-700 dark:text-gray-300 dark:text-gray-300">Extended Warranty</span>
                   </div>
                   {recommendation.packages.map((pkg, idx) => (
                     <div key={pkg.name} className="text-center text-sm">
@@ -1066,7 +1066,7 @@ export default function AIRecommendation({
                 <div className="grid grid-cols-4 gap-4 p-4 border-b border-gray-100 dark:border-gray-800">
                   <div className="flex items-center gap-2">
                     <Phone className="w-4 h-4 text-gray-400" />
-                    <span className="text-gray-700 dark:text-gray-300">Priority Support</span>
+                    <span className="text-gray-700 dark:text-gray-300 dark:text-gray-300">Priority Support</span>
                   </div>
                   {recommendation.packages.map((pkg, idx) => (
                     <div key={pkg.name} className="flex justify-center">
@@ -1083,7 +1083,7 @@ export default function AIRecommendation({
                 <div className="grid grid-cols-4 gap-4 p-4 border-b border-gray-100 dark:border-gray-800">
                   <div className="flex items-center gap-2">
                     <Building2 className="w-4 h-4 text-gray-400" />
-                    <span className="text-gray-700 dark:text-gray-300">Dedicated Project Manager</span>
+                    <span className="text-gray-700 dark:text-gray-300 dark:text-gray-300">Dedicated Project Manager</span>
                   </div>
                   {recommendation.packages.map((pkg, idx) => (
                     <div key={pkg.name} className="flex justify-center">
@@ -1100,7 +1100,7 @@ export default function AIRecommendation({
                 <div className="grid grid-cols-4 gap-4 p-4">
                   <div className="flex items-center gap-2">
                     <Calendar className="w-4 h-4 text-gray-400" />
-                    <span className="text-gray-700 dark:text-gray-300">Free Maintenance Visits</span>
+                    <span className="text-gray-700 dark:text-gray-300 dark:text-gray-300">Free Maintenance Visits</span>
                   </div>
                   {recommendation.packages.map((pkg, idx) => (
                     <div key={pkg.name} className="text-center text-sm">

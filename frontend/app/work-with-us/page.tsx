@@ -223,7 +223,7 @@ function JobCard(props) {
                 {position.department}
               </span>
             </div>
-            <p className="text-gray-600 dark:text-gray-300 text-sm mb-3">{position.description}</p>
+            <p className="text-gray-600 dark:text-gray-400 dark:text-gray-300 text-sm mb-3">{position.description}</p>
             <div className="flex flex-wrap gap-3">
               <span className="flex items-center gap-1 text-sm text-gray-500 dark:text-gray-400">
                 <Briefcase className="w-4 h-4" /> {position.type}
@@ -268,7 +268,7 @@ function JobCard(props) {
                   </h4>
                   <ul className="space-y-2">
                     {position.responsibilities.map((item, i) => (
-                      <li key={i} className="flex items-start gap-2 text-sm text-gray-600 dark:text-gray-300">
+                      <li key={i} className="flex items-start gap-2 text-sm text-gray-600 dark:text-gray-400 dark:text-gray-300">
                         <CheckCircle2 className="w-4 h-4 text-green-500 flex-shrink-0 mt-0.5" />
                         {item}
                       </li>
@@ -284,7 +284,7 @@ function JobCard(props) {
                   </h4>
                   <ul className="space-y-2">
                     {position.requirements.map((item, i) => (
-                      <li key={i} className="flex items-start gap-2 text-sm text-gray-600 dark:text-gray-300">
+                      <li key={i} className="flex items-start gap-2 text-sm text-gray-600 dark:text-gray-400 dark:text-gray-300">
                         <CheckCircle2 className="w-4 h-4 text-blue-500 flex-shrink-0 mt-0.5" />
                         {item}
                       </li>
@@ -378,7 +378,7 @@ export default function WorkWithUsPage() {
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white dark:text-white mb-4">
               Our Expertise Areas
             </h2>
-            <p className="text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
+            <p className="text-gray-600 dark:text-gray-400 dark:text-gray-300 max-w-2xl mx-auto">
               We specialize in luxury smart home technology. If you have expertise in any of these areas, we'd love to hear from you.
             </p>
           </div>
@@ -396,12 +396,12 @@ export default function WorkWithUsPage() {
                   <area.icon className="w-7 h-7 text-[#C9A962]" />
                 </div>
                 <h3 className="text-xl font-bold text-gray-900 dark:text-white dark:text-white mb-2">{area.title}</h3>
-                <p className="text-gray-600 dark:text-gray-300 mb-4">{area.description}</p>
+                <p className="text-gray-600 dark:text-gray-400 dark:text-gray-300 mb-4">{area.description}</p>
                 <div className="flex flex-wrap gap-2">
                   {area.skills.map((skill) => (
                     <span 
                       key={skill}
-                      className="text-xs bg-gray-100 dark:bg-gray-600 text-gray-700 dark:text-gray-200 px-2 py-1 rounded-full"
+                      className="text-xs bg-gray-100 dark:bg-gray-600 text-gray-700 dark:text-gray-300 dark:text-gray-200 px-2 py-1 rounded-full"
                     >
                       {skill}
                     </span>
@@ -420,7 +420,7 @@ export default function WorkWithUsPage() {
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white dark:text-white mb-4">
               Why Join LEXA?
             </h2>
-            <p className="text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
+            <p className="text-gray-600 dark:text-gray-400 dark:text-gray-300 max-w-2xl mx-auto">
               We invest in our people because they are the heart of our success
             </p>
           </div>
@@ -438,7 +438,7 @@ export default function WorkWithUsPage() {
                   <benefit.icon className="w-8 h-8 text-[#C9A962]" />
                 </div>
                 <h3 className="text-lg font-bold text-gray-900 dark:text-white dark:text-white mb-2">{benefit.title}</h3>
-                <p className="text-gray-600 dark:text-gray-300 text-sm">{benefit.desc}</p>
+                <p className="text-gray-600 dark:text-gray-400 dark:text-gray-300 text-sm">{benefit.desc}</p>
               </motion.div>
             ))}
           </div>
@@ -452,7 +452,7 @@ export default function WorkWithUsPage() {
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white dark:text-white mb-4">
               Open Positions
             </h2>
-            <p className="text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
+            <p className="text-gray-600 dark:text-gray-400 dark:text-gray-300 max-w-2xl mx-auto">
               Join our team of experts. Click on any position to view full details and requirements.
             </p>
           </div>
@@ -468,7 +468,7 @@ export default function WorkWithUsPage() {
               <h3 className="text-xl font-bold text-gray-900 dark:text-white dark:text-white mb-3">
                 Don't See a Suitable Role?
               </h3>
-              <p className="text-gray-600 dark:text-gray-300 mb-6">
+              <p className="text-gray-600 dark:text-gray-400 dark:text-gray-300 mb-6">
                 We're always looking for talented individuals. Send us your CV and we'll keep it on file for future opportunities.
               </p>
               <a

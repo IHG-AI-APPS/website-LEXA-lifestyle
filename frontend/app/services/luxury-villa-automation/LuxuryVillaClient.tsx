@@ -119,7 +119,7 @@ export default function LuxuryVillaClient() {
                   <s.icon className="w-8 h-8 text-amber-600 dark:text-amber-400" />
                 </div>
                 <h3 className="text-lg font-semibold mb-2 text-gray-900 dark:text-white dark:text-white">{s.title}</h3>
-                <p className="text-gray-600 dark:text-gray-300">{s.desc}</p>
+                <p className="text-gray-600 dark:text-gray-400 dark:text-gray-300">{s.desc}</p>
               </div>
             ))}
           </div>
@@ -129,13 +129,13 @@ export default function LuxuryVillaClient() {
       <section className="py-16 dark:bg-gray-900">
         <div className="container mx-auto px-4">
           <h2 className="text-3xl font-bold text-center mb-4 text-gray-900 dark:text-white dark:text-white">Dubai Communities We Serve</h2>
-          <p className="text-center text-gray-600 dark:text-gray-300 mb-12">Trusted by villa owners across Dubai's most exclusive addresses</p>
+          <p className="text-center text-gray-600 dark:text-gray-400 dark:text-gray-300 mb-12">Trusted by villa owners across Dubai's most exclusive addresses</p>
           <div className="grid md:grid-cols-3 gap-6">
             {communities.map((c, i) => (
               <div key={i} className="bg-white dark:bg-gray-700 p-6 rounded-xl shadow-lg">
                 <h3 className="text-xl font-semibold text-gray-900 dark:text-white dark:text-white">{c.name}</h3>
                 <p className="text-amber-600 dark:text-amber-400 font-medium">{c.villas} Villas Automated</p>
-                <p className="text-gray-600 dark:text-gray-300 mt-2">{c.specialty}</p>
+                <p className="text-gray-600 dark:text-gray-400 dark:text-gray-300 mt-2">{c.specialty}</p>
               </div>
             ))}
           </div>
@@ -149,7 +149,7 @@ export default function LuxuryVillaClient() {
             {faqs.map((faq, i) => (
               <div key={i} className="bg-white dark:bg-gray-700 p-6 rounded-xl shadow">
                 <h3 className="text-lg font-semibold mb-2 text-gray-900 dark:text-white dark:text-white">{faq.q}</h3>
-                <p className="text-gray-600 dark:text-gray-300">{faq.a}</p>
+                <p className="text-gray-600 dark:text-gray-400 dark:text-gray-300">{faq.a}</p>
               </div>
             ))}
           </div>

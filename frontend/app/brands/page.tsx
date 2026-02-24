@@ -82,10 +82,10 @@ export default function BrandsPage() {
             <div className="flex items-center justify-center gap-6 text-sm">
               <div className="flex items-center gap-2">
                 <Award className="text-gray-400" size={20} />
-                <span className="text-gray-600 dark:text-gray-400">Authorized Dealer</span>
+                <span className="text-gray-600 dark:text-gray-400 dark:text-gray-400">Authorized Dealer</span>
               </div>
               <div className="text-gray-400">|</div>
-              <div className="text-gray-600 dark:text-gray-400">
+              <div className="text-gray-600 dark:text-gray-400 dark:text-gray-400">
                 <span className="font-semibold text-black">{brands.length}</span> Brands
               </div>
             </div>
@@ -125,7 +125,7 @@ export default function BrandsPage() {
                             />
                           </div>
                         ) : (
-                          <span className="font-semibold text-sm text-gray-800 group-hover:text-black">
+                          <span className="font-semibold text-sm text-gray-800 dark:text-gray-200 group-hover:text-black">
                             {brand.name}
                           </span>
                         )}
@@ -150,7 +150,7 @@ export default function BrandsPage() {
                 className={`px-4 py-2 text-sm font-medium rounded-full transition-all ${
                   activeCategory === null
                     ? 'bg-black text-white'
-                    : 'bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 text-gray-600 dark:text-gray-400 hover:border-gray-400'
+                    : 'bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 text-gray-600 dark:text-gray-400 dark:text-gray-400 hover:border-gray-400'
                 }`}
               >
                 All Categories
@@ -259,7 +259,7 @@ export default function BrandsPage() {
 
                             {/* Arrow */}
                             <ChevronRight 
-                              className="text-gray-300 group-hover:text-gray-600 transition-colors flex-shrink-0" 
+                              className="text-gray-300 group-hover:text-gray-600 dark:text-gray-400 transition-colors flex-shrink-0" 
                               size={20} 
                             />
                           </div>

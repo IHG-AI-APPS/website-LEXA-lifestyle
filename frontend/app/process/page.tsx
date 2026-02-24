@@ -131,7 +131,7 @@ export default function ProcessPage() {
                 <span className="text-transparent bg-clip-text metallic-gradient">REALITY</span>
               </h1>
               <div className="h-px w-32 bg-gradient-to-r from-platinum to-transparent mb-8" />
-              <p className="text-xl text-gray-600 font-normal leading-relaxed">
+              <p className="text-xl text-gray-600 dark:text-gray-400 font-normal leading-relaxed">
                 A proven methodology refined over 1,000+ projects. Structured phases with clear milestones, transparent communication, and predictable outcomes.
               </p>
             </motion.div>
@@ -168,7 +168,7 @@ export default function ProcessPage() {
                           </span>
                         </div>
                         <h3 className="text-4xl font-semibold mb-4">{phase.title}</h3>
-                        <p className="text-lg text-gray-600 leading-relaxed max-w-3xl">
+                        <p className="text-lg text-gray-600 dark:text-gray-400 leading-relaxed max-w-3xl">
                           {phase.description}
                         </p>
                       </div>
@@ -180,7 +180,7 @@ export default function ProcessPage() {
                     <h4 className="text-xs tracking-wider uppercase text-gray-400 mb-4">Key Activities</h4>
                     <ul className="space-y-3">
                       {phase.activities.map((activity) => (
-                        <li key={activity} className="flex items-start gap-3 text-gray-600 dark:text-gray-400">
+                        <li key={activity} className="flex items-start gap-3 text-gray-600 dark:text-gray-400 dark:text-gray-400">
                           <CheckCircle size={18} className="text-charcoal mt-1 flex-shrink-0" strokeWidth={1.5} />
                           <span>{activity}</span>
                         </li>
@@ -192,7 +192,7 @@ export default function ProcessPage() {
                     <h4 className="text-xs tracking-wider uppercase text-gray-400 mb-4">Deliverables</h4>
                     <ul className="space-y-2">
                       {phase.deliverables.map((deliverable) => (
-                        <li key={deliverable} className="text-gray-600 border-l-2 border-gray-300 pl-4 py-1">
+                        <li key={deliverable} className="text-gray-600 dark:text-gray-400 border-l-2 border-gray-300 pl-4 py-1">
                           {deliverable}
                         </li>
                       ))}
@@ -252,7 +252,7 @@ export default function ProcessPage() {
               viewport={{ once: true }}
             >
               <h2 className="text-5xl font-semibold mb-6">Typical Project Timeline</h2>
-              <p className="text-xl text-gray-600 font-normal mb-10">
+              <p className="text-xl text-gray-600 dark:text-gray-400 font-normal mb-10">
                 Most residential projects complete in 10-18 weeks from consultation to handover.
               </p>
               <p className="text-base text-gray-500 mb-10">

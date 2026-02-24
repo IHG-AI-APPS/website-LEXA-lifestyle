@@ -252,7 +252,7 @@ export default function SpectacularLoading({
               className="flex items-center justify-center gap-2"
             >
               <Activity className="w-4 h-4 text-gray-400" />
-              <span className="text-gray-600 text-sm md:text-base">
+              <span className="text-gray-600 dark:text-gray-400 text-sm md:text-base">
                 {currentPhase.facts[currentFactIndex]}
               </span>
             </motion.div>
@@ -312,7 +312,7 @@ export default function SpectacularLoading({
                   </motion.div>
                 ) : index < currentPhaseIndex ? (
                   <div className="w-8 h-8 rounded-full bg-gray-300 flex items-center justify-center">
-                    <CheckCircle2 className="w-4 h-4 text-gray-600 dark:text-gray-400" />
+                    <CheckCircle2 className="w-4 h-4 text-gray-600 dark:text-gray-400 dark:text-gray-400" />
                   </div>
                 ) : (
                   <div className="w-8 h-8 rounded-full bg-gray-100 flex items-center justify-center">

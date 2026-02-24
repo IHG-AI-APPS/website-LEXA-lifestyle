@@ -212,13 +212,13 @@ export default function PackageBuilderPage() {
       <div className="border-b bg-white sticky top-16 sm:top-18 md:top-20 z-40">
         <div className="container mx-auto px-4 py-6">
           <div className="flex items-center justify-between max-w-6xl mx-auto">
-            <Link href="/packages" className="text-gray-600 hover:text-gray-900 dark:text-white dark:text-white">
+            <Link href="/packages" className="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:text-white dark:text-white">
               ← Back to Packages
             </Link>
             
             {selectedTier && (
               <div className="text-right">
-                <p className="text-sm text-gray-600 dark:text-gray-400">Estimated Total</p>
+                <p className="text-sm text-gray-600 dark:text-gray-400 dark:text-gray-400">Estimated Total</p>
                 <p className="text-2xl font-bold text-blue-600">
                   AED {(calculateTotal() / 1000).toFixed(0)}K
                 </p>
@@ -242,7 +242,7 @@ export default function PackageBuilderPage() {
               <h2 className="text-4xl font-bold text-gray-900 dark:text-white mb-4 text-center">
                 Build Your Smart Home Package
               </h2>
-              <p className="text-lg text-gray-600 mb-8 text-center">
+              <p className="text-lg text-gray-600 dark:text-gray-400 mb-8 text-center">
                 Step 1: Select your property type
               </p>
               
@@ -313,7 +313,7 @@ export default function PackageBuilderPage() {
             >
               <button
                 onClick={() => setStep(1)}
-                className="mb-6 flex items-center gap-2 text-gray-600 hover:text-gray-900 dark:text-white dark:text-white"
+                className="mb-6 flex items-center gap-2 text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:text-white dark:text-white"
               >
                 <ArrowLeft className="h-5 w-5" />
                 Change property type
@@ -322,7 +322,7 @@ export default function PackageBuilderPage() {
               <h2 className="text-4xl font-bold text-gray-900 dark:text-white mb-4 text-center">
                 Choose Your Package
               </h2>
-              <p className="text-lg text-gray-600 mb-12 text-center">
+              <p className="text-lg text-gray-600 dark:text-gray-400 mb-12 text-center">
                 Step 2: {propertyType.title}
               </p>
 
@@ -344,12 +344,12 @@ export default function PackageBuilderPage() {
 
                     <div className="text-center mb-8">
                       <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-2">{tier.tier_name}</h3>
-                      <p className="text-gray-600 mb-6">{tier.tier_subtitle}</p>
+                      <p className="text-gray-600 dark:text-gray-400 mb-6">{tier.tier_subtitle}</p>
                       <div className="mb-4">
                         <span className="text-5xl font-bold text-gray-900 dark:text-white dark:text-white">
                           {(tier.base_price_aed / 1000).toFixed(0)}K
                         </span>
-                        <span className="text-gray-600 ml-1">AED</span>
+                        <span className="text-gray-600 dark:text-gray-400 ml-1">AED</span>
                       </div>
                       <p className="text-sm text-gray-500">{tier.typical_rooms_count}</p>
                     </div>
@@ -389,7 +389,7 @@ export default function PackageBuilderPage() {
             >
               <button
                 onClick={() => setStep(2)}
-                className="mb-6 flex items-center gap-2 text-gray-600 hover:text-gray-900 dark:text-white dark:text-white"
+                className="mb-6 flex items-center gap-2 text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:text-white dark:text-white"
               >
                 <ArrowLeft className="h-5 w-5" />
                 Change tier
@@ -398,7 +398,7 @@ export default function PackageBuilderPage() {
               <h2 className="text-4xl font-bold text-gray-900 dark:text-white mb-4 text-center">
                 Choose Your Control System
               </h2>
-              <p className="text-lg text-gray-600 mb-2 text-center">
+              <p className="text-lg text-gray-600 dark:text-gray-400 mb-2 text-center">
                 Step 3: Select the automation platform
               </p>
               <p className="text-sm text-gray-500 mb-8 text-center">
@@ -435,7 +435,7 @@ export default function PackageBuilderPage() {
                         <p className="text-sm text-blue-600 font-semibold mb-3">
                           {system.tagline}
                         </p>
-                        <p className="text-sm text-gray-600 mb-4 line-clamp-3">
+                        <p className="text-sm text-gray-600 dark:text-gray-400 mb-4 line-clamp-3">
                           {system.description}
                         </p>
                       </div>
@@ -456,7 +456,7 @@ export default function PackageBuilderPage() {
                           <p className="text-xs text-gray-500 mb-1">Best For</p>
                           <div className="flex flex-wrap gap-1">
                             {system.best_for?.slice(0, 2).map((use: string, idx: number) => (
-                              <span key={idx} className="text-xs text-gray-700 dark:text-gray-300">
+                              <span key={idx} className="text-xs text-gray-700 dark:text-gray-300 dark:text-gray-300">
                                 {use}{idx < 1 ? ',' : ''}
                               </span>
                             ))}
@@ -465,7 +465,7 @@ export default function PackageBuilderPage() {
 
                         <div>
                           <p className="text-xs text-gray-500 mb-1">Key Features</p>
-                          <ul className="text-xs text-gray-600 space-y-1">
+                          <ul className="text-xs text-gray-600 dark:text-gray-400 space-y-1">
                             {system.features?.slice(0, 3).map((feature: string, idx: number) => (
                               <li key={idx} className="flex items-start gap-1">
                                 <Check className="h-3 w-3 text-green-600 mt-0.5 flex-shrink-0" />
@@ -507,7 +507,7 @@ export default function PackageBuilderPage() {
             >
               <button
                 onClick={() => setStep(3)}
-                className="mb-6 flex items-center gap-2 text-gray-600 hover:text-gray-900 dark:text-white dark:text-white"
+                className="mb-6 flex items-center gap-2 text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:text-white dark:text-white"
               >
                 <ArrowLeft className="h-5 w-5" />
                 Change control system
@@ -516,7 +516,7 @@ export default function PackageBuilderPage() {
               <h2 className="text-4xl font-bold text-gray-900 dark:text-white mb-4 text-center">
                 Customize Your Package
               </h2>
-              <p className="text-lg text-gray-600 mb-2 text-center">
+              <p className="text-lg text-gray-600 dark:text-gray-400 mb-2 text-center">
                 Step 4: Add optional enhancements and upgrades
               </p>
               <p className="text-sm text-gray-500 mb-8 text-center">
@@ -583,7 +583,7 @@ export default function PackageBuilderPage() {
                                   </h4>
                                 </div>
                                 
-                                <p className="text-sm text-gray-600 mb-3">
+                                <p className="text-sm text-gray-600 dark:text-gray-400 mb-3">
                                   {item.description}
                                 </p>
 
@@ -623,7 +623,7 @@ export default function PackageBuilderPage() {
               <div className="flex justify-center gap-4">
                 <button
                   onClick={() => setStep(5)}
-                  className="px-8 py-4 bg-gray-100 text-gray-700 rounded-xl hover:bg-gray-200 font-bold text-lg"
+                  className="px-8 py-4 bg-gray-100 text-gray-700 dark:text-gray-300 rounded-xl hover:bg-gray-200 font-bold text-lg"
                 >
                   Skip Enhancements
                 </button>
@@ -649,7 +649,7 @@ export default function PackageBuilderPage() {
             >
               <button
                 onClick={() => setStep(4)}
-                className="mb-6 flex items-center gap-2 text-gray-600 hover:text-gray-900 dark:text-white dark:text-white"
+                className="mb-6 flex items-center gap-2 text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:text-white dark:text-white"
               >
                 <ArrowLeft className="h-5 w-5" />
                 Back to enhancements
@@ -658,7 +658,7 @@ export default function PackageBuilderPage() {
               <h2 className="text-4xl font-bold text-gray-900 dark:text-white mb-4 text-center">
                 Choose Your Brands
               </h2>
-              <p className="text-lg text-gray-600 mb-2 text-center">
+              <p className="text-lg text-gray-600 dark:text-gray-400 mb-2 text-center">
                 Step 5: Select preferred equipment brands
               </p>
               {selectedControlSystem && (
@@ -707,7 +707,7 @@ export default function PackageBuilderPage() {
                           <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-2">
                             {category.product_type}
                           </h3>
-                          <p className="text-sm text-gray-600 dark:text-gray-400">{category.description}</p>
+                          <p className="text-sm text-gray-600 dark:text-gray-400 dark:text-gray-400">{category.description}</p>
                         </div>
 
                         <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
@@ -746,7 +746,7 @@ export default function PackageBuilderPage() {
                                   <h4 className="font-bold text-lg text-gray-900 dark:text-white mb-1">
                                     {option.brand}
                                   </h4>
-                                  <p className="text-sm text-gray-600 mb-3">{option.model}</p>
+                                  <p className="text-sm text-gray-600 dark:text-gray-400 mb-3">{option.model}</p>
 
                                   <ul className="text-xs text-gray-500 space-y-1">
                                     {option.features.slice(0, 3).map((feature: string, fidx: number) => (
@@ -781,7 +781,7 @@ export default function PackageBuilderPage() {
               <div className="flex justify-center gap-4">
                 <button
                   onClick={() => setStep(6)}
-                  className="px-8 py-4 bg-gray-100 text-gray-700 rounded-xl hover:bg-gray-200 font-bold text-lg"
+                  className="px-8 py-4 bg-gray-100 text-gray-700 dark:text-gray-300 rounded-xl hover:bg-gray-200 font-bold text-lg"
                 >
                   Use Default Brands
                 </button>
@@ -807,7 +807,7 @@ export default function PackageBuilderPage() {
             >
               <button
                 onClick={() => setStep(5)}
-                className="mb-6 flex items-center gap-2 text-gray-600 hover:text-gray-900 dark:text-white dark:text-white"
+                className="mb-6 flex items-center gap-2 text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:text-white dark:text-white"
               >
                 <ArrowLeft className="h-5 w-5" />
                 Back to brand selection
@@ -816,7 +816,7 @@ export default function PackageBuilderPage() {
               <h2 className="text-4xl font-bold text-gray-900 dark:text-white mb-4 text-center">
                 Add Specialty Rooms
               </h2>
-              <p className="text-lg text-gray-600 mb-2 text-center">
+              <p className="text-lg text-gray-600 dark:text-gray-400 mb-2 text-center">
                 Step 6: Customize your package
               </p>
               {selectedTier.included_specialty_count > 0 && (
@@ -859,7 +859,7 @@ export default function PackageBuilderPage() {
                       </div>
 
                       <h4 className="font-bold text-gray-900 dark:text-white mb-2">{room.name}</h4>
-                      <p className="text-sm text-gray-600 mb-4 line-clamp-2">{room.description}</p>
+                      <p className="text-sm text-gray-600 dark:text-gray-400 mb-4 line-clamp-2">{room.description}</p>
                       
                       <div className="flex items-center justify-between">
                         <span className={`font-bold ${isIncluded ? 'text-green-600' : 'text-gray-900'}`}>
@@ -895,7 +895,7 @@ export default function PackageBuilderPage() {
               <h2 className="text-4xl font-bold text-gray-900 dark:text-white mb-4 text-center">
                 Your Custom Package
               </h2>
-              <p className="text-lg text-gray-600 mb-12 text-center">
+              <p className="text-lg text-gray-600 dark:text-gray-400 mb-12 text-center">
                 Review and request your quote
               </p>
 
@@ -904,12 +904,12 @@ export default function PackageBuilderPage() {
                 <div>
                   <div className="bg-gradient-to-br from-gray-50 to-blue-50 rounded-2xl p-8 space-y-6">
                     <div>
-                      <p className="text-sm text-gray-600 mb-1">Property Type</p>
+                      <p className="text-sm text-gray-600 dark:text-gray-400 mb-1">Property Type</p>
                       <p className="text-xl font-bold text-gray-900 dark:text-white dark:text-white">{propertyType?.title}</p>
                     </div>
 
                     <div className="pt-4 border-t">
-                      <p className="text-sm text-gray-600 mb-1">Package Tier</p>
+                      <p className="text-sm text-gray-600 dark:text-gray-400 mb-1">Package Tier</p>
                       <p className="text-xl font-bold text-gray-900 dark:text-white dark:text-white">{selectedTier?.tier_name}</p>
                       <p className="text-lg text-blue-600 font-semibold">
                         AED {(selectedTier?.base_price_aed / 1000).toFixed(0)}K
@@ -918,7 +918,7 @@ export default function PackageBuilderPage() {
 
                     {selectedControlSystem && (
                       <div className="pt-4 border-t">
-                        <p className="text-sm text-gray-600 mb-1">Control System</p>
+                        <p className="text-sm text-gray-600 dark:text-gray-400 mb-1">Control System</p>
                         <p className="text-lg font-bold text-gray-900 dark:text-white dark:text-white">{selectedControlSystem?.name}</p>
                         <p className="text-xs text-gray-500">{selectedControlSystem?.tagline}</p>
                       </div>
@@ -926,12 +926,12 @@ export default function PackageBuilderPage() {
 
                     {selectedEnhancements.length > 0 && (
                       <div className="pt-4 border-t">
-                        <p className="text-sm text-gray-600 mb-3">
+                        <p className="text-sm text-gray-600 dark:text-gray-400 mb-3">
                           Enhancements & Upgrades ({selectedEnhancements.length})
                         </p>
                         {selectedEnhancements.map((enhancement) => (
                           <div key={enhancement.id} className="flex justify-between items-center py-2">
-                            <span className="text-sm text-gray-700 dark:text-gray-300">{enhancement.name}</span>
+                            <span className="text-sm text-gray-700 dark:text-gray-300 dark:text-gray-300">{enhancement.name}</span>
                             <span className="text-sm font-bold text-gray-900 dark:text-white dark:text-white">
                               +AED {(enhancement.base_price_aed / 1000).toFixed(0)}K
                             </span>
@@ -942,12 +942,12 @@ export default function PackageBuilderPage() {
 
                     {Object.keys(selectedBrands).length > 0 && (
                       <div className="pt-4 border-t">
-                        <p className="text-sm text-gray-600 mb-3">
+                        <p className="text-sm text-gray-600 dark:text-gray-400 mb-3">
                           Brand Customizations ({Object.keys(selectedBrands).length})
                         </p>
                         {Object.values(selectedBrands).map((brand: any, idx: number) => (
                           <div key={idx} className="flex justify-between items-center py-2">
-                            <span className="text-sm text-gray-700 dark:text-gray-300">{brand.brand} - {brand.model}</span>
+                            <span className="text-sm text-gray-700 dark:text-gray-300 dark:text-gray-300">{brand.brand} - {brand.model}</span>
                             <span className={`text-sm font-bold ${
                               brand.price_adjustment === 0 ? 'text-green-600' : 'text-gray-900'
                             }`}>
@@ -964,14 +964,14 @@ export default function PackageBuilderPage() {
 
                     {selectedRooms.length > 0 && (
                       <div className="pt-4 border-t">
-                        <p className="text-sm text-gray-600 mb-3">
+                        <p className="text-sm text-gray-600 dark:text-gray-400 mb-3">
                           Specialty Rooms ({selectedRooms.length})
                         </p>
                         {selectedRooms.map((room, idx) => {
                           const isIncluded = idx < (selectedTier?.included_specialty_count || 0)
                           return (
                             <div key={room.slug} className="flex justify-between items-center py-2">
-                              <span className="text-sm text-gray-700 dark:text-gray-300">{room.name}</span>
+                              <span className="text-sm text-gray-700 dark:text-gray-300 dark:text-gray-300">{room.name}</span>
                               <span className={`text-sm font-bold ${isIncluded ? 'text-green-600' : 'text-gray-900'}`}>
                                 {isIncluded ? 'Included' : `+AED ${(room.base_price_aed / 1000).toFixed(0)}K`}
                               </span>
@@ -999,7 +999,7 @@ export default function PackageBuilderPage() {
                 <div>
                   <div className="space-y-6">
                     <div>
-                      <label className="block text-sm font-bold text-gray-700 mb-2">
+                      <label className="block text-sm font-bold text-gray-700 dark:text-gray-300 mb-2">
                         Full Name *
                       </label>
                       <input
@@ -1013,7 +1013,7 @@ export default function PackageBuilderPage() {
                     </div>
 
                     <div>
-                      <label className="block text-sm font-bold text-gray-700 mb-2">
+                      <label className="block text-sm font-bold text-gray-700 dark:text-gray-300 mb-2">
                         Email *
                       </label>
                       <input
@@ -1027,7 +1027,7 @@ export default function PackageBuilderPage() {
                     </div>
 
                     <div>
-                      <label className="block text-sm font-bold text-gray-700 mb-2">
+                      <label className="block text-sm font-bold text-gray-700 dark:text-gray-300 mb-2">
                         Phone Number *
                       </label>
                       <input
@@ -1041,7 +1041,7 @@ export default function PackageBuilderPage() {
                     </div>
 
                     <div>
-                      <label className="block text-sm font-bold text-gray-700 mb-2">
+                      <label className="block text-sm font-bold text-gray-700 dark:text-gray-300 mb-2">
                         Project Timeline & Notes
                       </label>
                       <textarea
@@ -1135,16 +1135,16 @@ export default function PackageBuilderPage() {
               <h2 className="text-4xl font-bold text-gray-900 dark:text-white mb-4">
                 Quote Request Submitted! 🎉
               </h2>
-              <p className="text-xl text-gray-600 mb-8">
+              <p className="text-xl text-gray-600 dark:text-gray-400 mb-8">
                 Thank you for choosing LEXA. Our team will review your custom package and contact you within 24 hours with a detailed quote.
               </p>
 
               <div className="bg-blue-50 rounded-2xl p-8 mb-8">
-                <p className="text-gray-600 mb-2">Your Selected Package</p>
+                <p className="text-gray-600 dark:text-gray-400 mb-2">Your Selected Package</p>
                 <p className="text-3xl font-bold text-gray-900 dark:text-white mb-1">{propertyType?.title}</p>
                 <p className="text-2xl font-bold text-blue-600">{selectedTier?.tier_name} Tier</p>
                 <div className="mt-4 pt-4 border-t border-blue-200">
-                  <p className="text-gray-600 mb-1">Estimated Investment</p>
+                  <p className="text-gray-600 dark:text-gray-400 mb-1">Estimated Investment</p>
                   <p className="text-4xl font-bold text-gray-900 dark:text-white dark:text-white">AED {(calculateTotal() / 1000).toFixed(0)}K</p>
                 </div>
               </div>

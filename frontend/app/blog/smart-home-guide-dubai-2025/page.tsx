@@ -65,7 +65,7 @@ export default function BlogArticlePage() {
         {/* Article Content */}
         <div className="container mx-auto px-4 max-w-4xl py-12">
           <div className="prose prose-lg max-w-none">
-            <p className="text-xl text-gray-600 mb-8">
+            <p className="text-xl text-gray-600 dark:text-gray-400 mb-8">
               With over 500 completed projects across Dubai, Abu Dhabi, and the UAE, LEXA Lifestyle shares expert insights on smart home automation in 2025.
             </p>
             

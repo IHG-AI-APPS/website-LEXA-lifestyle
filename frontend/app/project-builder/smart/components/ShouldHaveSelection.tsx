@@ -169,7 +169,7 @@ export default function ShouldHaveSelection({
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.2 }}
-          className="text-gray-600 dark:text-gray-400"
+          className="text-gray-600 dark:text-gray-400 dark:text-gray-400"
         >
           These features will enhance your smart home experience. Select what matters most.
         </motion.p>

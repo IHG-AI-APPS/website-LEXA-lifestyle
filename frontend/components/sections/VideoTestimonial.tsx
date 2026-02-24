@@ -56,7 +56,7 @@ export default function VideoTestimonial() {
           >
             <Quote className="w-16 h-16 text-gray-200" strokeWidth={1} />
             
-            <p className="text-2xl md:text-3xl font-serif text-gray-800 leading-relaxed">
+            <p className="text-2xl md:text-3xl font-serif text-gray-800 dark:text-gray-200 leading-relaxed">
               {testimonial.quote}
             </p>
 

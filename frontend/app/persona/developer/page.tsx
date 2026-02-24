@@ -106,7 +106,7 @@ export default function DeveloperPage() {
                   <span className="text-transparent bg-clip-text metallic-gradient">DEVELOPMENTS</span>
                 </h1>
                 <div className="h-px w-24 bg-gradient-to-r from-platinum to-transparent mb-8" />
-                <p className="text-xl text-gray-600 font-normal leading-relaxed mb-10">
+                <p className="text-xl text-gray-600 dark:text-gray-400 font-normal leading-relaxed mb-10">
                   Turn-key automation for luxury developments. Scale your projects with consistent quality and on-time delivery.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4">
@@ -158,7 +158,7 @@ export default function DeveloperPage() {
               className="text-center mb-16"
             >
               <h2 className="text-4xl font-semibold mb-4">Why Developers Choose LEXA</h2>
-              <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+              <p className="text-lg text-gray-600 dark:text-gray-400 max-w-3xl mx-auto">
                 Reliable partner for projects of any scale. From boutique developments to master communities.
               </p>
             </motion.div>
@@ -179,7 +179,7 @@ export default function DeveloperPage() {
                       <Icon size={32} className="text-charcoal" />
                     </div>
                     <h3 className="text-xl font-semibold mb-3">{benefit.title}</h3>
-                    <p className="text-gray-600 dark:text-gray-400">{benefit.description}</p>
+                    <p className="text-gray-600 dark:text-gray-400 dark:text-gray-400">{benefit.description}</p>
                   </motion.div>
                 )
               })}
@@ -199,7 +199,7 @@ export default function DeveloperPage() {
               className="text-center mb-16"
             >
               <h2 className="text-4xl font-semibold mb-4">Solutions for Development Projects</h2>
-              <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+              <p className="text-lg text-gray-600 dark:text-gray-400 max-w-3xl mx-auto">
                 Comprehensive automation for residential, commercial, and mixed-use developments
               </p>
             </motion.div>
@@ -231,7 +231,7 @@ export default function DeveloperPage() {
                           <h4 className="text-lg font-semibold mb-2 group-hover:text-charcoal transition-colors">
                             {item.name}
                           </h4>
-                          <p className="text-sm text-gray-600 mb-3">{item.description}</p>
+                          <p className="text-sm text-gray-600 dark:text-gray-400 mb-3">{item.description}</p>
                           <div className="flex items-center text-sm text-charcoal font-medium">
                             Learn More <ArrowRight size={16} className="ml-2 group-hover:translate-x-1 transition-transform" />
                           </div>

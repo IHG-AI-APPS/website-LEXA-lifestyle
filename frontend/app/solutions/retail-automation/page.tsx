@@ -53,7 +53,7 @@ export default function RetailAutomationPage() {
                   <motion.div key={i} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ delay: i * 0.1 }} viewport={{ once: true }} className="bg-white dark:bg-gray-800 p-8 border-2 border-gray-200 hover:border-[#1A1A1A] transition-all">
                     <div className="flex items-start gap-4">
                       <div className="p-3 bg-gray-50 dark:bg-gray-800"><Icon className="h-6 w-6 text-[#1A1A1A] dark:text-white" /></div>
-                      <div><h3 className="text-lg font-semibold mb-2 text-[#1A1A1A] dark:text-white">{f.title}</h3><p className="text-gray-600 text-sm">{f.desc}</p></div>
+                      <div><h3 className="text-lg font-semibold mb-2 text-[#1A1A1A] dark:text-white">{f.title}</h3><p className="text-gray-600 dark:text-gray-400 text-sm">{f.desc}</p></div>
                     </div>
                   </motion.div>
                 )
@@ -66,10 +66,10 @@ export default function RetailAutomationPage() {
           <div className="container mx-auto px-4 text-center max-w-4xl">
             <h2 className="text-3xl font-bold mb-4 text-[#1A1A1A] dark:text-white">Proven Impact</h2>
             <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 mt-12">
-              <div className="p-6 bg-gray-50 dark:bg-gray-800"><div className="text-4xl font-bold text-[#1A1A1A] dark:text-white">35%</div><div className="text-sm text-gray-600 dark:text-gray-400">Energy Savings</div></div>
-              <div className="p-6 bg-gray-50 dark:bg-gray-800"><div className="text-4xl font-bold text-[#1A1A1A] dark:text-white">22%</div><div className="text-sm text-gray-600 dark:text-gray-400">Sales Increase</div></div>
-              <div className="p-6 bg-gray-50 dark:bg-gray-800"><div className="text-4xl font-bold text-[#1A1A1A] dark:text-white">40%</div><div className="text-sm text-gray-600 dark:text-gray-400">Faster Checkout</div></div>
-              <div className="p-6 bg-gray-50 dark:bg-gray-800"><div className="text-4xl font-bold text-[#1A1A1A] dark:text-white">60%</div><div className="text-sm text-gray-600 dark:text-gray-400">Loss Prevention</div></div>
+              <div className="p-6 bg-gray-50 dark:bg-gray-800"><div className="text-4xl font-bold text-[#1A1A1A] dark:text-white">35%</div><div className="text-sm text-gray-600 dark:text-gray-400 dark:text-gray-400">Energy Savings</div></div>
+              <div className="p-6 bg-gray-50 dark:bg-gray-800"><div className="text-4xl font-bold text-[#1A1A1A] dark:text-white">22%</div><div className="text-sm text-gray-600 dark:text-gray-400 dark:text-gray-400">Sales Increase</div></div>
+              <div className="p-6 bg-gray-50 dark:bg-gray-800"><div className="text-4xl font-bold text-[#1A1A1A] dark:text-white">40%</div><div className="text-sm text-gray-600 dark:text-gray-400 dark:text-gray-400">Faster Checkout</div></div>
+              <div className="p-6 bg-gray-50 dark:bg-gray-800"><div className="text-4xl font-bold text-[#1A1A1A] dark:text-white">60%</div><div className="text-sm text-gray-600 dark:text-gray-400 dark:text-gray-400">Loss Prevention</div></div>
             </div>
           </div>
         </section>

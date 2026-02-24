@@ -211,7 +211,7 @@ export default function ProjectDetailsForm({
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.2 }}
-          className="text-gray-600 max-w-2xl mx-auto"
+          className="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto"
         >
           This helps our AI recommend the perfect smart home solution tailored to your needs.
         </motion.p>
@@ -356,7 +356,7 @@ export default function ProjectDetailsForm({
                   className={`w-12 h-12 rounded-lg border-2 font-bold transition-all ${
                     bedrooms === (typeof num === 'number' ? num : 7)
                       ? 'border-indigo-500 bg-indigo-50 text-indigo-600'
-                      : 'border-gray-200 bg-white text-gray-600 hover:border-gray-300'
+                      : 'border-gray-200 bg-white text-gray-600 dark:text-gray-400 hover:border-gray-300'
                   }`}
                 >
                   {num}
@@ -377,7 +377,7 @@ export default function ProjectDetailsForm({
                   className={`w-12 h-12 rounded-lg border-2 font-bold transition-all ${
                     floors === (typeof num === 'number' ? num : 5)
                       ? 'border-indigo-500 bg-indigo-50 text-indigo-600'
-                      : 'border-gray-200 bg-white text-gray-600 hover:border-gray-300'
+                      : 'border-gray-200 bg-white text-gray-600 dark:text-gray-400 hover:border-gray-300'
                   }`}
                 >
                   {num}
@@ -465,7 +465,7 @@ export default function ProjectDetailsForm({
                 className={`p-3 rounded-lg border-2 text-sm font-medium transition-all ${
                   location === loc
                     ? 'border-blue-500 bg-blue-50 text-blue-600'
-                    : 'border-gray-200 bg-white text-gray-700 hover:border-gray-300'
+                    : 'border-gray-200 bg-white text-gray-700 dark:text-gray-300 hover:border-gray-300'
                 }`}
               >
                 {loc}

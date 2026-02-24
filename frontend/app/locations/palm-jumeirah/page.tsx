@@ -65,7 +65,7 @@ export default function PalmJumeirahPage() {
               {features.map((feature, index) => (
                 <div key={index} className="flex items-start gap-3">
                   <CheckCircle2 className="text-green-600 flex-shrink-0 mt-1" size={20} />
-                  <span className="text-gray-700 font-medium">{feature}</span>
+                  <span className="text-gray-700 dark:text-gray-300 font-medium">{feature}</span>
                 </div>
               ))}
             </div>
@@ -84,7 +84,7 @@ export default function PalmJumeirahPage() {
                 <Link key={index} href={solution.link}>
                   <div className="border border-gray-200 hover:border-black p-6 rounded-lg transition-all group">
                     <h3 className="text-lg font-bold mb-2 group-hover:text-black transition-colors">{solution.title}</h3>
-                    <p className="text-sm text-gray-600 dark:text-gray-400">{solution.desc}</p>
+                    <p className="text-sm text-gray-600 dark:text-gray-400 dark:text-gray-400">{solution.desc}</p>
                   </div>
                 </Link>
               ))}

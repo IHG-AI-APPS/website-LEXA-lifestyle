@@ -107,7 +107,7 @@ export default function HiddenCostsPage() {
               <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4 text-[#1A1A1A] dark:text-white">
                 The True Cost of Doing Nothing
               </h2>
-              <p className="text-base sm:text-lg text-gray-600 max-w-3xl mx-auto">
+              <p className="text-base sm:text-lg text-gray-600 dark:text-gray-400 max-w-3xl mx-auto">
                 Annual costs for typical luxury villa without building intelligence
               </p>
             </motion.div>
@@ -135,14 +135,14 @@ export default function HiddenCostsPage() {
                         <XCircle className="h-5 w-5 text-red-500 flex-shrink-0 mt-0.5" />
                         <div>
                           <div className="text-xs text-gray-500 mb-1">Without Intelligence:</div>
-                          <div className="text-sm font-semibold text-gray-700 dark:text-gray-300">{cost.without}</div>
+                          <div className="text-sm font-semibold text-gray-700 dark:text-gray-300 dark:text-gray-300">{cost.without}</div>
                         </div>
                       </div>
                       <div className="flex items-start gap-2">
                         <CheckCircle2 className="h-5 w-5 text-green-500 flex-shrink-0 mt-0.5" />
                         <div>
                           <div className="text-xs text-gray-500 mb-1">With Intelligence:</div>
-                          <div className="text-sm font-semibold text-gray-700 dark:text-gray-300">{cost.with}</div>
+                          <div className="text-sm font-semibold text-gray-700 dark:text-gray-300 dark:text-gray-300">{cost.with}</div>
                         </div>
                       </div>
                       <div className="pt-2 border-t border-gray-200 dark:border-gray-700">

@@ -20,13 +20,13 @@ export default function FeaturedWorks() {
     <section className="py-24 md:py-32 bg-gray-50">
       <div className="container mx-auto px-4 md:px-8 max-w-7xl">
         <div className="mb-16">
-          <span className="text-xs md:text-sm tracking-[0.2em] uppercase text-gray-600 font-bold block mb-6">
+          <span className="text-xs md:text-sm tracking-[0.2em] uppercase text-gray-600 dark:text-gray-400 font-bold block mb-6">
             Portfolio
           </span>
           <h2 className="text-4xl md:text-5xl font-heading font-semibold tracking-tight text-black mb-6">
             FEATURED WORKS
           </h2>
-          <p className="text-base md:text-lg text-gray-600 max-w-2xl">
+          <p className="text-base md:text-lg text-gray-600 dark:text-gray-400 max-w-2xl">
             A curated selection of exceptional installations and events chosen for their high-quality value, originality, and impact.
           </p>
         </div>

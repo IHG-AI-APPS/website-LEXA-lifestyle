@@ -66,7 +66,7 @@ export default function NewsPage() {
                 Company <span className="text-gray-400">News</span>
               </h1>
               <div className="h-px w-32 bg-[#9F8B65] mb-6 mx-auto" />
-              <p className="text-base md:text-lg text-gray-600 leading-relaxed max-w-2xl mx-auto">
+              <p className="text-base md:text-lg text-gray-600 dark:text-gray-400 leading-relaxed max-w-2xl mx-auto">
                 Company announcements, product launches, and industry updates from LEXA Lifestyle.
               </p>
             </motion.div>
@@ -103,7 +103,7 @@ export default function NewsPage() {
                   <Calendar size={16} strokeWidth={1.5} />
                   <time>{new Date(featuredNews.published_date).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })}</time>
                 </div>
-                <p className="text-gray-600 leading-relaxed mb-8">
+                <p className="text-gray-600 dark:text-gray-400 leading-relaxed mb-8">
                   {featuredNews.excerpt}
                 </p>
                 <Link
@@ -147,7 +147,7 @@ export default function NewsPage() {
                   <h3 className="text-xl font-bold text-[#1A1A1A] mb-3 group-hover:text-[#9F8B65] transition-colors">
                     {article.title}
                   </h3>
-                  <p className="text-sm text-gray-600 leading-relaxed">
+                  <p className="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">
                     {article.excerpt}
                   </p>
                   {article.tags && article.tags.length > 0 && (

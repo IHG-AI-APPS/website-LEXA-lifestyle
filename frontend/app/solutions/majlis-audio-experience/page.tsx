@@ -138,7 +138,7 @@ export default function MajlisAudioPage() {
               <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4 text-[#1A1A1A] dark:text-white">
                 Premium Audio Solution
               </h2>
-              <p className="text-base sm:text-lg text-gray-600 max-w-3xl mx-auto">
+              <p className="text-base sm:text-lg text-gray-600 dark:text-gray-400 max-w-3xl mx-auto">
                 Designed specifically for traditional Arabic gathering spaces
               </p>
             </motion.div>
@@ -163,7 +163,7 @@ export default function MajlisAudioPage() {
                         <h3 className="text-lg font-semibold mb-2 text-[#1A1A1A] dark:text-white">
                           {feature.title}
                         </h3>
-                        <p className="text-gray-600 text-sm leading-relaxed">
+                        <p className="text-gray-600 dark:text-gray-400 text-sm leading-relaxed">
                           {feature.description}
                         </p>
                       </div>
@@ -188,14 +188,14 @@ export default function MajlisAudioPage() {
                 <h2 className="text-3xl sm:text-4xl font-bold mb-6 text-[#1A1A1A] dark:text-white">
                   Perfect for Traditional Gatherings
                 </h2>
-                <p className="text-lg text-gray-600 mb-8 leading-relaxed">
+                <p className="text-lg text-gray-600 dark:text-gray-400 mb-8 leading-relaxed">
                   Our majlis audio systems respect cultural values while delivering modern performance. Discreet installation maintains traditional aesthetics.
                 </p>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   {useCases.map((useCase, index) => (
                     <div key={index} className="flex items-start gap-3">
                       <CheckCircle2 className="h-5 w-5 text-[#1A1A1A] flex-shrink-0 mt-0.5" />
-                      <span className="text-sm text-gray-700 dark:text-gray-300">{useCase}</span>
+                      <span className="text-sm text-gray-700 dark:text-gray-300 dark:text-gray-300">{useCase}</span>
                     </div>
                   ))}
                 </div>
@@ -214,7 +214,7 @@ export default function MajlisAudioPage() {
                     <div key={index} className="bg-gray-50 p-6 text-center border-2 border-gray-200 dark:border-gray-700">
                       <Icon className="h-8 w-8 mx-auto mb-3 text-[#1A1A1A] dark:text-white" />
                       <div className="text-3xl font-bold mb-2 text-[#1A1A1A] dark:text-white">{benefit.metric}</div>
-                      <div className="text-sm text-gray-600 dark:text-gray-400">{benefit.label}</div>
+                      <div className="text-sm text-gray-600 dark:text-gray-400 dark:text-gray-400">{benefit.label}</div>
                     </div>
                   )
                 })}

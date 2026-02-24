@@ -56,7 +56,7 @@ export default function BlogPage() {
                 Smart Living <span className="text-gray-400">Insights</span>
               </h1>
               <div className="h-px w-32 bg-[#9F8B65] mb-6 mx-auto" />
-              <p className="text-base md:text-lg text-gray-600 leading-relaxed max-w-2xl mx-auto">
+              <p className="text-base md:text-lg text-gray-600 dark:text-gray-400 leading-relaxed max-w-2xl mx-auto">
                 Expert insights, guides, and trends in smart home technology, automation, and luxury living from the Middle East&apos;s leading integrator.
               </p>
             </motion.div>
@@ -76,7 +76,7 @@ export default function BlogPage() {
                   className={`px-6 py-3 rounded-full text-sm font-medium transition-all ${
                     selectedCategory === category
                       ? 'bg-charcoal text-white'
-                      : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
+                      : 'bg-gray-100 text-gray-700 dark:text-gray-300 hover:bg-gray-200'
                   }`}
                 >
                   {category}
@@ -92,9 +92,9 @@ export default function BlogPage() {
         <div className="container mx-auto px-8 lg:px-16">
           <div className="max-w-7xl mx-auto">
             {loading ? (
-              <div className="text-center py-12 text-gray-600 dark:text-gray-400">Loading articles...</div>
+              <div className="text-center py-12 text-gray-600 dark:text-gray-400 dark:text-gray-400">Loading articles...</div>
             ) : filteredArticles.length === 0 ? (
-              <div className="text-center py-12 text-gray-600 dark:text-gray-400">No articles found in this category.</div>
+              <div className="text-center py-12 text-gray-600 dark:text-gray-400 dark:text-gray-400">No articles found in this category.</div>
             ) : (
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 {filteredArticles.map((article: any, index: number) => (
@@ -139,11 +139,11 @@ export default function BlogPage() {
                             </div>
                           </div>
 
-                          <h3 className="text-xl font-semibold mb-3 group-hover:text-gray-600 transition-colors line-clamp-2">
+                          <h3 className="text-xl font-semibold mb-3 group-hover:text-gray-600 dark:text-gray-400 transition-colors line-clamp-2">
                             {article.title}
                           </h3>
 
-                          <p className="text-gray-600 text-sm mb-4 line-clamp-3">
+                          <p className="text-gray-600 dark:text-gray-400 text-sm mb-4 line-clamp-3">
                             {article.excerpt}
                           </p>
 

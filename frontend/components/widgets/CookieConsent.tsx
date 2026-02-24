@@ -72,7 +72,7 @@ export default function CookieConsent() {
 
         {/* Content - Compact */}
         <div className="p-3">
-          <p className="text-gray-600 dark:text-gray-400 text-xs leading-relaxed mb-3">
+          <p className="text-gray-600 dark:text-gray-400 dark:text-gray-400 text-xs leading-relaxed mb-3">
             We use cookies to enhance your experience.{' '}
             <Link href="/privacy-policy" className="text-[#C9A962] hover:underline font-medium">
               Learn more
@@ -89,7 +89,7 @@ export default function CookieConsent() {
             </button>
             <button
               onClick={acceptEssential}
-              className="flex-1 px-3 py-2 bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 font-medium text-xs rounded-lg hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors"
+              className="flex-1 px-3 py-2 bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 dark:text-gray-300 font-medium text-xs rounded-lg hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors"
             >
               Essential Only
             </button>

@@ -228,7 +228,7 @@ export default function RecentlyViewedSection({
                           className="object-cover group-hover:scale-105 transition-transform duration-500"
                         />
                         {/* Type badge */}
-                        <div className="absolute bottom-2 left-2 px-2 py-1 bg-white/90 dark:bg-gray-900/90 backdrop-blur-sm rounded-md text-xs font-medium text-gray-700 dark:text-gray-300">
+                        <div className="absolute bottom-2 left-2 px-2 py-1 bg-white/90 dark:bg-gray-900/90 backdrop-blur-sm rounded-md text-xs font-medium text-gray-700 dark:text-gray-300 dark:text-gray-300">
                           {typeIcons[item.type]} {typeLabels[item.type][language === 'ar' ? 'ar' : 'en']}
                         </div>
                       </div>

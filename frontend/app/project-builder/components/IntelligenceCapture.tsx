@@ -56,7 +56,7 @@ export default function IntelligenceCapture({ sessionId, onComplete }: Intellige
           <p className="text-sm text-gray-500 uppercase tracking-widest mb-2">
             Constraints & Documentation (Optional)
           </p>
-          <p className="text-xs text-gray-600 dark:text-gray-400">
+          <p className="text-xs text-gray-600 dark:text-gray-400 dark:text-gray-400">
             Help AI refine recommendations with project-specific requirements
           </p>
         </div>
@@ -66,7 +66,7 @@ export default function IntelligenceCapture({ sessionId, onComplete }: Intellige
           <h3 className="text-sm font-medium uppercase tracking-widest text-gray-900 dark:text-white mb-4">Budget Parameters</h3>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div>
-              <label className="text-xs uppercase tracking-widest text-gray-600 mb-2 block">Maximum Budget (Optional)</label>
+              <label className="text-xs uppercase tracking-widest text-gray-600 dark:text-gray-400 mb-2 block">Maximum Budget (Optional)</label>
               <Input
                 type="text"
                 value={constraints.budget_max}
@@ -76,7 +76,7 @@ export default function IntelligenceCapture({ sessionId, onComplete }: Intellige
               />
             </div>
             <div>
-              <label className="text-xs uppercase tracking-widest text-gray-600 mb-2 block">Timeline Constraint</label>
+              <label className="text-xs uppercase tracking-widest text-gray-600 dark:text-gray-400 mb-2 block">Timeline Constraint</label>
               <Input
                 type="text"
                 value={constraints.timeline_constraint}
@@ -106,7 +106,7 @@ export default function IntelligenceCapture({ sessionId, onComplete }: Intellige
                 />
                 <div>
                   <div className="text-sm font-medium text-gray-900 dark:text-white dark:text-white">{constraint.label}</div>
-                  <div className="text-xs text-gray-600 dark:text-gray-400">{constraint.desc}</div>
+                  <div className="text-xs text-gray-600 dark:text-gray-400 dark:text-gray-400">{constraint.desc}</div>
                 </div>
               </label>
             ))}
@@ -131,7 +131,7 @@ export default function IntelligenceCapture({ sessionId, onComplete }: Intellige
             <Upload className="w-6 h-6 text-blue-600" />
             <div>
               <h3 className="text-sm font-medium uppercase tracking-widest text-gray-900 dark:text-white mb-2">Upload Drawings (Optional)</h3>
-              <p className="text-xs text-gray-600 mb-4">
+              <p className="text-xs text-gray-600 dark:text-gray-400 mb-4">
                 Floor plans, elevations, or site photos help AI understand spatial constraints
               </p>
             </div>
@@ -150,7 +150,7 @@ export default function IntelligenceCapture({ sessionId, onComplete }: Intellige
             className="block w-full p-8 border-2 border-dashed border-blue-300 hover:border-blue-600 cursor-pointer transition-colors text-center"
           >
             <Upload className="w-8 h-8 text-blue-600 mx-auto mb-2" />
-            <div className="text-sm text-gray-700 dark:text-gray-300">Click to upload or drag files here</div>
+            <div className="text-sm text-gray-700 dark:text-gray-300 dark:text-gray-300">Click to upload or drag files here</div>
             <div className="text-xs text-gray-500 mt-1">PDF, JPG, PNG, DWG (Max 10MB each)</div>
           </label>
 
@@ -176,7 +176,7 @@ export default function IntelligenceCapture({ sessionId, onComplete }: Intellige
         {/* Info Box */}
         <div className="bg-blue-50 border border-blue-200 p-4 mb-8 flex items-start gap-3">
           <AlertCircle className="w-5 h-5 text-blue-600 flex-shrink-0 mt-0.5" />
-          <div className="text-xs text-gray-700 dark:text-gray-300">
+          <div className="text-xs text-gray-700 dark:text-gray-300 dark:text-gray-300">
             <span className="font-medium">AI Enhancement:</span> Constraints help the recommendation engine filter out incompatible features and prioritize solutions that fit your specific requirements. This step is optional but improves proposal accuracy.
           </div>
         </div>

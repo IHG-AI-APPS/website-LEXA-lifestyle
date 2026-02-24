@@ -35,10 +35,10 @@ export default function CompanyPage() {
                   <span className="text-transparent bg-clip-text metallic-gradient">EXCELLENCE</span>
                 </h1>
                 <div className="h-px w-24 bg-gradient-to-r from-platinum to-transparent mb-8" />
-                <p className="text-xl text-gray-600 font-normal leading-relaxed mb-6">
+                <p className="text-xl text-gray-600 dark:text-gray-400 font-normal leading-relaxed mb-6">
                   LEXA Lifestyle is Dubai&apos;s premier smart living integrator since 2005.
                 </p>
-                <p className="text-lg text-gray-600 font-normal leading-relaxed">
+                <p className="text-lg text-gray-600 dark:text-gray-400 font-normal leading-relaxed">
                   Over 1,000 projects delivered across the UAE, partnering with Crestron, Lutron, Control4, and Savant.
                 </p>
               </motion.div>
@@ -81,7 +81,7 @@ export default function CompanyPage() {
                       <Icon size={32} className="text-charcoal" strokeWidth={1.5} />
                     </div>
                     <h3 className="text-xl font-semibold mb-3">{value.title}</h3>
-                    <p className="text-sm text-gray-600 dark:text-gray-400">{value.description}</p>
+                    <p className="text-sm text-gray-600 dark:text-gray-400 dark:text-gray-400">{value.description}</p>
                   </motion.div>
                 )
               })}

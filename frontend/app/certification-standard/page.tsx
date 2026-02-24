@@ -164,7 +164,7 @@ export default function CertificationStandardPage() {
               <h2 className="text-4xl sm:text-5xl font-bold mb-4">
                 Why LEXA ≠ Random AV Guy
               </h2>
-              <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              <p className="text-xl text-gray-600 dark:text-gray-400 max-w-3xl mx-auto">
                 The difference between a professional integration firm and an installer
               </p>
             </div>
@@ -172,7 +172,7 @@ export default function CertificationStandardPage() {
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               <div className="bg-white dark:bg-gray-800 rounded-xl p-8 shadow-lg border-t-4 border-red-500">
                 <h3 className="text-2xl font-bold mb-4 text-red-600">Random Installer</h3>
-                <ul className="space-y-3 text-gray-600 dark:text-gray-400">
+                <ul className="space-y-3 text-gray-600 dark:text-gray-400 dark:text-gray-400">
                   <li className="flex items-start gap-2">
                     <span className="text-red-500 text-xl">×</span>
                     <span className="text-sm">No documented standards</span>
@@ -201,7 +201,7 @@ export default function CertificationStandardPage() {
                   <Award className="text-green-600" size={32} />
                   <h3 className="text-2xl font-bold text-green-900">LEXA Certified</h3>
                 </div>
-                <ul className="space-y-3 text-gray-800 dark:text-gray-100">
+                <ul className="space-y-3 text-gray-800 dark:text-gray-200 dark:text-gray-100">
                   <li className="flex items-start gap-2">
                     <CheckCircle2 className="text-green-600 flex-shrink-0 mt-0.5" size={20} />
                     <span className="text-sm font-semibold">Documented 47-point standards</span>
@@ -226,7 +226,7 @@ export default function CertificationStandardPage() {
               </div>
 
               <div className="bg-white dark:bg-gray-800 rounded-xl p-8 shadow-lg border-t-4 border-gray-300">
-                <h3 className="text-2xl font-bold mb-4 text-gray-600 dark:text-gray-400">Typical Contractor</h3>
+                <h3 className="text-2xl font-bold mb-4 text-gray-600 dark:text-gray-400 dark:text-gray-400">Typical Contractor</h3>
                 <ul className="space-y-3 text-gray-500">
                   <li className="flex items-start gap-2">
                     <span className="text-gray-400 text-xl">○</span>
@@ -263,7 +263,7 @@ export default function CertificationStandardPage() {
               <h2 className="text-4xl sm:text-5xl font-bold mb-4">
                 Our Integration Standards
               </h2>
-              <p className="text-xl text-gray-600 dark:text-gray-400">
+              <p className="text-xl text-gray-600 dark:text-gray-400 dark:text-gray-400">
                 Engineering excellence in every installation
               </p>
             </div>
@@ -283,13 +283,13 @@ export default function CertificationStandardPage() {
                   </div>
 
                   <h3 className="text-2xl font-bold mb-3">{standard.title}</h3>
-                  <p className="text-gray-600 mb-6">{standard.description}</p>
+                  <p className="text-gray-600 dark:text-gray-400 mb-6">{standard.description}</p>
 
                   <ul className="space-y-3">
                     {standard.items.map((item, idx) => (
                       <li key={idx} className="flex items-start gap-3 text-sm">
                         <CheckCircle2 size={18} className="text-green-600 flex-shrink-0 mt-0.5" />
-                        <span className="text-gray-700 dark:text-gray-300">{item}</span>
+                        <span className="text-gray-700 dark:text-gray-300 dark:text-gray-300">{item}</span>
                       </li>
                     ))}
                   </ul>
@@ -337,7 +337,7 @@ export default function CertificationStandardPage() {
               <h2 className="text-4xl sm:text-5xl font-bold mb-4">
                 Manufacturer Certifications
               </h2>
-              <p className="text-xl text-gray-600 dark:text-gray-400">
+              <p className="text-xl text-gray-600 dark:text-gray-400 dark:text-gray-400">
                 Authorized, trained, and certified by the industry&apos;s leading brands
               </p>
             </div>
@@ -364,7 +364,7 @@ export default function CertificationStandardPage() {
             </div>
 
             <div className="mt-12 text-center">
-              <p className="text-gray-600 mb-6">
+              <p className="text-gray-600 dark:text-gray-400 mb-6">
                 One of only 3 companies in the UAE with multi-platform premium certifications
               </p>
               <Button variant="outline" size="lg" className="border-2">
@@ -384,7 +384,7 @@ export default function CertificationStandardPage() {
               <h2 className="text-4xl sm:text-5xl font-bold mb-4">
                 Documentation Samples
               </h2>
-              <p className="text-xl text-gray-600 dark:text-gray-400">
+              <p className="text-xl text-gray-600 dark:text-gray-400 dark:text-gray-400">
                 Every project includes comprehensive technical documentation
               </p>
             </div>
@@ -482,7 +482,7 @@ export default function CertificationStandardPage() {
             <div className="prose prose-lg max-w-none">
               <h2 className="text-3xl font-bold mb-6">What is the LEXA Certified Integration Standard?</h2>
               
-              <p className="text-gray-600 leading-relaxed mb-6">
+              <p className="text-gray-600 dark:text-gray-400 leading-relaxed mb-6">
                 The LEXA Certified Integration Standard (LCIS) is the UAE&apos;s first documented smart home integration 
                 methodology combining international best practices, manufacturer requirements, and 15+ years of 
                 field experience. Unlike typical installers who follow ad-hoc processes, LEXA integrators follow a 
@@ -490,7 +490,7 @@ export default function CertificationStandardPage() {
               </p>
 
               <h3 className="text-2xl font-bold mb-4">Why Documentation Matters</h3>
-              <p className="text-gray-600 leading-relaxed mb-6">
+              <p className="text-gray-600 dark:text-gray-400 leading-relaxed mb-6">
                 Professional documentation is the difference between a sophisticated installation and expensive 
                 equipment. Our as-built drawings, network diagrams, and system documentation enable:
               </p>
@@ -514,7 +514,7 @@ export default function CertificationStandardPage() {
               </ul>
 
               <h3 className="text-2xl font-bold mb-4">Quality Assurance Process</h3>
-              <p className="text-gray-600 leading-relaxed mb-6">
+              <p className="text-gray-600 dark:text-gray-400 leading-relaxed mb-6">
                 Every LEXA installation undergoes a 5-stage quality assurance process:
               </p>
               <ol className="space-y-3 mb-8 list-decimal list-inside">
@@ -526,7 +526,7 @@ export default function CertificationStandardPage() {
               </ol>
 
               <h3 className="text-2xl font-bold mb-4">Annual Maintenance Contract (AMC)</h3>
-              <p className="text-gray-600 leading-relaxed mb-6">
+              <p className="text-gray-600 dark:text-gray-400 leading-relaxed mb-6">
                 Our AMC framework ensures your smart home remains optimized and up-to-date:
               </p>
               <ul className="space-y-2 mb-8">
@@ -549,7 +549,7 @@ export default function CertificationStandardPage() {
               </ul>
 
               <h3 className="text-2xl font-bold mb-4">Training & Knowledge Transfer</h3>
-              <p className="text-gray-600 leading-relaxed mb-6">
+              <p className="text-gray-600 dark:text-gray-400 leading-relaxed mb-6">
                 Every project includes comprehensive training ensuring you can confidently operate your smart home:
               </p>
               <ul className="space-y-2">

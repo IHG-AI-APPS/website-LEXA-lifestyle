@@ -196,7 +196,7 @@ export default function SmartApartmentPackagesPage() {
                 <span className="text-blue-600">Every Apartment</span>
               </h1>
               
-              <p className="text-lg sm:text-xl text-gray-600 mb-8 leading-relaxed max-w-3xl mx-auto">
+              <p className="text-lg sm:text-xl text-gray-600 dark:text-gray-400 mb-8 leading-relaxed max-w-3xl mx-auto">
                 Wireless-first smart home packages designed for apartments. From studios to duplexes, transform your space without rewiring. Starting from AED 3,000.
               </p>
               
@@ -212,7 +212,7 @@ export default function SmartApartmentPackagesPage() {
                   size="lg"
                   variant="outline"
                   asChild
-                  className="border-2 border-gray-300 text-gray-700 hover:bg-gray-50 px-8 py-6 text-sm font-semibold uppercase tracking-wider"
+                  className="border-2 border-gray-300 text-gray-700 dark:text-gray-300 hover:bg-gray-50 px-8 py-6 text-sm font-semibold uppercase tracking-wider"
                 >
                   <Link href="#packages">
                     Compare Packages
@@ -228,7 +228,7 @@ export default function SmartApartmentPackagesPage() {
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
             <div className="text-center mb-8">
               <h2 className="text-2xl sm:text-3xl font-bold mb-2 text-gray-900 dark:text-white dark:text-white">Select Your Apartment Size</h2>
-              <p className="text-gray-600 dark:text-gray-400">Choose your apartment type to see tailored pricing</p>
+              <p className="text-gray-600 dark:text-gray-400 dark:text-gray-400">Choose your apartment type to see tailored pricing</p>
             </div>
             <div className="flex flex-wrap justify-center gap-3">
               {apartmentSizes.map((size) => (
@@ -238,7 +238,7 @@ export default function SmartApartmentPackagesPage() {
                   className={`px-6 py-3 border-2 font-semibold transition-all ${
                     selectedSize === size.id
                       ? 'border-blue-600 bg-blue-50 text-blue-700'
-                      : 'border-gray-200 bg-white text-gray-700 hover:border-blue-300'
+                      : 'border-gray-200 bg-white text-gray-700 dark:text-gray-300 hover:border-blue-300'
                   }`}
                 >
                   <span className="mr-2">{size.icon}</span>
@@ -285,20 +285,20 @@ export default function SmartApartmentPackagesPage() {
                         <div className="text-sm text-gray-500">Starting price</div>
                       </div>
 
-                      <p className="text-sm text-gray-600 mb-6">{pkg.description}</p>
+                      <p className="text-sm text-gray-600 dark:text-gray-400 mb-6">{pkg.description}</p>
 
                       <div className="space-y-3 mb-6">
                         {pkg.features.map((feature) => (
                           <div key={feature} className="flex items-start gap-2">
                             <CheckCircle2 className="h-5 w-5 text-blue-600 flex-shrink-0 mt-0.5" />
-                            <span className="text-sm text-gray-700 dark:text-gray-300">{feature}</span>
+                            <span className="text-sm text-gray-700 dark:text-gray-300 dark:text-gray-300">{feature}</span>
                           </div>
                         ))}
                       </div>
 
                       <div className="border-t border-gray-200 pt-4 mb-6">
                         <div className="text-xs text-gray-500">Ideal for:</div>
-                        <div className="text-sm font-semibold text-gray-700 dark:text-gray-300">{pkg.ideal}</div>
+                        <div className="text-sm font-semibold text-gray-700 dark:text-gray-300 dark:text-gray-300">{pkg.ideal}</div>
                       </div>
 
                       <Button
@@ -332,7 +332,7 @@ export default function SmartApartmentPackagesPage() {
               <h2 className="text-3xl sm:text-4xl font-bold mb-4 text-gray-900 dark:text-white dark:text-white">
                 Choose Your Ecosystem
               </h2>
-              <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+              <p className="text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
                 All packages support three leading smart home ecosystems
               </p>
             </motion.div>
@@ -351,12 +351,12 @@ export default function SmartApartmentPackagesPage() {
                     <Wifi className="h-5 w-5 text-blue-600" />
                     <h3 className="text-xl font-bold text-gray-900 dark:text-white dark:text-white">{eco.name}</h3>
                   </div>
-                  <p className="text-gray-600 mb-4">{eco.description}</p>
+                  <p className="text-gray-600 dark:text-gray-400 mb-4">{eco.description}</p>
                   <div className="space-y-2 mb-4">
                     {eco.features.map((feature) => (
                       <div key={feature} className="flex items-start gap-2">
                         <CheckCircle2 className="h-4 w-4 text-blue-600 flex-shrink-0 mt-0.5" />
-                        <span className="text-sm text-gray-700 dark:text-gray-300">{feature}</span>
+                        <span className="text-sm text-gray-700 dark:text-gray-300 dark:text-gray-300">{feature}</span>
                       </div>
                     ))}
                   </div>
@@ -400,7 +400,7 @@ export default function SmartApartmentPackagesPage() {
                   >
                     <Icon className="h-12 w-12 mx-auto mb-4 text-blue-600" />
                     <h3 className="text-xl font-bold mb-2 text-gray-900 dark:text-white dark:text-white">{benefit.title}</h3>
-                    <p className="text-gray-600 dark:text-gray-400">{benefit.desc}</p>
+                    <p className="text-gray-600 dark:text-gray-400 dark:text-gray-400">{benefit.desc}</p>
                   </motion.div>
                 )
               })}

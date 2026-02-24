@@ -82,7 +82,7 @@ export default function Workflow() {
                 <h3 className="text-xl font-semibold mb-3 tracking-tight">{step.title}</h3>
 
                 {/* Description */}
-                <p className="text-sm text-gray-600 leading-relaxed font-light">
+                <p className="text-sm text-gray-600 dark:text-gray-400 leading-relaxed font-light">
                   {step.description}
                 </p>
               </motion.div>
@@ -108,7 +108,7 @@ export default function Workflow() {
                 {/* Content */}
                 <div className="flex-1 pt-2">
                   <h3 className="text-2xl font-semibold mb-3 tracking-tight">{step.title}</h3>
-                  <p className="text-sm text-gray-600 leading-relaxed font-light">
+                  <p className="text-sm text-gray-600 dark:text-gray-400 leading-relaxed font-light">
                     {step.description}
                   </p>
                 </div>
@@ -124,7 +124,7 @@ export default function Workflow() {
             viewport={{ once: true }}
             className="mt-20 text-center"
           >
-            <p className="text-lg text-gray-600 font-light mb-8 max-w-2xl mx-auto">
+            <p className="text-lg text-gray-600 dark:text-gray-400 font-light mb-8 max-w-2xl mx-auto">
               Every project follows our proven methodology, ensuring predictable outcomes and exceptional results.
             </p>
             <button className="px-10 py-5 border border-gray-300 hover:border-charcoal hover:bg-gray-100 text-charcoal text-sm font-medium tracking-wide transition-all duration-300">

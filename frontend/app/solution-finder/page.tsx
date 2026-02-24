@@ -292,7 +292,7 @@ export default function SolutionFinderPage() {
                       {currentQuestion.question}
                     </h2>
                     {currentQuestion.subtitle && (
-                      <p className="text-xl text-gray-600 mb-12">
+                      <p className="text-xl text-gray-600 dark:text-gray-400 mb-12">
                         {currentQuestion.subtitle}
                       </p>
                     )}
@@ -316,7 +316,7 @@ export default function SolutionFinderPage() {
                             <div className="flex-1">
                               <div className="font-medium text-lg mb-1">{answer.label}</div>
                               {answer.description && (
-                                <div className="text-sm text-gray-600 dark:text-gray-400">{answer.description}</div>
+                                <div className="text-sm text-gray-600 dark:text-gray-400 dark:text-gray-400">{answer.description}</div>
                               )}
                             </div>
                             {currentAnswer === answer.value && (
@@ -383,7 +383,7 @@ export default function SolutionFinderPage() {
 
                   <div className="h-px w-32 bg-gradient-to-r from-platinum to-transparent mx-auto mb-8" />
 
-                  <p className="text-xl text-gray-600 font-normal max-w-2xl mx-auto">
+                  <p className="text-xl text-gray-600 dark:text-gray-400 font-normal max-w-2xl mx-auto">
                     Based on your answers, here are the smart living solutions we recommend for you.
                   </p>
                 </motion.div>
@@ -428,7 +428,7 @@ export default function SolutionFinderPage() {
                             <h3 className="text-2xl font-semibold mb-3">
                               {rec.solution.title}
                             </h3>
-                            <p className="text-gray-600 mb-4">
+                            <p className="text-gray-600 dark:text-gray-400 mb-4">
                               {rec.solution.description}
                             </p>
 
@@ -468,7 +468,7 @@ export default function SolutionFinderPage() {
                 >
                   <div className="glass border border-gray-200 p-8">
                     <h3 className="text-2xl font-semibold mb-4">Ready to get started?</h3>
-                    <p className="text-gray-600 mb-6">
+                    <p className="text-gray-600 dark:text-gray-400 mb-6">
                       Book a free consultation with our experts to discuss your personalized smart living solution.
                     </p>
                     <div className="flex flex-col sm:flex-row gap-4 justify-center">

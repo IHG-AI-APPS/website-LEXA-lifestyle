@@ -234,7 +234,7 @@ export default function IntelligenceEngine({ sessionId, projectData, onComplete 
           <p className="text-sm text-gray-500 uppercase tracking-widest mb-2">
             693 Features Analyzed • {mandatoryCount} Selected • {resolution.recommended_bundles?.length || 0} Systems
           </p>
-          <p className="text-xs text-gray-600 dark:text-gray-400">
+          <p className="text-xs text-gray-600 dark:text-gray-400 dark:text-gray-400">
             AI filtered down to {totalFeatures} relevant features for your project
           </p>
         </div>
@@ -258,7 +258,7 @@ export default function IntelligenceEngine({ sessionId, projectData, onComplete 
               <div className="text-3xl font-semibold text-gray-900 dark:text-white mb-1">
                 {stat.value}
               </div>
-              <div className="text-xs text-gray-600 uppercase tracking-widest">{stat.label}</div>
+              <div className="text-xs text-gray-600 dark:text-gray-400 uppercase tracking-widest">{stat.label}</div>
             </motion.div>
           ))}
         </div>
@@ -274,12 +274,12 @@ export default function IntelligenceEngine({ sessionId, projectData, onComplete 
                     <div className={`${config.bg} p-2 rounded`}>
                       <Icon className={`w-4 h-4 ${config.color}`} />
                     </div>
-                    <span className="text-xs font-medium text-gray-700 dark:text-gray-300">{config.label}</span>
+                    <span className="text-xs font-medium text-gray-700 dark:text-gray-300 dark:text-gray-300">{config.label}</span>
                   </div>
                 )
               })}
             </div>
-            <div className="text-xs text-gray-600 dark:text-gray-400">
+            <div className="text-xs text-gray-600 dark:text-gray-400 dark:text-gray-400">
               💡 Click features to customize • Hover for AI reasoning
             </div>
           </div>
@@ -296,7 +296,7 @@ export default function IntelligenceEngine({ sessionId, projectData, onComplete 
               className={`px-4 py-2 text-sm font-medium rounded transition-all ${
                 viewMode === 'list'
                   ? 'bg-white text-blue-600 shadow-sm'
-                  : 'text-gray-600 hover:text-gray-900'
+                  : 'text-gray-600 dark:text-gray-400 hover:text-gray-900'
               }`}
             >
               List View
@@ -306,7 +306,7 @@ export default function IntelligenceEngine({ sessionId, projectData, onComplete 
               className={`px-4 py-2 text-sm font-medium rounded transition-all flex items-center gap-2 ${
                 viewMode === 'graph'
                   ? 'bg-white text-blue-600 shadow-sm'
-                  : 'text-gray-600 hover:text-gray-900'
+                  : 'text-gray-600 dark:text-gray-400 hover:text-gray-900'
               }`}
             >
               <Network className="w-4 h-4" />
@@ -360,7 +360,7 @@ export default function IntelligenceEngine({ sessionId, projectData, onComplete 
                     )}
                     <div className="text-left">
                       <h4 className="text-lg font-semibold text-gray-900 dark:text-white dark:text-white">{bundle.system_domain}</h4>
-                      <p className="text-xs text-gray-600 mt-1">
+                      <p className="text-xs text-gray-600 dark:text-gray-400 mt-1">
                         {bundleFeatures.length} features • {selectedInBundle} selected • Score: {Math.round(bundle.score)}/100
                       </p>
                     </div>
@@ -430,7 +430,7 @@ export default function IntelligenceEngine({ sessionId, projectData, onComplete 
                                   </div>
 
                                   {/* AI Reasoning */}
-                                  <div className="text-xs text-gray-600 mb-2 flex items-start gap-1">
+                                  <div className="text-xs text-gray-600 dark:text-gray-400 mb-2 flex items-start gap-1">
                                     <Brain className="w-3 h-3 text-blue-600 mt-0.5 flex-shrink-0" />
                                     <span>{reasoning}</span>
                                   </div>
@@ -493,7 +493,7 @@ export default function IntelligenceEngine({ sessionId, projectData, onComplete 
               <Network className="w-6 h-6 text-orange-600" />
               <div>
                 <h3 className="text-sm font-medium uppercase tracking-widest text-gray-900 dark:text-white mb-2">Auto-Resolved Dependencies</h3>
-                <p className="text-xs text-gray-600 mb-4">
+                <p className="text-xs text-gray-600 dark:text-gray-400 mb-4">
                   These systems were automatically added as prerequisites:
                 </p>
               </div>
@@ -510,7 +510,7 @@ export default function IntelligenceEngine({ sessionId, projectData, onComplete 
 
         {/* Continue Button */}
         <div className="text-center">
-          <div className="mb-4 text-sm text-gray-600 dark:text-gray-400">
+          <div className="mb-4 text-sm text-gray-600 dark:text-gray-400 dark:text-gray-400">
             <span className="font-semibold text-blue-600">{mandatoryCount}</span> features selected from {totalFeatures} analyzed
           </div>
           <Button

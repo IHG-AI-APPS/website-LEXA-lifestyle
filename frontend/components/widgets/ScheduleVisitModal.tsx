@@ -187,18 +187,18 @@ export default function ScheduleVisitModal({
                   <h3 className="text-lg font-bold text-gray-900 dark:text-white dark:text-white mb-1">
                     {language === 'ar' ? 'تم الحجز بنجاح!' : 'Visit Scheduled!'}
                   </h3>
-                  <p className="text-gray-600 dark:text-gray-400 mb-4 text-sm">
+                  <p className="text-gray-600 dark:text-gray-400 dark:text-gray-400 mb-4 text-sm">
                     {language === 'ar' 
                       ? 'تم إرسال تأكيد إلى بريدك الإلكتروني'
                       : 'Confirmation sent to your email'}
                   </p>
                   
                   <div className="bg-gray-50 dark:bg-gray-800/50 rounded-lg p-3 mb-4 text-left">
-                    <div className="flex items-center gap-2 text-xs text-gray-600 dark:text-gray-400 mb-1">
+                    <div className="flex items-center gap-2 text-xs text-gray-600 dark:text-gray-400 dark:text-gray-400 mb-1">
                       <Calendar className="h-3 w-3" />
                       <span>{formData.date}</span>
                     </div>
-                    <div className="flex items-center gap-2 text-xs text-gray-600 dark:text-gray-400">
+                    <div className="flex items-center gap-2 text-xs text-gray-600 dark:text-gray-400 dark:text-gray-400">
                       <Clock className="h-3 w-3" />
                       <span>{formData.time}</span>
                     </div>
@@ -228,7 +228,7 @@ export default function ScheduleVisitModal({
                 /* Step 1: Select Date & Time - Compact */
                 <div className="space-y-4">
                   <div>
-                    <label className="block text-xs font-medium text-gray-700 dark:text-gray-300 mb-2">
+                    <label className="block text-xs font-medium text-gray-700 dark:text-gray-300 dark:text-gray-300 mb-2">
                       {language === 'ar' ? 'اختر التاريخ' : 'Select Date'}
                     </label>
                     <div className="grid grid-cols-4 gap-1.5">
@@ -239,7 +239,7 @@ export default function ScheduleVisitModal({
                           className={`p-2 rounded-lg text-center transition-all ${
                             formData.date === formatDate(date)
                               ? 'bg-[#1A1A1A] dark:bg-[#E8DCC8] text-white dark:text-[#1A1A1A]'
-                              : 'bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:bg-gray-200'
+                              : 'bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 dark:text-gray-300 hover:bg-gray-200'
                           }`}
                         >
                           <div className="text-[10px] opacity-70">{date.toLocaleDateString('en-US', { weekday: 'short' })}</div>
@@ -252,7 +252,7 @@ export default function ScheduleVisitModal({
 
                   {formData.date && (
                     <motion.div initial={{ opacity: 0, height: 0 }} animate={{ opacity: 1, height: 'auto' }}>
-                      <label className="block text-xs font-medium text-gray-700 dark:text-gray-300 mb-2">
+                      <label className="block text-xs font-medium text-gray-700 dark:text-gray-300 dark:text-gray-300 mb-2">
                         {language === 'ar' ? 'اختر الوقت' : 'Select Time'}
                       </label>
                       <div className="grid grid-cols-4 gap-1.5">
@@ -263,7 +263,7 @@ export default function ScheduleVisitModal({
                             className={`p-1.5 rounded-lg text-xs transition-all ${
                               formData.time === time
                                 ? 'bg-[#1A1A1A] dark:bg-[#E8DCC8] text-white dark:text-[#1A1A1A]'
-                                : 'bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:bg-gray-200'
+                                : 'bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 dark:text-gray-300 hover:bg-gray-200'
                             }`}
                           >
                             {time}
@@ -287,20 +287,20 @@ export default function ScheduleVisitModal({
                 <div className="space-y-3">
                   <button 
                     onClick={() => setStep(1)}
-                    className="text-xs text-gray-500 hover:text-gray-700 flex items-center gap-1"
+                    className="text-xs text-gray-500 hover:text-gray-700 dark:text-gray-300 flex items-center gap-1"
                   >
                     ← {language === 'ar' ? 'تغيير' : 'Change'}
                   </button>
                   
                   <div className="bg-[#E8DCC8]/20 rounded-lg p-2 flex items-center gap-2">
                     <Calendar className="h-4 w-4 text-[#1A1A1A] dark:text-[#E8DCC8]" />
-                    <span className="text-xs font-medium text-gray-700 dark:text-gray-300">
+                    <span className="text-xs font-medium text-gray-700 dark:text-gray-300 dark:text-gray-300">
                       {formData.date} at {formData.time}
                     </span>
                   </div>
 
                   <div>
-                    <label className="block text-xs font-medium text-gray-700 dark:text-gray-300 mb-1">
+                    <label className="block text-xs font-medium text-gray-700 dark:text-gray-300 dark:text-gray-300 mb-1">
                       {language === 'ar' ? 'الاسم' : 'Name'} *
                     </label>
                     <input
@@ -314,7 +314,7 @@ export default function ScheduleVisitModal({
                   </div>
 
                   <div>
-                    <label className="block text-xs font-medium text-gray-700 dark:text-gray-300 mb-1">
+                    <label className="block text-xs font-medium text-gray-700 dark:text-gray-300 dark:text-gray-300 mb-1">
                       {language === 'ar' ? 'البريد' : 'Email'} *
                     </label>
                     <input
@@ -328,7 +328,7 @@ export default function ScheduleVisitModal({
                   </div>
 
                   <div>
-                    <label className="block text-xs font-medium text-gray-700 dark:text-gray-300 mb-1">
+                    <label className="block text-xs font-medium text-gray-700 dark:text-gray-300 dark:text-gray-300 mb-1">
                       {language === 'ar' ? 'الهاتف' : 'Phone'} *
                     </label>
                     <input

@@ -68,7 +68,7 @@ export default function CalculatorCardsSection() {
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-[#1A1A1A] dark:text-white mb-4 font-heading">
             Planning & Design Tools
           </h2>
-          <p className="text-base md:text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
+          <p className="text-base md:text-lg text-gray-600 dark:text-gray-400 dark:text-gray-300 max-w-2xl mx-auto">
             Explore our tools to plan, calculate costs, and build your perfect smart home solution
           </p>
         </motion.div>

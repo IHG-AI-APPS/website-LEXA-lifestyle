@@ -88,7 +88,7 @@ export default function SolutionsPage() {
                 {language === 'ar' ? 'أنظمة متكاملة' : 'Integrated'} <span className="text-gray-400">{language === 'ar' ? '' : 'Systems'}</span>
               </h1>
               <div className="h-px w-32 bg-[#9F8B65] mb-6 mx-auto" />
-              <p className="text-base md:text-lg text-gray-600 leading-relaxed max-w-2xl mx-auto">
+              <p className="text-base md:text-lg text-gray-600 dark:text-gray-400 leading-relaxed max-w-2xl mx-auto">
                 {language === 'ar' 
                   ? 'كل حل مصمم للعمل معًا بسلاسة. واجهة واحدة. تحكم كامل.'
                   : 'Every solution designed to work together seamlessly. One interface. Total control.'
@@ -116,7 +116,7 @@ export default function SolutionsPage() {
                   {language === 'ar' ? 'الفئة' : 'Category'}
                 </span>
                 <h2 className="text-3xl md:text-4xl font-bold mb-2">{categoryConfig.residential.title}</h2>
-                <p className="text-lg text-gray-600 dark:text-gray-400">{categoryConfig.residential.subtitle}</p>
+                <p className="text-lg text-gray-600 dark:text-gray-400 dark:text-gray-400">{categoryConfig.residential.subtitle}</p>
               </motion.div>
 
               <div className="space-y-2">
@@ -145,7 +145,7 @@ export default function SolutionsPage() {
                             </h3>
                           </div>
                           <div className="lg:col-span-5">
-                            <p className="text-gray-600 leading-relaxed">
+                            <p className="text-gray-600 dark:text-gray-400 leading-relaxed">
                               {solution.description}
                             </p>
                           </div>
@@ -179,7 +179,7 @@ export default function SolutionsPage() {
                   {language === 'ar' ? 'الفئة' : 'Category'}
                 </span>
                 <h2 className="text-3xl md:text-4xl font-bold mb-2">{categoryConfig.commercial.title}</h2>
-                <p className="text-lg text-gray-600 dark:text-gray-400">{categoryConfig.commercial.subtitle}</p>
+                <p className="text-lg text-gray-600 dark:text-gray-400 dark:text-gray-400">{categoryConfig.commercial.subtitle}</p>
               </motion.div>
 
               <div className="space-y-2">
@@ -208,7 +208,7 @@ export default function SolutionsPage() {
                             </h3>
                           </div>
                           <div className="lg:col-span-5">
-                            <p className="text-gray-600 leading-relaxed">
+                            <p className="text-gray-600 dark:text-gray-400 leading-relaxed">
                               {solution.description}
                             </p>
                           </div>
@@ -242,7 +242,7 @@ export default function SolutionsPage() {
                   {language === 'ar' ? 'الفئة' : 'Category'}
                 </span>
                 <h2 className="text-3xl md:text-4xl font-bold mb-2">{categoryConfig.specialized.title}</h2>
-                <p className="text-lg text-gray-600 dark:text-gray-400">{categoryConfig.specialized.subtitle}</p>
+                <p className="text-lg text-gray-600 dark:text-gray-400 dark:text-gray-400">{categoryConfig.specialized.subtitle}</p>
               </motion.div>
 
               <div className="space-y-2">
@@ -271,7 +271,7 @@ export default function SolutionsPage() {
                             </h3>
                           </div>
                           <div className="lg:col-span-5">
-                            <p className="text-gray-600 leading-relaxed">
+                            <p className="text-gray-600 dark:text-gray-400 leading-relaxed">
                               {solution.description}
                             </p>
                           </div>
@@ -305,7 +305,7 @@ export default function SolutionsPage() {
                   {language === 'ar' ? 'الفئة' : 'Category'}
                 </span>
                 <h2 className="text-3xl md:text-4xl font-bold mb-2">{categoryConfig.other.title}</h2>
-                <p className="text-lg text-gray-600 dark:text-gray-400">{categoryConfig.other.subtitle}</p>
+                <p className="text-lg text-gray-600 dark:text-gray-400 dark:text-gray-400">{categoryConfig.other.subtitle}</p>
               </motion.div>
 
               <div className="space-y-2">
@@ -334,7 +334,7 @@ export default function SolutionsPage() {
                             </h3>
                           </div>
                           <div className="lg:col-span-5">
-                            <p className="text-gray-600 leading-relaxed">
+                            <p className="text-gray-600 dark:text-gray-400 leading-relaxed">
                               {solution.description}
                             </p>
                           </div>

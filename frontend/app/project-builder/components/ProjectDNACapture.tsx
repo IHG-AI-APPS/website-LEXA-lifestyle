@@ -118,7 +118,7 @@ export default function ProjectDNACapture({ onComplete }: ProjectDNACaptureProps
                   formData.segment === segment.id ? 'text-blue-600' : 'text-gray-400 group-hover:text-blue-600'
                 }`} />
                 <div className="text-sm font-medium text-gray-900 dark:text-white mb-1">{segment.label}</div>
-                <div className="text-xs text-gray-600 dark:text-gray-400">{segment.desc}</div>
+                <div className="text-xs text-gray-600 dark:text-gray-400 dark:text-gray-400">{segment.desc}</div>
               </button>
             ))}
           </div>
@@ -141,7 +141,7 @@ export default function ProjectDNACapture({ onComplete }: ProjectDNACaptureProps
                   className={`bg-white dark:bg-gray-800 border p-4 text-sm transition-all duration-300 ${
                     formData.property_type === type.id
                       ? 'border-blue-600 text-blue-600 shadow-md'
-                      : 'border-gray-200 text-gray-600 hover:border-gray-300 hover:shadow-sm'
+                      : 'border-gray-200 text-gray-600 dark:text-gray-400 hover:border-gray-300 hover:shadow-sm'
                   }`}
                 >
                   {type.label}
@@ -168,7 +168,7 @@ export default function ProjectDNACapture({ onComplete }: ProjectDNACaptureProps
                   className={`bg-white dark:bg-gray-800 border p-4 text-sm transition-all duration-300 ${
                     formData.project_stage === stage.id
                       ? 'border-blue-600 text-blue-600 shadow-md'
-                      : 'border-gray-200 text-gray-600 hover:border-gray-300 hover:shadow-sm'
+                      : 'border-gray-200 text-gray-600 dark:text-gray-400 hover:border-gray-300 hover:shadow-sm'
                   }`}
                 >
                   {stage.label}
@@ -199,7 +199,7 @@ export default function ProjectDNACapture({ onComplete }: ProjectDNACaptureProps
                     className={`px-3 py-1 text-xs border transition-all ${
                       formData.area_sqft === preset
                         ? 'border-blue-600 bg-blue-50 text-blue-600'
-                        : 'border-gray-200 text-gray-600 hover:border-gray-300'
+                        : 'border-gray-200 text-gray-600 dark:text-gray-400 hover:border-gray-300'
                     }`}
                   >
                     {parseInt(preset).toLocaleString()}
@@ -234,7 +234,7 @@ export default function ProjectDNACapture({ onComplete }: ProjectDNACaptureProps
                       className={`flex-1 px-3 py-2 text-sm border transition-all ${
                         formData.num_floors === (preset === '4+' ? '4' : preset)
                           ? 'border-blue-600 bg-blue-50 text-blue-600'
-                          : 'border-gray-200 text-gray-600 hover:border-gray-300'
+                          : 'border-gray-200 text-gray-600 dark:text-gray-400 hover:border-gray-300'
                       }`}
                     >
                       {preset}
@@ -252,7 +252,7 @@ export default function ProjectDNACapture({ onComplete }: ProjectDNACaptureProps
                       className={`flex-1 px-3 py-2 text-sm border transition-all ${
                         formData.num_rooms === (preset === '6+' ? '6' : preset)
                           ? 'border-blue-600 bg-blue-50 text-blue-600'
-                          : 'border-gray-200 text-gray-600 hover:border-gray-300'
+                          : 'border-gray-200 text-gray-600 dark:text-gray-400 hover:border-gray-300'
                       }`}
                     >
                       {preset}
@@ -280,7 +280,7 @@ export default function ProjectDNACapture({ onComplete }: ProjectDNACaptureProps
                   className={`bg-white dark:bg-gray-800 border p-3 text-xs transition-all duration-300 ${
                     formData.location === city || (city === 'Other' && !['Dubai', 'Abu Dhabi', 'Sharjah', 'Ajman', 'Ras Al Khaimah', 'Fujairah', 'Umm Al Quwain'].includes(formData.location))
                       ? 'border-blue-600 text-blue-600 shadow-md'
-                      : 'border-gray-200 text-gray-600 hover:border-gray-300 hover:shadow-sm'
+                      : 'border-gray-200 text-gray-600 dark:text-gray-400 hover:border-gray-300 hover:shadow-sm'
                   }`}
                 >
                   {city}

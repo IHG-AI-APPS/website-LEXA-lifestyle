@@ -104,7 +104,7 @@ export default function HomeCinemaClient() {
               <div key={i} className="text-center p-6 bg-white dark:bg-gray-700 rounded-xl shadow-lg">
                 <e.icon className="w-8 h-8 text-slate-600 mx-auto mb-4" />
                 <h3 className="font-semibold text-gray-900 dark:text-white dark:text-white">{e.title}</h3>
-                <p className="text-gray-600 dark:text-gray-300 text-sm">{e.desc}</p>
+                <p className="text-gray-600 dark:text-gray-400 dark:text-gray-300 text-sm">{e.desc}</p>
               </div>
             ))}
           </div>
@@ -117,7 +117,7 @@ export default function HomeCinemaClient() {
             {faqs.map((f, i) => (
               <div key={i} className="bg-white dark:bg-gray-700 p-6 rounded-xl shadow">
                 <h3 className="text-lg font-semibold mb-2 text-gray-900 dark:text-white dark:text-white">{f.q}</h3>
-                <p className="text-gray-600 dark:text-gray-300">{f.a}</p>
+                <p className="text-gray-600 dark:text-gray-400 dark:text-gray-300">{f.a}</p>
               </div>
             ))}
           </div>

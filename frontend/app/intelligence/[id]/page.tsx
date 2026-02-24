@@ -156,7 +156,7 @@ export default function IntelligenceDetailPage() {
         <h1 className="text-2xl font-bold text-gray-900 dark:text-white dark:text-white mb-2">
           {language === 'ar' ? 'الميزة غير موجودة' : 'Feature Not Found'}
         </h1>
-        <p className="text-gray-600 dark:text-gray-400 mb-6">
+        <p className="text-gray-600 dark:text-gray-400 dark:text-gray-400 mb-6">
           {language === 'ar' ? 'لم نتمكن من العثور على هذه الميزة الذكية' : "We couldn't find this intelligence feature"}
         </p>
         <Button asChild>
@@ -274,7 +274,7 @@ export default function IntelligenceDetailPage() {
                   ].map((feat, index) => (
                     <div key={index} className="flex items-start gap-3">
                       <CheckCircle2 className="h-5 w-5 text-green-600 flex-shrink-0 mt-0.5" />
-                      <span className="text-gray-700 dark:text-gray-300">{feat}</span>
+                      <span className="text-gray-700 dark:text-gray-300 dark:text-gray-300">{feat}</span>
                     </div>
                   ))}
                 </div>
@@ -297,7 +297,7 @@ export default function IntelligenceDetailPage() {
                       <div className="p-1 bg-[#E8DCC8]/20 rounded">
                         <Sparkles className="h-4 w-4 text-[#C9A962]" />
                       </div>
-                      <span className="text-gray-700 dark:text-gray-300">{benefit}</span>
+                      <span className="text-gray-700 dark:text-gray-300 dark:text-gray-300">{benefit}</span>
                     </div>
                   ))}
                 </div>
@@ -315,7 +315,7 @@ export default function IntelligenceDetailPage() {
                   <h2 className="text-2xl font-bold text-[#1A1A1A] dark:text-white mb-2">
                     {language === 'ar' ? 'ميزات ذكية ذات صلة' : 'Related Intelligence Features'}
                   </h2>
-                  <p className="text-gray-600 dark:text-gray-400">
+                  <p className="text-gray-600 dark:text-gray-400 dark:text-gray-400">
                     {language === 'ar' 
                       ? `المزيد من حلول ${categoryName}`
                       : `More ${categoryName} solutions`}
@@ -354,7 +354,7 @@ export default function IntelligenceDetailPage() {
                           <h3 className="font-semibold text-[#1A1A1A] dark:text-white mb-2 line-clamp-2 group-hover:text-[#C9A962] transition-colors">
                             {related.title}
                           </h3>
-                          <p className="text-sm text-gray-600 dark:text-gray-400 line-clamp-2">
+                          <p className="text-sm text-gray-600 dark:text-gray-400 dark:text-gray-400 line-clamp-2">
                             {related.description}
                           </p>
                           {related.price && (

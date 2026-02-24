@@ -203,7 +203,7 @@ export default function CategorySelection({
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.2 }}
-          className="text-gray-600 max-w-2xl mx-auto"
+          className="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto"
         >
           Select the categories that matter to you. We&apos;ll then help you prioritize 
           features within each category.
@@ -232,7 +232,7 @@ export default function CategorySelection({
           <div className="text-red-400 mb-4">
             <Home className="w-16 h-16 mx-auto opacity-50" />
           </div>
-          <h3 className="text-lg font-semibold text-gray-700 mb-2">Unable to Load Categories</h3>
+          <h3 className="text-lg font-semibold text-gray-700 dark:text-gray-300 mb-2">Unable to Load Categories</h3>
           <p className="text-gray-500 mb-4">{error}</p>
           <Button 
             variant="outline" 
@@ -246,7 +246,7 @@ export default function CategorySelection({
           <div className="text-gray-400 mb-4">
             <Home className="w-16 h-16 mx-auto opacity-50" />
           </div>
-          <h3 className="text-lg font-semibold text-gray-700 mb-2">No Categories Available</h3>
+          <h3 className="text-lg font-semibold text-gray-700 dark:text-gray-300 mb-2">No Categories Available</h3>
           <p className="text-gray-500 mb-4">Please refresh the page.</p>
           <Button 
             variant="outline" 

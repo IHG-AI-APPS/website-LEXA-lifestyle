@@ -139,7 +139,7 @@ export default function LexaEvolvesPage() {
               <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4 text-[#1A1A1A] dark:text-white">
                 Four Stages of Evolution
               </h2>
-              <p className="text-base sm:text-lg text-gray-600 max-w-3xl mx-auto">
+              <p className="text-base sm:text-lg text-gray-600 dark:text-gray-400 max-w-3xl mx-auto">
                 Your smart home journey, from foundation to full intelligence
               </p>
             </motion.div>
@@ -167,16 +167,16 @@ export default function LexaEvolvesPage() {
                           {stage.stage}
                         </span>
                       </div>
-                      <p className="text-gray-600 mb-4">{stage.description}</p>
+                      <p className="text-gray-600 dark:text-gray-400 mb-4">{stage.description}</p>
                       <div className="grid grid-cols-2 md:grid-cols-4 gap-3 mb-4">
                         {stage.features.map((feature) => (
                           <div key={feature} className="flex items-start gap-2">
                             <CheckCircle2 className="h-4 w-4 text-violet-600 flex-shrink-0 mt-0.5" />
-                            <span className="text-sm text-gray-700 dark:text-gray-300">{feature}</span>
+                            <span className="text-sm text-gray-700 dark:text-gray-300 dark:text-gray-300">{feature}</span>
                           </div>
                         ))}
                       </div>
-                      <div className="inline-block px-4 py-2 bg-gray-100 text-gray-700 text-sm font-semibold">
+                      <div className="inline-block px-4 py-2 bg-gray-100 text-gray-700 dark:text-gray-300 text-sm font-semibold">
                         Investment: {stage.investment}
                       </div>
                     </div>
@@ -220,7 +220,7 @@ export default function LexaEvolvesPage() {
                       </div>
                       <div>
                         <h3 className="text-xl font-bold mb-2 text-[#1A1A1A] dark:text-white">{benefit.title}</h3>
-                        <p className="text-gray-600 dark:text-gray-400">{benefit.description}</p>
+                        <p className="text-gray-600 dark:text-gray-400 dark:text-gray-400">{benefit.description}</p>
                       </div>
                     </div>
                   </motion.div>

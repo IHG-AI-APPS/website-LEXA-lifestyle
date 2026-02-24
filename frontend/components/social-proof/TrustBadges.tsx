@@ -39,15 +39,15 @@ export default function TrustBadges({
   if (variant === 'compact') {
     return (
       <div className={`flex items-center justify-center gap-6 py-4 ${className}`}>
-        <div className="flex items-center gap-2 text-sm text-gray-600 dark:text-gray-400">
+        <div className="flex items-center gap-2 text-sm text-gray-600 dark:text-gray-400 dark:text-gray-400">
           <Shield className="w-4 h-4 text-green-600" />
           <span>15+ Years</span>
         </div>
-        <div className="flex items-center gap-2 text-sm text-gray-600 dark:text-gray-400">
+        <div className="flex items-center gap-2 text-sm text-gray-600 dark:text-gray-400 dark:text-gray-400">
           <CheckCircle className="w-4 h-4 text-green-600" />
           <span>500+ Projects</span>
         </div>
-        <div className="flex items-center gap-2 text-sm text-gray-600 dark:text-gray-400">
+        <div className="flex items-center gap-2 text-sm text-gray-600 dark:text-gray-400 dark:text-gray-400">
           <Star className="w-4 h-4 text-yellow-500" />
           <span>4.9 Rating</span>
         </div>
@@ -71,7 +71,7 @@ export default function TrustBadges({
             >
               <stat.icon className="w-8 h-8 text-[#C9A962] mx-auto mb-2" />
               <div className="text-3xl font-bold text-gray-900 dark:text-white dark:text-white">{stat.value}</div>
-              <div className="text-sm text-gray-600 dark:text-gray-400">{stat.label}</div>
+              <div className="text-sm text-gray-600 dark:text-gray-400 dark:text-gray-400">{stat.label}</div>
             </motion.div>
           ))}
         </div>

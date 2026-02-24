@@ -72,7 +72,7 @@ export default function ResourcesPage() {
               
               <div className="h-px w-32 bg-gradient-to-r from-platinum to-transparent mx-auto mb-8" />
               
-              <p className="text-xl text-gray-600 font-normal">
+              <p className="text-xl text-gray-600 dark:text-gray-400 font-normal">
                 Guides, insights, and expertise to help you make informed decisions about smart living
               </p>
             </motion.div>
@@ -92,7 +92,7 @@ export default function ResourcesPage() {
                   className={`px-6 py-2 text-sm font-medium tracking-wide uppercase transition-all duration-300 ${
                     selectedCategory === category
                       ? 'bg-charcoal text-white'
-                      : 'border border-gray-300 text-gray-600 hover:border-charcoal'
+                      : 'border border-gray-300 text-gray-600 dark:text-gray-400 hover:border-charcoal'
                   }`}
                 >
                   {category}
@@ -109,7 +109,7 @@ export default function ResourcesPage() {
           <div className="max-w-6xl mx-auto">
             {filteredArticles.length === 0 ? (
               <div className="text-center py-20">
-                <p className="text-xl text-gray-600 dark:text-gray-400">No articles found in this category.</p>
+                <p className="text-xl text-gray-600 dark:text-gray-400 dark:text-gray-400">No articles found in this category.</p>
               </div>
             ) : (
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -138,11 +138,11 @@ export default function ResourcesPage() {
 
                         {/* Content */}
                         <div className="flex-1 flex flex-col">
-                          <h3 className="text-2xl font-semibold mb-3 group-hover:text-gray-600 transition-colors">
+                          <h3 className="text-2xl font-semibold mb-3 group-hover:text-gray-600 dark:text-gray-400 transition-colors">
                             {article.title}
                           </h3>
                           
-                          <p className="text-gray-600 mb-4 line-clamp-3">
+                          <p className="text-gray-600 dark:text-gray-400 mb-4 line-clamp-3">
                             {article.excerpt}
                           </p>
 
@@ -181,7 +181,7 @@ export default function ResourcesPage() {
               <h2 className="text-5xl font-semibold mb-6">
                 Need Expert Guidance?
               </h2>
-              <p className="text-xl text-gray-600 mb-8">
+              <p className="text-xl text-gray-600 dark:text-gray-400 mb-8">
                 Our team is ready to help you design the perfect smart living solution
               </p>
               <Button

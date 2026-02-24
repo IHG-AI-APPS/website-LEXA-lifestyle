@@ -161,8 +161,8 @@ export default function AIChatWidget() {
                   <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-gradient-to-r from-purple-100 to-blue-100 flex items-center justify-center">
                     <Sparkles className="w-8 h-8 text-purple-600" />
                   </div>
-                  <h4 className="font-semibold text-gray-800 dark:text-gray-200 mb-2">Welcome to LEXA AI!</h4>
-                  <p className="text-sm text-gray-600 dark:text-gray-400 mb-4">
+                  <h4 className="font-semibold text-gray-800 dark:text-gray-200 dark:text-gray-200 mb-2">Welcome to LEXA AI!</h4>
+                  <p className="text-sm text-gray-600 dark:text-gray-400 dark:text-gray-400 mb-4">
                     I'm your smart home consultant. Ask me anything about home automation!
                   </p>
                   <div className="space-y-2">
@@ -203,7 +203,7 @@ export default function AIChatWidget() {
                     <div className={`px-4 py-2 rounded-2xl ${
                       msg.role === 'user' 
                         ? 'bg-blue-600 text-white rounded-tr-sm' 
-                        : 'bg-white dark:bg-gray-700 text-gray-800 dark:text-gray-200 rounded-tl-sm shadow-sm border border-gray-100 dark:border-gray-600'
+                        : 'bg-white dark:bg-gray-700 text-gray-800 dark:text-gray-200 dark:text-gray-200 rounded-tl-sm shadow-sm border border-gray-100 dark:border-gray-600'
                     }`}>
                       <p className="text-sm whitespace-pre-wrap">{msg.content}</p>
                     </div>
@@ -231,7 +231,7 @@ export default function AIChatWidget() {
             {leadScore > 0 && (
               <div className="px-4 py-2 bg-gradient-to-r from-green-50 to-blue-50 border-t border-gray-100 dark:border-gray-800">
                 <div className="flex items-center justify-between text-xs">
-                  <span className="text-gray-600 dark:text-gray-400">Conversation Progress</span>
+                  <span className="text-gray-600 dark:text-gray-400 dark:text-gray-400">Conversation Progress</span>
                   <span className="font-medium text-green-600">{leadScore}% Complete</span>
                 </div>
                 <div className="mt-1 h-1.5 bg-gray-200 rounded-full overflow-hidden">
@@ -268,7 +268,7 @@ export default function AIChatWidget() {
               <div className="flex justify-between items-center mt-2">
                 <button 
                   onClick={clearChat}
-                  className="text-xs text-gray-400 hover:text-gray-600 dark:text-gray-400"
+                  className="text-xs text-gray-400 hover:text-gray-600 dark:text-gray-400 dark:text-gray-400"
                 >
                   Clear chat
                 </button>

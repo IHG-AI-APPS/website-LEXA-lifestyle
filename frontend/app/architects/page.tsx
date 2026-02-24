@@ -183,7 +183,7 @@ export default function ArchitectsPage() {
           <div className="max-w-7xl mx-auto">
             <div className="text-center mb-16">
               <h2 className="text-4xl sm:text-5xl font-heading font-bold mb-4 ">Technical Resources</h2>
-              <p className="text-xl text-gray-600 dark:text-gray-400">
+              <p className="text-xl text-gray-600 dark:text-gray-400 dark:text-gray-400">
                 Click on any resource to request instant access
               </p>
             </div>
@@ -207,13 +207,13 @@ export default function ArchitectsPage() {
                     </div>
 
                     <h3 className="text-2xl font-bold mb-2">{resource.title}</h3>
-                    <p className="text-gray-600 mb-4">{resource.description}</p>
+                    <p className="text-gray-600 dark:text-gray-400 mb-4">{resource.description}</p>
 
                     <div className="flex flex-wrap gap-2">
                       {resource.formats.map((format) => (
                         <span
                           key={format}
-                          className="px-3 py-1 bg-gray-100 text-gray-700 text-xs font-semibold rounded-full"
+                          className="px-3 py-1 bg-gray-100 text-gray-700 dark:text-gray-300 text-xs font-semibold rounded-full"
                         >
                           {format}
                         </span>
@@ -238,7 +238,7 @@ export default function ArchitectsPage() {
           <div className="max-w-4xl mx-auto">
             <div className="text-center mb-12">
               <h2 className="text-4xl sm:text-5xl font-heading font-bold mb-4 ">Why Architects Trust LEXA</h2>
-              <p className="text-xl text-gray-600 dark:text-gray-400">
+              <p className="text-xl text-gray-600 dark:text-gray-400 dark:text-gray-400">
                 We speak your language - technical, precise, reliable
               </p>
             </div>
@@ -249,7 +249,7 @@ export default function ArchitectsPage() {
                   <Zap size={32} className="text-white" />
                 </div>
                 <h3 className="font-bold text-lg mb-2">Fast Turnaround</h3>
-                <p className="text-gray-600 text-sm">
+                <p className="text-gray-600 dark:text-gray-400 text-sm">
                   Get resources within hours, not days
                 </p>
               </div>
@@ -259,7 +259,7 @@ export default function ArchitectsPage() {
                   <FileText size={32} className="text-white" />
                 </div>
                 <h3 className="font-bold text-lg mb-2">Detailed Documentation</h3>
-                <p className="text-gray-600 text-sm">
+                <p className="text-gray-600 dark:text-gray-400 text-sm">
                   Complete specs with all technical details
                 </p>
               </div>
@@ -269,7 +269,7 @@ export default function ArchitectsPage() {
                   <Building2 size={32} className="text-white" />
                 </div>
                 <h3 className="font-bold text-lg mb-2">Project Support</h3>
-                <p className="text-gray-600 text-sm">
+                <p className="text-gray-600 dark:text-gray-400 text-sm">
                   Dedicated engineer for technical queries
                 </p>
               </div>
@@ -292,10 +292,10 @@ export default function ArchitectsPage() {
                   <Check size={40} className="text-green-600" />
                 </div>
                 <h2 className="text-3xl font-bold mb-4">Request Received!</h2>
-                <p className="text-xl text-gray-700 mb-2">
+                <p className="text-xl text-gray-700 dark:text-gray-300 mb-2">
                   Our project engineer will send you the resources within the next few hours.
                 </p>
-                <p className="text-gray-600 dark:text-gray-400">
+                <p className="text-gray-600 dark:text-gray-400 dark:text-gray-400">
                   Check your email at <strong>{formData.email}</strong>
                 </p>
               </div>
@@ -313,12 +313,12 @@ export default function ArchitectsPage() {
                 </div>
 
                 <form onSubmit={handleSubmit} className="p-8 space-y-6">
-                  <p className="text-gray-700 bg-blue-50 border-l-4 border-blue-500 p-4 rounded">
+                  <p className="text-gray-700 dark:text-gray-300 bg-blue-50 border-l-4 border-blue-500 p-4 rounded">
                     Fill in your details and our project engineer will send you the requested resources along with technical support.
                   </p>
 
                   <div>
-                    <label className="block text-sm font-semibold text-gray-700 mb-2">
+                    <label className="block text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">
                       Full Name *
                     </label>
                     <Input
@@ -331,7 +331,7 @@ export default function ArchitectsPage() {
                   </div>
 
                   <div>
-                    <label className="block text-sm font-semibold text-gray-700 mb-2">
+                    <label className="block text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">
                       Email Address *
                     </label>
                     <Input
@@ -344,7 +344,7 @@ export default function ArchitectsPage() {
                   </div>
 
                   <div>
-                    <label className="block text-sm font-semibold text-gray-700 mb-2">
+                    <label className="block text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">
                       Phone Number *
                     </label>
                     <Input
@@ -357,7 +357,7 @@ export default function ArchitectsPage() {
                   </div>
 
                   <div>
-                    <label className="block text-sm font-semibold text-gray-700 mb-2">
+                    <label className="block text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">
                       Company Name
                     </label>
                     <Input
@@ -369,7 +369,7 @@ export default function ArchitectsPage() {
                   </div>
 
                   <div>
-                    <label className="block text-sm font-semibold text-gray-700 mb-2">
+                    <label className="block text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">
                       Project Details (Optional)
                     </label>
                     <Textarea

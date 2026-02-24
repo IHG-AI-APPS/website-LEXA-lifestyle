@@ -139,7 +139,7 @@ export default function AbuDhabiLuxuryAutomationClient() {
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white dark:text-white mb-4">
               Abu Dhabi Areas We Serve
             </h2>
-            <p className="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
+            <p className="text-gray-600 dark:text-gray-400 dark:text-gray-400 max-w-2xl mx-auto">
               Expert smart home installation across Abu Dhabi&apos;s most prestigious communities
             </p>
           </div>
@@ -157,7 +157,7 @@ export default function AbuDhabiLuxuryAutomationClient() {
                 <div className="flex items-start justify-between">
                   <div>
                     <h3 className="text-xl font-bold text-gray-900 dark:text-white dark:text-white mb-2">{area.name}</h3>
-                    <p className="text-gray-600 dark:text-gray-400 text-sm">{area.description}</p>
+                    <p className="text-gray-600 dark:text-gray-400 dark:text-gray-400 text-sm">{area.description}</p>
                   </div>
                   <div className="text-right">
                     <div className="text-2xl font-bold text-[#C9A962]">{area.projects}</div>
@@ -177,7 +177,7 @@ export default function AbuDhabiLuxuryAutomationClient() {
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white dark:text-white mb-4">
               Smart Home Solutions for Abu Dhabi
             </h2>
-            <p className="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
+            <p className="text-gray-600 dark:text-gray-400 dark:text-gray-400 max-w-2xl mx-auto">
               Comprehensive automation services designed for Abu Dhabi&apos;s unique climate and lifestyle
             </p>
           </div>
@@ -194,7 +194,7 @@ export default function AbuDhabiLuxuryAutomationClient() {
               >
                 <service.icon className="h-10 w-10 text-[#C9A962] mb-4" />
                 <h3 className="text-xl font-bold text-gray-900 dark:text-white dark:text-white mb-2">{service.title}</h3>
-                <p className="text-gray-600 dark:text-gray-400">{service.description}</p>
+                <p className="text-gray-600 dark:text-gray-400 dark:text-gray-400">{service.description}</p>
               </motion.div>
             ))}
           </div>
@@ -211,7 +211,7 @@ export default function AbuDhabiLuxuryAutomationClient() {
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white dark:text-white mb-4">
               Smart Home Abu Dhabi FAQs
             </h2>
-            <p className="text-gray-600 dark:text-gray-400">
+            <p className="text-gray-600 dark:text-gray-400 dark:text-gray-400">
               Common questions about home automation in Abu Dhabi
             </p>
           </div>
@@ -229,7 +229,7 @@ export default function AbuDhabiLuxuryAutomationClient() {
                 <h3 className="text-lg font-bold text-gray-900 dark:text-white dark:text-white mb-3">
                   {faq.question}
                 </h3>
-                <p className="text-gray-600 dark:text-gray-400 leading-relaxed">
+                <p className="text-gray-600 dark:text-gray-400 dark:text-gray-400 leading-relaxed">
                   {faq.answer}
                 </p>
               </motion.div>
@@ -280,7 +280,7 @@ export default function AbuDhabiLuxuryAutomationClient() {
                 <h3 className="text-xl font-bold">Abu Dhabi Consultation</h3>
                 <button 
                   onClick={() => setShowConsultation(false)}
-                  className="text-gray-500 hover:text-gray-700 dark:text-gray-300"
+                  className="text-gray-500 hover:text-gray-700 dark:text-gray-300 dark:text-gray-300"
                 >
                   ✕
                 </button>

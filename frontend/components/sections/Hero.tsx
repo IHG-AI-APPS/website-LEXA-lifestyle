@@ -67,7 +67,7 @@ export default function Hero() {
 
               <div className="flex items-center gap-8 mb-12">
                 <div className="h-px w-24 bg-gradient-to-r from-platinum to-transparent" />
-                <p className="text-xl text-gray-600 font-light max-w-2xl">
+                <p className="text-xl text-gray-600 dark:text-gray-400 font-light max-w-2xl">
                   Seamlessly integrated. Architecturally refined.
                   <br className="hidden sm:block" />
                   Crestron · Lutron · Control4 · Savant

@@ -150,7 +150,7 @@ export default function HospitalityAutomationPage() {
               <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4 text-[#1A1A1A] dark:text-white">
                 Complete Guest Experience Platform
               </h2>
-              <p className="text-base sm:text-lg text-gray-600 max-w-3xl mx-auto">
+              <p className="text-base sm:text-lg text-gray-600 dark:text-gray-400 max-w-3xl mx-auto">
                 Every touchpoint optimized for comfort, convenience, and memorable stays
               </p>
             </motion.div>
@@ -175,7 +175,7 @@ export default function HospitalityAutomationPage() {
                         <h3 className="text-lg font-semibold mb-2 text-[#1A1A1A] dark:text-white">
                           {feature.title}
                         </h3>
-                        <p className="text-gray-600 text-sm leading-relaxed">
+                        <p className="text-gray-600 dark:text-gray-400 text-sm leading-relaxed">
                           {feature.description}
                         </p>
                       </div>
@@ -200,7 +200,7 @@ export default function HospitalityAutomationPage() {
               <h2 className="text-3xl sm:text-4xl font-bold mb-4 text-[#1A1A1A] dark:text-white">
                 Seamless Guest Journey
               </h2>
-              <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+              <p className="text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
                 Intelligent automation at every stage of the guest experience
               </p>
             </motion.div>
@@ -221,7 +221,7 @@ export default function HospitalityAutomationPage() {
                   <h3 className="text-xl font-bold mb-4 text-[#1A1A1A] dark:text-white">{stage.phase}</h3>
                   <ul className="space-y-2">
                     {stage.features.map((feature) => (
-                      <li key={feature} className="flex items-start gap-2 text-sm text-gray-600 dark:text-gray-400">
+                      <li key={feature} className="flex items-start gap-2 text-sm text-gray-600 dark:text-gray-400 dark:text-gray-400">
                         <CheckCircle2 className="h-4 w-4 text-[#1A1A1A] flex-shrink-0 mt-0.5" />
                         <span>{feature}</span>
                       </li>
@@ -246,7 +246,7 @@ export default function HospitalityAutomationPage() {
               <h2 className="text-3xl sm:text-4xl font-bold mb-4 text-[#1A1A1A] dark:text-white">
                 Proven Results for Hospitality
               </h2>
-              <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+              <p className="text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
                 Real impact on guest satisfaction and operational efficiency
               </p>
             </motion.div>
@@ -265,7 +265,7 @@ export default function HospitalityAutomationPage() {
                   >
                     <Icon className="h-10 w-10 mx-auto mb-4 text-[#1A1A1A] dark:text-white" />
                     <div className="text-4xl font-bold mb-2 text-[#1A1A1A] dark:text-white">{benefit.metric}</div>
-                    <div className="text-sm text-gray-600 dark:text-gray-400">{benefit.label}</div>
+                    <div className="text-sm text-gray-600 dark:text-gray-400 dark:text-gray-400">{benefit.label}</div>
                   </motion.div>
                 )
               })}

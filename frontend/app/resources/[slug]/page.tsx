@@ -53,7 +53,7 @@ export default function ArticleDetailPage() {
       <div className="min-h-screen bg-white pt-20 flex items-center justify-center">
         <div className="text-center">
           <h1 className="text-4xl font-semibold mb-4">Article Not Found</h1>
-          <p className="text-gray-600 mb-8">The article you&apos;re looking for doesn&apos;t exist.</p>
+          <p className="text-gray-600 dark:text-gray-400 mb-8">The article you&apos;re looking for doesn&apos;t exist.</p>
           <Link href="/resources">
             <Button>View All Resources</Button>
           </Link>
@@ -75,7 +75,7 @@ export default function ArticleDetailPage() {
       <section className="py-6 border-b border-gray-200 dark:border-gray-700">
         <div className="container mx-auto px-8 lg:px-16">
           <div className="max-w-4xl mx-auto">
-            <Link href="/resources" className="flex items-center gap-2 text-gray-600 hover:text-charcoal transition-colors">
+            <Link href="/resources" className="flex items-center gap-2 text-gray-600 dark:text-gray-400 hover:text-charcoal transition-colors">
               <ArrowLeft size={16} />
               <span className="text-sm">Back to Resources</span>
             </Link>
@@ -103,7 +103,7 @@ export default function ArticleDetailPage() {
               </h1>
 
               {/* Meta */}
-              <div className="flex flex-wrap items-center gap-6 text-sm text-gray-600 dark:text-gray-400">
+              <div className="flex flex-wrap items-center gap-6 text-sm text-gray-600 dark:text-gray-400 dark:text-gray-400">
                 <div className="flex items-center gap-2">
                   <User size={16} />
                   <span>{article.author}</span>
@@ -169,7 +169,7 @@ export default function ArticleDetailPage() {
                     return (
                       <ol key={index} className="list-decimal list-inside space-y-3 my-6">
                         {items.map((item, idx) => (
-                          <li key={idx} className="text-gray-700 leading-relaxed">
+                          <li key={idx} className="text-gray-700 dark:text-gray-300 leading-relaxed">
                             {item.replace(/^\d+\.\s*/, '').replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')}
                           </li>
                         ))}
@@ -178,7 +178,7 @@ export default function ArticleDetailPage() {
                   }
                   // Regular paragraph
                   return (
-                    <p key={index} className="text-xl text-gray-700 leading-relaxed mb-6"
+                    <p key={index} className="text-xl text-gray-700 dark:text-gray-300 leading-relaxed mb-6"
                        dangerouslySetInnerHTML={{
                          __html: paragraph.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
                        }}
@@ -200,7 +200,7 @@ export default function ArticleDetailPage() {
                   {article.tags.map((tag) => (
                     <span
                       key={tag}
-                      className="px-4 py-2 border border-gray-300 text-sm font-medium tracking-wide uppercase text-gray-600 dark:text-gray-400"
+                      className="px-4 py-2 border border-gray-300 text-sm font-medium tracking-wide uppercase text-gray-600 dark:text-gray-400 dark:text-gray-400"
                     >
                       {tag}
                     </span>
@@ -225,7 +225,7 @@ export default function ArticleDetailPage() {
               <h2 className="text-4xl font-semibold mb-6">
                 Ready to Get Started?
               </h2>
-              <p className="text-xl text-gray-600 mb-8">
+              <p className="text-xl text-gray-600 dark:text-gray-400 mb-8">
                 Let&apos;s discuss how we can bring these solutions to your space
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -263,7 +263,7 @@ export default function ArticleDetailPage() {
                 className="mb-12"
               >
                 <h2 className="text-4xl font-semibold mb-4">Related Articles</h2>
-                <p className="text-xl text-gray-600 dark:text-gray-400">Continue exploring</p>
+                <p className="text-xl text-gray-600 dark:text-gray-400 dark:text-gray-400">Continue exploring</p>
               </motion.div>
 
               <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -285,7 +285,7 @@ export default function ArticleDetailPage() {
                             className="object-cover grayscale-[20%] group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700"
                           />
                         </div>
-                        <h3 className="text-xl font-semibold mb-2 group-hover:text-gray-600 transition-colors">
+                        <h3 className="text-xl font-semibold mb-2 group-hover:text-gray-600 dark:text-gray-400 transition-colors">
                           {relatedArticle.title}
                         </h3>
                         <div className="flex items-center gap-2 text-sm text-gray-500">

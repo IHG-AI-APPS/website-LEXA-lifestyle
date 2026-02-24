@@ -386,7 +386,7 @@ export default function CommandPalette() {
                           className="flex items-center gap-3 px-3 py-2 rounded-lg cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-800 data-[selected=true]:bg-gray-100 dark:data-[selected=true]:bg-gray-800"
                           data-testid={`command-${command.id}`}
                         >
-                          <div className="flex items-center justify-center w-8 h-8 bg-gray-100 dark:bg-gray-800 rounded-lg text-gray-600 dark:text-gray-400">
+                          <div className="flex items-center justify-center w-8 h-8 bg-gray-100 dark:bg-gray-800 rounded-lg text-gray-600 dark:text-gray-400 dark:text-gray-400">
                             {command.icon}
                           </div>
                           <div className="flex-1">

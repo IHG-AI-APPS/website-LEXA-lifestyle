@@ -47,7 +47,7 @@ export default function PricingRanges() {
             <h2 className="h2 mb-3 md:mb-4">
               Typical Project Ranges
             </h2>
-            <p className="text-base md:text-lg text-gray-600 dark:text-gray-400">
+            <p className="text-base md:text-lg text-gray-600 dark:text-gray-400 dark:text-gray-400">
               Transparent pricing to help you plan your investment
             </p>
           </motion.div>
@@ -71,11 +71,11 @@ export default function PricingRanges() {
                 
                 <div className="text-xl sm:text-2xl font-bold mb-3 sm:mb-4 text-black">{type.range}</div>
                 
-                <p className="text-sm sm:text-base text-gray-600 mb-5 sm:mb-6">{type.description}</p>
+                <p className="text-sm sm:text-base text-gray-600 dark:text-gray-400 mb-5 sm:mb-6">{type.description}</p>
 
                 <div className="space-y-2 mb-5 sm:mb-6">
                   {type.features.map((feature, idx) => (
-                    <div key={idx} className="flex items-center gap-2 text-sm text-gray-700 dark:text-gray-300">
+                    <div key={idx} className="flex items-center gap-2 text-sm text-gray-700 dark:text-gray-300 dark:text-gray-300">
                       <div className="w-1.5 h-1.5 bg-black rounded-full"></div>
                       <span>{feature}</span>
                     </div>

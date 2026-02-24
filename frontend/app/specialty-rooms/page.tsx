@@ -90,18 +90,18 @@ export default function SpecialtyRoomsPage() {
               </span>
             </h1>
 
-            <p className="text-lg sm:text-xl text-gray-600 mb-8">
+            <p className="text-lg sm:text-xl text-gray-600 dark:text-gray-400 mb-8">
               Elevate your smart home with bespoke automation for wine cellars, game rooms, 
               private gyms, spas, and more. Each solution is professionally designed and seamlessly integrated.
             </p>
 
             <div className="flex flex-wrap gap-3 justify-center">
               <div className="px-4 py-2 bg-white dark:bg-gray-800 rounded-lg shadow-sm">
-                <p className="text-sm text-gray-600 dark:text-gray-400">Price Range</p>
+                <p className="text-sm text-gray-600 dark:text-gray-400 dark:text-gray-400">Price Range</p>
                 <p className="font-bold text-gray-900 dark:text-white dark:text-white">AED 28K - 85K</p>
               </div>
               <div className="px-4 py-2 bg-white dark:bg-gray-800 rounded-lg shadow-sm">
-                <p className="text-sm text-gray-600 dark:text-gray-400">Total Options</p>
+                <p className="text-sm text-gray-600 dark:text-gray-400 dark:text-gray-400">Total Options</p>
                 <p className="font-bold text-gray-900 dark:text-white dark:text-white">{rooms.length} Rooms</p>
               </div>
             </div>
@@ -120,7 +120,7 @@ export default function SpecialtyRoomsPage() {
                 className={`px-4 py-2 rounded-lg whitespace-nowrap font-medium transition-colors ${
                   filter === cat
                     ? 'bg-blue-600 text-white'
-                    : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
+                    : 'bg-gray-100 text-gray-700 dark:text-gray-300 hover:bg-gray-200'
                 }`}
               >
                 {cat === 'all' ? 'All Rooms' : cat}
@@ -177,7 +177,7 @@ export default function SpecialtyRoomsPage() {
                       <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2 group-hover:text-blue-600 transition-colors">
                         {room.name}
                       </h3>
-                      <p className="text-sm text-gray-600 mb-4 line-clamp-2">
+                      <p className="text-sm text-gray-600 dark:text-gray-400 mb-4 line-clamp-2">
                         {room.description}
                       </p>
 
@@ -204,7 +204,7 @@ export default function SpecialtyRoomsPage() {
           <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-4">
             Ready to Customize Your Smart Home?
           </h2>
-          <p className="text-lg text-gray-600 mb-8 max-w-2xl mx-auto">
+          <p className="text-lg text-gray-600 dark:text-gray-400 mb-8 max-w-2xl mx-auto">
             These specialty rooms can be added to any package tier. 
             High-End tier includes your choice of ANY 3 rooms.
           </p>

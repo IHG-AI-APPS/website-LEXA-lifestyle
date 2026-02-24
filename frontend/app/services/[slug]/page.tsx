@@ -230,7 +230,7 @@ export default function ServiceDetailPage() {
     return (
       <div className="min-h-screen flex flex-col items-center justify-center px-6">
         <h1 className="text-4xl font-bold mb-4">Service Not Found</h1>
-        <p className="text-gray-600 mb-8">The service you&apos;re looking for doesn&apos;t exist.</p>
+        <p className="text-gray-600 dark:text-gray-400 mb-8">The service you&apos;re looking for doesn&apos;t exist.</p>
         <Link href="/services">
           <Button variant="outline">View All Services</Button>
         </Link>
@@ -325,7 +325,7 @@ export default function ServiceDetailPage() {
             <div>
               <h2 className="text-3xl md:text-4xl font-bold mb-6">Overview</h2>
               <div className="prose prose-lg">
-                <p className="text-gray-700 leading-relaxed">
+                <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
                   {service.long_description || service.description}
                 </p>
               </div>
@@ -345,7 +345,7 @@ export default function ServiceDetailPage() {
                     className="flex items-start gap-3"
                   >
                     <CheckCircle2 className="w-5 h-5 text-[#E8DCC8] flex-shrink-0 mt-0.5" />
-                    <span className="text-gray-700 dark:text-gray-300">{feature}</span>
+                    <span className="text-gray-700 dark:text-gray-300 dark:text-gray-300">{feature}</span>
                   </motion.li>
                 ))}
               </ul>
@@ -359,7 +359,7 @@ export default function ServiceDetailPage() {
         <section className="bg-white dark:bg-gray-900">
           <div className="max-w-7xl mx-auto px-6 py-4">
             <h2 className="text-3xl md:text-4xl font-bold text-center mb-4">Our Process</h2>
-            <p className="text-center text-gray-600 mb-8 max-w-2xl mx-auto">
+            <p className="text-center text-gray-600 dark:text-gray-400 mb-8 max-w-2xl mx-auto">
               We follow a structured approach to ensure excellent results
             </p>
           </div>
@@ -381,7 +381,7 @@ export default function ServiceDetailPage() {
               {service.support_tiers.map((tier, index) => (
                 <div key={index} className="bg-white dark:bg-gray-800 p-6 rounded-lg border-2 border-gray-200 dark:border-gray-700 hover:border-[#E8DCC8] transition">
                   <h3 className="text-xl font-bold mb-3">{tier.tier}</h3>
-                  <p className="text-sm text-gray-600 mb-4">{tier.description}</p>
+                  <p className="text-sm text-gray-600 dark:text-gray-400 mb-4">{tier.description}</p>
                   <div className="text-2xl font-bold text-[#E8DCC8]">{tier.price}</div>
                 </div>
               ))}
@@ -437,7 +437,7 @@ export default function ServiceDetailPage() {
                   className="flex items-start gap-3 p-4 bg-gray-50 dark:bg-gray-800 rounded-lg border border-gray-200 dark:border-gray-700"
                 >
                   <FileText className="w-5 h-5 text-[#E8DCC8] flex-shrink-0 mt-0.5" />
-                  <span className="text-sm text-gray-700 dark:text-gray-300">{item}</span>
+                  <span className="text-sm text-gray-700 dark:text-gray-300 dark:text-gray-300">{item}</span>
                 </motion.div>
               ))}
             </div>
@@ -463,19 +463,19 @@ export default function ServiceDetailPage() {
                   {study.challenge && (
                     <div className="mb-4">
                       <h4 className="font-semibold text-gray-900 dark:text-white dark:text-white mb-2">Challenge:</h4>
-                      <p className="text-gray-700 dark:text-gray-300">{study.challenge}</p>
+                      <p className="text-gray-700 dark:text-gray-300 dark:text-gray-300">{study.challenge}</p>
                     </div>
                   )}
                   {study.solution && (
                     <div className="mb-4">
                       <h4 className="font-semibold text-gray-900 dark:text-white dark:text-white mb-2">Solution:</h4>
-                      <p className="text-gray-700 dark:text-gray-300">{study.solution}</p>
+                      <p className="text-gray-700 dark:text-gray-300 dark:text-gray-300">{study.solution}</p>
                     </div>
                   )}
                   {study.result && (
                     <div>
                       <h4 className="font-semibold text-gray-900 dark:text-white dark:text-white mb-2">Result:</h4>
-                      <p className="text-gray-700 font-medium">{study.result}</p>
+                      <p className="text-gray-700 dark:text-gray-300 font-medium">{study.result}</p>
                     </div>
                   )}
                 </motion.div>
@@ -499,17 +499,17 @@ export default function ServiceDetailPage() {
                       Pricing Range
                     </h3>
                     {service.pricing_guide.starting_from && (
-                      <p className="text-gray-700 mb-2">
+                      <p className="text-gray-700 dark:text-gray-300 mb-2">
                         <span className="font-semibold">Starting from:</span> {service.pricing_guide.starting_from}
                       </p>
                     )}
                     {service.pricing_guide.typical_range && (
-                      <p className="text-gray-700 mb-2">
+                      <p className="text-gray-700 dark:text-gray-300 mb-2">
                         <span className="font-semibold">Typical range:</span> {service.pricing_guide.typical_range}
                       </p>
                     )}
                     {service.pricing_guide.price_range && (
-                      <p className="text-gray-700 dark:text-gray-300">
+                      <p className="text-gray-700 dark:text-gray-300 dark:text-gray-300">
                         <span className="font-semibold">Range:</span> {service.pricing_guide.price_range}
                       </p>
                     )}
@@ -521,14 +521,14 @@ export default function ServiceDetailPage() {
                       <Clock className="w-5 h-5 text-[#E8DCC8]" />
                       Timeline
                     </h3>
-                    <p className="text-gray-700 dark:text-gray-300">{service.pricing_guide.timeline}</p>
+                    <p className="text-gray-700 dark:text-gray-300 dark:text-gray-300">{service.pricing_guide.timeline}</p>
                   </div>
                 )}
               </div>
               {service.pricing_guide.includes && (
                 <div className="mt-6 pt-6 border-t border-gray-200 dark:border-gray-700">
                   <h4 className="font-semibold mb-2">What&apos;s Included:</h4>
-                  <p className="text-gray-700 text-sm">{service.pricing_guide.includes}</p>
+                  <p className="text-gray-700 dark:text-gray-300 text-sm">{service.pricing_guide.includes}</p>
                 </div>
               )}
             </div>
@@ -552,7 +552,7 @@ export default function ServiceDetailPage() {
                   className="bg-white dark:bg-gray-800 p-6 rounded-lg border border-gray-200 dark:border-gray-700"
                 >
                   <h3 className="font-bold text-lg mb-3">{item.question}</h3>
-                  <p className="text-gray-700 leading-relaxed">{item.answer}</p>
+                  <p className="text-gray-700 dark:text-gray-300 leading-relaxed">{item.answer}</p>
                 </motion.div>
               ))}
             </div>

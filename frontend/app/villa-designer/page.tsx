@@ -146,13 +146,13 @@ export default function VillaDesignerPage() {
               Thank You, {formData.name}!
             </h1>
             
-            <p className="text-xl text-gray-700 mb-8">
+            <p className="text-xl text-gray-700 dark:text-gray-300 mb-8">
               Your system concept will be prepared within 24 hours.
             </p>
             
             <div className="bg-gradient-to-r from-green-50 to-blue-50 rounded-2xl p-6 mb-8">
-              <p className="text-gray-700 font-medium mb-2">What&apos;s Next?</p>
-              <ul className="text-left text-gray-600 space-y-2">
+              <p className="text-gray-700 dark:text-gray-300 font-medium mb-2">What&apos;s Next?</p>
+              <ul className="text-left text-gray-600 dark:text-gray-400 space-y-2">
                 <li className="flex items-start gap-2">
                   <Check size={20} className="text-green-600 flex-shrink-0 mt-0.5" />
                   <span>Our luxury design team will review your requirements</span>

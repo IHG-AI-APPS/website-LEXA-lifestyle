@@ -141,7 +141,7 @@ export default function DashboardPage() {
           <div className="flex items-center justify-between flex-wrap gap-4">
             <div>
               <h1 className="text-3xl font-semibold text-gray-900 dark:text-white mb-2">My Projects</h1>
-              <p className="text-gray-600 dark:text-gray-400">Track and manage your smart home projects</p>
+              <p className="text-gray-600 dark:text-gray-400 dark:text-gray-400">Track and manage your smart home projects</p>
             </div>
             <div className="flex items-center gap-3">
               <Button
@@ -184,7 +184,7 @@ export default function DashboardPage() {
               <FolderOpen className="w-8 h-8 text-gray-400" />
             </div>
             <h2 className="text-xl font-semibold text-gray-900 dark:text-white mb-2">No Projects Yet</h2>
-            <p className="text-gray-600 mb-6 max-w-md mx-auto">
+            <p className="text-gray-600 dark:text-gray-400 mb-6 max-w-md mx-auto">
               Start building your smart home project and it will appear here. 
               Your progress is automatically saved.
             </p>

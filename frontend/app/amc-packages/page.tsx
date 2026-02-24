@@ -220,7 +220,7 @@ export default function AMCPackagesPage() {
               <h2 className="text-3xl sm:text-4xl lg:text-5xl font-heading font-bold mb-4 text-[#1A1A1A] dark:text-white">
                 Annual Maintenance Packages
               </h2>
-              <p className="text-base sm:text-lg text-gray-600 max-w-3xl mx-auto">
+              <p className="text-base sm:text-lg text-gray-600 dark:text-gray-400 max-w-3xl mx-auto">
                 Choose the right level of care for your smart building
               </p>
             </motion.div>
@@ -243,15 +243,15 @@ export default function AMCPackagesPage() {
                     </div>
                   )}
                   <h3 className="text-2xl font-bold mb-1 text-[#1A1A1A] dark:text-white">{pkg.name}</h3>
-                  <p className="text-sm text-gray-600 mb-4">{pkg.subtitle}</p>
+                  <p className="text-sm text-gray-600 dark:text-gray-400 mb-4">{pkg.subtitle}</p>
                   <div className="text-3xl font-bold mb-2 text-[#1A1A1A] dark:text-white">{pkg.price}</div>
-                  <p className="text-sm text-gray-600 mb-6">{pkg.description}</p>
+                  <p className="text-sm text-gray-600 dark:text-gray-400 mb-6">{pkg.description}</p>
                   
                   <div className="space-y-3 mb-6">
                     {pkg.features.map((feature) => (
                       <div key={feature} className="flex items-start gap-2">
                         <CheckCircle2 className="h-5 w-5 text-[#1A1A1A] flex-shrink-0 mt-0.5" />
-                        <span className="text-sm text-gray-700 dark:text-gray-300">{feature}</span>
+                        <span className="text-sm text-gray-700 dark:text-gray-300 dark:text-gray-300">{feature}</span>
                       </div>
                     ))}
                   </div>
@@ -262,7 +262,7 @@ export default function AMCPackagesPage() {
                   </div>
 
                   <div className="border-t border-gray-200 pt-4 mb-6">
-                    <div className="text-sm text-gray-600 mb-1">Ideal for:</div>
+                    <div className="text-sm text-gray-600 dark:text-gray-400 mb-1">Ideal for:</div>
                     <div className="text-sm font-semibold text-[#1A1A1A] dark:text-white">{pkg.ideal}</div>
                   </div>
 
@@ -295,7 +295,7 @@ export default function AMCPackagesPage() {
               <h2 className="text-3xl sm:text-4xl font-heading font-bold mb-4 text-[#1A1A1A] dark:text-white">
                 What&apos;s Included in AMC
               </h2>
-              <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+              <p className="text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
                 Comprehensive care covering all aspects of your smart building system
               </p>
             </motion.div>
@@ -320,7 +320,7 @@ export default function AMCPackagesPage() {
                     </div>
                     <ul className="space-y-2">
                       {category.items.map((item) => (
-                        <li key={item} className="flex items-start gap-2 text-sm text-gray-600 dark:text-gray-400">
+                        <li key={item} className="flex items-start gap-2 text-sm text-gray-600 dark:text-gray-400 dark:text-gray-400">
                           <CheckCircle2 className="h-4 w-4 text-[#1A1A1A] flex-shrink-0 mt-0.5" />
                           <span>{item}</span>
                         </li>
@@ -363,7 +363,7 @@ export default function AMCPackagesPage() {
                     <Icon className="h-10 w-10 mx-auto mb-4 text-[#1A1A1A] dark:text-white" />
                     <div className="text-4xl font-bold mb-2 text-[#1A1A1A] dark:text-white">{benefit.stat}</div>
                     <div className="text-sm font-semibold mb-2 text-[#1A1A1A] dark:text-white">{benefit.title}</div>
-                    <div className="text-xs text-gray-600 dark:text-gray-400">{benefit.description}</div>
+                    <div className="text-xs text-gray-600 dark:text-gray-400 dark:text-gray-400">{benefit.description}</div>
                   </motion.div>
                 )
               })}

@@ -87,7 +87,7 @@ export default function ObjectiveSelector({ sessionId, onComplete }: ObjectiveSe
           <p className="text-sm text-gray-500 uppercase tracking-widest mb-2">
             What matters most to you?
           </p>
-          <p className="text-gray-600 text-sm">
+          <p className="text-gray-600 dark:text-gray-400 text-sm">
             Select 2-4 objectives. The intelligence engine will prioritize accordingly.
           </p>
         </div>
@@ -131,7 +131,7 @@ export default function ObjectiveSelector({ sessionId, onComplete }: ObjectiveSe
 
                 {/* Label */}
                 <h3 className={`text-lg font-medium mb-2 transition-colors duration-300 ${
-                  isSelected ? 'text-gray-900' : 'text-gray-600 group-hover:text-gray-900'
+                  isSelected ? 'text-gray-900' : 'text-gray-600 dark:text-gray-400 group-hover:text-gray-900'
                 }`}>
                   {objective.name}
                 </h3>
@@ -149,7 +149,7 @@ export default function ObjectiveSelector({ sessionId, onComplete }: ObjectiveSe
 
         {/* Counter & Continue */}
         <div className="text-center">
-          <div className="text-sm text-gray-600 mb-6">
+          <div className="text-sm text-gray-600 dark:text-gray-400 mb-6">
             {selectedObjectives.length > 0 ? (
               <span>
                 <span className="text-blue-600 font-semibold font-mono">{selectedObjectives.length}</span> objective{selectedObjectives.length > 1 ? 's' : ''} selected

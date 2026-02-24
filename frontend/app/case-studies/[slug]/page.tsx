@@ -42,7 +42,7 @@ export default function CaseStudyPage() {
 
   if (!project) {
     return <div className="min-h-screen bg-white pt-20 flex items-center justify-center">
-      <div className="text-gray-600 dark:text-gray-400">Case study not found</div>
+      <div className="text-gray-600 dark:text-gray-400 dark:text-gray-400">Case study not found</div>
     </div>
   }
 
@@ -52,7 +52,7 @@ export default function CaseStudyPage() {
       <section className="py-20 bg-gray-50 dark:bg-gray-800">
         <div className="container mx-auto px-8 lg:px-16">
           <div className="max-w-7xl mx-auto">
-            <Link href="/projects" className="inline-flex items-center gap-2 text-gray-600 hover:text-charcoal mb-8">
+            <Link href="/projects" className="inline-flex items-center gap-2 text-gray-600 dark:text-gray-400 hover:text-charcoal mb-8">
               <ArrowLeft size={20} />
               Back to Projects
             </Link>
@@ -131,7 +131,7 @@ export default function CaseStudyPage() {
                 viewport={{ once: true }}
               >
                 <h2 className="text-4xl font-semibold mb-6">The Challenge</h2>
-                <p className="text-lg text-gray-600 leading-relaxed whitespace-pre-line">
+                <p className="text-lg text-gray-600 dark:text-gray-400 leading-relaxed whitespace-pre-line">
                   {project.challenge}
                 </p>
               </motion.div>
@@ -177,7 +177,7 @@ export default function CaseStudyPage() {
                   {project.technical_specs.map((spec, index) => (
                     <div key={index} className="flex items-start gap-3">
                       <CheckCircle size={20} className="text-charcoal mt-1 flex-shrink-0" strokeWidth={1.5} />
-                      <span className="text-gray-600 dark:text-gray-400">{spec}</span>
+                      <span className="text-gray-600 dark:text-gray-400 dark:text-gray-400">{spec}</span>
                     </div>
                   ))}
                 </div>
@@ -199,7 +199,7 @@ export default function CaseStudyPage() {
                 viewport={{ once: true }}
               >
                 <h2 className="text-4xl font-semibold mb-6">The Outcome</h2>
-                <p className="text-lg text-gray-600 leading-relaxed whitespace-pre-line">
+                <p className="text-lg text-gray-600 dark:text-gray-400 leading-relaxed whitespace-pre-line">
                   {project.outcome}
                 </p>
               </motion.div>
@@ -220,14 +220,14 @@ export default function CaseStudyPage() {
                 viewport={{ once: true }}
                 className="text-center"
               >
-                <p className="text-2xl font-normal text-gray-700 mb-8 italic">
+                <p className="text-2xl font-normal text-gray-700 dark:text-gray-300 mb-8 italic">
                   &quot;{project.client_testimonial}&quot;
                 </p>
                 {project.client_name && (
                   <div>
                     <div className="font-semibold">{project.client_name}</div>
                     {project.client_role && (
-                      <div className="text-sm text-gray-600 dark:text-gray-400">{project.client_role}</div>
+                      <div className="text-sm text-gray-600 dark:text-gray-400 dark:text-gray-400">{project.client_role}</div>
                     )}
                   </div>
                 )}
@@ -278,7 +278,7 @@ export default function CaseStudyPage() {
               viewport={{ once: true }}
             >
               <h2 className="text-5xl font-semibold mb-6">Ready for Your Project?</h2>
-              <p className="text-xl text-gray-600 font-normal mb-10">
+              <p className="text-xl text-gray-600 dark:text-gray-400 font-normal mb-10">
                 Let&apos;s discuss how we can transform your space.
               </p>
               <Button

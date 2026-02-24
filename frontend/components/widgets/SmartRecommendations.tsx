@@ -255,7 +255,7 @@ export default function SmartRecommendations({
                         
                         {/* Category chip on image */}
                         <div className="absolute bottom-3 left-3">
-                          <span className="px-2.5 py-1 bg-white/90 dark:bg-gray-900/90 backdrop-blur-sm rounded-md text-[10px] font-semibold text-gray-700 dark:text-gray-300 uppercase tracking-wider">
+                          <span className="px-2.5 py-1 bg-white/90 dark:bg-gray-900/90 backdrop-blur-sm rounded-md text-[10px] font-semibold text-gray-700 dark:text-gray-300 dark:text-gray-300 uppercase tracking-wider">
                             {rec.category}
                           </span>
                         </div>

@@ -34,7 +34,7 @@ export default function RelatedPagesNav({
             className="text-center mb-8 md:mb-10"
           >
             <h2 className="text-2xl md:text-3xl font-bold mb-2">{title}</h2>
-            <p className="text-sm md:text-base text-gray-600 dark:text-gray-400">{subtitle}</p>
+            <p className="text-sm md:text-base text-gray-600 dark:text-gray-400 dark:text-gray-400">{subtitle}</p>
           </motion.div>
 
           {/* Related Pages Grid */}
@@ -60,7 +60,7 @@ export default function RelatedPagesNav({
                     {page.title}
                     <ChevronRight className="h-5 w-5 transform group-hover:translate-x-1 transition-transform" />
                   </h3>
-                  <p className="text-sm text-gray-600 leading-relaxed">
+                  <p className="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">
                     {page.description}
                   </p>
                 </Link>

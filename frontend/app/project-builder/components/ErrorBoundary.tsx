@@ -55,13 +55,13 @@ export default class ErrorBoundary extends Component<Props, State> {
               Something went wrong
             </h2>
             
-            <p className="text-gray-600 mb-6">
+            <p className="text-gray-600 dark:text-gray-400 mb-6">
               We encountered an unexpected error. Don&apos;t worry, your progress has been saved.
             </p>
             
             {this.state.error && (
               <div className="bg-gray-100 rounded p-4 mb-6 text-left">
-                <p className="text-xs font-mono text-gray-700 dark:text-gray-300">
+                <p className="text-xs font-mono text-gray-700 dark:text-gray-300 dark:text-gray-300">
                   {this.state.error.message}
                 </p>
               </div>

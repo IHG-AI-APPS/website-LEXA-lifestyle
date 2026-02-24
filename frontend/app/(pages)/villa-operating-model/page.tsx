@@ -115,7 +115,7 @@ export default function VillaOperatingModelPage() {
               <span className="text-transparent bg-clip-text metallic-gradient">OPERATING MODEL</span>
             </h1>
             <div className="h-px w-32 bg-gradient-to-r from-platinum to-transparent mb-8 mx-auto" />
-            <p className="text-lg text-gray-600 leading-relaxed max-w-2xl mx-auto">
+            <p className="text-lg text-gray-600 dark:text-gray-400 leading-relaxed max-w-2xl mx-auto">
               Your home adapts to people, not keys. Four distinct roles ensure everyone has the right access 
               at the right time—from full control for owners to time-restricted zones for staff.
             </p>
@@ -146,7 +146,7 @@ export default function VillaOperatingModelPage() {
                       </div>
                       <div className="flex-1">
                         <h3 className="text-2xl font-semibold mb-2">{role.title}</h3>
-                        <p className="text-sm text-gray-600 dark:text-gray-400">{role.description}</p>
+                        <p className="text-sm text-gray-600 dark:text-gray-400 dark:text-gray-400">{role.description}</p>
                       </div>
                     </div>
 
@@ -155,7 +155,7 @@ export default function VillaOperatingModelPage() {
                       {role.features.map((feature, i) => (
                         <div key={i} className="flex items-start gap-2">
                           <div className="w-1 h-1 rounded-full bg-black mt-2 flex-shrink-0" />
-                          <span className="text-sm text-gray-700 dark:text-gray-300">{feature}</span>
+                          <span className="text-sm text-gray-700 dark:text-gray-300 dark:text-gray-300">{feature}</span>
                         </div>
                       ))}
                     </div>
@@ -186,7 +186,7 @@ export default function VillaOperatingModelPage() {
             className="text-center mb-12"
           >
             <h2 className="text-3xl md:text-4xl font-bold mb-4">Why Role-Based Access?</h2>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+            <p className="text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
               Intelligent access management enhances security while maintaining operational efficiency
             </p>
           </motion.div>
@@ -207,7 +207,7 @@ export default function VillaOperatingModelPage() {
                     <Icon className="w-8 h-8 text-black" strokeWidth={1.5} />
                   </div>
                   <h3 className="text-lg font-semibold mb-2">{benefit.title}</h3>
-                  <p className="text-sm text-gray-600 dark:text-gray-400">{benefit.description}</p>
+                  <p className="text-sm text-gray-600 dark:text-gray-400 dark:text-gray-400">{benefit.description}</p>
                 </motion.div>
               )
             })}
@@ -236,12 +236,12 @@ export default function VillaOperatingModelPage() {
                 className="bg-gradient-to-r from-blue-50 to-transparent p-6 border-l-4 border-blue-600"
               >
                 <h3 className="text-xl font-semibold mb-2">Scenario: Weekend Guests</h3>
-                <p className="text-gray-700 mb-4">
+                <p className="text-gray-700 dark:text-gray-300 mb-4">
                   Your family is hosting friends for the weekend. You create temporary guest access codes valid 
                   Friday through Sunday. Guests can control lights, climate, and entertainment in their rooms and 
                   common areas. Monday morning, access automatically expires—no manual management needed.
                 </p>
-                <div className="text-sm text-gray-600 italic">
+                <div className="text-sm text-gray-600 dark:text-gray-400 italic">
                   <strong>Result:</strong> Guests feel welcomed with full comfort control, while family areas remain private.
                 </div>
               </motion.div>
@@ -254,12 +254,12 @@ export default function VillaOperatingModelPage() {
                 className="bg-gradient-to-r from-orange-50 to-transparent p-6 border-l-4 border-orange-600"
               >
                 <h3 className="text-xl font-semibold mb-2">Scenario: Daily Staff Operations</h3>
-                <p className="text-gray-700 mb-4">
+                <p className="text-gray-700 dark:text-gray-300 mb-4">
                   Your housekeeping staff arrives at 7 AM. Their access cards work only during 7 AM - 5 PM on weekdays, 
                   and only in service areas (kitchen, laundry, guest rooms). The master bedroom, home office, and children&apos;s 
                   rooms are automatically off-limits. Movement is logged for accountability.
                 </p>
-                <div className="text-sm text-gray-600 italic">
+                <div className="text-sm text-gray-600 dark:text-gray-400 italic">
                   <strong>Result:</strong> Staff can work efficiently while family privacy is guaranteed and all activity is auditable.
                 </div>
               </motion.div>
@@ -272,12 +272,12 @@ export default function VillaOperatingModelPage() {
                 className="bg-gradient-to-r from-purple-50 to-transparent p-6 border-l-4 border-purple-600"
               >
                 <h3 className="text-xl font-semibold mb-2">Scenario: Family Personalization</h3>
-                <p className="text-gray-700 mb-4">
+                <p className="text-gray-700 dark:text-gray-300 mb-4">
                   Each family member has a unique profile. When your daughter enters her bedroom, her preferred lighting, 
                   temperature, and music automatically activate. Your son&apos;s room has different settings tailored to his preferences. 
                   Everyone has full control of their personal spaces while common areas adapt to whoever&apos;s present.
                 </p>
-                <div className="text-sm text-gray-600 italic">
+                <div className="text-sm text-gray-600 dark:text-gray-400 italic">
                   <strong>Result:</strong> Truly personalized comfort without manual adjustment—the home remembers and adapts.
                 </div>
               </motion.div>

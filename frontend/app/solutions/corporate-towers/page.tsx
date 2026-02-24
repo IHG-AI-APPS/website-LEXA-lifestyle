@@ -140,7 +140,7 @@ export default function CorporateTowersPage() {
               <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4 text-[#1A1A1A] dark:text-white">
                 Complete Building Intelligence
               </h2>
-              <p className="text-base sm:text-lg text-gray-600 max-w-3xl mx-auto">
+              <p className="text-base sm:text-lg text-gray-600 dark:text-gray-400 max-w-3xl mx-auto">
                 Comprehensive solutions designed specifically for corporate towers and office buildings
               </p>
             </motion.div>
@@ -165,7 +165,7 @@ export default function CorporateTowersPage() {
                         <h3 className="text-lg font-semibold mb-2 text-[#1A1A1A] dark:text-white">
                           {feature.title}
                         </h3>
-                        <p className="text-gray-600 text-sm leading-relaxed">
+                        <p className="text-gray-600 dark:text-gray-400 text-sm leading-relaxed">
                           {feature.description}
                         </p>
                       </div>
@@ -190,7 +190,7 @@ export default function CorporateTowersPage() {
               <h2 className="text-3xl sm:text-4xl font-bold mb-4 text-[#1A1A1A] dark:text-white">
                 Measurable Business Impact
               </h2>
-              <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+              <p className="text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
                 Real results from our corporate tower implementations across the UAE
               </p>
             </motion.div>
@@ -209,7 +209,7 @@ export default function CorporateTowersPage() {
                   >
                     <Icon className="h-10 w-10 mx-auto mb-4 text-[#1A1A1A] dark:text-white" />
                     <div className="text-4xl font-bold mb-2 text-[#1A1A1A] dark:text-white">{benefit.metric}</div>
-                    <div className="text-sm text-gray-600 dark:text-gray-400">{benefit.label}</div>
+                    <div className="text-sm text-gray-600 dark:text-gray-400 dark:text-gray-400">{benefit.label}</div>
                   </motion.div>
                 )
               })}
@@ -279,7 +279,7 @@ export default function CorporateTowersPage() {
               <h2 className="text-3xl sm:text-4xl font-bold mb-4 text-[#1A1A1A] dark:text-white">
                 Ready to Transform Your Corporate Tower?
               </h2>
-              <p className="text-lg text-gray-600 mb-8 max-w-2xl mx-auto">
+              <p className="text-lg text-gray-600 dark:text-gray-400 mb-8 max-w-2xl mx-auto">
                 Schedule a free assessment and discover how much you can save with building intelligence.
               </p>
               <Button
