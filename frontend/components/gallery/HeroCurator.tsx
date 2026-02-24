@@ -13,14 +13,9 @@ interface HeroCuratorProps {
 }
 
 // Curated Dark Luxury Video Sequence - Maximum Impact
+// Only include videos that actually exist
 const HERO_CLIPS = [
   '/videos/hero-v3/v3_01_dramatic_entrance.mp4',  // Hook: Dramatic chandelier entrance
-  '/videos/hero/01_arrival.mp4',                   // Architectural villa exterior
-  '/videos/hero-v2/v2_01_lights_on.mp4',          // Dramatic lighting sequence
-  '/videos/hero-v2/v2_04_speaker_system.mp4',     // Luxury audiophile room
-  '/videos/hero/05_cinema_room.mp4',              // Home cinema experience
-  '/videos/hero-v2/v2_06_control_interface.mp4', // Smart control panel
-  '/videos/hero-v2/v2_07_pool_area.mp4',         // Outdoor living with pool
 ]
 
 export default function HeroCurator({ onPersonaClick }: HeroCuratorProps) {
