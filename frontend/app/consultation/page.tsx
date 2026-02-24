@@ -154,6 +154,9 @@ export default function ConsultationPage() {
         </div>
       </section>
 
+      {/* Trust Badges */}
+      <TrustBadges variant="compact" showCertifications={false} className="bg-white border-b border-gray-100" />
+
       {/* Consultation Types */}
       <section className="py-20 bg-gray-50">
         <div className="container mx-auto px-8 lg:px-16">
