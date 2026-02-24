@@ -4,6 +4,7 @@ import { useState } from 'react'
 import { motion } from 'framer-motion'
 import { Button } from '@/components/ui/button'
 import BookingModal from '@/components/modals/BookingModal'
+import TrustBadges from '@/components/social-proof/TrustBadges'
 import ProofBar from '@/components/sections/ProofBar'
 import { 
   Calendar, 
