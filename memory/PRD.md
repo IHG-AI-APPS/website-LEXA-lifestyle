@@ -1,12 +1,43 @@
 # LEXA Smart Home Platform - Product Requirements Document
 
-**Version**: 9.24  
+**Version**: 9.25  
 **Last Updated**: February 24, 2026  
-**Status**: Sales Intelligence + Email Automation Complete
+**Status**: Logo Fix + Mega Menu AI Images Complete
 
 ---
 
-## Latest Updates (v9.24)
+## Latest Updates (v9.25)
+
+### Logo Adaptation Fix & Mega Menu AI Images (Feb 24, 2026)
+
+**STATUS: COMPLETED & TESTED (100%)**
+
+#### Logo Fix:
+- **Problem**: LEXA logo was not adapting correctly to backgrounds across pages/themes
+- **Solution**: Replaced JS theme-state-dependent logo switching with CSS `dark:invert` approach
+  - Uses `/lexa-black.png` as the base on scrolled/non-homepage header (light mode)
+  - CSS `dark:invert` automatically inverts to white in dark mode
+  - White logo remains for homepage hero (transparent header over dark background)
+- **Files Modified**:
+  - `/app/frontend/components/layout/Header.tsx` - Line 153: CSS-based dark mode adaptation
+  - `/app/frontend/app/ar-seo/[slug]/page.tsx` - Added `dark:invert` class
+  - `/app/frontend/app/ar-seo/blog/[slug]/page.tsx` - Added `dark:invert` class
+
+#### Mega Menu AI Images:
+- Generated 4 high-quality AI images (Imagen 4.0) for all mega menu Column 4 (right corner):
+  1. **Solutions**: Luxury home cinema room with Dolby Atmos, gold ambient lighting
+  2. **Services**: Smart home control panel installation with fiber optic cabling
+  3. **Intelligence**: Futuristic building management dashboard with holographic data
+  4. **Packages**: Luxury Dubai villa exterior at golden hour with smart features
+- **Files Modified**:
+  - `/app/frontend/components/navigation/SolutionsMegaMenu.tsx` - Replaced Unsplash image
+  - `/app/frontend/components/navigation/ServicesMegaMenu.tsx` - Replaced Cog icon placeholder, added SafeImage import
+  - `/app/frontend/components/navigation/IntelligenceMegaMenu.tsx` - Replaced Brain icon placeholder
+  - `/app/frontend/components/navigation/PackagesMegaMenu.tsx` - Replaced Brain icon placeholder
+
+---
+
+## Previous Updates (v9.24)
 
 ### Automated Email Notifications for Hot Leads (Feb 24, 2026)
 
