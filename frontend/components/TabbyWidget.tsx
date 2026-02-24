@@ -34,7 +34,7 @@ export default function TabbyWidget({ totalAmount, currency = 'AED' }: TabbyWidg
     <div className="bg-gradient-to-br from-purple-50 to-pink-50 rounded-xl p-6 border-2 border-purple-200">
       {/* Header */}
       <div className="flex items-center gap-3 mb-4">
-        <div className="bg-white p-2 rounded-lg">
+        <div className="bg-white dark:bg-gray-800 p-2 rounded-lg">
           <CreditCard className="text-purple-600" size={24} />
         </div>
         <div>
@@ -51,8 +51,8 @@ export default function TabbyWidget({ totalAmount, currency = 'AED' }: TabbyWidg
             onClick={() => setSelectedPlan(key as '4' | '12')}
             className={`relative p-4 border-2 rounded-lg transition-all text-left ${
               selectedPlan === key
-                ? 'border-purple-600 bg-white shadow-md'
-                : 'border-purple-200 bg-white/50 hover:border-purple-400'
+                ? 'border-purple-600 bg-white dark:bg-gray-800 shadow-md'
+                : 'border-purple-200 bg-white/50 dark:bg-gray-800/50 hover:border-purple-400'
             }`}
           >
             {plan.popular && (
@@ -70,7 +70,7 @@ export default function TabbyWidget({ totalAmount, currency = 'AED' }: TabbyWidg
       </div>
 
       {/* Selected Plan Details */}
-      <div className="bg-white rounded-lg p-4 mb-4">
+      <div className="bg-white dark:bg-gray-800 rounded-lg p-4 mb-4">
         <div className="flex items-center gap-2 mb-3">
           <TrendingDown className="text-green-600" size={20} />
           <span className="font-semibold text-sm">Your Payment Plan</span>

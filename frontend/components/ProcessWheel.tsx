@@ -43,7 +43,7 @@ export default function ProcessWheel({ steps }: ProcessWheelProps) {
               )}
 
               {/* Step Card */}
-              <div className="relative bg-white border-2 border-gray-200 rounded-lg p-6 hover:border-[#E8DCC8] transition-all hover:shadow-lg z-10">
+              <div className="relative bg-white dark:bg-gray-800 border-2 border-gray-200 dark:border-gray-700 rounded-lg p-6 hover:border-[#E8DCC8] transition-all hover:shadow-lg z-10">
                 {/* Step Number */}
                 <div className={`w-16 h-16 rounded-full bg-gradient-to-br ${colors[index % colors.length]} flex items-center justify-center mb-4 mx-auto`}>
                   <span className="text-2xl font-bold text-white">{index + 1}</span>
