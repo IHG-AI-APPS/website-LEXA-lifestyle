@@ -760,7 +760,10 @@ export default function ROICalculatorPage() {
                       Our experts will help you maximize your ROI.
                     </p>
                     <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                      <Button className="h-12 px-8 bg-gradient-to-r from-emerald-500 to-teal-500 hover:from-emerald-600 hover:to-teal-600 text-white border-0 rounded-xl font-semibold">
+                      <Button 
+                        className="h-12 px-8 bg-gradient-to-r from-emerald-500 to-teal-500 hover:from-emerald-600 hover:to-teal-600 text-white border-0 rounded-xl font-semibold"
+                        onClick={() => setShowBookingModal(true)}
+                      >
                         Schedule Consultation
                       </Button>
                       <Button variant="outline" className="h-12 px-8 border-white/20 text-white hover:bg-white/10 rounded-xl font-semibold">
