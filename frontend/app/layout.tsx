@@ -63,9 +63,15 @@ export default function RootLayout({
         {/* DNS Prefetch for external domains */}
         <link rel="dns-prefetch" href="https://images.unsplash.com" />
         <link rel="dns-prefetch" href="https://images.pexels.com" />
+        <link rel="dns-prefetch" href="https://static.prod-images.emergentagent.com" />
         
         {/* Preconnect for critical resources */}
         <link rel="preconnect" href={process.env.NEXT_PUBLIC_BACKEND_URL || ''} crossOrigin="anonymous" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        
+        {/* Preload critical fonts */}
+        <link rel="preload" as="font" type="font/woff2" href="/_next/static/media/outfit-variable.woff2" crossOrigin="anonymous" />
         
         {/* Structured Data */}
         <script
