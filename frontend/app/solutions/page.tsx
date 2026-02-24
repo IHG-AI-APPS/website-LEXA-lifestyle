@@ -70,9 +70,9 @@ export default function SolutionsPage() {
   }
 
   return (
-    <div className="min-h-screen bg-white pt-20">
+    <div className="min-h-screen bg-white dark:bg-gray-900 pt-20">
       {/* Hero - Centered */}
-      <section className="py-16 md:py-20 bg-gray-50">
+      <section className="py-16 md:py-20 bg-gray-50 dark:bg-gray-800">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
           <div className="mx-auto">
             <motion.div
