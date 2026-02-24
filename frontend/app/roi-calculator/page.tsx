@@ -5,6 +5,7 @@ import { motion, AnimatePresence } from 'framer-motion'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import PricingDisclaimer from '@/components/shared/PricingDisclaimer'
+import BookingModal from '@/components/modals/BookingModal'
 import { 
   CheckCircle, TrendingUp, Leaf, DollarSign, Clock, BarChart3, 
   Home, Zap, Shield, Tv, Sun, Wifi, Building, 
