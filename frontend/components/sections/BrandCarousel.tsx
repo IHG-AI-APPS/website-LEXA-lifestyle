@@ -43,12 +43,12 @@ export default function BrandCarousel() {
   if (brands.length === 0) return null
 
   return (
-    <section className="py-24 bg-white border-y border-gray-200 overflow-hidden">
+    <section className="py-24 bg-white dark:bg-[#0a0f1a] border-y border-gray-200 dark:border-gray-800 overflow-hidden">
       <div className="container mx-auto px-4 md:px-8 max-w-7xl mb-16">
-        <span className="text-xs md:text-sm tracking-[0.2em] uppercase text-gray-600 font-bold block mb-6">
+        <span className="text-xs md:text-sm tracking-[0.2em] uppercase text-gray-600 dark:text-gray-400 font-bold block mb-6">
           Our Partners
         </span>
-        <h2 className="text-4xl md:text-5xl font-heading font-semibold tracking-tight text-black">
+        <h2 className="text-4xl md:text-5xl font-heading font-semibold tracking-tight text-black dark:text-white">
           BRANDS WE LOVE
         </h2>
       </div>
@@ -59,7 +59,7 @@ export default function BrandCarousel() {
           {duplicatedBrands.map((brand, index) => (
             <div
               key={`${brand.id}-${index}`}
-              className="flex-shrink-0 w-32 h-24 relative grayscale opacity-50 hover:grayscale-0 hover:opacity-100 transition-all duration-500"
+              className="flex-shrink-0 w-32 h-24 relative grayscale opacity-50 hover:grayscale-0 hover:opacity-100 transition-all duration-500 dark:invert dark:brightness-200"
             >
               <SafeImage
                 src={brand.logo}
