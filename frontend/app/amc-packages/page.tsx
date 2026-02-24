@@ -292,7 +292,7 @@ export default function AMCPackagesPage() {
               viewport={{ once: true }}
               className="text-center mb-16"
             >
-              <h2 className="text-3xl sm:text-4xl font-bold mb-4 text-[#1A1A1A]">
+              <h2 className="text-3xl sm:text-4xl font-heading font-bold mb-4 text-[#1A1A1A]">
                 What&apos;s Included in AMC
               </h2>
               <p className="text-lg text-gray-600 max-w-2xl mx-auto">
@@ -343,7 +343,7 @@ export default function AMCPackagesPage() {
               viewport={{ once: true }}
               className="text-center mb-16"
             >
-              <h2 className="text-3xl sm:text-4xl font-bold mb-4 text-[#1A1A1A]">
+              <h2 className="text-3xl sm:text-4xl font-heading font-bold mb-4 text-[#1A1A1A]">
                 Why Choose Our AMC
               </h2>
             </motion.div>
