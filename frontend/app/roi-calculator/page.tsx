@@ -94,6 +94,7 @@ export default function ROICalculatorPage() {
   const [results, setResults] = useState<ROIResult | null>(null)
   const [loading, setLoading] = useState(false)
   const [activeTab, setActiveTab] = useState<'overview' | 'timeline' | 'breakdown' | 'environmental'>('overview')
+  const [showBookingModal, setShowBookingModal] = useState(false)
 
   const availableSystems = [
     'Lighting Control',
