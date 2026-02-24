@@ -1,112 +1,83 @@
 # LEXA Smart Home Platform - Product Requirements Document
 
-**Version**: 9.22  
+**Version**: 9.23  
 **Last Updated**: February 24, 2026  
-**Status**: Dark Mode Audit Complete
+**Status**: Go-Live Phase 3 Complete
 
 ---
 
-## Latest Updates (v9.22)
+## Latest Updates (v9.23)
 
-### Site-Wide Dark Mode Audit (Feb 24, 2026)
+### Go-Live Phase 3: Sales Intelligence System (Feb 24, 2026)
 
-**STATUS: COMPLETED**
+**STATUS: COMPLETED & TESTED (100%)**
 
-#### Scope
-Comprehensive audit and fix of **100+ pages** and **50+ components** for dark mode compatibility.
+#### Backend API (`/api/sales-intelligence/`)
+1. **Unified Lead Pipeline** - Aggregates leads from 7 sources:
+   - leads (10), contact_messages (16), consultation_bookings (5)
+   - experience_centre_bookings (26), calculator_submissions (54)
+   - exit_intent_leads (1), ai_chat_leads (1) = **113 total leads**
 
-#### Changes Made:
-1. **Shared Components (Batch 1):**
-   - `Header.tsx` - Logo switching (light/dark), nav link colors, CTA button, backdrop blur
-   - `StatsSection.tsx` - Section bg, counter text, label colors
-   - `SolutionsBentoGrid.tsx` - Grid bg, card borders, link colors
-   - `PageSkeleton.tsx` - Full rewrite with dark mode for all 5 variants
-   - `AIChatWidget.tsx` - Chat window, messages, input, suggestions
-   - `CookieConsent.tsx` - Banner bg, text, buttons
-   - `ExitIntentPopup.tsx` - Modal bg, text, bullet items
-   - `CommandPalette.tsx` - Dialog bg, search input, result items, footer
-   - `SocialProofWidget.tsx` - Floating widget bg and border
-   - `PackageComparison.tsx` - Section bg, card bg
-   - `TabbyWidget.tsx` - Widget bg, tab states
-   - `ProcessWheel.tsx` - Step card bg and borders
-   - `SwissServices.tsx` - Section backgrounds
-   - `Skeleton.tsx` - Loading states
+2. **Lead Scoring Engine** - Auto-scores 0-100 based on:
+   - Budget tier (0-30pts), Timeline urgency (0-25pts)
+   - Property type (0-15pts), Source quality (0-25pts)
+   - Engagement level (0-15pts based on fields filled)
 
-2. **Customer-Facing Pages (Batch 2):**
-   - `/contact` - Form, contact cards, business hours, social links
-   - `/about` - Timeline, values, partner grid, CTA
-   - `/brands`, `/brands/[slug]` - Brand cards, category filter, detail pages
-   - `/blog`, `/blog/[slug]` - Article cards, prose content, related articles
-   - `/solutions`, `/solutions/[slug]` - Solution cards, feature grids, FAQ sections
-   - `/services`, `/services/[slug]` - Service cards, process steps, case studies
-   - `/projects`, `/projects/[slug]` - Project grid, detail pages
-   - `/packages`, `/packages/[slug]` - Package cards, comparison tables
-   - `/consultation` - TrustBadges, consultation types
-   - `/experience-centre` - Social proof section, booking
-   - `/amc-packages` - Package tiers, feature lists
-   - `/careers` - Job listings, benefits
-   - `/intelligence` - Feature grid
-   - `/faq` - Already had dark mode
-   - `/testimonials` - Already had dark mode
+3. **Automated Lead Routing** - 5 default rules:
+   - High-Value Villas (score 70+) → Senior Consultant
+   - Experience Centre Leads → EC Manager
+   - Calculator High Budget (score 50+) → Project Specialist
+   - Consultation Requests → Consultation Team
+   - Default Round-Robin → Sales Team
 
-3. **Secondary Pages (Batch 3):**
-   - All location pages (7 cities)
-   - All persona pages (4 types)
-   - All (pages) directory pages (6 pages)
-   - Partner pages, resource pages, geo-SEO pages
-   - Privacy, terms, warranty, support pages
+4. **API Endpoints:**
+   - `GET /dashboard-stats` - KPIs, stage counts, score distribution, source breakdown
+   - `GET /pipeline` - Full lead list with filters (status, source, min_score, assigned_to)
+   - `GET /lead/{id}` - Detailed lead with score breakdown
+   - `PUT /lead/{id}/status` - Update pipeline stage
+   - `PUT /lead/{id}/assign` - Assign to team member
+   - `PUT /lead/{id}/score` - Re-score a lead
+   - `GET /routing-rules` - View routing rules
+   - `POST /routing-rules` - Create routing rule
+   - `DELETE /routing-rules/{id}` - Delete routing rule
+   - `GET /activity-feed` - Recent pipeline activities
 
-#### Pattern Fixes Applied:
-| Pattern | Fix | Count |
-|---------|-----|-------|
-| `bg-white` | `→ dark:bg-gray-900/800` | ~550 instances |
-| `bg-gray-50` | `→ dark:bg-gray-800` | ~160 instances |
-| `bg-gray-100` | `→ dark:bg-gray-800` | ~80 instances |
-| `text-[#1A1A1A]` | `→ dark:text-white` | ~190 instances |
-| `text-gray-900` | `→ dark:text-white` | ~280 instances |
-| `text-gray-600/700` | `→ dark:text-gray-400/300` | ~200 instances |
-| `border-gray-200` | `→ dark:border-gray-700` | ~180 instances |
+#### Frontend Dashboard (`/admin/sales-dashboard`)
+- **KPI Cards**: Total Leads (113), Avg Score (51.8), Pipeline Value (AED 17.4M), New This Week
+- **Pipeline Funnel**: Visual bar chart of stage distribution
+- **Lead Quality**: Hot (49) / Warm (5) / Cold (59) breakdown
+- **Source Breakdown**: Leads by origin channel
+- **Lead Table**: Sortable, filterable table with search, status filter, source filter
+- **Lead Detail Modal**: Slide-out panel with score breakdown, contact info, stage controls
+- **Stage Management**: Click-to-update stage buttons (New → Contacted → Qualified → Proposal → Won/Lost)
 
 #### Testing:
-- Test report: `/app/test_reports/iteration_11.json`
-- 19/19 main pages return HTTP 200
-- Theme toggle verified working
-- Logo correctly switches between light/dark variants
-- No action items from testing agent
+- Backend: 20/20 tests passed (auth, stats, pipeline, filters, CRUD, routing)
+- Frontend: All UI elements verified
+- Test report: `/app/test_reports/iteration_12.json`
 
 ---
 
-## Previous Session Updates (v9.21)
+## Previous Updates
 
-### PPT Bug Fixes + Go-Live Phase 2 (Feb 24, 2026)
-- Fixed hero video (6 clips, lighter overlay)
-- Created /faq page (searchable, 46 FAQs)
-- Created /testimonials page (4 dynamic cards)
-- Verified admin intelligence features working
+### v9.22 - Dark Mode Audit (Feb 24, 2026)
+- Fixed ~1,500 hardcoded color instances across 100+ pages and 50+ components
+- Header logo switching, all widgets, all customer-facing pages
+
+### v9.21 - PPT Bug Fixes + Go-Live Phase 2 (Feb 24, 2026)
+- Fixed hero video, created /faq and /testimonials pages
 - Added TrustBadges to homepage and consultation page
-- Enhanced Experience Centre with social proof section
-- Cleaned up 24 one-time migration scripts
-
----
-
-## Remaining Issues
-
-### P2: Minor Aesthetic Gaps
-- Some `text-black` classes in location pages on intentionally dark sections
-- ROI Calculator uses intentional dark UI with glass morphism effects
-- Solution/service number text-gray-300 is aesthetic, not a dark mode bug
+- Enhanced Experience Centre with social proof
 
 ---
 
 ## Upcoming Tasks
 
-### P1: Go-Live Phase 3
-- Automated lead routing
-- Lead scoring system
-- Sales intelligence dashboard
+### P1: Client Portal
+- Build out client portal feature for customers to track their projects
 
-### P2: Client Portal
-- Build out client portal feature
+### P2: Remaining Minor Issues
+- Image 404s from external URLs (unsplash, old preview URLs)
 
 ---
 
@@ -120,12 +91,14 @@ Comprehensive audit and fix of **100+ pages** and **50+ components** for dark mo
 
 ## Key Technical Info
 
-- **Frontend**: Next.js with Tailwind CSS (dark mode via `class` strategy), Framer Motion
-- **Backend**: FastAPI with MongoDB
-- **Dark Mode**: ThemeContext.tsx manages state, stored in localStorage as `lexa-theme`, respects system preference
+- **Frontend**: Next.js, Tailwind CSS (class-based dark mode), Framer Motion
+- **Backend**: FastAPI with MongoDB (motor async driver)
+- **Database**: MongoDB `lexa_lifestyle` with 40+ collections
+- **Auth**: JWT via `JWT_SECRET_KEY` env variable
+- **Dark Mode**: ThemeContext with localStorage persistence
 - **Tracking**: GA4, Meta Pixel, Google Ads
 - **Booking**: Custom BookingModal (replaced Calendly)
-- **i18n**: English/Arabic with JSON locale files
+- **Sales Intelligence**: Unified pipeline across 7 lead sources
 
 ---
 
@@ -133,10 +106,9 @@ Comprehensive audit and fix of **100+ pages** and **50+ components** for dark mo
 
 | Version | Date | Changes |
 |---------|------|---------|
-| 9.22 | Feb 24, 2026 | Site-wide dark mode audit (100+ pages, 50+ components, ~1500 fixes) |
-| 9.21 | Feb 24, 2026 | PPT bug fixes (hero video, FAQ, testimonials), Go-Live Phase 2 |
-| 9.20 | Feb 20, 2026 | Project gallery images, font audit, speed optimization |
-| 9.15 | Feb 20, 2026 | Sora 2 hero video, language refactoring |
+| 9.23 | Feb 24, 2026 | Go-Live Phase 3: Sales Intelligence (scoring, routing, dashboard) |
+| 9.22 | Feb 24, 2026 | Site-wide dark mode audit (~1,500 fixes) |
+| 9.21 | Feb 24, 2026 | PPT bug fixes, Go-Live Phase 2 (TrustBadges, social proof) |
+| 9.20 | Feb 20, 2026 | Project galleries, font audit, speed optimization |
+| 9.15 | Feb 20, 2026 | Sora 2 hero video |
 | 9.13 | Feb 16, 2026 | Full SEO audit (760 FAQs, Schema markup) |
-| 9.10 | Feb 15, 2026 | Tracking pixels admin |
-| 9.9 | Feb 15, 2026 | Footer redesign, FAQ enhancement |
