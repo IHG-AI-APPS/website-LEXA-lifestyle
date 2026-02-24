@@ -19,7 +19,7 @@ export default function PackageComparison({ packages, title = "Our Packages" }: 
   if (!packages || packages.length === 0) return null
 
   return (
-    <div className="py-16 bg-gray-50">
+    <div className="py-16 bg-gray-50 dark:bg-gray-800">
       <div className="max-w-7xl mx-auto px-4">
         <h2 className="text-3xl md:text-4xl font-heading font-bold text-center mb-12">
           {title}
@@ -33,7 +33,7 @@ export default function PackageComparison({ packages, title = "Our Packages" }: 
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ delay: index * 0.1 }}
               viewport={{ once: true }}
-              className={`relative bg-white rounded-lg overflow-hidden ${
+              className={`relative bg-white dark:bg-gray-900 rounded-lg overflow-hidden ${
                 pkg.popular 
                   ? 'border-4 border-[#E8DCC8] shadow-2xl scale-105' 
                   : 'border-2 border-gray-200'
