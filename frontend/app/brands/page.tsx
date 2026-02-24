@@ -301,7 +301,7 @@ export default function BrandsPage() {
             </p>
             <Button 
               size="lg" 
-              className="bg-white hover:bg-gray-100 text-gray-900 px-8" 
+              className="bg-white dark:bg-gray-800 hover:bg-gray-100 dark:hover:bg-gray-700 text-gray-900 dark:text-gray-200 px-8" 
               onClick={() => setShowConsultationForm(true)}
             >
               Consult with Experts
