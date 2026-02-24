@@ -323,6 +323,7 @@ export default function SystemPage() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.6 }}
           className="bg-white border border-gray-200 p-6 hover:shadow-lg transition-shadow cursor-pointer"
+          onClick={() => setShowBugReport(true)}
         >
           <Bug className="text-red-500 mb-3" size={32} />
           <h3 className="text-lg font-semibold mb-2">Report Bug</h3>
@@ -339,6 +340,7 @@ export default function SystemPage() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.7 }}
           className="bg-white border border-gray-200 p-6 hover:shadow-lg transition-shadow cursor-pointer"
+          onClick={() => router.push('/admin/logs')}
         >
           <Clock className="text-blue-500 mb-3" size={32} />
           <h3 className="text-lg font-semibold mb-2">Activity Logs</h3>
@@ -355,17 +357,65 @@ export default function SystemPage() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.8 }}
           className="bg-white border border-gray-200 p-6 hover:shadow-lg transition-shadow cursor-pointer"
+          onClick={handleCheckUpdates}
         >
           <TrendingUp className="text-green-500 mb-3" size={32} />
           <h3 className="text-lg font-semibold mb-2">Check Updates</h3>
           <p className="text-sm text-gray-600 mb-4">
             Check for platform updates and new features
           </p>
-          <button className="text-sm bg-green-50 text-green-700 px-4 py-2 hover:bg-green-100 transition-colors">
-            Check Now
+          <button 
+            disabled={checkingUpdates}
+            className="text-sm bg-green-50 text-green-700 px-4 py-2 hover:bg-green-100 transition-colors disabled:opacity-50"
+          >
+            {checkingUpdates ? 'Checking...' : 'Check Now'}
           </button>
         </motion.div>
       </div>
+
+      {/* Bug Report Modal */}
+      {showBugReport && (
+        <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 p-4">
+          <div className="bg-white max-w-lg w-full p-6 rounded-lg">
+            <h2 className="text-xl font-bold mb-4">Report a Bug</h2>
+            <div className="space-y-4">
+              <div>
+                <label className="block text-sm font-medium mb-1">Issue Title</label>
+                <input
+                  type="text"
+                  value={bugReport.title}
+                  onChange={(e) => setBugReport({ ...bugReport, title: e.target.value })}
+                  className="w-full p-2 border border-gray-300 rounded"
+                  placeholder="Brief description of the issue"
+                />
+              </div>
+              <div>
+                <label className="block text-sm font-medium mb-1">Description</label>
+                <textarea
+                  value={bugReport.description}
+                  onChange={(e) => setBugReport({ ...bugReport, description: e.target.value })}
+                  className="w-full p-2 border border-gray-300 rounded h-32"
+                  placeholder="Detailed steps to reproduce the issue"
+                />
+              </div>
+              <div className="flex gap-3 justify-end">
+                <button
+                  onClick={() => setShowBugReport(false)}
+                  className="px-4 py-2 text-gray-600 hover:bg-gray-100 rounded"
+                >
+                  Cancel
+                </button>
+                <button
+                  onClick={handleReportBug}
+                  className="px-4 py-2 bg-red-600 text-white hover:bg-red-700 rounded"
+                >
+                  Submit Report
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   )
 }
