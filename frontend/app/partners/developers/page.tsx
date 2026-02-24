@@ -201,7 +201,7 @@ export default function DeveloperToolkitPage() {
               <h2 className={`text-3xl md:text-4xl font-bold mb-4 ${isDark ? 'text-white' : 'text-gray-900'}`}>
                 What&apos;s in the <span className="text-[#C9A962]">Developer Toolkit</span>
               </h2>
-              <p className={`text-lg max-w-3xl mx-auto ${isDark ? "text-gray-400" : "text-gray-600"}`}>
+              <p className={`text-lg max-w-3xl mx-auto ${isDark ? "text-gray-400" : "text-gray-600 dark:text-gray-400"}`}>
                 Everything you need to integrate LEXA automation into your development—from initial planning to handover.
               </p>
             </motion.div>
@@ -224,7 +224,7 @@ export default function DeveloperToolkitPage() {
                   >
                     <Icon size={40} className="text-[#C9A962] mb-4" strokeWidth={1.5} />
                     <h3 className={`text-xl font-bold mb-3 ${isDark ? 'text-white' : 'text-gray-900'}`}>{resource.title}</h3>
-                    <p className={`leading-relaxed mb-3 ${isDark ? "text-gray-400" : "text-gray-600"}`}>{resource.description}</p>
+                    <p className={`leading-relaxed mb-3 ${isDark ? "text-gray-400" : "text-gray-600 dark:text-gray-400"}`}>{resource.description}</p>
                     <p className="text-sm text-[#C9A962] font-medium">{resource.fileCount}</p>
                   </motion.div>
                 )
@@ -264,7 +264,7 @@ export default function DeveloperToolkitPage() {
               <h2 className={`text-3xl md:text-4xl font-bold mb-4 ${isDark ? 'text-white' : 'text-gray-900'}`}>
                 The <span className="text-[#C9A962]">LEXA Advantage</span>
               </h2>
-              <p className={`text-lg max-w-3xl mx-auto ${isDark ? "text-gray-400" : "text-gray-600"}`}>
+              <p className={`text-lg max-w-3xl mx-auto ${isDark ? "text-gray-400" : "text-gray-600 dark:text-gray-400"}`}>
                 Data-driven results from real developments across Dubai and Abu Dhabi.
               </p>
             </motion.div>
@@ -285,7 +285,7 @@ export default function DeveloperToolkitPage() {
                 >
                   <div className="text-4xl font-bold text-[#C9A962] mb-4">{benefit.stat}</div>
                   <h3 className={`text-lg font-bold mb-3 ${isDark ? 'text-white' : 'text-gray-900'}`}>{benefit.label}</h3>
-                  <p className={`text-sm leading-relaxed ${isDark ? "text-gray-400" : "text-gray-600"}`}>{benefit.desc}</p>
+                  <p className={`text-sm leading-relaxed ${isDark ? "text-gray-400" : "text-gray-600 dark:text-gray-400"}`}>{benefit.desc}</p>
                 </motion.div>
               ))}
             </div>
@@ -306,7 +306,7 @@ export default function DeveloperToolkitPage() {
               <h2 className={`text-3xl md:text-4xl font-bold mb-4 ${isDark ? 'text-white' : 'text-gray-900'}`}>
                 <span className="text-[#C9A962]">Volume Partner</span> Program
               </h2>
-              <p className={`text-lg ${isDark ? "text-gray-400" : "text-gray-600"}`}>
+              <p className={`text-lg ${isDark ? "text-gray-400" : "text-gray-600 dark:text-gray-400"}`}>
                 Better rates and dedicated support as your projects scale
               </p>
             </motion.div>
@@ -413,7 +413,7 @@ export default function DeveloperToolkitPage() {
                 <div className="py-12 text-center">
                   <div className="text-6xl mb-4 text-[#C9A962]">✓</div>
                   <h3 className="text-2xl font-bold text-[#C9A962] mb-2">Download Starting...</h3>
-                  <p className="text-gray-600">
+                  <p className="text-gray-600 dark:text-gray-400">
                     Check your email for the toolkit. Download will begin automatically.
                   </p>
                 </div>

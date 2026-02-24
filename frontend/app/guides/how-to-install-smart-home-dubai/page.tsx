@@ -96,7 +96,7 @@ export default function HowToInstallPage() {
                   </div>
                 </div>
                 <div className="flex-1">
-                  <h2 className="text-2xl font-bold mb-4 text-gray-900">{step.name}</h2>
+                  <h2 className="text-2xl font-bold mb-4 text-gray-900 dark:text-white">{step.name}</h2>
                   <p className="text-gray-600 leading-relaxed text-lg">{step.text}</p>
                 </div>
               </div>

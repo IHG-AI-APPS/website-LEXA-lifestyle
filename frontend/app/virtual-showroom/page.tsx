@@ -115,7 +115,7 @@ export default function VirtualShowroomPage() {
                   <MapPin className="text-charcoal" size={32} strokeWidth={1.5} />
                   <div>
                     <div className="font-medium">Al Quoz 1, Dubai</div>
-                    <div className="text-sm text-gray-600">Sheikh Zayed Road</div>
+                    <div className="text-sm text-gray-600 dark:text-gray-400">Sheikh Zayed Road</div>
                   </div>
                 </div>
 
@@ -123,7 +123,7 @@ export default function VirtualShowroomPage() {
                   <Clock className="text-charcoal" size={32} strokeWidth={1.5} />
                   <div>
                     <div className="font-medium">Open Daily</div>
-                    <div className="text-sm text-gray-600">9 AM - 7 PM</div>
+                    <div className="text-sm text-gray-600 dark:text-gray-400">9 AM - 7 PM</div>
                   </div>
                 </div>
 
@@ -131,7 +131,7 @@ export default function VirtualShowroomPage() {
                   <Phone className="text-charcoal" size={32} strokeWidth={1.5} />
                   <div>
                     <div className="font-medium">+971 4 XXX XXXX</div>
-                    <div className="text-sm text-gray-600">Book a visit</div>
+                    <div className="text-sm text-gray-600 dark:text-gray-400">Book a visit</div>
                   </div>
                 </div>
               </div>

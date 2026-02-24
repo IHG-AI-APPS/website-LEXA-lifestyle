@@ -109,7 +109,7 @@ export default function FinalSubmission({ sessionId, projectData, onComplete }: 
                 value={formData.contact_name}
                 onChange={(e) => setFormData({ ...formData, contact_name: e.target.value })}
                 placeholder="John Smith"
-                className="border-gray-200 focus:border-blue-600 text-gray-900"
+                className="border-gray-200 focus:border-blue-600 text-gray-900 dark:text-white"
               />
             </div>
 
@@ -120,7 +120,7 @@ export default function FinalSubmission({ sessionId, projectData, onComplete }: 
                 value={formData.contact_email}
                 onChange={(e) => setFormData({ ...formData, contact_email: e.target.value })}
                 placeholder="john@example.com"
-                className="border-gray-200 focus:border-blue-600 text-gray-900"
+                className="border-gray-200 focus:border-blue-600 text-gray-900 dark:text-white"
               />
             </div>
 
@@ -131,7 +131,7 @@ export default function FinalSubmission({ sessionId, projectData, onComplete }: 
                 value={formData.contact_phone}
                 onChange={(e) => setFormData({ ...formData, contact_phone: e.target.value })}
                 placeholder="+971 50 123 4567"
-                className="border-gray-200 focus:border-blue-600 text-gray-900"
+                className="border-gray-200 focus:border-blue-600 text-gray-900 dark:text-white"
               />
             </div>
 
@@ -142,7 +142,7 @@ export default function FinalSubmission({ sessionId, projectData, onComplete }: 
                 value={formData.timeline}
                 onChange={(e) => setFormData({ ...formData, timeline: e.target.value })}
                 placeholder="e.g., 3-6 months"
-                className="border-gray-200 focus:border-blue-600 text-gray-900"
+                className="border-gray-200 focus:border-blue-600 text-gray-900 dark:text-white"
               />
             </div>
 
@@ -153,7 +153,7 @@ export default function FinalSubmission({ sessionId, projectData, onComplete }: 
                 value={formData.budget_band}
                 onChange={(e) => setFormData({ ...formData, budget_band: e.target.value })}
                 placeholder="e.g., AED 200,000 - 500,000"
-                className="border-gray-200 focus:border-blue-600 text-gray-900"
+                className="border-gray-200 focus:border-blue-600 text-gray-900 dark:text-white"
               />
             </div>
 

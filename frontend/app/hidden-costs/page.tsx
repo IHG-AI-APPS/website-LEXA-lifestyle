@@ -135,14 +135,14 @@ export default function HiddenCostsPage() {
                         <XCircle className="h-5 w-5 text-red-500 flex-shrink-0 mt-0.5" />
                         <div>
                           <div className="text-xs text-gray-500 mb-1">Without Intelligence:</div>
-                          <div className="text-sm font-semibold text-gray-700">{cost.without}</div>
+                          <div className="text-sm font-semibold text-gray-700 dark:text-gray-300">{cost.without}</div>
                         </div>
                       </div>
                       <div className="flex items-start gap-2">
                         <CheckCircle2 className="h-5 w-5 text-green-500 flex-shrink-0 mt-0.5" />
                         <div>
                           <div className="text-xs text-gray-500 mb-1">With Intelligence:</div>
-                          <div className="text-sm font-semibold text-gray-700">{cost.with}</div>
+                          <div className="text-sm font-semibold text-gray-700 dark:text-gray-300">{cost.with}</div>
                         </div>
                       </div>
                       <div className="pt-2 border-t border-gray-200 dark:border-gray-700">

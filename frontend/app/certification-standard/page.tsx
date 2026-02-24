@@ -172,7 +172,7 @@ export default function CertificationStandardPage() {
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               <div className="bg-white rounded-xl p-8 shadow-lg border-t-4 border-red-500">
                 <h3 className="text-2xl font-bold mb-4 text-red-600">Random Installer</h3>
-                <ul className="space-y-3 text-gray-600">
+                <ul className="space-y-3 text-gray-600 dark:text-gray-400">
                   <li className="flex items-start gap-2">
                     <span className="text-red-500 text-xl">×</span>
                     <span className="text-sm">No documented standards</span>
@@ -201,7 +201,7 @@ export default function CertificationStandardPage() {
                   <Award className="text-green-600" size={32} />
                   <h3 className="text-2xl font-bold text-green-900">LEXA Certified</h3>
                 </div>
-                <ul className="space-y-3 text-gray-800">
+                <ul className="space-y-3 text-gray-800 dark:text-gray-100">
                   <li className="flex items-start gap-2">
                     <CheckCircle2 className="text-green-600 flex-shrink-0 mt-0.5" size={20} />
                     <span className="text-sm font-semibold">Documented 47-point standards</span>
@@ -226,7 +226,7 @@ export default function CertificationStandardPage() {
               </div>
 
               <div className="bg-white rounded-xl p-8 shadow-lg border-t-4 border-gray-300">
-                <h3 className="text-2xl font-bold mb-4 text-gray-600">Typical Contractor</h3>
+                <h3 className="text-2xl font-bold mb-4 text-gray-600 dark:text-gray-400">Typical Contractor</h3>
                 <ul className="space-y-3 text-gray-500">
                   <li className="flex items-start gap-2">
                     <span className="text-gray-400 text-xl">○</span>
@@ -263,7 +263,7 @@ export default function CertificationStandardPage() {
               <h2 className="text-4xl sm:text-5xl font-bold mb-4">
                 Our Integration Standards
               </h2>
-              <p className="text-xl text-gray-600">
+              <p className="text-xl text-gray-600 dark:text-gray-400">
                 Engineering excellence in every installation
               </p>
             </div>
@@ -289,7 +289,7 @@ export default function CertificationStandardPage() {
                     {standard.items.map((item, idx) => (
                       <li key={idx} className="flex items-start gap-3 text-sm">
                         <CheckCircle2 size={18} className="text-green-600 flex-shrink-0 mt-0.5" />
-                        <span className="text-gray-700">{item}</span>
+                        <span className="text-gray-700 dark:text-gray-300">{item}</span>
                       </li>
                     ))}
                   </ul>
@@ -337,7 +337,7 @@ export default function CertificationStandardPage() {
               <h2 className="text-4xl sm:text-5xl font-bold mb-4">
                 Manufacturer Certifications
               </h2>
-              <p className="text-xl text-gray-600">
+              <p className="text-xl text-gray-600 dark:text-gray-400">
                 Authorized, trained, and certified by the industry&apos;s leading brands
               </p>
             </div>
@@ -384,7 +384,7 @@ export default function CertificationStandardPage() {
               <h2 className="text-4xl sm:text-5xl font-bold mb-4">
                 Documentation Samples
               </h2>
-              <p className="text-xl text-gray-600">
+              <p className="text-xl text-gray-600 dark:text-gray-400">
                 Every project includes comprehensive technical documentation
               </p>
             </div>

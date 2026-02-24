@@ -163,7 +163,7 @@ export default function DeveloperToolkitPage() {
                 </div>
                 <div>
                   <h3 className="text-2xl font-bold mb-2">Initial Meeting</h3>
-                  <p className="text-gray-700">
+                  <p className="text-gray-700 dark:text-gray-300">
                     Schedule a developer partnership consultation. We review your project, unit types, and target market.
                   </p>
                 </div>
@@ -175,7 +175,7 @@ export default function DeveloperToolkitPage() {
                 </div>
                 <div>
                   <h3 className="text-2xl font-bold mb-2">Package Design</h3>
-                  <p className="text-gray-700">
+                  <p className="text-gray-700 dark:text-gray-300">
                     We create tiered automation packages (Silver/Gold/Platinum) tailored to your units and price points.
                   </p>
                 </div>
@@ -187,7 +187,7 @@ export default function DeveloperToolkitPage() {
                 </div>
                 <div>
                   <h3 className="text-2xl font-bold mb-2">Toolkit Access</h3>
-                  <p className="text-gray-700">
+                  <p className="text-gray-700 dark:text-gray-300">
                     Receive full access to marketing materials, technical docs, and Smart-Ready certification for your project.
                   </p>
                 </div>
@@ -199,7 +199,7 @@ export default function DeveloperToolkitPage() {
                 </div>
                 <div>
                   <h3 className="text-2xl font-bold mb-2">Sales Enablement</h3>
-                  <p className="text-gray-700">
+                  <p className="text-gray-700 dark:text-gray-300">
                     We train your sales team on automation value proposition and handle technical queries from buyers.
                   </p>
                 </div>
@@ -211,7 +211,7 @@ export default function DeveloperToolkitPage() {
                 </div>
                 <div>
                   <h3 className="text-2xl font-bold mb-2">Installation & Handover</h3>
-                  <p className="text-gray-700">
+                  <p className="text-gray-700 dark:text-gray-300">
                     We handle all installations, commissioning, and buyer handover documentation. Post-sale support included.
                   </p>
                 </div>

@@ -80,9 +80,9 @@ export default function ProductsPage() {
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               {loading ? (
-                <div className="col-span-2 text-center py-12 text-gray-600">Loading products...</div>
+                <div className="col-span-2 text-center py-12 text-gray-600 dark:text-gray-400">Loading products...</div>
               ) : products.length === 0 ? (
-                <div className="col-span-2 text-center py-12 text-gray-600">No products available.</div>
+                <div className="col-span-2 text-center py-12 text-gray-600 dark:text-gray-400">No products available.</div>
               ) : (
                 products.map((category: any, index: number) => (
                   <motion.div

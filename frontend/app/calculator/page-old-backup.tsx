@@ -233,7 +233,7 @@ export default function CostCalculatorPage() {
                             </div>
                             <div>
                               <div className="font-medium mb-1">{system.label}</div>
-                              <div className="text-sm text-gray-600">{system.description}</div>
+                              <div className="text-sm text-gray-600 dark:text-gray-400">{system.description}</div>
                             </div>
                           </div>
                         </button>
@@ -271,7 +271,7 @@ export default function CostCalculatorPage() {
                   <div className="sticky top-24 glass border border-gray-200 p-8 space-y-8">
                     <div>
                       <h3 className="text-2xl font-semibold mb-2">Your Estimate</h3>
-                      <p className="text-sm text-gray-600">
+                      <p className="text-sm text-gray-600 dark:text-gray-400">
                         Based on {selectedSystems.length} systems for a {squareFootage} sq ft {propertyType}
                       </p>
                     </div>
@@ -286,7 +286,7 @@ export default function CostCalculatorPage() {
                         <div className="text-4xl font-semibold mb-2">
                           {formatCurrency(result.estimated_cost_min)}
                         </div>
-                        <div className="text-lg text-gray-600">
+                        <div className="text-lg text-gray-600 dark:text-gray-400">
                           to {formatCurrency(result.estimated_cost_max)}
                         </div>
                       </div>
@@ -341,7 +341,7 @@ export default function CostCalculatorPage() {
                       <Calculator size={48} className="mx-auto" strokeWidth={1} />
                     </div>
                     <h3 className="text-xl font-semibold mb-2">Your Estimate</h3>
-                    <p className="text-sm text-gray-600">
+                    <p className="text-sm text-gray-600 dark:text-gray-400">
                       Fill out the form to see your personalized cost estimate and project timeline.
                     </p>
                   </div>
@@ -355,7 +355,7 @@ export default function CostCalculatorPage() {
       {/* Disclaimer */}
       <section className="py-12 bg-gray-50">
         <div className="container mx-auto px-8 lg:px-16">
-          <div className="max-w-4xl mx-auto text-center text-sm text-gray-600">
+          <div className="max-w-4xl mx-auto text-center text-sm text-gray-600 dark:text-gray-400">
             <p>
               * This is an estimated range based on typical installations. Final pricing will be determined after a detailed site assessment and consultation. Prices are in AED and exclude VAT.
             </p>

@@ -234,7 +234,7 @@ export default function IntelligenceEngine({ sessionId, projectData, onComplete 
           <p className="text-sm text-gray-500 uppercase tracking-widest mb-2">
             693 Features Analyzed • {mandatoryCount} Selected • {resolution.recommended_bundles?.length || 0} Systems
           </p>
-          <p className="text-xs text-gray-600">
+          <p className="text-xs text-gray-600 dark:text-gray-400">
             AI filtered down to {totalFeatures} relevant features for your project
           </p>
         </div>
@@ -274,12 +274,12 @@ export default function IntelligenceEngine({ sessionId, projectData, onComplete 
                     <div className={`${config.bg} p-2 rounded`}>
                       <Icon className={`w-4 h-4 ${config.color}`} />
                     </div>
-                    <span className="text-xs font-medium text-gray-700">{config.label}</span>
+                    <span className="text-xs font-medium text-gray-700 dark:text-gray-300">{config.label}</span>
                   </div>
                 )
               })}
             </div>
-            <div className="text-xs text-gray-600">
+            <div className="text-xs text-gray-600 dark:text-gray-400">
               💡 Click features to customize • Hover for AI reasoning
             </div>
           </div>
@@ -287,7 +287,7 @@ export default function IntelligenceEngine({ sessionId, projectData, onComplete 
 
         {/* View Mode Toggle */}
         <div className="flex items-center justify-between mb-8">
-          <h3 className="text-lg font-medium uppercase tracking-widest text-gray-900">
+          <h3 className="text-lg font-medium uppercase tracking-widest text-gray-900 dark:text-white">
             System Analysis
           </h3>
           <div className="flex items-center gap-2 bg-gray-100 p-1 rounded-lg">
@@ -328,7 +328,7 @@ export default function IntelligenceEngine({ sessionId, projectData, onComplete 
         {/* System Domains with Feature Drill-Down (List View) */}
         {viewMode === 'list' && (
           <div className="space-y-4 mb-12">
-            <h3 className="text-lg font-medium mb-6 uppercase tracking-widest text-gray-900">
+            <h3 className="text-lg font-medium mb-6 uppercase tracking-widest text-gray-900 dark:text-white">
               Recommended Systems & Features
             </h3>
           
@@ -359,7 +359,7 @@ export default function IntelligenceEngine({ sessionId, projectData, onComplete 
                       <ChevronRight className="w-5 h-5 text-gray-400" />
                     )}
                     <div className="text-left">
-                      <h4 className="text-lg font-semibold text-gray-900">{bundle.system_domain}</h4>
+                      <h4 className="text-lg font-semibold text-gray-900 dark:text-white">{bundle.system_domain}</h4>
                       <p className="text-xs text-gray-600 mt-1">
                         {bundleFeatures.length} features • {selectedInBundle} selected • Score: {Math.round(bundle.score)}/100
                       </p>
@@ -418,7 +418,7 @@ export default function IntelligenceEngine({ sessionId, projectData, onComplete 
                                 <div className="flex-1">
                                   {/* Feature Name + Classification */}
                                   <div className="flex items-start justify-between gap-3 mb-2">
-                                    <h5 className="text-sm font-medium text-gray-900">
+                                    <h5 className="text-sm font-medium text-gray-900 dark:text-white">
                                       {feature.feature_name}
                                     </h5>
                                     <div className={`${classConfig.bg} px-2 py-1 rounded flex items-center gap-1 flex-shrink-0`}>
@@ -510,7 +510,7 @@ export default function IntelligenceEngine({ sessionId, projectData, onComplete 
 
         {/* Continue Button */}
         <div className="text-center">
-          <div className="mb-4 text-sm text-gray-600">
+          <div className="mb-4 text-sm text-gray-600 dark:text-gray-400">
             <span className="font-semibold text-blue-600">{mandatoryCount}</span> features selected from {totalFeatures} analyzed
           </div>
           <Button

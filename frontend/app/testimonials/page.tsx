@@ -134,7 +134,7 @@ export default function TestimonialsPage() {
                           {t.role && <span>{t.role}</span>}
                           {t.company && (
                             <>
-                              <span className="text-gray-300 dark:text-gray-600">|</span>
+                              <span className="text-gray-300 dark:text-gray-600 dark:text-gray-400">|</span>
                               <span className="flex items-center gap-1">
                                 <Building2 className="h-3 w-3" />
                                 {t.company}
@@ -143,7 +143,7 @@ export default function TestimonialsPage() {
                           )}
                           {t.location && (
                             <>
-                              <span className="text-gray-300 dark:text-gray-600">|</span>
+                              <span className="text-gray-300 dark:text-gray-600 dark:text-gray-400">|</span>
                               <span className="flex items-center gap-1">
                                 <MapPin className="h-3 w-3" />
                                 {t.location}

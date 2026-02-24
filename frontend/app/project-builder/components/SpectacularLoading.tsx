@@ -312,7 +312,7 @@ export default function SpectacularLoading({
                   </motion.div>
                 ) : index < currentPhaseIndex ? (
                   <div className="w-8 h-8 rounded-full bg-gray-300 flex items-center justify-center">
-                    <CheckCircle2 className="w-4 h-4 text-gray-600" />
+                    <CheckCircle2 className="w-4 h-4 text-gray-600 dark:text-gray-400" />
                   </div>
                 ) : (
                   <div className="w-8 h-8 rounded-full bg-gray-100 flex items-center justify-center">

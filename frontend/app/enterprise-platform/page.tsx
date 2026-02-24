@@ -299,7 +299,7 @@ export default function EnterprisePerformanceOSPage() {
               viewport={{ once: true }}
               className="text-center mb-16"
             >
-              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4 text-gray-900">
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4 text-gray-900 dark:text-white">
                 Four-Layer Architecture
               </h2>
               <p className="text-base sm:text-lg text-gray-600 max-w-3xl mx-auto">
@@ -325,14 +325,14 @@ export default function EnterprisePerformanceOSPage() {
                       </div>
                       <div>
                         <div className="text-sm font-bold text-gray-500 mb-1">LAYER {layer.number}</div>
-                        <h3 className="text-2xl font-bold text-gray-900">{layer.title}</h3>
+                        <h3 className="text-2xl font-bold text-gray-900 dark:text-white">{layer.title}</h3>
                       </div>
                     </div>
                     <div className="space-y-2">
                       {layer.features.map((feature) => (
                         <div key={feature} className="flex items-start gap-2">
                           <CheckCircle2 className="h-5 w-5 text-blue-600 flex-shrink-0 mt-0.5" />
-                          <span className="text-sm text-gray-700">{feature}</span>
+                          <span className="text-sm text-gray-700 dark:text-gray-300">{feature}</span>
                         </div>
                       ))}
                     </div>
@@ -353,10 +353,10 @@ export default function EnterprisePerformanceOSPage() {
               viewport={{ once: true }}
               className="text-center mb-12"
             >
-              <h2 className="text-3xl sm:text-4xl font-bold mb-4 text-gray-900">
+              <h2 className="text-3xl sm:text-4xl font-bold mb-4 text-gray-900 dark:text-white">
                 Enterprise Use Cases
               </h2>
-              <p className="text-lg text-gray-600">
+              <p className="text-lg text-gray-600 dark:text-gray-400">
                 Designed for diverse building portfolios across the UAE
               </p>
             </motion.div>
@@ -392,7 +392,7 @@ export default function EnterprisePerformanceOSPage() {
                 <div className="p-4 bg-blue-100">
                   <SelectedIcon className="h-10 w-10 text-blue-600" />
                 </div>
-                <h3 className="text-3xl font-bold text-gray-900">{selectedCase.name}</h3>
+                <h3 className="text-3xl font-bold text-gray-900 dark:text-white">{selectedCase.name}</h3>
               </div>
               
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -462,10 +462,10 @@ export default function EnterprisePerformanceOSPage() {
               viewport={{ once: true }}
               className="text-center mb-16"
             >
-              <h2 className="text-3xl sm:text-4xl font-bold mb-4 text-gray-900">
+              <h2 className="text-3xl sm:text-4xl font-bold mb-4 text-gray-900 dark:text-white">
                 Enterprise Investment Tiers
               </h2>
-              <p className="text-lg text-gray-600">
+              <p className="text-lg text-gray-600 dark:text-gray-400">
                 Scalable solutions for every building size
               </p>
             </motion.div>
@@ -487,7 +487,7 @@ export default function EnterprisePerformanceOSPage() {
                       Most Popular
                     </div>
                   )}
-                  <h3 className="text-2xl font-bold mb-2 text-gray-900">{tier.name}</h3>
+                  <h3 className="text-2xl font-bold mb-2 text-gray-900 dark:text-white">{tier.name}</h3>
                   <div className="text-sm text-gray-600 mb-4">{tier.size}</div>
                   <div className="text-3xl font-bold text-blue-600 mb-6">{tier.investment}</div>
                   
@@ -495,7 +495,7 @@ export default function EnterprisePerformanceOSPage() {
                     {tier.includes.map((item) => (
                       <div key={item} className="flex items-start gap-2">
                         <CheckCircle2 className="h-5 w-5 text-blue-600 flex-shrink-0 mt-0.5" />
-                        <span className="text-sm text-gray-700">{item}</span>
+                        <span className="text-sm text-gray-700 dark:text-gray-300">{item}</span>
                       </div>
                     ))}
                   </div>

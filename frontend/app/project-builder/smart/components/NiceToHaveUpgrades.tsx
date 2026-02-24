@@ -263,7 +263,7 @@ export default function NiceToHaveUpgrades({
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.2 }}
-          className="text-gray-600"
+          className="text-gray-600 dark:text-gray-400"
         >
           Add these premium features to your {selectedPackage} package
         </motion.p>
@@ -330,7 +330,7 @@ export default function NiceToHaveUpgrades({
                   <IconComponent className="w-4 h-4 text-gray-400" />
                   <span className="text-xs text-gray-500">{upgrade.category}</span>
                 </div>
-                <h4 className="font-bold text-gray-900">{upgrade.feature.name}</h4>
+                <h4 className="font-bold text-gray-900 dark:text-white">{upgrade.feature.name}</h4>
                 <p className="text-sm text-gray-500 mt-1">{upgrade.feature.description}</p>
               </div>
             </motion.button>

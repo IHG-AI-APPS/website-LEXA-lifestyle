@@ -103,14 +103,14 @@ export default function RelatedServices({ services, currentSlug }: RelatedServic
                       {/* Icon Badge */}
                       <div className="absolute top-4 right-4">
                         <div className="bg-white/90 backdrop-blur-sm p-3 rounded-full">
-                          <Icon className="h-5 w-5 text-gray-900" />
+                          <Icon className="h-5 w-5 text-gray-900 dark:text-white" />
                         </div>
                       </div>
 
                       {/* Category */}
                       {service.category && (
                         <div className="absolute top-4 left-4">
-                          <span className="bg-white/90 backdrop-blur-sm px-3 py-1.5 rounded-full text-xs font-semibold text-gray-900">
+                          <span className="bg-white/90 backdrop-blur-sm px-3 py-1.5 rounded-full text-xs font-semibold text-gray-900 dark:text-white">
                             {service.category}
                           </span>
                         </div>

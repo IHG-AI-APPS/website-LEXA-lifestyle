@@ -156,7 +156,7 @@ export default function WhyLexaPage() {
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-16">
               <h2 className="h2 uppercase mb-4">WHAT SETS LEXA APART</h2>
-              <p className="text-xl text-gray-600">8 reasons we&apos;re Dubai&apos;s preferred luxury automation partner</p>
+              <p className="text-xl text-gray-600 dark:text-gray-400">8 reasons we&apos;re Dubai&apos;s preferred luxury automation partner</p>
             </div>
 
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -175,7 +175,7 @@ export default function WhyLexaPage() {
                       <Icon size={28} />
                     </div>
                     <h3 className="text-lg font-semibold mb-2">{item.title}</h3>
-                    <p className="text-sm text-gray-600">{item.description}</p>
+                    <p className="text-sm text-gray-600 dark:text-gray-400">{item.description}</p>
                   </motion.div>
                 )
               })}
@@ -190,7 +190,7 @@ export default function WhyLexaPage() {
           <div className="max-w-4xl mx-auto">
             <div className="text-center mb-12">
               <h2 className="h2 uppercase mb-4">LEXA VS. OTHER DUBAI INTEGRATORS</h2>
-              <p className="text-xl text-gray-600">See how we compare to competitors</p>
+              <p className="text-xl text-gray-600 dark:text-gray-400">See how we compare to competitors</p>
             </div>
 
             <div className="bg-white rounded-lg shadow-lg overflow-hidden">
@@ -210,10 +210,10 @@ export default function WhyLexaPage() {
                         {item.lexa === true ? (
                           <Check className="inline-block text-green-600" size={24} />
                         ) : (
-                          <span className="text-sm text-gray-600">{item.lexa}</span>
+                          <span className="text-sm text-gray-600 dark:text-gray-400">{item.lexa}</span>
                         )}
                       </td>
-                      <td className="px-6 py-4 text-center text-sm text-gray-600">
+                      <td className="px-6 py-4 text-center text-sm text-gray-600 dark:text-gray-400">
                         {item.competitors}
                       </td>
                     </tr>
@@ -231,7 +231,7 @@ export default function WhyLexaPage() {
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-16">
               <h2 className="h2 uppercase mb-4">WHAT OUR CLIENTS SAY</h2>
-              <p className="text-xl text-gray-600">Real feedback from luxury homeowners across Dubai</p>
+              <p className="text-xl text-gray-600 dark:text-gray-400">Real feedback from luxury homeowners across Dubai</p>
             </div>
 
             <div className="grid md:grid-cols-3 gap-8">
@@ -252,7 +252,7 @@ export default function WhyLexaPage() {
                   <p className="text-gray-700 mb-4 italic">&quot;{testimonial.text}&quot;</p>
                   <div className="border-t pt-4">
                     <p className="font-semibold">{testimonial.name}</p>
-                    <p className="text-sm text-gray-600">{testimonial.location}</p>
+                    <p className="text-sm text-gray-600 dark:text-gray-400">{testimonial.location}</p>
                     <p className="text-xs text-gray-500 mt-2">{testimonial.project}</p>
                   </div>
                 </motion.div>

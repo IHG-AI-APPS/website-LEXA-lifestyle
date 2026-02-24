@@ -316,7 +316,7 @@ export default function SolutionFinderPage() {
                             <div className="flex-1">
                               <div className="font-medium text-lg mb-1">{answer.label}</div>
                               {answer.description && (
-                                <div className="text-sm text-gray-600">{answer.description}</div>
+                                <div className="text-sm text-gray-600 dark:text-gray-400">{answer.description}</div>
                               )}
                             </div>
                             {currentAnswer === answer.value && (

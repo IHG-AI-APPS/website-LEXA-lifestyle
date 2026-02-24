@@ -92,9 +92,9 @@ export default function BlogPage() {
         <div className="container mx-auto px-8 lg:px-16">
           <div className="max-w-7xl mx-auto">
             {loading ? (
-              <div className="text-center py-12 text-gray-600">Loading articles...</div>
+              <div className="text-center py-12 text-gray-600 dark:text-gray-400">Loading articles...</div>
             ) : filteredArticles.length === 0 ? (
-              <div className="text-center py-12 text-gray-600">No articles found in this category.</div>
+              <div className="text-center py-12 text-gray-600 dark:text-gray-400">No articles found in this category.</div>
             ) : (
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 {filteredArticles.map((article: any, index: number) => (

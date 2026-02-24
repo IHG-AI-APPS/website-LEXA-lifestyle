@@ -31,7 +31,7 @@ export default function PalmJumeirahPage() {
               <div>
                 <h3 className="text-2xl font-semibold mb-4">Beachfront Specialization</h3>
                 <p className="text-gray-600 mb-4">Palm properties need special considerations:</p>
-                <ul className="space-y-2 text-gray-600">
+                <ul className="space-y-2 text-gray-600 dark:text-gray-400">
                   <li>✓ Salt-air resistant outdoor equipment</li>
                   <li>✓ Beach-facing shade automation</li>
                   <li>✓ Outdoor entertainment systems</li>
@@ -46,17 +46,17 @@ export default function PalmJumeirahPage() {
                 <div className="space-y-4">
                   <div className="border-l-4 border-gray-900 pl-4">
                     <div className="font-semibold">Signature Villa</div>
-                    <div className="text-sm text-gray-600">9,000 sq ft | AED 680,000</div>
+                    <div className="text-sm text-gray-600 dark:text-gray-400">9,000 sq ft | AED 680,000</div>
                     <div className="text-sm text-gray-500">Full Crestron, Theater, Outdoor AV, Pool Automation</div>
                   </div>
                   <div className="border-l-4 border-gray-900 pl-4">
                     <div className="font-semibold">Garden Homes</div>
-                    <div className="text-sm text-gray-600">5,500 sq ft | AED 420,000</div>
+                    <div className="text-sm text-gray-600 dark:text-gray-400">5,500 sq ft | AED 420,000</div>
                     <div className="text-sm text-gray-500">Control4, Lutron, Sonos, Smart Security</div>
                   </div>
                   <div className="border-l-4 border-gray-900 pl-4">
                     <div className="font-semibold">Apartment Tower</div>
-                    <div className="text-sm text-gray-600">3,200 sq ft | AED 210,000</div>
+                    <div className="text-sm text-gray-600 dark:text-gray-400">3,200 sq ft | AED 210,000</div>
                     <div className="text-sm text-gray-500">Smart Living Package with Sea Views</div>
                   </div>
                 </div>
@@ -67,17 +67,17 @@ export default function PalmJumeirahPage() {
               <div className="text-center">
                 <Home className="inline-block mb-4" size={40} />
                 <div className="text-3xl font-bold mb-2">120+</div>
-                <div className="text-gray-600">Palm Properties Completed</div>
+                <div className="text-gray-600 dark:text-gray-400">Palm Properties Completed</div>
               </div>
               <div className="text-center">
                 <DollarSign className="inline-block mb-4" size={40} />
                 <div className="text-3xl font-bold mb-2">AED 450K</div>
-                <div className="text-gray-600">Average Villa Investment</div>
+                <div className="text-gray-600 dark:text-gray-400">Average Villa Investment</div>
               </div>
               <div className="text-center">
                 <Clock className="inline-block mb-4" size={40} />
                 <div className="text-3xl font-bold mb-2">8-12 Weeks</div>
-                <div className="text-gray-600">Typical Timeline</div>
+                <div className="text-gray-600 dark:text-gray-400">Typical Timeline</div>
               </div>
             </div>
           </div>

@@ -163,7 +163,7 @@ export default function ConsultationPage() {
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-16">
               <h2 className="text-4xl sm:text-5xl font-bold mb-4">Choose Your Consultation Type</h2>
-              <p className="text-xl text-gray-600">
+              <p className="text-xl text-gray-600 dark:text-gray-400">
                 Select the option that works best for you
               </p>
             </div>
@@ -206,7 +206,7 @@ export default function ConsultationPage() {
                       {type.features.map((feature, idx) => (
                         <div key={idx} className="flex items-start gap-3">
                           <CheckCircle2 size={20} className="text-green-500 flex-shrink-0 mt-0.5" />
-                          <span className="text-sm text-gray-700">{feature}</span>
+                          <span className="text-sm text-gray-700 dark:text-gray-300">{feature}</span>
                         </div>
                       ))}
                     </div>
@@ -236,7 +236,7 @@ export default function ConsultationPage() {
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-16">
               <h2 className="text-4xl sm:text-5xl font-bold mb-4">Our Consultation Process</h2>
-              <p className="text-xl text-gray-600">
+              <p className="text-xl text-gray-600 dark:text-gray-400">
                 From first contact to smart home perfection
               </p>
             </div>
@@ -279,7 +279,7 @@ export default function ConsultationPage() {
           <div className="max-w-4xl mx-auto">
             <div className="text-center mb-12">
               <h2 className="text-4xl font-bold mb-4">What to Expect</h2>
-              <p className="text-xl text-gray-600">
+              <p className="text-xl text-gray-600 dark:text-gray-400">
                 Your consultation will be informative, pressure-free, and tailored to your needs
               </p>
             </div>
@@ -362,7 +362,7 @@ export default function ConsultationPage() {
                     {faq.q}
                     <span className="text-2xl text-gray-400 group-open:rotate-45 transition-transform">+</span>
                   </summary>
-                  <div className="px-6 pb-4 text-gray-600">
+                  <div className="px-6 pb-4 text-gray-600 dark:text-gray-400">
                     {faq.a}
                   </div>
                 </details>

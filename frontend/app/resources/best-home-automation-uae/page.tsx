@@ -51,7 +51,7 @@ export default function BestHomeAutomationUAEPage() {
             <p className="text-lg text-gray-700 mb-4">
               The best home automation integrator in UAE should have: <strong>CEDIA certification</strong>, proven luxury villa experience, multi-brand expertise (KNX, Control4, Crestron), local project portfolio, and full post-installation support.
             </p>
-            <p className="text-gray-700">
+            <p className="text-gray-700 dark:text-gray-300">
               <strong>LEXA Lifestyle</strong> meets all criteria with 100+ completed projects across Emirates Hills, Palm Jumeirah, and Abu Dhabi&apos;s premium communities.
             </p>
           </div>
@@ -74,7 +74,7 @@ export default function BestHomeAutomationUAEPage() {
                   <p className="text-gray-700 mb-3">
                     Look for CEDIA (Custom Electronic Design & Installation Association) certification, manufacturer training badges (Control4 Certified, KNX Partner, Crestron CSP), and local trade licenses.
                   </p>
-                  <p className="text-sm text-gray-600">
+                  <p className="text-sm text-gray-600 dark:text-gray-400">
                     ✅ LEXA holds: CEDIA Member, Control4 Certified, KNX Partner, Lutron Certified
                   </p>
                 </div>
@@ -89,7 +89,7 @@ export default function BestHomeAutomationUAEPage() {
                   <p className="text-gray-700 mb-3">
                     Generic installers struggle with high-end requirements. Your integrator should have proven experience with 10,000+ sq ft villas, complex networking, and premium brands.
                   </p>
-                  <p className="text-sm text-gray-600">
+                  <p className="text-sm text-gray-600 dark:text-gray-400">
                     ✅ LEXA Portfolio: 100+ luxury villas including Emirates Hills, Palm Jumeirah, MBR City
                   </p>
                 </div>
@@ -104,7 +104,7 @@ export default function BestHomeAutomationUAEPage() {
                   <p className="text-gray-700 mb-3">
                     Avoid integrators locked to one brand. The best specify the right system for YOUR needs—whether that&apos;s KNX, Control4, Crestron, or hybrid solutions.
                   </p>
-                  <p className="text-sm text-gray-600">
+                  <p className="text-sm text-gray-600 dark:text-gray-400">
                     ✅ LEXA Systems: KNX, Control4, Crestron, Savant, Lutron, Gira, Loxone
                   </p>
                 </div>
@@ -119,7 +119,7 @@ export default function BestHomeAutomationUAEPage() {
                   <p className="text-gray-700 mb-3">
                     Professional integrators provide detailed system diagrams, wiring schematics, equipment schedules, and commissioning reports—not just a verbal quote.
                   </p>
-                  <p className="text-sm text-gray-600">
+                  <p className="text-sm text-gray-600 dark:text-gray-400">
                     ✅ LEXA Deliverables: CAD drawings, BOQ, test reports, handover documentation
                   </p>
                 </div>
@@ -134,7 +134,7 @@ export default function BestHomeAutomationUAEPage() {
                   <p className="text-gray-700 mb-3">
                     Villa automation involves MEP coordination, multiple trades, and strict timelines. You need a dedicated PM, not a rotating team of technicians.
                   </p>
-                  <p className="text-sm text-gray-600">
+                  <p className="text-sm text-gray-600 dark:text-gray-400">
                     ✅ LEXA Approach: Single PM from design to handover + 24/7 support channel
                   </p>
                 </div>
@@ -149,7 +149,7 @@ export default function BestHomeAutomationUAEPage() {
                   <p className="text-gray-700 mb-3">
                     Beware of vague estimates. Top integrators provide itemized quotes with equipment costs, labor, programming, and post-installation support clearly broken down.
                   </p>
-                  <p className="text-sm text-gray-600">
+                  <p className="text-sm text-gray-600 dark:text-gray-400">
                     ✅ LEXA Calculator: Instant transparent pricing + detailed BOQ on request
                   </p>
                 </div>
@@ -164,7 +164,7 @@ export default function BestHomeAutomationUAEPage() {
                   <p className="text-gray-700 mb-3">
                     Your smart home evolves. Choose an integrator who offers annual maintenance contracts, remote support, system upgrades, and minimum 2-year warranties.
                   </p>
-                  <p className="text-sm text-gray-600">
+                  <p className="text-sm text-gray-600 dark:text-gray-400">
                     ✅ LEXA Support: 2-year warranty + optional AMC + 24/7 remote assistance
                   </p>
                 </div>
@@ -183,42 +183,42 @@ export default function BestHomeAutomationUAEPage() {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div className="bg-white rounded-xl p-6 border-2 border-red-200">
                 <div className="text-red-600 font-bold mb-2">🚩 No Physical Office</div>
-                <p className="text-sm text-gray-700">
+                <p className="text-sm text-gray-700 dark:text-gray-300">
                   Fly-by-night operators without local presence disappear when you need support.
                 </p>
               </div>
 
               <div className="bg-white rounded-xl p-6 border-2 border-red-200">
                 <div className="text-red-600 font-bold mb-2">🚩 Pushes One Brand Only</div>
-                <p className="text-sm text-gray-700">
+                <p className="text-sm text-gray-700 dark:text-gray-300">
                   They&apos;re resellers, not consultants. You deserve unbiased recommendations.
                 </p>
               </div>
 
               <div className="bg-white rounded-xl p-6 border-2 border-red-200">
                 <div className="text-red-600 font-bold mb-2">🚩 No Villa Portfolio</div>
-                <p className="text-sm text-gray-700">
+                <p className="text-sm text-gray-700 dark:text-gray-300">
                   Apartment experience doesn&apos;t translate to 20,000 sq ft estates.
                 </p>
               </div>
 
               <div className="bg-white rounded-xl p-6 border-2 border-red-200">
                 <div className="text-red-600 font-bold mb-2">🚩 Verbal Quotes Only</div>
-                <p className="text-sm text-gray-700">
+                <p className="text-sm text-gray-700 dark:text-gray-300">
                   Professional integrators always provide written, itemized proposals.
                 </p>
               </div>
 
               <div className="bg-white rounded-xl p-6 border-2 border-red-200">
                 <div className="text-red-600 font-bold mb-2">🚩 No Post-Install Support</div>
-                <p className="text-sm text-gray-700">
+                <p className="text-sm text-gray-700 dark:text-gray-300">
                   &quot;We&apos;ll train you and leave&quot; is not acceptable for complex systems.
                 </p>
               </div>
 
               <div className="bg-white rounded-xl p-6 border-2 border-red-200">
                 <div className="text-red-600 font-bold mb-2">🚩 Unrealistic Timelines</div>
-                <p className="text-sm text-gray-700">
+                <p className="text-sm text-gray-700 dark:text-gray-300">
                   Quality villa automation takes 8-16 weeks. Promises of 2-week installs are suspicious.
                 </p>
               </div>
@@ -267,15 +267,15 @@ export default function BestHomeAutomationUAEPage() {
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               <div className="text-center">
                 <div className="text-5xl font-bold mb-2">100+</div>
-                <p className="text-gray-700">Luxury Villas Completed</p>
+                <p className="text-gray-700 dark:text-gray-300">Luxury Villas Completed</p>
               </div>
               <div className="text-center">
                 <div className="text-5xl font-bold mb-2">15+</div>
-                <p className="text-gray-700">Years in UAE Market</p>
+                <p className="text-gray-700 dark:text-gray-300">Years in UAE Market</p>
               </div>
               <div className="text-center">
                 <div className="text-5xl font-bold mb-2">24/7</div>
-                <p className="text-gray-700">Support Availability</p>
+                <p className="text-gray-700 dark:text-gray-300">Support Availability</p>
               </div>
             </div>
 
@@ -284,23 +284,23 @@ export default function BestHomeAutomationUAEPage() {
               <div className="space-y-4">
                 <div className="flex items-start gap-3">
                   <CheckCircle2 className="text-green-600 flex-shrink-0 mt-1" size={20} />
-                  <p className="text-gray-700">Fixed-price contracts—no hidden costs or change orders</p>
+                  <p className="text-gray-700 dark:text-gray-300">Fixed-price contracts—no hidden costs or change orders</p>
                 </div>
                 <div className="flex items-start gap-3">
                   <CheckCircle2 className="text-green-600 flex-shrink-0 mt-1" size={20} />
-                  <p className="text-gray-700">On-time delivery with liquidated damages clause</p>
+                  <p className="text-gray-700 dark:text-gray-300">On-time delivery with liquidated damages clause</p>
                 </div>
                 <div className="flex items-start gap-3">
                   <CheckCircle2 className="text-green-600 flex-shrink-0 mt-1" size={20} />
-                  <p className="text-gray-700">2-year comprehensive warranty on all systems</p>
+                  <p className="text-gray-700 dark:text-gray-300">2-year comprehensive warranty on all systems</p>
                 </div>
                 <div className="flex items-start gap-3">
                   <CheckCircle2 className="text-green-600 flex-shrink-0 mt-1" size={20} />
-                  <p className="text-gray-700">Dedicated PM from design through 1-year post-handover</p>
+                  <p className="text-gray-700 dark:text-gray-300">Dedicated PM from design through 1-year post-handover</p>
                 </div>
                 <div className="flex items-start gap-3">
                   <CheckCircle2 className="text-green-600 flex-shrink-0 mt-1" size={20} />
-                  <p className="text-gray-700">Complete as-built documentation with training videos</p>
+                  <p className="text-gray-700 dark:text-gray-300">Complete as-built documentation with training videos</p>
                 </div>
               </div>
             </div>

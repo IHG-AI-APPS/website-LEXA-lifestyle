@@ -251,7 +251,7 @@ export default function AMCPackagesPage() {
                     {pkg.features.map((feature) => (
                       <div key={feature} className="flex items-start gap-2">
                         <CheckCircle2 className="h-5 w-5 text-[#1A1A1A] flex-shrink-0 mt-0.5" />
-                        <span className="text-sm text-gray-700">{feature}</span>
+                        <span className="text-sm text-gray-700 dark:text-gray-300">{feature}</span>
                       </div>
                     ))}
                   </div>
@@ -320,7 +320,7 @@ export default function AMCPackagesPage() {
                     </div>
                     <ul className="space-y-2">
                       {category.items.map((item) => (
-                        <li key={item} className="flex items-start gap-2 text-sm text-gray-600">
+                        <li key={item} className="flex items-start gap-2 text-sm text-gray-600 dark:text-gray-400">
                           <CheckCircle2 className="h-4 w-4 text-[#1A1A1A] flex-shrink-0 mt-0.5" />
                           <span>{item}</span>
                         </li>
@@ -363,7 +363,7 @@ export default function AMCPackagesPage() {
                     <Icon className="h-10 w-10 mx-auto mb-4 text-[#1A1A1A] dark:text-white" />
                     <div className="text-4xl font-bold mb-2 text-[#1A1A1A] dark:text-white">{benefit.stat}</div>
                     <div className="text-sm font-semibold mb-2 text-[#1A1A1A] dark:text-white">{benefit.title}</div>
-                    <div className="text-xs text-gray-600">{benefit.description}</div>
+                    <div className="text-xs text-gray-600 dark:text-gray-400">{benefit.description}</div>
                   </motion.div>
                 )
               })}

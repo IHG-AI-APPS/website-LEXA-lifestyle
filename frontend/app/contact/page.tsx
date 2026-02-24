@@ -153,7 +153,7 @@ export default function ContactPage() {
                       <h3 className="text-2xl font-bold text-gray-900 mb-2">
                         {language === 'ar' ? 'تم إرسال الرسالة!' : 'Message Sent!'}
                       </h3>
-                      <p className="text-gray-600">
+                      <p className="text-gray-600 dark:text-gray-400">
                         {language === 'ar' 
                           ? 'شكراً لتواصلك معنا. سنتصل بك قريباً.'
                           : "Thank you for reaching out. We'll contact you shortly."
@@ -412,7 +412,7 @@ export default function ContactPage() {
               <div>
                 <div className="flex items-center gap-2 mb-4">
                   <MapPin className="h-6 w-6 text-red-500" />
-                  <h2 className="text-2xl font-bold text-gray-900">
+                  <h2 className="text-2xl font-bold text-gray-900 dark:text-white">
                     {language === 'ar' ? 'زُر صالة العرض' : 'Visit Our Showroom'}
                   </h2>
                 </div>
@@ -503,19 +503,19 @@ export default function ContactPage() {
           <div className="max-w-7xl mx-auto">
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
               <Link href="/calculator" className="p-4 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors text-center">
-                <p className="font-medium text-gray-900">{language === 'ar' ? 'حاسبة التكلفة' : 'Cost Calculator'}</p>
+                <p className="font-medium text-gray-900 dark:text-white">{language === 'ar' ? 'حاسبة التكلفة' : 'Cost Calculator'}</p>
                 <p className="text-sm text-gray-500">{language === 'ar' ? 'قدّر مشروعك' : 'Estimate your project'}</p>
               </Link>
               <Link href="/smart-home-quiz" className="p-4 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors text-center">
-                <p className="font-medium text-gray-900">{language === 'ar' ? 'اختبار الذكاء الاصطناعي' : 'AI Quiz'}</p>
+                <p className="font-medium text-gray-900 dark:text-white">{language === 'ar' ? 'اختبار الذكاء الاصطناعي' : 'AI Quiz'}</p>
                 <p className="text-sm text-gray-500">{language === 'ar' ? 'احصل على توصيات' : 'Get recommendations'}</p>
               </Link>
               <Link href="/projects" className="p-4 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors text-center">
-                <p className="font-medium text-gray-900">{language === 'ar' ? 'مشاريعنا' : 'Our Projects'}</p>
+                <p className="font-medium text-gray-900 dark:text-white">{language === 'ar' ? 'مشاريعنا' : 'Our Projects'}</p>
                 <p className="text-sm text-gray-500">{language === 'ar' ? 'عرض المعرض' : 'View portfolio'}</p>
               </Link>
               <Link href="/packages" className="p-4 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors text-center">
-                <p className="font-medium text-gray-900">{language === 'ar' ? 'الباقات' : 'Packages'}</p>
+                <p className="font-medium text-gray-900 dark:text-white">{language === 'ar' ? 'الباقات' : 'Packages'}</p>
                 <p className="text-sm text-gray-500">{language === 'ar' ? 'تصفح الخيارات' : 'Browse options'}</p>
               </Link>
             </div>

@@ -84,7 +84,7 @@ export default function PalmJumeirahPage() {
                 <Link key={index} href={solution.link}>
                   <div className="border border-gray-200 hover:border-black p-6 rounded-lg transition-all group">
                     <h3 className="text-lg font-bold mb-2 group-hover:text-black transition-colors">{solution.title}</h3>
-                    <p className="text-sm text-gray-600">{solution.desc}</p>
+                    <p className="text-sm text-gray-600 dark:text-gray-400">{solution.desc}</p>
                   </div>
                 </Link>
               ))}

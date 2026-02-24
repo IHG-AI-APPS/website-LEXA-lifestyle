@@ -292,7 +292,7 @@ export default function AIStaffAccountabilityPage() {
                   <diff.icon className="w-6 h-6 text-blue-600" />
                 </div>
                 <div className="text-sm text-gray-500 mb-2 line-through">{diff.traditional}</div>
-                <div className="text-lg font-bold text-gray-900">{diff.lexa}</div>
+                <div className="text-lg font-bold text-gray-900 dark:text-white">{diff.lexa}</div>
               </motion.div>
             ))}
           </div>
@@ -304,7 +304,7 @@ export default function AIStaffAccountabilityPage() {
         <div className="container mx-auto px-6">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-gray-900 mb-4">Operational Challenges We Solve</h2>
-            <p className="text-xl text-gray-600">Common pain points in luxury hospitality operations</p>
+            <p className="text-xl text-gray-600 dark:text-gray-400">Common pain points in luxury hospitality operations</p>
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
@@ -319,7 +319,7 @@ export default function AIStaffAccountabilityPage() {
               >
                 <pain.icon className="w-10 h-10 text-red-500 mb-4" />
                 <h3 className="text-lg font-bold text-gray-900 mb-2">{pain.problem}</h3>
-                <p className="text-sm text-gray-600">{pain.impact}</p>
+                <p className="text-sm text-gray-600 dark:text-gray-400">{pain.impact}</p>
               </motion.div>
             ))}
           </div>
@@ -331,7 +331,7 @@ export default function AIStaffAccountabilityPage() {
         <div className="container mx-auto px-6">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-gray-900 mb-4">3-Stage Implementation Roadmap</h2>
-            <p className="text-xl text-gray-600">Measurable ROI at every stage</p>
+            <p className="text-xl text-gray-600 dark:text-gray-400">Measurable ROI at every stage</p>
           </div>
 
           {/* Stage Selector */}
@@ -364,8 +364,8 @@ export default function AIStaffAccountabilityPage() {
                   {currentStage.id}
                 </div>
                 <div>
-                  <h3 className="text-3xl font-bold text-gray-900">{currentStage.name}</h3>
-                  <p className="text-lg text-gray-600">{currentStage.tagline}</p>
+                  <h3 className="text-3xl font-bold text-gray-900 dark:text-white">{currentStage.name}</h3>
+                  <p className="text-lg text-gray-600 dark:text-gray-400">{currentStage.tagline}</p>
                 </div>
               </div>
 
@@ -390,7 +390,7 @@ export default function AIStaffAccountabilityPage() {
                     </div>
                     <div>
                       <h4 className="font-bold text-gray-900 mb-1">{feature.title}</h4>
-                      <p className="text-sm text-gray-600">{feature.desc}</p>
+                      <p className="text-sm text-gray-600 dark:text-gray-400">{feature.desc}</p>
                     </div>
                   </div>
                 ))}
@@ -399,11 +399,11 @@ export default function AIStaffAccountabilityPage() {
               <div className="flex items-center justify-between pt-6 border-t border-gray-200 dark:border-gray-700">
                 <div>
                   <div className="text-sm text-gray-500 mb-1">ROI Impact</div>
-                  <div className="font-semibold text-gray-900">{currentStage.roi}</div>
+                  <div className="font-semibold text-gray-900 dark:text-white">{currentStage.roi}</div>
                 </div>
                 <div className="text-right">
                   <div className="text-sm text-gray-500 mb-1">Investment Level</div>
-                  <div className="font-semibold text-gray-900">{currentStage.investment}</div>
+                  <div className="font-semibold text-gray-900 dark:text-white">{currentStage.investment}</div>
                 </div>
               </div>
             </div>
@@ -416,7 +416,7 @@ export default function AIStaffAccountabilityPage() {
         <div className="container mx-auto px-6">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-gray-900 mb-4">Technology Architecture</h2>
-            <p className="text-xl text-gray-600">4-layer intelligent system design</p>
+            <p className="text-xl text-gray-600 dark:text-gray-400">4-layer intelligent system design</p>
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-7xl mx-auto">
@@ -435,7 +435,7 @@ export default function AIStaffAccountabilityPage() {
                 <h3 className="text-lg font-bold text-gray-900 mb-4">{layer.layer}</h3>
                 <ul className="space-y-2">
                   {layer.components.map((component, i) => (
-                    <li key={i} className="flex items-start gap-2 text-sm text-gray-600">
+                    <li key={i} className="flex items-start gap-2 text-sm text-gray-600 dark:text-gray-400">
                       <CheckCircle2 className="w-4 h-4 text-green-500 flex-shrink-0 mt-0.5" />
                       <span>{component}</span>
                     </li>
@@ -452,7 +452,7 @@ export default function AIStaffAccountabilityPage() {
         <div className="container mx-auto px-6">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-gray-900 mb-4">Industry Success Stories</h2>
-            <p className="text-xl text-gray-600">Real results from luxury hospitality leaders</p>
+            <p className="text-xl text-gray-600 dark:text-gray-400">Real results from luxury hospitality leaders</p>
           </div>
 
           <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
@@ -471,11 +471,11 @@ export default function AIStaffAccountabilityPage() {
                 <div className="space-y-4">
                   <div>
                     <div className="text-sm font-semibold text-red-600 mb-1">Challenge</div>
-                    <p className="text-gray-700">{useCase.challenge}</p>
+                    <p className="text-gray-700 dark:text-gray-300">{useCase.challenge}</p>
                   </div>
                   <div>
                     <div className="text-sm font-semibold text-blue-600 mb-1">LEXA Solution</div>
-                    <p className="text-gray-700">{useCase.solution}</p>
+                    <p className="text-gray-700 dark:text-gray-300">{useCase.solution}</p>
                   </div>
                   <div className="bg-green-50 border border-green-200 rounded-lg p-4">
                     <div className="text-sm font-semibold text-green-700 mb-1">Result</div>

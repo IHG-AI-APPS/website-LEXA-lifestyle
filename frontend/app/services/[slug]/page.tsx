@@ -345,7 +345,7 @@ export default function ServiceDetailPage() {
                     className="flex items-start gap-3"
                   >
                     <CheckCircle2 className="w-5 h-5 text-[#E8DCC8] flex-shrink-0 mt-0.5" />
-                    <span className="text-gray-700">{feature}</span>
+                    <span className="text-gray-700 dark:text-gray-300">{feature}</span>
                   </motion.li>
                 ))}
               </ul>
@@ -437,7 +437,7 @@ export default function ServiceDetailPage() {
                   className="flex items-start gap-3 p-4 bg-gray-50 dark:bg-gray-800 rounded-lg border border-gray-200 dark:border-gray-700"
                 >
                   <FileText className="w-5 h-5 text-[#E8DCC8] flex-shrink-0 mt-0.5" />
-                  <span className="text-sm text-gray-700">{item}</span>
+                  <span className="text-sm text-gray-700 dark:text-gray-300">{item}</span>
                 </motion.div>
               ))}
             </div>
@@ -463,13 +463,13 @@ export default function ServiceDetailPage() {
                   {study.challenge && (
                     <div className="mb-4">
                       <h4 className="font-semibold text-gray-900 dark:text-white mb-2">Challenge:</h4>
-                      <p className="text-gray-700">{study.challenge}</p>
+                      <p className="text-gray-700 dark:text-gray-300">{study.challenge}</p>
                     </div>
                   )}
                   {study.solution && (
                     <div className="mb-4">
                       <h4 className="font-semibold text-gray-900 dark:text-white mb-2">Solution:</h4>
-                      <p className="text-gray-700">{study.solution}</p>
+                      <p className="text-gray-700 dark:text-gray-300">{study.solution}</p>
                     </div>
                   )}
                   {study.result && (
@@ -509,7 +509,7 @@ export default function ServiceDetailPage() {
                       </p>
                     )}
                     {service.pricing_guide.price_range && (
-                      <p className="text-gray-700">
+                      <p className="text-gray-700 dark:text-gray-300">
                         <span className="font-semibold">Range:</span> {service.pricing_guide.price_range}
                       </p>
                     )}
@@ -521,7 +521,7 @@ export default function ServiceDetailPage() {
                       <Clock className="w-5 h-5 text-[#E8DCC8]" />
                       Timeline
                     </h3>
-                    <p className="text-gray-700">{service.pricing_guide.timeline}</p>
+                    <p className="text-gray-700 dark:text-gray-300">{service.pricing_guide.timeline}</p>
                   </div>
                 )}
               </div>

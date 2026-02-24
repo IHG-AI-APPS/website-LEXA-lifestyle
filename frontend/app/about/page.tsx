@@ -227,7 +227,7 @@ export default function AboutPage() {
                   viewport={{ once: true }}
                   className="border border-gray-200 dark:border-gray-700 p-6 flex items-center justify-center text-center"
                 >
-                  <span className="text-lg font-medium text-gray-600">{partner}</span>
+                  <span className="text-lg font-medium text-gray-600 dark:text-gray-400">{partner}</span>
                 </motion.div>
               ))}
             </div>

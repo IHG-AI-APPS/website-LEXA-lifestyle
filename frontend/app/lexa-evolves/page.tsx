@@ -172,7 +172,7 @@ export default function LexaEvolvesPage() {
                         {stage.features.map((feature) => (
                           <div key={feature} className="flex items-start gap-2">
                             <CheckCircle2 className="h-4 w-4 text-violet-600 flex-shrink-0 mt-0.5" />
-                            <span className="text-sm text-gray-700">{feature}</span>
+                            <span className="text-sm text-gray-700 dark:text-gray-300">{feature}</span>
                           </div>
                         ))}
                       </div>
@@ -220,7 +220,7 @@ export default function LexaEvolvesPage() {
                       </div>
                       <div>
                         <h3 className="text-xl font-bold mb-2 text-[#1A1A1A] dark:text-white">{benefit.title}</h3>
-                        <p className="text-gray-600">{benefit.description}</p>
+                        <p className="text-gray-600 dark:text-gray-400">{benefit.description}</p>
                       </div>
                     </div>
                   </motion.div>

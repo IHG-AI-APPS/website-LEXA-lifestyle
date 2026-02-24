@@ -169,7 +169,7 @@ export default function ShouldHaveSelection({
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.2 }}
-          className="text-gray-600"
+          className="text-gray-600 dark:text-gray-400"
         >
           These features will enhance your smart home experience. Select what matters most.
         </motion.p>
@@ -207,7 +207,7 @@ export default function ShouldHaveSelection({
                     <IconComponent className="w-5 h-5 text-orange-600" />
                   </div>
                   <div>
-                    <h3 className="font-bold text-gray-900">{category.name}</h3>
+                    <h3 className="font-bold text-gray-900 dark:text-white">{category.name}</h3>
                     <p className="text-sm text-gray-500">
                       {selectedInCategory} of {category.features.length} selected
                     </p>
@@ -248,7 +248,7 @@ export default function ShouldHaveSelection({
                       {/* Content */}
                       <div className="flex-1 min-w-0">
                         <div className="flex items-center gap-2">
-                          <span className="font-medium text-gray-900">{feature.name}</span>
+                          <span className="font-medium text-gray-900 dark:text-white">{feature.name}</span>
                           {feature.popularity >= 80 && (
                             <span className="text-xs bg-orange-100 text-orange-700 px-2 py-0.5 rounded-full">
                               Recommended

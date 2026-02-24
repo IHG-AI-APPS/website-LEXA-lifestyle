@@ -102,7 +102,7 @@ export default function JBRClient() {
               >
                 <system.icon className="text-[#C9A962] mb-4" size={32} />
                 <h3 className="text-xl font-bold mb-2">{system.title}</h3>
-                <p className="text-gray-600">{system.desc}</p>
+                <p className="text-gray-600 dark:text-gray-400">{system.desc}</p>
               </motion.div>
             ))}
           </div>

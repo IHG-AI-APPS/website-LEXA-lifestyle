@@ -195,7 +195,7 @@ export default function ProtocolSelection({
                       {type.pros.slice(0, 3).map((pro, i) => (
                         <div key={i} className="flex items-center gap-2 text-sm">
                           <CheckCircle2 className="w-4 h-4 text-green-500 flex-shrink-0" />
-                          <span className="text-gray-700">{pro}</span>
+                          <span className="text-gray-700 dark:text-gray-300">{pro}</span>
                         </div>
                       ))}
                     </div>

@@ -70,15 +70,15 @@ export default function SharjahPage() {
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
               <div>
                 <div className="text-4xl font-bold text-[#E8DCC8] mb-2">{sharjahData.projectCount}+</div>
-                <div className="text-gray-600">Homes Automated in Sharjah</div>
+                <div className="text-gray-600 dark:text-gray-400">Homes Automated in Sharjah</div>
               </div>
               <div>
                 <div className="text-4xl font-bold text-[#E8DCC8] mb-2">{sharjahData.avgProjectValue}</div>
-                <div className="text-gray-600">Average Project Value</div>
+                <div className="text-gray-600 dark:text-gray-400">Average Project Value</div>
               </div>
               <div>
                 <div className="text-4xl font-bold text-[#E8DCC8] mb-2">4.9/5</div>
-                <div className="text-gray-600">Customer Rating</div>
+                <div className="text-gray-600 dark:text-gray-400">Customer Rating</div>
               </div>
             </div>
           </div>
@@ -148,7 +148,7 @@ function ServiceCard({ title, description }: { title: string; description: strin
   return (
     <div className="p-6 bg-white dark:bg-gray-800 border border-gray-200 rounded-lg hover:shadow-lg transition">
       <h3 className="text-xl font-bold mb-3">{title}</h3>
-      <p className="text-gray-600">{description}</p>
+      <p className="text-gray-600 dark:text-gray-400">{description}</p>
     </div>
   )
 }

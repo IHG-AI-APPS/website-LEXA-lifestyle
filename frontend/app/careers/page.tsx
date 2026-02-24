@@ -35,21 +35,21 @@ export default function CareersPage() {
           <div className="grid md:grid-cols-3 gap-8">
             <div className="p-6 bg-gray-50 dark:bg-gray-800">
               <h3 className="text-xl font-semibold mb-3">Innovation & Excellence</h3>
-              <p className="text-gray-600">
+              <p className="text-gray-600 dark:text-gray-400">
                 Work with cutting-edge technologies from world-leading brands like Savant, Crestron, Bowers & Wilkins, and Sony.
               </p>
             </div>
             
             <div className="p-6 bg-gray-50 dark:bg-gray-800">
               <h3 className="text-xl font-semibold mb-3">Growth & Learning</h3>
-              <p className="text-gray-600">
+              <p className="text-gray-600 dark:text-gray-400">
                 Continuous training, certifications, and career development opportunities in smart home and AV technologies.
               </p>
             </div>
             
             <div className="p-6 bg-gray-50 dark:bg-gray-800">
               <h3 className="text-xl font-semibold mb-3">Prestigious Projects</h3>
-              <p className="text-gray-600">
+              <p className="text-gray-600 dark:text-gray-400">
                 Work on high-end residential villas, luxury hotels, and commercial projects across Dubai and the UAE.
               </p>
             </div>
@@ -99,7 +99,7 @@ export default function CareersPage() {
                 <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
                   <div>
                     <h3 className="text-xl font-semibold mb-2">{job.title}</h3>
-                    <div className="flex flex-wrap gap-4 text-sm text-gray-600">
+                    <div className="flex flex-wrap gap-4 text-sm text-gray-600 dark:text-gray-400">
                       <span className="flex items-center gap-2">
                         <Briefcase className="h-4 w-4" />
                         {job.department}

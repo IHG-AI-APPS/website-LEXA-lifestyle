@@ -89,7 +89,7 @@ export default function EmergencySupportPage() {
               <h2 className="text-4xl sm:text-5xl font-bold mb-4">
                 We Fix It Fast
               </h2>
-              <p className="text-xl text-gray-600">
+              <p className="text-xl text-gray-600 dark:text-gray-400">
                 Common smart home emergencies we handle daily
               </p>
             </div>
@@ -125,7 +125,7 @@ export default function EmergencySupportPage() {
                 </div>
                 <div>
                   <h3 className="text-2xl font-bold mb-2">Contact Us</h3>
-                  <p className="text-gray-700">
+                  <p className="text-gray-700 dark:text-gray-300">
                     WhatsApp, phone, or emergency hotline. Available 24/7 including public holidays.
                   </p>
                 </div>
@@ -137,7 +137,7 @@ export default function EmergencySupportPage() {
                 </div>
                 <div>
                   <h3 className="text-2xl font-bold mb-2">Remote Diagnosis</h3>
-                  <p className="text-gray-700">
+                  <p className="text-gray-700 dark:text-gray-300">
                     Our team attempts remote troubleshooting first. Many issues resolved within minutes over video call.
                   </p>
                 </div>
@@ -149,7 +149,7 @@ export default function EmergencySupportPage() {
                 </div>
                 <div>
                   <h3 className="text-2xl font-bold mb-2">Technician Dispatch</h3>
-                  <p className="text-gray-700">
+                  <p className="text-gray-700 dark:text-gray-300">
                     If site visit needed, certified technician dispatched immediately. ETA communicated upfront.
                   </p>
                 </div>
@@ -161,7 +161,7 @@ export default function EmergencySupportPage() {
                 </div>
                 <div>
                   <h3 className="text-2xl font-bold mb-2">Issue Resolved</h3>
-                  <p className="text-gray-700">
+                  <p className="text-gray-700 dark:text-gray-300">
                     Problem fixed on-site. Follow-up check within 48 hours to ensure stability.
                   </p>
                 </div>
@@ -179,7 +179,7 @@ export default function EmergencySupportPage() {
               <h2 className="text-4xl sm:text-5xl font-bold mb-4">
                 Annual Maintenance Contracts
               </h2>
-              <p className="text-xl text-gray-600">
+              <p className="text-xl text-gray-600 dark:text-gray-400">
                 Proactive care. Priority support. Peace of mind.
               </p>
             </div>
@@ -202,7 +202,7 @@ export default function EmergencySupportPage() {
                 <AlertCircle size={28} className="flex-shrink-0 mt-1" />
                 <div>
                   <h3 className="text-xl font-bold mb-2">Why AMC Matters</h3>
-                  <p className="text-gray-700">
+                  <p className="text-gray-700 dark:text-gray-300">
                     Smart homes are complex systems. Without regular maintenance, small issues become expensive emergencies. 
                     Our AMC clients experience <strong>85% fewer emergency calls</strong> and <strong>longer system lifespan</strong>.
                   </p>

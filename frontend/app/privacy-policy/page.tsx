@@ -173,9 +173,9 @@ export default function PrivacyPolicyPage() {
             <div className="bg-gray-50 p-6 rounded-xl mt-4">
               <p className="text-gray-700 font-semibold">LEXA Lifestyle Trading LLC</p>
               <p className="text-gray-600 mt-2">Al Quoz Industrial 1, SZR - Interchange No 3</p>
-              <p className="text-gray-600">Dubai, United Arab Emirates</p>
+              <p className="text-gray-600 dark:text-gray-400">Dubai, United Arab Emirates</p>
               <p className="text-gray-600 mt-2">Email: privacy@lexalifestyle.com</p>
-              <p className="text-gray-600">Phone: +971 4 267 0470</p>
+              <p className="text-gray-600 dark:text-gray-400">Phone: +971 4 267 0470</p>
             </div>
           </section>
 

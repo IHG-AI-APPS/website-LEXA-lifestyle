@@ -82,10 +82,10 @@ export default function BrandsPage() {
             <div className="flex items-center justify-center gap-6 text-sm">
               <div className="flex items-center gap-2">
                 <Award className="text-gray-400" size={20} />
-                <span className="text-gray-600">Authorized Dealer</span>
+                <span className="text-gray-600 dark:text-gray-400">Authorized Dealer</span>
               </div>
               <div className="text-gray-400">|</div>
-              <div className="text-gray-600">
+              <div className="text-gray-600 dark:text-gray-400">
                 <span className="font-semibold text-black">{brands.length}</span> Brands
               </div>
             </div>

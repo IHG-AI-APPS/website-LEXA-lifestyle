@@ -80,7 +80,7 @@ export default function SpecialtyRoomsPage() {
           >
             <div className="inline-flex items-center gap-2 px-4 py-2 bg-white rounded-full mb-6 shadow-sm">
               <Plus className="h-4 w-4 text-blue-600" />
-              <span className="text-sm font-medium text-gray-900">À La Carte Add-Ons</span>
+              <span className="text-sm font-medium text-gray-900 dark:text-white">À La Carte Add-Ons</span>
             </div>
 
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 mb-6">
@@ -97,12 +97,12 @@ export default function SpecialtyRoomsPage() {
 
             <div className="flex flex-wrap gap-3 justify-center">
               <div className="px-4 py-2 bg-white rounded-lg shadow-sm">
-                <p className="text-sm text-gray-600">Price Range</p>
-                <p className="font-bold text-gray-900">AED 28K - 85K</p>
+                <p className="text-sm text-gray-600 dark:text-gray-400">Price Range</p>
+                <p className="font-bold text-gray-900 dark:text-white">AED 28K - 85K</p>
               </div>
               <div className="px-4 py-2 bg-white rounded-lg shadow-sm">
-                <p className="text-sm text-gray-600">Total Options</p>
-                <p className="font-bold text-gray-900">{rooms.length} Rooms</p>
+                <p className="text-sm text-gray-600 dark:text-gray-400">Total Options</p>
+                <p className="font-bold text-gray-900 dark:text-white">{rooms.length} Rooms</p>
               </div>
             </div>
           </motion.div>
@@ -165,7 +165,7 @@ export default function SpecialtyRoomsPage() {
 
                       {/* Price Badge */}
                       <div className="absolute bottom-4 right-4 px-3 py-1 bg-white/90 backdrop-blur-sm rounded-full">
-                        <p className="text-sm font-bold text-gray-900">
+                        <p className="text-sm font-bold text-gray-900 dark:text-white">
                           +AED {(room.base_price_aed / 1000).toFixed(0)}K
                         </p>
                       </div>

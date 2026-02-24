@@ -291,7 +291,7 @@ export default function FeaturePrioritization({
         >
           Prioritize Your Features
         </motion.h2>
-        <p className="text-gray-600">
+        <p className="text-gray-600 dark:text-gray-400">
           For each feature, select how important it is to you
         </p>
       </div>
@@ -352,7 +352,7 @@ export default function FeaturePrioritization({
               <div className="flex items-start justify-between mb-3">
                 <div className="flex-1">
                   <div className="flex items-center gap-2">
-                    <h3 className="font-semibold text-gray-900">{feature.name}</h3>
+                    <h3 className="font-semibold text-gray-900 dark:text-white">{feature.name}</h3>
                     {feature.popularity >= 85 && (
                       <span className="text-xs bg-amber-100 text-amber-700 px-2 py-0.5 rounded-full">
                         Popular
@@ -408,7 +408,7 @@ export default function FeaturePrioritization({
             </div>
           ))}
           <div className="p-3 rounded-lg bg-gray-100">
-            <div className="text-2xl font-bold text-gray-600">{summary.skip}</div>
+            <div className="text-2xl font-bold text-gray-600 dark:text-gray-400">{summary.skip}</div>
             <div className="text-xs text-gray-500">Skipped</div>
           </div>
         </div>

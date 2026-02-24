@@ -126,7 +126,7 @@ export default function SolutionClient({
                     className="flex items-start gap-3 p-6 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 hover:border-charcoal transition-colors"
                   >
                     <CheckCircle2 className="text-charcoal flex-shrink-0 mt-1" size={20} />
-                    <span className="text-gray-800">{feature}</span>
+                    <span className="text-gray-800 dark:text-gray-100">{feature}</span>
                   </motion.div>
                 ))}
               </div>
@@ -161,7 +161,7 @@ export default function SolutionClient({
                     {card.benefits && card.benefits.length > 0 && (
                       <ul className="space-y-2">
                         {card.benefits.map((benefit, i) => (
-                          <li key={i} className="flex items-center gap-2 text-sm text-gray-700">
+                          <li key={i} className="flex items-center gap-2 text-sm text-gray-700 dark:text-gray-300">
                             <CheckCircle2 size={16} className="text-charcoal flex-shrink-0" />
                             {benefit}
                           </li>
@@ -235,7 +235,7 @@ export default function SolutionClient({
                 solution.faqs.map((faq, index) => (
                   <div key={index} className="bg-white dark:bg-gray-800 p-8 border border-gray-200 dark:border-gray-700">
                     <h3 className="text-xl font-semibold mb-3">{faq.question}</h3>
-                    <p className="text-gray-700">{faq.answer}</p>
+                    <p className="text-gray-700 dark:text-gray-300">{faq.answer}</p>
                   </div>
                 ))
               ) : (
@@ -243,7 +243,7 @@ export default function SolutionClient({
                 <>
                   <div className="bg-white dark:bg-gray-800 p-8 border border-gray-200 dark:border-gray-700">
                     <h3 className="text-xl font-semibold mb-3">What is {solution.title}?</h3>
-                    <p className="text-gray-700">
+                    <p className="text-gray-700 dark:text-gray-300">
                       {solution.title} is the integration of intelligent systems — lighting, audio-visual equipment, 
                       sensors, climate control, and user interfaces — designed specifically for this room experience. 
                       It combines automation, convenience, and luxury to create the perfect environment.
@@ -252,7 +252,7 @@ export default function SolutionClient({
 
                   <div className="bg-white dark:bg-gray-800 p-8 border border-gray-200 dark:border-gray-700">
                     <h3 className="text-xl font-semibold mb-3">How much does {solution.title} cost in Dubai/UAE?</h3>
-                    <p className="text-gray-700">
+                    <p className="text-gray-700 dark:text-gray-300">
                       Costs vary based on room size, technology brands, and customization level. Typical projects in UAE 
                       range from AED 25,000 to AED 85,000. We customize every installation to match your property 
                       requirements and budget. Contact us for a detailed quote.
@@ -261,7 +261,7 @@ export default function SolutionClient({
 
                   <div className="bg-white dark:bg-gray-800 p-8 border border-gray-200 dark:border-gray-700">
                     <h3 className="text-xl font-semibold mb-3">How long does installation take?</h3>
-                    <p className="text-gray-700">
+                    <p className="text-gray-700 dark:text-gray-300">
                       Installation timeframes depend on project scope and complexity. Most projects take 2–6 weeks from 
                       initial consultation to completion. We provide full design, engineering, and installation planning 
                       before any work begins to ensure a smooth process.
@@ -270,7 +270,7 @@ export default function SolutionClient({
 
                   <div className="bg-white dark:bg-gray-800 p-8 border border-gray-200 dark:border-gray-700">
                     <h3 className="text-xl font-semibold mb-3">Can automation be added to existing rooms?</h3>
-                    <p className="text-gray-700">
+                    <p className="text-gray-700 dark:text-gray-300">
                       Yes — retrofit automation packages are very common in UAE villas and apartments. Modern systems can 
                       be installed without major renovation. We specialize in adding smart technology to existing spaces 
                       with minimal disruption.
@@ -279,7 +279,7 @@ export default function SolutionClient({
 
                   <div className="bg-white dark:bg-gray-800 p-8 border border-gray-200 dark:border-gray-700">
                     <h3 className="text-xl font-semibold mb-3">Is this suitable for Dubai&apos;s climate?</h3>
-                    <p className="text-gray-700">
+                    <p className="text-gray-700 dark:text-gray-300">
                       Absolutely. All our systems are specifically selected and configured for UAE&apos;s climate conditions. 
                       We use weatherproof outdoor components, climate-resistant materials, and ensure proper ventilation 
                       and cooling for indoor equipment.
@@ -288,7 +288,7 @@ export default function SolutionClient({
 
                   <div className="bg-white dark:bg-gray-800 p-8 border border-gray-200 dark:border-gray-700">
                     <h3 className="text-xl font-semibold mb-3">Do you provide support & maintenance?</h3>
-                    <p className="text-gray-700">
+                    <p className="text-gray-700 dark:text-gray-300">
                       Yes. LEXA Lifestyle offers comprehensive AMC (Annual Maintenance Contract) packages for ongoing 
                       support, software updates, system health checks, and priority service. Our local team provides 
                       fast response times across Dubai and UAE.

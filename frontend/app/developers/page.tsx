@@ -184,7 +184,7 @@ export default function DevelopersPage() {
         <div className="container mx-auto px-8 lg:px-16">
           <div className="max-w-4xl mx-auto text-center mb-16">
             <h2 className="text-4xl sm:text-5xl font-bold mb-4 ">Smart Homes = Value-Add, Not Expense</h2>
-            <p className="text-xl text-gray-600">
+            <p className="text-xl text-gray-600 dark:text-gray-400">
               Turn automation into a sales advantage
             </p>
           </div>
@@ -198,7 +198,7 @@ export default function DevelopersPage() {
             >
               <TrendingUp size={40} className="text-black mb-4" />
               <h3 className="text-2xl font-bold mb-2">10-15% Sales Premium</h3>
-              <p className="text-gray-700">
+              <p className="text-gray-700 dark:text-gray-300">
                 Smart-ready units command higher prices and sell faster
               </p>
             </motion.div>
@@ -212,7 +212,7 @@ export default function DevelopersPage() {
             >
               <Clock size={40} className="text-blue-600 mb-4" />
               <h3 className="text-2xl font-bold mb-2">Reduce Support Calls</h3>
-              <p className="text-gray-700">
+              <p className="text-gray-700 dark:text-gray-300">
                 Proper documentation = fewer post-handover issues
               </p>
             </motion.div>
@@ -226,7 +226,7 @@ export default function DevelopersPage() {
             >
               <Award size={40} className="text-purple-600 mb-4" />
               <h3 className="text-2xl font-bold mb-2">Market Differentiation</h3>
-              <p className="text-gray-700">
+              <p className="text-gray-700 dark:text-gray-300">
                 Smart-Ready badge sets you apart from competition
               </p>
             </motion.div>
@@ -240,7 +240,7 @@ export default function DevelopersPage() {
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-16">
               <h2 className="text-4xl sm:text-5xl font-bold mb-4 ">Developer Resources</h2>
-              <p className="text-xl text-gray-600">
+              <p className="text-xl text-gray-600 dark:text-gray-400">
                 Everything you need to add smart-home value
               </p>
             </div>
@@ -315,7 +315,7 @@ export default function DevelopersPage() {
                 <p className="text-xl text-gray-700 mb-2">
                   Our development partnerships team will send you the requested resources and schedule a call to discuss your project.
                 </p>
-                <p className="text-gray-600">
+                <p className="text-gray-600 dark:text-gray-400">
                   Check your email at <strong>{formData.email}</strong>
                 </p>
               </div>

@@ -60,7 +60,7 @@ const CustomNode = ({ data }: any) => {
           )}
         </div>
         <div>
-          <div className="text-sm font-semibold text-gray-900">{data.label}</div>
+          <div className="text-sm font-semibold text-gray-900 dark:text-white">{data.label}</div>
           <div className={`text-[10px] uppercase tracking-widest mt-1 ${
             isSelected ? 'text-blue-600' : 'text-orange-600'
           }`}>
@@ -156,7 +156,7 @@ export default function KnowledgeGraphVisualizer({
         <h3 className="text-lg font-medium text-gray-900 mb-2">
           No Dependency Graph Available
         </h3>
-        <p className="text-sm text-gray-600">
+        <p className="text-sm text-gray-600 dark:text-gray-400">
           Complete the intelligence analysis to view system dependencies
         </p>
       </div>
@@ -176,7 +176,7 @@ export default function KnowledgeGraphVisualizer({
             <h3 className="text-lg font-semibold text-gray-900 mb-1">
               System Dependency Graph
             </h3>
-            <p className="text-xs text-gray-600">
+            <p className="text-xs text-gray-600 dark:text-gray-400">
               Interactive visualization of system relationships and prerequisites
             </p>
           </div>
@@ -187,20 +187,20 @@ export default function KnowledgeGraphVisualizer({
         <div className="flex items-center gap-6 text-sm">
           <div className="flex items-center gap-2">
             <div className="w-3 h-3 rounded-full bg-blue-600"></div>
-            <span className="text-gray-700">
+            <span className="text-gray-700 dark:text-gray-300">
               <span className="font-semibold">{selectedCount}</span> Selected Systems
             </span>
           </div>
           <div className="flex items-center gap-2">
             <div className="w-3 h-3 rounded-full bg-orange-600"></div>
-            <span className="text-gray-700">
+            <span className="text-gray-700 dark:text-gray-300">
               <span className="font-semibold">{autoAddedCount}</span> Auto-Added Dependencies
             </span>
           </div>
           {warningsCount > 0 && (
             <div className="flex items-center gap-2">
               <AlertTriangle className="w-4 h-4 text-orange-600" />
-              <span className="text-gray-700">
+              <span className="text-gray-700 dark:text-gray-300">
                 <span className="font-semibold">{warningsCount}</span> Warnings
               </span>
             </div>
@@ -244,15 +244,15 @@ export default function KnowledgeGraphVisualizer({
             <div className="space-y-2 text-xs">
               <div className="flex items-center gap-2">
                 <div className="w-3 h-3 rounded bg-blue-600"></div>
-                <span className="text-gray-700">Your Selection</span>
+                <span className="text-gray-700 dark:text-gray-300">Your Selection</span>
               </div>
               <div className="flex items-center gap-2">
                 <div className="w-3 h-3 rounded bg-orange-600"></div>
-                <span className="text-gray-700">Required Dependency</span>
+                <span className="text-gray-700 dark:text-gray-300">Required Dependency</span>
               </div>
               <div className="flex items-center gap-2">
                 <div className="w-6 h-0.5 bg-blue-600"></div>
-                <span className="text-gray-700">Dependency Link</span>
+                <span className="text-gray-700 dark:text-gray-300">Dependency Link</span>
               </div>
             </div>
             <div className="mt-4 pt-3 border-t border-gray-200 text-[10px] text-gray-500">
@@ -294,7 +294,7 @@ export default function KnowledgeGraphVisualizer({
         <h4 className="text-xs font-medium text-gray-900 mb-3 uppercase tracking-widest">
           How to Read This Graph
         </h4>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs text-gray-700">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs text-gray-700 dark:text-gray-300">
           <div className="flex items-start gap-2">
             <CheckCircle2 className="w-4 h-4 text-blue-600 mt-0.5 flex-shrink-0" />
             <div>

@@ -66,10 +66,10 @@ export default function RetailAutomationPage() {
           <div className="container mx-auto px-4 text-center max-w-4xl">
             <h2 className="text-3xl font-bold mb-4 text-[#1A1A1A] dark:text-white">Proven Impact</h2>
             <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 mt-12">
-              <div className="p-6 bg-gray-50 dark:bg-gray-800"><div className="text-4xl font-bold text-[#1A1A1A] dark:text-white">35%</div><div className="text-sm text-gray-600">Energy Savings</div></div>
-              <div className="p-6 bg-gray-50 dark:bg-gray-800"><div className="text-4xl font-bold text-[#1A1A1A] dark:text-white">22%</div><div className="text-sm text-gray-600">Sales Increase</div></div>
-              <div className="p-6 bg-gray-50 dark:bg-gray-800"><div className="text-4xl font-bold text-[#1A1A1A] dark:text-white">40%</div><div className="text-sm text-gray-600">Faster Checkout</div></div>
-              <div className="p-6 bg-gray-50 dark:bg-gray-800"><div className="text-4xl font-bold text-[#1A1A1A] dark:text-white">60%</div><div className="text-sm text-gray-600">Loss Prevention</div></div>
+              <div className="p-6 bg-gray-50 dark:bg-gray-800"><div className="text-4xl font-bold text-[#1A1A1A] dark:text-white">35%</div><div className="text-sm text-gray-600 dark:text-gray-400">Energy Savings</div></div>
+              <div className="p-6 bg-gray-50 dark:bg-gray-800"><div className="text-4xl font-bold text-[#1A1A1A] dark:text-white">22%</div><div className="text-sm text-gray-600 dark:text-gray-400">Sales Increase</div></div>
+              <div className="p-6 bg-gray-50 dark:bg-gray-800"><div className="text-4xl font-bold text-[#1A1A1A] dark:text-white">40%</div><div className="text-sm text-gray-600 dark:text-gray-400">Faster Checkout</div></div>
+              <div className="p-6 bg-gray-50 dark:bg-gray-800"><div className="text-4xl font-bold text-[#1A1A1A] dark:text-white">60%</div><div className="text-sm text-gray-600 dark:text-gray-400">Loss Prevention</div></div>
             </div>
           </div>
         </section>

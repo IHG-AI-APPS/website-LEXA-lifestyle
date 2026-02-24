@@ -85,7 +85,7 @@ export default function WarrantyPage() {
 
           <div className="mt-12 p-6 bg-gray-50 rounded-lg">
             <p className="font-semibold mb-2">Need Support?</p>
-            <p className="text-gray-600">
+            <p className="text-gray-600 dark:text-gray-400">
               Call: <a href="tel:+97142670470" className="text-[#E8DCC8]">+971 42 670 470</a><br/>
               Email: <a href="mailto:support@lexalifestyle.com" className="text-[#E8DCC8]">support@lexalifestyle.com</a><br/>
               WhatsApp: <a href="https://wa.me/+971521782109" className="text-[#E8DCC8]">+971 52 178 2109</a>

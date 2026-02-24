@@ -246,7 +246,7 @@ export default function ProjectDetailsForm({
                   <div className={`w-12 h-12 rounded-xl bg-gradient-to-br ${type.color} flex items-center justify-center mb-3`}>
                     <Icon className="w-6 h-6 text-white" />
                   </div>
-                  <h4 className="font-bold text-gray-900">{type.name}</h4>
+                  <h4 className="font-bold text-gray-900 dark:text-white">{type.name}</h4>
                   <p className="text-sm text-gray-500 mt-1">{type.description}</p>
                   <p className="text-xs text-indigo-600 mt-2 font-medium">{type.recommendation}</p>
                   {isSelected && (

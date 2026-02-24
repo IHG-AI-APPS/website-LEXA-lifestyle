@@ -264,7 +264,7 @@ export default function PartnerWithUsPage() {
                 <p className="text-sm text-gray-600 mb-4">{type.description}</p>
                 <ul className="space-y-2">
                   {type.benefits.map((benefit, i) => (
-                    <li key={i} className="flex items-center gap-2 text-sm text-gray-700">
+                    <li key={i} className="flex items-center gap-2 text-sm text-gray-700 dark:text-gray-300">
                       <CheckCircle className="h-4 w-4 text-green-500 flex-shrink-0" />
                       {benefit}
                     </li>
@@ -304,7 +304,7 @@ export default function PartnerWithUsPage() {
                 </div>
                 <div>
                   <h3 className="font-bold text-gray-900 mb-1">{benefit.title}</h3>
-                  <p className="text-sm text-gray-600">{benefit.description}</p>
+                  <p className="text-sm text-gray-600 dark:text-gray-400">{benefit.description}</p>
                 </div>
               </motion.div>
             ))}
@@ -357,7 +357,7 @@ export default function PartnerWithUsPage() {
                 {gccCountries.map((country, index) => (
                   <div key={index} className="flex items-center gap-2">
                     <CheckCircle className="h-5 w-5 text-green-500" />
-                    <span className="text-gray-700">{country}</span>
+                    <span className="text-gray-700 dark:text-gray-300">{country}</span>
                   </div>
                 ))}
               </div>
@@ -370,8 +370,8 @@ export default function PartnerWithUsPage() {
                     <span className="text-green-600 text-sm font-bold">✓</span>
                   </div>
                   <div>
-                    <div className="font-semibold text-gray-900">Saudi Arabia - NEOM & Riyadh</div>
-                    <div className="text-sm text-gray-600">High demand for Vision 2030 smart city projects</div>
+                    <div className="font-semibold text-gray-900 dark:text-white">Saudi Arabia - NEOM & Riyadh</div>
+                    <div className="text-sm text-gray-600 dark:text-gray-400">High demand for Vision 2030 smart city projects</div>
                   </div>
                 </li>
                 <li className="flex items-start gap-3">
@@ -379,8 +379,8 @@ export default function PartnerWithUsPage() {
                     <span className="text-green-600 text-sm font-bold">✓</span>
                   </div>
                   <div>
-                    <div className="font-semibold text-gray-900">Qatar - Lusail & The Pearl</div>
-                    <div className="text-sm text-gray-600">Luxury residential developments seeking partners</div>
+                    <div className="font-semibold text-gray-900 dark:text-white">Qatar - Lusail & The Pearl</div>
+                    <div className="text-sm text-gray-600 dark:text-gray-400">Luxury residential developments seeking partners</div>
                   </div>
                 </li>
                 <li className="flex items-start gap-3">
@@ -388,8 +388,8 @@ export default function PartnerWithUsPage() {
                     <span className="text-green-600 text-sm font-bold">✓</span>
                   </div>
                   <div>
-                    <div className="font-semibold text-gray-900">Kuwait & Bahrain</div>
-                    <div className="text-sm text-gray-600">Growing market with limited competition</div>
+                    <div className="font-semibold text-gray-900 dark:text-white">Kuwait & Bahrain</div>
+                    <div className="text-sm text-gray-600 dark:text-gray-400">Growing market with limited competition</div>
                   </div>
                 </li>
               </ul>
@@ -405,7 +405,7 @@ export default function PartnerWithUsPage() {
             <h2 className="text-2xl md:text-4xl font-bold text-gray-900 mb-4">
               Apply to Become a Partner
             </h2>
-            <p className="text-gray-600">
+            <p className="text-gray-600 dark:text-gray-400">
               Fill out the form below and our partnership team will contact you within 48 hours.
             </p>
           </div>
@@ -445,7 +445,7 @@ export default function PartnerWithUsPage() {
                           : 'border-gray-200 hover:border-gray-300'
                       }`}
                     >
-                      <div className="font-semibold text-sm text-gray-900">{type.title}</div>
+                      <div className="font-semibold text-sm text-gray-900 dark:text-white">{type.title}</div>
                     </button>
                   ))}
                 </div>
@@ -515,7 +515,7 @@ export default function PartnerWithUsPage() {
                     required
                     value={formData.country}
                     onChange={(e) => setFormData({ ...formData, country: e.target.value })}
-                    className="w-full h-10 px-3 rounded-lg border border-gray-200 text-gray-900"
+                    className="w-full h-10 px-3 rounded-lg border border-gray-200 text-gray-900 dark:text-white"
                   >
                     <option value="">Select country</option>
                     {gccCountries.map((country) => (
@@ -603,7 +603,7 @@ export default function PartnerWithUsPage() {
               <h3 className="font-bold text-gray-900 mb-2">
                 What are the requirements to become a LEXA dealer?
               </h3>
-              <p className="text-gray-600">
+              <p className="text-gray-600 dark:text-gray-400">
                 We look for partners with relevant experience in electrical, AV, or home automation. 
                 You&apos;ll need a valid trade license, showroom or office space, and commitment to 
                 completing our product training program.
@@ -614,7 +614,7 @@ export default function PartnerWithUsPage() {
               <h3 className="font-bold text-gray-900 mb-2">
                 What brands can I sell as a LEXA partner?
               </h3>
-              <p className="text-gray-600">
+              <p className="text-gray-600 dark:text-gray-400">
                 Partners get access to our full portfolio including Control4, Crestron, Lutron, 
                 Sonos, Samsung, Sony, Bowers & Wilkins, McIntosh, KEF, and 20+ more premium brands.
               </p>
@@ -624,7 +624,7 @@ export default function PartnerWithUsPage() {
               <h3 className="font-bold text-gray-900 mb-2">
                 Do you offer exclusive territories?
               </h3>
-              <p className="text-gray-600">
+              <p className="text-gray-600 dark:text-gray-400">
                 Yes, for qualifying distributors we offer exclusive territory rights in specific 
                 regions. This is evaluated based on your business plan, investment capability, 
                 and market potential.
@@ -635,7 +635,7 @@ export default function PartnerWithUsPage() {
               <h3 className="font-bold text-gray-900 mb-2">
                 What support do partners receive?
               </h3>
-              <p className="text-gray-600">
+              <p className="text-gray-600 dark:text-gray-400">
                 All partners receive product training, technical support, marketing materials, 
                 lead referrals, co-marketing funds, and access to our Experience Centre for 
                 client demonstrations.
@@ -646,7 +646,7 @@ export default function PartnerWithUsPage() {
               <h3 className="font-bold text-gray-900 mb-2">
                 How long does the application process take?
               </h3>
-              <p className="text-gray-600">
+              <p className="text-gray-600 dark:text-gray-400">
                 We review all applications within 48 hours. The full onboarding process, including 
                 training and certification, typically takes 2-4 weeks depending on your chosen 
                 partnership level.

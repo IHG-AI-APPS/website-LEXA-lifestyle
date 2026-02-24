@@ -172,7 +172,7 @@ export default function ArchitectAutomationGuidePage() {
                   <AlertTriangle className="text-red-600 flex-shrink-0" size={24} />
                   <h3 className="font-bold text-lg">Insufficient Conduit Sizing</h3>
                 </div>
-                <p className="text-sm text-gray-700">
+                <p className="text-sm text-gray-700 dark:text-gray-300">
                   Standard 20mm conduits can&apos;t handle automation + AV + networking. Specify 32mm minimum for future-proofing.
                 </p>
               </div>
@@ -182,7 +182,7 @@ export default function ArchitectAutomationGuidePage() {
                   <AlertTriangle className="text-red-600 flex-shrink-0" size={24} />
                   <h3 className="font-bold text-lg">No Server Room Cooling</h3>
                 </div>
-                <p className="text-sm text-gray-700">
+                <p className="text-sm text-gray-700 dark:text-gray-300">
                   Equipment racks generate 2-3 kW heat. Dedicated mini-split or VRV zone is mandatory, not optional.
                 </p>
               </div>
@@ -192,7 +192,7 @@ export default function ArchitectAutomationGuidePage() {
                   <AlertTriangle className="text-red-600 flex-shrink-0" size={24} />
                   <h3 className="font-bold text-lg">Late Network Planning</h3>
                 </div>
-                <p className="text-sm text-gray-700">
+                <p className="text-sm text-gray-700 dark:text-gray-300">
                   Wi-Fi as afterthought causes dead zones. Plan structured cabling and AP locations during DD phase.
                 </p>
               </div>
@@ -202,7 +202,7 @@ export default function ArchitectAutomationGuidePage() {
                   <AlertTriangle className="text-red-600 flex-shrink-0" size={24} />
                   <h3 className="font-bold text-lg">Ignoring False Ceiling Depth</h3>
                 </div>
-                <p className="text-sm text-gray-700">
+                <p className="text-sm text-gray-700 dark:text-gray-300">
                   Motorized shades need 180-220mm. Speakers need 150mm. Check with integrator before finalizing heights.
                 </p>
               </div>
@@ -212,7 +212,7 @@ export default function ArchitectAutomationGuidePage() {
                   <AlertTriangle className="text-red-600 flex-shrink-0" size={24} />
                   <h3 className="font-bold text-lg">Over-Specifying Brands</h3>
                 </div>
-                <p className="text-sm text-gray-700">
+                <p className="text-sm text-gray-700 dark:text-gray-300">
                   Locking to one brand eliminates competition. Specify performance requirements, not product names.
                 </p>
               </div>
@@ -222,7 +222,7 @@ export default function ArchitectAutomationGuidePage() {
                   <AlertTriangle className="text-red-600 flex-shrink-0" size={24} />
                   <h3 className="font-bold text-lg">No Cable Management Strategy</h3>
                 </div>
-                <p className="text-sm text-gray-700">
+                <p className="text-sm text-gray-700 dark:text-gray-300">
                   Visible cables ruin luxury interiors. Plan cable trays, floor boxes, and in-wall routing early.
                 </p>
               </div>
@@ -232,7 +232,7 @@ export default function ArchitectAutomationGuidePage() {
                   <AlertTriangle className="text-red-600 flex-shrink-0" size={24} />
                   <h3 className="font-bold text-lg">Forgetting Power Backup</h3>
                 </div>
-                <p className="text-sm text-gray-700">
+                <p className="text-sm text-gray-700 dark:text-gray-300">
                   Smart homes need UPS for network and servers. Size for 4-hour runtime minimum.
                 </p>
               </div>
@@ -242,7 +242,7 @@ export default function ArchitectAutomationGuidePage() {
                   <AlertTriangle className="text-red-600 flex-shrink-0" size={24} />
                   <h3 className="font-bold text-lg">No Integration Budget</h3>
                 </div>
-                <p className="text-sm text-gray-700">
+                <p className="text-sm text-gray-700 dark:text-gray-300">
                   Owners assume automation is &quot;included.&quot; Clarify budget expectations during concept phase to avoid VE surprises.
                 </p>
               </div>

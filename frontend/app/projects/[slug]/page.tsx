@@ -311,7 +311,7 @@ export default function ProjectDetailPage() {
                   </h2>
                   <ul className="space-y-2">
                     {project.results.map((result, idx) => (
-                      <li key={idx} className="flex items-start gap-2 text-gray-700">
+                      <li key={idx} className="flex items-start gap-2 text-gray-700 dark:text-gray-300">
                         <span className="text-green-500 mt-1">✓</span>
                         {result}
                       </li>
@@ -346,7 +346,7 @@ export default function ProjectDetailPage() {
                     {project.client_name && (
                       <div>
                         <p className="text-xs text-gray-400 mb-1">Client:</p>
-                        <p className="text-sm font-medium text-gray-900">{project.client_name}</p>
+                        <p className="text-sm font-medium text-gray-900 dark:text-white">{project.client_name}</p>
                       </div>
                     )}
                     <div>
@@ -357,22 +357,22 @@ export default function ProjectDetailPage() {
                     </div>
                     <div>
                       <p className="text-xs text-gray-400 mb-1">Location:</p>
-                      <p className="text-sm font-medium text-gray-900">{project.location}</p>
+                      <p className="text-sm font-medium text-gray-900 dark:text-white">{project.location}</p>
                     </div>
                     {project.size && (
                       <div>
                         <p className="text-xs text-gray-400 mb-1">Size:</p>
-                        <p className="text-sm font-medium text-gray-900">{project.size}</p>
+                        <p className="text-sm font-medium text-gray-900 dark:text-white">{project.size}</p>
                       </div>
                     )}
                     <div>
                       <p className="text-xs text-gray-400 mb-1">Completed On:</p>
-                      <p className="text-sm font-medium text-gray-900">{project.completion_date || project.year}</p>
+                      <p className="text-sm font-medium text-gray-900 dark:text-white">{project.completion_date || project.year}</p>
                     </div>
                     {project.budget_range && (
                       <div>
                         <p className="text-xs text-gray-400 mb-1">Investment:</p>
-                        <p className="text-sm font-medium text-gray-900">{project.budget_range}</p>
+                        <p className="text-sm font-medium text-gray-900 dark:text-white">{project.budget_range}</p>
                       </div>
                     )}
                   </div>
@@ -405,7 +405,7 @@ export default function ProjectDetailPage() {
                             </div>
                           )}
                           <div>
-                            <p className="text-sm font-medium text-gray-900">{brand.name}</p>
+                            <p className="text-sm font-medium text-gray-900 dark:text-white">{brand.name}</p>
                             {brand.category && (
                               <p className="text-xs text-gray-400">{brand.category}</p>
                             )}

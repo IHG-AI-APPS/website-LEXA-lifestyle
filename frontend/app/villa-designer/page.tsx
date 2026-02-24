@@ -142,7 +142,7 @@ export default function VillaDesignerPage() {
               <Check size={40} className="text-green-600" />
             </div>
             
-            <h1 className="text-4xl font-bold mb-4 text-gray-900">
+            <h1 className="text-4xl font-bold mb-4 text-gray-900 dark:text-white">
               Thank You, {formData.name}!
             </h1>
             

@@ -182,7 +182,7 @@ export default function PlatformAgnosticPage() {
                         <p className="text-gray-600 mb-3">{benefit.description}</p>
                         <div className="bg-indigo-50 p-3 border-l-4 border-indigo-600">
                           <div className="text-xs text-indigo-600 font-semibold mb-1">Example:</div>
-                          <div className="text-sm text-gray-700">{benefit.example}</div>
+                          <div className="text-sm text-gray-700 dark:text-gray-300">{benefit.example}</div>
                         </div>
                       </div>
                     </div>
@@ -262,7 +262,7 @@ export default function PlatformAgnosticPage() {
               </div>
               {comparison.map((row, index) => (
                 <div key={row.aspect} className={`grid grid-cols-3 border-t border-gray-200 ${index % 2 === 0 ? 'bg-gray-50' : 'bg-white'}`}>
-                  <div className="p-4 border-r border-gray-200 font-semibold text-gray-700">{row.aspect}</div>
+                  <div className="p-4 border-r border-gray-200 font-semibold text-gray-700 dark:text-gray-300">{row.aspect}</div>
                   <div className="p-4 border-r border-gray-200 text-center text-red-600 text-sm">{row.proprietary}</div>
                   <div className="p-4 text-center text-green-600 font-semibold text-sm">{row.agnostic}</div>
                 </div>

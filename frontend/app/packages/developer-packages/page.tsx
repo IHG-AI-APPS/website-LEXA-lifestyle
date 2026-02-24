@@ -254,7 +254,7 @@ export default function DeveloperPackagesPage() {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <h2 className="text-3xl sm:text-4xl font-bold mb-4 text-gray-900">
+            <h2 className="text-3xl sm:text-4xl font-bold mb-4 text-gray-900 dark:text-white">
               Why Developers Choose LEXA
             </h2>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
@@ -280,8 +280,8 @@ export default function DeveloperPackagesPage() {
                   <div className="text-xs font-bold text-amber-600 uppercase tracking-wider mb-2">
                     {benefit.highlight}
                   </div>
-                  <h3 className="text-lg font-bold mb-2 text-gray-900">{benefit.title}</h3>
-                  <p className="text-sm text-gray-600">{benefit.description}</p>
+                  <h3 className="text-lg font-bold mb-2 text-gray-900 dark:text-white">{benefit.title}</h3>
+                  <p className="text-sm text-gray-600 dark:text-gray-400">{benefit.description}</p>
                 </motion.div>
               )
             })}
@@ -299,7 +299,7 @@ export default function DeveloperPackagesPage() {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <h2 className="text-3xl sm:text-4xl font-bold mb-4 text-gray-900">
+            <h2 className="text-3xl sm:text-4xl font-bold mb-4 text-gray-900 dark:text-white">
               Scalable Package Options
             </h2>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
@@ -350,19 +350,19 @@ export default function DeveloperPackagesPage() {
                     Most Popular
                   </div>
                 )}
-                <h3 className="text-2xl font-bold mb-1 text-gray-900">{pkg.tier}</h3>
+                <h3 className="text-2xl font-bold mb-1 text-gray-900 dark:text-white">{pkg.tier}</h3>
                 <p className="text-sm text-gray-500 mb-4">{pkg.tagline}</p>
                 <div className="space-y-2 mb-4">
                   {pkg.features.map((feature) => (
                     <div key={feature} className="flex items-center gap-2">
                       <CheckCircle2 className="h-4 w-4 text-amber-500 flex-shrink-0" />
-                      <span className="text-sm text-gray-700">{feature}</span>
+                      <span className="text-sm text-gray-700 dark:text-gray-300">{feature}</span>
                     </div>
                   ))}
                 </div>
                 <div className="border-t border-gray-200 pt-4">
                   <div className="text-xs text-gray-500">Ideal for:</div>
-                  <div className="text-sm font-semibold text-gray-700">{pkg.ideal}</div>
+                  <div className="text-sm font-semibold text-gray-700 dark:text-gray-300">{pkg.ideal}</div>
                 </div>
               </motion.div>
             ))}

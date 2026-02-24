@@ -87,11 +87,11 @@ export default function SmartHomeCostDubaiPage() {
                 </p>
                 <div className="flex items-center justify-between">
                   <div>
-                    <p className="text-sm text-gray-600">Basic (Wireless)</p>
+                    <p className="text-sm text-gray-600 dark:text-gray-400">Basic (Wireless)</p>
                     <p className="text-xl font-bold">AED 15,000 - 30,000</p>
                   </div>
                   <div>
-                    <p className="text-sm text-gray-600">Premium (KNX/DALI)</p>
+                    <p className="text-sm text-gray-600 dark:text-gray-400">Premium (KNX/DALI)</p>
                     <p className="text-xl font-bold">AED 40,000 - 80,000</p>
                   </div>
                 </div>
@@ -104,11 +104,11 @@ export default function SmartHomeCostDubaiPage() {
                 </p>
                 <div className="flex items-center justify-between">
                   <div>
-                    <p className="text-sm text-gray-600">Basic Integration</p>
+                    <p className="text-sm text-gray-600 dark:text-gray-400">Basic Integration</p>
                     <p className="text-xl font-bold">AED 10,000 - 20,000</p>
                   </div>
                   <div>
-                    <p className="text-sm text-gray-600">Advanced Zoning</p>
+                    <p className="text-sm text-gray-600 dark:text-gray-400">Advanced Zoning</p>
                     <p className="text-xl font-bold">AED 25,000 - 50,000</p>
                   </div>
                 </div>
@@ -121,11 +121,11 @@ export default function SmartHomeCostDubaiPage() {
                 </p>
                 <div className="flex items-center justify-between">
                   <div>
-                    <p className="text-sm text-gray-600">Standard Security</p>
+                    <p className="text-sm text-gray-600 dark:text-gray-400">Standard Security</p>
                     <p className="text-xl font-bold">AED 20,000 - 40,000</p>
                   </div>
                   <div>
-                    <p className="text-sm text-gray-600">Premium Security</p>
+                    <p className="text-sm text-gray-600 dark:text-gray-400">Premium Security</p>
                     <p className="text-xl font-bold">AED 60,000 - 120,000</p>
                   </div>
                 </div>
@@ -138,11 +138,11 @@ export default function SmartHomeCostDubaiPage() {
                 </p>
                 <div className="flex items-center justify-between">
                   <div>
-                    <p className="text-sm text-gray-600">Basic Audio</p>
+                    <p className="text-sm text-gray-600 dark:text-gray-400">Basic Audio</p>
                     <p className="text-xl font-bold">AED 25,000 - 50,000</p>
                   </div>
                   <div>
-                    <p className="text-sm text-gray-600">Premium Cinema</p>
+                    <p className="text-sm text-gray-600 dark:text-gray-400">Premium Cinema</p>
                     <p className="text-xl font-bold">AED 80,000 - 200,000</p>
                   </div>
                 </div>
@@ -155,11 +155,11 @@ export default function SmartHomeCostDubaiPage() {
                 </p>
                 <div className="flex items-center justify-between">
                   <div>
-                    <p className="text-sm text-gray-600">Standard Motors</p>
+                    <p className="text-sm text-gray-600 dark:text-gray-400">Standard Motors</p>
                     <p className="text-xl font-bold">AED 15,000 - 30,000</p>
                   </div>
                   <div>
-                    <p className="text-sm text-gray-600">Premium Silent Motors</p>
+                    <p className="text-sm text-gray-600 dark:text-gray-400">Premium Silent Motors</p>
                     <p className="text-xl font-bold">AED 35,000 - 60,000</p>
                   </div>
                 </div>
@@ -172,11 +172,11 @@ export default function SmartHomeCostDubaiPage() {
                 </p>
                 <div className="flex items-center justify-between">
                   <div>
-                    <p className="text-sm text-gray-600">Control4</p>
+                    <p className="text-sm text-gray-600 dark:text-gray-400">Control4</p>
                     <p className="text-xl font-bold">AED 30,000 - 60,000</p>
                   </div>
                   <div>
-                    <p className="text-sm text-gray-600">KNX / Crestron</p>
+                    <p className="text-sm text-gray-600 dark:text-gray-400">KNX / Crestron</p>
                     <p className="text-xl font-bold">AED 50,000 - 100,000+</p>
                   </div>
                 </div>
@@ -196,7 +196,7 @@ export default function SmartHomeCostDubaiPage() {
               <div className="bg-white rounded-xl p-6 shadow-lg">
                 <div className="text-sm text-gray-600 mb-2">4BR Villa, Arabian Ranches</div>
                 <div className="text-3xl font-bold mb-4">AED 85,000</div>
-                <ul className="space-y-2 text-sm text-gray-700">
+                <ul className="space-y-2 text-sm text-gray-700 dark:text-gray-300">
                   <li className="flex items-start gap-2">
                     <CheckCircle2 size={16} className="text-green-600 flex-shrink-0 mt-1" />
                     <span>Smart lighting (KNX)</span>
@@ -219,7 +219,7 @@ export default function SmartHomeCostDubaiPage() {
               <div className="bg-white rounded-xl p-6 shadow-lg border-2 border-black">
                 <div className="text-sm text-gray-600 mb-2">6BR Villa, Emirates Hills</div>
                 <div className="text-3xl font-bold mb-4">AED 225,000</div>
-                <ul className="space-y-2 text-sm text-gray-700">
+                <ul className="space-y-2 text-sm text-gray-700 dark:text-gray-300">
                   <li className="flex items-start gap-2">
                     <CheckCircle2 size={16} className="text-green-600 flex-shrink-0 mt-1" />
                     <span>Full KNX lighting</span>
@@ -249,7 +249,7 @@ export default function SmartHomeCostDubaiPage() {
               <div className="bg-white rounded-xl p-6 shadow-lg">
                 <div className="text-sm text-gray-600 mb-2">8BR Palace, Palm Jumeirah</div>
                 <div className="text-3xl font-bold mb-4">AED 480,000</div>
-                <ul className="space-y-2 text-sm text-gray-700">
+                <ul className="space-y-2 text-sm text-gray-700 dark:text-gray-300">
                   <li className="flex items-start gap-2">
                     <CheckCircle2 size={16} className="text-green-600 flex-shrink-0 mt-1" />
                     <span>Crestron full integration</span>
@@ -286,35 +286,35 @@ export default function SmartHomeCostDubaiPage() {
             <div className="space-y-6">
               <div>
                 <h3 className="text-2xl font-bold mb-3">1. Villa Size</h3>
-                <p className="text-gray-700">
+                <p className="text-gray-700 dark:text-gray-300">
                   Larger villas require more devices, wiring, and labor. A 10,000 sq ft villa typically costs 2-3x more than a 5,000 sq ft property.
                 </p>
               </div>
 
               <div>
                 <h3 className="text-2xl font-bold mb-3">2. Construction Stage</h3>
-                <p className="text-gray-700">
+                <p className="text-gray-700 dark:text-gray-300">
                   Pre-construction installation saves 20-30% vs. retrofit. Wiring and infrastructure are much easier during build phase.
                 </p>
               </div>
 
               <div>
                 <h3 className="text-2xl font-bold mb-3">3. System Choice</h3>
-                <p className="text-gray-700">
+                <p className="text-gray-700 dark:text-gray-300">
                   KNX and Crestron cost more upfront but offer superior scalability. Control4 provides excellent value for mid-range projects.
                 </p>
               </div>
 
               <div>
                 <h3 className="text-2xl font-bold mb-3">4. Brand Preferences</h3>
-                <p className="text-gray-700">
+                <p className="text-gray-700 dark:text-gray-300">
                   Premium brands (Lutron, Gira, Bang & Olufsen) command 30-50% premium over standard brands.
                 </p>
               </div>
 
               <div>
                 <h3 className="text-2xl font-bold mb-3">5. Customization Level</h3>
-                <p className="text-gray-700">
+                <p className="text-gray-700 dark:text-gray-300">
                   Custom programming, unique interfaces, and bespoke solutions add 15-25% to base system costs.
                 </p>
               </div>

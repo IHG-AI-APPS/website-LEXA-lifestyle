@@ -196,7 +196,7 @@ export default function DigitalTwinPage() {
                   >
                     <Icon className="h-10 w-10 mx-auto mb-4 text-[#1A1A1A] dark:text-white" />
                     <div className="text-4xl font-bold mb-2 text-[#1A1A1A] dark:text-white">{benefit.metric}</div>
-                    <div className="text-sm text-gray-600">{benefit.label}</div>
+                    <div className="text-sm text-gray-600 dark:text-gray-400">{benefit.label}</div>
                   </motion.div>
                 )
               })}

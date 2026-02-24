@@ -76,7 +76,7 @@ export default function TermsPage() {
           </p>
 
           <div className="mt-12 p-6 bg-gray-50 rounded-lg">
-            <p className="text-sm text-gray-600">
+            <p className="text-sm text-gray-600 dark:text-gray-400">
               Last updated: February 2026
             </p>
           </div>

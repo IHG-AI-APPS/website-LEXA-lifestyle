@@ -109,7 +109,7 @@ export default function ResourcesPage() {
           <div className="max-w-6xl mx-auto">
             {filteredArticles.length === 0 ? (
               <div className="text-center py-20">
-                <p className="text-xl text-gray-600">No articles found in this category.</p>
+                <p className="text-xl text-gray-600 dark:text-gray-400">No articles found in this category.</p>
               </div>
             ) : (
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">

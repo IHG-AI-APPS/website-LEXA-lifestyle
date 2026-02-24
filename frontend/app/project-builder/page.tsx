@@ -178,7 +178,7 @@ export default function ProjectBuilderLanding() {
                 >
                   <feature.icon className="w-6 h-6 text-blue-600 mb-4" />
                   <h4 className="text-sm font-medium text-gray-900 mb-2 uppercase tracking-widest">{feature.label}</h4>
-                  <p className="text-xs text-gray-600">{feature.desc}</p>
+                  <p className="text-xs text-gray-600 dark:text-gray-400">{feature.desc}</p>
                 </div>
               ))}
             </div>

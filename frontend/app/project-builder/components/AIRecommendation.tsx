@@ -569,7 +569,7 @@ export default function AIRecommendation({
           <div className="w-10 h-10 bg-purple-100 rounded-lg flex items-center justify-center mx-auto mb-2">
             <Package className="w-5 h-5 text-purple-600" />
           </div>
-          <div className="text-2xl font-bold text-gray-900">{recommendation.summary.total_features}</div>
+          <div className="text-2xl font-bold text-gray-900 dark:text-white">{recommendation.summary.total_features}</div>
           <div className="text-sm text-gray-500">Features</div>
         </div>
         <div className="bg-white dark:bg-gray-800 border border-gray-200 rounded-xl p-4 text-center">
@@ -583,7 +583,7 @@ export default function AIRecommendation({
           <div className="w-10 h-10 bg-green-100 rounded-lg flex items-center justify-center mx-auto mb-2">
             <Shield className="w-5 h-5 text-green-600" />
           </div>
-          <div className="text-2xl font-bold text-gray-900">{selectedSystems.length}</div>
+          <div className="text-2xl font-bold text-gray-900 dark:text-white">{selectedSystems.length}</div>
           <div className="text-sm text-gray-500">Systems</div>
         </div>
         <div className="bg-white dark:bg-gray-800 border border-gray-200 rounded-xl p-4 text-center">
@@ -659,7 +659,7 @@ export default function AIRecommendation({
                 <div className="text-2xl font-bold text-gray-900 mb-3">{pkg.price_indicator}</div>
                 <p className="text-sm text-gray-600 mb-4">{pkg.description}</p>
 
-                <div className="flex items-center gap-2 text-sm font-medium text-gray-700">
+                <div className="flex items-center gap-2 text-sm font-medium text-gray-700 dark:text-gray-300">
                   <Check className="w-4 h-4 text-green-500" />
                   {pkg.features_included} features included
                 </div>
@@ -692,7 +692,7 @@ export default function AIRecommendation({
               <div className="w-8 h-8 bg-purple-100 rounded-full flex items-center justify-center flex-shrink-0">
                 <Sparkles className="w-4 h-4 text-purple-600" />
               </div>
-              <p className="text-gray-700">{insight}</p>
+              <p className="text-gray-700 dark:text-gray-300">{insight}</p>
             </motion.div>
           ))}
         </div>
@@ -720,7 +720,7 @@ export default function AIRecommendation({
               <div key={tier} className="flex items-center gap-3">
                 <div className={`w-3 h-3 rounded-full ${config.color}`} />
                 <div>
-                  <div className="text-sm font-medium text-gray-900">{config.label}</div>
+                  <div className="text-sm font-medium text-gray-900 dark:text-white">{config.label}</div>
                   <div className="text-xs text-gray-500">{count} features</div>
                 </div>
               </div>
@@ -803,7 +803,7 @@ export default function AIRecommendation({
               className="bg-white rounded-2xl p-6 max-w-md w-full shadow-2xl"
             >
               <div className="flex items-center justify-between mb-6">
-                <h3 className="text-xl font-bold text-gray-900">Book a Consultation</h3>
+                <h3 className="text-xl font-bold text-gray-900 dark:text-white">Book a Consultation</h3>
                 <button
                   onClick={() => setShowConsultationModal(false)}
                   className="p-2 hover:bg-gray-100 rounded-full"
@@ -926,7 +926,7 @@ export default function AIRecommendation({
             >
               <div className="flex items-center justify-between mb-6">
                 <div>
-                  <h3 className="text-2xl font-bold text-gray-900">Compare Packages</h3>
+                  <h3 className="text-2xl font-bold text-gray-900 dark:text-white">Compare Packages</h3>
                   <p className="text-gray-500 text-sm mt-1">See what&apos;s included in each package</p>
                 </div>
                 <button
@@ -971,9 +971,9 @@ export default function AIRecommendation({
               <div className="border border-gray-200 rounded-xl overflow-hidden">
                 {/* Features Included */}
                 <div className="grid grid-cols-4 gap-4 p-4 bg-gray-50 border-b border-gray-200 dark:border-gray-700">
-                  <div className="font-medium text-gray-700">Features Included</div>
+                  <div className="font-medium text-gray-700 dark:text-gray-300">Features Included</div>
                   {recommendation.packages.map((pkg) => (
-                    <div key={pkg.name} className="text-center font-bold text-gray-900">
+                    <div key={pkg.name} className="text-center font-bold text-gray-900 dark:text-white">
                       {pkg.features_included}
                     </div>
                   ))}
@@ -983,7 +983,7 @@ export default function AIRecommendation({
                 <div className="grid grid-cols-4 gap-4 p-4 border-b border-gray-100 dark:border-gray-800">
                   <div className="flex items-center gap-2">
                     <div className="w-3 h-3 rounded-full bg-red-500" />
-                    <span className="text-gray-700">Must-Have Features</span>
+                    <span className="text-gray-700 dark:text-gray-300">Must-Have Features</span>
                   </div>
                   {recommendation.packages.map((pkg, idx) => (
                     <div key={pkg.name} className="flex justify-center">
@@ -996,7 +996,7 @@ export default function AIRecommendation({
                 <div className="grid grid-cols-4 gap-4 p-4 border-b border-gray-100 dark:border-gray-800">
                   <div className="flex items-center gap-2">
                     <div className="w-3 h-3 rounded-full bg-orange-500" />
-                    <span className="text-gray-700">Should-Have Features</span>
+                    <span className="text-gray-700 dark:text-gray-300">Should-Have Features</span>
                   </div>
                   {recommendation.packages.map((pkg, idx) => (
                     <div key={pkg.name} className="flex justify-center">
@@ -1013,7 +1013,7 @@ export default function AIRecommendation({
                 <div className="grid grid-cols-4 gap-4 p-4 border-b border-gray-100 dark:border-gray-800">
                   <div className="flex items-center gap-2">
                     <div className="w-3 h-3 rounded-full bg-purple-500" />
-                    <span className="text-gray-700">Nice-to-Have Upgrades</span>
+                    <span className="text-gray-700 dark:text-gray-300">Nice-to-Have Upgrades</span>
                   </div>
                   {recommendation.packages.map((pkg, idx) => (
                     <div key={pkg.name} className="flex justify-center">
@@ -1030,7 +1030,7 @@ export default function AIRecommendation({
                 <div className="grid grid-cols-4 gap-4 p-4 border-b border-gray-100 dark:border-gray-800">
                   <div className="flex items-center gap-2">
                     <Shield className="w-4 h-4 text-gray-400" />
-                    <span className="text-gray-700">Premium Hardware</span>
+                    <span className="text-gray-700 dark:text-gray-300">Premium Hardware</span>
                   </div>
                   {recommendation.packages.map((pkg, idx) => (
                     <div key={pkg.name} className="flex justify-center">
@@ -1047,7 +1047,7 @@ export default function AIRecommendation({
                 <div className="grid grid-cols-4 gap-4 p-4 border-b border-gray-100 dark:border-gray-800">
                   <div className="flex items-center gap-2">
                     <CheckCircle2 className="w-4 h-4 text-gray-400" />
-                    <span className="text-gray-700">Extended Warranty</span>
+                    <span className="text-gray-700 dark:text-gray-300">Extended Warranty</span>
                   </div>
                   {recommendation.packages.map((pkg, idx) => (
                     <div key={pkg.name} className="text-center text-sm">
@@ -1066,7 +1066,7 @@ export default function AIRecommendation({
                 <div className="grid grid-cols-4 gap-4 p-4 border-b border-gray-100 dark:border-gray-800">
                   <div className="flex items-center gap-2">
                     <Phone className="w-4 h-4 text-gray-400" />
-                    <span className="text-gray-700">Priority Support</span>
+                    <span className="text-gray-700 dark:text-gray-300">Priority Support</span>
                   </div>
                   {recommendation.packages.map((pkg, idx) => (
                     <div key={pkg.name} className="flex justify-center">
@@ -1083,7 +1083,7 @@ export default function AIRecommendation({
                 <div className="grid grid-cols-4 gap-4 p-4 border-b border-gray-100 dark:border-gray-800">
                   <div className="flex items-center gap-2">
                     <Building2 className="w-4 h-4 text-gray-400" />
-                    <span className="text-gray-700">Dedicated Project Manager</span>
+                    <span className="text-gray-700 dark:text-gray-300">Dedicated Project Manager</span>
                   </div>
                   {recommendation.packages.map((pkg, idx) => (
                     <div key={pkg.name} className="flex justify-center">
@@ -1100,7 +1100,7 @@ export default function AIRecommendation({
                 <div className="grid grid-cols-4 gap-4 p-4">
                   <div className="flex items-center gap-2">
                     <Calendar className="w-4 h-4 text-gray-400" />
-                    <span className="text-gray-700">Free Maintenance Visits</span>
+                    <span className="text-gray-700 dark:text-gray-300">Free Maintenance Visits</span>
                   </div>
                   {recommendation.packages.map((pkg, idx) => (
                     <div key={pkg.name} className="text-center text-sm">

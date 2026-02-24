@@ -221,7 +221,7 @@ export default function HospitalityAutomationPage() {
                   <h3 className="text-xl font-bold mb-4 text-[#1A1A1A] dark:text-white">{stage.phase}</h3>
                   <ul className="space-y-2">
                     {stage.features.map((feature) => (
-                      <li key={feature} className="flex items-start gap-2 text-sm text-gray-600">
+                      <li key={feature} className="flex items-start gap-2 text-sm text-gray-600 dark:text-gray-400">
                         <CheckCircle2 className="h-4 w-4 text-[#1A1A1A] flex-shrink-0 mt-0.5" />
                         <span>{feature}</span>
                       </li>
@@ -265,7 +265,7 @@ export default function HospitalityAutomationPage() {
                   >
                     <Icon className="h-10 w-10 mx-auto mb-4 text-[#1A1A1A] dark:text-white" />
                     <div className="text-4xl font-bold mb-2 text-[#1A1A1A] dark:text-white">{benefit.metric}</div>
-                    <div className="text-sm text-gray-600">{benefit.label}</div>
+                    <div className="text-sm text-gray-600 dark:text-gray-400">{benefit.label}</div>
                   </motion.div>
                 )
               })}

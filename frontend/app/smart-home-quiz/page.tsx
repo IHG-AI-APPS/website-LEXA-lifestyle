@@ -473,7 +473,7 @@ export default function SmartHomeQuizPage() {
                       </div>
                       <div className="flex-1">
                         <div className="flex items-center gap-2">
-                          <h4 className="font-semibold text-gray-900">{rec.feature_title}</h4>
+                          <h4 className="font-semibold text-gray-900 dark:text-white">{rec.feature_title}</h4>
                           <span className="px-2 py-0.5 bg-gray-100 text-gray-600 text-xs rounded-full">
                             {rec.category}
                           </span>
@@ -546,14 +546,14 @@ export default function SmartHomeQuizPage() {
                         <div className="text-center py-8">
                           <CheckCircle2 className="h-16 w-16 mx-auto text-green-500 mb-4" />
                           <h3 className="text-xl font-bold text-gray-900 mb-2">Results Saved!</h3>
-                          <p className="text-gray-600">Check your email for your personalized recommendations.</p>
+                          <p className="text-gray-600 dark:text-gray-400">Check your email for your personalized recommendations.</p>
                         </div>
                       ) : (
                         <>
                           <div className="flex items-center justify-between mb-6">
                             <div className="flex items-center gap-2">
                               <Mail className="h-5 w-5 text-purple-500" />
-                              <h3 className="text-lg font-bold text-gray-900">Save Your Results</h3>
+                              <h3 className="text-lg font-bold text-gray-900 dark:text-white">Save Your Results</h3>
                             </div>
                             <button
                               onClick={() => setShowSaveModal(false)}

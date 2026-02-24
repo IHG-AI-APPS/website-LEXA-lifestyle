@@ -212,13 +212,13 @@ export default function PackageBuilderPage() {
       <div className="border-b bg-white sticky top-16 sm:top-18 md:top-20 z-40">
         <div className="container mx-auto px-4 py-6">
           <div className="flex items-center justify-between max-w-6xl mx-auto">
-            <Link href="/packages" className="text-gray-600 hover:text-gray-900">
+            <Link href="/packages" className="text-gray-600 hover:text-gray-900 dark:text-white">
               ← Back to Packages
             </Link>
             
             {selectedTier && (
               <div className="text-right">
-                <p className="text-sm text-gray-600">Estimated Total</p>
+                <p className="text-sm text-gray-600 dark:text-gray-400">Estimated Total</p>
                 <p className="text-2xl font-bold text-blue-600">
                   AED {(calculateTotal() / 1000).toFixed(0)}K
                 </p>
@@ -313,7 +313,7 @@ export default function PackageBuilderPage() {
             >
               <button
                 onClick={() => setStep(1)}
-                className="mb-6 flex items-center gap-2 text-gray-600 hover:text-gray-900"
+                className="mb-6 flex items-center gap-2 text-gray-600 hover:text-gray-900 dark:text-white"
               >
                 <ArrowLeft className="h-5 w-5" />
                 Change property type
@@ -346,7 +346,7 @@ export default function PackageBuilderPage() {
                       <h3 className="text-2xl font-bold text-gray-900 mb-2">{tier.tier_name}</h3>
                       <p className="text-gray-600 mb-6">{tier.tier_subtitle}</p>
                       <div className="mb-4">
-                        <span className="text-5xl font-bold text-gray-900">
+                        <span className="text-5xl font-bold text-gray-900 dark:text-white">
                           {(tier.base_price_aed / 1000).toFixed(0)}K
                         </span>
                         <span className="text-gray-600 ml-1">AED</span>
@@ -389,7 +389,7 @@ export default function PackageBuilderPage() {
             >
               <button
                 onClick={() => setStep(2)}
-                className="mb-6 flex items-center gap-2 text-gray-600 hover:text-gray-900"
+                className="mb-6 flex items-center gap-2 text-gray-600 hover:text-gray-900 dark:text-white"
               >
                 <ArrowLeft className="h-5 w-5" />
                 Change tier
@@ -456,7 +456,7 @@ export default function PackageBuilderPage() {
                           <p className="text-xs text-gray-500 mb-1">Best For</p>
                           <div className="flex flex-wrap gap-1">
                             {system.best_for?.slice(0, 2).map((use: string, idx: number) => (
-                              <span key={idx} className="text-xs text-gray-700">
+                              <span key={idx} className="text-xs text-gray-700 dark:text-gray-300">
                                 {use}{idx < 1 ? ',' : ''}
                               </span>
                             ))}
@@ -478,7 +478,7 @@ export default function PackageBuilderPage() {
 
                       <div className="pt-4 border-t border-gray-200 dark:border-gray-700">
                         <p className="text-xs text-gray-500 mb-1">Price Range</p>
-                        <p className="font-bold text-gray-900">
+                        <p className="font-bold text-gray-900 dark:text-white">
                           {system.price_range_aed ? (
                             <>AED {(system.price_range_aed[0] / 1000).toFixed(0)}K - {(system.price_range_aed[1] / 1000).toFixed(0)}K</>
                           ) : (
@@ -507,7 +507,7 @@ export default function PackageBuilderPage() {
             >
               <button
                 onClick={() => setStep(3)}
-                className="mb-6 flex items-center gap-2 text-gray-600 hover:text-gray-900"
+                className="mb-6 flex items-center gap-2 text-gray-600 hover:text-gray-900 dark:text-white"
               >
                 <ArrowLeft className="h-5 w-5" />
                 Change control system
@@ -607,7 +607,7 @@ export default function PackageBuilderPage() {
                                 }`}>
                                   {item.type === 'upgrade' ? 'Upgrade' : 'Add-on'}
                                 </span>
-                                <span className="font-bold text-gray-900">
+                                <span className="font-bold text-gray-900 dark:text-white">
                                   +AED {(item.base_price_aed / 1000).toFixed(0)}K
                                 </span>
                               </div>
@@ -649,7 +649,7 @@ export default function PackageBuilderPage() {
             >
               <button
                 onClick={() => setStep(4)}
-                className="mb-6 flex items-center gap-2 text-gray-600 hover:text-gray-900"
+                className="mb-6 flex items-center gap-2 text-gray-600 hover:text-gray-900 dark:text-white"
               >
                 <ArrowLeft className="h-5 w-5" />
                 Back to enhancements
@@ -707,7 +707,7 @@ export default function PackageBuilderPage() {
                           <h3 className="text-2xl font-bold text-gray-900 mb-2">
                             {category.product_type}
                           </h3>
-                          <p className="text-sm text-gray-600">{category.description}</p>
+                          <p className="text-sm text-gray-600 dark:text-gray-400">{category.description}</p>
                         </div>
 
                         <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
@@ -807,7 +807,7 @@ export default function PackageBuilderPage() {
             >
               <button
                 onClick={() => setStep(5)}
-                className="mb-6 flex items-center gap-2 text-gray-600 hover:text-gray-900"
+                className="mb-6 flex items-center gap-2 text-gray-600 hover:text-gray-900 dark:text-white"
               >
                 <ArrowLeft className="h-5 w-5" />
                 Back to brand selection
@@ -905,12 +905,12 @@ export default function PackageBuilderPage() {
                   <div className="bg-gradient-to-br from-gray-50 to-blue-50 rounded-2xl p-8 space-y-6">
                     <div>
                       <p className="text-sm text-gray-600 mb-1">Property Type</p>
-                      <p className="text-xl font-bold text-gray-900">{propertyType?.title}</p>
+                      <p className="text-xl font-bold text-gray-900 dark:text-white">{propertyType?.title}</p>
                     </div>
 
                     <div className="pt-4 border-t">
                       <p className="text-sm text-gray-600 mb-1">Package Tier</p>
-                      <p className="text-xl font-bold text-gray-900">{selectedTier?.tier_name}</p>
+                      <p className="text-xl font-bold text-gray-900 dark:text-white">{selectedTier?.tier_name}</p>
                       <p className="text-lg text-blue-600 font-semibold">
                         AED {(selectedTier?.base_price_aed / 1000).toFixed(0)}K
                       </p>
@@ -919,7 +919,7 @@ export default function PackageBuilderPage() {
                     {selectedControlSystem && (
                       <div className="pt-4 border-t">
                         <p className="text-sm text-gray-600 mb-1">Control System</p>
-                        <p className="text-lg font-bold text-gray-900">{selectedControlSystem?.name}</p>
+                        <p className="text-lg font-bold text-gray-900 dark:text-white">{selectedControlSystem?.name}</p>
                         <p className="text-xs text-gray-500">{selectedControlSystem?.tagline}</p>
                       </div>
                     )}
@@ -931,8 +931,8 @@ export default function PackageBuilderPage() {
                         </p>
                         {selectedEnhancements.map((enhancement) => (
                           <div key={enhancement.id} className="flex justify-between items-center py-2">
-                            <span className="text-sm text-gray-700">{enhancement.name}</span>
-                            <span className="text-sm font-bold text-gray-900">
+                            <span className="text-sm text-gray-700 dark:text-gray-300">{enhancement.name}</span>
+                            <span className="text-sm font-bold text-gray-900 dark:text-white">
                               +AED {(enhancement.base_price_aed / 1000).toFixed(0)}K
                             </span>
                           </div>
@@ -947,7 +947,7 @@ export default function PackageBuilderPage() {
                         </p>
                         {Object.values(selectedBrands).map((brand: any, idx: number) => (
                           <div key={idx} className="flex justify-between items-center py-2">
-                            <span className="text-sm text-gray-700">{brand.brand} - {brand.model}</span>
+                            <span className="text-sm text-gray-700 dark:text-gray-300">{brand.brand} - {brand.model}</span>
                             <span className={`text-sm font-bold ${
                               brand.price_adjustment === 0 ? 'text-green-600' : 'text-gray-900'
                             }`}>
@@ -971,7 +971,7 @@ export default function PackageBuilderPage() {
                           const isIncluded = idx < (selectedTier?.included_specialty_count || 0)
                           return (
                             <div key={room.slug} className="flex justify-between items-center py-2">
-                              <span className="text-sm text-gray-700">{room.name}</span>
+                              <span className="text-sm text-gray-700 dark:text-gray-300">{room.name}</span>
                               <span className={`text-sm font-bold ${isIncluded ? 'text-green-600' : 'text-gray-900'}`}>
                                 {isIncluded ? 'Included' : `+AED ${(room.base_price_aed / 1000).toFixed(0)}K`}
                               </span>
@@ -983,7 +983,7 @@ export default function PackageBuilderPage() {
 
                     <div className="pt-6 border-t">
                       <div className="flex justify-between items-center mb-2">
-                        <p className="text-2xl font-bold text-gray-900">Total Estimate</p>
+                        <p className="text-2xl font-bold text-gray-900 dark:text-white">Total Estimate</p>
                         <p className="text-3xl font-bold text-blue-600">
                           AED {(calculateTotal() / 1000).toFixed(0)}K
                         </p>
@@ -1145,7 +1145,7 @@ export default function PackageBuilderPage() {
                 <p className="text-2xl font-bold text-blue-600">{selectedTier?.tier_name} Tier</p>
                 <div className="mt-4 pt-4 border-t border-blue-200">
                   <p className="text-gray-600 mb-1">Estimated Investment</p>
-                  <p className="text-4xl font-bold text-gray-900">AED {(calculateTotal() / 1000).toFixed(0)}K</p>
+                  <p className="text-4xl font-bold text-gray-900 dark:text-white">AED {(calculateTotal() / 1000).toFixed(0)}K</p>
                 </div>
               </div>
 

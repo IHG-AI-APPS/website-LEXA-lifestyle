@@ -374,7 +374,7 @@ export default function FeatureSelectionFlow({
                       <IconComponent className="w-5 h-5 text-white" />
                     </div>
                     <div className="text-left">
-                      <h3 className="font-semibold text-gray-900">{category.category_name}</h3>
+                      <h3 className="font-semibold text-gray-900 dark:text-white">{category.category_name}</h3>
                       <p className="text-sm text-gray-500">
                         {category.features.length} features
                         {selectedInCategory > 0 && (

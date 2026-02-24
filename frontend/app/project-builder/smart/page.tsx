@@ -270,7 +270,7 @@ export default function SmartBuilderFlow() {
                         <div className="text-xs text-gray-500">
                           Step {currentStepIndex + 1} of {BUILDER_STEPS.length}
                         </div>
-                        <div className="text-sm font-semibold text-gray-900">
+                        <div className="text-sm font-semibold text-gray-900 dark:text-white">
                           {currentStepData.label}
                         </div>
                       </div>

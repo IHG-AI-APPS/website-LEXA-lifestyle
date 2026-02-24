@@ -221,7 +221,7 @@ export default function VendorSupplierPage() {
                 {lookingFor.map((item, index) => (
                   <li key={index} className="flex items-start gap-3">
                     <CheckCircle className="h-5 w-5 text-green-500 flex-shrink-0 mt-0.5" />
-                    <span className="text-gray-700">{item}</span>
+                    <span className="text-gray-700 dark:text-gray-300">{item}</span>
                   </li>
                 ))}
               </ul>
@@ -232,22 +232,22 @@ export default function VendorSupplierPage() {
                 <div className="flex items-center gap-4 p-4 bg-green-50 rounded-lg border border-green-200">
                   <div className="w-3 h-3 bg-green-500 rounded-full animate-pulse" />
                   <div>
-                    <div className="font-semibold text-gray-900">High Priority</div>
-                    <div className="text-sm text-gray-600">AI-powered automation systems, Voice control platforms</div>
+                    <div className="font-semibold text-gray-900 dark:text-white">High Priority</div>
+                    <div className="text-sm text-gray-600 dark:text-gray-400">AI-powered automation systems, Voice control platforms</div>
                   </div>
                 </div>
                 <div className="flex items-center gap-4 p-4 bg-yellow-50 rounded-lg border border-yellow-200">
                   <div className="w-3 h-3 bg-yellow-500 rounded-full" />
                   <div>
-                    <div className="font-semibold text-gray-900">Medium Priority</div>
-                    <div className="text-sm text-gray-600">Outdoor audio, Motorized shading, EV charging</div>
+                    <div className="font-semibold text-gray-900 dark:text-white">Medium Priority</div>
+                    <div className="text-sm text-gray-600 dark:text-gray-400">Outdoor audio, Motorized shading, EV charging</div>
                   </div>
                 </div>
                 <div className="flex items-center gap-4 p-4 bg-blue-50 rounded-lg border border-blue-200">
                   <div className="w-3 h-3 bg-blue-500 rounded-full" />
                   <div>
-                    <div className="font-semibold text-gray-900">Open Categories</div>
-                    <div className="text-sm text-gray-600">Smart appliances, Wellness tech, Energy management</div>
+                    <div className="font-semibold text-gray-900 dark:text-white">Open Categories</div>
+                    <div className="text-sm text-gray-600 dark:text-gray-400">Smart appliances, Wellness tech, Energy management</div>
                   </div>
                 </div>
               </div>
@@ -365,7 +365,7 @@ export default function VendorSupplierPage() {
                         <span className="w-8 h-8 bg-[#E8DCC8] text-[#1A1A1A] rounded-full flex items-center justify-center font-bold text-sm">
                           {step.step}
                         </span>
-                        <h3 className="font-bold text-gray-900">{step.title}</h3>
+                        <h3 className="font-bold text-gray-900 dark:text-white">{step.title}</h3>
                       </div>
                       <p className="text-sm text-gray-600 md:ml-11">{step.description}</p>
                     </div>
@@ -393,7 +393,7 @@ export default function VendorSupplierPage() {
             <h2 className="text-2xl md:text-4xl font-bold text-gray-900 mb-4">
               Vendor Registration Form
             </h2>
-            <p className="text-gray-600">
+            <p className="text-gray-600 dark:text-gray-400">
               Complete the form below to start the vendor evaluation process. Our procurement 
               team will review your submission within 5 business days.
             </p>
@@ -657,7 +657,7 @@ export default function VendorSupplierPage() {
               <h3 className="font-bold text-gray-900 mb-2">
                 What volume do you typically order?
               </h3>
-              <p className="text-gray-600">
+              <p className="text-gray-600 dark:text-gray-400">
                 Order volumes vary by product category and brand. Initial orders typically range from 
                 $10,000-$50,000 depending on the product line, with regular reorders based on demand.
               </p>
@@ -667,7 +667,7 @@ export default function VendorSupplierPage() {
               <h3 className="font-bold text-gray-900 mb-2">
                 Do you require exclusivity for the GCC region?
               </h3>
-              <p className="text-gray-600">
+              <p className="text-gray-600 dark:text-gray-400">
                 We prefer exclusive or semi-exclusive arrangements for new brands, but we evaluate 
                 each opportunity individually. Strong existing distribution in the region may also 
                 be considered.
@@ -678,7 +678,7 @@ export default function VendorSupplierPage() {
               <h3 className="font-bold text-gray-900 mb-2">
                 What certifications are required for GCC markets?
               </h3>
-              <p className="text-gray-600">
+              <p className="text-gray-600 dark:text-gray-400">
                 Products should have CE marking at minimum. UAE market may require ESMA compliance 
                 for certain categories. Saudi Arabia requires SASO certification. We can guide you 
                 through specific requirements.
@@ -689,7 +689,7 @@ export default function VendorSupplierPage() {
               <h3 className="font-bold text-gray-900 mb-2">
                 How long does the evaluation process take?
               </h3>
-              <p className="text-gray-600">
+              <p className="text-gray-600 dark:text-gray-400">
                 From initial application to partnership agreement, the process typically takes 4-8 weeks. 
                 This includes documentation review, sample testing, and commercial negotiations.
               </p>
@@ -699,7 +699,7 @@ export default function VendorSupplierPage() {
               <h3 className="font-bold text-gray-900 mb-2">
                 Do you provide marketing support for vendor brands?
               </h3>
-              <p className="text-gray-600">
+              <p className="text-gray-600 dark:text-gray-400">
                 Yes, we offer comprehensive marketing support including product displays at our Experience 
                 Centre, digital marketing campaigns, dealer training, and co-branded marketing materials.
               </p>

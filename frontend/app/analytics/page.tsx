@@ -224,7 +224,7 @@ export default function AnalyticsDashboard() {
               <div className="flex items-center justify-between p-3 bg-red-50 rounded-lg">
                 <div className="flex items-center gap-2">
                   <Flame className="w-5 h-5 text-red-600" />
-                  <span className="font-medium text-gray-900">Hot Leads</span>
+                  <span className="font-medium text-gray-900 dark:text-white">Hot Leads</span>
                 </div>
                 <span className="text-2xl font-semibold text-red-600">
                   {data?.lead_quality.hot || 0}
@@ -233,7 +233,7 @@ export default function AnalyticsDashboard() {
               <div className="flex items-center justify-between p-3 bg-orange-50 rounded-lg">
                 <div className="flex items-center gap-2">
                   <ThermometerSun className="w-5 h-5 text-orange-600" />
-                  <span className="font-medium text-gray-900">Warm Leads</span>
+                  <span className="font-medium text-gray-900 dark:text-white">Warm Leads</span>
                 </div>
                 <span className="text-2xl font-semibold text-orange-600">
                   {data?.lead_quality.warm || 0}
@@ -242,7 +242,7 @@ export default function AnalyticsDashboard() {
               <div className="flex items-center justify-between p-3 bg-green-50 rounded-lg">
                 <div className="flex items-center gap-2">
                   <Leaf className="w-5 h-5 text-green-600" />
-                  <span className="font-medium text-gray-900">Nurture Leads</span>
+                  <span className="font-medium text-gray-900 dark:text-white">Nurture Leads</span>
                 </div>
                 <span className="text-2xl font-semibold text-green-600">
                   {data?.lead_quality.nurture || 0}

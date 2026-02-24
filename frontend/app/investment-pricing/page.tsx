@@ -226,7 +226,7 @@ export default function InvestmentPricingPage() {
                     {tier.features.map((feature) => (
                       <div key={feature} className="flex items-start gap-2">
                         <CheckCircle2 className="h-5 w-5 text-[#1A1A1A] flex-shrink-0 mt-0.5" />
-                        <span className="text-sm text-gray-700">{feature}</span>
+                        <span className="text-sm text-gray-700 dark:text-gray-300">{feature}</span>
                       </div>
                     ))}
                   </div>
@@ -291,7 +291,7 @@ export default function InvestmentPricingPage() {
                   </div>
                   <ul className="space-y-2">
                     {item.items.map((subItem) => (
-                      <li key={subItem} className="flex items-start gap-2 text-sm text-gray-600">
+                      <li key={subItem} className="flex items-start gap-2 text-sm text-gray-600 dark:text-gray-400">
                         <CheckCircle2 className="h-4 w-4 text-[#1A1A1A] flex-shrink-0 mt-0.5" />
                         <span>{subItem}</span>
                       </li>

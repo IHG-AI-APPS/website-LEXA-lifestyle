@@ -180,7 +180,7 @@ export default function ProcessPage() {
                     <h4 className="text-xs tracking-wider uppercase text-gray-400 mb-4">Key Activities</h4>
                     <ul className="space-y-3">
                       {phase.activities.map((activity) => (
-                        <li key={activity} className="flex items-start gap-3 text-gray-600">
+                        <li key={activity} className="flex items-start gap-3 text-gray-600 dark:text-gray-400">
                           <CheckCircle size={18} className="text-charcoal mt-1 flex-shrink-0" strokeWidth={1.5} />
                           <span>{activity}</span>
                         </li>

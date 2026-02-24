@@ -42,7 +42,7 @@ export default function CaseStudyPage() {
 
   if (!project) {
     return <div className="min-h-screen bg-white pt-20 flex items-center justify-center">
-      <div className="text-gray-600">Case study not found</div>
+      <div className="text-gray-600 dark:text-gray-400">Case study not found</div>
     </div>
   }
 
@@ -177,7 +177,7 @@ export default function CaseStudyPage() {
                   {project.technical_specs.map((spec, index) => (
                     <div key={index} className="flex items-start gap-3">
                       <CheckCircle size={20} className="text-charcoal mt-1 flex-shrink-0" strokeWidth={1.5} />
-                      <span className="text-gray-600">{spec}</span>
+                      <span className="text-gray-600 dark:text-gray-400">{spec}</span>
                     </div>
                   ))}
                 </div>
@@ -227,7 +227,7 @@ export default function CaseStudyPage() {
                   <div>
                     <div className="font-semibold">{project.client_name}</div>
                     {project.client_role && (
-                      <div className="text-sm text-gray-600">{project.client_role}</div>
+                      <div className="text-sm text-gray-600 dark:text-gray-400">{project.client_role}</div>
                     )}
                   </div>
                 )}

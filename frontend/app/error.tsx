@@ -54,7 +54,7 @@ export default function Error({
             </div>
           )}
 
-          <div className="mt-12 text-gray-600">
+          <div className="mt-12 text-gray-600 dark:text-gray-400">
             <p className="mb-4">If this problem persists, please contact our support team:</p>
             <p className="font-semibold">+971 42 670 470</p>
             <p className="text-sm">Available Saturday-Thursday, 9AM-6PM GST</p>

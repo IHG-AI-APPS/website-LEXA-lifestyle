@@ -111,7 +111,7 @@ export default function PropertyPackageDetailPage() {
   if (!packageData) {
     return (
       <div className="min-h-screen flex items-center justify-center">
-        <p className="text-gray-600">Package not found</p>
+        <p className="text-gray-600 dark:text-gray-400">Package not found</p>
       </div>
     )
   }
@@ -155,13 +155,13 @@ export default function PropertyPackageDetailPage() {
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-5xl mx-auto">
             <div className="text-center">
               <Home className="h-8 w-8 mx-auto mb-2 text-blue-600" />
-              <p className="text-sm text-gray-600">Property Size</p>
-              <p className="font-bold text-gray-900">{packageData.typical_size_range}</p>
+              <p className="text-sm text-gray-600 dark:text-gray-400">Property Size</p>
+              <p className="font-bold text-gray-900 dark:text-white">{packageData.typical_size_range}</p>
             </div>
             {packageData.typical_features?.slice(0, 3).map((feature: string, i: number) => (
               <div key={i} className="text-center">
                 <Check className="h-8 w-8 mx-auto mb-2 text-green-600" />
-                <p className="text-sm font-medium text-gray-900">{feature}</p>
+                <p className="text-sm font-medium text-gray-900 dark:text-white">{feature}</p>
               </div>
             ))}
           </div>
@@ -213,10 +213,10 @@ export default function PropertyPackageDetailPage() {
                       </h3>
                       <p className="text-gray-600 mb-4">{tier.tier_subtitle}</p>
                       <div className="mb-4">
-                        <span className="text-4xl font-bold text-gray-900">
+                        <span className="text-4xl font-bold text-gray-900 dark:text-white">
                           {formatPrice(tier.base_price_aed)}
                         </span>
-                        <span className="text-gray-600">+</span>
+                        <span className="text-gray-600 dark:text-gray-400">+</span>
                       </div>
                       <p className="text-sm text-gray-500">{tier.typical_rooms_count}</p>
                     </div>
@@ -302,7 +302,7 @@ export default function PropertyPackageDetailPage() {
                         </div>
                       )}
 
-                      <div className="mt-6 text-sm text-gray-600">
+                      <div className="mt-6 text-sm text-gray-600 dark:text-gray-400">
                         <p className="font-semibold text-gray-900 mb-1">Support Level:</p>
                         <p>{tier.support_level}</p>
                       </div>
@@ -331,7 +331,7 @@ function FeatureSection({ icon: Icon, title, count, colors }: any) {
         <Icon className={`h-4 w-4 ${colors.text}`} />
       </div>
       <div>
-        <p className="font-medium text-gray-900">{title}</p>
+        <p className="font-medium text-gray-900 dark:text-white">{title}</p>
         <p className="text-gray-500">{count} features</p>
       </div>
     </div>
@@ -344,7 +344,7 @@ function DetailedFeatureList({ title, features }: { title: string; features: str
       <h4 className="font-bold text-gray-900 mb-3">{title}</h4>
       <ul className="space-y-2">
         {features.map((feature, i) => (
-          <li key={i} className="flex items-start gap-2 text-sm text-gray-700">
+          <li key={i} className="flex items-start gap-2 text-sm text-gray-700 dark:text-gray-300">
             <Check className="h-4 w-4 text-green-600 mt-0.5 flex-shrink-0" />
             <span>{feature}</span>
           </li>
