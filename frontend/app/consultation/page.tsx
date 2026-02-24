@@ -97,7 +97,7 @@ export default function ConsultationPage() {
   ]
 
   return (
-    <div className="min-h-screen bg-white pt-20">
+    <div className="min-h-screen bg-white dark:bg-gray-900 pt-20">
       {/* Hero Section */}
       <section className="py-20 bg-gradient-to-br from-black via-gray-900 to-black text-white">
         <div className="container mx-auto px-8 lg:px-16">
@@ -158,7 +158,7 @@ export default function ConsultationPage() {
       <TrustBadges variant="compact" showCertifications={false} className="bg-white border-b border-gray-100" />
 
       {/* Consultation Types */}
-      <section className="py-20 bg-gray-50">
+      <section className="py-20 bg-gray-50 dark:bg-gray-800">
         <div className="container mx-auto px-8 lg:px-16">
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-16">
@@ -274,7 +274,7 @@ export default function ConsultationPage() {
       </section>
 
       {/* What to Expect */}
-      <section className="py-20 bg-gray-50">
+      <section className="py-20 bg-gray-50 dark:bg-gray-800">
         <div className="container mx-auto px-8 lg:px-16">
           <div className="max-w-4xl mx-auto">
             <div className="text-center mb-12">

@@ -110,7 +110,7 @@ export default function ExperienceCentrePage() {
   }
 
   return (
-    <div className="min-h-screen bg-[#F9F9F7] pt-20">
+    <div className="min-h-screen bg-[#F9F9F7] dark:bg-gray-900 pt-20">
       {/* Hero Section */}
       <section className="relative h-[70vh] overflow-hidden bg-white">
         <div className="absolute inset-0">
@@ -214,7 +214,7 @@ export default function ExperienceCentrePage() {
       </section>
 
       {/* Introduction */}
-      <section className="py-20 bg-[#F9F9F7]">
+      <section className="py-20 bg-[#F9F9F7] dark:bg-gray-900">
         <div className="px-6 md:px-12 lg:px-24">
           <div className="max-w-4xl">
             <motion.div
@@ -298,7 +298,7 @@ export default function ExperienceCentrePage() {
       </section>
 
       {/* Social Proof & Trust */}
-      <section className="py-16 bg-[#F9F9F7] border-t border-black/5">
+      <section className="py-16 bg-[#F9F9F7] dark:bg-gray-800 border-t border-black/5 dark:border-gray-700">
         <div className="px-6 md:px-12 lg:px-24">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-12">
             {[

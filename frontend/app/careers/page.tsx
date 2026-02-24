@@ -9,7 +9,7 @@ export const metadata = {
 
 export default function CareersPage() {
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-white dark:bg-gray-900">
       {/* Hero */}
       <section className="bg-[#1A1A1A] text-white py-20 md:py-28">
         <div className="container mx-auto px-6 md:px-12 lg:px-24">
@@ -58,7 +58,7 @@ export default function CareersPage() {
       </section>
 
       {/* Open Positions */}
-      <section className="py-16 md:py-20 bg-gray-50">
+      <section className="py-16 md:py-20 bg-gray-50 dark:bg-gray-800">
         <div className="container mx-auto px-6 md:px-12 lg:px-24">
           <h2 className="text-3xl font-bold mb-12">Open Positions</h2>
           
