@@ -155,7 +155,7 @@ export default function RelatedPackages({ currentSlug, currentTitle }: RelatedPa
                       </div>
 
                       {/* CTA */}
-                      <div className="flex items-center justify-between pt-4 border-t border-gray-100">
+                      <div className="flex items-center justify-between pt-4 border-t border-gray-100 dark:border-gray-800">
                         <span className="text-sm font-semibold text-blue-600 group-hover:text-blue-700 transition-colors">
                           Explore Package
                         </span>

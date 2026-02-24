@@ -492,7 +492,7 @@ export default function ProjectDetailsForm({
       </div>
 
       {/* Link to Calculator */}
-      <div className="mt-8 pt-6 border-t border-gray-200">
+      <div className="mt-8 pt-6 border-t border-gray-200 dark:border-gray-700">
         <div className="bg-gradient-to-r from-blue-50 to-cyan-50 border border-blue-200 rounded-xl p-5">
           <div className="flex flex-col md:flex-row items-center justify-between gap-4">
             <div>

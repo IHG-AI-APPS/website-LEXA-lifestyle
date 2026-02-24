@@ -201,7 +201,7 @@ export default function ProtocolSelection({
                     </div>
 
                     {/* Best For */}
-                    <div className="pt-4 border-t border-gray-100">
+                    <div className="pt-4 border-t border-gray-100 dark:border-gray-800">
                       <span className="text-xs font-semibold text-gray-500 uppercase tracking-wide">Best for:</span>
                       <p className="text-sm text-gray-700 mt-1">{type.best_for}</p>
                     </div>

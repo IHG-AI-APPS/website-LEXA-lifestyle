@@ -157,7 +157,7 @@ export default function SolutionDetailPage() {
 
       {/* Long Description Section */}
       {solution.long_description && (
-        <section className="py-20 border-b border-gray-200">
+        <section className="py-20 border-b border-gray-200 dark:border-gray-700">
           <div className="container mx-auto px-8 lg:px-16">
             <div className="max-w-4xl mx-auto">
               <motion.div
@@ -252,7 +252,7 @@ export default function SolutionDetailPage() {
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: 0.2 }}
                   viewport={{ once: true }}
-                  className="flex items-start gap-4 p-6 bg-white dark:bg-gray-800 border border-gray-200"
+                  className="flex items-start gap-4 p-6 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700"
                 >
                   <CheckCircle2 className="text-charcoal flex-shrink-0 mt-1" size={24} strokeWidth={2} />
                   <div>
@@ -267,7 +267,7 @@ export default function SolutionDetailPage() {
 
       {/* Technology Brands Section */}
       {solution.brands.length > 0 && (
-        <section className="py-20 border-b border-gray-200">
+        <section className="py-20 border-b border-gray-200 dark:border-gray-700">
           <div className="container mx-auto px-8 lg:px-16">
             <div className="max-w-6xl mx-auto">
               <motion.div
@@ -406,7 +406,7 @@ export default function SolutionDetailPage() {
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.6, delay: 0.2 }}
                     viewport={{ once: true }}
-                    className="bg-white p-8 border border-gray-200"
+                    className="bg-white p-8 border border-gray-200 dark:border-gray-700"
                   >
                     <h3 className="text-xl font-semibold mb-3">{faq.question}</h3>
                     <p className="text-gray-600 leading-relaxed">{faq.answer}</p>
@@ -420,7 +420,7 @@ export default function SolutionDetailPage() {
 
       {/* Use Cases Section */}
       {solution.use_cases && solution.use_cases.length > 0 && (
-        <section className="py-20 border-b border-gray-200">
+        <section className="py-20 border-b border-gray-200 dark:border-gray-700">
           <div className="container mx-auto px-8 lg:px-16">
             <div className="max-w-6xl mx-auto">
               <motion.div
@@ -482,7 +482,7 @@ export default function SolutionDetailPage() {
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.6, delay: 0.15 }}
                     viewport={{ once: true }}
-                    className="flex items-start gap-4 p-6 bg-white dark:bg-gray-800 border border-gray-200"
+                    className="flex items-start gap-4 p-6 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700"
                   >
                     <CheckCircle2 className="text-charcoal flex-shrink-0 mt-1" size={24} strokeWidth={2} />
                     <div>

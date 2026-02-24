@@ -280,7 +280,7 @@ export default function DeveloperToolkitPage() {
                   className={`text-center p-8 rounded-2xl border ${
                     isDark 
                       ? "bg-gray-800/50 border-gray-700" 
-                      : "bg-gray-50 border-gray-200"
+                      : "bg-gray-50 border-gray-200 dark:border-gray-700"
                   }`}
                 >
                   <div className="text-4xl font-bold text-[#C9A962] mb-4">{benefit.stat}</div>

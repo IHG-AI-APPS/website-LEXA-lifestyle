@@ -338,7 +338,7 @@ export default function SmartCarParkLightingPage() {
 
           {/* Comparison Table */}
           <div className="max-w-5xl mx-auto mb-16">
-            <div className="bg-gradient-to-br from-gray-50 to-gray-100 rounded-2xl p-8 border border-gray-200">
+            <div className="bg-gradient-to-br from-gray-50 to-gray-100 rounded-2xl p-8 border border-gray-200 dark:border-gray-700">
               <h3 className="text-2xl font-bold text-gray-900 mb-6 text-center">
                 Electricity Consumption Comparison (per lamp)
               </h3>
@@ -503,7 +503,7 @@ export default function SmartCarParkLightingPage() {
 
           <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
             {/* LED Tube Specs */}
-            <div className="bg-gray-50 rounded-xl p-8 border border-gray-200">
+            <div className="bg-gray-50 rounded-xl p-8 border border-gray-200 dark:border-gray-700">
               <div className="flex items-center gap-3 mb-6">
                 <div className="w-12 h-12 bg-blue-600 rounded-xl flex items-center justify-center">
                   <Lightbulb className="w-6 h-6 text-white" />
@@ -512,7 +512,7 @@ export default function SmartCarParkLightingPage() {
               </div>
               <div className="space-y-3">
                 {technicalSpecs.ledTube.map((item, index) => (
-                  <div key={index} className="flex justify-between items-center py-2 border-b border-gray-200">
+                  <div key={index} className="flex justify-between items-center py-2 border-b border-gray-200 dark:border-gray-700">
                     <span className="text-gray-600">{item.spec}</span>
                     <span className="font-semibold text-gray-900">{item.value}</span>
                   </div>
@@ -521,7 +521,7 @@ export default function SmartCarParkLightingPage() {
             </div>
 
             {/* Gateway Specs */}
-            <div className="bg-gray-50 rounded-xl p-8 border border-gray-200">
+            <div className="bg-gray-50 rounded-xl p-8 border border-gray-200 dark:border-gray-700">
               <div className="flex items-center gap-3 mb-6">
                 <div className="w-12 h-12 bg-purple-600 rounded-xl flex items-center justify-center">
                   <CloudCog className="w-6 h-6 text-white" />
@@ -530,7 +530,7 @@ export default function SmartCarParkLightingPage() {
               </div>
               <div className="space-y-3">
                 {technicalSpecs.gateway.map((item, index) => (
-                  <div key={index} className="flex justify-between items-center py-2 border-b border-gray-200">
+                  <div key={index} className="flex justify-between items-center py-2 border-b border-gray-200 dark:border-gray-700">
                     <span className="text-gray-600">{item.spec}</span>
                     <span className="font-semibold text-gray-900">{item.value}</span>
                   </div>
@@ -564,7 +564,7 @@ export default function SmartCarParkLightingPage() {
                     {step.step}
                   </div>
                 </div>
-                <div className="flex-grow bg-white rounded-xl p-6 border border-gray-200">
+                <div className="flex-grow bg-white rounded-xl p-6 border border-gray-200 dark:border-gray-700">
                   <h3 className="text-xl font-bold text-gray-900 mb-2">{step.title}</h3>
                   <p className="text-gray-600">{step.desc}</p>
                 </div>

@@ -236,7 +236,7 @@ export default function SolutionFinderPage() {
       {!showResults ? (
         <>
           {/* Header */}
-          <section className="py-12 bg-gray-50 border-b border-gray-200">
+          <section className="py-12 bg-gray-50 border-b border-gray-200 dark:border-gray-700">
             <div className="container mx-auto px-8 lg:px-16">
               <div className="max-w-4xl mx-auto">
                 <div className="flex items-center justify-between mb-6">

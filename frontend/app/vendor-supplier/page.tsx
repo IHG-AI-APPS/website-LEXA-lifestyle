@@ -360,7 +360,7 @@ export default function VendorSupplierPage() {
                   className={`md:flex items-center ${index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'}`}
                 >
                   <div className={`md:w-1/2 ${index % 2 === 0 ? 'md:pr-12 md:text-right' : 'md:pl-12'}`}>
-                    <div className="bg-white p-6 rounded-xl shadow-md border border-gray-100">
+                    <div className="bg-white p-6 rounded-xl shadow-md border border-gray-100 dark:border-gray-800">
                       <div className="flex items-center gap-3 mb-2 md:justify-start">
                         <span className="w-8 h-8 bg-[#E8DCC8] text-[#1A1A1A] rounded-full flex items-center justify-center font-bold text-sm">
                           {step.step}
@@ -653,7 +653,7 @@ export default function VendorSupplierPage() {
           </h2>
           
           <div className="space-y-6">
-            <div className="bg-white p-6 rounded-xl border border-gray-200">
+            <div className="bg-white p-6 rounded-xl border border-gray-200 dark:border-gray-700">
               <h3 className="font-bold text-gray-900 mb-2">
                 What volume do you typically order?
               </h3>
@@ -663,7 +663,7 @@ export default function VendorSupplierPage() {
               </p>
             </div>
             
-            <div className="bg-white p-6 rounded-xl border border-gray-200">
+            <div className="bg-white p-6 rounded-xl border border-gray-200 dark:border-gray-700">
               <h3 className="font-bold text-gray-900 mb-2">
                 Do you require exclusivity for the GCC region?
               </h3>
@@ -674,7 +674,7 @@ export default function VendorSupplierPage() {
               </p>
             </div>
             
-            <div className="bg-white p-6 rounded-xl border border-gray-200">
+            <div className="bg-white p-6 rounded-xl border border-gray-200 dark:border-gray-700">
               <h3 className="font-bold text-gray-900 mb-2">
                 What certifications are required for GCC markets?
               </h3>
@@ -685,7 +685,7 @@ export default function VendorSupplierPage() {
               </p>
             </div>
             
-            <div className="bg-white p-6 rounded-xl border border-gray-200">
+            <div className="bg-white p-6 rounded-xl border border-gray-200 dark:border-gray-700">
               <h3 className="font-bold text-gray-900 mb-2">
                 How long does the evaluation process take?
               </h3>
@@ -695,7 +695,7 @@ export default function VendorSupplierPage() {
               </p>
             </div>
             
-            <div className="bg-white p-6 rounded-xl border border-gray-200">
+            <div className="bg-white p-6 rounded-xl border border-gray-200 dark:border-gray-700">
               <h3 className="font-bold text-gray-900 mb-2">
                 Do you provide marketing support for vendor brands?
               </h3>

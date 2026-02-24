@@ -228,7 +228,7 @@ export default function PlatformAgnosticPage() {
                   <p className="text-gray-600 mb-4">{layer.description}</p>
                   <div className="flex flex-wrap gap-2">
                     {layer.examples.map((example) => (
-                      <span key={example} className="px-3 py-1 bg-white text-sm text-gray-700 border border-gray-200">
+                      <span key={example} className="px-3 py-1 bg-white text-sm text-gray-700 border border-gray-200 dark:border-gray-700">
                         {example}
                       </span>
                     ))}
@@ -256,7 +256,7 @@ export default function PlatformAgnosticPage() {
 
             <div className="bg-white border-2 border-gray-200 overflow-hidden">
               <div className="grid grid-cols-3 bg-gray-100 font-semibold text-sm">
-                <div className="p-4 border-r border-gray-200">Aspect</div>
+                <div className="p-4 border-r border-gray-200 dark:border-gray-700">Aspect</div>
                 <div className="p-4 border-r border-gray-200 text-center">Proprietary Systems</div>
                 <div className="p-4 text-center">Platform Agnostic</div>
               </div>

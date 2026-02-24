@@ -393,7 +393,7 @@ export default function FeatureSelectionFlow({
                       initial={{ height: 0, opacity: 0 }}
                       animate={{ height: 'auto', opacity: 1 }}
                       exit={{ height: 0, opacity: 0 }}
-                      className="border-t border-gray-200"
+                      className="border-t border-gray-200 dark:border-gray-700"
                     >
                       <div className="p-4 grid grid-cols-1 md:grid-cols-2 gap-3">
                         {category.features.map(feature => {

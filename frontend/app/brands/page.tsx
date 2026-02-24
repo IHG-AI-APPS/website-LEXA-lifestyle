@@ -273,7 +273,7 @@ export default function BrandsPage() {
 
                           {/* Featured Badge */}
                           {brand.featured && (
-                            <div className="mt-3 pt-3 border-t border-gray-100">
+                            <div className="mt-3 pt-3 border-t border-gray-100 dark:border-gray-800">
                               <span className="inline-flex items-center gap-1 text-xs text-amber-600">
                                 <Star size={12} fill="currentColor" />
                                 Featured Partner

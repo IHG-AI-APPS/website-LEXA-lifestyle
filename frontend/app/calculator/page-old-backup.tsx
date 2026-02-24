@@ -278,7 +278,7 @@ export default function CostCalculatorPage() {
 
                     <div className="space-y-6">
                       {/* Cost Range */}
-                      <div className="pb-6 border-b border-gray-200">
+                      <div className="pb-6 border-b border-gray-200 dark:border-gray-700">
                         <div className="flex items-center gap-3 mb-3">
                           <TrendingUp className="text-charcoal" size={20} />
                           <span className="text-xs tracking-wider uppercase text-gray-500">Investment Range</span>
@@ -292,7 +292,7 @@ export default function CostCalculatorPage() {
                       </div>
 
                       {/* Timeline */}
-                      <div className="pb-6 border-b border-gray-200">
+                      <div className="pb-6 border-b border-gray-200 dark:border-gray-700">
                         <div className="flex items-center gap-3 mb-3">
                           <Clock className="text-charcoal" size={20} />
                           <span className="text-xs tracking-wider uppercase text-gray-500">Timeline</span>
@@ -322,7 +322,7 @@ export default function CostCalculatorPage() {
                     </div>
 
                     {/* CTA */}
-                    <div className="pt-6 border-t border-gray-200">
+                    <div className="pt-6 border-t border-gray-200 dark:border-gray-700">
                       <p className="text-sm text-gray-600 mb-4">
                         Ready to bring your vision to life? Book a free consultation with our experts.
                       </p>

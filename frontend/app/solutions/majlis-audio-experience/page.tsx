@@ -211,7 +211,7 @@ export default function MajlisAudioPage() {
                 {benefits.map((benefit, index) => {
                   const Icon = benefit.icon
                   return (
-                    <div key={index} className="bg-gray-50 p-6 text-center border-2 border-gray-200">
+                    <div key={index} className="bg-gray-50 p-6 text-center border-2 border-gray-200 dark:border-gray-700">
                       <Icon className="h-8 w-8 mx-auto mb-3 text-[#1A1A1A] dark:text-white" />
                       <div className="text-3xl font-bold mb-2 text-[#1A1A1A] dark:text-white">{benefit.metric}</div>
                       <div className="text-sm text-gray-600">{benefit.label}</div>

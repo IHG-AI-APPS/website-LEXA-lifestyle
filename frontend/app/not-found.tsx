@@ -36,7 +36,7 @@ export default function NotFound() {
             </Link>
           </div>
 
-          <div className="mt-12 pt-8 border-t border-gray-200">
+          <div className="mt-12 pt-8 border-t border-gray-200 dark:border-gray-700">
             <h3 className="text-lg font-semibold mb-4">Popular Pages</h3>
             <div className="grid md:grid-cols-3 gap-4 text-left">
               <Link href="/services" className="p-4 border border-gray-200 hover:border-gray-900 transition-colors group">

@@ -321,7 +321,7 @@ export default function ProjectDetailPage() {
               )}
 
               {/* Action Buttons */}
-              <div className="flex flex-wrap gap-3 py-6 border-t border-b border-gray-200">
+              <div className="flex flex-wrap gap-3 py-6 border-t border-b border-gray-200 dark:border-gray-700">
                 <button className="inline-flex items-center gap-2 px-4 py-2 text-sm text-gray-600 hover:text-black transition-colors">
                   <Heart className="h-4 w-4" />
                   Save

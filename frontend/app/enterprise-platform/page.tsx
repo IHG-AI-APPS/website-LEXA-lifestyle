@@ -397,7 +397,7 @@ export default function EnterprisePerformanceOSPage() {
               
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 {selectedCase.benefits.map((benefit) => (
-                  <div key={benefit.label} className="bg-white p-6 border border-gray-200">
+                  <div key={benefit.label} className="bg-white p-6 border border-gray-200 dark:border-gray-700">
                     <div className="font-semibold text-gray-900 mb-2">{benefit.label}</div>
                     <div className="text-sm text-blue-600 font-semibold">{benefit.value}</div>
                   </div>
@@ -555,7 +555,7 @@ export default function EnterprisePerformanceOSPage() {
         </section>
 
         {/* Disclaimer */}
-        <section className="py-6 bg-gray-100 border-t border-gray-200">
+        <section className="py-6 bg-gray-100 border-t border-gray-200 dark:border-gray-700">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
             <p className="text-xs text-gray-500 text-center">
               * Performance metrics shown are industry benchmarks and expected outcomes based on typical implementations of intelligent building management systems. 

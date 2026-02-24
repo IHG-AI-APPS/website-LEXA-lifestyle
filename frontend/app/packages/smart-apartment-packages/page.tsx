@@ -224,7 +224,7 @@ export default function SmartApartmentPackagesPage() {
         </section>
 
         {/* Apartment Size Selector */}
-        <section id="packages" className="py-12 bg-white border-b border-gray-200">
+        <section id="packages" className="py-12 bg-white border-b border-gray-200 dark:border-gray-700">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
             <div className="text-center mb-8">
               <h2 className="text-2xl sm:text-3xl font-bold mb-2 text-gray-900">Select Your Apartment Size</h2>

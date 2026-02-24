@@ -164,7 +164,7 @@ export default function BigHomesBreakSmartPage() {
                           <span className="text-sm uppercase tracking-wider text-orange-600 font-semibold">Impact:</span>
                           <p className="text-gray-700 mt-1">{problem.impact}</p>
                         </div>
-                        <div className="pt-3 border-t border-gray-200">
+                        <div className="pt-3 border-t border-gray-200 dark:border-gray-700">
                           <div className="text-sm text-gray-500 italic">📊 {problem.stat}</div>
                         </div>
                       </div>
@@ -207,7 +207,7 @@ export default function BigHomesBreakSmartPage() {
                   <span className="text-red-600 font-bold text-lg">{item.cost}</span>
                 </div>
                 <p className="text-gray-600 text-sm mb-4">{item.description}</p>
-                <div className="pt-3 border-t border-gray-200">
+                <div className="pt-3 border-t border-gray-200 dark:border-gray-700">
                   <span className="text-xs uppercase tracking-wider text-green-600 font-semibold">LEXA Solution:</span>
                   <p className="text-sm text-gray-700 mt-1">{item.solution}</p>
                 </div>

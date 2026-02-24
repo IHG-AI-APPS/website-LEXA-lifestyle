@@ -158,7 +158,7 @@ export default function IntelligenceCapture({ sessionId, onComplete }: Intellige
           {uploadedFiles.length > 0 && (
             <div className="mt-4 space-y-2">
               {uploadedFiles.map((file, index) => (
-                <div key={index} className="flex items-center justify-between p-3 bg-white dark:bg-gray-800 border border-gray-200">
+                <div key={index} className="flex items-center justify-between p-3 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700">
                   <div className="flex items-center gap-2">
                     <FileText className="w-4 h-4 text-blue-600" />
                     <span className="text-sm text-gray-900">{file.name}</span>

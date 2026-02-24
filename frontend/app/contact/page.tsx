@@ -416,7 +416,7 @@ export default function ContactPage() {
                     {language === 'ar' ? 'زُر صالة العرض' : 'Visit Our Showroom'}
                   </h2>
                 </div>
-                <div className="bg-white rounded-xl p-6 border border-gray-200">
+                <div className="bg-white rounded-xl p-6 border border-gray-200 dark:border-gray-700">
                   <p className="text-lg text-gray-700 mb-4">
                     <strong>LEXA Lifestyle LLC</strong><br />
                     <span className="text-sm text-gray-500">
@@ -469,7 +469,7 @@ export default function ContactPage() {
 
               {/* Map */}
               <div className="relative">
-                <div className="aspect-[4/3] bg-gray-200 rounded-xl overflow-hidden border border-gray-200">
+                <div className="aspect-[4/3] bg-gray-200 rounded-xl overflow-hidden border border-gray-200 dark:border-gray-700">
                   <iframe
                     src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3611.6614635837277!2d55.2226452759589!3d25.14713373372549!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f6bc640af2289%3A0xb82b68390913e17a!2sLexa%20Lifestyle%20LLC!5e0!3m2!1sen!2sae!4v1771051862873!5m2!1sen!2sae"
                     width="100%"

@@ -970,7 +970,7 @@ export default function AIRecommendation({
               {/* Comparison Table */}
               <div className="border border-gray-200 rounded-xl overflow-hidden">
                 {/* Features Included */}
-                <div className="grid grid-cols-4 gap-4 p-4 bg-gray-50 border-b border-gray-200">
+                <div className="grid grid-cols-4 gap-4 p-4 bg-gray-50 border-b border-gray-200 dark:border-gray-700">
                   <div className="font-medium text-gray-700">Features Included</div>
                   {recommendation.packages.map((pkg) => (
                     <div key={pkg.name} className="text-center font-bold text-gray-900">
@@ -980,7 +980,7 @@ export default function AIRecommendation({
                 </div>
 
                 {/* Must-Have Features */}
-                <div className="grid grid-cols-4 gap-4 p-4 border-b border-gray-100">
+                <div className="grid grid-cols-4 gap-4 p-4 border-b border-gray-100 dark:border-gray-800">
                   <div className="flex items-center gap-2">
                     <div className="w-3 h-3 rounded-full bg-red-500" />
                     <span className="text-gray-700">Must-Have Features</span>
@@ -993,7 +993,7 @@ export default function AIRecommendation({
                 </div>
 
                 {/* Should-Have Features */}
-                <div className="grid grid-cols-4 gap-4 p-4 border-b border-gray-100">
+                <div className="grid grid-cols-4 gap-4 p-4 border-b border-gray-100 dark:border-gray-800">
                   <div className="flex items-center gap-2">
                     <div className="w-3 h-3 rounded-full bg-orange-500" />
                     <span className="text-gray-700">Should-Have Features</span>
@@ -1010,7 +1010,7 @@ export default function AIRecommendation({
                 </div>
 
                 {/* Nice-to-Have Upgrades */}
-                <div className="grid grid-cols-4 gap-4 p-4 border-b border-gray-100">
+                <div className="grid grid-cols-4 gap-4 p-4 border-b border-gray-100 dark:border-gray-800">
                   <div className="flex items-center gap-2">
                     <div className="w-3 h-3 rounded-full bg-purple-500" />
                     <span className="text-gray-700">Nice-to-Have Upgrades</span>
@@ -1027,7 +1027,7 @@ export default function AIRecommendation({
                 </div>
 
                 {/* Premium Hardware */}
-                <div className="grid grid-cols-4 gap-4 p-4 border-b border-gray-100">
+                <div className="grid grid-cols-4 gap-4 p-4 border-b border-gray-100 dark:border-gray-800">
                   <div className="flex items-center gap-2">
                     <Shield className="w-4 h-4 text-gray-400" />
                     <span className="text-gray-700">Premium Hardware</span>
@@ -1044,7 +1044,7 @@ export default function AIRecommendation({
                 </div>
 
                 {/* Extended Warranty */}
-                <div className="grid grid-cols-4 gap-4 p-4 border-b border-gray-100">
+                <div className="grid grid-cols-4 gap-4 p-4 border-b border-gray-100 dark:border-gray-800">
                   <div className="flex items-center gap-2">
                     <CheckCircle2 className="w-4 h-4 text-gray-400" />
                     <span className="text-gray-700">Extended Warranty</span>
@@ -1063,7 +1063,7 @@ export default function AIRecommendation({
                 </div>
 
                 {/* Priority Support */}
-                <div className="grid grid-cols-4 gap-4 p-4 border-b border-gray-100">
+                <div className="grid grid-cols-4 gap-4 p-4 border-b border-gray-100 dark:border-gray-800">
                   <div className="flex items-center gap-2">
                     <Phone className="w-4 h-4 text-gray-400" />
                     <span className="text-gray-700">Priority Support</span>
@@ -1080,7 +1080,7 @@ export default function AIRecommendation({
                 </div>
 
                 {/* Dedicated Project Manager */}
-                <div className="grid grid-cols-4 gap-4 p-4 border-b border-gray-100">
+                <div className="grid grid-cols-4 gap-4 p-4 border-b border-gray-100 dark:border-gray-800">
                   <div className="flex items-center gap-2">
                     <Building2 className="w-4 h-4 text-gray-400" />
                     <span className="text-gray-700">Dedicated Project Manager</span>

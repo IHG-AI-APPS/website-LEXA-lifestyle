@@ -693,7 +693,7 @@ export default function AdvancedCalculatorPage() {
                     <h3 className="text-xl font-bold mb-4">Cost Breakdown</h3>
                     <div className="space-y-3">
                       {breakdown.map((item, index) => (
-                        <div key={index} className="flex justify-between items-center py-3 border-b border-gray-100">
+                        <div key={index} className="flex justify-between items-center py-3 border-b border-gray-100 dark:border-gray-800">
                           <span className="text-gray-700">{item.name}</span>
                           <span className="font-semibold">{formatCurrency(item.cost)}</span>
                         </div>

@@ -155,7 +155,7 @@ export default function ConsultationPage() {
       </section>
 
       {/* Trust Badges */}
-      <TrustBadges variant="compact" showCertifications={false} className="bg-white border-b border-gray-100" />
+      <TrustBadges variant="compact" showCertifications={false} className="bg-white border-b border-gray-100 dark:border-gray-800" />
 
       {/* Consultation Types */}
       <section className="py-20 bg-gray-50 dark:bg-gray-800">

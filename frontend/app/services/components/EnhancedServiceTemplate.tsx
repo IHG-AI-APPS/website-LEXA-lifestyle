@@ -226,7 +226,7 @@ export default function EnhancedServicePage({
                   
                   {/* Stats */}
                   {feature.stats && (
-                    <div className="pt-4 border-t border-gray-100">
+                    <div className="pt-4 border-t border-gray-100 dark:border-gray-800">
                       <span className="text-xs font-semibold text-gray-700">
                         {feature.stats}
                       </span>
@@ -281,7 +281,7 @@ export default function EnhancedServicePage({
                   </div>
                   
                   {/* Content */}
-                  <div className="flex-1 bg-white rounded-2xl p-8 shadow-md border border-gray-100">
+                  <div className="flex-1 bg-white rounded-2xl p-8 shadow-md border border-gray-100 dark:border-gray-800">
                     <div className="flex items-start justify-between mb-3">
                       <h3 className="text-2xl font-bold text-gray-900">
                         {step.title}

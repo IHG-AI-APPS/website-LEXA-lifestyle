@@ -101,7 +101,7 @@ export default function ProjectBuilderLanding() {
       </section>
 
       {/* Process Section */}
-      <section className="py-20 border-t border-gray-100">
+      <section className="py-20 border-t border-gray-100 dark:border-gray-800">
         <div className="container mx-auto px-8 lg:px-16">
           <div className="max-w-7xl mx-auto">
             <div className="text-center mb-16">
@@ -162,7 +162,7 @@ export default function ProjectBuilderLanding() {
       </section>
 
       {/* Features Grid */}
-      <section className="py-20 bg-gradient-to-b from-gray-50 to-white border-t border-gray-100">
+      <section className="py-20 bg-gradient-to-b from-gray-50 to-white border-t border-gray-100 dark:border-gray-800">
         <div className="container mx-auto px-8 lg:px-16">
           <div className="max-w-7xl mx-auto">
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -187,7 +187,7 @@ export default function ProjectBuilderLanding() {
       </section>
 
       {/* Final CTA */}
-      <section className="py-20 border-t border-gray-100">
+      <section className="py-20 border-t border-gray-100 dark:border-gray-800">
         <div className="container mx-auto px-8 lg:px-16 max-w-4xl text-center">
           <h2 className="text-4xl font-semibold tracking-tight text-gray-900 mb-8">
             Ready to begin?

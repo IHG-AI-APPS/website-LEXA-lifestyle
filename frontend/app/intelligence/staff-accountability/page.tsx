@@ -372,7 +372,7 @@ export default function AIStaffAccountabilityPage() {
               {/* Benefits Metrics */}
               <div className="grid md:grid-cols-3 gap-4 mb-8">
                 {Object.entries(currentStage.benefits).map(([key, value], index) => (
-                  <div key={index} className="bg-white rounded-xl p-6 border border-gray-200">
+                  <div key={index} className="bg-white rounded-xl p-6 border border-gray-200 dark:border-gray-700">
                     <div className="text-3xl font-bold text-blue-600 mb-2">{value}</div>
                     <div className="text-sm text-gray-600 capitalize">{key.replace('_', ' ')}</div>
                   </div>
@@ -396,7 +396,7 @@ export default function AIStaffAccountabilityPage() {
                 ))}
               </div>
 
-              <div className="flex items-center justify-between pt-6 border-t border-gray-200">
+              <div className="flex items-center justify-between pt-6 border-t border-gray-200 dark:border-gray-700">
                 <div>
                   <div className="text-sm text-gray-500 mb-1">ROI Impact</div>
                   <div className="font-semibold text-gray-900">{currentStage.roi}</div>

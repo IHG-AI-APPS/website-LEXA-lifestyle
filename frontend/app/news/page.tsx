@@ -76,7 +76,7 @@ export default function NewsPage() {
 
       {/* Featured News */}
       {featuredNews && (
-        <section className="py-16 bg-white border-b border-gray-100">
+        <section className="py-16 bg-white border-b border-gray-100 dark:border-gray-800">
           <div className="container mx-auto px-6 lg:px-12 max-w-7xl">
             <motion.div
               initial={{ opacity: 0, y: 20 }}

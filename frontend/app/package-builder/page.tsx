@@ -476,7 +476,7 @@ export default function PackageBuilderPage() {
                         </div>
                       </div>
 
-                      <div className="pt-4 border-t border-gray-200">
+                      <div className="pt-4 border-t border-gray-200 dark:border-gray-700">
                         <p className="text-xs text-gray-500 mb-1">Price Range</p>
                         <p className="font-bold text-gray-900">
                           {system.price_range_aed ? (
@@ -599,7 +599,7 @@ export default function PackageBuilderPage() {
                                 )}
                               </div>
 
-                              <div className="flex items-center justify-between pt-3 border-t border-gray-200">
+                              <div className="flex items-center justify-between pt-3 border-t border-gray-200 dark:border-gray-700">
                                 <span className={`text-xs px-2 py-1 rounded ${
                                   item.type === 'upgrade' 
                                     ? 'bg-purple-100 text-purple-700' 
