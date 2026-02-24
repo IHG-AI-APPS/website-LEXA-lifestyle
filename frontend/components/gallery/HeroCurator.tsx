@@ -58,6 +58,7 @@ export default function HeroCurator({ onPersonaClick }: HeroCuratorProps) {
           autoPlay
           muted
           playsInline
+          preload="metadata"
           onLoadedData={() => setIsLoaded(true)}
           onEnded={handleVideoEnd}
         >
