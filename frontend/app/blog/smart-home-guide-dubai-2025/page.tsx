@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   description: 'Ultimate guide to smart home automation in Dubai. Learn about Control4, Crestron, costs, installation process, and ROI. Expert insights from 500+ Dubai villa projects.',
   keywords: ['smart home guide Dubai', 'home automation tutorial', 'Control4 installation', 'Dubai smart home cost'],
   alternates: {
-    canonical: 'https://smart-builder-launch.preview.emergentagent.com/blog/smart-home-guide-dubai-2025'
+    canonical: 'https://brand-visual-refresh.preview.emergentagent.com/blog/smart-home-guide-dubai-2025'
   }
 }
 
@@ -19,7 +19,7 @@ const articleData = {
   publishDate: '2025-01-15',
   modifiedDate: '2025-02-06',
   author: 'LEXA Lifestyle Experts',
-  image: 'https://smart-builder-launch.preview.emergentagent.com/blog-smart-home.jpg',
+  image: 'https://brand-visual-refresh.preview.emergentagent.com/blog-smart-home.jpg',
   category: 'Smart Home Guides'
 }
 
