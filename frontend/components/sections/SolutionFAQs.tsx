@@ -66,7 +66,7 @@ export default function SolutionFAQs({ solutionSlug, title = "Frequently Asked Q
             viewport={{ once: true }}
             className="mb-12 text-center"
           >
-            <h2 className="text-4xl font-semibold mb-4">{title}</h2>
+            <h2 className="text-4xl font-heading font-semibold mb-4">{title}</h2>
             <p className="text-xl text-gray-600">
               Everything you need to know about this solution
             </p>
