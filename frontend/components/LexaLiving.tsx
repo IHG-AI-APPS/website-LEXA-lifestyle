@@ -75,7 +75,7 @@ export default function LexaLiving() {
             transition={{ duration: 0.6 }}
             className="text-center mb-16"
           >
-            <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-4">
+            <h2 className="text-4xl sm:text-5xl lg:text-6xl font-heading font-bold mb-4">
               LEXA Living
             </h2>
             <p className="text-xl text-gray-400">
