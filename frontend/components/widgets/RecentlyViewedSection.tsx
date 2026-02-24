@@ -170,8 +170,8 @@ export default function RecentlyViewedSection({
               </h2>
               <p className="text-sm text-gray-500 dark:text-gray-400">
                 {language === 'ar' 
-                  ? `${items.length} عناصر في السجل` 
-                  : `${items.length} items in history`}
+                  ? `${validatedItems.length} عناصر في السجل` 
+                  : `${validatedItems.length} items in history`}
               </p>
             </div>
           </div>
