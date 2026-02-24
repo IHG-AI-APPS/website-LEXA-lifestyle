@@ -275,7 +275,7 @@ export default function Header() {
                 variant="outline"
                 className={`px-4 xl:px-5 py-2 text-xs font-semibold uppercase tracking-wider btn-magnetic ${
                   shouldUseDarkText
-                    ? 'border-2 border-[#1A1A1A] text-[#1A1A1A] hover:bg-[#1A1A1A] hover:text-white'
+                    ? 'border-2 border-[#1A1A1A] dark:border-gray-300 text-[#1A1A1A] dark:text-gray-200 hover:bg-[#1A1A1A] dark:hover:bg-gray-200 hover:text-white dark:hover:text-gray-900'
                     : 'border-2 border-white text-white hover:bg-white hover:text-[#1A1A1A]'
                 }`}
                 onClick={() => setShowConsultationForm(true)}
