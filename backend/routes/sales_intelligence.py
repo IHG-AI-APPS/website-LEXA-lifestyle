@@ -20,7 +20,7 @@ router = APIRouter(prefix="/api/sales-intelligence", tags=["sales-intelligence"]
 logger = logging.getLogger(__name__)
 security = HTTPBearer()
 
-SECRET_KEY = os.environ.get("SECRET_KEY", "lexa-smart-home-secret-key-2024")
+SECRET_KEY = os.environ.get("JWT_SECRET_KEY", "lexa-smart-home-secret-key-2024")
 ALGORITHM = "HS256"
 
 mongo_url = os.environ.get('MONGO_URL')
