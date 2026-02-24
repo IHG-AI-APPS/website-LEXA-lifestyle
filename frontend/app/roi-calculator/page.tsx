@@ -780,6 +780,12 @@ export default function ROICalculatorPage() {
 
       {/* Disclaimer */}
       <PricingDisclaimer variant="dark" />
+
+      {/* Booking Modal */}
+      <BookingModal
+        isOpen={showBookingModal}
+        onClose={() => setShowBookingModal(false)}
+      />
     </div>
   )
 }
