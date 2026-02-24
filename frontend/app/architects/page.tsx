@@ -150,7 +150,7 @@ export default function ArchitectsPage() {
                 <Building2 size={36} strokeWidth={2} />
               </div>
               
-              <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold mb-6 ">
+              <h1 className="text-5xl sm:text-6xl lg:text-7xl font-heading font-bold mb-6 ">
                 Architect Resource Portal
               </h1>
               
