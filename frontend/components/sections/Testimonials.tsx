@@ -2,15 +2,31 @@
 
 import { motion } from 'framer-motion'
 import SafeImage from '@/components/ui/SafeImage'
-import { Quote } from 'lucide-react'
+import { Quote, Star } from 'lucide-react'
+import { useState, useEffect } from 'react'
 
-const testimonials = [
+const BACKEND_URL = process.env.NEXT_PUBLIC_BACKEND_URL || ''
+
+interface Testimonial {
+  id: string
+  name: string
+  role: string
+  company?: string
+  testimonial?: string
+  content?: string
+  rating?: number
+  image?: string
+}
+
+// Fallback testimonials if API fails
+const fallbackTestimonials: Testimonial[] = [
   {
     id: '1',
     name: 'Kris Fade',
     role: 'Radio Host | Entrepreneur | TV Personality',
     testimonial: 'LEXA turned my home into a smart luxury experience. The lighting, the automation — it\'s next-level living. Smooth process, amazing team. They nailed it!',
     image: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&h=400&fit=crop',
+    rating: 5
   },
   {
     id: '2',
@@ -18,6 +34,7 @@ const testimonials = [
     role: 'CEO, Sky View Real Estate',
     testimonial: 'LEXA nailed the design and delivery. Lumibright lighting turned our Harmony villa into a mood you can live in.',
     image: 'https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=400&h=400&fit=crop',
+    rating: 5
   },
   {
     id: '3',
@@ -25,10 +42,35 @@ const testimonials = [
     role: 'Executive Director - United Phosphorus Ltd',
     testimonial: 'They run a very professional high-end business. The quality of their work and staff makes me realize their philosophy of customer satisfaction. I wish them all the very best.',
     image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop',
+    rating: 5
   },
 ]
 
 export default function Testimonials() {
+  const [testimonials, setTestimonials] = useState<Testimonial[]>(fallbackTestimonials)
+  const [loading, setLoading] = useState(true)
+
+  useEffect(() => {
+    const fetchTestimonials = async () => {
+      try {
+        const response = await fetch(`${BACKEND_URL}/api/testimonials`)
+        if (response.ok) {
+          const data = await response.json()
+          const items = Array.isArray(data) ? data : data.testimonials || []
+          if (items.length > 0) {
+            setTestimonials(items.slice(0, 6)) // Show max 6 testimonials
+          }
+        }
+      } catch (error) {
+        console.error('Error fetching testimonials:', error)
+        // Keep fallback testimonials
+      } finally {
+        setLoading(false)
+      }
+    }
+    
+    fetchTestimonials()
+  }, [])
   return (
     <section className="py-24 md:py-32 bg-white">
       <div className="container mx-auto px-4 md:px-8 max-w-7xl">
