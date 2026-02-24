@@ -136,7 +136,7 @@ export default function LuxuryCinemaPage() {
               viewport={{ once: true }}
               className="text-center mb-16"
             >
-              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4 text-[#1A1A1A]">
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4 text-[#1A1A1A] dark:text-white">
                 Cinema-Grade Technology
               </h2>
               <p className="text-base sm:text-lg text-gray-600 max-w-3xl mx-auto">
@@ -158,10 +158,10 @@ export default function LuxuryCinemaPage() {
                   >
                     <div className="flex items-start gap-4">
                       <div className="flex-shrink-0 p-3 bg-gradient-to-br from-purple-50 to-pink-50">
-                        <Icon className="h-6 w-6 text-[#1A1A1A]" />
+                        <Icon className="h-6 w-6 text-[#1A1A1A] dark:text-white" />
                       </div>
                       <div>
-                        <h3 className="text-lg font-semibold mb-2 text-[#1A1A1A]">
+                        <h3 className="text-lg font-semibold mb-2 text-[#1A1A1A] dark:text-white">
                           {feature.title}
                         </h3>
                         <p className="text-gray-600 text-sm leading-relaxed">
@@ -186,7 +186,7 @@ export default function LuxuryCinemaPage() {
               viewport={{ once: true }}
               className="text-center mb-16"
             >
-              <h2 className="text-3xl sm:text-4xl font-bold mb-4 text-[#1A1A1A]">
+              <h2 className="text-3xl sm:text-4xl font-bold mb-4 text-[#1A1A1A] dark:text-white">
                 Bespoke Cinema Themes
               </h2>
               <p className="text-lg text-gray-600 max-w-2xl mx-auto">
@@ -204,7 +204,7 @@ export default function LuxuryCinemaPage() {
                   viewport={{ once: true }}
                   className="bg-gray-50 p-6 border-l-4 border-purple-600"
                 >
-                  <h3 className="text-xl font-bold mb-2 text-[#1A1A1A]">{theme.name}</h3>
+                  <h3 className="text-xl font-bold mb-2 text-[#1A1A1A] dark:text-white">{theme.name}</h3>
                   <p className="text-gray-600 text-sm">{theme.description}</p>
                 </motion.div>
               ))}
@@ -259,8 +259,8 @@ export default function LuxuryCinemaPage() {
               viewport={{ once: true }}
               className="text-center"
             >
-              <Film className="h-16 w-16 mx-auto mb-6 text-[#1A1A1A]" />
-              <h2 className="text-3xl sm:text-4xl font-bold mb-4 text-[#1A1A1A]">
+              <Film className="h-16 w-16 mx-auto mb-6 text-[#1A1A1A] dark:text-white" />
+              <h2 className="text-3xl sm:text-4xl font-bold mb-4 text-[#1A1A1A] dark:text-white">
                 Ready to Create Your Private Cinema?
               </h2>
               <p className="text-lg text-gray-600 mb-8 max-w-2xl mx-auto">

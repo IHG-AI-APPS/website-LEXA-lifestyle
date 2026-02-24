@@ -231,7 +231,7 @@ export default function IntelligenceDetailPage() {
                     size="lg"
                     variant="outline"
                     asChild
-                    className="border-2 border-white text-white hover:bg-white hover:text-[#1A1A1A]"
+                    className="border-2 border-white text-white hover:bg-white hover:text-[#1A1A1A] dark:text-white"
                   >
                     <a href="tel:+971503267227">
                       <Phone className="h-4 w-4 mr-2" />

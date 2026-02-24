@@ -407,7 +407,7 @@ export default function ServiceDetailPage() {
                 >
                   <div className="flex-shrink-0">
                     <div className="w-12 h-12 rounded-full bg-[#E8DCC8] flex items-center justify-center">
-                      <Award className="w-6 h-6 text-[#1A1A1A]" />
+                      <Award className="w-6 h-6 text-[#1A1A1A] dark:text-white" />
                     </div>
                   </div>
                   <div>

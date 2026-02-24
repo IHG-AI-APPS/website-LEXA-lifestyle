@@ -217,7 +217,7 @@ export default function AMCPackagesPage() {
               viewport={{ once: true }}
               className="text-center mb-16"
             >
-              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-heading font-bold mb-4 text-[#1A1A1A]">
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-heading font-bold mb-4 text-[#1A1A1A] dark:text-white">
                 Annual Maintenance Packages
               </h2>
               <p className="text-base sm:text-lg text-gray-600 max-w-3xl mx-auto">
@@ -242,9 +242,9 @@ export default function AMCPackagesPage() {
                       Recommended
                     </div>
                   )}
-                  <h3 className="text-2xl font-bold mb-1 text-[#1A1A1A]">{pkg.name}</h3>
+                  <h3 className="text-2xl font-bold mb-1 text-[#1A1A1A] dark:text-white">{pkg.name}</h3>
                   <p className="text-sm text-gray-600 mb-4">{pkg.subtitle}</p>
-                  <div className="text-3xl font-bold mb-2 text-[#1A1A1A]">{pkg.price}</div>
+                  <div className="text-3xl font-bold mb-2 text-[#1A1A1A] dark:text-white">{pkg.price}</div>
                   <p className="text-sm text-gray-600 mb-6">{pkg.description}</p>
                   
                   <div className="space-y-3 mb-6">
@@ -263,7 +263,7 @@ export default function AMCPackagesPage() {
 
                   <div className="border-t border-gray-200 pt-4 mb-6">
                     <div className="text-sm text-gray-600 mb-1">Ideal for:</div>
-                    <div className="text-sm font-semibold text-[#1A1A1A]">{pkg.ideal}</div>
+                    <div className="text-sm font-semibold text-[#1A1A1A] dark:text-white">{pkg.ideal}</div>
                   </div>
 
                   <Button
@@ -292,7 +292,7 @@ export default function AMCPackagesPage() {
               viewport={{ once: true }}
               className="text-center mb-16"
             >
-              <h2 className="text-3xl sm:text-4xl font-heading font-bold mb-4 text-[#1A1A1A]">
+              <h2 className="text-3xl sm:text-4xl font-heading font-bold mb-4 text-[#1A1A1A] dark:text-white">
                 What&apos;s Included in AMC
               </h2>
               <p className="text-lg text-gray-600 max-w-2xl mx-auto">
@@ -314,9 +314,9 @@ export default function AMCPackagesPage() {
                   >
                     <div className="flex items-center gap-3 mb-4">
                       <div className="p-2 bg-white">
-                        <Icon className="h-6 w-6 text-[#1A1A1A]" />
+                        <Icon className="h-6 w-6 text-[#1A1A1A] dark:text-white" />
                       </div>
-                      <h3 className="text-xl font-bold text-[#1A1A1A]">{category.title}</h3>
+                      <h3 className="text-xl font-bold text-[#1A1A1A] dark:text-white">{category.title}</h3>
                     </div>
                     <ul className="space-y-2">
                       {category.items.map((item) => (
@@ -343,7 +343,7 @@ export default function AMCPackagesPage() {
               viewport={{ once: true }}
               className="text-center mb-16"
             >
-              <h2 className="text-3xl sm:text-4xl font-heading font-bold mb-4 text-[#1A1A1A]">
+              <h2 className="text-3xl sm:text-4xl font-heading font-bold mb-4 text-[#1A1A1A] dark:text-white">
                 Why Choose Our AMC
               </h2>
             </motion.div>
@@ -360,9 +360,9 @@ export default function AMCPackagesPage() {
                     viewport={{ once: true }}
                     className="text-center p-6 bg-white border-2 border-gray-200"
                   >
-                    <Icon className="h-10 w-10 mx-auto mb-4 text-[#1A1A1A]" />
-                    <div className="text-4xl font-bold mb-2 text-[#1A1A1A]">{benefit.stat}</div>
-                    <div className="text-sm font-semibold mb-2 text-[#1A1A1A]">{benefit.title}</div>
+                    <Icon className="h-10 w-10 mx-auto mb-4 text-[#1A1A1A] dark:text-white" />
+                    <div className="text-4xl font-bold mb-2 text-[#1A1A1A] dark:text-white">{benefit.stat}</div>
+                    <div className="text-sm font-semibold mb-2 text-[#1A1A1A] dark:text-white">{benefit.title}</div>
                     <div className="text-xs text-gray-600">{benefit.description}</div>
                   </motion.div>
                 )

@@ -135,7 +135,7 @@ export default function MajlisAudioPage() {
               viewport={{ once: true }}
               className="text-center mb-16"
             >
-              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4 text-[#1A1A1A]">
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4 text-[#1A1A1A] dark:text-white">
                 Premium Audio Solution
               </h2>
               <p className="text-base sm:text-lg text-gray-600 max-w-3xl mx-auto">
@@ -157,10 +157,10 @@ export default function MajlisAudioPage() {
                   >
                     <div className="flex items-start gap-4">
                       <div className="flex-shrink-0 p-3 bg-gradient-to-br from-amber-50 to-orange-50">
-                        <Icon className="h-6 w-6 text-[#1A1A1A]" />
+                        <Icon className="h-6 w-6 text-[#1A1A1A] dark:text-white" />
                       </div>
                       <div>
-                        <h3 className="text-lg font-semibold mb-2 text-[#1A1A1A]">
+                        <h3 className="text-lg font-semibold mb-2 text-[#1A1A1A] dark:text-white">
                           {feature.title}
                         </h3>
                         <p className="text-gray-600 text-sm leading-relaxed">
@@ -185,7 +185,7 @@ export default function MajlisAudioPage() {
                 transition={{ duration: 0.6 }}
                 viewport={{ once: true }}
               >
-                <h2 className="text-3xl sm:text-4xl font-bold mb-6 text-[#1A1A1A]">
+                <h2 className="text-3xl sm:text-4xl font-bold mb-6 text-[#1A1A1A] dark:text-white">
                   Perfect for Traditional Gatherings
                 </h2>
                 <p className="text-lg text-gray-600 mb-8 leading-relaxed">
@@ -212,8 +212,8 @@ export default function MajlisAudioPage() {
                   const Icon = benefit.icon
                   return (
                     <div key={index} className="bg-gray-50 p-6 text-center border-2 border-gray-200">
-                      <Icon className="h-8 w-8 mx-auto mb-3 text-[#1A1A1A]" />
-                      <div className="text-3xl font-bold mb-2 text-[#1A1A1A]">{benefit.metric}</div>
+                      <Icon className="h-8 w-8 mx-auto mb-3 text-[#1A1A1A] dark:text-white" />
+                      <div className="text-3xl font-bold mb-2 text-[#1A1A1A] dark:text-white">{benefit.metric}</div>
                       <div className="text-sm text-gray-600">{benefit.label}</div>
                     </div>
                   )

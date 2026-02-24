@@ -380,7 +380,7 @@ export default function IntelligencePage() {
                   variant="outline"
                   size="lg"
                   onClick={() => setShowAll(true)}
-                  className="border-2 border-[#1A1A1A] dark:border-white text-[#1A1A1A] dark:text-white hover:bg-[#1A1A1A] hover:text-white dark:hover:bg-white dark:hover:text-[#1A1A1A]"
+                  className="border-2 border-[#1A1A1A] dark:border-white text-[#1A1A1A] dark:text-white hover:bg-[#1A1A1A] hover:text-white dark:hover:bg-white dark:hover:text-[#1A1A1A] dark:text-white"
                 >
                   {language === 'ar' ? `عرض الكل (${filteredFeatures.length})` : `View All (${filteredFeatures.length})`}
                 </Button>

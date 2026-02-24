@@ -104,7 +104,7 @@ export default function HiddenCostsPage() {
               viewport={{ once: true }}
               className="text-center mb-16"
             >
-              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4 text-[#1A1A1A]">
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4 text-[#1A1A1A] dark:text-white">
                 The True Cost of Doing Nothing
               </h2>
               <p className="text-base sm:text-lg text-gray-600 max-w-3xl mx-auto">
@@ -128,7 +128,7 @@ export default function HiddenCostsPage() {
                       <div className="p-3 bg-red-50">
                         <Icon className="h-6 w-6 text-red-600" />
                       </div>
-                      <h3 className="text-xl font-bold text-[#1A1A1A]">{cost.title}</h3>
+                      <h3 className="text-xl font-bold text-[#1A1A1A] dark:text-white">{cost.title}</h3>
                     </div>
                     <div className="space-y-3">
                       <div className="flex items-start gap-2">

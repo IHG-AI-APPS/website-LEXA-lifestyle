@@ -127,7 +127,7 @@ export default function DigitalTwinPage() {
               viewport={{ once: true }}
               className="text-center mb-16"
             >
-              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4 text-[#1A1A1A]">
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4 text-[#1A1A1A] dark:text-white">
                 Next-Generation Building Intelligence
               </h2>
               <p className="text-base sm:text-lg text-gray-600 max-w-3xl mx-auto">
@@ -149,10 +149,10 @@ export default function DigitalTwinPage() {
                   >
                     <div className="flex items-start gap-4">
                       <div className="flex-shrink-0 p-3 bg-gradient-to-br from-cyan-50 to-blue-50">
-                        <Icon className="h-6 w-6 text-[#1A1A1A]" />
+                        <Icon className="h-6 w-6 text-[#1A1A1A] dark:text-white" />
                       </div>
                       <div>
-                        <h3 className="text-lg font-semibold mb-2 text-[#1A1A1A]">
+                        <h3 className="text-lg font-semibold mb-2 text-[#1A1A1A] dark:text-white">
                           {capability.title}
                         </h3>
                         <p className="text-gray-600 text-sm leading-relaxed">
@@ -177,7 +177,7 @@ export default function DigitalTwinPage() {
               viewport={{ once: true }}
               className="text-center mb-16"
             >
-              <h2 className="text-3xl sm:text-4xl font-bold mb-4 text-[#1A1A1A]">
+              <h2 className="text-3xl sm:text-4xl font-bold mb-4 text-[#1A1A1A] dark:text-white">
                 Quantifiable Business Value
               </h2>
             </motion.div>
@@ -194,8 +194,8 @@ export default function DigitalTwinPage() {
                     viewport={{ once: true }}
                     className="text-center p-6 bg-gray-50 border-2 border-gray-200"
                   >
-                    <Icon className="h-10 w-10 mx-auto mb-4 text-[#1A1A1A]" />
-                    <div className="text-4xl font-bold mb-2 text-[#1A1A1A]">{benefit.metric}</div>
+                    <Icon className="h-10 w-10 mx-auto mb-4 text-[#1A1A1A] dark:text-white" />
+                    <div className="text-4xl font-bold mb-2 text-[#1A1A1A] dark:text-white">{benefit.metric}</div>
                     <div className="text-sm text-gray-600">{benefit.label}</div>
                   </motion.div>
                 )

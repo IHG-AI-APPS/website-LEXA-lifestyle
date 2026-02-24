@@ -250,7 +250,7 @@ export default function ExperienceCentrePage() {
             transition={{ duration: 0.8 }}
             className="mb-16"
           >
-            <h2 className="h2 text-[#1A1A1A]">
+            <h2 className="h2 text-[#1A1A1A] dark:text-white">
               What You&apos;ll Experience
             </h2>
           </motion.div>
@@ -317,7 +317,7 @@ export default function ExperienceCentrePage() {
                 data-testid={`trust-stat-${i}`}
               >
                 <stat.icon className="w-6 h-6 text-[#9F8B65] mx-auto mb-2" />
-                <div className="text-2xl font-bold text-[#1A1A1A]">{stat.value}</div>
+                <div className="text-2xl font-bold text-[#1A1A1A] dark:text-white">{stat.value}</div>
                 <div className="text-sm text-[#4A4A4A]">{stat.label}</div>
               </motion.div>
             ))}

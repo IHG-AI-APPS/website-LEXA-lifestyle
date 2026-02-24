@@ -62,7 +62,7 @@ export default function NewsPage() {
               <span className="text-xs tracking-[0.3em] uppercase text-gray-400 font-medium mb-4 block">
                 Latest Updates
               </span>
-              <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 text-[#1A1A1A]">
+              <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 text-[#1A1A1A] dark:text-white">
                 Company <span className="text-gray-400">News</span>
               </h1>
               <div className="h-px w-32 bg-[#9F8B65] mb-6 mx-auto" />
