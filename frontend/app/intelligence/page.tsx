@@ -374,11 +374,12 @@ export default function IntelligencePage() {
               </div>
             )}
 
-            {filteredFeatures.length > 20 && (
+            {filteredFeatures.length > 20 && !showAll && (
               <div className="text-center mt-12">
                 <Button
                   variant="outline"
                   size="lg"
+                  onClick={() => setShowAll(true)}
                   className="border-2 border-[#1A1A1A] dark:border-white text-[#1A1A1A] dark:text-white hover:bg-[#1A1A1A] hover:text-white dark:hover:bg-white dark:hover:text-[#1A1A1A]"
                 >
                   {language === 'ar' ? `عرض الكل (${filteredFeatures.length})` : `View All (${filteredFeatures.length})`}
