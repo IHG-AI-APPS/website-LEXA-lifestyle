@@ -19,7 +19,7 @@ export default function TermsOfServicePage() {
         {/* Content */}
         <div className="prose prose-lg max-w-none">
           <section className="mb-10">
-            <h2 className="text-2xl font-bold text-[#1A1A1A] mb-4">1. Agreement to Terms</h2>
+            <h2 className="text-2xl font-heading font-bold text-[#1A1A1A] mb-4">1. Agreement to Terms</h2>
             <p className="text-gray-600 leading-relaxed">
               By accessing or using the services provided by LEXA Lifestyle Trading LLC ("LEXA," "we," "us," or "our"), 
               including our website, smart home automation services, and related offerings, you agree to be bound by 
@@ -28,7 +28,7 @@ export default function TermsOfServicePage() {
           </section>
 
           <section className="mb-10">
-            <h2 className="text-2xl font-bold text-[#1A1A1A] mb-4">2. Services Description</h2>
+            <h2 className="text-2xl font-heading font-bold text-[#1A1A1A] mb-4">2. Services Description</h2>
             <p className="text-gray-600 leading-relaxed">
               LEXA Lifestyle provides luxury smart home automation services, including but not limited to:
             </p>
@@ -44,7 +44,7 @@ export default function TermsOfServicePage() {
           </section>
 
           <section className="mb-10">
-            <h2 className="text-2xl font-bold text-[#1A1A1A] mb-4">3. Quotations and Pricing</h2>
+            <h2 className="text-2xl font-heading font-bold text-[#1A1A1A] mb-4">3. Quotations and Pricing</h2>
             <p className="text-gray-600 leading-relaxed">
               All quotations and estimates provided through our website, including the smart home calculator, are 
               indicative only and subject to:
@@ -62,7 +62,7 @@ export default function TermsOfServicePage() {
           </section>
 
           <section className="mb-10">
-            <h2 className="text-2xl font-bold text-[#1A1A1A] mb-4">4. Project Engagement</h2>
+            <h2 className="text-2xl font-heading font-bold text-[#1A1A1A] mb-4">4. Project Engagement</h2>
             
             <h3 className="text-xl font-semibold text-[#1A1A1A] mt-6 mb-3">4.1 Consultation</h3>
             <p className="text-gray-600 leading-relaxed">
@@ -89,7 +89,7 @@ export default function TermsOfServicePage() {
           </section>
 
           <section className="mb-10">
-            <h2 className="text-2xl font-bold text-[#1A1A1A] mb-4">5. Warranty and Support</h2>
+            <h2 className="text-2xl font-heading font-bold text-[#1A1A1A] mb-4">5. Warranty and Support</h2>
             
             <h3 className="text-xl font-semibold text-[#1A1A1A] mt-6 mb-3">5.1 Installation Warranty</h3>
             <p className="text-gray-600 leading-relaxed">
@@ -119,7 +119,7 @@ export default function TermsOfServicePage() {
           </section>
 
           <section className="mb-10">
-            <h2 className="text-2xl font-bold text-[#1A1A1A] mb-4">6. Client Responsibilities</h2>
+            <h2 className="text-2xl font-heading font-bold text-[#1A1A1A] mb-4">6. Client Responsibilities</h2>
             <p className="text-gray-600 leading-relaxed">Clients are responsible for:</p>
             <ul className="list-disc pl-6 text-gray-600 space-y-2 mt-3">
               <li>Providing accurate property information and access</li>
@@ -132,7 +132,7 @@ export default function TermsOfServicePage() {
           </section>
 
           <section className="mb-10">
-            <h2 className="text-2xl font-bold text-[#1A1A1A] mb-4">7. Intellectual Property</h2>
+            <h2 className="text-2xl font-heading font-bold text-[#1A1A1A] mb-4">7. Intellectual Property</h2>
             <p className="text-gray-600 leading-relaxed">
               All content on our website, including text, graphics, logos, images, and software, is the property 
               of LEXA Lifestyle or its licensors and is protected by UAE and international intellectual property laws. 
@@ -142,7 +142,7 @@ export default function TermsOfServicePage() {
           </section>
 
           <section className="mb-10">
-            <h2 className="text-2xl font-bold text-[#1A1A1A] mb-4">8. Website Use</h2>
+            <h2 className="text-2xl font-heading font-bold text-[#1A1A1A] mb-4">8. Website Use</h2>
             <p className="text-gray-600 leading-relaxed">When using our website, you agree not to:</p>
             <ul className="list-disc pl-6 text-gray-600 space-y-2 mt-3">
               <li>Use the website for any unlawful purpose</li>
@@ -155,7 +155,7 @@ export default function TermsOfServicePage() {
           </section>
 
           <section className="mb-10">
-            <h2 className="text-2xl font-bold text-[#1A1A1A] mb-4">9. Limitation of Liability</h2>
+            <h2 className="text-2xl font-heading font-bold text-[#1A1A1A] mb-4">9. Limitation of Liability</h2>
             <p className="text-gray-600 leading-relaxed">
               To the maximum extent permitted by UAE law:
             </p>
@@ -168,7 +168,7 @@ export default function TermsOfServicePage() {
           </section>
 
           <section className="mb-10">
-            <h2 className="text-2xl font-bold text-[#1A1A1A] mb-4">10. Cancellation and Refunds</h2>
+            <h2 className="text-2xl font-heading font-bold text-[#1A1A1A] mb-4">10. Cancellation and Refunds</h2>
             
             <h3 className="text-xl font-semibold text-[#1A1A1A] mt-6 mb-3">10.1 Client Cancellation</h3>
             <p className="text-gray-600 leading-relaxed">
@@ -188,7 +188,7 @@ export default function TermsOfServicePage() {
           </section>
 
           <section className="mb-10">
-            <h2 className="text-2xl font-bold text-[#1A1A1A] mb-4">11. Force Majeure</h2>
+            <h2 className="text-2xl font-heading font-bold text-[#1A1A1A] mb-4">11. Force Majeure</h2>
             <p className="text-gray-600 leading-relaxed">
               Neither party shall be liable for delays or failures due to circumstances beyond reasonable control, 
               including natural disasters, war, pandemic, government actions, or supply chain disruptions.
@@ -196,7 +196,7 @@ export default function TermsOfServicePage() {
           </section>
 
           <section className="mb-10">
-            <h2 className="text-2xl font-bold text-[#1A1A1A] mb-4">12. Dispute Resolution</h2>
+            <h2 className="text-2xl font-heading font-bold text-[#1A1A1A] mb-4">12. Dispute Resolution</h2>
             <p className="text-gray-600 leading-relaxed">
               Any disputes arising from these Terms or our services shall be:
             </p>
@@ -208,7 +208,7 @@ export default function TermsOfServicePage() {
           </section>
 
           <section className="mb-10">
-            <h2 className="text-2xl font-bold text-[#1A1A1A] mb-4">13. Governing Law</h2>
+            <h2 className="text-2xl font-heading font-bold text-[#1A1A1A] mb-4">13. Governing Law</h2>
             <p className="text-gray-600 leading-relaxed">
               These Terms are governed by the laws of the United Arab Emirates. The Dubai Courts shall have 
               exclusive jurisdiction over any disputes.
@@ -216,7 +216,7 @@ export default function TermsOfServicePage() {
           </section>
 
           <section className="mb-10">
-            <h2 className="text-2xl font-bold text-[#1A1A1A] mb-4">14. Changes to Terms</h2>
+            <h2 className="text-2xl font-heading font-bold text-[#1A1A1A] mb-4">14. Changes to Terms</h2>
             <p className="text-gray-600 leading-relaxed">
               We reserve the right to modify these Terms at any time. Changes will be effective upon posting 
               to our website. Continued use of our services constitutes acceptance of modified Terms.
@@ -224,7 +224,7 @@ export default function TermsOfServicePage() {
           </section>
 
           <section className="mb-10">
-            <h2 className="text-2xl font-bold text-[#1A1A1A] mb-4">15. Contact Information</h2>
+            <h2 className="text-2xl font-heading font-bold text-[#1A1A1A] mb-4">15. Contact Information</h2>
             <p className="text-gray-600 leading-relaxed">
               For questions about these Terms, please contact us:
             </p>
@@ -239,7 +239,7 @@ export default function TermsOfServicePage() {
           </section>
 
           <section className="mb-10">
-            <h2 className="text-2xl font-bold text-[#1A1A1A] mb-4">16. Severability</h2>
+            <h2 className="text-2xl font-heading font-bold text-[#1A1A1A] mb-4">16. Severability</h2>
             <p className="text-gray-600 leading-relaxed">
               If any provision of these Terms is found to be unenforceable, the remaining provisions shall 
               continue in full force and effect.
