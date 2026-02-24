@@ -234,6 +234,20 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       changeFrequency: 'weekly' as const,
       priority
     })),
+    // Dubai area-specific pages
+    ...dubaiAreas.map(({ slug, priority }) => ({
+      url: `${baseUrl}/${slug}`,
+      lastModified: new Date(),
+      changeFrequency: 'monthly' as const,
+      priority
+    })),
+    // Abu Dhabi area-specific pages
+    ...abuDhabiAreas.map(({ slug, priority }) => ({
+      url: `${baseUrl}/${slug}`,
+      lastModified: new Date(),
+      changeFrequency: 'monthly' as const,
+      priority
+    })),
     ...guides.map(slug => ({
       url: `${baseUrl}/guides/${slug}`,
       lastModified: new Date(),
