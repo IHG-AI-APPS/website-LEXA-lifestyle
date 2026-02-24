@@ -88,7 +88,7 @@ export default function ProjectDNACapture({ onComplete }: ProjectDNACaptureProps
   }
 
   return (
-    <div className="max-w-5xl mx-auto">
+    <div className="max-w-5xl mx-auto pt-16 lg:pt-20">
       <div>
         {/* Header */}
         <div className="text-center mb-12">
