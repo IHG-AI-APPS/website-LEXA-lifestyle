@@ -68,9 +68,9 @@ export default function HeroCurator({ onPersonaClick }: HeroCuratorProps) {
           <source src={HERO_CLIPS[currentClip]} type="video/mp4" />
         </video>
         
-        {/* Dark Luxury Overlay - Enhanced for dramatic feel */}
-        <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-black/60" />
-        <div className="absolute inset-0 bg-gradient-to-r from-black/50 via-transparent to-black/30" />
+        {/* Dark Luxury Overlay - Balanced for video visibility */}
+        <div className="absolute inset-0 bg-gradient-to-t from-black via-black/30 to-black/40" />
+        <div className="absolute inset-0 bg-gradient-to-r from-black/40 via-transparent to-black/20" />
       </div>
 
       {/* Content */}
