@@ -121,7 +121,7 @@ export default function LexaLiving() {
                   {lifestyleMoments[activeScene].image}
                 </div>
                 
-                <h3 className="text-4xl sm:text-5xl font-bold mb-4 text-center">
+                <h3 className="text-4xl sm:text-5xl font-heading font-bold mb-4 text-center">
                   {lifestyleMoments[activeScene].title}
                 </h3>
                 
