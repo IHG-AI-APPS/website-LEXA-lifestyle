@@ -99,7 +99,7 @@ export default function ServiceLayer({ sessionId, projectData, onComplete }: Ser
                 disabled={service.mandatory}
                 className={`w-full p-8 border text-left transition-all duration-300 relative ${
                   isSelected
-                    ? 'border-blue-600 bg-white shadow-lg'
+                    ? 'border-blue-600 bg-white dark:bg-gray-800 shadow-lg'
                     : 'border-gray-200 bg-white hover:border-gray-300 hover:shadow-md'
                 } ${service.mandatory ? 'cursor-not-allowed' : 'cursor-pointer'}`}
               >

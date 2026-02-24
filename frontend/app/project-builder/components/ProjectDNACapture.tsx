@@ -108,7 +108,7 @@ export default function ProjectDNACapture({ onComplete }: ProjectDNACaptureProps
               <button
                 key={segment.id}
                 onClick={() => setFormData({ ...formData, segment: segment.id, property_type: '' })}
-                className={`bg-white border p-6 text-left transition-all duration-300 hover:shadow-lg group ${
+                className={`bg-white dark:bg-gray-800 border p-6 text-left transition-all duration-300 hover:shadow-lg group ${
                   formData.segment === segment.id
                     ? 'border-blue-600 shadow-md'
                     : 'border-gray-200 hover:border-gray-300'
@@ -138,7 +138,7 @@ export default function ProjectDNACapture({ onComplete }: ProjectDNACaptureProps
                 <button
                   key={type.id}
                   onClick={() => setFormData({ ...formData, property_type: type.id })}
-                  className={`bg-white border p-4 text-sm transition-all duration-300 ${
+                  className={`bg-white dark:bg-gray-800 border p-4 text-sm transition-all duration-300 ${
                     formData.property_type === type.id
                       ? 'border-blue-600 text-blue-600 shadow-md'
                       : 'border-gray-200 text-gray-600 hover:border-gray-300 hover:shadow-sm'
@@ -165,7 +165,7 @@ export default function ProjectDNACapture({ onComplete }: ProjectDNACaptureProps
                 <button
                   key={stage.id}
                   onClick={() => setFormData({ ...formData, project_stage: stage.id })}
-                  className={`bg-white border p-4 text-sm transition-all duration-300 ${
+                  className={`bg-white dark:bg-gray-800 border p-4 text-sm transition-all duration-300 ${
                     formData.project_stage === stage.id
                       ? 'border-blue-600 text-blue-600 shadow-md'
                       : 'border-gray-200 text-gray-600 hover:border-gray-300 hover:shadow-sm'
@@ -277,7 +277,7 @@ export default function ProjectDNACapture({ onComplete }: ProjectDNACaptureProps
                 <button
                   key={city}
                   onClick={() => setFormData({ ...formData, location: city === 'Other' ? '' : city })}
-                  className={`bg-white border p-3 text-xs transition-all duration-300 ${
+                  className={`bg-white dark:bg-gray-800 border p-3 text-xs transition-all duration-300 ${
                     formData.location === city || (city === 'Other' && !['Dubai', 'Abu Dhabi', 'Sharjah', 'Ajman', 'Ras Al Khaimah', 'Fujairah', 'Umm Al Quwain'].includes(formData.location))
                       ? 'border-blue-600 text-blue-600 shadow-md'
                       : 'border-gray-200 text-gray-600 hover:border-gray-300 hover:shadow-sm'

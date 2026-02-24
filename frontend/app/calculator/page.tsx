@@ -1269,7 +1269,7 @@ export default function IndustryCalculatorPage() {
                                   }}
                                   className={`p-4 border-2 rounded-lg text-left transition-all ${
                                     selectedSolutions[solution.id] === level.id
-                                      ? 'border-black bg-white shadow-md'
+                                      ? 'border-black bg-white dark:bg-gray-800 shadow-md'
                                       : 'border-gray-200 hover:border-gray-400'
                                   }`}
                                 >

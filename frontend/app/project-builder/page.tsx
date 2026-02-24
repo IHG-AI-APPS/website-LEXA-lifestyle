@@ -141,7 +141,7 @@ export default function ProjectBuilderLanding() {
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: 0.2 }}
                   viewport={{ once: true }}
-                  className="group relative bg-white border border-gray-200 hover:border-gray-300 p-8 transition-all duration-500 hover:shadow-lg"
+                  className="group relative bg-white dark:bg-gray-800 border border-gray-200 hover:border-gray-300 p-8 transition-all duration-500 hover:shadow-lg"
                 >
                   {/* Number Badge */}
                   <div className="absolute -top-4 -left-4 w-12 h-12 bg-gradient-to-br from-blue-600 to-purple-600 text-white flex items-center justify-center font-mono text-sm font-medium">
@@ -174,7 +174,7 @@ export default function ProjectBuilderLanding() {
               ].map((feature, index) => (
                 <div
                   key={index}
-                  className="bg-white border border-gray-200 p-6 hover:border-blue-600 hover:shadow-md transition-all duration-300"
+                  className="bg-white dark:bg-gray-800 border border-gray-200 p-6 hover:border-blue-600 hover:shadow-md transition-all duration-300"
                 >
                   <feature.icon className="w-6 h-6 text-blue-600 mb-4" />
                   <h4 className="text-sm font-medium text-gray-900 mb-2 uppercase tracking-widest">{feature.label}</h4>

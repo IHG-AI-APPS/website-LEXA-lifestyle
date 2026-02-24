@@ -83,7 +83,7 @@ export default function RelatedSolutions({ solutions, currentSlug }: RelatedSolu
                   href={`/solutions/${solution.slug}`}
                   className="group block h-full"
                 >
-                  <div className="relative h-full overflow-hidden rounded-2xl bg-white shadow-lg hover:shadow-2xl transition-all duration-300">
+                  <div className="relative h-full overflow-hidden rounded-2xl bg-white dark:bg-gray-800 shadow-lg hover:shadow-2xl transition-all duration-300">
                     {/* Image Poster */}
                     <div className="relative h-64 overflow-hidden">
                       {solution.image ? (

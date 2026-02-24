@@ -182,7 +182,7 @@ export default function BOQSummary({ sessionId, selectedProposal, onComplete }: 
         )}
 
         {/* Summary Grid */}
-        <div className="bg-white border border-gray-200 p-8 mb-8">
+        <div className="bg-white dark:bg-gray-800 border border-gray-200 p-8 mb-8">
           <h3 className="text-sm font-medium mb-6 uppercase tracking-widest text-gray-900">Architecture Overview</h3>
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
@@ -244,7 +244,7 @@ export default function BOQSummary({ sessionId, selectedProposal, onComplete }: 
         </div>
 
         {/* Next Steps */}
-        <div className="bg-white border border-gray-200 p-8 mb-12">
+        <div className="bg-white dark:bg-gray-800 border border-gray-200 p-8 mb-12">
           <h3 className="text-sm font-medium mb-4 uppercase tracking-widest text-gray-900">Next Steps</h3>
           <ol className="space-y-3 text-sm text-gray-700">
             <li className="flex items-start gap-3">

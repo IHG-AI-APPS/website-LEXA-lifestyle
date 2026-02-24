@@ -87,7 +87,7 @@ export default function ProposalComparison({ sessionId, resolutionData, onSelect
                 onClick={() => setSelectedProposal(type)}
                 onMouseEnter={() => setHoveredProposal(type)}
                 onMouseLeave={() => setHoveredProposal(null)}
-                className={`relative p-8 text-left transition-all duration-500 bg-white border ${
+                className={`relative p-8 text-left transition-all duration-500 bg-white dark:bg-gray-800 border ${
                   isSelected
                     ? 'border-blue-600 shadow-xl scale-105 z-10'
                     : 'border-gray-200 hover:border-gray-300 hover:shadow-lg'
@@ -169,7 +169,7 @@ export default function ProposalComparison({ sessionId, resolutionData, onSelect
         </div>
 
         {/* Interactive Comparison Matrix */}
-        <div className="bg-white border border-gray-200 p-8 mb-12">
+        <div className="bg-white dark:bg-gray-800 border border-gray-200 p-8 mb-12">
           <h3 className="text-sm font-medium mb-6 uppercase tracking-widest text-gray-900">Detailed Comparison</h3>
           <div className="overflow-x-auto">
             <table className="w-full text-xs">

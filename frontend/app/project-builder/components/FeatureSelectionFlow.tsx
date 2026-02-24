@@ -337,7 +337,7 @@ export default function FeatureSelectionFlow({
                     ? 'bg-green-500 text-white'
                     : isSelectedInOtherTier(feature.id)
                     ? 'bg-gray-100 text-gray-400 cursor-not-allowed'
-                    : 'bg-white border border-gray-200 hover:border-amber-400 text-gray-700'
+                    : 'bg-white dark:bg-gray-800 border border-gray-200 hover:border-amber-400 text-gray-700'
                 }`}
               >
                 {feature.name}
@@ -410,7 +410,7 @@ export default function FeatureSelectionFlow({
                                   ? `bg-gradient-to-r ${currentTier.color} text-white shadow-md`
                                   : otherTier
                                   ? 'bg-gray-50 text-gray-400 cursor-not-allowed'
-                                  : 'bg-white border border-gray-200 hover:border-gray-400 hover:shadow-sm'
+                                  : 'bg-white dark:bg-gray-800 border border-gray-200 hover:border-gray-400 hover:shadow-sm'
                               }`}
                             >
                               <div className={`w-6 h-6 rounded-full flex-shrink-0 flex items-center justify-center ${

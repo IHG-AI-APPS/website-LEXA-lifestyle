@@ -100,7 +100,7 @@ export default function FinalSubmission({ sessionId, projectData, onComplete }: 
         </div>
 
         {/* Form */}
-        <div className="bg-white border border-gray-200 p-8 mb-12">
+        <div className="bg-white dark:bg-gray-800 border border-gray-200 p-8 mb-12">
           <div className="space-y-6">
             <div>
               <label className="text-xs uppercase tracking-widest text-gray-600 mb-2 block">Full Name *</label>

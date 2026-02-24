@@ -146,7 +146,7 @@ export default function SharjahPage() {
 
 function ServiceCard({ title, description }: { title: string; description: string }) {
   return (
-    <div className="p-6 bg-white border border-gray-200 rounded-lg hover:shadow-lg transition">
+    <div className="p-6 bg-white dark:bg-gray-800 border border-gray-200 rounded-lg hover:shadow-lg transition">
       <h3 className="text-xl font-bold mb-3">{title}</h3>
       <p className="text-gray-600">{description}</p>
     </div>

@@ -252,7 +252,7 @@ export default function IntelligenceEngine({ sessionId, projectData, onComplete 
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.2 }}
-              className="bg-white border border-gray-200 p-6 text-center hover:border-blue-600 hover:shadow-md transition-all duration-300"
+              className="bg-white dark:bg-gray-800 border border-gray-200 p-6 text-center hover:border-blue-600 hover:shadow-md transition-all duration-300"
             >
               <stat.icon className={`w-6 h-6 mx-auto mb-3 text-${stat.color}-600`} />
               <div className="text-3xl font-semibold text-gray-900 mb-1">
@@ -345,7 +345,7 @@ export default function IntelligenceEngine({ sessionId, projectData, onComplete 
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: bundleIndex * 0.1 }}
-                className="bg-white border border-gray-200 overflow-hidden hover:border-blue-600 transition-all duration-300"
+                className="bg-white dark:bg-gray-800 border border-gray-200 overflow-hidden hover:border-blue-600 transition-all duration-300"
               >
                 {/* Domain Header - Clickable */}
                 <button
@@ -403,7 +403,7 @@ export default function IntelligenceEngine({ sessionId, projectData, onComplete 
                               onMouseLeave={() => setHoveredFeature(null)}
                               className={`w-full p-4 border rounded text-left transition-all duration-300 relative group ${
                                 isSelected
-                                  ? 'border-blue-600 bg-white shadow-md'
+                                  ? 'border-blue-600 bg-white dark:bg-gray-800 shadow-md'
                                   : 'border-gray-200 bg-white hover:border-gray-300 hover:shadow-sm'
                               }`}
                             >

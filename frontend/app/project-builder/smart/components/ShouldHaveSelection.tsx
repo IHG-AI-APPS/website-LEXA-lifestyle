@@ -198,7 +198,7 @@ export default function ShouldHaveSelection({
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.1 + catIndex * 0.05 }}
-              className="bg-white border border-gray-200 rounded-2xl p-6"
+              className="bg-white dark:bg-gray-800 border border-gray-200 rounded-2xl p-6"
             >
               {/* Category Header */}
               <div className="flex items-center justify-between mb-4">

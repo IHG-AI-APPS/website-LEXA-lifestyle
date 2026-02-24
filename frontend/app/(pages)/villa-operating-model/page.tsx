@@ -138,7 +138,7 @@ export default function VillaOperatingModelPage() {
                   transition={{ duration: 0.6, delay: 0.2 }}
                   className="group"
                 >
-                  <div className="bg-white border border-gray-200 p-8 hover:border-gray-400 transition-all duration-300 h-full">
+                  <div className="bg-white dark:bg-gray-800 border border-gray-200 p-8 hover:border-gray-400 transition-all duration-300 h-full">
                     {/* Header */}
                     <div className="flex items-start gap-4 mb-6">
                       <div className={`p-3 bg-gradient-to-br ${role.color} rounded-lg`}>

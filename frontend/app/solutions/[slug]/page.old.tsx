@@ -252,7 +252,7 @@ export default function SolutionDetailPage() {
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: 0.2 }}
                   viewport={{ once: true }}
-                  className="flex items-start gap-4 p-6 bg-white border border-gray-200"
+                  className="flex items-start gap-4 p-6 bg-white dark:bg-gray-800 border border-gray-200"
                 >
                   <CheckCircle2 className="text-charcoal flex-shrink-0 mt-1" size={24} strokeWidth={2} />
                   <div>
@@ -482,7 +482,7 @@ export default function SolutionDetailPage() {
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.6, delay: 0.15 }}
                     viewport={{ once: true }}
-                    className="flex items-start gap-4 p-6 bg-white border border-gray-200"
+                    className="flex items-start gap-4 p-6 bg-white dark:bg-gray-800 border border-gray-200"
                   >
                     <CheckCircle2 className="text-charcoal flex-shrink-0 mt-1" size={24} strokeWidth={2} />
                     <div>

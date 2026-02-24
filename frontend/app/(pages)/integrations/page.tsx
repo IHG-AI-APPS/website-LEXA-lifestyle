@@ -234,7 +234,7 @@ export default function IntegrationsPage() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.6, delay: 0.2 }}
-                  className="bg-white border border-gray-200 p-8 hover:border-gray-400 transition-all duration-300"
+                  className="bg-white dark:bg-gray-800 border border-gray-200 p-8 hover:border-gray-400 transition-all duration-300"
                 >
                   <div className="flex items-start gap-4 mb-6">
                     <div className="p-3 bg-black rounded-lg">

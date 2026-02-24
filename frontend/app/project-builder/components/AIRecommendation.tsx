@@ -565,28 +565,28 @@ export default function AIRecommendation({
         transition={{ delay: 0.3 }}
         className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-10"
       >
-        <div className="bg-white border border-gray-200 rounded-xl p-4 text-center">
+        <div className="bg-white dark:bg-gray-800 border border-gray-200 rounded-xl p-4 text-center">
           <div className="w-10 h-10 bg-purple-100 rounded-lg flex items-center justify-center mx-auto mb-2">
             <Package className="w-5 h-5 text-purple-600" />
           </div>
           <div className="text-2xl font-bold text-gray-900">{recommendation.summary.total_features}</div>
           <div className="text-sm text-gray-500">Features</div>
         </div>
-        <div className="bg-white border border-gray-200 rounded-xl p-4 text-center">
+        <div className="bg-white dark:bg-gray-800 border border-gray-200 rounded-xl p-4 text-center">
           <div className="w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center mx-auto mb-2">
             <Zap className="w-5 h-5 text-blue-600" />
           </div>
           <div className="text-2xl font-bold text-gray-900 capitalize">{recommendation.summary.protocol_type}</div>
           <div className="text-sm text-gray-500">Protocol</div>
         </div>
-        <div className="bg-white border border-gray-200 rounded-xl p-4 text-center">
+        <div className="bg-white dark:bg-gray-800 border border-gray-200 rounded-xl p-4 text-center">
           <div className="w-10 h-10 bg-green-100 rounded-lg flex items-center justify-center mx-auto mb-2">
             <Shield className="w-5 h-5 text-green-600" />
           </div>
           <div className="text-2xl font-bold text-gray-900">{selectedSystems.length}</div>
           <div className="text-sm text-gray-500">Systems</div>
         </div>
-        <div className="bg-white border border-gray-200 rounded-xl p-4 text-center">
+        <div className="bg-white dark:bg-gray-800 border border-gray-200 rounded-xl p-4 text-center">
           <div className="w-10 h-10 bg-amber-100 rounded-lg flex items-center justify-center mx-auto mb-2">
             <TrendingUp className="w-5 h-5 text-amber-600" />
           </div>
@@ -703,7 +703,7 @@ export default function AIRecommendation({
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 1.0 }}
-        className="bg-white border border-gray-200 rounded-2xl p-6 mb-10"
+        className="bg-white dark:bg-gray-800 border border-gray-200 rounded-2xl p-6 mb-10"
       >
         <h3 className="text-lg font-bold text-gray-900 mb-4">Feature Breakdown</h3>
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4">

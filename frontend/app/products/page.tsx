@@ -93,7 +93,7 @@ export default function ProductsPage() {
                     viewport={{ once: true }}
                   >
                     <Link href={`/products/${category.slug}`}>
-                      <div className="group h-full bg-white border border-gray-200 hover:border-charcoal transition-all">
+                      <div className="group h-full bg-white dark:bg-gray-800 border border-gray-200 hover:border-charcoal transition-all">
                         {/* Image */}
                         <div className="relative h-[250px] overflow-hidden">
                           <SafeImage

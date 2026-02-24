@@ -168,7 +168,7 @@ export default function KnowledgeGraphVisualizer({
   const warningsCount = graphData.warnings?.length || 0
 
   return (
-    <div className="bg-white border border-gray-200 rounded-lg overflow-hidden">
+    <div className="bg-white dark:bg-gray-800 border border-gray-200 rounded-lg overflow-hidden">
       {/* Header */}
       <div className="bg-gradient-to-r from-blue-50 to-purple-50 border-b border-gray-200 p-6">
         <div className="flex items-center justify-between mb-4">
@@ -233,11 +233,11 @@ export default function KnowledgeGraphVisualizer({
             showZoom={true}
             showFitView={true}
             showInteractive={false}
-            className="bg-white border border-gray-300 rounded-lg shadow-lg"
+            className="bg-white dark:bg-gray-800 border border-gray-300 rounded-lg shadow-lg"
           />
           
           {/* Legend Panel */}
-          <Panel position="top-right" className="bg-white border border-gray-200 rounded-lg p-4 shadow-lg">
+          <Panel position="top-right" className="bg-white dark:bg-gray-800 border border-gray-200 rounded-lg p-4 shadow-lg">
             <div className="text-xs font-medium text-gray-900 mb-3 uppercase tracking-widest">
               Legend
             </div>

@@ -62,7 +62,7 @@ export default function IntelligenceCapture({ sessionId, onComplete }: Intellige
         </div>
 
         {/* Budget Constraint */}
-        <div className="bg-white border border-gray-200 p-8 mb-6">
+        <div className="bg-white dark:bg-gray-800 border border-gray-200 p-8 mb-6">
           <h3 className="text-sm font-medium uppercase tracking-widest text-gray-900 mb-4">Budget Parameters</h3>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div>
@@ -89,7 +89,7 @@ export default function IntelligenceCapture({ sessionId, onComplete }: Intellige
         </div>
 
         {/* Site Constraints */}
-        <div className="bg-white border border-gray-200 p-8 mb-6">
+        <div className="bg-white dark:bg-gray-800 border border-gray-200 p-8 mb-6">
           <h3 className="text-sm font-medium uppercase tracking-widest text-gray-900 mb-4">Site Constraints</h3>
           <div className="space-y-3">
             {[
@@ -114,7 +114,7 @@ export default function IntelligenceCapture({ sessionId, onComplete }: Intellige
         </div>
 
         {/* Custom Constraints */}
-        <div className="bg-white border border-gray-200 p-8 mb-6">
+        <div className="bg-white dark:bg-gray-800 border border-gray-200 p-8 mb-6">
           <h3 className="text-sm font-medium uppercase tracking-widest text-gray-900 mb-4">Additional Requirements</h3>
           <textarea
             value={constraints.custom_constraints}
@@ -158,7 +158,7 @@ export default function IntelligenceCapture({ sessionId, onComplete }: Intellige
           {uploadedFiles.length > 0 && (
             <div className="mt-4 space-y-2">
               {uploadedFiles.map((file, index) => (
-                <div key={index} className="flex items-center justify-between p-3 bg-white border border-gray-200">
+                <div key={index} className="flex items-center justify-between p-3 bg-white dark:bg-gray-800 border border-gray-200">
                   <div className="flex items-center gap-2">
                     <FileText className="w-4 h-4 text-blue-600" />
                     <span className="text-sm text-gray-900">{file.name}</span>

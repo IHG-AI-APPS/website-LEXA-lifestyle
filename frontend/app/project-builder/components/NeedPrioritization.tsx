@@ -525,7 +525,7 @@ export default function NeedPrioritization({
                             key={featureId}
                             draggable
                             onDragStart={() => setDraggedFeature(featureId)}
-                            className="bg-white border border-gray-200 rounded-lg md:rounded-xl p-2 md:p-4 md:cursor-move hover:shadow-lg transition-shadow group"
+                            className="bg-white dark:bg-gray-800 border border-gray-200 rounded-lg md:rounded-xl p-2 md:p-4 md:cursor-move hover:shadow-lg transition-shadow group"
                           >
                             <div className="flex items-center gap-2 md:gap-3">
                               {/* Grip icon - desktop only */}

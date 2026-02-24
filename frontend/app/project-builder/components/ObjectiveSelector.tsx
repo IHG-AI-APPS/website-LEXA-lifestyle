@@ -105,7 +105,7 @@ export default function ObjectiveSelector({ sessionId, onComplete }: ObjectiveSe
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.4, delay: 0.2 }}
                 onClick={() => toggleObjective(objective.id)}
-                className={`relative p-8 text-left transition-all duration-300 group bg-white border ${
+                className={`relative p-8 text-left transition-all duration-300 group bg-white dark:bg-gray-800 border ${
                   isSelected
                     ? 'border-blue-600 shadow-lg scale-105'
                     : 'border-gray-200 hover:border-gray-300 hover:shadow-md'
