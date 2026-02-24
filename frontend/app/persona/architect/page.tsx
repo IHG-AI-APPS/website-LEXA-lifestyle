@@ -260,7 +260,7 @@ export default function ArchitectPage() {
               <div className="inline-block bg-white/20 backdrop-blur-sm px-6 py-2 rounded-full mb-6">
                 <p className="text-sm font-semibold uppercase tracking-wider">Design Tool</p>
               </div>
-              <h2 className="text-5xl font-bold mb-6">Specify Smart Systems</h2>
+              <h2 className="text-5xl font-heading font-bold mb-6">Specify Smart Systems</h2>
               <p className="text-2xl text-white/90 mb-4">
                 Use our builder to plan automation for your architectural projects
               </p>
