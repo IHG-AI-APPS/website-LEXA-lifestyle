@@ -150,7 +150,7 @@ export default function Header() {
             <Link href="/" className="relative group">
               <div className="relative w-24 h-10 sm:w-28 sm:h-12 lg:w-36 lg:h-14 transition-opacity duration-300 group-hover:opacity-70">
                 <SafeImage
-                  src={shouldUseDarkText ? "/lexa-black.png" : "/lexa-white.png"}
+                  src={(shouldUseDarkText && theme !== 'dark') ? "/lexa-black.png" : "/lexa-white.png"}
                   alt="LEXA"
                   fill
                   sizes="(max-width: 640px) 96px, (max-width: 1024px) 112px, 144px"
