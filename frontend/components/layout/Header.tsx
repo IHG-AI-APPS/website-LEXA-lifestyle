@@ -141,7 +141,7 @@ export default function Header() {
         }}
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
           shouldUseDarkText
-            ? 'bg-white/95 backdrop-blur-md elevation-4 border-b border-gray-200' 
+            ? 'bg-white/95 dark:bg-gray-900/95 backdrop-blur-md elevation-4 border-b border-gray-200 dark:border-gray-700' 
             : 'bg-transparent'
         }`}
       >
