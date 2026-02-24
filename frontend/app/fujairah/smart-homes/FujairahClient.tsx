@@ -35,7 +35,7 @@ export default function FujairahClient() {
         <div className="relative z-10 container mx-auto px-4 py-20">
           <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} className="max-w-3xl">
             <div className="flex items-center gap-2 mb-4"><MapPin className="h-5 w-5 text-[#C9A962]" /><span className={`text-sm ${isDark ? 'text-gray-300' : 'text-gray-600'}`}>Fujairah, UAE</span></div>
-            <h1 className={`text-4xl md:text-5xl lg:text-6xl font-bold mb-6 ${isDark ? 'text-white' : 'text-gray-900'}`}>Smart Homes<br /><span className="text-[#C9A962]">Fujairah</span></h1>
+            <h1 className={`text-4xl md:text-5xl lg:text-6xl font-heading font-bold mb-6 ${isDark ? 'text-white' : 'text-gray-900'}`}>Smart Homes<br /><span className="text-[#C9A962]">Fujairah</span></h1>
             <p className={`text-lg md:text-xl mb-8 ${isDark ? 'text-gray-300' : 'text-gray-600'}`}>East Coast smart living. From Al Aqah beach villas to mountain retreats, LEXA brings automation to Fujairah&apos;s stunning landscapes.</p>
             <div className="flex flex-col sm:flex-row gap-4">
               <Button size="lg" className="bg-[#C9A962] hover:bg-[#B8994D] text-white px-8 rounded-xl" asChild>
