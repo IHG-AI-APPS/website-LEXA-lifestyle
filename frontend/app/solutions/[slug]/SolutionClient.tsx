@@ -97,7 +97,7 @@ export default function SolutionClient({
 
       {/* Long Description */}
       {solution.long_description && (
-        <section className="py-16 bg-gray-50">
+        <section className="py-16 bg-gray-50 dark:bg-gray-800">
           <div className="container mx-auto px-8 lg:px-16">
             <div className="max-w-4xl mx-auto">
               <p className="text-lg text-gray-700 leading-relaxed">
@@ -137,7 +137,7 @@ export default function SolutionClient({
 
       {/* Feature Cards (if available) */}
       {solution.feature_cards && solution.feature_cards.length > 0 && (
-        <section className="py-20 bg-gray-50">
+        <section className="py-20 bg-gray-50 dark:bg-gray-800">
           <div className="container mx-auto px-8 lg:px-16">
             <div className="max-w-6xl mx-auto">
               <h2 className="text-4xl font-semibold mb-12 text-center">What You Get</h2>
@@ -199,7 +199,7 @@ export default function SolutionClient({
 
       {/* Related Projects */}
       {relatedProjects.length > 0 && (
-        <section className="py-20 bg-gray-50">
+        <section className="py-20 bg-gray-50 dark:bg-gray-800">
           <div className="container mx-auto px-8 lg:px-16">
             <RelatedItemsCarousel
               title="Related Projects"
@@ -224,7 +224,7 @@ export default function SolutionClient({
       )}
 
       {/* FAQ Section - Dynamic from Database */}
-      <section className="py-20 bg-gray-50">
+      <section className="py-20 bg-gray-50 dark:bg-gray-800">
         <div className="container mx-auto px-8 lg:px-16">
           <div className="max-w-4xl mx-auto">
             <h2 className="text-4xl font-semibold mb-12 text-center">Frequently Asked Questions</h2>

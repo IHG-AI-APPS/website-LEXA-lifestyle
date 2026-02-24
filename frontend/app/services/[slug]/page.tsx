@@ -374,7 +374,7 @@ export default function ServiceDetailPage() {
 
       {/* Support Tiers */}
       {service.support_tiers && service.support_tiers.length > 0 && (
-        <section className="py-16 bg-gray-50">
+        <section className="py-16 bg-gray-50 dark:bg-gray-800">
           <div className="max-w-6xl mx-auto px-6">
             <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">Support Plans</h2>
             <div className="grid md:grid-cols-3 gap-6">
@@ -447,7 +447,7 @@ export default function ServiceDetailPage() {
 
       {/* Case Studies */}
       {service.case_studies && service.case_studies.length > 0 && (
-        <section className="py-16 bg-gray-50">
+        <section className="py-16 bg-gray-50 dark:bg-gray-800">
           <div className="max-w-6xl mx-auto px-6">
             <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">Success Stories</h2>
             <div className="space-y-8">
@@ -538,7 +538,7 @@ export default function ServiceDetailPage() {
 
       {/* FAQ Section - Use faqs (primary) or faq (legacy) */}
       {((service.faqs && service.faqs.length > 0) || (service.faq && service.faq.length > 0)) && (
-        <section className="py-16 bg-gray-50">
+        <section className="py-16 bg-gray-50 dark:bg-gray-800">
           <div className="max-w-4xl mx-auto px-6">
             <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">Frequently Asked Questions</h2>
             <div className="space-y-6">

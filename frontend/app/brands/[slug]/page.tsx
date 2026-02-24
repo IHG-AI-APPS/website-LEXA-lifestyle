@@ -308,7 +308,7 @@ export default function BrandDetailPage({ params }: { params: { slug: string } }
 
       {/* Top Selling Products - SEO Rich Section */}
       {brand.products && brand.products.length > 0 && (
-        <section className="py-12 md:py-20 bg-gray-50">
+        <section className="py-12 md:py-20 bg-gray-50 dark:bg-gray-800">
           <div className="container mx-auto px-4 sm:px-8 lg:px-16">
             <div className="max-w-6xl mx-auto">
               <motion.div
