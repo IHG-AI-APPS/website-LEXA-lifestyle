@@ -99,7 +99,7 @@ export default function Step9Contact({
           <select
             value={contactRole}
             onChange={(e) => onRoleChange(e.target.value)}
-            className="w-full border-2 border-gray-200 px-4 py-3 rounded-lg focus:border-black"
+            className="w-full border-2 border-gray-200 dark:border-gray-700 px-4 py-3 rounded-lg focus:border-black"
           >
             <option value="">Select your role</option>
             <option value="homeowner">Homeowner</option>

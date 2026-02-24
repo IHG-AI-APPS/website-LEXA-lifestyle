@@ -279,7 +279,7 @@ export default function CategorySelection({
                 className={`relative p-5 rounded-xl border-2 text-left transition-all ${
                   isSelected
                     ? 'border-green-500 bg-green-50 shadow-lg'
-                    : 'border-gray-200 bg-white hover:border-gray-300 hover:shadow-md'
+                    : 'border-gray-200 dark:border-gray-700 bg-white hover:border-gray-300 dark:border-gray-600 hover:shadow-md'
                 }`}
               >
                 {/* Selection Indicator */}
@@ -332,7 +332,7 @@ export default function CategorySelection({
       )}
 
       {/* Bottom Bar */}
-      <div className="sticky bottom-0 bg-white border-t border-gray-200 p-4 -mx-4">
+      <div className="sticky bottom-0 bg-white border-t border-gray-200 dark:border-gray-700 p-4 -mx-4">
         <div className="max-w-6xl mx-auto flex items-center justify-between">
           <div>
             <span className="text-sm text-gray-500">Selected:</span>

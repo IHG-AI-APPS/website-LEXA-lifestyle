@@ -111,7 +111,7 @@ export default function ProjectDNACapture({ onComplete }: ProjectDNACaptureProps
                 className={`bg-white dark:bg-gray-800 border p-6 text-left transition-all duration-300 hover:shadow-lg group ${
                   formData.segment === segment.id
                     ? 'border-blue-600 shadow-md'
-                    : 'border-gray-200 hover:border-gray-300'
+                    : 'border-gray-200 dark:border-gray-700 hover:border-gray-300'
                 }`}
               >
                 <segment.icon className={`w-6 h-6 mb-3 transition-colors ${
@@ -141,7 +141,7 @@ export default function ProjectDNACapture({ onComplete }: ProjectDNACaptureProps
                   className={`bg-white dark:bg-gray-800 border p-4 text-sm transition-all duration-300 ${
                     formData.property_type === type.id
                       ? 'border-blue-600 text-blue-600 shadow-md'
-                      : 'border-gray-200 text-gray-600 dark:text-gray-400 hover:border-gray-300 hover:shadow-sm'
+                      : 'border-gray-200 dark:border-gray-700 text-gray-600 dark:text-gray-400 hover:border-gray-300 dark:border-gray-600 hover:shadow-sm'
                   }`}
                 >
                   {type.label}
@@ -168,7 +168,7 @@ export default function ProjectDNACapture({ onComplete }: ProjectDNACaptureProps
                   className={`bg-white dark:bg-gray-800 border p-4 text-sm transition-all duration-300 ${
                     formData.project_stage === stage.id
                       ? 'border-blue-600 text-blue-600 shadow-md'
-                      : 'border-gray-200 text-gray-600 dark:text-gray-400 hover:border-gray-300 hover:shadow-sm'
+                      : 'border-gray-200 dark:border-gray-700 text-gray-600 dark:text-gray-400 hover:border-gray-300 dark:border-gray-600 hover:shadow-sm'
                   }`}
                 >
                   {stage.label}
@@ -199,7 +199,7 @@ export default function ProjectDNACapture({ onComplete }: ProjectDNACaptureProps
                     className={`px-3 py-1 text-xs border transition-all ${
                       formData.area_sqft === preset
                         ? 'border-blue-600 bg-blue-50 text-blue-600'
-                        : 'border-gray-200 text-gray-600 dark:text-gray-400 hover:border-gray-300'
+                        : 'border-gray-200 dark:border-gray-700 text-gray-600 dark:text-gray-400 hover:border-gray-300'
                     }`}
                   >
                     {parseInt(preset).toLocaleString()}
@@ -211,7 +211,7 @@ export default function ProjectDNACapture({ onComplete }: ProjectDNACaptureProps
                 value={formData.area_sqft}
                 onChange={(e) => setFormData({ ...formData, area_sqft: e.target.value })}
                 placeholder="Or enter custom size"
-                className="border-gray-200 focus:border-blue-600 text-gray-900 dark:text-white dark:text-white"
+                className="border-gray-200 dark:border-gray-700 focus:border-blue-600 text-gray-900 dark:text-white dark:text-white"
               />
               {formData.area_sqft && (
                 <p className="text-xs text-gray-500 mt-1">
@@ -234,7 +234,7 @@ export default function ProjectDNACapture({ onComplete }: ProjectDNACaptureProps
                       className={`flex-1 px-3 py-2 text-sm border transition-all ${
                         formData.num_floors === (preset === '4+' ? '4' : preset)
                           ? 'border-blue-600 bg-blue-50 text-blue-600'
-                          : 'border-gray-200 text-gray-600 dark:text-gray-400 hover:border-gray-300'
+                          : 'border-gray-200 dark:border-gray-700 text-gray-600 dark:text-gray-400 hover:border-gray-300'
                       }`}
                     >
                       {preset}
@@ -252,7 +252,7 @@ export default function ProjectDNACapture({ onComplete }: ProjectDNACaptureProps
                       className={`flex-1 px-3 py-2 text-sm border transition-all ${
                         formData.num_rooms === (preset === '6+' ? '6' : preset)
                           ? 'border-blue-600 bg-blue-50 text-blue-600'
-                          : 'border-gray-200 text-gray-600 dark:text-gray-400 hover:border-gray-300'
+                          : 'border-gray-200 dark:border-gray-700 text-gray-600 dark:text-gray-400 hover:border-gray-300'
                       }`}
                     >
                       {preset}
@@ -280,7 +280,7 @@ export default function ProjectDNACapture({ onComplete }: ProjectDNACaptureProps
                   className={`bg-white dark:bg-gray-800 border p-3 text-xs transition-all duration-300 ${
                     formData.location === city || (city === 'Other' && !['Dubai', 'Abu Dhabi', 'Sharjah', 'Ajman', 'Ras Al Khaimah', 'Fujairah', 'Umm Al Quwain'].includes(formData.location))
                       ? 'border-blue-600 text-blue-600 shadow-md'
-                      : 'border-gray-200 text-gray-600 dark:text-gray-400 hover:border-gray-300 hover:shadow-sm'
+                      : 'border-gray-200 dark:border-gray-700 text-gray-600 dark:text-gray-400 hover:border-gray-300 dark:border-gray-600 hover:shadow-sm'
                   }`}
                 >
                   {city}
@@ -293,7 +293,7 @@ export default function ProjectDNACapture({ onComplete }: ProjectDNACaptureProps
                 value={formData.location}
                 onChange={(e) => setFormData({ ...formData, location: e.target.value })}
                 placeholder="Enter custom location"
-                className="border-gray-200 focus:border-blue-600 text-gray-900 dark:text-white mt-3"
+                className="border-gray-200 dark:border-gray-700 focus:border-blue-600 text-gray-900 dark:text-white mt-3"
               />
             )}
           </motion.div>

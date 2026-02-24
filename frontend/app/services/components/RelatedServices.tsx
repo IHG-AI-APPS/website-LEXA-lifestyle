@@ -146,7 +146,7 @@ export default function RelatedServices({ services, currentSlug }: RelatedServic
                       )}
 
                       {/* CTA */}
-                      <div className="flex items-center justify-between pt-4 border-t border-gray-100 dark:border-gray-800">
+                      <div className="flex items-center justify-between pt-4 border-t border-gray-100 dark:border-gray-800 dark:border-gray-800">
                         <span className="text-sm font-semibold text-gray-700 dark:text-gray-300 group-hover:text-black transition-colors">
                           Learn More
                         </span>

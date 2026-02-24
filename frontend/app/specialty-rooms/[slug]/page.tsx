@@ -211,7 +211,7 @@ export default function SpecialtyRoomDetailPage() {
                 </Link>
                 <Link
                   href="/consultation"
-                  className="inline-flex items-center justify-center px-6 py-3 bg-white text-gray-900 dark:text-white rounded-lg border-2 border-gray-200 hover:border-blue-600 transition-colors font-medium"
+                  className="inline-flex items-center justify-center px-6 py-3 bg-white text-gray-900 dark:text-white rounded-lg border-2 border-gray-200 dark:border-gray-700 hover:border-blue-600 transition-colors font-medium"
                 >
                   Get Custom Quote
                 </Link>

@@ -79,11 +79,11 @@ export default function Step10Results({
       </div>
 
       {/* Cost Breakdown */}
-      <div className="bg-white border-2 border-gray-200 rounded-lg p-6 mb-6">
+      <div className="bg-white border-2 border-gray-200 dark:border-gray-700 rounded-lg p-6 mb-6">
         <h3 className="text-xl font-bold mb-4">Cost Breakdown</h3>
         <div className="space-y-3">
           {breakdown.map((item, index) => (
-            <div key={index} className="flex justify-between items-center py-3 border-b border-gray-100 dark:border-gray-800">
+            <div key={index} className="flex justify-between items-center py-3 border-b border-gray-100 dark:border-gray-800 dark:border-gray-800">
               <span className="text-gray-700 dark:text-gray-300 dark:text-gray-300">{item.name}</span>
               <span className={`font-semibold ${item.cost < 0 ? 'text-green-600' : ''}`}>
                 {formatCurrency(item.cost)}

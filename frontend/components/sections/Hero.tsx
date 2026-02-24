@@ -87,7 +87,7 @@ export default function Hero() {
                 <Button
                   size="lg"
                   variant="outline"
-                  className="border border-gray-300 hover:border-charcoal hover:bg-gray-50 text-charcoal px-10 py-7 text-sm font-medium tracking-wide transition-all duration-300"
+                  className="border border-gray-300 dark:border-gray-600 hover:border-charcoal hover:bg-gray-50 text-charcoal px-10 py-7 text-sm font-medium tracking-wide transition-all duration-300"
                   onClick={() => window.location.href = '/solution-finder'}
                   data-testid="hero-quiz-btn"
                 >
@@ -130,7 +130,7 @@ export default function Hero() {
                 </div>
 
                 {/* Stats Card */}
-                <div className="glass border border-gray-200 p-8 space-y-6">
+                <div className="glass border border-gray-200 dark:border-gray-700 p-8 space-y-6">
                   <div>
                     <div className="text-5xl font-semibold mb-1 tracking-tight">
                       {settings?.brands_count || 50}+

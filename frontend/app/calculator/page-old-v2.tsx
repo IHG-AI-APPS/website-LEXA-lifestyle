@@ -388,7 +388,7 @@ export default function AdvancedCalculatorPage() {
                           className={`p-6 border-2 rounded-lg transition-all ${
                             propertyType === type.value
                               ? 'border-black bg-gray-50 shadow-lg'
-                              : 'border-gray-200 hover:border-gray-400'
+                              : 'border-gray-200 dark:border-gray-700 hover:border-gray-400'
                           }`}
                         >
                           <type.icon className="w-12 h-12 mx-auto mb-3" />
@@ -425,7 +425,7 @@ export default function AdvancedCalculatorPage() {
                           className={`p-4 border-2 rounded-lg font-semibold transition-all ${
                             bedrooms === num
                               ? 'border-black bg-gray-50'
-                              : 'border-gray-200 hover:border-gray-400'
+                              : 'border-gray-200 dark:border-gray-700 hover:border-gray-400'
                           }`}
                         >
                           {num}
@@ -451,7 +451,7 @@ export default function AdvancedCalculatorPage() {
                           className={`p-5 border-2 rounded-lg text-left transition-all ${
                             constructionStage === stage.value
                               ? 'border-black bg-gray-50'
-                              : 'border-gray-200 hover:border-gray-400'
+                              : 'border-gray-200 dark:border-gray-700 hover:border-gray-400'
                           }`}
                         >
                           <div className="font-semibold mb-1">{stage.label}</div>
@@ -531,7 +531,7 @@ export default function AdvancedCalculatorPage() {
                     if (!system) return null
 
                     return (
-                      <div key={systemKey} className="bg-white border-2 border-gray-200 rounded-lg p-6">
+                      <div key={systemKey} className="bg-white border-2 border-gray-200 dark:border-gray-700 rounded-lg p-6">
                         <div className="flex items-center gap-3 mb-4">
                           <system.icon size={24} />
                           <h3 className="text-xl font-semibold">{system.label}</h3>
@@ -550,7 +550,7 @@ export default function AdvancedCalculatorPage() {
                                 className={`p-5 border-2 rounded-lg text-left transition-all ${
                                   selectedSystems[systemKey] === level
                                     ? 'border-black bg-gray-50 shadow-md'
-                                    : 'border-gray-200 hover:border-gray-400'
+                                    : 'border-gray-200 dark:border-gray-700 hover:border-gray-400'
                                 }`}
                               >
                                 <div className="font-semibold mb-2">{feature.name}</div>
@@ -598,7 +598,7 @@ export default function AdvancedCalculatorPage() {
                         className={`p-5 border-2 rounded-lg text-left transition-all ${
                           additionalFeatures.includes(feature.id)
                             ? 'border-black bg-gray-50'
-                            : 'border-gray-200 hover:border-gray-400'
+                            : 'border-gray-200 dark:border-gray-700 hover:border-gray-400'
                         }`}
                       >
                         <div className="flex items-start justify-between mb-2">
@@ -623,7 +623,7 @@ export default function AdvancedCalculatorPage() {
                       <select
                         value={timeline}
                         onChange={(e) => setTimeline(e.target.value)}
-                        className="w-full p-4 border-2 border-gray-200 rounded-lg"
+                        className="w-full p-4 border-2 border-gray-200 dark:border-gray-700 rounded-lg"
                       >
                         <option value="">Select timeline</option>
                         <option value="asap">As soon as possible</option>
@@ -640,7 +640,7 @@ export default function AdvancedCalculatorPage() {
                       <select
                         value={budget}
                         onChange={(e) => setBudget(e.target.value)}
-                        className="w-full p-4 border-2 border-gray-200 rounded-lg"
+                        className="w-full p-4 border-2 border-gray-200 dark:border-gray-700 rounded-lg"
                       >
                         <option value="">Select budget</option>
                         <option value="under-200k">Under AED 200,000</option>
@@ -689,11 +689,11 @@ export default function AdvancedCalculatorPage() {
                   </div>
 
                   {/* Cost Breakdown */}
-                  <div className="bg-white border-2 border-gray-200 rounded-lg p-6">
+                  <div className="bg-white border-2 border-gray-200 dark:border-gray-700 rounded-lg p-6">
                     <h3 className="text-xl font-bold mb-4">Cost Breakdown</h3>
                     <div className="space-y-3">
                       {breakdown.map((item, index) => (
-                        <div key={index} className="flex justify-between items-center py-3 border-b border-gray-100 dark:border-gray-800">
+                        <div key={index} className="flex justify-between items-center py-3 border-b border-gray-100 dark:border-gray-800 dark:border-gray-800">
                           <span className="text-gray-700 dark:text-gray-300 dark:text-gray-300">{item.name}</span>
                           <span className="font-semibold">{formatCurrency(item.cost)}</span>
                         </div>

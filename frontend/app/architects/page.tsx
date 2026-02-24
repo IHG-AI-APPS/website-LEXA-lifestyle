@@ -200,7 +200,7 @@ export default function ArchitectsPage() {
                 >
                   <button
                     onClick={() => handleResourceClick(resource.id)}
-                    className="w-full bg-white border-2 border-gray-200 rounded-2xl p-8 hover:border-black hover:shadow-2xl transition-all transform hover:scale-105 text-left"
+                    className="w-full bg-white border-2 border-gray-200 dark:border-gray-700 rounded-2xl p-8 hover:border-black hover:shadow-2xl transition-all transform hover:scale-105 text-left"
                   >
                     <div className={`inline-flex items-center justify-center w-16 h-16 mb-6 rounded-full bg-gradient-to-r ${resource.color}`}>
                       <resource.icon size={32} className="text-white" />

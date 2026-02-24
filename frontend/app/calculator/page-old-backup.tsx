@@ -184,7 +184,7 @@ export default function CostCalculatorPage() {
                           className={`p-6 border-2 transition-all duration-300 ${
                             propertyType === type.value
                               ? 'border-charcoal bg-gray-50'
-                              : 'border-gray-200 hover:border-gray-400'
+                              : 'border-gray-200 dark:border-gray-700 hover:border-gray-400'
                           }`}
                         >
                           <div className="text-4xl mb-3">{type.icon}</div>
@@ -222,7 +222,7 @@ export default function CostCalculatorPage() {
                           className={`w-full p-5 border-2 text-left transition-all duration-300 ${
                             selectedSystems.includes(system.value)
                               ? 'border-charcoal bg-gray-50'
-                              : 'border-gray-200 hover:border-gray-400'
+                              : 'border-gray-200 dark:border-gray-700 hover:border-gray-400'
                           }`}
                         >
                           <div className="flex items-start gap-4">
@@ -268,7 +268,7 @@ export default function CostCalculatorPage() {
                 className="lg:col-span-2"
               >
                 {result ? (
-                  <div className="sticky top-24 glass border border-gray-200 p-8 space-y-8">
+                  <div className="sticky top-24 glass border border-gray-200 dark:border-gray-700 p-8 space-y-8">
                     <div>
                       <h3 className="text-2xl font-semibold mb-2">Your Estimate</h3>
                       <p className="text-sm text-gray-600 dark:text-gray-400 dark:text-gray-400">
@@ -278,7 +278,7 @@ export default function CostCalculatorPage() {
 
                     <div className="space-y-6">
                       {/* Cost Range */}
-                      <div className="pb-6 border-b border-gray-200 dark:border-gray-700">
+                      <div className="pb-6 border-b border-gray-200 dark:border-gray-700 dark:border-gray-700">
                         <div className="flex items-center gap-3 mb-3">
                           <TrendingUp className="text-charcoal" size={20} />
                           <span className="text-xs tracking-wider uppercase text-gray-500">Investment Range</span>
@@ -292,7 +292,7 @@ export default function CostCalculatorPage() {
                       </div>
 
                       {/* Timeline */}
-                      <div className="pb-6 border-b border-gray-200 dark:border-gray-700">
+                      <div className="pb-6 border-b border-gray-200 dark:border-gray-700 dark:border-gray-700">
                         <div className="flex items-center gap-3 mb-3">
                           <Clock className="text-charcoal" size={20} />
                           <span className="text-xs tracking-wider uppercase text-gray-500">Timeline</span>
@@ -322,7 +322,7 @@ export default function CostCalculatorPage() {
                     </div>
 
                     {/* CTA */}
-                    <div className="pt-6 border-t border-gray-200 dark:border-gray-700">
+                    <div className="pt-6 border-t border-gray-200 dark:border-gray-700 dark:border-gray-700">
                       <p className="text-sm text-gray-600 dark:text-gray-400 mb-4">
                         Ready to bring your vision to life? Book a free consultation with our experts.
                       </p>
@@ -336,7 +336,7 @@ export default function CostCalculatorPage() {
                     </div>
                   </div>
                 ) : (
-                  <div className="sticky top-24 glass border border-gray-200 p-8 text-center">
+                  <div className="sticky top-24 glass border border-gray-200 dark:border-gray-700 p-8 text-center">
                     <div className="text-gray-400 mb-4">
                       <Calculator size={48} className="mx-auto" strokeWidth={1} />
                     </div>

@@ -179,7 +179,7 @@ export default function ProtocolSelection({
                     onClick={() => handleTypeSelect(type.id)}
                     whileHover={{ scale: 1.02 }}
                     whileTap={{ scale: 0.98 }}
-                    className="relative p-6 rounded-2xl border-2 border-gray-200 hover:border-gray-400 bg-white text-left transition-all hover:shadow-xl group"
+                    className="relative p-6 rounded-2xl border-2 border-gray-200 dark:border-gray-700 hover:border-gray-400 bg-white text-left transition-all hover:shadow-xl group"
                   >
                     {/* Icon */}
                     <div className={`w-14 h-14 rounded-xl bg-gradient-to-br ${type.color} flex items-center justify-center mb-4 group-hover:scale-110 transition-transform`}>
@@ -201,7 +201,7 @@ export default function ProtocolSelection({
                     </div>
 
                     {/* Best For */}
-                    <div className="pt-4 border-t border-gray-100 dark:border-gray-800">
+                    <div className="pt-4 border-t border-gray-100 dark:border-gray-800 dark:border-gray-800">
                       <span className="text-xs font-semibold text-gray-500 uppercase tracking-wide">Best for:</span>
                       <p className="text-sm text-gray-700 dark:text-gray-300 mt-1">{type.best_for}</p>
                     </div>
@@ -267,7 +267,7 @@ export default function ProtocolSelection({
                       className={`relative p-5 rounded-xl border-2 text-left transition-all ${
                         isSelected 
                           ? `border-transparent bg-gradient-to-br ${selectedTypeConfig.color} text-white shadow-lg`
-                          : 'border-gray-200 bg-white hover:border-gray-400 hover:shadow-md'
+                          : 'border-gray-200 dark:border-gray-700 bg-white hover:border-gray-400 hover:shadow-md'
                       }`}
                     >
                       {/* Selection Indicator */}
@@ -331,7 +331,7 @@ export default function ProtocolSelection({
             )}
 
             {/* Navigation */}
-            <div className="sticky bottom-0 bg-white border-t border-gray-200 p-4 -mx-4">
+            <div className="sticky bottom-0 bg-white border-t border-gray-200 dark:border-gray-700 p-4 -mx-4">
               <div className="max-w-5xl mx-auto flex items-center justify-between">
                 <div>
                   <span className="text-sm text-gray-500">Selected protocols:</span>

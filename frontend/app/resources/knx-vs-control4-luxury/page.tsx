@@ -268,7 +268,7 @@ export default function KNXvsControl4Page() {
             <h2 className="text-4xl sm:text-5xl font-bold mb-12">Choose Your System</h2>
             
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              <div className="bg-white border-2 border-gray-300 rounded-2xl p-8">
+              <div className="bg-white border-2 border-gray-300 dark:border-gray-600 rounded-2xl p-8">
                 <h3 className="text-2xl font-bold mb-4">Choose KNX If...</h3>
                 <ul className="space-y-3 text-gray-700 dark:text-gray-300 dark:text-gray-300">
                   <li className="flex items-start gap-2">
@@ -298,7 +298,7 @@ export default function KNXvsControl4Page() {
                 </ul>
               </div>
 
-              <div className="bg-white border-2 border-gray-300 rounded-2xl p-8">
+              <div className="bg-white border-2 border-gray-300 dark:border-gray-600 rounded-2xl p-8">
                 <h3 className="text-2xl font-bold mb-4">Choose Control4 If...</h3>
                 <ul className="space-y-3 text-gray-700 dark:text-gray-300 dark:text-gray-300">
                   <li className="flex items-start gap-2">

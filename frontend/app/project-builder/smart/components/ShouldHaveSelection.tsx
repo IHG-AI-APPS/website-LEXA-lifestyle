@@ -198,7 +198,7 @@ export default function ShouldHaveSelection({
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.1 + catIndex * 0.05 }}
-              className="bg-white dark:bg-gray-800 border border-gray-200 rounded-2xl p-6"
+              className="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-2xl p-6"
             >
               {/* Category Header */}
               <div className="flex items-center justify-between mb-4">
@@ -235,7 +235,7 @@ export default function ShouldHaveSelection({
                       className={`flex items-start gap-3 p-4 rounded-xl border-2 text-left transition-all ${
                         isSelected
                           ? 'border-orange-500 bg-orange-50'
-                          : 'border-gray-200 hover:border-gray-300 bg-white'
+                          : 'border-gray-200 dark:border-gray-700 hover:border-gray-300 dark:border-gray-600 bg-white'
                       }`}
                     >
                       {/* Checkbox */}
@@ -267,7 +267,7 @@ export default function ShouldHaveSelection({
       </div>
 
       {/* Bottom Navigation */}
-      <div className="sticky bottom-0 bg-white border-t border-gray-200 p-4 -mx-4">
+      <div className="sticky bottom-0 bg-white border-t border-gray-200 dark:border-gray-700 p-4 -mx-4">
         <div className="max-w-4xl mx-auto flex items-center justify-between">
           <Button variant="outline" onClick={onBack}>
             <ChevronLeft className="w-4 h-4 mr-1" />

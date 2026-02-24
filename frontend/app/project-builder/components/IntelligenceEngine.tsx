@@ -252,7 +252,7 @@ export default function IntelligenceEngine({ sessionId, projectData, onComplete 
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.2 }}
-              className="bg-white dark:bg-gray-800 border border-gray-200 p-6 text-center hover:border-blue-600 hover:shadow-md transition-all duration-300"
+              className="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 p-6 text-center hover:border-blue-600 hover:shadow-md transition-all duration-300"
             >
               <stat.icon className={`w-6 h-6 mx-auto mb-3 text-${stat.color}-600`} />
               <div className="text-3xl font-semibold text-gray-900 dark:text-white mb-1">
@@ -264,7 +264,7 @@ export default function IntelligenceEngine({ sessionId, projectData, onComplete 
         </div>
 
         {/* Legend */}
-        <div className="bg-gradient-to-r from-gray-50 to-blue-50 border border-gray-200 p-6 mb-8">
+        <div className="bg-gradient-to-r from-gray-50 to-blue-50 border border-gray-200 dark:border-gray-700 p-6 mb-8">
           <div className="flex items-center justify-between flex-wrap gap-4">
             <div className="flex items-center gap-6">
               {Object.entries(CLASSIFICATION_CONFIG).map(([key, config]) => {
@@ -345,7 +345,7 @@ export default function IntelligenceEngine({ sessionId, projectData, onComplete 
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: bundleIndex * 0.1 }}
-                className="bg-white dark:bg-gray-800 border border-gray-200 overflow-hidden hover:border-blue-600 transition-all duration-300"
+                className="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 overflow-hidden hover:border-blue-600 transition-all duration-300"
               >
                 {/* Domain Header - Clickable */}
                 <button
@@ -381,7 +381,7 @@ export default function IntelligenceEngine({ sessionId, projectData, onComplete 
                       animate={{ height: 'auto', opacity: 1 }}
                       exit={{ height: 0, opacity: 0 }}
                       transition={{ duration: 0.3 }}
-                      className="border-t border-gray-200 bg-gray-50"
+                      className="border-t border-gray-200 dark:border-gray-700 bg-gray-50"
                     >
                       <div className="p-6 space-y-3">
                         {bundleFeatures.slice(0, 10).map((feature: any, featureIndex: number) => {
@@ -404,7 +404,7 @@ export default function IntelligenceEngine({ sessionId, projectData, onComplete 
                               className={`w-full p-4 border rounded text-left transition-all duration-300 relative group ${
                                 isSelected
                                   ? 'border-blue-600 bg-white dark:bg-gray-800 shadow-md'
-                                  : 'border-gray-200 bg-white hover:border-gray-300 hover:shadow-sm'
+                                  : 'border-gray-200 dark:border-gray-700 bg-white hover:border-gray-300 dark:border-gray-600 hover:shadow-sm'
                               }`}
                             >
                               {/* Selection Checkbox */}

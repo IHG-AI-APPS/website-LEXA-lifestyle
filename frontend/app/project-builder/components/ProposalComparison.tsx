@@ -90,7 +90,7 @@ export default function ProposalComparison({ sessionId, resolutionData, onSelect
                 className={`relative p-8 text-left transition-all duration-500 bg-white dark:bg-gray-800 border ${
                   isSelected
                     ? 'border-blue-600 shadow-xl scale-105 z-10'
-                    : 'border-gray-200 hover:border-gray-300 hover:shadow-lg'
+                    : 'border-gray-200 dark:border-gray-700 hover:border-gray-300 dark:border-gray-600 hover:shadow-lg'
                 }`}
                 whileHover={{ y: -4 }}
               >
@@ -135,7 +135,7 @@ export default function ProposalComparison({ sessionId, resolutionData, onSelect
                 </div>
 
                 {/* Stats */}
-                <div className="space-y-3 mb-6 pb-6 border-b border-gray-200 dark:border-gray-700">
+                <div className="space-y-3 mb-6 pb-6 border-b border-gray-200 dark:border-gray-700 dark:border-gray-700">
                   <div className="flex justify-between text-xs">
                     <span className="text-gray-600 dark:text-gray-400 dark:text-gray-400">Systems</span>
                     <span className="text-gray-900 dark:text-white font-mono font-medium">{proposal.system_count}</span>
@@ -169,12 +169,12 @@ export default function ProposalComparison({ sessionId, resolutionData, onSelect
         </div>
 
         {/* Interactive Comparison Matrix */}
-        <div className="bg-white dark:bg-gray-800 border border-gray-200 p-8 mb-12">
+        <div className="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 p-8 mb-12">
           <h3 className="text-sm font-medium mb-6 uppercase tracking-widest text-gray-900 dark:text-white dark:text-white">Detailed Comparison</h3>
           <div className="overflow-x-auto">
             <table className="w-full text-xs">
               <thead>
-                <tr className="border-b border-gray-200 dark:border-gray-700">
+                <tr className="border-b border-gray-200 dark:border-gray-700 dark:border-gray-700">
                   <th className="text-left py-3 text-gray-600 dark:text-gray-400 uppercase tracking-widest font-medium">Feature</th>
                   <th className="text-center py-3 text-gray-600 dark:text-gray-400 uppercase tracking-widest font-medium">Value</th>
                   <th className="text-center py-3 text-blue-600 uppercase tracking-widest font-medium">Balanced</th>
@@ -185,7 +185,7 @@ export default function ProposalComparison({ sessionId, resolutionData, onSelect
                 {proposals.comparison_matrix?.rows?.map((row: any, index: number) => (
                   <tr
                     key={index}
-                    className="border-b border-gray-100 hover:bg-gray-50 transition-colors"
+                    className="border-b border-gray-100 dark:border-gray-800 hover:bg-gray-50 transition-colors"
                   >
                     <td className="py-3 text-gray-700 dark:text-gray-300 dark:text-gray-300">{row.feature}</td>
                     <td className="py-3 text-center text-gray-900 dark:text-white font-mono">{row.value}</td>

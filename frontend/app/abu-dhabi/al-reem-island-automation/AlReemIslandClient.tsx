@@ -154,7 +154,7 @@ export default function AlReemIslandClient() {
                 className={`p-6 rounded-2xl border transition-all hover:shadow-lg ${
                   isDark 
                     ? 'bg-gray-800 border-gray-700 hover:border-[#C9A962]' 
-                    : 'bg-white border-gray-200 hover:border-[#C9A962]'
+                    : 'bg-white border-gray-200 dark:border-gray-700 hover:border-[#C9A962]'
                 }`}
               >
                 <h3 className={`text-xl font-bold mb-2 ${isDark ? 'text-white' : 'text-gray-900'}`}>{building.name}</h3>

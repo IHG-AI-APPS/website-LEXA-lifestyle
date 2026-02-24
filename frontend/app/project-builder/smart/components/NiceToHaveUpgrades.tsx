@@ -305,7 +305,7 @@ export default function NiceToHaveUpgrades({
               className={`relative p-5 rounded-2xl border-2 text-left transition-all ${
                 isSelected
                   ? 'border-purple-500 bg-purple-50 shadow-lg'
-                  : 'border-gray-200 bg-white hover:border-gray-300 hover:shadow-md'
+                  : 'border-gray-200 dark:border-gray-700 bg-white hover:border-gray-300 dark:border-gray-600 hover:shadow-md'
               }`}
             >
               {/* Price Badge */}
@@ -347,7 +347,7 @@ export default function NiceToHaveUpgrades({
       )}
 
       {/* Bottom Navigation */}
-      <div className="sticky bottom-0 bg-white border-t border-gray-200 p-4 -mx-4">
+      <div className="sticky bottom-0 bg-white border-t border-gray-200 dark:border-gray-700 p-4 -mx-4">
         <div className="max-w-4xl mx-auto flex items-center justify-between">
           <Button variant="outline" onClick={onBack}>
             <ChevronLeft className="w-4 h-4 mr-1" />

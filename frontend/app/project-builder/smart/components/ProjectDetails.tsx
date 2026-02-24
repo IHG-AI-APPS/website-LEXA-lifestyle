@@ -240,7 +240,7 @@ export default function ProjectDetailsForm({
                   className={`p-5 rounded-xl border-2 text-left transition-all ${
                     isSelected
                       ? 'border-indigo-500 bg-indigo-50 ring-2 ring-indigo-500/20'
-                      : 'border-gray-200 bg-white hover:border-gray-300'
+                      : 'border-gray-200 dark:border-gray-700 bg-white hover:border-gray-300'
                   }`}
                 >
                   <div className={`w-12 h-12 rounded-xl bg-gradient-to-br ${type.color} flex items-center justify-center mb-3`}>
@@ -282,7 +282,7 @@ export default function ProjectDetailsForm({
                   className={`p-4 rounded-xl border-2 text-center transition-all ${
                     isSelected
                       ? 'border-indigo-500 bg-indigo-50'
-                      : 'border-gray-200 bg-white hover:border-gray-300'
+                      : 'border-gray-200 dark:border-gray-700 bg-white hover:border-gray-300'
                   }`}
                 >
                   <Icon className={`w-8 h-8 mx-auto mb-2 ${isSelected ? 'text-indigo-600' : 'text-gray-400'}`} />
@@ -313,7 +313,7 @@ export default function ProjectDetailsForm({
                   className={`p-4 rounded-xl border-2 text-center transition-all ${
                     propertySize === size
                       ? 'border-indigo-500 bg-indigo-50'
-                      : 'border-gray-200 bg-white hover:border-gray-300'
+                      : 'border-gray-200 dark:border-gray-700 bg-white hover:border-gray-300'
                   }`}
                 >
                   <span className={`text-sm font-medium ${propertySize === size ? 'text-indigo-600' : 'text-gray-700'}`}>
@@ -356,7 +356,7 @@ export default function ProjectDetailsForm({
                   className={`w-12 h-12 rounded-lg border-2 font-bold transition-all ${
                     bedrooms === (typeof num === 'number' ? num : 7)
                       ? 'border-indigo-500 bg-indigo-50 text-indigo-600'
-                      : 'border-gray-200 bg-white text-gray-600 dark:text-gray-400 hover:border-gray-300'
+                      : 'border-gray-200 dark:border-gray-700 bg-white text-gray-600 dark:text-gray-400 hover:border-gray-300'
                   }`}
                 >
                   {num}
@@ -377,7 +377,7 @@ export default function ProjectDetailsForm({
                   className={`w-12 h-12 rounded-lg border-2 font-bold transition-all ${
                     floors === (typeof num === 'number' ? num : 5)
                       ? 'border-indigo-500 bg-indigo-50 text-indigo-600'
-                      : 'border-gray-200 bg-white text-gray-600 dark:text-gray-400 hover:border-gray-300'
+                      : 'border-gray-200 dark:border-gray-700 bg-white text-gray-600 dark:text-gray-400 hover:border-gray-300'
                   }`}
                 >
                   {num}
@@ -405,7 +405,7 @@ export default function ProjectDetailsForm({
                 className={`p-4 rounded-xl border-2 text-center transition-all ${
                   budget === range.id
                     ? 'border-green-500 bg-green-50'
-                    : 'border-gray-200 bg-white hover:border-gray-300'
+                    : 'border-gray-200 dark:border-gray-700 bg-white hover:border-gray-300'
                 }`}
               >
                 <div className={`font-bold ${budget === range.id ? 'text-green-600' : 'text-gray-900'}`}>
@@ -435,7 +435,7 @@ export default function ProjectDetailsForm({
                 className={`p-4 rounded-xl border-2 text-center transition-all ${
                   timeline === option.id
                     ? 'border-amber-500 bg-amber-50'
-                    : 'border-gray-200 bg-white hover:border-gray-300'
+                    : 'border-gray-200 dark:border-gray-700 bg-white hover:border-gray-300'
                 }`}
               >
                 <div className={`font-bold text-sm ${timeline === option.id ? 'text-amber-600' : 'text-gray-900'}`}>
@@ -465,7 +465,7 @@ export default function ProjectDetailsForm({
                 className={`p-3 rounded-lg border-2 text-sm font-medium transition-all ${
                   location === loc
                     ? 'border-blue-500 bg-blue-50 text-blue-600'
-                    : 'border-gray-200 bg-white text-gray-700 dark:text-gray-300 hover:border-gray-300'
+                    : 'border-gray-200 dark:border-gray-700 bg-white text-gray-700 dark:text-gray-300 hover:border-gray-300'
                 }`}
               >
                 {loc}
@@ -485,14 +485,14 @@ export default function ProjectDetailsForm({
             value={specialRequirements}
             onChange={(e) => setSpecialRequirements(e.target.value)}
             placeholder="E.g., Home theater room, wine cellar automation, yacht dock integration, specific brand preferences..."
-            className="w-full p-4 rounded-xl border-2 border-gray-200 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-500/20 transition-all resize-none"
+            className="w-full p-4 rounded-xl border-2 border-gray-200 dark:border-gray-700 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-500/20 transition-all resize-none"
             rows={3}
           />
         </motion.section>
       </div>
 
       {/* Link to Calculator */}
-      <div className="mt-8 pt-6 border-t border-gray-200 dark:border-gray-700">
+      <div className="mt-8 pt-6 border-t border-gray-200 dark:border-gray-700 dark:border-gray-700">
         <div className="bg-gradient-to-r from-blue-50 to-cyan-50 border border-blue-200 rounded-xl p-5">
           <div className="flex flex-col md:flex-row items-center justify-between gap-4">
             <div>
@@ -513,7 +513,7 @@ export default function ProjectDetailsForm({
       </div>
 
       {/* Bottom Bar */}
-      <div className="sticky bottom-0 bg-white border-t border-gray-200 p-4 -mx-4 mt-8">
+      <div className="sticky bottom-0 bg-white border-t border-gray-200 dark:border-gray-700 p-4 -mx-4 mt-8">
         <div className="max-w-4xl mx-auto flex items-center justify-between">
           <div className="text-sm text-gray-500">
             {!canContinue && (

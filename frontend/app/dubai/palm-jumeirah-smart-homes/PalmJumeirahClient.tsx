@@ -115,7 +115,7 @@ export default function PalmJumeirahClient() {
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
             {communities.map((community, index) => (
               <motion.div key={community.name} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: index * 0.1 }}
-                className={`p-6 rounded-2xl border transition-all hover:shadow-lg ${isDark ? 'bg-gray-800 border-gray-700 hover:border-[#C9A962]' : 'bg-white border-gray-200 hover:border-[#C9A962]'}`}>
+                className={`p-6 rounded-2xl border transition-all hover:shadow-lg ${isDark ? 'bg-gray-800 border-gray-700 hover:border-[#C9A962]' : 'bg-white border-gray-200 dark:border-gray-700 hover:border-[#C9A962]'}`}>
                 <h3 className={`text-xl font-bold mb-2 ${isDark ? 'text-white' : 'text-gray-900'}`}>{community.name}</h3>
                 <p className={`text-sm mb-3 ${isDark ? 'text-gray-400' : 'text-gray-600'}`}>{community.type}</p>
                 <div className="text-[#C9A962] font-semibold">{community.price}</div>

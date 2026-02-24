@@ -305,7 +305,7 @@ export default function NeedPrioritization({
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.3 + index * 0.1 }}
-                    className="bg-white border-2 border-gray-200 rounded-xl md:rounded-2xl p-5 md:p-8 hover:border-gray-400 hover:shadow-xl transition-all duration-300"
+                    className="bg-white border-2 border-gray-200 dark:border-gray-700 rounded-xl md:rounded-2xl p-5 md:p-8 hover:border-gray-400 hover:shadow-xl transition-all duration-300"
                   >
                     <div className="flex items-start gap-3 md:gap-4">
                       <div className={`flex-shrink-0 w-10 h-10 md:w-14 md:h-14 bg-gradient-to-br ${tier.color} rounded-xl md:rounded-2xl flex items-center justify-center`}>
@@ -340,7 +340,7 @@ export default function NeedPrioritization({
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.8 }}
-              className="bg-gray-50 border border-gray-200 rounded-xl md:rounded-2xl p-5 md:p-8 mb-8 md:mb-12"
+              className="bg-gray-50 border border-gray-200 dark:border-gray-700 rounded-xl md:rounded-2xl p-5 md:p-8 mb-8 md:mb-12"
             >
               <h3 className="text-lg md:text-xl font-bold text-gray-900 dark:text-white mb-3 md:mb-4 flex items-center gap-2 md:gap-3">
                 <Sparkles className="w-5 h-5 md:w-6 md:h-6 text-gray-700 dark:text-gray-300 dark:text-gray-300" />
@@ -429,7 +429,7 @@ export default function NeedPrioritization({
 
             {/* MOBILE ONLY: Feature Selection Grid at Top */}
             {uncategorized.length > 0 && (
-              <div className="md:hidden bg-white border-2 border-gray-300 rounded-xl p-4 mb-6">
+              <div className="md:hidden bg-white border-2 border-gray-300 dark:border-gray-600 rounded-xl p-4 mb-6">
                 <h3 className="font-bold text-gray-900 dark:text-white mb-3 flex items-center gap-2 text-sm">
                   <Hand className="w-4 h-4 text-blue-600" />
                   <span>Select a Feature</span>
@@ -453,7 +453,7 @@ export default function NeedPrioritization({
                             ? 'bg-blue-600 text-white border-2 border-blue-600 shadow-lg scale-[1.02]' 
                             : aiRec
                               ? 'bg-amber-50 border-2 border-amber-300 hover:border-amber-400'
-                              : 'bg-gray-100 border-2 border-gray-200 hover:border-gray-400 active:scale-95'
+                              : 'bg-gray-100 border-2 border-gray-200 dark:border-gray-700 hover:border-gray-400 active:scale-95'
                         }`}
                       >
                         {aiRec && !isSelected && (
@@ -498,7 +498,7 @@ export default function NeedPrioritization({
                     className={`border-2 border-dashed rounded-xl md:rounded-2xl p-4 md:p-6 min-h-[180px] md:min-h-[400px] transition-all cursor-pointer ${
                       selectedFeature 
                         ? 'border-blue-400 bg-blue-50 hover:bg-blue-100 hover:border-blue-500' 
-                        : 'border-gray-300 bg-gray-50 hover:border-gray-400'
+                        : 'border-gray-300 dark:border-gray-600 bg-gray-50 hover:border-gray-400'
                     }`}
                   >
                     <div className="flex items-center gap-2 md:gap-3 mb-3 md:mb-6">
@@ -525,7 +525,7 @@ export default function NeedPrioritization({
                             key={featureId}
                             draggable
                             onDragStart={() => setDraggedFeature(featureId)}
-                            className="bg-white dark:bg-gray-800 border border-gray-200 rounded-lg md:rounded-xl p-2 md:p-4 md:cursor-move hover:shadow-lg transition-shadow group"
+                            className="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg md:rounded-xl p-2 md:p-4 md:cursor-move hover:shadow-lg transition-shadow group"
                           >
                             <div className="flex items-center gap-2 md:gap-3">
                               {/* Grip icon - desktop only */}
@@ -571,7 +571,7 @@ export default function NeedPrioritization({
 
             {/* DESKTOP ONLY: Uncategorized Features at bottom */}
             {uncategorized.length > 0 && (
-              <div className="hidden md:block bg-white border-2 border-gray-300 rounded-2xl p-6 mb-8">
+              <div className="hidden md:block bg-white border-2 border-gray-300 dark:border-gray-600 rounded-2xl p-6 mb-8">
                 <h3 className="font-bold text-gray-900 dark:text-white mb-4 flex items-center gap-2">
                   <span className="text-gray-500">Uncategorized Features</span>
                   <span className="text-sm font-normal text-gray-500">({uncategorized.length} remaining)</span>
@@ -592,7 +592,7 @@ export default function NeedPrioritization({
                         className={`relative border rounded-xl p-4 cursor-move hover:shadow-lg transition-all ${
                           aiRec 
                             ? 'bg-amber-50 border-amber-300 hover:bg-amber-100' 
-                            : 'bg-gray-100 border-gray-300 hover:bg-white'
+                            : 'bg-gray-100 border-gray-300 dark:border-gray-600 hover:bg-white'
                         }`}
                       >
                         {aiRec && (
@@ -659,7 +659,7 @@ export default function NeedPrioritization({
                 if (features.length === 0) return null
 
                 return (
-                  <div key={tier.id} className="bg-white border-2 border-gray-200 rounded-xl md:rounded-2xl p-5 md:p-8">
+                  <div key={tier.id} className="bg-white border-2 border-gray-200 dark:border-gray-700 rounded-xl md:rounded-2xl p-5 md:p-8">
                     <div className="flex items-center gap-3 md:gap-4 mb-4 md:mb-6">
                       <div className={`w-10 h-10 md:w-12 md:h-12 bg-gradient-to-br ${tier.color} rounded-lg md:rounded-xl flex items-center justify-center`}>
                         <Icon className="w-5 h-5 md:w-6 md:h-6 text-white" />

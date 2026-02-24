@@ -90,7 +90,7 @@ export default function SharjahPage() {
             <h2 className="text-3xl font-bold mb-8 text-center">Areas We Serve in Sharjah</h2>
             <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
               {sharjahData.majorAreas.map((area) => (
-                <div key={area} className="p-4 border border-gray-200 rounded-lg hover:border-[#E8DCC8] transition flex items-center gap-2">
+                <div key={area} className="p-4 border border-gray-200 dark:border-gray-700 rounded-lg hover:border-[#E8DCC8] transition flex items-center gap-2">
                   <MapPin className="h-4 w-4 text-[#E8DCC8]" />
                   <span className="text-sm font-medium">{area}</span>
                 </div>
@@ -146,7 +146,7 @@ export default function SharjahPage() {
 
 function ServiceCard({ title, description }: { title: string; description: string }) {
   return (
-    <div className="p-6 bg-white dark:bg-gray-800 border border-gray-200 rounded-lg hover:shadow-lg transition">
+    <div className="p-6 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg hover:shadow-lg transition">
       <h3 className="text-xl font-bold mb-3">{title}</h3>
       <p className="text-gray-600 dark:text-gray-400 dark:text-gray-400">{description}</p>
     </div>

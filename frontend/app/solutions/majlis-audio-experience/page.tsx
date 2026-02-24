@@ -153,7 +153,7 @@ export default function MajlisAudioPage() {
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.6, delay: 0.2 }}
                     viewport={{ once: true }}
-                    className="bg-white dark:bg-gray-800 p-8 border-2 border-gray-200 hover:border-[#1A1A1A] transition-all duration-300 hover:shadow-xl"
+                    className="bg-white dark:bg-gray-800 p-8 border-2 border-gray-200 dark:border-gray-700 hover:border-[#1A1A1A] transition-all duration-300 hover:shadow-xl"
                   >
                     <div className="flex items-start gap-4">
                       <div className="flex-shrink-0 p-3 bg-gradient-to-br from-amber-50 to-orange-50">
@@ -211,7 +211,7 @@ export default function MajlisAudioPage() {
                 {benefits.map((benefit, index) => {
                   const Icon = benefit.icon
                   return (
-                    <div key={index} className="bg-gray-50 p-6 text-center border-2 border-gray-200 dark:border-gray-700">
+                    <div key={index} className="bg-gray-50 p-6 text-center border-2 border-gray-200 dark:border-gray-700 dark:border-gray-700">
                       <Icon className="h-8 w-8 mx-auto mb-3 text-[#1A1A1A] dark:text-white" />
                       <div className="text-3xl font-bold mb-2 text-[#1A1A1A] dark:text-white">{benefit.metric}</div>
                       <div className="text-sm text-gray-600 dark:text-gray-400 dark:text-gray-400">{benefit.label}</div>

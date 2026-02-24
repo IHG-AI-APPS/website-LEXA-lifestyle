@@ -196,7 +196,7 @@ export default function PropertyPackageDetailPage() {
                   className={`relative rounded-2xl border-2 ${
                     isRecommended 
                       ? `${colors.border} shadow-xl lg:scale-105` 
-                      : 'border-gray-200 hover:border-gray-300'
+                      : 'border-gray-200 dark:border-gray-700 hover:border-gray-300'
                   } transition-all duration-300 bg-white self-start`}
                 >
                   {isRecommended && (
@@ -255,7 +255,7 @@ export default function PropertyPackageDetailPage() {
                       className={`w-full py-3 px-4 rounded-lg border-2 font-medium transition-colors mb-4 flex items-center justify-center gap-2 ${
                         isRecommended
                           ? `${colors.bg} text-white ${colors.bgHover} ${colors.border}`
-                          : `border-gray-300 text-gray-700 dark:text-gray-300 ${colors.borderHover} ${colors.textHover}`
+                          : `border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 ${colors.borderHover} ${colors.textHover}`
                       }`}
                     >
                       {isExpanded ? 'Hide Details' : 'View Full Features'}
@@ -282,7 +282,7 @@ export default function PropertyPackageDetailPage() {
                       initial={{ opacity: 0, height: 0 }}
                       animate={{ opacity: 1, height: 'auto' }}
                       exit={{ opacity: 0, height: 0 }}
-                      className="border-t border-gray-200 p-6 lg:p-8 bg-gray-50 dark:bg-gray-800"
+                      className="border-t border-gray-200 dark:border-gray-700 p-6 lg:p-8 bg-gray-50 dark:bg-gray-800"
                     >
                       <DetailedFeatureList title="Lighting Features" features={tier.lighting_features || []} />
                       <DetailedFeatureList title="Climate Features" features={tier.climate_features || []} />

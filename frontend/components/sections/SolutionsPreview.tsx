@@ -139,7 +139,7 @@ export default function SolutionsPreview() {
           >
             <Link
               href="/solutions"
-              className="inline-block px-10 py-5 border border-gray-300 hover:border-charcoal hover:bg-gray-50 text-charcoal text-sm font-medium tracking-wide transition-all duration-300"
+              className="inline-block px-10 py-5 border border-gray-300 dark:border-gray-600 hover:border-charcoal hover:bg-gray-50 text-charcoal text-sm font-medium tracking-wide transition-all duration-300"
             >
               View All Solutions
             </Link>

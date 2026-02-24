@@ -259,7 +259,7 @@ export default function ArchitectAutomationGuidePage() {
             
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               <Link href="/architects">
-                <div className="bg-white border-2 border-gray-200 rounded-xl p-6 hover:border-black transition-all">
+                <div className="bg-white border-2 border-gray-200 dark:border-gray-700 rounded-xl p-6 hover:border-black transition-all">
                   <FileText size={40} className="mb-4" />
                   <h3 className="font-bold text-lg mb-2">Sample BOQ Templates</h3>
                   <p className="text-sm text-gray-600 dark:text-gray-400 mb-4">Excel and PDF formats for cost estimation</p>
@@ -271,7 +271,7 @@ export default function ArchitectAutomationGuidePage() {
               </Link>
 
               <Link href="/architects">
-                <div className="bg-white border-2 border-gray-200 rounded-xl p-6 hover:border-black transition-all">
+                <div className="bg-white border-2 border-gray-200 dark:border-gray-700 rounded-xl p-6 hover:border-black transition-all">
                   <FileText size={40} className="mb-4" />
                   <h3 className="font-bold text-lg mb-2">CAD Blocks & Symbols</h3>
                   <p className="text-sm text-gray-600 dark:text-gray-400 mb-4">DWG and Revit families for devices</p>
@@ -283,7 +283,7 @@ export default function ArchitectAutomationGuidePage() {
               </Link>
 
               <Link href="/architects">
-                <div className="bg-white border-2 border-gray-200 rounded-xl p-6 hover:border-black transition-all">
+                <div className="bg-white border-2 border-gray-200 dark:border-gray-700 rounded-xl p-6 hover:border-black transition-all">
                   <FileText size={40} className="mb-4" />
                   <h3 className="font-bold text-lg mb-2">Specification Text</h3>
                   <p className="text-sm text-gray-600 dark:text-gray-400 mb-4">Ready-to-use technical specs</p>

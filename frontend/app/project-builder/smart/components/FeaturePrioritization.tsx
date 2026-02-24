@@ -415,7 +415,7 @@ export default function FeaturePrioritization({
       </div>
 
       {/* Navigation */}
-      <div className="sticky bottom-0 bg-white border-t border-gray-200 p-4 -mx-4">
+      <div className="sticky bottom-0 bg-white border-t border-gray-200 dark:border-gray-700 p-4 -mx-4">
         <div className="max-w-4xl mx-auto flex items-center justify-between">
           <Button variant="outline" onClick={goToPrevCategory}>
             <ChevronLeft className="w-4 h-4 mr-1" />

@@ -122,7 +122,7 @@ export default function HomeownerPage() {
                     <Button
                       size="lg"
                       variant="outline"
-                      className="border border-gray-300 hover:border-charcoal w-full"
+                      className="border border-gray-300 dark:border-gray-600 hover:border-charcoal w-full"
                     >
                       Visit Experience Centre
                     </Button>
@@ -227,7 +227,7 @@ export default function HomeownerPage() {
                           whileInView={{ opacity: 1, y: 0 }}
                           viewport={{ once: true }}
                           transition={{ delay: itemIndex * 0.05 }}
-                          className="bg-white dark:bg-gray-800 p-6 border border-gray-200 hover:border-charcoal transition-all hover:shadow-lg"
+                          className="bg-white dark:bg-gray-800 p-6 border border-gray-200 dark:border-gray-700 hover:border-charcoal transition-all hover:shadow-lg"
                         >
                           <h4 className="text-lg font-semibold mb-2 group-hover:text-charcoal transition-colors">
                             {item.name}

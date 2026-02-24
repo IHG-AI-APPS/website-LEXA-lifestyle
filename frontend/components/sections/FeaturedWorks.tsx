@@ -65,7 +65,7 @@ export default function FeaturedWorks() {
         <div className="mt-12 text-center">
           <Link
             href="/projects"
-            className="inline-flex items-center gap-2 bg-transparent border border-gray-300 text-black px-8 py-4 font-medium uppercase tracking-widest hover:border-black transition-colors"
+            className="inline-flex items-center gap-2 bg-transparent border border-gray-300 dark:border-gray-600 text-black px-8 py-4 font-medium uppercase tracking-widest hover:border-black transition-colors"
           >
             View All Projects
             <ArrowRight size={16} strokeWidth={2} />

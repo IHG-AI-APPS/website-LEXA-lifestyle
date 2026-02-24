@@ -85,7 +85,7 @@ export default function SignatureProjects() {
                   {project.systems && project.systems.length > 0 && (
                     <div className="flex flex-wrap gap-2">
                       {project.systems.slice(0, 4).map((system: string) => (
-                        <span key={system} className="text-xs px-3 py-1 border border-gray-300 text-gray-600 dark:text-gray-400 dark:text-gray-400">
+                        <span key={system} className="text-xs px-3 py-1 border border-gray-300 dark:border-gray-600 text-gray-600 dark:text-gray-400 dark:text-gray-400">
                           {system}
                         </span>
                       ))}

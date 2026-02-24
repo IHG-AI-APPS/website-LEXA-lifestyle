@@ -28,7 +28,7 @@ export default function SolutionsSelector({
           return (
             <motion.div
               key={solution.id}
-              className="bg-white dark:bg-gray-800 rounded-xl border-2 border-gray-200 p-6"
+              className="bg-white dark:bg-gray-800 rounded-xl border-2 border-gray-200 dark:border-gray-700 p-6"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
             >
@@ -48,7 +48,7 @@ export default function SolutionsSelector({
                       className={`p-4 rounded-lg border-2 text-left transition-all ${
                         isSelected
                           ? 'border-black bg-black text-white'
-                          : 'border-gray-200 hover:border-gray-300'
+                          : 'border-gray-200 dark:border-gray-700 hover:border-gray-300'
                       }`}
                     >
                       <div className="font-semibold text-sm mb-2">{level.label}</div>

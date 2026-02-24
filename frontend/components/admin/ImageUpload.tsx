@@ -121,7 +121,7 @@ export function ImageUpload({
       )}
 
       {/* Mode Toggle */}
-      <div className="flex rounded-lg border border-gray-200 p-1 bg-gray-50 w-fit">
+      <div className="flex rounded-lg border border-gray-200 dark:border-gray-700 p-1 bg-gray-50 w-fit">
         <button
           type="button"
           onClick={() => setMode('upload')}
@@ -158,7 +158,7 @@ export function ImageUpload({
           className={`relative border-2 border-dashed rounded-lg p-6 text-center transition-colors ${
             dragActive
               ? 'border-blue-500 bg-blue-50'
-              : 'border-gray-300 hover:border-gray-400'
+              : 'border-gray-300 dark:border-gray-600 hover:border-gray-400'
           } ${uploading ? 'pointer-events-none opacity-60' : 'cursor-pointer'}`}
           onClick={() => fileInputRef.current?.click()}
         >
@@ -195,7 +195,7 @@ export function ImageUpload({
             value={value}
             onChange={(e) => onChange(e.target.value)}
             placeholder={placeholder}
-            className="w-full px-4 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 pr-10"
+            className="w-full px-4 py-2.5 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 pr-10"
           />
           {value && (
             <button
@@ -217,7 +217,7 @@ export function ImageUpload({
       {/* Preview */}
       {showPreview && value && (
         <div className="relative mt-3">
-          <div className="relative rounded-lg overflow-hidden border border-gray-200 bg-gray-50">
+          <div className="relative rounded-lg overflow-hidden border border-gray-200 dark:border-gray-700 bg-gray-50">
             <img
               src={value}
               alt="Preview"
@@ -343,7 +343,7 @@ export function MultiImageUpload({
               <img
                 src={url}
                 alt={`Image ${index + 1}`}
-                className="w-full h-full object-cover rounded-lg border border-gray-200 dark:border-gray-700"
+                className="w-full h-full object-cover rounded-lg border border-gray-200 dark:border-gray-700 dark:border-gray-700"
                 onError={(e) => {
                   (e.target as HTMLImageElement).src = 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="%239CA3AF" stroke-width="1"%3E%3Crect x="3" y="3" width="18" height="18" rx="2"/%3E%3C/svg%3E'
                 }}
@@ -375,7 +375,7 @@ export function MultiImageUpload({
             type="button"
             onClick={() => fileInputRef.current?.click()}
             disabled={uploading}
-            className="flex items-center gap-2 px-4 py-2 text-sm border border-gray-300 rounded-lg hover:bg-gray-50 disabled:opacity-50"
+            className="flex items-center gap-2 px-4 py-2 text-sm border border-gray-300 dark:border-gray-600 rounded-lg hover:bg-gray-50 disabled:opacity-50"
           >
             {uploading ? (
               <Loader2 className="w-4 h-4 animate-spin" />
@@ -387,7 +387,7 @@ export function MultiImageUpload({
           <button
             type="button"
             onClick={addUrlImage}
-            className="flex items-center gap-2 px-4 py-2 text-sm border border-gray-300 rounded-lg hover:bg-gray-50"
+            className="flex items-center gap-2 px-4 py-2 text-sm border border-gray-300 dark:border-gray-600 rounded-lg hover:bg-gray-50"
           >
             <Link className="w-4 h-4" />
             Add URL

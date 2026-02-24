@@ -787,7 +787,7 @@ export default function FinalSummary({
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.1 }}
-        className="bg-white dark:bg-gray-800 border border-gray-200 rounded-2xl p-6 mb-6"
+        className="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-2xl p-6 mb-6"
       >
         <h2 className="text-lg font-bold text-gray-900 dark:text-white mb-4 flex items-center gap-2">
           <Building2 className="w-5 h-5 text-gray-400" />
@@ -818,7 +818,7 @@ export default function FinalSummary({
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.2 }}
-        className="bg-white dark:bg-gray-800 border border-gray-200 rounded-2xl p-6 mb-6"
+        className="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-2xl p-6 mb-6"
       >
         <h2 className="text-lg font-bold text-gray-900 dark:text-white mb-4 flex items-center gap-2">
           <Sparkles className="w-5 h-5 text-gray-400" />
@@ -848,7 +848,7 @@ export default function FinalSummary({
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.3 }}
-        className="bg-white dark:bg-gray-800 border border-gray-200 rounded-2xl p-6 mb-6"
+        className="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-2xl p-6 mb-6"
       >
         <h2 className="text-lg font-bold text-gray-900 dark:text-white mb-4 flex items-center gap-2">
           <Settings className="w-5 h-5 text-gray-400" />
@@ -1057,7 +1057,7 @@ export default function FinalSummary({
                           className={`p-2 rounded-lg border-2 text-sm font-medium capitalize ${
                             bookingForm.preferredTime === time
                               ? 'border-green-500 bg-green-50 text-green-600'
-                              : 'border-gray-200 hover:border-gray-300'
+                              : 'border-gray-200 dark:border-gray-700 hover:border-gray-300'
                           }`}
                         >
                           {time}

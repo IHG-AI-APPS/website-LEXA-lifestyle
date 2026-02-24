@@ -96,7 +96,7 @@ export default function EmergencySupportPage() {
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {emergencyScenarios.map((scenario, index) => (
-                <div key={index} className="bg-white border-2 border-gray-200 rounded-xl p-6 hover:border-red-500 transition-all">
+                <div key={index} className="bg-white border-2 border-gray-200 dark:border-gray-700 rounded-xl p-6 hover:border-red-500 transition-all">
                   <div className="text-4xl mb-4">{scenario.icon}</div>
                   <h3 className="font-bold text-lg mb-2">{scenario.issue}</h3>
                   <div className="flex items-center gap-2 text-red-600 font-semibold">

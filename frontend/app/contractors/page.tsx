@@ -433,7 +433,7 @@ export default function ContractorsPage() {
                           className={`p-3 border-2 rounded-lg text-sm font-medium transition-all ${
                             formData.project_type === type.label
                               ? 'border-black bg-gray-50 text-black'
-                              : 'border-gray-200 hover:border-gray-400'
+                              : 'border-gray-200 dark:border-gray-700 hover:border-gray-400'
                           }`}
                         >
                           {type.label}
@@ -455,7 +455,7 @@ export default function ContractorsPage() {
                           className={`p-4 border-2 rounded-lg text-left transition-all ${
                             formData.systems_needed.includes(system.id)
                               ? 'border-black bg-gray-50'
-                              : 'border-gray-200 hover:border-gray-400'
+                              : 'border-gray-200 dark:border-gray-700 hover:border-gray-400'
                           }`}
                         >
                           <system.icon size={24} className={formData.systems_needed.includes(system.id) ? 'text-black mb-2' : 'text-gray-400 mb-2'} />
@@ -478,7 +478,7 @@ export default function ContractorsPage() {
                           className={`p-3 border-2 rounded-lg text-sm font-medium transition-all ${
                             formData.project_timeline === timeline.label
                               ? 'border-black bg-gray-50 text-black'
-                              : 'border-gray-200 hover:border-gray-400'
+                              : 'border-gray-200 dark:border-gray-700 hover:border-gray-400'
                           }`}
                         >
                           {timeline.label}

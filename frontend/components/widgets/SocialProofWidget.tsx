@@ -92,7 +92,7 @@ export default function SocialProofWidget() {
           initial={{ opacity: 0, x: -100, y: 0 }}
           animate={{ opacity: 1, x: 0, y: 0 }}
           exit={{ opacity: 0, x: -100, y: 0 }}
-          className="fixed bottom-24 left-4 z-40 max-w-[320px] bg-white dark:bg-gray-900 rounded-xl shadow-2xl border border-gray-100 dark:border-gray-700 overflow-hidden"
+          className="fixed bottom-24 left-4 z-40 max-w-[320px] bg-white dark:bg-gray-900 rounded-xl shadow-2xl border border-gray-100 dark:border-gray-800 dark:border-gray-700 overflow-hidden"
         >
           <div className="p-4">
             <div className="flex items-start gap-3">

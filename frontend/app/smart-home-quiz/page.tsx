@@ -271,7 +271,7 @@ export default function SmartHomeQuizPage() {
                       className={`p-6 rounded-xl border-2 text-left transition-all ${
                         isSelected 
                           ? `${colors.bg} ${colors.border} shadow-md` 
-                          : 'border-gray-200 hover:border-gray-300 hover:shadow-sm'
+                          : 'border-gray-200 dark:border-gray-700 hover:border-gray-300 dark:border-gray-600 hover:shadow-sm'
                       }`}
                     >
                       <div className="flex items-start gap-4">
@@ -333,7 +333,7 @@ export default function SmartHomeQuizPage() {
                       className={`p-6 rounded-xl border-2 text-center transition-all ${
                         isSelected 
                           ? 'bg-blue-50 border-blue-500 shadow-md' 
-                          : 'border-gray-200 hover:border-gray-300'
+                          : 'border-gray-200 dark:border-gray-700 hover:border-gray-300'
                       }`}
                     >
                       <Icon className={`h-10 w-10 mx-auto mb-3 ${isSelected ? 'text-blue-600' : 'text-gray-600'}`} />
@@ -385,7 +385,7 @@ export default function SmartHomeQuizPage() {
                       className={`p-6 rounded-xl border-2 text-left transition-all ${
                         isSelected 
                           ? 'bg-blue-50 border-blue-500 shadow-md' 
-                          : 'border-gray-200 hover:border-gray-300'
+                          : 'border-gray-200 dark:border-gray-700 hover:border-gray-300'
                       }`}
                     >
                       <h3 className={`font-bold text-lg ${isSelected ? 'text-blue-600' : 'text-gray-900'}`}>
@@ -466,7 +466,7 @@ export default function SmartHomeQuizPage() {
                       initial={{ opacity: 0, y: 10 }}
                       animate={{ opacity: 1, y: 0 }}
                       transition={{ duration: 0.15 }}
-                      className="flex items-center gap-4 p-4 rounded-xl border border-gray-200 hover:border-blue-300 hover:shadow-sm transition-all"
+                      className="flex items-center gap-4 p-4 rounded-xl border border-gray-200 dark:border-gray-700 hover:border-blue-300 hover:shadow-sm transition-all"
                     >
                       <div className="w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center text-blue-600 font-bold">
                         {index + 1}
@@ -492,7 +492,7 @@ export default function SmartHomeQuizPage() {
                 </div>
 
                 {/* CTAs */}
-                <div className="border-t border-gray-200 pt-6">
+                <div className="border-t border-gray-200 dark:border-gray-700 pt-6">
                   <h4 className="font-bold text-gray-900 dark:text-white mb-4">Ready to bring your smart home to life?</h4>
                   
                   {/* Save Results Button */}
@@ -574,7 +574,7 @@ export default function SmartHomeQuizPage() {
                                 type="text"
                                 value={saveName}
                                 onChange={(e) => setSaveName(e.target.value)}
-                                className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-purple-500"
+                                className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-xl focus:outline-none focus:ring-2 focus:ring-purple-500"
                                 placeholder="Your name"
                               />
                             </div>
@@ -585,7 +585,7 @@ export default function SmartHomeQuizPage() {
                                 required
                                 value={saveEmail}
                                 onChange={(e) => setSaveEmail(e.target.value)}
-                                className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-purple-500"
+                                className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-xl focus:outline-none focus:ring-2 focus:ring-purple-500"
                                 placeholder="your@email.com"
                               />
                             </div>

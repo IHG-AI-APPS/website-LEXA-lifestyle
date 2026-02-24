@@ -201,7 +201,7 @@ export default function SolutionsBentoGrid() {
               >
                 <Link
                   href={`/solutions/${solution.slug}`}
-                  className="group relative block h-full overflow-hidden rounded-lg md:rounded-xl border border-gray-200 dark:border-gray-700 transition-all hover:border-[#E8DCC8] hover:shadow-xl"
+                  className="group relative block h-full overflow-hidden rounded-lg md:rounded-xl border border-gray-200 dark:border-gray-700 dark:border-gray-700 transition-all hover:border-[#E8DCC8] hover:shadow-xl"
                   data-testid={`solution-${index}`}
                 >
                   {/* Background Image */}

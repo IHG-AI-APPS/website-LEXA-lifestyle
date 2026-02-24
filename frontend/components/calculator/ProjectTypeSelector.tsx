@@ -42,7 +42,7 @@ export default function ProjectTypeSelector({
                 className={`p-6 rounded-xl border-2 text-left transition-all ${
                   isSelected
                     ? 'border-black bg-black text-white'
-                    : 'border-gray-200 hover:border-gray-400 bg-white'
+                    : 'border-gray-200 dark:border-gray-700 hover:border-gray-400 bg-white'
                 }`}
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
@@ -72,7 +72,7 @@ export default function ProjectTypeSelector({
                 className={`p-4 rounded-lg border-2 text-left transition-all ${
                   selectedSubCategory === subCat.id
                     ? 'border-black bg-gray-50'
-                    : 'border-gray-200 hover:border-gray-300'
+                    : 'border-gray-200 dark:border-gray-700 hover:border-gray-300'
                 }`}
               >
                 <span className="font-medium">{subCat.label}</span>

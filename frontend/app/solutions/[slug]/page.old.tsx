@@ -107,7 +107,7 @@ export default function SolutionDetailPage() {
                   {solution.tags.map((tag) => (
                     <span
                       key={tag}
-                      className="px-4 py-2 border border-gray-300 text-sm font-medium tracking-wide uppercase"
+                      className="px-4 py-2 border border-gray-300 dark:border-gray-600 text-sm font-medium tracking-wide uppercase"
                     >
                       {tag}
                     </span>
@@ -157,7 +157,7 @@ export default function SolutionDetailPage() {
 
       {/* Long Description Section */}
       {solution.long_description && (
-        <section className="py-20 border-b border-gray-200 dark:border-gray-700">
+        <section className="py-20 border-b border-gray-200 dark:border-gray-700 dark:border-gray-700">
           <div className="container mx-auto px-8 lg:px-16">
             <div className="max-w-4xl mx-auto">
               <motion.div
@@ -202,7 +202,7 @@ export default function SolutionDetailPage() {
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.6, delay: 0.2 }}
                     viewport={{ once: true }}
-                    className="bg-gray-50 border border-gray-200 p-8 hover:border-charcoal transition-all duration-300"
+                    className="bg-gray-50 border border-gray-200 dark:border-gray-700 p-8 hover:border-charcoal transition-all duration-300"
                   >
                     <div className="mb-4">
                       <Sparkles className="text-charcoal" size={32} strokeWidth={1.5} />
@@ -252,7 +252,7 @@ export default function SolutionDetailPage() {
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: 0.2 }}
                   viewport={{ once: true }}
-                  className="flex items-start gap-4 p-6 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700"
+                  className="flex items-start gap-4 p-6 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 dark:border-gray-700"
                 >
                   <CheckCircle2 className="text-charcoal flex-shrink-0 mt-1" size={24} strokeWidth={2} />
                   <div>
@@ -267,7 +267,7 @@ export default function SolutionDetailPage() {
 
       {/* Technology Brands Section */}
       {solution.brands.length > 0 && (
-        <section className="py-20 border-b border-gray-200 dark:border-gray-700">
+        <section className="py-20 border-b border-gray-200 dark:border-gray-700 dark:border-gray-700">
           <div className="container mx-auto px-8 lg:px-16">
             <div className="max-w-6xl mx-auto">
               <motion.div
@@ -293,7 +293,7 @@ export default function SolutionDetailPage() {
                 {solution.brands.map((brand, index) => (
                   <div
                     key={index}
-                    className="px-8 py-4 border border-gray-300 text-lg font-medium tracking-wide hover:border-charcoal transition-colors"
+                    className="px-8 py-4 border border-gray-300 dark:border-gray-600 text-lg font-medium tracking-wide hover:border-charcoal transition-colors"
                   >
                     {brand}
                   </div>
@@ -406,7 +406,7 @@ export default function SolutionDetailPage() {
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.6, delay: 0.2 }}
                     viewport={{ once: true }}
-                    className="bg-white dark:bg-gray-800 p-8 border border-gray-200 dark:border-gray-700"
+                    className="bg-white dark:bg-gray-800 p-8 border border-gray-200 dark:border-gray-700 dark:border-gray-700"
                   >
                     <h3 className="text-xl font-semibold mb-3">{faq.question}</h3>
                     <p className="text-gray-600 dark:text-gray-400 leading-relaxed">{faq.answer}</p>
@@ -420,7 +420,7 @@ export default function SolutionDetailPage() {
 
       {/* Use Cases Section */}
       {solution.use_cases && solution.use_cases.length > 0 && (
-        <section className="py-20 border-b border-gray-200 dark:border-gray-700">
+        <section className="py-20 border-b border-gray-200 dark:border-gray-700 dark:border-gray-700">
           <div className="container mx-auto px-8 lg:px-16">
             <div className="max-w-6xl mx-auto">
               <motion.div
@@ -444,7 +444,7 @@ export default function SolutionDetailPage() {
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.6, delay: 0.2 }}
                     viewport={{ once: true }}
-                    className="bg-white border-2 border-gray-200 p-8 hover:border-charcoal transition-colors"
+                    className="bg-white border-2 border-gray-200 dark:border-gray-700 p-8 hover:border-charcoal transition-colors"
                   >
                     <h3 className="text-2xl font-semibold mb-4">{useCase.title}</h3>
                     <p className="text-gray-600 dark:text-gray-400 leading-relaxed">{useCase.description}</p>
@@ -482,7 +482,7 @@ export default function SolutionDetailPage() {
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.6, delay: 0.15 }}
                     viewport={{ once: true }}
-                    className="flex items-start gap-4 p-6 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700"
+                    className="flex items-start gap-4 p-6 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 dark:border-gray-700"
                   >
                     <CheckCircle2 className="text-charcoal flex-shrink-0 mt-1" size={24} strokeWidth={2} />
                     <div>
@@ -577,7 +577,7 @@ export default function SolutionDetailPage() {
                 <Button
                   size="lg"
                   variant="outline"
-                  className="border-gray-300 px-12 py-7"
+                  className="border-gray-300 dark:border-gray-600 px-12 py-7"
                   onClick={() => window.location.href = '/calculator'}
                 >
                   Calculate Cost

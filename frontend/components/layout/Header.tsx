@@ -141,7 +141,7 @@ export default function Header() {
         }}
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
           shouldUseDarkText
-            ? 'bg-white/95 dark:bg-gray-900/95 backdrop-blur-md elevation-4 border-b border-gray-200 dark:border-gray-700' 
+            ? 'bg-white/95 dark:bg-gray-900/95 backdrop-blur-md elevation-4 border-b border-gray-200 dark:border-gray-700 dark:border-gray-700' 
             : 'bg-transparent'
         }`}
       >
@@ -275,7 +275,7 @@ export default function Header() {
                 variant="outline"
                 className={`px-4 xl:px-5 py-2 text-xs font-semibold uppercase tracking-wider btn-magnetic ${
                   shouldUseDarkText
-                    ? 'border-2 border-[#1A1A1A] dark:border-gray-300 text-[#1A1A1A] dark:text-gray-200 hover:bg-[#1A1A1A] dark:hover:bg-gray-200 hover:text-white dark:hover:text-gray-900'
+                    ? 'border-2 border-[#1A1A1A] dark:border-gray-300 dark:border-gray-600 text-[#1A1A1A] dark:text-gray-200 hover:bg-[#1A1A1A] dark:hover:bg-gray-200 hover:text-white dark:hover:text-gray-900'
                     : 'border-2 border-white text-white hover:bg-white hover:text-[#1A1A1A]'
                 }`}
                 onClick={() => setShowConsultationForm(true)}
@@ -308,7 +308,7 @@ export default function Header() {
                 animate={{ opacity: 1, height: 'auto' }}
                 exit={{ opacity: 0, height: 0 }}
                 transition={{ duration: 0.3 }}
-                className="lg:hidden py-6 border-t border-gray-200 dark:border-gray-700 bg-white dark:bg-[#0a0f1a] overflow-y-auto max-h-[calc(100vh-80px)]"
+                className="lg:hidden py-6 border-t border-gray-200 dark:border-gray-700 dark:border-gray-700 bg-white dark:bg-[#0a0f1a] overflow-y-auto max-h-[calc(100vh-80px)]"
               >
                 {/* Mobile Solutions Button */}
                 <motion.div
@@ -404,7 +404,7 @@ export default function Header() {
                   initial={{ opacity: 0, x: -20 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ delay: 0.35 }}
-                  className="px-4 py-3 flex items-center justify-between border-t border-gray-100 dark:border-gray-800"
+                  className="px-4 py-3 flex items-center justify-between border-t border-gray-100 dark:border-gray-800 dark:border-gray-800"
                 >
                   <span className="text-sm font-medium text-gray-700 dark:text-gray-300 dark:text-gray-300 uppercase tracking-wider">
                     {theme === 'dark' ? (language === 'ar' ? 'الوضع الليلي' : 'Dark Mode') : (language === 'ar' ? 'الوضع الفاتح' : 'Light Mode')}

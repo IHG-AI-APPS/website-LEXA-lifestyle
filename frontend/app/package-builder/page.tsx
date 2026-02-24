@@ -333,7 +333,7 @@ export default function PackageBuilderPage() {
                     className={`relative rounded-2xl border-2 p-8 transition-all ${
                       tier.recommended 
                         ? 'border-purple-500 shadow-2xl scale-105' 
-                        : 'border-gray-200 hover:border-blue-500'
+                        : 'border-gray-200 dark:border-gray-700 hover:border-blue-500'
                     }`}
                   >
                     {tier.badge && (
@@ -414,7 +414,7 @@ export default function PackageBuilderPage() {
                     <div
                       key={system.id}
                       onClick={() => selectControlSystem(system)}
-                      className="group relative rounded-2xl border-2 border-gray-200 p-6 cursor-pointer hover:border-blue-500 hover:shadow-xl transition-all bg-white"
+                      className="group relative rounded-2xl border-2 border-gray-200 dark:border-gray-700 p-6 cursor-pointer hover:border-blue-500 hover:shadow-xl transition-all bg-white"
                     >
                       {system.featured && (
                         <div className="absolute -top-3 left-6 px-3 py-1 bg-blue-500 text-white text-xs font-bold rounded-full">
@@ -476,7 +476,7 @@ export default function PackageBuilderPage() {
                         </div>
                       </div>
 
-                      <div className="pt-4 border-t border-gray-200 dark:border-gray-700">
+                      <div className="pt-4 border-t border-gray-200 dark:border-gray-700 dark:border-gray-700">
                         <p className="text-xs text-gray-500 mb-1">Price Range</p>
                         <p className="font-bold text-gray-900 dark:text-white dark:text-white">
                           {system.price_range_aed ? (
@@ -537,7 +537,7 @@ export default function PackageBuilderPage() {
                   if (applicableItems.length === 0) return null
 
                   return (
-                    <div key={category} className="bg-white dark:bg-gray-800 rounded-2xl border-2 border-gray-200 p-6">
+                    <div key={category} className="bg-white dark:bg-gray-800 rounded-2xl border-2 border-gray-200 dark:border-gray-700 p-6">
                       <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-4 flex items-center gap-2">
                         {category}
                         <span className="text-sm font-normal text-gray-500">
@@ -559,7 +559,7 @@ export default function PackageBuilderPage() {
                                   ? 'border-blue-500 bg-blue-50 shadow-lg' 
                                   : isAiRecommended
                                     ? 'border-amber-300 bg-amber-50/50 hover:border-amber-400'
-                                    : 'border-gray-200 hover:border-gray-400'
+                                    : 'border-gray-200 dark:border-gray-700 hover:border-gray-400'
                               }`}
                             >
                               {/* AI Recommended Badge */}
@@ -599,7 +599,7 @@ export default function PackageBuilderPage() {
                                 )}
                               </div>
 
-                              <div className="flex items-center justify-between pt-3 border-t border-gray-200 dark:border-gray-700">
+                              <div className="flex items-center justify-between pt-3 border-t border-gray-200 dark:border-gray-700 dark:border-gray-700">
                                 <span className={`text-xs px-2 py-1 rounded ${
                                   item.type === 'upgrade' 
                                     ? 'bg-purple-100 text-purple-700' 
@@ -702,7 +702,7 @@ export default function PackageBuilderPage() {
                     const defaultOption = category.options?.[0] || null
                     
                     return (
-                      <div key={category.id} className="bg-white dark:bg-gray-800 rounded-2xl border-2 border-gray-200 p-6">
+                      <div key={category.id} className="bg-white dark:bg-gray-800 rounded-2xl border-2 border-gray-200 dark:border-gray-700 p-6">
                         <div className="mb-6">
                           <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-2">
                             {category.product_type}
@@ -727,7 +727,7 @@ export default function PackageBuilderPage() {
                                 className={`relative rounded-xl border-2 p-5 cursor-pointer transition-all ${
                                   isSelected
                                     ? 'border-blue-500 bg-blue-50 shadow-lg' 
-                                    : 'border-gray-200 hover:border-gray-400'
+                                    : 'border-gray-200 dark:border-gray-700 hover:border-gray-400'
                                 }`}
                               >
                                 {isSelected && (
@@ -758,7 +758,7 @@ export default function PackageBuilderPage() {
                                   </ul>
                                 </div>
 
-                                <div className="pt-3 border-t border-gray-200 text-center">
+                                <div className="pt-3 border-t border-gray-200 dark:border-gray-700 text-center">
                                   <span className={`font-bold text-lg ${
                                     option.price_adjustment === 0 
                                       ? 'text-green-600' 
@@ -838,7 +838,7 @@ export default function PackageBuilderPage() {
                       className={`relative rounded-xl border-2 p-6 cursor-pointer transition-all ${
                         isSelected 
                           ? 'border-blue-500 bg-blue-50 shadow-lg' 
-                          : 'border-gray-200 hover:border-gray-400'
+                          : 'border-gray-200 dark:border-gray-700 hover:border-gray-400'
                       }`}
                     >
                       {isSelected && (
@@ -1006,7 +1006,7 @@ export default function PackageBuilderPage() {
                         type="text"
                         value={contactInfo.name}
                         onChange={(e) => setContactInfo({...contactInfo, name: e.target.value})}
-                        className="w-full px-4 py-4 border-2 border-gray-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent text-lg"
+                        className="w-full px-4 py-4 border-2 border-gray-300 dark:border-gray-600 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent text-lg"
                         placeholder="John Smith"
                         required
                       />
@@ -1020,7 +1020,7 @@ export default function PackageBuilderPage() {
                         type="email"
                         value={contactInfo.email}
                         onChange={(e) => setContactInfo({...contactInfo, email: e.target.value})}
-                        className="w-full px-4 py-4 border-2 border-gray-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent text-lg"
+                        className="w-full px-4 py-4 border-2 border-gray-300 dark:border-gray-600 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent text-lg"
                         placeholder="john@example.com"
                         required
                       />
@@ -1034,7 +1034,7 @@ export default function PackageBuilderPage() {
                         type="tel"
                         value={contactInfo.phone}
                         onChange={(e) => setContactInfo({...contactInfo, phone: e.target.value})}
-                        className="w-full px-4 py-4 border-2 border-gray-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent text-lg"
+                        className="w-full px-4 py-4 border-2 border-gray-300 dark:border-gray-600 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent text-lg"
                         placeholder="+971 50 123 4567"
                         required
                       />
@@ -1048,7 +1048,7 @@ export default function PackageBuilderPage() {
                         value={contactInfo.message}
                         onChange={(e) => setContactInfo({...contactInfo, message: e.target.value})}
                         rows={5}
-                        className="w-full px-4 py-4 border-2 border-gray-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent text-lg"
+                        className="w-full px-4 py-4 border-2 border-gray-300 dark:border-gray-600 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent text-lg"
                         placeholder="Tell us about your project timeline, specific requirements, or any questions..."
                       />
                     </div>

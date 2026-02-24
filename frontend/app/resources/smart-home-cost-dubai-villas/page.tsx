@@ -80,7 +80,7 @@ export default function SmartHomeCostDubaiPage() {
             <h2 className="text-4xl sm:text-5xl font-bold mb-12">Cost Breakdown by System</h2>
             
             <div className="space-y-8">
-              <div className="bg-white border-2 border-gray-200 rounded-xl p-8">
+              <div className="bg-white border-2 border-gray-200 dark:border-gray-700 rounded-xl p-8">
                 <h3 className="text-2xl font-bold mb-4">Smart Lighting Control</h3>
                 <p className="text-gray-700 dark:text-gray-300 mb-4">
                   Automated lighting with scenes, schedules, and dimming control throughout the villa.
@@ -97,7 +97,7 @@ export default function SmartHomeCostDubaiPage() {
                 </div>
               </div>
 
-              <div className="bg-white border-2 border-gray-200 rounded-xl p-8">
+              <div className="bg-white border-2 border-gray-200 dark:border-gray-700 rounded-xl p-8">
                 <h3 className="text-2xl font-bold mb-4">Climate Control Integration</h3>
                 <p className="text-gray-700 dark:text-gray-300 mb-4">
                   HVAC automation with zone control, scheduling, and energy optimization.
@@ -114,7 +114,7 @@ export default function SmartHomeCostDubaiPage() {
                 </div>
               </div>
 
-              <div className="bg-white border-2 border-gray-200 rounded-xl p-8">
+              <div className="bg-white border-2 border-gray-200 dark:border-gray-700 rounded-xl p-8">
                 <h3 className="text-2xl font-bold mb-4">Security & Access Control</h3>
                 <p className="text-gray-700 dark:text-gray-300 mb-4">
                   CCTV, alarm systems, smart locks, video intercoms, and perimeter security.
@@ -131,7 +131,7 @@ export default function SmartHomeCostDubaiPage() {
                 </div>
               </div>
 
-              <div className="bg-white border-2 border-gray-200 rounded-xl p-8">
+              <div className="bg-white border-2 border-gray-200 dark:border-gray-700 rounded-xl p-8">
                 <h3 className="text-2xl font-bold mb-4">Multi-Room Audio/Video</h3>
                 <p className="text-gray-700 dark:text-gray-300 mb-4">
                   Distributed audio, home cinema, and centralized media control.
@@ -148,7 +148,7 @@ export default function SmartHomeCostDubaiPage() {
                 </div>
               </div>
 
-              <div className="bg-white border-2 border-gray-200 rounded-xl p-8">
+              <div className="bg-white border-2 border-gray-200 dark:border-gray-700 rounded-xl p-8">
                 <h3 className="text-2xl font-bold mb-4">Motorized Shades & Curtains</h3>
                 <p className="text-gray-700 dark:text-gray-300 mb-4">
                   Automated window treatments with scheduling and light sensors.
@@ -165,7 +165,7 @@ export default function SmartHomeCostDubaiPage() {
                 </div>
               </div>
 
-              <div className="bg-white border-2 border-gray-200 rounded-xl p-8">
+              <div className="bg-white border-2 border-gray-200 dark:border-gray-700 rounded-xl p-8">
                 <h3 className="text-2xl font-bold mb-4">Central Control System</h3>
                 <p className="text-gray-700 dark:text-gray-300 mb-4">
                   KNX, Control4, Crestron, or Savant – the brain of your smart home.

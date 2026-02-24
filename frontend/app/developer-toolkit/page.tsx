@@ -118,7 +118,7 @@ export default function DeveloperToolkitPage() {
             
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {toolkitResources.map((resource, index) => (
-                <div key={index} className="bg-white dark:bg-gray-800 rounded-2xl p-8 shadow-lg border-2 border-gray-200 hover:border-black transition-all">
+                <div key={index} className="bg-white dark:bg-gray-800 rounded-2xl p-8 shadow-lg border-2 border-gray-200 dark:border-gray-700 hover:border-black transition-all">
                   <div className={`inline-flex items-center justify-center w-16 h-16 mb-6 rounded-full bg-gradient-to-r ${resource.color}`}>
                     <resource.icon size={32} className="text-white" />
                   </div>

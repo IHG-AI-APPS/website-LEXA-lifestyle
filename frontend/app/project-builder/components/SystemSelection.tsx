@@ -245,7 +245,7 @@ export default function SystemSelection({
                       className={`relative p-5 rounded-xl border-2 text-left transition-all ${
                         isSelected
                           ? 'border-green-500 bg-green-50 shadow-lg ring-2 ring-green-500/20'
-                          : 'border-gray-200 bg-white hover:border-gray-400 hover:shadow-md'
+                          : 'border-gray-200 dark:border-gray-700 bg-white hover:border-gray-400 hover:shadow-md'
                       }`}
                     >
                       {/* Recommended Badge */}
@@ -327,7 +327,7 @@ export default function SystemSelection({
                       className={`relative p-5 rounded-xl border-2 text-left transition-all ${
                         isSelected
                           ? 'border-green-500 bg-green-50 shadow-lg'
-                          : 'border-gray-200 bg-white hover:border-gray-400 hover:shadow-md'
+                          : 'border-gray-200 dark:border-gray-700 bg-white hover:border-gray-400 hover:shadow-md'
                       }`}
                     >
                       {/* Selection Indicator */}
@@ -365,7 +365,7 @@ export default function SystemSelection({
       )}
 
       {/* Navigation */}
-      <div className="sticky bottom-0 bg-white border-t border-gray-200 p-4 -mx-4 mt-8">
+      <div className="sticky bottom-0 bg-white border-t border-gray-200 dark:border-gray-700 p-4 -mx-4 mt-8">
         <div className="max-w-6xl mx-auto flex items-center justify-between">
           <div>
             <span className="text-sm text-gray-500">Selected systems:</span>

@@ -54,7 +54,7 @@ export default function CookieConsent() {
 
   return (
     <div className="fixed bottom-0 left-0 right-0 z-50 p-2 sm:p-3 animate-slide-up">
-      <div className="max-w-md mx-auto bg-white dark:bg-gray-900 rounded-xl shadow-xl border border-gray-100 dark:border-gray-700 overflow-hidden">
+      <div className="max-w-md mx-auto bg-white dark:bg-gray-900 rounded-xl shadow-xl border border-gray-100 dark:border-gray-800 dark:border-gray-700 overflow-hidden">
         {/* Header - Very compact */}
         <div className="bg-[#1A1A1A] px-3 py-2 flex items-center justify-between">
           <div className="flex items-center gap-2">

@@ -151,7 +151,7 @@ export default function KnowledgeGraphVisualizer({
 
   if (!graphData || !graphData.nodes || graphData.nodes.length === 0) {
     return (
-      <div className="bg-gray-50 border border-gray-200 rounded-lg p-12 text-center">
+      <div className="bg-gray-50 border border-gray-200 dark:border-gray-700 rounded-lg p-12 text-center">
         <Network className="w-16 h-16 text-gray-400 mx-auto mb-4" />
         <h3 className="text-lg font-medium text-gray-900 dark:text-white mb-2">
           No Dependency Graph Available
@@ -168,9 +168,9 @@ export default function KnowledgeGraphVisualizer({
   const warningsCount = graphData.warnings?.length || 0
 
   return (
-    <div className="bg-white dark:bg-gray-800 border border-gray-200 rounded-lg overflow-hidden">
+    <div className="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg overflow-hidden">
       {/* Header */}
-      <div className="bg-gradient-to-r from-blue-50 to-purple-50 border-b border-gray-200 p-6">
+      <div className="bg-gradient-to-r from-blue-50 to-purple-50 border-b border-gray-200 dark:border-gray-700 p-6">
         <div className="flex items-center justify-between mb-4">
           <div>
             <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-1">
@@ -233,11 +233,11 @@ export default function KnowledgeGraphVisualizer({
             showZoom={true}
             showFitView={true}
             showInteractive={false}
-            className="bg-white dark:bg-gray-800 border border-gray-300 rounded-lg shadow-lg"
+            className="bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-600 rounded-lg shadow-lg"
           />
           
           {/* Legend Panel */}
-          <Panel position="top-right" className="bg-white dark:bg-gray-800 border border-gray-200 rounded-lg p-4 shadow-lg">
+          <Panel position="top-right" className="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg p-4 shadow-lg">
             <div className="text-xs font-medium text-gray-900 dark:text-white mb-3 uppercase tracking-widest">
               Legend
             </div>
@@ -255,7 +255,7 @@ export default function KnowledgeGraphVisualizer({
                 <span className="text-gray-700 dark:text-gray-300 dark:text-gray-300">Dependency Link</span>
               </div>
             </div>
-            <div className="mt-4 pt-3 border-t border-gray-200 text-[10px] text-gray-500">
+            <div className="mt-4 pt-3 border-t border-gray-200 dark:border-gray-700 text-[10px] text-gray-500">
               💡 Click and drag to pan<br />
               🔍 Use controls to zoom
             </div>
@@ -265,7 +265,7 @@ export default function KnowledgeGraphVisualizer({
 
       {/* Warnings Section */}
       {warningsCount > 0 && (
-        <div className="border-t border-gray-200 bg-orange-50 p-6">
+        <div className="border-t border-gray-200 dark:border-gray-700 bg-orange-50 p-6">
           <div className="flex items-start gap-3">
             <AlertTriangle className="w-5 h-5 text-orange-600 mt-0.5" />
             <div className="flex-1">
@@ -290,7 +290,7 @@ export default function KnowledgeGraphVisualizer({
       )}
 
       {/* How to Read Section */}
-      <div className="border-t border-gray-200 bg-gray-50 p-6">
+      <div className="border-t border-gray-200 dark:border-gray-700 bg-gray-50 p-6">
         <h4 className="text-xs font-medium text-gray-900 dark:text-white mb-3 uppercase tracking-widest">
           How to Read This Graph
         </h4>

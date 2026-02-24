@@ -157,13 +157,13 @@ export default function ProcessPage() {
                   {/* Phase Header */}
                   <div className="lg:col-span-12">
                     <div className="flex items-start gap-8 mb-8">
-                      <div className="w-20 h-20 border border-gray-300 flex items-center justify-center flex-shrink-0">
+                      <div className="w-20 h-20 border border-gray-300 dark:border-gray-600 flex items-center justify-center flex-shrink-0">
                         <Icon size={36} className="text-charcoal" strokeWidth={1.5} />
                       </div>
                       <div className="flex-1">
                         <div className="flex items-center gap-4 mb-3">
                           <span className="text-3xl font-semibold text-gray-300">{phase.number}</span>
-                          <span className="text-xs tracking-wider uppercase text-gray-400 border border-gray-300 px-3 py-1">
+                          <span className="text-xs tracking-wider uppercase text-gray-400 border border-gray-300 dark:border-gray-600 px-3 py-1">
                             {phase.duration}
                           </span>
                         </div>
@@ -192,7 +192,7 @@ export default function ProcessPage() {
                     <h4 className="text-xs tracking-wider uppercase text-gray-400 mb-4">Deliverables</h4>
                     <ul className="space-y-2">
                       {phase.deliverables.map((deliverable) => (
-                        <li key={deliverable} className="text-gray-600 dark:text-gray-400 border-l-2 border-gray-300 pl-4 py-1">
+                        <li key={deliverable} className="text-gray-600 dark:text-gray-400 border-l-2 border-gray-300 dark:border-gray-600 pl-4 py-1">
                           {deliverable}
                         </li>
                       ))}

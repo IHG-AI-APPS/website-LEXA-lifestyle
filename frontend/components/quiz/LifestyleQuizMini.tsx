@@ -114,7 +114,7 @@ export default function LifestyleQuizMini({ onComplete, onSkip }: LifestyleQuizP
               className={`flex items-center gap-2 px-3 py-2 rounded-lg border-2 transition-all text-sm ${
                 isSelected 
                   ? colorMap[p.color]
-                  : 'bg-white border-gray-200 text-gray-700 dark:text-gray-300 hover:border-gray-300'
+                  : 'bg-white border-gray-200 dark:border-gray-700 text-gray-700 dark:text-gray-300 hover:border-gray-300'
               }`}
             >
               <Icon className="h-4 w-4 flex-shrink-0" />

@@ -77,7 +77,7 @@ export default function CompanyPage() {
                     viewport={{ once: true }}
                     className="text-center"
                   >
-                    <div className="w-16 h-16 mx-auto mb-6 border border-gray-300 flex items-center justify-center">
+                    <div className="w-16 h-16 mx-auto mb-6 border border-gray-300 dark:border-gray-600 flex items-center justify-center">
                       <Icon size={32} className="text-charcoal" strokeWidth={1.5} />
                     </div>
                     <h3 className="text-xl font-semibold mb-3">{value.title}</h3>

@@ -100,7 +100,7 @@ export default function ResumePage() {
       <div className="min-h-screen bg-gray-50 pt-20">
         <div className="container mx-auto px-4 py-8 max-w-md">
           <div className="animate-pulse text-center">
-            <div className="h-12 w-12 border-2 border-gray-200 border-t-blue-600 rounded-full animate-spin mx-auto mb-4"></div>
+            <div className="h-12 w-12 border-2 border-gray-200 dark:border-gray-700 border-t-blue-600 rounded-full animate-spin mx-auto mb-4"></div>
             <div className="h-4 bg-gray-200 rounded w-2/3 mx-auto"></div>
           </div>
         </div>

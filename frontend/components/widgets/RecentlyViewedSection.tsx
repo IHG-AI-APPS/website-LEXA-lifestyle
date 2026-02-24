@@ -206,7 +206,7 @@ export default function RecentlyViewedSection({
                   transition={{ delay: index * 0.05 }}
                   className="flex-shrink-0 w-64 snap-start"
                 >
-                  <div className="group relative bg-white dark:bg-gray-800 rounded-xl overflow-hidden shadow-sm hover:shadow-lg transition-all duration-300 border border-gray-100 dark:border-gray-700">
+                  <div className="group relative bg-white dark:bg-gray-800 rounded-xl overflow-hidden shadow-sm hover:shadow-lg transition-all duration-300 border border-gray-100 dark:border-gray-800 dark:border-gray-700">
                     {/* Remove button */}
                     <button
                       onClick={(e) => {
@@ -267,7 +267,7 @@ export default function RecentlyViewedSection({
                   exit={{ opacity: 0, y: -20 }}
                   transition={{ delay: index * 0.05 }}
                 >
-                  <div className="group relative bg-white dark:bg-gray-800 rounded-xl overflow-hidden shadow-sm hover:shadow-lg transition-all duration-300 border border-gray-100 dark:border-gray-700">
+                  <div className="group relative bg-white dark:bg-gray-800 rounded-xl overflow-hidden shadow-sm hover:shadow-lg transition-all duration-300 border border-gray-100 dark:border-gray-800 dark:border-gray-700">
                     {/* Remove button */}
                     <button
                       onClick={(e) => {

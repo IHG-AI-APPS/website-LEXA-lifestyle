@@ -95,7 +95,7 @@ export default function CareersPage() {
                 type: 'Full-time'
               }
             ].map((job, index) => (
-              <div key={index} className="bg-white dark:bg-gray-800 p-6 border border-gray-200 hover:border-[#E8DCC8] transition-colors">
+              <div key={index} className="bg-white dark:bg-gray-800 p-6 border border-gray-200 dark:border-gray-700 hover:border-[#E8DCC8] transition-colors">
                 <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
                   <div>
                     <h3 className="text-xl font-semibold mb-2">{job.title}</h3>

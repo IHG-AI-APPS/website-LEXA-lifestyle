@@ -67,7 +67,7 @@ export default function Workflow() {
               >
                 {/* Number Circle */}
                 <div className="relative mb-8">
-                  <div className="w-full aspect-square border border-gray-300 group-hover:border-charcoal transition-colors duration-300 flex items-center justify-center">
+                  <div className="w-full aspect-square border border-gray-300 dark:border-gray-600 group-hover:border-charcoal transition-colors duration-300 flex items-center justify-center">
                     <span className="text-5xl font-semibold tracking-tight group-hover:scale-110 transition-transform duration-300">
                       {step.number}
                     </span>
@@ -101,7 +101,7 @@ export default function Workflow() {
                 className="flex gap-6"
               >
                 {/* Number */}
-                <div className="flex-shrink-0 w-20 h-20 border border-gray-300 flex items-center justify-center">
+                <div className="flex-shrink-0 w-20 h-20 border border-gray-300 dark:border-gray-600 flex items-center justify-center">
                   <span className="text-3xl font-semibold tracking-tight">{step.number}</span>
                 </div>
 
@@ -127,7 +127,7 @@ export default function Workflow() {
             <p className="text-lg text-gray-600 dark:text-gray-400 font-light mb-8 max-w-2xl mx-auto">
               Every project follows our proven methodology, ensuring predictable outcomes and exceptional results.
             </p>
-            <button className="px-10 py-5 border border-gray-300 hover:border-charcoal hover:bg-gray-100 text-charcoal text-sm font-medium tracking-wide transition-all duration-300">
+            <button className="px-10 py-5 border border-gray-300 dark:border-gray-600 hover:border-charcoal hover:bg-gray-100 text-charcoal text-sm font-medium tracking-wide transition-all duration-300">
               Learn More About Our Process
             </button>
           </motion.div>

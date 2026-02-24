@@ -178,7 +178,7 @@ export default function DashboardPage() {
           <motion.div
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
-            className="bg-white dark:bg-gray-800 rounded-xl border border-gray-200 p-12 text-center"
+            className="bg-white dark:bg-gray-800 rounded-xl border border-gray-200 dark:border-gray-700 p-12 text-center"
           >
             <div className="w-16 h-16 bg-gray-100 rounded-full flex items-center justify-center mx-auto mb-4">
               <FolderOpen className="w-8 h-8 text-gray-400" />
@@ -206,7 +206,7 @@ export default function DashboardPage() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.2 }}
-                className="bg-white dark:bg-gray-800 rounded-xl border border-gray-200 overflow-hidden hover:shadow-lg transition-shadow"
+                className="bg-white dark:bg-gray-800 rounded-xl border border-gray-200 dark:border-gray-700 overflow-hidden hover:shadow-lg transition-shadow"
                 data-testid={`project-card-${session.session_id}`}
               >
                 {/* Card Header */}
@@ -317,17 +317,17 @@ export default function DashboardPage() {
             transition={{ delay: 0.3 }}
             className="mt-8 grid grid-cols-1 sm:grid-cols-3 gap-4"
           >
-            <div className="bg-white dark:bg-gray-800 rounded-xl border border-gray-200 p-4 text-center">
+            <div className="bg-white dark:bg-gray-800 rounded-xl border border-gray-200 dark:border-gray-700 p-4 text-center">
               <div className="text-3xl font-semibold text-gray-900 dark:text-white dark:text-white">{sessions.length}</div>
               <div className="text-sm text-gray-500">Total Projects</div>
             </div>
-            <div className="bg-white dark:bg-gray-800 rounded-xl border border-gray-200 p-4 text-center">
+            <div className="bg-white dark:bg-gray-800 rounded-xl border border-gray-200 dark:border-gray-700 p-4 text-center">
               <div className="text-3xl font-semibold text-blue-600">
                 {sessions.filter(s => !s.completed).length}
               </div>
               <div className="text-sm text-gray-500">In Progress</div>
             </div>
-            <div className="bg-white dark:bg-gray-800 rounded-xl border border-gray-200 p-4 text-center">
+            <div className="bg-white dark:bg-gray-800 rounded-xl border border-gray-200 dark:border-gray-700 p-4 text-center">
               <div className="text-3xl font-semibold text-green-600">
                 {sessions.filter(s => s.completed).length}
               </div>

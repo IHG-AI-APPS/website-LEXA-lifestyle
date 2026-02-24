@@ -257,7 +257,7 @@ export default function DevelopersPage() {
                 >
                   <button
                     onClick={() => handleResourceClick(resource.id)}
-                    className="w-full bg-white border-2 border-gray-200 rounded-2xl p-8 hover:border-blue-600 hover:shadow-2xl transition-all transform hover:scale-105 text-left"
+                    className="w-full bg-white border-2 border-gray-200 dark:border-gray-700 rounded-2xl p-8 hover:border-blue-600 hover:shadow-2xl transition-all transform hover:scale-105 text-left"
                   >
                     <div className="inline-flex items-center justify-center w-16 h-16 mb-6 rounded-full bg-blue-100">
                       <resource.icon size={32} className="text-blue-600" />
@@ -406,7 +406,7 @@ export default function DevelopersPage() {
                           className={`p-3 border-2 rounded-lg text-sm font-medium transition-all ${
                             formData.project_scale === scale.label
                               ? 'border-black bg-gray-50 text-black'
-                              : 'border-gray-200 hover:border-gray-400'
+                              : 'border-gray-200 dark:border-gray-700 hover:border-gray-400'
                           }`}
                         >
                           {scale.label}
@@ -440,7 +440,7 @@ export default function DevelopersPage() {
                           className={`p-3 border-2 rounded-lg text-sm font-medium transition-all ${
                             formData.timeline === timeline.label
                               ? 'border-black bg-gray-50 text-black'
-                              : 'border-gray-200 hover:border-gray-400'
+                              : 'border-gray-200 dark:border-gray-700 hover:border-gray-400'
                           }`}
                         >
                           {timeline.label}

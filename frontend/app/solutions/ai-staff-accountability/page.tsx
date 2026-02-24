@@ -286,7 +286,7 @@ export default function AIStaffAccountabilityPage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.2 }}
-                className="bg-gradient-to-br from-gray-50 to-white border border-gray-200 rounded-xl p-6"
+                className="bg-gradient-to-br from-gray-50 to-white border border-gray-200 dark:border-gray-700 rounded-xl p-6"
               >
                 <div className="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center mb-4">
                   <diff.icon className="w-6 h-6 text-blue-600" />
@@ -358,7 +358,7 @@ export default function AIStaffAccountabilityPage() {
             animate={{ opacity: 1, y: 0 }}
             className="max-w-6xl mx-auto"
           >
-            <div className="bg-gradient-to-br from-gray-50 to-white border-2 border-gray-200 rounded-2xl p-10">
+            <div className="bg-gradient-to-br from-gray-50 to-white border-2 border-gray-200 dark:border-gray-700 rounded-2xl p-10">
               <div className="flex items-center gap-4 mb-8">
                 <div className={`w-16 h-16 bg-${currentStage.color}-600 rounded-2xl flex items-center justify-center text-white text-2xl font-bold`}>
                   {currentStage.id}
@@ -372,7 +372,7 @@ export default function AIStaffAccountabilityPage() {
               {/* Benefits Metrics */}
               <div className="grid md:grid-cols-3 gap-4 mb-8">
                 {Object.entries(currentStage.benefits).map(([key, value], index) => (
-                  <div key={index} className="bg-white dark:bg-gray-800 rounded-xl p-6 border border-gray-200 dark:border-gray-700">
+                  <div key={index} className="bg-white dark:bg-gray-800 rounded-xl p-6 border border-gray-200 dark:border-gray-700 dark:border-gray-700">
                     <div className="text-3xl font-bold text-blue-600 mb-2">{value}</div>
                     <div className="text-sm text-gray-600 dark:text-gray-400 capitalize">{key.replace('_', ' ')}</div>
                   </div>
@@ -396,7 +396,7 @@ export default function AIStaffAccountabilityPage() {
                 ))}
               </div>
 
-              <div className="flex items-center justify-between pt-6 border-t border-gray-200 dark:border-gray-700">
+              <div className="flex items-center justify-between pt-6 border-t border-gray-200 dark:border-gray-700 dark:border-gray-700">
                 <div>
                   <div className="text-sm text-gray-500 mb-1">ROI Impact</div>
                   <div className="font-semibold text-gray-900 dark:text-white dark:text-white">{currentStage.roi}</div>
@@ -427,7 +427,7 @@ export default function AIStaffAccountabilityPage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.2 }}
-                className="bg-white dark:bg-gray-800 rounded-xl p-6 border border-gray-200 hover:border-blue-300 hover:shadow-lg transition-all"
+                className="bg-white dark:bg-gray-800 rounded-xl p-6 border border-gray-200 dark:border-gray-700 hover:border-blue-300 hover:shadow-lg transition-all"
               >
                 <div className="w-14 h-14 bg-blue-100 rounded-xl flex items-center justify-center mb-4">
                   <layer.icon className="w-7 h-7 text-blue-600" />
@@ -463,7 +463,7 @@ export default function AIStaffAccountabilityPage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.2 }}
-                className="bg-gradient-to-br from-gray-50 to-white border border-gray-200 rounded-xl p-8 hover:shadow-lg transition-shadow"
+                className="bg-gradient-to-br from-gray-50 to-white border border-gray-200 dark:border-gray-700 rounded-xl p-8 hover:shadow-lg transition-shadow"
               >
                 <div className="text-5xl mb-4">{useCase.icon}</div>
                 <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">{useCase.industry}</h3>

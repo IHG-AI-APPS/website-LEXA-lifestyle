@@ -100,7 +100,7 @@ export default function FinalSubmission({ sessionId, projectData, onComplete }: 
         </div>
 
         {/* Form */}
-        <div className="bg-white dark:bg-gray-800 border border-gray-200 p-8 mb-12">
+        <div className="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 p-8 mb-12">
           <div className="space-y-6">
             <div>
               <label className="text-xs uppercase tracking-widest text-gray-600 dark:text-gray-400 mb-2 block">Full Name *</label>
@@ -109,7 +109,7 @@ export default function FinalSubmission({ sessionId, projectData, onComplete }: 
                 value={formData.contact_name}
                 onChange={(e) => setFormData({ ...formData, contact_name: e.target.value })}
                 placeholder="John Smith"
-                className="border-gray-200 focus:border-blue-600 text-gray-900 dark:text-white dark:text-white"
+                className="border-gray-200 dark:border-gray-700 focus:border-blue-600 text-gray-900 dark:text-white dark:text-white"
               />
             </div>
 
@@ -120,7 +120,7 @@ export default function FinalSubmission({ sessionId, projectData, onComplete }: 
                 value={formData.contact_email}
                 onChange={(e) => setFormData({ ...formData, contact_email: e.target.value })}
                 placeholder="john@example.com"
-                className="border-gray-200 focus:border-blue-600 text-gray-900 dark:text-white dark:text-white"
+                className="border-gray-200 dark:border-gray-700 focus:border-blue-600 text-gray-900 dark:text-white dark:text-white"
               />
             </div>
 
@@ -131,7 +131,7 @@ export default function FinalSubmission({ sessionId, projectData, onComplete }: 
                 value={formData.contact_phone}
                 onChange={(e) => setFormData({ ...formData, contact_phone: e.target.value })}
                 placeholder="+971 50 123 4567"
-                className="border-gray-200 focus:border-blue-600 text-gray-900 dark:text-white dark:text-white"
+                className="border-gray-200 dark:border-gray-700 focus:border-blue-600 text-gray-900 dark:text-white dark:text-white"
               />
             </div>
 
@@ -142,7 +142,7 @@ export default function FinalSubmission({ sessionId, projectData, onComplete }: 
                 value={formData.timeline}
                 onChange={(e) => setFormData({ ...formData, timeline: e.target.value })}
                 placeholder="e.g., 3-6 months"
-                className="border-gray-200 focus:border-blue-600 text-gray-900 dark:text-white dark:text-white"
+                className="border-gray-200 dark:border-gray-700 focus:border-blue-600 text-gray-900 dark:text-white dark:text-white"
               />
             </div>
 
@@ -153,7 +153,7 @@ export default function FinalSubmission({ sessionId, projectData, onComplete }: 
                 value={formData.budget_band}
                 onChange={(e) => setFormData({ ...formData, budget_band: e.target.value })}
                 placeholder="e.g., AED 200,000 - 500,000"
-                className="border-gray-200 focus:border-blue-600 text-gray-900 dark:text-white dark:text-white"
+                className="border-gray-200 dark:border-gray-700 focus:border-blue-600 text-gray-900 dark:text-white dark:text-white"
               />
             </div>
 
@@ -164,7 +164,7 @@ export default function FinalSubmission({ sessionId, projectData, onComplete }: 
                 onChange={(e) => setFormData({ ...formData, notes: e.target.value })}
                 placeholder="Any specific requirements or questions..."
                 rows={4}
-                className="w-full border border-gray-200 focus:border-blue-600 outline-none text-gray-900 dark:text-white placeholder-gray-400 py-3 px-4 text-sm transition-colors"
+                className="w-full border border-gray-200 dark:border-gray-700 focus:border-blue-600 outline-none text-gray-900 dark:text-white placeholder-gray-400 py-3 px-4 text-sm transition-colors"
               />
             </div>
           </div>

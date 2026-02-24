@@ -129,7 +129,7 @@ export default function SolutionsPage() {
                     viewport={{ once: true }}
                   >
                     <Link href={`/solutions/${solution.slug}`}>
-                      <div className="group py-8 border-b border-gray-200 dark:border-gray-700 hover:border-gray-400 dark:hover:border-gray-500 transition-all duration-300">
+                      <div className="group py-8 border-b border-gray-200 dark:border-gray-700 dark:border-gray-700 hover:border-gray-400 dark:hover:border-gray-500 transition-all duration-300">
                         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
                           <div className="lg:col-span-1">
                             <span className="text-4xl font-semibold text-gray-300 group-hover:text-black transition-colors">
@@ -192,7 +192,7 @@ export default function SolutionsPage() {
                     viewport={{ once: true }}
                   >
                     <Link href={`/solutions/${solution.slug}`}>
-                      <div className="group py-8 border-b border-gray-200 dark:border-gray-700 hover:border-gray-400 dark:hover:border-gray-500 transition-all duration-300">
+                      <div className="group py-8 border-b border-gray-200 dark:border-gray-700 dark:border-gray-700 hover:border-gray-400 dark:hover:border-gray-500 transition-all duration-300">
                         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
                           <div className="lg:col-span-1">
                             <span className="text-4xl font-semibold text-gray-300 group-hover:text-black transition-colors">
@@ -255,7 +255,7 @@ export default function SolutionsPage() {
                     viewport={{ once: true }}
                   >
                     <Link href={`/solutions/${solution.slug}`}>
-                      <div className="group py-8 border-b border-gray-200 dark:border-gray-700 hover:border-gray-400 dark:hover:border-gray-500 transition-all duration-300">
+                      <div className="group py-8 border-b border-gray-200 dark:border-gray-700 dark:border-gray-700 hover:border-gray-400 dark:hover:border-gray-500 transition-all duration-300">
                         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
                           <div className="lg:col-span-1">
                             <span className="text-4xl font-semibold text-gray-300 group-hover:text-black transition-colors">
@@ -318,7 +318,7 @@ export default function SolutionsPage() {
                     viewport={{ once: true }}
                   >
                     <Link href={`/solutions/${solution.slug}`}>
-                      <div className="group py-8 border-b border-gray-200 dark:border-gray-700 hover:border-gray-400 dark:hover:border-gray-500 transition-all duration-300">
+                      <div className="group py-8 border-b border-gray-200 dark:border-gray-700 dark:border-gray-700 hover:border-gray-400 dark:hover:border-gray-500 transition-all duration-300">
                         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
                           <div className="lg:col-span-1">
                             <span className="text-4xl font-semibold text-gray-300 group-hover:text-black transition-colors">
@@ -360,7 +360,7 @@ export default function SolutionsPage() {
       <RecentlyViewedSection 
         maxItems={4} 
         variant="horizontal" 
-        className="bg-white dark:bg-gray-900 border-t border-gray-100 dark:border-gray-800" 
+        className="bg-white dark:bg-gray-900 border-t border-gray-100 dark:border-gray-800 dark:border-gray-800" 
       />
     </div>
   )

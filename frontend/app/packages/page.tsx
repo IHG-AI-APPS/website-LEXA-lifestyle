@@ -115,7 +115,7 @@ export default function PackagesPage() {
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
                   {propertyPackages.map((pkg) => (
                     <Link key={pkg.slug} href={`/packages/${pkg.slug}`}>
-                      <div className="group h-full border border-gray-200 hover:border-gray-400 hover:shadow-md rounded-lg p-5 transition-all bg-white">
+                      <div className="group h-full border border-gray-200 dark:border-gray-700 hover:border-gray-400 hover:shadow-md rounded-lg p-5 transition-all bg-white">
                         <div className="flex items-start justify-between mb-3">
                           <div className="w-10 h-10 rounded-lg bg-gray-100 flex items-center justify-center">
                             <Home className="h-5 w-5 text-gray-600 dark:text-gray-400 dark:text-gray-400" />
@@ -150,7 +150,7 @@ export default function PackagesPage() {
               <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
                 {apartmentTiers.map((tier) => (
                   <Link key={tier.name} href="/packages/smart-apartment-packages">
-                    <div className={`relative border-2 rounded-lg p-4 transition-all hover:shadow-md ${tier.popular ? 'border-amber-400 bg-amber-50' : 'border-gray-200 bg-white hover:border-gray-400'}`}>
+                    <div className={`relative border-2 rounded-lg p-4 transition-all hover:shadow-md ${tier.popular ? 'border-amber-400 bg-amber-50' : 'border-gray-200 dark:border-gray-700 bg-white hover:border-gray-400'}`}>
                       {tier.popular && (
                         <span className="absolute -top-2 right-3 px-2 py-0.5 bg-amber-500 text-white text-xs font-bold rounded">
                           Popular
@@ -204,7 +204,7 @@ export default function PackagesPage() {
               </div>
               
               <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-                <div className="border border-gray-200 rounded-lg p-5 bg-gradient-to-br from-gray-50 to-white">
+                <div className="border border-gray-200 dark:border-gray-700 rounded-lg p-5 bg-gradient-to-br from-gray-50 to-white">
                   <div className="flex items-center gap-2 mb-2">
                     <Zap className="h-4 w-4 text-blue-500" />
                     <span className="font-semibold text-gray-900 dark:text-white dark:text-white">Essential</span>
@@ -213,7 +213,7 @@ export default function PackagesPage() {
                     Core automation features for smart living. Perfect for those starting their smart home journey.
                   </p>
                 </div>
-                <div className="border border-gray-200 rounded-lg p-5 bg-gradient-to-br from-amber-50 to-white">
+                <div className="border border-gray-200 dark:border-gray-700 rounded-lg p-5 bg-gradient-to-br from-amber-50 to-white">
                   <div className="flex items-center gap-2 mb-2">
                     <Sparkles className="h-4 w-4 text-amber-500" />
                     <span className="font-semibold text-gray-900 dark:text-white dark:text-white">Enhanced</span>
@@ -222,7 +222,7 @@ export default function PackagesPage() {
                     Advanced features with extended coverage. Ideal for comprehensive home automation.
                   </p>
                 </div>
-                <div className="border border-gray-200 rounded-lg p-5 bg-gradient-to-br from-purple-50 to-white">
+                <div className="border border-gray-200 dark:border-gray-700 rounded-lg p-5 bg-gradient-to-br from-purple-50 to-white">
                   <div className="flex items-center gap-2 mb-2">
                     <Crown className="h-4 w-4 text-purple-500" />
                     <span className="font-semibold text-gray-900 dark:text-white dark:text-white">High-End</span>
@@ -256,7 +256,7 @@ export default function PackagesPage() {
                 </Link>
                 <Link
                   href="/contact"
-                  className="px-5 py-2.5 border border-gray-300 text-gray-700 dark:text-gray-300 text-sm font-medium rounded-lg hover:border-gray-400 transition-colors"
+                  className="px-5 py-2.5 border border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 text-sm font-medium rounded-lg hover:border-gray-400 transition-colors"
                 >
                   Contact Us
                 </Link>

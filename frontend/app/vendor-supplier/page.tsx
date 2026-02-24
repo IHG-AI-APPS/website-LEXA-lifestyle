@@ -281,7 +281,7 @@ export default function VendorSupplierPage() {
                 className={`p-5 rounded-xl cursor-pointer transition-all border-2 ${
                   selectedCategories.includes(category.id)
                     ? 'border-[#E8DCC8] bg-[#E8DCC8]/10 shadow-md'
-                    : 'border-gray-200 bg-white hover:border-gray-300'
+                    : 'border-gray-200 dark:border-gray-700 bg-white hover:border-gray-300'
                 }`}
               >
                 <div className={`w-10 h-10 rounded-lg flex items-center justify-center mb-3 ${
@@ -360,7 +360,7 @@ export default function VendorSupplierPage() {
                   className={`md:flex items-center ${index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'}`}
                 >
                   <div className={`md:w-1/2 ${index % 2 === 0 ? 'md:pr-12 md:text-right' : 'md:pl-12'}`}>
-                    <div className="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-md border border-gray-100 dark:border-gray-800">
+                    <div className="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-md border border-gray-100 dark:border-gray-800 dark:border-gray-800">
                       <div className="flex items-center gap-3 mb-2 md:justify-start">
                         <span className="w-8 h-8 bg-[#E8DCC8] text-[#1A1A1A] rounded-full flex items-center justify-center font-bold text-sm">
                           {step.step}
@@ -532,7 +532,7 @@ export default function VendorSupplierPage() {
                         className={`p-3 border-2 rounded-lg text-left transition-all text-sm ${
                           selectedCategories.includes(cat.id)
                             ? 'border-[#E8DCC8] bg-[#E8DCC8]/10'
-                            : 'border-gray-200 hover:border-gray-300'
+                            : 'border-gray-200 dark:border-gray-700 hover:border-gray-300'
                         }`}
                       >
                         <cat.icon className={`h-4 w-4 mb-1 ${
@@ -587,7 +587,7 @@ export default function VendorSupplierPage() {
                   onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                   placeholder="Tell us about your products, competitive advantages, and why you'd be a good fit for LEXA..."
                   rows={4}
-                  className="w-full px-3 py-2 rounded-lg border border-gray-200 text-gray-900 dark:text-white resize-none"
+                  className="w-full px-3 py-2 rounded-lg border border-gray-200 dark:border-gray-700 text-gray-900 dark:text-white resize-none"
                 />
               </div>
 
@@ -653,7 +653,7 @@ export default function VendorSupplierPage() {
           </h2>
           
           <div className="space-y-6">
-            <div className="bg-white dark:bg-gray-800 p-6 rounded-xl border border-gray-200 dark:border-gray-700">
+            <div className="bg-white dark:bg-gray-800 p-6 rounded-xl border border-gray-200 dark:border-gray-700 dark:border-gray-700">
               <h3 className="font-bold text-gray-900 dark:text-white mb-2">
                 What volume do you typically order?
               </h3>
@@ -663,7 +663,7 @@ export default function VendorSupplierPage() {
               </p>
             </div>
             
-            <div className="bg-white dark:bg-gray-800 p-6 rounded-xl border border-gray-200 dark:border-gray-700">
+            <div className="bg-white dark:bg-gray-800 p-6 rounded-xl border border-gray-200 dark:border-gray-700 dark:border-gray-700">
               <h3 className="font-bold text-gray-900 dark:text-white mb-2">
                 Do you require exclusivity for the GCC region?
               </h3>
@@ -674,7 +674,7 @@ export default function VendorSupplierPage() {
               </p>
             </div>
             
-            <div className="bg-white dark:bg-gray-800 p-6 rounded-xl border border-gray-200 dark:border-gray-700">
+            <div className="bg-white dark:bg-gray-800 p-6 rounded-xl border border-gray-200 dark:border-gray-700 dark:border-gray-700">
               <h3 className="font-bold text-gray-900 dark:text-white mb-2">
                 What certifications are required for GCC markets?
               </h3>
@@ -685,7 +685,7 @@ export default function VendorSupplierPage() {
               </p>
             </div>
             
-            <div className="bg-white dark:bg-gray-800 p-6 rounded-xl border border-gray-200 dark:border-gray-700">
+            <div className="bg-white dark:bg-gray-800 p-6 rounded-xl border border-gray-200 dark:border-gray-700 dark:border-gray-700">
               <h3 className="font-bold text-gray-900 dark:text-white mb-2">
                 How long does the evaluation process take?
               </h3>
@@ -695,7 +695,7 @@ export default function VendorSupplierPage() {
               </p>
             </div>
             
-            <div className="bg-white dark:bg-gray-800 p-6 rounded-xl border border-gray-200 dark:border-gray-700">
+            <div className="bg-white dark:bg-gray-800 p-6 rounded-xl border border-gray-200 dark:border-gray-700 dark:border-gray-700">
               <h3 className="font-bold text-gray-900 dark:text-white mb-2">
                 Do you provide marketing support for vendor brands?
               </h3>

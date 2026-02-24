@@ -150,7 +150,7 @@ export default function SmartRecommendations({
                   transition={{ delay: index * 0.1 }}
                 >
                   <Link href={`/solutions/${rec.slug}`}>
-                    <div className="group relative bg-white dark:bg-gray-800 rounded-xl overflow-hidden shadow-sm hover:shadow-lg transition-all duration-300 border border-gray-100 dark:border-gray-700">
+                    <div className="group relative bg-white dark:bg-gray-800 rounded-xl overflow-hidden shadow-sm hover:shadow-lg transition-all duration-300 border border-gray-100 dark:border-gray-800 dark:border-gray-700">
                       <div className="relative h-24 overflow-hidden">
                         <SafeImage
                           src={getImageUrl(rec.image)}
@@ -182,7 +182,7 @@ export default function SmartRecommendations({
                   transition={{ delay: index * 0.1 }}
                 >
                   <Link href={`/solutions/${rec.slug}`}>
-                    <div className="group relative bg-white dark:bg-gray-800 rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100 dark:border-gray-700 h-full">
+                    <div className="group relative bg-white dark:bg-gray-800 rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100 dark:border-gray-800 dark:border-gray-700 h-full">
                       {/* Confidence Badge */}
                       <div className="absolute top-3 right-3 z-10 px-2 py-1 bg-[#C9A962]/90 backdrop-blur-sm rounded-full text-[10px] font-bold text-[#1A1A1A]">
                         {Math.round(rec.confidence * 100)}% match
@@ -235,7 +235,7 @@ export default function SmartRecommendations({
                   className="flex-shrink-0 w-72 snap-start"
                 >
                   <Link href={`/solutions/${rec.slug}`}>
-                    <div className="group relative bg-white dark:bg-gray-800 rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100 dark:border-gray-700">
+                    <div className="group relative bg-white dark:bg-gray-800 rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100 dark:border-gray-800 dark:border-gray-700">
                       {/* AI Badge */}
                       <div className="absolute top-3 left-3 z-10 flex items-center gap-1.5 px-2.5 py-1 bg-black/70 backdrop-blur-sm rounded-full">
                         <Sparkles className="h-3 w-3 text-[#C9A962]" />
@@ -270,7 +270,7 @@ export default function SmartRecommendations({
                         </p>
                         
                         {/* Recommendation reason */}
-                        <div className="flex items-center gap-2 pt-3 border-t border-gray-100 dark:border-gray-700">
+                        <div className="flex items-center gap-2 pt-3 border-t border-gray-100 dark:border-gray-800 dark:border-gray-700">
                           <div className="p-1.5 bg-[#E8DCC8]/20 dark:bg-[#E8DCC8]/10 rounded-md">
                             <Lightbulb className="h-3.5 w-3.5 text-[#C9A962]" />
                           </div>

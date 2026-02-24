@@ -317,7 +317,7 @@ export default function EnterprisePerformanceOSPage() {
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.6, delay: 0.2 }}
                     viewport={{ once: true }}
-                    className="bg-white dark:bg-gray-800 p-8 border-2 border-gray-200 hover:border-blue-500 transition-all"
+                    className="bg-white dark:bg-gray-800 p-8 border-2 border-gray-200 dark:border-gray-700 hover:border-blue-500 transition-all"
                   >
                     <div className="flex items-start gap-4 mb-6">
                       <div className={`p-4 bg-${layer.color}-100`}>
@@ -371,7 +371,7 @@ export default function EnterprisePerformanceOSPage() {
                     className={`px-6 py-3 border-2 font-semibold transition-all flex items-center gap-2 ${
                       selectedUseCase === useCase.id
                         ? 'border-blue-600 bg-blue-50 text-blue-700'
-                        : 'border-gray-200 bg-white text-gray-700 dark:text-gray-300 hover:border-blue-300'
+                        : 'border-gray-200 dark:border-gray-700 bg-white text-gray-700 dark:text-gray-300 hover:border-blue-300'
                     }`}
                   >
                     <Icon className="h-5 w-5" />
@@ -397,7 +397,7 @@ export default function EnterprisePerformanceOSPage() {
               
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 {selectedCase.benefits.map((benefit) => (
-                  <div key={benefit.label} className="bg-white dark:bg-gray-800 p-6 border border-gray-200 dark:border-gray-700">
+                  <div key={benefit.label} className="bg-white dark:bg-gray-800 p-6 border border-gray-200 dark:border-gray-700 dark:border-gray-700">
                     <div className="font-semibold text-gray-900 dark:text-white mb-2">{benefit.label}</div>
                     <div className="text-sm text-blue-600 font-semibold">{benefit.value}</div>
                   </div>
@@ -555,7 +555,7 @@ export default function EnterprisePerformanceOSPage() {
         </section>
 
         {/* Disclaimer */}
-        <section className="py-6 bg-gray-100 border-t border-gray-200 dark:border-gray-700">
+        <section className="py-6 bg-gray-100 border-t border-gray-200 dark:border-gray-700 dark:border-gray-700">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
             <p className="text-xs text-gray-500 text-center">
               * Performance metrics shown are industry benchmarks and expected outcomes based on typical implementations of intelligent building management systems. 

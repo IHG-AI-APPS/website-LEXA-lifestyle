@@ -210,7 +210,7 @@ export default function EnhancedServicePage({
                 transition={{ duration: 0.2 }}
                 className="group"
               >
-                <div className="bg-white dark:bg-gray-800 rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 h-full border border-gray-100 hover:border-gray-300">
+                <div className="bg-white dark:bg-gray-800 rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 h-full border border-gray-100 dark:border-gray-800 hover:border-gray-300">
                   {/* Icon */}
                   <div className="w-16 h-16 bg-gradient-to-br from-gray-800 to-black rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
                     <feature.icon className="h-8 w-8 text-white" />
@@ -226,7 +226,7 @@ export default function EnhancedServicePage({
                   
                   {/* Stats */}
                   {feature.stats && (
-                    <div className="pt-4 border-t border-gray-100 dark:border-gray-800">
+                    <div className="pt-4 border-t border-gray-100 dark:border-gray-800 dark:border-gray-800">
                       <span className="text-xs font-semibold text-gray-700 dark:text-gray-300 dark:text-gray-300">
                         {feature.stats}
                       </span>
@@ -281,7 +281,7 @@ export default function EnhancedServicePage({
                   </div>
                   
                   {/* Content */}
-                  <div className="flex-1 bg-white dark:bg-gray-800 rounded-2xl p-8 shadow-md border border-gray-100 dark:border-gray-800">
+                  <div className="flex-1 bg-white dark:bg-gray-800 rounded-2xl p-8 shadow-md border border-gray-100 dark:border-gray-800 dark:border-gray-800">
                     <div className="flex items-start justify-between mb-3">
                       <h3 className="text-2xl font-bold text-gray-900 dark:text-white dark:text-white">
                         {step.title}

@@ -258,7 +258,7 @@ function JobCard(props) {
             transition={{ duration: 0.3 }}
             className="overflow-hidden"
           >
-            <div className="px-6 pb-6 border-t border-gray-100 dark:border-gray-600 pt-6">
+            <div className="px-6 pb-6 border-t border-gray-100 dark:border-gray-800 dark:border-gray-600 pt-6">
               <div className="grid md:grid-cols-2 gap-6">
                 {/* Responsibilities */}
                 <div>
@@ -294,7 +294,7 @@ function JobCard(props) {
               </div>
               
               {/* Apply Button */}
-              <div className="mt-6 pt-6 border-t border-gray-100 dark:border-gray-600 flex flex-col sm:flex-row gap-4 items-center justify-between">
+              <div className="mt-6 pt-6 border-t border-gray-100 dark:border-gray-800 dark:border-gray-600 flex flex-col sm:flex-row gap-4 items-center justify-between">
                 <p className="text-sm text-gray-500 dark:text-gray-400">
                   Ready to apply? Send your CV and cover letter to our HR team.
                 </p>

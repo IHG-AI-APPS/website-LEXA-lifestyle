@@ -981,7 +981,7 @@ export default function IndustryCalculatorPage() {
                         className={`p-6 border-2 rounded-lg transition-all text-left ${
                           projectType === type.id
                             ? 'border-black bg-gray-50 shadow-lg'
-                            : 'border-gray-200 hover:border-gray-400'
+                            : 'border-gray-200 dark:border-gray-700 hover:border-gray-400'
                         }`}
                       >
                         <type.icon className="w-10 h-10 mb-3" />
@@ -992,7 +992,7 @@ export default function IndustryCalculatorPage() {
                   </div>
 
                   {/* Link to Smart Project Builder */}
-                  <div className="mt-8 pt-6 border-t border-gray-200 dark:border-gray-700">
+                  <div className="mt-8 pt-6 border-t border-gray-200 dark:border-gray-700 dark:border-gray-700">
                     <div className="bg-gradient-to-r from-purple-50 to-indigo-50 border border-purple-200 rounded-xl p-5">
                       <div className="flex flex-col md:flex-row items-center justify-between gap-4">
                         <div>
@@ -1033,7 +1033,7 @@ export default function IndustryCalculatorPage() {
                         className={`p-6 border-2 rounded-lg transition-all text-left ${
                           subCategory === sub.id
                             ? 'border-black bg-gray-50 shadow-lg'
-                            : 'border-gray-200 hover:border-gray-400'
+                            : 'border-gray-200 dark:border-gray-700 hover:border-gray-400'
                         }`}
                       >
                         <div className="font-semibold text-lg">{sub.label}</div>
@@ -1101,7 +1101,7 @@ export default function IndustryCalculatorPage() {
                       <select
                         value={constructionStage}
                         onChange={(e) => setConstructionStage(e.target.value)}
-                        className="w-full border-2 border-gray-200 px-4 py-3 rounded-lg text-base focus:outline-none focus:border-black"
+                        className="w-full border-2 border-gray-200 dark:border-gray-700 px-4 py-3 rounded-lg text-base focus:outline-none focus:border-black"
                       >
                         <option value="">Select stage</option>
                         <option value="new">New Construction</option>
@@ -1180,7 +1180,7 @@ export default function IndustryCalculatorPage() {
                             key={id}
                             onClick={() => applyBundle(id)}
                             className={`p-4 border-2 rounded-xl text-left transition-all hover:shadow-lg ${
-                              selectedBundle === id ? 'border-black bg-gray-50' : 'border-gray-200 hover:border-gray-400'
+                              selectedBundle === id ? 'border-black bg-gray-50' : 'border-gray-200 dark:border-gray-700 hover:border-gray-400'
                             }`}
                           >
                             <div className="font-bold text-lg mb-1">{bundle.name}</div>
@@ -1205,7 +1205,7 @@ export default function IndustryCalculatorPage() {
                       <button
                         onClick={() => applyBundle('smart-office')}
                         className={`w-full p-4 border-2 rounded-xl text-left transition-all hover:shadow-lg ${
-                          selectedBundle === 'smart-office' ? 'border-black bg-gray-50' : 'border-gray-200 hover:border-gray-400'
+                          selectedBundle === 'smart-office' ? 'border-black bg-gray-50' : 'border-gray-200 dark:border-gray-700 hover:border-gray-400'
                         }`}
                       >
                         <div className="flex justify-between items-start">
@@ -1270,7 +1270,7 @@ export default function IndustryCalculatorPage() {
                                   className={`p-4 border-2 rounded-lg text-left transition-all ${
                                     selectedSolutions[solution.id] === level.id
                                       ? 'border-black bg-white dark:bg-gray-800 shadow-md'
-                                      : 'border-gray-200 hover:border-gray-400'
+                                      : 'border-gray-200 dark:border-gray-700 hover:border-gray-400'
                                   }`}
                                 >
                                   <div className="font-semibold text-sm mb-2">{level.label}</div>
@@ -1308,7 +1308,7 @@ export default function IndustryCalculatorPage() {
                       <select
                         value={controlPlatform}
                         onChange={(e) => setControlPlatform(e.target.value)}
-                        className="w-full border-2 border-gray-200 px-4 py-3 rounded-lg focus:border-black"
+                        className="w-full border-2 border-gray-200 dark:border-gray-700 px-4 py-3 rounded-lg focus:border-black"
                       >
                         <option value="">Select platform</option>
                         {CONTROL_PLATFORMS.map(brand => (
@@ -1324,7 +1324,7 @@ export default function IndustryCalculatorPage() {
                       <select
                         value={securityBrand}
                         onChange={(e) => setSecurityBrand(e.target.value)}
-                        className="w-full border-2 border-gray-200 px-4 py-3 rounded-lg focus:border-black"
+                        className="w-full border-2 border-gray-200 dark:border-gray-700 px-4 py-3 rounded-lg focus:border-black"
                       >
                         <option value="">Select brand</option>
                         {SECURITY_BRANDS.map(brand => (
@@ -1340,7 +1340,7 @@ export default function IndustryCalculatorPage() {
                       <select
                         value={lightingBrand}
                         onChange={(e) => setLightingBrand(e.target.value)}
-                        className="w-full border-2 border-gray-200 px-4 py-3 rounded-lg focus:border-black"
+                        className="w-full border-2 border-gray-200 dark:border-gray-700 px-4 py-3 rounded-lg focus:border-black"
                       >
                         <option value="">Select system</option>
                         {LIGHTING_BRANDS.map(brand => (
@@ -1371,7 +1371,7 @@ export default function IndustryCalculatorPage() {
                       <select
                         value={timeline}
                         onChange={(e) => setTimeline(e.target.value)}
-                        className="w-full border-2 border-gray-200 px-4 py-3 rounded-lg focus:border-black"
+                        className="w-full border-2 border-gray-200 dark:border-gray-700 px-4 py-3 rounded-lg focus:border-black"
                       >
                         <option value="">Select timeline</option>
                         <option value="asap">ASAP (Less than 2 months)</option>
@@ -1388,7 +1388,7 @@ export default function IndustryCalculatorPage() {
                       <select
                         value={budgetRange}
                         onChange={(e) => setBudgetRange(e.target.value)}
-                        className="w-full border-2 border-gray-200 px-4 py-3 rounded-lg focus:border-black"
+                        className="w-full border-2 border-gray-200 dark:border-gray-700 px-4 py-3 rounded-lg focus:border-black"
                       >
                         <option value="">Select budget range</option>
                         <option value="under-50k">Under AED 50K</option>
@@ -1411,7 +1411,7 @@ export default function IndustryCalculatorPage() {
                       <select
                         value={privilegeCard}
                         onChange={(e) => setPrivilegeCard(e.target.value)}
-                        className="w-full border-2 border-gray-200 px-4 py-3 rounded-lg focus:border-black"
+                        className="w-full border-2 border-gray-200 dark:border-gray-700 px-4 py-3 rounded-lg focus:border-black"
                       >
                         <option value="">None</option>
                         <option value="esaad">Esaad Card (10% Discount)</option>
@@ -1454,7 +1454,7 @@ export default function IndustryCalculatorPage() {
                             setEmirate(e.target.value)
                             setCity('')
                           }}
-                          className="w-full border-2 border-gray-200 px-4 py-3 rounded-lg focus:border-black"
+                          className="w-full border-2 border-gray-200 dark:border-gray-700 px-4 py-3 rounded-lg focus:border-black"
                         >
                           <option value="">Select emirate</option>
                           {Object.keys(LOCATIONS).map(em => (
@@ -1471,7 +1471,7 @@ export default function IndustryCalculatorPage() {
                           <select
                             value={city}
                             onChange={(e) => setCity(e.target.value)}
-                            className="w-full border-2 border-gray-200 px-4 py-3 rounded-lg focus:border-black"
+                            className="w-full border-2 border-gray-200 dark:border-gray-700 px-4 py-3 rounded-lg focus:border-black"
                           >
                             <option value="">Select city/area</option>
                             {LOCATIONS[emirate as keyof typeof LOCATIONS]?.map(c => (
@@ -1558,7 +1558,7 @@ export default function IndustryCalculatorPage() {
                           <select
                             value={contactRole}
                             onChange={(e) => setContactRole(e.target.value)}
-                            className="w-full border-2 border-gray-200 px-4 py-3 rounded-lg focus:border-black"
+                            className="w-full border-2 border-gray-200 dark:border-gray-700 px-4 py-3 rounded-lg focus:border-black"
                           >
                             <option value="">Select your role</option>
                             <option value="owner">Property Owner</option>
@@ -1606,7 +1606,7 @@ export default function IndustryCalculatorPage() {
                         className={`p-5 border-2 rounded-lg text-left transition-all ${
                           additionalFeatures.includes(feature.id)
                             ? 'border-black bg-gray-50'
-                            : 'border-gray-200 hover:border-gray-400'
+                            : 'border-gray-200 dark:border-gray-700 hover:border-gray-400'
                         }`}
                       >
                         <div className="flex items-start justify-between mb-2">
@@ -1650,7 +1650,7 @@ export default function IndustryCalculatorPage() {
                 >
                   <h2 className="text-3xl font-bold mb-6">Review Your Selections</h2>
 
-                  <div className="bg-gray-50 border-2 border-gray-200 rounded-lg p-6 space-y-4">
+                  <div className="bg-gray-50 border-2 border-gray-200 dark:border-gray-700 rounded-lg p-6 space-y-4">
                     <div>
                       <div className="text-sm font-semibold text-gray-600 dark:text-gray-400 uppercase">Project Type</div>
                       <div className="text-lg">{currentProjectType?.label} - {subCategory}</div>
@@ -1734,11 +1734,11 @@ export default function IndustryCalculatorPage() {
                   </div>
 
                   {/* Cost Breakdown */}
-                  <div className="bg-white border-2 border-gray-200 rounded-lg p-6 mb-6">
+                  <div className="bg-white border-2 border-gray-200 dark:border-gray-700 rounded-lg p-6 mb-6">
                     <h3 className="text-xl font-bold mb-4">Cost Breakdown</h3>
                     <div className="space-y-3">
                       {breakdown.map((item, index) => (
-                        <div key={index} className="flex justify-between items-center py-3 border-b border-gray-100 dark:border-gray-800">
+                        <div key={index} className="flex justify-between items-center py-3 border-b border-gray-100 dark:border-gray-800 dark:border-gray-800">
                           <span className="text-gray-700 dark:text-gray-300 dark:text-gray-300">{item.name}</span>
                           <span className={`font-semibold ${item.cost < 0 ? 'text-green-600' : ''}`}>{formatCurrency(item.cost)}</span>
                         </div>

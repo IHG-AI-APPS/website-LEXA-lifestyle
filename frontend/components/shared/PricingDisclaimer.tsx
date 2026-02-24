@@ -9,7 +9,7 @@ interface PricingDisclaimerProps {
 
 export default function PricingDisclaimer({ variant = 'light', className = '' }: PricingDisclaimerProps) {
   const baseStyles = {
-    light: 'bg-gray-100 border-t border-gray-200 text-gray-500',
+    light: 'bg-gray-100 border-t border-gray-200 dark:border-gray-700 text-gray-500',
     dark: 'bg-gray-900/50 border-t border-white/10 text-gray-400',
     minimal: 'bg-transparent text-gray-400'
   }

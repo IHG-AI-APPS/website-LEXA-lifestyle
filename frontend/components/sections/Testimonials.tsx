@@ -91,7 +91,7 @@ export default function Testimonials() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: index * 0.1 }}
-              className="bg-gray-50 dark:bg-gray-800/50 border border-gray-200 dark:border-gray-700 p-8 group hover:border-gray-400 dark:hover:border-gray-500 transition-all duration-300"
+              className="bg-gray-50 dark:bg-gray-800/50 border border-gray-200 dark:border-gray-700 dark:border-gray-700 p-8 group hover:border-gray-400 dark:hover:border-gray-500 transition-all duration-300"
             >
               <Quote className="w-10 h-10 text-gray-300 dark:text-gray-600 dark:text-gray-400 mb-6" strokeWidth={1.5} />
               
@@ -107,7 +107,7 @@ export default function Testimonials() {
                 {testimonial.testimonial || testimonial.content}
               </p>
 
-              <div className="flex items-center gap-4 pt-6 border-t border-gray-200 dark:border-gray-700">
+              <div className="flex items-center gap-4 pt-6 border-t border-gray-200 dark:border-gray-700 dark:border-gray-700">
                 {testimonial.image && (
                   <div className="relative w-12 h-12 rounded-full overflow-hidden">
                     <SafeImage

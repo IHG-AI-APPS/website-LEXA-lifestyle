@@ -189,7 +189,7 @@ export default function FAQPage() {
                     {category.name}
                   </h2>
 
-                  <div className="border border-gray-200 dark:border-gray-700 rounded-lg overflow-hidden divide-y divide-gray-200 dark:divide-gray-700">
+                  <div className="border border-gray-200 dark:border-gray-700 dark:border-gray-700 rounded-lg overflow-hidden divide-y divide-gray-200 dark:divide-gray-700">
                     {category.faqs.map((faq, faqIdx) => {
                       const key = `${catIdx}-${faqIdx}`
                       const isOpen = openItems[key]
@@ -245,7 +245,7 @@ export default function FAQPage() {
                 <ArrowRight className="ml-2 h-4 w-4" />
               </Link>
             </Button>
-            <Button asChild variant="outline" className="border-gray-300 dark:border-gray-600">
+            <Button asChild variant="outline" className="border-gray-300 dark:border-gray-600 dark:border-gray-600">
               <Link href="/consultation" data-testid="faq-consultation-btn">
                 {language === 'ar' ? 'احجز استشارة مجانية' : 'Book Free Consultation'}
               </Link>

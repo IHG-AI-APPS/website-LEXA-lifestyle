@@ -72,7 +72,7 @@ export default function ProjectBuilderLanding() {
                   <Button
                     size="lg"
                     variant="outline"
-                    className="border-gray-300 text-gray-700 dark:text-gray-300 hover:bg-gray-50 px-10 py-7 text-sm font-medium tracking-wide transition-all duration-300 group"
+                    className="border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 hover:bg-gray-50 px-10 py-7 text-sm font-medium tracking-wide transition-all duration-300 group"
                   >
                     Classic Builder
                     <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
@@ -101,7 +101,7 @@ export default function ProjectBuilderLanding() {
       </section>
 
       {/* Process Section */}
-      <section className="py-20 border-t border-gray-100 dark:border-gray-800">
+      <section className="py-20 border-t border-gray-100 dark:border-gray-800 dark:border-gray-800">
         <div className="container mx-auto px-8 lg:px-16">
           <div className="max-w-7xl mx-auto">
             <div className="text-center mb-16">
@@ -141,7 +141,7 @@ export default function ProjectBuilderLanding() {
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: 0.2 }}
                   viewport={{ once: true }}
-                  className="group relative bg-white dark:bg-gray-800 border border-gray-200 hover:border-gray-300 p-8 transition-all duration-500 hover:shadow-lg"
+                  className="group relative bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 hover:border-gray-300 dark:border-gray-600 p-8 transition-all duration-500 hover:shadow-lg"
                 >
                   {/* Number Badge */}
                   <div className="absolute -top-4 -left-4 w-12 h-12 bg-gradient-to-br from-blue-600 to-purple-600 text-white flex items-center justify-center font-mono text-sm font-medium">
@@ -162,7 +162,7 @@ export default function ProjectBuilderLanding() {
       </section>
 
       {/* Features Grid */}
-      <section className="py-20 bg-gradient-to-b from-gray-50 to-white border-t border-gray-100 dark:border-gray-800">
+      <section className="py-20 bg-gradient-to-b from-gray-50 to-white border-t border-gray-100 dark:border-gray-800 dark:border-gray-800">
         <div className="container mx-auto px-8 lg:px-16">
           <div className="max-w-7xl mx-auto">
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -174,7 +174,7 @@ export default function ProjectBuilderLanding() {
               ].map((feature, index) => (
                 <div
                   key={index}
-                  className="bg-white dark:bg-gray-800 border border-gray-200 p-6 hover:border-blue-600 hover:shadow-md transition-all duration-300"
+                  className="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 p-6 hover:border-blue-600 hover:shadow-md transition-all duration-300"
                 >
                   <feature.icon className="w-6 h-6 text-blue-600 mb-4" />
                   <h4 className="text-sm font-medium text-gray-900 dark:text-white mb-2 uppercase tracking-widest">{feature.label}</h4>
@@ -187,7 +187,7 @@ export default function ProjectBuilderLanding() {
       </section>
 
       {/* Final CTA */}
-      <section className="py-20 border-t border-gray-100 dark:border-gray-800">
+      <section className="py-20 border-t border-gray-100 dark:border-gray-800 dark:border-gray-800">
         <div className="container mx-auto px-8 lg:px-16 max-w-4xl text-center">
           <h2 className="text-4xl font-semibold tracking-tight text-gray-900 dark:text-white mb-8">
             Ready to begin?

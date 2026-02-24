@@ -174,7 +174,7 @@ export default function BlogArticlePage({ params }: { params: { slug: string } }
               className="prose prose-lg prose-gray max-w-none
                 prose-headings:font-bold prose-headings:tracking-tight prose-headings:text-gray-900 dark:text-white dark:prose-headings:text-white
                 prose-h1:text-3xl prose-h1:mt-8 prose-h1:mb-4
-                prose-h2:text-2xl prose-h2:mt-8 prose-h2:mb-4 prose-h2:border-b prose-h2:border-gray-200 prose-h2:pb-2
+                prose-h2:text-2xl prose-h2:mt-8 prose-h2:mb-4 prose-h2:border-b prose-h2:border-gray-200 dark:border-gray-700 prose-h2:pb-2
                 prose-h3:text-xl prose-h3:mt-6 prose-h3:mb-3
                 prose-p:text-gray-700 dark:text-gray-300 prose-p:leading-relaxed prose-p:mb-4
                 prose-a:text-blue-600 prose-a:no-underline hover:prose-a:underline
@@ -186,8 +186,8 @@ export default function BlogArticlePage({ params }: { params: { slug: string } }
                 prose-code:bg-gray-100 prose-code:px-1.5 prose-code:py-0.5 prose-code:rounded prose-code:text-sm
                 prose-pre:bg-gray-900 prose-pre:text-gray-100 prose-pre:rounded-lg prose-pre:overflow-x-auto
                 prose-table:w-full prose-table:border-collapse
-                prose-th:bg-gray-100 prose-th:border prose-th:border-gray-300 prose-th:px-4 prose-th:py-2 prose-th:text-left prose-th:font-semibold
-                prose-td:border prose-td:border-gray-300 prose-td:px-4 prose-td:py-2
+                prose-th:bg-gray-100 prose-th:border prose-th:border-gray-300 dark:border-gray-600 prose-th:px-4 prose-th:py-2 prose-th:text-left prose-th:font-semibold
+                prose-td:border prose-td:border-gray-300 dark:border-gray-600 prose-td:px-4 prose-td:py-2
                 prose-img:rounded-lg prose-img:shadow-md
               "
             >
@@ -195,7 +195,7 @@ export default function BlogArticlePage({ params }: { params: { slug: string } }
                 remarkPlugins={[remarkGfm]}
                 components={{
                   h1: ({ children }) => <h1 className="text-3xl font-bold mt-8 mb-4 text-gray-900 dark:text-white dark:text-white">{children}</h1>,
-                  h2: ({ children }) => <h2 className="text-2xl font-bold mt-8 mb-4 text-gray-900 dark:text-white dark:text-white border-b border-gray-200 dark:border-gray-700 pb-2">{children}</h2>,
+                  h2: ({ children }) => <h2 className="text-2xl font-bold mt-8 mb-4 text-gray-900 dark:text-white dark:text-white border-b border-gray-200 dark:border-gray-700 dark:border-gray-700 pb-2">{children}</h2>,
                   h3: ({ children }) => <h3 className="text-xl font-bold mt-6 mb-3 text-gray-900 dark:text-white dark:text-white">{children}</h3>,
                   p: ({ children }) => <p className="text-gray-700 dark:text-gray-300 leading-relaxed mb-4">{children}</p>,
                   ul: ({ children }) => <ul className="list-disc pl-6 my-4 space-y-2">{children}</ul>,
@@ -208,13 +208,13 @@ export default function BlogArticlePage({ params }: { params: { slug: string } }
                   ),
                   table: ({ children }) => (
                     <div className="overflow-x-auto my-6">
-                      <table className="w-full border-collapse border border-gray-300 rounded-lg overflow-hidden">
+                      <table className="w-full border-collapse border border-gray-300 dark:border-gray-600 rounded-lg overflow-hidden">
                         {children}
                       </table>
                     </div>
                   ),
-                  th: ({ children }) => <th className="bg-gray-100 dark:bg-gray-800 border border-gray-300 dark:border-gray-600 px-4 py-3 text-left font-semibold text-gray-900 dark:text-white dark:text-white">{children}</th>,
-                  td: ({ children }) => <td className="border border-gray-300 px-4 py-3 text-gray-700 dark:text-gray-300 dark:text-gray-300">{children}</td>,
+                  th: ({ children }) => <th className="bg-gray-100 dark:bg-gray-800 border border-gray-300 dark:border-gray-600 dark:border-gray-600 px-4 py-3 text-left font-semibold text-gray-900 dark:text-white dark:text-white">{children}</th>,
+                  td: ({ children }) => <td className="border border-gray-300 dark:border-gray-600 px-4 py-3 text-gray-700 dark:text-gray-300 dark:text-gray-300">{children}</td>,
                   a: ({ href, children }) => (
                     <a href={href} className="text-blue-600 hover:text-blue-800 hover:underline transition-colors" target="_blank" rel="noopener noreferrer">
                       {children}
@@ -241,7 +241,7 @@ export default function BlogArticlePage({ params }: { params: { slug: string } }
             </motion.article>
             
             {/* Share & Actions */}
-            <div className="mt-12 pt-8 border-t border-gray-200 flex items-center justify-between">
+            <div className="mt-12 pt-8 border-t border-gray-200 dark:border-gray-700 flex items-center justify-between">
               <div className="flex items-center gap-4">
                 <span className="text-sm text-gray-500">Share this article:</span>
                 <button className="p-2 rounded-full bg-gray-100 hover:bg-gray-200 transition-colors">
@@ -265,7 +265,7 @@ export default function BlogArticlePage({ params }: { params: { slug: string } }
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                 {relatedArticles.filter(a => a.slug !== article.slug).slice(0, 3).map((relatedArticle) => (
                   <Link key={relatedArticle.id} href={`/blog/${relatedArticle.slug}`}>
-                    <div className="group bg-white dark:bg-gray-800 rounded-xl overflow-hidden shadow-sm hover:shadow-lg transition-all border border-gray-100 dark:border-gray-700">
+                    <div className="group bg-white dark:bg-gray-800 rounded-xl overflow-hidden shadow-sm hover:shadow-lg transition-all border border-gray-100 dark:border-gray-800 dark:border-gray-700">
                       <div className="relative h-40 overflow-hidden bg-gradient-to-br from-blue-100 to-blue-50">
                         {relatedArticle.featured_image && !relatedArticle.featured_image.includes('photo-180') ? (
                           <SafeImage

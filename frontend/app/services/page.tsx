@@ -180,7 +180,7 @@ export default function ServicesPage() {
                       viewport={{ once: true }}
                     >
                       <Link href={`/services/${service.slug}`}>
-                        <div className="group py-8 border-b border-gray-200 hover:border-gray-400 transition-all duration-300">
+                        <div className="group py-8 border-b border-gray-200 dark:border-gray-700 hover:border-gray-400 transition-all duration-300">
                           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
                             <div className="lg:col-span-1">
                               <span className="text-4xl font-semibold text-gray-300 group-hover:text-black transition-colors">
@@ -248,7 +248,7 @@ export default function ServicesPage() {
                     viewport={{ once: true }}
                   >
                     <Link href={`/services/${service.slug}`}>
-                      <div className="group py-8 border-b border-gray-200 hover:border-gray-400 transition-all duration-300">
+                      <div className="group py-8 border-b border-gray-200 dark:border-gray-700 hover:border-gray-400 transition-all duration-300">
                         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
                           <div className="lg:col-span-1">
                             <span className="text-4xl font-semibold text-gray-300 group-hover:text-black transition-colors">

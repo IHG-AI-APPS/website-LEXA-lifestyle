@@ -50,7 +50,7 @@ export default function RetailAutomationPage() {
               {features.map((f, i) => {
                 const Icon = f.icon
                 return (
-                  <motion.div key={i} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ delay: i * 0.1 }} viewport={{ once: true }} className="bg-white dark:bg-gray-800 p-8 border-2 border-gray-200 hover:border-[#1A1A1A] transition-all">
+                  <motion.div key={i} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ delay: i * 0.1 }} viewport={{ once: true }} className="bg-white dark:bg-gray-800 p-8 border-2 border-gray-200 dark:border-gray-700 hover:border-[#1A1A1A] transition-all">
                     <div className="flex items-start gap-4">
                       <div className="p-3 bg-gray-50 dark:bg-gray-800"><Icon className="h-6 w-6 text-[#1A1A1A] dark:text-white" /></div>
                       <div><h3 className="text-lg font-semibold mb-2 text-[#1A1A1A] dark:text-white">{f.title}</h3><p className="text-gray-600 dark:text-gray-400 text-sm">{f.desc}</p></div>

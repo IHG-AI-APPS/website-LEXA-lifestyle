@@ -36,7 +36,7 @@ export default function SplineViewer({ sceneUrl, title, description }: SplineVie
         <select
           value={selectedScene}
           onChange={(e) => setSelectedScene(e.target.value)}
-          className="border-2 border-gray-300 rounded-lg px-4 py-2 font-semibold"
+          className="border-2 border-gray-300 dark:border-gray-600 rounded-lg px-4 py-2 font-semibold"
         >
           <option value="smart-home-living">Living Room</option>
           <option value="smart-home-kitchen">Kitchen</option>

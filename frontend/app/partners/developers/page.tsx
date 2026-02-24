@@ -219,7 +219,7 @@ export default function DeveloperToolkitPage() {
                     className={`p-8 rounded-2xl border transition-all hover:shadow-lg ${
                       isDark 
                         ? 'bg-gray-800 border-gray-700 hover:border-[#C9A962]' 
-                        : 'bg-white border-gray-200 hover:border-[#C9A962]'
+                        : 'bg-white border-gray-200 dark:border-gray-700 hover:border-[#C9A962]'
                     }`}
                   >
                     <Icon size={40} className="text-[#C9A962] mb-4" strokeWidth={1.5} />
@@ -280,7 +280,7 @@ export default function DeveloperToolkitPage() {
                   className={`text-center p-8 rounded-2xl border ${
                     isDark 
                       ? "bg-gray-800/50 border-gray-700" 
-                      : "bg-gray-50 border-gray-200 dark:border-gray-700"
+                      : "bg-gray-50 border-gray-200 dark:border-gray-700 dark:border-gray-700"
                   }`}
                 >
                   <div className="text-4xl font-bold text-[#C9A962] mb-4">{benefit.stat}</div>
@@ -469,7 +469,7 @@ export default function DeveloperToolkitPage() {
                         required
                         value={emailGateData.project_scale}
                         onChange={(e) => setEmailGateData({ ...emailGateData, project_scale: e.target.value })}
-                        className="w-full border border-gray-300 rounded-md p-2"
+                        className="w-full border border-gray-300 dark:border-gray-600 rounded-md p-2"
                       >
                         <option value="boutique">Boutique (1-10 units)</option>
                         <option value="mid-scale">Mid-Scale (10-50 units)</option>
@@ -494,7 +494,7 @@ export default function DeveloperToolkitPage() {
                       required
                       value={emailGateData.timeline}
                       onChange={(e) => setEmailGateData({ ...emailGateData, timeline: e.target.value })}
-                      className="w-full border border-gray-300 rounded-md p-2"
+                      className="w-full border border-gray-300 dark:border-gray-600 rounded-md p-2"
                     >
                       <option value="">Select timeline...</option>
                       <option value="immediate">Immediate (Next 3 months)</option>

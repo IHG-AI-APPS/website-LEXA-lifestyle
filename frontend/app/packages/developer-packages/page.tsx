@@ -272,7 +272,7 @@ export default function DeveloperPackagesPage() {
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: 0.15 }}
                   viewport={{ once: true }}
-                  className="bg-white dark:bg-gray-800 p-6 border border-gray-200 hover:shadow-lg transition-shadow"
+                  className="bg-white dark:bg-gray-800 p-6 border border-gray-200 dark:border-gray-700 hover:shadow-lg transition-shadow"
                 >
                   <div className="inline-flex p-3 bg-amber-100 mb-4">
                     <Icon className="h-6 w-6 text-amber-600" />
@@ -360,7 +360,7 @@ export default function DeveloperPackagesPage() {
                     </div>
                   ))}
                 </div>
-                <div className="border-t border-gray-200 pt-4">
+                <div className="border-t border-gray-200 dark:border-gray-700 pt-4">
                   <div className="text-xs text-gray-500">Ideal for:</div>
                   <div className="text-sm font-semibold text-gray-700 dark:text-gray-300 dark:text-gray-300">{pkg.ideal}</div>
                 </div>

@@ -17,7 +17,7 @@ export default function ClientLogos() {
   const duplicatedClients = [...clients, ...clients, ...clients]
 
   return (
-    <section className="py-24 bg-white border-y border-gray-200 overflow-hidden">
+    <section className="py-24 bg-white border-y border-gray-200 dark:border-gray-700 overflow-hidden">
       <div className="container mx-auto px-4 md:px-8 max-w-7xl mb-12">
         <span className="text-xs md:text-sm tracking-[0.2em] uppercase text-gray-600 dark:text-gray-400 font-bold block mb-6">
           Trusted By

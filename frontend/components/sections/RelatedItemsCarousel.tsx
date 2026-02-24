@@ -51,7 +51,7 @@ export default function RelatedItemsCarousel({ items, title, basePath }: Related
               <button
                 onClick={handlePrev}
                 disabled={!canGoPrev}
-                className="p-2 border border-gray-300 hover:border-black disabled:opacity-30 disabled:hover:border-gray-300 transition-colors"
+                className="p-2 border border-gray-300 dark:border-gray-600 hover:border-black disabled:opacity-30 disabled:hover:border-gray-300 dark:border-gray-600 transition-colors"
                 aria-label="Previous"
               >
                 <ChevronLeft size={20} strokeWidth={2} />
@@ -59,7 +59,7 @@ export default function RelatedItemsCarousel({ items, title, basePath }: Related
               <button
                 onClick={handleNext}
                 disabled={!canGoNext}
-                className="p-2 border border-gray-300 hover:border-black disabled:opacity-30 disabled:hover:border-gray-300 transition-colors"
+                className="p-2 border border-gray-300 dark:border-gray-600 hover:border-black disabled:opacity-30 disabled:hover:border-gray-300 dark:border-gray-600 transition-colors"
                 aria-label="Next"
               >
                 <ChevronRight size={20} strokeWidth={2} />

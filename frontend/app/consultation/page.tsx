@@ -155,7 +155,7 @@ export default function ConsultationPage() {
       </section>
 
       {/* Trust Badges */}
-      <TrustBadges variant="compact" showCertifications={false} className="bg-white border-b border-gray-100 dark:border-gray-800" />
+      <TrustBadges variant="compact" showCertifications={false} className="bg-white border-b border-gray-100 dark:border-gray-800 dark:border-gray-800" />
 
       {/* Consultation Types */}
       <section className="py-20 bg-gray-50 dark:bg-gray-800">
@@ -256,7 +256,7 @@ export default function ConsultationPage() {
                     <div className="hidden lg:block absolute top-12 left-full w-full h-0.5 bg-gradient-to-r from-gray-300 to-transparent -z-10" />
                   )}
 
-                  <div className="bg-white border-2 border-gray-200 rounded-xl p-6 hover:border-black transition-all">
+                  <div className="bg-white border-2 border-gray-200 dark:border-gray-700 rounded-xl p-6 hover:border-black transition-all">
                     <div className="text-6xl font-bold text-gray-200 mb-4">{step.number}</div>
                     
                     <div className="inline-flex items-center justify-center w-14 h-14 mb-4 bg-black rounded-full">
@@ -356,7 +356,7 @@ export default function ConsultationPage() {
               ].map((faq, index) => (
                 <details
                   key={index}
-                  className="bg-white border-2 border-gray-200 rounded-lg overflow-hidden group"
+                  className="bg-white border-2 border-gray-200 dark:border-gray-700 rounded-lg overflow-hidden group"
                 >
                   <summary className="px-6 py-4 font-semibold text-lg cursor-pointer hover:bg-gray-50 transition-colors flex items-center justify-between">
                     {faq.q}

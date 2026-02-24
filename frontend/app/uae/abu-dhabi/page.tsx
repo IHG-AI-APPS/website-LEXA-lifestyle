@@ -57,7 +57,7 @@ export default function AbuDhabiPage() {
             <h2 className="text-3xl font-bold mb-8 text-center">Areas We Serve in Abu Dhabi</h2>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
               {abuDhabiData.majorAreas.map((area) => (
-                <div key={area} className="p-4 border border-gray-200 rounded-lg hover:border-[#E8DCC8] transition flex items-center gap-2">
+                <div key={area} className="p-4 border border-gray-200 dark:border-gray-700 rounded-lg hover:border-[#E8DCC8] transition flex items-center gap-2">
                   <MapPin className="h-4 w-4 text-[#E8DCC8]" />
                   <span className="text-sm font-medium">{area}</span>
                 </div>

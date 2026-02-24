@@ -23,7 +23,7 @@ export default function RelatedPagesNav({
   subtitle = "Learn more about LEXA"
 }: RelatedPagesNavProps) {
   return (
-    <section className="py-12 md:py-16 bg-gray-50 border-t border-gray-200 dark:border-gray-700">
+    <section className="py-12 md:py-16 bg-gray-50 border-t border-gray-200 dark:border-gray-700 dark:border-gray-700">
       <div className="content-container">
         <div className="max-w-5xl mx-auto">
           {/* Section Header */}
@@ -49,7 +49,7 @@ export default function RelatedPagesNav({
               >
                 <Link
                   href={page.href}
-                  className="group block p-6 bg-white dark:bg-gray-800 rounded-lg border border-gray-200 hover:border-[#E8DCC8] hover:shadow-lg transition-all duration-300 h-full"
+                  className="group block p-6 bg-white dark:bg-gray-800 rounded-lg border border-gray-200 dark:border-gray-700 hover:border-[#E8DCC8] hover:shadow-lg transition-all duration-300 h-full"
                 >
                   {page.category && (
                     <span className="inline-block text-xs uppercase tracking-wider text-[#E8DCC8] font-semibold mb-3">

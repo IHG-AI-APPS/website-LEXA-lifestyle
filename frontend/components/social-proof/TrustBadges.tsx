@@ -78,7 +78,7 @@ export default function TrustBadges({
 
         {/* Certifications */}
         {showCertifications && (
-          <div className="border-t border-gray-200 dark:border-gray-700 pt-8">
+          <div className="border-t border-gray-200 dark:border-gray-700 dark:border-gray-700 pt-8">
             <p className="text-center text-sm text-gray-500 dark:text-gray-400 uppercase tracking-widest mb-6">
               Certified Partners
             </p>
@@ -102,7 +102,7 @@ export default function TrustBadges({
 
         {/* Client Logos */}
         {showClients && (
-          <div className="border-t border-gray-200 dark:border-gray-700 pt-8 mt-8">
+          <div className="border-t border-gray-200 dark:border-gray-700 dark:border-gray-700 pt-8 mt-8">
             <p className="text-center text-sm text-gray-500 dark:text-gray-400 uppercase tracking-widest mb-6">
               Trusted By Leading Developers
             </p>

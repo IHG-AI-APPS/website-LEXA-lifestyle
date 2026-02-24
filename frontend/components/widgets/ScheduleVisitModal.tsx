@@ -307,7 +307,7 @@ export default function ScheduleVisitModal({
                       type="text"
                       value={formData.name}
                       onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                      className="w-full px-3 py-2 rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 text-sm focus:ring-2 focus:ring-[#E8DCC8]"
+                      className="w-full px-3 py-2 rounded-lg border border-gray-200 dark:border-gray-700 dark:border-gray-700 bg-white dark:bg-gray-800 text-sm focus:ring-2 focus:ring-[#E8DCC8]"
                       placeholder={language === 'ar' ? 'أدخل اسمك' : 'Your name'}
                       required
                     />
@@ -321,7 +321,7 @@ export default function ScheduleVisitModal({
                       type="email"
                       value={formData.email}
                       onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                      className="w-full px-3 py-2 rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 text-sm focus:ring-2 focus:ring-[#E8DCC8]"
+                      className="w-full px-3 py-2 rounded-lg border border-gray-200 dark:border-gray-700 dark:border-gray-700 bg-white dark:bg-gray-800 text-sm focus:ring-2 focus:ring-[#E8DCC8]"
                       placeholder={language === 'ar' ? 'بريدك الإلكتروني' : 'Your email'}
                       required
                     />
@@ -335,7 +335,7 @@ export default function ScheduleVisitModal({
                       type="tel"
                       value={formData.phone}
                       onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                      className="w-full px-3 py-2 rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 text-sm focus:ring-2 focus:ring-[#E8DCC8]"
+                      className="w-full px-3 py-2 rounded-lg border border-gray-200 dark:border-gray-700 dark:border-gray-700 bg-white dark:bg-gray-800 text-sm focus:ring-2 focus:ring-[#E8DCC8]"
                       placeholder="+971 50 123 4567"
                       required
                     />

@@ -409,7 +409,7 @@ export default function ExperienceCentrePage() {
                           className={`p-3 border-2 text-sm font-medium transition-colors ${
                             bookingData.time === slot
                               ? 'border-black bg-black text-white'
-                              : 'border-gray-300 hover:border-gray-400'
+                              : 'border-gray-300 dark:border-gray-600 hover:border-gray-400'
                           }`}
                         >
                           {slot}
@@ -473,7 +473,7 @@ export default function ExperienceCentrePage() {
                             className={`p-3 border-2 text-sm font-medium transition-colors ${
                               bookingData.interests.includes(interest)
                                 ? 'border-black bg-black text-white'
-                                : 'border-gray-300 hover:border-gray-400'
+                                : 'border-gray-300 dark:border-gray-600 hover:border-gray-400'
                             }`}
                           >
                             {interest}

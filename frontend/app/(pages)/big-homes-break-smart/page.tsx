@@ -145,7 +145,7 @@ export default function BigHomesBreakSmartPage() {
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.6, delay: 0.2 }}
-                  className="bg-white border-2 border-gray-200 hover:border-red-400 transition-all duration-300 p-8"
+                  className="bg-white border-2 border-gray-200 dark:border-gray-700 hover:border-red-400 transition-all duration-300 p-8"
                 >
                   <div className="flex flex-col md:flex-row gap-6">
                     <div className="flex-shrink-0">
@@ -164,7 +164,7 @@ export default function BigHomesBreakSmartPage() {
                           <span className="text-sm uppercase tracking-wider text-orange-600 font-semibold">Impact:</span>
                           <p className="text-gray-700 dark:text-gray-300 mt-1">{problem.impact}</p>
                         </div>
-                        <div className="pt-3 border-t border-gray-200 dark:border-gray-700">
+                        <div className="pt-3 border-t border-gray-200 dark:border-gray-700 dark:border-gray-700">
                           <div className="text-sm text-gray-500 italic">📊 {problem.stat}</div>
                         </div>
                       </div>
@@ -207,7 +207,7 @@ export default function BigHomesBreakSmartPage() {
                   <span className="text-red-600 font-bold text-lg">{item.cost}</span>
                 </div>
                 <p className="text-gray-600 dark:text-gray-400 text-sm mb-4">{item.description}</p>
-                <div className="pt-3 border-t border-gray-200 dark:border-gray-700">
+                <div className="pt-3 border-t border-gray-200 dark:border-gray-700 dark:border-gray-700">
                   <span className="text-xs uppercase tracking-wider text-green-600 font-semibold">LEXA Solution:</span>
                   <p className="text-sm text-gray-700 dark:text-gray-300 mt-1">{item.solution}</p>
                 </div>

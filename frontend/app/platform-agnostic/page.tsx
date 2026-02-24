@@ -171,7 +171,7 @@ export default function PlatformAgnosticPage() {
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.6, delay: 0.2 }}
                     viewport={{ once: true }}
-                    className="bg-white dark:bg-gray-800 p-8 border-2 border-gray-200 hover:border-[#1A1A1A] transition-all"
+                    className="bg-white dark:bg-gray-800 p-8 border-2 border-gray-200 dark:border-gray-700 hover:border-[#1A1A1A] transition-all"
                   >
                     <div className="flex items-start gap-4 mb-4">
                       <div className="p-3 bg-indigo-50">
@@ -228,7 +228,7 @@ export default function PlatformAgnosticPage() {
                   <p className="text-gray-600 dark:text-gray-400 mb-4">{layer.description}</p>
                   <div className="flex flex-wrap gap-2">
                     {layer.examples.map((example) => (
-                      <span key={example} className="px-3 py-1 bg-white text-sm text-gray-700 dark:text-gray-300 border border-gray-200 dark:border-gray-700">
+                      <span key={example} className="px-3 py-1 bg-white text-sm text-gray-700 dark:text-gray-300 border border-gray-200 dark:border-gray-700 dark:border-gray-700">
                         {example}
                       </span>
                     ))}
@@ -254,16 +254,16 @@ export default function PlatformAgnosticPage() {
               </h2>
             </motion.div>
 
-            <div className="bg-white border-2 border-gray-200 overflow-hidden">
+            <div className="bg-white border-2 border-gray-200 dark:border-gray-700 overflow-hidden">
               <div className="grid grid-cols-3 bg-gray-100 font-semibold text-sm">
-                <div className="p-4 border-r border-gray-200 dark:border-gray-700">Aspect</div>
-                <div className="p-4 border-r border-gray-200 text-center">Proprietary Systems</div>
+                <div className="p-4 border-r border-gray-200 dark:border-gray-700 dark:border-gray-700">Aspect</div>
+                <div className="p-4 border-r border-gray-200 dark:border-gray-700 text-center">Proprietary Systems</div>
                 <div className="p-4 text-center">Platform Agnostic</div>
               </div>
               {comparison.map((row, index) => (
-                <div key={row.aspect} className={`grid grid-cols-3 border-t border-gray-200 ${index % 2 === 0 ? 'bg-gray-50' : 'bg-white'}`}>
-                  <div className="p-4 border-r border-gray-200 font-semibold text-gray-700 dark:text-gray-300 dark:text-gray-300">{row.aspect}</div>
-                  <div className="p-4 border-r border-gray-200 text-center text-red-600 text-sm">{row.proprietary}</div>
+                <div key={row.aspect} className={`grid grid-cols-3 border-t border-gray-200 dark:border-gray-700 ${index % 2 === 0 ? 'bg-gray-50' : 'bg-white'}`}>
+                  <div className="p-4 border-r border-gray-200 dark:border-gray-700 font-semibold text-gray-700 dark:text-gray-300 dark:text-gray-300">{row.aspect}</div>
+                  <div className="p-4 border-r border-gray-200 dark:border-gray-700 text-center text-red-600 text-sm">{row.proprietary}</div>
                   <div className="p-4 text-center text-green-600 font-semibold text-sm">{row.agnostic}</div>
                 </div>
               ))}

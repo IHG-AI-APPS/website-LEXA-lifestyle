@@ -43,7 +43,7 @@ export default function Step7Location({
               onEmirateChange(e.target.value)
               onCityChange('') // Reset city when emirate changes
             }}
-            className="w-full border-2 border-gray-200 px-4 py-3 rounded-lg focus:border-black"
+            className="w-full border-2 border-gray-200 dark:border-gray-700 px-4 py-3 rounded-lg focus:border-black"
           >
             <option value="">Select emirate</option>
             {emirates.map((em) => (
@@ -63,7 +63,7 @@ export default function Step7Location({
             <select
               value={city}
               onChange={(e) => onCityChange(e.target.value)}
-              className="w-full border-2 border-gray-200 px-4 py-3 rounded-lg focus:border-black"
+              className="w-full border-2 border-gray-200 dark:border-gray-700 px-4 py-3 rounded-lg focus:border-black"
             >
               <option value="">Select city/area</option>
               {cities.map((c) => (

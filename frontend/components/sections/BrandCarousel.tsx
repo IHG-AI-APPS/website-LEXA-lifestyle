@@ -43,7 +43,7 @@ export default function BrandCarousel() {
   if (brands.length === 0) return null
 
   return (
-    <section className="py-24 bg-white dark:bg-[#0a0f1a] border-y border-gray-200 dark:border-gray-800 overflow-hidden">
+    <section className="py-24 bg-white dark:bg-[#0a0f1a] border-y border-gray-200 dark:border-gray-700 dark:border-gray-800 overflow-hidden">
       <div className="container mx-auto px-4 md:px-8 max-w-7xl mb-16">
         <span className="text-xs md:text-sm tracking-[0.2em] uppercase text-gray-600 dark:text-gray-400 dark:text-gray-400 font-bold block mb-6">
           Our Partners

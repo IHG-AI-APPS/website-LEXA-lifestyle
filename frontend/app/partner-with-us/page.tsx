@@ -442,7 +442,7 @@ export default function PartnerWithUsPage() {
                       className={`p-3 border-2 rounded-lg text-left transition-all ${
                         selectedType === type.id 
                           ? 'border-[#E8DCC8] bg-[#E8DCC8]/10' 
-                          : 'border-gray-200 hover:border-gray-300'
+                          : 'border-gray-200 dark:border-gray-700 hover:border-gray-300'
                       }`}
                     >
                       <div className="font-semibold text-sm text-gray-900 dark:text-white dark:text-white">{type.title}</div>
@@ -515,7 +515,7 @@ export default function PartnerWithUsPage() {
                     required
                     value={formData.country}
                     onChange={(e) => setFormData({ ...formData, country: e.target.value })}
-                    className="w-full h-10 px-3 rounded-lg border border-gray-200 text-gray-900 dark:text-white dark:text-white"
+                    className="w-full h-10 px-3 rounded-lg border border-gray-200 dark:border-gray-700 text-gray-900 dark:text-white dark:text-white"
                   >
                     <option value="">Select country</option>
                     {gccCountries.map((country) => (
@@ -547,7 +547,7 @@ export default function PartnerWithUsPage() {
                   onChange={(e) => setFormData({ ...formData, currentBusiness: e.target.value })}
                   placeholder="Tell us about your current business, experience, and why you want to partner with LEXA..."
                   rows={4}
-                  className="w-full px-3 py-2 rounded-lg border border-gray-200 text-gray-900 dark:text-white resize-none"
+                  className="w-full px-3 py-2 rounded-lg border border-gray-200 dark:border-gray-700 text-gray-900 dark:text-white resize-none"
                 />
               </div>
 

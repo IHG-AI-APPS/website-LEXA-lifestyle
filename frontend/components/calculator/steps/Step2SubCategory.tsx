@@ -22,7 +22,7 @@ export default function Step2SubCategory({ subCategories, selectedSubCategory, o
             className={`p-6 border-2 rounded-lg text-left transition-all ${
               selectedSubCategory === sub.id
                 ? 'border-black bg-gray-50'
-                : 'border-gray-200 hover:border-gray-400'
+                : 'border-gray-200 dark:border-gray-700 hover:border-gray-400'
             }`}
           >
             <h3 className="font-semibold text-lg">{sub.label}</h3>

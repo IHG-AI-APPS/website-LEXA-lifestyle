@@ -76,7 +76,7 @@ export default function NewsPage() {
 
       {/* Featured News */}
       {featuredNews && (
-        <section className="py-16 bg-white border-b border-gray-100 dark:border-gray-800">
+        <section className="py-16 bg-white border-b border-gray-100 dark:border-gray-800 dark:border-gray-800">
           <div className="container mx-auto px-6 lg:px-12 max-w-7xl">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -153,7 +153,7 @@ export default function NewsPage() {
                   {article.tags && article.tags.length > 0 && (
                     <div className="flex flex-wrap gap-2 mt-4">
                       {article.tags.map(tag => (
-                        <span key={tag} className="text-xs text-gray-500 border border-gray-200 px-2 py-1 rounded">
+                        <span key={tag} className="text-xs text-gray-500 border border-gray-200 dark:border-gray-700 px-2 py-1 rounded">
                           {tag}
                         </span>
                       ))}

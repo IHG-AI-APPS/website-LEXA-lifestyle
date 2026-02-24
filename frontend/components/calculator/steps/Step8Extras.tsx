@@ -43,7 +43,7 @@ export default function Step8Extras({
               className={`p-4 border-2 rounded-lg transition-all text-center ${
                 selectedFeatures.includes(feature.id)
                   ? 'border-black bg-gray-50'
-                  : 'border-gray-200 hover:border-gray-400'
+                  : 'border-gray-200 dark:border-gray-700 hover:border-gray-400'
               }`}
             >
               <div className="text-3xl mb-2">{feature.icon}</div>

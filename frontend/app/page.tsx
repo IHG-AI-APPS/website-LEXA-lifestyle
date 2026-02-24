@@ -41,7 +41,7 @@ export default function HomePage() {
       <HeroCurator onPersonaClick={() => setShowPersonaModal(true)} />
       
       {/* TRUST BADGES - Quick social proof strip below hero */}
-      <TrustBadges variant="compact" className="bg-white dark:bg-gray-900 border-b border-gray-100 dark:border-gray-800" />
+      <TrustBadges variant="compact" className="bg-white dark:bg-gray-900 border-b border-gray-100 dark:border-gray-800 dark:border-gray-800" />
       
       {/* RECENTLY VIEWED - Personalized re-engagement (shows only if user has history) */}
       <RecentlyViewedSection maxItems={4} variant="horizontal" className="bg-gray-50 dark:bg-gray-900/50" />

@@ -44,7 +44,7 @@ export default function Step4Solutions({ solutions, selectedSolutions, onSolutio
                   className={`p-4 border-2 rounded-lg text-left transition-all ${
                     selectedSolutions[solution.id] === level.id
                       ? 'border-black bg-white'
-                      : 'border-gray-200 hover:border-gray-400'
+                      : 'border-gray-200 dark:border-gray-700 hover:border-gray-400'
                   }`}
                 >
                   <div className="font-semibold text-sm mb-1">{level.label}</div>

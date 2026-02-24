@@ -234,7 +234,7 @@ export default function IntegrationsPage() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.6, delay: 0.2 }}
-                  className="bg-white dark:bg-gray-800 border border-gray-200 p-8 hover:border-gray-400 transition-all duration-300"
+                  className="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 p-8 hover:border-gray-400 transition-all duration-300"
                 >
                   <div className="flex items-start gap-4 mb-6">
                     <div className="p-3 bg-black rounded-lg">
@@ -250,7 +250,7 @@ export default function IntegrationsPage() {
                     {platform.brands.map((brand) => (
                       <div
                         key={brand.name}
-                        className="bg-gray-50 p-4 border border-gray-200 hover:border-black transition-colors"
+                        className="bg-gray-50 p-4 border border-gray-200 dark:border-gray-700 hover:border-black transition-colors"
                       >
                         <div className="font-semibold mb-1">{brand.name}</div>
                         <div className="text-xs text-gray-500">{brand.tier}</div>
@@ -287,7 +287,7 @@ export default function IntegrationsPage() {
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: 0.15 }}
-                className="bg-white dark:bg-gray-800 p-6 border-2 border-gray-200 hover:border-blue-400 transition-all duration-300"
+                className="bg-white dark:bg-gray-800 p-6 border-2 border-gray-200 dark:border-gray-700 hover:border-blue-400 transition-all duration-300"
               >
                 <div className="flex items-center justify-between mb-2">
                   <h3 className="text-lg font-bold">{protocol.name}</h3>

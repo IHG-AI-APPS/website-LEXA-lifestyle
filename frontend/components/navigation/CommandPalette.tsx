@@ -324,7 +324,7 @@ export default function CommandPalette() {
       >
         <Search className="w-4 h-4" />
         <span>Search...</span>
-        <kbd className="hidden lg:inline-flex items-center gap-1 px-1.5 py-0.5 text-xs bg-white dark:bg-gray-700 border border-gray-200 dark:border-gray-600 rounded">
+        <kbd className="hidden lg:inline-flex items-center gap-1 px-1.5 py-0.5 text-xs bg-white dark:bg-gray-700 border border-gray-200 dark:border-gray-700 dark:border-gray-600 rounded">
           ⌘K
         </kbd>
       </button>
@@ -351,10 +351,10 @@ export default function CommandPalette() {
               className="fixed top-[20%] left-1/2 -translate-x-1/2 w-full max-w-xl z-50"
             >
               <Command
-                className="bg-white dark:bg-gray-900 rounded-xl shadow-2xl border border-gray-200 dark:border-gray-700 overflow-hidden"
+                className="bg-white dark:bg-gray-900 rounded-xl shadow-2xl border border-gray-200 dark:border-gray-700 dark:border-gray-700 overflow-hidden"
                 loop
               >
-                <div className="flex items-center gap-3 px-4 py-3 border-b border-gray-200 dark:border-gray-700">
+                <div className="flex items-center gap-3 px-4 py-3 border-b border-gray-200 dark:border-gray-700 dark:border-gray-700">
                   <Search className="w-5 h-5 text-gray-400" />
                   <Command.Input
                     value={search}
@@ -525,7 +525,7 @@ export default function CommandPalette() {
                   )}
                 </Command.List>
 
-                <div className="flex items-center justify-between px-4 py-2 border-t border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-800 text-xs text-gray-500 dark:text-gray-400">
+                <div className="flex items-center justify-between px-4 py-2 border-t border-gray-200 dark:border-gray-700 dark:border-gray-700 bg-gray-50 dark:bg-gray-800 text-xs text-gray-500 dark:text-gray-400">
                   <div className="flex items-center gap-4">
                     <span className="flex items-center gap-1">
                       <kbd className="px-1.5 py-0.5 bg-white dark:bg-gray-800 border rounded">↑↓</kbd>

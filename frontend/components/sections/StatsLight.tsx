@@ -21,7 +21,7 @@ export default function StatsLight() {
   const isInView = useInView(ref, { once: true })
 
   return (
-    <section ref={ref} className="py-24 bg-gray-50 border-y border-gray-200 dark:border-gray-700">
+    <section ref={ref} className="py-24 bg-gray-50 border-y border-gray-200 dark:border-gray-700 dark:border-gray-700">
       <div className="container mx-auto px-4 md:px-8 max-w-7xl">
         <div className="grid grid-cols-2 md:grid-cols-5 gap-8 md:gap-12">
           {stats.map((stat, index) => (

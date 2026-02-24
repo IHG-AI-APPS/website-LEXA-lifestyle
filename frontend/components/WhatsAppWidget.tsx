@@ -120,7 +120,7 @@ export default function WhatsAppWidget() {
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 20, scale: 0.9 }}
             transition={{ duration: 0.2 }}
-            className="fixed bottom-24 sm:bottom-28 right-4 sm:right-6 z-[55] w-[calc(100vw-32px)] sm:w-80 max-w-80 bg-white dark:bg-gray-800 rounded-2xl shadow-2xl border border-gray-200 overflow-hidden"
+            className="fixed bottom-24 sm:bottom-28 right-4 sm:right-6 z-[55] w-[calc(100vw-32px)] sm:w-80 max-w-80 bg-white dark:bg-gray-800 rounded-2xl shadow-2xl border border-gray-200 dark:border-gray-700 overflow-hidden"
           >
             <div className="bg-green-500 p-4 text-white">
               <div className="flex items-center justify-between mb-2">
@@ -147,7 +147,7 @@ export default function WhatsAppWidget() {
                 <button
                   key={index}
                   onClick={() => handleQuickMessage(msg.message, msg.intent)}
-                  className="w-full text-left p-4 rounded-xl border-2 border-gray-200 hover:border-green-500 hover:bg-green-50 transition-all group"
+                  className="w-full text-left p-4 rounded-xl border-2 border-gray-200 dark:border-gray-700 hover:border-green-500 hover:bg-green-50 transition-all group"
                 >
                   <div className="font-semibold text-sm mb-1 group-hover:text-green-600">
                     {msg.title}

@@ -82,7 +82,7 @@ export default function PalmJumeirahPage() {
                 { title: 'Smart Lifestyle', link: '/solutions/smart-lifestyle', desc: 'Complete villa automation' }
               ].map((solution, index) => (
                 <Link key={index} href={solution.link}>
-                  <div className="border border-gray-200 hover:border-black p-6 rounded-lg transition-all group">
+                  <div className="border border-gray-200 dark:border-gray-700 hover:border-black p-6 rounded-lg transition-all group">
                     <h3 className="text-lg font-bold mb-2 group-hover:text-black transition-colors">{solution.title}</h3>
                     <p className="text-sm text-gray-600 dark:text-gray-400 dark:text-gray-400">{solution.desc}</p>
                   </div>

@@ -261,7 +261,7 @@ export default function AMCPackagesPage() {
                     <div className="text-sm font-bold text-blue-900">{pkg.response}</div>
                   </div>
 
-                  <div className="border-t border-gray-200 pt-4 mb-6">
+                  <div className="border-t border-gray-200 dark:border-gray-700 pt-4 mb-6">
                     <div className="text-sm text-gray-600 dark:text-gray-400 mb-1">Ideal for:</div>
                     <div className="text-sm font-semibold text-[#1A1A1A] dark:text-white">{pkg.ideal}</div>
                   </div>
@@ -358,7 +358,7 @@ export default function AMCPackagesPage() {
                     whileInView={{ opacity: 1, scale: 1 }}
                     transition={{ duration: 0.6, delay: 0.2 }}
                     viewport={{ once: true }}
-                    className="text-center p-6 bg-white border-2 border-gray-200 dark:border-gray-700"
+                    className="text-center p-6 bg-white border-2 border-gray-200 dark:border-gray-700 dark:border-gray-700"
                   >
                     <Icon className="h-10 w-10 mx-auto mb-4 text-[#1A1A1A] dark:text-white" />
                     <div className="text-4xl font-bold mb-2 text-[#1A1A1A] dark:text-white">{benefit.stat}</div>

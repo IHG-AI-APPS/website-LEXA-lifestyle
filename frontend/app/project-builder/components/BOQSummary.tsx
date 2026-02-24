@@ -182,7 +182,7 @@ export default function BOQSummary({ sessionId, selectedProposal, onComplete }: 
         )}
 
         {/* Summary Grid */}
-        <div className="bg-white dark:bg-gray-800 border border-gray-200 p-8 mb-8">
+        <div className="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 p-8 mb-8">
           <h3 className="text-sm font-medium mb-6 uppercase tracking-widest text-gray-900 dark:text-white dark:text-white">Architecture Overview</h3>
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
@@ -217,7 +217,7 @@ export default function BOQSummary({ sessionId, selectedProposal, onComplete }: 
           </div>
 
           {/* Systems List */}
-          <div className="border-t border-gray-200 pt-6">
+          <div className="border-t border-gray-200 dark:border-gray-700 pt-6">
             <div className="text-xs text-gray-600 dark:text-gray-400 uppercase tracking-widest mb-4">Included Systems</div>
             <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
               {proposal?.systems?.map((system: any, index: number) => (
@@ -244,7 +244,7 @@ export default function BOQSummary({ sessionId, selectedProposal, onComplete }: 
         </div>
 
         {/* Next Steps */}
-        <div className="bg-white dark:bg-gray-800 border border-gray-200 p-8 mb-12">
+        <div className="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 p-8 mb-12">
           <h3 className="text-sm font-medium mb-4 uppercase tracking-widest text-gray-900 dark:text-white dark:text-white">Next Steps</h3>
           <ol className="space-y-3 text-sm text-gray-700 dark:text-gray-300 dark:text-gray-300">
             <li className="flex items-start gap-3">
@@ -299,7 +299,7 @@ export default function BOQSummary({ sessionId, selectedProposal, onComplete }: 
                   type="text"
                   value={emailForm.name}
                   onChange={(e) => setEmailForm({ ...emailForm, name: e.target.value })}
-                  className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                  className="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
                   placeholder="John Smith"
                   data-testid="email-modal-name"
                 />
@@ -310,7 +310,7 @@ export default function BOQSummary({ sessionId, selectedProposal, onComplete }: 
                   type="email"
                   value={emailForm.email}
                   onChange={(e) => setEmailForm({ ...emailForm, email: e.target.value })}
-                  className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                  className="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
                   placeholder="john@example.com"
                   data-testid="email-modal-email"
                 />

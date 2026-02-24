@@ -212,7 +212,7 @@ export default function SmartApartmentPackagesPage() {
                   size="lg"
                   variant="outline"
                   asChild
-                  className="border-2 border-gray-300 text-gray-700 dark:text-gray-300 hover:bg-gray-50 px-8 py-6 text-sm font-semibold uppercase tracking-wider"
+                  className="border-2 border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 hover:bg-gray-50 px-8 py-6 text-sm font-semibold uppercase tracking-wider"
                 >
                   <Link href="#packages">
                     Compare Packages
@@ -224,7 +224,7 @@ export default function SmartApartmentPackagesPage() {
         </section>
 
         {/* Apartment Size Selector */}
-        <section id="packages" className="py-12 bg-white border-b border-gray-200 dark:border-gray-700">
+        <section id="packages" className="py-12 bg-white border-b border-gray-200 dark:border-gray-700 dark:border-gray-700">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
             <div className="text-center mb-8">
               <h2 className="text-2xl sm:text-3xl font-bold mb-2 text-gray-900 dark:text-white dark:text-white">Select Your Apartment Size</h2>
@@ -238,7 +238,7 @@ export default function SmartApartmentPackagesPage() {
                   className={`px-6 py-3 border-2 font-semibold transition-all ${
                     selectedSize === size.id
                       ? 'border-blue-600 bg-blue-50 text-blue-700'
-                      : 'border-gray-200 bg-white text-gray-700 dark:text-gray-300 hover:border-blue-300'
+                      : 'border-gray-200 dark:border-gray-700 bg-white text-gray-700 dark:text-gray-300 hover:border-blue-300'
                   }`}
                 >
                   <span className="mr-2">{size.icon}</span>
@@ -296,7 +296,7 @@ export default function SmartApartmentPackagesPage() {
                         ))}
                       </div>
 
-                      <div className="border-t border-gray-200 pt-4 mb-6">
+                      <div className="border-t border-gray-200 dark:border-gray-700 pt-4 mb-6">
                         <div className="text-xs text-gray-500">Ideal for:</div>
                         <div className="text-sm font-semibold text-gray-700 dark:text-gray-300 dark:text-gray-300">{pkg.ideal}</div>
                       </div>

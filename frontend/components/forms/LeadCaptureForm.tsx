@@ -82,7 +82,7 @@ export default function LeadCaptureForm({ calculatorData, onSubmit, onSkip }: Le
   }
 
   return (
-    <div className="p-8 bg-white dark:bg-gray-800 rounded-lg border border-gray-200 dark:border-gray-700">
+    <div className="p-8 bg-white dark:bg-gray-800 rounded-lg border border-gray-200 dark:border-gray-700 dark:border-gray-700">
       <div className="mb-6">
         <h3 className="text-2xl font-heading font-semibold mb-2">Get Your Detailed Quote</h3>
         <p className="text-sm text-gray-600 dark:text-gray-400 dark:text-gray-400">
@@ -129,7 +129,7 @@ export default function LeadCaptureForm({ calculatorData, onSubmit, onSkip }: Le
             <select
               value={formData.timeline}
               onChange={e => setFormData(prev => ({ ...prev, timeline: e.target.value }))}
-              className="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-black focus:border-transparent"
+              className="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md focus:ring-2 focus:ring-black focus:border-transparent"
             >
               <option value="">Select timeline</option>
               <option value="immediate">Immediately</option>

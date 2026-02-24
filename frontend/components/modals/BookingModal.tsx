@@ -132,7 +132,7 @@ export default function BookingModal({ isOpen, onClose, submissionId, customerNa
                         className={`p-5 border-2 rounded-lg transition-all text-left ${
                           bookingType === 'site-visit'
                             ? 'border-green-500 bg-green-50'
-                            : 'border-gray-200 hover:border-gray-400'
+                            : 'border-gray-200 dark:border-gray-700 hover:border-gray-400'
                         }`}
                       >
                         <MapPin className={`mb-3 ${bookingType === 'site-visit' ? 'text-green-600' : 'text-gray-400'}`} size={28} />
@@ -148,7 +148,7 @@ export default function BookingModal({ isOpen, onClose, submissionId, customerNa
                         className={`p-5 border-2 rounded-lg transition-all text-left ${
                           bookingType === 'experience-center'
                             ? 'border-green-500 bg-green-50'
-                            : 'border-gray-200 hover:border-gray-400'
+                            : 'border-gray-200 dark:border-gray-700 hover:border-gray-400'
                         }`}
                       >
                         <Calendar className={`mb-3 ${bookingType === 'experience-center' ? 'text-green-600' : 'text-gray-400'}`} size={28} />
@@ -164,7 +164,7 @@ export default function BookingModal({ isOpen, onClose, submissionId, customerNa
                         className={`p-5 border-2 rounded-lg transition-all text-left ${
                           bookingType === 'video-call'
                             ? 'border-green-500 bg-green-50'
-                            : 'border-gray-200 hover:border-gray-400'
+                            : 'border-gray-200 dark:border-gray-700 hover:border-gray-400'
                         }`}
                       >
                         <Video className={`mb-3 ${bookingType === 'video-call' ? 'text-green-600' : 'text-gray-400'}`} size={28} />

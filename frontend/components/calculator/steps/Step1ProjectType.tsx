@@ -24,7 +24,7 @@ export default function Step1ProjectType({ projectTypes, selectedType, onSelect 
             className={`p-6 border-2 rounded-xl text-left transition-all transform hover:scale-105 ${
               selectedType === type.id
                 ? 'border-black bg-gray-50 shadow-lg'
-                : 'border-gray-200 hover:border-gray-400'
+                : 'border-gray-200 dark:border-gray-700 hover:border-gray-400'
             }`}
           >
             <type.icon

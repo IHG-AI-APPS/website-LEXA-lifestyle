@@ -57,7 +57,7 @@ export default function OurPromise() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: index * 0.1 }}
-              className="bg-white dark:bg-gray-800 border border-gray-200 p-8 group hover:border-gray-400 transition-all duration-300"
+              className="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 p-8 group hover:border-gray-400 transition-all duration-300"
             >
               <promise.icon className="w-12 h-12 text-gray-600 dark:text-gray-400 mb-6 stroke-[1.5] group-hover:text-black transition-colors" />
               <h3 className="text-xl font-heading font-semibold text-black mb-4">

@@ -72,7 +72,7 @@ export default function FloorPlanUploader({ onSave, initialImage, initialAnnotat
     <div className="space-y-6">
       {/* Upload Section */}
       {!floorPlanImage && (
-        <div className="border-2 border-dashed border-gray-300 rounded-xl p-12 text-center hover:border-gray-400 transition-colors">
+        <div className="border-2 border-dashed border-gray-300 dark:border-gray-600 rounded-xl p-12 text-center hover:border-gray-400 transition-colors">
           <Upload className="mx-auto mb-4 text-gray-400" size={48} />
           <h3 className="text-xl font-semibold mb-2">Upload Your Floor Plan</h3>
           <p className="text-gray-600 dark:text-gray-400 mb-6">
@@ -114,7 +114,7 @@ export default function FloorPlanUploader({ onSave, initialImage, initialAnnotat
                   className={`p-3 text-center rounded-lg border-2 transition-all text-sm ${
                     selectedDeviceType === device.id
                       ? 'border-black bg-gray-100 scale-105'
-                      : 'border-gray-200 hover:border-gray-400'
+                      : 'border-gray-200 dark:border-gray-700 hover:border-gray-400'
                   }`}
                   style={selectedDeviceType === device.id ? { borderColor: device.color } : {}}
                 >
@@ -149,7 +149,7 @@ export default function FloorPlanUploader({ onSave, initialImage, initialAnnotat
                         deviceType: e.target.value,
                       })
                     }}
-                    className="border-2 border-gray-300 rounded px-2 py-1"
+                    className="border-2 border-gray-300 dark:border-gray-600 rounded px-2 py-1"
                   >
                     {DEVICE_TYPES.map(device => (
                       <option key={device.id} value={device.id}>
@@ -224,7 +224,7 @@ export default function FloorPlanUploader({ onSave, initialImage, initialAnnotat
                 alt="Floor plan"
                 width={1200}
                 height={800}
-                className="w-full h-auto rounded-lg border-2 border-gray-200 dark:border-gray-700"
+                className="w-full h-auto rounded-lg border-2 border-gray-200 dark:border-gray-700 dark:border-gray-700"
               />
             </div>
           </div>

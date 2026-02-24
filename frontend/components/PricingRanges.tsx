@@ -60,7 +60,7 @@ export default function PricingRanges() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
-                className="bg-gallery-base rounded-xl p-6 sm:p-8 border-2 border-gray-200 hover:border-black hover:shadow-xl transition-all"
+                className="bg-gallery-base rounded-xl p-6 sm:p-8 border-2 border-gray-200 dark:border-gray-700 hover:border-black hover:shadow-xl transition-all"
               >
                 <div className="w-14 h-14 sm:w-16 sm:h-16 bg-black rounded-full flex items-center justify-center mb-5 sm:mb-6">
                   <type.icon size={28} className="text-white sm:w-8 sm:h-8" />

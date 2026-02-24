@@ -276,7 +276,7 @@ export default function CertificationStandardPage() {
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: 0.2 }}
                   viewport={{ once: true }}
-                  className="bg-white border-2 border-gray-200 rounded-xl p-8 hover:border-black transition-all"
+                  className="bg-white border-2 border-gray-200 dark:border-gray-700 rounded-xl p-8 hover:border-black transition-all"
                 >
                   <div className="inline-flex items-center justify-center w-14 h-14 mb-4 bg-black rounded-full">
                     <standard.icon size={28} className="text-white" />
@@ -350,7 +350,7 @@ export default function CertificationStandardPage() {
                   whileInView={{ opacity: 1, scale: 1 }}
                   transition={{ duration: 0.5, delay: 0.2 }}
                   viewport={{ once: true }}
-                  className="bg-white border-2 border-gray-200 rounded-xl p-6 hover:border-yellow-500 hover:shadow-xl transition-all"
+                  className="bg-white border-2 border-gray-200 dark:border-gray-700 rounded-xl p-6 hover:border-yellow-500 hover:shadow-xl transition-all"
                 >
                   <div className="text-center">
                     <div className="text-5xl mb-3">{cert.logo}</div>

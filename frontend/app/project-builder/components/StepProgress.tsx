@@ -59,7 +59,7 @@ export default function StepProgress({
   return (
     <>
       {/* Desktop Progress Bar - Below main navigation */}
-      <div className="hidden lg:block w-full bg-white border-b border-gray-200 shadow-sm sticky top-[72px] z-30">
+      <div className="hidden lg:block w-full bg-white border-b border-gray-200 dark:border-gray-700 shadow-sm sticky top-[72px] z-30">
         <div className="max-w-7xl mx-auto px-6 pt-4 pb-10">
           <div className="flex items-center justify-between">
             {BUILDER_STEPS.map((step, index) => {
@@ -160,7 +160,7 @@ export default function StepProgress({
       </div>
 
       {/* Mobile Progress Bar - Below main navigation */}
-      <div className="lg:hidden w-full bg-white border-b border-gray-200 shadow-sm sticky top-[64px] z-30">
+      <div className="lg:hidden w-full bg-white border-b border-gray-200 dark:border-gray-700 shadow-sm sticky top-[64px] z-30">
         <div className="px-4 py-3">
           {/* Current Step Info */}
           <div className="flex items-center justify-between mb-3">

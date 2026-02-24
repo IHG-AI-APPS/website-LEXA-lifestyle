@@ -114,7 +114,7 @@ export default function BrandsPage() {
                     transition={{ duration: 0.15 }}
                   >
                     <Link href={`/brands/${brand.slug}`}>
-                      <div className="group relative bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 hover:border-gray-400 dark:hover:border-gray-500 hover:shadow-md transition-all p-4 h-28 flex flex-col items-center justify-center text-center">
+                      <div className="group relative bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 dark:border-gray-700 hover:border-gray-400 dark:hover:border-gray-500 hover:shadow-md transition-all p-4 h-28 flex flex-col items-center justify-center text-center">
                         {brand.logo ? (
                           <div className="relative w-full h-12 mb-2">
                             <SafeImage
@@ -150,7 +150,7 @@ export default function BrandsPage() {
                 className={`px-4 py-2 text-sm font-medium rounded-full transition-all ${
                   activeCategory === null
                     ? 'bg-black text-white'
-                    : 'bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 text-gray-600 dark:text-gray-400 dark:text-gray-400 hover:border-gray-400'
+                    : 'bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 dark:border-gray-700 text-gray-600 dark:text-gray-400 dark:text-gray-400 hover:border-gray-400'
                 }`}
               >
                 All Categories
@@ -215,10 +215,10 @@ export default function BrandsPage() {
                   <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
                     {categoryBrands.map((brand) => (
                       <Link key={brand.slug} href={`/brands/${brand.slug}`}>
-                        <div className="group bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 hover:border-gray-400 dark:hover:border-gray-500 hover:shadow-lg transition-all p-5 h-full">
+                        <div className="group bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 dark:border-gray-700 hover:border-gray-400 dark:hover:border-gray-500 hover:shadow-lg transition-all p-5 h-full">
                           <div className="flex items-start gap-4">
                             {/* Logo */}
-                            <div className="w-16 h-16 flex-shrink-0 bg-gray-50 dark:bg-gray-700 border border-gray-100 dark:border-gray-600 flex items-center justify-center p-2">
+                            <div className="w-16 h-16 flex-shrink-0 bg-gray-50 dark:bg-gray-700 border border-gray-100 dark:border-gray-800 dark:border-gray-600 flex items-center justify-center p-2">
                               {brand.logo ? (
                                 <div className="relative w-full h-full">
                                   <SafeImage
@@ -273,7 +273,7 @@ export default function BrandsPage() {
 
                           {/* Featured Badge */}
                           {brand.featured && (
-                            <div className="mt-3 pt-3 border-t border-gray-100 dark:border-gray-800">
+                            <div className="mt-3 pt-3 border-t border-gray-100 dark:border-gray-800 dark:border-gray-800">
                               <span className="inline-flex items-center gap-1 text-xs text-amber-600">
                                 <Star size={12} fill="currentColor" />
                                 Featured Partner

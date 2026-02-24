@@ -108,7 +108,7 @@ export default function ObjectiveSelector({ sessionId, onComplete }: ObjectiveSe
                 className={`relative p-8 text-left transition-all duration-300 group bg-white dark:bg-gray-800 border ${
                   isSelected
                     ? 'border-blue-600 shadow-lg scale-105'
-                    : 'border-gray-200 hover:border-gray-300 hover:shadow-md'
+                    : 'border-gray-200 dark:border-gray-700 hover:border-gray-300 dark:border-gray-600 hover:shadow-md'
                 }`}
               >
                 {/* Selection Indicator */}

@@ -148,7 +148,7 @@ export default function AboutPage() {
                     viewport={{ once: true }}
                     className="text-center"
                   >
-                    <div className="w-16 h-16 mx-auto mb-6 border border-gray-300 flex items-center justify-center">
+                    <div className="w-16 h-16 mx-auto mb-6 border border-gray-300 dark:border-gray-600 flex items-center justify-center">
                       <Icon size={32} className="text-charcoal" strokeWidth={1.5} />
                     </div>
                     <h3 className="h3 mb-3">{value.title}</h3>
@@ -225,7 +225,7 @@ export default function AboutPage() {
                   whileInView={{ opacity: 1, scale: 1 }}
                   transition={{ duration: 0.5, delay: 0.15 }}
                   viewport={{ once: true }}
-                  className="border border-gray-200 dark:border-gray-700 p-6 flex items-center justify-center text-center"
+                  className="border border-gray-200 dark:border-gray-700 dark:border-gray-700 p-6 flex items-center justify-center text-center"
                 >
                   <span className="text-lg font-medium text-gray-600 dark:text-gray-400 dark:text-gray-400">{partner}</span>
                 </motion.div>

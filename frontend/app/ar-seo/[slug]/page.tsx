@@ -215,7 +215,7 @@ export default async function DynamicArabicPage({ params }: { params: { slug: st
             <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center">الأسئلة الشائعة</h2>
             <div className="space-y-6">
               {page.faqs.map((faq: { question: string; answer: string }, index: number) => (
-                <div key={index} className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-sm border border-gray-100 dark:border-gray-800">
+                <div key={index} className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-sm border border-gray-100 dark:border-gray-800 dark:border-gray-800">
                   <h3 className="text-xl font-semibold mb-3 text-gray-900 dark:text-white dark:text-white">{faq.question}</h3>
                   <p className="text-gray-700 dark:text-gray-300 leading-relaxed">{faq.answer}</p>
                 </div>

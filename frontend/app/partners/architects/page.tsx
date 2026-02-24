@@ -198,7 +198,7 @@ export default function ArchitectResourcePortalPage() {
                     className={`p-8 rounded-2xl border transition-all hover:shadow-lg ${
                       isDark 
                         ? 'bg-gray-800 border-gray-700 hover:border-[#C9A962]' 
-                        : 'bg-white border-gray-200 hover:border-[#C9A962]'
+                        : 'bg-white border-gray-200 dark:border-gray-700 hover:border-[#C9A962]'
                     }`}
                   >
                     <Icon size={40} className="text-[#C9A962] mb-4" strokeWidth={1.5} />
@@ -517,7 +517,7 @@ export default function ArchitectResourcePortalPage() {
                       required
                       value={formData.resource_type}
                       onChange={(e) => setFormData({ ...formData, resource_type: e.target.value })}
-                      className="w-full border border-gray-300 rounded-lg p-3 focus:ring-2 focus:ring-[#C9A962] focus:border-[#C9A962]"
+                      className="w-full border border-gray-300 dark:border-gray-600 rounded-lg p-3 focus:ring-2 focus:ring-[#C9A962] focus:border-[#C9A962]"
                     >
                       <option value="">Select resource...</option>
                       <option value="cad_blocks">CAD Blocks Library</option>

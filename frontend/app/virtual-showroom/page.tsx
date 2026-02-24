@@ -141,7 +141,7 @@ export default function VirtualShowroomPage() {
       </section>
 
       {/* Category Filter */}
-      <section className="py-8 border-b border-gray-200 dark:border-gray-700">
+      <section className="py-8 border-b border-gray-200 dark:border-gray-700 dark:border-gray-700">
         <div className="container mx-auto px-8 lg:px-16">
           <div className="max-w-7xl mx-auto">
             <div className="flex flex-wrap gap-3 justify-center">

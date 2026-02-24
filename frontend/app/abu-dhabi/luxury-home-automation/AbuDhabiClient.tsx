@@ -152,7 +152,7 @@ export default function AbuDhabiLuxuryAutomationClient() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1 }}
-                className="p-6 bg-white dark:bg-gray-900 rounded-xl shadow-sm hover:shadow-lg transition-all border border-gray-100 dark:border-gray-700"
+                className="p-6 bg-white dark:bg-gray-900 rounded-xl shadow-sm hover:shadow-lg transition-all border border-gray-100 dark:border-gray-800 dark:border-gray-700"
               >
                 <div className="flex items-start justify-between">
                   <div>

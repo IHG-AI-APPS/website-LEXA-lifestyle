@@ -100,7 +100,7 @@ export default function ServiceLayer({ sessionId, projectData, onComplete }: Ser
                 className={`w-full p-8 border text-left transition-all duration-300 relative ${
                   isSelected
                     ? 'border-blue-600 bg-white dark:bg-gray-800 shadow-lg'
-                    : 'border-gray-200 bg-white hover:border-gray-300 hover:shadow-md'
+                    : 'border-gray-200 dark:border-gray-700 bg-white hover:border-gray-300 dark:border-gray-600 hover:shadow-md'
                 } ${service.mandatory ? 'cursor-not-allowed' : 'cursor-pointer'}`}
               >
                 {/* Badges */}
@@ -158,7 +158,7 @@ export default function ServiceLayer({ sessionId, projectData, onComplete }: Ser
         </div>
 
         {/* Summary */}
-        <div className="bg-gray-50 border border-gray-200 p-6 mb-8">
+        <div className="bg-gray-50 border border-gray-200 dark:border-gray-700 p-6 mb-8">
           <div className="text-sm text-gray-700 dark:text-gray-300 dark:text-gray-300">
             <span className="font-semibold">{selectedServices.length}</span> service{selectedServices.length > 1 ? 's' : ''} selected:
             <span className="ml-2 text-gray-600 dark:text-gray-400 dark:text-gray-400">

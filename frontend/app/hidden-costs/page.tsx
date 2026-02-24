@@ -122,7 +122,7 @@ export default function HiddenCostsPage() {
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.6, delay: 0.2 }}
                     viewport={{ once: true }}
-                    className="bg-white dark:bg-gray-800 p-8 border-2 border-gray-200 dark:border-gray-700"
+                    className="bg-white dark:bg-gray-800 p-8 border-2 border-gray-200 dark:border-gray-700 dark:border-gray-700"
                   >
                     <div className="flex items-start gap-4 mb-4">
                       <div className="p-3 bg-red-50">
@@ -145,7 +145,7 @@ export default function HiddenCostsPage() {
                           <div className="text-sm font-semibold text-gray-700 dark:text-gray-300 dark:text-gray-300">{cost.with}</div>
                         </div>
                       </div>
-                      <div className="pt-2 border-t border-gray-200 dark:border-gray-700">
+                      <div className="pt-2 border-t border-gray-200 dark:border-gray-700 dark:border-gray-700">
                         <div className="inline-block px-3 py-1 bg-green-50 text-green-800 text-sm font-semibold">
                           💰 {cost.savings}
                         </div>

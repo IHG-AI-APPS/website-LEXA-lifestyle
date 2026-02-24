@@ -231,7 +231,7 @@ export default function InvestmentPricingPage() {
                     ))}
                   </div>
 
-                  <div className="border-t border-gray-200 pt-4 mb-6">
+                  <div className="border-t border-gray-200 dark:border-gray-700 pt-4 mb-6">
                     <div className="text-sm text-gray-600 dark:text-gray-400 mb-1">Ideal for:</div>
                     <div className="text-sm font-semibold text-[#1A1A1A] dark:text-white">{tier.ideal}</div>
                   </div>
@@ -331,7 +331,7 @@ export default function InvestmentPricingPage() {
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.6, delay: 0.2 }}
                     viewport={{ once: true }}
-                    className="bg-white dark:bg-gray-800 p-8 border-2 border-gray-200 hover:border-[#1A1A1A] transition-all"
+                    className="bg-white dark:bg-gray-800 p-8 border-2 border-gray-200 dark:border-gray-700 hover:border-[#1A1A1A] transition-all"
                   >
                     <div className="flex items-start gap-4 mb-4">
                       <div className="p-3 bg-gray-50 dark:bg-gray-800">

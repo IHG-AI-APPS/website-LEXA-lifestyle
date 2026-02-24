@@ -43,7 +43,7 @@ export default function Step5Brands({
               className={`p-4 border-2 rounded-lg transition-all ${
                 selectedControl === platform
                   ? 'border-black bg-gray-50'
-                  : 'border-gray-200 hover:border-gray-400'
+                  : 'border-gray-200 dark:border-gray-700 hover:border-gray-400'
               }`}
             >
               <span className="font-semibold">{platform}</span>
@@ -65,7 +65,7 @@ export default function Step5Brands({
               className={`p-4 border-2 rounded-lg transition-all ${
                 selectedSecurity === brand
                   ? 'border-black bg-gray-50'
-                  : 'border-gray-200 hover:border-gray-400'
+                  : 'border-gray-200 dark:border-gray-700 hover:border-gray-400'
               }`}
             >
               <span className="font-semibold">{brand}</span>
@@ -87,7 +87,7 @@ export default function Step5Brands({
               className={`p-4 border-2 rounded-lg transition-all ${
                 selectedLighting === brand
                   ? 'border-black bg-gray-50'
-                  : 'border-gray-200 hover:border-gray-400'
+                  : 'border-gray-200 dark:border-gray-700 hover:border-gray-400'
               }`}
             >
               <span className="font-semibold">{brand}</span>
