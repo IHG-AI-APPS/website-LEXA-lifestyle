@@ -13,9 +13,13 @@ interface HeroCuratorProps {
 }
 
 // Curated Dark Luxury Video Sequence - Maximum Impact
-// Only include videos that actually exist
 const HERO_CLIPS = [
-  '/videos/hero-v3/v3_01_dramatic_entrance.mp4',  // Hook: Dramatic chandelier entrance
+  '/videos/hero-v3/v3_01_dramatic_entrance.mp4',
+  '/videos/hero/01_arrival.mp4',
+  '/videos/hero/02_interior_reveal.mp4',
+  '/videos/hero/04_living_tech.mp4',
+  '/videos/hero/05_cinema_room.mp4',
+  '/videos/hero/07_villa_night.mp4',
 ]
 
 export default function HeroCurator({ onPersonaClick }: HeroCuratorProps) {
