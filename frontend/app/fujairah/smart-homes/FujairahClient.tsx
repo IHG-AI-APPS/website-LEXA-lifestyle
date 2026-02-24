@@ -68,7 +68,7 @@ export default function FujairahClient() {
 
       <section className={`py-20 ${isDark ? 'bg-gray-900' : 'bg-white'}`}>
         <div className="container mx-auto px-4 max-w-4xl">
-          <h2 className={`text-3xl font-bold text-center mb-12 ${isDark ? 'text-white' : 'text-gray-900'}`}>Fujairah FAQs</h2>
+          <h2 className={`text-3xl font-heading font-bold text-center mb-12 ${isDark ? 'text-white' : 'text-gray-900'}`}>Fujairah FAQs</h2>
           <div className="space-y-4">
             {faqs.map((faq, i) => (
               <div key={i} className={`p-6 rounded-xl ${isDark ? 'bg-gray-800' : 'bg-gray-50'} shadow-sm`}>
