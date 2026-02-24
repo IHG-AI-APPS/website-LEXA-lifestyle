@@ -176,7 +176,7 @@ export default function RecentlyViewedSection({
             </div>
           </div>
           
-          {showClearButton && items.length > 0 && (
+          {showClearButton && validatedItems.length > 0 && (
             <button
               onClick={clearAll}
               className="flex items-center gap-1.5 text-sm text-gray-500 dark:text-gray-400 hover:text-red-500 dark:hover:text-red-400 transition-colors"
