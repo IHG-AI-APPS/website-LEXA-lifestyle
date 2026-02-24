@@ -53,7 +53,7 @@ export default function FujairahClient() {
 
       <section className={`py-20 ${isDark ? 'bg-gray-800/50' : 'bg-gray-50'}`}>
         <div className="container mx-auto px-4">
-          <h2 className={`text-3xl font-bold text-center mb-12 ${isDark ? 'text-white' : 'text-gray-900'}`}>Fujairah Areas</h2>
+          <h2 className={`text-3xl font-heading font-bold text-center mb-12 ${isDark ? 'text-white' : 'text-gray-900'}`}>Fujairah Areas</h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
             {areas.map((a, i) => (
               <motion.div key={a.name} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ delay: i * 0.1 }} className={`p-6 rounded-2xl border ${isDark ? 'bg-gray-800 border-gray-700' : 'bg-white border-gray-200'}`}>
