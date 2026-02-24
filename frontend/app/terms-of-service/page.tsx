@@ -12,7 +12,7 @@ export default function TermsOfServicePage() {
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="mb-12">
-          <h1 className="text-4xl md:text-5xl font-bold text-[#1A1A1A] mb-4">Terms of Service</h1>
+          <h1 className="text-4xl md:text-5xl font-heading font-bold text-[#1A1A1A] mb-4">Terms of Service</h1>
           <p className="text-gray-500">Last updated: February 2026</p>
         </div>
 
