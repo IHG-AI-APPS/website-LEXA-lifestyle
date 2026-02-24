@@ -143,7 +143,7 @@ export default function SolutionsBentoGrid() {
 
   if (loading) {
     return (
-      <section className="bg-white py-10 md:py-12">
+      <section className="bg-white dark:bg-gray-900 py-10 md:py-12">
         <div className="content-container">
           <div className="mb-10 md:mb-12 text-center">
             <span className="mb-3 inline-block rounded-full bg-black px-4 py-1.5 text-xs font-bold uppercase tracking-widest text-white">
@@ -153,7 +153,7 @@ export default function SolutionsBentoGrid() {
           </div>
           <div className="grid grid-cols-1 md:grid-cols-4 auto-rows-fr gap-3 md:gap-4 max-h-[800px]">
             {[...Array(4)].map((_, i) => (
-              <div key={i} className={`${GRID_CLASSES[i]} bg-gray-100 animate-pulse rounded-xl`} />
+              <div key={i} className={`${GRID_CLASSES[i]} bg-gray-100 dark:bg-gray-800 animate-pulse rounded-xl`} />
             ))}
           </div>
         </div>
@@ -162,7 +162,7 @@ export default function SolutionsBentoGrid() {
   }
 
   return (
-    <section className="bg-white py-10 md:py-12">
+    <section className="bg-white dark:bg-gray-900 py-10 md:py-12">
       <div className="content-container">
         {/* Section Header */}
         <motion.div
@@ -177,7 +177,7 @@ export default function SolutionsBentoGrid() {
           <h2 className="h2 mb-4">
             Technology That Transforms Spaces
           </h2>
-          <p className="text-base md:text-lg text-gray-600 max-w-2xl mx-auto">
+          <p className="text-base md:text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
             From private cinemas to complete home automation, discover our flagship solutions.
           </p>
         </motion.div>
@@ -201,7 +201,7 @@ export default function SolutionsBentoGrid() {
               >
                 <Link
                   href={`/solutions/${solution.slug}`}
-                  className="group relative block h-full overflow-hidden rounded-lg md:rounded-xl border border-gray-200 transition-all hover:border-[#E8DCC8] hover:shadow-xl"
+                  className="group relative block h-full overflow-hidden rounded-lg md:rounded-xl border border-gray-200 dark:border-gray-700 transition-all hover:border-[#E8DCC8] hover:shadow-xl"
                   data-testid={`solution-${index}`}
                 >
                   {/* Background Image */}
@@ -265,7 +265,7 @@ export default function SolutionsBentoGrid() {
         >
           <Link 
             href="/solutions"
-            className="inline-flex items-center gap-2 text-sm font-semibold text-black hover:text-[#E8DCC8] transition-colors"
+            className="inline-flex items-center gap-2 text-sm font-semibold text-black dark:text-white hover:text-[#E8DCC8] transition-colors"
           >
             View All Solutions
             <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
