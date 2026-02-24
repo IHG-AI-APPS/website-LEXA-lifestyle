@@ -105,7 +105,7 @@ export default function ProjectBuilderLanding() {
         <div className="container mx-auto px-8 lg:px-16">
           <div className="max-w-7xl mx-auto">
             <div className="text-center mb-16">
-              <h2 className="text-4xl sm:text-5xl font-semibold tracking-tight text-gray-900 mb-4">
+              <h2 className="text-4xl sm:text-5xl font-semibold tracking-tight text-gray-900 dark:text-white mb-4">
                 How It Works
               </h2>
               <p className="text-lg text-gray-600 max-w-2xl mx-auto">
@@ -152,7 +152,7 @@ export default function ProjectBuilderLanding() {
                   <step.icon className="w-8 h-8 text-gray-400 group-hover:text-blue-600 transition-colors duration-300 mb-6" />
 
                   {/* Content */}
-                  <h3 className="text-xl font-medium text-gray-900 mb-3">{step.title}</h3>
+                  <h3 className="text-xl font-medium text-gray-900 dark:text-white mb-3">{step.title}</h3>
                   <p className="text-sm text-gray-600 leading-relaxed">{step.description}</p>
                 </motion.div>
               ))}
@@ -177,7 +177,7 @@ export default function ProjectBuilderLanding() {
                   className="bg-white dark:bg-gray-800 border border-gray-200 p-6 hover:border-blue-600 hover:shadow-md transition-all duration-300"
                 >
                   <feature.icon className="w-6 h-6 text-blue-600 mb-4" />
-                  <h4 className="text-sm font-medium text-gray-900 mb-2 uppercase tracking-widest">{feature.label}</h4>
+                  <h4 className="text-sm font-medium text-gray-900 dark:text-white mb-2 uppercase tracking-widest">{feature.label}</h4>
                   <p className="text-xs text-gray-600 dark:text-gray-400">{feature.desc}</p>
                 </div>
               ))}
@@ -189,7 +189,7 @@ export default function ProjectBuilderLanding() {
       {/* Final CTA */}
       <section className="py-20 border-t border-gray-100 dark:border-gray-800">
         <div className="container mx-auto px-8 lg:px-16 max-w-4xl text-center">
-          <h2 className="text-4xl font-semibold tracking-tight text-gray-900 mb-8">
+          <h2 className="text-4xl font-semibold tracking-tight text-gray-900 dark:text-white mb-8">
             Ready to begin?
           </h2>
           <Link href="/project-builder/start">

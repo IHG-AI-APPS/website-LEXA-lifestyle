@@ -191,7 +191,7 @@ export default function SmartApartmentPackagesPage() {
                 </span>
               </div>
               
-              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6 leading-tight text-gray-900 dark:text-white">
+              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6 leading-tight text-gray-900 dark:text-white dark:text-white">
                 Smart Living for<br />
                 <span className="text-blue-600">Every Apartment</span>
               </h1>
@@ -227,7 +227,7 @@ export default function SmartApartmentPackagesPage() {
         <section id="packages" className="py-12 bg-white border-b border-gray-200 dark:border-gray-700">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
             <div className="text-center mb-8">
-              <h2 className="text-2xl sm:text-3xl font-bold mb-2 text-gray-900 dark:text-white">Select Your Apartment Size</h2>
+              <h2 className="text-2xl sm:text-3xl font-bold mb-2 text-gray-900 dark:text-white dark:text-white">Select Your Apartment Size</h2>
               <p className="text-gray-600 dark:text-gray-400">Choose your apartment type to see tailored pricing</p>
             </div>
             <div className="flex flex-wrap justify-center gap-3">
@@ -275,11 +275,11 @@ export default function SmartApartmentPackagesPage() {
                       <div className={`inline-flex p-3 ${colorMap[pkg.color]?.bg || 'bg-gray-100'} mb-4`}>
                         <Icon className={`h-8 w-8 ${colorMap[pkg.color]?.text || 'text-gray-600'}`} />
                       </div>
-                      <h3 className="text-2xl font-bold mb-1 text-gray-900 dark:text-white">{pkg.tier}</h3>
+                      <h3 className="text-2xl font-bold mb-1 text-gray-900 dark:text-white dark:text-white">{pkg.tier}</h3>
                       <p className="text-sm text-gray-500 mb-4">{pkg.tagline}</p>
                       
                       <div className="mb-6">
-                        <div className="text-4xl font-bold text-gray-900 mb-1">
+                        <div className="text-4xl font-bold text-gray-900 dark:text-white mb-1">
                           AED {pkg.pricing[selectedSize as keyof typeof pkg.pricing].toLocaleString()}
                         </div>
                         <div className="text-sm text-gray-500">Starting price</div>
@@ -329,7 +329,7 @@ export default function SmartApartmentPackagesPage() {
               viewport={{ once: true }}
               className="text-center mb-16"
             >
-              <h2 className="text-3xl sm:text-4xl font-bold mb-4 text-gray-900 dark:text-white">
+              <h2 className="text-3xl sm:text-4xl font-bold mb-4 text-gray-900 dark:text-white dark:text-white">
                 Choose Your Ecosystem
               </h2>
               <p className="text-lg text-gray-600 max-w-2xl mx-auto">
@@ -349,7 +349,7 @@ export default function SmartApartmentPackagesPage() {
                 >
                   <div className="flex items-center gap-2 mb-3">
                     <Wifi className="h-5 w-5 text-blue-600" />
-                    <h3 className="text-xl font-bold text-gray-900 dark:text-white">{eco.name}</h3>
+                    <h3 className="text-xl font-bold text-gray-900 dark:text-white dark:text-white">{eco.name}</h3>
                   </div>
                   <p className="text-gray-600 mb-4">{eco.description}</p>
                   <div className="space-y-2 mb-4">
@@ -377,7 +377,7 @@ export default function SmartApartmentPackagesPage() {
               viewport={{ once: true }}
               className="text-center mb-16"
             >
-              <h2 className="text-3xl sm:text-4xl font-bold mb-4 text-gray-900 dark:text-white">
+              <h2 className="text-3xl sm:text-4xl font-bold mb-4 text-gray-900 dark:text-white dark:text-white">
                 Why Choose LEXA Apartment Packages?
               </h2>
             </motion.div>
@@ -399,7 +399,7 @@ export default function SmartApartmentPackagesPage() {
                     className="bg-white dark:bg-gray-800 p-8 text-center"
                   >
                     <Icon className="h-12 w-12 mx-auto mb-4 text-blue-600" />
-                    <h3 className="text-xl font-bold mb-2 text-gray-900 dark:text-white">{benefit.title}</h3>
+                    <h3 className="text-xl font-bold mb-2 text-gray-900 dark:text-white dark:text-white">{benefit.title}</h3>
                     <p className="text-gray-600 dark:text-gray-400">{benefit.desc}</p>
                   </motion.div>
                 )

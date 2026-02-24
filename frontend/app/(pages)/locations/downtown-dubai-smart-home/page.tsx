@@ -87,7 +87,7 @@ export default function DowntownDubaiPage() {
         <div className="container mx-auto px-8 lg:px-16 text-center">
           <h2 className="h2 uppercase mb-6">AUTOMATE YOUR DOWNTOWN DUBAI HOME</h2>
           <p className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">Get a custom quote for your Burj Khalifa, Address, or Downtown apartment. Free consultation and system demonstration.</p>
-          <Link href="/contact" className="inline-block bg-white text-gray-900 px-8 py-4 text-lg font-semibold hover:bg-gray-100 transition-colors">Schedule Consultation</Link>
+          <Link href="/contact" className="inline-block bg-white text-gray-900 dark:text-white px-8 py-4 text-lg font-semibold hover:bg-gray-100 transition-colors">Schedule Consultation</Link>
         </div>
       </section>
     </div>

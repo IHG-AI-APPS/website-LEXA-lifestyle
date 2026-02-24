@@ -119,7 +119,7 @@ export default function SmartRecommendations({
               </span>
             </div>
             <div>
-              <h2 className="text-lg font-bold text-gray-900 dark:text-white flex items-center gap-2">
+              <h2 className="text-lg font-bold text-gray-900 dark:text-white dark:text-white flex items-center gap-2">
                 {language === 'ar' ? 'مُقترح لك' : 'Recommended for You'}
                 <span className="text-lg">{clusterIcons[interestCluster] || '💡'}</span>
               </h2>
@@ -202,7 +202,7 @@ export default function SmartRecommendations({
                         <span className="text-[10px] uppercase tracking-wider text-[#C9A962] font-semibold">
                           {rec.category}
                         </span>
-                        <h3 className="font-bold text-gray-900 dark:text-white text-sm mt-1 mb-2 group-hover:text-[#C9A962] transition-colors line-clamp-1">
+                        <h3 className="font-bold text-gray-900 dark:text-white dark:text-white text-sm mt-1 mb-2 group-hover:text-[#C9A962] transition-colors line-clamp-1">
                           {rec.title}
                         </h3>
                         <p className="text-xs text-gray-500 dark:text-gray-400 line-clamp-2 mb-3">
@@ -262,7 +262,7 @@ export default function SmartRecommendations({
                       </div>
                       
                       <div className="p-4">
-                        <h3 className="font-bold text-gray-900 dark:text-white text-base mb-2 group-hover:text-[#C9A962] transition-colors line-clamp-1">
+                        <h3 className="font-bold text-gray-900 dark:text-white dark:text-white text-base mb-2 group-hover:text-[#C9A962] transition-colors line-clamp-1">
                           {rec.title}
                         </h3>
                         <p className="text-sm text-gray-500 dark:text-gray-400 line-clamp-2 mb-3">

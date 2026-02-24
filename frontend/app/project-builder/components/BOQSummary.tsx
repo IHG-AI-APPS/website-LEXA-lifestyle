@@ -126,7 +126,7 @@ export default function BOQSummary({ sessionId, selectedProposal, onComplete }: 
               Bill of Quantities Framework
             </span>
           </div>
-          <h1 className="text-4xl sm:text-5xl font-semibold tracking-tight text-gray-900 mb-4">
+          <h1 className="text-4xl sm:text-5xl font-semibold tracking-tight text-gray-900 dark:text-white mb-4">
             Project <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600">Summary</span>
           </h1>
           <p className="text-sm text-gray-500 uppercase tracking-widest">
@@ -183,35 +183,35 @@ export default function BOQSummary({ sessionId, selectedProposal, onComplete }: 
 
         {/* Summary Grid */}
         <div className="bg-white dark:bg-gray-800 border border-gray-200 p-8 mb-8">
-          <h3 className="text-sm font-medium mb-6 uppercase tracking-widest text-gray-900 dark:text-white">Architecture Overview</h3>
+          <h3 className="text-sm font-medium mb-6 uppercase tracking-widest text-gray-900 dark:text-white dark:text-white">Architecture Overview</h3>
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
             <div className="flex items-start gap-3">
               <Layers className="w-5 h-5 text-blue-600 mt-1" />
               <div>
                 <div className="text-xs text-gray-600 uppercase tracking-widest mb-1">Tier Mix</div>
-                <div className="text-base text-gray-900 font-medium">{proposal?.tier_mix}</div>
+                <div className="text-base text-gray-900 dark:text-white font-medium">{proposal?.tier_mix}</div>
               </div>
             </div>
             <div className="flex items-start gap-3">
               <Target className="w-5 h-5 text-blue-600 mt-1" />
               <div>
                 <div className="text-xs text-gray-600 uppercase tracking-widest mb-1">System Count</div>
-                <div className="text-base text-gray-900 font-medium font-mono">{proposal?.system_count} Integrated Systems</div>
+                <div className="text-base text-gray-900 dark:text-white font-medium font-mono">{proposal?.system_count} Integrated Systems</div>
               </div>
             </div>
             <div className="flex items-start gap-3">
               <Clock className="w-5 h-5 text-blue-600 mt-1" />
               <div>
                 <div className="text-xs text-gray-600 uppercase tracking-widest mb-1">Estimated Timeline</div>
-                <div className="text-base text-gray-900 font-medium font-mono">{proposal?.estimated_timeline}</div>
+                <div className="text-base text-gray-900 dark:text-white font-medium font-mono">{proposal?.estimated_timeline}</div>
               </div>
             </div>
             <div className="flex items-start gap-3">
               <CheckCircle2 className="w-5 h-5 text-blue-600 mt-1" />
               <div>
                 <div className="text-xs text-gray-600 uppercase tracking-widest mb-1">Complexity Score</div>
-                <div className="text-base text-gray-900 font-medium font-mono">{proposal?.complexity_score}/10</div>
+                <div className="text-base text-gray-900 dark:text-white font-medium font-mono">{proposal?.complexity_score}/10</div>
               </div>
             </div>
           </div>
@@ -232,7 +232,7 @@ export default function BOQSummary({ sessionId, selectedProposal, onComplete }: 
 
         {/* Key Highlights */}
         <div className="bg-gradient-to-br from-blue-50 to-purple-50 border border-blue-200 p-8 mb-8">
-          <h3 className="text-sm font-medium mb-4 uppercase tracking-widest text-gray-900 dark:text-white">Key Highlights</h3>
+          <h3 className="text-sm font-medium mb-4 uppercase tracking-widest text-gray-900 dark:text-white dark:text-white">Key Highlights</h3>
           <div className="space-y-3">
             {proposal?.highlights?.map((highlight: string, index: number) => (
               <div key={index} className="flex items-start gap-3 text-sm text-gray-700 dark:text-gray-300">
@@ -245,7 +245,7 @@ export default function BOQSummary({ sessionId, selectedProposal, onComplete }: 
 
         {/* Next Steps */}
         <div className="bg-white dark:bg-gray-800 border border-gray-200 p-8 mb-12">
-          <h3 className="text-sm font-medium mb-4 uppercase tracking-widest text-gray-900 dark:text-white">Next Steps</h3>
+          <h3 className="text-sm font-medium mb-4 uppercase tracking-widest text-gray-900 dark:text-white dark:text-white">Next Steps</h3>
           <ol className="space-y-3 text-sm text-gray-700 dark:text-gray-300">
             <li className="flex items-start gap-3">
               <span className="text-blue-600 font-mono font-medium">01.</span>

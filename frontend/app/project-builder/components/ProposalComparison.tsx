@@ -61,7 +61,7 @@ export default function ProposalComparison({ sessionId, resolutionData, onSelect
       >
         {/* Header */}
         <div className="text-center mb-12">
-          <h1 className="text-4xl sm:text-5xl font-semibold tracking-tight text-gray-900 mb-4">
+          <h1 className="text-4xl sm:text-5xl font-semibold tracking-tight text-gray-900 dark:text-white mb-4">
             Architecture <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600">Proposals</span>
           </h1>
           <p className="text-sm text-gray-500 uppercase tracking-widest mb-2">
@@ -123,7 +123,7 @@ export default function ProposalComparison({ sessionId, resolutionData, onSelect
 
                 {/* Title */}
                 <div className="mb-6">
-                  <h3 className="text-2xl font-semibold text-gray-900 mb-2">
+                  <h3 className="text-2xl font-semibold text-gray-900 dark:text-white mb-2">
                     {proposal.name}
                   </h3>
                   <p className="text-xs text-blue-600 uppercase tracking-widest mb-3 font-medium">
@@ -138,19 +138,19 @@ export default function ProposalComparison({ sessionId, resolutionData, onSelect
                 <div className="space-y-3 mb-6 pb-6 border-b border-gray-200 dark:border-gray-700">
                   <div className="flex justify-between text-xs">
                     <span className="text-gray-600 dark:text-gray-400">Systems</span>
-                    <span className="text-gray-900 font-mono font-medium">{proposal.system_count}</span>
+                    <span className="text-gray-900 dark:text-white font-mono font-medium">{proposal.system_count}</span>
                   </div>
                   <div className="flex justify-between text-xs">
                     <span className="text-gray-600 dark:text-gray-400">Features</span>
-                    <span className="text-gray-900 font-mono font-medium">{proposal.feature_count}</span>
+                    <span className="text-gray-900 dark:text-white font-mono font-medium">{proposal.feature_count}</span>
                   </div>
                   <div className="flex justify-between text-xs">
                     <span className="text-gray-600 dark:text-gray-400">Complexity</span>
-                    <span className="text-gray-900 font-mono font-medium">{proposal.complexity_score}/10</span>
+                    <span className="text-gray-900 dark:text-white font-mono font-medium">{proposal.complexity_score}/10</span>
                   </div>
                   <div className="flex justify-between text-xs">
                     <span className="text-gray-600 dark:text-gray-400">Timeline</span>
-                    <span className="text-gray-900 font-mono font-medium">{proposal.estimated_timeline}</span>
+                    <span className="text-gray-900 dark:text-white font-mono font-medium">{proposal.estimated_timeline}</span>
                   </div>
                 </div>
 
@@ -170,7 +170,7 @@ export default function ProposalComparison({ sessionId, resolutionData, onSelect
 
         {/* Interactive Comparison Matrix */}
         <div className="bg-white dark:bg-gray-800 border border-gray-200 p-8 mb-12">
-          <h3 className="text-sm font-medium mb-6 uppercase tracking-widest text-gray-900 dark:text-white">Detailed Comparison</h3>
+          <h3 className="text-sm font-medium mb-6 uppercase tracking-widest text-gray-900 dark:text-white dark:text-white">Detailed Comparison</h3>
           <div className="overflow-x-auto">
             <table className="w-full text-xs">
               <thead>
@@ -188,9 +188,9 @@ export default function ProposalComparison({ sessionId, resolutionData, onSelect
                     className="border-b border-gray-100 hover:bg-gray-50 transition-colors"
                   >
                     <td className="py-3 text-gray-700 dark:text-gray-300">{row.feature}</td>
-                    <td className="py-3 text-center text-gray-900 font-mono">{row.value}</td>
+                    <td className="py-3 text-center text-gray-900 dark:text-white font-mono">{row.value}</td>
                     <td className="py-3 text-center text-blue-600 font-mono font-medium">{row.balanced}</td>
-                    <td className="py-3 text-center text-gray-900 font-mono">{row.flagship}</td>
+                    <td className="py-3 text-center text-gray-900 dark:text-white font-mono">{row.flagship}</td>
                   </tr>
                 ))}
               </tbody>
@@ -209,7 +209,7 @@ export default function ProposalComparison({ sessionId, resolutionData, onSelect
             <ArrowRight className="ml-3 w-4 h-4 group-hover:translate-x-1 transition-transform" />
           </Button>
           <p className="text-xs text-gray-600 mt-4">
-            You&apos;ve selected the <span className="font-medium text-gray-900 dark:text-white">{selectedProposal}</span> option
+            You&apos;ve selected the <span className="font-medium text-gray-900 dark:text-white dark:text-white">{selectedProposal}</span> option
           </p>
         </div>
       </motion.div>

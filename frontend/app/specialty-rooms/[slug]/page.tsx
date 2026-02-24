@@ -106,22 +106,22 @@ export default function SpecialtyRoomDetailPage() {
             <div className="text-center">
               <DollarSign className="h-8 w-8 mx-auto mb-2 text-blue-600" />
               <p className="text-sm text-gray-600 dark:text-gray-400">Starting Price</p>
-              <p className="font-bold text-gray-900 dark:text-white">AED {(room.base_price_aed / 1000).toFixed(0)}K</p>
+              <p className="font-bold text-gray-900 dark:text-white dark:text-white">AED {(room.base_price_aed / 1000).toFixed(0)}K</p>
             </div>
             <div className="text-center">
               <Package className="h-8 w-8 mx-auto mb-2 text-purple-600" />
               <p className="text-sm text-gray-600 dark:text-gray-400">Features Included</p>
-              <p className="font-bold text-gray-900 dark:text-white">{room.features?.length || 0}</p>
+              <p className="font-bold text-gray-900 dark:text-white dark:text-white">{room.features?.length || 0}</p>
             </div>
             <div className="text-center">
               <Sparkles className="h-8 w-8 mx-auto mb-2 text-amber-600" />
               <p className="text-sm text-gray-600 dark:text-gray-400">Typical Size</p>
-              <p className="font-bold text-gray-900 dark:text-white">{room.typical_size}</p>
+              <p className="font-bold text-gray-900 dark:text-white dark:text-white">{room.typical_size}</p>
             </div>
             <div className="text-center">
               <Check className="h-8 w-8 mx-auto mb-2 text-green-600" />
               <p className="text-sm text-gray-600 dark:text-gray-400">Installation</p>
-              <p className="font-bold text-gray-900 dark:text-white">Professional</p>
+              <p className="font-bold text-gray-900 dark:text-white dark:text-white">Professional</p>
             </div>
           </div>
         </div>
@@ -133,7 +133,7 @@ export default function SpecialtyRoomDetailPage() {
           <div className="max-w-4xl mx-auto">
             {/* Description */}
             <div className="mb-12">
-              <h2 className="text-3xl font-bold text-gray-900 mb-4">Overview</h2>
+              <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-4">Overview</h2>
               <p className="text-lg text-gray-700 leading-relaxed">
                 {room.long_description}
               </p>
@@ -141,7 +141,7 @@ export default function SpecialtyRoomDetailPage() {
 
             {/* Features */}
             <div className="mb-12">
-              <h2 className="text-3xl font-bold text-gray-900 mb-6">
+              <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-6">
                 What&apos;s Included
               </h2>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -157,7 +157,7 @@ export default function SpecialtyRoomDetailPage() {
             {/* Components */}
             {room.typical_components && room.typical_components.length > 0 && (
               <div className="mb-12">
-                <h2 className="text-3xl font-bold text-gray-900 mb-6">
+                <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-6">
                   Typical Components
                 </h2>
                 <div className="bg-blue-50 rounded-xl p-6">
@@ -176,7 +176,7 @@ export default function SpecialtyRoomDetailPage() {
             {/* Integration */}
             {room.integration_with && room.integration_with.length > 0 && (
               <div className="mb-12">
-                <h2 className="text-3xl font-bold text-gray-900 mb-6">
+                <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-6">
                   Integrates With
                 </h2>
                 <div className="flex flex-wrap gap-3">
@@ -194,7 +194,7 @@ export default function SpecialtyRoomDetailPage() {
 
             {/* CTA */}
             <div className="mt-12 p-8 bg-gradient-to-br from-blue-50 to-purple-50 rounded-2xl">
-              <h3 className="text-2xl font-bold text-gray-900 mb-4">
+              <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">
                 Add This to Your Package
               </h3>
               <p className="text-gray-700 mb-6">
@@ -211,7 +211,7 @@ export default function SpecialtyRoomDetailPage() {
                 </Link>
                 <Link
                   href="/consultation"
-                  className="inline-flex items-center justify-center px-6 py-3 bg-white text-gray-900 rounded-lg border-2 border-gray-200 hover:border-blue-600 transition-colors font-medium"
+                  className="inline-flex items-center justify-center px-6 py-3 bg-white text-gray-900 dark:text-white rounded-lg border-2 border-gray-200 hover:border-blue-600 transition-colors font-medium"
                 >
                   Get Custom Quote
                 </Link>
@@ -225,7 +225,7 @@ export default function SpecialtyRoomDetailPage() {
       <section className="py-16 bg-gray-50 dark:bg-gray-800">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-8">
-            <h2 className="text-3xl font-bold text-gray-900 mb-2">
+            <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-2">
               Other Specialty Rooms
             </h2>
             <Link 

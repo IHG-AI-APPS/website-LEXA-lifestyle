@@ -86,7 +86,7 @@ export default function AnalyticsDashboard() {
           </div>
         )}
       </div>
-      <div className="text-3xl font-semibold text-gray-900 mb-1">{value}</div>
+      <div className="text-3xl font-semibold text-gray-900 dark:text-white mb-1">{value}</div>
       <div className="text-sm text-gray-500">{title}</div>
       {subtitle && <div className="text-xs text-gray-400 mt-1">{subtitle}</div>}
     </motion.div>
@@ -104,7 +104,7 @@ export default function AnalyticsDashboard() {
             <div key={key}>
               <div className="flex justify-between text-sm mb-1">
                 <span className="text-gray-600 capitalize">{key.replace(/_/g, ' ')}</span>
-                <span className="text-gray-900 font-medium">{value} ({percentage}%)</span>
+                <span className="text-gray-900 dark:text-white font-medium">{value} ({percentage}%)</span>
               </div>
               <div className="h-2 bg-gray-100 rounded-full overflow-hidden">
                 <motion.div
@@ -156,7 +156,7 @@ export default function AnalyticsDashboard() {
         {/* Header */}
         <div className="flex items-center justify-between mb-8">
           <div>
-            <h1 className="text-2xl font-semibold text-gray-900 flex items-center gap-2">
+            <h1 className="text-2xl font-semibold text-gray-900 dark:text-white flex items-center gap-2">
               <BarChart3 className="w-6 h-6 text-blue-600" />
               Analytics Dashboard
             </h1>
@@ -216,7 +216,7 @@ export default function AnalyticsDashboard() {
             transition={{ delay: 0.1 }}
             className="bg-white dark:bg-gray-800 rounded-xl border border-gray-200 p-6"
           >
-            <h3 className="text-lg font-medium text-gray-900 mb-4 flex items-center gap-2">
+            <h3 className="text-lg font-medium text-gray-900 dark:text-white mb-4 flex items-center gap-2">
               <Target className="w-5 h-5 text-blue-600" />
               Lead Quality Distribution
             </h3>
@@ -224,7 +224,7 @@ export default function AnalyticsDashboard() {
               <div className="flex items-center justify-between p-3 bg-red-50 rounded-lg">
                 <div className="flex items-center gap-2">
                   <Flame className="w-5 h-5 text-red-600" />
-                  <span className="font-medium text-gray-900 dark:text-white">Hot Leads</span>
+                  <span className="font-medium text-gray-900 dark:text-white dark:text-white">Hot Leads</span>
                 </div>
                 <span className="text-2xl font-semibold text-red-600">
                   {data?.lead_quality.hot || 0}
@@ -233,7 +233,7 @@ export default function AnalyticsDashboard() {
               <div className="flex items-center justify-between p-3 bg-orange-50 rounded-lg">
                 <div className="flex items-center gap-2">
                   <ThermometerSun className="w-5 h-5 text-orange-600" />
-                  <span className="font-medium text-gray-900 dark:text-white">Warm Leads</span>
+                  <span className="font-medium text-gray-900 dark:text-white dark:text-white">Warm Leads</span>
                 </div>
                 <span className="text-2xl font-semibold text-orange-600">
                   {data?.lead_quality.warm || 0}
@@ -242,7 +242,7 @@ export default function AnalyticsDashboard() {
               <div className="flex items-center justify-between p-3 bg-green-50 rounded-lg">
                 <div className="flex items-center gap-2">
                   <Leaf className="w-5 h-5 text-green-600" />
-                  <span className="font-medium text-gray-900 dark:text-white">Nurture Leads</span>
+                  <span className="font-medium text-gray-900 dark:text-white dark:text-white">Nurture Leads</span>
                 </div>
                 <span className="text-2xl font-semibold text-green-600">
                   {data?.lead_quality.nurture || 0}
@@ -258,7 +258,7 @@ export default function AnalyticsDashboard() {
             transition={{ delay: 0.2 }}
             className="bg-white dark:bg-gray-800 rounded-xl border border-gray-200 p-6"
           >
-            <h3 className="text-lg font-medium text-gray-900 mb-4 flex items-center gap-2">
+            <h3 className="text-lg font-medium text-gray-900 dark:text-white mb-4 flex items-center gap-2">
               <DollarSign className="w-5 h-5 text-green-600" />
               Proposal Selections
             </h3>
@@ -279,7 +279,7 @@ export default function AnalyticsDashboard() {
             transition={{ delay: 0.3 }}
             className="bg-white dark:bg-gray-800 rounded-xl border border-gray-200 p-6"
           >
-            <h3 className="text-lg font-medium text-gray-900 mb-4 flex items-center gap-2">
+            <h3 className="text-lg font-medium text-gray-900 dark:text-white mb-4 flex items-center gap-2">
               <Building2 className="w-5 h-5 text-purple-600" />
               Segment Distribution
             </h3>
@@ -300,7 +300,7 @@ export default function AnalyticsDashboard() {
             transition={{ delay: 0.4 }}
             className="bg-white dark:bg-gray-800 rounded-xl border border-gray-200 p-6"
           >
-            <h3 className="text-lg font-medium text-gray-900 mb-4 flex items-center gap-2">
+            <h3 className="text-lg font-medium text-gray-900 dark:text-white mb-4 flex items-center gap-2">
               <Building2 className="w-5 h-5 text-blue-600" />
               Property Types
             </h3>

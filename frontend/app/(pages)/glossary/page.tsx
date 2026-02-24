@@ -300,13 +300,13 @@ export default function GlossaryPage() {
                 className="mb-16"
               >
                 <div className="flex items-center gap-4 mb-8 pb-4 border-b-2 border-gray-900">
-                  <span className="text-6xl font-bold text-gray-900 dark:text-white">{section.letter}</span>
+                  <span className="text-6xl font-bold text-gray-900 dark:text-white dark:text-white">{section.letter}</span>
                 </div>
 
                 <div className="space-y-8">
                   {section.terms.map((item, index) => (
                     <div key={index} className="group">
-                      <h3 className="text-2xl uppercase font-semibold text-gray-900 mb-2">
+                      <h3 className="text-2xl uppercase font-semibold text-gray-900 dark:text-white mb-2">
                         {item.term}
                       </h3>
                       <p className="text-gray-600 leading-relaxed">
@@ -336,7 +336,7 @@ export default function GlossaryPage() {
           </p>
           <a
             href="/contact"
-            className="inline-block bg-white text-gray-900 px-8 py-4 text-lg font-semibold hover:bg-gray-100 transition-colors"
+            className="inline-block bg-white text-gray-900 dark:text-white px-8 py-4 text-lg font-semibold hover:bg-gray-100 transition-colors"
           >
             Schedule Consultation
           </a>

@@ -228,7 +228,7 @@ export default function IntelligenceEngine({ sessionId, projectData, onComplete 
               AI Intelligence Analysis Complete
             </span>
           </div>
-          <h1 className="text-4xl sm:text-5xl font-semibold tracking-tight text-gray-900 mb-4">
+          <h1 className="text-4xl sm:text-5xl font-semibold tracking-tight text-gray-900 dark:text-white mb-4">
             Knowledge <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600">Graph</span>
           </h1>
           <p className="text-sm text-gray-500 uppercase tracking-widest mb-2">
@@ -255,7 +255,7 @@ export default function IntelligenceEngine({ sessionId, projectData, onComplete 
               className="bg-white dark:bg-gray-800 border border-gray-200 p-6 text-center hover:border-blue-600 hover:shadow-md transition-all duration-300"
             >
               <stat.icon className={`w-6 h-6 mx-auto mb-3 text-${stat.color}-600`} />
-              <div className="text-3xl font-semibold text-gray-900 mb-1">
+              <div className="text-3xl font-semibold text-gray-900 dark:text-white mb-1">
                 {stat.value}
               </div>
               <div className="text-xs text-gray-600 uppercase tracking-widest">{stat.label}</div>
@@ -287,7 +287,7 @@ export default function IntelligenceEngine({ sessionId, projectData, onComplete 
 
         {/* View Mode Toggle */}
         <div className="flex items-center justify-between mb-8">
-          <h3 className="text-lg font-medium uppercase tracking-widest text-gray-900 dark:text-white">
+          <h3 className="text-lg font-medium uppercase tracking-widest text-gray-900 dark:text-white dark:text-white">
             System Analysis
           </h3>
           <div className="flex items-center gap-2 bg-gray-100 p-1 rounded-lg">
@@ -328,7 +328,7 @@ export default function IntelligenceEngine({ sessionId, projectData, onComplete 
         {/* System Domains with Feature Drill-Down (List View) */}
         {viewMode === 'list' && (
           <div className="space-y-4 mb-12">
-            <h3 className="text-lg font-medium mb-6 uppercase tracking-widest text-gray-900 dark:text-white">
+            <h3 className="text-lg font-medium mb-6 uppercase tracking-widest text-gray-900 dark:text-white dark:text-white">
               Recommended Systems & Features
             </h3>
           
@@ -359,7 +359,7 @@ export default function IntelligenceEngine({ sessionId, projectData, onComplete 
                       <ChevronRight className="w-5 h-5 text-gray-400" />
                     )}
                     <div className="text-left">
-                      <h4 className="text-lg font-semibold text-gray-900 dark:text-white">{bundle.system_domain}</h4>
+                      <h4 className="text-lg font-semibold text-gray-900 dark:text-white dark:text-white">{bundle.system_domain}</h4>
                       <p className="text-xs text-gray-600 mt-1">
                         {bundleFeatures.length} features • {selectedInBundle} selected • Score: {Math.round(bundle.score)}/100
                       </p>
@@ -418,7 +418,7 @@ export default function IntelligenceEngine({ sessionId, projectData, onComplete 
                                 <div className="flex-1">
                                   {/* Feature Name + Classification */}
                                   <div className="flex items-start justify-between gap-3 mb-2">
-                                    <h5 className="text-sm font-medium text-gray-900 dark:text-white">
+                                    <h5 className="text-sm font-medium text-gray-900 dark:text-white dark:text-white">
                                       {feature.feature_name}
                                     </h5>
                                     <div className={`${classConfig.bg} px-2 py-1 rounded flex items-center gap-1 flex-shrink-0`}>
@@ -492,7 +492,7 @@ export default function IntelligenceEngine({ sessionId, projectData, onComplete 
             <div className="flex items-start gap-3 mb-4">
               <Network className="w-6 h-6 text-orange-600" />
               <div>
-                <h3 className="text-sm font-medium uppercase tracking-widest text-gray-900 mb-2">Auto-Resolved Dependencies</h3>
+                <h3 className="text-sm font-medium uppercase tracking-widest text-gray-900 dark:text-white mb-2">Auto-Resolved Dependencies</h3>
                 <p className="text-xs text-gray-600 mb-4">
                   These systems were automatically added as prerequisites:
                 </p>

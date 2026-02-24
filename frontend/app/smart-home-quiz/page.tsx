@@ -208,7 +208,7 @@ export default function SmartHomeQuizPage() {
               <Brain className="h-4 w-4 text-blue-600" />
               <span className="text-sm font-medium text-blue-900">AI-Powered Recommendations</span>
             </div>
-            <h1 className="text-4xl sm:text-5xl font-bold text-gray-900 mb-4">
+            <h1 className="text-4xl sm:text-5xl font-bold text-gray-900 dark:text-white mb-4">
               Find Your Perfect<br />
               <span className="text-blue-600">Smart Home</span>
             </h1>
@@ -255,7 +255,7 @@ export default function SmartHomeQuizPage() {
               exit={{ opacity: 0, x: -20 }}
               className="bg-white dark:bg-gray-800 rounded-2xl shadow-xl p-8"
             >
-              <h2 className="text-2xl font-bold text-gray-900 mb-2">What matters most to you?</h2>
+              <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-2">What matters most to you?</h2>
               <p className="text-gray-600 mb-6">Select up to 3 priorities for your smart home</p>
               
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
@@ -318,7 +318,7 @@ export default function SmartHomeQuizPage() {
               exit={{ opacity: 0, x: -20 }}
               className="bg-white dark:bg-gray-800 rounded-2xl shadow-xl p-8"
             >
-              <h2 className="text-2xl font-bold text-gray-900 mb-2">What type of property?</h2>
+              <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-2">What type of property?</h2>
               <p className="text-gray-600 mb-6">This helps us tailor recommendations to your space</p>
               
               <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
@@ -371,7 +371,7 @@ export default function SmartHomeQuizPage() {
               exit={{ opacity: 0, x: -20 }}
               className="bg-white dark:bg-gray-800 rounded-2xl shadow-xl p-8"
             >
-              <h2 className="text-2xl font-bold text-gray-900 mb-2">What's your budget range?</h2>
+              <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-2">What's your budget range?</h2>
               <p className="text-gray-600 mb-6">We'll recommend features that fit your investment</p>
               
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
@@ -455,7 +455,7 @@ export default function SmartHomeQuizPage() {
 
               {/* Recommendations */}
               <div className="bg-white dark:bg-gray-800 rounded-2xl shadow-xl p-8">
-                <h3 className="text-lg font-bold text-gray-900 mb-4">
+                <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-4">
                   Top {Math.min(recommendations.length, 10)} Recommended Features
                 </h3>
                 
@@ -473,7 +473,7 @@ export default function SmartHomeQuizPage() {
                       </div>
                       <div className="flex-1">
                         <div className="flex items-center gap-2">
-                          <h4 className="font-semibold text-gray-900 dark:text-white">{rec.feature_title}</h4>
+                          <h4 className="font-semibold text-gray-900 dark:text-white dark:text-white">{rec.feature_title}</h4>
                           <span className="px-2 py-0.5 bg-gray-100 text-gray-600 text-xs rounded-full">
                             {rec.category}
                           </span>
@@ -493,7 +493,7 @@ export default function SmartHomeQuizPage() {
 
                 {/* CTAs */}
                 <div className="border-t border-gray-200 pt-6">
-                  <h4 className="font-bold text-gray-900 mb-4">Ready to bring your smart home to life?</h4>
+                  <h4 className="font-bold text-gray-900 dark:text-white mb-4">Ready to bring your smart home to life?</h4>
                   
                   {/* Save Results Button */}
                   <button
@@ -545,7 +545,7 @@ export default function SmartHomeQuizPage() {
                       {saved ? (
                         <div className="text-center py-8">
                           <CheckCircle2 className="h-16 w-16 mx-auto text-green-500 mb-4" />
-                          <h3 className="text-xl font-bold text-gray-900 mb-2">Results Saved!</h3>
+                          <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2">Results Saved!</h3>
                           <p className="text-gray-600 dark:text-gray-400">Check your email for your personalized recommendations.</p>
                         </div>
                       ) : (
@@ -553,7 +553,7 @@ export default function SmartHomeQuizPage() {
                           <div className="flex items-center justify-between mb-6">
                             <div className="flex items-center gap-2">
                               <Mail className="h-5 w-5 text-purple-500" />
-                              <h3 className="text-lg font-bold text-gray-900 dark:text-white">Save Your Results</h3>
+                              <h3 className="text-lg font-bold text-gray-900 dark:text-white dark:text-white">Save Your Results</h3>
                             </div>
                             <button
                               onClick={() => setShowSaveModal(false)}

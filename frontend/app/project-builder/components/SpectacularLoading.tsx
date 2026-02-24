@@ -231,7 +231,7 @@ export default function SpectacularLoading({
             transition={{ duration: 0.4 }}
             className="mb-6"
           >
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-2">
+            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-2">
               {currentPhase.title}
             </h2>
             <p className="text-sm uppercase tracking-[0.3em] text-gray-500 font-medium">

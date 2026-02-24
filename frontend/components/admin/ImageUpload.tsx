@@ -127,7 +127,7 @@ export function ImageUpload({
           onClick={() => setMode('upload')}
           className={`flex items-center gap-2 px-3 py-1.5 text-sm rounded-md transition-colors ${
             mode === 'upload'
-              ? 'bg-white text-gray-900 shadow-sm'
+              ? 'bg-white text-gray-900 dark:text-white shadow-sm'
               : 'text-gray-600 hover:text-gray-900'
           }`}
         >
@@ -139,7 +139,7 @@ export function ImageUpload({
           onClick={() => setMode('url')}
           className={`flex items-center gap-2 px-3 py-1.5 text-sm rounded-md transition-colors ${
             mode === 'url'
-              ? 'bg-white text-gray-900 shadow-sm'
+              ? 'bg-white text-gray-900 dark:text-white shadow-sm'
               : 'text-gray-600 hover:text-gray-900'
           }`}
         >

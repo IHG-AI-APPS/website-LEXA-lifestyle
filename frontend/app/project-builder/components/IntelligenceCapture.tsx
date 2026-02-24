@@ -50,7 +50,7 @@ export default function IntelligenceCapture({ sessionId, onComplete }: Intellige
       >
         {/* Header */}
         <div className="text-center mb-12">
-          <h1 className="text-4xl sm:text-5xl font-semibold tracking-tight text-gray-900 mb-4">
+          <h1 className="text-4xl sm:text-5xl font-semibold tracking-tight text-gray-900 dark:text-white mb-4">
             Project <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600">Intelligence</span>
           </h1>
           <p className="text-sm text-gray-500 uppercase tracking-widest mb-2">
@@ -63,7 +63,7 @@ export default function IntelligenceCapture({ sessionId, onComplete }: Intellige
 
         {/* Budget Constraint */}
         <div className="bg-white dark:bg-gray-800 border border-gray-200 p-8 mb-6">
-          <h3 className="text-sm font-medium uppercase tracking-widest text-gray-900 mb-4">Budget Parameters</h3>
+          <h3 className="text-sm font-medium uppercase tracking-widest text-gray-900 dark:text-white mb-4">Budget Parameters</h3>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div>
               <label className="text-xs uppercase tracking-widest text-gray-600 mb-2 block">Maximum Budget (Optional)</label>
@@ -90,7 +90,7 @@ export default function IntelligenceCapture({ sessionId, onComplete }: Intellige
 
         {/* Site Constraints */}
         <div className="bg-white dark:bg-gray-800 border border-gray-200 p-8 mb-6">
-          <h3 className="text-sm font-medium uppercase tracking-widest text-gray-900 mb-4">Site Constraints</h3>
+          <h3 className="text-sm font-medium uppercase tracking-widest text-gray-900 dark:text-white mb-4">Site Constraints</h3>
           <div className="space-y-3">
             {[
               { key: 'no_ceiling_work', label: 'No ceiling work allowed', desc: 'Exclude ceiling-mounted features' },
@@ -105,7 +105,7 @@ export default function IntelligenceCapture({ sessionId, onComplete }: Intellige
                   className="mt-1 w-4 h-4 text-blue-600 border-gray-300 rounded focus:ring-blue-500"
                 />
                 <div>
-                  <div className="text-sm font-medium text-gray-900 dark:text-white">{constraint.label}</div>
+                  <div className="text-sm font-medium text-gray-900 dark:text-white dark:text-white">{constraint.label}</div>
                   <div className="text-xs text-gray-600 dark:text-gray-400">{constraint.desc}</div>
                 </div>
               </label>
@@ -115,13 +115,13 @@ export default function IntelligenceCapture({ sessionId, onComplete }: Intellige
 
         {/* Custom Constraints */}
         <div className="bg-white dark:bg-gray-800 border border-gray-200 p-8 mb-6">
-          <h3 className="text-sm font-medium uppercase tracking-widest text-gray-900 mb-4">Additional Requirements</h3>
+          <h3 className="text-sm font-medium uppercase tracking-widest text-gray-900 dark:text-white mb-4">Additional Requirements</h3>
           <textarea
             value={constraints.custom_constraints}
             onChange={(e) => setConstraints({ ...constraints, custom_constraints: e.target.value })}
             placeholder="Any other specific requirements or constraints...\ne.g., 'Must use specific brand for lighting', 'Avoid smart speakers due to privacy', 'Integration with existing Crestron system required'"
             rows={4}
-            className="w-full border border-gray-200 focus:border-blue-600 outline-none text-gray-900 placeholder-gray-400 p-4 text-sm"
+            className="w-full border border-gray-200 focus:border-blue-600 outline-none text-gray-900 dark:text-white placeholder-gray-400 p-4 text-sm"
           />
         </div>
 
@@ -130,7 +130,7 @@ export default function IntelligenceCapture({ sessionId, onComplete }: Intellige
           <div className="flex items-start gap-3 mb-4">
             <Upload className="w-6 h-6 text-blue-600" />
             <div>
-              <h3 className="text-sm font-medium uppercase tracking-widest text-gray-900 mb-2">Upload Drawings (Optional)</h3>
+              <h3 className="text-sm font-medium uppercase tracking-widest text-gray-900 dark:text-white mb-2">Upload Drawings (Optional)</h3>
               <p className="text-xs text-gray-600 mb-4">
                 Floor plans, elevations, or site photos help AI understand spatial constraints
               </p>
@@ -161,7 +161,7 @@ export default function IntelligenceCapture({ sessionId, onComplete }: Intellige
                 <div key={index} className="flex items-center justify-between p-3 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700">
                   <div className="flex items-center gap-2">
                     <FileText className="w-4 h-4 text-blue-600" />
-                    <span className="text-sm text-gray-900 dark:text-white">{file.name}</span>
+                    <span className="text-sm text-gray-900 dark:text-white dark:text-white">{file.name}</span>
                     <span className="text-xs text-gray-500">({(file.size / 1024).toFixed(0)} KB)</span>
                   </div>
                   <button onClick={() => removeFile(index)} className="text-gray-400 hover:text-red-600">

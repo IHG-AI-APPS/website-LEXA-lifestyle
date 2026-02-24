@@ -92,7 +92,7 @@ export default function PalmJumeirahClient() {
                   Get Free Quote <ArrowRight className="ml-2 h-5 w-5" />
                 </a>
               </Button>
-              <Button size="lg" variant="outline" className={`rounded-xl ${isDark ? 'border-white text-white hover:bg-white hover:text-gray-900' : 'border-gray-900 text-gray-900 hover:bg-gray-900 hover:text-white'}`} asChild>
+              <Button size="lg" variant="outline" className={`rounded-xl ${isDark ? 'border-white text-white hover:bg-white hover:text-gray-900' : 'border-gray-900 text-gray-900 dark:text-white hover:bg-gray-900 hover:text-white'}`} asChild>
                 <Link href="/experience-centre">Visit Showroom</Link>
               </Button>
             </div>

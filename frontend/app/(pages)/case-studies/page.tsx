@@ -201,7 +201,7 @@ export default function CaseStudiesPage() {
 
                     {/* Features */}
                     <div className="mb-6">
-                      <h4 className="text-sm font-semibold text-gray-900 mb-3">KEY FEATURES</h4>
+                      <h4 className="text-sm font-semibold text-gray-900 dark:text-white mb-3">KEY FEATURES</h4>
                       <div className="flex flex-wrap gap-2">
                         {project.features.map((feature, i) => (
                           <span key={i} className="text-xs px-3 py-1 bg-gray-100 text-gray-700 dark:text-gray-300">
@@ -213,13 +213,13 @@ export default function CaseStudiesPage() {
 
                     {/* Results */}
                     <div className="bg-gray-50 p-6 mb-6">
-                      <h4 className="text-sm font-semibold text-gray-900 mb-2">RESULTS</h4>
+                      <h4 className="text-sm font-semibold text-gray-900 dark:text-white mb-2">RESULTS</h4>
                       <p className="text-sm text-gray-700 dark:text-gray-300">{project.results}</p>
                     </div>
 
                     <Link
                       href={`/case-studies/${project.slug}`}
-                      className="inline-block text-sm font-semibold text-gray-900 hover:underline"
+                      className="inline-block text-sm font-semibold text-gray-900 dark:text-white hover:underline"
                     >
                       View Full Case Study →
                     </Link>
@@ -259,7 +259,7 @@ export default function CaseStudiesPage() {
           </p>
           <a
             href="/contact"
-            className="inline-block bg-white text-gray-900 px-8 py-4 text-lg font-semibold hover:bg-gray-100 transition-colors"
+            className="inline-block bg-white text-gray-900 dark:text-white px-8 py-4 text-lg font-semibold hover:bg-gray-100 transition-colors"
           >
             Book Free Consultation
           </a>

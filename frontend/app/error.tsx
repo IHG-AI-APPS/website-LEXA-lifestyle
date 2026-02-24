@@ -24,7 +24,7 @@ export default function Error({
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
         >
-          <h1 className="text-6xl font-bold text-gray-900 mb-4">Oops!</h1>
+          <h1 className="text-6xl font-bold text-gray-900 dark:text-white mb-4">Oops!</h1>
           <h2 className="text-3xl font-semibold mb-4">Something went wrong</h2>
           <p className="text-xl text-gray-600 mb-8">
             We&apos;re sorry for the inconvenience. An unexpected error occurred.

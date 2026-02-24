@@ -269,7 +269,7 @@ export default function AIStaffAccountabilityPage() {
               viewport={{ once: true }}
               className="inline-block"
             >
-              <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+              <h2 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4">
                 Not CCTV, But <span className="text-blue-600">Operational Intelligence</span>
               </h2>
               <p className="text-xl text-gray-600 max-w-3xl mx-auto">
@@ -292,7 +292,7 @@ export default function AIStaffAccountabilityPage() {
                   <diff.icon className="w-6 h-6 text-blue-600" />
                 </div>
                 <div className="text-sm text-gray-500 mb-2 line-through">{diff.traditional}</div>
-                <div className="text-lg font-bold text-gray-900 dark:text-white">{diff.lexa}</div>
+                <div className="text-lg font-bold text-gray-900 dark:text-white dark:text-white">{diff.lexa}</div>
               </motion.div>
             ))}
           </div>
@@ -303,7 +303,7 @@ export default function AIStaffAccountabilityPage() {
       <section className="py-20 bg-gray-50 dark:bg-gray-800">
         <div className="container mx-auto px-6">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">Operational Challenges We Solve</h2>
+            <h2 className="text-4xl font-bold text-gray-900 dark:text-white mb-4">Operational Challenges We Solve</h2>
             <p className="text-xl text-gray-600 dark:text-gray-400">Common pain points in luxury hospitality operations</p>
           </div>
 
@@ -318,7 +318,7 @@ export default function AIStaffAccountabilityPage() {
                 className="bg-white border-l-4 border-red-500 rounded-r-xl p-6 shadow-sm hover:shadow-md transition-shadow"
               >
                 <pain.icon className="w-10 h-10 text-red-500 mb-4" />
-                <h3 className="text-lg font-bold text-gray-900 mb-2">{pain.problem}</h3>
+                <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-2">{pain.problem}</h3>
                 <p className="text-sm text-gray-600 dark:text-gray-400">{pain.impact}</p>
               </motion.div>
             ))}
@@ -330,7 +330,7 @@ export default function AIStaffAccountabilityPage() {
       <section className="py-20 bg-white">
         <div className="container mx-auto px-6">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">3-Stage Implementation Roadmap</h2>
+            <h2 className="text-4xl font-bold text-gray-900 dark:text-white mb-4">3-Stage Implementation Roadmap</h2>
             <p className="text-xl text-gray-600 dark:text-gray-400">Measurable ROI at every stage</p>
           </div>
 
@@ -364,7 +364,7 @@ export default function AIStaffAccountabilityPage() {
                   {currentStage.id}
                 </div>
                 <div>
-                  <h3 className="text-3xl font-bold text-gray-900 dark:text-white">{currentStage.name}</h3>
+                  <h3 className="text-3xl font-bold text-gray-900 dark:text-white dark:text-white">{currentStage.name}</h3>
                   <p className="text-lg text-gray-600 dark:text-gray-400">{currentStage.tagline}</p>
                 </div>
               </div>
@@ -389,7 +389,7 @@ export default function AIStaffAccountabilityPage() {
                       </div>
                     </div>
                     <div>
-                      <h4 className="font-bold text-gray-900 mb-1">{feature.title}</h4>
+                      <h4 className="font-bold text-gray-900 dark:text-white mb-1">{feature.title}</h4>
                       <p className="text-sm text-gray-600 dark:text-gray-400">{feature.desc}</p>
                     </div>
                   </div>
@@ -399,11 +399,11 @@ export default function AIStaffAccountabilityPage() {
               <div className="flex items-center justify-between pt-6 border-t border-gray-200 dark:border-gray-700">
                 <div>
                   <div className="text-sm text-gray-500 mb-1">ROI Impact</div>
-                  <div className="font-semibold text-gray-900 dark:text-white">{currentStage.roi}</div>
+                  <div className="font-semibold text-gray-900 dark:text-white dark:text-white">{currentStage.roi}</div>
                 </div>
                 <div className="text-right">
                   <div className="text-sm text-gray-500 mb-1">Investment Level</div>
-                  <div className="font-semibold text-gray-900 dark:text-white">{currentStage.investment}</div>
+                  <div className="font-semibold text-gray-900 dark:text-white dark:text-white">{currentStage.investment}</div>
                 </div>
               </div>
             </div>
@@ -415,7 +415,7 @@ export default function AIStaffAccountabilityPage() {
       <section className="py-20 bg-gray-50 dark:bg-gray-800">
         <div className="container mx-auto px-6">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">Technology Architecture</h2>
+            <h2 className="text-4xl font-bold text-gray-900 dark:text-white mb-4">Technology Architecture</h2>
             <p className="text-xl text-gray-600 dark:text-gray-400">4-layer intelligent system design</p>
           </div>
 
@@ -432,7 +432,7 @@ export default function AIStaffAccountabilityPage() {
                 <div className="w-14 h-14 bg-blue-100 rounded-xl flex items-center justify-center mb-4">
                   <layer.icon className="w-7 h-7 text-blue-600" />
                 </div>
-                <h3 className="text-lg font-bold text-gray-900 mb-4">{layer.layer}</h3>
+                <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-4">{layer.layer}</h3>
                 <ul className="space-y-2">
                   {layer.components.map((component, i) => (
                     <li key={i} className="flex items-start gap-2 text-sm text-gray-600 dark:text-gray-400">
@@ -451,7 +451,7 @@ export default function AIStaffAccountabilityPage() {
       <section className="py-20 bg-white">
         <div className="container mx-auto px-6">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">Industry Success Stories</h2>
+            <h2 className="text-4xl font-bold text-gray-900 dark:text-white mb-4">Industry Success Stories</h2>
             <p className="text-xl text-gray-600 dark:text-gray-400">Real results from luxury hospitality leaders</p>
           </div>
 
@@ -466,7 +466,7 @@ export default function AIStaffAccountabilityPage() {
                 className="bg-gradient-to-br from-gray-50 to-white border border-gray-200 rounded-xl p-8 hover:shadow-lg transition-shadow"
               >
                 <div className="text-5xl mb-4">{useCase.icon}</div>
-                <h3 className="text-2xl font-bold text-gray-900 mb-4">{useCase.industry}</h3>
+                <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">{useCase.industry}</h3>
                 
                 <div className="space-y-4">
                   <div>

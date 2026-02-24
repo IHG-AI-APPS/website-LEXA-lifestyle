@@ -390,7 +390,7 @@ export default function CommandPalette() {
                             {command.icon}
                           </div>
                           <div className="flex-1">
-                            <div className="text-sm font-medium text-gray-900 dark:text-white">
+                            <div className="text-sm font-medium text-gray-900 dark:text-white dark:text-white">
                               {command.title}
                             </div>
                             {command.description && (
@@ -420,7 +420,7 @@ export default function CommandPalette() {
                             {command.icon}
                           </div>
                           <div className="flex-1">
-                            <div className="text-sm font-medium text-gray-900 dark:text-white">
+                            <div className="text-sm font-medium text-gray-900 dark:text-white dark:text-white">
                               {command.title}
                             </div>
                             {command.description && (
@@ -450,7 +450,7 @@ export default function CommandPalette() {
                             {command.icon}
                           </div>
                           <div className="flex-1">
-                            <div className="text-sm font-medium text-gray-900 dark:text-white">
+                            <div className="text-sm font-medium text-gray-900 dark:text-white dark:text-white">
                               {command.title}
                             </div>
                             {command.description && (
@@ -480,7 +480,7 @@ export default function CommandPalette() {
                             {command.icon}
                           </div>
                           <div className="flex-1">
-                            <div className="text-sm font-medium text-gray-900 dark:text-white">
+                            <div className="text-sm font-medium text-gray-900 dark:text-white dark:text-white">
                               {command.title}
                             </div>
                             {command.description && (
@@ -510,7 +510,7 @@ export default function CommandPalette() {
                             {command.icon}
                           </div>
                           <div className="flex-1">
-                            <div className="text-sm font-medium text-gray-900 dark:text-white">
+                            <div className="text-sm font-medium text-gray-900 dark:text-white dark:text-white">
                               {command.title}
                             </div>
                             {command.description && (

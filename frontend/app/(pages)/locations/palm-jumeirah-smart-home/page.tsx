@@ -88,7 +88,7 @@ export default function PalmJumeirahPage() {
         <div className="container mx-auto px-8 lg:px-16 text-center">
           <h2 className="h2 uppercase mb-6">TRANSFORM YOUR PALM JUMEIRAH PROPERTY</h2>
           <p className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">Expert automation for Signature Villas, Garden Homes, and Shoreline Apartments. Schedule your free consultation today.</p>
-          <Link href="/contact" className="inline-block bg-white text-gray-900 px-8 py-4 text-lg font-semibold hover:bg-gray-100 transition-colors">Private Design Session</Link>
+          <Link href="/contact" className="inline-block bg-white text-gray-900 dark:text-white px-8 py-4 text-lg font-semibold hover:bg-gray-100 transition-colors">Private Design Session</Link>
         </div>
       </section>
     </div>

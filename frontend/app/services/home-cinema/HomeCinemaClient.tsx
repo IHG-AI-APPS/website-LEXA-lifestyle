@@ -98,12 +98,12 @@ export default function HomeCinemaClient() {
       </section>
       <section className="py-16 bg-gray-50 dark:bg-gray-800">
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-bold text-center mb-12 text-gray-900 dark:text-white">Cinema Elements</h2>
+          <h2 className="text-3xl font-bold text-center mb-12 text-gray-900 dark:text-white dark:text-white">Cinema Elements</h2>
           <div className="grid md:grid-cols-4 gap-6">
             {elements.map((e, i) => (
               <div key={i} className="text-center p-6 bg-white dark:bg-gray-700 rounded-xl shadow-lg">
                 <e.icon className="w-8 h-8 text-slate-600 mx-auto mb-4" />
-                <h3 className="font-semibold text-gray-900 dark:text-white">{e.title}</h3>
+                <h3 className="font-semibold text-gray-900 dark:text-white dark:text-white">{e.title}</h3>
                 <p className="text-gray-600 dark:text-gray-300 text-sm">{e.desc}</p>
               </div>
             ))}
@@ -112,11 +112,11 @@ export default function HomeCinemaClient() {
       </section>
       <section className="py-16 bg-gray-50 dark:bg-gray-800">
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-bold text-center mb-12 text-gray-900 dark:text-white">Home Cinema FAQ</h2>
+          <h2 className="text-3xl font-bold text-center mb-12 text-gray-900 dark:text-white dark:text-white">Home Cinema FAQ</h2>
           <div className="max-w-3xl mx-auto space-y-6">
             {faqs.map((f, i) => (
               <div key={i} className="bg-white dark:bg-gray-700 p-6 rounded-xl shadow">
-                <h3 className="text-lg font-semibold mb-2 text-gray-900 dark:text-white">{f.q}</h3>
+                <h3 className="text-lg font-semibold mb-2 text-gray-900 dark:text-white dark:text-white">{f.q}</h3>
                 <p className="text-gray-600 dark:text-gray-300">{f.a}</p>
               </div>
             ))}

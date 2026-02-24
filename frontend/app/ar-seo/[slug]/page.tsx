@@ -110,12 +110,12 @@ export default async function DynamicArabicPage({ params }: { params: { slug: st
           </Link>
           <div className="flex gap-4 items-center">
             {page.english_alternate_url && (
-              <a href={page.english_alternate_url} className="text-sm text-gray-600 hover:text-gray-900 flex items-center gap-1">
+              <a href={page.english_alternate_url} className="text-sm text-gray-600 hover:text-gray-900 dark:text-white flex items-center gap-1">
                 <ArrowLeft className="h-4 w-4" />
                 English
               </a>
             )}
-            <span className="text-sm font-bold text-gray-900 dark:text-white">العربية</span>
+            <span className="text-sm font-bold text-gray-900 dark:text-white dark:text-white">العربية</span>
           </div>
         </div>
       </header>
@@ -216,7 +216,7 @@ export default async function DynamicArabicPage({ params }: { params: { slug: st
             <div className="space-y-6">
               {page.faqs.map((faq: { question: string; answer: string }, index: number) => (
                 <div key={index} className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-sm border border-gray-100 dark:border-gray-800">
-                  <h3 className="text-xl font-semibold mb-3 text-gray-900 dark:text-white">{faq.question}</h3>
+                  <h3 className="text-xl font-semibold mb-3 text-gray-900 dark:text-white dark:text-white">{faq.question}</h3>
                   <p className="text-gray-700 leading-relaxed">{faq.answer}</p>
                 </div>
               ))}

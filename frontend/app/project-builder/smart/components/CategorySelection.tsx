@@ -195,7 +195,7 @@ export default function CategorySelection({
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.1 }}
-          className="text-3xl md:text-4xl font-bold text-gray-900 mb-3"
+          className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-3"
         >
           What Do You Want to Automate?
         </motion.h2>
@@ -299,7 +299,7 @@ export default function CategorySelection({
                 </div>
 
                 {/* Title */}
-                <h3 className="font-bold text-gray-900 mb-1">{category.name}</h3>
+                <h3 className="font-bold text-gray-900 dark:text-white mb-1">{category.name}</h3>
                 
                 {/* Tagline */}
                 <p className="text-xs text-gray-500 mb-2">{details.tagline}</p>

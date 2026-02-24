@@ -138,10 +138,10 @@ export default function WhyLexaPage() {
                 When UAE&apos;s most discerning homeowners need premium automation, they choose LEXA Lifestyle. Here&apos;s why we&apos;re different.
               </p>
               <div className="flex gap-4 justify-center">
-                <Link href="/contact" className="bg-white text-gray-900 px-8 py-4 font-semibold hover:bg-gray-100 transition-colors">
+                <Link href="/contact" className="bg-white text-gray-900 dark:text-white px-8 py-4 font-semibold hover:bg-gray-100 transition-colors">
                   Schedule Consultation
                 </Link>
-                <Link href="/experience-centre" className="border-2 border-white px-8 py-4 font-semibold hover:bg-white hover:text-gray-900 transition-colors">
+                <Link href="/experience-centre" className="border-2 border-white px-8 py-4 font-semibold hover:bg-white hover:text-gray-900 dark:text-white transition-colors">
                   Visit Experience Centre
                 </Link>
               </div>

@@ -117,7 +117,7 @@ export default function EmiratesHillsPage() {
         <div className="container mx-auto px-8 lg:px-16 text-center">
           <h2 className="h2 uppercase mb-6">TRANSFORM YOUR EMIRATES HILLS VILLA</h2>
           <p className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">Schedule a consultation to discuss your smart home vision. We&apos;ll visit your property and create a customized proposal.</p>
-          <Link href="/contact" className="inline-block bg-white text-gray-900 px-8 py-4 text-lg font-semibold hover:bg-gray-100 transition-colors">Book Free Consultation</Link>
+          <Link href="/contact" className="inline-block bg-white text-gray-900 dark:text-white px-8 py-4 text-lg font-semibold hover:bg-gray-100 transition-colors">Book Free Consultation</Link>
           <p className="text-sm text-gray-400 mt-6">Serving Emirates Hills | Arabian Ranches | Jumeirah Islands | Palm Jumeirah</p>
         </div>
       </section>

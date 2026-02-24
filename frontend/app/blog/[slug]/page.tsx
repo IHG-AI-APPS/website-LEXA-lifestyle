@@ -105,7 +105,7 @@ export default function BlogArticlePage({ params }: { params: { slug: string } }
               transition={{ duration: 0.3 }}
             >
               <Badge className="mb-4 bg-blue-100 text-blue-700 hover:bg-blue-100">{article.category}</Badge>
-              <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6 tracking-tight text-gray-900 dark:text-white leading-tight">
+              <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6 tracking-tight text-gray-900 dark:text-white dark:text-white leading-tight">
                 {article.title}
               </h1>
               
@@ -172,13 +172,13 @@ export default function BlogArticlePage({ params }: { params: { slug: string } }
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.3, delay: 0.2 }}
               className="prose prose-lg prose-gray max-w-none
-                prose-headings:font-bold prose-headings:tracking-tight prose-headings:text-gray-900 dark:prose-headings:text-white
+                prose-headings:font-bold prose-headings:tracking-tight prose-headings:text-gray-900 dark:text-white dark:prose-headings:text-white
                 prose-h1:text-3xl prose-h1:mt-8 prose-h1:mb-4
                 prose-h2:text-2xl prose-h2:mt-8 prose-h2:mb-4 prose-h2:border-b prose-h2:border-gray-200 prose-h2:pb-2
                 prose-h3:text-xl prose-h3:mt-6 prose-h3:mb-3
                 prose-p:text-gray-700 prose-p:leading-relaxed prose-p:mb-4
                 prose-a:text-blue-600 prose-a:no-underline hover:prose-a:underline
-                prose-strong:text-gray-900 dark:prose-strong:text-white prose-strong:font-semibold
+                prose-strong:text-gray-900 dark:text-white dark:prose-strong:text-white prose-strong:font-semibold
                 prose-ul:my-4 prose-ul:pl-6
                 prose-ol:my-4 prose-ol:pl-6
                 prose-li:text-gray-700 prose-li:mb-2
@@ -194,9 +194,9 @@ export default function BlogArticlePage({ params }: { params: { slug: string } }
               <ReactMarkdown 
                 remarkPlugins={[remarkGfm]}
                 components={{
-                  h1: ({ children }) => <h1 className="text-3xl font-bold mt-8 mb-4 text-gray-900 dark:text-white">{children}</h1>,
-                  h2: ({ children }) => <h2 className="text-2xl font-bold mt-8 mb-4 text-gray-900 dark:text-white border-b border-gray-200 dark:border-gray-700 pb-2">{children}</h2>,
-                  h3: ({ children }) => <h3 className="text-xl font-bold mt-6 mb-3 text-gray-900 dark:text-white">{children}</h3>,
+                  h1: ({ children }) => <h1 className="text-3xl font-bold mt-8 mb-4 text-gray-900 dark:text-white dark:text-white">{children}</h1>,
+                  h2: ({ children }) => <h2 className="text-2xl font-bold mt-8 mb-4 text-gray-900 dark:text-white dark:text-white border-b border-gray-200 dark:border-gray-700 pb-2">{children}</h2>,
+                  h3: ({ children }) => <h3 className="text-xl font-bold mt-6 mb-3 text-gray-900 dark:text-white dark:text-white">{children}</h3>,
                   p: ({ children }) => <p className="text-gray-700 leading-relaxed mb-4">{children}</p>,
                   ul: ({ children }) => <ul className="list-disc pl-6 my-4 space-y-2">{children}</ul>,
                   ol: ({ children }) => <ol className="list-decimal pl-6 my-4 space-y-2">{children}</ol>,
@@ -213,14 +213,14 @@ export default function BlogArticlePage({ params }: { params: { slug: string } }
                       </table>
                     </div>
                   ),
-                  th: ({ children }) => <th className="bg-gray-100 dark:bg-gray-800 border border-gray-300 dark:border-gray-600 px-4 py-3 text-left font-semibold text-gray-900 dark:text-white">{children}</th>,
+                  th: ({ children }) => <th className="bg-gray-100 dark:bg-gray-800 border border-gray-300 dark:border-gray-600 px-4 py-3 text-left font-semibold text-gray-900 dark:text-white dark:text-white">{children}</th>,
                   td: ({ children }) => <td className="border border-gray-300 px-4 py-3 text-gray-700 dark:text-gray-300">{children}</td>,
                   a: ({ href, children }) => (
                     <a href={href} className="text-blue-600 hover:text-blue-800 hover:underline transition-colors" target="_blank" rel="noopener noreferrer">
                       {children}
                     </a>
                   ),
-                  strong: ({ children }) => <strong className="font-semibold text-gray-900 dark:text-white">{children}</strong>,
+                  strong: ({ children }) => <strong className="font-semibold text-gray-900 dark:text-white dark:text-white">{children}</strong>,
                   code: ({ children, className }) => {
                     const isInline = !className
                     return isInline ? (
@@ -261,7 +261,7 @@ export default function BlogArticlePage({ params }: { params: { slug: string } }
         <section className="py-16 bg-gray-50 dark:bg-gray-800">
           <div className="container mx-auto px-4 sm:px-8 lg:px-16">
             <div className="max-w-6xl mx-auto">
-              <h2 className="text-2xl font-bold mb-8 text-gray-900 dark:text-white">Continue Reading</h2>
+              <h2 className="text-2xl font-bold mb-8 text-gray-900 dark:text-white dark:text-white">Continue Reading</h2>
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                 {relatedArticles.filter(a => a.slug !== article.slug).slice(0, 3).map((relatedArticle) => (
                   <Link key={relatedArticle.id} href={`/blog/${relatedArticle.slug}`}>
@@ -284,7 +284,7 @@ export default function BlogArticlePage({ params }: { params: { slug: string } }
                       </div>
                       <div className="p-5">
                         <Badge variant="secondary" className="mb-2 text-xs">{relatedArticle.category}</Badge>
-                        <h3 className="font-semibold mb-2 group-hover:text-blue-600 transition-colors line-clamp-2 text-gray-900 dark:text-white">
+                        <h3 className="font-semibold mb-2 group-hover:text-blue-600 transition-colors line-clamp-2 text-gray-900 dark:text-white dark:text-white">
                           {relatedArticle.title}
                         </h3>
                         <p className="text-sm text-gray-500 line-clamp-2">

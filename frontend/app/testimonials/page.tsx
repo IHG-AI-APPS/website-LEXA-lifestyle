@@ -127,7 +127,7 @@ export default function TestimonialsPage() {
                         {t.name?.charAt(0) || '?'}
                       </div>
                       <div>
-                        <p className="font-medium text-gray-900 dark:text-white text-sm">
+                        <p className="font-medium text-gray-900 dark:text-white dark:text-white text-sm">
                           {t.name}
                         </p>
                         <div className="flex items-center gap-2 text-xs text-gray-500 dark:text-gray-400">
@@ -173,7 +173,7 @@ export default function TestimonialsPage() {
       {/* CTA */}
       <section className="py-16 bg-gray-50 dark:bg-gray-800">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl text-center">
-          <h2 className="text-lg font-semibold text-gray-900 dark:text-white mb-3">
+          <h2 className="text-lg font-semibold text-gray-900 dark:text-white dark:text-white mb-3">
             {language === 'ar' ? 'هل أنت مستعد للتحول؟' : 'Ready to Transform Your Space?'}
           </h2>
           <p className="text-gray-500 dark:text-gray-400 mb-6">

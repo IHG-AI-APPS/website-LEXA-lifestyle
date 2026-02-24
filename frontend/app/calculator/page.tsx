@@ -1274,7 +1274,7 @@ export default function IndustryCalculatorPage() {
                                   }`}
                                 >
                                   <div className="font-semibold text-sm mb-2">{level.label}</div>
-                                  <div className="text-lg font-bold text-gray-900 dark:text-white">
+                                  <div className="text-lg font-bold text-gray-900 dark:text-white dark:text-white">
                                     {formatPriceRange(level.price)}
                                   </div>
                                 </button>

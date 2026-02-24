@@ -299,7 +299,7 @@ export default function EnterprisePerformanceOSPage() {
               viewport={{ once: true }}
               className="text-center mb-16"
             >
-              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4 text-gray-900 dark:text-white">
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4 text-gray-900 dark:text-white dark:text-white">
                 Four-Layer Architecture
               </h2>
               <p className="text-base sm:text-lg text-gray-600 max-w-3xl mx-auto">
@@ -325,7 +325,7 @@ export default function EnterprisePerformanceOSPage() {
                       </div>
                       <div>
                         <div className="text-sm font-bold text-gray-500 mb-1">LAYER {layer.number}</div>
-                        <h3 className="text-2xl font-bold text-gray-900 dark:text-white">{layer.title}</h3>
+                        <h3 className="text-2xl font-bold text-gray-900 dark:text-white dark:text-white">{layer.title}</h3>
                       </div>
                     </div>
                     <div className="space-y-2">
@@ -353,7 +353,7 @@ export default function EnterprisePerformanceOSPage() {
               viewport={{ once: true }}
               className="text-center mb-12"
             >
-              <h2 className="text-3xl sm:text-4xl font-bold mb-4 text-gray-900 dark:text-white">
+              <h2 className="text-3xl sm:text-4xl font-bold mb-4 text-gray-900 dark:text-white dark:text-white">
                 Enterprise Use Cases
               </h2>
               <p className="text-lg text-gray-600 dark:text-gray-400">
@@ -392,13 +392,13 @@ export default function EnterprisePerformanceOSPage() {
                 <div className="p-4 bg-blue-100">
                   <SelectedIcon className="h-10 w-10 text-blue-600" />
                 </div>
-                <h3 className="text-3xl font-bold text-gray-900 dark:text-white">{selectedCase.name}</h3>
+                <h3 className="text-3xl font-bold text-gray-900 dark:text-white dark:text-white">{selectedCase.name}</h3>
               </div>
               
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 {selectedCase.benefits.map((benefit) => (
                   <div key={benefit.label} className="bg-white dark:bg-gray-800 p-6 border border-gray-200 dark:border-gray-700">
-                    <div className="font-semibold text-gray-900 mb-2">{benefit.label}</div>
+                    <div className="font-semibold text-gray-900 dark:text-white mb-2">{benefit.label}</div>
                     <div className="text-sm text-blue-600 font-semibold">{benefit.value}</div>
                   </div>
                 ))}
@@ -462,7 +462,7 @@ export default function EnterprisePerformanceOSPage() {
               viewport={{ once: true }}
               className="text-center mb-16"
             >
-              <h2 className="text-3xl sm:text-4xl font-bold mb-4 text-gray-900 dark:text-white">
+              <h2 className="text-3xl sm:text-4xl font-bold mb-4 text-gray-900 dark:text-white dark:text-white">
                 Enterprise Investment Tiers
               </h2>
               <p className="text-lg text-gray-600 dark:text-gray-400">
@@ -487,7 +487,7 @@ export default function EnterprisePerformanceOSPage() {
                       Most Popular
                     </div>
                   )}
-                  <h3 className="text-2xl font-bold mb-2 text-gray-900 dark:text-white">{tier.name}</h3>
+                  <h3 className="text-2xl font-bold mb-2 text-gray-900 dark:text-white dark:text-white">{tier.name}</h3>
                   <div className="text-sm text-gray-600 mb-4">{tier.size}</div>
                   <div className="text-3xl font-bold text-blue-600 mb-6">{tier.investment}</div>
                   

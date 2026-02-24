@@ -68,7 +68,7 @@ export default function RelatedPackages({ currentSlug, currentTitle }: RelatedPa
             <span className="text-sm font-semibold uppercase tracking-wider text-blue-600 mb-2 block">
               Explore More
             </span>
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 dark:text-white mb-4">
               Other Smart Home Packages
             </h2>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
@@ -115,7 +115,7 @@ export default function RelatedPackages({ currentSlug, currentTitle }: RelatedPa
                       <div className="absolute top-4 right-4">
                         <div className="bg-white/90 backdrop-blur-sm px-3 py-1.5 rounded-full flex items-center gap-2">
                           <Icon className="h-4 w-4 text-blue-600" />
-                          <span className="text-xs font-semibold text-gray-900 dark:text-white">
+                          <span className="text-xs font-semibold text-gray-900 dark:text-white dark:text-white">
                             {pkg.property_count || '3'} Tiers
                           </span>
                         </div>
@@ -148,7 +148,7 @@ export default function RelatedPackages({ currentSlug, currentTitle }: RelatedPa
                         <div className="h-1 w-1 bg-gray-300 rounded-full" />
                         <div className="flex items-center gap-1">
                           <span>From</span>
-                          <span className="font-semibold text-gray-900 dark:text-white">
+                          <span className="font-semibold text-gray-900 dark:text-white dark:text-white">
                             {pkg.starting_price ? `AED ${(pkg.starting_price / 1000).toFixed(0)}K` : 'Contact'}
                           </span>
                         </div>

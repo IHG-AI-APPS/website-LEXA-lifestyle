@@ -287,7 +287,7 @@ export default function FeaturePrioritization({
         <motion.h2
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          className="text-2xl md:text-3xl font-bold text-gray-900 mb-2"
+          className="text-2xl md:text-3xl font-bold text-gray-900 dark:text-white mb-2"
         >
           Prioritize Your Features
         </motion.h2>
@@ -352,7 +352,7 @@ export default function FeaturePrioritization({
               <div className="flex items-start justify-between mb-3">
                 <div className="flex-1">
                   <div className="flex items-center gap-2">
-                    <h3 className="font-semibold text-gray-900 dark:text-white">{feature.name}</h3>
+                    <h3 className="font-semibold text-gray-900 dark:text-white dark:text-white">{feature.name}</h3>
                     {feature.popularity >= 85 && (
                       <span className="text-xs bg-amber-100 text-amber-700 px-2 py-0.5 rounded-full">
                         Popular

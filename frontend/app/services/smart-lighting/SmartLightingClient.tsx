@@ -84,7 +84,7 @@ export default function SmartLightingClient() {
             Transform your home with intelligent lighting. LEXA designs and installs Lutron, Ketra, and automated shade systems that enhance your lifestyle and wellbeing.
           </p>
           <div className="flex flex-wrap gap-4">
-            <Link href="/consultation" className="bg-yellow-500 hover:bg-yellow-400 text-gray-900 px-8 py-4 rounded-lg font-semibold flex items-center gap-2">
+            <Link href="/consultation" className="bg-yellow-500 hover:bg-yellow-400 text-gray-900 dark:text-white px-8 py-4 rounded-lg font-semibold flex items-center gap-2">
               Design My Lighting <ArrowRight className="w-5 h-5" />
             </Link>
             <button 
@@ -110,12 +110,12 @@ export default function SmartLightingClient() {
 
       <section className="py-16 bg-gray-50 dark:bg-gray-800">
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-bold text-center mb-12 text-gray-900 dark:text-white">Smart Lighting Solutions</h2>
+          <h2 className="text-3xl font-bold text-center mb-12 text-gray-900 dark:text-white dark:text-white">Smart Lighting Solutions</h2>
           <div className="grid md:grid-cols-4 gap-6">
             {solutions.map((s, i) => (
               <div key={i} className="text-center p-6 bg-white dark:bg-gray-700 rounded-xl shadow-lg">
                 <s.icon className="w-10 h-10 text-amber-600 mx-auto mb-4" />
-                <h3 className="font-semibold text-gray-900 dark:text-white">{s.title}</h3>
+                <h3 className="font-semibold text-gray-900 dark:text-white dark:text-white">{s.title}</h3>
                 <p className="text-gray-600 dark:text-gray-300 text-sm mt-2">{s.desc}</p>
               </div>
             ))}
@@ -125,11 +125,11 @@ export default function SmartLightingClient() {
 
       <section className="py-16 dark:bg-gray-900">
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-bold text-center mb-12 text-gray-900 dark:text-white">Premium Lighting Brands</h2>
+          <h2 className="text-3xl font-bold text-center mb-12 text-gray-900 dark:text-white dark:text-white">Premium Lighting Brands</h2>
           <div className="grid md:grid-cols-4 gap-6">
             {brands.map((b, i) => (
               <div key={i} className="bg-white dark:bg-gray-700 p-6 rounded-xl shadow-lg">
-                <h3 className="text-xl font-semibold text-gray-900 dark:text-white">{b.name}</h3>
+                <h3 className="text-xl font-semibold text-gray-900 dark:text-white dark:text-white">{b.name}</h3>
                 <p className="text-amber-600 dark:text-amber-400 text-sm mt-1">{b.products}</p>
               </div>
             ))}
@@ -139,11 +139,11 @@ export default function SmartLightingClient() {
 
       <section className="py-16 bg-gray-50 dark:bg-gray-800">
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-bold text-center mb-12 text-gray-900 dark:text-white">Smart Lighting FAQ</h2>
+          <h2 className="text-3xl font-bold text-center mb-12 text-gray-900 dark:text-white dark:text-white">Smart Lighting FAQ</h2>
           <div className="max-w-3xl mx-auto space-y-6">
             {faqs.map((f, i) => (
               <div key={i} className="bg-white dark:bg-gray-700 p-6 rounded-xl shadow">
-                <h3 className="font-semibold mb-2 text-gray-900 dark:text-white">{f.q}</h3>
+                <h3 className="font-semibold mb-2 text-gray-900 dark:text-white dark:text-white">{f.q}</h3>
                 <p className="text-gray-600 dark:text-gray-300">{f.a}</p>
               </div>
             ))}

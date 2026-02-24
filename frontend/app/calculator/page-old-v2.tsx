@@ -554,7 +554,7 @@ export default function AdvancedCalculatorPage() {
                                 }`}
                               >
                                 <div className="font-semibold mb-2">{feature.name}</div>
-                                <div className="text-2xl font-bold text-gray-900 dark:text-white">
+                                <div className="text-2xl font-bold text-gray-900 dark:text-white dark:text-white">
                                   {formatCurrency(feature.price)}
                                 </div>
                               </button>

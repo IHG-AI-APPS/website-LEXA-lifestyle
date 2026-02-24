@@ -136,7 +136,7 @@ export default function AbuDhabiLuxuryAutomationClient() {
       <section className="py-20 bg-gray-50 dark:bg-gray-800">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white dark:text-white mb-4">
               Abu Dhabi Areas We Serve
             </h2>
             <p className="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
@@ -156,7 +156,7 @@ export default function AbuDhabiLuxuryAutomationClient() {
               >
                 <div className="flex items-start justify-between">
                   <div>
-                    <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2">{area.name}</h3>
+                    <h3 className="text-xl font-bold text-gray-900 dark:text-white dark:text-white mb-2">{area.name}</h3>
                     <p className="text-gray-600 dark:text-gray-400 text-sm">{area.description}</p>
                   </div>
                   <div className="text-right">
@@ -174,7 +174,7 @@ export default function AbuDhabiLuxuryAutomationClient() {
       <section className="py-20">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white dark:text-white mb-4">
               Smart Home Solutions for Abu Dhabi
             </h2>
             <p className="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
@@ -193,7 +193,7 @@ export default function AbuDhabiLuxuryAutomationClient() {
                 className="p-6 bg-gray-50 dark:bg-gray-800 rounded-xl hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors"
               >
                 <service.icon className="h-10 w-10 text-[#C9A962] mb-4" />
-                <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2">{service.title}</h3>
+                <h3 className="text-xl font-bold text-gray-900 dark:text-white dark:text-white mb-2">{service.title}</h3>
                 <p className="text-gray-600 dark:text-gray-400">{service.description}</p>
               </motion.div>
             ))}
@@ -208,7 +208,7 @@ export default function AbuDhabiLuxuryAutomationClient() {
       <section className="py-20 bg-gray-50 dark:bg-gray-800">
         <div className="container mx-auto px-4 max-w-4xl">
           <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white dark:text-white mb-4">
               Smart Home Abu Dhabi FAQs
             </h2>
             <p className="text-gray-600 dark:text-gray-400">
@@ -226,7 +226,7 @@ export default function AbuDhabiLuxuryAutomationClient() {
                 transition={{ delay: index * 0.05 }}
                 className="p-6 bg-white dark:bg-gray-900 rounded-xl shadow-sm"
               >
-                <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-3">
+                <h3 className="text-lg font-bold text-gray-900 dark:text-white dark:text-white mb-3">
                   {faq.question}
                 </h3>
                 <p className="text-gray-600 dark:text-gray-400 leading-relaxed">

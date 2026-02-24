@@ -184,7 +184,7 @@ export default function FAQPage() {
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: catIdx * 0.05 }}
                 >
-                  <h2 className="text-lg font-semibold text-gray-900 dark:text-white mb-4 flex items-center gap-2">
+                  <h2 className="text-lg font-semibold text-gray-900 dark:text-white dark:text-white mb-4 flex items-center gap-2">
                     <div className="w-1 h-5 bg-[#9F8B65] rounded-full" />
                     {category.name}
                   </h2>
@@ -200,7 +200,7 @@ export default function FAQPage() {
                             className="w-full flex items-center justify-between px-5 py-4 text-left hover:bg-gray-50 dark:hover:bg-gray-800/50 transition-colors"
                             data-testid={`faq-toggle-${catIdx}-${faqIdx}`}
                           >
-                            <span className="font-medium text-gray-900 dark:text-white pr-4 text-sm sm:text-base">
+                            <span className="font-medium text-gray-900 dark:text-white dark:text-white pr-4 text-sm sm:text-base">
                               {faq.question}
                             </span>
                             <ChevronDown
@@ -230,7 +230,7 @@ export default function FAQPage() {
       {/* CTA */}
       <section className="py-16 bg-gray-50 dark:bg-gray-800">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl text-center">
-          <h2 className="text-lg font-semibold text-gray-900 dark:text-white mb-3">
+          <h2 className="text-lg font-semibold text-gray-900 dark:text-white dark:text-white mb-3">
             {language === 'ar' ? 'لم تجد ما تبحث عنه؟' : "Didn't find what you're looking for?"}
           </h2>
           <p className="text-gray-500 dark:text-gray-400 mb-6">

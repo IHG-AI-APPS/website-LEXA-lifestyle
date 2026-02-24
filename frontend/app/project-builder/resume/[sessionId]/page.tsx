@@ -117,7 +117,7 @@ export default function ResumePage() {
           className="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-8 max-w-md w-full text-center"
         >
           <AlertCircle className="w-16 h-16 text-red-500 mx-auto mb-4" />
-          <h1 className="text-2xl font-semibold text-gray-900 mb-2">Session Unavailable</h1>
+          <h1 className="text-2xl font-semibold text-gray-900 dark:text-white mb-2">Session Unavailable</h1>
           <p className="text-gray-600 mb-6">{error}</p>
           <Button onClick={() => router.push('/project-builder')} className="gap-2">
             Start New Project
@@ -153,7 +153,7 @@ export default function ResumePage() {
               <>
                 {/* Project Overview */}
                 <div className="mb-6">
-                  <h2 className="text-sm font-medium text-gray-900 uppercase tracking-wider mb-3">
+                  <h2 className="text-sm font-medium text-gray-900 dark:text-white uppercase tracking-wider mb-3">
                     Project Overview
                   </h2>
                   <div className="bg-gray-50 rounded-lg p-4 space-y-2">
@@ -178,7 +178,7 @@ export default function ResumePage() {
 
                 {/* Progress */}
                 <div className="mb-6">
-                  <h2 className="text-sm font-medium text-gray-900 uppercase tracking-wider mb-3">
+                  <h2 className="text-sm font-medium text-gray-900 dark:text-white uppercase tracking-wider mb-3">
                     Your Progress
                   </h2>
                   <div className="space-y-2">

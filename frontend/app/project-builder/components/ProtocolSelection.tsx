@@ -161,7 +161,7 @@ export default function ProtocolSelection({
                 <Zap className="w-5 h-5" />
                 <span className="font-semibold">Protocol Selection</span>
               </div>
-              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-3">
+              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-3">
                 Choose Your Infrastructure Type
               </h2>
               <p className="text-gray-600 max-w-2xl mx-auto">
@@ -187,7 +187,7 @@ export default function ProtocolSelection({
                     </div>
 
                     {/* Title & Description */}
-                    <h3 className="text-xl font-bold text-gray-900 mb-2">{type.name}</h3>
+                    <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2">{type.name}</h3>
                     <p className="text-gray-600 text-sm mb-4">{type.description}</p>
 
                     {/* Pros */}
@@ -239,7 +239,7 @@ export default function ProtocolSelection({
                 <selectedTypeConfig.icon className="w-5 h-5" />
                 <span className="font-semibold">{selectedTypeConfig.name} Protocols</span>
               </div>
-              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-3">
+              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-3">
                 Select Your Preferred Protocols
               </h2>
               <p className="text-gray-600 max-w-2xl mx-auto">

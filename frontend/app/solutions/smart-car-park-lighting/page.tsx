@@ -234,7 +234,7 @@ export default function SmartCarParkLightingPage() {
           <div className="grid md:grid-cols-2 gap-12">
             {/* Challenges */}
             <div>
-              <h2 className="text-3xl font-bold text-gray-900 mb-8">Traditional Lighting Challenges</h2>
+              <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-8">Traditional Lighting Challenges</h2>
               <div className="space-y-4">
                 {challenges.map((challenge, index) => (
                   <motion.div
@@ -245,7 +245,7 @@ export default function SmartCarParkLightingPage() {
                     transition={{ duration: 0.2 }}
                     className="bg-red-50 border-l-4 border-red-500 p-4 rounded-r-lg"
                   >
-                    <h3 className="font-bold text-gray-900 mb-1">{challenge.problem}</h3>
+                    <h3 className="font-bold text-gray-900 dark:text-white mb-1">{challenge.problem}</h3>
                     <p className="text-sm text-gray-700 dark:text-gray-300">{challenge.impact}</p>
                   </motion.div>
                 ))}
@@ -254,14 +254,14 @@ export default function SmartCarParkLightingPage() {
 
             {/* Solution */}
             <div>
-              <h2 className="text-3xl font-bold text-gray-900 mb-8">Our Dynamic Lighting Solution</h2>
+              <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-8">Our Dynamic Lighting Solution</h2>
               <div className="bg-gradient-to-br from-blue-50 to-cyan-50 border border-blue-200 rounded-xl p-8">
                 <div className="flex items-center gap-3 mb-6">
                   <div className="w-12 h-12 bg-blue-600 rounded-xl flex items-center justify-center">
                     <Lightbulb className="w-6 h-6 text-white" />
                   </div>
                   <div>
-                    <h3 className="font-bold text-xl text-gray-900 dark:text-white">IoT-Powered Intelligence</h3>
+                    <h3 className="font-bold text-xl text-gray-900 dark:text-white dark:text-white">IoT-Powered Intelligence</h3>
                     <p className="text-sm text-gray-600 dark:text-gray-400">AI + Radar + Cloud Management</p>
                   </div>
                 </div>
@@ -303,7 +303,7 @@ export default function SmartCarParkLightingPage() {
       <section className="py-20 bg-gray-50 dark:bg-gray-800">
         <div className="container mx-auto px-6">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">Intelligent Features</h2>
+            <h2 className="text-4xl font-bold text-gray-900 dark:text-white mb-4">Intelligent Features</h2>
             <p className="text-xl text-gray-600 dark:text-gray-400">Next-generation IoT lighting for modern parking facilities</p>
           </div>
 
@@ -320,7 +320,7 @@ export default function SmartCarParkLightingPage() {
                 <div className="w-14 h-14 bg-blue-100 rounded-xl flex items-center justify-center mb-4">
                   <feature.icon className="w-7 h-7 text-blue-600" />
                 </div>
-                <h3 className="text-xl font-bold text-gray-900 mb-3">{feature.title}</h3>
+                <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-3">{feature.title}</h3>
                 <p className="text-gray-600 leading-relaxed">{feature.description}</p>
               </motion.div>
             ))}
@@ -332,14 +332,14 @@ export default function SmartCarParkLightingPage() {
       <section className="py-20 bg-white">
         <div className="container mx-auto px-6">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">Proven ROI & Energy Savings</h2>
+            <h2 className="text-4xl font-bold text-gray-900 dark:text-white mb-4">Proven ROI & Energy Savings</h2>
             <p className="text-xl text-gray-600 dark:text-gray-400">Real numbers from real implementations</p>
           </div>
 
           {/* Comparison Table */}
           <div className="max-w-5xl mx-auto mb-16">
             <div className="bg-gradient-to-br from-gray-50 to-gray-100 rounded-2xl p-8 border border-gray-200 dark:border-gray-700">
-              <h3 className="text-2xl font-bold text-gray-900 mb-6 text-center">
+              <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-6 text-center">
                 Electricity Consumption Comparison (per lamp)
               </h3>
               
@@ -357,10 +357,10 @@ export default function SmartCarParkLightingPage() {
                   <tbody>
                     {roiComparison.map((row, index) => (
                       <tr key={index} className={`border-b border-gray-200 ${index === 1 ? 'bg-green-50' : ''}`}>
-                        <td className="py-4 px-4 font-medium text-gray-900 dark:text-white">{row.metric}</td>
+                        <td className="py-4 px-4 font-medium text-gray-900 dark:text-white dark:text-white">{row.metric}</td>
                         <td className="py-4 px-4 text-right text-gray-700 dark:text-gray-300">{row.monthly}</td>
                         <td className="py-4 px-4 text-right text-gray-700 dark:text-gray-300">{row.yearly}</td>
-                        <td className="py-4 px-4 text-right font-bold text-gray-900 dark:text-white">{row.fiveYear}</td>
+                        <td className="py-4 px-4 text-right font-bold text-gray-900 dark:text-white dark:text-white">{row.fiveYear}</td>
                         <td className="py-4 px-4 text-center">
                           {row.savings && (
                             <span className="inline-flex items-center gap-1 bg-green-600 text-white px-3 py-1 rounded-full text-sm font-bold">
@@ -392,7 +392,7 @@ export default function SmartCarParkLightingPage() {
 
           {/* 5-Year Cost Comparison */}
           <div className="max-w-5xl mx-auto">
-            <h3 className="text-2xl font-bold text-gray-900 mb-8 text-center">
+            <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-8 text-center">
               Total Investment Comparison (500 units, 5 years)
             </h3>
             <div className="grid md:grid-cols-4 gap-6">
@@ -497,7 +497,7 @@ export default function SmartCarParkLightingPage() {
       <section className="py-20 bg-white">
         <div className="container mx-auto px-6">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">Technical Specifications</h2>
+            <h2 className="text-4xl font-bold text-gray-900 dark:text-white mb-4">Technical Specifications</h2>
             <p className="text-xl text-gray-600 dark:text-gray-400">Enterprise-grade hardware and connectivity</p>
           </div>
 
@@ -508,13 +508,13 @@ export default function SmartCarParkLightingPage() {
                 <div className="w-12 h-12 bg-blue-600 rounded-xl flex items-center justify-center">
                   <Lightbulb className="w-6 h-6 text-white" />
                 </div>
-                <h3 className="text-2xl font-bold text-gray-900 dark:text-white">AIOT Bluetooth Radar LED T8</h3>
+                <h3 className="text-2xl font-bold text-gray-900 dark:text-white dark:text-white">AIOT Bluetooth Radar LED T8</h3>
               </div>
               <div className="space-y-3">
                 {technicalSpecs.ledTube.map((item, index) => (
                   <div key={index} className="flex justify-between items-center py-2 border-b border-gray-200 dark:border-gray-700">
                     <span className="text-gray-600 dark:text-gray-400">{item.spec}</span>
-                    <span className="font-semibold text-gray-900 dark:text-white">{item.value}</span>
+                    <span className="font-semibold text-gray-900 dark:text-white dark:text-white">{item.value}</span>
                   </div>
                 ))}
               </div>
@@ -526,13 +526,13 @@ export default function SmartCarParkLightingPage() {
                 <div className="w-12 h-12 bg-purple-600 rounded-xl flex items-center justify-center">
                   <CloudCog className="w-6 h-6 text-white" />
                 </div>
-                <h3 className="text-2xl font-bold text-gray-900 dark:text-white">Smart Gateway</h3>
+                <h3 className="text-2xl font-bold text-gray-900 dark:text-white dark:text-white">Smart Gateway</h3>
               </div>
               <div className="space-y-3">
                 {technicalSpecs.gateway.map((item, index) => (
                   <div key={index} className="flex justify-between items-center py-2 border-b border-gray-200 dark:border-gray-700">
                     <span className="text-gray-600 dark:text-gray-400">{item.spec}</span>
-                    <span className="font-semibold text-gray-900 dark:text-white">{item.value}</span>
+                    <span className="font-semibold text-gray-900 dark:text-white dark:text-white">{item.value}</span>
                   </div>
                 ))}
               </div>
@@ -545,7 +545,7 @@ export default function SmartCarParkLightingPage() {
       <section className="py-20 bg-gray-50 dark:bg-gray-800">
         <div className="container mx-auto px-6">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">Implementation Process</h2>
+            <h2 className="text-4xl font-bold text-gray-900 dark:text-white mb-4">Implementation Process</h2>
             <p className="text-xl text-gray-600 dark:text-gray-400">From assessment to go-live in 6 simple steps</p>
           </div>
 
@@ -565,7 +565,7 @@ export default function SmartCarParkLightingPage() {
                   </div>
                 </div>
                 <div className="flex-grow bg-white dark:bg-gray-800 rounded-xl p-6 border border-gray-200 dark:border-gray-700">
-                  <h3 className="text-xl font-bold text-gray-900 mb-2">{step.title}</h3>
+                  <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2">{step.title}</h3>
                   <p className="text-gray-600 dark:text-gray-400">{step.desc}</p>
                 </div>
               </motion.div>
@@ -578,7 +578,7 @@ export default function SmartCarParkLightingPage() {
       <section className="py-20 bg-white">
         <div className="container mx-auto px-6">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">Perfect For</h2>
+            <h2 className="text-4xl font-bold text-gray-900 dark:text-white mb-4">Perfect For</h2>
             <p className="text-xl text-gray-600 dark:text-gray-400">Proven solutions across industries</p>
           </div>
 
@@ -593,7 +593,7 @@ export default function SmartCarParkLightingPage() {
                 className="bg-gradient-to-br from-gray-50 to-white border border-gray-200 rounded-xl p-6 hover:shadow-lg transition-all text-center"
               >
                 <div className="text-5xl mb-4">{useCase.icon}</div>
-                <h3 className="text-lg font-bold text-gray-900 mb-2">{useCase.title}</h3>
+                <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-2">{useCase.title}</h3>
                 <p className="text-sm text-gray-600 dark:text-gray-400">{useCase.desc}</p>
               </motion.div>
             ))}

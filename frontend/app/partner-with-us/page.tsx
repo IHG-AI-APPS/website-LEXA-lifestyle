@@ -232,7 +232,7 @@ export default function PartnerWithUsPage() {
       <section className="py-16 md:py-24 bg-gray-50 dark:bg-gray-800">
         <div className="container mx-auto px-4 max-w-6xl">
           <div className="text-center mb-12">
-            <h2 className="text-2xl md:text-4xl font-bold text-gray-900 mb-4">
+            <h2 className="text-2xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">
               Partnership Opportunities
             </h2>
             <p className="text-gray-600 max-w-2xl mx-auto">
@@ -260,7 +260,7 @@ export default function PartnerWithUsPage() {
                 <div className="w-12 h-12 bg-[#1A1A1A] rounded-lg flex items-center justify-center mb-4">
                   <type.icon className="h-6 w-6 text-[#E8DCC8]" />
                 </div>
-                <h3 className="text-lg font-bold text-gray-900 mb-2">{type.title}</h3>
+                <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-2">{type.title}</h3>
                 <p className="text-sm text-gray-600 mb-4">{type.description}</p>
                 <ul className="space-y-2">
                   {type.benefits.map((benefit, i) => (
@@ -280,7 +280,7 @@ export default function PartnerWithUsPage() {
       <section className="py-16 md:py-24">
         <div className="container mx-auto px-4 max-w-6xl">
           <div className="text-center mb-12">
-            <h2 className="text-2xl md:text-4xl font-bold text-gray-900 mb-4">
+            <h2 className="text-2xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">
               Why Partner With LEXA?
             </h2>
             <p className="text-gray-600 max-w-2xl mx-auto">
@@ -303,7 +303,7 @@ export default function PartnerWithUsPage() {
                   <benefit.icon className="h-6 w-6 text-[#1A1A1A] dark:text-white" />
                 </div>
                 <div>
-                  <h3 className="font-bold text-gray-900 mb-1">{benefit.title}</h3>
+                  <h3 className="font-bold text-gray-900 dark:text-white mb-1">{benefit.title}</h3>
                   <p className="text-sm text-gray-600 dark:text-gray-400">{benefit.description}</p>
                 </div>
               </motion.div>
@@ -345,7 +345,7 @@ export default function PartnerWithUsPage() {
         <div className="container mx-auto px-4 max-w-6xl">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
-              <h2 className="text-2xl md:text-4xl font-bold text-gray-900 mb-6">
+              <h2 className="text-2xl md:text-4xl font-bold text-gray-900 dark:text-white mb-6">
                 Expanding Across the GCC
               </h2>
               <p className="text-gray-600 mb-6">
@@ -363,14 +363,14 @@ export default function PartnerWithUsPage() {
               </div>
             </div>
             <div className="bg-white dark:bg-gray-800 p-8 rounded-xl shadow-lg">
-              <h3 className="text-xl font-bold text-gray-900 mb-4">Territory Opportunities</h3>
+              <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-4">Territory Opportunities</h3>
               <ul className="space-y-4">
                 <li className="flex items-start gap-3">
                   <div className="w-8 h-8 bg-green-100 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
                     <span className="text-green-600 text-sm font-bold">✓</span>
                   </div>
                   <div>
-                    <div className="font-semibold text-gray-900 dark:text-white">Saudi Arabia - NEOM & Riyadh</div>
+                    <div className="font-semibold text-gray-900 dark:text-white dark:text-white">Saudi Arabia - NEOM & Riyadh</div>
                     <div className="text-sm text-gray-600 dark:text-gray-400">High demand for Vision 2030 smart city projects</div>
                   </div>
                 </li>
@@ -379,7 +379,7 @@ export default function PartnerWithUsPage() {
                     <span className="text-green-600 text-sm font-bold">✓</span>
                   </div>
                   <div>
-                    <div className="font-semibold text-gray-900 dark:text-white">Qatar - Lusail & The Pearl</div>
+                    <div className="font-semibold text-gray-900 dark:text-white dark:text-white">Qatar - Lusail & The Pearl</div>
                     <div className="text-sm text-gray-600 dark:text-gray-400">Luxury residential developments seeking partners</div>
                   </div>
                 </li>
@@ -388,7 +388,7 @@ export default function PartnerWithUsPage() {
                     <span className="text-green-600 text-sm font-bold">✓</span>
                   </div>
                   <div>
-                    <div className="font-semibold text-gray-900 dark:text-white">Kuwait & Bahrain</div>
+                    <div className="font-semibold text-gray-900 dark:text-white dark:text-white">Kuwait & Bahrain</div>
                     <div className="text-sm text-gray-600 dark:text-gray-400">Growing market with limited competition</div>
                   </div>
                 </li>
@@ -402,7 +402,7 @@ export default function PartnerWithUsPage() {
       <section id="application-form" className="py-16 md:py-24">
         <div className="container mx-auto px-4 max-w-3xl">
           <div className="text-center mb-12">
-            <h2 className="text-2xl md:text-4xl font-bold text-gray-900 mb-4">
+            <h2 className="text-2xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">
               Apply to Become a Partner
             </h2>
             <p className="text-gray-600 dark:text-gray-400">
@@ -417,7 +417,7 @@ export default function PartnerWithUsPage() {
               className="bg-green-50 border border-green-200 rounded-xl p-8 text-center"
             >
               <CheckCircle className="h-16 w-16 text-green-500 mx-auto mb-4" />
-              <h3 className="text-xl font-bold text-gray-900 mb-2">Application Submitted!</h3>
+              <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2">Application Submitted!</h3>
               <p className="text-gray-600 mb-6">
                 Thank you for your interest in partnering with LEXA. Our team will review your 
                 application and contact you within 48 business hours.
@@ -445,7 +445,7 @@ export default function PartnerWithUsPage() {
                           : 'border-gray-200 hover:border-gray-300'
                       }`}
                     >
-                      <div className="font-semibold text-sm text-gray-900 dark:text-white">{type.title}</div>
+                      <div className="font-semibold text-sm text-gray-900 dark:text-white dark:text-white">{type.title}</div>
                     </button>
                   ))}
                 </div>
@@ -515,7 +515,7 @@ export default function PartnerWithUsPage() {
                     required
                     value={formData.country}
                     onChange={(e) => setFormData({ ...formData, country: e.target.value })}
-                    className="w-full h-10 px-3 rounded-lg border border-gray-200 text-gray-900 dark:text-white"
+                    className="w-full h-10 px-3 rounded-lg border border-gray-200 text-gray-900 dark:text-white dark:text-white"
                   >
                     <option value="">Select country</option>
                     {gccCountries.map((country) => (
@@ -547,7 +547,7 @@ export default function PartnerWithUsPage() {
                   onChange={(e) => setFormData({ ...formData, currentBusiness: e.target.value })}
                   placeholder="Tell us about your current business, experience, and why you want to partner with LEXA..."
                   rows={4}
-                  className="w-full px-3 py-2 rounded-lg border border-gray-200 text-gray-900 resize-none"
+                  className="w-full px-3 py-2 rounded-lg border border-gray-200 text-gray-900 dark:text-white resize-none"
                 />
               </div>
 
@@ -594,13 +594,13 @@ export default function PartnerWithUsPage() {
       {/* FAQ Section for SEO */}
       <section className="py-16 md:py-24 bg-gray-50 dark:bg-gray-800">
         <div className="container mx-auto px-4 max-w-4xl">
-          <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-8 text-center">
+          <h2 className="text-2xl md:text-3xl font-bold text-gray-900 dark:text-white mb-8 text-center">
             Frequently Asked Questions
           </h2>
           
           <div className="space-y-6">
             <div className="bg-white dark:bg-gray-800 p-6 rounded-xl">
-              <h3 className="font-bold text-gray-900 mb-2">
+              <h3 className="font-bold text-gray-900 dark:text-white mb-2">
                 What are the requirements to become a LEXA dealer?
               </h3>
               <p className="text-gray-600 dark:text-gray-400">
@@ -611,7 +611,7 @@ export default function PartnerWithUsPage() {
             </div>
             
             <div className="bg-white dark:bg-gray-800 p-6 rounded-xl">
-              <h3 className="font-bold text-gray-900 mb-2">
+              <h3 className="font-bold text-gray-900 dark:text-white mb-2">
                 What brands can I sell as a LEXA partner?
               </h3>
               <p className="text-gray-600 dark:text-gray-400">
@@ -621,7 +621,7 @@ export default function PartnerWithUsPage() {
             </div>
             
             <div className="bg-white dark:bg-gray-800 p-6 rounded-xl">
-              <h3 className="font-bold text-gray-900 mb-2">
+              <h3 className="font-bold text-gray-900 dark:text-white mb-2">
                 Do you offer exclusive territories?
               </h3>
               <p className="text-gray-600 dark:text-gray-400">
@@ -632,7 +632,7 @@ export default function PartnerWithUsPage() {
             </div>
             
             <div className="bg-white dark:bg-gray-800 p-6 rounded-xl">
-              <h3 className="font-bold text-gray-900 mb-2">
+              <h3 className="font-bold text-gray-900 dark:text-white mb-2">
                 What support do partners receive?
               </h3>
               <p className="text-gray-600 dark:text-gray-400">
@@ -643,7 +643,7 @@ export default function PartnerWithUsPage() {
             </div>
             
             <div className="bg-white dark:bg-gray-800 p-6 rounded-xl">
-              <h3 className="font-bold text-gray-900 mb-2">
+              <h3 className="font-bold text-gray-900 dark:text-white mb-2">
                 How long does the application process take?
               </h3>
               <p className="text-gray-600 dark:text-gray-400">

@@ -103,7 +103,7 @@ export default function ContactPage() {
             <div className="flex flex-wrap gap-4 justify-center">
               <a 
                 href="tel:+97142670470" 
-                className="inline-flex items-center gap-2 px-6 py-3 bg-white text-gray-900 font-medium rounded-lg hover:bg-gray-100 transition-colors"
+                className="inline-flex items-center gap-2 px-6 py-3 bg-white text-gray-900 dark:text-white font-medium rounded-lg hover:bg-gray-100 transition-colors"
               >
                 <Phone className="h-5 w-5" />
                 {language === 'ar' ? 'اتصل بنا' : 'Call Us'}
@@ -131,7 +131,7 @@ export default function ContactPage() {
               {/* Contact Form - Takes 2 columns */}
               <div className="lg:col-span-2">
                 <div className="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-xl p-6 md:p-8 shadow-sm">
-                  <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-2">
+                  <h2 className="text-2xl font-bold text-gray-900 dark:text-white dark:text-white mb-2">
                     {language === 'ar' ? 'أرسل لنا رسالة' : 'Send us a Message'}
                   </h2>
                   <p className="text-gray-500 mb-6">
@@ -150,7 +150,7 @@ export default function ContactPage() {
                       <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
                         <Send className="h-8 w-8 text-green-600" />
                       </div>
-                      <h3 className="text-2xl font-bold text-gray-900 mb-2">
+                      <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-2">
                         {language === 'ar' ? 'تم إرسال الرسالة!' : 'Message Sent!'}
                       </h3>
                       <p className="text-gray-600 dark:text-gray-400">
@@ -219,7 +219,7 @@ export default function ContactPage() {
                           value={formData.subject}
                           onChange={handleChange}
                           required
-                          className="w-full h-12 px-3 rounded-md border border-gray-200 dark:border-gray-600 bg-white dark:bg-gray-800 text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-gray-900 dark:focus:ring-gray-400 focus:border-transparent"
+                          className="w-full h-12 px-3 rounded-md border border-gray-200 dark:border-gray-600 bg-white dark:bg-gray-800 text-gray-900 dark:text-white dark:text-white focus:outline-none focus:ring-2 focus:ring-gray-900 dark:focus:ring-gray-400 focus:border-transparent"
                         >
                           <option value="">{language === 'ar' ? 'اختر موضوعاً...' : 'Select a subject...'}</option>
                           <option value="New Project Inquiry">{language === 'ar' ? 'استفسار عن مشروع جديد' : 'New Project Inquiry'}</option>
@@ -282,7 +282,7 @@ export default function ContactPage() {
               <div className="lg:col-span-1 space-y-6">
                 {/* Quick Contact */}
                 <div className="bg-gray-50 dark:bg-gray-800 rounded-xl p-6">
-                  <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-4">
+                  <h3 className="text-lg font-bold text-gray-900 dark:text-white dark:text-white mb-4">
                     {language === 'ar' ? 'معلومات الاتصال' : 'Contact Information'}
                   </h3>
                   
@@ -295,7 +295,7 @@ export default function ContactPage() {
                         <p className="text-xs text-gray-400 uppercase tracking-wider mb-0.5">
                           {language === 'ar' ? 'الهاتف' : 'Phone'}
                         </p>
-                        <p className="font-semibold text-gray-900 dark:text-white group-hover:text-blue-600 transition-colors">+971 42 670 470</p>
+                        <p className="font-semibold text-gray-900 dark:text-white dark:text-white group-hover:text-blue-600 transition-colors">+971 42 670 470</p>
                       </div>
                     </a>
 
@@ -307,7 +307,7 @@ export default function ContactPage() {
                         <p className="text-xs text-gray-400 uppercase tracking-wider mb-0.5">
                           {language === 'ar' ? 'واتساب' : 'WhatsApp'}
                         </p>
-                        <p className="font-semibold text-gray-900 dark:text-white group-hover:text-green-600 transition-colors">+971 52 178 2109</p>
+                        <p className="font-semibold text-gray-900 dark:text-white dark:text-white group-hover:text-green-600 transition-colors">+971 52 178 2109</p>
                       </div>
                     </a>
 
@@ -319,7 +319,7 @@ export default function ContactPage() {
                         <p className="text-xs text-gray-400 uppercase tracking-wider mb-0.5">
                           {language === 'ar' ? 'البريد الإلكتروني' : 'Email'}
                         </p>
-                        <p className="font-semibold text-gray-900 dark:text-white group-hover:text-blue-600 transition-colors">sales@lexalifestyle.com</p>
+                        <p className="font-semibold text-gray-900 dark:text-white dark:text-white group-hover:text-blue-600 transition-colors">sales@lexalifestyle.com</p>
                       </div>
                     </a>
                   </div>
@@ -329,7 +329,7 @@ export default function ContactPage() {
                 <div className="bg-gray-50 dark:bg-gray-800 rounded-xl p-6">
                   <div className="flex items-center gap-2 mb-4">
                     <Clock className="h-5 w-5 text-gray-600 dark:text-gray-400" />
-                    <h3 className="text-lg font-bold text-gray-900 dark:text-white">
+                    <h3 className="text-lg font-bold text-gray-900 dark:text-white dark:text-white">
                       {language === 'ar' ? 'ساعات العمل' : 'Business Hours'}
                     </h3>
                   </div>
@@ -355,7 +355,7 @@ export default function ContactPage() {
 
                 {/* Social Media */}
                 <div className="bg-gray-50 dark:bg-gray-800 rounded-xl p-6">
-                  <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-4">
+                  <h3 className="text-lg font-bold text-gray-900 dark:text-white dark:text-white mb-4">
                     {language === 'ar' ? 'تابعنا' : 'Follow Us'}
                   </h3>
                   <div className="flex gap-3">
@@ -412,7 +412,7 @@ export default function ContactPage() {
               <div>
                 <div className="flex items-center gap-2 mb-4">
                   <MapPin className="h-6 w-6 text-red-500" />
-                  <h2 className="text-2xl font-bold text-gray-900 dark:text-white">
+                  <h2 className="text-2xl font-bold text-gray-900 dark:text-white dark:text-white">
                     {language === 'ar' ? 'زُر صالة العرض' : 'Visit Our Showroom'}
                   </h2>
                 </div>
@@ -449,7 +449,7 @@ export default function ContactPage() {
 
                 {/* Experience Centre CTA */}
                 <div className="mt-6 p-6 bg-gradient-to-r from-amber-50 to-orange-50 rounded-xl border border-amber-200">
-                  <h3 className="font-bold text-gray-900 mb-2">
+                  <h3 className="font-bold text-gray-900 dark:text-white mb-2">
                     {language === 'ar' ? 'ليكسا بريمير' : 'LEXA PREMIER'}
                   </h3>
                   <p className="text-sm text-gray-600 mb-3">
@@ -486,7 +486,7 @@ export default function ContactPage() {
                   href={googleMapsUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="absolute bottom-4 right-4 px-4 py-2 bg-white text-gray-900 text-sm font-medium rounded-lg shadow-lg hover:bg-gray-50 transition-colors flex items-center gap-2"
+                  className="absolute bottom-4 right-4 px-4 py-2 bg-white text-gray-900 dark:text-white text-sm font-medium rounded-lg shadow-lg hover:bg-gray-50 transition-colors flex items-center gap-2"
                 >
                   <MapPin className="h-4 w-4 text-red-500" />
                   {language === 'ar' ? 'افتح في خرائط جوجل' : 'Open in Google Maps'}
@@ -503,19 +503,19 @@ export default function ContactPage() {
           <div className="max-w-7xl mx-auto">
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
               <Link href="/calculator" className="p-4 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors text-center">
-                <p className="font-medium text-gray-900 dark:text-white">{language === 'ar' ? 'حاسبة التكلفة' : 'Cost Calculator'}</p>
+                <p className="font-medium text-gray-900 dark:text-white dark:text-white">{language === 'ar' ? 'حاسبة التكلفة' : 'Cost Calculator'}</p>
                 <p className="text-sm text-gray-500">{language === 'ar' ? 'قدّر مشروعك' : 'Estimate your project'}</p>
               </Link>
               <Link href="/smart-home-quiz" className="p-4 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors text-center">
-                <p className="font-medium text-gray-900 dark:text-white">{language === 'ar' ? 'اختبار الذكاء الاصطناعي' : 'AI Quiz'}</p>
+                <p className="font-medium text-gray-900 dark:text-white dark:text-white">{language === 'ar' ? 'اختبار الذكاء الاصطناعي' : 'AI Quiz'}</p>
                 <p className="text-sm text-gray-500">{language === 'ar' ? 'احصل على توصيات' : 'Get recommendations'}</p>
               </Link>
               <Link href="/projects" className="p-4 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors text-center">
-                <p className="font-medium text-gray-900 dark:text-white">{language === 'ar' ? 'مشاريعنا' : 'Our Projects'}</p>
+                <p className="font-medium text-gray-900 dark:text-white dark:text-white">{language === 'ar' ? 'مشاريعنا' : 'Our Projects'}</p>
                 <p className="text-sm text-gray-500">{language === 'ar' ? 'عرض المعرض' : 'View portfolio'}</p>
               </Link>
               <Link href="/packages" className="p-4 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors text-center">
-                <p className="font-medium text-gray-900 dark:text-white">{language === 'ar' ? 'الباقات' : 'Packages'}</p>
+                <p className="font-medium text-gray-900 dark:text-white dark:text-white">{language === 'ar' ? 'الباقات' : 'Packages'}</p>
                 <p className="text-sm text-gray-500">{language === 'ar' ? 'تصفح الخيارات' : 'Browse options'}</p>
               </Link>
             </div>

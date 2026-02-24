@@ -153,7 +153,7 @@ export default function IntelligenceDetailPage() {
     return (
       <div className="min-h-screen bg-gray-50 dark:bg-gray-900 flex flex-col items-center justify-center">
         <Brain className="h-16 w-16 text-gray-400 mb-4" />
-        <h1 className="text-2xl font-bold text-gray-900 dark:text-white mb-2">
+        <h1 className="text-2xl font-bold text-gray-900 dark:text-white dark:text-white mb-2">
           {language === 'ar' ? 'الميزة غير موجودة' : 'Feature Not Found'}
         </h1>
         <p className="text-gray-600 dark:text-gray-400 mb-6">

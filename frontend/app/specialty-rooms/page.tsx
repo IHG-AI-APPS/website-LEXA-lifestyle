@@ -80,10 +80,10 @@ export default function SpecialtyRoomsPage() {
           >
             <div className="inline-flex items-center gap-2 px-4 py-2 bg-white dark:bg-gray-800 rounded-full mb-6 shadow-sm">
               <Plus className="h-4 w-4 text-blue-600" />
-              <span className="text-sm font-medium text-gray-900 dark:text-white">À La Carte Add-Ons</span>
+              <span className="text-sm font-medium text-gray-900 dark:text-white dark:text-white">À La Carte Add-Ons</span>
             </div>
 
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 mb-6">
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 dark:text-white mb-6">
               Specialty Room
               <span className="block mt-2 bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
                 Automation
@@ -98,11 +98,11 @@ export default function SpecialtyRoomsPage() {
             <div className="flex flex-wrap gap-3 justify-center">
               <div className="px-4 py-2 bg-white dark:bg-gray-800 rounded-lg shadow-sm">
                 <p className="text-sm text-gray-600 dark:text-gray-400">Price Range</p>
-                <p className="font-bold text-gray-900 dark:text-white">AED 28K - 85K</p>
+                <p className="font-bold text-gray-900 dark:text-white dark:text-white">AED 28K - 85K</p>
               </div>
               <div className="px-4 py-2 bg-white dark:bg-gray-800 rounded-lg shadow-sm">
                 <p className="text-sm text-gray-600 dark:text-gray-400">Total Options</p>
-                <p className="font-bold text-gray-900 dark:text-white">{rooms.length} Rooms</p>
+                <p className="font-bold text-gray-900 dark:text-white dark:text-white">{rooms.length} Rooms</p>
               </div>
             </div>
           </motion.div>
@@ -165,7 +165,7 @@ export default function SpecialtyRoomsPage() {
 
                       {/* Price Badge */}
                       <div className="absolute bottom-4 right-4 px-3 py-1 bg-white/90 backdrop-blur-sm rounded-full">
-                        <p className="text-sm font-bold text-gray-900 dark:text-white">
+                        <p className="text-sm font-bold text-gray-900 dark:text-white dark:text-white">
                           +AED {(room.base_price_aed / 1000).toFixed(0)}K
                         </p>
                       </div>
@@ -174,7 +174,7 @@ export default function SpecialtyRoomsPage() {
                     {/* Content */}
                     <div className="p-6">
                       <p className="text-xs font-medium text-blue-600 mb-2">{room.category}</p>
-                      <h3 className="text-xl font-bold text-gray-900 mb-2 group-hover:text-blue-600 transition-colors">
+                      <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2 group-hover:text-blue-600 transition-colors">
                         {room.name}
                       </h3>
                       <p className="text-sm text-gray-600 mb-4 line-clamp-2">
@@ -201,7 +201,7 @@ export default function SpecialtyRoomsPage() {
       {/* CTA Section */}
       <section className="py-16 bg-gray-50 dark:bg-gray-800">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl font-bold text-gray-900 mb-4">
+          <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-4">
             Ready to Customize Your Smart Home?
           </h2>
           <p className="text-lg text-gray-600 mb-8 max-w-2xl mx-auto">
@@ -217,7 +217,7 @@ export default function SpecialtyRoomsPage() {
             </Link>
             <Link
               href="/consultation"
-              className="inline-flex items-center justify-center px-8 py-4 bg-white text-gray-900 rounded-lg border-2 border-gray-200 hover:border-blue-600 transition-colors font-medium"
+              className="inline-flex items-center justify-center px-8 py-4 bg-white text-gray-900 dark:text-white rounded-lg border-2 border-gray-200 hover:border-blue-600 transition-colors font-medium"
             >
               Schedule Consultation
             </Link>

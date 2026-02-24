@@ -184,7 +184,7 @@ export default function ScheduleVisitModal({
                   <div className="w-12 h-12 bg-green-100 dark:bg-green-900/30 rounded-full flex items-center justify-center mx-auto mb-3">
                     <CheckCircle className="h-6 w-6 text-green-600 dark:text-green-400" />
                   </div>
-                  <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-1">
+                  <h3 className="text-lg font-bold text-gray-900 dark:text-white dark:text-white mb-1">
                     {language === 'ar' ? 'تم الحجز بنجاح!' : 'Visit Scheduled!'}
                   </h3>
                   <p className="text-gray-600 dark:text-gray-400 mb-4 text-sm">

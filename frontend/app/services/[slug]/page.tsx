@@ -462,19 +462,19 @@ export default function ServiceDetailPage() {
                   <h3 className="text-2xl font-bold mb-4">{study.title}</h3>
                   {study.challenge && (
                     <div className="mb-4">
-                      <h4 className="font-semibold text-gray-900 dark:text-white mb-2">Challenge:</h4>
+                      <h4 className="font-semibold text-gray-900 dark:text-white dark:text-white mb-2">Challenge:</h4>
                       <p className="text-gray-700 dark:text-gray-300">{study.challenge}</p>
                     </div>
                   )}
                   {study.solution && (
                     <div className="mb-4">
-                      <h4 className="font-semibold text-gray-900 dark:text-white mb-2">Solution:</h4>
+                      <h4 className="font-semibold text-gray-900 dark:text-white dark:text-white mb-2">Solution:</h4>
                       <p className="text-gray-700 dark:text-gray-300">{study.solution}</p>
                     </div>
                   )}
                   {study.result && (
                     <div>
-                      <h4 className="font-semibold text-gray-900 dark:text-white mb-2">Result:</h4>
+                      <h4 className="font-semibold text-gray-900 dark:text-white dark:text-white mb-2">Result:</h4>
                       <p className="text-gray-700 font-medium">{study.result}</p>
                     </div>
                   )}

@@ -218,7 +218,7 @@ function JobCard(props) {
         <div className="flex flex-col md:flex-row md:items-start justify-between gap-4">
           <div className="flex-1">
             <div className="flex items-center gap-2 mb-2">
-              <h3 className="text-xl font-bold text-gray-900 dark:text-white">{position.title}</h3>
+              <h3 className="text-xl font-bold text-gray-900 dark:text-white dark:text-white">{position.title}</h3>
               <span className="text-xs bg-[#C9A962]/20 text-[#C9A962] px-2 py-1 rounded-full font-medium">
                 {position.department}
               </span>
@@ -262,7 +262,7 @@ function JobCard(props) {
               <div className="grid md:grid-cols-2 gap-6">
                 {/* Responsibilities */}
                 <div>
-                  <h4 className="font-bold text-gray-900 dark:text-white mb-3 flex items-center gap-2">
+                  <h4 className="font-bold text-gray-900 dark:text-white dark:text-white mb-3 flex items-center gap-2">
                     <Building2 className="w-4 h-4 text-[#C9A962]" />
                     Key Responsibilities
                   </h4>
@@ -278,7 +278,7 @@ function JobCard(props) {
                 
                 {/* Requirements */}
                 <div>
-                  <h4 className="font-bold text-gray-900 dark:text-white mb-3 flex items-center gap-2">
+                  <h4 className="font-bold text-gray-900 dark:text-white dark:text-white mb-3 flex items-center gap-2">
                     <GraduationCap className="w-4 h-4 text-[#C9A962]" />
                     Requirements
                   </h4>
@@ -349,7 +349,7 @@ export default function WorkWithUsPage() {
               </a>
               <a 
                 href="#positions"
-                className="border-2 border-white text-white hover:bg-white hover:text-gray-900 px-8 py-4 rounded-lg font-semibold transition-colors"
+                className="border-2 border-white text-white hover:bg-white hover:text-gray-900 dark:text-white px-8 py-4 rounded-lg font-semibold transition-colors"
               >
                 View Open Positions
               </a>
@@ -375,7 +375,7 @@ export default function WorkWithUsPage() {
       <section className="py-20 bg-gray-50 dark:bg-gray-800">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white dark:text-white mb-4">
               Our Expertise Areas
             </h2>
             <p className="text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
@@ -395,7 +395,7 @@ export default function WorkWithUsPage() {
                 <div className="w-14 h-14 bg-[#C9A962]/10 rounded-xl flex items-center justify-center mb-4">
                   <area.icon className="w-7 h-7 text-[#C9A962]" />
                 </div>
-                <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2">{area.title}</h3>
+                <h3 className="text-xl font-bold text-gray-900 dark:text-white dark:text-white mb-2">{area.title}</h3>
                 <p className="text-gray-600 dark:text-gray-300 mb-4">{area.description}</p>
                 <div className="flex flex-wrap gap-2">
                   {area.skills.map((skill) => (
@@ -417,7 +417,7 @@ export default function WorkWithUsPage() {
       <section className="py-20 dark:bg-gray-900">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white dark:text-white mb-4">
               Why Join LEXA?
             </h2>
             <p className="text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
@@ -437,7 +437,7 @@ export default function WorkWithUsPage() {
                 <div className="w-16 h-16 bg-[#C9A962]/10 rounded-full flex items-center justify-center mx-auto mb-4">
                   <benefit.icon className="w-8 h-8 text-[#C9A962]" />
                 </div>
-                <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-2">{benefit.title}</h3>
+                <h3 className="text-lg font-bold text-gray-900 dark:text-white dark:text-white mb-2">{benefit.title}</h3>
                 <p className="text-gray-600 dark:text-gray-300 text-sm">{benefit.desc}</p>
               </motion.div>
             ))}
@@ -449,7 +449,7 @@ export default function WorkWithUsPage() {
       <section id="positions" className="py-20 bg-gray-50 dark:bg-gray-800">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white dark:text-white mb-4">
               Open Positions
             </h2>
             <p className="text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
@@ -465,7 +465,7 @@ export default function WorkWithUsPage() {
           {/* General Application */}
           <div className="max-w-4xl mx-auto mt-12">
             <div className="bg-gradient-to-r from-[#C9A962]/10 to-[#C9A962]/5 border-2 border-dashed border-[#C9A962]/30 rounded-xl p-8 text-center">
-              <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-3">
+              <h3 className="text-xl font-bold text-gray-900 dark:text-white dark:text-white mb-3">
                 Don't See a Suitable Role?
               </h3>
               <p className="text-gray-600 dark:text-gray-300 mb-6">

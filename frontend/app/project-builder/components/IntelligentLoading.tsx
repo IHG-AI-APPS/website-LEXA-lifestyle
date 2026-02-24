@@ -100,7 +100,7 @@ export default function IntelligentLoading({ estimatedTime = 30 }: IntelligentLo
         transition={{ duration: 0.5 }}
         className="text-center mb-8"
       >
-        <h3 className="text-2xl font-semibold text-gray-900 mb-2">
+        <h3 className="text-2xl font-semibold text-gray-900 dark:text-white mb-2">
           {currentState.text}
         </h3>
         <p className="text-sm text-gray-500 uppercase tracking-widest">

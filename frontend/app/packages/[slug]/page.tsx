@@ -156,12 +156,12 @@ export default function PropertyPackageDetailPage() {
             <div className="text-center">
               <Home className="h-8 w-8 mx-auto mb-2 text-blue-600" />
               <p className="text-sm text-gray-600 dark:text-gray-400">Property Size</p>
-              <p className="font-bold text-gray-900 dark:text-white">{packageData.typical_size_range}</p>
+              <p className="font-bold text-gray-900 dark:text-white dark:text-white">{packageData.typical_size_range}</p>
             </div>
             {packageData.typical_features?.slice(0, 3).map((feature: string, i: number) => (
               <div key={i} className="text-center">
                 <Check className="h-8 w-8 mx-auto mb-2 text-green-600" />
-                <p className="text-sm font-medium text-gray-900 dark:text-white">{feature}</p>
+                <p className="text-sm font-medium text-gray-900 dark:text-white dark:text-white">{feature}</p>
               </div>
             ))}
           </div>
@@ -172,7 +172,7 @@ export default function PropertyPackageDetailPage() {
       <section className="py-16 lg:py-24">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
+            <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 dark:text-white mb-4">
               Choose Your Package Tier
             </h2>
             <p className="text-lg text-gray-600 max-w-3xl mx-auto">
@@ -208,12 +208,12 @@ export default function PropertyPackageDetailPage() {
                   <div className="p-6 lg:p-8">
                     {/* Header */}
                     <div className="text-center mb-6">
-                      <h3 className="text-2xl font-bold text-gray-900 mb-2">
+                      <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-2">
                         {tier.tier_name}
                       </h3>
                       <p className="text-gray-600 mb-4">{tier.tier_subtitle}</p>
                       <div className="mb-4">
-                        <span className="text-4xl font-bold text-gray-900 dark:text-white">
+                        <span className="text-4xl font-bold text-gray-900 dark:text-white dark:text-white">
                           {formatPrice(tier.base_price_aed)}
                         </span>
                         <span className="text-gray-600 dark:text-gray-400">+</span>
@@ -268,7 +268,7 @@ export default function PropertyPackageDetailPage() {
                       className={`w-full py-4 px-6 rounded-lg font-bold text-lg transition-all flex items-center justify-center gap-2 ${
                         isRecommended
                           ? `${colors.bg} text-white ${colors.bgHover} shadow-lg hover:shadow-xl`
-                          : `bg-gray-100 text-gray-900 hover:bg-gray-200`
+                          : `bg-gray-100 text-gray-900 dark:text-white hover:bg-gray-200`
                       }`}
                     >
                       Select {tier.tier_name}
@@ -303,7 +303,7 @@ export default function PropertyPackageDetailPage() {
                       )}
 
                       <div className="mt-6 text-sm text-gray-600 dark:text-gray-400">
-                        <p className="font-semibold text-gray-900 mb-1">Support Level:</p>
+                        <p className="font-semibold text-gray-900 dark:text-white mb-1">Support Level:</p>
                         <p>{tier.support_level}</p>
                       </div>
                     </motion.div>
@@ -331,7 +331,7 @@ function FeatureSection({ icon: Icon, title, count, colors }: any) {
         <Icon className={`h-4 w-4 ${colors.text}`} />
       </div>
       <div>
-        <p className="font-medium text-gray-900 dark:text-white">{title}</p>
+        <p className="font-medium text-gray-900 dark:text-white dark:text-white">{title}</p>
         <p className="text-gray-500">{count} features</p>
       </div>
     </div>
@@ -341,7 +341,7 @@ function FeatureSection({ icon: Icon, title, count, colors }: any) {
 function DetailedFeatureList({ title, features }: { title: string; features: string[] }) {
   return (
     <div className="mb-6 last:mb-0">
-      <h4 className="font-bold text-gray-900 mb-3">{title}</h4>
+      <h4 className="font-bold text-gray-900 dark:text-white mb-3">{title}</h4>
       <ul className="space-y-2">
         {features.map((feature, i) => (
           <li key={i} className="flex items-start gap-2 text-sm text-gray-700 dark:text-gray-300">

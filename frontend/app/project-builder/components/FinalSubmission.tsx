@@ -64,7 +64,7 @@ export default function FinalSubmission({ sessionId, projectData, onComplete }: 
         >
           <CheckCircle2 className="w-20 h-20 text-green-600 mx-auto mb-6" />
         </motion.div>
-        <h2 className="text-3xl sm:text-4xl font-semibold tracking-tight text-gray-900 mb-4">
+        <h2 className="text-3xl sm:text-4xl font-semibold tracking-tight text-gray-900 dark:text-white mb-4">
           Project <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600">Submitted</span>
         </h2>
         <p className="text-sm text-gray-500 uppercase tracking-widest mb-2">Intelligence Analysis Complete</p>
@@ -88,7 +88,7 @@ export default function FinalSubmission({ sessionId, projectData, onComplete }: 
               Final Step
             </span>
           </div>
-          <h1 className="text-4xl sm:text-5xl font-semibold tracking-tight text-gray-900 mb-4">
+          <h1 className="text-4xl sm:text-5xl font-semibold tracking-tight text-gray-900 dark:text-white mb-4">
             Let&apos;s <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600">Connect</span>
           </h1>
           <p className="text-sm text-gray-500 uppercase tracking-widest mb-2">
@@ -109,7 +109,7 @@ export default function FinalSubmission({ sessionId, projectData, onComplete }: 
                 value={formData.contact_name}
                 onChange={(e) => setFormData({ ...formData, contact_name: e.target.value })}
                 placeholder="John Smith"
-                className="border-gray-200 focus:border-blue-600 text-gray-900 dark:text-white"
+                className="border-gray-200 focus:border-blue-600 text-gray-900 dark:text-white dark:text-white"
               />
             </div>
 
@@ -120,7 +120,7 @@ export default function FinalSubmission({ sessionId, projectData, onComplete }: 
                 value={formData.contact_email}
                 onChange={(e) => setFormData({ ...formData, contact_email: e.target.value })}
                 placeholder="john@example.com"
-                className="border-gray-200 focus:border-blue-600 text-gray-900 dark:text-white"
+                className="border-gray-200 focus:border-blue-600 text-gray-900 dark:text-white dark:text-white"
               />
             </div>
 
@@ -131,7 +131,7 @@ export default function FinalSubmission({ sessionId, projectData, onComplete }: 
                 value={formData.contact_phone}
                 onChange={(e) => setFormData({ ...formData, contact_phone: e.target.value })}
                 placeholder="+971 50 123 4567"
-                className="border-gray-200 focus:border-blue-600 text-gray-900 dark:text-white"
+                className="border-gray-200 focus:border-blue-600 text-gray-900 dark:text-white dark:text-white"
               />
             </div>
 
@@ -142,7 +142,7 @@ export default function FinalSubmission({ sessionId, projectData, onComplete }: 
                 value={formData.timeline}
                 onChange={(e) => setFormData({ ...formData, timeline: e.target.value })}
                 placeholder="e.g., 3-6 months"
-                className="border-gray-200 focus:border-blue-600 text-gray-900 dark:text-white"
+                className="border-gray-200 focus:border-blue-600 text-gray-900 dark:text-white dark:text-white"
               />
             </div>
 
@@ -153,7 +153,7 @@ export default function FinalSubmission({ sessionId, projectData, onComplete }: 
                 value={formData.budget_band}
                 onChange={(e) => setFormData({ ...formData, budget_band: e.target.value })}
                 placeholder="e.g., AED 200,000 - 500,000"
-                className="border-gray-200 focus:border-blue-600 text-gray-900 dark:text-white"
+                className="border-gray-200 focus:border-blue-600 text-gray-900 dark:text-white dark:text-white"
               />
             </div>
 
@@ -164,7 +164,7 @@ export default function FinalSubmission({ sessionId, projectData, onComplete }: 
                 onChange={(e) => setFormData({ ...formData, notes: e.target.value })}
                 placeholder="Any specific requirements or questions..."
                 rows={4}
-                className="w-full border border-gray-200 focus:border-blue-600 outline-none text-gray-900 placeholder-gray-400 py-3 px-4 text-sm transition-colors"
+                className="w-full border border-gray-200 focus:border-blue-600 outline-none text-gray-900 dark:text-white placeholder-gray-400 py-3 px-4 text-sm transition-colors"
               />
             </div>
           </div>

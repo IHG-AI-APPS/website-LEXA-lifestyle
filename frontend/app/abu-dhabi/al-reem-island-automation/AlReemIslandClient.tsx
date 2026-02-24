@@ -105,7 +105,7 @@ export default function AlReemIslandClient() {
               <Button 
                 size="lg"
                 variant="outline"
-                className={`rounded-xl ${isDark ? 'border-white text-white hover:bg-white hover:text-gray-900' : 'border-gray-900 text-gray-900 hover:bg-gray-900 hover:text-white'}`}
+                className={`rounded-xl ${isDark ? 'border-white text-white hover:bg-white hover:text-gray-900' : 'border-gray-900 text-gray-900 dark:text-white hover:bg-gray-900 hover:text-white'}`}
                 asChild
               >
                 <Link href="/experience-centre">Visit Showroom</Link>

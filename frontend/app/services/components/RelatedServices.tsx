@@ -57,7 +57,7 @@ export default function RelatedServices({ services, currentSlug }: RelatedServic
             <span className="text-sm font-semibold uppercase tracking-wider text-gray-600 mb-2 block">
               Complete Your Project
             </span>
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 dark:text-white mb-4">
               Related Services
             </h2>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
@@ -103,14 +103,14 @@ export default function RelatedServices({ services, currentSlug }: RelatedServic
                       {/* Icon Badge */}
                       <div className="absolute top-4 right-4">
                         <div className="bg-white/90 backdrop-blur-sm p-3 rounded-full">
-                          <Icon className="h-5 w-5 text-gray-900 dark:text-white" />
+                          <Icon className="h-5 w-5 text-gray-900 dark:text-white dark:text-white" />
                         </div>
                       </div>
 
                       {/* Category */}
                       {service.category && (
                         <div className="absolute top-4 left-4">
-                          <span className="bg-white/90 backdrop-blur-sm px-3 py-1.5 rounded-full text-xs font-semibold text-gray-900 dark:text-white">
+                          <span className="bg-white/90 backdrop-blur-sm px-3 py-1.5 rounded-full text-xs font-semibold text-gray-900 dark:text-white dark:text-white">
                             {service.category}
                           </span>
                         </div>

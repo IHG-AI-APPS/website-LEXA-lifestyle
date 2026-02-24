@@ -255,7 +255,7 @@ export default function NiceToHaveUpgrades({
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.1 }}
-          className="text-2xl md:text-3xl font-bold text-gray-900 mb-2"
+          className="text-2xl md:text-3xl font-bold text-gray-900 dark:text-white mb-2"
         >
           Nice-to-Have Upgrades
         </motion.h2>
@@ -277,12 +277,12 @@ export default function NiceToHaveUpgrades({
         >
           <div>
             <span className="text-gray-500">Your Package:</span>
-            <span className="font-bold text-gray-900 ml-2">{selectedPackage}</span>
+            <span className="font-bold text-gray-900 dark:text-white ml-2">{selectedPackage}</span>
           </div>
           <div className="w-px h-6 bg-gray-300" />
           <div>
             <span className="text-gray-500">Base Price:</span>
-            <span className="font-bold text-gray-900 ml-2">{basePrice}</span>
+            <span className="font-bold text-gray-900 dark:text-white ml-2">{basePrice}</span>
           </div>
         </motion.div>
       </div>
@@ -330,7 +330,7 @@ export default function NiceToHaveUpgrades({
                   <IconComponent className="w-4 h-4 text-gray-400" />
                   <span className="text-xs text-gray-500">{upgrade.category}</span>
                 </div>
-                <h4 className="font-bold text-gray-900 dark:text-white">{upgrade.feature.name}</h4>
+                <h4 className="font-bold text-gray-900 dark:text-white dark:text-white">{upgrade.feature.name}</h4>
                 <p className="text-sm text-gray-500 mt-1">{upgrade.feature.description}</p>
               </div>
             </motion.button>

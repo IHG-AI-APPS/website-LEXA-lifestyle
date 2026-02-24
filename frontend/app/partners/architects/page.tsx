@@ -446,7 +446,7 @@ export default function ArchitectResourcePortalPage() {
             </button>
 
             <div className="p-8 sm:p-10">
-              <h2 className="text-2xl font-bold text-gray-900 mb-2">
+              <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-2">
                 Request Architect Resources
               </h2>
               <p className="text-gray-600 mb-8">
@@ -458,7 +458,7 @@ export default function ArchitectResourcePortalPage() {
                   <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
                     <CheckCircle className="text-green-600" size={32} />
                   </div>
-                  <h3 className="text-xl font-bold text-gray-900 mb-2">Request Received!</h3>
+                  <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2">Request Received!</h3>
                   <p className="text-gray-600 dark:text-gray-400">
                     We&apos;ll send your requested resources within 24 hours. Check your email inbox.
                   </p>

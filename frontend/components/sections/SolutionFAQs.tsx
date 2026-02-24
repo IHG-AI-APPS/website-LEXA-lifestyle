@@ -82,7 +82,7 @@ export default function SolutionFAQs({ solutionSlug, title = "Frequently Asked Q
                 viewport={{ once: true }}
                 className="bg-white dark:bg-gray-800 p-8 border border-gray-200 rounded-lg shadow-sm hover:shadow-md transition-shadow"
               >
-                <h3 className="text-xl font-semibold mb-3 text-gray-900 dark:text-white">{faq.question}</h3>
+                <h3 className="text-xl font-semibold mb-3 text-gray-900 dark:text-white dark:text-white">{faq.question}</h3>
                 <p className="text-gray-600 leading-relaxed">{faq.answer}</p>
               </motion.div>
             ))}

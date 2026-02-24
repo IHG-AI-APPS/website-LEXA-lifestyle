@@ -111,12 +111,12 @@ export default function OutdoorAudioClient() {
 
       <section className="py-16 bg-gray-50 dark:bg-gray-800">
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-bold text-center mb-12 text-gray-900 dark:text-white">Outdoor Audio Solutions</h2>
+          <h2 className="text-3xl font-bold text-center mb-12 text-gray-900 dark:text-white dark:text-white">Outdoor Audio Solutions</h2>
           <div className="grid md:grid-cols-4 gap-6">
             {solutions.map((s, i) => (
               <div key={i} className="text-center p-6 bg-white dark:bg-gray-700 rounded-xl shadow-lg">
                 <s.icon className="w-10 h-10 text-teal-600 mx-auto mb-4" />
-                <h3 className="font-semibold text-gray-900 dark:text-white">{s.title}</h3>
+                <h3 className="font-semibold text-gray-900 dark:text-white dark:text-white">{s.title}</h3>
                 <p className="text-gray-600 dark:text-gray-300 text-sm mt-2">{s.desc}</p>
               </div>
             ))}
@@ -126,11 +126,11 @@ export default function OutdoorAudioClient() {
 
       <section className="py-16 dark:bg-gray-900">
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-bold text-center mb-12 text-gray-900 dark:text-white">Outdoor Audio Brands</h2>
+          <h2 className="text-3xl font-bold text-center mb-12 text-gray-900 dark:text-white dark:text-white">Outdoor Audio Brands</h2>
           <div className="grid md:grid-cols-4 gap-6">
             {brands.map((b, i) => (
               <div key={i} className="bg-white dark:bg-gray-700 p-6 rounded-xl shadow-lg">
-                <h3 className="text-xl font-semibold text-gray-900 dark:text-white">{b.name}</h3>
+                <h3 className="text-xl font-semibold text-gray-900 dark:text-white dark:text-white">{b.name}</h3>
                 <p className="text-teal-600 dark:text-teal-400">{b.specialty}</p>
               </div>
             ))}
@@ -140,11 +140,11 @@ export default function OutdoorAudioClient() {
 
       <section className="py-16 bg-gray-50 dark:bg-gray-800">
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-bold text-center mb-12 text-gray-900 dark:text-white">Outdoor Audio FAQ</h2>
+          <h2 className="text-3xl font-bold text-center mb-12 text-gray-900 dark:text-white dark:text-white">Outdoor Audio FAQ</h2>
           <div className="max-w-3xl mx-auto space-y-6">
             {faqs.map((f, i) => (
               <div key={i} className="bg-white dark:bg-gray-700 p-6 rounded-xl shadow">
-                <h3 className="text-lg font-semibold mb-2 text-gray-900 dark:text-white">{f.q}</h3>
+                <h3 className="text-lg font-semibold mb-2 text-gray-900 dark:text-white dark:text-white">{f.q}</h3>
                 <p className="text-gray-600 dark:text-gray-300">{f.a}</p>
               </div>
             ))}

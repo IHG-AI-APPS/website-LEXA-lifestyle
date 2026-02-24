@@ -168,7 +168,7 @@ export default function MustHaveSelection({
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.1 }}
-          className="text-2xl md:text-3xl font-bold text-gray-900 mb-2"
+          className="text-2xl md:text-3xl font-bold text-gray-900 dark:text-white mb-2"
         >
           What Can&apos;t You Live Without?
         </motion.h2>
@@ -203,7 +203,7 @@ export default function MustHaveSelection({
                     <IconComponent className="w-5 h-5 text-red-600" />
                   </div>
                   <div>
-                    <h3 className="font-bold text-gray-900 dark:text-white">{category.name}</h3>
+                    <h3 className="font-bold text-gray-900 dark:text-white dark:text-white">{category.name}</h3>
                     <p className="text-sm text-gray-500">
                       {selectedInCategory} of {category.features.length} selected
                     </p>
@@ -244,7 +244,7 @@ export default function MustHaveSelection({
                       {/* Content */}
                       <div className="flex-1 min-w-0">
                         <div className="flex items-center gap-2">
-                          <span className="font-medium text-gray-900 dark:text-white">{feature.name}</span>
+                          <span className="font-medium text-gray-900 dark:text-white dark:text-white">{feature.name}</span>
                           {feature.popularity >= 90 && (
                             <span className="text-xs bg-amber-100 text-amber-700 px-2 py-0.5 rounded-full">
                               Popular

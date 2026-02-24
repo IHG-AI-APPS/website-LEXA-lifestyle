@@ -165,7 +165,7 @@ export default function RecentlyViewedSection({
               <Clock className="h-5 w-5 text-[#1A1A1A] dark:text-[#E8DCC8]" />
             </div>
             <div>
-              <h2 className="text-lg font-bold text-gray-900 dark:text-white">
+              <h2 className="text-lg font-bold text-gray-900 dark:text-white dark:text-white">
                 {language === 'ar' ? 'تمت مشاهدتها مؤخراً' : 'Recently Viewed'}
               </h2>
               <p className="text-sm text-gray-500 dark:text-gray-400">
@@ -235,7 +235,7 @@ export default function RecentlyViewedSection({
 
                       {/* Content */}
                       <div className="p-4">
-                        <h3 className="font-semibold text-gray-900 dark:text-white text-sm line-clamp-1 mb-1 group-hover:text-[#C9A962] transition-colors">
+                        <h3 className="font-semibold text-gray-900 dark:text-white dark:text-white text-sm line-clamp-1 mb-1 group-hover:text-[#C9A962] transition-colors">
                           {item.title}
                         </h3>
                         {item.category && (
@@ -298,7 +298,7 @@ export default function RecentlyViewedSection({
                             {typeLabels[item.type][language === 'ar' ? 'ar' : 'en']}
                           </span>
                         </div>
-                        <h3 className="font-semibold text-gray-900 dark:text-white text-sm line-clamp-2 group-hover:text-[#C9A962] transition-colors">
+                        <h3 className="font-semibold text-gray-900 dark:text-white dark:text-white text-sm line-clamp-2 group-hover:text-[#C9A962] transition-colors">
                           {item.title}
                         </h3>
                       </div>

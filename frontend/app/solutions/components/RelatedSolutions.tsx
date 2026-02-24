@@ -57,7 +57,7 @@ export default function RelatedSolutions({ solutions, currentSlug }: RelatedSolu
             <span className="text-sm font-semibold uppercase tracking-wider text-blue-600 mb-2 block">
               Explore More
             </span>
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 dark:text-white mb-4">
               Related Solutions
             </h2>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
@@ -104,7 +104,7 @@ export default function RelatedSolutions({ solutions, currentSlug }: RelatedSolu
                       <div className="absolute top-4 right-4">
                         <div className="bg-white/90 backdrop-blur-sm px-3 py-1.5 rounded-full flex items-center gap-2">
                           <Icon className="h-4 w-4 text-blue-600" />
-                          <span className="text-xs font-semibold text-gray-900 dark:text-white">
+                          <span className="text-xs font-semibold text-gray-900 dark:text-white dark:text-white">
                             {solution.category}
                           </span>
                         </div>

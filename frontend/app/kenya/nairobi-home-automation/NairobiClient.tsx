@@ -25,7 +25,7 @@ export default function NairobiClient() {
             East Africa smart living hub. From Karen garden estates to Runda luxury villas, LEXA delivers intelligent living to the Safari Capital.
           </p>
           <div className="flex flex-wrap gap-4">
-            <Link href="/consultation" className="bg-yellow-500 hover:bg-yellow-400 text-gray-900 px-8 py-4 rounded-lg font-semibold flex items-center gap-2">
+            <Link href="/consultation" className="bg-yellow-500 hover:bg-yellow-400 text-gray-900 dark:text-white px-8 py-4 rounded-lg font-semibold flex items-center gap-2">
               Get Free Quote <ArrowRight className="w-5 h-5" />
             </Link>
           </div>
@@ -41,11 +41,11 @@ export default function NairobiClient() {
       </section>
       <section className="py-16 bg-gray-50 dark:bg-gray-800">
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-bold text-center mb-12 text-gray-900 dark:text-white">Nairobi Communities We Serve</h2>
+          <h2 className="text-3xl font-bold text-center mb-12 text-gray-900 dark:text-white dark:text-white">Nairobi Communities We Serve</h2>
           <div className="grid md:grid-cols-2 gap-6">
             {communities.map((c, i) => (
               <div key={i} className="bg-white dark:bg-gray-700 p-6 rounded-xl shadow-lg">
-                <h3 className="text-xl font-semibold text-gray-900 dark:text-white">{c.name}</h3>
+                <h3 className="text-xl font-semibold text-gray-900 dark:text-white dark:text-white">{c.name}</h3>
                 <p className="text-gray-600 dark:text-gray-300">{c.type} - {c.projects}</p>
               </div>
             ))}

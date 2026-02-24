@@ -80,7 +80,7 @@ export default function LuxuryVillaClient() {
             Transform your villa into an intelligent sanctuary. LEXA delivers bespoke smart home solutions for Dubai's most prestigious addresses - from Palm Jumeirah to Emirates Hills.
           </p>
           <div className="flex flex-wrap gap-4">
-            <Link href="/consultation" className="bg-yellow-500 hover:bg-yellow-400 text-gray-900 px-8 py-4 rounded-lg font-semibold flex items-center gap-2">
+            <Link href="/consultation" className="bg-yellow-500 hover:bg-yellow-400 text-gray-900 dark:text-white px-8 py-4 rounded-lg font-semibold flex items-center gap-2">
               Villa Consultation <ArrowRight className="w-5 h-5" />
             </Link>
             <button 
@@ -111,14 +111,14 @@ export default function LuxuryVillaClient() {
 
       <section className="py-16 bg-gray-50 dark:bg-gray-800">
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-bold text-center mb-12 text-gray-900 dark:text-white">Villa Smart Systems</h2>
+          <h2 className="text-3xl font-bold text-center mb-12 text-gray-900 dark:text-white dark:text-white">Villa Smart Systems</h2>
           <div className="grid md:grid-cols-4 gap-6">
             {systems.map((s, i) => (
               <div key={i} className="text-center p-6 bg-white dark:bg-gray-700 rounded-xl shadow-lg">
                 <div className="w-16 h-16 bg-amber-100 dark:bg-amber-900 rounded-full flex items-center justify-center mx-auto mb-4">
                   <s.icon className="w-8 h-8 text-amber-600 dark:text-amber-400" />
                 </div>
-                <h3 className="text-lg font-semibold mb-2 text-gray-900 dark:text-white">{s.title}</h3>
+                <h3 className="text-lg font-semibold mb-2 text-gray-900 dark:text-white dark:text-white">{s.title}</h3>
                 <p className="text-gray-600 dark:text-gray-300">{s.desc}</p>
               </div>
             ))}
@@ -128,12 +128,12 @@ export default function LuxuryVillaClient() {
 
       <section className="py-16 dark:bg-gray-900">
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-bold text-center mb-4 text-gray-900 dark:text-white">Dubai Communities We Serve</h2>
+          <h2 className="text-3xl font-bold text-center mb-4 text-gray-900 dark:text-white dark:text-white">Dubai Communities We Serve</h2>
           <p className="text-center text-gray-600 dark:text-gray-300 mb-12">Trusted by villa owners across Dubai's most exclusive addresses</p>
           <div className="grid md:grid-cols-3 gap-6">
             {communities.map((c, i) => (
               <div key={i} className="bg-white dark:bg-gray-700 p-6 rounded-xl shadow-lg">
-                <h3 className="text-xl font-semibold text-gray-900 dark:text-white">{c.name}</h3>
+                <h3 className="text-xl font-semibold text-gray-900 dark:text-white dark:text-white">{c.name}</h3>
                 <p className="text-amber-600 dark:text-amber-400 font-medium">{c.villas} Villas Automated</p>
                 <p className="text-gray-600 dark:text-gray-300 mt-2">{c.specialty}</p>
               </div>
@@ -144,11 +144,11 @@ export default function LuxuryVillaClient() {
 
       <section className="py-16 bg-gray-50 dark:bg-gray-800">
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-bold text-center mb-12 text-gray-900 dark:text-white">Villa Automation FAQ</h2>
+          <h2 className="text-3xl font-bold text-center mb-12 text-gray-900 dark:text-white dark:text-white">Villa Automation FAQ</h2>
           <div className="max-w-3xl mx-auto space-y-6">
             {faqs.map((faq, i) => (
               <div key={i} className="bg-white dark:bg-gray-700 p-6 rounded-xl shadow">
-                <h3 className="text-lg font-semibold mb-2 text-gray-900 dark:text-white">{faq.q}</h3>
+                <h3 className="text-lg font-semibold mb-2 text-gray-900 dark:text-white dark:text-white">{faq.q}</h3>
                 <p className="text-gray-600 dark:text-gray-300">{faq.a}</p>
               </div>
             ))}

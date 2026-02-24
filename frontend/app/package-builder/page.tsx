@@ -212,7 +212,7 @@ export default function PackageBuilderPage() {
       <div className="border-b bg-white sticky top-16 sm:top-18 md:top-20 z-40">
         <div className="container mx-auto px-4 py-6">
           <div className="flex items-center justify-between max-w-6xl mx-auto">
-            <Link href="/packages" className="text-gray-600 hover:text-gray-900 dark:text-white">
+            <Link href="/packages" className="text-gray-600 hover:text-gray-900 dark:text-white dark:text-white">
               ← Back to Packages
             </Link>
             
@@ -239,7 +239,7 @@ export default function PackageBuilderPage() {
               exit={{ opacity: 0, x: -20 }}
               className="max-w-5xl mx-auto"
             >
-              <h2 className="text-4xl font-bold text-gray-900 mb-4 text-center">
+              <h2 className="text-4xl font-bold text-gray-900 dark:text-white mb-4 text-center">
                 Build Your Smart Home Package
               </h2>
               <p className="text-lg text-gray-600 mb-8 text-center">
@@ -313,13 +313,13 @@ export default function PackageBuilderPage() {
             >
               <button
                 onClick={() => setStep(1)}
-                className="mb-6 flex items-center gap-2 text-gray-600 hover:text-gray-900 dark:text-white"
+                className="mb-6 flex items-center gap-2 text-gray-600 hover:text-gray-900 dark:text-white dark:text-white"
               >
                 <ArrowLeft className="h-5 w-5" />
                 Change property type
               </button>
 
-              <h2 className="text-4xl font-bold text-gray-900 mb-4 text-center">
+              <h2 className="text-4xl font-bold text-gray-900 dark:text-white mb-4 text-center">
                 Choose Your Package
               </h2>
               <p className="text-lg text-gray-600 mb-12 text-center">
@@ -343,10 +343,10 @@ export default function PackageBuilderPage() {
                     )}
 
                     <div className="text-center mb-8">
-                      <h3 className="text-2xl font-bold text-gray-900 mb-2">{tier.tier_name}</h3>
+                      <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-2">{tier.tier_name}</h3>
                       <p className="text-gray-600 mb-6">{tier.tier_subtitle}</p>
                       <div className="mb-4">
-                        <span className="text-5xl font-bold text-gray-900 dark:text-white">
+                        <span className="text-5xl font-bold text-gray-900 dark:text-white dark:text-white">
                           {(tier.base_price_aed / 1000).toFixed(0)}K
                         </span>
                         <span className="text-gray-600 ml-1">AED</span>
@@ -367,7 +367,7 @@ export default function PackageBuilderPage() {
                       className={`w-full py-4 rounded-lg font-bold transition-all ${
                         tier.recommended
                           ? 'bg-purple-500 text-white hover:bg-purple-600 shadow-lg'
-                          : 'bg-gray-100 text-gray-900 hover:bg-gray-200'
+                          : 'bg-gray-100 text-gray-900 dark:text-white hover:bg-gray-200'
                       }`}
                     >
                       Select {tier.tier_name}
@@ -389,13 +389,13 @@ export default function PackageBuilderPage() {
             >
               <button
                 onClick={() => setStep(2)}
-                className="mb-6 flex items-center gap-2 text-gray-600 hover:text-gray-900 dark:text-white"
+                className="mb-6 flex items-center gap-2 text-gray-600 hover:text-gray-900 dark:text-white dark:text-white"
               >
                 <ArrowLeft className="h-5 w-5" />
                 Change tier
               </button>
 
-              <h2 className="text-4xl font-bold text-gray-900 mb-4 text-center">
+              <h2 className="text-4xl font-bold text-gray-900 dark:text-white mb-4 text-center">
                 Choose Your Control System
               </h2>
               <p className="text-lg text-gray-600 mb-2 text-center">
@@ -429,7 +429,7 @@ export default function PackageBuilderPage() {
                       )}
 
                       <div className="mb-4">
-                        <h3 className="text-2xl font-bold text-gray-900 mb-2 group-hover:text-blue-600 transition-colors">
+                        <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-2 group-hover:text-blue-600 transition-colors">
                           {system.name}
                         </h3>
                         <p className="text-sm text-blue-600 font-semibold mb-3">
@@ -478,7 +478,7 @@ export default function PackageBuilderPage() {
 
                       <div className="pt-4 border-t border-gray-200 dark:border-gray-700">
                         <p className="text-xs text-gray-500 mb-1">Price Range</p>
-                        <p className="font-bold text-gray-900 dark:text-white">
+                        <p className="font-bold text-gray-900 dark:text-white dark:text-white">
                           {system.price_range_aed ? (
                             <>AED {(system.price_range_aed[0] / 1000).toFixed(0)}K - {(system.price_range_aed[1] / 1000).toFixed(0)}K</>
                           ) : (
@@ -487,7 +487,7 @@ export default function PackageBuilderPage() {
                         </p>
                       </div>
 
-                      <button className="mt-4 w-full px-6 py-3 bg-gray-100 group-hover:bg-blue-600 text-gray-900 group-hover:text-white rounded-lg font-bold transition-all">
+                      <button className="mt-4 w-full px-6 py-3 bg-gray-100 group-hover:bg-blue-600 text-gray-900 dark:text-white group-hover:text-white rounded-lg font-bold transition-all">
                         Select {system.name}
                       </button>
                     </div>
@@ -507,13 +507,13 @@ export default function PackageBuilderPage() {
             >
               <button
                 onClick={() => setStep(3)}
-                className="mb-6 flex items-center gap-2 text-gray-600 hover:text-gray-900 dark:text-white"
+                className="mb-6 flex items-center gap-2 text-gray-600 hover:text-gray-900 dark:text-white dark:text-white"
               >
                 <ArrowLeft className="h-5 w-5" />
                 Change control system
               </button>
 
-              <h2 className="text-4xl font-bold text-gray-900 mb-4 text-center">
+              <h2 className="text-4xl font-bold text-gray-900 dark:text-white mb-4 text-center">
                 Customize Your Package
               </h2>
               <p className="text-lg text-gray-600 mb-2 text-center">
@@ -538,7 +538,7 @@ export default function PackageBuilderPage() {
 
                   return (
                     <div key={category} className="bg-white dark:bg-gray-800 rounded-2xl border-2 border-gray-200 p-6">
-                      <h3 className="text-2xl font-bold text-gray-900 mb-4 flex items-center gap-2">
+                      <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-4 flex items-center gap-2">
                         {category}
                         <span className="text-sm font-normal text-gray-500">
                           ({applicableItems.length} options)
@@ -578,7 +578,7 @@ export default function PackageBuilderPage() {
 
                               <div className="mb-3">
                                 <div className="flex items-start justify-between mb-2">
-                                  <h4 className="font-bold text-gray-900 flex-1 pr-8">
+                                  <h4 className="font-bold text-gray-900 dark:text-white flex-1 pr-8">
                                     {item.name}
                                   </h4>
                                 </div>
@@ -607,7 +607,7 @@ export default function PackageBuilderPage() {
                                 }`}>
                                   {item.type === 'upgrade' ? 'Upgrade' : 'Add-on'}
                                 </span>
-                                <span className="font-bold text-gray-900 dark:text-white">
+                                <span className="font-bold text-gray-900 dark:text-white dark:text-white">
                                   +AED {(item.base_price_aed / 1000).toFixed(0)}K
                                 </span>
                               </div>
@@ -649,13 +649,13 @@ export default function PackageBuilderPage() {
             >
               <button
                 onClick={() => setStep(4)}
-                className="mb-6 flex items-center gap-2 text-gray-600 hover:text-gray-900 dark:text-white"
+                className="mb-6 flex items-center gap-2 text-gray-600 hover:text-gray-900 dark:text-white dark:text-white"
               >
                 <ArrowLeft className="h-5 w-5" />
                 Back to enhancements
               </button>
 
-              <h2 className="text-4xl font-bold text-gray-900 mb-4 text-center">
+              <h2 className="text-4xl font-bold text-gray-900 dark:text-white mb-4 text-center">
                 Choose Your Brands
               </h2>
               <p className="text-lg text-gray-600 mb-2 text-center">
@@ -704,7 +704,7 @@ export default function PackageBuilderPage() {
                     return (
                       <div key={category.id} className="bg-white dark:bg-gray-800 rounded-2xl border-2 border-gray-200 p-6">
                         <div className="mb-6">
-                          <h3 className="text-2xl font-bold text-gray-900 mb-2">
+                          <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-2">
                             {category.product_type}
                           </h3>
                           <p className="text-sm text-gray-600 dark:text-gray-400">{category.description}</p>
@@ -743,7 +743,7 @@ export default function PackageBuilderPage() {
                                 )}
 
                                 <div className="mb-4">
-                                  <h4 className="font-bold text-lg text-gray-900 mb-1">
+                                  <h4 className="font-bold text-lg text-gray-900 dark:text-white mb-1">
                                     {option.brand}
                                   </h4>
                                   <p className="text-sm text-gray-600 mb-3">{option.model}</p>
@@ -807,13 +807,13 @@ export default function PackageBuilderPage() {
             >
               <button
                 onClick={() => setStep(5)}
-                className="mb-6 flex items-center gap-2 text-gray-600 hover:text-gray-900 dark:text-white"
+                className="mb-6 flex items-center gap-2 text-gray-600 hover:text-gray-900 dark:text-white dark:text-white"
               >
                 <ArrowLeft className="h-5 w-5" />
                 Back to brand selection
               </button>
 
-              <h2 className="text-4xl font-bold text-gray-900 mb-4 text-center">
+              <h2 className="text-4xl font-bold text-gray-900 dark:text-white mb-4 text-center">
                 Add Specialty Rooms
               </h2>
               <p className="text-lg text-gray-600 mb-2 text-center">
@@ -858,7 +858,7 @@ export default function PackageBuilderPage() {
                         />
                       </div>
 
-                      <h4 className="font-bold text-gray-900 mb-2">{room.name}</h4>
+                      <h4 className="font-bold text-gray-900 dark:text-white mb-2">{room.name}</h4>
                       <p className="text-sm text-gray-600 mb-4 line-clamp-2">{room.description}</p>
                       
                       <div className="flex items-center justify-between">
@@ -892,7 +892,7 @@ export default function PackageBuilderPage() {
               exit={{ opacity: 0, x: -20 }}
               className="max-w-5xl mx-auto"
             >
-              <h2 className="text-4xl font-bold text-gray-900 mb-4 text-center">
+              <h2 className="text-4xl font-bold text-gray-900 dark:text-white mb-4 text-center">
                 Your Custom Package
               </h2>
               <p className="text-lg text-gray-600 mb-12 text-center">
@@ -905,12 +905,12 @@ export default function PackageBuilderPage() {
                   <div className="bg-gradient-to-br from-gray-50 to-blue-50 rounded-2xl p-8 space-y-6">
                     <div>
                       <p className="text-sm text-gray-600 mb-1">Property Type</p>
-                      <p className="text-xl font-bold text-gray-900 dark:text-white">{propertyType?.title}</p>
+                      <p className="text-xl font-bold text-gray-900 dark:text-white dark:text-white">{propertyType?.title}</p>
                     </div>
 
                     <div className="pt-4 border-t">
                       <p className="text-sm text-gray-600 mb-1">Package Tier</p>
-                      <p className="text-xl font-bold text-gray-900 dark:text-white">{selectedTier?.tier_name}</p>
+                      <p className="text-xl font-bold text-gray-900 dark:text-white dark:text-white">{selectedTier?.tier_name}</p>
                       <p className="text-lg text-blue-600 font-semibold">
                         AED {(selectedTier?.base_price_aed / 1000).toFixed(0)}K
                       </p>
@@ -919,7 +919,7 @@ export default function PackageBuilderPage() {
                     {selectedControlSystem && (
                       <div className="pt-4 border-t">
                         <p className="text-sm text-gray-600 mb-1">Control System</p>
-                        <p className="text-lg font-bold text-gray-900 dark:text-white">{selectedControlSystem?.name}</p>
+                        <p className="text-lg font-bold text-gray-900 dark:text-white dark:text-white">{selectedControlSystem?.name}</p>
                         <p className="text-xs text-gray-500">{selectedControlSystem?.tagline}</p>
                       </div>
                     )}
@@ -932,7 +932,7 @@ export default function PackageBuilderPage() {
                         {selectedEnhancements.map((enhancement) => (
                           <div key={enhancement.id} className="flex justify-between items-center py-2">
                             <span className="text-sm text-gray-700 dark:text-gray-300">{enhancement.name}</span>
-                            <span className="text-sm font-bold text-gray-900 dark:text-white">
+                            <span className="text-sm font-bold text-gray-900 dark:text-white dark:text-white">
                               +AED {(enhancement.base_price_aed / 1000).toFixed(0)}K
                             </span>
                           </div>
@@ -983,7 +983,7 @@ export default function PackageBuilderPage() {
 
                     <div className="pt-6 border-t">
                       <div className="flex justify-between items-center mb-2">
-                        <p className="text-2xl font-bold text-gray-900 dark:text-white">Total Estimate</p>
+                        <p className="text-2xl font-bold text-gray-900 dark:text-white dark:text-white">Total Estimate</p>
                         <p className="text-3xl font-bold text-blue-600">
                           AED {(calculateTotal() / 1000).toFixed(0)}K
                         </p>
@@ -1132,7 +1132,7 @@ export default function PackageBuilderPage() {
                 <Check className="h-16 w-16 text-white" />
               </div>
 
-              <h2 className="text-4xl font-bold text-gray-900 mb-4">
+              <h2 className="text-4xl font-bold text-gray-900 dark:text-white mb-4">
                 Quote Request Submitted! 🎉
               </h2>
               <p className="text-xl text-gray-600 mb-8">
@@ -1141,11 +1141,11 @@ export default function PackageBuilderPage() {
 
               <div className="bg-blue-50 rounded-2xl p-8 mb-8">
                 <p className="text-gray-600 mb-2">Your Selected Package</p>
-                <p className="text-3xl font-bold text-gray-900 mb-1">{propertyType?.title}</p>
+                <p className="text-3xl font-bold text-gray-900 dark:text-white mb-1">{propertyType?.title}</p>
                 <p className="text-2xl font-bold text-blue-600">{selectedTier?.tier_name} Tier</p>
                 <div className="mt-4 pt-4 border-t border-blue-200">
                   <p className="text-gray-600 mb-1">Estimated Investment</p>
-                  <p className="text-4xl font-bold text-gray-900 dark:text-white">AED {(calculateTotal() / 1000).toFixed(0)}K</p>
+                  <p className="text-4xl font-bold text-gray-900 dark:text-white dark:text-white">AED {(calculateTotal() / 1000).toFixed(0)}K</p>
                 </div>
               </div>
 
@@ -1158,7 +1158,7 @@ export default function PackageBuilderPage() {
                 </button>
                 <button
                   onClick={() => window.location.reload()}
-                  className="px-8 py-4 bg-gray-100 text-gray-900 rounded-xl hover:bg-gray-200 font-bold text-lg"
+                  className="px-8 py-4 bg-gray-100 text-gray-900 dark:text-white rounded-xl hover:bg-gray-200 font-bold text-lg"
                 >
                   Calculate Another Quote
                 </button>

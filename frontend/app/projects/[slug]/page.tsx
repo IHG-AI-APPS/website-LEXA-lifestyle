@@ -200,7 +200,7 @@ export default function ProjectDetailPage() {
                   
                   {project.challenge && (
                     <>
-                      <h3 className="text-lg font-semibold text-gray-900 mt-6 mb-2">The Challenge</h3>
+                      <h3 className="text-lg font-semibold text-gray-900 dark:text-white mt-6 mb-2">The Challenge</h3>
                       <p className="text-gray-700 leading-relaxed text-base md:text-lg">
                         {project.challenge}
                       </p>
@@ -209,7 +209,7 @@ export default function ProjectDetailPage() {
                   
                   {project.solution && (
                     <>
-                      <h3 className="text-lg font-semibold text-gray-900 mt-6 mb-2">Our Solution</h3>
+                      <h3 className="text-lg font-semibold text-gray-900 dark:text-white mt-6 mb-2">Our Solution</h3>
                       <p className="text-gray-700 leading-relaxed text-base md:text-lg">
                         {project.solution}
                       </p>
@@ -219,7 +219,7 @@ export default function ProjectDetailPage() {
                   {/* Extended description from features */}
                   {project.features && project.features.length > 0 && (
                     <>
-                      <h3 className="text-lg font-semibold text-gray-900 mt-6 mb-2">Key Highlights</h3>
+                      <h3 className="text-lg font-semibold text-gray-900 dark:text-white mt-6 mb-2">Key Highlights</h3>
                       <p className="text-gray-700 leading-relaxed text-base md:text-lg">
                         This project showcases our expertise in creating sophisticated smart home environments. 
                         {project.features.slice(0, 3).join('. ')}. 
@@ -346,7 +346,7 @@ export default function ProjectDetailPage() {
                     {project.client_name && (
                       <div>
                         <p className="text-xs text-gray-400 mb-1">Client:</p>
-                        <p className="text-sm font-medium text-gray-900 dark:text-white">{project.client_name}</p>
+                        <p className="text-sm font-medium text-gray-900 dark:text-white dark:text-white">{project.client_name}</p>
                       </div>
                     )}
                     <div>
@@ -357,22 +357,22 @@ export default function ProjectDetailPage() {
                     </div>
                     <div>
                       <p className="text-xs text-gray-400 mb-1">Location:</p>
-                      <p className="text-sm font-medium text-gray-900 dark:text-white">{project.location}</p>
+                      <p className="text-sm font-medium text-gray-900 dark:text-white dark:text-white">{project.location}</p>
                     </div>
                     {project.size && (
                       <div>
                         <p className="text-xs text-gray-400 mb-1">Size:</p>
-                        <p className="text-sm font-medium text-gray-900 dark:text-white">{project.size}</p>
+                        <p className="text-sm font-medium text-gray-900 dark:text-white dark:text-white">{project.size}</p>
                       </div>
                     )}
                     <div>
                       <p className="text-xs text-gray-400 mb-1">Completed On:</p>
-                      <p className="text-sm font-medium text-gray-900 dark:text-white">{project.completion_date || project.year}</p>
+                      <p className="text-sm font-medium text-gray-900 dark:text-white dark:text-white">{project.completion_date || project.year}</p>
                     </div>
                     {project.budget_range && (
                       <div>
                         <p className="text-xs text-gray-400 mb-1">Investment:</p>
-                        <p className="text-sm font-medium text-gray-900 dark:text-white">{project.budget_range}</p>
+                        <p className="text-sm font-medium text-gray-900 dark:text-white dark:text-white">{project.budget_range}</p>
                       </div>
                     )}
                   </div>
@@ -405,7 +405,7 @@ export default function ProjectDetailPage() {
                             </div>
                           )}
                           <div>
-                            <p className="text-sm font-medium text-gray-900 dark:text-white">{brand.name}</p>
+                            <p className="text-sm font-medium text-gray-900 dark:text-white dark:text-white">{brand.name}</p>
                             {brand.category && (
                               <p className="text-xs text-gray-400">{brand.category}</p>
                             )}
@@ -457,7 +457,7 @@ export default function ProjectDetailPage() {
                     />
                   </div>
                   <span className="text-xs text-blue-600 mb-1 block">{rp.type || 'Residential'}</span>
-                  <h3 className="font-semibold text-gray-900 group-hover:text-blue-600 transition-colors mb-1">
+                  <h3 className="font-semibold text-gray-900 dark:text-white group-hover:text-blue-600 transition-colors mb-1">
                     {rp.title}
                   </h3>
                   <p className="text-sm text-gray-500">{rp.location}</p>

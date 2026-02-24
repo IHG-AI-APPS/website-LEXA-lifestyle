@@ -159,7 +159,7 @@ export default function SystemSelection({
           <Award className="w-5 h-5" />
           <span className="font-semibold">System Selection</span>
         </div>
-        <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-3">
+        <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-3">
           Choose Your Control System
         </h2>
         <p className="text-gray-600 max-w-2xl mx-auto">
@@ -172,15 +172,15 @@ export default function SystemSelection({
       <div className="bg-gray-50 rounded-xl p-4 mb-8">
         <div className="grid grid-cols-3 gap-4 text-center">
           <div>
-            <div className="text-2xl font-bold text-gray-900 dark:text-white">{totalFeatures}</div>
+            <div className="text-2xl font-bold text-gray-900 dark:text-white dark:text-white">{totalFeatures}</div>
             <div className="text-sm text-gray-500">Features Selected</div>
           </div>
           <div>
-            <div className="text-2xl font-bold text-gray-900 dark:text-white">{selectedProtocols.length}</div>
+            <div className="text-2xl font-bold text-gray-900 dark:text-white dark:text-white">{selectedProtocols.length}</div>
             <div className="text-sm text-gray-500">Protocols Chosen</div>
           </div>
           <div>
-            <div className="text-2xl font-bold text-gray-900 capitalize">{protocolType}</div>
+            <div className="text-2xl font-bold text-gray-900 dark:text-white capitalize">{protocolType}</div>
             <div className="text-sm text-gray-500">Infrastructure Type</div>
           </div>
         </div>
@@ -227,7 +227,7 @@ export default function SystemSelection({
           {/* Top Recommendations */}
           {recommendations.length > 0 && (
             <div className="mb-8">
-              <h3 className="text-lg font-bold text-gray-900 mb-4 flex items-center gap-2">
+              <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-4 flex items-center gap-2">
                 <ThumbsUp className="w-5 h-5 text-green-500" />
                 Recommended for You
               </h3>
@@ -269,7 +269,7 @@ export default function SystemSelection({
                       </div>
 
                       {/* System Name */}
-                      <h4 className="text-xl font-bold text-gray-900 mb-1">{system.name}</h4>
+                      <h4 className="text-xl font-bold text-gray-900 dark:text-white mb-1">{system.name}</h4>
                       
                       {/* Price Range */}
                       <div className="text-sm text-gray-500 mb-3">{system.price_range}</div>
@@ -310,7 +310,7 @@ export default function SystemSelection({
 
           {/* All Systems */}
           <div>
-            <h3 className="text-lg font-bold text-gray-900 mb-4">All Systems</h3>
+            <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-4">All Systems</h3>
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
               {systems
                 .filter(s => !recommendations.slice(0, 3).find(r => r.id === s.id))
@@ -344,7 +344,7 @@ export default function SystemSelection({
                       </div>
 
                       {/* System Name */}
-                      <h4 className="text-lg font-bold text-gray-900 mb-1">{system.name}</h4>
+                      <h4 className="text-lg font-bold text-gray-900 dark:text-white mb-1">{system.name}</h4>
                       
                       {/* Price Range */}
                       <div className="text-sm text-gray-500 mb-2">{system.price_range}</div>

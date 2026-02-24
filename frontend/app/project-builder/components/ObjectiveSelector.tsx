@@ -81,7 +81,7 @@ export default function ObjectiveSelector({ sessionId, onComplete }: ObjectiveSe
       >
         {/* Header */}
         <div className="text-center mb-12">
-          <h1 className="text-4xl sm:text-5xl font-semibold tracking-tight text-gray-900 mb-4">
+          <h1 className="text-4xl sm:text-5xl font-semibold tracking-tight text-gray-900 dark:text-white mb-4">
             Strategic <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600">Priorities</span>
           </h1>
           <p className="text-sm text-gray-500 uppercase tracking-widest mb-2">

@@ -299,7 +299,7 @@ export default function FeatureSelectionFlow({
           <TierIcon className="w-5 h-5" />
           <span className="font-semibold">{currentTier.name}</span>
         </div>
-        <h2 className="text-3xl font-bold text-gray-900 mb-2">
+        <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-2">
           Select Your {currentTier.name} Features
         </h2>
         <p className="text-gray-600 max-w-2xl mx-auto">
@@ -374,7 +374,7 @@ export default function FeatureSelectionFlow({
                       <IconComponent className="w-5 h-5 text-white" />
                     </div>
                     <div className="text-left">
-                      <h3 className="font-semibold text-gray-900 dark:text-white">{category.category_name}</h3>
+                      <h3 className="font-semibold text-gray-900 dark:text-white dark:text-white">{category.category_name}</h3>
                       <p className="text-sm text-gray-500">
                         {category.features.length} features
                         {selectedInCategory > 0 && (

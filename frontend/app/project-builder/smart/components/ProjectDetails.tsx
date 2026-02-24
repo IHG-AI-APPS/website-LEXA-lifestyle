@@ -203,7 +203,7 @@ export default function ProjectDetailsForm({
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.1 }}
-          className="text-3xl md:text-4xl font-bold text-gray-900 mb-3"
+          className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-3"
         >
           Let&apos;s Understand Your Project
         </motion.h2>
@@ -225,7 +225,7 @@ export default function ProjectDetailsForm({
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.3 }}
         >
-          <h3 className="text-lg font-bold text-gray-900 mb-4 flex items-center gap-2">
+          <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-4 flex items-center gap-2">
             <Hammer className="w-5 h-5 text-gray-500" />
             Project Type
           </h3>
@@ -246,7 +246,7 @@ export default function ProjectDetailsForm({
                   <div className={`w-12 h-12 rounded-xl bg-gradient-to-br ${type.color} flex items-center justify-center mb-3`}>
                     <Icon className="w-6 h-6 text-white" />
                   </div>
-                  <h4 className="font-bold text-gray-900 dark:text-white">{type.name}</h4>
+                  <h4 className="font-bold text-gray-900 dark:text-white dark:text-white">{type.name}</h4>
                   <p className="text-sm text-gray-500 mt-1">{type.description}</p>
                   <p className="text-xs text-indigo-600 mt-2 font-medium">{type.recommendation}</p>
                   {isSelected && (
@@ -264,7 +264,7 @@ export default function ProjectDetailsForm({
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.4 }}
         >
-          <h3 className="text-lg font-bold text-gray-900 mb-4 flex items-center gap-2">
+          <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-4 flex items-center gap-2">
             <Home className="w-5 h-5 text-gray-500" />
             Property Type
           </h3>
@@ -301,7 +301,7 @@ export default function ProjectDetailsForm({
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
           >
-            <h3 className="text-lg font-bold text-gray-900 mb-4 flex items-center gap-2">
+            <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-4 flex items-center gap-2">
               <Ruler className="w-5 h-5 text-gray-500" />
               Property Size
             </h3>
@@ -344,7 +344,7 @@ export default function ProjectDetailsForm({
           className="grid md:grid-cols-2 gap-6"
         >
           <div>
-            <h3 className="text-lg font-bold text-gray-900 mb-4 flex items-center gap-2">
+            <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-4 flex items-center gap-2">
               <Users className="w-5 h-5 text-gray-500" />
               Bedrooms
             </h3>
@@ -365,7 +365,7 @@ export default function ProjectDetailsForm({
             </div>
           </div>
           <div>
-            <h3 className="text-lg font-bold text-gray-900 mb-4 flex items-center gap-2">
+            <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-4 flex items-center gap-2">
               <Building2 className="w-5 h-5 text-gray-500" />
               Floors
             </h3>
@@ -393,7 +393,7 @@ export default function ProjectDetailsForm({
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.6 }}
         >
-          <h3 className="text-lg font-bold text-gray-900 mb-4 flex items-center gap-2">
+          <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-4 flex items-center gap-2">
             <Wallet className="w-5 h-5 text-gray-500" />
             Budget Range
           </h3>
@@ -423,7 +423,7 @@ export default function ProjectDetailsForm({
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.7 }}
         >
-          <h3 className="text-lg font-bold text-gray-900 mb-4 flex items-center gap-2">
+          <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-4 flex items-center gap-2">
             <Calendar className="w-5 h-5 text-gray-500" />
             Project Timeline
           </h3>
@@ -453,7 +453,7 @@ export default function ProjectDetailsForm({
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.8 }}
         >
-          <h3 className="text-lg font-bold text-gray-900 mb-4 flex items-center gap-2">
+          <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-4 flex items-center gap-2">
             <MapPin className="w-5 h-5 text-gray-500" />
             Location
           </h3>
@@ -480,7 +480,7 @@ export default function ProjectDetailsForm({
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.9 }}
         >
-          <h3 className="text-lg font-bold text-gray-900 mb-4">Special Requirements (Optional)</h3>
+          <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-4">Special Requirements (Optional)</h3>
           <textarea
             value={specialRequirements}
             onChange={(e) => setSpecialRequirements(e.target.value)}

@@ -46,11 +46,11 @@ export default function DohaClient() {
       </section>
       <section className="py-16 bg-gray-50 dark:bg-gray-800">
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-bold text-center mb-12 text-gray-900 dark:text-white">Doha Communities We Serve</h2>
+          <h2 className="text-3xl font-bold text-center mb-12 text-gray-900 dark:text-white dark:text-white">Doha Communities We Serve</h2>
           <div className="grid md:grid-cols-2 gap-6">
             {communities.map((c, i) => (
               <div key={i} className="bg-white dark:bg-gray-700 p-6 rounded-xl shadow-lg">
-                <h3 className="text-xl font-semibold text-gray-900 dark:text-white">{c.name}</h3>
+                <h3 className="text-xl font-semibold text-gray-900 dark:text-white dark:text-white">{c.name}</h3>
                 <p className="text-gray-600 dark:text-gray-300">{c.type} • {c.projects}</p>
               </div>
             ))}
@@ -59,11 +59,11 @@ export default function DohaClient() {
       </section>
       <section className="py-16 dark:bg-gray-900">
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-bold text-center mb-12 text-gray-900 dark:text-white">FAQ</h2>
+          <h2 className="text-3xl font-bold text-center mb-12 text-gray-900 dark:text-white dark:text-white">FAQ</h2>
           <div className="max-w-3xl mx-auto space-y-6">
             {faqs.map((faq, i) => (
               <div key={i} className="bg-white dark:bg-gray-700 p-6 rounded-xl shadow">
-                <h3 className="text-lg font-semibold mb-2 text-gray-900 dark:text-white">{faq.q}</h3>
+                <h3 className="text-lg font-semibold mb-2 text-gray-900 dark:text-white dark:text-white">{faq.q}</h3>
                 <p className="text-gray-600 dark:text-gray-300">{faq.a}</p>
               </div>
             ))}
