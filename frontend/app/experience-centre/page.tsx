@@ -297,6 +297,45 @@ export default function ExperienceCentrePage() {
         </div>
       </section>
 
+      {/* Social Proof & Trust */}
+      <section className="py-16 bg-[#F9F9F7] border-t border-black/5">
+        <div className="px-6 md:px-12 lg:px-24">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-12">
+            {[
+              { icon: Award, value: '500+', label: 'Projects Delivered' },
+              { icon: Users, value: '15+', label: 'Years in Dubai' },
+              { icon: Star, value: '4.9/5', label: 'Client Satisfaction' },
+              { icon: Shield, value: '32+', label: 'Premium Brand Partners' },
+            ].map((stat, i) => (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.1 }}
+                className="text-center"
+                data-testid={`trust-stat-${i}`}
+              >
+                <stat.icon className="w-6 h-6 text-[#9F8B65] mx-auto mb-2" />
+                <div className="text-2xl font-bold text-[#1A1A1A]">{stat.value}</div>
+                <div className="text-sm text-[#4A4A4A]">{stat.label}</div>
+              </motion.div>
+            ))}
+          </div>
+          <div className="text-center">
+            <p className="text-xs uppercase tracking-[0.3em] text-[#9F8B65] mb-3">What To Expect</p>
+            <div className="flex flex-wrap justify-center gap-4 text-sm text-[#4A4A4A]">
+              {['Private 1-on-1 Tour', 'Live System Demos', 'Expert Consultation', 'No Obligation'].map((item, i) => (
+                <span key={i} className="flex items-center gap-1.5">
+                  <CheckCircle className="w-4 h-4 text-green-600" />
+                  {item}
+                </span>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* CTA Section */}
       <section className="py-24 bg-[#1A1A1A]">
         <div className="px-6 md:px-12 lg:px-24">
