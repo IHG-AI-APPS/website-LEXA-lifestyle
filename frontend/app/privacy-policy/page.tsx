@@ -19,7 +19,7 @@ export default function PrivacyPolicyPage() {
         {/* Content */}
         <div className="prose prose-lg max-w-none">
           <section className="mb-10">
-            <h2 className="text-2xl font-bold text-[#1A1A1A] mb-4">1. Introduction</h2>
+            <h2 className="text-2xl font-heading font-bold text-[#1A1A1A] mb-4">1. Introduction</h2>
             <p className="text-gray-600 leading-relaxed">
               LEXA Lifestyle Trading LLC ("LEXA," "we," "us," or "our") is committed to protecting your privacy. 
               This Privacy Policy explains how we collect, use, disclose, and safeguard your information when 
@@ -31,7 +31,7 @@ export default function PrivacyPolicyPage() {
           </section>
 
           <section className="mb-10">
-            <h2 className="text-2xl font-bold text-[#1A1A1A] mb-4">2. Information We Collect</h2>
+            <h2 className="text-2xl font-heading font-bold text-[#1A1A1A] mb-4">2. Information We Collect</h2>
             
             <h3 className="text-xl font-semibold text-[#1A1A1A] mt-6 mb-3">2.1 Personal Information</h3>
             <p className="text-gray-600 leading-relaxed">We may collect personally identifiable information, including but not limited to:</p>
@@ -55,7 +55,7 @@ export default function PrivacyPolicyPage() {
           </section>
 
           <section className="mb-10">
-            <h2 className="text-2xl font-bold text-[#1A1A1A] mb-4">3. How We Use Your Information</h2>
+            <h2 className="text-2xl font-heading font-bold text-[#1A1A1A] mb-4">3. How We Use Your Information</h2>
             <p className="text-gray-600 leading-relaxed">We use collected information to:</p>
             <ul className="list-disc pl-6 text-gray-600 space-y-2 mt-3">
               <li>Provide, operate, and maintain our services</li>
@@ -69,7 +69,7 @@ export default function PrivacyPolicyPage() {
           </section>
 
           <section className="mb-10">
-            <h2 className="text-2xl font-bold text-[#1A1A1A] mb-4">4. Cookies and Tracking Technologies</h2>
+            <h2 className="text-2xl font-heading font-bold text-[#1A1A1A] mb-4">4. Cookies and Tracking Technologies</h2>
             <p className="text-gray-600 leading-relaxed">
               We use cookies and similar tracking technologies to track activity on our website and store certain information. 
               Cookies are files with a small amount of data that may include an anonymous unique identifier.
@@ -88,7 +88,7 @@ export default function PrivacyPolicyPage() {
           </section>
 
           <section className="mb-10">
-            <h2 className="text-2xl font-bold text-[#1A1A1A] mb-4">5. Information Sharing and Disclosure</h2>
+            <h2 className="text-2xl font-heading font-bold text-[#1A1A1A] mb-4">5. Information Sharing and Disclosure</h2>
             <p className="text-gray-600 leading-relaxed">We may share your information with:</p>
             <ul className="list-disc pl-6 text-gray-600 space-y-2 mt-3">
               <li><strong>Service Providers:</strong> Third parties who assist us in operating our website and conducting our business</li>
@@ -102,7 +102,7 @@ export default function PrivacyPolicyPage() {
           </section>
 
           <section className="mb-10">
-            <h2 className="text-2xl font-bold text-[#1A1A1A] mb-4">6. Data Security</h2>
+            <h2 className="text-2xl font-heading font-bold text-[#1A1A1A] mb-4">6. Data Security</h2>
             <p className="text-gray-600 leading-relaxed">
               We implement appropriate technical and organizational security measures to protect your personal information, including:
             </p>
@@ -115,7 +115,7 @@ export default function PrivacyPolicyPage() {
           </section>
 
           <section className="mb-10">
-            <h2 className="text-2xl font-bold text-[#1A1A1A] mb-4">7. Your Rights</h2>
+            <h2 className="text-2xl font-heading font-bold text-[#1A1A1A] mb-4">7. Your Rights</h2>
             <p className="text-gray-600 leading-relaxed">You have the right to:</p>
             <ul className="list-disc pl-6 text-gray-600 space-y-2 mt-3">
               <li>Access your personal data</li>
@@ -131,7 +131,7 @@ export default function PrivacyPolicyPage() {
           </section>
 
           <section className="mb-10">
-            <h2 className="text-2xl font-bold text-[#1A1A1A] mb-4">8. Data Retention</h2>
+            <h2 className="text-2xl font-heading font-bold text-[#1A1A1A] mb-4">8. Data Retention</h2>
             <p className="text-gray-600 leading-relaxed">
               We retain your personal information only for as long as necessary to fulfill the purposes outlined in this 
               Privacy Policy, unless a longer retention period is required by law. Project-related data may be retained 
@@ -140,7 +140,7 @@ export default function PrivacyPolicyPage() {
           </section>
 
           <section className="mb-10">
-            <h2 className="text-2xl font-bold text-[#1A1A1A] mb-4">9. International Data Transfers</h2>
+            <h2 className="text-2xl font-heading font-bold text-[#1A1A1A] mb-4">9. International Data Transfers</h2>
             <p className="text-gray-600 leading-relaxed">
               Your information may be transferred to and processed in countries other than the UAE. We ensure that 
               appropriate safeguards are in place to protect your information in accordance with this Privacy Policy.
@@ -148,7 +148,7 @@ export default function PrivacyPolicyPage() {
           </section>
 
           <section className="mb-10">
-            <h2 className="text-2xl font-bold text-[#1A1A1A] mb-4">10. Children's Privacy</h2>
+            <h2 className="text-2xl font-heading font-bold text-[#1A1A1A] mb-4">10. Children's Privacy</h2>
             <p className="text-gray-600 leading-relaxed">
               Our services are not intended for individuals under the age of 18. We do not knowingly collect personal 
               information from children. If you become aware that a child has provided us with personal information, 
@@ -157,7 +157,7 @@ export default function PrivacyPolicyPage() {
           </section>
 
           <section className="mb-10">
-            <h2 className="text-2xl font-bold text-[#1A1A1A] mb-4">11. Changes to This Policy</h2>
+            <h2 className="text-2xl font-heading font-bold text-[#1A1A1A] mb-4">11. Changes to This Policy</h2>
             <p className="text-gray-600 leading-relaxed">
               We may update this Privacy Policy from time to time. We will notify you of any changes by posting the 
               new Privacy Policy on this page and updating the "Last updated" date. You are advised to review this 
@@ -166,7 +166,7 @@ export default function PrivacyPolicyPage() {
           </section>
 
           <section className="mb-10">
-            <h2 className="text-2xl font-bold text-[#1A1A1A] mb-4">12. Contact Us</h2>
+            <h2 className="text-2xl font-heading font-bold text-[#1A1A1A] mb-4">12. Contact Us</h2>
             <p className="text-gray-600 leading-relaxed">
               If you have any questions about this Privacy Policy, please contact us:
             </p>
@@ -180,7 +180,7 @@ export default function PrivacyPolicyPage() {
           </section>
 
           <section className="mb-10">
-            <h2 className="text-2xl font-bold text-[#1A1A1A] mb-4">13. UAE Compliance</h2>
+            <h2 className="text-2xl font-heading font-bold text-[#1A1A1A] mb-4">13. UAE Compliance</h2>
             <p className="text-gray-600 leading-relaxed">
               This Privacy Policy complies with UAE Federal Decree-Law No. 45 of 2021 on Personal Data Protection 
               and other applicable UAE regulations governing data privacy and protection.
