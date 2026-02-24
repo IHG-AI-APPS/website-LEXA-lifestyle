@@ -39,15 +39,15 @@ export default function TrustBadges({
   if (variant === 'compact') {
     return (
       <div className={`flex items-center justify-center gap-6 py-4 ${className}`}>
-        <div className="flex items-center gap-2 text-sm text-gray-600">
+        <div className="flex items-center gap-2 text-sm text-gray-600 dark:text-gray-400">
           <Shield className="w-4 h-4 text-green-600" />
           <span>15+ Years</span>
         </div>
-        <div className="flex items-center gap-2 text-sm text-gray-600">
+        <div className="flex items-center gap-2 text-sm text-gray-600 dark:text-gray-400">
           <CheckCircle className="w-4 h-4 text-green-600" />
           <span>500+ Projects</span>
         </div>
-        <div className="flex items-center gap-2 text-sm text-gray-600">
+        <div className="flex items-center gap-2 text-sm text-gray-600 dark:text-gray-400">
           <Star className="w-4 h-4 text-yellow-500" />
           <span>4.9 Rating</span>
         </div>

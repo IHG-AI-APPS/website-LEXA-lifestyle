@@ -229,9 +229,9 @@ export default function AIChatWidget() {
 
             {/* Lead Score Indicator */}
             {leadScore > 0 && (
-              <div className="px-4 py-2 bg-gradient-to-r from-green-50 to-blue-50 border-t border-gray-100">
+              <div className="px-4 py-2 bg-gradient-to-r from-green-50 to-blue-50 border-t border-gray-100 dark:border-gray-800">
                 <div className="flex items-center justify-between text-xs">
-                  <span className="text-gray-600">Conversation Progress</span>
+                  <span className="text-gray-600 dark:text-gray-400">Conversation Progress</span>
                   <span className="font-medium text-green-600">{leadScore}% Complete</span>
                 </div>
                 <div className="mt-1 h-1.5 bg-gray-200 rounded-full overflow-hidden">
@@ -268,7 +268,7 @@ export default function AIChatWidget() {
               <div className="flex justify-between items-center mt-2">
                 <button 
                   onClick={clearChat}
-                  className="text-xs text-gray-400 hover:text-gray-600"
+                  className="text-xs text-gray-400 hover:text-gray-600 dark:text-gray-400"
                 >
                   Clear chat
                 </button>

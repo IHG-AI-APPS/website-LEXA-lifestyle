@@ -39,7 +39,7 @@ export default function TabbyWidget({ totalAmount, currency = 'AED' }: TabbyWidg
         </div>
         <div>
           <h3 className="font-bold text-lg">Buy Now, Pay Later with Tabby</h3>
-          <p className="text-sm text-gray-600">Split your purchase into easy installments</p>
+          <p className="text-sm text-gray-600 dark:text-gray-400">Split your purchase into easy installments</p>
         </div>
       </div>
 
@@ -78,21 +78,21 @@ export default function TabbyWidget({ totalAmount, currency = 'AED' }: TabbyWidg
         
         <div className="space-y-2 text-sm">
           <div className="flex justify-between">
-            <span className="text-gray-600">Total Amount</span>
+            <span className="text-gray-600 dark:text-gray-400">Total Amount</span>
             <span className="font-semibold">{currency} {totalAmount.toLocaleString()}</span>
           </div>
           <div className="flex justify-between">
-            <span className="text-gray-600">Monthly Payment</span>
+            <span className="text-gray-600 dark:text-gray-400">Monthly Payment</span>
             <span className="font-semibold text-purple-600">
               {currency} {plans[selectedPlan].installment.toLocaleString()}
             </span>
           </div>
           <div className="flex justify-between">
-            <span className="text-gray-600">Duration</span>
+            <span className="text-gray-600 dark:text-gray-400">Duration</span>
             <span className="font-semibold">{plans[selectedPlan].months} months</span>
           </div>
           <div className="flex justify-between pt-2 border-t">
-            <span className="text-gray-600">Interest Rate</span>
+            <span className="text-gray-600 dark:text-gray-400">Interest Rate</span>
             <span className="font-semibold text-green-600">0% (Interest-free!)</span>
           </div>
         </div>
@@ -104,7 +104,7 @@ export default function TabbyWidget({ totalAmount, currency = 'AED' }: TabbyWidg
           <Info size={16} />
           Why Choose Tabby?
         </h4>
-        <ul className="space-y-1 text-xs text-gray-700">
+        <ul className="space-y-1 text-xs text-gray-700 dark:text-gray-300">
           <li>✓ 0% interest & no hidden fees</li>
           <li>✓ Instant approval decision</li>
           <li>✓ No impact on your credit score</li>

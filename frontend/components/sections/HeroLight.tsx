@@ -78,7 +78,7 @@ export default function HeroLight() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 0.3 }}
-            className="grid grid-cols-2 md:grid-cols-4 gap-8 pt-12 border-t border-gray-200"
+            className="grid grid-cols-2 md:grid-cols-4 gap-8 pt-12 border-t border-gray-200 dark:border-gray-700"
           >
             <div>
               <div className="text-xs tracking-wider uppercase mb-2 text-gray-500">Experience</div>

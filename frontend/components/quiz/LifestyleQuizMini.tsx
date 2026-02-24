@@ -88,7 +88,7 @@ export default function LifestyleQuizMini({ onComplete, onSkip }: LifestyleQuizP
       <div className="flex items-start justify-between mb-4">
         <div className="flex items-center gap-2">
           <Sparkles className="h-5 w-5 text-blue-600" />
-          <h3 className="font-bold text-gray-900">Quick: What matters most to you?</h3>
+          <h3 className="font-bold text-gray-900 dark:text-white">Quick: What matters most to you?</h3>
         </div>
         <button
           onClick={onSkip}

@@ -19,7 +19,7 @@ export default function Step6Timeline({
     <div className="space-y-8 max-w-2xl mx-auto">
       <div className="text-center mb-8">
         <h2 className="text-3xl font-bold mb-3">Timeline & Budget</h2>
-        <p className="text-gray-600">
+        <p className="text-gray-600 dark:text-gray-400">
           Help us understand your project timeline and budget expectations
         </p>
       </div>

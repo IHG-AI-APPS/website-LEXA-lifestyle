@@ -153,7 +153,7 @@ export default function LexaLiving() {
             <p className="text-gray-500 text-sm mb-4">
               Powered by intelligent automation that learns your preferences
             </p>
-            <div className="flex flex-wrap items-center justify-center gap-4 text-xs text-gray-600">
+            <div className="flex flex-wrap items-center justify-center gap-4 text-xs text-gray-600 dark:text-gray-400">
               <span>KNX</span>
               <span>•</span>
               <span>Control4</span>

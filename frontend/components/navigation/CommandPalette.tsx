@@ -528,11 +528,11 @@ export default function CommandPalette() {
                 <div className="flex items-center justify-between px-4 py-2 border-t border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-800 text-xs text-gray-500 dark:text-gray-400">
                   <div className="flex items-center gap-4">
                     <span className="flex items-center gap-1">
-                      <kbd className="px-1.5 py-0.5 bg-white border rounded">↑↓</kbd>
+                      <kbd className="px-1.5 py-0.5 bg-white dark:bg-gray-800 border rounded">↑↓</kbd>
                       Navigate
                     </span>
                     <span className="flex items-center gap-1">
-                      <kbd className="px-1.5 py-0.5 bg-white border rounded">↵</kbd>
+                      <kbd className="px-1.5 py-0.5 bg-white dark:bg-gray-800 border rounded">↵</kbd>
                       Select
                     </span>
                   </div>

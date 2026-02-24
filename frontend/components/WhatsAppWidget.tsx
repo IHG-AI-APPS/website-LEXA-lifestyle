@@ -152,7 +152,7 @@ export default function WhatsAppWidget() {
                   <div className="font-semibold text-sm mb-1 group-hover:text-green-600">
                     {msg.title}
                   </div>
-                  <div className="text-xs text-gray-600">
+                  <div className="text-xs text-gray-600 dark:text-gray-400">
                     {msg.message.substring(0, 50)}...
                   </div>
                 </button>

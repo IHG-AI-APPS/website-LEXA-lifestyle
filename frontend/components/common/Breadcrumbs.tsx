@@ -42,7 +42,7 @@ export default function Breadcrumbs() {
       />
       
       {/* Visual Breadcrumbs */}
-      <nav aria-label="Breadcrumb" className="bg-gray-50 border-b border-gray-200">
+      <nav aria-label="Breadcrumb" className="bg-gray-50 border-b border-gray-200 dark:border-gray-700">
         <div className="container mx-auto px-4 max-w-7xl py-3">
           <ol className="flex items-center space-x-2 text-sm">
             <li>

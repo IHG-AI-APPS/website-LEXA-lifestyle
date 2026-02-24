@@ -62,7 +62,7 @@ export default function PackageComparison({ packages, title = "Our Packages" }: 
                   {pkg.features.map((feature, fIndex) => (
                     <li key={fIndex} className="flex items-start gap-3">
                       <CheckCircle2 className="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" />
-                      <span className="text-sm text-gray-700">{feature}</span>
+                      <span className="text-sm text-gray-700 dark:text-gray-300">{feature}</span>
                     </li>
                   ))}
                 </ul>

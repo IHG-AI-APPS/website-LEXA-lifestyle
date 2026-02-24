@@ -41,7 +41,7 @@ export default function TrustSignals() {
             <h2 className="h2 mb-3 md:mb-4">
               Trusted in the UAE
             </h2>
-            <p className="text-base md:text-lg text-gray-600">
+            <p className="text-base md:text-lg text-gray-600 dark:text-gray-400">
               Partnering with Dubai&apos;s leading developers and premium communities
             </p>
           </motion.div>
@@ -65,7 +65,7 @@ export default function TrustSignals() {
                 {authorities.map((auth, index) => (
                   <div 
                     key={index}
-                    className="flex items-center justify-center md:justify-start gap-2 text-gray-700"
+                    className="flex items-center justify-center md:justify-start gap-2 text-gray-700 dark:text-gray-300"
                   >
                     <div className="w-2 h-2 bg-black rounded-full flex-shrink-0"></div>
                     <span className="font-medium text-sm md:text-base">{auth}</span>
@@ -92,7 +92,7 @@ export default function TrustSignals() {
                 {developers.map((dev, index) => (
                   <div 
                     key={index}
-                    className="flex items-center justify-center md:justify-start gap-2 text-gray-700"
+                    className="flex items-center justify-center md:justify-start gap-2 text-gray-700 dark:text-gray-300"
                   >
                     <div className="w-2 h-2 bg-black rounded-full flex-shrink-0"></div>
                     <span className="font-medium text-sm md:text-base">{dev}</span>
@@ -119,7 +119,7 @@ export default function TrustSignals() {
                 {locations.map((loc, index) => (
                   <div 
                     key={index}
-                    className="flex items-center justify-center md:justify-start gap-2 text-gray-700"
+                    className="flex items-center justify-center md:justify-start gap-2 text-gray-700 dark:text-gray-300"
                   >
                     <div className="w-2 h-2 bg-black rounded-full flex-shrink-0"></div>
                     <span className="font-medium text-sm md:text-base">{loc}</span>
@@ -139,19 +139,19 @@ export default function TrustSignals() {
           >
             <div className="text-center">
               <div className="text-3xl md:text-4xl font-bold mb-1.5 md:mb-2">100+</div>
-              <div className="text-sm md:text-base text-gray-600">Luxury Villas</div>
+              <div className="text-sm md:text-base text-gray-600 dark:text-gray-400">Luxury Villas</div>
             </div>
             <div className="text-center">
               <div className="text-3xl md:text-4xl font-bold mb-1.5 md:mb-2">15+</div>
-              <div className="text-sm md:text-base text-gray-600">Years in UAE</div>
+              <div className="text-sm md:text-base text-gray-600 dark:text-gray-400">Years in UAE</div>
             </div>
             <div className="text-center">
               <div className="text-3xl md:text-4xl font-bold mb-1.5 md:mb-2">24/7</div>
-              <div className="text-sm md:text-base text-gray-600">Support Available</div>
+              <div className="text-sm md:text-base text-gray-600 dark:text-gray-400">Support Available</div>
             </div>
             <div className="text-center">
               <div className="text-3xl md:text-4xl font-bold mb-1.5 md:mb-2">CEDIA</div>
-              <div className="text-sm md:text-base text-gray-600">Certified Team</div>
+              <div className="text-sm md:text-base text-gray-600 dark:text-gray-400">Certified Team</div>
             </div>
           </motion.div>
 

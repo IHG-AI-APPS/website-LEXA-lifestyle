@@ -9,7 +9,7 @@ export default function Step2SubCategory({ subCategories, selectedSubCategory, o
     <div className="space-y-6">
       <div className="text-center mb-8">
         <h2 className="text-3xl font-bold mb-3">Choose Your Property Sub-Type</h2>
-        <p className="text-gray-600">
+        <p className="text-gray-600 dark:text-gray-400">
           Select the specific category for more accurate recommendations
         </p>
       </div>

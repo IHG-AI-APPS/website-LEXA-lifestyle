@@ -60,7 +60,7 @@ export default function VideoTestimonial() {
               {testimonial.quote}
             </p>
 
-            <div className="pt-8 border-t border-gray-200">
+            <div className="pt-8 border-t border-gray-200 dark:border-gray-700">
               <div className="text-xl font-semibold text-black mb-1">
                 {testimonial.name}
               </div>

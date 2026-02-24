@@ -82,10 +82,10 @@ export default function LeadCaptureForm({ calculatorData, onSubmit, onSkip }: Le
   }
 
   return (
-    <div className="p-8 bg-white rounded-lg border border-gray-200">
+    <div className="p-8 bg-white rounded-lg border border-gray-200 dark:border-gray-700">
       <div className="mb-6">
         <h3 className="text-2xl font-heading font-semibold mb-2">Get Your Detailed Quote</h3>
-        <p className="text-sm text-gray-600">
+        <p className="text-sm text-gray-600 dark:text-gray-400">
           Share your details and we&apos;ll send you a personalized proposal with exact pricing.
         </p>
       </div>

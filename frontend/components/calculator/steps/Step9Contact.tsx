@@ -29,7 +29,7 @@ export default function Step9Contact({
     <div className="space-y-6 max-w-2xl mx-auto">
       <div className="text-center mb-8">
         <h2 className="text-3xl font-bold mb-3">Contact Information</h2>
-        <p className="text-gray-600">
+        <p className="text-gray-600 dark:text-gray-400">
           How can we reach you with your personalized quote?
         </p>
       </div>

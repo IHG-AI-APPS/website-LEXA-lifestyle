@@ -103,7 +103,7 @@ export default function SocialProofWidget() {
               
               {/* Content */}
               <div className="flex-1 min-w-0">
-                <p className="text-sm text-gray-800">
+                <p className="text-sm text-gray-800 dark:text-gray-100">
                   <span className="font-semibold">{currentEvent.name}</span>
                   {' '}from{' '}
                   <span className="font-medium text-blue-600">{currentEvent.location}</span>

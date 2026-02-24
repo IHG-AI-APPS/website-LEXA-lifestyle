@@ -164,7 +164,7 @@ export default function FloorPlanUploader({ onSave, initialImage, initialAnnotat
 
           {/* Action Buttons */}
           <div className="bg-gray-50 border-t p-4 flex justify-between items-center">
-            <div className="text-sm text-gray-600">
+            <div className="text-sm text-gray-600 dark:text-gray-400">
               <strong>{annotations.length}</strong> devices marked
             </div>
             <div className="flex gap-3">
@@ -224,7 +224,7 @@ export default function FloorPlanUploader({ onSave, initialImage, initialAnnotat
                 alt="Floor plan"
                 width={1200}
                 height={800}
-                className="w-full h-auto rounded-lg border-2 border-gray-200"
+                className="w-full h-auto rounded-lg border-2 border-gray-200 dark:border-gray-700"
               />
             </div>
           </div>

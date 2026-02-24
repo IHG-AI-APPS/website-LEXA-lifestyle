@@ -11,7 +11,7 @@ export default function Step4Solutions({ solutions, selectedSolutions, onSolutio
     <div className="space-y-6">
       <div className="text-center mb-8">
         <h2 className="text-3xl font-bold mb-3">Select Smart Home Solutions</h2>
-        <p className="text-gray-600">
+        <p className="text-gray-600 dark:text-gray-400">
           Choose the systems you want and select your preferred feature level
         </p>
       </div>

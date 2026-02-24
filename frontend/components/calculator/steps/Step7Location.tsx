@@ -26,7 +26,7 @@ export default function Step7Location({
     <div className="space-y-6 max-w-2xl mx-auto">
       <div className="text-center mb-8">
         <h2 className="text-3xl font-bold mb-3">Property Location</h2>
-        <p className="text-gray-600">
+        <p className="text-gray-600 dark:text-gray-400">
           Tell us where your property is located
         </p>
       </div>

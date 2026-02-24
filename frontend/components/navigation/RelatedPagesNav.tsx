@@ -23,7 +23,7 @@ export default function RelatedPagesNav({
   subtitle = "Learn more about LEXA"
 }: RelatedPagesNavProps) {
   return (
-    <section className="py-12 md:py-16 bg-gray-50 border-t border-gray-200">
+    <section className="py-12 md:py-16 bg-gray-50 border-t border-gray-200 dark:border-gray-700">
       <div className="content-container">
         <div className="max-w-5xl mx-auto">
           {/* Section Header */}
@@ -34,7 +34,7 @@ export default function RelatedPagesNav({
             className="text-center mb-8 md:mb-10"
           >
             <h2 className="text-2xl md:text-3xl font-bold mb-2">{title}</h2>
-            <p className="text-sm md:text-base text-gray-600">{subtitle}</p>
+            <p className="text-sm md:text-base text-gray-600 dark:text-gray-400">{subtitle}</p>
           </motion.div>
 
           {/* Related Pages Grid */}

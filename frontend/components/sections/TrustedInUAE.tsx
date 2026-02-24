@@ -212,7 +212,7 @@ export default function TrustedInUAE({
                 className={`p-4 rounded-xl text-center ${
                   isDark 
                     ? 'bg-gray-800/70 hover:bg-gray-800 border border-gray-700/50' 
-                    : 'bg-gray-50 hover:bg-white border border-gray-200'
+                    : 'bg-gray-50 hover:bg-white dark:bg-gray-800 border border-gray-200'
                 } transition-all hover:shadow-lg`}
               >
                 <div className={`text-lg font-bold ${isDark ? 'text-white' : 'text-gray-900'}`}>

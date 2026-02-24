@@ -117,7 +117,7 @@ export function ImageUpload({
   return (
     <div className={`space-y-3 ${className}`}>
       {label && (
-        <label className="block text-sm font-medium text-gray-700">{label}</label>
+        <label className="block text-sm font-medium text-gray-700 dark:text-gray-300">{label}</label>
       )}
 
       {/* Mode Toggle */}
@@ -173,7 +173,7 @@ export function ImageUpload({
           {uploading ? (
             <div className="flex flex-col items-center gap-2">
               <Loader2 className="w-8 h-8 text-blue-500 animate-spin" />
-              <p className="text-sm text-gray-600">Uploading...</p>
+              <p className="text-sm text-gray-600 dark:text-gray-400">Uploading...</p>
             </div>
           ) : (
             <>
@@ -201,7 +201,7 @@ export function ImageUpload({
             <button
               type="button"
               onClick={clearImage}
-              className="absolute right-2 top-1/2 -translate-y-1/2 p-1 text-gray-400 hover:text-gray-600"
+              className="absolute right-2 top-1/2 -translate-y-1/2 p-1 text-gray-400 hover:text-gray-600 dark:text-gray-400"
             >
               <X className="w-4 h-4" />
             </button>
@@ -330,7 +330,7 @@ export function MultiImageUpload({
   return (
     <div className={`space-y-3 ${className}`}>
       {label && (
-        <label className="block text-sm font-medium text-gray-700">
+        <label className="block text-sm font-medium text-gray-700 dark:text-gray-300">
           {label} ({values.length}/{maxImages})
         </label>
       )}
@@ -343,7 +343,7 @@ export function MultiImageUpload({
               <img
                 src={url}
                 alt={`Image ${index + 1}`}
-                className="w-full h-full object-cover rounded-lg border border-gray-200"
+                className="w-full h-full object-cover rounded-lg border border-gray-200 dark:border-gray-700"
                 onError={(e) => {
                   (e.target as HTMLImageElement).src = 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="%239CA3AF" stroke-width="1"%3E%3Crect x="3" y="3" width="18" height="18" rx="2"/%3E%3C/svg%3E'
                 }}
