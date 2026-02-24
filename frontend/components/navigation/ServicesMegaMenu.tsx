@@ -243,12 +243,15 @@ export default function ServicesMegaMenu({ isOpen, onClose, onMouseEnter, onMous
                     onClick={onClose}
                     className="group block h-full"
                   >
-                    <div className="relative h-full min-h-[300px] overflow-hidden rounded-xl border border-white/10 bg-gradient-to-br from-orange-900/20 to-red-900/20">
-                      <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent" />
+                    <div className="relative h-full min-h-[300px] overflow-hidden rounded-xl border border-white/10">
+                      <SafeImage
+                        src="https://static.prod-images.emergentagent.com/jobs/41733178-a8fe-49c4-9ba7-b7e286387ff3/images/2ae21f07105d45e9d12dce5f8ccec66a2fa34244232263f2cf1d0ed508aeebb5.png"
+                        alt="Full-Service Smart Home Integration"
+                        fill
+                        className="object-cover transition-transform duration-500 group-hover:scale-105"
+                      />
                       
-                      <div className="absolute inset-0 flex items-center justify-center">
-                        <Cog className="h-24 w-24 text-[#E8DCC8]/30" />
-                      </div>
+                      <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent" />
                       
                       <div className="absolute bottom-0 left-0 right-0 p-6">
                         <span className="mb-2 inline-block rounded-full bg-[#E8DCC8]/20 px-3 py-1 text-xs font-bold uppercase tracking-wider text-[#E8DCC8]">

@@ -258,7 +258,7 @@ export default function SolutionsMegaMenu({ isOpen, onClose, onMouseEnter, onMou
                   >
                     <div className="relative h-full min-h-[300px] overflow-hidden rounded-xl border border-white/10">
                       <SafeImage
-                        src="https://images.unsplash.com/photo-1598899134739-24c46f58b8c0"
+                        src="https://static.prod-images.emergentagent.com/jobs/41733178-a8fe-49c4-9ba7-b7e286387ff3/images/76abb6b817ac2cd7a8fef90d88d3169f0e0e9a44ec03f5b8242a3dd4a35e57da.png"
                         alt="Luxury Home Cinema"
                         fill
                         className="object-cover transition-transform duration-500 group-hover:scale-105"
