@@ -1075,6 +1075,8 @@ class EmailService:
         subject: str,
         html_content: str,
         from_name: str = "LEXA Lifestyle",
+        from_email: str = None,
+        cc_email: str = None,
         attachments: List[tuple] = None
     ) -> bool:
         """
@@ -1085,6 +1087,8 @@ class EmailService:
             subject: Email subject
             html_content: HTML email content
             from_name: Sender name
+            from_email: Override sender email address
+            cc_email: CC recipient email
             attachments: List of (filename, content, mime_type) tuples
             
         Returns:
@@ -1096,9 +1100,11 @@ class EmailService:
         
         try:
             message = MIMEMultipart("mixed")
-            message["From"] = f"{from_name} <{SENDER_EMAIL}>"
+            message["From"] = f"{from_name} <{from_email or SENDER_EMAIL}>"
             message["To"] = to_email
             message["Subject"] = subject
+            if cc_email:
+                message["Cc"] = cc_email
             
             # Create alternative part for HTML
             alt_part = MIMEMultipart("alternative")
