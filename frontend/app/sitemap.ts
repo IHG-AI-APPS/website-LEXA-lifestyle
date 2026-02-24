@@ -153,6 +153,23 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     { slug: 'ajman', priority: 0.80 }
   ]
 
+  // Dubai specific areas (high-value SEO)
+  const dubaiAreas = [
+    { slug: 'dubai/palm-jumeirah-smart-homes', priority: 0.90 },
+    { slug: 'dubai/emirates-hills-villa-automation', priority: 0.90 },
+    { slug: 'dubai/dubai-hills-smart-villas', priority: 0.88 },
+    { slug: 'dubai/downtown-dubai-penthouse-automation', priority: 0.88 },
+    { slug: 'dubai/jumeirah-beach-residence', priority: 0.87 },
+    { slug: 'dubai/dubai-marina-smart-homes', priority: 0.87 },
+  ]
+
+  // Abu Dhabi specific areas
+  const abuDhabiAreas = [
+    { slug: 'abu-dhabi/saadiyat-island-smart-homes', priority: 0.85 },
+    { slug: 'abu-dhabi/yas-island-villa-automation', priority: 0.85 },
+    { slug: 'abu-dhabi/al-reem-island-automation', priority: 0.83 },
+  ]
+
   // SEO content pages
   const guides = [
     'how-to-install-smart-home-dubai'
