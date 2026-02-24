@@ -1,7 +1,7 @@
 'use client'
 
 import Image, { ImageProps } from 'next/image'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 
 interface SafeImageProps extends Omit<ImageProps, 'onError'> {
   fallbackSrc?: string
@@ -23,6 +23,12 @@ export default function SafeImage({
 }: SafeImageProps) {
   const [imgSrc, setImgSrc] = useState(src)
   const [hasError, setHasError] = useState(false)
+
+  // Sync state when src prop changes (e.g., theme/route change)
+  useEffect(() => {
+    setImgSrc(src)
+    setHasError(false)
+  }, [src])
 
   // Validate and normalize the image source
   const getValidSrc = (source: string | typeof src): string => {
