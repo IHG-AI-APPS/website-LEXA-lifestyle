@@ -86,7 +86,10 @@ export function UnoptimizedImage({
   const [imgSrc, setImgSrc] = useState(src)
   const [hasError, setHasError] = useState(false)
 
-  const handleError = () => {
+  useEffect(() => {
+    setImgSrc(src)
+    setHasError(false)
+  }, [src]) = () => {
     if (!hasError) {
       setHasError(true)
       setImgSrc(fallbackSrc)
