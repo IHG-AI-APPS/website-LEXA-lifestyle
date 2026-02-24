@@ -37,7 +37,7 @@ export default function SwissServices() {
 
   if (loading) {
     return (
-      <section className="bg-white py-12 sm:py-16 md:py-20">
+      <section className="bg-white dark:bg-gray-900 py-12 sm:py-16 md:py-20">
         <div className="container mx-auto px-4 sm:px-6 md:px-8 lg:px-16 max-w-7xl">
           <div className="text-center">Loading services...</div>
         </div>
@@ -46,7 +46,7 @@ export default function SwissServices() {
   }
 
   return (
-    <section className="bg-white py-12 sm:py-16 md:py-20">
+    <section className="bg-white dark:bg-gray-900 py-12 sm:py-16 md:py-20">
       <div className="container mx-auto px-4 sm:px-6 md:px-8 lg:px-16 max-w-7xl">
         {/* Compact Section Header */}
         <motion.div
