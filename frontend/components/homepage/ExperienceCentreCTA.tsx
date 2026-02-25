@@ -222,15 +222,18 @@ export default function ExperienceCentreCTA() {
                   
                   {/* Highlights */}
                   <div className="flex gap-4 md:gap-6">
-                    {highlights.map((item, i) => (
-                      <div key={i} className="flex items-center gap-2">
-                        <item.icon className="h-4 w-4 text-[#E8DCC8]" />
-                        <div>
-                          <div className="text-white text-sm font-medium">{item.label}</div>
-                          <div className="text-white/50 text-xs">{item.desc}</div>
+                    {highlights.map((item: any, i: number) => {
+                      const IconComp = ICON_MAP[item.icon] || Sparkles
+                      return (
+                        <div key={i} className="flex items-center gap-2">
+                          <IconComp className="h-4 w-4 text-[#E8DCC8]" />
+                          <div>
+                            <div className="text-white text-sm font-medium">{item.label}</div>
+                            <div className="text-white/50 text-xs">{item.desc}</div>
+                          </div>
                         </div>
-                      </div>
-                    ))}
+                      )
+                    })}
                   </div>
                 </div>
 
