@@ -249,7 +249,7 @@ export default function ServicesMegaMenu({ isOpen, onClose, onMouseEnter, onMous
                         src="https://static.prod-images.emergentagent.com/jobs/41733178-a8fe-49c4-9ba7-b7e286387ff3/images/2ae21f07105d45e9d12dce5f8ccec66a2fa34244232263f2cf1d0ed508aeebb5.png"
                         alt="Full-Service Smart Home Integration"
                         fill
-                        className="object-cover transition-transform duration-500 group-hover:scale-105"
+                        sizes="(max-width: 1024px) 50vw, 25vw"
                       />
                       
                       <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent" />

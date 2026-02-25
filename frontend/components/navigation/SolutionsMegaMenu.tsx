@@ -261,7 +261,7 @@ export default function SolutionsMegaMenu({ isOpen, onClose, onMouseEnter, onMou
                         src="https://static.prod-images.emergentagent.com/jobs/41733178-a8fe-49c4-9ba7-b7e286387ff3/images/76abb6b817ac2cd7a8fef90d88d3169f0e0e9a44ec03f5b8242a3dd4a35e57da.png"
                         alt="Luxury Home Cinema"
                         fill
-                        className="object-cover transition-transform duration-500 group-hover:scale-105"
+                        sizes="(max-width: 1024px) 50vw, 25vw"
                       />
                       
                       <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent" />

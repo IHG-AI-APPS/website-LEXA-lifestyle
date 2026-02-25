@@ -309,7 +309,7 @@ export default function IntelligenceMegaMenu({ isOpen, onClose, onMouseEnter, on
                         src="https://static.prod-images.emergentagent.com/jobs/41733178-a8fe-49c4-9ba7-b7e286387ff3/images/17b4faffd2a04800e723195293e85edcef2995893a936d192034cabd003c7b89.png"
                         alt="Building Intelligence & AI Analytics"
                         fill
-                        className="object-cover transition-transform duration-500 group-hover:scale-105"
+                        sizes="(max-width: 1024px) 50vw, 25vw"
                       />
                       
                       <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent" />
