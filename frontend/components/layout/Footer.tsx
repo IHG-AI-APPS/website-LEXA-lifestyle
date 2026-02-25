@@ -5,10 +5,25 @@ import SafeImage from '@/components/ui/SafeImage'
 import { ArrowUpRight } from 'lucide-react'
 import { useLanguage } from '@/contexts/LanguageContext'
 import FooterSearch from '@/components/search/FooterSearch'
+import { useCms } from '@/hooks/useCms'
 
 export default function Footer() {
   const currentYear = new Date().getFullYear()
   const { language } = useLanguage()
+  const cms = useCms('site_footer', null)
+
+  const description = cms
+    ? (language === 'ar' ? cms.company_description_ar : cms.company_description_en)
+    : (language === 'ar' 
+        ? 'العيش الذكي الفاخر، مصمم ومُسلّم من البداية للنهاية. المتكامل الرائد للمنازل الذكية في دبي.'
+        : 'Luxury Smart Living, Designed & Delivered End-to-End. Dubai\'s premier smart home integrator.')
+  
+  const socials = cms?.social_links || {
+    instagram: 'https://www.instagram.com/lexalifestyle.me/',
+    facebook: 'https://www.facebook.com/profile.php?id=61565723780513',
+    linkedin: 'https://www.linkedin.com/company/lexa-lifestyle-llc/posts/?feedView=all',
+    youtube: 'https://www.youtube.com/@lexalifestyle'
+  }
 
   return (
     <footer className="bg-black text-white">
