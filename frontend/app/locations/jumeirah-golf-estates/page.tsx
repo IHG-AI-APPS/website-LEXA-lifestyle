@@ -4,10 +4,13 @@ import { Button } from '@/components/ui/button'
 import { MapPin } from 'lucide-react'
 import TrustSignals from '@/components/TrustSignals'
 import CmsReg from './CmsReg'
+import { generateCmsMetadata } from '@/lib/cmsMetadata'
 
-export const metadata: Metadata = {
+export async function generateMetadata(): Promise<Metadata> {
+  return generateCmsMetadata('seo_locations_jumeirah_golf_estates', {
   title: 'Smart Villas Jumeirah Golf Estates | JGE Automation Dubai',
   description: 'Golf lifestyle villa automation for JGE. Family-friendly smart solutions.',
+})
 }
 
 export default function JGEPage() {

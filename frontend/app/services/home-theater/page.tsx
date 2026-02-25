@@ -1,7 +1,9 @@
 import { Metadata } from 'next'
 import HomeTheaterClient from './HomeTheaterClient'
+import { generateCmsMetadata } from '@/lib/cmsMetadata'
 
-export const metadata: Metadata = {
+export async function generateMetadata(): Promise<Metadata> {
+  return generateCmsMetadata('seo_home_theater', {
   title: 'Home Theater Installation Dubai | Luxury Cinema Room Design | LEXA',
   description: 'Dubai\'s premier home theater designers. Dolby Atmos, IMAX Enhanced, 4K/8K laser projection. Custom cinema rooms for villas & penthouses. Sony, JBL Synthesis, Trinnov experts.',
   keywords: 'home theater Dubai, home cinema UAE, Dolby Atmos installation Dubai, private cinema room, luxury home theater Emirates, 4K projector Dubai, JBL Synthesis UAE, cinema room design, media room Dubai, Trinnov processor',
@@ -14,6 +16,7 @@ export const metadata: Metadata = {
   alternates: {
     canonical: 'https://lexalifestyle.com/services/home-theater',
   },
+})
 }
 
 export default function HomeTheaterPage() {

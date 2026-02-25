@@ -4,13 +4,16 @@ import { ArrowLeft, Calendar, User, Tag } from 'lucide-react'
 import { generateArticleSchema } from '@/lib/seo'
 import CmsReg from './CmsReg'
 
-export const metadata: Metadata = {
+export async function generateMetadata(): Promise<Metadata> {
+  return generateCmsMetadata('seo_blog', {
   title: 'Smart Home Automation Guide Dubai 2025 | Complete Installation Guide',
   description: 'Ultimate guide to smart home automation in Dubai. Learn about Control4, Crestron, costs, installation process, and ROI. Expert insights from 500+ Dubai villa projects.',
   keywords: ['smart home guide Dubai', 'home automation tutorial', 'Control4 installation', 'Dubai smart home cost'],
   alternates: {
     canonical: 'https://full-site-cms.preview.emergentagent.com/blog/smart-home-guide-dubai-2025'
+import { generateCmsMetadata } from '@/lib/cmsMetadata'
   }
+})
 }
 
 const articleData = {

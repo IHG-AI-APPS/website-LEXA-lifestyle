@@ -4,10 +4,13 @@ import { Button } from '@/components/ui/button'
 import { MapPin, CheckCircle2 } from 'lucide-react'
 import TrustSignals from '@/components/TrustSignals'
 import CmsReg from './CmsReg'
+import { generateCmsMetadata } from '@/lib/cmsMetadata'
 
-export const metadata: Metadata = {
+export async function generateMetadata(): Promise<Metadata> {
+  return generateCmsMetadata('seo_locations_downtown_dubai', {
   title: 'Smart Home Automation Downtown Dubai | Penthouse Integration',
   description: 'Premium automation for Downtown Dubai penthouses. Burj Khalifa, Opera District specialists.',
+})
 }
 
 export default function DowntownPage() {

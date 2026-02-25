@@ -4,11 +4,14 @@ import { Button } from '@/components/ui/button'
 import { MapPin, CheckCircle2 } from 'lucide-react'
 import TrustSignals from '@/components/TrustSignals'
 import CmsReg from './CmsReg'
+import { generateCmsMetadata } from '@/lib/cmsMetadata'
 
-export const metadata: Metadata = {
+export async function generateMetadata(): Promise<Metadata> {
+  return generateCmsMetadata('seo_locations_emirates_hills', {
   title: 'Smart Home Automation Emirates Hills | Ultra-Luxury Villa Integration Dubai',
   description: 'Bespoke automation for Emirates Hills villas. KNX, Crestron ultra-luxury installations.',
   keywords: 'smart home Emirates Hills, ultra-luxury automation Dubai',
+})
 }
 
 export default function EmiratesHillsPage() {

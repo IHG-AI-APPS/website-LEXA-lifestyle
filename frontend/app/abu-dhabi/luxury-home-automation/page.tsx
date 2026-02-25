@@ -1,7 +1,9 @@
 import { Metadata } from 'next'
 import AbuDhabiLuxuryAutomationClient from './AbuDhabiClient'
+import { generateCmsMetadata } from '@/lib/cmsMetadata'
 
-export const metadata: Metadata = {
+export async function generateMetadata(): Promise<Metadata> {
+  return generateCmsMetadata('seo_abu_dhabi_luxury_home_automation', {
   title: 'Luxury Home Automation Abu Dhabi | Smart Villa Solutions | LEXA',
   description: 'Abu Dhabi\'s premier smart home automation company. Expert Control4 & Crestron integration for Saadiyat Island, Yas Island, Al Reem Island villas. 15+ years UAE experience.',
   keywords: 'smart home Abu Dhabi, home automation Abu Dhabi, Control4 Abu Dhabi, Crestron Abu Dhabi, villa automation Saadiyat, smart home Yas Island, luxury automation UAE, home theater Abu Dhabi',
@@ -16,6 +18,7 @@ export const metadata: Metadata = {
   alternates: {
     canonical: 'https://lexalifestyle.com/abu-dhabi/luxury-home-automation',
   },
+})
 }
 
 export default function AbuDhabiLuxuryAutomationPage() {

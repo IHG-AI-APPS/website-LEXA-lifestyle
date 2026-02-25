@@ -1,7 +1,8 @@
 import { Metadata } from 'next'
 import SharjahClient from './SharjahClient'
 
-export const metadata: Metadata = {
+export async function generateMetadata(): Promise<Metadata> {
+  return generateCmsMetadata('seo_sharjah_smart_home_automation', {
   title: 'Smart Home Automation Sharjah | Villa & Apartment Solutions | LEXA',
   description: 'Sharjah\'s trusted smart home automation company. Expert Control4 & Crestron integration for Al Zahia, Tilal City, Aljada villas. Professional installation & maintenance.',
   keywords: 'smart home Sharjah, home automation Sharjah, Control4 Sharjah, villa automation Sharjah, Al Zahia smart home, Tilal City automation',
@@ -11,6 +12,8 @@ export const metadata: Metadata = {
     url: 'https://lexalifestyle.com/sharjah/smart-home-automation',
   },
   alternates: { canonical: 'https://lexalifestyle.com/sharjah/smart-home-automation' },
+})
 }
+import { generateCmsMetadata } from '@/lib/cmsMetadata'
 
 export default function SharjahPage() { return <SharjahClient /> }

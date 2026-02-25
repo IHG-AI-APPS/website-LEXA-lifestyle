@@ -4,10 +4,13 @@ import { Button } from '@/components/ui/button'
 import { MapPin } from 'lucide-react'
 import TrustSignals from '@/components/TrustSignals'
 import CmsReg from './CmsReg'
+import { generateCmsMetadata } from '@/lib/cmsMetadata'
 
-export const metadata: Metadata = {
+export async function generateMetadata(): Promise<Metadata> {
+  return generateCmsMetadata('seo_locations_dubai_hills', {
   title: 'Smart Home Automation Dubai Hills | Family Villa Integration',
   description: 'Family-friendly automation for Dubai Hills Estate villas.',
+})
 }
 
 export default function DubaiHillsPage() {

@@ -3,11 +3,14 @@ import Link from 'next/link'
 import { Button } from '@/components/ui/button'
 import { Phone, Clock, Shield, Wrench, CheckCircle2, AlertCircle } from 'lucide-react'
 import CmsReg from './CmsReg'
+import { generateCmsMetadata } from '@/lib/cmsMetadata'
 
-export const metadata: Metadata = {
+export async function generateMetadata(): Promise<Metadata> {
+  return generateCmsMetadata('seo_support', {
   title: '24/7 Smart Home Support UAE | Emergency Automation Service Dubai',
   description: '24/7 emergency smart home support across UAE. Immediate response for villa automation issues. Annual maintenance contracts available.',
   keywords: '24/7 smart home support UAE, emergency automation Dubai, AMC smart home, villa automation support',
+})
 }
 
 export default function EmergencySupportPage() {

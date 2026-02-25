@@ -3,11 +3,14 @@ import Link from 'next/link'
 import { Button } from '@/components/ui/button'
 import { ArrowRight, Check, X } from 'lucide-react'
 import CmsReg from './CmsReg'
+import { generateCmsMetadata } from '@/lib/cmsMetadata'
 
-export const metadata: Metadata = {
+export async function generateMetadata(): Promise<Metadata> {
+  return generateCmsMetadata('seo_resources', {
   title: 'KNX vs Control4 for Luxury Homes UAE 2025 | System Comparison',
   description: 'Detailed comparison of KNX and Control4 for Dubai luxury villas. Pros, cons, costs, and best use cases. Expert guidance from CEDIA certified integrators.',
   keywords: 'KNX vs Control4, smart home system comparison, luxury automation dubai, KNX price UAE, Control4 cost',
+})
 }
 
 export default function KNXvsControl4Page() {

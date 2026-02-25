@@ -1,7 +1,9 @@
 import { Metadata } from 'next'
 import SaadiyatIslandClient from './SaadiyatIslandClient'
+import { generateCmsMetadata } from '@/lib/cmsMetadata'
 
-export const metadata: Metadata = {
+export async function generateMetadata(): Promise<Metadata> {
+  return generateCmsMetadata('seo_abu_dhabi_saadiyat_island_smart_homes', {
   title: 'Smart Home Automation Saadiyat Island | Luxury Villa Solutions | LEXA',
   description: 'Saadiyat Island\'s trusted smart home automation experts. Premium Control4 & Crestron integration for cultural district villas, beachfront properties & luxury estates. Free consultation.',
   keywords: 'smart home Saadiyat Island, home automation Saadiyat, Control4 Saadiyat Island, villa automation Abu Dhabi, smart villa Saadiyat, luxury home technology, Louvre district smart homes',
@@ -16,6 +18,7 @@ export const metadata: Metadata = {
   alternates: {
     canonical: 'https://lexalifestyle.com/abu-dhabi/saadiyat-island-smart-homes',
   },
+})
 }
 
 export default function SaadiyatIslandPage() {

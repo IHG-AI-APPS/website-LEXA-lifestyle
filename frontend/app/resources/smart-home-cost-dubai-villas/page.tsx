@@ -3,11 +3,14 @@ import Link from 'next/link'
 import { Button } from '@/components/ui/button'
 import { ArrowRight, DollarSign, Home, Calculator, CheckCircle2 } from 'lucide-react'
 import CmsReg from './CmsReg'
+import { generateCmsMetadata } from '@/lib/cmsMetadata'
 
-export const metadata: Metadata = {
+export async function generateMetadata(): Promise<Metadata> {
+  return generateCmsMetadata('seo_resources', {
   title: 'Smart Home Automation Cost in Dubai Villas 2025 | LEXA Lifestyle',
   description: 'Complete cost breakdown for smart home automation in Dubai villas. From basic systems (AED 50K) to ultra-luxury (AED 500K+). Get accurate pricing for KNX, Control4, Crestron systems.',
   keywords: 'smart home cost dubai, villa automation price, home automation dubai cost, KNX price UAE, Control4 cost dubai',
+})
 }
 
 export default function SmartHomeCostDubaiPage() {

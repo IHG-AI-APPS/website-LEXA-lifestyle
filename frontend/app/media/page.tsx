@@ -2,9 +2,11 @@ import VideoGallery from '@/components/sections/VideoGallery'
 import { Metadata } from 'next'
 import CmsReg from './CmsReg'
 
-export const metadata: Metadata = {
+export async function generateMetadata(): Promise<Metadata> {
+  return generateCmsMetadata('seo_media', {
   title: 'Media Gallery',
   description: 'Watch our smart home automation projects, client testimonials, and product demonstrations. LEXA Lifestyle Dubai video gallery.'
+})
 }
 
 export default function MediaGalleryPage() {
@@ -64,6 +66,7 @@ export default function MediaGalleryPage() {
       <VideoGallery
         limit={12}
         title="All Videos"
+import { generateCmsMetadata } from '@/lib/cmsMetadata'
         description="Browse our complete video library"
         cols={4}
       />

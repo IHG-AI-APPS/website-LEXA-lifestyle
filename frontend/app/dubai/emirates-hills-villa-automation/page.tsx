@@ -1,7 +1,8 @@
 import { Metadata } from 'next'
 import EmiratesHillsClient from './EmiratesHillsClient'
 
-export const metadata: Metadata = {
+export async function generateMetadata(): Promise<Metadata> {
+  return generateCmsMetadata('seo_dubai_emirates_hills_villa_automation', {
   title: 'Emirates Hills Villa Automation | Smart Home Solutions | LEXA',
   description: 'Emirates Hills smart home specialists. Luxury villa automation with Control4, Crestron, Lutron. Golf course views with intelligent living. 15+ years Dubai experience.',
   keywords: 'smart home Emirates Hills, villa automation Emirates Hills, Control4 Emirates Hills, Crestron Dubai, luxury home automation',
@@ -11,7 +12,9 @@ export const metadata: Metadata = {
     url: 'https://lexalifestyle.com/dubai/emirates-hills-villa-automation',
   },
   alternates: { canonical: 'https://lexalifestyle.com/dubai/emirates-hills-villa-automation' },
+})
 }
+import { generateCmsMetadata } from '@/lib/cmsMetadata'
 
 export default function EmiratesHillsPage() {
   return <EmiratesHillsClient />

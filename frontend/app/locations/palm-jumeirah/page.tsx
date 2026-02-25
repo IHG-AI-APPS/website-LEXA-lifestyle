@@ -4,11 +4,14 @@ import { Button } from '@/components/ui/button'
 import { MapPin, CheckCircle2 } from 'lucide-react'
 import TrustSignals from '@/components/TrustSignals'
 import CmsReg from './CmsReg'
+import { generateCmsMetadata } from '@/lib/cmsMetadata'
 
-export const metadata: Metadata = {
+export async function generateMetadata(): Promise<Metadata> {
+  return generateCmsMetadata('seo_locations_palm_jumeirah', {
   title: 'Smart Home Automation Palm Jumeirah | Luxury Villa Integration Dubai',
   description: 'Premium smart home automation for Palm Jumeirah villas. KNX, Control4, Crestron systems. 24/7 support.',
   keywords: 'smart home Palm Jumeirah, villa automation Palm, luxury automation Dubai',
+})
 }
 
 export default function PalmJumeirahPage() {

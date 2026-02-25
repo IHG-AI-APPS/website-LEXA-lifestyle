@@ -4,13 +4,16 @@ import { MapPin, Phone, Mail } from 'lucide-react'
 import { getEmirateSchema } from '@/lib/seo'
 import CmsReg from './CmsReg'
 
-export const metadata: Metadata = {
+export async function generateMetadata(): Promise<Metadata> {
+  return generateCmsMetadata('seo_uae_abu_dhabi', {
   title: 'Smart Home Automation Abu Dhabi | Home Automation Company | LEXA',
   description: 'Abu Dhabi\'s premier smart home automation company. Serving Saadiyat Island, Yas Island, Al Reem, Khalifa City. Control4 & Crestron dealer. Expert villa automation.',
   keywords: ['smart home Abu Dhabi', 'home automation Abu Dhabi', 'Control4 Abu Dhabi', 'villa automation Abu Dhabi', 'أتمتة المنزل أبوظبي'],
   alternates: {
     canonical: 'https://lexalifestyle.com/uae/abu-dhabi'
+import { generateCmsMetadata } from '@/lib/cmsMetadata'
   }
+})
 }
 
 const abuDhabiData = {

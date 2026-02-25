@@ -1,7 +1,9 @@
 import { Metadata } from 'next'
 import JBRClient from './JBRClient'
+import { generateCmsMetadata } from '@/lib/cmsMetadata'
 
-export const metadata: Metadata = {
+export async function generateMetadata(): Promise<Metadata> {
+  return generateCmsMetadata('seo_dubai_jumeirah_beach_residence', {
   title: 'Smart Home Automation JBR Dubai | Beachfront Living | LEXA',
   description: 'Smart home automation for Jumeirah Beach Residence apartments. Expert audio, lighting & security systems for beachfront living. Premium Control4 solutions.',
   keywords: 'smart home JBR, home automation JBR Dubai, smart apartment JBR, beachfront smart home, JBR automation',
@@ -16,6 +18,7 @@ export const metadata: Metadata = {
   alternates: {
     canonical: 'https://lexalifestyle.com/dubai/jumeirah-beach-residence',
   },
+})
 }
 
 export default function JBRPage() {

@@ -4,9 +4,11 @@ import { Button } from '@/components/ui/button'
 import { Download, FileText, Package, Award, CheckCircle2, Lock } from 'lucide-react'
 import CmsReg from './CmsReg'
 
-export const metadata: Metadata = {
+export async function generateMetadata(): Promise<Metadata> {
+  return generateCmsMetadata('seo_developer_toolkit', {
   title: 'Developer Partner Toolkit | LEXA Lifestyle',
   description: 'Exclusive resources for real estate developers. Smart-ready certification, marketing materials, and technical documentation.',
+})
 }
 
 export default function DeveloperToolkitPage() {
@@ -134,6 +136,7 @@ export default function DeveloperToolkitPage() {
                       <span
                         key={format}
                         className="px-3 py-1 bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 text-xs font-semibold rounded-full"
+import { generateCmsMetadata } from '@/lib/cmsMetadata'
                       >
                         {format}
                       </span>

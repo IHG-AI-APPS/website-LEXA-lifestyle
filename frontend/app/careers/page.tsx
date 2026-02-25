@@ -1,11 +1,15 @@
+import type { Metadata } from 'next'
 import Link from 'next/link'
 import { Button } from '@/components/ui/button'
 import { ArrowLeft, Briefcase, MapPin, Clock } from 'lucide-react'
 import CmsReg from './CmsReg'
+import { generateCmsMetadata } from '@/lib/cmsMetadata'
 
-export const metadata = {
+export async function generateMetadata(): Promise<Metadata> {
+  return generateCmsMetadata('seo_careers', {
   title: 'Careers | LEXA Lifestyle',
   description: 'Join the LEXA Lifestyle team and shape the future of smart living in Dubai'
+})
 }
 
 export default function CareersPage() {

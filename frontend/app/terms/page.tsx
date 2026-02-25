@@ -1,11 +1,15 @@
+import type { Metadata } from 'next'
 import Link from 'next/link'
 import { Button } from '@/components/ui/button'
 import { ArrowLeft } from 'lucide-react'
 import CmsReg from './CmsReg'
+import { generateCmsMetadata } from '@/lib/cmsMetadata'
 
-export const metadata = {
+export async function generateMetadata(): Promise<Metadata> {
+  return generateCmsMetadata('seo_terms', {
   title: 'Terms & Conditions | LEXA Lifestyle',
   description: 'Terms and conditions for LEXA Lifestyle services and products'
+})
 }
 
 export default function TermsPage() {

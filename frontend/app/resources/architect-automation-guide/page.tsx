@@ -3,11 +3,14 @@ import Link from 'next/link'
 import { Button } from '@/components/ui/button'
 import { ArrowRight, FileText, Download, CheckCircle2, AlertTriangle } from 'lucide-react'
 import CmsReg from './CmsReg'
+import { generateCmsMetadata } from '@/lib/cmsMetadata'
 
-export const metadata: Metadata = {
+export async function generateMetadata(): Promise<Metadata> {
+  return generateCmsMetadata('seo_resources', {
   title: 'Architect Guide to Smart Home Planning UAE | LEXA Lifestyle',
   description: 'Essential guide for architects specifying smart home automation in UAE villas. BOQ templates, CAD blocks, MEP coordination, and technical specs.',
   keywords: 'architect automation guide, smart home specifications, MEP coordination, automation BOQ, villa automation planning',
+})
 }
 
 export default function ArchitectAutomationGuidePage() {

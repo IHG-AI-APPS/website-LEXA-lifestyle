@@ -4,11 +4,14 @@ import { Button } from '@/components/ui/button'
 import { MapPin, CheckCircle2 } from 'lucide-react'
 import TrustSignals from '@/components/TrustSignals'
 import CmsReg from './CmsReg'
+import { generateCmsMetadata } from '@/lib/cmsMetadata'
 
-export const metadata: Metadata = {
+export async function generateMetadata(): Promise<Metadata> {
+  return generateCmsMetadata('seo_locations_abu_dhabi', {
   title: 'Smart Home Automation Abu Dhabi | Luxury Villa Integration UAE Capital',
   description: 'Premium smart home automation in Abu Dhabi. Saadiyat Island, Yas Island specialists.',
   keywords: 'smart home Abu Dhabi, villa automation Abu Dhabi, Saadiyat automation',
+})
 }
 
 export default function AbuDhabiPage() {

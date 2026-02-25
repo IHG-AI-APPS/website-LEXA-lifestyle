@@ -4,13 +4,16 @@ import { Building2, MapPin, Phone, Mail } from 'lucide-react'
 import { getEmirateSchema } from '@/lib/seo'
 import CmsReg from './CmsReg'
 
-export const metadata: Metadata = {
+export async function generateMetadata(): Promise<Metadata> {
+  return generateCmsMetadata('seo_uae_ajman', {
   title: 'Smart Home Automation Ajman | Home Automation Company UAE | LEXA',
   description: 'Expert smart home automation in Ajman. Serving Al Nuaimiya, Al Rashidiya, and all Ajman communities. Professional Control4 & Crestron integration in UAE.',
   keywords: ['smart home Ajman', 'home automation Ajman', 'Control4 Ajman', 'Crestron Ajman', 'villa automation Ajman', 'أتمتة المنزل عجمان'],
   alternates: {
     canonical: 'https://lexalifestyle.com/uae/ajman'
+import { generateCmsMetadata } from '@/lib/cmsMetadata'
   }
+})
 }
 
 const ajmanData = {

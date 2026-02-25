@@ -3,11 +3,14 @@ import Link from 'next/link'
 import { Button } from '@/components/ui/button'
 import { ArrowRight, Award, Star, Shield, CheckCircle2 } from 'lucide-react'
 import CmsReg from './CmsReg'
+import { generateCmsMetadata } from '@/lib/cmsMetadata'
 
-export const metadata: Metadata = {
+export async function generateMetadata(): Promise<Metadata> {
+  return generateCmsMetadata('seo_resources', {
   title: 'Best Home Automation Integrator UAE 2025 | LEXA Lifestyle Dubai',
   description: 'Top-rated smart home automation company in UAE. Specialized in luxury villas, KNX, Control4, Crestron. 100+ projects across Dubai, Abu Dhabi. CEDIA certified integrators.',
   keywords: 'best home automation UAE, smart home integrator dubai, KNX installer UAE, luxury automation dubai, CEDIA integrator',
+})
 }
 
 export default function BestHomeAutomationUAEPage() {

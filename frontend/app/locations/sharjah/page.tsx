@@ -4,10 +4,13 @@ import { Button } from '@/components/ui/button'
 import { MapPin } from 'lucide-react'
 import TrustSignals from '@/components/TrustSignals'
 import CmsReg from './CmsReg'
+import { generateCmsMetadata } from '@/lib/cmsMetadata'
 
-export const metadata: Metadata = {
+export async function generateMetadata(): Promise<Metadata> {
+  return generateCmsMetadata('seo_locations_sharjah', {
   title: 'Smart Home Automation Sharjah | Affordable Villa Integration UAE',
   description: 'Quality automation for Sharjah villas at competitive prices.',
+})
 }
 
 export default function SharjahPage() {

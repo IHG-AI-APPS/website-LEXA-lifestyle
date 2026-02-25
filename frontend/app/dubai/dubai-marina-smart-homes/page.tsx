@@ -1,7 +1,9 @@
 import { Metadata } from 'next'
 import DubaiMarinaClient from './DubaiMarinaClient'
+import { generateCmsMetadata } from '@/lib/cmsMetadata'
 
-export const metadata: Metadata = {
+export async function generateMetadata(): Promise<Metadata> {
+  return generateCmsMetadata('seo_dubai_dubai_marina_smart_homes', {
   title: 'Smart Home Automation Dubai Marina | High-Rise Luxury | LEXA',
   description: 'Expert smart home automation for Dubai Marina towers. Premium lighting, audio, and security systems for high-rise luxury living. Control4 & Crestron specialists.',
   keywords: 'smart home Dubai Marina, home automation Dubai Marina, smart apartment Marina, high-rise automation Dubai, Marina smart living',
@@ -16,6 +18,7 @@ export const metadata: Metadata = {
   alternates: {
     canonical: 'https://lexalifestyle.com/dubai/dubai-marina-smart-homes',
   },
+})
 }
 
 export default function DubaiMarinaPage() {
