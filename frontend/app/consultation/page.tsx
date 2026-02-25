@@ -4,22 +4,8 @@ import { useState } from 'react'
 import { motion } from 'framer-motion'
 import { Button } from '@/components/ui/button'
 import BookingModal from '@/components/modals/BookingModal'
-import TrustBadges from '@/components/social-proof/TrustBadges'
-import ProofBar from '@/components/sections/ProofBar'
-import { 
-  Calendar, 
-  CheckCircle2, 
-  Clock, 
-  Home, 
-  FileText, 
-  Wrench,
-  Headphones,
-  Shield,
-  Award,
-  Phone,
-  MapPin,
-  Video
-} from 'lucide-react'
+import Link from 'next/link'
+import { Calendar, CheckCircle2, Clock, Home, FileText, Wrench, Headphones, Shield, Award, Phone, MapPin, Video, ArrowRight } from 'lucide-react'
 import { useCms } from '@/hooks/useCms'
 
 const ICON_MAP: Record<string, any> = { Calendar, MapPin, Home, Video, FileText, Wrench, Headphones, CheckCircle2, Clock }
@@ -28,412 +14,128 @@ export default function ConsultationPage() {
   const [showBookingModal, setShowBookingModal] = useState(false)
   const cms = useCms('page_consultation', null)
 
-  const consultationTypes = cms?.consultation_types?.length ? cms.consultation_types.map((t: any) => ({
-    icon: ICON_MAP[t.icon] || MapPin,
-    title: t.title,
-    duration: t.duration,
-    description: t.description,
-    features: t.features || [],
-    cta: t.cta,
-    popular: t.popular || false
-  })) : [
-    {
-      icon: MapPin,
-      title: 'Free Site Visit',
-      duration: '60-90 minutes',
-      description: 'Our expert team visits your property for a comprehensive survey',
-      features: [
-        'Property assessment',
-        'Technical recommendations',
-        'Budget discussion',
-        'Timeline planning'
-      ],
-      cta: 'Schedule Site Visit',
-      popular: true
-    },
-    {
-      icon: Home,
-      title: 'Experience Center Tour',
-      duration: '45-60 minutes',
-      description: 'Visit our showroom to see smart home systems in action',
-      features: [
-        'Live product demonstrations',
-        'Touch and feel devices',
-        'Compare solutions',
-        'Q&A with specialists'
-      ],
-      cta: 'Book Center Visit',
-      popular: false
-    },
-    {
-      icon: Video,
-      title: 'Video Consultation',
-      duration: '30 minutes',
-      description: 'Virtual meeting with our smart home experts',
-      features: [
-        'Screen share capabilities',
-        'Discuss your project',
-        'Get preliminary quotes',
-        'Q&A session'
-      ],
-      cta: 'Schedule Video Call',
-      popular: false
-    }
+  const consultationTypes = cms?.consultation_types?.length ? cms.consultation_types.map((t: any) => ({ icon: ICON_MAP[t.icon] || MapPin, title: t.title, duration: t.duration, description: t.description, features: t.features || [], cta: t.cta, popular: t.popular || false })) : [
+    { icon: MapPin, title: 'Free Site Visit', duration: '60-90 minutes', description: 'Our expert team visits your property for a comprehensive survey', features: ['Property assessment', 'Technical recommendations', 'Budget discussion', 'Timeline planning'], cta: 'Schedule Site Visit', popular: true },
+    { icon: Home, title: 'Experience Center Tour', duration: '45-60 minutes', description: 'Visit our showroom to see smart home systems in action', features: ['Live product demonstrations', 'Touch and feel devices', 'Compare solutions', 'Q&A with specialists'], cta: 'Book Center Visit', popular: false },
+    { icon: Video, title: 'Video Consultation', duration: '30 minutes', description: 'Virtual meeting with our smart home experts', features: ['Screen share capabilities', 'Discuss your project', 'Get preliminary quotes', 'Q&A session'], cta: 'Schedule Video Call', popular: false }
   ]
 
-  const processSteps = cms?.process_steps?.length ? cms.process_steps.map((s: any) => ({
-    number: s.number,
-    icon: ICON_MAP[s.icon] || Calendar,
-    title: s.title,
-    description: s.description
-  })) : [
-    {
-      number: '01',
-      icon: Calendar,
-      title: 'Private Design Session',
-      description: 'Choose your preferred consultation type and select a convenient time slot'
-    },
-    {
-      number: '02',
-      icon: FileText,
-      title: 'Discover & Design',
-      description: 'We assess your needs, discuss solutions, and create a tailored proposal'
-    },
-    {
-      number: '03',
-      icon: Wrench,
-      title: 'Installation',
-      description: 'Professional installation by certified technicians with minimal disruption'
-    },
-    {
-      number: '04',
-      icon: Headphones,
-      title: 'Ongoing Support',
-      description: 'Lifetime support, warranty coverage, and system optimization'
-    }
+  const processSteps = [
+    { number: '01', icon: Calendar, title: 'Private Design Session', description: 'Choose your preferred consultation type and select a convenient time slot' },
+    { number: '02', icon: FileText, title: 'Discover & Design', description: 'We assess your needs, discuss solutions, and create a tailored proposal' },
+    { number: '03', icon: Wrench, title: 'Installation', description: 'Professional installation by certified technicians with minimal disruption' },
+    { number: '04', icon: Headphones, title: 'Ongoing Support', description: 'Lifetime support, warranty coverage, and system optimization' }
   ]
 
   return (
-    <div className="min-h-screen bg-white dark:bg-gray-900 pt-20">
-      {/* Hero Section */}
-      <section className="py-20 bg-gradient-to-br from-black via-gray-900 to-black text-white">
-        <div className="container mx-auto px-8 lg:px-16">
-          <div className="max-w-5xl mx-auto text-center">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-            >
-              <div className="inline-flex items-center justify-center w-20 h-20 mb-6 bg-white/10 backdrop-blur-sm rounded-full">
-                <Calendar size={36} strokeWidth={2} />
-              </div>
-              
-              <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold mb-6">
-                FREE SMART HOME
-                <br />
-                CONSULTATION
-              </h1>
-              
-              <p className="text-xl text-gray-300 mb-8 max-w-3xl mx-auto">
-                Expert guidance, personalized solutions, no obligations. Book your consultation today and discover how smart technology can transform your space.
-              </p>
-
-              <Button
-                size="lg"
-                className="bg-white text-black hover:bg-gray-100 dark:bg-gray-800 px-10 py-7 text-lg font-semibold"
-                onClick={() => setShowBookingModal(true)}
-              >
-                <Calendar className="mr-3" size={24} />
-                Book Free Consultation
-              </Button>
-
-              {/* Trust Indicators */}
-              <div className="flex flex-wrap items-center justify-center gap-8 mt-12 text-sm text-gray-400">
-                <div className="flex items-center gap-2">
-                  <CheckCircle2 size={20} className="text-green-400" />
-                  <span>No Obligation</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <CheckCircle2 size={20} className="text-green-400" />
-                  <span>Free Quote</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <CheckCircle2 size={20} className="text-green-400" />
-                  <span>Expert Advice</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <CheckCircle2 size={20} className="text-green-400" />
-                  <span>Same Day Response</span>
-                </div>
-              </div>
-            </motion.div>
+    <div className="min-h-screen bg-white dark:bg-gray-950 pt-20" data-testid="consultation-page">
+      {/* Hero */}
+      <section className="relative overflow-hidden bg-gray-900 text-white py-20 lg:py-28">
+        <div className="container mx-auto px-8 lg:px-16 relative z-10">
+          <div className="max-w-3xl mx-auto text-center">
+            <span className="inline-block px-3 py-1 rounded-full bg-[#C9A962]/15 border border-[#C9A962]/30 text-[#C9A962] text-xs uppercase tracking-widest mb-5">Free Consultation</span>
+            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-5 tracking-tight" data-testid="consultation-title">Book Your Free Consultation</h1>
+            <p className="text-base text-gray-300 mb-8 max-w-lg mx-auto leading-relaxed">Every LEXA project begins with a conversation. Choose how you&apos;d like to connect with our smart home experts.</p>
+            <Button size="lg" className="bg-[#C9A962] text-gray-900 hover:bg-[#C9A962]/90 font-semibold" onClick={() => setShowBookingModal(true)} data-testid="hero-cta">
+              Book Now <ArrowRight className="ml-2" size={18} />
+            </Button>
           </div>
         </div>
       </section>
-
-      {/* Trust Badges */}
-      <TrustBadges variant="compact" showCertifications={false} className="bg-white border-b border-gray-100 dark:border-gray-800 dark:border-gray-800" />
 
       {/* Consultation Types */}
-      <section className="py-20 bg-gray-50 dark:bg-gray-800">
+      <section className="py-16 lg:py-20 bg-white dark:bg-gray-950" data-testid="consultation-types">
         <div className="container mx-auto px-8 lg:px-16">
           <div className="max-w-6xl mx-auto">
-            <div className="text-center mb-16">
-              <h2 className="text-4xl sm:text-5xl font-bold mb-4">Choose Your Consultation Type</h2>
-              <p className="text-xl text-gray-600 dark:text-gray-400 dark:text-gray-400">
-                Select the option that works best for you
-              </p>
-            </div>
-
-            <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-              {consultationTypes.map((type, index) => (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6, delay: 0.2 }}
-                  viewport={{ once: true }}
-                  className={`relative bg-white dark:bg-gray-800 rounded-2xl shadow-xl overflow-hidden ${
-                    type.popular ? 'ring-4 ring-green-500' : ''
-                  }`}
-                >
-                  {type.popular && (
-                    <div className="absolute top-4 right-4 bg-green-500 text-white text-xs px-3 py-1 rounded-full font-semibold">
-                      MOST POPULAR
-                    </div>
-                  )}
-
-                  <div className="p-8">
-                    <div className={`inline-flex items-center justify-center w-16 h-16 mb-6 rounded-full ${
-                      type.popular ? 'bg-green-100' : 'bg-gray-100'
-                    }`}>
-                      <type.icon size={32} className={type.popular ? 'text-green-600' : 'text-gray-600'} />
-                    </div>
-
-                    <h3 className="text-2xl font-bold mb-2">{type.title}</h3>
-                    
-                    <div className="flex items-center gap-2 text-gray-600 dark:text-gray-400 mb-4">
-                      <Clock size={16} />
-                      <span className="text-sm">{type.duration}</span>
-                    </div>
-
-                    <p className="text-gray-600 dark:text-gray-400 mb-6">{type.description}</p>
-
-                    <div className="space-y-3 mb-8">
-                      {type.features.map((feature, idx) => (
-                        <div key={idx} className="flex items-start gap-3">
-                          <CheckCircle2 size={20} className="text-green-500 flex-shrink-0 mt-0.5" />
-                          <span className="text-sm text-gray-700 dark:text-gray-300 dark:text-gray-300">{feature}</span>
-                        </div>
-                      ))}
-                    </div>
-
-                    <Button
-                      size="lg"
-                      className={`w-full ${
-                        type.popular
-                          ? 'bg-green-600 hover:bg-green-700 text-white'
-                          : 'bg-black hover:bg-gray-800 text-white'
-                      }`}
-                      onClick={() => setShowBookingModal(true)}
-                    >
-                      {type.cta}
-                    </Button>
-                  </div>
-                </motion.div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Process Timeline */}
-      <section className="py-20">
-        <div className="container mx-auto px-8 lg:px-16">
-          <div className="max-w-6xl mx-auto">
-            <div className="text-center mb-16">
-              <h2 className="text-4xl sm:text-5xl font-bold mb-4">Our Consultation Process</h2>
-              <p className="text-xl text-gray-600 dark:text-gray-400 dark:text-gray-400">
-                From first contact to smart home perfection
-              </p>
-            </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-              {processSteps.map((step, index) => (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6, delay: 0.25 }}
-                  viewport={{ once: true }}
-                  className="relative"
-                >
-                  {/* Connector Line */}
-                  {index < processSteps.length - 1 && (
-                    <div className="hidden lg:block absolute top-12 left-full w-full h-0.5 bg-gradient-to-r from-gray-300 to-transparent -z-10" />
-                  )}
-
-                  <div className="bg-white border-2 border-gray-200 dark:border-gray-700 rounded-xl p-6 hover:border-black transition-all">
-                    <div className="text-6xl font-bold text-gray-200 mb-4">{step.number}</div>
-                    
-                    <div className="inline-flex items-center justify-center w-14 h-14 mb-4 bg-black rounded-full">
-                      <step.icon size={28} className="text-white" />
-                    </div>
-
-                    <h3 className="text-xl font-bold mb-3">{step.title}</h3>
-                    <p className="text-gray-600 dark:text-gray-400 text-sm">{step.description}</p>
-                  </div>
-                </motion.div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* What to Expect */}
-      <section className="py-20 bg-gray-50 dark:bg-gray-800">
-        <div className="container mx-auto px-8 lg:px-16">
-          <div className="max-w-4xl mx-auto">
             <div className="text-center mb-12">
-              <h2 className="text-4xl font-bold mb-4">What to Expect</h2>
-              <p className="text-xl text-gray-600 dark:text-gray-400 dark:text-gray-400">
-                Your consultation will be informative, pressure-free, and tailored to your needs
-              </p>
+              <span className="text-xs uppercase tracking-widest text-[#C9A962] font-semibold">Choose Your Format</span>
+              <h2 className="text-2xl sm:text-3xl font-bold mt-2 text-gray-900 dark:text-white">Consultation Options</h2>
             </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <div className="bg-white dark:bg-gray-800 rounded-xl p-6 shadow-lg">
-                <Shield className="text-blue-600 mb-4" size={32} />
-                <h3 className="font-bold text-lg mb-2">No Pressure, Just Guidance</h3>
-                <p className="text-gray-600 dark:text-gray-400 text-sm">
-                  We&apos;re here to educate and advise. No pushy sales tactics, just honest recommendations.
-                </p>
-              </div>
-
-              <div className="bg-white dark:bg-gray-800 rounded-xl p-6 shadow-lg">
-                <Award className="text-purple-600 mb-4" size={32} />
-                <h3 className="font-bold text-lg mb-2">Expert Knowledge</h3>
-                <p className="text-gray-600 dark:text-gray-400 text-sm">
-                  Our team has 15+ years of experience in luxury smart home installations across the UAE.
-                </p>
-              </div>
-
-              <div className="bg-white dark:bg-gray-800 rounded-xl p-6 shadow-lg">
-                <FileText className="text-green-600 mb-4" size={32} />
-                <h3 className="font-bold text-lg mb-2">Detailed Proposal</h3>
-                <p className="text-gray-600 dark:text-gray-400 text-sm">
-                  Receive a comprehensive quote with cost breakdowns, timelines, and product specifications.
-                </p>
-              </div>
-
-              <div className="bg-white dark:bg-gray-800 rounded-xl p-6 shadow-lg">
-                <Phone className="text-orange-600 mb-4" size={32} />
-                <h3 className="font-bold text-lg mb-2">Ongoing Support</h3>
-                <p className="text-gray-600 dark:text-gray-400 text-sm">
-                  We&apos;re available before, during, and after your project. Your success is our priority.
-                </p>
-              </div>
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+              {consultationTypes.map((type: any, i: number) => {
+                const Icon = type.icon
+                return (
+                  <motion.div key={i} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.3, delay: i * 0.1 }}
+                    className={`relative rounded-2xl border-2 bg-white dark:bg-gray-900 p-8 ${type.popular ? 'border-[#C9A962] shadow-xl' : 'border-gray-200 dark:border-gray-700'} transition-all hover:shadow-lg`}>
+                    {type.popular && <div className="absolute -top-3 left-1/2 -translate-x-1/2 px-3 py-0.5 bg-[#C9A962] text-gray-900 text-xs font-bold rounded-full">Most Popular</div>}
+                    <div className="w-12 h-12 rounded-lg bg-gray-900 dark:bg-[#C9A962] flex items-center justify-center mb-5">
+                      <Icon className="text-white dark:text-gray-900" size={22} />
+                    </div>
+                    <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-1">{type.title}</h3>
+                    <div className="flex items-center gap-2 text-sm text-[#C9A962] mb-3"><Clock size={14} />{type.duration}</div>
+                    <p className="text-sm text-gray-600 dark:text-gray-400 mb-5">{type.description}</p>
+                    <ul className="space-y-2 mb-6">
+                      {type.features.map((feat: string, j: number) => (
+                        <li key={j} className="flex items-start gap-2 text-sm text-gray-700 dark:text-gray-300"><CheckCircle2 size={14} className="text-[#C9A962] flex-shrink-0 mt-0.5" />{feat}</li>
+                      ))}
+                    </ul>
+                    <Button className={`w-full font-semibold ${type.popular ? 'bg-[#C9A962] text-gray-900 hover:bg-[#C9A962]/90' : 'bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-white hover:bg-gray-200'}`} onClick={() => setShowBookingModal(true)}>
+                      {type.cta} <ArrowRight className="ml-2" size={16} />
+                    </Button>
+                  </motion.div>
+                )
+              })}
             </div>
           </div>
         </div>
       </section>
 
-      {/* FAQ Section */}
-      <section className="py-20">
+      {/* Process */}
+      <section className="py-16 lg:py-20 bg-gray-50 dark:bg-gray-900" data-testid="process-section">
         <div className="container mx-auto px-8 lg:px-16">
-          <div className="max-w-3xl mx-auto">
-            <h2 className="text-4xl font-bold text-center mb-12">Frequently Asked Questions</h2>
-
-            <div className="space-y-4">
-              {[
-                {
-                  q: 'Is the consultation really free?',
-                  a: 'Yes! There are absolutely no charges or obligations. We provide expert advice and detailed quotes at no cost.'
-                },
-                {
-                  q: 'How long does a consultation take?',
-                  a: 'Site visits typically take 60-90 minutes, experience center tours 45-60 minutes, and video calls 30 minutes.'
-                },
-                {
-                  q: 'What should I prepare for the consultation?',
-                  a: 'Just your questions and ideas! For site visits, having floor plans is helpful but not required.'
-                },
-                {
-                  q: 'Do you cover all of UAE?',
-                  a: 'Yes, we provide services across all seven emirates including Dubai, Abu Dhabi, Sharjah, and more.'
-                },
-                {
-                  q: 'Can I get a quote during the consultation?',
-                  a: 'Yes! We provide preliminary quotes during consultations and detailed proposals within 24-48 hours.'
-                },
-                {
-                  q: 'What if I need to reschedule?',
-                  a: 'No problem! You can reschedule or cancel anytime through your confirmation email.'
-                }
-              ].map((faq, index) => (
-                <details
-                  key={index}
-                  className="bg-white border-2 border-gray-200 dark:border-gray-700 rounded-lg overflow-hidden group"
-                >
-                  <summary className="px-6 py-4 font-semibold text-lg cursor-pointer hover:bg-gray-50 transition-colors flex items-center justify-between">
-                    {faq.q}
-                    <span className="text-2xl text-gray-400 group-open:rotate-45 transition-transform">+</span>
-                  </summary>
-                  <div className="px-6 pb-4 text-gray-600 dark:text-gray-400 dark:text-gray-400">
-                    {faq.a}
-                  </div>
-                </details>
-              ))}
+          <div className="max-w-5xl mx-auto">
+            <div className="text-center mb-12">
+              <span className="text-xs uppercase tracking-widest text-[#C9A962] font-semibold">How It Works</span>
+              <h2 className="text-2xl sm:text-3xl font-bold mt-2 text-gray-900 dark:text-white">Simple Process</h2>
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+              {processSteps.map((step, i) => {
+                const Icon = step.icon
+                return (
+                  <motion.div key={i} initial={{ opacity: 0, y: 15 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.3, delay: i * 0.1 }}
+                    className="text-center">
+                    <div className="w-14 h-14 rounded-full bg-gray-900 dark:bg-gray-800 flex items-center justify-center mb-4 mx-auto border-2 border-[#C9A962]/30">
+                      <span className="text-[#C9A962] font-bold text-lg">{step.number}</span>
+                    </div>
+                    <h3 className="text-base font-bold mb-2 text-gray-900 dark:text-white">{step.title}</h3>
+                    <p className="text-sm text-gray-600 dark:text-gray-400">{step.description}</p>
+                  </motion.div>
+                )
+              })}
             </div>
           </div>
         </div>
       </section>
 
-      {/* Proof Bar */}
-      <ProofBar />
-
-      {/* Final CTA */}
-      <section className="py-20 bg-gradient-to-br from-green-600 to-green-700 text-white">
+      {/* Trust Signals */}
+      <section className="py-16 bg-gray-900 text-white">
         <div className="container mx-auto px-8 lg:px-16">
-          <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-4xl sm:text-5xl font-bold mb-6">
-              Ready to Transform Your Space?
-            </h2>
-            <p className="text-xl text-green-100 mb-10">
-              Book your free consultation now and take the first step towards your smart home dream
-            </p>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-5xl mx-auto text-center">
+            {[{ value: '100%', label: 'Free Consultation' }, { value: '500+', label: 'Projects Delivered' }, { value: '24/7', label: 'Support Available' }, { value: '4.9/5', label: 'Client Rating' }].map((stat, i) => (
+              <div key={i}><p className="text-2xl font-bold text-[#C9A962]">{stat.value}</p><p className="text-xs text-gray-400 uppercase tracking-wider mt-1">{stat.label}</p></div>
+            ))}
+          </div>
+        </div>
+      </section>
 
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button
-                size="lg"
-                className="bg-white text-black hover:bg-gray-100 dark:bg-gray-800 px-10 py-7 text-lg font-semibold"
-                onClick={() => setShowBookingModal(true)}
-              >
-                <Calendar className="mr-2" size={24} />
+      {/* CTA */}
+      <section className="py-20 bg-white dark:bg-gray-950">
+        <div className="container mx-auto px-8 lg:px-16">
+          <div className="max-w-3xl mx-auto text-center">
+            <span className="text-[#C9A962] text-xs uppercase tracking-widest font-semibold">Ready to Start?</span>
+            <h2 className="text-3xl sm:text-4xl font-bold mt-3 mb-4 text-gray-900 dark:text-white">Let&apos;s Discuss Your Project</h2>
+            <p className="text-gray-500 mb-8 max-w-xl mx-auto">No obligation, no pressure. Just expert advice tailored to your property.</p>
+            <div className="flex flex-col sm:flex-row gap-3 justify-center">
+              <Button size="lg" className="bg-[#C9A962] text-gray-900 hover:bg-[#C9A962]/90 font-semibold px-8" onClick={() => setShowBookingModal(true)} data-testid="cta-book">
                 Book Free Consultation
               </Button>
-              <Button
-                size="lg"
-                variant="outline"
-                className="border-2 border-white text-white hover:bg-white hover:text-black px-10 py-7 text-lg font-semibold"
-                onClick={() => window.location.href = '/calculator'}
-              >
-                Get Instant Quote
-              </Button>
+              <a href="tel:+971503267227"><Button size="lg" variant="outline" className="border-gray-300 dark:border-gray-700 px-8"><Phone className="mr-2" size={16} /> Call Now</Button></a>
             </div>
-
-            <p className="text-sm text-green-200 mt-6">
-              Average response time: &lt;2 hours | Available 7 days a week
-            </p>
           </div>
         </div>
       </section>
 
-      {/* Booking Modal */}
-      <BookingModal
-        isOpen={showBookingModal}
-        onClose={() => setShowBookingModal(false)}
-      />
+      {showBookingModal && <BookingModal isOpen={showBookingModal} onClose={() => setShowBookingModal(false)} />}
     </div>
   )
 }
