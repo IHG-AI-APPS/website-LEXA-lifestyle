@@ -268,7 +268,7 @@ export default function SolutionClient({
               ) : (
                 /* Fallback generic FAQs if no database FAQs exist */
                 <>
-                  <div className="bg-white dark:bg-gray-800 p-8 border border-gray-200 dark:border-gray-700 dark:border-gray-700">
+                  <div className="bg-white dark:bg-gray-900 p-6 rounded-lg border border-gray-100 dark:border-gray-700">
                     <h3 className="text-xl font-semibold mb-3">What is {solution.title}?</h3>
                     <p className="text-gray-700 dark:text-gray-300 dark:text-gray-300">
                       {solution.title} is the integration of intelligent systems — lighting, audio-visual equipment, 
@@ -277,7 +277,7 @@ export default function SolutionClient({
                     </p>
                   </div>
 
-                  <div className="bg-white dark:bg-gray-800 p-8 border border-gray-200 dark:border-gray-700 dark:border-gray-700">
+                  <div className="bg-white dark:bg-gray-900 p-6 rounded-lg border border-gray-100 dark:border-gray-700">
                     <h3 className="text-xl font-semibold mb-3">How much does {solution.title} cost in Dubai/UAE?</h3>
                     <p className="text-gray-700 dark:text-gray-300 dark:text-gray-300">
                       Costs vary based on room size, technology brands, and customization level. Typical projects in UAE 
@@ -286,7 +286,7 @@ export default function SolutionClient({
                     </p>
                   </div>
 
-                  <div className="bg-white dark:bg-gray-800 p-8 border border-gray-200 dark:border-gray-700 dark:border-gray-700">
+                  <div className="bg-white dark:bg-gray-900 p-6 rounded-lg border border-gray-100 dark:border-gray-700">
                     <h3 className="text-xl font-semibold mb-3">How long does installation take?</h3>
                     <p className="text-gray-700 dark:text-gray-300 dark:text-gray-300">
                       Installation timeframes depend on project scope and complexity. Most projects take 2–6 weeks from 
@@ -295,7 +295,7 @@ export default function SolutionClient({
                     </p>
                   </div>
 
-                  <div className="bg-white dark:bg-gray-800 p-8 border border-gray-200 dark:border-gray-700 dark:border-gray-700">
+                  <div className="bg-white dark:bg-gray-900 p-6 rounded-lg border border-gray-100 dark:border-gray-700">
                     <h3 className="text-xl font-semibold mb-3">Can automation be added to existing rooms?</h3>
                     <p className="text-gray-700 dark:text-gray-300 dark:text-gray-300">
                       Yes — retrofit automation packages are very common in UAE villas and apartments. Modern systems can 
@@ -304,7 +304,7 @@ export default function SolutionClient({
                     </p>
                   </div>
 
-                  <div className="bg-white dark:bg-gray-800 p-8 border border-gray-200 dark:border-gray-700 dark:border-gray-700">
+                  <div className="bg-white dark:bg-gray-900 p-6 rounded-lg border border-gray-100 dark:border-gray-700">
                     <h3 className="text-xl font-semibold mb-3">Is this suitable for Dubai&apos;s climate?</h3>
                     <p className="text-gray-700 dark:text-gray-300 dark:text-gray-300">
                       Absolutely. All our systems are specifically selected and configured for UAE&apos;s climate conditions. 
@@ -313,7 +313,7 @@ export default function SolutionClient({
                     </p>
                   </div>
 
-                  <div className="bg-white dark:bg-gray-800 p-8 border border-gray-200 dark:border-gray-700 dark:border-gray-700">
+                  <div className="bg-white dark:bg-gray-900 p-6 rounded-lg border border-gray-100 dark:border-gray-700">
                     <h3 className="text-xl font-semibold mb-3">Do you provide support & maintenance?</h3>
                     <p className="text-gray-700 dark:text-gray-300 dark:text-gray-300">
                       Yes. LEXA Lifestyle offers comprehensive AMC (Annual Maintenance Contract) packages for ongoing 
