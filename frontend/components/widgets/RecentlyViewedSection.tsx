@@ -118,7 +118,7 @@ export default function RecentlyViewedSection({
             }
             
             if (endpoint) {
-              const res = await fetch(endpoint, { method: 'HEAD' })
+              const res = await fetch(endpoint, { method: 'GET' })
               if (res.ok) {
                 validItems.push(item)
               } else {

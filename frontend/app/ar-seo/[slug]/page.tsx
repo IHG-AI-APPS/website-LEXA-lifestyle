@@ -106,7 +106,7 @@ export default async function DynamicArabicPage({ params }: { params: { slug: st
       <header className="border-b py-4 bg-white sticky top-0 z-50">
         <div className="container mx-auto px-4 max-w-7xl flex justify-between items-center">
           <Link href="/">
-            <SafeImage src="/lexa-black.png" alt="LEXA Lifestyle" width={120} height={48} className="h-10 md:h-12 w-auto dark:invert" style={{ width: 'auto' }} />
+            <SafeImage src="/lexa-black.png" alt="LEXA Lifestyle" width={120} height={48} className="h-10 md:h-12 w-auto dark:invert" style={{ width: 'auto', height: 'auto' }} />
           </Link>
           <div className="flex gap-4 items-center">
             {page.english_alternate_url && (

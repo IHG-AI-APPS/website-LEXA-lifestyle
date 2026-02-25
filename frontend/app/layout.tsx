@@ -70,9 +70,6 @@ export default function RootLayout({
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         
-        {/* Preload critical fonts */}
-        <link rel="preload" as="font" type="font/woff2" href="/_next/static/media/outfit-variable.woff2" crossOrigin="anonymous" />
-        
         {/* Structured Data */}
         <script
           type="application/ld+json"
