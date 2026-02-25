@@ -281,6 +281,10 @@ class Solution(BaseModel):
     features: List[str] = []
     brands: List[str] = []
     tags: List[str] = []
+    gallery_images: List[str] = []
+    feature_cards: List[dict] = []
+    faqs: List[dict] = []
+    meta_description: Optional[str] = None
 
 class Service(BaseModel):
     model_config = ConfigDict(extra="ignore")
