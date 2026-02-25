@@ -473,7 +473,7 @@ export default function WorkWithUsPage() {
             </p>
           </div>
           <div className="max-w-4xl mx-auto space-y-4">
-            {openPositions.map((position, index) => (
+            {positions.map((position, index) => (
               <JobCard key={position.title} position={position} index={index} />
             ))}
           </div>
