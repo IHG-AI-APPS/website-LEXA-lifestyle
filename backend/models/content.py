@@ -37,7 +37,7 @@ class Solution(BaseModel):
     seo_title: Optional[str] = None
     seo_description: Optional[str] = None
     key_benefits: List[str] = []  # Key benefits/selling points
-    related_products: List[dict] = []  # Related products with name, description, image, price_range
+    related_products: List = []  # Related product slugs or dicts
     certifications: List[str] = []
     compatible_brands: List[str] = []
     gallery_images: List[str] = []
