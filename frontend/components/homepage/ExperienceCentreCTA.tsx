@@ -22,44 +22,24 @@ import {
 import Link from 'next/link'
 import SafeImage from '@/components/ui/SafeImage'
 
-const timeSlots = [
-  '10:00 AM', '11:00 AM', '12:00 PM',
-  '2:00 PM', '3:00 PM', '4:00 PM'
+const BACKEND_URL = process.env.NEXT_PUBLIC_BACKEND_URL || ''
+
+const ICON_MAP: Record<string, any> = { Building2, Sparkles, Play, MapPin, Calendar, Clock, Phone }
+
+const DEFAULT_TIME_SLOTS = ['10:00 AM', '11:00 AM', '12:00 PM', '2:00 PM', '3:00 PM', '4:00 PM']
+
+const DEFAULT_HIGHLIGHTS = [
+  { icon: 'Building2', label: '5,000+ sq ft', desc: 'Showroom' },
+  { icon: 'Sparkles', label: '32+ Brands', desc: 'Live demos' },
+  { icon: 'Play', label: '6 Zones', desc: 'To explore' },
 ]
 
-const highlights = [
-  { icon: Building2, label: '5,000+ sq ft', desc: 'Showroom' },
-  { icon: Sparkles, label: '32+ Brands', desc: 'Live demos' },
-  { icon: Play, label: '6 Zones', desc: 'To explore' },
-]
-
-// Showroom gallery images
-const galleryImages = [
-  {
-    src: 'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=800&q=80',
-    title: 'Smart Home Showcase',
-    zone: 'Main Hall'
-  },
-  {
-    src: 'https://images.unsplash.com/photo-1560185007-c5ca9d2c014d?w=800&q=80',
-    title: 'Home Cinema Experience',
-    zone: 'Theater Zone'
-  },
-  {
-    src: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&q=80',
-    title: 'Audio Listening Room',
-    zone: 'Hi-Fi Zone'
-  },
-  {
-    src: 'https://images.unsplash.com/photo-1513506003901-1e6a229e2d15?w=800&q=80',
-    title: 'Lighting Design Studio',
-    zone: 'Lighting Zone'
-  },
-  {
-    src: 'https://images.unsplash.com/photo-1558002038-1055907df827?w=800&q=80',
-    title: 'Security Command Center',
-    zone: 'Security Zone'
-  }
+const DEFAULT_GALLERY = [
+  { src: 'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=800&q=80', title: 'Smart Home Showcase', zone: 'Main Hall' },
+  { src: 'https://images.unsplash.com/photo-1560185007-c5ca9d2c014d?w=800&q=80', title: 'Home Cinema Experience', zone: 'Theater Zone' },
+  { src: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&q=80', title: 'Audio Listening Room', zone: 'Hi-Fi Zone' },
+  { src: 'https://images.unsplash.com/photo-1513506003901-1e6a229e2d15?w=800&q=80', title: 'Lighting Design Studio', zone: 'Lighting Zone' },
+  { src: 'https://images.unsplash.com/photo-1558002038-1055907df827?w=800&q=80', title: 'Security Command Center', zone: 'Security Zone' }
 ]
 
 export default function ExperienceCentreCTA() {
@@ -75,6 +55,22 @@ export default function ExperienceCentreCTA() {
   })
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle')
+  const [cmsData, setCmsData] = useState<any>(null)
+
+  // Fetch CMS data
+  useEffect(() => {
+    fetch(`${BACKEND_URL}/api/cms/sections/homepage_experience_cta`)
+      .then(r => r.json())
+      .then(d => { if (d?.value) setCmsData(d.value) })
+      .catch(() => {})
+  }, [])
+
+  const galleryImages = cmsData?.gallery_images?.length ? cmsData.gallery_images : DEFAULT_GALLERY
+  const highlights = cmsData?.highlights?.length ? cmsData.highlights : DEFAULT_HIGHLIGHTS
+  const timeSlots = cmsData?.time_slots?.length ? cmsData.time_slots : DEFAULT_TIME_SLOTS
+  const address = cmsData?.address || 'Al Quoz 1, Dubai'
+  const addressDetail = cmsData?.address_detail || 'Sheikh Zayed Road, 3rd Interchange'
+  const phoneNumber = cmsData?.phone || '+971 42 670 470'
 
   // Auto-rotate gallery
   useEffect(() => {
