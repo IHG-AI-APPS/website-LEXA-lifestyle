@@ -49,7 +49,7 @@ export default function HeroCurator({ onPersonaClick }: HeroCuratorProps) {
   const handleVideoEnd = () => {
     setIsFading(true)
     setTimeout(() => {
-      setCurrentClip((prev) => (prev + 1) % HERO_CLIPS.length)
+      setCurrentClip((prev) => (prev + 1) % heroClips.length)
       setIsFading(false)
     }, 400)
   }
@@ -78,7 +78,7 @@ export default function HeroCurator({ onPersonaClick }: HeroCuratorProps) {
           onEnded={handleVideoEnd}
           onError={() => {
             // Skip to next clip on error
-            setCurrentClip((prev) => (prev + 1) % HERO_CLIPS.length)
+            setCurrentClip((prev) => (prev + 1) % heroClips.length)
           }}
         >
           <source src={HERO_CLIPS[currentClip]} type="video/mp4" />
