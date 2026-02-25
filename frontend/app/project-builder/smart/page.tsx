@@ -372,7 +372,7 @@ export default function SmartBuilderFlow() {
                 protocolType={protocolType}
                 selectedProtocols={selectedProtocols}
                 selectedSystems={selectedSystems}
-                onComplete={(pkg) => handlePackageComplete(pkg, '')}
+                onComplete={(pkg, price) => handlePackageComplete(pkg, price)}
                 onBack={goBack}
                 projectDetails={projectDetails}
               />
