@@ -80,6 +80,7 @@ const emptySolution: Partial<Solution> = {
   icon: '',
   tags: [],
   brands: [],
+  gallery_images: [],
   feature_cards: [],
   faqs: [],
   additional_sections: [],
