@@ -77,6 +77,26 @@ export default function RootLayout({
         {/* Preconnect for critical resources */}
         <link rel="preconnect" href={process.env.NEXT_PUBLIC_BACKEND_URL || ''} crossOrigin="anonymous" />
         
+        {/* Chunk load error recovery - auto-reload on stale chunks */}
+        <script dangerouslySetInnerHTML={{ __html: `
+          window.addEventListener('error', function(e) {
+            if (e.message && (
+              e.message.includes("Cannot read properties of undefined (reading 'call')") ||
+              e.message.includes('Loading chunk') ||
+              e.message.includes('ChunkLoadError') ||
+              e.message.includes('Failed to fetch dynamically imported module')
+            )) {
+              if (!sessionStorage.getItem('chunk_retry')) {
+                sessionStorage.setItem('chunk_retry', '1');
+                window.location.reload();
+              } else {
+                sessionStorage.removeItem('chunk_retry');
+              }
+            }
+          });
+          if (sessionStorage.getItem('chunk_retry')) sessionStorage.removeItem('chunk_retry');
+        ` }} />
+        
         {/* Consolidated Structured Data */}
         <script
           type="application/ld+json"
