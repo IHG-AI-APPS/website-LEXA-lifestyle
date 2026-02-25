@@ -329,22 +329,32 @@ export default function SolutionClient({
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-gradient-to-br from-charcoal to-gray-900 text-white">
-        <div className="container mx-auto px-8 lg:px-16">
-          <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-4xl font-semibold mb-6">
-              Ready to Get Started?
+      <section className="py-20 bg-gray-900 text-white relative overflow-hidden">
+        <div className="container mx-auto px-8 lg:px-16 relative z-10">
+          <div className="max-w-3xl mx-auto text-center">
+            <span className="text-[#C9A962] text-xs uppercase tracking-widest font-semibold">Ready to Start?</span>
+            <h2 className="text-3xl sm:text-4xl font-bold mt-3 mb-4">
+              Let&apos;s Design Your {solution.title} System
             </h2>
-            <p className="text-xl text-gray-300 mb-10">
-              Let our experts design the perfect {solution.title.toLowerCase()} for your space.
+            <p className="text-gray-400 mb-8 max-w-xl mx-auto">
+              Get a bespoke proposal from our engineering team. Free consultation with no obligation.
             </p>
-            <Button
-              size="lg"
-              className="bg-platinum text-charcoal hover:bg-platinum/90"
-              onClick={() => setShowContactForm(true)}
-            >
-              Schedule Consultation
-            </Button>
+            
+            <div className="flex flex-col sm:flex-row gap-3 justify-center">
+              <Button
+                size="lg"
+                className="bg-[#C9A962] text-gray-900 hover:bg-[#C9A962]/90 font-semibold px-8"
+                onClick={() => setShowContactForm(true)}
+                data-testid="cta-get-quote"
+              >
+                Get a Free Quote
+              </Button>
+              <Link href="/consultation">
+                <Button size="lg" variant="outline" className="border-white/30 text-white hover:bg-white/10 px-8">
+                  Book Consultation
+                </Button>
+              </Link>
+            </div>
           </div>
         </div>
       </section>
