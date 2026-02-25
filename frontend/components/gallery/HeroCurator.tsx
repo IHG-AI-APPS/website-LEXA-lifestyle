@@ -81,7 +81,7 @@ export default function HeroCurator({ onPersonaClick }: HeroCuratorProps) {
             setCurrentClip((prev) => (prev + 1) % heroClips.length)
           }}
         >
-          <source src={HERO_CLIPS[currentClip]} type="video/mp4" />
+          <source src={heroClips[currentClip]} type="video/mp4" />
         </video>
         
         {/* Dark Luxury Overlay - Balanced for video visibility */}
