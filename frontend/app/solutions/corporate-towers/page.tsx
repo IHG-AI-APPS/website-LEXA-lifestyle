@@ -19,8 +19,11 @@ import { Button } from '@/components/ui/button'
 import { useState } from 'react'
 import ConsultationForm from '@/components/forms/ConsultationForm'
 import SafeImage from '@/components/ui/SafeImage'
+import { useCms } from '@/hooks/useCms'
 
 export default function CorporateTowersPage() {
+  const cms = useCms('page_solutions_corporate-towers', null)
+
   const [showConsultationForm, setShowConsultationForm] = useState(false)
 
   const features = [

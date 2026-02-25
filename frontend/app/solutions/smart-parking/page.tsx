@@ -19,8 +19,11 @@ import {
 import { Button } from '@/components/ui/button'
 import { useState } from 'react'
 import ConsultationForm from '@/components/forms/ConsultationForm'
+import { useCms } from '@/hooks/useCms'
 
 export default function SmartParkingPage() {
+  const cms = useCms('page_solutions_smart-parking', null)
+
   const [showConsultationForm, setShowConsultationForm] = useState(false)
 
   const features = [

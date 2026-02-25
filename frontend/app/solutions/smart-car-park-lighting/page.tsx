@@ -10,8 +10,11 @@ import {
 } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import ConsultationForm from '@/components/forms/ConsultationForm'
+import { useCms } from '@/hooks/useCms'
 
 export default function SmartCarParkLightingPage() {
+  const cms = useCms('page_solutions_smart-car-park-lighting', null)
+
   const [showConsultationForm, setShowConsultationForm] = useState(false)
   const [selectedPlan, setSelectedPlan] = useState('rental1')
 

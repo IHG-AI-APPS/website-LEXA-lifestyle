@@ -17,8 +17,11 @@ import {
 import { Button } from '@/components/ui/button'
 import { useState } from 'react'
 import ConsultationForm from '@/components/forms/ConsultationForm'
+import { useCms } from '@/hooks/useCms'
 
 export default function MajlisAudioPage() {
+  const cms = useCms('page_solutions_majlis-audio-experience', null)
+
   const [showConsultationForm, setShowConsultationForm] = useState(false)
 
   const features = [

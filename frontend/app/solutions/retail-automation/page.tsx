@@ -5,8 +5,11 @@ import { Button } from '@/components/ui/button'
 import { useState } from 'react'
 import ConsultationForm from '@/components/forms/ConsultationForm'
 import Link from 'next/link'
+import { useCms } from '@/hooks/useCms'
 
 export default function RetailAutomationPage() {
+  const cms = useCms('page_solutions_retail-automation', null)
+
   const [showForm, setShowForm] = useState(false)
   
   const features = [

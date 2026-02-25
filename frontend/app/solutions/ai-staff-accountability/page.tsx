@@ -12,8 +12,11 @@ import {
 } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import ConsultationForm from '@/components/forms/ConsultationForm'
+import { useCms } from '@/hooks/useCms'
 
 export default function AIStaffAccountabilityPage() {
+  const cms = useCms('page_solutions_ai-staff-accountability', null)
+
   const [showConsultationForm, setShowConsultationForm] = useState(false)
   const [selectedStage, setSelectedStage] = useState(1)
 
