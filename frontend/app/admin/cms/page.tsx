@@ -622,6 +622,83 @@ function SectionEditor({ sectionKey, data, onSave }: { sectionKey: string, data:
 }
 
 // Geo/Location Page Editor
+
+// SEO Metadata Editor
+function SeoMetaEditor({ data, onSave, pageKey }: { data: any, onSave: (data: any) => void, pageKey: string }) {
+  const [formData, setFormData] = useState<any>(data || {})
+  useEffect(() => { setFormData(data || {}) }, [data])
+  const update = (key: string, value: any) => setFormData((prev: any) => ({ ...prev, [key]: value }))
+
+  const isGlobal = pageKey === 'seo_global'
+
+  return (
+    <div className="space-y-4">
+      <div className="border border-gray-200 dark:border-gray-700 rounded-lg p-4">
+        <h4 className="text-sm font-bold mb-3 text-[#C9A962]">Meta Tags</h4>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+          <div className="col-span-full">
+            <label className="text-xs text-gray-500">Meta Title{isGlobal ? ' (default for all pages)' : ''}</label>
+            <Input value={formData.title || ''} onChange={e => update('title', e.target.value)} placeholder="Page Title | LEXA Smart Home" data-testid="seo-title" />
+            <p className="text-xs text-gray-400 mt-1">{(formData.title || '').length}/60 characters</p>
+          </div>
+          <div className="col-span-full">
+            <label className="text-xs text-gray-500">Meta Description</label>
+            <textarea value={formData.description || ''} onChange={e => update('description', e.target.value)} placeholder="A compelling description for search results..." className="w-full text-sm p-2 rounded-md border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-900 text-gray-900 dark:text-white" rows={2} data-testid="seo-description" />
+            <p className="text-xs text-gray-400 mt-1">{(formData.description || '').length}/160 characters</p>
+          </div>
+          <div className="col-span-full">
+            <label className="text-xs text-gray-500">Keywords (comma-separated)</label>
+            <Input value={formData.keywords || ''} onChange={e => update('keywords', e.target.value)} placeholder="smart home dubai, home automation, luxury villa" data-testid="seo-keywords" />
+          </div>
+        </div>
+      </div>
+
+      <div className="border border-gray-200 dark:border-gray-700 rounded-lg p-4">
+        <h4 className="text-sm font-bold mb-3 text-[#C9A962]">Open Graph (Social Sharing)</h4>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+          <div className="col-span-full"><label className="text-xs text-gray-500">OG Title (defaults to Meta Title)</label><Input value={formData.og_title || ''} onChange={e => update('og_title', e.target.value)} /></div>
+          <div className="col-span-full"><label className="text-xs text-gray-500">OG Description</label><textarea value={formData.og_description || ''} onChange={e => update('og_description', e.target.value)} className="w-full text-sm p-2 rounded-md border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-900 text-gray-900 dark:text-white" rows={2} /></div>
+          <div><label className="text-xs text-gray-500">OG Image URL</label><Input value={formData.og_image || ''} onChange={e => update('og_image', e.target.value)} /></div>
+          <div><label className="text-xs text-gray-500">OG Type</label><Input value={formData.og_type || 'website'} onChange={e => update('og_type', e.target.value)} /></div>
+        </div>
+      </div>
+
+      {isGlobal && (
+        <div className="border border-gray-200 dark:border-gray-700 rounded-lg p-4">
+          <h4 className="text-sm font-bold mb-3 text-[#C9A962]">Global Settings</h4>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+            <div><label className="text-xs text-gray-500">Site Name</label><Input value={formData.site_name || ''} onChange={e => update('site_name', e.target.value)} /></div>
+            <div><label className="text-xs text-gray-500">Canonical Domain</label><Input value={formData.canonical_domain || ''} onChange={e => update('canonical_domain', e.target.value)} placeholder="https://lexasmarthome.com" /></div>
+            <div><label className="text-xs text-gray-500">Default OG Image</label><Input value={formData.default_og_image || ''} onChange={e => update('default_og_image', e.target.value)} /></div>
+            <div><label className="text-xs text-gray-500">Twitter Handle</label><Input value={formData.twitter_handle || ''} onChange={e => update('twitter_handle', e.target.value)} placeholder="@lexasmarthome" /></div>
+            <div className="col-span-full"><label className="text-xs text-gray-500">Google Verification Code</label><Input value={formData.google_verification || ''} onChange={e => update('google_verification', e.target.value)} /></div>
+          </div>
+        </div>
+      )}
+
+      <div className="border border-gray-200 dark:border-gray-700 rounded-lg p-4">
+        <h4 className="text-sm font-bold mb-3 text-[#C9A962]">Advanced</h4>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+          <div><label className="text-xs text-gray-500">Canonical URL Override</label><Input value={formData.canonical_url || ''} onChange={e => update('canonical_url', e.target.value)} placeholder="Leave empty for auto-generated" /></div>
+          <div>
+            <label className="text-xs text-gray-500">Robots</label>
+            <select value={formData.robots || 'index, follow'} onChange={e => update('robots', e.target.value)} className="w-full text-sm p-2 rounded-md border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-900 text-gray-900 dark:text-white">
+              <option value="index, follow">Index, Follow (default)</option>
+              <option value="noindex, follow">No Index, Follow</option>
+              <option value="index, nofollow">Index, No Follow</option>
+              <option value="noindex, nofollow">No Index, No Follow</option>
+            </select>
+          </div>
+        </div>
+      </div>
+
+      <div className="flex justify-end pt-4 border-t border-gray-200 dark:border-gray-700">
+        <Button onClick={() => onSave(formData)} data-testid="save-seo"><Save className="h-4 w-4 mr-2" /> Save SEO Settings</Button>
+      </div>
+    </div>
+  )
+}
+
 function GeoPageEditor({ data, onSave }: { data: any, onSave: (data: any) => void }) {
   const [formData, setFormData] = useState<any>(data || {})
   useEffect(() => { setFormData(data || {}) }, [data])
