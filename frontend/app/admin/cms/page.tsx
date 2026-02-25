@@ -625,27 +625,130 @@ function SectionEditor({ sectionKey, data, onSave }: { sectionKey: string, data:
 // Geo/Location Page Editor
 
 // SEO Metadata Editor
+function charCountColor(len: number, min: number, max: number) {
+  if (len === 0) return 'text-gray-400'
+  if (len < min) return 'text-amber-500'
+  if (len > max) return 'text-red-500'
+  return 'text-emerald-500'
+}
+
 function SeoMetaEditor({ data, onSave, pageKey }: { data: any, onSave: (data: any) => void, pageKey: string }) {
   const [formData, setFormData] = useState<any>(data || {})
+  const [previewTab, setPreviewTab] = useState<'google' | 'social'>('google')
   useEffect(() => { setFormData(data || {}) }, [data])
   const update = (key: string, value: any) => setFormData((prev: any) => ({ ...prev, [key]: value }))
 
   const isGlobal = pageKey === 'seo_global'
 
+  // Derive page URL from key
+  const pageSlug = pageKey.replace(/^seo_/, '').replace(/_/g, '-')
+  const pageUrl = isGlobal ? 'lexalifestyle.com' : `lexalifestyle.com/${pageSlug === 'homepage' ? '' : pageSlug}`
+
+  // Preview values
+  const previewTitle = formData.title || 'Page Title | LEXA Smart Home'
+  const previewDesc = formData.description || 'A compelling description of this page for search engine results...'
+  const previewOgTitle = formData.og_title || previewTitle
+  const previewOgDesc = formData.og_description || previewDesc
+  const previewOgImage = formData.og_image || ''
+
+  const titleLen = (formData.title || '').length
+  const descLen = (formData.description || '').length
+
   return (
     <div className="space-y-4">
+      {/* Live Preview */}
+      <div className="border border-[#C9A962]/30 rounded-lg overflow-hidden" data-testid="seo-preview-card">
+        <div className="flex border-b border-gray-200 dark:border-gray-700">
+          <button
+            onClick={() => setPreviewTab('google')}
+            className={`flex-1 px-4 py-2.5 text-xs font-semibold tracking-wide transition-colors ${previewTab === 'google' ? 'bg-white dark:bg-gray-900 text-[#C9A962] border-b-2 border-[#C9A962]' : 'bg-gray-50 dark:bg-gray-800 text-gray-500 hover:text-gray-700 dark:hover:text-gray-300'}`}
+            data-testid="preview-tab-google"
+          >
+            Google Preview
+          </button>
+          <button
+            onClick={() => setPreviewTab('social')}
+            className={`flex-1 px-4 py-2.5 text-xs font-semibold tracking-wide transition-colors ${previewTab === 'social' ? 'bg-white dark:bg-gray-900 text-[#C9A962] border-b-2 border-[#C9A962]' : 'bg-gray-50 dark:bg-gray-800 text-gray-500 hover:text-gray-700 dark:hover:text-gray-300'}`}
+            data-testid="preview-tab-social"
+          >
+            Social Card Preview
+          </button>
+        </div>
+
+        {previewTab === 'google' && (
+          <div className="p-4 bg-white dark:bg-gray-900" data-testid="google-serp-preview">
+            <p className="text-xs text-gray-400 mb-3 uppercase tracking-wider font-medium">Search Result Preview</p>
+            <div className="max-w-xl">
+              <p className="text-sm text-gray-500 dark:text-gray-400 mb-0.5 truncate">{pageUrl}</p>
+              <h3 className="text-lg text-blue-700 dark:text-blue-400 font-normal leading-snug mb-0.5 line-clamp-1 cursor-pointer hover:underline">
+                {previewTitle.length > 60 ? previewTitle.slice(0, 60) + '...' : previewTitle}
+              </h3>
+              <p className="text-sm text-gray-600 dark:text-gray-400 leading-relaxed line-clamp-2">
+                {previewDesc.length > 160 ? previewDesc.slice(0, 160) + '...' : previewDesc}
+              </p>
+            </div>
+            <div className="mt-3 flex gap-4 text-xs">
+              <span className={charCountColor(titleLen, 30, 60)}>
+                Title: {titleLen}/60 {titleLen > 60 ? '(too long)' : titleLen > 0 && titleLen < 30 ? '(too short)' : titleLen > 0 ? '(good)' : ''}
+              </span>
+              <span className={charCountColor(descLen, 70, 160)}>
+                Desc: {descLen}/160 {descLen > 160 ? '(too long)' : descLen > 0 && descLen < 70 ? '(too short)' : descLen > 0 ? '(good)' : ''}
+              </span>
+            </div>
+          </div>
+        )}
+
+        {previewTab === 'social' && (
+          <div className="p-4 bg-white dark:bg-gray-900" data-testid="social-card-preview">
+            <p className="text-xs text-gray-400 mb-3 uppercase tracking-wider font-medium">Social Card Preview</p>
+            <div className="max-w-md border border-gray-200 dark:border-gray-700 rounded-lg overflow-hidden">
+              {previewOgImage ? (
+                <div className="aspect-[1.91/1] bg-gray-100 dark:bg-gray-800 relative">
+                  <img src={previewOgImage} alt="OG" className="w-full h-full object-cover" onError={e => { (e.target as HTMLImageElement).style.display = 'none' }} />
+                  <div className="absolute inset-0 flex items-center justify-center text-gray-400 text-xs pointer-events-none">
+                    {!previewOgImage && 'No image set'}
+                  </div>
+                </div>
+              ) : (
+                <div className="aspect-[1.91/1] bg-gray-100 dark:bg-gray-800 flex items-center justify-center">
+                  <div className="text-center text-gray-400">
+                    <Image className="h-8 w-8 mx-auto mb-1 opacity-40" />
+                    <p className="text-xs">No OG image set</p>
+                  </div>
+                </div>
+              )}
+              <div className="p-3 bg-gray-50 dark:bg-gray-800">
+                <p className="text-[10px] text-gray-400 uppercase tracking-wider mb-0.5">{pageUrl}</p>
+                <p className="text-sm font-semibold text-gray-900 dark:text-white leading-tight line-clamp-1">{previewOgTitle}</p>
+                <p className="text-xs text-gray-500 dark:text-gray-400 mt-0.5 line-clamp-2">{previewOgDesc}</p>
+              </div>
+            </div>
+          </div>
+        )}
+      </div>
+
       <div className="border border-gray-200 dark:border-gray-700 rounded-lg p-4">
         <h4 className="text-sm font-bold mb-3 text-[#C9A962]">Meta Tags</h4>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
           <div className="col-span-full">
             <label className="text-xs text-gray-500">Meta Title{isGlobal ? ' (default for all pages)' : ''}</label>
             <Input value={formData.title || ''} onChange={e => update('title', e.target.value)} placeholder="Page Title | LEXA Smart Home" data-testid="seo-title" />
-            <p className="text-xs text-gray-400 mt-1">{(formData.title || '').length}/60 characters</p>
+            <div className="flex items-center gap-2 mt-1">
+              <div className="flex-1 h-1.5 bg-gray-100 dark:bg-gray-800 rounded-full overflow-hidden">
+                <div className={`h-full rounded-full transition-all ${titleLen === 0 ? 'w-0' : titleLen <= 60 ? 'bg-emerald-400' : 'bg-red-400'}`} style={{ width: `${Math.min((titleLen / 60) * 100, 100)}%` }} />
+              </div>
+              <p className={`text-xs ${charCountColor(titleLen, 30, 60)}`}>{titleLen}/60</p>
+            </div>
           </div>
           <div className="col-span-full">
             <label className="text-xs text-gray-500">Meta Description</label>
             <textarea value={formData.description || ''} onChange={e => update('description', e.target.value)} placeholder="A compelling description for search results..." className="w-full text-sm p-2 rounded-md border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-900 text-gray-900 dark:text-white" rows={2} data-testid="seo-description" />
-            <p className="text-xs text-gray-400 mt-1">{(formData.description || '').length}/160 characters</p>
+            <div className="flex items-center gap-2 mt-1">
+              <div className="flex-1 h-1.5 bg-gray-100 dark:bg-gray-800 rounded-full overflow-hidden">
+                <div className={`h-full rounded-full transition-all ${descLen === 0 ? 'w-0' : descLen <= 160 ? 'bg-emerald-400' : 'bg-red-400'}`} style={{ width: `${Math.min((descLen / 160) * 100, 100)}%` }} />
+              </div>
+              <p className={`text-xs ${charCountColor(descLen, 70, 160)}`}>{descLen}/160</p>
+            </div>
           </div>
           <div className="col-span-full">
             <label className="text-xs text-gray-500">Keywords (comma-separated)</label>
