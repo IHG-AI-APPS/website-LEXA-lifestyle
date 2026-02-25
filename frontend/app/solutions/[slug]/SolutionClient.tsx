@@ -199,17 +199,18 @@ export default function SolutionClient({
         </section>
       )}
 
-      {/* Brands */}
+      {/* Brands — Clean pill design */}
       {solution.brands && solution.brands.length > 0 && (
-        <section className="py-16 bg-white dark:bg-gray-900">
+        <section className="py-14 bg-white dark:bg-gray-900">
           <div className="container mx-auto px-8 lg:px-16">
             <div className="max-w-4xl mx-auto text-center">
-              <h3 className="text-2xl font-semibold mb-8">Premium Brands We Work With</h3>
-              <div className="flex flex-wrap justify-center gap-6">
+              <span className="text-xs uppercase tracking-widest text-[#C9A962] font-semibold">Trusted Technology</span>
+              <h3 className="text-2xl font-semibold mt-2 mb-8">Premium Brands We Integrate</h3>
+              <div className="flex flex-wrap justify-center gap-3">
                 {solution.brands.map((brand, index) => (
                   <span
                     key={index}
-                    className="px-6 py-3 bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-gray-200 font-medium rounded-full"
+                    className="px-5 py-2.5 bg-gray-50 dark:bg-gray-800 text-gray-700 dark:text-gray-300 font-medium text-sm border border-gray-200 dark:border-gray-700 rounded-full hover:border-[#C9A962]/50 transition-colors"
                   >
                     {brand}
                   </span>
