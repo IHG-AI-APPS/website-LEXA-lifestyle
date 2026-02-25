@@ -8,7 +8,7 @@ import os
 
 BASE_URL = os.environ.get('REACT_APP_BACKEND_URL', '').rstrip('/')
 
-# Service slugs to test (all 10 enriched services)
+# Service slugs to test (actual services in database)
 SERVICE_SLUGS = [
     "consultation-design",
     "home-cinema-multi-room-av",
@@ -16,10 +16,6 @@ SERVICE_SLUGS = [
     "network-infrastructure-it",
     "system-engineering-integration",
     "wiring",
-    "installation-commissioning",
-    "smart-home-programming",
-    "service-maintenance",
-    "warranty-aftercare"
 ]
 
 
