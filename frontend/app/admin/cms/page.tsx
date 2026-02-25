@@ -16,11 +16,26 @@ interface CMSSection {
 }
 
 const CMS_SECTIONS: CMSSection[] = [
+  // Homepage
   { key: 'homepage_hero', label: 'Homepage Hero', icon: Video, description: 'Hero video clips, heading, subtitle, CTA buttons' },
   { key: 'homepage_experience_cta', label: 'Experience Centre CTA', icon: MapPin, description: 'Gallery images, highlights, time slots, address' },
   { key: 'homepage_calculator_cards', label: 'Smart Home Tools', icon: Settings2, description: 'Featured tool and calculator cards on homepage' },
   { key: 'homepage_trusted_uae', label: 'Partners & Trust', icon: Award, description: 'Technology partners, developers, certifications, stats' },
+  // Pages
+  { key: 'page_about', label: 'About Page', icon: Users, description: 'Company story, values, milestones, partners' },
+  { key: 'page_contact', label: 'Contact Page', icon: MapPin, description: 'Address, phone, email, social links, map coordinates' },
+  { key: 'page_consultation', label: 'Consultation Page', icon: Calendar, description: 'Consultation types, process steps' },
+  { key: 'page_experience_centre', label: 'Experience Centre Page', icon: Building2, description: 'Zones, features, visit info' },
+  { key: 'site_footer', label: 'Footer', icon: Layout, description: 'Company description, social links' },
   { key: 'careers_positions', label: 'Career Positions', icon: Briefcase, description: 'Open positions on Work With Us page' },
+  // Services
+  { key: 'service_home_theater', label: 'Service: Home Theater', icon: Film, description: 'Features, projects, FAQs' },
+  { key: 'service_smart_lighting', label: 'Service: Smart Lighting', icon: Lightbulb, description: 'Features, projects' },
+  { key: 'service_home_cinema', label: 'Service: Home Cinema', icon: Film, description: 'Features, projects' },
+  { key: 'service_luxury_villa_automation', label: 'Service: Villa Automation', icon: Home, description: 'Features, projects' },
+  { key: 'service_outdoor_audio', label: 'Service: Outdoor Audio', icon: Speaker, description: 'Features, projects' },
+  { key: 'service_high_end_audio', label: 'Service: High-End Audio', icon: Speaker, description: 'Features, projects' },
+  { key: 'service_multi_room_audio', label: 'Service: Multi-Room Audio', icon: Speaker, description: 'Features, projects' },
 ]
 
 function ArrayEditor({ items, onChange, fields }: { items: any[], onChange: (items: any[]) => void, fields: { key: string, label: string, type?: string }[] }) {
