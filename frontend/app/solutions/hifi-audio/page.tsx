@@ -6,7 +6,6 @@ export default function HiFiAudioPage() {
   return (
     <SeoLandingPageTemplate
       cmsKey="page_solutions_hifi-audio"
-      cmsKey="page_solutions_hifi-audio"
       hero={{
         badge: "Audiophile Solutions",
         title: "HI-FI AUDIO",

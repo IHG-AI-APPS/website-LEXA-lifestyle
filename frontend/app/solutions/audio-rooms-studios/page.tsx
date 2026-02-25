@@ -9,7 +9,6 @@ export default function AudioRoomsStudiosPage() {
   return (
     <SeoLandingPageTemplate
       cmsKey="page_solutions_audio-rooms-studios"
-      cmsKey="page_solutions_audio-rooms-studios"
       hero={{
         badge: "Professional Audio Spaces",
         title: "AUDIO ROOMS",

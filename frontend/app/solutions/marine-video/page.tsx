@@ -8,7 +8,6 @@ export default function MarineVideoPage() {
     <>
       <SeoLandingPageTemplate
       cmsKey="page_solutions_marine-video"
-      cmsKey="page_solutions_marine-video"
         hero={{
           badge: "Marine Video",
           title: "MARINE",

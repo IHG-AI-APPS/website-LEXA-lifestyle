@@ -6,7 +6,6 @@ export default function OutdoorLivingPage() {
   return (
     <SeoLandingPageTemplate
       cmsKey="page_solutions_outdoor-living"
-      cmsKey="page_solutions_outdoor-living"
       hero={{
         badge: "Outdoor Entertainment",
         title: "OUTDOOR LIVING",

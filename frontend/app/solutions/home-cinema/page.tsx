@@ -6,7 +6,6 @@ export default function HomeCinemaPage() {
   return (
     <SeoLandingPageTemplate
       cmsKey="page_solutions_home-cinema"
-      cmsKey="page_solutions_home-cinema"
       hero={{
         badge: "Affordable Home Entertainment",
         title: "LIVING ROOM",

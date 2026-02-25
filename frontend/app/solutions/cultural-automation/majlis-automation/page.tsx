@@ -4,7 +4,6 @@ export default function MajlisAutomationPage() {
   return (
     <SeoLandingPageTemplate
       cmsKey="page_solutions_cultural-automation_majlis-automation"
-      cmsKey="page_solutions_cultural-automation_majlis-automation"
       hero={{
         badge: 'Cultural Automation',
         title: 'MAJLIS',

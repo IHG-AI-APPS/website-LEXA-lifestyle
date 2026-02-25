@@ -6,7 +6,6 @@ export default function HomeTheaterPage() {
   return (
     <SeoLandingPageTemplate
       cmsKey="page_solutions_home-theater"
-      cmsKey="page_solutions_home-theater"
       hero={{
         badge: "Entertainment Solutions",
         title: "HOME THEATER",

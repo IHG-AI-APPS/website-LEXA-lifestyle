@@ -6,7 +6,6 @@ export default function VideoWallsPage() {
   return (
     <SeoLandingPageTemplate
       cmsKey="page_solutions_video-walls"
-      cmsKey="page_solutions_video-walls"
       hero={{
         badge: "Visual Impact",
         title: "VIDEO WALLS",

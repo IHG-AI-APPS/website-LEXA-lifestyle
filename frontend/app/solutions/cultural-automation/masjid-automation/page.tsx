@@ -6,7 +6,6 @@ export default function MasjidAutomationPage() {
   return (
     <SeoLandingPageTemplate
       cmsKey="page_solutions_cultural-automation_masjid-automation"
-      cmsKey="page_solutions_cultural-automation_masjid-automation"
       hero={{
         badge: "Cultural Spaces",
         title: "MASJID & MOSQUE",

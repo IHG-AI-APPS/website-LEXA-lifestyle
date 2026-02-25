@@ -6,7 +6,6 @@ export default function LightingAutomationPage() {
   return (
     <SeoLandingPageTemplate
       cmsKey="page_solutions_lighting-automation"
-      cmsKey="page_solutions_lighting-automation"
       hero={{
         badge: "Smart Living",
         title: "LIGHTING",

@@ -8,7 +8,6 @@ export default function YachtAutomationPage() {
     <>
       <SeoLandingPageTemplate
       cmsKey="page_solutions_yacht-automation"
-      cmsKey="page_solutions_yacht-automation"
       hero={{
         badge: "Marine Solutions",
         title: "YACHT",

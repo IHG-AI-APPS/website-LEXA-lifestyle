@@ -6,7 +6,6 @@ export default function NetworkingPage() {
   return (
     <SeoLandingPageTemplate
       cmsKey="page_solutions_networking"
-      cmsKey="page_solutions_networking"
       hero={{
         badge: "Infrastructure Solutions",
         title: "NETWORK",

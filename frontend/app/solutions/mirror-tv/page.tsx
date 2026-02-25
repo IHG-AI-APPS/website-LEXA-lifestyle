@@ -8,7 +8,6 @@ export default function MirrorTVPage() {
     <>
       <SeoLandingPageTemplate
       cmsKey="page_solutions_mirror-tv"
-      cmsKey="page_solutions_mirror-tv"
         hero={{
           badge: "Hidden Technology",
           title: "MIRROR TV",

@@ -6,7 +6,6 @@ export default function AuditoriumsPage() {
   return (
     <SeoLandingPageTemplate
       cmsKey="page_solutions_auditoriums"
-      cmsKey="page_solutions_auditoriums"
       hero={{
         badge: "Large Venues",
         title: "AUDITORIUM",

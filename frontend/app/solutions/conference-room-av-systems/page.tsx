@@ -9,7 +9,6 @@ export default function ConferenceRoomAVSystemsPage() {
   return (
     <SeoLandingPageTemplate
       cmsKey="page_solutions_conference-room-av-systems"
-      cmsKey="page_solutions_conference-room-av-systems"
       hero={{
         badge: "Enterprise AV Solutions",
         title: "CONFERENCE ROOM",

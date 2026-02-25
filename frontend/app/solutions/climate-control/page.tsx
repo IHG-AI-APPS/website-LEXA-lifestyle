@@ -6,7 +6,6 @@ export default function ClimateControlPage() {
   return (
     <SeoLandingPageTemplate
       cmsKey="page_solutions_climate-control"
-      cmsKey="page_solutions_climate-control"
       hero={{
         badge: "Comfort Solutions",
         title: "CLIMATE",
