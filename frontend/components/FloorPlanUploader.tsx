@@ -9,7 +9,7 @@ import dynamic from 'next/dynamic'
 
 // Dynamically import ReactImageAnnotate to avoid SSR issues
 const ReactImageAnnotate = dynamic(
-  () => import('react-image-annotate').then((mod: any) => mod.default || mod),
+  () => import('react-image-annotate').then((mod: any) => mod.default || mod).catch(() => () => null),
   { ssr: false, loading: () => <div className="h-[600px] flex items-center justify-center bg-gray-100 dark:bg-gray-800 rounded-lg">Loading annotation tool...</div> }
 ) as any
 
