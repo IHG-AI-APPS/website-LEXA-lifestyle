@@ -8,12 +8,15 @@ import { ArrowUpRight } from 'lucide-react'
 import { getSolutions, type Solution } from '@/lib/api'
 import { useLanguage } from '@/contexts/LanguageContext'
 import dynamic from 'next/dynamic'
+import { useCms } from '@/hooks/useCms'
 
 const RecentlyViewedSection = dynamic(() => import('@/components/widgets/RecentlyViewedSection'), {
   ssr: false
 })
 
 export default function SolutionsPage() {
+  const cms = useCms('page_solutions_listing', null)
+
   const { language } = useLanguage()
   const [solutions, setSolutions] = useState<Solution[]>([])
   const [loading, setLoading] = useState(true)

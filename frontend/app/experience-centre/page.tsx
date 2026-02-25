@@ -9,6 +9,7 @@ import { Input } from '@/components/ui/input'
 import { Textarea } from '@/components/ui/textarea'
 import Link from 'next/link'
 import RelatedPagesNav from '@/components/navigation/RelatedPagesNav'
+import { useCms } from '@/hooks/useCms'
 
 const facilities = [
   {
@@ -61,6 +62,8 @@ const timeSlots = [
 ]
 
 export default function ExperienceCentrePage() {
+  const cms = useCms('page_experience_centre', null)
+
   const [showBookingModal, setShowBookingModal] = useState(false)
   const [bookingStep, setBookingStep] = useState<'date' | 'details' | 'confirm'>('date')
   const [bookingData, setBookingData] = useState({

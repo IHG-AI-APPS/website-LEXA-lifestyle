@@ -4,8 +4,11 @@ import Link from 'next/link'
 import { motion } from 'framer-motion'
 import { Brain, ArrowRight, Sparkles, Shield, Zap, Network, Lightbulb } from 'lucide-react'
 import { Button } from '@/components/ui/button'
+import { useCms } from '@/hooks/useCms'
 
 export default function ProjectBuilderLanding() {
+  const cms = useCms('page_project_builder', null)
+
   return (
     <div className="min-h-screen bg-white">
       {/* Hero Section */}

@@ -5,6 +5,7 @@ import Link from 'next/link'
 import SafeImage from '@/components/ui/SafeImage'
 import { motion } from 'framer-motion'
 import { Wine, Shield, Gamepad2, Music, Briefcase, Sparkles, Dumbbell, Baby, Bed, Users, Waves, Speaker, Plus } from 'lucide-react'
+import { useCms } from '@/hooks/useCms'
 
 const BACKEND_URL = process.env.NEXT_PUBLIC_BACKEND_URL || 'http://localhost:8001'
 
@@ -24,6 +25,8 @@ const categoryIcons: Record<string, any> = {
 }
 
 export default function SpecialtyRoomsPage() {
+  const cms = useCms('page_specialty_rooms_listing', null)
+
   const [rooms, setRooms] = useState<any[]>([])
   const [loading, setLoading] = useState(true)
   const [filter, setFilter] = useState('all')

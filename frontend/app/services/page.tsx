@@ -6,6 +6,7 @@ import Link from 'next/link'
 import { ArrowUpRight } from 'lucide-react'
 import RelatedPagesNav from '@/components/navigation/RelatedPagesNav'
 import { useLanguage } from '@/contexts/LanguageContext'
+import { useCms } from '@/hooks/useCms'
 
 interface Service {
   id: string
@@ -17,6 +18,8 @@ interface Service {
 }
 
 export default function ServicesPage() {
+  const cms = useCms('page_services_listing', null)
+
   const { t, language } = useLanguage()
   const [services, setServices] = useState<Service[]>([])
   const [loading, setLoading] = useState(true)

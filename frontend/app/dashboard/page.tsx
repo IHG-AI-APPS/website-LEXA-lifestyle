@@ -17,6 +17,7 @@ import {
 } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { toast } from 'sonner'
+import { useCms } from '@/hooks/useCms'
 
 const API_URL = process.env.NEXT_PUBLIC_BACKEND_URL || ''
 
@@ -35,6 +36,8 @@ interface SavedSession {
 }
 
 export default function DashboardPage() {
+  const cms = useCms('page_dashboard', null)
+
   const [sessions, setSessions] = useState<SavedSession[]>([])
   const [loading, setLoading] = useState(true)
   const [deletingId, setDeletingId] = useState<string | null>(null)

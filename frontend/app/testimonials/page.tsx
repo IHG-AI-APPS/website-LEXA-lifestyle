@@ -6,6 +6,7 @@ import Link from 'next/link'
 import { Star, Quote, ArrowRight, Building2, MapPin } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { useLanguage } from '@/contexts/LanguageContext'
+import { useCms } from '@/hooks/useCms'
 
 const BACKEND_URL = process.env.NEXT_PUBLIC_BACKEND_URL || ''
 
@@ -23,6 +24,8 @@ interface Testimonial {
 }
 
 export default function TestimonialsPage() {
+  const cms = useCms('page_testimonials_listing', null)
+
   const { language } = useLanguage()
   const [testimonials, setTestimonials] = useState<Testimonial[]>([])
   const [loading, setLoading] = useState(true)

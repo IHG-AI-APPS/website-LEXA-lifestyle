@@ -20,6 +20,7 @@ import {
   ArrowDownRight
 } from 'lucide-react'
 import { Button } from '@/components/ui/button'
+import { useCms } from '@/hooks/useCms'
 
 const API_URL = process.env.NEXT_PUBLIC_BACKEND_URL || ''
 
@@ -45,6 +46,8 @@ interface AnalyticsData {
 }
 
 export default function AnalyticsDashboard() {
+  const cms = useCms('page_analytics', null)
+
   const [data, setData] = useState<AnalyticsData | null>(null)
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState<string | null>(null)

@@ -13,8 +13,11 @@ import BOQSummary from '../components/BOQSummary'
 import FinalSubmission from '../components/FinalSubmission'
 import StepProgress from '../components/StepProgress'
 import NavigationControls from '../components/NavigationControls'
+import { useCms } from '@/hooks/useCms'
 
 export default function ProjectBuilderFlow() {
+  const cms = useCms('page_project_builder_start', null)
+
   const [currentView, setCurrentView] = useState<string>('dna') 
   // dna, objectives, priorities, intelligence, capture, proposals, services, boq, submission
   const [sessionId, setSessionId] = useState<string | null>(null)

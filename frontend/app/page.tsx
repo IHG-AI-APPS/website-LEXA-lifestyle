@@ -5,6 +5,7 @@ import dynamic from 'next/dynamic'
 import HeroCurator from '@/components/gallery/HeroCurator'
 import StatsSection from '@/components/homepage/StatsSection'
 import PersonaModal from '@/components/sections/PersonaModal'
+import { useCms } from '@/hooks/useCms'
 
 const TrustBadges = dynamic(() => import('@/components/social-proof/TrustBadges'))
 
@@ -26,6 +27,8 @@ const TrustedInUAE = dynamic(() => import('@/components/sections/TrustedInUAE'),
 })
 
 export default function HomePage() {
+  const cms = useCms('page_homepage', null)
+
   const [showPersonaModal, setShowPersonaModal] = useState(false)
 
   // Register service worker for offline support and caching

@@ -7,11 +7,14 @@ import Link from 'next/link'
 import { Calendar, Clock, Tag } from 'lucide-react'
 import { Badge } from '@/components/ui/badge'
 import RelatedPagesNav from '@/components/navigation/RelatedPagesNav'
+import { useCms } from '@/hooks/useCms'
 
 const BACKEND_URL = process.env.NEXT_PUBLIC_BACKEND_URL || 'http://localhost:8001'
 const API = `${BACKEND_URL}/api`
 
 export default function BlogPage() {
+  const cms = useCms('page_blog_listing', null)
+
   const [articles, setArticles] = useState([])
   const [loading, setLoading] = useState(true)
   const [selectedCategory, setSelectedCategory] = useState('All')

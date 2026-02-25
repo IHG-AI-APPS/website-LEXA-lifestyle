@@ -7,6 +7,7 @@ import { Button } from '@/components/ui/button'
 import TrustBar from '@/components/conversion/TrustBar'
 import RelatedPagesNav from '@/components/navigation/RelatedPagesNav'
 import {
+import { useCms } from '@/hooks/useCms'
   CheckCircle2,
   X,
   ArrowRight,
@@ -17,6 +18,8 @@ import {
 } from 'lucide-react'
 
 export default function LuxuryHomeCinemaDubaiPage() {
+  const cms = useCms('page_luxury_home_cinema_dubai', null)
+
   return (
     <div className="min-h-screen bg-[#0A0A0A] text-white">
       {/* HERO */}

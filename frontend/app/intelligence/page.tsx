@@ -29,6 +29,7 @@ import {
 import { Button } from '@/components/ui/button'
 import ConsultationForm from '@/components/forms/ConsultationForm'
 import { useLanguage } from '@/contexts/LanguageContext'
+import { useCms } from '@/hooks/useCms'
 
 const BACKEND_URL = process.env.NEXT_PUBLIC_BACKEND_URL || ''
 
@@ -81,6 +82,8 @@ const categoryNames: Record<string, { en: string; ar: string }> = {
 }
 
 export default function IntelligencePage() {
+  const cms = useCms('page_intelligence_listing', null)
+
   const { language } = useLanguage()
   const [showConsultationForm, setShowConsultationForm] = useState(false)
   const [features, setFeatures] = useState<IntelligenceFeature[]>([])

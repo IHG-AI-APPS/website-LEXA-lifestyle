@@ -5,8 +5,11 @@ import { motion } from 'framer-motion'
 import SafeImage from '@/components/ui/SafeImage'
 import Link from 'next/link'
 import { getProjects, type Project } from '@/lib/api'
+import { useCms } from '@/hooks/useCms'
 
 export default function ProjectsPage() {
+  const cms = useCms('page_projects_listing', null)
+
   const [filter, setFilter] = useState('all')
   const [projects, setProjects] = useState<Project[]>([])
   const [loading, setLoading] = useState(true)

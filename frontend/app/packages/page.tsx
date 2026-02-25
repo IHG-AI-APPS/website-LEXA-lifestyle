@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import { motion } from 'framer-motion'
 import { 
+import { useCms } from '@/hooks/useCms'
   Home, 
   Building2, 
   Hotel, 
@@ -21,6 +22,8 @@ import {
 const BACKEND_URL = process.env.NEXT_PUBLIC_BACKEND_URL || 'http://localhost:8001'
 
 export default function PackagesPage() {
+  const cms = useCms('page_packages_listing', null)
+
   const [propertyPackages, setPropertyPackages] = useState<any[]>([])
   const [loading, setLoading] = useState(true)
 

@@ -28,6 +28,7 @@ import BookingModal from '@/components/modals/BookingModal'
 import TabbyWidget from '@/components/TabbyWidget'
 import RelatedPagesNav from '@/components/navigation/RelatedPagesNav'
 import FloorPlanUploader from '@/components/FloorPlanUploader'
+import { useCms } from '@/hooks/useCms'
 
 const API_URL = process.env.NEXT_PUBLIC_BACKEND_URL || ''
 
@@ -341,6 +342,8 @@ const LOCATIONS = {
 }
 
 export default function IndustryCalculatorPage() {
+  const cms = useCms('page_calculator', null)
+
   const searchParams = useSearchParams()
   const [step, setStep] = useState(1)
   

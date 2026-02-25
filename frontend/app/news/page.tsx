@@ -5,6 +5,7 @@ import { motion } from 'framer-motion'
 import SafeImage from '@/components/ui/SafeImage'
 import Link from 'next/link'
 import { Calendar, ArrowRight } from 'lucide-react'
+import { useCms } from '@/hooks/useCms'
 
 interface NewsArticle {
   id: string
@@ -18,6 +19,8 @@ interface NewsArticle {
 }
 
 export default function NewsPage() {
+  const cms = useCms('page_news_listing', null)
+
   const [news, setNews] = useState<NewsArticle[]>([])
   const [loading, setLoading] = useState(true)
 

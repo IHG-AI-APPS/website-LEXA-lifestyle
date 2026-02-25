@@ -22,8 +22,11 @@ import { Button } from '@/components/ui/button'
 import { useState } from 'react'
 import ConsultationForm from '@/components/forms/ConsultationForm'
 import PricingDisclaimer from '@/components/shared/PricingDisclaimer'
+import { useCms } from '@/hooks/useCms'
 
 export default function SmartApartmentPackagesPage() {
+  const cms = useCms('page_packages_smart_apartment', null)
+
   const [showConsultationForm, setShowConsultationForm] = useState(false)
   const [selectedSize, setSelectedSize] = useState('studio')
 

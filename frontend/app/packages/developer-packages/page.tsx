@@ -23,8 +23,11 @@ import {
 import { Button } from '@/components/ui/button'
 import { useState } from 'react'
 import PricingDisclaimer from '@/components/shared/PricingDisclaimer'
+import { useCms } from '@/hooks/useCms'
 
 export default function DeveloperPackagesPage() {
+  const cms = useCms('page_packages_developer', null)
+
   const [formData, setFormData] = useState({
     companyName: '',
     contactName: '',

@@ -7,6 +7,7 @@ import Link from 'next/link'
 import { Button } from '@/components/ui/button'
 import ConsultationForm from '@/components/forms/ConsultationForm'
 import { Award, ChevronRight, Star } from 'lucide-react'
+import { useCms } from '@/hooks/useCms'
 
 const BACKEND_URL = process.env.NEXT_PUBLIC_BACKEND_URL || 'http://localhost:8001'
 const API = `${BACKEND_URL}/api`
@@ -26,6 +27,8 @@ const categoryStyles: Record<string, { color: string; bg: string }> = {
 }
 
 export default function BrandsPage() {
+  const cms = useCms('page_brands_listing', null)
+
   const [showConsultationForm, setShowConsultationForm] = useState(false)
   const [brands, setBrands] = useState<any[]>([])
   const [loading, setLoading] = useState(true)

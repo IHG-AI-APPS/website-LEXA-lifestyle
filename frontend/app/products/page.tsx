@@ -7,11 +7,14 @@ import Link from 'next/link'
 import { Button } from '@/components/ui/button'
 import ConsultationForm from '@/components/forms/ConsultationForm'
 import { Monitor, Cpu, Wifi, Code, ArrowRight } from 'lucide-react'
+import { useCms } from '@/hooks/useCms'
 
 const BACKEND_URL = process.env.NEXT_PUBLIC_BACKEND_URL || 'http://localhost:8001'
 const API = `${BACKEND_URL}/api`
 
 export default function ProductsPage() {
+  const cms = useCms('page_products_listing', null)
+
   const [showConsultationForm, setShowConsultationForm] = useState(false)
   const [products, setProducts] = useState([])
   const [loading, setLoading] = useState(true)

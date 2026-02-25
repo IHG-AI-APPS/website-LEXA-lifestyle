@@ -8,6 +8,7 @@ import {
   GraduationCap, Heart, TrendingUp, Clock, CheckCircle2, Building2
 } from 'lucide-react'
 import { motion, AnimatePresence } from 'framer-motion'
+import { useCms } from '@/hooks/useCms'
 
 const expertiseAreas = [
   {
@@ -317,6 +318,8 @@ function JobCard(props) {
 const BACKEND_URL = process.env.NEXT_PUBLIC_BACKEND_URL || ''
 
 export default function WorkWithUsPage() {
+  const cms = useCms('page_work_with_us', null)
+
   const [cmsPositions, setCmsPositions] = useState<any[] | null>(null)
 
   useEffect(() => {

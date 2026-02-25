@@ -6,6 +6,7 @@ import Link from 'next/link'
 import { Button } from '@/components/ui/button'
 import TrustBar from '@/components/conversion/TrustBar'
 import {
+import { useCms } from '@/hooks/useCms'
   Moon,
   Building2,
   Radio,
@@ -19,6 +20,8 @@ import {
 } from 'lucide-react'
 
 export default function CulturalAutomationPage() {
+  const cms = useCms('page_solutions_cultural_automation', null)
+
   const solutions = [
     {
       icon: Moon,

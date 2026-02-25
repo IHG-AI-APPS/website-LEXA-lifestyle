@@ -7,8 +7,11 @@ import Link from 'next/link'
 import { Clock, ArrowRight, Search } from 'lucide-react'
 import { getArticles, getArticleCategories, type Article } from '@/lib/api'
 import { Button } from '@/components/ui/button'
+import { useCms } from '@/hooks/useCms'
 
 export default function ResourcesPage() {
+  const cms = useCms('page_resources_listing', null)
+
   const [articles, setArticles] = useState<Article[]>([])
   const [filteredArticles, setFilteredArticles] = useState<Article[]>([])
   const [categories, setCategories] = useState<string[]>([])
