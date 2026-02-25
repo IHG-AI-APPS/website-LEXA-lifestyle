@@ -2,205 +2,88 @@
 
 import { useState } from 'react'
 import { motion } from 'framer-motion'
-import SafeImage from '@/components/ui/SafeImage'
 import { Button } from '@/components/ui/button'
 import ConsultationForm from '@/components/forms/ConsultationForm'
-import RelatedPagesNav from '@/components/navigation/RelatedPagesNav'
-import { Search, Pencil, Wrench, Code, Headphones, CheckCircle } from 'lucide-react'
+import Link from 'next/link'
+import { Search, Pencil, Wrench, Code, Headphones, CheckCircle2, ArrowRight, Phone } from 'lucide-react'
 import { useCms } from '@/hooks/useCms'
+
+const phases = [
+  { number: '01', icon: Search, title: 'Discovery & Consultation', duration: '1-2 Weeks', description: 'We begin with an in-depth consultation to understand your vision, lifestyle, and technical requirements.', activities: ['Initial discovery call to discuss your project', 'Comprehensive site survey and assessment', 'Requirements documentation and scoping', 'Budget analysis and feasibility study', 'Preliminary recommendations and proposal'], deliverables: ['Site survey report', 'Requirements document', 'Initial proposal with budget range'] },
+  { number: '02', icon: Pencil, title: 'Design & Planning', duration: '2-4 Weeks', description: 'Our design team creates a bespoke system architecture tailored to your space and needs.', activities: ['Detailed system architecture design', 'Equipment selection and specification', 'CAD drawings and technical documentation', '3D visualization and mockups', 'Coordination with architects and designers'], deliverables: ['System design documentation', 'CAD drawings', 'Equipment specifications', '3D renders'] },
+  { number: '03', icon: Wrench, title: 'Installation', duration: '4-8 Weeks', description: 'Professional installation with meticulous attention to detail and quality.', activities: ['Pre-installation site preparation', 'Structured cabling and infrastructure', 'Equipment mounting and integration', 'Cable management and concealment', 'Quality control inspections'], deliverables: ['Installed equipment', 'Cable infrastructure', 'Interim testing reports'] },
+  { number: '04', icon: Code, title: 'Programming & Integration', duration: '2-3 Weeks', description: 'Custom programming for seamless system integration and intuitive control.', activities: ['System configuration and programming', 'User interface customization', 'Scene and automation setup', 'Cross-system integration testing', 'Performance optimization'], deliverables: ['Configured system', 'Custom UI', 'Automation scenes', 'Test reports'] },
+  { number: '05', icon: Headphones, title: 'Training & Handover', duration: '1 Week', description: 'Comprehensive training and support to ensure you get the most from your system.', activities: ['Comprehensive user training sessions', 'Documentation and user guides', 'Warranty activation and registration', 'Support plan enrollment', 'Final quality assurance'], deliverables: ['User documentation', 'Training completion', 'Warranty certificates', 'Support plan'] },
+]
 
 export default function ProcessPage() {
   const cms = useCms('page_process', null)
-
   const [showConsultationForm, setShowConsultationForm] = useState(false)
 
-  const phases = [
-    {
-      number: '01',
-      icon: Search,
-      title: 'Discovery & Consultation',
-      duration: '1-2 Weeks',
-      description: 'We begin with an in-depth consultation to understand your vision, lifestyle, and technical requirements.',
-      activities: [
-        'Initial discovery call to discuss your project',
-        'Comprehensive site survey and assessment',
-        'Requirements documentation and scoping',
-        'Budget analysis and feasibility study',
-        'Preliminary recommendations and proposal'
-      ],
-      deliverables: ['Site survey report', 'Requirements document', 'Initial proposal with budget range']
-    },
-    {
-      number: '02',
-      icon: Pencil,
-      title: 'Design & Planning',
-      duration: '2-4 Weeks',
-      description: 'Our design team creates a bespoke system architecture tailored to your space and needs.',
-      activities: [
-        'Detailed system architecture design',
-        'Equipment selection and specification',
-        'CAD drawings and technical documentation',
-        '3D visualization and mockups',
-        'Coordination with architects and designers'
-      ],
-      deliverables: ['System design documentation', 'CAD drawings', 'Equipment specifications', '3D renders']
-    },
-    {
-      number: '03',
-      icon: Wrench,
-      title: 'Installation',
-      duration: '4-8 Weeks',
-      description: 'Professional installation with meticulous attention to detail and quality.',
-      activities: [
-        'Pre-installation site preparation',
-        'Structured cabling and infrastructure',
-        'Equipment mounting and integration',
-        'Cable management and concealment',
-        'Quality control inspections'
-      ],
-      deliverables: ['Installed equipment', 'Cable infrastructure', 'Interim testing reports']
-    },
-    {
-      number: '04',
-      icon: Code,
-      title: 'Programming & Integration',
-      duration: '2-3 Weeks',
-      description: 'Custom programming for seamless system integration and intuitive control.',
-      activities: [
-        'System configuration and programming',
-        'User interface customization',
-        'Scene and automation setup',
-        'Cross-system integration testing',
-        'Performance optimization'
-      ],
-      deliverables: ['Configured system', 'Custom UI', 'Automation scenes', 'Test reports']
-    },
-    {
-      number: '05',
-      icon: Headphones,
-      title: 'Training & Handover',
-      duration: '1 Week',
-      description: 'Comprehensive training and support to ensure you get the most from your system.',
-      activities: [
-        'Comprehensive user training sessions',
-        'Documentation and user guides',
-        'Warranty activation and registration',
-        'Support plan enrollment',
-        'Final quality assurance'
-      ],
-      deliverables: ['User documentation', 'Training completion', 'Warranty certificates', 'Support plan']
-    },
-  ]
-
-  const principles = [
-    {
-      title: 'Transparency',
-      description: 'Clear communication and documentation at every stage. No surprises.'
-    },
-    {
-      title: 'Quality',
-      description: 'Uncompromising standards from design through installation and support.'
-    },
-    {
-      title: 'Timeline',
-      description: 'Coordinated scheduling and milestone tracking to meet your deadlines.'
-    },
-    {
-      title: 'Partnership',
-      description: 'Long-term relationship focused on your success, not just project completion.'
-    },
-  ]
-
   return (
-    <div className="min-h-screen bg-white pt-20">
+    <div className="min-h-screen bg-white dark:bg-gray-950 pt-20" data-testid="process-page">
       {/* Hero */}
-      <section className="py-20 bg-gray-50 dark:bg-gray-800">
-        <div className="container mx-auto px-8 lg:px-16">
-          <div className="max-w-7xl mx-auto">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-              className="max-w-4xl"
-            >
-              <span className="text-xs tracking-[0.5em] uppercase text-gray-400 font-medium mb-6 block">
-                Our Process
-              </span>
-              <h1 className="text-7xl sm:text-8xl font-semibold tracking-[-0.04em] leading-[0.9] mb-8">
-                FROM VISION
-                <br />
-                TO
-                <br />
-                <span className="text-transparent bg-clip-text metallic-gradient">REALITY</span>
-              </h1>
-              <div className="h-px w-32 bg-gradient-to-r from-platinum to-transparent mb-8" />
-              <p className="text-xl text-gray-600 dark:text-gray-400 font-normal leading-relaxed">
-                A proven methodology refined over 1,000+ projects. Structured phases with clear milestones, transparent communication, and predictable outcomes.
-              </p>
-            </motion.div>
-          </div>
+      <section className="relative overflow-hidden bg-gray-900 text-white py-20 lg:py-28">
+        <div className="container mx-auto px-8 lg:px-16 relative z-10">
+          <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }} className="max-w-3xl">
+            <span className="inline-block px-3 py-1 rounded-full bg-[#C9A962]/15 border border-[#C9A962]/30 text-[#C9A962] text-xs uppercase tracking-widest mb-5">Our Process</span>
+            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-5 tracking-tight leading-tight" data-testid="process-title">From Vision to Reality</h1>
+            <p className="text-base text-gray-300 max-w-lg leading-relaxed mb-8">A proven methodology refined over 1,000+ projects. Structured phases with clear milestones, transparent communication, and predictable outcomes.</p>
+            <Button size="lg" className="bg-[#C9A962] text-gray-900 hover:bg-[#C9A962]/90 font-semibold" onClick={() => setShowConsultationForm(true)} data-testid="hero-cta">
+              Start Your Project <ArrowRight className="ml-2" size={18} />
+            </Button>
+          </motion.div>
         </div>
       </section>
 
       {/* Process Phases */}
-      <section className="py-20">
+      <section className="py-16 lg:py-20 bg-white dark:bg-gray-950" data-testid="phases-section">
         <div className="container mx-auto px-8 lg:px-16">
-          <div className="max-w-7xl mx-auto space-y-24">
+          <div className="max-w-5xl mx-auto space-y-16">
             {phases.map((phase, index) => {
               const Icon = phase.icon
               return (
-                <motion.div
-                  key={phase.number}
-                  initial={{ opacity: 0, y: 40 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.8 }}
-                  viewport={{ once: true }}
-                  className="grid grid-cols-1 lg:grid-cols-12 gap-12"
-                >
+                <motion.div key={phase.number} initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5 }}
+                  className="relative">
                   {/* Phase Header */}
-                  <div className="lg:col-span-12">
-                    <div className="flex items-start gap-8 mb-8">
-                      <div className="w-20 h-20 border border-gray-300 dark:border-gray-600 flex items-center justify-center flex-shrink-0">
-                        <Icon size={36} className="text-charcoal" strokeWidth={1.5} />
+                  <div className="flex items-start gap-6 mb-8">
+                    <div className="w-16 h-16 rounded-xl bg-gray-900 dark:bg-[#C9A962] flex items-center justify-center flex-shrink-0">
+                      <Icon className="text-white dark:text-gray-900" size={28} />
+                    </div>
+                    <div>
+                      <div className="flex items-center gap-3 mb-2">
+                        <span className="text-2xl font-bold text-gray-300 dark:text-gray-600">{phase.number}</span>
+                        <span className="px-3 py-1 rounded-full bg-[#C9A962]/10 text-[#C9A962] text-xs font-semibold uppercase tracking-widest">{phase.duration}</span>
                       </div>
-                      <div className="flex-1">
-                        <div className="flex items-center gap-4 mb-3">
-                          <span className="text-3xl font-semibold text-gray-300">{phase.number}</span>
-                          <span className="text-xs tracking-wider uppercase text-gray-400 border border-gray-300 dark:border-gray-600 px-3 py-1">
-                            {phase.duration}
-                          </span>
-                        </div>
-                        <h3 className="text-4xl font-semibold mb-4">{phase.title}</h3>
-                        <p className="text-lg text-gray-600 dark:text-gray-400 leading-relaxed max-w-3xl">
-                          {phase.description}
-                        </p>
-                      </div>
+                      <h3 className="text-xl sm:text-2xl font-bold text-gray-900 dark:text-white mb-2">{phase.title}</h3>
+                      <p className="text-base text-gray-600 dark:text-gray-400 leading-relaxed max-w-2xl">{phase.description}</p>
                     </div>
                   </div>
 
                   {/* Phase Details */}
-                  <div className="lg:col-span-7">
-                    <h4 className="text-xs tracking-wider uppercase text-gray-400 mb-4">Key Activities</h4>
-                    <ul className="space-y-3">
-                      {phase.activities.map((activity) => (
-                        <li key={activity} className="flex items-start gap-3 text-gray-600 dark:text-gray-400 dark:text-gray-400">
-                          <CheckCircle size={18} className="text-charcoal mt-1 flex-shrink-0" strokeWidth={1.5} />
-                          <span>{activity}</span>
-                        </li>
-                      ))}
-                    </ul>
+                  <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 ml-0 lg:ml-[88px]">
+                    <div>
+                      <span className="text-xs uppercase tracking-widest text-[#C9A962] font-semibold mb-4 block">Key Activities</span>
+                      <ul className="space-y-3">
+                        {phase.activities.map((activity, i) => (
+                          <li key={i} className="flex items-start gap-3">
+                            <CheckCircle2 size={16} className="text-[#C9A962] flex-shrink-0 mt-0.5" />
+                            <span className="text-sm text-gray-700 dark:text-gray-300">{activity}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                    <div>
+                      <span className="text-xs uppercase tracking-widest text-[#C9A962] font-semibold mb-4 block">Deliverables</span>
+                      <ul className="space-y-2">
+                        {phase.deliverables.map((d, i) => (
+                          <li key={i} className="text-sm text-gray-600 dark:text-gray-400 border-l-2 border-[#C9A962]/40 pl-4 py-1">{d}</li>
+                        ))}
+                      </ul>
+                    </div>
                   </div>
 
-                  <div className="lg:col-span-5">
-                    <h4 className="text-xs tracking-wider uppercase text-gray-400 mb-4">Deliverables</h4>
-                    <ul className="space-y-2">
-                      {phase.deliverables.map((deliverable) => (
-                        <li key={deliverable} className="text-gray-600 dark:text-gray-400 border-l-2 border-gray-300 dark:border-gray-600 pl-4 py-1">
-                          {deliverable}
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
+                  {index < phases.length - 1 && <div className="h-px bg-gray-200 dark:bg-gray-800 mt-12" />}
                 </motion.div>
               )
             })}
@@ -209,34 +92,24 @@ export default function ProcessPage() {
       </section>
 
       {/* Principles */}
-      <section className="py-20 bg-charcoal">
+      <section className="py-16 lg:py-20 bg-gray-50 dark:bg-gray-900">
         <div className="container mx-auto px-8 lg:px-16">
-          <div className="max-w-7xl mx-auto">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-              viewport={{ once: true }}
-              className="mb-16"
-            >
-              <h2 className="text-5xl font-semibold text-white mb-6">Our Principles</h2>
-              <p className="text-lg text-gray-400 font-normal max-w-2xl">
-                What guides us through every project phase.
-              </p>
-            </motion.div>
-
+          <div className="max-w-5xl mx-auto">
+            <div className="text-center mb-12">
+              <span className="text-xs uppercase tracking-widest text-[#C9A962] font-semibold">How We Work</span>
+              <h2 className="text-2xl sm:text-3xl font-bold mt-2 text-gray-900 dark:text-white">Our Principles</h2>
+            </div>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-              {principles.map((principle, index) => (
-                <motion.div
-                  key={principle.title}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.5, delay: 0.2 }}
-                  viewport={{ once: true }}
-                  className="border border-gray-800 p-6"
-                >
-                  <h3 className="text-xl font-semibold text-white mb-3">{principle.title}</h3>
-                  <p className="text-sm text-gray-400 leading-relaxed">{principle.description}</p>
+              {[
+                { title: 'Transparency', desc: 'Clear communication and documentation at every stage. No surprises.' },
+                { title: 'Quality', desc: 'Uncompromising standards from design through installation and support.' },
+                { title: 'Timeline', desc: 'Coordinated scheduling and milestone tracking to meet your deadlines.' },
+                { title: 'Partnership', desc: 'Long-term relationship focused on your success, not just project completion.' },
+              ].map((p, i) => (
+                <motion.div key={i} initial={{ opacity: 0, y: 15 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.3, delay: i * 0.1 }}
+                  className="bg-white dark:bg-gray-950 p-6 rounded-xl border border-gray-100 dark:border-gray-800">
+                  <h3 className="text-base font-bold mb-2 text-gray-900 dark:text-white">{p.title}</h3>
+                  <p className="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">{p.desc}</p>
                 </motion.div>
               ))}
             </div>
@@ -244,65 +117,24 @@ export default function ProcessPage() {
         </div>
       </section>
 
-      {/* Timeline */}
-      <section className="py-20 bg-gray-50 dark:bg-gray-800">
-        <div className="container mx-auto px-8 lg:px-16">
-          <div className="max-w-4xl mx-auto text-center">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-              viewport={{ once: true }}
-            >
-              <h2 className="text-5xl font-semibold mb-6">Typical Project Timeline</h2>
-              <p className="text-xl text-gray-600 dark:text-gray-400 font-normal mb-10">
-                Most residential projects complete in 10-18 weeks from consultation to handover.
-              </p>
-              <p className="text-base text-gray-500 mb-10">
-                Timeline varies based on project scope, property size, and coordination with construction schedules.
-              </p>
-              <Button
-                size="lg"
-                className="bg-charcoal hover:bg-charcoal-light text-white px-12"
-                onClick={() => setShowConsultationForm(true)}
-              >
-                Start Your Project
+      {/* CTA */}
+      <section className="py-20 bg-gray-900 text-white">
+        <div className="container mx-auto px-8 lg:px-16 relative z-10">
+          <div className="max-w-3xl mx-auto text-center">
+            <span className="text-[#C9A962] text-xs uppercase tracking-widest font-semibold">Ready to Start?</span>
+            <h2 className="text-3xl sm:text-4xl font-bold mt-3 mb-4">Let&apos;s Begin Your Project</h2>
+            <p className="text-gray-400 mb-8 max-w-xl mx-auto">From concept to completion, we&apos;ll guide you every step of the way.</p>
+            <div className="flex flex-col sm:flex-row gap-3 justify-center">
+              <Button size="lg" className="bg-[#C9A962] text-gray-900 hover:bg-[#C9A962]/90 font-semibold px-8" onClick={() => setShowConsultationForm(true)} data-testid="cta-button">
+                Book Free Consultation
               </Button>
-            </motion.div>
+              <Link href="/contact"><Button size="lg" variant="outline" className="border-white/30 text-white hover:bg-white/10 px-8">Contact Us</Button></Link>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* Related Pages Navigation */}
-      <RelatedPagesNav
-        pages={[
-          {
-            title: 'Experience Centre',
-            description: 'Visit our Dubai showroom and experience our solutions live.',
-            href: '/experience-centre',
-            category: 'Visit Us'
-          },
-          {
-            title: 'Solutions Overview',
-            description: 'Explore our complete range of smart home solutions.',
-            href: '/solutions',
-            category: 'What We Offer'
-          },
-          {
-            title: 'Projects Portfolio',
-            description: 'See our completed luxury installations across the UAE.',
-            href: '/projects',
-            category: 'Our Work'
-          }
-        ]}
-        title="Next Steps"
-        subtitle="Ready to start your smart living journey?"
-      />
-
-      <ConsultationForm
-        isOpen={showConsultationForm}
-        onClose={() => setShowConsultationForm(false)}
-      />
+      {showConsultationForm && <ConsultationForm isOpen={showConsultationForm} onClose={() => setShowConsultationForm(false)} />}
     </div>
   )
 }
