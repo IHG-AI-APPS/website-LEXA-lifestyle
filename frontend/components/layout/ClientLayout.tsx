@@ -15,13 +15,14 @@ import { Toaster } from 'sonner'
 import dynamic from 'next/dynamic'
 import { trackPageView } from '@/hooks/useAnalytics'
 
-// Dynamically import widgets to avoid SSR issues
-const AIChatWidget = dynamic(() => import('@/components/widgets/AIChatWidget').catch(() => () => null), { ssr: false })
-const SocialProofWidget = dynamic(() => import('@/components/widgets/SocialProofWidget').catch(() => () => null), { ssr: false })
-const ExitIntentPopup = dynamic(() => import('@/components/widgets/ExitIntentPopup').catch(() => () => null), { ssr: false })
-const CookieConsent = dynamic(() => import('@/components/widgets/CookieConsent').catch(() => () => null), { ssr: false })
-const LinkPrefetcher = dynamic(() => import('@/components/performance/LinkPrefetcher').catch(() => () => null), { ssr: false })
-const ScheduleVisitButton = dynamic(() => import('@/components/widgets/ScheduleVisitButton').catch(() => () => null), { ssr: false })
+// Dynamically import widgets to avoid SSR issues - with error recovery
+const Noop = () => null
+const AIChatWidget = dynamic(() => import('@/components/widgets/AIChatWidget').catch(() => ({ default: Noop })), { ssr: false })
+const SocialProofWidget = dynamic(() => import('@/components/widgets/SocialProofWidget').catch(() => ({ default: Noop })), { ssr: false })
+const ExitIntentPopup = dynamic(() => import('@/components/widgets/ExitIntentPopup').catch(() => ({ default: Noop })), { ssr: false })
+const CookieConsent = dynamic(() => import('@/components/widgets/CookieConsent').catch(() => ({ default: Noop })), { ssr: false })
+const LinkPrefetcher = dynamic(() => import('@/components/performance/LinkPrefetcher').catch(() => ({ default: Noop })), { ssr: false })
+const ScheduleVisitButton = dynamic(() => import('@/components/widgets/ScheduleVisitButton').catch(() => ({ default: Noop })), { ssr: false })
 
 export default function ClientLayout({ children }: { children: React.ReactNode }) {
   const pathname = usePathname()
