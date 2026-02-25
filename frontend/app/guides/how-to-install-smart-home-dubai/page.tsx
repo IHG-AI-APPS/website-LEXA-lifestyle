@@ -2,17 +2,17 @@ import { Metadata } from 'next'
 import Link from 'next/link'
 import { ArrowLeft, Clock, DollarSign } from 'lucide-react'
 import { generateHowToSchema } from '@/lib/seo'
+import { generateCmsMetadata } from '@/lib/cmsMetadata'
 import CmsReg from './CmsReg'
 
 export async function generateMetadata(): Promise<Metadata> {
   return generateCmsMetadata('seo_resources', {
-  title: 'How to Install Smart Home in Dubai | 8-Step Installation Guide | LEXA',
-  description: 'Complete step-by-step guide to installing smart home automation in Dubai. From consultation to commissioning. Timeline, costs, and expert tips from 500+ projects.',
-  alternates: {
-    canonical: 'https://cms-seo-live.preview.emergentagent.com/guides/how-to-install-smart-home-dubai'
-import { generateCmsMetadata } from '@/lib/cmsMetadata'
-  }
-})
+    title: 'How to Install Smart Home in Dubai | 8-Step Installation Guide | LEXA',
+    description: 'Complete step-by-step guide to installing smart home automation in Dubai. From consultation to commissioning. Timeline, costs, and expert tips from 500+ projects.',
+    alternates: {
+      canonical: 'https://cms-seo-live.preview.emergentagent.com/guides/how-to-install-smart-home-dubai'
+    }
+  })
 }
 
 const guideData = {
