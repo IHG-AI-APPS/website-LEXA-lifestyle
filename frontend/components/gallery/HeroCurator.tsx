@@ -179,7 +179,7 @@ export default function HeroCurator({ onPersonaClick }: HeroCuratorProps) {
 
       {/* Subtle Video Progress Dots */}
       <div className="absolute bottom-24 left-1/2 z-10 -translate-x-1/2 flex gap-1.5">
-        {HERO_CLIPS.map((_, index) => (
+        {heroClips.map((_, index) => (
           <div
             key={index}
             className={`h-1 rounded-full transition-all duration-500 ${
