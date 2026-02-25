@@ -180,6 +180,7 @@ export default function RecentlyViewedSection({
             <button
               onClick={clearAll}
               className="flex items-center gap-1.5 text-sm text-gray-500 dark:text-gray-400 hover:text-red-500 dark:hover:text-red-400 transition-colors"
+              data-testid="clear-all-recently-viewed"
             >
               <Trash2 className="h-4 w-4" />
               <span className="hidden sm:inline">
