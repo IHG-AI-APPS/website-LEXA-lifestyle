@@ -5,14 +5,19 @@ import { useParams } from 'next/navigation'
 import Link from 'next/link'
 import SafeImage from '@/components/ui/SafeImage'
 import { motion } from 'framer-motion'
-import { ArrowLeft, CheckCircle2, Phone, Clock, Award, Users, Target, FileText, Download } from 'lucide-react'
+import { CheckCircle2, Phone, ArrowRight, Monitor, Volume2, Cpu, Sparkles, ExternalLink } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import ProcessWheel from '@/components/ProcessWheel'
-import StatsGrid from '@/components/StatsGrid'
 import PackageComparison from '@/components/PackageComparison'
 import RelatedServices from '../components/RelatedServices'
 import { useRecentlyViewed } from '@/hooks/useRecentlyViewed'
 import { useCms } from '@/hooks/useCms'
+
+interface FeatureCard {
+  title: string
+  description: string
+  benefits: string[]
+}
 
 interface Service {
   id: string
@@ -23,73 +28,38 @@ interface Service {
   long_description?: string
   image: string
   features?: string[]
-  process_steps?: Array<{
-    title: string
-    description: string
-    duration: string
-    deliverables?: string[]
-  }>
+  process_steps?: Array<{ title: string; description: string; duration: string; deliverables?: string[] }>
   deliverables?: string[]
-  why_choose?: Array<{
-    title: string
-    description: string
-  }>
-  case_studies?: Array<{
-    title: string
-    challenge?: string
-    solution?: string
-    result?: string
-  }>
-  pricing_guide?: {
-    starting_from?: string
-    typical_range?: string
-    price_range?: string
-    factors?: string[]
-    includes?: string
-    timeline?: string
-  }
-  home_cinema_packages?: Array<{
-    tier: string
-    features: string[]
-    price_range: string
-  }>
-  security_packages?: Array<{
-    tier: string
-    cameras?: string
-    smart_locks?: string
-    features: string[]
-    price_range: string
-  }>
-  network_packages?: Array<{
-    tier: string
-    aps?: string
-    coverage?: string
-    features: string[]
-    price_range: string
-  }>
-  support_tiers?: Array<{
-    tier: string
-    description: string
-    price: string
-  }>
-  faq?: Array<{
-    question: string
-    answer: string
-  }>
-  faqs?: Array<{
-    question: string
-    answer: string
-  }>
+  why_choose?: Array<{ title: string; description: string }>
+  case_studies?: Array<{ title: string; challenge?: string; solution?: string; result?: string }>
+  pricing_guide?: { starting_from?: string; typical_range?: string; price_range?: string; factors?: string[]; includes?: string; timeline?: string }
+  home_cinema_packages?: Array<{ tier: string; features: string[]; price_range: string }>
+  security_packages?: Array<{ tier: string; cameras?: string; smart_locks?: string; features: string[]; price_range: string }>
+  network_packages?: Array<{ tier: string; aps?: string; coverage?: string; features: string[]; price_range: string }>
+  support_tiers?: Array<{ tier: string; description: string; price: string }>
+  faq?: Array<{ question: string; answer: string }>
+  faqs?: Array<{ question: string; answer: string }>
+  brands?: string[]
+  gallery_images?: string[]
+  feature_cards?: FeatureCard[]
+  related_products?: string[]
   icon?: string
   tags?: string[]
 }
 
+interface SolutionItem {
+  slug: string
+  title: string
+  image: string
+  category?: string
+}
+
 export default function ServiceDetailPage() {
   const cms = useCms('page_services_detail', null)
-
   const params = useParams()
   const [service, setService] = useState<Service | null>(null)
   const [relatedServices, setRelatedServices] = useState<Service[]>([])
+  const [productSolutions, setProductSolutions] = useState<SolutionItem[]>([])
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState(false)
   const { addItem } = useRecentlyViewed()
@@ -99,130 +69,67 @@ export default function ServiceDetailPage() {
       try {
         const apiUrl = process.env.NEXT_PUBLIC_BACKEND_URL || 'http://localhost:8001'
         const response = await fetch(`${apiUrl}/api/services/${params.slug}`)
-        if (!response.ok) {
-          setError(true)
-          return
-        }
+        if (!response.ok) { setError(true); return }
         const data = await response.json()
         setService(data)
-        
-        // Track this service as recently viewed
-        addItem({
-          id: data.id || data.slug,
-          type: 'service',
-          slug: data.slug,
-          title: data.title,
-          image: data.image,
-          category: data.category
-        })
-        
+
+        addItem({ id: data.id || data.slug, type: 'service', slug: data.slug, title: data.title, image: data.image, category: data.category })
+
         // Fetch related services
         try {
-          const servicesResponse = await fetch(`${apiUrl}/api/services`)
-          if (servicesResponse.ok) {
-            const servicesData = await servicesResponse.json()
-            const servicesArray = Array.isArray(servicesData) ? servicesData : servicesData.services || []
-            setRelatedServices(servicesArray)
+          const servicesRes = await fetch(`${apiUrl}/api/services`)
+          if (servicesRes.ok) {
+            const servicesData = await servicesRes.json()
+            setRelatedServices(Array.isArray(servicesData) ? servicesData : servicesData.services || [])
           }
-        } catch (err) {
-          console.error('Failed to load related services:', err)
-        }
-      } catch (err) {
-        setError(true)
-      } finally {
-        setLoading(false)
-      }
-    }
+        } catch (err) { console.error('Failed to load related services:', err) }
 
-    if (params.slug) {
-      fetchService()
+        // Fetch product solutions from related_products slugs
+        if (data.related_products && data.related_products.length > 0) {
+          try {
+            const solRes = await fetch(`${apiUrl}/api/solutions`)
+            if (solRes.ok) {
+              const solData = await solRes.json()
+              const allSols = Array.isArray(solData) ? solData : solData.solutions || []
+              const matched = data.related_products
+                .map((slug: string) => allSols.find((s: SolutionItem) => s.slug === slug))
+                .filter(Boolean)
+              setProductSolutions(matched)
+            }
+          } catch (err) { console.error('Failed to load solutions:', err) }
+        }
+      } catch (err) { setError(true) } finally { setLoading(false) }
     }
+    if (params.slug) fetchService()
   }, [params.slug])
 
-  // Inject FAQ Schema.org structured data for SEO
+  // Schema.org structured data
   useEffect(() => {
     if (!service) return
-    
     const faqs = service.faqs || service.faq || []
-    if (faqs.length === 0) return
-    
-    // Create FAQ Schema
-    const faqSchema = {
-      "@context": "https://schema.org",
-      "@type": "FAQPage",
-      "mainEntity": faqs.map((faq) => ({
-        "@type": "Question",
-        "name": faq.question,
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": faq.answer
-        }
-      }))
+    const schemas: any[] = []
+    if (faqs.length > 0) {
+      schemas.push({ "@context": "https://schema.org", "@type": "FAQPage", "mainEntity": faqs.map(faq => ({ "@type": "Question", "name": faq.question, "acceptedAnswer": { "@type": "Answer", "text": faq.answer } })) })
     }
-    
-    // Create Service Schema
-    const serviceSchema = {
-      "@context": "https://schema.org",
-      "@type": "Service",
-      "serviceType": service.title,
-      "name": `${service.title} - LEXA Lifestyle`,
-      "description": service.description,
-      "provider": {
-        "@type": "Organization",
-        "name": "LEXA Lifestyle",
-        "url": "https://lexalifestyle.com",
-        "logo": "https://lexalifestyle.com/lexa-logo.png",
-        "address": {
-          "@type": "PostalAddress",
-          "addressLocality": "Dubai",
-          "addressCountry": "AE"
-        }
-      },
-      "areaServed": {
-        "@type": "Country",
-        "name": "United Arab Emirates"
-      },
-      "image": service.image
-    }
-    
-    // Remove any existing schema scripts
-    document.querySelectorAll('script[data-schema="faq"]').forEach(el => el.remove())
-    document.querySelectorAll('script[data-schema="service"]').forEach(el => el.remove())
-    
-    // Add FAQ schema script
-    const faqScript = document.createElement('script')
-    faqScript.type = 'application/ld+json'
-    faqScript.setAttribute('data-schema', 'faq')
-    faqScript.textContent = JSON.stringify(faqSchema)
-    document.head.appendChild(faqScript)
-    
-    // Add Service schema script
-    const serviceScript = document.createElement('script')
-    serviceScript.type = 'application/ld+json'
-    serviceScript.setAttribute('data-schema', 'service')
-    serviceScript.textContent = JSON.stringify(serviceSchema)
-    document.head.appendChild(serviceScript)
-    
-    // Cleanup on unmount
-    return () => {
-      document.querySelectorAll('script[data-schema="faq"]').forEach(el => el.remove())
-      document.querySelectorAll('script[data-schema="service"]').forEach(el => el.remove())
-    }
+    schemas.push({ "@context": "https://schema.org", "@type": "Service", "serviceType": service.title, "name": `${service.title} - LEXA Lifestyle`, "description": service.description, "provider": { "@type": "Organization", "name": "LEXA Lifestyle", "url": "https://lexalifestyle.com" }, "areaServed": { "@type": "Country", "name": "United Arab Emirates" }, "image": service.image })
+
+    document.querySelectorAll('script[data-schema="service-page"]').forEach(el => el.remove())
+    const script = document.createElement('script')
+    script.type = 'application/ld+json'
+    script.setAttribute('data-schema', 'service-page')
+    script.textContent = JSON.stringify(schemas)
+    document.head.appendChild(script)
+    return () => { document.querySelectorAll('script[data-schema="service-page"]').forEach(el => el.remove()) }
   }, [service])
 
   if (loading) {
     return (
-      <div className="min-h-screen bg-white dark:bg-gray-900 pt-20">
+      <div className="min-h-screen bg-white dark:bg-gray-950 pt-20">
         <div className="container mx-auto px-4 py-8">
           <div className="animate-pulse">
-            <div className="h-64 bg-gray-200 rounded-xl mb-8"></div>
-            <div className="h-10 bg-gray-200 rounded w-1/2 mb-4"></div>
-            <div className="h-4 bg-gray-100 dark:bg-gray-800 rounded w-3/4 mb-8"></div>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              {[...Array(3)].map((_, i) => (
-                <div key={i} className="bg-gray-100 dark:bg-gray-800 rounded-lg h-32"></div>
-              ))}
-            </div>
+            <div className="h-64 bg-gray-200 rounded-xl mb-8" />
+            <div className="h-10 bg-gray-200 rounded w-1/2 mb-4" />
+            <div className="h-4 bg-gray-100 rounded w-3/4 mb-8" />
           </div>
         </div>
       </div>
@@ -234,191 +141,268 @@ export default function ServiceDetailPage() {
       <div className="min-h-screen flex flex-col items-center justify-center px-6">
         <h1 className="text-4xl font-bold mb-4">Service Not Found</h1>
         <p className="text-gray-600 dark:text-gray-400 mb-8">The service you&apos;re looking for doesn&apos;t exist.</p>
-        <Link href="/services">
-          <Button variant="outline">View All Services</Button>
-        </Link>
+        <Link href="/services"><Button variant="outline">View All Services</Button></Link>
       </div>
     )
   }
 
-  // Prepare stats from service data
-  const stats = [
-    { value: 500, suffix: '+', label: 'Projects Completed' },
-    { value: 98, suffix: '%', label: 'Client Satisfaction' },
-    { value: 15, suffix: '+', label: 'Years Experience' },
-    { value: 50, suffix: '+', label: 'Expert Engineers' }
-  ]
-
-  // Prepare packages for comparison
+  // Prepare packages
   let packages: any[] = []
-  if (service.home_cinema_packages && service.home_cinema_packages.length > 0) {
-    packages = service.home_cinema_packages.map(pkg => ({
-      tier: pkg.tier,
-      price_range: pkg.price_range,
-      features: pkg.features,
-      popular: pkg.tier.toLowerCase().includes('premium')
-    }))
-  } else if (service.security_packages && service.security_packages.length > 0) {
-    packages = service.security_packages.map(pkg => ({
-      tier: pkg.tier,
-      price_range: pkg.price_range,
-      features: pkg.features,
-      popular: pkg.tier.toLowerCase().includes('comprehensive')
-    }))
-  } else if (service.network_packages && service.network_packages.length > 0) {
-    packages = service.network_packages.map(pkg => ({
-      tier: pkg.tier,
-      price_range: pkg.price_range,
-      features: pkg.features,
-      popular: pkg.tier.toLowerCase().includes('smart villa')
-    }))
-  }
+  if (service.home_cinema_packages?.length) packages = service.home_cinema_packages.map(p => ({ ...p, popular: p.tier.toLowerCase().includes('premium') }))
+  else if (service.security_packages?.length) packages = service.security_packages.map(p => ({ ...p, popular: p.tier.toLowerCase().includes('comprehensive') }))
+  else if (service.network_packages?.length) packages = service.network_packages.map(p => ({ ...p, popular: p.tier.toLowerCase().includes('smart villa') }))
+
+  const galleryImages = service.gallery_images || []
+  const featureCards = (service.feature_cards || []) as FeatureCard[]
+  const featureCardIcons = [Monitor, Volume2, Cpu]
+  const allFaqs = service.faqs || service.faq || []
 
   return (
-    <div className="min-h-screen bg-white dark:bg-gray-900">
-      {/* Hero Section */}
-      <section className="relative h-[60vh] min-h-[500px]">
-        <SafeImage
-          src={service.image}
-          alt={service.title}
-          fill
-          className="object-cover"
-          priority
-        />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/40 to-black/20" />
-        
-        <div className="absolute inset-0 flex items-center">
-          <div className="container mx-auto px-6 md:px-12 lg:px-24">
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-              className="max-w-3xl"
-            >
-              <Link 
-                href="/services"
-                className="inline-flex items-center gap-2 text-white/80 hover:text-white mb-6 text-sm transition"
-              >
-                <ArrowLeft className="w-4 h-4" />
-                BACK TO SERVICES
-              </Link>
-
-              <div className="text-xs tracking-[0.3em] uppercase text-[#E8DCC8] mb-4">
+    <div className="min-h-screen bg-white dark:bg-gray-950 pt-20">
+      {/* Hero — Split Layout */}
+      <section className="relative overflow-hidden bg-gray-900 text-white">
+        <div className="grid grid-cols-1 lg:grid-cols-2 min-h-[480px]">
+          <div className="flex flex-col justify-center px-8 lg:px-16 py-16 relative z-10">
+            <motion.div initial={{ opacity: 0, x: -30 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.6 }}>
+              <span className="inline-block px-3 py-1 rounded-full bg-[#C9A962]/15 border border-[#C9A962]/30 text-[#C9A962] text-xs uppercase tracking-widest mb-5" data-testid="service-category">
                 {service.category}
-              </div>
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">
+              </span>
+              <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-5 tracking-tight leading-tight" data-testid="service-title">
                 {service.title}
               </h1>
-              <p className="text-lg md:text-xl text-white/90 leading-relaxed">
-                {service.description}
-              </p>
+              <p className="text-base text-gray-300 mb-8 max-w-lg leading-relaxed">{service.description}</p>
+              <div className="flex flex-col sm:flex-row gap-3">
+                <Link href="/contact">
+                  <Button size="lg" className="bg-[#C9A962] text-gray-900 hover:bg-[#C9A962]/90 font-semibold" data-testid="hero-cta">
+                    Book Consultation <ArrowRight className="ml-2" size={18} />
+                  </Button>
+                </Link>
+                <a href="tel:+971426704270">
+                  <Button size="lg" variant="outline" className="border-white/30 text-white hover:bg-white/10">
+                    <Phone className="mr-2" size={16} /> Call Us
+                  </Button>
+                </a>
+              </div>
             </motion.div>
           </div>
+          <div className="relative min-h-[300px] lg:min-h-full">
+            <SafeImage src={service.image} alt={service.title} fill className="object-cover" priority sizes="(max-width: 1024px) 100vw, 50vw" />
+            <div className="absolute inset-0 bg-gradient-to-r from-gray-900 via-gray-900/40 to-transparent lg:block hidden" />
+            <div className="absolute inset-0 bg-gradient-to-t from-gray-900/60 to-transparent lg:hidden" />
+          </div>
         </div>
       </section>
 
-      {/* Stats Section */}
-      <StatsGrid stats={stats} />
-
-      {/* Overview Section */}
-      <section className="py-16 px-6 md:px-12 lg:px-24">
-        <div className="max-w-6xl mx-auto">
-          <div className="grid md:grid-cols-2 gap-12">
-            {/* Description */}
-            <div>
-              <h2 className="text-3xl md:text-4xl font-bold mb-6">Overview</h2>
-              <div className="prose prose-lg">
-                <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
+      {/* Service Overview — Content + Features */}
+      <section className="py-16 lg:py-20 bg-white dark:bg-gray-950">
+        <div className="container mx-auto px-8 lg:px-16">
+          <div className="max-w-6xl mx-auto">
+            <div className="grid grid-cols-1 lg:grid-cols-5 gap-12">
+              <div className="lg:col-span-3">
+                <span className="text-xs uppercase tracking-widest text-[#C9A962] font-semibold">Service Overview</span>
+                <h2 className="text-2xl sm:text-3xl font-bold mt-2 mb-6 text-gray-900 dark:text-white">
+                  {service.title}
+                </h2>
+                <p className="text-base text-gray-600 dark:text-gray-300 leading-relaxed mb-8">
                   {service.long_description || service.description}
                 </p>
-              </div>
-            </div>
 
-            {/* Key Features */}
-            <div className="bg-gray-50 dark:bg-gray-800 p-8 rounded-lg border-2 border-gray-200 dark:border-gray-700 dark:border-gray-700">
-              <h3 className="text-2xl font-bold mb-6">Key Features</h3>
-              <ul className="space-y-3">
-                {(service.features || []).map((feature, index) => (
-                  <motion.li
-                    key={index}
-                    initial={{ opacity: 0, x: -20 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    transition={{ duration: 0.2 }}
-                    viewport={{ once: true }}
-                    className="flex items-start gap-3"
-                  >
-                    <CheckCircle2 className="w-5 h-5 text-[#E8DCC8] flex-shrink-0 mt-0.5" />
-                    <span className="text-gray-700 dark:text-gray-300 dark:text-gray-300">{feature}</span>
-                  </motion.li>
-                ))}
-              </ul>
+                {service.features && service.features.length > 0 && (
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                    {service.features.map((feature, i) => (
+                      <motion.div key={i} initial={{ opacity: 0, y: 10 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.25, delay: i * 0.03 }}
+                        className="flex items-start gap-3 p-3 rounded-lg bg-gray-50 dark:bg-gray-900 border border-gray-100 dark:border-gray-800 hover:border-[#C9A962]/40 transition-colors">
+                        <CheckCircle2 size={16} className="text-[#C9A962] flex-shrink-0 mt-0.5" />
+                        <span className="text-sm text-gray-700 dark:text-gray-300">{feature}</span>
+                      </motion.div>
+                    ))}
+                  </div>
+                )}
+              </div>
+
+              <div className="lg:col-span-2">
+                <div className="sticky top-28 space-y-5">
+                  <div className="bg-gray-900 dark:bg-gray-800 text-white rounded-xl p-6">
+                    <h3 className="text-lg font-semibold mb-4">Why Choose LEXA?</h3>
+                    <div className="space-y-4">
+                      {(service.why_choose || [
+                        { title: 'Expert Team', description: '50+ certified engineers & technicians' },
+                        { title: 'Proven Track Record', description: '500+ projects delivered in UAE' },
+                        { title: 'Full Service', description: 'Design through to ongoing support' },
+                        { title: 'UAE Specialist', description: '15+ years in Dubai & Abu Dhabi' }
+                      ]).slice(0, 4).map((item, i) => (
+                        <div key={i} className="flex gap-3">
+                          <div className="w-8 h-8 rounded-full bg-[#C9A962]/20 flex items-center justify-center flex-shrink-0">
+                            <span className="text-[#C9A962] text-xs font-bold">{String(i + 1).padStart(2, '0')}</span>
+                          </div>
+                          <div>
+                            <p className="text-sm font-medium">{item.title}</p>
+                            <p className="text-xs text-gray-400">{item.description}</p>
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                  {service.pricing_guide && (service.pricing_guide.starting_from || service.pricing_guide.typical_range) && (
+                    <div className="bg-[#C9A962]/10 border border-[#C9A962]/30 rounded-xl p-5">
+                      <p className="text-xs uppercase tracking-widest text-[#C9A962] font-semibold mb-2">Investment</p>
+                      <p className="text-lg font-bold text-gray-900 dark:text-white">
+                        {service.pricing_guide.starting_from || service.pricing_guide.typical_range || service.pricing_guide.price_range}
+                      </p>
+                      {service.pricing_guide.timeline && (
+                        <p className="text-xs text-gray-500 mt-1">Timeline: {service.pricing_guide.timeline}</p>
+                      )}
+                    </div>
+                  )}
+                  <Link href="/contact">
+                    <Button size="lg" className="w-full bg-[#C9A962] text-gray-900 hover:bg-[#C9A962]/90 font-semibold" data-testid="sidebar-cta">
+                      Request a Quote
+                    </Button>
+                  </Link>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </section>
+
+      {/* Feature Cards — What You Get */}
+      {featureCards.length > 0 && (
+        <section className="py-16 lg:py-20 bg-gray-50 dark:bg-gray-900" data-testid="feature-cards-section">
+          <div className="container mx-auto px-8 lg:px-16">
+            <div className="max-w-6xl mx-auto">
+              <div className="text-center mb-12">
+                <span className="text-xs uppercase tracking-widest text-[#C9A962] font-semibold">Service Breakdown</span>
+                <h2 className="text-2xl sm:text-3xl font-bold mt-2 text-gray-900 dark:text-white">What You Get</h2>
+              </div>
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                {featureCards.map((card, i) => {
+                  const IconComp = featureCardIcons[i] || Sparkles
+                  return (
+                    <motion.div key={i} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.3, delay: i * 0.1 }}
+                      className="bg-white dark:bg-gray-950 rounded-xl overflow-hidden border border-gray-100 dark:border-gray-800 hover:shadow-lg transition-shadow group">
+                      <div className="h-1 bg-gradient-to-r from-[#C9A962] to-[#C9A962]/30" />
+                      <div className="p-7">
+                        <div className="w-11 h-11 rounded-lg bg-gray-900 dark:bg-[#C9A962] flex items-center justify-center mb-5 group-hover:bg-[#C9A962] transition-colors">
+                          <IconComp className="text-white dark:text-gray-900 group-hover:text-gray-900 transition-colors" size={20} />
+                        </div>
+                        <h3 className="text-lg font-bold mb-2 text-gray-900 dark:text-white">{card.title}</h3>
+                        <p className="text-sm text-gray-600 dark:text-gray-400 mb-5 leading-relaxed">{card.description}</p>
+                        {card.benefits?.length > 0 && (
+                          <ul className="space-y-2">
+                            {card.benefits.map((b, j) => (
+                              <li key={j} className="flex items-start gap-2 text-sm text-gray-700 dark:text-gray-300">
+                                <CheckCircle2 size={14} className="text-[#C9A962] flex-shrink-0 mt-0.5" /> {b}
+                              </li>
+                            ))}
+                          </ul>
+                        )}
+                      </div>
+                    </motion.div>
+                  )
+                })}
+              </div>
+            </div>
+          </div>
+        </section>
+      )}
 
       {/* Process Section */}
       {service.process_steps && service.process_steps.length > 0 && (
-        <section className="bg-white dark:bg-gray-900">
-          <div className="max-w-7xl mx-auto px-6 py-4">
-            <h2 className="text-3xl md:text-4xl font-bold text-center mb-4">Our Process</h2>
-            <p className="text-center text-gray-600 dark:text-gray-400 mb-8 max-w-2xl mx-auto">
-              We follow a structured approach to ensure excellent results
-            </p>
+        <section className="bg-white dark:bg-gray-950 py-16 lg:py-20">
+          <div className="max-w-7xl mx-auto px-6">
+            <div className="text-center mb-8">
+              <span className="text-xs uppercase tracking-widest text-[#C9A962] font-semibold">How We Work</span>
+              <h2 className="text-2xl sm:text-3xl font-bold mt-2 text-gray-900 dark:text-white">Our Process</h2>
+            </div>
           </div>
           <ProcessWheel steps={service.process_steps} />
         </section>
       )}
 
-      {/* Packages Section */}
-      {packages.length > 0 && (
-        <PackageComparison packages={packages} title="Choose Your Package" />
-      )}
+      {/* Packages */}
+      {packages.length > 0 && <PackageComparison packages={packages} title="Choose Your Package" />}
 
-      {/* Support Tiers */}
-      {service.support_tiers && service.support_tiers.length > 0 && (
-        <section className="py-16 bg-gray-50 dark:bg-gray-800">
-          <div className="max-w-6xl mx-auto px-6">
-            <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">Support Plans</h2>
-            <div className="grid md:grid-cols-3 gap-6">
-              {service.support_tiers.map((tier, index) => (
-                <div key={index} className="bg-white dark:bg-gray-800 p-6 rounded-lg border-2 border-gray-200 dark:border-gray-700 dark:border-gray-700 hover:border-[#E8DCC8] transition">
-                  <h3 className="text-xl font-bold mb-3">{tier.tier}</h3>
-                  <p className="text-sm text-gray-600 dark:text-gray-400 mb-4">{tier.description}</p>
-                  <div className="text-2xl font-bold text-[#E8DCC8]">{tier.price}</div>
-                </div>
-              ))}
+      {/* Solutions We Deploy — Image-based clickable cards */}
+      {productSolutions.length > 0 && (
+        <section className="py-16 lg:py-20 bg-white dark:bg-gray-950" data-testid="solutions-section">
+          <div className="container mx-auto px-8 lg:px-16">
+            <div className="max-w-6xl mx-auto">
+              <div className="text-center mb-12">
+                <span className="text-xs uppercase tracking-widest text-[#C9A962] font-semibold">Solutions & Systems</span>
+                <h2 className="text-2xl sm:text-3xl font-bold mt-2 text-gray-900 dark:text-white">Solutions We Deploy</h2>
+                <p className="text-sm text-gray-500 dark:text-gray-400 mt-2 max-w-2xl mx-auto">
+                  Explore the smart systems and technologies we integrate as part of this service
+                </p>
+              </div>
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+                {productSolutions.map((sol, i) => (
+                  <motion.div key={sol.slug} initial={{ opacity: 0, scale: 0.95 }} whileInView={{ opacity: 1, scale: 1 }} viewport={{ once: true }} transition={{ duration: 0.3, delay: i * 0.05 }}>
+                    <Link href={`/solutions/${sol.slug}`} className="group block relative rounded-xl overflow-hidden bg-gray-100 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 hover:border-[#C9A962]/60 hover:shadow-xl transition-all" data-testid={`solution-card-${sol.slug}`}>
+                      <div className="relative aspect-[4/3]">
+                        <SafeImage src={sol.image} alt={sol.title} fill className="object-cover group-hover:scale-105 transition-transform duration-500" sizes="(max-width: 768px) 50vw, 25vw" />
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
+                        <div className="absolute bottom-0 left-0 right-0 p-4">
+                          <h3 className="text-white font-semibold text-sm leading-tight">{sol.title}</h3>
+                          <span className="text-[#C9A962] text-xs mt-1 inline-flex items-center gap-1 opacity-0 group-hover:opacity-100 transition-opacity">
+                            Explore <ExternalLink size={10} />
+                          </span>
+                        </div>
+                      </div>
+                    </Link>
+                  </motion.div>
+                ))}
+              </div>
             </div>
           </div>
         </section>
       )}
 
-      {/* Why Choose Section */}
-      {service.why_choose && service.why_choose.length > 0 && (
-        <section className="py-16 bg-gradient-to-br from-[#1A1A1A] via-[#2A2A2A] to-[#1A1A1A] text-white">
-          <div className="max-w-6xl mx-auto px-6">
-            <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">Why Choose LEXA</h2>
-            <div className="grid md:grid-cols-2 gap-8">
-              {service.why_choose.map((reason, index) => (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.2 }}
-                  viewport={{ once: true }}
-                  className="flex gap-4"
-                >
-                  <div className="flex-shrink-0">
-                    <div className="w-12 h-12 rounded-full bg-[#E8DCC8] flex items-center justify-center">
-                      <Award className="w-6 h-6 text-[#1A1A1A] dark:text-white dark:text-white" />
+      {/* Brands */}
+      {service.brands && service.brands.length > 0 && (
+        <section className="py-16 lg:py-20 bg-gray-50 dark:bg-gray-900" data-testid="brands-section">
+          <div className="container mx-auto px-8 lg:px-16">
+            <div className="max-w-5xl mx-auto">
+              <div className="text-center mb-12">
+                <span className="text-xs uppercase tracking-widest text-[#C9A962] font-semibold">Certified Partners</span>
+                <h2 className="text-2xl sm:text-3xl font-bold mt-2 text-gray-900 dark:text-white">Brands We Work With</h2>
+              </div>
+              <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4">
+                {service.brands.map((brand, i) => (
+                  <motion.div key={i} initial={{ opacity: 0, y: 10 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.2, delay: i * 0.04 }}>
+                    <Link href={`/brands/${brand.toLowerCase().replace(/\s+/g, '-')}`}
+                      className="group flex flex-col items-center justify-center p-5 h-24 rounded-xl bg-white dark:bg-gray-950 border border-gray-200 dark:border-gray-800 hover:border-[#C9A962]/60 hover:shadow-md transition-all">
+                      <span className="text-base font-bold text-gray-800 dark:text-gray-200 group-hover:text-[#C9A962] transition-colors tracking-wide">{brand}</span>
+                      <span className="text-[10px] text-gray-400 uppercase tracking-widest mt-1">Partner</span>
+                    </Link>
+                  </motion.div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/* Inspirations Gallery */}
+      {galleryImages.length > 0 && (
+        <section className="py-16 lg:py-20 bg-white dark:bg-gray-950" data-testid="inspirations-section">
+          <div className="container mx-auto px-8 lg:px-16">
+            <div className="max-w-6xl mx-auto">
+              <div className="text-center mb-12">
+                <span className="text-xs uppercase tracking-widest text-[#C9A962] font-semibold">Our Work</span>
+                <h2 className="text-2xl sm:text-3xl font-bold mt-2 text-gray-900 dark:text-white">Inspirations</h2>
+              </div>
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                {galleryImages.slice(0, 6).map((img, i) => (
+                  <motion.div key={i} initial={{ opacity: 0, scale: 0.95 }} whileInView={{ opacity: 1, scale: 1 }} viewport={{ once: true }} transition={{ duration: 0.3, delay: i * 0.06 }}
+                    className={`relative overflow-hidden rounded-xl group cursor-pointer ${i === 0 ? 'md:col-span-2 md:row-span-2' : ''}`}>
+                    <div className={`relative ${i === 0 ? 'aspect-[4/3]' : 'aspect-[3/2]'}`}>
+                      <SafeImage src={typeof img === 'string' ? img : ''} alt={`${service.title} inspiration ${i + 1}`} fill className="object-cover group-hover:scale-105 transition-transform duration-700" sizes={i === 0 ? '(max-width: 768px) 100vw, 66vw' : '(max-width: 768px) 100vw, 33vw'} />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                     </div>
-                  </div>
-                  <div>
-                    <h3 className="text-xl font-bold mb-2">{reason.title}</h3>
-                    <p className="text-gray-300">{reason.description}</p>
-                  </div>
-                </motion.div>
-              ))}
+                  </motion.div>
+                ))}
+              </div>
             </div>
           </div>
         </section>
@@ -426,23 +410,22 @@ export default function ServiceDetailPage() {
 
       {/* Deliverables */}
       {service.deliverables && service.deliverables.length > 0 && (
-        <section className="py-16">
-          <div className="max-w-6xl mx-auto px-6">
-            <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">What You Receive</h2>
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {service.deliverables.map((item, index) => (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0, scale: 0.9 }}
-                  whileInView={{ opacity: 1, scale: 1 }}
-                  transition={{ duration: 0.2 }}
-                  viewport={{ once: true }}
-                  className="flex items-start gap-3 p-4 bg-gray-50 dark:bg-gray-800 rounded-lg border border-gray-200 dark:border-gray-700 dark:border-gray-700"
-                >
-                  <FileText className="w-5 h-5 text-[#E8DCC8] flex-shrink-0 mt-0.5" />
-                  <span className="text-sm text-gray-700 dark:text-gray-300 dark:text-gray-300">{item}</span>
-                </motion.div>
-              ))}
+        <section className="py-16 lg:py-20 bg-gray-50 dark:bg-gray-900">
+          <div className="container mx-auto px-8 lg:px-16">
+            <div className="max-w-6xl mx-auto">
+              <div className="text-center mb-12">
+                <span className="text-xs uppercase tracking-widest text-[#C9A962] font-semibold">Deliverables</span>
+                <h2 className="text-2xl sm:text-3xl font-bold mt-2 text-gray-900 dark:text-white">What You Receive</h2>
+              </div>
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
+                {service.deliverables.map((item, i) => (
+                  <motion.div key={i} initial={{ opacity: 0, y: 10 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.2, delay: i * 0.03 }}
+                    className="flex items-start gap-3 p-4 bg-white dark:bg-gray-950 rounded-lg border border-gray-100 dark:border-gray-800 hover:border-[#C9A962]/40 transition-colors">
+                    <CheckCircle2 size={16} className="text-[#C9A962] flex-shrink-0 mt-0.5" />
+                    <span className="text-sm text-gray-700 dark:text-gray-300">{item}</span>
+                  </motion.div>
+                ))}
+              </div>
             </div>
           </div>
         </section>
@@ -450,145 +433,87 @@ export default function ServiceDetailPage() {
 
       {/* Case Studies */}
       {service.case_studies && service.case_studies.length > 0 && (
-        <section className="py-16 bg-gray-50 dark:bg-gray-800">
-          <div className="max-w-6xl mx-auto px-6">
-            <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">Success Stories</h2>
-            <div className="space-y-8">
-              {service.case_studies.map((study, index) => (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  className="bg-white dark:bg-gray-800 p-8 rounded-lg border-2 border-gray-200 dark:border-gray-700 dark:border-gray-700"
-                >
-                  <h3 className="text-2xl font-bold mb-4">{study.title}</h3>
-                  {study.challenge && (
-                    <div className="mb-4">
-                      <h4 className="font-semibold text-gray-900 dark:text-white dark:text-white mb-2">Challenge:</h4>
-                      <p className="text-gray-700 dark:text-gray-300 dark:text-gray-300">{study.challenge}</p>
-                    </div>
-                  )}
-                  {study.solution && (
-                    <div className="mb-4">
-                      <h4 className="font-semibold text-gray-900 dark:text-white dark:text-white mb-2">Solution:</h4>
-                      <p className="text-gray-700 dark:text-gray-300 dark:text-gray-300">{study.solution}</p>
-                    </div>
-                  )}
-                  {study.result && (
-                    <div>
-                      <h4 className="font-semibold text-gray-900 dark:text-white dark:text-white mb-2">Result:</h4>
-                      <p className="text-gray-700 dark:text-gray-300 font-medium">{study.result}</p>
-                    </div>
-                  )}
-                </motion.div>
-              ))}
-            </div>
-          </div>
-        </section>
-      )}
-
-      {/* Pricing Section */}
-      {service.pricing_guide && (
-        <section className="py-16">
-          <div className="max-w-4xl mx-auto px-6">
-            <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">Investment & Timeline</h2>
-            <div className="bg-gradient-to-br from-gray-50 dark:from-gray-800 to-white dark:to-gray-900 p-8 rounded-lg border-2 border-gray-200 dark:border-gray-700 dark:border-gray-700">
-              <div className="grid md:grid-cols-2 gap-8">
-                {(service.pricing_guide.starting_from || service.pricing_guide.typical_range || service.pricing_guide.price_range) && (
-                  <div>
-                    <h3 className="text-lg font-semibold mb-4 flex items-center gap-2">
-                      <Target className="w-5 h-5 text-[#E8DCC8]" />
-                      Pricing Range
-                    </h3>
-                    {service.pricing_guide.starting_from && (
-                      <p className="text-gray-700 dark:text-gray-300 mb-2">
-                        <span className="font-semibold">Starting from:</span> {service.pricing_guide.starting_from}
-                      </p>
-                    )}
-                    {service.pricing_guide.typical_range && (
-                      <p className="text-gray-700 dark:text-gray-300 mb-2">
-                        <span className="font-semibold">Typical range:</span> {service.pricing_guide.typical_range}
-                      </p>
-                    )}
-                    {service.pricing_guide.price_range && (
-                      <p className="text-gray-700 dark:text-gray-300 dark:text-gray-300">
-                        <span className="font-semibold">Range:</span> {service.pricing_guide.price_range}
-                      </p>
-                    )}
-                  </div>
-                )}
-                {service.pricing_guide.timeline && (
-                  <div>
-                    <h3 className="text-lg font-semibold mb-4 flex items-center gap-2">
-                      <Clock className="w-5 h-5 text-[#E8DCC8]" />
-                      Timeline
-                    </h3>
-                    <p className="text-gray-700 dark:text-gray-300 dark:text-gray-300">{service.pricing_guide.timeline}</p>
-                  </div>
-                )}
+        <section className="py-16 lg:py-20 bg-white dark:bg-gray-950">
+          <div className="container mx-auto px-8 lg:px-16">
+            <div className="max-w-5xl mx-auto">
+              <div className="text-center mb-12">
+                <span className="text-xs uppercase tracking-widest text-[#C9A962] font-semibold">Results</span>
+                <h2 className="text-2xl sm:text-3xl font-bold mt-2 text-gray-900 dark:text-white">Success Stories</h2>
               </div>
-              {service.pricing_guide.includes && (
-                <div className="mt-6 pt-6 border-t border-gray-200 dark:border-gray-700 dark:border-gray-700">
-                  <h4 className="font-semibold mb-2">What&apos;s Included:</h4>
-                  <p className="text-gray-700 dark:text-gray-300 text-sm">{service.pricing_guide.includes}</p>
-                </div>
-              )}
+              <div className="space-y-6">
+                {service.case_studies.map((study, i) => (
+                  <motion.div key={i} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
+                    className="bg-gray-50 dark:bg-gray-900 p-7 rounded-xl border border-gray-100 dark:border-gray-800">
+                    <h3 className="text-lg font-bold mb-4 text-gray-900 dark:text-white">{study.title}</h3>
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                      {study.challenge && (
+                        <div><p className="text-xs uppercase tracking-widest text-[#C9A962] font-semibold mb-1">Challenge</p><p className="text-sm text-gray-600 dark:text-gray-400">{study.challenge}</p></div>
+                      )}
+                      {study.solution && (
+                        <div><p className="text-xs uppercase tracking-widest text-[#C9A962] font-semibold mb-1">Solution</p><p className="text-sm text-gray-600 dark:text-gray-400">{study.solution}</p></div>
+                      )}
+                      {study.result && (
+                        <div><p className="text-xs uppercase tracking-widest text-[#C9A962] font-semibold mb-1">Result</p><p className="text-sm text-gray-700 dark:text-gray-300 font-medium">{study.result}</p></div>
+                      )}
+                    </div>
+                  </motion.div>
+                ))}
+              </div>
             </div>
           </div>
         </section>
       )}
 
-      {/* FAQ Section - Use faqs (primary) or faq (legacy) */}
-      {((service.faqs && service.faqs.length > 0) || (service.faq && service.faq.length > 0)) && (
-        <section className="py-16 bg-gray-50 dark:bg-gray-800">
-          <div className="max-w-4xl mx-auto px-6">
-            <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">Frequently Asked Questions</h2>
-            <div className="space-y-6">
-              {(service.faqs || service.faq || []).map((item, index) => (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0, y: 10 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.2 }}
-                  viewport={{ once: true }}
-                  className="bg-white dark:bg-gray-800 p-6 rounded-lg border border-gray-200 dark:border-gray-700 dark:border-gray-700"
-                >
-                  <h3 className="font-bold text-lg mb-3">{item.question}</h3>
-                  <p className="text-gray-700 dark:text-gray-300 leading-relaxed">{item.answer}</p>
-                </motion.div>
-              ))}
+      {/* FAQ */}
+      {allFaqs.length > 0 && (
+        <section className="py-16 lg:py-20 bg-gray-50 dark:bg-gray-900">
+          <div className="container mx-auto px-8 lg:px-16">
+            <div className="max-w-4xl mx-auto">
+              <div className="text-center mb-12">
+                <span className="text-xs uppercase tracking-widest text-[#C9A962] font-semibold">Got Questions?</span>
+                <h2 className="text-2xl sm:text-3xl font-bold mt-2 text-gray-900 dark:text-white">Frequently Asked Questions</h2>
+              </div>
+              <div className="space-y-4">
+                {allFaqs.map((faq, i) => (
+                  <div key={i} className="bg-white dark:bg-gray-950 p-6 rounded-xl border border-gray-100 dark:border-gray-800">
+                    <h3 className="text-base font-semibold mb-2 text-gray-900 dark:text-white">{faq.question}</h3>
+                    <p className="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">{faq.answer}</p>
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
         </section>
       )}
 
-      {/* CTA Section */}
-      <section className="py-20 bg-gradient-to-br from-[#1A1A1A] via-[#2A2A2A] to-[#1A1A1A] text-white">
-        <div className="max-w-4xl mx-auto px-6 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold mb-6">
-            Ready to Get Started?
-          </h2>
-          <p className="text-xl text-gray-300 mb-8">
-            Contact our team for a free consultation and detailed quote
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link href="/contact">
-              <Button size="lg" className="bg-[#E8DCC8] text-black hover:bg-[#d4c8b4] text-lg px-8">
-                Book Consultation
-              </Button>
-            </Link>
-            <a href="tel:+971426704270">
-              <Button size="lg" variant="outline" className="border-2 border-white text-white hover:bg-white hover:text-black text-lg px-8">
-                <Phone className="w-5 h-5 mr-2" />
-                Call: +971 42 670 4270
-              </Button>
-            </a>
+      {/* CTA */}
+      <section className="py-20 bg-gray-900 text-white relative overflow-hidden">
+        <div className="container mx-auto px-8 lg:px-16 relative z-10">
+          <div className="max-w-3xl mx-auto text-center">
+            <span className="text-[#C9A962] text-xs uppercase tracking-widest font-semibold">Ready to Start?</span>
+            <h2 className="text-3xl sm:text-4xl font-bold mt-3 mb-4">
+              Let&apos;s Discuss Your {service.title} Needs
+            </h2>
+            <p className="text-gray-400 mb-8 max-w-xl mx-auto">
+              Get a bespoke proposal from our engineering team. Free consultation with no obligation.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-3 justify-center">
+              <Link href="/contact">
+                <Button size="lg" className="bg-[#C9A962] text-gray-900 hover:bg-[#C9A962]/90 font-semibold px-8" data-testid="cta-book">
+                  Book Consultation
+                </Button>
+              </Link>
+              <a href="tel:+971426704270">
+                <Button size="lg" variant="outline" className="border-white/30 text-white hover:bg-white/10 px-8">
+                  <Phone className="mr-2" size={16} /> +971 42 670 4270
+                </Button>
+              </a>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* Related Services Section */}
+      {/* Related Services */}
       {relatedServices.length > 0 && (
         <RelatedServices services={relatedServices} currentSlug={service.slug} />
       )}
