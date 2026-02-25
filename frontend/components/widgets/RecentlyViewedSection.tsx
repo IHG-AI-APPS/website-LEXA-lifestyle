@@ -211,9 +211,12 @@ export default function RecentlyViewedSection({
                     <button
                       onClick={(e) => {
                         e.preventDefault()
+                        e.stopPropagation()
                         removeItem(item.id, item.type)
                       }}
-                      className="absolute top-2 right-2 z-10 p-1.5 bg-black/50 hover:bg-black/70 rounded-full opacity-0 group-hover:opacity-100 transition-opacity"
+                      className="absolute top-2 right-2 z-10 p-1.5 bg-black/60 hover:bg-red-500 rounded-full opacity-100 sm:opacity-0 sm:group-hover:opacity-100 transition-all"
+                      aria-label={`Remove ${item.title} from recently viewed`}
+                      data-testid={`remove-recently-viewed-${item.type}-${item.id}`}
                     >
                       <X className="h-3.5 w-3.5 text-white" />
                     </button>
@@ -273,9 +276,12 @@ export default function RecentlyViewedSection({
                     <button
                       onClick={(e) => {
                         e.preventDefault()
+                        e.stopPropagation()
                         removeItem(item.id, item.type)
                       }}
-                      className="absolute top-2 right-2 z-10 p-1.5 bg-black/50 hover:bg-black/70 rounded-full opacity-0 group-hover:opacity-100 transition-opacity"
+                      className="absolute top-2 right-2 z-10 p-1.5 bg-black/60 hover:bg-red-500 rounded-full opacity-100 sm:opacity-0 sm:group-hover:opacity-100 transition-all"
+                      aria-label={`Remove ${item.title} from recently viewed`}
+                      data-testid={`remove-recently-viewed-grid-${item.type}-${item.id}`}
                     >
                       <X className="h-3.5 w-3.5 text-white" />
                     </button>
