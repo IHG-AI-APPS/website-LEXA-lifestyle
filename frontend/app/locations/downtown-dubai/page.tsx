@@ -3,6 +3,7 @@ import Link from 'next/link'
 import { Button } from '@/components/ui/button'
 import { MapPin, CheckCircle2 } from 'lucide-react'
 import TrustSignals from '@/components/TrustSignals'
+import DowntownPageCms from './DowntownPageCms'
 
 export const metadata: Metadata = {
   title: 'Smart Home Automation Downtown Dubai | Penthouse Integration',
@@ -20,6 +21,7 @@ export default function DowntownPage() {
   ]
 
   return (
+    <DowntownPageCms>
     <div className="min-h-screen bg-white dark:bg-gray-900 pt-20">
       <section className="py-24 md:py-32 bg-gradient-to-br from-black via-gray-900 to-black text-white">
         <div className="container mx-auto px-8 lg:px-16">

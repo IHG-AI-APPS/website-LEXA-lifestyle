@@ -2,6 +2,7 @@ import { Metadata } from 'next'
 import Link from 'next/link'
 import { ArrowLeft, Calendar, User, Tag } from 'lucide-react'
 import { generateArticleSchema } from '@/lib/seo'
+import BlogArticlePageCms from './BlogArticlePageCms'
 
 export const metadata: Metadata = {
   title: 'Smart Home Automation Guide Dubai 2025 | Complete Installation Guide',
@@ -27,6 +28,7 @@ export default function BlogArticlePage() {
   const schema = generateArticleSchema(articleData)
 
   return (
+    <BlogArticlePageCms>
     <>
       <script
         type="application/ld+json"

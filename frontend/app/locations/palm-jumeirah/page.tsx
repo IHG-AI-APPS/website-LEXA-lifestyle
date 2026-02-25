@@ -3,6 +3,7 @@ import Link from 'next/link'
 import { Button } from '@/components/ui/button'
 import { MapPin, CheckCircle2 } from 'lucide-react'
 import TrustSignals from '@/components/TrustSignals'
+import PalmJumeirahPageCms from './PalmJumeirahPageCms'
 
 export const metadata: Metadata = {
   title: 'Smart Home Automation Palm Jumeirah | Luxury Villa Integration Dubai',
@@ -21,6 +22,7 @@ export default function PalmJumeirahPage() {
   ]
 
   return (
+    <PalmJumeirahPageCms>
     <div className="min-h-screen bg-white dark:bg-gray-900 pt-20">
       <section className="py-24 md:py-32 bg-gradient-to-br from-black via-gray-900 to-black text-white">
         <div className="container mx-auto px-8 lg:px-16">

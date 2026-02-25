@@ -2,6 +2,7 @@ import { Metadata } from 'next'
 import Link from 'next/link'
 import { Button } from '@/components/ui/button'
 import { ArrowRight, Award, Star, Shield, CheckCircle2 } from 'lucide-react'
+import BestHomeAutomationUAEPageCms from './BestHomeAutomationUAEPageCms'
 
 export const metadata: Metadata = {
   title: 'Best Home Automation Integrator UAE 2025 | LEXA Lifestyle Dubai',
@@ -11,6 +12,7 @@ export const metadata: Metadata = {
 
 export default function BestHomeAutomationUAEPage() {
   return (
+    <BestHomeAutomationUAEPageCms>
     <div className="min-h-screen bg-white pt-20">
       {/* Hero */}
       <section className="py-24 md:py-32 bg-gradient-to-br from-black via-gray-900 to-black text-white">

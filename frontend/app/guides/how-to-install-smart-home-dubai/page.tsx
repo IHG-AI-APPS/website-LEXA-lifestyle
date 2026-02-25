@@ -2,6 +2,7 @@ import { Metadata } from 'next'
 import Link from 'next/link'
 import { ArrowLeft, Clock, DollarSign } from 'lucide-react'
 import { generateHowToSchema } from '@/lib/seo'
+import HowToInstallPageCms from './HowToInstallPageCms'
 
 export const metadata: Metadata = {
   title: 'How to Install Smart Home in Dubai | 8-Step Installation Guide | LEXA',
@@ -56,6 +57,7 @@ export default function HowToInstallPage() {
   const schema = generateHowToSchema(guideData)
 
   return (
+    <HowToInstallPageCms>
     <>
       <script
         type="application/ld+json"

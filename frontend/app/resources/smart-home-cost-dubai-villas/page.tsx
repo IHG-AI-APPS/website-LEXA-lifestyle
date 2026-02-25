@@ -2,6 +2,7 @@ import { Metadata } from 'next'
 import Link from 'next/link'
 import { Button } from '@/components/ui/button'
 import { ArrowRight, DollarSign, Home, Calculator, CheckCircle2 } from 'lucide-react'
+import SmartHomeCostDubaiPageCms from './SmartHomeCostDubaiPageCms'
 
 export const metadata: Metadata = {
   title: 'Smart Home Automation Cost in Dubai Villas 2025 | LEXA Lifestyle',
@@ -11,6 +12,7 @@ export const metadata: Metadata = {
 
 export default function SmartHomeCostDubaiPage() {
   return (
+    <SmartHomeCostDubaiPageCms>
     <div className="min-h-screen bg-white pt-20">
       {/* Hero Section */}
       <section className="py-24 md:py-32 bg-gradient-to-br from-black via-gray-900 to-black text-white">

@@ -1,5 +1,6 @@
 import VideoGallery from '@/components/sections/VideoGallery'
 import { Metadata } from 'next'
+import MediaGalleryPageCms from './MediaGalleryPageCms'
 
 export const metadata: Metadata = {
   title: 'Media Gallery',
@@ -8,6 +9,7 @@ export const metadata: Metadata = {
 
 export default function MediaGalleryPage() {
   return (
+    <MediaGalleryPageCms>
     <main className="min-h-screen pt-20">
       {/* Hero Section */}
       <section className="relative py-20 px-4 bg-gradient-to-br from-gray-900 via-gray-800 to-black text-white">

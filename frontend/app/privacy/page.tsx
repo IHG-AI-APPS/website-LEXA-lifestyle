@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import { Button } from '@/components/ui/button'
 import { ArrowLeft } from 'lucide-react'
+import PrivacyPageCms from './PrivacyPageCms'
 
 export const metadata = {
   title: 'Privacy Policy | LEXA Lifestyle',
@@ -9,6 +10,7 @@ export const metadata = {
 
 export default function PrivacyPage() {
   return (
+    <PrivacyPageCms>
     <div className="min-h-screen bg-white">
       <div className="container mx-auto px-6 md:px-12 lg:px-24 py-16 md:py-24">
         <Link href="/">

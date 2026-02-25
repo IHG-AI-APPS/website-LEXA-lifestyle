@@ -2,6 +2,7 @@ import { Metadata } from 'next'
 import Link from 'next/link'
 import { Building2, MapPin, Phone, Mail } from 'lucide-react'
 import { getEmirateSchema } from '@/lib/seo'
+import DubaiPageCms from './DubaiPageCms'
 
 export const metadata: Metadata = {
   title: 'Smart Home Automation Dubai | #1 Home Automation Company | LEXA',
@@ -37,6 +38,7 @@ export default function DubaiPage() {
   const schema = getEmirateSchema(dubaiData)
 
   return (
+    <DubaiPageCms>
     <>
       <script
         type="application/ld+json"
