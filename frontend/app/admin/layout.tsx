@@ -74,6 +74,7 @@ const navigation = [
   { name: 'Submissions', href: '/admin/submissions', icon: MessageSquare },
   { name: 'SEO Tools', href: '/admin/seo', icon: Search },
   { name: 'Activity Logs', href: '/admin/logs', icon: Clock },
+  { name: 'CMS / Page Content', href: '/admin/cms', icon: FileText },
   { name: 'System Health', href: '/admin/system', icon: Activity },
 ]
 
