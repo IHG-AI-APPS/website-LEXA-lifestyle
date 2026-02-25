@@ -430,7 +430,7 @@ export default function PartnerWithUsPage() {
               </Button>
             </motion.div>
           ) : (
-            <form onSubmit={handleSubmit} className="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-6 md:p-8 space-y-6">
+            <form aria-label="Form" onSubmit={handleSubmit} className="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-6 md:p-8 space-y-6">
               {/* Partner Type Selection */}
               <div>
                 <label className="block text-sm font-semibold text-gray-700 dark:text-gray-300 mb-3">

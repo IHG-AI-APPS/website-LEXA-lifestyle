@@ -335,7 +335,7 @@ export default function DevelopersPage() {
                   <p className="text-gray-300">{selectedResourceData?.description}</p>
                 </div>
 
-                <form onSubmit={handleSubmit} className="p-8 space-y-6">
+                <form aria-label="Form" onSubmit={handleSubmit} className="p-8 space-y-6">
                   <p className="text-gray-700 dark:text-gray-300 bg-gray-50 border-l-4 border-black p-4 rounded">
                     Fill in your details and our partnerships team will send you comprehensive resources tailored to your development.
                   </p>

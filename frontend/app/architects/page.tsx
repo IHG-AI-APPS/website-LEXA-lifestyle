@@ -315,7 +315,7 @@ export default function ArchitectsPage() {
                   <p className="text-white/90">{selectedResourceData?.description}</p>
                 </div>
 
-                <form onSubmit={handleSubmit} className="p-8 space-y-6">
+                <form aria-label="Form" onSubmit={handleSubmit} className="p-8 space-y-6">
                   <p className="text-gray-700 dark:text-gray-300 bg-blue-50 border-l-4 border-blue-500 p-4 rounded">
                     Fill in your details and our project engineer will send you the requested resources along with technical support.
                   </p>

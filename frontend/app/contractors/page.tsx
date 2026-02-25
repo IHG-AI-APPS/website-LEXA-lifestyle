@@ -366,7 +366,7 @@ export default function ContractorsPage() {
                   <p className="text-gray-300">Fill in the details and get your BOQ within 48 hours</p>
                 </div>
 
-                <form onSubmit={handleSubmit} className="p-8 space-y-6 max-h-[60vh] overflow-y-auto">
+                <form aria-label="Form" onSubmit={handleSubmit} className="p-8 space-y-6 max-h-[60vh] overflow-y-auto">
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div>
                       <label className="block text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">

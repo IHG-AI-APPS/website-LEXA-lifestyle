@@ -422,7 +422,7 @@ export default function VendorSupplierPage() {
               </Button>
             </motion.div>
           ) : (
-            <form onSubmit={handleSubmit} className="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-6 md:p-8 space-y-6">
+            <form aria-label="Form" onSubmit={handleSubmit} className="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-6 md:p-8 space-y-6">
               {/* Company Information */}
               <div>
                 <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-4 pb-2 border-b">Company Information</h3>
