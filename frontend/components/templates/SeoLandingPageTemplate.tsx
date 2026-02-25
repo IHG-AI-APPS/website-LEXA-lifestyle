@@ -1,11 +1,11 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import SafeImage from '@/components/ui/SafeImage'
 import Link from 'next/link'
 import { Button } from '@/components/ui/button'
-import TrustBar from '@/components/conversion/TrustBar'
+import dynamic from 'next/dynamic'
 import { 
   CheckCircle2, X, ArrowRight, LucideIcon,
   // Icons used in SEO landing pages - add more as needed
