@@ -4,22 +4,25 @@ import Link from 'next/link'
 import { Film, Monitor, Speaker, Star, ArrowRight, Volume2, Projector, MessageCircle } from 'lucide-react'
 import Script from 'next/script'
 import { openWhatsApp, whatsAppMessages } from '@/lib/whatsapp'
+import { useCms } from '@/hooks/useCms'
 
-const features = [
+const ICON_MAP: Record<string, any> = { Projector, Volume2, Monitor, Speaker, Film, Star }
+
+const DEFAULT_FEATURES = [
   { icon: Projector, title: 'Laser Projection', desc: 'Sony, JVC, Barco 4K & 8K laser projectors with HDR10+' },
   { icon: Volume2, title: 'Dolby Atmos', desc: 'Immersive object-based audio with up to 9.4.6 configurations' },
   { icon: Monitor, title: 'LED Video Walls', desc: 'Samsung & Sony MicroLED for daylight viewing' },
   { icon: Speaker, title: 'JBL Synthesis', desc: 'Reference-grade cinema speakers and subwoofers' },
 ]
 
-const projects = [
+const DEFAULT_PROJECTS = [
   { name: 'Private IMAX', type: '21-seat cinema', location: 'Palm Jumeirah' },
   { name: 'Dolby Atmos Suite', type: '12-seat theater', location: 'Emirates Hills' },
   { name: 'Media Lounge', type: 'Casual viewing', location: 'Dubai Hills' },
   { name: 'Yacht Cinema', type: 'Marine installation', location: 'Dubai Marina' },
 ]
 
-const faqs = [
+const DEFAULT_FAQS = [
   {
     q: 'How much does a home theater cost in Dubai?',
     a: 'Home theater installations in Dubai range from AED 80,000 for a quality media room to AED 1,000,000+ for a reference-grade private cinema. Our most popular villa theaters typically cost AED 200,000-400,000 including acoustic treatment, Dolby Atmos audio, and 4K laser projection.'
