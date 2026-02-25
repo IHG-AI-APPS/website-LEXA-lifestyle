@@ -23,9 +23,13 @@ export function useCms<T = any>(key: string, fallback: T): T {
       return
     }
 
-    fetch(`${BACKEND_URL}/api/cms/sections/${key}`)
+    let cancelled = false
+    const controller = new AbortController()
+
+    fetch(`${BACKEND_URL}/api/cms/sections/${key}`, { signal: controller.signal })
       .then(r => r.json())
       .then(d => {
+        if (cancelled) return
         fetchDone[key] = true
         if (d?.value) {
           cache[key] = { data: d.value, ts: Date.now() }
@@ -34,7 +38,9 @@ export function useCms<T = any>(key: string, fallback: T): T {
           cache[key] = { data: null, ts: Date.now() }
         }
       })
-      .catch(() => { fetchDone[key] = true })
+      .catch(() => { if (!cancelled) fetchDone[key] = true })
+
+    return () => { cancelled = true; controller.abort() }
   }, [key])
 
   return data
