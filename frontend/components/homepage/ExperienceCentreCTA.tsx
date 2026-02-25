@@ -301,8 +301,8 @@ export default function ExperienceCentreCTA() {
                             <Phone className="h-4 w-4 text-[#E8DCC8]" />
                           </div>
                           <div>
-                            <a href="tel:+97142670470" className="text-white text-sm hover:text-[#E8DCC8] transition-colors">
-                              +971 42 670 470
+                            <a href={`tel:${phoneNumber.replace(/\s/g, '')}`} className="text-white text-sm hover:text-[#E8DCC8] transition-colors">
+                              {phoneNumber}
                             </a>
                             <div className="text-white/40 text-xs">WhatsApp: +971 52 178 2109</div>
                           </div>
