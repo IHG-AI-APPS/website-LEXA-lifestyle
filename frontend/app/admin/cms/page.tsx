@@ -17,6 +17,21 @@ interface CMSSection {
 }
 
 const CMS_SECTIONS: CMSSection[] = [
+  // Global SEO
+  { key: 'seo_global', label: 'Global SEO Settings', icon: Globe, category: 'seo', description: 'Default meta title, description, OG image, keywords' },
+  { key: 'seo_homepage', label: 'Homepage SEO', icon: Home, category: 'seo', description: 'Homepage title, description, OG tags' },
+  ...([
+    'about', 'contact', 'consultation', 'experience-centre', 'careers', 'blog',
+    'solutions', 'services', 'projects', 'products', 'brands', 'packages',
+    'testimonials', 'news', 'resources', 'faq', 'support', 'warranty',
+    'privacy-policy', 'terms-of-service', 'calculator', 'work-with-us',
+  ] as string[]).map(slug => ({
+    key: `seo_${slug.replace(/-/g, '_')}`,
+    label: `SEO: ${slug.replace(/-/g, ' ').replace(/\b\w/g, c => c.toUpperCase())}`,
+    icon: Globe,
+    category: 'seo',
+    description: `Meta title, description, OG tags for /${slug}`
+  })),
   // Homepage
   { key: 'homepage_hero', label: 'Homepage Hero', icon: Video, category: 'homepage', description: 'Hero video clips, heading, subtitle, CTA buttons' },
   { key: 'homepage_experience_cta', label: 'Experience Centre CTA', icon: MapPin, category: 'homepage', description: 'Gallery images, highlights, time slots, address' },
