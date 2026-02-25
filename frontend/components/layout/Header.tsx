@@ -130,6 +130,8 @@ export default function Header() {
   return (
     <>
       <motion.header
+        role="banner"
+        aria-label="Site header"
         initial={{ y: -20, opacity: 0 }}
         animate={{ 
           y: headerVisible ? 0 : -100, 
