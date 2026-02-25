@@ -24,9 +24,10 @@ class TestAdminAuth:
         )
         assert response.status_code == 200, f"Login failed: {response.text}"
         data = response.json()
-        assert "token" in data, "Token not in response"
-        assert len(data["token"]) > 0, "Token is empty"
-        return data["token"]
+        # API returns access_token field
+        assert "access_token" in data, "access_token not in response"
+        assert len(data["access_token"]) > 0, "Token is empty"
+        return data["access_token"]
 
 
 class TestCMSSEOEndpoints:
