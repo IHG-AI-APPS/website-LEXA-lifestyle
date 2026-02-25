@@ -397,8 +397,8 @@ export default function SolutionsAdminPage() {
           <p className="text-2xl font-bold">{solutions.filter(s => s.featured).length}</p>
         </div>
         <div className="bg-white p-4 rounded-lg border">
-          <p className="text-sm text-gray-600">With Products</p>
-          <p className="text-2xl font-bold">{solutions.filter(s => s.related_products?.length).length}</p>
+          <p className="text-sm text-gray-600">With Gallery</p>
+          <p className="text-2xl font-bold">{solutions.filter(s => (s.gallery_images as any)?.length).length}</p>
         </div>
         <div className="bg-white p-4 rounded-lg border">
           <p className="text-sm text-gray-600">Categories</p>
