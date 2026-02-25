@@ -40,45 +40,41 @@ export default function SolutionClient({
     }
   }, [solution, addItem])
 
+  // Gallery images for visual sections
+  const galleryImages = solution.gallery_images || []
+
   return (
     <div className="min-h-screen bg-white dark:bg-gray-900 pt-20">
-      {/* Hero Section */}
-      <section className="relative py-20 overflow-hidden bg-gradient-to-br from-gray-900 via-gray-800 to-black text-white">
-        <div className="absolute inset-0 opacity-10">
-          <SafeImage
-            src={solution.image}
-            alt={solution.title}
-            fill
-            className="object-cover"
-          />
-        </div>
-        
-        <div className="container mx-auto px-8 lg:px-16 relative z-10">
-          <div className="max-w-5xl mx-auto text-center">
+      {/* Hero Section — Split layout with visible image */}
+      <section className="relative overflow-hidden bg-gray-900 text-white">
+        <div className="grid grid-cols-1 lg:grid-cols-2 min-h-[480px]">
+          {/* Left: Content */}
+          <div className="flex flex-col justify-center px-8 lg:px-16 py-16 relative z-10">
             <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
+              initial={{ opacity: 0, x: -30 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6 }}
             >
-              <span className="inline-block px-4 py-1 rounded-full bg-platinum/10 border border-platinum/20 text-platinum text-xs uppercase tracking-widest mb-6">
+              <span className="inline-block px-3 py-1 rounded-full bg-[#C9A962]/15 border border-[#C9A962]/30 text-[#C9A962] text-xs uppercase tracking-widest mb-5">
                 {solution.category}
               </span>
               
-              <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold mb-6 tracking-tight">
+              <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-5 tracking-tight leading-tight">
                 {solution.title}
               </h1>
               
-              <p className="text-xl text-gray-300 mb-10 max-w-3xl mx-auto">
+              <p className="text-base text-gray-300 mb-8 max-w-lg leading-relaxed">
                 {solution.description}
               </p>
 
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <div className="flex flex-col sm:flex-row gap-3">
                 <Button
                   size="lg"
-                  className="bg-platinum text-charcoal hover:bg-platinum/90"
+                  className="bg-[#C9A962] text-gray-900 hover:bg-[#C9A962]/90 font-semibold"
                   onClick={() => setShowContactForm(true)}
+                  data-testid="hero-cta-design"
                 >
-                  Design {solution.title.split(' ')[0]} System <ArrowRight className="ml-2" size={20} />
+                  Get a Free Quote <ArrowRight className="ml-2" size={18} />
                 </Button>
                 <Link href="/projects">
                   <Button
@@ -92,14 +88,29 @@ export default function SolutionClient({
               </div>
             </motion.div>
           </div>
+          
+          {/* Right: Hero Image */}
+          <div className="relative min-h-[300px] lg:min-h-full">
+            <SafeImage
+              src={solution.image}
+              alt={solution.title}
+              fill
+              className="object-cover"
+              priority
+              sizes="(max-width: 1024px) 100vw, 50vw"
+            />
+            <div className="absolute inset-0 bg-gradient-to-r from-gray-900 via-gray-900/40 to-transparent lg:block hidden" />
+            <div className="absolute inset-0 bg-gradient-to-t from-gray-900/60 to-transparent lg:hidden" />
+          </div>
         </div>
       </section>
 
-      {/* Long Description */}
+      {/* Long Description with accent bar */}
       {solution.long_description && (
-        <section className="py-16 bg-gray-50 dark:bg-gray-800">
+        <section className="py-14 bg-gray-50 dark:bg-gray-800">
           <div className="container mx-auto px-8 lg:px-16">
-            <div className="max-w-4xl mx-auto">
+            <div className="max-w-4xl mx-auto flex gap-6">
+              <div className="w-1 bg-[#C9A962] rounded-full flex-shrink-0 hidden sm:block" />
               <p className="text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
                 {solution.long_description}
               </p>
