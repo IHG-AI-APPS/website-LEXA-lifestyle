@@ -5,6 +5,7 @@ import { motion } from 'framer-motion'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { 
+import { useCms } from '@/hooks/useCms'
   Award,
   FileText, 
   Download, 
@@ -18,6 +19,8 @@ import {
 } from 'lucide-react'
 
 export default function DeveloperPartnerToolkitPage() {
+  const cms = useCms('page_developer_partner_toolkit', null)
+
   const [isUnlocked, setIsUnlocked] = useState(false)
   const [accessCode, setAccessCode] = useState('')
 

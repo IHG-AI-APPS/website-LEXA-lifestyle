@@ -7,6 +7,7 @@ import { ChevronDown, Search, HelpCircle, ArrowRight } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { useLanguage } from '@/contexts/LanguageContext'
+import { useCms } from '@/hooks/useCms'
 
 const BACKEND_URL = process.env.NEXT_PUBLIC_BACKEND_URL || ''
 
@@ -22,6 +23,8 @@ interface FAQCategory {
 }
 
 export default function FAQPage() {
+  const cms = useCms('page_faq', null)
+
   const { language } = useLanguage()
   const [categories, setCategories] = useState<FAQCategory[]>([])
   const [loading, setLoading] = useState(true)

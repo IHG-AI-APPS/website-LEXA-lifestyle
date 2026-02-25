@@ -7,8 +7,11 @@ import Link from 'next/link'
 import { Button } from '@/components/ui/button'
 import ConsultationForm from '@/components/forms/ConsultationForm'
 import { Building, TrendingUp, Clock, CheckCircle, ArrowRight } from 'lucide-react'
+import { useCms } from '@/hooks/useCms'
 
 export default function DeveloperPage() {
+  const cms = useCms('page_persona_developer', null)
+
   const [showConsultationForm, setShowConsultationForm] = useState(false)
 
   const benefits = [

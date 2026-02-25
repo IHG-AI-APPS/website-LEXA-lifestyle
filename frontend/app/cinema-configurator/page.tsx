@@ -6,6 +6,7 @@ import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { Textarea } from '@/components/ui/textarea'
 import {
+import { useCms } from '@/hooks/useCms'
   Film,
   Ruler,
   Users,
@@ -35,6 +36,8 @@ interface ConfigState {
 }
 
 export default function CinemaConfiguratorPage() {
+  const cms = useCms('page_cinema_configurator', null)
+
   const [step, setStep] = useState(1)
   const [config, setConfig] = useState<ConfigState>({
     roomSize: '',

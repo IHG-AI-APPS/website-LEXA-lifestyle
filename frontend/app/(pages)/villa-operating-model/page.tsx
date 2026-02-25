@@ -3,8 +3,11 @@
 import { motion } from 'framer-motion'
 import { Users, Shield, Key, Clock, MapPin, FileText, Home, UserCheck, UserCog, UserPlus } from 'lucide-react'
 import Link from 'next/link'
+import { useCms } from '@/hooks/useCms'
 
 export default function VillaOperatingModelPage() {
+  const cms = useCms('page_villa_operating_model', null)
+
   const roles = [
     {
       icon: Home,

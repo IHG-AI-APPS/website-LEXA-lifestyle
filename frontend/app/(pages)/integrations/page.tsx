@@ -3,8 +3,11 @@
 import { motion } from 'framer-motion'
 import { CheckCircle2, Wifi, Lightbulb, Volume2, Video, Shield, Cpu, Smartphone } from 'lucide-react'
 import Link from 'next/link'
+import { useCms } from '@/hooks/useCms'
 
 export default function IntegrationsPage() {
+  const cms = useCms('page_integrations', null)
+
   const platforms = [
     {
       category: 'Control Systems',

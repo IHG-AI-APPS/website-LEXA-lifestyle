@@ -3,8 +3,11 @@
 import { motion } from 'framer-motion'
 import { Check, Award, Users, Shield, Clock, Star, TrendingUp, Zap } from 'lucide-react'
 import Link from 'next/link'
+import { useCms } from '@/hooks/useCms'
 
 export default function WhyLexaPage() {
+  const cms = useCms('page_why_lexa', null)
+
   const advantages = [
     {
       icon: Award,

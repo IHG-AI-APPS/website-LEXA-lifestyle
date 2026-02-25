@@ -4,8 +4,11 @@ import { motion } from 'framer-motion'
 import SafeImage from '@/components/ui/SafeImage'
 import { Award, Users, Building, Target } from 'lucide-react'
 import RelatedPagesNav from '@/components/navigation/RelatedPagesNav'
+import { useCms } from '@/hooks/useCms'
 
 export default function CompanyPage() {
+  const cms = useCms('page_company', null)
+
   const values = [
     { icon: Award, title: 'Excellence', description: 'Uncompromising quality in every project' },
     { icon: Users, title: 'Partnership', description: 'Long-term relationships built on trust' },

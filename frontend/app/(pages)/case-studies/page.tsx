@@ -5,6 +5,7 @@ import SafeImage from '@/components/ui/SafeImage'
 import Link from 'next/link'
 import { MapPin, Calendar, DollarSign, Home } from 'lucide-react'
 import VideoGallery from '@/components/sections/VideoGallery'
+import { useCms } from '@/hooks/useCms'
 
 // Placeholder case studies - replace with real data from backend
 const caseStudies = [
@@ -107,6 +108,8 @@ const caseStudies = [
 ]
 
 export default function CaseStudiesPage() {
+  const cms = useCms('page_case_studies', null)
+
   return (
     <div className="min-h-screen bg-white dark:bg-gray-900 pt-20">
       {/* Hero */}

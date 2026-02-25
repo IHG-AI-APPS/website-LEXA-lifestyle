@@ -5,6 +5,7 @@ import { motion, AnimatePresence } from 'framer-motion'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { 
+import { useCms } from '@/hooks/useCms'
   Home, 
   Sparkles, 
   Calendar, 
@@ -25,6 +26,8 @@ import {
 const BACKEND_URL = process.env.NEXT_PUBLIC_BACKEND_URL || 'http://localhost:8001'
 
 export default function VillaDesignerPage() {
+  const cms = useCms('page_villa_designer', null)
+
   const [currentStep, setCurrentStep] = useState(1)
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [isComplete, setIsComplete] = useState(false)

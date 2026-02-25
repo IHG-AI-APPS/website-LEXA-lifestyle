@@ -22,6 +22,7 @@ import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import SafeImage from '@/components/ui/SafeImage'
 import Link from 'next/link'
+import { useCms } from '@/hooks/useCms'
 
 const partnerTypes = [
   {
@@ -106,6 +107,8 @@ const gccCountries = [
 ]
 
 export default function PartnerWithUsPage() {
+  const cms = useCms('page_partner_with_us', null)
+
   const [selectedType, setSelectedType] = useState('')
   const [formData, setFormData] = useState({
     companyName: '',

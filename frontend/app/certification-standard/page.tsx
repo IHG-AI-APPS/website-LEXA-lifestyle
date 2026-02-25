@@ -18,8 +18,11 @@ import {
   TrendingUp
 } from 'lucide-react'
 import Link from 'next/link'
+import { useCms } from '@/hooks/useCms'
 
 export default function CertificationStandardPage() {
+  const cms = useCms('page_certification_standard', null)
+
   const standards = [
     {
       icon: FileCheck,

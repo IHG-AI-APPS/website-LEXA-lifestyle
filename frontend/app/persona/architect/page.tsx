@@ -7,8 +7,11 @@ import Link from 'next/link'
 import { Button } from '@/components/ui/button'
 import ConsultationForm from '@/components/forms/ConsultationForm'
 import { Ruler, Palette, Layers, FileText, ArrowRight } from 'lucide-react'
+import { useCms } from '@/hooks/useCms'
 
 export default function ArchitectPage() {
+  const cms = useCms('page_persona_architect', null)
+
   const [showConsultationForm, setShowConsultationForm] = useState(false)
 
   const benefits = [

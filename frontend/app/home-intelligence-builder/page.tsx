@@ -2,8 +2,11 @@
 
 import { useEffect } from 'react'
 import { useRouter } from 'next/navigation'
+import { useCms } from '@/hooks/useCms'
 
 export default function HomeIntelligenceBuilderRedirect() {
+  const cms = useCms('page_home_intelligence_builder', null)
+
   const router = useRouter()
   
   useEffect(() => {

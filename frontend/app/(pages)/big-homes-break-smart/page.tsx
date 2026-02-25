@@ -3,8 +3,11 @@
 import { motion } from 'framer-motion'
 import { AlertTriangle, Smartphone, Users, Zap, DollarSign, Brain, Check, X } from 'lucide-react'
 import Link from 'next/link'
+import { useCms } from '@/hooks/useCms'
 
 export default function BigHomesBreakSmartPage() {
+  const cms = useCms('page_big_homes_break_smart', null)
+
   const problems = [
     {
       icon: Smartphone,

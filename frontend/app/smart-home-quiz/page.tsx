@@ -22,6 +22,7 @@ import {
   X
 } from 'lucide-react'
 import { Button } from '@/components/ui/button'
+import { useCms } from '@/hooks/useCms'
 
 const BACKEND_URL = process.env.NEXT_PUBLIC_BACKEND_URL || ''
 
@@ -101,6 +102,8 @@ const budgetRanges = [
 ]
 
 export default function SmartHomeQuizPage() {
+  const cms = useCms('page_smart_home_quiz', null)
+
   const [step, setStep] = useState(1)
   const [selectedPriorities, setSelectedPriorities] = useState<string[]>([])
   const [propertyType, setPropertyType] = useState<string>('')

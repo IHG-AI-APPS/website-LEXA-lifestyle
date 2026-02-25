@@ -6,6 +6,7 @@ import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { Textarea } from '@/components/ui/textarea'
 import { 
+import { useCms } from '@/hooks/useCms'
   TrendingUp,
   FileText,
   Award,
@@ -68,6 +69,8 @@ const timelines = [
 ]
 
 export default function DevelopersPage() {
+  const cms = useCms('page_developers', null)
+
   const [selectedResource, setSelectedResource] = useState<string | null>(null)
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [showSuccess, setShowSuccess] = useState(false)

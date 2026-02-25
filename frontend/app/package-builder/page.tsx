@@ -8,6 +8,7 @@ import SafeImage from '@/components/ui/SafeImage'
 import Link from 'next/link'
 import PricingDisclaimer from '@/components/shared/PricingDisclaimer'
 import LifestyleQuizMini from '@/components/quiz/LifestyleQuizMini'
+import { useCms } from '@/hooks/useCms'
 
 const BACKEND_URL = process.env.NEXT_PUBLIC_BACKEND_URL || 'http://localhost:8001'
 
@@ -22,6 +23,8 @@ const propertyIcons = {
 }
 
 export default function PackageBuilderPage() {
+  const cms = useCms('page_package_builder', null)
+
   const searchParams = useSearchParams()
   const preSelectedProperty = searchParams.get('property')
   const preSelectedTier = searchParams.get('tier')

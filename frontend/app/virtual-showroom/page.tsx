@@ -6,6 +6,7 @@ import SafeImage from '@/components/ui/SafeImage'
 import { Button } from '@/components/ui/button'
 import ConsultationForm from '@/components/forms/ConsultationForm'
 import { MapPin, Phone, Clock, X } from 'lucide-react'
+import { useCms } from '@/hooks/useCms'
 
 const showcaseAreas = [
   {
@@ -76,6 +77,8 @@ const showcaseAreas = [
 const categories = ['All', 'Overview', 'Lighting', 'Entertainment', 'Living Spaces', 'Security', 'Climate', 'Comfort', 'Technology']
 
 export default function VirtualShowroomPage() {
+  const cms = useCms('page_virtual_showroom', null)
+
   const [selectedCategory, setSelectedCategory] = useState('All')
   const [selectedImage, setSelectedImage] = useState<typeof showcaseAreas[0] | null>(null)
   const [showConsultationForm, setShowConsultationForm] = useState(false)

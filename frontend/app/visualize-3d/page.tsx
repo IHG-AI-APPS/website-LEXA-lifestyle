@@ -2,8 +2,11 @@
 
 import SplineViewer from '@/components/SplineViewer'
 import { Sparkles, Zap, Eye, Lightbulb } from 'lucide-react'
+import { useCms } from '@/hooks/useCms'
 
 export default function Visualize3DPage() {
+  const cms = useCms('page_visualize_3d', null)
+
   return (
     <div className="min-h-screen bg-gradient-to-b from-gray-50 to-white pt-20">
       {/* Header */}

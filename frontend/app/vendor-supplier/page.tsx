@@ -25,6 +25,7 @@ import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import SafeImage from '@/components/ui/SafeImage'
 import Link from 'next/link'
+import { useCms } from '@/hooks/useCms'
 
 const productCategories = [
   { id: 'automation', name: 'Home Automation Systems', icon: Cpu, description: 'Control systems, hubs, processors' },
@@ -98,6 +99,8 @@ const lookingFor = [
 ]
 
 export default function VendorSupplierPage() {
+  const cms = useCms('page_vendor_supplier', null)
+
   const [selectedCategories, setSelectedCategories] = useState<string[]>([])
   const [formData, setFormData] = useState({
     companyName: '',

@@ -8,8 +8,11 @@ import { Input } from '@/components/ui/input'
 import { Textarea } from '@/components/ui/textarea'
 import { Download, FileText, Layers, Calculator, Wrench, ArrowRight, X, CheckCircle } from 'lucide-react'
 import { useTheme } from '@/contexts/ThemeContext'
+import { useCms } from '@/hooks/useCms'
 
 export default function ArchitectResourcePortalPage() {
+  const cms = useCms('page_partners_architects', null)
+
   const { theme } = useTheme()
   const isDark = theme === 'dark'
   

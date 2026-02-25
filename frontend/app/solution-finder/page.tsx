@@ -8,6 +8,7 @@ import { getSolutions, type Solution } from '@/lib/api'
 import { useEffect } from 'react'
 import SafeImage from '@/components/ui/SafeImage'
 import Link from 'next/link'
+import { useCms } from '@/hooks/useCms'
 
 interface QuizQuestion {
   id: string
@@ -87,6 +88,8 @@ interface QuizResult {
 }
 
 export default function SolutionFinderPage() {
+  const cms = useCms('page_solution_finder', null)
+
   const [currentStep, setCurrentStep] = useState(0)
   const [answers, setAnswers] = useState<Record<string, string>>({})
   const [showResults, setShowResults] = useState(false)

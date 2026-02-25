@@ -16,8 +16,11 @@ import {
 import { Button } from '@/components/ui/button'
 import { useState } from 'react'
 import ConsultationForm from '@/components/forms/ConsultationForm'
+import { useCms } from '@/hooks/useCms'
 
 export default function HiddenCostsPage() {
+  const cms = useCms('page_hidden_costs', null)
+
   const [showConsultationForm, setShowConsultationForm] = useState(false)
 
   const hiddenCosts = [

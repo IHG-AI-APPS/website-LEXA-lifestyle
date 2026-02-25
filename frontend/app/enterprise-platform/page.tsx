@@ -21,8 +21,11 @@ import {
 import { Button } from '@/components/ui/button'
 import { useState } from 'react'
 import ConsultationForm from '@/components/forms/ConsultationForm'
+import { useCms } from '@/hooks/useCms'
 
 export default function EnterprisePerformanceOSPage() {
+  const cms = useCms('page_enterprise_platform', null)
+
   const [showConsultationForm, setShowConsultationForm] = useState(false)
   const [selectedUseCase, setSelectedUseCase] = useState('offices')
 

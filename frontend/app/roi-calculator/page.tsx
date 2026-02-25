@@ -7,6 +7,7 @@ import { Input } from '@/components/ui/input'
 import PricingDisclaimer from '@/components/shared/PricingDisclaimer'
 import BookingModal from '@/components/modals/BookingModal'
 import { 
+import { useCms } from '@/hooks/useCms'
   CheckCircle, TrendingUp, Leaf, DollarSign, Clock, BarChart3, 
   Home, Zap, Shield, Tv, Sun, Wifi, Building, 
   ArrowRight, Sparkles, TreePine, Droplets, Award
@@ -82,6 +83,8 @@ const systemDescriptions: Record<string, string> = {
 }
 
 export default function ROICalculatorPage() {
+  const cms = useCms('page_roi_calculator', null)
+
   const [formData, setFormData] = useState({
     property_size: 3500,
     property_type: 'Villa',

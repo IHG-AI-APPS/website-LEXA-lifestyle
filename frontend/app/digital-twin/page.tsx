@@ -18,8 +18,11 @@ import {
 import { Button } from '@/components/ui/button'
 import { useState } from 'react'
 import ConsultationForm from '@/components/forms/ConsultationForm'
+import { useCms } from '@/hooks/useCms'
 
 export default function DigitalTwinPage() {
+  const cms = useCms('page_digital_twin', null)
+
   const [showConsultationForm, setShowConsultationForm] = useState(false)
 
   const capabilities = [

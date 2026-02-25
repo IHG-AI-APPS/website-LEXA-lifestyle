@@ -7,8 +7,11 @@ import { Button } from '@/components/ui/button'
 import ConsultationForm from '@/components/forms/ConsultationForm'
 import RelatedPagesNav from '@/components/navigation/RelatedPagesNav'
 import { Search, Pencil, Wrench, Code, Headphones, CheckCircle } from 'lucide-react'
+import { useCms } from '@/hooks/useCms'
 
 export default function ProcessPage() {
+  const cms = useCms('page_process', null)
+
   const [showConsultationForm, setShowConsultationForm] = useState(false)
 
   const phases = [

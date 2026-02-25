@@ -3,6 +3,7 @@
 import { motion } from 'framer-motion'
 import { Search } from 'lucide-react'
 import { useState } from 'react'
+import { useCms } from '@/hooks/useCms'
 
 const glossaryTerms = [
   {
@@ -238,6 +239,8 @@ const glossaryTerms = [
 ]
 
 export default function GlossaryPage() {
+  const cms = useCms('page_glossary', null)
+
   const [searchTerm, setSearchTerm] = useState('')
 
   const filteredTerms = glossaryTerms.map(section => ({

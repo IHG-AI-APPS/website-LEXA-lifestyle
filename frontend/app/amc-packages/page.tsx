@@ -18,8 +18,11 @@ import { Button } from '@/components/ui/button'
 import { useState } from 'react'
 import ConsultationForm from '@/components/forms/ConsultationForm'
 import PricingDisclaimer from '@/components/shared/PricingDisclaimer'
+import { useCms } from '@/hooks/useCms'
 
 export default function AMCPackagesPage() {
+  const cms = useCms('page_amc_packages', null)
+
   const [showConsultationForm, setShowConsultationForm] = useState(false)
 
   const amcPackages = [

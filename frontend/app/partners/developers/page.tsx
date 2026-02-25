@@ -8,8 +8,11 @@ import { Input } from '@/components/ui/input'
 import { Textarea } from '@/components/ui/textarea'
 import { CheckCircle, Download, FileText, Building2, Users, Clock, TrendingUp, ArrowRight, X } from 'lucide-react'
 import { useTheme } from '@/contexts/ThemeContext'
+import { useCms } from '@/hooks/useCms'
 
 export default function DeveloperToolkitPage() {
+  const cms = useCms('page_partners_developers', null)
+
   const { theme } = useTheme()
   const isDark = theme === 'dark'
   const [showEmailGate, setShowEmailGate] = useState(false)

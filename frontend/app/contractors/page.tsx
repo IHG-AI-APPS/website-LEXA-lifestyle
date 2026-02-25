@@ -6,6 +6,7 @@ import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { Textarea } from '@/components/ui/textarea'
 import { 
+import { useCms } from '@/hooks/useCms'
   Truck,
   Clock,
   FileText,
@@ -53,6 +54,8 @@ const timelines = [
 ]
 
 export default function ContractorsPage() {
+  const cms = useCms('page_contractors', null)
+
   const [showForm, setShowForm] = useState(false)
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [showSuccess, setShowSuccess] = useState(false)
