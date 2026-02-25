@@ -12,9 +12,11 @@ import {
   Facebook, Instagram, Linkedin, Youtube
 } from 'lucide-react'
 import { useLanguage } from '@/contexts/LanguageContext'
+import { useCms } from '@/hooks/useCms'
 
 export default function ContactPage() {
   const { t, language } = useLanguage()
+  const cms = useCms('page_contact', null)
   const [formData, setFormData] = useState({
     name: '',
     email: '',
