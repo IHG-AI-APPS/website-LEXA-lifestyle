@@ -17,11 +17,10 @@ import {
 import { toast } from 'sonner'
 import { ImageUpload } from '@/components/admin/ImageUpload'
 
-interface RelatedProduct {
-  name: string
+interface FeatureCard {
+  title: string
   description: string
-  image: string
-  price_range?: string
+  benefits: string[]
 }
 
 interface Solution {
@@ -38,8 +37,9 @@ interface Solution {
   process?: object[]
   icon?: string
   tags: string[]
-  brands?: string[]
-  feature_cards?: object[]
+  brands: string[]
+  gallery_images: string[]
+  feature_cards: FeatureCard[]
   faqs?: object[]
   additional_sections?: object[]
   featured?: boolean
@@ -52,7 +52,7 @@ interface Solution {
   seo_title?: string
   seo_description?: string
   key_benefits: string[]
-  related_products: RelatedProduct[]
+  related_products: string[]
   certifications: string[]
   compatible_brands: string[]
   // Arabic translations
