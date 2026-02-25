@@ -119,25 +119,30 @@ export default function SolutionClient({
         </section>
       )}
 
-      {/* Features Grid */}
+      {/* Features Grid — Visual cards with numbered layout */}
       {solution.features && solution.features.length > 0 && (
         <section className="py-20">
           <div className="container mx-auto px-8 lg:px-16">
             <div className="max-w-6xl mx-auto">
-              <h2 className="text-4xl font-semibold mb-12 text-center">Key Features</h2>
+              <div className="text-center mb-14">
+                <span className="text-xs uppercase tracking-widest text-[#C9A962] font-semibold">Capabilities</span>
+                <h2 className="text-3xl font-semibold mt-2">Key Features</h2>
+              </div>
               
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
                 {solution.features.map((feature, index) => (
                   <motion.div
                     key={index}
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
-                    transition={{ duration: 0.2 }}
-                    className="flex items-start gap-3 p-6 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 dark:border-gray-700 hover:border-charcoal transition-colors"
+                    transition={{ duration: 0.3, delay: index * 0.05 }}
+                    className="flex items-start gap-4 p-5 bg-white dark:bg-gray-800 border border-gray-100 dark:border-gray-700 rounded-lg hover:border-[#C9A962]/40 hover:shadow-sm transition-all group"
                   >
-                    <CheckCircle2 className="text-charcoal flex-shrink-0 mt-1" size={20} />
-                    <span className="text-gray-800 dark:text-gray-200 dark:text-gray-100">{feature}</span>
+                    <span className="flex-shrink-0 w-8 h-8 rounded-full bg-gray-900 dark:bg-[#C9A962] text-white dark:text-gray-900 flex items-center justify-center text-xs font-bold group-hover:bg-[#C9A962] group-hover:text-gray-900 transition-colors">
+                      {String(index + 1).padStart(2, '0')}
+                    </span>
+                    <span className="text-gray-800 dark:text-gray-200 text-sm leading-relaxed pt-1">{feature}</span>
                   </motion.div>
                 ))}
               </div>
