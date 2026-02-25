@@ -88,6 +88,9 @@ const nextConfig = {
     NEXT_PUBLIC_BACKEND_URL: process.env.REACT_APP_BACKEND_URL || 'http://localhost:8001',
   },
   
+  // Source maps for production debugging
+  productionBrowserSourceMaps: true,
+  
   // Compiler optimizations
   compiler: {
     removeConsole: process.env.NODE_ENV === 'production',

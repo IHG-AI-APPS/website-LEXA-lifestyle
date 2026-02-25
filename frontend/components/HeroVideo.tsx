@@ -64,8 +64,10 @@ export default function HeroVideo({
         playsInline
         onLoadedData={() => setIsLoaded(true)}
         onEnded={handleVideoEnd}
+        aria-label={`LEXA Smart Home showcase - ${HERO_CLIPS[currentIndex].name}`}
       >
         <source src={HERO_CLIPS[currentIndex].src} type="video/mp4" />
+        <track kind="captions" src="" label="English" srcLang="en" default />
       </video>
 
       {/* Loading State */}
