@@ -32,8 +32,15 @@ import {
   Dumbbell, Timer, Hourglass, Watch, AlarmClock, BellRing, Vibrate,
   Battery, BatteryCharging, Plug, Cable, Usb, HardDrive, MemoryStick
 } from 'lucide-react'
-import RelatedSolutions from '@/app/solutions/components/RelatedSolutions'
 import { useCms, isCmsEmpty, seedCmsDefaults } from '@/hooks/useCms'
+
+// Lazy load below-fold components
+const RelatedSolutions = dynamic(() => import('@/app/solutions/components/RelatedSolutions'), {
+  loading: () => <div className="h-32" />
+})
+const TrustBar = dynamic(() => import('@/components/conversion/TrustBar'), {
+  loading: () => <div className="h-12" />
+})
 
 const BACKEND_URL = process.env.NEXT_PUBLIC_BACKEND_URL || 'http://localhost:8001'
 
