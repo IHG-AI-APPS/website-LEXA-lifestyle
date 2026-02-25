@@ -16,12 +16,12 @@ import dynamic from 'next/dynamic'
 import { trackPageView } from '@/hooks/useAnalytics'
 
 // Dynamically import widgets to avoid SSR issues
-const AIChatWidget = dynamic(() => import('@/components/widgets/AIChatWidget'), { ssr: false })
-const SocialProofWidget = dynamic(() => import('@/components/widgets/SocialProofWidget'), { ssr: false })
-const ExitIntentPopup = dynamic(() => import('@/components/widgets/ExitIntentPopup'), { ssr: false })
-const CookieConsent = dynamic(() => import('@/components/widgets/CookieConsent'), { ssr: false })
-const LinkPrefetcher = dynamic(() => import('@/components/performance/LinkPrefetcher'), { ssr: false })
-const ScheduleVisitButton = dynamic(() => import('@/components/widgets/ScheduleVisitButton'), { ssr: false })
+const AIChatWidget = dynamic(() => import('@/components/widgets/AIChatWidget').catch(() => () => null), { ssr: false })
+const SocialProofWidget = dynamic(() => import('@/components/widgets/SocialProofWidget').catch(() => () => null), { ssr: false })
+const ExitIntentPopup = dynamic(() => import('@/components/widgets/ExitIntentPopup').catch(() => () => null), { ssr: false })
+const CookieConsent = dynamic(() => import('@/components/widgets/CookieConsent').catch(() => () => null), { ssr: false })
+const LinkPrefetcher = dynamic(() => import('@/components/performance/LinkPrefetcher').catch(() => () => null), { ssr: false })
+const ScheduleVisitButton = dynamic(() => import('@/components/widgets/ScheduleVisitButton').catch(() => () => null), { ssr: false })
 
 export default function ClientLayout({ children }: { children: React.ReactNode }) {
   const pathname = usePathname()
