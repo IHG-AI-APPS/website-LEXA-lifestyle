@@ -2,9 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Import Google Font for Arabic */
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Arabic:wght@400;500;600;700;800;900&display=swap');
-
 /* Import RTL styles for Arabic language support */
 @import '../styles/rtl.css';
 

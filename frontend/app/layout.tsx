@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-import { Outfit, DM_Sans, Tajawal } from 'next/font/google'
+import { Outfit, DM_Sans, Tajawal, Noto_Sans_Arabic } from 'next/font/google'
 import './globals.css'
 import ClientLayout from '@/components/layout/ClientLayout'
 import TrackingPixels from '@/components/tracking/TrackingPixels'
@@ -30,6 +30,15 @@ const tajawal = Tajawal({
   preload: true,
   weight: ['400', '500', '700'],
   fallback: ['Noto Sans Arabic', 'Arial', 'sans-serif']
+})
+
+const notoArabic = Noto_Sans_Arabic({
+  subsets: ['arabic'],
+  variable: '--font-arabic',
+  display: 'swap',
+  preload: false,
+  weight: ['400', '500', '600', '700'],
+  fallback: ['Arial', 'sans-serif']
 })
 
 export const metadata: Metadata = defaultMetadata
