@@ -1747,6 +1747,7 @@ app.include_router(schedule_visit.router)  # Schedule visit booking
 app.include_router(smart_recommendations.router)  # Smart AI recommendations
 app.include_router(geo_pages.router)  # Geo pages management
 app.include_router(tracking_settings.router)  # Tracking pixel settings
+app.include_router(locations.router)  # Dynamic location pages
 
 # Register main API router (remaining endpoints)
 app.include_router(api_router)
