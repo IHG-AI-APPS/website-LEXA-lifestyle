@@ -97,10 +97,12 @@ class TestSEOManagement:
         assert response.status_code == 200
         print("SEO page-specific (about) store: PASS")
         
-        # Verify it was stored
+        # Verify it was stored - single key endpoint returns {key, value} format
         response = requests.get(f"{BASE_URL}/api/cms/sections/seo_about")
         data = response.json()
-        assert data.get('title') == test_data['title']
+        # Handle both formats: {key, value} or direct data
+        actual_data = data.get('value', data)
+        assert actual_data.get('title') == test_data['title']
         print("SEO page-specific (about) retrieve: PASS")
     
     def test_seo_robots_directive_options(self):
@@ -128,10 +130,11 @@ class TestSEOManagement:
             )
             assert response.status_code == 200
             
-            # Verify
+            # Verify - handle both formats
             response = requests.get(f"{BASE_URL}/api/cms/sections/seo_test_robots")
             data = response.json()
-            assert data.get('robots') == robots
+            actual_data = data.get('value', data)
+            assert actual_data.get('robots') == robots
         
         print("SEO robots directives: PASS")
     
