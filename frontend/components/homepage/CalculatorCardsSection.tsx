@@ -1,59 +1,70 @@
 'use client'
 
+import { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
 import Link from 'next/link'
 import { Calculator, TrendingUp, Package, Sparkles, ArrowRight, Brain, Zap } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 
+const BACKEND_URL = process.env.NEXT_PUBLIC_BACKEND_URL || ''
+const ICON_MAP: Record<string, any> = { Calculator, TrendingUp, Package, Sparkles, Brain, Zap }
+
+const DEFAULT_FEATURED = {
+  title: 'Smart Project Builder',
+  description: 'AI-powered consultant-grade system that analyzes your needs and creates intelligent architecture proposals with 650+ features',
+  href: '/project-builder',
+  cta: 'Start Building',
+  badge: 'NEW',
+  icon: 'Brain'
+}
+
+const DEFAULT_TOOLS = [
+  { icon: 'Package', title: 'Package Builder', description: 'Design your complete smart home package step-by-step with live pricing', href: '/package-builder', cta: 'Build Your Package', image: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&q=85&auto=format&fit=crop' },
+  { icon: 'Sparkles', title: 'Specialty Rooms', description: 'Explore 22 premium specialty room automation solutions', href: '/specialty-rooms', cta: 'Explore Rooms', image: 'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=800&q=85&auto=format&fit=crop' },
+  { icon: 'Calculator', title: 'Cost Calculator', description: 'Quick estimate your smart home investment', href: '/calculator', cta: 'Calculate Cost', image: 'https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=600&q=80&auto=format&fit=crop' },
+  { icon: 'TrendingUp', title: 'ROI Calculator', description: 'Analyze your return on investment over time', href: '/roi-calculator', cta: 'Calculate ROI', image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&q=80&auto=format&fit=crop' }
+]
+
+const GRADIENTS = [
+  'from-amber-900/80 via-amber-800/70 to-transparent',
+  'from-purple-900/80 via-purple-800/70 to-transparent',
+  'from-blue-900/80 via-blue-800/70 to-transparent',
+  'from-emerald-900/80 via-emerald-800/70 to-transparent'
+]
+
 export default function CalculatorCardsSection() {
+  const [cmsData, setCmsData] = useState<any>(null)
+
+  useEffect(() => {
+    fetch(`${BACKEND_URL}/api/cms/sections/homepage_calculator_cards`)
+      .then(r => r.json())
+      .then(d => { if (d?.value) setCmsData(d.value) })
+      .catch(() => {})
+  }, [])
+
+  const featuredData = cmsData?.featured_tool || DEFAULT_FEATURED
+  const toolsData = cmsData?.tools?.length ? cmsData.tools : DEFAULT_TOOLS
+
+  const FeaturedIcon = ICON_MAP[featuredData.icon] || Brain
   const featuredTool = {
-    icon: Brain,
-    title: 'Smart Project Builder',
-    description: 'AI-powered consultant-grade system that analyzes your needs and creates intelligent architecture proposals with 650+ features',
-    href: '/project-builder',
-    cta: 'Start Building',
-    badge: 'NEW',
+    icon: FeaturedIcon,
+    title: featuredData.title,
+    description: featuredData.description,
+    href: featuredData.href,
+    cta: featuredData.cta,
+    badge: featuredData.badge,
     gradient: 'from-blue-600 via-purple-600 to-indigo-600'
   }
 
-  const tools = [
-    {
-      icon: Package,
-      title: 'Package Builder',
-      description: 'Design your complete smart home package step-by-step with live pricing',
-      href: '/package-builder',
-      cta: 'Build Your Package',
-      image: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&q=85&auto=format&fit=crop',
-      gradient: 'from-amber-900/80 via-amber-800/70 to-transparent'
-    },
-    {
-      icon: Sparkles,
-      title: 'Specialty Rooms',
-      description: 'Explore 22 premium specialty room automation solutions',
-      href: '/specialty-rooms',
-      cta: 'Explore Rooms',
-      image: 'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=800&q=85&auto=format&fit=crop',
-      gradient: 'from-purple-900/80 via-purple-800/70 to-transparent'
-    },
-    {
-      icon: Calculator,
-      title: 'Cost Calculator',
-      description: 'Quick estimate your smart home investment',
-      href: '/calculator',
-      cta: 'Calculate Cost',
-      image: 'https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=600&q=80&auto=format&fit=crop',
-      gradient: 'from-blue-900/80 via-blue-800/70 to-transparent'
-    },
-    {
-      icon: TrendingUp,
-      title: 'ROI Calculator',
-      description: 'Analyze your return on investment over time',
-      href: '/roi-calculator',
-      cta: 'Calculate ROI',
-      image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&q=80&auto=format&fit=crop',
-      gradient: 'from-emerald-900/80 via-emerald-800/70 to-transparent'
-    }
-  ]
+  const tools = toolsData.map((t: any, i: number) => ({
+    icon: ICON_MAP[t.icon] || Package,
+    title: t.title,
+    description: t.description,
+    href: t.href,
+    cta: t.cta,
+    image: t.image,
+    gradient: GRADIENTS[i % GRADIENTS.length]
+  }))
 
   return (
     <section className="py-16 md:py-20 lg:py-24 bg-white dark:bg-[#0a0f1a]">
