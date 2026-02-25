@@ -179,6 +179,9 @@ class Brand(BaseModel):
     long_description: Optional[str] = None  # Extended description for SEO
     certifications: List[str] = []  # e.g., ["CEDIA Certified", "THX Certified"]
     key_features: List[str] = []  # Key brand features/benefits
+    gallery_images: List[str] = []  # Inspiration gallery
+    feature_cards: List[dict] = []  # Feature category cards
+    related_solutions: List[str] = []  # Related solution slugs
 
 
 class ProductCategory(BaseModel):
