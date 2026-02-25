@@ -305,23 +305,43 @@ export default function ServicesAdminPage() {
     setFormData({ ...formData, process_steps: newSteps })
   }
 
-  // Product management
-  const addProduct = () => {
-    setFormData({
-      ...formData,
-      related_products: [...(formData.related_products || []), { name: '', description: '', image: '', price_range: '' }]
-    })
+  // Gallery image management
+  const addGalleryImage = () => {
+    setFormData({ ...formData, gallery_images: [...(formData.gallery_images || []), ''] })
+  }
+  const updateGalleryImage = (index: number, value: string) => {
+    const imgs = [...(formData.gallery_images || [])]
+    imgs[index] = value
+    setFormData({ ...formData, gallery_images: imgs })
+  }
+  const removeGalleryImage = (index: number) => {
+    setFormData({ ...formData, gallery_images: (formData.gallery_images || []).filter((_, i) => i !== index) })
   }
 
-  const updateProduct = (index: number, field: keyof RelatedProduct, value: string) => {
-    const newProducts = [...(formData.related_products || [])]
-    newProducts[index] = { ...newProducts[index], [field]: value }
-    setFormData({ ...formData, related_products: newProducts })
+  // Feature card management
+  const addFeatureCard = () => {
+    setFormData({ ...formData, feature_cards: [...(formData.feature_cards || []), { title: '', description: '', benefits: [] } as FeatureCard] })
+  }
+  const updateFeatureCard = (index: number, field: string, value: any) => {
+    const cards = [...(formData.feature_cards || [])] as FeatureCard[]
+    cards[index] = { ...cards[index], [field]: value }
+    setFormData({ ...formData, feature_cards: cards })
+  }
+  const removeFeatureCard = (index: number) => {
+    setFormData({ ...formData, feature_cards: (formData.feature_cards || []).filter((_, i) => i !== index) })
   }
 
-  const removeProduct = (index: number) => {
-    const newProducts = (formData.related_products || []).filter((_, i) => i !== index)
-    setFormData({ ...formData, related_products: newProducts })
+  // Related products (slug-based)
+  const addRelatedProduct = () => {
+    setFormData({ ...formData, related_products: [...(formData.related_products || []), ''] })
+  }
+  const updateRelatedProduct = (index: number, value: string) => {
+    const prods = [...(formData.related_products || [])] as string[]
+    prods[index] = value
+    setFormData({ ...formData, related_products: prods })
+  }
+  const removeRelatedProduct = (index: number) => {
+    setFormData({ ...formData, related_products: (formData.related_products || []).filter((_, i) => i !== index) })
   }
 
   // FAQ management
