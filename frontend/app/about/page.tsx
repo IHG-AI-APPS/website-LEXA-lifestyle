@@ -9,6 +9,9 @@ import ConsultationForm from '@/components/forms/ConsultationForm'
 import RelatedPagesNav from '@/components/navigation/RelatedPagesNav'
 import { Award, Users, Building, Target, MapPin, Phone, Mail } from 'lucide-react'
 import { useLanguage } from '@/contexts/LanguageContext'
+import { useCms } from '@/hooks/useCms'
+
+const ICON_MAP: Record<string, any> = { Award, Users, Building, Target, MapPin, Phone, Mail }
 
 export default function AboutPage() {
   const { t, language } = useLanguage()
