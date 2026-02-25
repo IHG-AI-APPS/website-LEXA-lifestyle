@@ -99,18 +99,14 @@ export default function HeroCurator({ onPersonaClick }: HeroCuratorProps) {
             className="max-w-5xl"
           >
             <h1 className={`text-2xl xs:text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-black tracking-tighter uppercase text-white leading-[0.95] ${language === 'ar' ? 'font-arabic' : ''}`}>
-              {t('hero.title1')}
-              <br />
-              {t('hero.title2')}
-              <br />
-              {t('hero.title3')}
+              {heading || (<>{t('hero.title1')}<br />{t('hero.title2')}<br />{t('hero.title3')}</>)}
             </h1>
             
             <p className="mt-6 max-w-xl text-sm sm:text-base text-white/90 md:text-lg leading-relaxed">
-              {language === 'ar' 
+              {subheading || (language === 'ar' 
                 ? 'مصمم ومُسلّم من البداية للنهاية. جرّب حلول المنزل الذكي الفاخرة الرائدة في دبي.'
                 : "Designed & delivered end-to-end. Experience Dubai's premier luxury smart home solutions."
-              }
+              )}
             </p>
 
             <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:gap-4">
