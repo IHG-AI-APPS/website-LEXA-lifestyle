@@ -49,7 +49,7 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" className={`${outfit.variable} ${dmSans.variable} ${tajawal.variable}`}>
+    <html lang="en" className={`${outfit.variable} ${dmSans.variable} ${tajawal.variable} ${notoArabic.variable}`}>
       <head>
         {/* Favicon & App Icons */}
         <link rel="icon" href="/favicon.ico" sizes="32x32" />
