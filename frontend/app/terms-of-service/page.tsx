@@ -9,7 +9,8 @@ export const metadata: Metadata = {
 
 export default function TermsOfServicePage() {
   return (
-        <CmsReg />
+        <>
+      <CmsReg />
     <div className="min-h-screen bg-white pt-24 pb-16">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
@@ -250,5 +251,6 @@ export default function TermsOfServicePage() {
         </div>
       </div>
     </div>
+    </>
   )
 }

@@ -10,7 +10,8 @@ export const metadata = {
 
 export default function WarrantyPage() {
   return (
-        <CmsReg />
+        <>
+      <CmsReg />
     <div className="min-h-screen bg-white dark:bg-gray-900">
       <div className="container mx-auto px-6 md:px-12 lg:px-24 py-16 md:py-24">
         <Link href="/">
@@ -96,5 +97,6 @@ export default function WarrantyPage() {
         </div>
       </div>
     </div>
+    </>
   )
 }

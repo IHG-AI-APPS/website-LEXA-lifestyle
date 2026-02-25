@@ -32,7 +32,8 @@ export default function EmergencySupportPage() {
   ]
 
   return (
-        <CmsReg />
+        <>
+      <CmsReg />
     <div className="min-h-screen bg-white dark:bg-gray-900 pt-20">
       {/* Hero */}
       <section className="py-24 md:py-32 bg-gradient-to-br from-red-600 via-orange-600 to-red-600 text-white">
@@ -241,5 +242,6 @@ export default function EmergencySupportPage() {
         </div>
       </section>
     </div>
+    </>
   )
 }

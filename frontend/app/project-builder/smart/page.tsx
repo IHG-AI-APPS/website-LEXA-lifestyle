@@ -206,7 +206,8 @@ export default function SmartBuilderFlow() {
   }
 
   return (
-        <CmsReg />
+        <>
+      <CmsReg />
     <div className="min-h-screen bg-gradient-to-b from-gray-50 to-white">
       {/* Progress Header - Below main navigation */}
       <div className="bg-white border-b border-gray-200 dark:border-gray-700 sticky top-16 sm:top-18 md:top-20 z-40">
@@ -412,5 +413,6 @@ export default function SmartBuilderFlow() {
         </AnimatePresence>
       </div>
     </div>
+    </>
   )
 }

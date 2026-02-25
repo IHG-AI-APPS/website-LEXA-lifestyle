@@ -36,7 +36,8 @@ export default function SharjahPage() {
   const schema = getEmirateSchema(sharjahData)
 
   return (
-        <CmsReg />
+        <>
+      <CmsReg />
     <>
       <script
         type="application/ld+json"
@@ -142,6 +143,7 @@ export default function SharjahPage() {
           </div>
         </section>
       </div>
+    </>
     </>
   )
 }

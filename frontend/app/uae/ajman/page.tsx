@@ -34,7 +34,8 @@ export default function AjmanPage() {
   const schema = getEmirateSchema(ajmanData)
 
   return (
-        <CmsReg />
+        <>
+      <CmsReg />
     <>
       <script
         type="application/ld+json"
@@ -140,6 +141,7 @@ export default function AjmanPage() {
           </div>
         </section>
       </div>
+    </>
     </>
   )
 }

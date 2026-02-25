@@ -38,7 +38,8 @@ export default function DubaiPage() {
   const schema = getEmirateSchema(dubaiData)
 
   return (
-        <CmsReg />
+        <>
+      <CmsReg />
     <>
       <script
         type="application/ld+json"
@@ -144,6 +145,7 @@ export default function DubaiPage() {
           </div>
         </section>
       </div>
+    </>
     </>
   )
 }

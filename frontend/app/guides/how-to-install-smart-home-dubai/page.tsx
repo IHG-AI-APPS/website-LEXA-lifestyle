@@ -57,7 +57,8 @@ export default function HowToInstallPage() {
   const schema = generateHowToSchema(guideData)
 
   return (
-        <CmsReg />
+        <>
+      <CmsReg />
     <>
       <script
         type="application/ld+json"
@@ -121,6 +122,7 @@ export default function HowToInstallPage() {
           </div>
         </div>
       </div>
+    </>
     </>
   )
 }

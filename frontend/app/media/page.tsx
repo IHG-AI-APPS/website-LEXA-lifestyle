@@ -9,7 +9,8 @@ export const metadata: Metadata = {
 
 export default function MediaGalleryPage() {
   return (
-        <CmsReg />
+        <>
+      <CmsReg />
     <main className="min-h-screen pt-20">
       {/* Hero Section */}
       <section className="relative py-20 px-4 bg-gradient-to-br from-gray-900 via-gray-800 to-black text-white">
@@ -67,5 +68,6 @@ export default function MediaGalleryPage() {
         cols={4}
       />
     </main>
+    </>
   )
 }

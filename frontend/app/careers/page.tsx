@@ -10,7 +10,8 @@ export const metadata = {
 
 export default function CareersPage() {
   return (
-        <CmsReg />
+        <>
+      <CmsReg />
     <div className="min-h-screen bg-white dark:bg-gray-900">
       {/* Hero */}
       <section className="bg-[#1A1A1A] text-white py-20 md:py-28">
@@ -161,5 +162,6 @@ export default function CareersPage() {
         </div>
       </section>
     </div>
+    </>
   )
 }

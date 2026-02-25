@@ -36,7 +36,8 @@ export default function AbuDhabiPage() {
   const schema = getEmirateSchema(abuDhabiData)
 
   return (
-        <CmsReg />
+        <>
+      <CmsReg />
     <>
       <script
         type="application/ld+json"
@@ -68,6 +69,7 @@ export default function AbuDhabiPage() {
           </div>
         </section>
       </div>
+    </>
     </>
   )
 }

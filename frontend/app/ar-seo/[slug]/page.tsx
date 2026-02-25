@@ -102,7 +102,8 @@ export default async function DynamicArabicPage({ params }: { params: { slug: st
   const isBlogPost = page.page_type === 'blog'
   
   return (
-        <CmsReg />
+        <>
+      <CmsReg />
     <div dir="rtl" lang="ar" className="min-h-screen bg-white dark:bg-gray-900">
       {/* Simple Header */}
       <header className="border-b py-4 bg-white sticky top-0 z-50">
@@ -306,5 +307,6 @@ export default async function DynamicArabicPage({ params }: { params: { slug: st
         </div>
       </footer>
     </div>
+    </>
   )
 }

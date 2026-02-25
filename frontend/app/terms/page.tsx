@@ -10,7 +10,8 @@ export const metadata = {
 
 export default function TermsPage() {
   return (
-        <CmsReg />
+        <>
+      <CmsReg />
     <div className="min-h-screen bg-white">
       <div className="container mx-auto px-6 md:px-12 lg:px-24 py-16 md:py-24">
         <Link href="/">
@@ -85,5 +86,6 @@ export default function TermsPage() {
         </div>
       </div>
     </div>
+    </>
   )
 }

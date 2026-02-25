@@ -12,7 +12,8 @@ export const metadata: Metadata = {
 
 export default function BestHomeAutomationUAEPage() {
   return (
-        <CmsReg />
+        <>
+      <CmsReg />
     <div className="min-h-screen bg-white pt-20">
       {/* Hero */}
       <section className="py-24 md:py-32 bg-gradient-to-br from-black via-gray-900 to-black text-white">
@@ -336,5 +337,6 @@ export default function BestHomeAutomationUAEPage() {
         </div>
       </section>
     </div>
+    </>
   )
 }

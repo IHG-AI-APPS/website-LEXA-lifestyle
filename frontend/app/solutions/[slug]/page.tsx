@@ -120,7 +120,8 @@ export default async function SolutionPage({ params }: { params: { slug: string 
     const serviceSchema = generateServiceSchema(solution)
     
     return (
-            <CmsReg />
+            <>
+      <CmsReg />
       <>
         {/* FAQ Schema.org Structured Data */}
         {faqSchema && (
@@ -141,6 +142,7 @@ export default async function SolutionPage({ params }: { params: { slug: string 
           relatedProjects={relatedProjects}
           otherSolutions={otherSolutions}
         />
+      </>
       </>
     )
   } catch (error) {

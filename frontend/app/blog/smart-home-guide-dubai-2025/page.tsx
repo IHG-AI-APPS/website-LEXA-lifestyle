@@ -28,7 +28,8 @@ export default function BlogArticlePage() {
   const schema = generateArticleSchema(articleData)
 
   return (
-        <CmsReg />
+        <>
+      <CmsReg />
     <>
       <script
         type="application/ld+json"
@@ -95,6 +96,7 @@ export default function BlogArticlePage() {
           </div>
         </div>
       </article>
+    </>
     </>
   )
 }
