@@ -26,7 +26,7 @@ export default function Footer() {
   }
 
   return (
-    <footer className="bg-black text-white">
+    <footer className="bg-black text-white" role="contentinfo" aria-label="Site footer">
       {/* Main Footer */}
       <div className="container mx-auto px-6 md:px-12 lg:px-24 py-16">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8">
