@@ -182,6 +182,7 @@ export default function SolutionsAdminPage() {
       compatible_brands: solution.compatible_brands || [],
       tags: solution.tags || [],
       brands: solution.brands || [],
+      gallery_images: solution.gallery_images || [],
       process: solution.process || [],
       feature_cards: solution.feature_cards || [],
       faqs: solution.faqs || [],
