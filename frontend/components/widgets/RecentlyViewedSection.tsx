@@ -225,6 +225,7 @@ export default function RecentlyViewedSection({
                           src={getImageUrl(item.image)}
                           alt={item.title}
                           fill
+                          sizes="(max-width: 768px) 50vw, 33vw"
                           className="object-cover group-hover:scale-105 transition-transform duration-500"
                         />
                         {/* Type badge */}
@@ -286,6 +287,7 @@ export default function RecentlyViewedSection({
                           src={getImageUrl(item.image)}
                           alt={item.title}
                           fill
+                          sizes="(max-width: 768px) 50vw, 25vw"
                           className="object-cover group-hover:scale-105 transition-transform duration-500"
                         />
                       </div>
