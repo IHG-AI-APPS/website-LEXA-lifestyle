@@ -15,7 +15,7 @@ import time
 
 BASE_URL = os.environ.get('REACT_APP_BACKEND_URL', '').rstrip('/')
 if not BASE_URL:
-    BASE_URL = 'https://full-site-cms.preview.emergentagent.com'
+    BASE_URL = 'https://cms-seo-live.preview.emergentagent.com'
 
 class TestBackendHealth:
     """Basic health and connectivity tests"""
