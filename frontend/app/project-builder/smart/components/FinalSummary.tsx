@@ -892,12 +892,24 @@ export default function FinalSummary({
         
         <div className="text-center py-4">
           <div className="text-xl opacity-80 mb-1">{selectedPackage} Package</div>
-          <div className="text-4xl font-bold mb-2">{packagePrice}</div>
+          <div className="text-4xl font-bold mb-2">{packagePrice || 'Custom Pricing'}</div>
           {totalUpgradePrice > 0 && (
             <div className="text-lg opacity-90">
               + AED {totalUpgradePrice.toLocaleString()} in upgrades
             </div>
           )}
+          {packagePrice && totalUpgradePrice > 0 && (() => {
+            const numMatch = packagePrice.match(/[\d,]+/)
+            if (numMatch) {
+              const baseNum = parseInt(numMatch[0].replace(/,/g, ''))
+              return (
+                <div className="mt-3 pt-3 border-t border-white/20 text-2xl font-bold">
+                  Total: AED {(baseNum + totalUpgradePrice).toLocaleString()}+
+                </div>
+              )
+            }
+            return null
+          })()}
         </div>
       </motion.div>
 
