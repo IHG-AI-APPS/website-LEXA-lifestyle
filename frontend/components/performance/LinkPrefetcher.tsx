@@ -161,10 +161,8 @@ export function useLazyLoad(threshold = 0.1) {
 export function preloadCriticalResources() {
   if (typeof window === 'undefined') return
 
-  // Preload critical fonts
-  const fonts = [
-    { href: '/fonts/outfit-variable.woff2', type: 'font/woff2' },
-  ]
+  // Fonts are handled by next/font - no manual preloading needed
+  const fonts: { href: string; type: string }[] = []
 
   fonts.forEach(({ href, type }) => {
     const link = document.createElement('link')
