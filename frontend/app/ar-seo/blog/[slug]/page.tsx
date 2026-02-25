@@ -3,6 +3,7 @@ import Link from 'next/link'
 import SafeImage from '@/components/ui/SafeImage'
 import { Phone, Mail, MapPin, CheckCircle, ArrowLeft, Calendar, User } from 'lucide-react'
 import { notFound } from 'next/navigation'
+import { generateCmsMetadata } from '@/lib/cmsMetadata'
 import CmsReg from './CmsReg'
 
 interface ArabicPageData {
@@ -51,7 +52,7 @@ export async function generateMetadata({ params }: { params: { slug: string } })
     }
   }
   
-  const metadata: Metadata = {
+  const fallback: Metadata = {
     title: page.meta_title,
     description: page.meta_description,
     keywords: page.meta_keywords,
@@ -66,7 +67,7 @@ export async function generateMetadata({ params }: { params: { slug: string } })
     }
   }
   
-  return metadata
+  return generateCmsMetadata(`seo_ar_blog_${params.slug.replace(/-/g, '_')}`, fallback)
 }
 
 export default async function DynamicArabicPage({ params }: { params: { slug: string } }) {

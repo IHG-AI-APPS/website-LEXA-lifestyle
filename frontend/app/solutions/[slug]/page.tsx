@@ -1,6 +1,7 @@
 import { Metadata } from 'next'
 import { notFound } from 'next/navigation'
 import { getSolution, getSolutions, getProjects } from '@/lib/api'
+import { generateCmsMetadata } from '@/lib/cmsMetadata'
 import SolutionClient from './SolutionClient'
 import CmsReg from './CmsReg'
 
@@ -9,7 +10,7 @@ export async function generateMetadata({ params }: { params: { slug: string } })
   try {
     const solution = await getSolution(params.slug)
     
-    return {
+    const fallback: Metadata = {
       title: solution.meta_description 
         ? `${solution.title} | LEXA Lifestyle` 
         : `${solution.title} - ${solution.description} | LEXA Lifestyle`,
@@ -28,6 +29,8 @@ export async function generateMetadata({ params }: { params: { slug: string } })
         images: [solution.image],
       },
     }
+
+    return generateCmsMetadata(`seo_solutions_${params.slug.replace(/-/g, '_')}`, fallback)
   } catch (error) {
     return {
       title: 'Solution Not Found | LEXA Lifestyle',
