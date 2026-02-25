@@ -93,7 +93,7 @@ interface AIRecommendationProps {
   protocolType: string
   selectedProtocols: string[]
   selectedSystems: string[]
-  onComplete: (selectedPackage: string) => void
+  onComplete: (selectedPackage: string, priceIndicator: string) => void
   onBack: () => void
   projectDetails?: ProjectDetails | null
 }
@@ -771,9 +771,8 @@ export default function AIRecommendation({
             </Button>
             <Button 
               onClick={() => {
-                // Find selected package price
                 const pkg = recommendation?.packages.find(p => p.name === selectedPackage)
-                onComplete(selectedPackage)
+                onComplete(selectedPackage, pkg?.price_indicator || '')
               }}
               disabled={!selectedPackage}
               className="bg-gradient-to-r from-purple-600 to-indigo-600 hover:opacity-90 text-white"
