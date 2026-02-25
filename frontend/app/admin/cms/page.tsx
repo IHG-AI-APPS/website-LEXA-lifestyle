@@ -617,6 +617,51 @@ export default function CMSPage() {
     }
   }
 
+  // Seed all solution pages by visiting each URL to trigger auto-seed
+  const [seeding, setSeeding] = useState(false)
+  const handleSeedAll = async () => {
+    setSeeding(true)
+    const solutionSections = CMS_SECTIONS.filter(s => s.category === activeCategory && !sections[s.key])
+    if (solutionSections.length === 0) {
+      toast.info('All sections already have CMS data')
+      setSeeding(false)
+      return
+    }
+
+    toast.info(`Seeding ${solutionSections.length} pages... This opens pages in hidden frames to extract content.`)
+    
+    // Map CMS keys to page URLs
+    const keyToUrl: Record<string, string> = {}
+    for (const s of solutionSections) {
+      if (s.key.startsWith('page_solutions_')) {
+        const slug = s.key.replace('page_solutions_', '').replace(/_/g, '/')
+        keyToUrl[s.key] = `/solutions/${slug.replace(/-/g, '-')}`
+      } else if (s.key.startsWith('page_geo_')) {
+        continue // Geo pages need page visit - skip for now
+      }
+    }
+
+    let seeded = 0
+    // Open each solution page in a hidden iframe to trigger auto-seed
+    for (const [key, url] of Object.entries(keyToUrl)) {
+      try {
+        const iframe = document.createElement('iframe')
+        iframe.style.display = 'none'
+        iframe.src = url
+        document.body.appendChild(iframe)
+        // Wait for page to load and auto-seed
+        await new Promise(resolve => setTimeout(resolve, 2500))
+        document.body.removeChild(iframe)
+        seeded++
+      } catch { /* continue */ }
+    }
+
+    toast.success(`Seeded ${seeded} solution pages. Refreshing...`)
+    setSeeding(false)
+    setLoading(true)
+    fetchSections()
+  }
+
   const filteredSections = CMS_SECTIONS.filter(s => {
     const matchesCategory = s.category === activeCategory
     const matchesSearch = !searchQuery || s.label.toLowerCase().includes(searchQuery.toLowerCase()) || s.key.toLowerCase().includes(searchQuery.toLowerCase())
