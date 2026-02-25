@@ -210,6 +210,29 @@ export default function SeoLandingPageTemplate({
   const geoPages = cms?.geoPages || geoPagesProp
 
   const [allSolutions, setAllSolutions] = useState<any[]>([])
+
+  // Auto-seed: when CMS has no data for this page, register the hardcoded defaults
+  useEffect(() => {
+    if (!cmsKey || cmsKey === '_noop_') return
+    const timer = setTimeout(() => {
+      if (isCmsEmpty(cmsKey)) {
+        seedCmsDefaults(cmsKey, {
+          hero: heroProp,
+          audience: audienceProp,
+          problems: problemsProp,
+          deliverables: deliverablesProp,
+          process: processProp,
+          section6: section6Prop,
+          trustSignals: trustSignalsProp,
+          conversion: conversionProp,
+          relatedPersonas: relatedPersonasProp,
+          relatedSolutions: relatedSolutionsProp,
+          geoPages: geoPagesProp,
+        })
+      }
+    }, 1500)
+    return () => clearTimeout(timer)
+  }, [cmsKey])
   
   useEffect(() => {
     // Fetch all solutions for RelatedSolutions component
