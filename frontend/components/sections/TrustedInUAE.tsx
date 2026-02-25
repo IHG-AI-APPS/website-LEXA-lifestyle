@@ -1,12 +1,15 @@
 'use client'
 
+import { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
 import SafeImage from '@/components/ui/SafeImage'
 import { useTheme } from '@/contexts/ThemeContext'
 
-// Partner categories with logos/names
-const partnerData = {
-  technologyPartners: [
+const BACKEND_URL = process.env.NEXT_PUBLIC_BACKEND_URL || ''
+
+// Default fallback data
+const DEFAULT_DATA = {
+  technology_partners: [
     { name: 'Control4', logo: '/partners/control4.png', type: 'Official Dealer' },
     { name: 'Crestron', logo: '/partners/crestron.png', type: 'Certified Integrator' },
     { name: 'Lutron', logo: '/partners/lutron.png', type: 'Authorized Partner' },
@@ -14,7 +17,7 @@ const partnerData = {
     { name: 'Samsung', logo: '/partners/samsung.png', type: 'Pro Partner' },
     { name: 'Sony', logo: '/partners/sony.png', type: 'AV Partner' },
   ],
-  trustedBy: [
+  trusted_by: [
     { name: 'Emaar Properties', type: 'Developer' },
     { name: 'Nakheel', type: 'Developer' },
     { name: 'DAMAC', type: 'Developer' },
@@ -49,6 +52,14 @@ export default function TrustedInUAE({
 }: TrustedInUAEProps) {
   const { theme } = useTheme()
   const isDark = theme === 'dark'
+  const [partnerData, setPartnerData] = useState(DEFAULT_DATA)
+
+  useEffect(() => {
+    fetch(`${BACKEND_URL}/api/cms/sections/homepage_trusted_uae`)
+      .then(r => r.json())
+      .then(d => { if (d?.value) setPartnerData({ ...DEFAULT_DATA, ...d.value }) })
+      .catch(() => {})
+  }, [])
 
   if (variant === 'logos-only') {
     return (
