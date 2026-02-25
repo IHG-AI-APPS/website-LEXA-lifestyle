@@ -455,7 +455,8 @@ export default function AIRecommendation({
       
       toast.success('Consultation request submitted! We will contact you shortly.')
       setShowConsultationModal(false)
-      onComplete(selectedPackage)
+      const pkg = recommendation?.packages.find(p => p.name === selectedPackage)
+      onComplete(selectedPackage, pkg?.price_indicator || '')
     } catch (error) {
       toast.error('Failed to submit consultation request')
     }
