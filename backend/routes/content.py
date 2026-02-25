@@ -311,3 +311,35 @@ async def get_cms_sections_bulk(keys: str = ""):
     except Exception as e:
         logger.error(f"CMS bulk sections error: {str(e)}")
         raise HTTPException(status_code=500, detail="Failed to fetch sections")
+
+
+@router.post("/cms/register-defaults")
+async def register_cms_defaults(data: dict):
+    """Register default CMS content for a page (idempotent - only creates if not exists)"""
+    try:
+        key = data.get("key")
+        defaults = data.get("defaults")
+        if not key or not defaults:
+            raise HTTPException(status_code=400, detail="key and defaults required")
+        
+        existing = await db.settings.find_one({"key": key})
+        if existing and existing.get("value") is not None:
+            return {"created": False, "message": "CMS data already exists"}
+        
+        await db.settings.update_one(
+            {"key": key},
+            {"$set": {"key": key, "value": defaults}},
+            upsert=True
+        )
+        # Invalidate cache
+        try:
+            await cache.delete(f"cms:{key}")
+        except Exception:
+            pass
+        
+        return {"created": True, "message": f"Defaults registered for {key}"}
+    except HTTPException:
+        raise
+    except Exception as e:
+        logger.error(f"CMS register defaults error: {str(e)}")
+        raise HTTPException(status_code=500, detail="Failed to register defaults")
