@@ -33,7 +33,7 @@ import {
   Battery, BatteryCharging, Plug, Cable, Usb, HardDrive, MemoryStick
 } from 'lucide-react'
 import RelatedSolutions from '@/app/solutions/components/RelatedSolutions'
-import { useCms } from '@/hooks/useCms'
+import { useCms, isCmsEmpty, seedCmsDefaults } from '@/hooks/useCms'
 
 const BACKEND_URL = process.env.NEXT_PUBLIC_BACKEND_URL || 'http://localhost:8001'
 
