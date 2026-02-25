@@ -60,9 +60,8 @@ export default function HowToInstallPage() {
   const schema = generateHowToSchema(guideData)
 
   return (
-        <>
-      <CmsReg />
     <>
+      <CmsReg />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
