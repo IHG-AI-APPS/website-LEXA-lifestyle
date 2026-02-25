@@ -112,10 +112,17 @@ export default async function SolutionPage({ params }: { params: { slug: string 
       )
       .slice(0, 3)
     
-    // Fetch other solutions
+    // Fetch all solutions (used for related products + other solutions)
     const allSolutions = await getSolutions()
+    
+    // Build product solutions from related_products slugs
+    const productSlugs = solution.related_products || []
+    const productSolutions = productSlugs.length > 0
+      ? allSolutions.filter(s => productSlugs.includes(s.slug))
+      : []
+    
     const otherSolutions = allSolutions
-      .filter(s => s.slug !== params.slug)
+      .filter(s => s.slug !== params.slug && !productSlugs.includes(s.slug))
       .slice(0, 4)
     
     // Generate structured data
@@ -144,6 +151,7 @@ export default async function SolutionPage({ params }: { params: { slug: string 
           solution={solution}
           relatedProjects={relatedProjects}
           otherSolutions={otherSolutions}
+          productSolutions={productSolutions}
         />
       </>
       </>

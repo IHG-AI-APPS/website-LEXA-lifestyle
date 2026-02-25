@@ -42,6 +42,8 @@ export interface Solution {
     title: string
     content: string
   }>
+  gallery_images?: string[]
+  related_products?: string[]
   // Mega menu fields
   featured?: boolean
   popular?: boolean
