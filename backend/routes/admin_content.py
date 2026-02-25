@@ -398,6 +398,12 @@ async def update_setting(key: str, data: dict):
             {"$set": {"key": key, "value": data.get("value")}},
             upsert=True
         )
+        # Invalidate CMS cache for this key
+        try:
+            from utils.cache import cache
+            await cache.delete(f"cms:{key}")
+        except Exception:
+            pass
         return {"success": True, "message": f"Setting '{key}' updated"}
     except Exception as e:
         logger.error(f"Error updating setting {key}: {str(e)}")
