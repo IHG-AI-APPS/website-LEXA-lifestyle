@@ -68,20 +68,30 @@ export default function ContactPage() {
 
   // Google Maps coordinates for Al Quoz, Dubai
   const mapLocation = {
-    lat: 25.1416,
-    lng: 55.2204,
-    address: "Al Quoz 1, Sheikh Zayed Road, 3rd Interchange, Dubai, UAE"
+    lat: cms?.map_lat || 25.1416,
+    lng: cms?.map_lng || 55.2204,
+    address: cms?.address || "Al Quoz 1, Sheikh Zayed Road, 3rd Interchange, Dubai, UAE"
   }
 
   const googleMapsUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(mapLocation.address)}`
   const googleMapsEmbedUrl = `https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3610.5!2d55.2204!3d25.1416!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2sAl%20Quoz%201!5e0!3m2!1sen!2sae!4v1234567890`
 
-  const socialLinks = [
-    { name: 'Instagram', icon: Instagram, url: 'https://www.instagram.com/lexalifestyle.ae/', color: 'hover:text-pink-600' },
-    { name: 'Facebook', icon: Facebook, url: 'https://www.facebook.com/lexalifestyle.ae/', color: 'hover:text-blue-600' },
-    { name: 'LinkedIn', icon: Linkedin, url: 'https://www.linkedin.com/company/lexalifestyle/', color: 'hover:text-blue-700' },
-    { name: 'YouTube', icon: Youtube, url: 'https://www.youtube.com/@lexalifestyle', color: 'hover:text-red-600' },
+  const contactPhone = cms?.phone || '+971 42 670 470'
+  const contactEmail = cms?.email || 'info@lexalifestyle.com'
+  const socialData = cms?.social_links || [
+    { name: 'Instagram', url: 'https://www.instagram.com/lexalifestyle.ae/' },
+    { name: 'Facebook', url: 'https://www.facebook.com/lexalifestyle.ae/' },
+    { name: 'LinkedIn', url: 'https://www.linkedin.com/company/lexalifestyle/' },
+    { name: 'YouTube', url: 'https://www.youtube.com/@lexalifestyle' },
   ]
+  const socialIconMap: Record<string, any> = { Instagram, Facebook, LinkedIn: Linkedin, YouTube: Youtube }
+  const socialColorMap: Record<string, string> = { Instagram: 'hover:text-pink-600', Facebook: 'hover:text-blue-600', LinkedIn: 'hover:text-blue-700', YouTube: 'hover:text-red-600' }
+  const socialLinks = socialData.map((s: any) => ({
+    name: s.name,
+    icon: socialIconMap[s.name] || ExternalLink,
+    url: s.url,
+    color: socialColorMap[s.name] || 'hover:text-gray-400'
+  }))
 
   return (
     <div className="min-h-screen bg-white dark:bg-gray-900 pt-20">
