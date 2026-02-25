@@ -73,13 +73,17 @@ export async function seedCmsDefaults(key: string, defaults: any): Promise<boole
 
 export function useCmsBulk(keys: string[]): Record<string, any> {
   const [data, setData] = useState<Record<string, any>>({})
+  const keysStr = keys.join(',')
 
   useEffect(() => {
     if (!keys.length) return
-    const keysStr = keys.join(',')
-    fetch(`${BACKEND_URL}/api/cms/sections?keys=${keysStr}`)
+    let cancelled = false
+    const controller = new AbortController()
+
+    fetch(`${BACKEND_URL}/api/cms/sections?keys=${keysStr}`, { signal: controller.signal })
       .then(r => r.json())
       .then(d => {
+        if (cancelled) return
         if (d && typeof d === 'object') {
           Object.entries(d).forEach(([k, v]) => {
             cache[k] = { data: v, ts: Date.now() }
@@ -88,7 +92,9 @@ export function useCmsBulk(keys: string[]): Record<string, any> {
         }
       })
       .catch(() => {})
-  }, [keys.join(',')])
+
+    return () => { cancelled = true; controller.abort() }
+  }, [keysStr])
 
   return data
 }
