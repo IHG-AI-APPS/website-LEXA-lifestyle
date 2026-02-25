@@ -2,6 +2,7 @@
 import React from 'react'
 import Link from 'next/link'
 import { MapPin, ArrowRight } from 'lucide-react'
+import { useCms } from '@/hooks/useCms'
 
 const communities = [
   { name: 'Amwaj Islands', type: 'Island Living', projects: '30+' },
@@ -11,6 +12,8 @@ const communities = [
 ]
 
 export default function ManamaClient() {
+  const cms = useCms('page_geo_bahrain_manama_smart_homes', null)
+
   return (
     <div className="min-h-screen bg-white dark:bg-gray-900">
       <section className="relative py-20 bg-gradient-to-br from-red-800 via-rose-800 to-pink-900">

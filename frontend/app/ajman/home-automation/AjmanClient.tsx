@@ -6,6 +6,7 @@ import Link from 'next/link'
 import { Phone, MapPin, ArrowRight } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { useTheme } from '@/contexts/ThemeContext'
+import { useCms } from '@/hooks/useCms'
 
 const communities = [
   { name: 'Al Zorah', type: 'Luxury golf resort', price: 'AED 2M+' },
@@ -24,6 +25,8 @@ const faqs = [
 ]
 
 export default function AjmanClient() {
+  const cms = useCms('page_geo_ajman_home_automation', null)
+
   const { theme } = useTheme()
   const isDark = theme === 'dark'
 

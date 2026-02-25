@@ -6,6 +6,7 @@ import Link from 'next/link'
 import { Phone, MapPin, ArrowRight, Building } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { useTheme } from '@/contexts/ThemeContext'
+import { useCms } from '@/hooks/useCms'
 
 const buildings = [
   { name: 'Burj Khalifa Residences', type: 'Iconic tower living', price: 'AED 15M+' },
@@ -24,6 +25,8 @@ const faqs = [
 ]
 
 export default function DowntownDubaiClient() {
+  const cms = useCms('page_geo_dubai_downtown_dubai_penthouse_automation', null)
+
   const { theme } = useTheme()
   const isDark = theme === 'dark'
 

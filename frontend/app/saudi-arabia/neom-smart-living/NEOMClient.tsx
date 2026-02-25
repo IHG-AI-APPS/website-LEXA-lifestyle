@@ -2,6 +2,7 @@
 import React from 'react'
 import Link from 'next/link'
 import { MapPin, ArrowRight } from 'lucide-react'
+import { useCms } from '@/hooks/useCms'
 
 const zones = [
   { name: 'THE LINE', type: 'Linear Smart City', status: 'Pioneering' },
@@ -11,6 +12,8 @@ const zones = [
 ]
 
 export default function NEOMClient() {
+  const cms = useCms('page_geo_saudi_arabia_neom_smart_living', null)
+
   return (
     <div className="min-h-screen bg-white dark:bg-gray-900">
       <section className="relative py-20 bg-gradient-to-br from-purple-900 via-indigo-900 to-blue-900">

@@ -6,6 +6,7 @@ import Link from 'next/link'
 import { Phone, MapPin, ArrowRight } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { useTheme } from '@/contexts/ThemeContext'
+import { useCms } from '@/hooks/useCms'
 
 const areas = [
   { name: 'UAQ Marina', type: 'Waterfront community', price: 'AED 600K+' },
@@ -21,6 +22,8 @@ const faqs = [
 ]
 
 export default function UAQClient() {
+  const cms = useCms('page_geo_umm_al_quwain_home_automation', null)
+
   const { theme } = useTheme()
   const isDark = theme === 'dark'
 

@@ -11,6 +11,7 @@ import { Button } from '@/components/ui/button'
 import ConsultationForm from '@/components/forms/ConsultationForm'
 import { useState } from 'react'
 import TrustedInUAE from '@/components/sections/TrustedInUAE'
+import { useCms } from '@/hooks/useCms'
 
 const abuDhabiAreas = [
   { name: 'Saadiyat Island', description: 'Cultural district luxury villas', projects: '45+' },
@@ -58,6 +59,8 @@ const faqs = [
 ]
 
 export default function AbuDhabiLuxuryAutomationClient() {
+  const cms = useCms('page_geo_abu_dhabi_luxury_home_automation', null)
+
   const [showConsultation, setShowConsultation] = useState(false)
 
   return (

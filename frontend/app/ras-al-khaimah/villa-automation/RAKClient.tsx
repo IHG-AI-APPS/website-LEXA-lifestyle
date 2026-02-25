@@ -6,6 +6,7 @@ import Link from 'next/link'
 import { Phone, MapPin, ArrowRight, Mountain, Waves } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { useTheme } from '@/contexts/ThemeContext'
+import { useCms } from '@/hooks/useCms'
 
 const communities = [
   { name: 'Al Hamra Village', type: 'Golf & marina resort', price: 'AED 2M+' },
@@ -24,6 +25,8 @@ const faqs = [
 ]
 
 export default function RAKClient() {
+  const cms = useCms('page_geo_ras_al_khaimah_villa_automation', null)
+
   const { theme } = useTheme()
   const isDark = theme === 'dark'
 

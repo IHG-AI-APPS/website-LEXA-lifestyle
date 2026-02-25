@@ -6,6 +6,7 @@ import Link from 'next/link'
 import { Home, Lightbulb, Film, Shield, Thermometer, Music, Phone, MapPin, CheckCircle, ArrowRight, Star } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { useTheme } from '@/contexts/ThemeContext'
+import { useCms } from '@/hooks/useCms'
 
 const communities = [
   { name: 'Saadiyat Beach Villas', type: 'Beachfront luxury villas', price: 'AED 15M+' },
@@ -53,6 +54,8 @@ const faqs = [
 ]
 
 export default function SaadiyatIslandClient() {
+  const cms = useCms('page_geo_abu_dhabi_saadiyat_island_smart_homes', null)
+
   const { theme } = useTheme()
   const isDark = theme === 'dark'
 

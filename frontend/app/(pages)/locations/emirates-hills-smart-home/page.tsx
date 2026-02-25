@@ -3,8 +3,11 @@
 import { motion } from 'framer-motion'
 import Link from 'next/link'
 import { MapPin, Home, DollarSign, Clock } from 'lucide-react'
+import { useCms } from '@/hooks/useCms'
 
 export default function EmiratesHillsPage() {
+  const cms = useCms('page_geo_(pages)_locations_emirates_hills_smart_home', null)
+
   return (
     <div className="min-h-screen bg-white dark:bg-gray-900 pt-20">
       <section className="py-20 bg-gray-50 dark:bg-gray-800">

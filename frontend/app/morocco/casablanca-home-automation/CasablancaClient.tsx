@@ -2,6 +2,7 @@
 import React from 'react'
 import Link from 'next/link'
 import { MapPin, ArrowRight } from 'lucide-react'
+import { useCms } from '@/hooks/useCms'
 
 const communities = [
   { name: 'Anfa', type: 'Luxury Villas', projects: '30+' },
@@ -11,6 +12,8 @@ const communities = [
 ]
 
 export default function CasablancaClient() {
+  const cms = useCms('page_geo_morocco_casablanca_home_automation', null)
+
   return (
     <div className="min-h-screen bg-white dark:bg-gray-900">
       <section className="relative py-20 bg-gradient-to-br from-red-700 via-orange-600 to-yellow-600">

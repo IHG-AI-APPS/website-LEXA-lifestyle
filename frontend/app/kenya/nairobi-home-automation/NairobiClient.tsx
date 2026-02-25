@@ -2,6 +2,7 @@
 import React from 'react'
 import Link from 'next/link'
 import { MapPin, ArrowRight } from 'lucide-react'
+import { useCms } from '@/hooks/useCms'
 
 const communities = [
   { name: 'Karen', type: 'Garden Estates', projects: '30+' },
@@ -11,6 +12,8 @@ const communities = [
 ]
 
 export default function NairobiClient() {
+  const cms = useCms('page_geo_kenya_nairobi_home_automation', null)
+
   return (
     <div className="min-h-screen bg-white dark:bg-gray-900">
       <section className="relative py-20 bg-gradient-to-br from-red-800 via-orange-700 to-yellow-700">

@@ -2,6 +2,7 @@
 import React from 'react'
 import Link from 'next/link'
 import { MapPin, ArrowRight } from 'lucide-react'
+import { useCms } from '@/hooks/useCms'
 
 const communities = [
   { name: 'Abdoun', type: 'Luxury Villas', projects: '30+' },
@@ -11,6 +12,8 @@ const communities = [
 ]
 
 export default function AmmanClient() {
+  const cms = useCms('page_geo_jordan_amman_home_automation', null)
+
   return (
     <div className="min-h-screen bg-white dark:bg-gray-900">
       <section className="relative py-20 bg-gradient-to-br from-red-900 via-rose-800 to-red-800">

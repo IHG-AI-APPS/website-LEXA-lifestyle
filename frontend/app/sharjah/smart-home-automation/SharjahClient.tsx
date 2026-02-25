@@ -6,6 +6,7 @@ import Link from 'next/link'
 import { Phone, MapPin, ArrowRight, Home, Building, Lightbulb, Shield, Thermometer, Film } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { useTheme } from '@/contexts/ThemeContext'
+import { useCms } from '@/hooks/useCms'
 
 const communities = [
   { name: 'Al Zahia', type: 'Master-planned community', price: 'AED 2M+' },
@@ -31,6 +32,8 @@ const faqs = [
 ]
 
 export default function SharjahClient() {
+  const cms = useCms('page_geo_sharjah_smart_home_automation', null)
+
   const { theme } = useTheme()
   const isDark = theme === 'dark'
 

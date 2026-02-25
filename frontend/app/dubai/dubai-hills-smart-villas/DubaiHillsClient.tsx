@@ -6,6 +6,7 @@ import Link from 'next/link'
 import { Phone, MapPin, ArrowRight, Home, Users } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { useTheme } from '@/contexts/ThemeContext'
+import { useCms } from '@/hooks/useCms'
 
 const communities = [
   { name: 'Fairways Villas', type: 'Golf course frontage', price: 'AED 8M+' },
@@ -24,6 +25,8 @@ const faqs = [
 ]
 
 export default function DubaiHillsClient() {
+  const cms = useCms('page_geo_dubai_dubai_hills_smart_villas', null)
+
   const { theme } = useTheme()
   const isDark = theme === 'dark'
 

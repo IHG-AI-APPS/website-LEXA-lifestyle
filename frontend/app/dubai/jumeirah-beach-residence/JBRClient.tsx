@@ -11,10 +11,13 @@ import {
 import SafeImage from '@/components/ui/SafeImage'
 import { Button } from '@/components/ui/button'
 import BookingModal from '@/components/modals/BookingModal'
+import { useCms } from '@/hooks/useCms'
 
 const BACKEND_URL = process.env.NEXT_PUBLIC_BACKEND_URL || ''
 
 export default function JBRClient() {
+  const cms = useCms('page_geo_dubai_jumeirah_beach_residence', null)
+
   const [showBookingModal, setShowBookingModal] = useState(false)
 
   const systems = [

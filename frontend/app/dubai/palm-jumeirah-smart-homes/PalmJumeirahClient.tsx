@@ -6,6 +6,7 @@ import Link from 'next/link'
 import { Home, Lightbulb, Film, Shield, Thermometer, Music, Phone, MapPin, ArrowRight } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { useTheme } from '@/contexts/ThemeContext'
+import { useCms } from '@/hooks/useCms'
 
 const communities = [
   { name: 'Signature Villas', type: 'Ultra-luxury beachfront', price: 'AED 50M+' },
@@ -53,6 +54,8 @@ const faqs = [
 ]
 
 export default function PalmJumeirahClient() {
+  const cms = useCms('page_geo_dubai_palm_jumeirah_smart_homes', null)
+
   const { theme } = useTheme()
   const isDark = theme === 'dark'
 

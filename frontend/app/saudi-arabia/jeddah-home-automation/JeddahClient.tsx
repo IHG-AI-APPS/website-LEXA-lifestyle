@@ -2,6 +2,7 @@
 import React from 'react'
 import Link from 'next/link'
 import { MapPin, ArrowRight } from 'lucide-react'
+import { useCms } from '@/hooks/useCms'
 
 const communities = [
   { name: 'Obhur', type: 'Beachfront Villas', projects: '35+' },
@@ -11,6 +12,8 @@ const communities = [
 ]
 
 export default function JeddahClient() {
+  const cms = useCms('page_geo_saudi_arabia_jeddah_home_automation', null)
+
   return (
     <div className="min-h-screen bg-white dark:bg-gray-900">
       <section className="relative py-20 bg-gradient-to-br from-blue-900 via-blue-800 to-cyan-900">

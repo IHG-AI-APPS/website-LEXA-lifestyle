@@ -2,6 +2,7 @@
 import React from 'react'
 import Link from 'next/link'
 import { MapPin, ArrowRight } from 'lucide-react'
+import { useCms } from '@/hooks/useCms'
 
 const communities = [
   { name: 'Al Mouj Muscat', type: 'Integrated Township', projects: '40+' },
@@ -11,6 +12,8 @@ const communities = [
 ]
 
 export default function MuscatClient() {
+  const cms = useCms('page_geo_oman_muscat_home_automation', null)
+
   return (
     <div className="min-h-screen bg-white dark:bg-gray-900">
       <section className="relative py-20 bg-gradient-to-br from-emerald-800 via-green-800 to-teal-900">

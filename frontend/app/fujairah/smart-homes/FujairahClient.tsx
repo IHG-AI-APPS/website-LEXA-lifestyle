@@ -6,6 +6,7 @@ import Link from 'next/link'
 import { Phone, MapPin, ArrowRight, Waves, Mountain } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { useTheme } from '@/contexts/ThemeContext'
+import { useCms } from '@/hooks/useCms'
 
 const areas = [
   { name: 'Al Aqah Beach', type: 'Resort villas', price: 'AED 1.5M+' },
@@ -22,6 +23,8 @@ const faqs = [
 ]
 
 export default function FujairahClient() {
+  const cms = useCms('page_geo_fujairah_smart_homes', null)
+
   const { theme } = useTheme()
   const isDark = theme === 'dark'
 

@@ -2,6 +2,7 @@
 import React from 'react'
 import Link from 'next/link'
 import { MapPin, ArrowRight } from 'lucide-react'
+import { useCms } from '@/hooks/useCms'
 
 const communities = [
   { name: 'The Pearl Qatar', type: 'Luxury Island', projects: '50+' },
@@ -16,6 +17,8 @@ const faqs = [
 ]
 
 export default function DohaClient() {
+  const cms = useCms('page_geo_qatar_doha_smart_homes', null)
+
   return (
     <div className="min-h-screen bg-white dark:bg-gray-900">
       <section className="relative py-20 bg-gradient-to-br from-maroon-900 via-red-900 to-rose-900" style={{background: 'linear-gradient(to bottom right, #7B1113, #8B0000, #722F37)'}}>

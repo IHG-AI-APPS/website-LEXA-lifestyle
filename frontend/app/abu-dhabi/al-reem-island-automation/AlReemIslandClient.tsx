@@ -6,6 +6,7 @@ import Link from 'next/link'
 import { Home, Lightbulb, Film, Shield, Thermometer, Music, Phone, MapPin, ArrowRight, Building } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { useTheme } from '@/contexts/ThemeContext'
+import { useCms } from '@/hooks/useCms'
 
 const buildings = [
   { name: 'Sun & Sky Towers', type: 'Iconic twin towers', units: '60+ automated' },
@@ -53,6 +54,8 @@ const faqs = [
 ]
 
 export default function AlReemIslandClient() {
+  const cms = useCms('page_geo_abu_dhabi_al_reem_island_automation', null)
+
   const { theme } = useTheme()
   const isDark = theme === 'dark'
 

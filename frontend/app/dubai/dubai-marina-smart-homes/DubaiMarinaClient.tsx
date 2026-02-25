@@ -11,8 +11,11 @@ import {
 import SafeImage from '@/components/ui/SafeImage'
 import { Button } from '@/components/ui/button'
 import BookingModal from '@/components/modals/BookingModal'
+import { useCms } from '@/hooks/useCms'
 
 export default function DubaiMarinaClient() {
+  const cms = useCms('page_geo_dubai_dubai_marina_smart_homes', null)
+
   const [showBookingModal, setShowBookingModal] = useState(false)
 
   const systems = [

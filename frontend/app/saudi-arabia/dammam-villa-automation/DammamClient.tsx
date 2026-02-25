@@ -2,6 +2,7 @@
 import React from 'react'
 import Link from 'next/link'
 import { MapPin, ArrowRight } from 'lucide-react'
+import { useCms } from '@/hooks/useCms'
 
 const communities = [
   { name: 'Al Khobar', type: 'Corniche Villas', projects: '30+' },
@@ -11,6 +12,8 @@ const communities = [
 ]
 
 export default function DammamClient() {
+  const cms = useCms('page_geo_saudi_arabia_dammam_villa_automation', null)
+
   return (
     <div className="min-h-screen bg-white dark:bg-gray-900">
       <section className="relative py-20 bg-gradient-to-br from-amber-900 via-orange-800 to-red-900">

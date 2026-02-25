@@ -2,6 +2,7 @@
 import React from 'react'
 import Link from 'next/link'
 import { MapPin, ArrowRight } from 'lucide-react'
+import { useCms } from '@/hooks/useCms'
 
 const communities = [
   { name: 'Ikoyi', type: 'Luxury Estates', projects: '35+' },
@@ -11,6 +12,8 @@ const communities = [
 ]
 
 export default function LagosClient() {
+  const cms = useCms('page_geo_nigeria_lagos_smart_homes', null)
+
   return (
     <div className="min-h-screen bg-white dark:bg-gray-900">
       <section className="relative py-20 bg-gradient-to-br from-green-800 via-emerald-700 to-teal-800">
