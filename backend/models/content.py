@@ -69,9 +69,12 @@ class Service(BaseModel):
     seo_description: Optional[str] = None
     key_features: List[str] = []
     process_steps: List[dict] = []  # Service delivery process
-    related_products: List[dict] = []  # Related products/packages
+    related_products: List = []  # Related solutions/services slugs
     certifications: List[str] = []
     faqs: List[dict] = []
+    gallery_images: List[str] = []  # Inspiration gallery
+    brands: List[str] = []  # Partner brands
+    feature_cards: List[dict] = []  # Feature category cards
     featured: bool = False
     # Arabic translations
     name_ar: Optional[str] = None
