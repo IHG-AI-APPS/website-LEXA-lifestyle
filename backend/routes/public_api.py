@@ -86,6 +86,10 @@ async def get_case_study(slug: str):
     try:
         case_study = await db.case_studies.find_one({"slug": slug}, {"_id": 0})
         if not case_study:
+            case_study = await db.projects.find_one({"id": slug}, {"_id": 0})
+        if not case_study:
+            case_study = await db.projects.find_one({"slug": slug}, {"_id": 0})
+        if not case_study:
             raise HTTPException(status_code=404, detail="Case study not found")
         return case_study
     except HTTPException:
