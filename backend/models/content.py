@@ -40,6 +40,7 @@ class Solution(BaseModel):
     related_products: List[dict] = []  # Related products with name, description, image, price_range
     certifications: List[str] = []
     compatible_brands: List[str] = []
+    gallery_images: List[str] = []
     # Arabic translations
     title_ar: Optional[str] = None
     description_ar: Optional[str] = None
