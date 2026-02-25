@@ -677,9 +677,17 @@ export default function CMSPage() {
           <h1 className="text-2xl font-bold text-gray-900 dark:text-white">Content Management</h1>
           <p className="text-sm text-gray-500 dark:text-gray-400 mt-1">Manage all {totalPages} dynamic content sections across the website</p>
         </div>
-        <Button variant="outline" onClick={() => { setLoading(true); fetchSections() }} data-testid="refresh-cms">
-          <RefreshCw className="h-4 w-4 mr-2" /> Refresh
-        </Button>
+        <div className="flex gap-2">
+          {(activeCategory === 'solutions') && (
+            <Button variant="outline" onClick={handleSeedAll} disabled={seeding} data-testid="seed-all-btn" className="text-[#C9A962] border-[#C9A962] hover:bg-[#C9A962]/10">
+              {seeding ? <RefreshCw className="h-4 w-4 mr-2 animate-spin" /> : <Wand2 className="h-4 w-4 mr-2" />}
+              {seeding ? 'Seeding...' : 'Seed from Current'}
+            </Button>
+          )}
+          <Button variant="outline" onClick={() => { setLoading(true); fetchSections() }} data-testid="refresh-cms">
+            <RefreshCw className="h-4 w-4 mr-2" /> Refresh
+          </Button>
+        </div>
       </div>
 
       {/* Category Tabs */}
