@@ -2,56 +2,45 @@
 
 import { useState, useEffect } from 'react'
 import { useParams } from 'next/navigation'
-import SafeImage from '@/components/ui/SafeImage'
 import Link from 'next/link'
+import SafeImage from '@/components/ui/SafeImage'
 import { motion } from 'framer-motion'
-import { Check, Sparkles, Package, DollarSign, ArrowRight } from 'lucide-react'
+import { Check, CheckCircle2, ArrowRight, Sparkles, Monitor, Volume2, Cpu, Phone, DollarSign } from 'lucide-react'
+import { Button } from '@/components/ui/button'
+import ConsultationForm from '@/components/forms/ConsultationForm'
 import { useCms } from '@/hooks/useCms'
 
 const BACKEND_URL = process.env.NEXT_PUBLIC_BACKEND_URL || 'http://localhost:8001'
 
+interface FeatureCard { title: string; description: string; benefits: string[] }
+
 export default function SpecialtyRoomDetailPage() {
   const cms = useCms('page_specialty_rooms_detail', null)
-
   const params = useParams()
   const slug = params?.slug as string
 
   const [room, setRoom] = useState<any>(null)
   const [loading, setLoading] = useState(true)
+  const [showConsultationForm, setShowConsultationForm] = useState(false)
 
   useEffect(() => {
-    const fetchRoomDetails = async () => {
-      try {
-        const response = await fetch(`${BACKEND_URL}/api/packages/specialty-rooms`)
-        const data = await response.json()
-        const foundRoom = data.specialty_rooms?.find((r: any) => r.slug === slug)
-        setRoom(foundRoom)
+    if (!slug) return
+    fetch(`${BACKEND_URL}/api/packages/specialty-rooms`)
+      .then(res => res.json())
+      .then(data => {
+        const found = data.specialty_rooms?.find((r: any) => r.slug === slug)
+        setRoom(found)
         setLoading(false)
-      } catch (error) {
-        console.error('Failed to load room:', error)
-        setLoading(false)
-      }
-    }
-
-    if (slug) {
-      fetchRoomDetails()
-    }
+      })
+      .catch(() => setLoading(false))
   }, [slug])
 
   if (loading) {
     return (
       <div className="min-h-screen bg-white pt-20">
         <div className="animate-pulse">
-          <div className="h-[50vh] bg-gray-200"></div>
-          <div className="container mx-auto px-4 py-8">
-            <div className="h-10 bg-gray-200 rounded w-1/2 mb-4"></div>
-            <div className="h-4 bg-gray-100 dark:bg-gray-800 rounded w-3/4 mb-8"></div>
-            <div className="grid grid-cols-2 gap-4">
-              {[...Array(4)].map((_, i) => (
-                <div key={i} className="h-20 bg-gray-100 dark:bg-gray-800 rounded"></div>
-              ))}
-            </div>
-          </div>
+          <div className="h-[480px] bg-gray-200" />
+          <div className="container mx-auto px-8 py-12"><div className="h-10 bg-gray-200 rounded w-1/2 mb-4" /></div>
         </div>
       </div>
     )
@@ -59,187 +48,253 @@ export default function SpecialtyRoomDetailPage() {
 
   if (!room) {
     return (
-      <div className="min-h-screen flex items-center justify-center">
-        <div className="text-center">
-          <p className="text-gray-600 dark:text-gray-400 mb-4">Specialty room not found</p>
-          <Link href="/specialty-rooms" className="text-blue-600 hover:underline">
-            View all specialty rooms
-          </Link>
-        </div>
+      <div className="min-h-screen flex flex-col items-center justify-center px-6">
+        <h1 className="text-4xl font-bold mb-4" data-testid="not-found-title">Room Not Found</h1>
+        <p className="text-gray-600 mb-8">The specialty room you&apos;re looking for doesn&apos;t exist.</p>
+        <Link href="/specialty-rooms"><Button variant="outline">View All Specialty Rooms</Button></Link>
       </div>
     )
   }
 
+  const featureCards = (room.feature_cards || []) as FeatureCard[]
+  const featureCardIcons = [Monitor, Volume2, Cpu]
+  const allFaqs = room.faqs || []
+  const brands = room.brands || []
+  const features = room.features || []
+  const relatedSolutions = room.related_solutions || []
+
   return (
-    <div className="min-h-screen bg-white">
-      {/* Hero Image */}
-      <section className="relative h-[50vh] min-h-[400px]">
-        <SafeImage
-          src={room.image}
-          alt={room.name}
-          fill
-          className="object-cover"
-          priority
-        />
-        <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent" />
-        
-        <div className="absolute inset-0 flex items-end">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8 pb-12">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              className="max-w-4xl"
-            >
-              <p className="text-blue-400 font-medium mb-2">{room.category}</p>
-              <h1 className="text-4xl sm:text-5xl font-bold text-white mb-4">
+    <div className="min-h-screen bg-white dark:bg-gray-950 pt-20" data-testid="specialty-room-detail-page">
+      {/* Hero — Split Layout */}
+      <section className="relative overflow-hidden bg-gray-900 text-white">
+        <div className="grid grid-cols-1 lg:grid-cols-2 min-h-[480px]">
+          <div className="flex flex-col justify-center px-8 lg:px-16 py-16 relative z-10">
+            <motion.div initial={{ opacity: 0, x: -30 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.6 }}>
+              <span className="inline-block px-3 py-1 rounded-full bg-[#C9A962]/15 border border-[#C9A962]/30 text-[#C9A962] text-xs uppercase tracking-widest mb-5" data-testid="room-category">
+                {room.category}
+              </span>
+              <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-5 tracking-tight leading-tight" data-testid="room-title">
                 {room.name}
               </h1>
-              <p className="text-xl text-gray-200">
-                {room.description}
-              </p>
+              <p className="text-base text-gray-300 mb-6 max-w-lg leading-relaxed">{room.description}</p>
+              {room.base_price_aed && (
+                <div className="mb-6 inline-flex items-center gap-2 px-4 py-2 bg-white/10 rounded-full">
+                  <DollarSign className="h-4 w-4 text-[#C9A962]" />
+                  <span className="text-sm">Starting from </span>
+                  <span className="text-lg font-bold text-[#C9A962]">AED {room.base_price_aed?.toLocaleString()}</span>
+                </div>
+              )}
+              <div className="flex flex-col sm:flex-row gap-3">
+                <Button size="lg" className="bg-[#C9A962] text-gray-900 hover:bg-[#C9A962]/90 font-semibold" onClick={() => setShowConsultationForm(true)} data-testid="hero-cta-quote">
+                  Get a Free Quote <ArrowRight className="ml-2" size={18} />
+                </Button>
+                <a href="tel:+971503267227">
+                  <Button size="lg" variant="outline" className="border-white/30 text-white hover:bg-white/10"><Phone className="mr-2" size={16} /> Call Us</Button>
+                </a>
+              </div>
             </motion.div>
           </div>
+          <div className="relative min-h-[300px] lg:min-h-full">
+            <SafeImage src={room.image} alt={room.name} fill className="object-cover" priority sizes="(max-width: 1024px) 100vw, 50vw" />
+            <div className="absolute inset-0 bg-gradient-to-r from-gray-900 via-gray-900/40 to-transparent lg:block hidden" />
+            <div className="absolute inset-0 bg-gradient-to-t from-gray-900/60 to-transparent lg:hidden" />
+          </div>
         </div>
       </section>
 
-      {/* Quick Stats */}
-      <section className="border-b">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-8">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-5xl mx-auto">
-            <div className="text-center">
-              <DollarSign className="h-8 w-8 mx-auto mb-2 text-blue-600" />
-              <p className="text-sm text-gray-600 dark:text-gray-400 dark:text-gray-400">Starting Price</p>
-              <p className="font-bold text-gray-900 dark:text-white dark:text-white">AED {(room.base_price_aed / 1000).toFixed(0)}K</p>
-            </div>
-            <div className="text-center">
-              <Package className="h-8 w-8 mx-auto mb-2 text-purple-600" />
-              <p className="text-sm text-gray-600 dark:text-gray-400 dark:text-gray-400">Features Included</p>
-              <p className="font-bold text-gray-900 dark:text-white dark:text-white">{room.features?.length || 0}</p>
-            </div>
-            <div className="text-center">
-              <Sparkles className="h-8 w-8 mx-auto mb-2 text-amber-600" />
-              <p className="text-sm text-gray-600 dark:text-gray-400 dark:text-gray-400">Typical Size</p>
-              <p className="font-bold text-gray-900 dark:text-white dark:text-white">{room.typical_size}</p>
-            </div>
-            <div className="text-center">
-              <Check className="h-8 w-8 mx-auto mb-2 text-green-600" />
-              <p className="text-sm text-gray-600 dark:text-gray-400 dark:text-gray-400">Installation</p>
-              <p className="font-bold text-gray-900 dark:text-white dark:text-white">Professional</p>
+      {/* Content — Room Details + Sidebar */}
+      <section className="py-16 lg:py-20 bg-white dark:bg-gray-950">
+        <div className="container mx-auto px-8 lg:px-16">
+          <div className="max-w-6xl mx-auto">
+            <div className="grid grid-cols-1 lg:grid-cols-5 gap-12">
+              <div className="lg:col-span-3">
+                <span className="text-xs uppercase tracking-widest text-[#C9A962] font-semibold">Room Details</span>
+                <h2 className="text-2xl sm:text-3xl font-bold mt-2 mb-6 text-gray-900 dark:text-white">
+                  Complete {room.name} System
+                </h2>
+                {room.long_description && (
+                  <p className="text-base text-gray-600 dark:text-gray-300 leading-relaxed mb-8">{room.long_description}</p>
+                )}
+                {features.length > 0 && (
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                    {features.map((feature: string, i: number) => (
+                      <motion.div key={i} initial={{ opacity: 0, y: 10 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.25, delay: i * 0.03 }}
+                        className="flex items-start gap-3 p-3 rounded-lg bg-gray-50 dark:bg-gray-900 border border-gray-100 dark:border-gray-800 hover:border-[#C9A962]/40 transition-colors">
+                        <CheckCircle2 size={16} className="text-[#C9A962] flex-shrink-0 mt-0.5" />
+                        <span className="text-sm text-gray-700 dark:text-gray-300">{feature}</span>
+                      </motion.div>
+                    ))}
+                  </div>
+                )}
+              </div>
+              <div className="lg:col-span-2">
+                <div className="sticky top-28 space-y-5">
+                  <div className="bg-gray-900 dark:bg-gray-800 text-white rounded-xl p-6">
+                    <h3 className="text-lg font-semibold mb-4">Room Specifications</h3>
+                    <div className="space-y-4">
+                      {[
+                        { label: 'Typical Size', desc: room.typical_size || 'Custom' },
+                        { label: 'Category', desc: room.category },
+                        { label: 'Starting Price', desc: room.base_price_aed ? `AED ${room.base_price_aed.toLocaleString()}` : 'Contact us' },
+                        { label: 'Integration', desc: room.integration_with?.join(', ') || 'Full home integration' }
+                      ].map((item, i) => (
+                        <div key={i} className="flex gap-3">
+                          <div className="w-8 h-8 rounded-full bg-[#C9A962]/20 flex items-center justify-center flex-shrink-0">
+                            <span className="text-[#C9A962] text-xs font-bold">{String(i + 1).padStart(2, '0')}</span>
+                          </div>
+                          <div>
+                            <p className="text-sm font-medium">{item.label}</p>
+                            <p className="text-xs text-gray-400">{item.desc}</p>
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                  <Button size="lg" className="w-full bg-[#C9A962] text-gray-900 hover:bg-[#C9A962]/90 font-semibold" onClick={() => setShowConsultationForm(true)} data-testid="sidebar-cta">
+                    Request Consultation
+                  </Button>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Main Content */}
-      <section className="py-16">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-4xl mx-auto">
-            {/* Description */}
-            <div className="mb-12">
-              <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-4">Overview</h2>
-              <p className="text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
-                {room.long_description}
-              </p>
+      {/* Feature Cards — What You Get */}
+      {featureCards.length > 0 && (
+        <section className="py-16 lg:py-20 bg-gray-50 dark:bg-gray-900" data-testid="feature-cards-section">
+          <div className="container mx-auto px-8 lg:px-16">
+            <div className="max-w-6xl mx-auto">
+              <div className="text-center mb-12">
+                <span className="text-xs uppercase tracking-widest text-[#C9A962] font-semibold">System Categories</span>
+                <h2 className="text-2xl sm:text-3xl font-bold mt-2 text-gray-900 dark:text-white">What You Get</h2>
+              </div>
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                {featureCards.map((card, i) => {
+                  const IconComp = featureCardIcons[i] || Sparkles
+                  return (
+                    <motion.div key={i} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.3, delay: i * 0.1 }}
+                      className="bg-white dark:bg-gray-950 rounded-xl overflow-hidden border border-gray-100 dark:border-gray-800 hover:shadow-lg transition-shadow group">
+                      <div className="h-1 bg-gradient-to-r from-[#C9A962] to-[#C9A962]/30" />
+                      <div className="p-7">
+                        <div className="w-11 h-11 rounded-lg bg-gray-900 dark:bg-[#C9A962] flex items-center justify-center mb-5 group-hover:bg-[#C9A962] transition-colors">
+                          <IconComp className="text-white dark:text-gray-900 group-hover:text-gray-900 transition-colors" size={20} />
+                        </div>
+                        <h3 className="text-lg font-bold mb-2 text-gray-900 dark:text-white">{card.title}</h3>
+                        <p className="text-sm text-gray-600 dark:text-gray-400 mb-5 leading-relaxed">{card.description}</p>
+                        {card.benefits?.length > 0 && (
+                          <ul className="space-y-2">
+                            {card.benefits.map((benefit, j) => (
+                              <li key={j} className="flex items-start gap-2 text-sm text-gray-700 dark:text-gray-300">
+                                <CheckCircle2 size={14} className="text-[#C9A962] flex-shrink-0 mt-0.5" />{benefit}
+                              </li>
+                            ))}
+                          </ul>
+                        )}
+                      </div>
+                    </motion.div>
+                  )
+                })}
+              </div>
             </div>
+          </div>
+        </section>
+      )}
 
-            {/* Features */}
-            <div className="mb-12">
-              <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-6">
-                What&apos;s Included
-              </h2>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                {room.features?.map((feature: string, i: number) => (
-                  <div key={i} className="flex items-start gap-3 p-4 bg-gray-50 rounded-lg">
-                    <Check className="h-5 w-5 text-green-600 mt-0.5 flex-shrink-0" />
-                    <span className="text-gray-700 dark:text-gray-300 dark:text-gray-300">{feature}</span>
+      {/* Brands We Partner With */}
+      {brands.length > 0 && (
+        <section className="py-16 lg:py-20 bg-white dark:bg-gray-950" data-testid="brands-section">
+          <div className="container mx-auto px-8 lg:px-16">
+            <div className="max-w-5xl mx-auto">
+              <div className="text-center mb-12">
+                <span className="text-xs uppercase tracking-widest text-[#C9A962] font-semibold">Certified Partners</span>
+                <h2 className="text-2xl sm:text-3xl font-bold mt-2 text-gray-900 dark:text-white">Brands We Integrate</h2>
+              </div>
+              <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-4">
+                {brands.map((brand: string, i: number) => (
+                  <motion.div key={i} initial={{ opacity: 0, y: 10 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.2, delay: i * 0.04 }} className="group">
+                    <Link href={`/brands/${brand.toLowerCase().replace(/\s+/g, '-')}`}
+                      className="flex flex-col items-center justify-center p-4 h-20 rounded-xl bg-gray-50 dark:bg-gray-900 border border-gray-200 dark:border-gray-800 hover:border-[#C9A962]/60 hover:shadow-md transition-all">
+                      <span className="text-sm font-bold text-gray-800 dark:text-gray-200 group-hover:text-[#C9A962] transition-colors">{brand}</span>
+                      <span className="text-[10px] text-gray-400 uppercase tracking-widest mt-1">Partner</span>
+                    </Link>
+                  </motion.div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/* Related Solutions */}
+      {relatedSolutions.length > 0 && (
+        <section className="py-16 lg:py-20 bg-gray-50 dark:bg-gray-900" data-testid="related-solutions-section">
+          <div className="container mx-auto px-8 lg:px-16">
+            <div className="max-w-6xl mx-auto">
+              <div className="text-center mb-12">
+                <span className="text-xs uppercase tracking-widest text-[#C9A962] font-semibold">Explore More</span>
+                <h2 className="text-2xl sm:text-3xl font-bold mt-2 text-gray-900 dark:text-white">Related Solutions</h2>
+              </div>
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                {relatedSolutions.map((sol: string, i: number) => (
+                  <Link key={i} href={`/solutions/${sol}`}
+                    className="group block p-6 rounded-xl bg-white dark:bg-gray-950 border border-gray-200 dark:border-gray-800 hover:border-[#C9A962]/60 hover:shadow-lg transition-all">
+                    <h3 className="font-semibold text-gray-900 dark:text-white group-hover:text-[#C9A962] transition-colors capitalize">
+                      {sol.replace(/-/g, ' ')}
+                    </h3>
+                    <span className="inline-flex items-center gap-1 text-xs text-gray-500 mt-2 group-hover:text-[#C9A962] transition-colors">
+                      Explore <ArrowRight className="h-3 w-3" />
+                    </span>
+                  </Link>
+                ))}
+              </div>
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/* FAQ Section */}
+      {allFaqs.length > 0 && (
+        <section className="py-16 lg:py-20 bg-white dark:bg-gray-950" data-testid="faq-section">
+          <div className="container mx-auto px-8 lg:px-16">
+            <div className="max-w-4xl mx-auto">
+              <div className="text-center mb-12">
+                <span className="text-xs uppercase tracking-widest text-[#C9A962] font-semibold">Got Questions?</span>
+                <h2 className="text-2xl sm:text-3xl font-bold mt-2 text-gray-900 dark:text-white">Frequently Asked Questions</h2>
+              </div>
+              <div className="space-y-4">
+                {allFaqs.map((faq: any, i: number) => (
+                  <div key={i} className="bg-gray-50 dark:bg-gray-900 p-6 rounded-xl border border-gray-100 dark:border-gray-800">
+                    <h3 className="text-base font-semibold mb-2 text-gray-900 dark:text-white">{faq.question}</h3>
+                    <p className="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">{faq.answer}</p>
                   </div>
                 ))}
               </div>
             </div>
+          </div>
+        </section>
+      )}
 
-            {/* Components */}
-            {room.typical_components && room.typical_components.length > 0 && (
-              <div className="mb-12">
-                <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-6">
-                  Typical Components
-                </h2>
-                <div className="bg-blue-50 rounded-xl p-6">
-                  <ul className="space-y-3">
-                    {room.typical_components.map((component: string, i: number) => (
-                      <li key={i} className="flex items-center gap-3 text-gray-700 dark:text-gray-300 dark:text-gray-300">
-                        <div className="w-2 h-2 bg-blue-600 rounded-full" />
-                        {component}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              </div>
-            )}
-
-            {/* Integration */}
-            {room.integration_with && room.integration_with.length > 0 && (
-              <div className="mb-12">
-                <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-6">
-                  Integrates With
-                </h2>
-                <div className="flex flex-wrap gap-3">
-                  {room.integration_with.map((system: string, i: number) => (
-                    <div
-                      key={i}
-                      className="px-4 py-2 bg-purple-50 text-purple-700 rounded-lg font-medium"
-                    >
-                      {system}
-                    </div>
-                  ))}
-                </div>
-              </div>
-            )}
-
-            {/* CTA */}
-            <div className="mt-12 p-8 bg-gradient-to-br from-blue-50 to-purple-50 rounded-2xl">
-              <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">
-                Add This to Your Package
-              </h3>
-              <p className="text-gray-700 dark:text-gray-300 mb-6">
-                This specialty room can be added to any smart home package. 
-                High-End tier customers choose 3 specialty rooms at no additional cost.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4">
-                <Link
-                  href="/packages"
-                  className="inline-flex items-center justify-center px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors font-medium"
-                >
-                  View Packages
-                  <ArrowRight className="ml-2 h-5 w-5" />
-                </Link>
-                <Link
-                  href="/consultation"
-                  className="inline-flex items-center justify-center px-6 py-3 bg-white text-gray-900 dark:text-white rounded-lg border-2 border-gray-200 dark:border-gray-700 hover:border-blue-600 transition-colors font-medium"
-                >
-                  Get Custom Quote
-                </Link>
-              </div>
+      {/* CTA Section */}
+      <section className="py-20 bg-gray-900 text-white relative overflow-hidden">
+        <div className="container mx-auto px-8 lg:px-16 relative z-10">
+          <div className="max-w-3xl mx-auto text-center">
+            <span className="text-[#C9A962] text-xs uppercase tracking-widest font-semibold">Ready to Start?</span>
+            <h2 className="text-3xl sm:text-4xl font-bold mt-3 mb-4">Design Your {room.name}</h2>
+            <p className="text-gray-400 mb-8 max-w-xl mx-auto">Get a bespoke proposal from our engineering team. Free consultation with no obligation.</p>
+            <div className="flex flex-col sm:flex-row gap-3 justify-center">
+              <Button size="lg" className="bg-[#C9A962] text-gray-900 hover:bg-[#C9A962]/90 font-semibold px-8" onClick={() => setShowConsultationForm(true)} data-testid="cta-get-quote">
+                Get a Free Quote
+              </Button>
+              <Link href="/consultation">
+                <Button size="lg" variant="outline" className="border-white/30 text-white hover:bg-white/10 px-8">Book Consultation</Button>
+              </Link>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Related Rooms */}
-      <section className="py-16 bg-gray-50 dark:bg-gray-800">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-8">
-            <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-2">
-              Other Specialty Rooms
-            </h2>
-            <Link 
-              href="/specialty-rooms"
-              className="text-blue-600 hover:underline"
-            >
-              View all specialty rooms →
-            </Link>
-          </div>
-        </div>
-      </section>
+      {showConsultationForm && <ConsultationForm isOpen={showConsultationForm} onClose={() => setShowConsultationForm(false)} />}
     </div>
   )
 }
