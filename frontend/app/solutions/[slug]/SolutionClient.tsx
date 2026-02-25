@@ -151,39 +151,46 @@ export default function SolutionClient({
         </section>
       )}
 
-      {/* Feature Cards (if available) */}
+      {/* Feature Cards — Premium design */}
       {solution.feature_cards && solution.feature_cards.length > 0 && (
         <section className="py-20 bg-gray-50 dark:bg-gray-800">
           <div className="container mx-auto px-8 lg:px-16">
             <div className="max-w-6xl mx-auto">
-              <h2 className="text-4xl font-semibold mb-12 text-center">What You Get</h2>
+              <div className="text-center mb-14">
+                <span className="text-xs uppercase tracking-widest text-[#C9A962] font-semibold">What&apos;s Included</span>
+                <h2 className="text-3xl font-semibold mt-2">What You Get</h2>
+              </div>
               
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                 {solution.feature_cards.map((card, index) => (
                   <motion.div
                     key={index}
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
-                    transition={{ duration: 0.2 }}
-                    className="bg-white dark:bg-gray-800 p-8 border border-gray-200 dark:border-gray-700 dark:border-gray-700"
+                    transition={{ duration: 0.3, delay: index * 0.1 }}
+                    className="bg-white dark:bg-gray-900 rounded-lg overflow-hidden border border-gray-100 dark:border-gray-700 hover:shadow-lg transition-shadow group"
                   >
-                    {card.icon && (
-                      <Sparkles className="text-charcoal mb-4" size={32} />
-                    )}
-                    <h3 className="text-xl font-semibold mb-3">{card.title}</h3>
-                    <p className="text-gray-600 dark:text-gray-400 mb-4">{card.description}</p>
-                    
-                    {card.benefits && card.benefits.length > 0 && (
-                      <ul className="space-y-2">
-                        {card.benefits.map((benefit, i) => (
-                          <li key={i} className="flex items-center gap-2 text-sm text-gray-700 dark:text-gray-300 dark:text-gray-300">
-                            <CheckCircle2 size={16} className="text-charcoal flex-shrink-0" />
-                            {benefit}
-                          </li>
-                        ))}
-                      </ul>
-                    )}
+                    {/* Top accent bar */}
+                    <div className="h-1 bg-gradient-to-r from-[#C9A962] to-[#C9A962]/40" />
+                    <div className="p-7">
+                      <div className="w-10 h-10 rounded-lg bg-gray-900 dark:bg-[#C9A962] flex items-center justify-center mb-5 group-hover:bg-[#C9A962] transition-colors">
+                        <Sparkles className="text-white dark:text-gray-900 group-hover:text-gray-900 transition-colors" size={20} />
+                      </div>
+                      <h3 className="text-lg font-semibold mb-2">{card.title}</h3>
+                      <p className="text-sm text-gray-600 dark:text-gray-400 mb-5 leading-relaxed">{card.description}</p>
+                      
+                      {card.benefits && card.benefits.length > 0 && (
+                        <ul className="space-y-2">
+                          {card.benefits.map((benefit, i) => (
+                            <li key={i} className="flex items-start gap-2 text-sm text-gray-700 dark:text-gray-300">
+                              <CheckCircle2 size={14} className="text-[#C9A962] flex-shrink-0 mt-0.5" />
+                              {benefit}
+                            </li>
+                          ))}
+                        </ul>
+                      )}
+                    </div>
                   </motion.div>
                 ))}
               </div>
