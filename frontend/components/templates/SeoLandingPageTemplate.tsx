@@ -74,6 +74,8 @@ function resolveIcon(icon: string | LucideIcon): LucideIcon {
 }
 
 export interface SeoLandingPageProps {
+  // CMS key for dynamic content override
+  cmsKey?: string
   // Hero Section
   hero: {
     badge: string
