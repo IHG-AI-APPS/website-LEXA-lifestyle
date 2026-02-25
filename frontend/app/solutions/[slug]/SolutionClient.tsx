@@ -260,9 +260,9 @@ export default function SolutionClient({
               {/* Dynamic FAQs from database */}
               {solution.faqs && solution.faqs.length > 0 ? (
                 solution.faqs.map((faq, index) => (
-                  <div key={index} className="bg-white dark:bg-gray-800 p-8 border border-gray-200 dark:border-gray-700 dark:border-gray-700">
-                    <h3 className="text-xl font-semibold mb-3">{faq.question}</h3>
-                    <p className="text-gray-700 dark:text-gray-300 dark:text-gray-300">{faq.answer}</p>
+                  <div key={index} className="bg-white dark:bg-gray-900 p-6 rounded-lg border border-gray-100 dark:border-gray-700">
+                    <h3 className="text-base font-semibold mb-2">{faq.question}</h3>
+                    <p className="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">{faq.answer}</p>
                   </div>
                 ))
               ) : (
