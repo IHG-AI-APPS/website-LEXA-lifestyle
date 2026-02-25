@@ -1,150 +1,96 @@
 # LEXA Smart Home Platform - Product Requirements Document
 
-**Version**: 9.35  
+**Version**: 10.0  
 **Last Updated**: February 25, 2026  
-**Status**: Full CMS / Dynamic Content System Complete (17 sections)
+**Status**: Full Site-Wide CMS Complete (137 sections)
 
 ---
 
-## Latest Updates (v9.35)
+## Latest Updates (v10.0)
 
-### Full CMS Dynamic Content System (Feb 25, 2026)
+### Site-Wide CMS Expansion (Feb 25, 2026)
 
 **STATUS: COMPLETED & TESTED (100%)**
 
-#### Coverage: 17 CMS Sections
-**Homepage (5):** Hero, Experience CTA, Calculator Cards, Partners & Trust, Careers  
-**Pages (5):** About, Contact, Consultation, Experience Centre, Footer  
-**Services (7):** Home Theater, Smart Lighting, Home Cinema, Villa Automation, Outdoor Audio, High-End Audio, Multi-Room Audio
+#### Coverage: 137 CMS Sections (up from 17)
+**Homepage (4):** Hero, Experience CTA, Calculator Cards, Partners & Trust  
+**Core Pages (6):** About, Contact, Consultation, Experience Centre, Footer, Careers  
+**Services (7):** Home Theater, Smart Lighting, Home Cinema, Villa Automation, Outdoor Audio, High-End Audio, Multi-Room Audio  
+**Solutions (43):** All solution pages including access-control, security, home-theater, home-cinema, lighting-automation, climate-control, motorized-shades, networking, surveillance, energy-management, bms-automation, plus all cultural-automation sub-pages, marine, yacht, conference, auditorium pages, etc.  
+**Locations (41):** All Dubai, Abu Dhabi, Saudi Arabia, Qatar, Bahrain, Oman, Kuwait, Jordan, Kenya, Nigeria, Egypt, Morocco, Lebanon geo pages, plus UAE emirate pages and location detail pages  
+**Content Pages (32):** FAQ, Process, Company, AMC Packages, Architects, Contractors, Developers, Certification, Enterprise Platform, Digital Twin, Villa Designer, Virtual Showroom, and more  
+**Personas (4):** Architect, Commercial, Developer, Homeowner
 
 #### Architecture:
-- **Reusable Hook**: `useCms(key, fallback)` in `/frontend/hooks/useCms.ts` — client-side cache + API fetch
-- **Backend API**: `GET /api/cms/sections/{key}` (single) + `GET /api/cms/sections?keys=...` (bulk) with 5-min server cache + cache invalidation on admin save
-- **Admin UI**: `/admin/cms` with 17 expandable section editors — rich forms for all content types (text, arrays, nested objects, images)
-- **Seed Scripts**: `seed_cms.py` + `seed_cms_v2.py` populate MongoDB with all initial data
-- All components use fallback defaults if CMS unavailable — zero downtime on CMS failure
+- **SeoLandingPageTemplate CMS Integration**: Added optional `cmsKey` prop to the template. When provided, fetches CMS data and overrides hardcoded props at section level (hero, audience, problems, deliverables, process, section6, trustSignals, conversion). 35 solution template pages use this pattern.
+- **Generic useCms Integration**: 8 non-template solution pages, 33 geo page client components, and 38 misc/persona pages have useCms hooks for CMS data override with hardcoded fallbacks.
+- **Admin CMS Page**: Comprehensive admin at `/admin/cms` with 7 category tabs, search functionality, and 3 specialized editors:
+  - **SeoTemplateEditor**: Structured form for all SeoLandingPageTemplate sections
+  - **GeoPageEditor**: Structured form for location pages (header, communities, services, FAQs, stats)
+  - **GenericPageEditor**: JSON editor for misc/persona pages
+- **Backend API**: `GET /api/cms/sections/{key}` (single), `GET /api/cms/sections?keys=...` (bulk), `PUT /api/admin/content/settings/{key}` (save with cache invalidation)
 
-#### Files Modified/Created:
-- `/app/frontend/hooks/useCms.ts` — NEW: Reusable CMS hook
-- `/app/frontend/app/admin/cms/page.tsx` — NEW: Full CMS admin page
-- `/app/backend/routes/content.py` — Public CMS API endpoints
-- `/app/backend/seed_cms.py`, `seed_cms_v2.py` — CMS seed scripts
-- 12 frontend components converted (HeroCurator, ExperienceCentreCTA, CalculatorCardsSection, TrustedInUAE, Footer, About, Contact, Consultation + 7 Service Client pages)
-
----
-
-## Previous Updates (v9.25)
-
-### Logo Adaptation Fix & Mega Menu AI Images (Feb 24, 2026)
-
-**STATUS: COMPLETED & TESTED (100%)**
-
-#### Logo Fix:
-- **Root Cause**: `SafeImage` component used `useState(src)` but never synced when the `src` prop changed. During client-side navigation (e.g., homepage → experience centre), the Header didn't unmount, so SafeImage kept the stale white logo even though the prop changed to black.
-- **Fix 1**: Added `useEffect` in `SafeImage.tsx` to sync internal state when `src` prop changes
-- **Fix 2**: Replaced JS theme-state-dependent logo switching with CSS `dark:invert` approach
-  - Uses `/lexa-black.png` as the base on scrolled/non-homepage header (light mode)
-  - CSS `dark:invert` automatically inverts to white in dark mode
-  - White logo remains for homepage hero (transparent header over dark background)
-- **Files Modified**:
-  - `/app/frontend/components/ui/SafeImage.tsx` - Added useEffect to sync src prop changes
-  - `/app/frontend/components/layout/Header.tsx` - Line 153: CSS-based dark mode adaptation
-  - `/app/frontend/app/ar-seo/[slug]/page.tsx` - Added `dark:invert` class
-  - `/app/frontend/app/ar-seo/blog/[slug]/page.tsx` - Added `dark:invert` class
-
-#### Mega Menu AI Images:
-- Generated 4 high-quality AI images (Imagen 4.0) for all mega menu Column 4 (right corner):
-  1. **Solutions**: Luxury home cinema room with Dolby Atmos, gold ambient lighting
-  2. **Services**: Smart home control panel installation with fiber optic cabling
-  3. **Intelligence**: Futuristic building management dashboard with holographic data
-  4. **Packages**: Luxury Dubai villa exterior at golden hour with smart features
-- **Files Modified**:
-  - `/app/frontend/components/navigation/SolutionsMegaMenu.tsx` - Replaced Unsplash image
-  - `/app/frontend/components/navigation/ServicesMegaMenu.tsx` - Replaced Cog icon placeholder, added SafeImage import
-  - `/app/frontend/components/navigation/IntelligenceMegaMenu.tsx` - Replaced Brain icon placeholder
-  - `/app/frontend/components/navigation/PackagesMegaMenu.tsx` - Replaced Brain icon placeholder
+#### Key Technical Decision:
+- Pages use hardcoded content as fallback when no CMS data exists in the database
+- Admin edits create/override CMS entries that take priority over hardcoded defaults
+- No seeding required for new sections - they work immediately with fallback content
 
 ---
 
-## Previous Updates (v9.24)
+## Original Problem Statement
 
-### Automated Email Notifications for Hot Leads (Feb 24, 2026)
+The user requires a fully dynamic, high-performance website for LEXA Smart Home, a luxury smart home automation company in the UAE. Key requirements:
+1. **Fully Dynamic Content**: Every content element must be editable through an admin panel
+2. **Performance Optimization**: Super fast website based on Lighthouse report findings
+3. **SEO & Accessibility**: Proper metadata management and accessibility compliance
 
-**STATUS: COMPLETED & TESTED (100%)**
+## User Personas
+- **Admin/Content Manager**: Manages all website content through the admin panel
+- **Prospective Client**: High-net-worth homeowner in UAE/GCC browsing solutions
+- **Architect/Developer**: Professional partner exploring smart home integration
 
-#### Email Flow:
-1. **Internal Alert** (webadmin@ → sales@):
-   - Triggers when a lead is first scored at 70+ (hot)
-   - LEXA branded HTML with amber "HOT LEAD ALERT" banner
-   - Shows: score breakdown, budget, timeline, property type, message
-   - Includes "View in Dashboard" CTA button
-   - Displays auto-routed assignment (e.g. "Senior Consultant")
-
-2. **Customer Acknowledgement** (webadmin@ → customer, CC sales@):
-   - Triggers simultaneously with internal alert
-   - LEXA branded HTML with thank-you message
-   - Shows "What happens next?" steps
-   - Includes contact info and solutions link
-   - CC to sales@ so team stays in loop
-
-#### Technical Details:
-- Emails fire as `asyncio.create_task` (non-blocking background tasks)
-- `email_sent` flag in `sales_pipeline` collection prevents duplicate sends
-- `send_email` method updated with `from_email` and `cc_email` optional params
-- Gmail SMTP (smtp.gmail.com:587) with TLS
-
-#### Files Modified:
-- `/app/backend/services/email_service.py` - Added `send_hot_lead_alert`, `send_lead_acknowledgement`, CC support
-- `/app/backend/routes/sales_intelligence.py` - Added `_send_hot_lead_emails` background task, pipeline persistence
+## Core Requirements
+- Dynamic CMS for all 137+ content sections
+- Admin panel for content management
+- Performance-optimized frontend
+- SEO management capabilities
 
 ---
 
-## Previous Updates
+## Phased Implementation Plan
 
-### v9.23 - Go-Live Phase 3: Sales Intelligence (Feb 24, 2026)
-- Unified lead pipeline (113 leads from 7 sources)
-- Lead scoring engine (0-100, 5 weighted dimensions)
-- Automated routing (5 rules)
-- Sales Dashboard with KPIs, funnel, lead table, detail modal
+### Phase A: Dynamic Content (COMPLETED - 100%)
+- ✅ CMS backend API with caching
+- ✅ Admin CMS editor with structured forms
+- ✅ useCms hook for frontend data fetching
+- ✅ 137 sections across all page types
+- ✅ All solution, geo, content, persona pages CMS-enabled
 
-### v9.22 - Dark Mode Audit (Feb 24, 2026)
-- ~1,500 fixes across 100+ pages and 50+ components
+### Phase B: Performance Optimization (P1 - PENDING)
+- Image optimization (WebP, next/image)
+- Code splitting & lazy loading
+- Font optimization
+- JavaScript payload reduction
 
-### v9.21 - PPT Bug Fixes + Go-Live Phase 2 (Feb 24, 2026)
-- Hero video, FAQ/testimonials pages, TrustBadges, social proof
-
----
-
-## All Go-Live Phases Status
-
-| Phase | Focus | Status |
-|-------|-------|--------|
-| Phase 1 | Tracking, WhatsApp, Geo-SEO | COMPLETE |
-| Phase 2 | Social Proof, Partner Portals, Experience Centre | COMPLETE |
-| Phase 3 | Lead Routing, Scoring, Sales Dashboard, Email Alerts | COMPLETE |
+### Phase C: Final Polish (P2 - PENDING)
+- Robust caching strategy
+- SEO metadata via CMS
+- Accessibility fixes
+- Final validation against audit reports
 
 ---
 
-## Upcoming Tasks
+## Key Files
+- `/app/frontend/app/admin/cms/page.tsx` - Admin CMS editor (137 sections, 7 tabs)
+- `/app/frontend/hooks/useCms.ts` - Reusable CMS hook
+- `/app/frontend/components/templates/SeoLandingPageTemplate.tsx` - CMS-aware template for solution pages
+- `/app/backend/routes/content.py` - Public CMS API endpoints
+- `/app/backend/routes/admin_content.py` - Admin CMS save endpoints
 
-### P1: Client Portal
-- Customer-facing portal to track project progress
+## Key API Endpoints
+- `GET /api/cms/sections/{key}` - Fetch single CMS section
+- `GET /api/cms/sections?keys=key1,key2` - Bulk fetch CMS sections
+- `PUT /api/admin/content/settings/{key}` - Save CMS section (admin)
 
-### P2: Enhancements
-- Lead export to CSV/Excel
-- Follow-up reminders/automation
-- Sales dashboard charts (conversion over time)
-
----
-
-## Admin Access
-**URL**: `/admin` | **Username**: `admin` | **Password**: `lexa2026`
-
-## Version History
-
-| Version | Date | Changes |
-|---------|------|---------|
-| 9.24 | Feb 24, 2026 | Hot lead email alerts (internal + customer ACK with CC) |
-| 9.23 | Feb 24, 2026 | Sales Intelligence system (scoring, routing, dashboard) |
-| 9.22 | Feb 24, 2026 | Site-wide dark mode audit (~1,500 fixes) |
-| 9.21 | Feb 24, 2026 | PPT bug fixes, Go-Live Phase 2 |
+## Database Schema
+- **cms_settings (settings collection)**: `{ key: string, value: any }` - Stores all CMS content
