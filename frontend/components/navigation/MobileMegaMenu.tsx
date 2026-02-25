@@ -22,19 +22,19 @@ interface MobileMegaMenuProps {
 const SERVICES_DATA = {
   categories: {
     'design': [
-      { title: 'Smart Home Design', slug: 'engineering', description: 'System design & consultation' },
-      { title: 'Engineering & Integration', slug: 'engineering', description: 'Technical planning & setup' }
+      { title: 'Consultation & Design', slug: '/services/consultation-design', description: 'System design & consultation', isFullPath: true },
+      { title: 'Engineering & Integration', slug: '/services/system-engineering-integration', description: 'Technical planning & setup', isFullPath: true },
+      { title: 'Wiring & Infrastructure', slug: '/services/wiring', description: 'Structured cabling & wiring', isFullPath: true }
     ],
     'core': [
-      { title: 'Lighting Control', slug: 'lighting-control', description: 'Automated lighting systems' },
-      { title: 'Audio & Entertainment', slug: 'audio-video-integration', description: 'Multi-room AV solutions' },
-      { title: 'Climate Control', slug: 'climate-control', description: 'Smart HVAC automation' },
-      { title: 'Security Systems', slug: 'security-surveillance', description: 'Cameras & access control' },
-      { title: 'Home Networking', slug: 'networking', description: 'WiFi 6 & structured cabling' }
+      { title: 'Home Cinema & AV', slug: '/services/home-cinema-multi-room-av', description: 'Cinema & multi-room audio', isFullPath: true },
+      { title: 'Security Systems', slug: '/services/security-surveillance-systems', description: 'Cameras & access control', isFullPath: true },
+      { title: 'Network Infrastructure', slug: '/services/network-infrastructure-it', description: 'WiFi 6 & enterprise networking', isFullPath: true },
+      { title: 'Voice & App Control', slug: '/services/voice-app-control-integration', description: 'Smart control integration', isFullPath: true }
     ],
     'support': [
-      { title: 'Maintenance & Support', slug: 'maintenance', description: '24/7 technical assistance' },
-      { title: 'System Upgrades', slug: 'upgrades', description: 'Future-proofing & expansion' }
+      { title: 'Project Management', slug: '/services/project-management', description: 'End-to-end project delivery', isFullPath: true },
+      { title: 'Commissioning & Support', slug: '/services/commissioning-support', description: 'Setup, testing & handover', isFullPath: true }
     ]
   }
 }
@@ -42,18 +42,18 @@ const SERVICES_DATA = {
 const INTELLIGENCE_DATA = {
   categories: {
     'insights': [
-      { title: 'Smart Home Blog', slug: 'blog', description: 'Latest trends & insights' },
-      { title: 'Case Studies', slug: 'case-studies', description: 'Real project showcases' },
-      { title: 'Technology Guides', slug: 'guides', description: 'In-depth tech explanations' }
+      { title: 'Smart Home Blog', slug: '/blog', description: 'Latest trends & insights', isFullPath: true },
+      { title: 'Case Studies', slug: '/case-studies', description: 'Real project showcases', isFullPath: true },
+      { title: 'Technology Guides', slug: '/guides', description: 'In-depth tech explanations', isFullPath: true }
     ],
     'tools': [
       { title: 'Cost Calculator', slug: '/calculator', description: 'Estimate your project cost', isFullPath: true },
-      { title: 'Project Builder', slug: '/project-builder/smart', description: 'Build your smart home', isFullPath: true },
+      { title: 'Project Builder', slug: '/project-builder', description: 'Build your smart home', isFullPath: true },
       { title: 'ROI Calculator', slug: '/roi-calculator', description: 'Calculate your savings', isFullPath: true }
     ],
     'resources': [
-      { title: 'FAQ', slug: 'faq', description: 'Frequently asked questions' },
-      { title: 'Glossary', slug: 'glossary', description: 'Smart home terminology' }
+      { title: 'FAQ', slug: '/faq', description: 'Frequently asked questions', isFullPath: true },
+      { title: 'Glossary', slug: '/glossary', description: 'Smart home terminology', isFullPath: true }
     ]
   }
 }
@@ -61,18 +61,19 @@ const INTELLIGENCE_DATA = {
 const PACKAGES_DATA = {
   categories: {
     'residential': [
-      { title: 'Villa Packages', slug: 'villa-packages', description: 'Complete villa automation' },
-      { title: 'Apartment Packages', slug: 'apartment-packages', description: 'Smart apartment solutions' },
-      { title: 'Penthouse Packages', slug: 'penthouse-packages', description: 'Luxury penthouse automation' }
+      { title: 'Luxury Villas & Mansions', slug: '/packages/luxury-villas-mansions', description: 'Complete villa automation', isFullPath: true },
+      { title: 'Penthouses & Sky Homes', slug: '/packages/penthouses-sky-homes', description: 'Luxury penthouse automation', isFullPath: true },
+      { title: 'Luxury Apartments', slug: '/packages/luxury-apartments-duplexes', description: 'Smart apartment solutions', isFullPath: true }
     ],
     'bundles': [
-      { title: 'Essential Package', slug: 'essential', description: 'Core smart home features' },
-      { title: 'Premium Package', slug: 'premium', description: 'Enhanced automation suite' },
-      { title: 'Ultimate Package', slug: 'ultimate', description: 'Complete luxury experience' }
+      { title: 'Studio Apartments', slug: '/packages/developer-studio-apartments', description: 'Smart studio packages', isFullPath: true },
+      { title: '1-Bedroom Apartments', slug: '/packages/developer-1br-apartments', description: '1BR smart packages', isFullPath: true },
+      { title: '2-Bedroom Apartments', slug: '/packages/developer-2br-apartments', description: '2BR smart packages', isFullPath: true },
+      { title: '3-Bedroom Apartments', slug: '/packages/developer-3br-apartments', description: '3BR smart packages', isFullPath: true }
     ],
     'special': [
       { title: 'AMC Packages', slug: '/amc-packages', description: 'Annual maintenance contracts', isFullPath: true },
-      { title: 'Retrofit Solutions', slug: 'retrofit', description: 'Upgrade existing homes' }
+      { title: 'Smart Apartments', slug: '/packages/smart-apartment-packages', description: 'Affordable smart home kits', isFullPath: true }
     ]
   }
 }
