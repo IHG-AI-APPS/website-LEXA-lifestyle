@@ -179,18 +179,36 @@ export interface SeoLandingPageProps {
 }
 
 export default function SeoLandingPageTemplate({
-  hero,
-  audience,
-  problems,
-  deliverables,
-  process,
-  section6,
-  trustSignals,
-  conversion,
-  relatedPersonas,
-  relatedSolutions,
-  geoPages
+  cmsKey,
+  hero: heroProp,
+  audience: audienceProp,
+  problems: problemsProp,
+  deliverables: deliverablesProp,
+  process: processProp,
+  section6: section6Prop,
+  trustSignals: trustSignalsProp,
+  conversion: conversionProp,
+  relatedPersonas: relatedPersonasProp,
+  relatedSolutions: relatedSolutionsProp,
+  geoPages: geoPagesProp
 }: SeoLandingPageProps) {
+  // CMS override: fetch dynamic content if cmsKey provided
+  const cmsRaw = useCms(cmsKey || '_noop_', null)
+  const cms = cmsKey ? cmsRaw : null
+
+  // Section-level overrides: CMS data takes priority over hardcoded props
+  const hero = cms?.hero || heroProp
+  const audience = cms?.audience || audienceProp
+  const problems = cms?.problems || problemsProp
+  const deliverables = cms?.deliverables || deliverablesProp
+  const process = cms?.process || processProp
+  const section6 = cms?.section6 || section6Prop
+  const trustSignals = cms?.trustSignals || trustSignalsProp
+  const conversion = cms?.conversion || conversionProp
+  const relatedPersonas = cms?.relatedPersonas || relatedPersonasProp
+  const relatedSolutions = cms?.relatedSolutions || relatedSolutionsProp
+  const geoPages = cms?.geoPages || geoPagesProp
+
   const [allSolutions, setAllSolutions] = useState<any[]>([])
   
   useEffect(() => {
