@@ -95,6 +95,9 @@ const emptyService: Partial<Service> = {
   certifications: [],
   faqs: [],
   featured: false,
+  brands: [],
+  gallery_images: [],
+  feature_cards: [],
   // Arabic translations
   name_ar: '',
   title_ar: '',
