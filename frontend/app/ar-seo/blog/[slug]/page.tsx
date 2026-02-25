@@ -3,6 +3,7 @@ import Link from 'next/link'
 import SafeImage from '@/components/ui/SafeImage'
 import { Phone, Mail, MapPin, CheckCircle, ArrowLeft, Calendar, User } from 'lucide-react'
 import { notFound } from 'next/navigation'
+import asyncCms from './asyncCms'
 
 interface ArabicPageData {
   slug: string

@@ -10,11 +10,14 @@ import { Breadcrumb } from '@/components/ui/breadcrumb'
 import ConsultationForm from '@/components/forms/ConsultationForm'
 import RelatedItemsCarousel from '@/components/sections/RelatedItemsCarousel'
 import { ArrowLeft, CheckCircle } from 'lucide-react'
+import { useCms } from '@/hooks/useCms'
 
 const BACKEND_URL = process.env.NEXT_PUBLIC_BACKEND_URL || 'http://localhost:8001'
 const API = `${BACKEND_URL}/api`
 
 export default function ProductDetailPage({ params }: { params: { slug: string } }) {
+  const cms = useCms('page_products_detail', null)
+
   const [showConsultationForm, setShowConsultationForm] = useState(false)
   const [product, setProduct] = useState<any>(null)
   const [otherProducts, setOtherProducts] = useState<any[]>([])

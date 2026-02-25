@@ -2,6 +2,7 @@ import { Metadata } from 'next'
 import { notFound } from 'next/navigation'
 import { getSolution, getSolutions, getProjects } from '@/lib/api'
 import SolutionClient from './SolutionClient'
+import asyncCms from './asyncCms'
 
 // Generate metadata for SEO
 export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata> {

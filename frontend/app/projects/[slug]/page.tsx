@@ -7,6 +7,7 @@ import Link from 'next/link'
 import { Button } from '@/components/ui/button'
 import { ArrowLeft, X, ChevronLeft, ChevronRight, Share2, Heart, ExternalLink } from 'lucide-react'
 import { useRecentlyViewed } from '@/hooks/useRecentlyViewed'
+import { useCms } from '@/hooks/useCms'
 
 interface Project {
   id: string
@@ -37,6 +38,8 @@ interface Project {
 }
 
 export default function ProjectDetailPage() {
+  const cms = useCms('page_projects_detail', null)
+
   const params = useParams()
   const slug = params.slug as string
   const { addItem } = useRecentlyViewed()

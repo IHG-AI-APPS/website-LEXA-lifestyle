@@ -6,10 +6,13 @@ import SafeImage from '@/components/ui/SafeImage'
 import Link from 'next/link'
 import { motion } from 'framer-motion'
 import { Check, Sparkles, Package, DollarSign, ArrowRight } from 'lucide-react'
+import { useCms } from '@/hooks/useCms'
 
 const BACKEND_URL = process.env.NEXT_PUBLIC_BACKEND_URL || 'http://localhost:8001'
 
 export default function SpecialtyRoomDetailPage() {
+  const cms = useCms('page_specialty_rooms_detail', null)
+
   const params = useParams()
   const slug = params?.slug as string
 

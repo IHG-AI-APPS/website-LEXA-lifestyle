@@ -5,6 +5,7 @@ import { useParams, useRouter } from 'next/navigation'
 import { motion } from 'framer-motion'
 import { Loader2, CheckCircle2, AlertCircle, ArrowRight, Clock } from 'lucide-react'
 import { Button } from '@/components/ui/button'
+import { useCms } from '@/hooks/useCms'
 
 const API_URL = process.env.NEXT_PUBLIC_BACKEND_URL || ''
 
@@ -29,6 +30,8 @@ interface SessionState {
 }
 
 export default function ResumePage() {
+  const cms = useCms('page_project_builder_resume', null)
+
   const params = useParams()
   const router = useRouter()
   const sessionId = params.sessionId as string

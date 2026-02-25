@@ -12,6 +12,7 @@ import StatsGrid from '@/components/StatsGrid'
 import PackageComparison from '@/components/PackageComparison'
 import RelatedServices from '../components/RelatedServices'
 import { useRecentlyViewed } from '@/hooks/useRecentlyViewed'
+import { useCms } from '@/hooks/useCms'
 
 interface Service {
   id: string
@@ -84,6 +85,8 @@ interface Service {
 }
 
 export default function ServiceDetailPage() {
+  const cms = useCms('page_services_detail', null)
+
   const params = useParams()
   const [service, setService] = useState<Service | null>(null)
   const [relatedServices, setRelatedServices] = useState<Service[]>([])

@@ -11,6 +11,7 @@ import { Breadcrumb } from '@/components/ui/breadcrumb'
 import RelatedItemsCarousel from '@/components/sections/RelatedItemsCarousel'
 import ConsultationForm from '@/components/forms/ConsultationForm'
 import { ArrowLeft, ExternalLink, MapPin, Calendar, Award, CheckCircle, ShoppingBag, Star } from 'lucide-react'
+import { useCms } from '@/hooks/useCms'
 
 const BACKEND_URL = process.env.NEXT_PUBLIC_BACKEND_URL || ''
 const API = `${BACKEND_URL}/api`
@@ -45,6 +46,8 @@ interface BrandData {
 }
 
 export default function BrandDetailPage({ params }: { params: { slug: string } }) {
+  const cms = useCms('page_brands_detail', null)
+
   const [showConsultationForm, setShowConsultationForm] = useState(false)
   const [brand, setBrand] = useState<BrandData | null>(null)
   const [otherBrands, setOtherBrands] = useState<BrandData[]>([])

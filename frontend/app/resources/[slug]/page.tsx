@@ -8,8 +8,11 @@ import { motion } from 'framer-motion'
 import { Button } from '@/components/ui/button'
 import { Clock, ArrowLeft, ArrowRight, User } from 'lucide-react'
 import { getArticle, getArticles, type Article } from '@/lib/api'
+import { useCms } from '@/hooks/useCms'
 
 export default function ArticleDetailPage() {
+  const cms = useCms('page_resources_detail', null)
+
   const params = useParams()
   const slug = params.slug as string
   

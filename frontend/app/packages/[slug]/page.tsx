@@ -18,6 +18,7 @@ import {
 } from 'lucide-react'
 import RelatedPackages from '../components/RelatedPackages'
 import PricingDisclaimer from '@/components/shared/PricingDisclaimer'
+import { useCms } from '@/hooks/useCms'
 
 const BACKEND_URL = process.env.NEXT_PUBLIC_BACKEND_URL || 'http://localhost:8001'
 
@@ -60,6 +61,8 @@ const formatPrice = (price: number) => {
 }
 
 export default function PropertyPackageDetailPage() {
+  const cms = useCms('page_packages_detail', null)
+
   const params = useParams()
   const router = useRouter()
   const slug = params?.slug as string

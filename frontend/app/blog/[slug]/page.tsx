@@ -10,11 +10,14 @@ import { Breadcrumb } from '@/components/ui/breadcrumb'
 import { Calendar, Clock, User, ArrowLeft, Share2, BookmarkPlus } from 'lucide-react'
 import ReactMarkdown from 'react-markdown'
 import remarkGfm from 'remark-gfm'
+import { useCms } from '@/hooks/useCms'
 
 const BACKEND_URL = process.env.NEXT_PUBLIC_BACKEND_URL || 'http://localhost:8001'
 const API = `${BACKEND_URL}/api`
 
 export default function BlogArticlePage({ params }: { params: { slug: string } }) {
+  const cms = useCms('page_blog_detail', null)
+
   const [article, setArticle] = useState<any>(null)
   const [relatedArticles, setRelatedArticles] = useState<any[]>([])
   const [loading, setLoading] = useState(true)

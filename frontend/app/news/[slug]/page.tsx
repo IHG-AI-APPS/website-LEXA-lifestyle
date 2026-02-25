@@ -6,6 +6,7 @@ import SafeImage from '@/components/ui/SafeImage'
 import { useParams } from 'next/navigation'
 import { Breadcrumb } from '@/components/ui/breadcrumb'
 import { Calendar, Tag } from 'lucide-react'
+import { useCms } from '@/hooks/useCms'
 
 interface NewsArticle {
   id: string
@@ -19,6 +20,8 @@ interface NewsArticle {
 }
 
 export default function NewsDetailPage() {
+  const cms = useCms('page_news_detail', null)
+
   const params = useParams()
   const [article, setArticle] = useState<NewsArticle | null>(null)
   const [loading, setLoading] = useState(true)

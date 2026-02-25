@@ -9,10 +9,13 @@ import { Button } from '@/components/ui/button'
 import ConsultationForm from '@/components/forms/ConsultationForm'
 import { CheckCircle, ArrowLeft } from 'lucide-react'
 import type { Project } from '@/lib/api'
+import { useCms } from '@/hooks/useCms'
 
 const BACKEND_URL = process.env.NEXT_PUBLIC_BACKEND_URL || 'http://localhost:8001'
 
 export default function CaseStudyPage() {
+  const cms = useCms('page_case_studies_detail', null)
+
   const params = useParams()
   const slug = params?.slug as string
   const [project, setProject] = useState<Project | null>(null)
