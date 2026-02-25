@@ -155,7 +155,7 @@ class TestAdminAuthentication:
     
     def test_admin_login_with_valid_credentials(self):
         """Test admin login with valid credentials"""
-        response = requests.post(f"{BASE_URL}/api/auth/login", json={
+        response = requests.post(f"{BASE_URL}/api/admin/login", json={
             "username": "admin",
             "password": "lexa2026"
         })
@@ -167,7 +167,7 @@ class TestAdminAuthentication:
     
     def test_admin_login_with_invalid_credentials(self):
         """Test admin login with invalid credentials returns 401"""
-        response = requests.post(f"{BASE_URL}/api/auth/login", json={
+        response = requests.post(f"{BASE_URL}/api/admin/login", json={
             "username": "admin",
             "password": "wrongpassword"
         })
