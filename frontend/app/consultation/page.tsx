@@ -81,7 +81,12 @@ export default function ConsultationPage() {
     }
   ]
 
-  const processSteps = [
+  const processSteps = cms?.process_steps?.length ? cms.process_steps.map((s: any) => ({
+    number: s.number,
+    icon: ICON_MAP[s.icon] || Calendar,
+    title: s.title,
+    description: s.description
+  })) : [
     {
       number: '01',
       icon: Calendar,
