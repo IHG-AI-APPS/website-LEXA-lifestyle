@@ -1,7 +1,7 @@
 'use client'
 
 import { useState, useEffect, useCallback } from 'react'
-import { Save, RefreshCw, ChevronDown, ChevronRight, Plus, Trash2, GripVertical, Video, Type, Image, List, MapPin, Briefcase, Users, Award, Settings2 } from 'lucide-react'
+import { Save, RefreshCw, ChevronDown, ChevronRight, Plus, Trash2, GripVertical, Video, Type, Image, List, MapPin, Briefcase, Users, Award, Settings2, Calendar, Building2, Layout, Film, Lightbulb, Home, Speaker } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { toast } from 'sonner'
