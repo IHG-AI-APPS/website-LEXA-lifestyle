@@ -785,50 +785,89 @@ export default function ServicesAdminPage() {
                 )}
               </div>
 
-              {/* Related Products */}
+              {/* Brands */}
+              <div className="border-b pb-6">
+                <h3 className="font-semibold mb-4 text-lg">Brands (Service Page)</h3>
+                <Input
+                  value={(formData.brands || []).join(', ')}
+                  onChange={(e) => handleArrayInput('brands' as any, e.target.value)}
+                  placeholder="Crestron, Control4, Lutron, Sonos"
+                />
+                <p className="text-xs text-gray-400 mt-1">Brands shown in the &quot;Brands We Work With&quot; section</p>
+              </div>
+
+              {/* Gallery Images */}
+              <div className="border-b pb-6">
+                <div className="flex items-center justify-between mb-4">
+                  <h3 className="font-semibold text-lg">Gallery Images (Inspirations)</h3>
+                  <Button type="button" variant="outline" size="sm" onClick={addGalleryImage}>
+                    <Plus size={16} className="mr-1" /> Add Image URL
+                  </Button>
+                </div>
+                <p className="text-xs text-gray-500 mb-3">Image URLs for the Inspirations gallery. First image is featured.</p>
+                {(formData.gallery_images || []).length === 0 ? (
+                  <p className="text-sm text-gray-500 italic">No gallery images.</p>
+                ) : (
+                  <div className="space-y-2">
+                    {(formData.gallery_images || []).map((url, index) => (
+                      <div key={index} className="flex items-center gap-2">
+                        {url && <div className="relative w-12 h-12 flex-shrink-0 bg-gray-100 rounded overflow-hidden"><SafeImage src={url} alt="" fill className="object-cover" /></div>}
+                        <Input value={url} onChange={(e) => updateGalleryImage(index, e.target.value)} placeholder="https://..." className="text-sm flex-1" />
+                        <Button type="button" variant="ghost" size="sm" onClick={() => removeGalleryImage(index)} className="text-red-600 h-8 w-8 p-0"><Trash2 size={14} /></Button>
+                      </div>
+                    ))}
+                  </div>
+                )}
+              </div>
+
+              {/* Feature Cards */}
+              <div className="border-b pb-6">
+                <div className="flex items-center justify-between mb-4">
+                  <h3 className="font-semibold text-lg">Feature Cards (What You Get)</h3>
+                  <Button type="button" variant="outline" size="sm" onClick={addFeatureCard}>
+                    <Plus size={16} className="mr-1" /> Add Card
+                  </Button>
+                </div>
+                {(formData.feature_cards || []).length === 0 ? (
+                  <p className="text-sm text-gray-500 italic">No feature cards.</p>
+                ) : (
+                  <div className="space-y-4">
+                    {((formData.feature_cards || []) as FeatureCard[]).map((card, index) => (
+                      <div key={index} className="border border-gray-200 rounded-lg p-4 bg-gray-50">
+                        <div className="flex justify-between items-start mb-3">
+                          <span className="text-sm font-medium text-gray-600">Card #{index + 1}</span>
+                          <Button type="button" variant="ghost" size="sm" onClick={() => removeFeatureCard(index)} className="text-red-600 h-6"><Trash2 size={14} /></Button>
+                        </div>
+                        <div className="space-y-3">
+                          <div><label className="block text-xs font-medium mb-1">Title *</label><Input value={card.title} onChange={(e) => updateFeatureCard(index, 'title', e.target.value)} placeholder="e.g., Site Assessment" className="text-sm" /></div>
+                          <div><label className="block text-xs font-medium mb-1">Description</label><Textarea value={card.description} onChange={(e) => updateFeatureCard(index, 'description', e.target.value)} rows={2} className="text-sm" /></div>
+                          <div><label className="block text-xs font-medium mb-1">Benefits (comma-separated)</label><Input value={(card.benefits || []).join(', ')} onChange={(e) => updateFeatureCard(index, 'benefits', e.target.value.split(',').map(b => b.trim()).filter(Boolean))} className="text-sm" /></div>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                )}
+              </div>
+
+              {/* Related Solutions */}
               <div className="pb-6">
                 <div className="flex items-center justify-between mb-4">
                   <h3 className="font-semibold text-lg flex items-center gap-2">
-                    <Package size={20} />
-                    Related Products
+                    <Package size={20} /> Related Solutions
                   </h3>
-                  <Button type="button" variant="outline" size="sm" onClick={addProduct}>
-                    <Plus size={16} className="mr-1" /> Add Product
+                  <Button type="button" variant="outline" size="sm" onClick={addRelatedProduct}>
+                    <Plus size={16} className="mr-1" /> Add Solution
                   </Button>
                 </div>
-                
+                <p className="text-xs text-gray-500 mb-3">Solution slugs shown as &quot;Solutions We Deploy&quot; image cards.</p>
                 {(formData.related_products || []).length === 0 ? (
-                  <p className="text-sm text-gray-500 italic">No products added.</p>
+                  <p className="text-sm text-gray-500 italic">No related solutions.</p>
                 ) : (
-                  <div className="space-y-4">
-                    {(formData.related_products || []).map((product, index) => (
-                      <div key={index} className="border border-gray-200 rounded-lg p-4 bg-gray-50">
-                        <div className="flex justify-between items-start mb-3">
-                          <span className="text-sm font-medium text-gray-600">Product #{index + 1}</span>
-                          <Button type="button" variant="ghost" size="sm" onClick={() => removeProduct(index)} className="text-red-600 h-6">
-                            <Trash2 size={14} />
-                          </Button>
-                        </div>
-                        <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
-                          <div>
-                            <label className="block text-xs font-medium mb-1">Product Name *</label>
-                            <Input
-                              value={product.name}
-                              onChange={(e) => updateProduct(index, 'name', e.target.value)}
-                              placeholder="Product name"
-                              className="text-sm"
-                            />
-                          </div>
-                          <div>
-                            <label className="block text-xs font-medium mb-1">Price Range</label>
-                            <Input
-                              value={product.price_range}
-                              onChange={(e) => updateProduct(index, 'price_range', e.target.value)}
-                              placeholder="e.g., AED 5,000 - 10,000"
-                              className="text-sm"
-                            />
-                          </div>
-                        </div>
+                  <div className="space-y-2">
+                    {(formData.related_products || []).map((slug, index) => (
+                      <div key={index} className="flex items-center gap-2">
+                        <Input value={typeof slug === 'string' ? slug : ''} onChange={(e) => updateRelatedProduct(index, e.target.value)} placeholder="e.g., smart-home, lighting-automation" className="text-sm flex-1" />
+                        <Button type="button" variant="ghost" size="sm" onClick={() => removeRelatedProduct(index)} className="text-red-600 h-8 w-8 p-0"><Trash2 size={14} /></Button>
                       </div>
                     ))}
                   </div>
