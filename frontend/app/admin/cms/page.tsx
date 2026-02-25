@@ -25,6 +25,7 @@ const CMS_SECTIONS: CMSSection[] = [
     'solutions', 'services', 'projects', 'products', 'brands', 'packages',
     'testimonials', 'news', 'resources', 'faq', 'support', 'warranty',
     'privacy-policy', 'terms-of-service', 'calculator', 'work-with-us',
+    'partner-with-us', 'vendor-supplier',
   ] as string[]).map(slug => ({
     key: `seo_${slug.replace(/-/g, '_')}`,
     label: `SEO: ${slug.replace(/-/g, ' ').replace(/\b\w/g, c => c.toUpperCase())}`,
