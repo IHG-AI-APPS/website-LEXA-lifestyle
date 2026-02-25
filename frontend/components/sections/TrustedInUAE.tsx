@@ -71,7 +71,7 @@ export default function TrustedInUAE({
             Official Partners & Certifications
           </p>
           <div className="flex flex-wrap justify-center items-center gap-8 md:gap-12">
-            {partnerData.technologyPartners.slice(0, 4).map((partner, index) => (
+            {partnerData.technology_partners.slice(0, 4).map((partner, index) => (
               <motion.div
                 key={partner.name}
                 initial={{ opacity: 0, y: 10 }}
@@ -127,7 +127,7 @@ export default function TrustedInUAE({
 
           {/* Partner Logos */}
           <div className="flex flex-wrap justify-center items-center gap-6 md:gap-10">
-            {partnerData.technologyPartners.map((partner, index) => (
+            {partnerData.technology_partners.map((partner, index) => (
               <motion.div
                 key={partner.name}
                 initial={{ opacity: 0 }}
@@ -213,7 +213,7 @@ export default function TrustedInUAE({
             Official Technology Partners
           </h3>
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
-            {partnerData.technologyPartners.map((partner, index) => (
+            {partnerData.technology_partners.map((partner, index) => (
               <motion.div
                 key={partner.name}
                 initial={{ opacity: 0, scale: 0.95 }}
@@ -243,7 +243,7 @@ export default function TrustedInUAE({
             Trusted by Leading UAE Developers
           </h3>
           <div className="flex flex-wrap justify-center gap-4">
-            {partnerData.trustedBy.map((client, index) => (
+            {partnerData.trusted_by.map((client, index) => (
               <motion.div
                 key={client.name}
                 initial={{ opacity: 0 }}
