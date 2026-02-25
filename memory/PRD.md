@@ -1,60 +1,84 @@
-# LEXA Smart Home Platform - Product Requirements Document
-
-**Version**: 14.0  
-**Last Updated**: February 25, 2026  
-**Status**: All Phases + Service Pages Redesign Complete
-
----
+# LEXA Smart Home Platform — PRD
 
 ## Original Problem Statement
-Fully dynamic, high-performance website for LEXA Smart Home with CMS-controlled content, Lighthouse-optimized performance, and WCAG 2.1 AA accessibility.
+Complete website overhaul for LEXA Smart Home to:
+1. Make all content fully dynamic and editable through admin CMS panel
+2. Improve site performance and design consistency
+3. Apply a "benchmark" design standard across all content pages
 
----
-
-## Completed Work
-
-### Phase A: Dynamic Content (100%)
-- 234 pages, 11 CMS category tabs (224 sections)
-
-### Phase B: Performance Optimization (100%)
-- Font loading, JSON-LD, lazy loading, API cache, responsive images
-
-### Phase C: Final Polish (100%)
-- SEO with SERP/Social previews, accessibility compliance
-
-### Solution Page Rollout (100% — Feb 25, 2026)
-- 85/85 solutions enriched: gallery_images, related_products, brands, feature_cards
-- 40+ AI-generated inspiration images across 10+ categories
-- SolutionClient.tsx template: Hero, What We Deliver, What You Get, Products We Offer, Brands, Inspirations, FAQ, CTA
-
-### Service Pages Redesign (100% — Feb 25, 2026)
-- 10/10 services enriched: gallery_images, brands, feature_cards, related_products (solution slugs)
-- Service page template completely rewritten matching SolutionClient design system
-- New sections: Solutions We Deploy (image cards), Brands We Work With, Inspirations gallery
-- Kept service-specific sections: Process Wheel, Package Comparison, Deliverables, Case Studies, Pricing
-
-### CMS Admin Enhancement (100% — Feb 25, 2026)
-- Admin Solutions page: Gallery Images (URL inputs with preview), Feature Cards (structured editor), Brands (comma-separated), Related Products (slug-based dropdown)
-- Admin Services page: Same CMS editing capabilities as solutions
-- Both show content richness metrics in list views
-
----
+## Core Principles
+- **Design Consistency**: All pages share the same high-quality benchmark template (split hero, feature cards, FAQ, brands, CTA)
+- **Rich Dynamic Content**: Pages enriched with galleries, feature cards, related items, brands
+- **100% CMS Control**: Every piece of content fully manageable from admin panel
 
 ## Architecture
-- 85 DB solutions: all enriched, 47 dynamic + 38 static pages
-- 10 DB services: all enriched with matching design
-- Admin CMS: Full CRUD for all enrichment fields on both solutions and services
+- **Frontend**: Next.js 14 (App Router)
+- **Backend**: FastAPI (Python)
+- **Database**: MongoDB
+- **Deployment**: Kubernetes
+
+## What's Been Implemented
+
+### Solutions Section (DONE)
+- SolutionClient.tsx = benchmark template
+- 85 solutions enriched with gallery_images, feature_cards, related_products, brands
+- Admin CMS fully integrated
+
+### Services Section (DONE)
+- Services detail page rewritten to benchmark
+- 10 services enriched
+- Admin CMS integrated
+
+### Packages Detail Pages (DONE — Feb 25, 2026)
+- `/packages/[slug]` redesigned with benchmark template
+- Kept unique tier comparison layout, added feature cards, brands, gallery, FAQ, CTA
+- 7 packages enriched with feature_cards, faqs, brands
+
+### Intelligence Detail Pages (DONE — Feb 25, 2026)
+- `/intelligence/[id]` redesigned with benchmark template
+- Hero, benefits, smart scenarios sidebar, feature cards, related features, FAQ, CTA
+- 693 features enriched with feature_cards and faqs by category
+
+### Specialty Rooms Detail Pages (DONE — Feb 25, 2026)
+- `/specialty-rooms/[slug]` redesigned with benchmark template
+- Hero with pricing, features list, feature cards, brands, related solutions, FAQ, CTA
+- 22 rooms enriched with feature_cards, faqs, brands, related_solutions
+
+### Locations Pages (DONE — Feb 25, 2026)
+- **Converted from static to dynamic**: 7 static page files deleted, replaced with `/locations/[slug]` dynamic route
+- New backend API: `GET /api/locations`, `GET /api/locations/{slug}`, `PUT /api/locations/{slug}`
+- 7 locations seeded in MongoDB with full rich content
+- Benchmark design applied
+
+### Case Studies Pages (DONE — Feb 25, 2026)
+- `/case-studies/[slug]` redesigned with benchmark template
+- Split hero with project metadata, challenge/solution/outcome sections, tech specs, gallery, CTA
+- Fixed API to fallback to 'projects' collection
+
+## Remaining / Backlog
+
+### P0 — Brand Pages Redesign (Not started — user deferred)
+- Backend model updated, data enrichment script created
+- Frontend page needs finalization
+- Admin CMS needs brand editing capabilities
+
+### P1 — Admin CMS Extensions
+- Add editing forms for: Packages (feature_cards, faqs, brands), Intelligence (feature_cards, faqs), Specialty Rooms (feature_cards, faqs, brands), Locations (all fields)
+- Currently Solutions and Services have full CMS editing; other sections have read-only enriched data
+
+### P2 — Projects Pages Redesign (user deferred)
 
 ## Key Files
-- `/app/frontend/app/solutions/[slug]/SolutionClient.tsx` - Solution template
-- `/app/frontend/app/services/[slug]/page.tsx` - Service template (redesigned)
-- `/app/frontend/app/admin/solutions/page.tsx` - Admin CMS (enhanced)
-- `/app/frontend/app/admin/services/page.tsx` - Admin CMS (enhanced)
-- `/app/backend/models/content.py` - Solution + Service models (updated)
-
-## Test Reports
-- `/app/test_reports/iteration_26.json` - Service redesign + CMS (100% pass)
-- `/app/test_reports/iteration_25.json` - Solution rollout (100% pass)
+- `/app/frontend/app/solutions/[slug]/SolutionClient.tsx` — Benchmark template
+- `/app/frontend/app/services/[slug]/page.tsx` — Services benchmark
+- `/app/frontend/app/packages/[slug]/page.tsx` — Packages benchmark
+- `/app/frontend/app/intelligence/[id]/page.tsx` — Intelligence benchmark
+- `/app/frontend/app/specialty-rooms/[slug]/page.tsx` — Specialty rooms benchmark
+- `/app/frontend/app/locations/[slug]/page.tsx` — Locations dynamic page
+- `/app/frontend/app/case-studies/[slug]/page.tsx` — Case studies benchmark
+- `/app/frontend/app/admin/cms/page.tsx` — Admin CMS panel
+- `/app/backend/models/content.py` — Content models
+- `/app/backend/routes/locations.py` — Locations API
 
 ## Credentials
-- Admin: /admin/login (username: admin, password: lexa2026)
+- Admin: `/admin/login` (username: admin, password: lexa2026)
