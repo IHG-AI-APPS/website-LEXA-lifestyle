@@ -171,6 +171,10 @@ export default function ServicesAdminPage() {
       related_products: service.related_products || [],
       certifications: service.certifications || [],
       faqs: service.faqs?.length ? service.faqs : ((service as any).faq || []),
+      // New enrichment fields
+      brands: (service as any).brands || [],
+      gallery_images: (service as any).gallery_images || [],
+      feature_cards: (service as any).feature_cards || [],
       // Ensure all text fields are included
       long_description: service.long_description || '',
       tagline: service.tagline || '',
