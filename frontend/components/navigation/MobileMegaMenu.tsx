@@ -158,6 +158,8 @@ export default function MobileMegaMenu({ isOpen, onClose, type }: MobileMegaMenu
         <>
           {/* Backdrop */}
           <motion.div
+                role="menu"
+                aria-label="Mobile navigation menu"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}

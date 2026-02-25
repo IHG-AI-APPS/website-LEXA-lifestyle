@@ -99,6 +99,8 @@ export default function IntelligenceMegaMenu({ isOpen, onClose, onMouseEnter, on
       <AnimatePresence>
         {isOpen && (
           <motion.div
+                role="menu"
+                aria-label="Intelligence menu"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}

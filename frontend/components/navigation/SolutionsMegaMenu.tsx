@@ -129,6 +129,8 @@ export default function SolutionsMegaMenu({ isOpen, onClose, onMouseEnter, onMou
       <AnimatePresence>
         {isOpen && (
           <motion.div
+                role="menu"
+                aria-label="Solutions menu"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}

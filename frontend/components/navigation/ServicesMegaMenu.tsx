@@ -89,6 +89,8 @@ export default function ServicesMegaMenu({ isOpen, onClose, onMouseEnter, onMous
         <>
           {/* Backdrop */}
           <motion.div
+                role="menu"
+                aria-label="Services menu"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
