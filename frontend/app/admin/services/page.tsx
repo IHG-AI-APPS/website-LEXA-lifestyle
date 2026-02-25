@@ -35,6 +35,12 @@ interface FAQ {
   answer: string
 }
 
+interface FeatureCard {
+  title: string
+  description: string
+  benefits: string[]
+}
+
 interface Service {
   id: string
   slug?: string
@@ -52,10 +58,13 @@ interface Service {
   seo_description?: string
   key_features: string[]
   process_steps: ProcessStep[]
-  related_products: RelatedProduct[]
+  related_products: string[]
   certifications: string[]
   faqs: FAQ[]
   featured: boolean
+  brands: string[]
+  gallery_images: string[]
+  feature_cards: FeatureCard[]
   // Arabic translations
   name_ar?: string
   title_ar?: string
