@@ -1,8 +1,0 @@
-'use client'
-
-import { useCms } from '@/hooks/useCms'
-
-export default function asyncCms({ children }: { children: React.ReactNode }) {
-  const cms = useCms('page_solutions_detail', null)
-  return <>{children}</>
-}

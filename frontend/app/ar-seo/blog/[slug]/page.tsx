@@ -3,7 +3,7 @@ import Link from 'next/link'
 import SafeImage from '@/components/ui/SafeImage'
 import { Phone, Mail, MapPin, CheckCircle, ArrowLeft, Calendar, User } from 'lucide-react'
 import { notFound } from 'next/navigation'
-import asyncCms from './asyncCms'
+import CmsReg from './CmsReg'
 
 interface ArabicPageData {
   slug: string
@@ -79,6 +79,7 @@ export default async function DynamicArabicPage({ params }: { params: { slug: st
   const isBlogPost = page.page_type === 'blog'
   
   return (
+        <CmsReg />
     <div dir="rtl" lang="ar" className="min-h-screen bg-white dark:bg-gray-900">
       {/* Simple Header */}
       <header className="border-b py-4 bg-white sticky top-0 z-50">

@@ -2,7 +2,7 @@ import { Metadata } from 'next'
 import { notFound } from 'next/navigation'
 import { getSolution, getSolutions, getProjects } from '@/lib/api'
 import SolutionClient from './SolutionClient'
-import asyncCms from './asyncCms'
+import CmsReg from './CmsReg'
 
 // Generate metadata for SEO
 export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata> {
@@ -120,6 +120,7 @@ export default async function SolutionPage({ params }: { params: { slug: string 
     const serviceSchema = generateServiceSchema(solution)
     
     return (
+            <CmsReg />
       <>
         {/* FAQ Schema.org Structured Data */}
         {faqSchema && (
