@@ -322,7 +322,7 @@ export default function SeoLandingPageTemplate({
       </section>
 
       {/* 2. WHO THIS IS FOR */}
-      <section className="py-16 bg-[#121212]">
+      <section className="py-16 bg-[#121212]" aria-label="Target audience">
         <div className="container mx-auto px-8 lg:px-16">
           <div className="max-w-5xl mx-auto">
             <h2 className="text-xl font-bold uppercase tracking-[0.2em] text-[#E8DCC8] mb-6">Who We Serve</h2>
@@ -346,7 +346,7 @@ export default function SeoLandingPageTemplate({
       </section>
 
       {/* 3. COMMON PROBLEMS */}
-      <section className="py-24 bg-[#0A0A0A]">
+      <section className="py-24 bg-[#0A0A0A]" aria-label="Common problems">
         <div className="container mx-auto px-8 lg:px-16">
           <div className="max-w-4xl mx-auto">
             <h2 className="text-3xl md:text-5xl font-medium mb-12 text-center">
@@ -375,7 +375,7 @@ export default function SeoLandingPageTemplate({
       </section>
 
       {/* 4. WHAT LEXA DELIVERS */}
-      <section className="py-24 bg-[#121212]">
+      <section className="py-24 bg-[#121212]" aria-label="Our deliverables">
         <div className="container mx-auto px-8 lg:px-16">
           <div className="max-w-5xl mx-auto">
             <h2 className="text-3xl md:text-5xl font-medium mb-12 text-center">
@@ -407,7 +407,7 @@ export default function SeoLandingPageTemplate({
       </section>
 
       {/* 5. PROCESS */}
-      <section className="py-24 bg-[#0A0A0A]">
+      <section className="py-24 bg-[#0A0A0A]" aria-label="Our process">
         <div className="container mx-auto px-8 lg:px-16">
           <div className="max-w-6xl mx-auto">
             <h2 className="text-3xl md:text-5xl font-medium mb-4 text-center">
@@ -606,7 +606,7 @@ export default function SeoLandingPageTemplate({
 
 
       {/* 8. CONVERSION */}
-      <section className="py-24 bg-gradient-to-br from-[#E8DCC8] via-[#B5952F] to-[#E8DCC8]">
+      <section className="py-24 bg-gradient-to-br from-[#E8DCC8] via-[#B5952F] to-[#E8DCC8]" aria-label="Get started">
         <div className="container mx-auto px-8 lg:px-16 text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
