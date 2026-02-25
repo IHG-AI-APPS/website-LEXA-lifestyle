@@ -80,8 +80,10 @@ export default function HeroCurator({ onPersonaClick }: HeroCuratorProps) {
             // Skip to next clip on error
             setCurrentClip((prev) => (prev + 1) % heroClips.length)
           }}
+          aria-label="LEXA Smart Home luxury showcase"
         >
           <source src={heroClips[currentClip]} type="video/mp4" />
+          <track kind="captions" src="" label="English" srcLang="en" default />
         </video>
         
         {/* Dark Luxury Overlay - Balanced for video visibility */}

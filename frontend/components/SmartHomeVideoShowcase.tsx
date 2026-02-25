@@ -124,8 +124,10 @@ export default function SmartHomeVideoShowcase({ className = '', autoPlay = true
             muted={isMuted}
             playsInline
             onEnded={handleVideoEnd}
+            aria-label={`Smart home showcase - ${currentClip.name}`}
           >
             <source src={currentClip.src} type="video/mp4" />
+            <track kind="captions" src="" label="English" srcLang="en" default />
           </video>
 
           {/* Overlay Gradient */}
