@@ -90,6 +90,12 @@ const nextConfig = {
   
   // Source maps for production debugging
   productionBrowserSourceMaps: true,
+
+  // Allow dev origins for preview environment
+  allowedDevOrigins: [
+    'cms-seo-live.preview.emergentagent.com',
+    'cms-seo-live.cluster-0.preview.emergentcf.cloud',
+  ],
   
   // Compiler optimizations
   compiler: {
