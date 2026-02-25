@@ -7,22 +7,23 @@ import StatsSection from '@/components/homepage/StatsSection'
 import PersonaModal from '@/components/sections/PersonaModal'
 import { useCms } from '@/hooks/useCms'
 
-const TrustBadges = dynamic(() => import('@/components/social-proof/TrustBadges'))
+const Noop = () => null
+const TrustBadges = dynamic(() => import('@/components/social-proof/TrustBadges').catch(() => ({ default: Noop })))
 
 // Lazy load below-the-fold components for performance
-const SolutionsBentoGrid = dynamic(() => import('@/components/homepage/SolutionsBentoGrid'), {
+const SolutionsBentoGrid = dynamic(() => import('@/components/homepage/SolutionsBentoGrid').catch(() => ({ default: Noop })), {
   loading: () => <div className="h-[600px] bg-gray-50 dark:bg-gray-800" />
 })
-const TetrisProjects = dynamic(() => import('@/components/gallery/TetrisProjects'))
-const CalculatorCardsSection = dynamic(() => import('@/components/homepage/CalculatorCardsSection'))
-const ExperienceCentreCTA = dynamic(() => import('@/components/homepage/ExperienceCentreCTA'))
-const RecentlyViewedSection = dynamic(() => import('@/components/widgets/RecentlyViewedSection'), {
+const TetrisProjects = dynamic(() => import('@/components/gallery/TetrisProjects').catch(() => ({ default: Noop })))
+const CalculatorCardsSection = dynamic(() => import('@/components/homepage/CalculatorCardsSection').catch(() => ({ default: Noop })))
+const ExperienceCentreCTA = dynamic(() => import('@/components/homepage/ExperienceCentreCTA').catch(() => ({ default: Noop })))
+const RecentlyViewedSection = dynamic(() => import('@/components/widgets/RecentlyViewedSection').catch(() => ({ default: Noop })), {
   ssr: false
 })
-const SmartRecommendations = dynamic(() => import('@/components/widgets/SmartRecommendations'), {
+const SmartRecommendations = dynamic(() => import('@/components/widgets/SmartRecommendations').catch(() => ({ default: Noop })), {
   ssr: false
 })
-const TrustedInUAE = dynamic(() => import('@/components/sections/TrustedInUAE'), {
+const TrustedInUAE = dynamic(() => import('@/components/sections/TrustedInUAE').catch(() => ({ default: Noop })), {
   loading: () => <div className="h-[300px] bg-gray-50 dark:bg-gray-800" />
 })
 
