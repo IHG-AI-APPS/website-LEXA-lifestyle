@@ -1,106 +1,114 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import { Button } from '@/components/ui/button'
-import { ArrowLeft, Shield, CheckCircle2 } from 'lucide-react'
+import { Shield, CheckCircle2, ArrowRight, Phone, Clock, Wrench } from 'lucide-react'
 import CmsReg from './CmsReg'
 import { generateCmsMetadata } from '@/lib/cmsMetadata'
 
 export async function generateMetadata(): Promise<Metadata> {
   return generateCmsMetadata('seo_warranty', {
-  title: 'Warranty & Service Policy | LEXA Lifestyle',
-  description: 'Warranty terms and service policies for LEXA Lifestyle products and installations'
-})
+    title: 'Warranty & Service Policy | LEXA Lifestyle',
+    description: 'Warranty terms and service policies for LEXA Lifestyle products and installations',
+  })
 }
 
 export default function WarrantyPage() {
+  const warrantyItems = [
+    { title: 'Premium Brands', desc: 'Manufacturer warranty ranging from 1-5 years depending on the brand and product' },
+    { title: 'Installation Work', desc: '12-month warranty on all installation and integration services' },
+    { title: 'Cabling & Infrastructure', desc: '24-month warranty on structured cabling and network infrastructure' },
+    { title: 'Programming & Config', desc: '12-month warranty on all system programming and configuration' },
+  ]
+
+  const exclusions = [
+    'Physical damage caused by misuse or accidents',
+    'Damage from power surges without proper surge protection',
+    'Unauthorized modifications to installed systems',
+    'Natural wear and tear beyond warranty periods',
+    'Issues caused by third-party modifications',
+  ]
+
   return (
-        <>
+    <>
       <CmsReg />
-    <div className="min-h-screen bg-white dark:bg-gray-900">
-      <div className="container mx-auto px-6 md:px-12 lg:px-24 py-16 md:py-24">
-        <Link href="/">
-          <Button variant="outline" className="mb-8">
-            <ArrowLeft className="mr-2 h-4 w-4" />
-            Back to Home
-          </Button>
-        </Link>
-
-        <div className="flex items-center gap-4 mb-8">
-          <Shield className="h-12 w-12 text-[#E8DCC8]" />
-          <h1 className="text-4xl md:text-5xl font-bold">Warranty & Service Policy</h1>
-        </div>
-        
-        <div className="prose prose-lg max-w-none">
-          <h2 className="text-2xl font-bold mt-8 mb-4">Product Warranty</h2>
-          <p className="mb-4">
-            LEXA Lifestyle offers comprehensive warranty coverage on all products and installations:
-          </p>
-          <ul className="list-none space-y-3 mb-8">
-            <li className="flex items-start gap-3">
-              <CheckCircle2 className="h-5 w-5 text-[#E8DCC8] flex-shrink-0 mt-1" />
-              <span><strong>Premium Brands:</strong> Manufacturer warranty ranging from 1-5 years depending on the brand and product</span>
-            </li>
-            <li className="flex items-start gap-3">
-              <CheckCircle2 className="h-5 w-5 text-[#E8DCC8] flex-shrink-0 mt-1" />
-              <span><strong>Installation Work:</strong> 12-month warranty on all installation and integration services</span>
-            </li>
-            <li className="flex items-start gap-3">
-              <CheckCircle2 className="h-5 w-5 text-[#E8DCC8] flex-shrink-0 mt-1" />
-              <span><strong>Cabling & Infrastructure:</strong> 24-month warranty on structured cabling and network infrastructure</span>
-            </li>
-          </ul>
-
-          <h2 className="text-2xl font-bold mt-12 mb-4">What&apos;s Covered</h2>
-          <ul className="list-disc pl-6 mb-8 space-y-2">
-            <li>Manufacturing defects in materials or workmanship</li>
-            <li>Installation errors or integration issues</li>
-            <li>System malfunctions under normal use conditions</li>
-            <li>Programming and configuration errors</li>
-          </ul>
-
-          <h2 className="text-2xl font-bold mt-12 mb-4">What&apos;s Not Covered</h2>
-          <ul className="list-disc pl-6 mb-8 space-y-2">
-            <li>Damage from misuse, abuse, or unauthorized modifications</li>
-            <li>Normal wear and tear or cosmetic damage</li>
-            <li>Damage from power surges, lightning, or environmental factors</li>
-            <li>Third-party products or services not supplied by LEXA</li>
-            <li>Consumable items (batteries, remote controls)</li>
-          </ul>
-
-          <h2 className="text-2xl font-bold mt-12 mb-4">After-Sales Support</h2>
-          <p className="mb-4">We provide comprehensive support services:</p>
-          <ul className="list-disc pl-6 mb-8 space-y-2">
-            <li><strong>24/7 Emergency Support:</strong> For critical system failures</li>
-            <li><strong>Remote Assistance:</strong> Technical support via phone, email, or remote access</li>
-            <li><strong>On-Site Service:</strong> Scheduled maintenance and repair visits</li>
-            <li><strong>Annual Maintenance Contracts:</strong> Optional extended support packages available</li>
-          </ul>
-
-          <h2 className="text-2xl font-bold mt-12 mb-4">Claiming Warranty</h2>
-          <p className="mb-4">To make a warranty claim:</p>
-          <ol className="list-decimal pl-6 mb-8 space-y-2">
-            <li>Contact our support team at <a href="tel:+97142670470" className="text-[#E8DCC8]">+971 42 670 470</a></li>
-            <li>Provide your project details and purchase information</li>
-            <li>Describe the issue in detail</li>
-            <li>Our team will diagnose and schedule repair or replacement</li>
-          </ol>
-
-          <h2 className="text-2xl font-bold mt-12 mb-4">Extended Warranty</h2>
-          <p className="mb-8">
-            We offer extended warranty packages for additional peace of mind. Contact our sales team for customized maintenance and support plans tailored to your property.
-          </p>
-
-          <div className="mt-12 p-6 bg-gray-50 rounded-lg">
-            <p className="font-semibold mb-2">Need Support?</p>
-            <p className="text-gray-600 dark:text-gray-400 dark:text-gray-400">
-              Call: <a href="tel:+97142670470" className="text-[#E8DCC8]">+971 42 670 470</a><br/>
-              Email: <a href="mailto:support@lexalifestyle.com" className="text-[#E8DCC8]">support@lexalifestyle.com</a><br/>
-              WhatsApp: <a href="https://wa.me/+971521782109" className="text-[#E8DCC8]">+971 52 178 2109</a>
-            </p>
+      <div className="min-h-screen bg-white dark:bg-gray-950 pt-20" data-testid="warranty-page">
+        {/* Hero */}
+        <section className="relative overflow-hidden bg-gray-900 text-white py-20 lg:py-28">
+          <div className="container mx-auto px-8 lg:px-16 relative z-10">
+            <div className="max-w-3xl mx-auto text-center">
+              <span className="inline-block px-3 py-1 rounded-full bg-[#C9A962]/15 border border-[#C9A962]/30 text-[#C9A962] text-xs uppercase tracking-widest mb-5">Your Protection</span>
+              <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-5 tracking-tight" data-testid="warranty-title">Warranty & Service Policy</h1>
+              <p className="text-base text-gray-300 max-w-lg mx-auto">Comprehensive warranty coverage on all products and installations from LEXA Lifestyle.</p>
+            </div>
           </div>
-        </div>
+        </section>
+
+        {/* Warranty Coverage */}
+        <section className="py-16 lg:py-20 bg-white dark:bg-gray-950">
+          <div className="container mx-auto px-8 lg:px-16">
+            <div className="max-w-4xl mx-auto">
+              <span className="text-xs uppercase tracking-widest text-[#C9A962] font-semibold">Coverage</span>
+              <h2 className="text-2xl sm:text-3xl font-bold mt-2 mb-8 text-gray-900 dark:text-white">Product Warranty</h2>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-12">
+                {warrantyItems.map((item, i) => (
+                  <div key={i} className="flex items-start gap-4 p-5 rounded-xl bg-gray-50 dark:bg-gray-900 border border-gray-100 dark:border-gray-800">
+                    <CheckCircle2 className="h-5 w-5 text-[#C9A962] flex-shrink-0 mt-0.5" />
+                    <div><h3 className="text-sm font-bold text-gray-900 dark:text-white mb-1">{item.title}</h3><p className="text-sm text-gray-600 dark:text-gray-400">{item.desc}</p></div>
+                  </div>
+                ))}
+              </div>
+
+              <h2 className="text-xl font-bold mb-4 text-gray-900 dark:text-white">Extended Warranty</h2>
+              <p className="text-sm text-gray-600 dark:text-gray-400 mb-8 leading-relaxed">
+                LEXA offers extended warranty options through our Annual Maintenance Contracts (AMC). AMC clients receive extended coverage, priority support, and preventive maintenance visits to ensure their systems perform optimally year after year.
+              </p>
+
+              <h2 className="text-xl font-bold mb-4 text-gray-900 dark:text-white">Warranty Exclusions</h2>
+              <div className="space-y-3 mb-12">
+                {exclusions.map((item, i) => (
+                  <div key={i} className="flex items-start gap-3 text-sm text-gray-600 dark:text-gray-400">
+                    <span className="text-gray-400 mt-0.5">-</span><span>{item}</span>
+                  </div>
+                ))}
+              </div>
+
+              <h2 className="text-xl font-bold mb-4 text-gray-900 dark:text-white">How to Claim Warranty</h2>
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-12">
+                {[
+                  { num: '01', title: 'Contact Support', desc: 'Reach out via phone, email, or WhatsApp' },
+                  { num: '02', title: 'Assessment', desc: 'Our team will diagnose the issue remotely or on-site' },
+                  { num: '03', title: 'Resolution', desc: 'Covered repairs or replacements at no additional cost' },
+                ].map((step, i) => (
+                  <div key={i} className="p-5 rounded-xl bg-gray-50 dark:bg-gray-900 border border-gray-100 dark:border-gray-800 text-center">
+                    <span className="text-2xl font-bold text-[#C9A962]">{step.num}</span>
+                    <h3 className="text-sm font-bold text-gray-900 dark:text-white mt-2 mb-1">{step.title}</h3>
+                    <p className="text-xs text-gray-500">{step.desc}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* CTA */}
+        <section className="py-20 bg-gray-900 text-white">
+          <div className="container mx-auto px-8 lg:px-16 relative z-10">
+            <div className="max-w-3xl mx-auto text-center">
+              <span className="text-[#C9A962] text-xs uppercase tracking-widest font-semibold">Need Support?</span>
+              <h2 className="text-3xl sm:text-4xl font-bold mt-3 mb-4">We&apos;re Here to Help</h2>
+              <p className="text-gray-400 mb-8 max-w-xl mx-auto">Contact our support team or explore our AMC packages for extended coverage.</p>
+              <div className="flex flex-col sm:flex-row gap-3 justify-center">
+                <Button size="lg" className="bg-[#C9A962] text-gray-900 hover:bg-[#C9A962]/90 font-semibold px-8" asChild>
+                  <Link href="/support">Contact Support</Link>
+                </Button>
+                <Button size="lg" variant="outline" className="border-white/30 text-white hover:bg-white/10 px-8" asChild>
+                  <Link href="/amc-packages">View AMC Plans</Link>
+                </Button>
+              </div>
+            </div>
+          </div>
+        </section>
       </div>
-    </div>
     </>
   )
 }
