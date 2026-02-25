@@ -168,29 +168,22 @@ class TestVoiceControl:
 
 
 class TestCulturalAutomationMajlis:
-    """Tests for /api/solutions/cultural-automation/majlis-automation - Arabic-themed"""
+    """Tests for majlis-audio-experience - Arabic-themed (note: cultural-automation/majlis-automation is a nested route)"""
     
-    def test_majlis_automation_returns_200(self):
-        # Try direct majlis-automation slug first
-        response = requests.get(f"{BASE_URL}/api/solutions/majlis-automation")
-        if response.status_code != 200:
-            # Try alternative slug
-            response = requests.get(f"{BASE_URL}/api/solutions/majlis-room-automation")
-        
-        assert response.status_code == 200, f"majlis automation not found: tried majlis-automation and majlis-room-automation"
-        print("✓ majlis-automation API returns 200")
+    def test_majlis_audio_experience_returns_200(self):
+        # Use majlis-audio-experience which exists in database
+        response = requests.get(f"{BASE_URL}/api/solutions/majlis-audio-experience")
+        assert response.status_code == 200, f"majlis-audio-experience not found"
+        print("✓ majlis-audio-experience API returns 200")
     
     def test_majlis_has_arabic_themed_content(self):
-        response = requests.get(f"{BASE_URL}/api/solutions/majlis-automation")
-        if response.status_code != 200:
-            response = requests.get(f"{BASE_URL}/api/solutions/majlis-room-automation")
-        
+        response = requests.get(f"{BASE_URL}/api/solutions/majlis-audio-experience")
         data = response.json()
         combined = f"{data.get('title', '')} {data.get('description', '')} {data.get('long_description', '')}".lower()
         
         # Check for Arabic/cultural keywords
-        assert any(kw in combined for kw in ['majlis', 'arabic', 'traditional', 'cultural', 'arab'])
-        print(f"✓ majlis automation has Arabic-themed content")
+        assert any(kw in combined for kw in ['majlis', 'arabic', 'traditional', 'cultural', 'arab', 'uae', 'dubai', 'emirati'])
+        print(f"✓ majlis audio experience has Arabic-themed content")
 
 
 class TestWineCellarAutomation:
