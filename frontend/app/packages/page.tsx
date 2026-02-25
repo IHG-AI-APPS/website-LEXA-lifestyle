@@ -4,7 +4,6 @@ import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import { motion } from 'framer-motion'
 import { 
-import { useCms } from '@/hooks/useCms'
   Home, 
   Building2, 
   Hotel, 
@@ -18,6 +17,7 @@ import { useCms } from '@/hooks/useCms'
   TrendingUp,
   Brain
 } from 'lucide-react'
+import { useCms } from '@/hooks/useCms'
 
 const BACKEND_URL = process.env.NEXT_PUBLIC_BACKEND_URL || 'http://localhost:8001'
 

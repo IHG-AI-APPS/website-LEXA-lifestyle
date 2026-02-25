@@ -7,7 +7,6 @@ import { Button } from '@/components/ui/button'
 import TrustBar from '@/components/conversion/TrustBar'
 import RelatedPagesNav from '@/components/navigation/RelatedPagesNav'
 import {
-import { useCms } from '@/hooks/useCms'
   CheckCircle2,
   X,
   ArrowRight,
@@ -16,6 +15,7 @@ import { useCms } from '@/hooks/useCms'
   Building2,
   Ruler
 } from 'lucide-react'
+import { useCms } from '@/hooks/useCms'
 
 export default function LuxuryHomeCinemaDubaiPage() {
   const cms = useCms('page_luxury_home_cinema_dubai', null)

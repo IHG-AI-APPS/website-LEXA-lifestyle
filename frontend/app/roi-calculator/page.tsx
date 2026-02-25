@@ -7,11 +7,11 @@ import { Input } from '@/components/ui/input'
 import PricingDisclaimer from '@/components/shared/PricingDisclaimer'
 import BookingModal from '@/components/modals/BookingModal'
 import { 
-import { useCms } from '@/hooks/useCms'
   CheckCircle, TrendingUp, Leaf, DollarSign, Clock, BarChart3, 
   Home, Zap, Shield, Tv, Sun, Wifi, Building, 
   ArrowRight, Sparkles, TreePine, Droplets, Award
 } from 'lucide-react'
+import { useCms } from '@/hooks/useCms'
 
 const BACKEND_URL = process.env.NEXT_PUBLIC_BACKEND_URL || 'http://localhost:8001'
 

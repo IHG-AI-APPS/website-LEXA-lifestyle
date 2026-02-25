@@ -5,7 +5,6 @@ import { motion } from 'framer-motion'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { 
-import { useCms } from '@/hooks/useCms'
   Award,
   FileText, 
   Download, 
@@ -17,6 +16,7 @@ import { useCms } from '@/hooks/useCms'
   Lock,
   Shield
 } from 'lucide-react'
+import { useCms } from '@/hooks/useCms'
 
 export default function DeveloperPartnerToolkitPage() {
   const cms = useCms('page_developer_partner_toolkit', null)
