@@ -247,11 +247,14 @@ export default function SolutionClient({
         </section>
       )}
 
-      {/* FAQ Section - Dynamic from Database */}
+      {/* FAQ Section — Accordion style */}
       <section className="py-20 bg-gray-50 dark:bg-gray-800">
         <div className="container mx-auto px-8 lg:px-16">
           <div className="max-w-4xl mx-auto">
-            <h2 className="text-4xl font-semibold mb-12 text-center">Frequently Asked Questions</h2>
+            <div className="text-center mb-14">
+              <span className="text-xs uppercase tracking-widest text-[#C9A962] font-semibold">Got Questions?</span>
+              <h2 className="text-3xl font-semibold mt-2">Frequently Asked Questions</h2>
+            </div>
             
             <div className="space-y-8">
               {/* Dynamic FAQs from database */}
