@@ -275,3 +275,39 @@ async def get_settings():
     except Exception as e:
         logger.error(f"Settings error: {str(e)}")
         raise HTTPException(status_code=500, detail="Failed to fetch settings")
+
+
+
+@router.get("/cms/sections/{key}")
+async def get_cms_section(key: str):
+    """Get CMS section content by key - public endpoint for frontend"""
+    try:
+        cache_key = f"cms:{key}"
+        cached = await cache.get(cache_key)
+        if cached is not None:
+            return cached
+        
+        section = await db.settings.find_one({"key": key}, {"_id": 0})
+        if section:
+            await cache.set(cache_key, section, ttl_seconds=300)
+            return section
+        return {"key": key, "value": None}
+    except Exception as e:
+        logger.error(f"CMS section error for {key}: {str(e)}")
+        raise HTTPException(status_code=500, detail="Failed to fetch section")
+
+
+@router.get("/cms/sections")
+async def get_cms_sections_bulk(keys: str = ""):
+    """Get multiple CMS sections at once. Pass comma-separated keys."""
+    try:
+        if not keys:
+            return {}
+        key_list = [k.strip() for k in keys.split(",") if k.strip()]
+        sections = await db.settings.find(
+            {"key": {"$in": key_list}}, {"_id": 0}
+        ).to_list(50)
+        return {s["key"]: s.get("value") for s in sections}
+    except Exception as e:
+        logger.error(f"CMS bulk sections error: {str(e)}")
+        raise HTTPException(status_code=500, detail="Failed to fetch sections")
