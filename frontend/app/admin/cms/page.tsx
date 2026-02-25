@@ -98,12 +98,93 @@ const CMS_SECTIONS: CMSSection[] = [
     'why-lexa', 'case-studies', 'glossary', 'integrations', 'villa-operating-model',
     'big-homes-break-smart', 'partner-with-us', 'lexa-evolves', 'digital-twin',
     'vendor-supplier', 'villa-designer', 'virtual-showroom', 'visualize-3d',
+    'work-with-us', 'developer-toolkit', 'privacy', 'terms',
+    'luxury-home-cinema-dubai', 'calculator', 'analytics', 'dashboard',
   ] as string[]).map(slug => ({
     key: `page_${slug}`,
     label: `Page: ${slug.replace(/-/g, ' ').replace(/\b\w/g, c => c.toUpperCase())}`,
     icon: FileText,
     category: 'misc',
     description: `Full page content`
+  })),
+  // Listing Pages
+  ...([
+    'blog', 'brands', 'products', 'projects', 'services', 'solutions',
+    'news', 'intelligence', 'packages', 'resources', 'specialty-rooms', 'testimonials',
+  ] as string[]).map(slug => ({
+    key: `page_${slug}_listing`,
+    label: `Listing: ${slug.replace(/-/g, ' ').replace(/\b\w/g, c => c.toUpperCase())}`,
+    icon: List,
+    category: 'listings',
+    description: `${slug} listing page headings and labels`
+  })),
+  // Dynamic Detail Pages (labels/chrome)
+  ...([
+    { key: 'page_blog_detail', label: 'Blog Post Template' },
+    { key: 'page_brands_detail', label: 'Brand Detail Template' },
+    { key: 'page_case_studies_detail', label: 'Case Study Detail' },
+    { key: 'page_intelligence_detail', label: 'Intelligence Detail' },
+    { key: 'page_news_detail', label: 'News Article Template' },
+    { key: 'page_packages_detail', label: 'Package Detail Template' },
+    { key: 'page_products_detail', label: 'Product Detail Template' },
+    { key: 'page_projects_detail', label: 'Project Detail Template' },
+    { key: 'page_resources_detail', label: 'Resource Detail Template' },
+    { key: 'page_services_detail', label: 'Service Detail Template' },
+    { key: 'page_solutions_detail', label: 'Solution Detail Template' },
+    { key: 'page_specialty_rooms_detail', label: 'Specialty Room Detail' },
+    { key: 'page_ar_seo_detail', label: 'Arabic SEO Page Template' },
+    { key: 'page_ar_seo_blog_detail', label: 'Arabic Blog Template' },
+  ] as { key: string, label: string }[]).map(item => ({
+    key: item.key,
+    label: `Detail: ${item.label}`,
+    icon: FileText,
+    category: 'detail_templates',
+    description: `Labels, headings, and chrome for detail pages`
+  })),
+  // Interactive Tools
+  ...([
+    { key: 'page_project_builder', label: 'Project Builder' },
+    { key: 'page_project_builder_start', label: 'Project Builder Start' },
+    { key: 'page_project_builder_smart', label: 'Smart Builder' },
+    { key: 'page_project_builder_resume', label: 'Project Builder Resume' },
+    { key: 'page_experience_centre', label: 'Experience Centre' },
+    { key: 'page_intelligence_staff_accountability', label: 'Staff Accountability' },
+    { key: 'page_packages_developer', label: 'Developer Packages' },
+    { key: 'page_packages_smart_apartment', label: 'Smart Apartment Packages' },
+    { key: 'page_solutions_cultural_automation', label: 'Cultural Automation Hub' },
+    { key: 'page_solutions_cultural_marine_yacht', label: 'Marine & Yacht Automation' },
+    { key: 'page_blog_smart_home_guide_2025', label: 'Smart Home Guide 2025' },
+    { key: 'page_guide_install_smart_home', label: 'Installation Guide' },
+    { key: 'page_resource_architect_guide', label: 'Architect Automation Guide' },
+    { key: 'page_resource_best_automation_uae', label: 'Best Home Automation UAE' },
+    { key: 'page_resource_knx_vs_control4', label: 'KNX vs Control4' },
+    { key: 'page_resource_smart_home_cost', label: 'Smart Home Cost Dubai' },
+  ] as { key: string, label: string }[]).map(item => ({
+    key: item.key,
+    label: `Tool/Content: ${item.label}`,
+    icon: Settings2,
+    category: 'tools_content',
+    description: `Content and labels for this page`
+  })),
+  // Location Pages (server component wrappers)
+  ...([
+    { key: 'page_locations_abu_dhabi', label: 'Locations: Abu Dhabi' },
+    { key: 'page_locations_downtown_dubai', label: 'Locations: Downtown Dubai' },
+    { key: 'page_locations_dubai_hills', label: 'Locations: Dubai Hills' },
+    { key: 'page_locations_emirates_hills', label: 'Locations: Emirates Hills' },
+    { key: 'page_locations_jumeirah_golf', label: 'Locations: Jumeirah Golf Estates' },
+    { key: 'page_locations_palm_jumeirah', label: 'Locations: Palm Jumeirah' },
+    { key: 'page_locations_sharjah', label: 'Locations: Sharjah' },
+    { key: 'page_uae_abu_dhabi', label: 'UAE: Abu Dhabi' },
+    { key: 'page_uae_ajman', label: 'UAE: Ajman' },
+    { key: 'page_uae_dubai', label: 'UAE: Dubai' },
+    { key: 'page_uae_sharjah', label: 'UAE: Sharjah' },
+  ] as { key: string, label: string }[]).map(item => ({
+    key: item.key,
+    label: item.label,
+    icon: Globe,
+    category: 'geo',
+    description: `Location page content`
   })),
   // Persona Pages
   ...(['architect', 'commercial', 'developer', 'homeowner'] as string[]).map(slug => ({
@@ -121,7 +202,10 @@ const CATEGORIES = [
   { id: 'services', label: 'Services', icon: Settings2 },
   { id: 'solutions', label: 'Solutions', icon: Layers },
   { id: 'geo', label: 'Locations', icon: Globe },
-  { id: 'misc', label: 'Content Pages', icon: FileText },
+  { id: 'listings', label: 'Listing Pages', icon: List },
+  { id: 'detail_templates', label: 'Detail Templates', icon: FileText },
+  { id: 'tools_content', label: 'Tools & Content', icon: Settings2 },
+  { id: 'misc', label: 'Other Pages', icon: FileText },
   { id: 'personas', label: 'Personas', icon: Users },
 ]
 
