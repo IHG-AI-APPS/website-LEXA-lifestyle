@@ -262,8 +262,8 @@ export default function ExperienceCentreCTA() {
                 <div className="flex items-center gap-3">
                   <MapPin className="h-4 w-4 text-[#E8DCC8]" />
                   <div>
-                    <div className="text-white text-sm font-medium">Al Quoz 1, Dubai</div>
-                    <div className="text-white/50 text-xs">Sheikh Zayed Road, 3rd Interchange</div>
+                    <div className="text-white text-sm font-medium">{address}</div>
+                    <div className="text-white/50 text-xs">{addressDetail}</div>
                   </div>
                 </div>
                 <a 
