@@ -66,6 +66,7 @@ export default function SafeImage({
       {...props}
       src={validSrc}
       alt={alt}
+      sizes={props.sizes || (props.fill ? '(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw' : undefined)}
       onError={handleError}
     />
   )
