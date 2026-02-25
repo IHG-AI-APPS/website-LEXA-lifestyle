@@ -23,13 +23,6 @@ interface ProcessStep {
   icon?: string
 }
 
-interface RelatedProduct {
-  name: string
-  description: string
-  image: string
-  price_range?: string
-}
-
 interface FAQ {
   question: string
   answer: string
