@@ -732,68 +732,136 @@ export default function SolutionsAdminPage() {
                 </div>
               </div>
 
-              {/* Related Products */}
+              {/* Brands */}
+              <div className="border-b pb-6">
+                <h3 className="font-semibold mb-4 text-lg">Brands (Solution Page)</h3>
+                <div>
+                  <label className="block text-sm font-medium mb-1">Brand Partners (comma-separated)</label>
+                  <Input
+                    value={(formData.brands || []).join(', ')}
+                    onChange={(e) => handleArrayInput('brands', e.target.value)}
+                    placeholder="Crestron, Lutron, Sonos, KEF, Hikvision"
+                  />
+                  <p className="text-xs text-gray-400 mt-1">These appear in the &quot;Brands We Integrate&quot; section on the solution page</p>
+                </div>
+              </div>
+
+              {/* Gallery Images (Inspirations) */}
+              <div className="border-b pb-6">
+                <div className="flex items-center justify-between mb-4">
+                  <h3 className="font-semibold text-lg">Gallery Images (Inspirations)</h3>
+                  <Button type="button" variant="outline" size="sm" onClick={addGalleryImage}>
+                    <Plus size={16} className="mr-1" /> Add Image URL
+                  </Button>
+                </div>
+                <p className="text-xs text-gray-500 mb-3">Add image URLs for the &quot;Inspirations&quot; gallery section. First image is featured (larger).</p>
+                {(formData.gallery_images || []).length === 0 ? (
+                  <p className="text-sm text-gray-500 italic">No gallery images. Add URLs for the Inspirations section.</p>
+                ) : (
+                  <div className="space-y-2">
+                    {(formData.gallery_images || []).map((url, index) => (
+                      <div key={index} className="flex items-center gap-2">
+                        {url && (
+                          <div className="relative w-12 h-12 flex-shrink-0 bg-gray-100 rounded overflow-hidden">
+                            <SafeImage src={url} alt={`Gallery ${index + 1}`} fill className="object-cover" />
+                          </div>
+                        )}
+                        <Input
+                          value={url}
+                          onChange={(e) => updateGalleryImage(index, e.target.value)}
+                          placeholder="https://example.com/image.jpg"
+                          className="text-sm flex-1"
+                        />
+                        <Button type="button" variant="ghost" size="sm" onClick={() => removeGalleryImage(index)} className="text-red-600 h-8 w-8 p-0">
+                          <Trash2 size={14} />
+                        </Button>
+                      </div>
+                    ))}
+                  </div>
+                )}
+              </div>
+
+              {/* Feature Cards */}
+              <div className="border-b pb-6">
+                <div className="flex items-center justify-between mb-4">
+                  <h3 className="font-semibold text-lg">Feature Cards (What You Get)</h3>
+                  <Button type="button" variant="outline" size="sm" onClick={addFeatureCard}>
+                    <Plus size={16} className="mr-1" /> Add Card
+                  </Button>
+                </div>
+                <p className="text-xs text-gray-500 mb-3">Feature category cards shown in the &quot;What You Get&quot; section (recommended: 3 cards).</p>
+                {(formData.feature_cards || []).length === 0 ? (
+                  <p className="text-sm text-gray-500 italic">No feature cards. Add cards for the &quot;What You Get&quot; section.</p>
+                ) : (
+                  <div className="space-y-4">
+                    {((formData.feature_cards || []) as FeatureCard[]).map((card, index) => (
+                      <div key={index} className="border border-gray-200 rounded-lg p-4 bg-gray-50">
+                        <div className="flex justify-between items-start mb-3">
+                          <span className="text-sm font-medium text-gray-600">Card #{index + 1}</span>
+                          <Button type="button" variant="ghost" size="sm" onClick={() => removeFeatureCard(index)} className="text-red-600 h-6">
+                            <Trash2 size={14} />
+                          </Button>
+                        </div>
+                        <div className="space-y-3">
+                          <div>
+                            <label className="block text-xs font-medium mb-1">Title *</label>
+                            <Input value={card.title} onChange={(e) => updateFeatureCard(index, 'title', e.target.value)} placeholder="e.g., AV & Display Systems" className="text-sm" />
+                          </div>
+                          <div>
+                            <label className="block text-xs font-medium mb-1">Description</label>
+                            <Textarea value={card.description} onChange={(e) => updateFeatureCard(index, 'description', e.target.value)} placeholder="Brief description of this feature category" rows={2} className="text-sm" />
+                          </div>
+                          <div>
+                            <label className="block text-xs font-medium mb-1">Benefits (comma-separated)</label>
+                            <Input
+                              value={(card.benefits || []).join(', ')}
+                              onChange={(e) => updateFeatureCard(index, 'benefits', e.target.value.split(',').map(b => b.trim()).filter(Boolean))}
+                              placeholder="4K Video Walls, Interactive Displays, Laser Projectors"
+                              className="text-sm"
+                            />
+                          </div>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                )}
+              </div>
+
+              {/* Related Products (Solutions) */}
               <div className="pb-6">
                 <div className="flex items-center justify-between mb-4">
                   <h3 className="font-semibold text-lg flex items-center gap-2">
                     <Package size={20} />
-                    Related Products
+                    Related Products (Solutions)
                   </h3>
-                  <Button type="button" variant="outline" size="sm" onClick={addProduct}>
-                    <Plus size={16} className="mr-1" /> Add Product
+                  <Button type="button" variant="outline" size="sm" onClick={addRelatedProduct}>
+                    <Plus size={16} className="mr-1" /> Add Solution
                   </Button>
                 </div>
-                
+                <p className="text-xs text-gray-500 mb-3">Select solution slugs to show as &quot;Products We Offer&quot; image cards on the page.</p>
                 {(formData.related_products || []).length === 0 ? (
-                  <p className="text-sm text-gray-500 italic">No products added. Add related products for better SEO.</p>
+                  <p className="text-sm text-gray-500 italic">No related products. Add solution slugs for the &quot;Products We Offer&quot; section.</p>
                 ) : (
-                  <div className="space-y-4">
-                    {(formData.related_products || []).map((product, index) => (
-                      <div key={index} className="border border-gray-200 rounded-lg p-4 bg-gray-50">
-                        <div className="flex justify-between items-start mb-3">
-                          <span className="text-sm font-medium text-gray-600">Product #{index + 1}</span>
-                          <Button type="button" variant="ghost" size="sm" onClick={() => removeProduct(index)} className="text-red-600 h-6">
-                            <Trash2 size={14} />
-                          </Button>
-                        </div>
-                        <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
-                          <div>
-                            <label className="block text-xs font-medium mb-1">Product Name *</label>
-                            <Input
-                              value={product.name}
-                              onChange={(e) => updateProduct(index, 'name', e.target.value)}
-                              placeholder="e.g., Savant Pro Remote"
-                              className="text-sm"
-                            />
-                          </div>
-                          <div>
-                            <label className="block text-xs font-medium mb-1">Price Range</label>
-                            <Input
-                              value={product.price_range}
-                              onChange={(e) => updateProduct(index, 'price_range', e.target.value)}
-                              placeholder="e.g., AED 2,500 - 4,000"
-                              className="text-sm"
-                            />
-                          </div>
-                          <div>
-                            <label className="block text-xs font-medium mb-1">Image URL</label>
-                            <Input
-                              value={product.image}
-                              onChange={(e) => updateProduct(index, 'image', e.target.value)}
-                              placeholder="https://..."
-                              className="text-sm"
-                            />
-                          </div>
-                          <div>
-                            <label className="block text-xs font-medium mb-1">Description</label>
-                            <Input
-                              value={product.description}
-                              onChange={(e) => updateProduct(index, 'description', e.target.value)}
-                              placeholder="Brief product description"
-                              className="text-sm"
-                            />
-                          </div>
-                        </div>
+                  <div className="space-y-2">
+                    {(formData.related_products || []).map((slug, index) => (
+                      <div key={index} className="flex items-center gap-2">
+                        <select
+                          value={typeof slug === 'string' ? slug : ''}
+                          onChange={(e) => updateRelatedProduct(index, e.target.value)}
+                          className="flex-1 h-10 px-3 border border-gray-200 rounded-md text-sm bg-white"
+                        >
+                          <option value="">-- Select a solution --</option>
+                          {solutions
+                            .filter(s => s.slug !== formData.slug)
+                            .sort((a, b) => a.title.localeCompare(b.title))
+                            .map(s => (
+                              <option key={s.slug} value={s.slug}>{s.title} ({s.category})</option>
+                            ))
+                          }
+                        </select>
+                        <Button type="button" variant="ghost" size="sm" onClick={() => removeRelatedProduct(index)} className="text-red-600 h-8 w-8 p-0">
+                          <Trash2 size={14} />
+                        </Button>
                       </div>
                     ))}
                   </div>
