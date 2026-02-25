@@ -2,6 +2,7 @@
 Public content routes (solutions, services, articles, projects, testimonials)
 """
 from fastapi import APIRouter, HTTPException
+from fastapi.responses import Response
 from motor.motor_asyncio import AsyncIOMotorClient
 from typing import List, Optional
 from models.content import Solution, Service, Project, Testimonial, Article
