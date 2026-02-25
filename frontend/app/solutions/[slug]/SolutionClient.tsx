@@ -199,6 +199,43 @@ export default function SolutionClient({
         </section>
       )}
 
+      {/* Gallery Showcase */}
+      {galleryImages.length > 0 && (
+        <section className="py-16 bg-white dark:bg-gray-900">
+          <div className="container mx-auto px-8 lg:px-16">
+            <div className="max-w-6xl mx-auto">
+              <div className="text-center mb-12">
+                <span className="text-xs uppercase tracking-widest text-[#C9A962] font-semibold">Portfolio</span>
+                <h2 className="text-3xl font-semibold mt-2">Project Gallery</h2>
+              </div>
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                {galleryImages.slice(0, 6).map((img, index) => (
+                  <motion.div
+                    key={index}
+                    initial={{ opacity: 0, scale: 0.95 }}
+                    whileInView={{ opacity: 1, scale: 1 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.3, delay: index * 0.05 }}
+                    className={`relative overflow-hidden rounded-lg group ${index === 0 ? 'md:col-span-2 md:row-span-2' : ''}`}
+                  >
+                    <div className={`relative ${index === 0 ? 'aspect-[4/3]' : 'aspect-square'}`}>
+                      <SafeImage
+                        src={typeof img === 'string' ? img : img.url || img.src}
+                        alt={`${solution.title} project ${index + 1}`}
+                        fill
+                        className="object-cover group-hover:scale-105 transition-transform duration-500"
+                        sizes="(max-width: 768px) 100vw, 33vw"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
+                    </div>
+                  </motion.div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </section>
+      )}
+
       {/* Brands — Clean pill design */}
       {solution.brands && solution.brands.length > 0 && (
         <section className="py-14 bg-white dark:bg-gray-900">
