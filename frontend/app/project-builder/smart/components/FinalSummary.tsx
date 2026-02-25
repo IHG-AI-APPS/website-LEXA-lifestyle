@@ -159,20 +159,12 @@ export default function FinalSummary({
     .logo-section {
       display: flex;
       flex-direction: column;
+      align-items: flex-start;
     }
     
-    .logo-text {
-      font-size: 36px;
-      font-weight: 700;
-      letter-spacing: 8px;
-      color: #000;
-    }
-    
-    .logo-subtitle {
-      font-size: 11px;
-      letter-spacing: 6px;
-      color: #666;
-      margin-top: 2px;
+    .logo-section img {
+      height: 48px;
+      width: auto;
     }
     
     .company-info {
@@ -472,8 +464,7 @@ export default function FinalSummary({
   <!-- Letterhead Header -->
   <div class="letterhead">
     <div class="logo-section">
-      <div class="logo-text">LEXA</div>
-      <div class="logo-subtitle">LIFE STYLE</div>
+      <img src="${typeof window !== 'undefined' ? window.location.origin : ''}/lexa-black.png" alt="LEXA Lifestyle" />
     </div>
     <div class="company-info">
       <strong>LEXA LIFESTYLE TRADING LLC</strong>
