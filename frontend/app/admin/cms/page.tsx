@@ -212,6 +212,7 @@ const CMS_SECTIONS: CMSSection[] = [
 ]
 
 const CATEGORIES = [
+  { id: 'seo', label: 'SEO', icon: Globe },
   { id: 'homepage', label: 'Homepage', icon: Home },
   { id: 'pages', label: 'Core Pages', icon: Layout },
   { id: 'services', label: 'Services', icon: Settings2 },
