@@ -886,7 +886,7 @@ export default function SolutionsAdminPage() {
                 <th className="px-2 py-3 text-left text-xs font-medium text-gray-500 uppercase w-16">Order</th>
                 <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase">Solution</th>
                 <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase hidden md:table-cell">Category</th>
-                <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase hidden lg:table-cell">Products</th>
+                <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase hidden lg:table-cell">Content</th>
                 <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase hidden sm:table-cell">Status</th>
                 <th className="px-4 py-3 text-right text-xs font-medium text-gray-500 uppercase">Actions</th>
               </tr>
@@ -934,7 +934,10 @@ export default function SolutionsAdminPage() {
                     <span className="px-2 py-1 bg-gray-100 text-xs rounded">{solution.category}</span>
                   </td>
                   <td className="px-4 py-4 hidden lg:table-cell">
-                    <span className="text-sm">{solution.related_products?.length || 0} products</span>
+                    <div className="flex gap-1 flex-wrap">
+                      <span className="px-1.5 py-0.5 bg-blue-50 text-blue-700 text-xs rounded">{(solution.gallery_images as any)?.length || 0} img</span>
+                      <span className="px-1.5 py-0.5 bg-green-50 text-green-700 text-xs rounded">{(solution.related_products as any)?.length || 0} prod</span>
+                    </div>
                   </td>
                   <td className="px-4 py-4 hidden sm:table-cell">
                     <div className="flex gap-1 flex-wrap">
