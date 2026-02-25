@@ -281,7 +281,132 @@ function SectionEditor({ sectionKey, data, onSave }: { sectionKey: string, data:
           </div>
         )
 
+      case 'page_about':
+        return (
+          <div className="space-y-4">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div><label className="block text-sm font-medium mb-1 text-gray-700 dark:text-gray-300">Hero Title (EN)</label><Input value={formData.hero_title_en || ''} onChange={e => updateField('hero_title_en', e.target.value)} /></div>
+              <div><label className="block text-sm font-medium mb-1 text-gray-700 dark:text-gray-300">Hero Title (AR)</label><Input value={formData.hero_title_ar || ''} onChange={e => updateField('hero_title_ar', e.target.value)} dir="rtl" /></div>
+              <div className="col-span-full"><label className="block text-sm font-medium mb-1 text-gray-700 dark:text-gray-300">Story (EN)</label><textarea value={formData.story_en || ''} onChange={e => updateField('story_en', e.target.value)} className="w-full text-sm p-2 rounded-md border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-900 text-gray-900 dark:text-white" rows={3} /></div>
+            </div>
+            <h4 className="text-sm font-semibold text-gray-700 dark:text-gray-300">Values</h4>
+            <ArrayEditor items={formData.values || []} onChange={v => updateField('values', v)} fields={[
+              { key: 'icon', label: 'Icon' }, { key: 'title_en', label: 'Title (EN)' }, { key: 'title_ar', label: 'Title (AR)' }, { key: 'description_en', label: 'Desc (EN)', type: 'textarea' }
+            ]} />
+            <h4 className="text-sm font-semibold text-gray-700 dark:text-gray-300">Milestones</h4>
+            <ArrayEditor items={formData.milestones || []} onChange={v => updateField('milestones', v)} fields={[
+              { key: 'year', label: 'Year' }, { key: 'title_en', label: 'Title (EN)' }, { key: 'description_en', label: 'Description (EN)' }
+            ]} />
+            <div><label className="block text-sm font-medium mb-1 text-gray-700 dark:text-gray-300">Partners (comma-separated)</label><Input value={(formData.partners || []).join(', ')} onChange={e => updateField('partners', e.target.value.split(',').map((s: string) => s.trim()).filter(Boolean))} /></div>
+          </div>
+        )
+
+      case 'page_contact':
+        return (
+          <div className="space-y-4">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div><label className="block text-sm font-medium mb-1 text-gray-700 dark:text-gray-300">Hero Title (EN)</label><Input value={formData.hero_title_en || ''} onChange={e => updateField('hero_title_en', e.target.value)} /></div>
+              <div><label className="block text-sm font-medium mb-1 text-gray-700 dark:text-gray-300">Hero Title (AR)</label><Input value={formData.hero_title_ar || ''} onChange={e => updateField('hero_title_ar', e.target.value)} dir="rtl" /></div>
+              <div className="col-span-full"><label className="block text-sm font-medium mb-1 text-gray-700 dark:text-gray-300">Address</label><Input value={formData.address || ''} onChange={e => updateField('address', e.target.value)} /></div>
+              <div><label className="block text-sm font-medium mb-1 text-gray-700 dark:text-gray-300">Phone</label><Input value={formData.phone || ''} onChange={e => updateField('phone', e.target.value)} /></div>
+              <div><label className="block text-sm font-medium mb-1 text-gray-700 dark:text-gray-300">Email</label><Input value={formData.email || ''} onChange={e => updateField('email', e.target.value)} /></div>
+              <div><label className="block text-sm font-medium mb-1 text-gray-700 dark:text-gray-300">Map Lat</label><Input type="number" step="0.0001" value={formData.map_lat || ''} onChange={e => updateField('map_lat', parseFloat(e.target.value))} /></div>
+              <div><label className="block text-sm font-medium mb-1 text-gray-700 dark:text-gray-300">Map Lng</label><Input type="number" step="0.0001" value={formData.map_lng || ''} onChange={e => updateField('map_lng', parseFloat(e.target.value))} /></div>
+              <div className="col-span-full"><label className="block text-sm font-medium mb-1 text-gray-700 dark:text-gray-300">Working Hours (EN)</label><Input value={formData.working_hours_en || ''} onChange={e => updateField('working_hours_en', e.target.value)} /></div>
+            </div>
+            <h4 className="text-sm font-semibold text-gray-700 dark:text-gray-300">Social Links</h4>
+            <ArrayEditor items={formData.social_links || []} onChange={v => updateField('social_links', v)} fields={[
+              { key: 'name', label: 'Platform' }, { key: 'url', label: 'URL' }
+            ]} />
+          </div>
+        )
+
+      case 'page_consultation':
+        return (
+          <div className="space-y-4">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div><label className="block text-sm font-medium mb-1 text-gray-700 dark:text-gray-300">Hero Title (EN)</label><Input value={formData.hero_title_en || ''} onChange={e => updateField('hero_title_en', e.target.value)} /></div>
+              <div><label className="block text-sm font-medium mb-1 text-gray-700 dark:text-gray-300">Hero Subtitle (EN)</label><Input value={formData.hero_subtitle_en || ''} onChange={e => updateField('hero_subtitle_en', e.target.value)} /></div>
+            </div>
+            <h4 className="text-sm font-semibold text-gray-700 dark:text-gray-300">Consultation Types</h4>
+            <ArrayEditor items={formData.consultation_types || []} onChange={v => updateField('consultation_types', v)} fields={[
+              { key: 'icon', label: 'Icon' }, { key: 'title', label: 'Title' }, { key: 'duration', label: 'Duration' }, { key: 'description', label: 'Description', type: 'textarea' }, { key: 'cta', label: 'CTA Text' }, { key: 'features', label: 'Features', type: 'array' }
+            ]} />
+            <h4 className="text-sm font-semibold text-gray-700 dark:text-gray-300">Process Steps</h4>
+            <ArrayEditor items={formData.process_steps || []} onChange={v => updateField('process_steps', v)} fields={[
+              { key: 'number', label: '#' }, { key: 'icon', label: 'Icon' }, { key: 'title', label: 'Title' }, { key: 'description', label: 'Description' }
+            ]} />
+          </div>
+        )
+
+      case 'page_experience_centre':
+        return (
+          <div className="space-y-4">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div><label className="block text-sm font-medium mb-1 text-gray-700 dark:text-gray-300">Hero Title (EN)</label><Input value={formData.hero_title_en || ''} onChange={e => updateField('hero_title_en', e.target.value)} /></div>
+              <div><label className="block text-sm font-medium mb-1 text-gray-700 dark:text-gray-300">Hero Subtitle (EN)</label><Input value={formData.hero_subtitle_en || ''} onChange={e => updateField('hero_subtitle_en', e.target.value)} /></div>
+            </div>
+            <h4 className="text-sm font-semibold text-gray-700 dark:text-gray-300">Zones</h4>
+            <ArrayEditor items={formData.zones || []} onChange={v => updateField('zones', v)} fields={[
+              { key: 'name', label: 'Zone Name' }, { key: 'description', label: 'Description', type: 'textarea' }, { key: 'image', label: 'Image URL' }, { key: 'features', label: 'Features', type: 'array' }
+            ]} />
+            <h4 className="text-sm font-semibold text-gray-700 dark:text-gray-300">Visit Info</h4>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-3 p-4 bg-gray-50 dark:bg-gray-800 rounded-lg">
+              <div><label className="text-xs text-gray-500 dark:text-gray-400">Address</label><Input value={formData.visit_info?.address || ''} onChange={e => updateField('visit_info', { ...formData.visit_info, address: e.target.value })} /></div>
+              <div><label className="text-xs text-gray-500 dark:text-gray-400">Phone</label><Input value={formData.visit_info?.phone || ''} onChange={e => updateField('visit_info', { ...formData.visit_info, phone: e.target.value })} /></div>
+              <div><label className="text-xs text-gray-500 dark:text-gray-400">Hours</label><Input value={formData.visit_info?.hours || ''} onChange={e => updateField('visit_info', { ...formData.visit_info, hours: e.target.value })} /></div>
+              <div><label className="text-xs text-gray-500 dark:text-gray-400">Parking</label><Input value={formData.visit_info?.parking || ''} onChange={e => updateField('visit_info', { ...formData.visit_info, parking: e.target.value })} /></div>
+            </div>
+          </div>
+        )
+
+      case 'site_footer':
+        return (
+          <div className="space-y-4">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div className="col-span-full"><label className="block text-sm font-medium mb-1 text-gray-700 dark:text-gray-300">Description (EN)</label><textarea value={formData.company_description_en || ''} onChange={e => updateField('company_description_en', e.target.value)} className="w-full text-sm p-2 rounded-md border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-900 text-gray-900 dark:text-white" rows={2} /></div>
+              <div><label className="block text-sm font-medium mb-1 text-gray-700 dark:text-gray-300">Phone</label><Input value={formData.phone || ''} onChange={e => updateField('phone', e.target.value)} /></div>
+              <div><label className="block text-sm font-medium mb-1 text-gray-700 dark:text-gray-300">Email</label><Input value={formData.email || ''} onChange={e => updateField('email', e.target.value)} /></div>
+              <div><label className="block text-sm font-medium mb-1 text-gray-700 dark:text-gray-300">Instagram URL</label><Input value={formData.social_links?.instagram || ''} onChange={e => updateField('social_links', { ...formData.social_links, instagram: e.target.value })} /></div>
+              <div><label className="block text-sm font-medium mb-1 text-gray-700 dark:text-gray-300">Facebook URL</label><Input value={formData.social_links?.facebook || ''} onChange={e => updateField('social_links', { ...formData.social_links, facebook: e.target.value })} /></div>
+              <div><label className="block text-sm font-medium mb-1 text-gray-700 dark:text-gray-300">LinkedIn URL</label><Input value={formData.social_links?.linkedin || ''} onChange={e => updateField('social_links', { ...formData.social_links, linkedin: e.target.value })} /></div>
+              <div><label className="block text-sm font-medium mb-1 text-gray-700 dark:text-gray-300">YouTube URL</label><Input value={formData.social_links?.youtube || ''} onChange={e => updateField('social_links', { ...formData.social_links, youtube: e.target.value })} /></div>
+            </div>
+          </div>
+        )
+
       default:
+        // Generic editor for service pages and other sections
+        if (sectionKey.startsWith('service_')) {
+          return (
+            <div className="space-y-4">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div><label className="block text-sm font-medium mb-1 text-gray-700 dark:text-gray-300">Title</label><Input value={formData.title || ''} onChange={e => updateField('title', e.target.value)} /></div>
+                <div><label className="block text-sm font-medium mb-1 text-gray-700 dark:text-gray-300">Hero Subtitle</label><Input value={formData.hero_subtitle || ''} onChange={e => updateField('hero_subtitle', e.target.value)} /></div>
+              </div>
+              <h4 className="text-sm font-semibold text-gray-700 dark:text-gray-300">Features</h4>
+              <ArrayEditor items={formData.features || []} onChange={v => updateField('features', v)} fields={[
+                { key: 'icon', label: 'Icon' }, { key: 'title', label: 'Title' }, { key: 'desc', label: 'Description' }
+              ]} />
+              {formData.projects && (
+                <>
+                  <h4 className="text-sm font-semibold text-gray-700 dark:text-gray-300">Projects</h4>
+                  <ArrayEditor items={formData.projects || []} onChange={v => updateField('projects', v)} fields={[
+                    { key: 'name', label: 'Name' }, { key: 'type', label: 'Type' }, { key: 'location', label: 'Location' }
+                  ]} />
+                </>
+              )}
+              {formData.faqs && (
+                <>
+                  <h4 className="text-sm font-semibold text-gray-700 dark:text-gray-300">FAQs</h4>
+                  <ArrayEditor items={formData.faqs || []} onChange={v => updateField('faqs', v)} fields={[
+                    { key: 'q', label: 'Question' }, { key: 'a', label: 'Answer', type: 'textarea' }
+                  ]} />
+                </>
+              )}
+            </div>
+          )
+        }
         return (
           <div className="p-4 bg-gray-50 dark:bg-gray-800 rounded-lg">
             <pre className="text-xs text-gray-600 dark:text-gray-400 overflow-auto max-h-96">
