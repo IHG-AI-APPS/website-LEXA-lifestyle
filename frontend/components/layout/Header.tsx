@@ -162,6 +162,8 @@ export default function Header() {
 
             <nav 
               className="hidden lg:flex items-center gap-4 xl:gap-6 2xl:gap-8"
+              role="navigation"
+              aria-label="Main navigation"
             >
               {/* Solutions with Mega Menu */}
               <div 
