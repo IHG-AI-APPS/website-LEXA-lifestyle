@@ -35,10 +35,11 @@ import {
 import { useCms, isCmsEmpty, seedCmsDefaults } from '@/hooks/useCms'
 
 // Lazy load below-fold components
-const RelatedSolutions = dynamic(() => import('@/app/solutions/components/RelatedSolutions'), {
+const Noop = () => null
+const RelatedSolutions = dynamic(() => import('@/app/solutions/components/RelatedSolutions').catch(() => ({ default: Noop })), {
   loading: () => <div className="h-32" />
 })
-const TrustBar = dynamic(() => import('@/components/conversion/TrustBar'), {
+const TrustBar = dynamic(() => import('@/components/conversion/TrustBar').catch(() => ({ default: Noop })), {
   loading: () => <div className="h-12" />
 })
 
