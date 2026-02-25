@@ -1,12 +1,41 @@
 # LEXA Smart Home Platform - Product Requirements Document
 
-**Version**: 9.25  
-**Last Updated**: February 24, 2026  
-**Status**: Logo Fix + Mega Menu AI Images Complete
+**Version**: 9.30  
+**Last Updated**: February 25, 2026  
+**Status**: CMS / Dynamic Content System Complete
 
 ---
 
-## Latest Updates (v9.25)
+## Latest Updates (v9.30)
+
+### CMS / Dynamic Content System (Feb 25, 2026)
+
+**STATUS: COMPLETED & TESTED (100%)**
+
+#### Backend CMS API:
+- `GET /api/cms/sections/{key}` — Public endpoint with 5-min cache
+- `GET /api/cms/sections?keys=...` — Bulk fetch multiple sections
+- `PUT /api/admin/content/settings/{key}` — Admin update with cache invalidation
+- MongoDB `settings` collection stores all CMS data
+- Seed script (`backend/seed_cms.py`) populates initial data
+
+#### Admin CMS Page (`/admin/cms`):
+- 5 editable sections with expand/collapse UI
+- Rich editors for each section type (text, arrays, images, nested objects)
+- Save/refresh per section with toast notifications
+
+#### Dynamic Frontend Components (5 converted):
+1. **HeroCurator** — Video clips, heading (EN/AR), subheading, CTA from CMS
+2. **ExperienceCentreCTA** — Gallery images, highlights, time slots, address/phone from CMS
+3. **CalculatorCardsSection** — Featured tool and 4 tool cards from CMS
+4. **TrustedInUAE** — Partners, developers, certifications, stats from CMS
+5. **Work With Us page** — Open positions from CMS
+
+All components use fallback defaults if CMS data is unavailable.
+
+---
+
+## Previous Updates (v9.25)
 
 ### Logo Adaptation Fix & Mega Menu AI Images (Feb 24, 2026)
 
