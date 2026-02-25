@@ -310,6 +310,7 @@ export default function IntelligenceMegaMenu({ isOpen, onClose, onMouseEnter, on
                         alt="Building Intelligence & AI Analytics"
                         fill
                         sizes="(max-width: 1024px) 50vw, 25vw"
+                        className="object-cover transition-transform duration-500 group-hover:scale-105"
                       />
                       
                       <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent" />
