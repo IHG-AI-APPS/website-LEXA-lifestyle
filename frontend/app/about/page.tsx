@@ -17,38 +17,24 @@ export default function AboutPage() {
   const { t, language } = useLanguage()
   const [showConsultationForm, setShowConsultationForm] = useState(false)
 
-  const values = [
-    { 
-      icon: Award, 
-      title: language === 'ar' ? 'الابتكار بهدف' : 'Innovation with Purpose', 
-      description: language === 'ar' 
-        ? 'نختار وندمج التقنيات التي تحسّن الراحة والتحكم ونمط الحياة فعلياً – وليس أدوات لمجرد المظهر.'
-        : 'We select and integrate technologies that genuinely improve comfort, control, and lifestyle – not gadgets for the sake of it.' 
-    },
-    { 
-      icon: Users, 
-      title: language === 'ar' ? 'التفكير المبني على التصميم' : 'Design-Led Thinking', 
-      description: language === 'ar'
-        ? 'كل حل يحترم العمارة والديكور الداخلي وطريقة عيش عملائنا في مساحاتهم.'
-        : 'Every solution respects architecture, interiors, and the way our clients actually live in their spaces.' 
-    },
-    { 
-      icon: Building, 
-      title: language === 'ar' ? 'جودة لا تقبل التنازل' : 'Uncompromising Quality', 
-      description: language === 'ar'
-        ? 'من العلامات التجارية التي نتشارك معها إلى الكابلات خلف الجدران، نصر على الموثوقية والأداء طويل المدى.'
-        : 'From brands we partner with to the cables behind the walls, we insist on long-term reliability and performance.' 
-    },
-    { 
-      icon: Target, 
-      title: language === 'ar' ? 'التسليم المرتكز على العميل' : 'Client-Centric Delivery', 
-      description: language === 'ar'
-        ? 'نتواصل بوضوح، ونلتزم بالمواعيد، ونتحمل المسؤولية من الفكرة إلى الإنجاز وما بعده.'
-        : 'We communicate clearly, meet timelines, and stay accountable from concept to completion and beyond.' 
-    },
+  const cmsData = useCms('page_about', null)
+
+  const values = cmsData?.values?.length ? cmsData.values.map((v: any) => ({
+    icon: ICON_MAP[v.icon] || Award,
+    title: language === 'ar' ? v.title_ar : v.title_en,
+    description: language === 'ar' ? v.description_ar : v.description_en
+  })) : [
+    { icon: Award, title: language === 'ar' ? 'الابتكار بهدف' : 'Innovation with Purpose', description: language === 'ar' ? 'نختار وندمج التقنيات التي تحسّن الراحة والتحكم ونمط الحياة فعلياً – وليس أدوات لمجرد المظهر.' : 'We select and integrate technologies that genuinely improve comfort, control, and lifestyle – not gadgets for the sake of it.' },
+    { icon: Users, title: language === 'ar' ? 'التفكير المبني على التصميم' : 'Design-Led Thinking', description: language === 'ar' ? 'كل حل يحترم العمارة والديكور الداخلي وطريقة عيش عملائنا في مساحاتهم.' : 'Every solution respects architecture, interiors, and the way our clients actually live in their spaces.' },
+    { icon: Building, title: language === 'ar' ? 'جودة لا تقبل التنازل' : 'Uncompromising Quality', description: language === 'ar' ? 'من العلامات التجارية التي نتشارك معها إلى الكابلات خلف الجدران، نصر على الموثوقية والأداء طويل المدى.' : 'From brands we partner with to the cables behind the walls, we insist on long-term reliability and performance.' },
+    { icon: Target, title: language === 'ar' ? 'التسليم المرتكز على العميل' : 'Client-Centric Delivery', description: language === 'ar' ? 'نتواصل بوضوح، ونلتزم بالمواعيد، ونتحمل المسؤولية من الفكرة إلى الإنجاز وما بعده.' : 'We communicate clearly, meet timelines, and stay accountable from concept to completion and beyond.' },
   ]
 
-  const milestones = [
+  const milestones = cmsData?.milestones?.length ? cmsData.milestones.map((m: any) => ({
+    year: m.year,
+    title: language === 'ar' ? m.title_ar : m.title_en,
+    description: language === 'ar' ? (m.description_ar || m.description_en) : m.description_en
+  })) : [
     { year: '2005', title: language === 'ar' ? 'التأسيس في دبي' : 'Founded in Dubai', description: language === 'ar' ? 'بدأنا برؤية لرفع مستوى العيش الذكي في الإمارات' : 'Started with a vision to elevate smart living in the UAE' },
     { year: '2010', title: language === 'ar' ? 'مركز التجربة' : 'Experience Center', description: language === 'ar' ? 'افتتحنا صالة عرض بمساحة 60,000 قدم مربع تعرض الأنظمة المتكاملة' : 'Opened 60,000 sq ft showroom showcasing integrated systems' },
     { year: '2015', title: language === 'ar' ? '500 مشروع' : '500 Projects', description: language === 'ar' ? 'إنجاز هام عبر القطاعات السكنية والتجارية' : 'Milestone achievement across residential and commercial sectors' },
@@ -56,16 +42,7 @@ export default function AboutPage() {
     { year: '2025', title: language === 'ar' ? '+1,000 مشروع' : '1,000+ Projects', description: language === 'ar' ? 'شريك موثوق للتطويرات الفاخرة والمساكن الراقية' : 'Trusted partner for luxury developments and high-end residences' },
   ]
 
-  const partners = [
-    'Crestron',
-    'Lutron',
-    'Control4',
-    'Savant',
-    'Bang & Olufsen',
-    'Sonos',
-    'Bowers & Wilkins',
-    'Nest'
-  ]
+  const partners = cmsData?.partners?.length ? cmsData.partners : ['Crestron', 'Lutron', 'Control4', 'Savant', 'Bang & Olufsen', 'Sonos', 'Bowers & Wilkins', 'Nest']
 
   return (
     <div className="min-h-screen bg-white dark:bg-gray-900 pt-20">
