@@ -117,7 +117,7 @@ export default function HeroCurator({ onPersonaClick }: HeroCuratorProps) {
                 className="bg-gradient-to-r from-[#E8DCC8] to-[#C19A2E] text-black uppercase tracking-widest hover:from-[#C19A2E] hover:to-[#E8DCC8] rounded-none px-6 py-5 sm:px-8 sm:py-6 text-xs sm:text-sm font-medium transition-all shadow-lg"
               >
                 <Users className={`${language === 'ar' ? 'ml-2' : 'mr-2'} h-4 w-4 sm:h-5 sm:w-5`} />
-                {language === 'ar' ? 'ابحث عن الحل المثالي' : 'Find Your Perfect Solution'}
+                {ctaPrimaryText || (language === 'ar' ? 'ابحث عن الحل المثالي' : 'Find Your Perfect Solution')}
                 <ArrowRight className={`${language === 'ar' ? 'mr-2 rotate-180' : 'ml-2'} h-3 w-3 sm:h-4 sm:w-4`} />
               </Button>
               
