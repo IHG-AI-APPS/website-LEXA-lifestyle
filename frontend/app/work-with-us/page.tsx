@@ -314,7 +314,23 @@ function JobCard(props) {
   )
 }
 
+const BACKEND_URL = process.env.NEXT_PUBLIC_BACKEND_URL || ''
+
 export default function WorkWithUsPage() {
+  const [cmsPositions, setCmsPositions] = useState<any[] | null>(null)
+
+  useEffect(() => {
+    fetch(`${BACKEND_URL}/api/cms/sections/careers_positions`)
+      .then(r => r.json())
+      .then(d => {
+        if (d?.value?.positions?.length) setCmsPositions(d.value.positions)
+      })
+      .catch(() => {})
+  }, [])
+
+  // Use CMS positions if available, fall back to hardcoded
+  const positions = cmsPositions || openPositions
+
   return (
     <div className="min-h-screen bg-white dark:bg-gray-900">
       {/* Hero Section */}
