@@ -76,33 +76,18 @@ export default function RootLayout({
         
         {/* Preconnect for critical resources */}
         <link rel="preconnect" href={process.env.NEXT_PUBLIC_BACKEND_URL || ''} crossOrigin="anonymous" />
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         
-        {/* Structured Data */}
+        {/* Consolidated Structured Data */}
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
-        />
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }}
-        />
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
-        />
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }}
-        />
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(reviewsSchema) }}
-        />
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(googleBusinessSchema) }}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify([
+            organizationSchema,
+            localBusinessSchema,
+            faqSchema,
+            serviceSchema,
+            reviewsSchema,
+            googleBusinessSchema,
+          ]) }}
         />
       </head>
       <body className={dmSans.className} suppressHydrationWarning>
