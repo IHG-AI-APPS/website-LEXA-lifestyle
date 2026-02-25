@@ -5,6 +5,8 @@ import SeoLandingPageTemplate from '@/components/templates/SeoLandingPageTemplat
 export default function WorkplaceAnalyticsPage() {
   return (
     <SeoLandingPageTemplate
+      cmsKey="page_solutions_workplace-analytics"
+      cmsKey="page_solutions_workplace-analytics"
       hero={{
         badge: "Smart Workplace",
         title: "WORKPLACE",

@@ -5,6 +5,8 @@ import SeoLandingPageTemplate from '@/components/templates/SeoLandingPageTemplat
 export default function GRMSHospitalityPage() {
   return (
     <SeoLandingPageTemplate
+      cmsKey="page_solutions_grms-hospitality"
+      cmsKey="page_solutions_grms-hospitality"
       hero={{
         badge: "Guest Experience",
         title: "HOTEL",

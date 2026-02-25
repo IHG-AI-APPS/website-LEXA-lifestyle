@@ -3,6 +3,8 @@ import SeoLandingPageTemplate from '@/components/templates/SeoLandingPageTemplat
 export default function YachtAutomationPage() {
   return (
     <SeoLandingPageTemplate
+      cmsKey="page_solutions_cultural-automation_yacht-automation"
+      cmsKey="page_solutions_cultural-automation_yacht-automation"
       hero={{
         badge: 'Marine Automation',
         title: 'YACHT',

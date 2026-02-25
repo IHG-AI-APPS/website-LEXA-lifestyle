@@ -3,6 +3,8 @@ import SeoLandingPageTemplate from '@/components/templates/SeoLandingPageTemplat
 export default function TempleAutomationPage() {
   return (
     <SeoLandingPageTemplate
+      cmsKey="page_solutions_cultural-automation_temple-automation"
+      cmsKey="page_solutions_cultural-automation_temple-automation"
       hero={{
         badge: 'Cultural Automation',
         title: 'TEMPLE & WORSHIP',

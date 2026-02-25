@@ -8,6 +8,8 @@ export default function CustomIoTAutomationPage() {
   
   return (
     <SeoLandingPageTemplate
+      cmsKey="page_solutions_custom-iot-automation"
+      cmsKey="page_solutions_custom-iot-automation"
       hero={{
         badge: "Custom Solutions",
         title: "CUSTOM IoT",

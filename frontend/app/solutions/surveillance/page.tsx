@@ -5,6 +5,8 @@ import SeoLandingPageTemplate from '@/components/templates/SeoLandingPageTemplat
 export default function SurveillancePage() {
   return (
     <SeoLandingPageTemplate
+      cmsKey="page_solutions_surveillance"
+      cmsKey="page_solutions_surveillance"
       hero={{
         badge: "Video Security",
         title: "SURVEILLANCE",

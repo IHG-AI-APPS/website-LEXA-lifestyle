@@ -3,6 +3,8 @@ import SeoLandingPageTemplate from '@/components/templates/SeoLandingPageTemplat
 export default function ChurchAutomationPage() {
   return (
     <SeoLandingPageTemplate
+      cmsKey="page_solutions_cultural-automation_church-automation"
+      cmsKey="page_solutions_cultural-automation_church-automation"
       hero={{
         badge: 'Cultural Automation',
         title: 'CHURCH',

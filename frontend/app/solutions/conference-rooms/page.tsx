@@ -5,6 +5,8 @@ import SeoLandingPageTemplate from '@/components/templates/SeoLandingPageTemplat
 export default function ConferenceRoomsPage() {
   return (
     <SeoLandingPageTemplate
+      cmsKey="page_solutions_conference-rooms"
+      cmsKey="page_solutions_conference-rooms"
       hero={{
         badge: "Enterprise Solutions",
         title: "CONFERENCE ROOM",

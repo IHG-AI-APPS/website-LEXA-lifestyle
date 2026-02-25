@@ -5,6 +5,8 @@ import SeoLandingPageTemplate from '@/components/templates/SeoLandingPageTemplat
 export default function BMSAutomationPage() {
   return (
     <SeoLandingPageTemplate
+      cmsKey="page_solutions_bms-automation"
+      cmsKey="page_solutions_bms-automation"
       hero={{
         badge: 'Smart Buildings',
         title: 'BUILDING MANAGEMENT',

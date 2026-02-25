@@ -8,6 +8,8 @@ export default function AICameraStaffAnalyticsPage() {
   
   return (
     <SeoLandingPageTemplate
+      cmsKey="page_solutions_ai-camera-staff-analytics"
+      cmsKey="page_solutions_ai-camera-staff-analytics"
       hero={{
         badge: "AI-Powered Intelligence",
         title: "AI CAMERA",

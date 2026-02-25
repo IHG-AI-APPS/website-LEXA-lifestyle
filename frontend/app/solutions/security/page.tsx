@@ -5,6 +5,8 @@ import SeoLandingPageTemplate from '@/components/templates/SeoLandingPageTemplat
 export default function SecurityPage() {
   return (
     <SeoLandingPageTemplate
+      cmsKey="page_solutions_security"
+      cmsKey="page_solutions_security"
       hero={{
         badge: "Protection Solutions",
         title: "SMART SECURITY",

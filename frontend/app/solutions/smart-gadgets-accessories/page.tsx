@@ -8,6 +8,8 @@ export default function SmartGadgetsAccessoriesPage() {
   
   return (
     <SeoLandingPageTemplate
+      cmsKey="page_solutions_smart-gadgets-accessories"
+      cmsKey="page_solutions_smart-gadgets-accessories"
       hero={{
         badge: "Smart Home Products",
         title: "SMART GADGETS",

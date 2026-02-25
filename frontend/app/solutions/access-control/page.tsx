@@ -5,6 +5,8 @@ import SeoLandingPageTemplate from '@/components/templates/SeoLandingPageTemplat
 export default function AccessControlPage() {
   return (
     <SeoLandingPageTemplate
+      cmsKey="page_solutions_access-control"
+      cmsKey="page_solutions_access-control"
       hero={{
         badge: "Entry Security",
         title: "ACCESS CONTROL",

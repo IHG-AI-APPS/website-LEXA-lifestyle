@@ -5,6 +5,8 @@ import SeoLandingPageTemplate from '@/components/templates/SeoLandingPageTemplat
 export default function AudioSystemsPage() {
   return (
     <SeoLandingPageTemplate
+      cmsKey="page_solutions_audio-systems"
+      cmsKey="page_solutions_audio-systems"
       hero={{
         badge: "Premium Audio",
         title: "WHOLE-HOME",

@@ -5,6 +5,8 @@ import SeoLandingPageTemplate from '@/components/templates/SeoLandingPageTemplat
 export default function SmartLifestylePage() {
   return (
     <SeoLandingPageTemplate
+      cmsKey="page_solutions_smart-lifestyle"
+      cmsKey="page_solutions_smart-lifestyle"
       hero={{
         badge: "Connected Living",
         title: "SMART LIFESTYLE",

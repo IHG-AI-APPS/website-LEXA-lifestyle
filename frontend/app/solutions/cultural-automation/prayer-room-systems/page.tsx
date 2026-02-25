@@ -3,6 +3,8 @@ import SeoLandingPageTemplate from '@/components/templates/SeoLandingPageTemplat
 export default function PrayerRoomSystemsPage() {
   return (
     <SeoLandingPageTemplate
+      cmsKey="page_solutions_cultural-automation_prayer-room-systems"
+      cmsKey="page_solutions_cultural-automation_prayer-room-systems"
       hero={{
         badge: 'Cultural Automation',
         title: 'PRAYER ROOM',

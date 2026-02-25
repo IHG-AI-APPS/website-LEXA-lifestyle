@@ -7,6 +7,8 @@ export default function MarineAudioPage() {
   return (
     <>
       <SeoLandingPageTemplate
+      cmsKey="page_solutions_marine-audio"
+      cmsKey="page_solutions_marine-audio"
         hero={{
           badge: "Marine Audio",
           title: "MARINE",

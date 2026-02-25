@@ -5,6 +5,8 @@ import SeoLandingPageTemplate from '@/components/templates/SeoLandingPageTemplat
 export default function EnergyManagementPage() {
   return (
     <SeoLandingPageTemplate
+      cmsKey="page_solutions_energy-management"
+      cmsKey="page_solutions_energy-management"
       hero={{
         badge: "Sustainability Solutions",
         title: "ENERGY",

@@ -5,6 +5,8 @@ import SeoLandingPageTemplate from '@/components/templates/SeoLandingPageTemplat
 export default function MotorizedShadesPage() {
   return (
     <SeoLandingPageTemplate
+      cmsKey="page_solutions_motorized-shades"
+      cmsKey="page_solutions_motorized-shades"
       hero={{
         badge: "Window Automation",
         title: "MOTORIZED SHADES",
