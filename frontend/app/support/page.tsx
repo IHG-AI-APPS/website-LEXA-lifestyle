@@ -2,7 +2,7 @@ import { Metadata } from 'next'
 import Link from 'next/link'
 import { Button } from '@/components/ui/button'
 import { Phone, Clock, Shield, Wrench, CheckCircle2, AlertCircle } from 'lucide-react'
-import EmergencySupportPageCms from './EmergencySupportPageCms'
+import CmsReg from './CmsReg'
 
 export const metadata: Metadata = {
   title: '24/7 Smart Home Support UAE | Emergency Automation Service Dubai',
@@ -32,7 +32,7 @@ export default function EmergencySupportPage() {
   ]
 
   return (
-    <EmergencySupportPageCms>
+        <CmsReg />
     <div className="min-h-screen bg-white dark:bg-gray-900 pt-20">
       {/* Hero */}
       <section className="py-24 md:py-32 bg-gradient-to-br from-red-600 via-orange-600 to-red-600 text-white">

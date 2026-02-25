@@ -1,7 +1,7 @@
 import Link from 'next/link'
 import { Button } from '@/components/ui/button'
 import { ArrowLeft, Shield, CheckCircle2 } from 'lucide-react'
-import WarrantyPageCms from './WarrantyPageCms'
+import CmsReg from './CmsReg'
 
 export const metadata = {
   title: 'Warranty & Service Policy | LEXA Lifestyle',
@@ -10,7 +10,7 @@ export const metadata = {
 
 export default function WarrantyPage() {
   return (
-    <WarrantyPageCms>
+        <CmsReg />
     <div className="min-h-screen bg-white dark:bg-gray-900">
       <div className="container mx-auto px-6 md:px-12 lg:px-24 py-16 md:py-24">
         <Link href="/">

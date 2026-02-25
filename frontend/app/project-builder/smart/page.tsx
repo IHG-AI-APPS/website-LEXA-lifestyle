@@ -39,7 +39,7 @@ import SystemSelection from '../components/SystemSelection'
 import AIRecommendation from '../components/AIRecommendation'
 import NiceToHaveUpgrades from './components/NiceToHaveUpgrades'
 import FinalSummary from './components/FinalSummary'
-import SmartBuilderFlowCms from './SmartBuilderFlowCms'
+import CmsReg from './CmsReg'
 
 // Step configuration - 9 steps
 const BUILDER_STEPS = [
@@ -206,7 +206,7 @@ export default function SmartBuilderFlow() {
   }
 
   return (
-    <SmartBuilderFlowCms>
+        <CmsReg />
     <div className="min-h-screen bg-gradient-to-b from-gray-50 to-white">
       {/* Progress Header - Below main navigation */}
       <div className="bg-white border-b border-gray-200 dark:border-gray-700 sticky top-16 sm:top-18 md:top-20 z-40">

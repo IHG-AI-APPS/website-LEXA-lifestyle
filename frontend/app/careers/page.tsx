@@ -1,7 +1,7 @@
 import Link from 'next/link'
 import { Button } from '@/components/ui/button'
 import { ArrowLeft, Briefcase, MapPin, Clock } from 'lucide-react'
-import CareersPageCms from './CareersPageCms'
+import CmsReg from './CmsReg'
 
 export const metadata = {
   title: 'Careers | LEXA Lifestyle',
@@ -10,7 +10,7 @@ export const metadata = {
 
 export default function CareersPage() {
   return (
-    <CareersPageCms>
+        <CmsReg />
     <div className="min-h-screen bg-white dark:bg-gray-900">
       {/* Hero */}
       <section className="bg-[#1A1A1A] text-white py-20 md:py-28">

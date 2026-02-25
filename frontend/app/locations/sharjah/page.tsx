@@ -3,7 +3,7 @@ import Link from 'next/link'
 import { Button } from '@/components/ui/button'
 import { MapPin } from 'lucide-react'
 import TrustSignals from '@/components/TrustSignals'
-import SharjahPageCms from './SharjahPageCms'
+import CmsReg from './CmsReg'
 
 export const metadata: Metadata = {
   title: 'Smart Home Automation Sharjah | Affordable Villa Integration UAE',
@@ -12,7 +12,7 @@ export const metadata: Metadata = {
 
 export default function SharjahPage() {
   return (
-    <SharjahPageCms>
+        <CmsReg />
     <div className="min-h-screen bg-white dark:bg-gray-900 pt-20">
       <section className="py-24 md:py-32 bg-gradient-to-br from-black via-gray-900 to-black text-white">
         <div className="container mx-auto px-8 lg:px-16">

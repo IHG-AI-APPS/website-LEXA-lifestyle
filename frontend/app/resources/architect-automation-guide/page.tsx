@@ -2,7 +2,7 @@ import { Metadata } from 'next'
 import Link from 'next/link'
 import { Button } from '@/components/ui/button'
 import { ArrowRight, FileText, Download, CheckCircle2, AlertTriangle } from 'lucide-react'
-import ArchitectAutomationGuidePageCms from './ArchitectAutomationGuidePageCms'
+import CmsReg from './CmsReg'
 
 export const metadata: Metadata = {
   title: 'Architect Guide to Smart Home Planning UAE | LEXA Lifestyle',
@@ -12,7 +12,7 @@ export const metadata: Metadata = {
 
 export default function ArchitectAutomationGuidePage() {
   return (
-    <ArchitectAutomationGuidePageCms>
+        <CmsReg />
     <div className="min-h-screen bg-white pt-20">
       {/* Hero */}
       <section className="py-24 md:py-32 bg-gradient-to-br from-black via-gray-900 to-black text-white">
