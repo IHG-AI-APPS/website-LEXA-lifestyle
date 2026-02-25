@@ -993,14 +993,18 @@ export default function FinalSummary({
       </motion.div>
 
       {/* Bottom Navigation */}
-      <div className="flex items-center justify-between">
-        <Button variant="outline" onClick={onBack}>
+      <div className="flex items-center justify-between pt-4 border-t border-gray-200 dark:border-gray-700">
+        <Button variant="outline" onClick={onBack} className="text-gray-600">
           <ChevronLeft className="w-4 h-4 mr-1" />
-          Back to Upgrades
+          Modify Selections
         </Button>
-        <Button variant="ghost" onClick={onStartNew}>
-          Start New Project
-          <ArrowRight className="w-4 h-4 ml-1" />
+        <Button 
+          variant="outline" 
+          onClick={onStartNew}
+          className="text-gray-600"
+        >
+          <RefreshCcw className="w-4 h-4 mr-1" />
+          New Project
         </Button>
       </div>
 
