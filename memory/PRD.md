@@ -1,37 +1,35 @@
 # LEXA Smart Home Platform - Product Requirements Document
 
-**Version**: 9.30  
+**Version**: 9.35  
 **Last Updated**: February 25, 2026  
-**Status**: CMS / Dynamic Content System Complete
+**Status**: Full CMS / Dynamic Content System Complete (17 sections)
 
 ---
 
-## Latest Updates (v9.30)
+## Latest Updates (v9.35)
 
-### CMS / Dynamic Content System (Feb 25, 2026)
+### Full CMS Dynamic Content System (Feb 25, 2026)
 
 **STATUS: COMPLETED & TESTED (100%)**
 
-#### Backend CMS API:
-- `GET /api/cms/sections/{key}` — Public endpoint with 5-min cache
-- `GET /api/cms/sections?keys=...` — Bulk fetch multiple sections
-- `PUT /api/admin/content/settings/{key}` — Admin update with cache invalidation
-- MongoDB `settings` collection stores all CMS data
-- Seed script (`backend/seed_cms.py`) populates initial data
+#### Coverage: 17 CMS Sections
+**Homepage (5):** Hero, Experience CTA, Calculator Cards, Partners & Trust, Careers  
+**Pages (5):** About, Contact, Consultation, Experience Centre, Footer  
+**Services (7):** Home Theater, Smart Lighting, Home Cinema, Villa Automation, Outdoor Audio, High-End Audio, Multi-Room Audio
 
-#### Admin CMS Page (`/admin/cms`):
-- 5 editable sections with expand/collapse UI
-- Rich editors for each section type (text, arrays, images, nested objects)
-- Save/refresh per section with toast notifications
+#### Architecture:
+- **Reusable Hook**: `useCms(key, fallback)` in `/frontend/hooks/useCms.ts` — client-side cache + API fetch
+- **Backend API**: `GET /api/cms/sections/{key}` (single) + `GET /api/cms/sections?keys=...` (bulk) with 5-min server cache + cache invalidation on admin save
+- **Admin UI**: `/admin/cms` with 17 expandable section editors — rich forms for all content types (text, arrays, nested objects, images)
+- **Seed Scripts**: `seed_cms.py` + `seed_cms_v2.py` populate MongoDB with all initial data
+- All components use fallback defaults if CMS unavailable — zero downtime on CMS failure
 
-#### Dynamic Frontend Components (5 converted):
-1. **HeroCurator** — Video clips, heading (EN/AR), subheading, CTA from CMS
-2. **ExperienceCentreCTA** — Gallery images, highlights, time slots, address/phone from CMS
-3. **CalculatorCardsSection** — Featured tool and 4 tool cards from CMS
-4. **TrustedInUAE** — Partners, developers, certifications, stats from CMS
-5. **Work With Us page** — Open positions from CMS
-
-All components use fallback defaults if CMS data is unavailable.
+#### Files Modified/Created:
+- `/app/frontend/hooks/useCms.ts` — NEW: Reusable CMS hook
+- `/app/frontend/app/admin/cms/page.tsx` — NEW: Full CMS admin page
+- `/app/backend/routes/content.py` — Public CMS API endpoints
+- `/app/backend/seed_cms.py`, `seed_cms_v2.py` — CMS seed scripts
+- 12 frontend components converted (HeroCurator, ExperienceCentreCTA, CalculatorCardsSection, TrustedInUAE, Footer, About, Contact, Consultation + 7 Service Client pages)
 
 ---
 
