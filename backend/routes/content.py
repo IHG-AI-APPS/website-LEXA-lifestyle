@@ -279,18 +279,21 @@ async def get_settings():
 
 
 @router.get("/cms/sections/{key}")
-async def get_cms_section(key: str):
+async def get_cms_section(key: str, response: Response):
     """Get CMS section content by key - public endpoint for frontend"""
     try:
         cache_key = f"cms:{key}"
         cached = await cache.get(cache_key)
         if cached is not None:
+            response.headers["Cache-Control"] = "public, max-age=60, stale-while-revalidate=300"
             return cached
         
         section = await db.settings.find_one({"key": key}, {"_id": 0})
         if section:
             await cache.set(cache_key, section, ttl_seconds=300)
+            response.headers["Cache-Control"] = "public, max-age=60, stale-while-revalidate=300"
             return section
+        response.headers["Cache-Control"] = "public, max-age=30"
         return {"key": key, "value": None}
     except Exception as e:
         logger.error(f"CMS section error for {key}: {str(e)}")
@@ -298,16 +301,35 @@ async def get_cms_section(key: str):
 
 
 @router.get("/cms/sections")
-async def get_cms_sections_bulk(keys: str = ""):
+async def get_cms_sections_bulk(keys: str = "", response: Response = None):
     """Get multiple CMS sections at once. Pass comma-separated keys."""
     try:
         if not keys:
             return {}
         key_list = [k.strip() for k in keys.split(",") if k.strip()]
-        sections = await db.settings.find(
-            {"key": {"$in": key_list}}, {"_id": 0}
-        ).to_list(50)
-        return {s["key"]: s.get("value") for s in sections}
+        
+        # Check cache first for each key
+        result = {}
+        uncached_keys = []
+        for k in key_list:
+            cached = await cache.get(f"cms:{k}")
+            if cached is not None:
+                result[k] = cached.get("value")
+            else:
+                uncached_keys.append(k)
+        
+        # Fetch uncached from DB
+        if uncached_keys:
+            sections = await db.settings.find(
+                {"key": {"$in": uncached_keys}}, {"_id": 0}
+            ).to_list(50)
+            for s in sections:
+                result[s["key"]] = s.get("value")
+                await cache.set(f"cms:{s['key']}", s, ttl_seconds=300)
+        
+        if response:
+            response.headers["Cache-Control"] = "public, max-age=60, stale-while-revalidate=300"
+        return result
     except Exception as e:
         logger.error(f"CMS bulk sections error: {str(e)}")
         raise HTTPException(status_code=500, detail="Failed to fetch sections")
