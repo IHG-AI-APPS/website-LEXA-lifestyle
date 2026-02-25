@@ -261,9 +261,9 @@ export default function SeoLandingPageTemplate({
   const currentSlug = typeof window !== 'undefined' ? window.location.pathname.split('/').pop() || '' : ''
   
   return (
-    <div className="min-h-screen bg-[#0A0A0A] text-white">
+    <div className="min-h-screen bg-[#0A0A0A] text-white" role="article">
       {/* 1. HERO */}
-      <section className="relative min-h-screen flex items-center justify-center">
+      <section className="relative min-h-screen flex items-center justify-center" aria-label={hero.title}>
         <div className="absolute inset-0 z-0">
           <SafeImage
             src={hero.image}
