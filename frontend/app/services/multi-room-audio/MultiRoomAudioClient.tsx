@@ -3,6 +3,7 @@ import React from 'react'
 import Link from 'next/link'
 import { Music2, Speaker, Radio, Waves, ArrowRight, Volume2 } from 'lucide-react'
 import Script from 'next/script'
+import { useCms } from '@/hooks/useCms'
 
 const solutions = [
   { icon: Speaker, title: 'Invisible Speakers', desc: 'Sonance Invisible Series, Amina - audio without visible speakers' },
@@ -56,6 +57,8 @@ const faqSchema = {
 }
 
 export default function MultiRoomAudioClient() {
+  const cms = useCms('service_multi_room_audio', null)
+
   return (
     <div className="min-h-screen bg-white dark:bg-gray-900">
       <Script id="schema-service" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaData) }} />

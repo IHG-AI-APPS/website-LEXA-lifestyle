@@ -4,6 +4,7 @@ import Link from 'next/link'
 import { Home, Lightbulb, Shield, Thermometer, ArrowRight, Smartphone, Sun, Lock, MessageCircle } from 'lucide-react'
 import Script from 'next/script'
 import { openWhatsApp, whatsAppMessages } from '@/lib/whatsapp'
+import { useCms } from '@/hooks/useCms'
 
 const systems = [
   { icon: Lightbulb, title: 'Intelligent Lighting', desc: 'Lutron, Ketra circadian lighting with scene control and automated blinds' },
@@ -61,6 +62,8 @@ const faqSchema = {
 }
 
 export default function LuxuryVillaClient() {
+  const cms = useCms('service_luxury_villa_automation', null)
+
   return (
     <div className="min-h-screen bg-white dark:bg-gray-900">
       <Script id="schema-service" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaData) }} />

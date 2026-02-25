@@ -4,6 +4,7 @@ import Link from 'next/link'
 import Script from 'next/script'
 import { Sun, Waves, TreePine, Volume2, ArrowRight, ThermometerSun, Droplets, MessageCircle } from 'lucide-react'
 import { openWhatsApp, whatsAppMessages } from '@/lib/whatsapp'
+import { useCms } from '@/hooks/useCms'
 
 const solutions = [
   { icon: Waves, title: 'Pool Audio', desc: 'Underwater speakers and poolside systems' },
@@ -68,6 +69,8 @@ const faqSchema = {
 }
 
 export default function OutdoorAudioClient() {
+  const cms = useCms('service_outdoor_audio', null)
+
   return (
     <div className="min-h-screen bg-white dark:bg-gray-900">
       <Script id="schema-service" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaData) }} />

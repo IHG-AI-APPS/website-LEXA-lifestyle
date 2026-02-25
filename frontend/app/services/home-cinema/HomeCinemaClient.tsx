@@ -4,6 +4,7 @@ import Link from 'next/link'
 import Script from 'next/script'
 import { Film, Armchair, Volume2, Eye, ArrowRight, MessageCircle } from 'lucide-react'
 import { openWhatsApp, whatsAppMessages } from '@/lib/whatsapp'
+import { useCms } from '@/hooks/useCms'
 
 const elements = [
   { icon: Eye, title: 'Visual Excellence', desc: 'Sony, JVC laser projection or Samsung MicroLED' },
@@ -56,6 +57,8 @@ const faqSchema = {
 }
 
 export default function HomeCinemaClient() {
+  const cms = useCms('service_home_cinema', null)
+
   return (
     <div className="min-h-screen bg-white dark:bg-gray-900">
       <Script id="schema-service" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaData) }} />

@@ -4,6 +4,7 @@ import Link from 'next/link'
 import Script from 'next/script'
 import { Lightbulb, Sun, Moon, Blinds, ArrowRight, Palette, Clock, Smartphone, MessageCircle } from 'lucide-react'
 import { openWhatsApp, whatsAppMessages } from '@/lib/whatsapp'
+import { useCms } from '@/hooks/useCms'
 
 const solutions = [
   { icon: Lightbulb, title: 'Scene Lighting', desc: 'One-touch scenes for dining, entertaining, relaxing' },
@@ -67,6 +68,8 @@ const faqSchema = {
 }
 
 export default function SmartLightingClient() {
+  const cms = useCms('service_smart_lighting', null)
+
   return (
     <div className="min-h-screen bg-white dark:bg-gray-900">
       <Script id="schema-service" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaData) }} />
