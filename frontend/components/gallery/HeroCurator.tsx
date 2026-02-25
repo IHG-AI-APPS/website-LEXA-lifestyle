@@ -12,8 +12,10 @@ interface HeroCuratorProps {
   onPersonaClick?: () => void
 }
 
-// Curated Dark Luxury Video Sequence - Maximum Impact
-const HERO_CLIPS = [
+const BACKEND_URL = process.env.NEXT_PUBLIC_BACKEND_URL || ''
+
+// Fallback clips if CMS data not yet loaded
+const DEFAULT_CLIPS = [
   '/videos/hero-v3/v3_01_dramatic_entrance.mp4',
   '/videos/hero/01_arrival.mp4',
   '/videos/hero/02_interior_reveal.mp4',
@@ -28,6 +30,20 @@ export default function HeroCurator({ onPersonaClick }: HeroCuratorProps) {
   const [isFading, setIsFading] = useState(false)
   const [isLoaded, setIsLoaded] = useState(false)
   const videoRef = useRef<HTMLVideoElement>(null)
+  const [cmsData, setCmsData] = useState<any>(null)
+
+  // Fetch CMS hero data
+  useEffect(() => {
+    fetch(`${BACKEND_URL}/api/cms/sections/homepage_hero`)
+      .then(r => r.json())
+      .then(d => { if (d?.value) setCmsData(d.value) })
+      .catch(() => {})
+  }, [])
+
+  const heroClips = cmsData?.video_clips?.length ? cmsData.video_clips : DEFAULT_CLIPS
+  const heading = cmsData ? (language === 'ar' ? cmsData.heading_ar : cmsData.heading_en) : null
+  const subheading = cmsData ? (language === 'ar' ? cmsData.subheading_ar : cmsData.subheading_en) : null
+  const ctaPrimaryText = cmsData ? (language === 'ar' ? cmsData.cta_primary_text_ar : cmsData.cta_primary_text_en) : null
 
   // Handle video end - smooth transition to next clip
   const handleVideoEnd = () => {
