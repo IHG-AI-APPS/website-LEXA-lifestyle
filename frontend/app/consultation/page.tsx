@@ -20,11 +20,23 @@ import {
   MapPin,
   Video
 } from 'lucide-react'
+import { useCms } from '@/hooks/useCms'
+
+const ICON_MAP: Record<string, any> = { Calendar, MapPin, Home, Video, FileText, Wrench, Headphones, CheckCircle2, Clock }
 
 export default function ConsultationPage() {
   const [showBookingModal, setShowBookingModal] = useState(false)
+  const cms = useCms('page_consultation', null)
 
-  const consultationTypes = [
+  const consultationTypes = cms?.consultation_types?.length ? cms.consultation_types.map((t: any) => ({
+    icon: ICON_MAP[t.icon] || MapPin,
+    title: t.title,
+    duration: t.duration,
+    description: t.description,
+    features: t.features || [],
+    cta: t.cta,
+    popular: t.popular || false
+  })) : [
     {
       icon: MapPin,
       title: 'Free Site Visit',
