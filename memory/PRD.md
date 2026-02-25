@@ -1,47 +1,60 @@
 # LEXA Smart Home Platform - Product Requirements Document
 
-**Version**: 10.1  
+**Version**: 10.2  
 **Last Updated**: February 25, 2026  
-**Status**: Full Site-Wide CMS + Seed from Current Complete
+**Status**: 100% Site-Wide CMS Coverage (234 pages)
 
 ---
 
 ## Original Problem Statement
 
-The user requires a fully dynamic, high-performance website for LEXA Smart Home, a luxury smart home automation company in the UAE. Key requirements:
+The user requires a fully dynamic, high-performance website for LEXA Smart Home. Key requirements:
 1. **Fully Dynamic Content**: Every content element must be editable through an admin panel
 2. **Performance Optimization**: Super fast website based on Lighthouse report findings
 3. **SEO & Accessibility**: Proper metadata management and accessibility compliance
 
-## User Personas
-- **Admin/Content Manager**: Manages all website content through the admin panel
-- **Prospective Client**: High-net-worth homeowner in UAE/GCC browsing solutions
-- **Architect/Developer**: Professional partner exploring smart home integration
-
 ---
 
-## Phase A: Dynamic Content (COMPLETED)
+## Phase A: Dynamic Content (COMPLETED - 100%)
 
-### CMS Coverage: 137 Sections
-- **Homepage (4)**: Hero, Experience CTA, Calculator Cards, Partners & Trust
-- **Core Pages (6)**: About, Contact, Consultation, Experience Centre, Footer, Careers
-- **Services (7)**: All 7 service pages
-- **Solutions (43)**: All solution template + custom pages
-- **Locations (41)**: All geo/location pages across Dubai, UAE, GCC, Africa
-- **Content Pages (32)**: FAQ, Process, Company, etc.
-- **Personas (4)**: Architect, Commercial, Developer, Homeowner
+### Coverage: 234 pages total
+- **42 Admin pages**: Don't need CMS (they ARE admin tools)
+- **191 Content pages**: All CMS-enabled
+- **1 Redirect page**: No content (just a `redirect()`)
 
-### Seed from Current Feature (COMPLETED)
-- Auto-seeds hardcoded page content to CMS DB on first page visit
-- Admin CMS "Seed from Current" button for bulk seeding
-- Idempotent `POST /api/cms/register-defaults` endpoint (never overwrites)
-- Green dot indicators in admin for sections with CMS data
+### CMS-Enabled Page Breakdown:
+- **Solution Template Pages (35)**: SeoLandingPageTemplate with cmsKey prop + auto-seed
+- **Non-Template Solution Pages (8)**: Direct useCms integration
+- **Geo/Location Client Components (33)**: useCms in client components
+- **Location Server Pages (11)**: CmsReg client component pattern
+- **Listing Pages (12)**: useCms for headings/labels
+- **Dynamic [slug] Routes (15)**: useCms/CmsReg for page chrome
+- **Content Pages (25)**: useCms directly in client components
+- **Server Content Pages (17)**: CmsReg wrapper pattern
+- **Previously CMS-Enabled (17)**: Homepage, About, Contact, Services, Footer
+- **Cultural Automation, Resources, Guides, Packages, Tools**: All covered
 
-### Architecture
-- `SeoLandingPageTemplate` with optional `cmsKey` prop (covers 35 solution pages)
-- `useCms` hook with `isCmsEmpty()` and `seedCmsDefaults()` utilities
-- Structured editors: SeoTemplateEditor, GeoPageEditor, GenericJSONEditor
-- Backend: GET/POST CMS sections API with Redis cache
+### Auto-Seed Feature:
+- SeoLandingPageTemplate auto-seeds hardcoded content to CMS on first page visit
+- Backend `POST /api/cms/register-defaults` (idempotent)
+- Admin "Seed from Current" button for bulk seeding
+
+### Admin CMS: 10 Category Tabs
+1. **Homepage** (4 sections)
+2. **Core Pages** (6 sections)
+3. **Services** (7 sections)
+4. **Solutions** (43 sections) - with structured SeoTemplate editor
+5. **Locations** (52 sections) - with structured GeoPage editor
+6. **Listing Pages** (12 sections)
+7. **Detail Templates** (14 sections)
+8. **Tools & Content** (16 sections)
+9. **Other Pages** (36 sections)
+10. **Personas** (4 sections)
+
+### Architecture Patterns:
+1. **SeoLandingPageTemplate CMS**: Template accepts `cmsKey` prop → fetches CMS → overrides hardcoded props
+2. **Client Component useCms**: Direct `useCms(key, null)` in client pages
+3. **Server Component CmsReg**: `<CmsReg />` client component renders null but registers CMS key
 
 ---
 
@@ -60,17 +73,17 @@ The user requires a fully dynamic, high-performance website for LEXA Smart Home,
 ---
 
 ## Key Files
-- `/app/frontend/app/admin/cms/page.tsx` - Admin CMS (137 sections, 7 tabs, Seed button)
+- `/app/frontend/app/admin/cms/page.tsx` - Admin CMS (10 tabs, 190+ sections)
 - `/app/frontend/hooks/useCms.ts` - CMS hook with seed utilities
 - `/app/frontend/components/templates/SeoLandingPageTemplate.tsx` - CMS-aware template
-- `/app/backend/routes/content.py` - Public CMS API + register-defaults endpoint
+- `/app/backend/routes/content.py` - CMS API endpoints
 
 ## Key API Endpoints
-- `GET /api/cms/sections/{key}` - Single CMS section
+- `GET /api/cms/sections/{key}` - Single section
 - `GET /api/cms/sections?keys=key1,key2` - Bulk fetch
-- `POST /api/cms/register-defaults` - Idempotent seed (only creates if not exists)
+- `POST /api/cms/register-defaults` - Idempotent seed
 - `PUT /api/admin/content/settings/{key}` - Admin save
 
 ## Test Reports
-- `/app/test_reports/iteration_16.json` - CMS expansion tests (100% pass)
-- `/app/test_reports/iteration_17.json` - Seed from Current tests (100% pass)
+- `/app/test_reports/iteration_16.json` - CMS expansion (100% pass)
+- `/app/test_reports/iteration_17.json` - Seed feature (100% pass)
