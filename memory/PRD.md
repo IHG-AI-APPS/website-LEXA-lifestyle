@@ -1,6 +1,6 @@
 # LEXA Smart Home Platform - Product Requirements Document
 
-**Version**: 12.0  
+**Version**: 12.1  
 **Last Updated**: February 25, 2026  
 **Status**: All 3 Phases Complete (A + B + C) - Project Scope Fulfilled
 
@@ -20,12 +20,11 @@ The user requires a fully dynamic, high-performance website for LEXA Smart Home.
 ### Coverage: 234 pages total
 - 42 Admin pages (don't need CMS) + 191 CMS-enabled + 1 redirect = **100%**
 
-### Admin CMS: 11 Category Tabs (222 sections)
+### Admin CMS: 11 Category Tabs (224 sections)
 SEO (26), Homepage (4), Core Pages (6), Services (7), Solutions (43), Locations (52), Listing Pages (12), Detail Templates (14), Tools & Content (16), Other Pages (40), Personas (4)
 
 ### Auto-Seed Feature
 - SeoLandingPageTemplate auto-seeds hardcoded content to CMS on first page visit
-- Admin "Seed from Current" button for bulk seeding
 
 ---
 
@@ -44,24 +43,22 @@ SEO (26), Homepage (4), Core Pages (6), Services (7), Solutions (43), Locations 
 ## Phase C: Final Polish (COMPLETED)
 
 ### SEO Management via CMS
-- **26 SEO sections** in admin: Global + Homepage + 24 page-specific (including partner-with-us, vendor-supplier)
-- **SeoMetaEditor**: Structured editor for meta title, description, keywords, OG tags (title, description, image, type), robots directives, canonical URL
+- **26 SEO sections** in admin: Global + Homepage + 24 page-specific
+- **SeoMetaEditor** with live preview:
+  - Google SERP Preview (title in blue, URL, description with live truncation)
+  - Social Card Preview (OG image area, title, description)
+  - Color-coded character counters with progress bars (green=good, amber=short, red=long)
 - **Global SEO Settings**: Site name, canonical domain, default OG image, Twitter handle, Google verification code
 - **Live SEO Rendering**: All 66+ pages use `generateCmsMetadata()` to dynamically render CMS SEO data in `<meta>` tags
 - **Pre-existing**: Dynamic sitemap.xml + comprehensive robots.txt
 
 ### Accessibility (WCAG 2.1 Compliance)
-- **Landmark Roles**: header (role=banner), main (role=main), footer (role=contentinfo), nav (role=navigation)
-- **ARIA Labels**: Header, footer, main content, all navigation menus (desktop + mobile), 5 mega menus (role=menu), 6 SeoLandingPageTemplate sections, contact form + 8 other forms
-- **Skip-to-Content**: Link to #main-content (pre-existing)
-- **Semantic HTML**: article role on solution pages, proper heading hierarchy
-- **Focus Management**: focus-visible styles (pre-existing)
-- **Breadcrumb**: aria-label + aria-current (pre-existing)
+- Landmark Roles, ARIA Labels, Skip-to-Content, Semantic HTML, Focus Management, Breadcrumb
 
 ---
 
 ## Key Files
-- `/app/frontend/app/admin/cms/page.tsx` - Admin CMS (11 tabs, 222+ sections)
+- `/app/frontend/app/admin/cms/page.tsx` - Admin CMS (11 tabs, 224+ sections, SEO preview cards)
 - `/app/frontend/hooks/useCms.ts` - CMS hook with seed utilities
 - `/app/frontend/lib/cmsMetadata.ts` - Server-side SEO metadata utility (generateCmsMetadata)
 - `/app/frontend/components/templates/SeoLandingPageTemplate.tsx` - CMS + lazy loading + a11y
