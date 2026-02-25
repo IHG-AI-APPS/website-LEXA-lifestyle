@@ -10,7 +10,7 @@ import { useLanguage } from '@/contexts/LanguageContext'
 import dynamic from 'next/dynamic'
 import { useCms } from '@/hooks/useCms'
 
-const RecentlyViewedSection = dynamic(() => import('@/components/widgets/RecentlyViewedSection'), {
+const RecentlyViewedSection = dynamic(() => import('@/components/widgets/RecentlyViewedSection').catch(() => ({ default: () => null })), {
   ssr: false
 })
 
