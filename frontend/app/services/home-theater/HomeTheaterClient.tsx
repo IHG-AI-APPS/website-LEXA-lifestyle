@@ -50,26 +50,31 @@ const schemaData = {
   "@type": "Service",
   "name": "Home Theater Installation Dubai",
   "description": "Luxury home theater and private cinema design and installation in Dubai. Dolby Atmos, 4K laser projection, acoustic treatment specialists.",
-  "provider": {
-    "@type": "Organization",
-    "name": "LEXA Lifestyle",
-    "url": "https://lexalifestyle.com"
-  },
+  "provider": { "@type": "Organization", "name": "LEXA Lifestyle", "url": "https://lexalifestyle.com" },
   "areaServed": ["Dubai", "Abu Dhabi", "UAE", "GCC"],
   "serviceType": "Home Theater Installation"
 }
 
-const faqSchema = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": faqs.map(faq => ({
-    "@type": "Question",
-    "name": faq.q,
-    "acceptedAnswer": { "@type": "Answer", "text": faq.a }
-  }))
-}
-
 export default function HomeTheaterClient() {
+  const cms = useCms('service_home_theater', null)
+  
+  const features = cms?.features?.length ? cms.features.map((f: any) => ({
+    icon: ICON_MAP[f.icon] || Projector, title: f.title, desc: f.desc
+  })) : DEFAULT_FEATURES
+
+  const projects = cms?.projects?.length ? cms.projects : DEFAULT_PROJECTS
+  const faqs = cms?.faqs?.length ? cms.faqs : DEFAULT_FAQS
+
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": faqs.map((faq: any) => ({
+      "@type": "Question",
+      "name": faq.q,
+      "acceptedAnswer": { "@type": "Answer", "text": faq.a }
+    }))
+  }
+
   return (
     <div className="min-h-screen bg-white dark:bg-gray-900">
       <Script id="schema-service" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaData) }} />
