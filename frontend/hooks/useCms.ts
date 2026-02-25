@@ -15,6 +15,7 @@ export function useCms<T = any>(key: string, fallback: T): T {
   })
 
   useEffect(() => {
+    if (!key || key === '_noop_') return
     const cached = cache[key]
     if (cached && Date.now() - cached.ts < CACHE_TTL) {
       setData(cached.data as T)
