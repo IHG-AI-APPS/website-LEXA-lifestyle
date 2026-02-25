@@ -30,6 +30,7 @@ import {
   Sparkles,
   ChevronLeft,
   ArrowRight,
+  RefreshCcw,
   Copy,
   X,
   Save,
