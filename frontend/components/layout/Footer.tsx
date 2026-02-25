@@ -108,9 +108,9 @@ export default function Footer() {
                 <h3 className="text-xs tracking-[0.2em] uppercase font-semibold text-white mb-5">Services</h3>
                 <ul className="space-y-3">
                   {[
-                    { name: 'Consultation', href: '/consultation' },
-                    { name: 'Design & Engineering', href: '/services' },
-                    { name: 'Installation', href: '/services' },
+                    { name: 'Consultation & Design', href: '/services/consultation-design' },
+                    { name: 'System Engineering', href: '/services/system-engineering-integration' },
+                    { name: 'Project Management', href: '/services/project-management' },
                     { name: 'AMC & Support', href: '/amc-packages' },
                     { name: 'Project Builder', href: '/project-builder' },
                     { name: 'All Services', href: '/services' }
