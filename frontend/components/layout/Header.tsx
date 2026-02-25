@@ -308,6 +308,8 @@ export default function Header() {
           <AnimatePresence>
             {isMobileMenuOpen && (
               <motion.nav
+                role="navigation"
+                aria-label="Mobile navigation"
                 initial={{ opacity: 0, height: 0 }}
                 animate={{ opacity: 1, height: 'auto' }}
                 exit={{ opacity: 0, height: 0 }}
