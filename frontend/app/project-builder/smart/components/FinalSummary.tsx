@@ -579,7 +579,7 @@ export default function FinalSummary({
         <p>Includes ${mustHaveFeatures.length + shouldHaveFeatures.length} core features</p>
       </div>
       <div class="package-price">
-        <div class="amount">${packagePrice || 'Contact for pricing'}</div>
+        <div class="amount">${packagePrice || 'Custom Pricing'}</div>
         <div class="note">Base Package</div>
       </div>
     </div>
@@ -598,7 +598,16 @@ export default function FinalSummary({
     <!-- Total -->
     <div class="total-box">
       <div class="label">Estimated Total Investment</div>
-      <div class="amount">${packagePrice}${totalUpgradePrice > 0 ? ` + AED ${totalUpgradePrice.toLocaleString()}` : ''}</div>
+      <div class="amount">${(() => {
+        // Try to extract numeric value from packagePrice
+        const numMatch = packagePrice?.match(/[\d,]+/)
+        if (numMatch) {
+          const baseNum = parseInt(numMatch[0].replace(/,/g, ''))
+          const total = baseNum + totalUpgradePrice
+          return 'AED ' + total.toLocaleString() + '+'
+        }
+        return packagePrice ? (totalUpgradePrice > 0 ? packagePrice + ' + AED ' + totalUpgradePrice.toLocaleString() : packagePrice) : 'Contact for detailed pricing'
+      })()}</div>
       <div class="validity">Quote valid for 30 days from date of issue</div>
     </div>
     
