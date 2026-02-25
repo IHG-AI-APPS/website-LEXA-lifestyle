@@ -125,6 +125,5 @@ export default function HowToInstallPage() {
         </div>
       </div>
     </>
-    </>
   )
 }
