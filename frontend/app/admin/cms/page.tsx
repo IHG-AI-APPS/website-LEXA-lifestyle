@@ -439,6 +439,11 @@ function SectionEditor({ sectionKey, data, onSave }: { sectionKey: string, data:
     return <GeoPageEditor data={data} onSave={onSave} />
   }
 
+  // SEO pages get a dedicated SEO editor
+  if (sectionKey.startsWith('seo_')) {
+    return <SeoMetaEditor data={data} onSave={onSave} pageKey={sectionKey} />
+  }
+
   const renderFields = () => {
     switch (sectionKey) {
       case 'homepage_hero':
