@@ -25,7 +25,7 @@ export default function Footer() {
                 width={140} 
                 height={60}
                 className="object-contain invert brightness-200"
-                style={{ height: 'auto' }}
+                style={{ width: 'auto', height: 'auto' }}
               />
             </Link>
             <p className="text-gray-400 text-sm leading-relaxed max-w-xs">
