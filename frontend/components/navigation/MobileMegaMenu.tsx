@@ -44,7 +44,7 @@ const INTELLIGENCE_DATA = {
     'insights': [
       { title: 'Smart Home Blog', slug: '/blog', description: 'Latest trends & insights', isFullPath: true },
       { title: 'Case Studies', slug: '/case-studies', description: 'Real project showcases', isFullPath: true },
-      { title: 'Technology Guides', slug: '/guides', description: 'In-depth tech explanations', isFullPath: true }
+      { title: 'Technology Guides', slug: '/blog', description: 'In-depth tech articles', isFullPath: true }
     ],
     'tools': [
       { title: 'Cost Calculator', slug: '/calculator', description: 'Estimate your project cost', isFullPath: true },
