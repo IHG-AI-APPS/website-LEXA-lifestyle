@@ -111,6 +111,9 @@ export default function BrandsAdminPage() {
         products: b.products || [],
         certifications: b.certifications || [],
         key_features: b.key_features || [],
+        gallery_images: b.gallery_images || [],
+        feature_cards: b.feature_cards || [],
+        related_solutions: b.related_solutions || [],
         seo_title: b.seo_title || '',
         seo_description: b.seo_description || ''
       }))
