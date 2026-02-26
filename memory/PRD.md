@@ -23,13 +23,23 @@ Complete website overhaul for LEXA Smart Home to:
 - **9 total bugs fixed** (serialization, ID overwrites, integration params, email/WhatsApp logic)
 
 ### Phase 17: Automated Regression Testing (Feb 26, 2026)
-- **Backend**: `nightly_runner.py` runs 96-endpoint test suite, saves JSON results
-- **Backend**: `regression_tests.py` API: GET `/api/admin/regression/latest`, `/history`, POST `/run`
-- **Frontend**: Admin page at `/admin/test-results` with live status card, history table, "Run Tests Now" trigger
-- **Cron**: Automated every 4 hours via `/etc/cron.d/test-runner`
-- **Testing**: 100% pass rate (7/7 backend, 9/9 frontend — iteration_45)
+- Backend: `nightly_runner.py` runs 96-endpoint test suite, saves JSON results
+- Backend: `regression_tests.py` API: GET `/api/admin/regression/latest`, `/history`, POST `/run`
+- Frontend: Admin page at `/admin/test-results` with live status card, history table, trigger button
+- Cron: Automated every 4 hours via `/etc/cron.d/test-runner`
+- Testing: 100% pass rate (iteration_45)
 
-### Verified API Coverage (96 endpoints across 18 areas)
+### Phase 18: PATCH Endpoints for Partial Updates (Feb 26, 2026)
+- **17 new PATCH endpoints** added across all admin CRUD entities
+- Entities covered in `server.py`: Solutions, Projects, Articles, News, Brands, Products, Videos, Catalogues
+- Entities covered in `admin_solutions_services.py`: Solutions-full, Services
+- Entities covered in `intelligence.py`: Features, Control Systems
+- Entities covered in `admin_extended_content.py`: Testimonials, Blog, Property Packages, Package Enhancements, Specialty Rooms, Product Categories
+- Pattern: Accept Dict body → strip _id/id → validate non-empty → `$set` partial update
+- Error handling: 400 for empty body, 404 for not found, auth required
+- Testing: 100% pass rate — 61/61 tests (iteration_46)
+
+### Verified API Coverage (96+ endpoints across 18 areas)
 | Area | Count | Status |
 |------|-------|--------|
 | Auth & Admin | 8 | PASS |
@@ -50,13 +60,13 @@ Complete website overhaul for LEXA Smart Home to:
 | Tracking | 2 | PASS |
 | Project Builder | 2 | PASS |
 | Health & Root | 2 | PASS |
+| PATCH Endpoints | 17 | PASS |
 
 ## Remaining / Backlog
 ### P1 — Redesign Projects Landing Page (`/projects`) to match benchmark design
 ### P2 — Site-wide Consistency Review (final QA pass)
 ### P3 — Content Change History for admin CMS (audit trail)
 ### P4 — Approve WhatsApp templates on Interakt dashboard (ops)
-### P5 — Consider PATCH endpoints for partial updates
 
 ## Credentials
 - Admin: `/admin/login` (username: admin, password: lexa2026)
