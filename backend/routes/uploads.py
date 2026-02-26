@@ -240,7 +240,10 @@ async def serve_uploaded_file(category: str, filename: str):
     return FileResponse(
         file_path,
         media_type=content_type,
-        headers={"Cache-Control": "public, max-age=31536000"}
+        headers={
+            "Cache-Control": "public, max-age=31536000",
+            "Content-Disposition": "inline"
+        }
     )
 
 
