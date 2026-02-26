@@ -1,0 +1,12 @@
+{
+  "timestamp": "2026-02-26T11:51:42.675891+00:00",
+  "status": "PASS",
+  "passed": 96,
+  "failed": 0,
+  "errors": 0,
+  "total": 96,
+  "failures": [],
+  "duration_seconds": null,
+  "xml_report": "/app/test_reports/nightly/results_20260226_115056.xml",
+  "exit_code": 0
+}
