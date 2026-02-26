@@ -233,6 +233,7 @@ async def get_articles(category: Optional[str] = None, limit: Optional[int] = No
             cursor = cursor.limit(limit)
         
         articles = await cursor.to_list(1000)
+        await cache.set(cache_key, articles, ttl_seconds=300)
         return articles
     except Exception as e:
         logger.error(f"Articles error: {str(e)}")
