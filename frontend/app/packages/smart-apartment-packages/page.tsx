@@ -41,7 +41,7 @@ export default function SmartApartmentPackagesPage() {
 
   // Static color map for Tailwind JIT compatibility
   const colorMap: Record<string, { bg: string; text: string }> = {
-    blue: { bg: 'bg-blue-100', text: 'text-blue-600' },
+    blue: { bg: 'bg-[#C9A962]/15', text: 'text-[#C9A962]' },
     orange: { bg: 'bg-orange-100', text: 'text-orange-600' },
     amber: { bg: 'bg-amber-100', text: 'text-amber-600' },
     purple: { bg: 'bg-purple-100', text: 'text-purple-600' }
@@ -218,11 +218,11 @@ export default function SmartApartmentPackagesPage() {
         </section>
 
         {/* Apartment Size Selector */}
-        <section id="packages" className="py-12 bg-white border-b border-gray-200 dark:border-gray-700 dark:border-gray-700">
+        <section id="packages" className="py-12 bg-white border-b border-gray-200 dark:border-gray-700">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
             <div className="text-center mb-8">
-              <h2 className="text-2xl sm:text-3xl font-bold mb-2 text-gray-900 dark:text-white dark:text-white">Select Your Apartment Size</h2>
-              <p className="text-gray-600 dark:text-gray-400 dark:text-gray-400">Choose your apartment type to see tailored pricing</p>
+              <h2 className="text-2xl sm:text-3xl font-bold mb-2 text-gray-900 dark:text-white">Select Your Apartment Size</h2>
+              <p className="text-gray-600 dark:text-gray-400">Choose your apartment type to see tailored pricing</p>
             </div>
             <div className="flex flex-wrap justify-center gap-3">
               {apartmentSizes.map((size) => (
@@ -231,8 +231,8 @@ export default function SmartApartmentPackagesPage() {
                   onClick={() => setSelectedSize(size.id)}
                   className={`px-6 py-3 border-2 font-semibold transition-all ${
                     selectedSize === size.id
-                      ? 'border-blue-600 bg-blue-50 text-blue-700'
-                      : 'border-gray-200 dark:border-gray-700 bg-white text-gray-700 dark:text-gray-300 hover:border-blue-300'
+                      ? 'border-[#C9A962] bg-[#C9A962]/10 text-[#C9A962]'
+                      : 'border-gray-200 dark:border-gray-700 bg-white text-gray-700 dark:text-gray-300 hover:border-[#C9A962]/50'
                   }`}
                 >
                   <span className="mr-2">{size.icon}</span>
@@ -244,7 +244,7 @@ export default function SmartApartmentPackagesPage() {
         </section>
 
         {/* Package Comparison */}
-        <section className="py-20 bg-gray-50 dark:bg-gray-800">
+        <section className="py-20 bg-gray-50 dark:bg-gray-900">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
               {packages.map((pkg) => {
@@ -257,11 +257,11 @@ export default function SmartApartmentPackagesPage() {
                     transition={{ duration: 0.6 }}
                     viewport={{ once: true }}
                     className={`bg-white border-2 transition-all hover:shadow-xl relative ${
-                      pkg.popular ? 'border-amber-500 shadow-lg scale-105' : 'border-gray-200'
+                      pkg.popular ? 'border-[#C9A962] shadow-lg scale-105' : 'border-gray-200'
                     }`}
                   >
                     {pkg.popular && (
-                      <div className="absolute -top-3 left-1/2 -translate-x-1/2 px-4 py-1 bg-amber-500 text-white text-xs font-bold uppercase">
+                      <div className="absolute -top-3 left-1/2 -translate-x-1/2 px-4 py-1 bg-[#C9A962] text-gray-900 font-semibold text-xs font-bold uppercase">
                         Most Popular
                       </div>
                     )}
@@ -269,7 +269,7 @@ export default function SmartApartmentPackagesPage() {
                       <div className={`inline-flex p-3 ${colorMap[pkg.color]?.bg || 'bg-gray-100'} mb-4`}>
                         <Icon className={`h-8 w-8 ${colorMap[pkg.color]?.text || 'text-gray-600'}`} />
                       </div>
-                      <h3 className="text-2xl font-bold mb-1 text-gray-900 dark:text-white dark:text-white">{pkg.tier}</h3>
+                      <h3 className="text-2xl font-bold mb-1 text-gray-900 dark:text-white">{pkg.tier}</h3>
                       <p className="text-sm text-gray-500 mb-4">{pkg.tagline}</p>
                       
                       <div className="mb-6">
@@ -284,22 +284,22 @@ export default function SmartApartmentPackagesPage() {
                       <div className="space-y-3 mb-6">
                         {pkg.features.map((feature) => (
                           <div key={feature} className="flex items-start gap-2">
-                            <CheckCircle2 className="h-5 w-5 text-blue-600 flex-shrink-0 mt-0.5" />
-                            <span className="text-sm text-gray-700 dark:text-gray-300 dark:text-gray-300">{feature}</span>
+                            <CheckCircle2 className="h-5 w-5 text-[#C9A962] flex-shrink-0 mt-0.5" />
+                            <span className="text-sm text-gray-700 dark:text-gray-300">{feature}</span>
                           </div>
                         ))}
                       </div>
 
                       <div className="border-t border-gray-200 dark:border-gray-700 pt-4 mb-6">
                         <div className="text-xs text-gray-500">Ideal for:</div>
-                        <div className="text-sm font-semibold text-gray-700 dark:text-gray-300 dark:text-gray-300">{pkg.ideal}</div>
+                        <div className="text-sm font-semibold text-gray-700 dark:text-gray-300">{pkg.ideal}</div>
                       </div>
 
                       <Button
                         onClick={() => setShowConsultationForm(true)}
                         className={`w-full ${
                           pkg.popular
-                            ? 'bg-amber-500 hover:bg-amber-600 text-white'
+                            ? 'bg-[#C9A962] hover:bg-[#C9A962]/90 text-gray-900 font-semibold'
                             : 'bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 text-gray-900'
                         }`}
                       >
@@ -323,7 +323,7 @@ export default function SmartApartmentPackagesPage() {
               viewport={{ once: true }}
               className="text-center mb-16"
             >
-              <h2 className="text-3xl sm:text-4xl font-bold mb-4 text-gray-900 dark:text-white dark:text-white">
+              <h2 className="text-3xl sm:text-4xl font-bold mb-4 text-gray-900 dark:text-white">
                 Choose Your Ecosystem
               </h2>
               <p className="text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
@@ -339,22 +339,22 @@ export default function SmartApartmentPackagesPage() {
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: 0.2 }}
                   viewport={{ once: true }}
-                  className="bg-gray-50 p-8 border-l-4 border-blue-600"
+                  className="bg-gray-50 p-8 border-l-4 border-[#C9A962]"
                 >
                   <div className="flex items-center gap-2 mb-3">
-                    <Wifi className="h-5 w-5 text-blue-600" />
-                    <h3 className="text-xl font-bold text-gray-900 dark:text-white dark:text-white">{eco.name}</h3>
+                    <Wifi className="h-5 w-5 text-[#C9A962]" />
+                    <h3 className="text-xl font-bold text-gray-900 dark:text-white">{eco.name}</h3>
                   </div>
                   <p className="text-gray-600 dark:text-gray-400 mb-4">{eco.description}</p>
                   <div className="space-y-2 mb-4">
                     {eco.features.map((feature) => (
                       <div key={feature} className="flex items-start gap-2">
-                        <CheckCircle2 className="h-4 w-4 text-blue-600 flex-shrink-0 mt-0.5" />
-                        <span className="text-sm text-gray-700 dark:text-gray-300 dark:text-gray-300">{feature}</span>
+                        <CheckCircle2 className="h-4 w-4 text-[#C9A962] flex-shrink-0 mt-0.5" />
+                        <span className="text-sm text-gray-700 dark:text-gray-300">{feature}</span>
                       </div>
                     ))}
                   </div>
-                  <div className="text-sm font-semibold text-blue-600">Best for: {eco.bestFor}</div>
+                  <div className="text-sm font-semibold text-[#C9A962]">Best for: {eco.bestFor}</div>
                 </motion.div>
               ))}
             </div>
@@ -362,7 +362,7 @@ export default function SmartApartmentPackagesPage() {
         </section>
 
         {/* Benefits */}
-        <section className="py-20 bg-blue-50">
+        <section className="py-20 bg-[#C9A962]/10">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -371,7 +371,7 @@ export default function SmartApartmentPackagesPage() {
               viewport={{ once: true }}
               className="text-center mb-16"
             >
-              <h2 className="text-3xl sm:text-4xl font-bold mb-4 text-gray-900 dark:text-white dark:text-white">
+              <h2 className="text-3xl sm:text-4xl font-bold mb-4 text-gray-900 dark:text-white">
                 Why Choose LEXA Apartment Packages?
               </h2>
             </motion.div>
@@ -392,9 +392,9 @@ export default function SmartApartmentPackagesPage() {
                     viewport={{ once: true }}
                     className="bg-white dark:bg-gray-800 p-8 text-center"
                   >
-                    <Icon className="h-12 w-12 mx-auto mb-4 text-blue-600" />
-                    <h3 className="text-xl font-bold mb-2 text-gray-900 dark:text-white dark:text-white">{benefit.title}</h3>
-                    <p className="text-gray-600 dark:text-gray-400 dark:text-gray-400">{benefit.desc}</p>
+                    <Icon className="h-12 w-12 mx-auto mb-4 text-[#C9A962]" />
+                    <h3 className="text-xl font-bold mb-2 text-gray-900 dark:text-white">{benefit.title}</h3>
+                    <p className="text-gray-600 dark:text-gray-400">{benefit.desc}</p>
                   </motion.div>
                 )
               })}
@@ -403,7 +403,7 @@ export default function SmartApartmentPackagesPage() {
         </section>
 
         {/* Developer Packages Teaser */}
-        <section className="py-20 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 text-white">
+        <section className="py-20 bg-gray-900 text-white">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -412,15 +412,15 @@ export default function SmartApartmentPackagesPage() {
               viewport={{ once: true }}
               className="text-center mb-12"
             >
-              <div className="inline-flex items-center gap-2 px-4 py-2 bg-amber-500/20 border border-amber-500/30 mb-6">
-                <Building2 className="h-4 w-4 text-amber-400" />
-                <span className="text-xs font-semibold uppercase tracking-wider text-amber-400">
+              <div className="inline-flex items-center gap-2 px-4 py-2 bg-[#C9A962]/20 border border-[#C9A962]/30 mb-6">
+                <Building2 className="h-4 w-4 text-[#C9A962]" />
+                <span className="text-xs font-semibold uppercase tracking-wider text-[#C9A962]">
                   For Developers & Property Managers
                 </span>
               </div>
               <h2 className="text-3xl sm:text-4xl font-bold mb-4">
                 Bulk Packages for<br />
-                <span className="text-amber-400">Multi-Unit Projects</span>
+                <span className="text-[#C9A962]">Multi-Unit Projects</span>
               </h2>
               <p className="text-lg text-gray-300 max-w-2xl mx-auto">
                 Special pricing for real estate developers and property management companies. 
@@ -444,7 +444,7 @@ export default function SmartApartmentPackagesPage() {
                     viewport={{ once: true }}
                     className="bg-white/5 border border-white/10 p-6 text-center"
                   >
-                    <Icon className="h-10 w-10 mx-auto mb-4 text-amber-400" />
+                    <Icon className="h-10 w-10 mx-auto mb-4 text-[#C9A962]" />
                     <h3 className="text-lg font-bold mb-2">{item.title}</h3>
                     <p className="text-sm text-gray-400">{item.desc}</p>
                   </motion.div>
@@ -456,7 +456,7 @@ export default function SmartApartmentPackagesPage() {
               <Button
                 size="lg"
                 asChild
-                className="bg-amber-500 hover:bg-amber-600 text-black px-8 py-6 text-sm font-semibold uppercase tracking-wider"
+                className="bg-[#C9A962] hover:bg-[#C9A962]/90 text-gray-900 font-semibold px-8 py-6 text-sm font-semibold uppercase tracking-wider"
               >
                 <Link href="/packages/developer-packages">
                   Explore Developer Packages
@@ -468,7 +468,7 @@ export default function SmartApartmentPackagesPage() {
         </section>
 
         {/* CTA */}
-        <section className="py-20 bg-gradient-to-br from-blue-600 to-blue-800 text-white">
+        <section className="py-20 bg-gray-900 text-white">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -481,13 +481,13 @@ export default function SmartApartmentPackagesPage() {
               <h2 className="text-3xl sm:text-4xl font-bold mb-4">
                 Ready to Upgrade Your Apartment?
               </h2>
-              <p className="text-lg text-blue-100 mb-8 max-w-2xl mx-auto">
+              <p className="text-lg text-gray-400 mb-8 max-w-2xl mx-auto">
                 Get a personalized quote based on your apartment size and automation needs.
               </p>
               <Button
                 size="lg"
                 onClick={() => setShowConsultationForm(true)}
-                className="bg-white text-blue-600 hover:bg-blue-50 px-8 py-6 text-sm font-semibold uppercase tracking-wider"
+                className="bg-white text-[#C9A962] hover:bg-[#C9A962]/10 px-8 py-6 text-sm font-semibold uppercase tracking-wider"
               >
                 Get Your Free Quote
                 <ArrowRight className="ml-2 h-4 w-4" />
@@ -497,7 +497,7 @@ export default function SmartApartmentPackagesPage() {
         </section>
 
         {/* Pricing Disclaimer */}
-        <PricingDisclaimer variant="minimal" className="bg-gray-50 dark:bg-gray-800" />
+        <PricingDisclaimer variant="minimal" className="bg-gray-50 dark:bg-gray-900" />
       </div>
 
       <ConsultationForm 
