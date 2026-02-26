@@ -232,7 +232,7 @@ export default function DeveloperPackagesPage() {
       </section>
 
       {/* Benefits Grid */}
-      <section className="py-20 bg-gray-50 dark:bg-gray-800">
+      <section className="py-20 bg-gray-50 dark:bg-gray-900">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -241,7 +241,7 @@ export default function DeveloperPackagesPage() {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <h2 className="text-3xl sm:text-4xl font-bold mb-4 text-gray-900 dark:text-white dark:text-white">
+            <h2 className="text-3xl sm:text-4xl font-bold mb-4 text-gray-900 dark:text-white">
               Why Developers Choose LEXA
             </h2>
             <p className="text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
@@ -261,14 +261,14 @@ export default function DeveloperPackagesPage() {
                   viewport={{ once: true }}
                   className="bg-white dark:bg-gray-800 p-6 border border-gray-200 dark:border-gray-700 hover:shadow-lg transition-shadow"
                 >
-                  <div className="inline-flex p-3 bg-amber-100 mb-4">
-                    <Icon className="h-6 w-6 text-amber-600" />
+                  <div className="inline-flex p-3 bg-[#C9A962]/15 mb-4">
+                    <Icon className="h-6 w-6 text-[#C9A962]" />
                   </div>
-                  <div className="text-xs font-bold text-amber-600 uppercase tracking-wider mb-2">
+                  <div className="text-xs font-bold text-[#C9A962] uppercase tracking-wider mb-2">
                     {benefit.highlight}
                   </div>
-                  <h3 className="text-lg font-bold mb-2 text-gray-900 dark:text-white dark:text-white">{benefit.title}</h3>
-                  <p className="text-sm text-gray-600 dark:text-gray-400 dark:text-gray-400">{benefit.description}</p>
+                  <h3 className="text-lg font-bold mb-2 text-gray-900 dark:text-white">{benefit.title}</h3>
+                  <p className="text-sm text-gray-600 dark:text-gray-400">{benefit.description}</p>
                 </motion.div>
               )
             })}
@@ -286,7 +286,7 @@ export default function DeveloperPackagesPage() {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <h2 className="text-3xl sm:text-4xl font-bold mb-4 text-gray-900 dark:text-white dark:text-white">
+            <h2 className="text-3xl sm:text-4xl font-bold mb-4 text-gray-900 dark:text-white">
               Scalable Package Options
             </h2>
             <p className="text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
@@ -329,27 +329,27 @@ export default function DeveloperPackagesPage() {
                 transition={{ duration: 0.6, delay: 0.2 }}
                 viewport={{ once: true }}
                 className={`bg-white border-2 p-6 relative ${
-                  pkg.popular ? 'border-amber-500 shadow-lg' : 'border-gray-200'
+                  pkg.popular ? 'border-[#C9A962] shadow-lg' : 'border-gray-200'
                 }`}
               >
                 {pkg.popular && (
-                  <div className="absolute -top-3 left-1/2 -translate-x-1/2 px-4 py-1 bg-amber-500 text-white text-xs font-bold uppercase">
+                  <div className="absolute -top-3 left-1/2 -translate-x-1/2 px-4 py-1 bg-[#C9A962] text-gray-900 text-xs font-bold uppercase">
                     Most Popular
                   </div>
                 )}
-                <h3 className="text-2xl font-bold mb-1 text-gray-900 dark:text-white dark:text-white">{pkg.tier}</h3>
+                <h3 className="text-2xl font-bold mb-1 text-gray-900 dark:text-white">{pkg.tier}</h3>
                 <p className="text-sm text-gray-500 mb-4">{pkg.tagline}</p>
                 <div className="space-y-2 mb-4">
                   {pkg.features.map((feature) => (
                     <div key={feature} className="flex items-center gap-2">
-                      <CheckCircle2 className="h-4 w-4 text-amber-500 flex-shrink-0" />
-                      <span className="text-sm text-gray-700 dark:text-gray-300 dark:text-gray-300">{feature}</span>
+                      <CheckCircle2 className="h-4 w-4 text-[#C9A962] flex-shrink-0" />
+                      <span className="text-sm text-gray-700 dark:text-gray-300">{feature}</span>
                     </div>
                   ))}
                 </div>
                 <div className="border-t border-gray-200 dark:border-gray-700 pt-4">
                   <div className="text-xs text-gray-500">Ideal for:</div>
-                  <div className="text-sm font-semibold text-gray-700 dark:text-gray-300 dark:text-gray-300">{pkg.ideal}</div>
+                  <div className="text-sm font-semibold text-gray-700 dark:text-gray-300">{pkg.ideal}</div>
                 </div>
               </motion.div>
             ))}
@@ -375,7 +375,7 @@ export default function DeveloperPackagesPage() {
       </section>
 
       {/* Inquiry Form */}
-      <section id="inquiry-form" className="py-20 bg-slate-900 text-white">
+      <section id="inquiry-form" className="py-20 bg-gray-900 text-white">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
             {/* Form */}
@@ -410,7 +410,7 @@ export default function DeveloperPackagesPage() {
                         required
                         value={formData.companyName}
                         onChange={(e) => setFormData({ ...formData, companyName: e.target.value })}
-                        className="w-full px-4 py-3 bg-white/10 border border-white/20 text-white placeholder-gray-400 focus:outline-none focus:border-amber-500"
+                        className="w-full px-4 py-3 bg-white/10 border border-white/20 text-white placeholder-gray-400 focus:outline-none focus:border-[#C9A962]"
                         placeholder="Your company name"
                       />
                     </div>
@@ -421,7 +421,7 @@ export default function DeveloperPackagesPage() {
                         required
                         value={formData.contactName}
                         onChange={(e) => setFormData({ ...formData, contactName: e.target.value })}
-                        className="w-full px-4 py-3 bg-white/10 border border-white/20 text-white placeholder-gray-400 focus:outline-none focus:border-amber-500"
+                        className="w-full px-4 py-3 bg-white/10 border border-white/20 text-white placeholder-gray-400 focus:outline-none focus:border-[#C9A962]"
                         placeholder="Your name"
                       />
                     </div>
@@ -435,7 +435,7 @@ export default function DeveloperPackagesPage() {
                         required
                         value={formData.email}
                         onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                        className="w-full px-4 py-3 bg-white/10 border border-white/20 text-white placeholder-gray-400 focus:outline-none focus:border-amber-500"
+                        className="w-full px-4 py-3 bg-white/10 border border-white/20 text-white placeholder-gray-400 focus:outline-none focus:border-[#C9A962]"
                         placeholder="email@company.com"
                       />
                     </div>
@@ -446,7 +446,7 @@ export default function DeveloperPackagesPage() {
                         required
                         value={formData.phone}
                         onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                        className="w-full px-4 py-3 bg-white/10 border border-white/20 text-white placeholder-gray-400 focus:outline-none focus:border-amber-500"
+                        className="w-full px-4 py-3 bg-white/10 border border-white/20 text-white placeholder-gray-400 focus:outline-none focus:border-[#C9A962]"
                         placeholder="+971 XX XXX XXXX"
                       />
                     </div>
@@ -459,7 +459,7 @@ export default function DeveloperPackagesPage() {
                         required
                         value={formData.projectType}
                         onChange={(e) => setFormData({ ...formData, projectType: e.target.value })}
-                        className="w-full px-4 py-3 bg-white/10 border border-white/20 text-white focus:outline-none focus:border-amber-500"
+                        className="w-full px-4 py-3 bg-white/10 border border-white/20 text-white focus:outline-none focus:border-[#C9A962]"
                       >
                         <option value="" className="bg-slate-800">Select project type</option>
                         {projectTypes.map((type) => (
@@ -475,7 +475,7 @@ export default function DeveloperPackagesPage() {
                         required
                         value={formData.unitCount}
                         onChange={(e) => setFormData({ ...formData, unitCount: e.target.value })}
-                        className="w-full px-4 py-3 bg-white/10 border border-white/20 text-white focus:outline-none focus:border-amber-500"
+                        className="w-full px-4 py-3 bg-white/10 border border-white/20 text-white focus:outline-none focus:border-[#C9A962]"
                       >
                         <option value="" className="bg-slate-800">Select unit range</option>
                         {unitRanges.map((range) => (
@@ -494,7 +494,7 @@ export default function DeveloperPackagesPage() {
                         required
                         value={formData.location}
                         onChange={(e) => setFormData({ ...formData, location: e.target.value })}
-                        className="w-full px-4 py-3 bg-white/10 border border-white/20 text-white focus:outline-none focus:border-amber-500"
+                        className="w-full px-4 py-3 bg-white/10 border border-white/20 text-white focus:outline-none focus:border-[#C9A962]"
                       >
                         <option value="" className="bg-slate-800">Select location</option>
                         {dubaiLocations.map((loc) => (
@@ -510,7 +510,7 @@ export default function DeveloperPackagesPage() {
                         required
                         value={formData.timeline}
                         onChange={(e) => setFormData({ ...formData, timeline: e.target.value })}
-                        className="w-full px-4 py-3 bg-white/10 border border-white/20 text-white focus:outline-none focus:border-amber-500"
+                        className="w-full px-4 py-3 bg-white/10 border border-white/20 text-white focus:outline-none focus:border-[#C9A962]"
                       >
                         <option value="" className="bg-slate-800">Select timeline</option>
                         {timelines.map((tl) => (
@@ -527,7 +527,7 @@ export default function DeveloperPackagesPage() {
                     <select
                       value={formData.packageInterest}
                       onChange={(e) => setFormData({ ...formData, packageInterest: e.target.value })}
-                      className="w-full px-4 py-3 bg-white/10 border border-white/20 text-white focus:outline-none focus:border-amber-500"
+                      className="w-full px-4 py-3 bg-white/10 border border-white/20 text-white focus:outline-none focus:border-[#C9A962]"
                     >
                       <option value="" className="bg-slate-800">Select preferred package tier</option>
                       <option value="basic" className="bg-slate-800">Basic - Essential Automation</option>
@@ -545,7 +545,7 @@ export default function DeveloperPackagesPage() {
                       value={formData.additionalInfo}
                       onChange={(e) => setFormData({ ...formData, additionalInfo: e.target.value })}
                       rows={4}
-                      className="w-full px-4 py-3 bg-white/10 border border-white/20 text-white placeholder-gray-400 focus:outline-none focus:border-amber-500"
+                      className="w-full px-4 py-3 bg-white/10 border border-white/20 text-white placeholder-gray-400 focus:outline-none focus:border-[#C9A962]"
                       placeholder="Tell us more about your project requirements, special needs, or questions..."
                     />
                   </div>
@@ -554,7 +554,7 @@ export default function DeveloperPackagesPage() {
                     type="submit"
                     size="lg"
                     disabled={isSubmitting}
-                    className="w-full bg-amber-500 hover:bg-amber-600 text-black py-6 text-sm font-semibold uppercase tracking-wider disabled:opacity-50"
+                    className="w-full bg-[#C9A962] hover:bg-[#C9A962]/90 text-gray-900 font-semibold py-6 text-sm font-semibold uppercase tracking-wider disabled:opacity-50"
                   >
                     {isSubmitting ? 'Submitting...' : 'Submit Inquiry'}
                     <ArrowRight className="ml-2 h-4 w-4" />
@@ -578,8 +578,8 @@ export default function DeveloperPackagesPage() {
                   href="tel:+97142670470"
                   className="flex items-center gap-4 p-4 bg-white/5 border border-white/10 hover:bg-white/10 transition-colors"
                 >
-                  <div className="p-3 bg-amber-500/20">
-                    <Phone className="h-6 w-6 text-amber-400" />
+                  <div className="p-3 bg-[#C9A962]/20">
+                    <Phone className="h-6 w-6 text-[#C9A962]" />
                   </div>
                   <div>
                     <div className="text-sm text-gray-400">Call Us Directly</div>
@@ -613,7 +613,7 @@ export default function DeveloperPackagesPage() {
                     { step: '4', title: 'Site Visit', desc: 'On-site assessment for accurate scope' }
                   ].map((item) => (
                     <div key={item.step} className="flex items-start gap-3">
-                      <div className="w-8 h-8 bg-amber-500 text-black font-bold flex items-center justify-center flex-shrink-0">
+                      <div className="w-8 h-8 bg-[#C9A962] text-gray-900 font-bold flex items-center justify-center flex-shrink-0">
                         {item.step}
                       </div>
                       <div>
@@ -625,9 +625,9 @@ export default function DeveloperPackagesPage() {
                 </div>
               </div>
 
-              <div className="mt-8 p-6 bg-amber-500/10 border border-amber-500/30">
+              <div className="mt-8 p-6 bg-[#C9A962]/10 border border-[#C9A962]/30">
                 <div className="flex items-center gap-3 mb-3">
-                  <Briefcase className="h-5 w-5 text-amber-400" />
+                  <Briefcase className="h-5 w-5 text-[#C9A962]" />
                   <span className="font-bold">Trusted by Leading Developers</span>
                 </div>
                 <p className="text-sm text-gray-400">
