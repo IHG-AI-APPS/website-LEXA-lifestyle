@@ -209,6 +209,46 @@ export async function deleteBrand(id: string) {
   return response.json()
 }
 
+// Catalogues Management
+export async function getCatalogues() {
+  const response = await fetch(`${BACKEND_URL}/api/admin/catalogues`, {
+    headers: getAuthHeaders()
+  })
+  if (!response.ok) throw new Error('Failed to fetch catalogues')
+  return response.json()
+}
+
+export async function createCatalogue(data: any) {
+  const response = await fetch(`${BACKEND_URL}/api/admin/catalogues`, {
+    method: 'POST',
+    headers: { ...getAuthHeaders(), 'Content-Type': 'application/json' },
+    body: JSON.stringify(data)
+  })
+  if (!response.ok) throw new Error('Failed to create catalogue')
+  return response.json()
+}
+
+export async function updateCatalogue(id: string, data: any) {
+  const response = await fetch(`${BACKEND_URL}/api/admin/catalogues/${id}`, {
+    method: 'PUT',
+    headers: { ...getAuthHeaders(), 'Content-Type': 'application/json' },
+    body: JSON.stringify(data)
+  })
+  if (!response.ok) throw new Error('Failed to update catalogue')
+  return response.json()
+}
+
+export async function deleteCatalogue(id: string) {
+  const response = await fetch(`${BACKEND_URL}/api/admin/catalogues/${id}`, {
+    method: 'DELETE',
+    headers: getAuthHeaders()
+  })
+  if (!response.ok) throw new Error('Failed to delete catalogue')
+  return response.json()
+}
+
+
+
 // Products Management
 export async function createProduct(product: any) {
   const response = await fetch(`${BACKEND_URL}/api/admin/products`, {
