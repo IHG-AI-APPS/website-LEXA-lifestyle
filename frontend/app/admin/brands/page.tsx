@@ -144,6 +144,9 @@ export default function BrandsAdminPage() {
       products: brand.products || [],
       certifications: brand.certifications || [],
       key_features: brand.key_features || [],
+      gallery_images: brand.gallery_images || [],
+      feature_cards: brand.feature_cards || [],
+      related_solutions: brand.related_solutions || [],
       seo_title: brand.seo_title || '',
       seo_description: brand.seo_description || ''
     })
