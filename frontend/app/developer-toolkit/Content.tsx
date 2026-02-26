@@ -2,7 +2,7 @@
 
 import Link from 'next/link'
 import { Button } from '@/components/ui/button'
-import { Download, FileText, Package, Award, CheckCircle2, Lock } from 'lucide-react'
+import { Download, FileText, Package, Award, CheckCircle2, Lock, ArrowRight } from 'lucide-react'
 import { useCms } from '@/hooks/useCms'
 
 const ICON_MAP: Record<string, any> = { Award, FileText, Package, Download, Lock }
