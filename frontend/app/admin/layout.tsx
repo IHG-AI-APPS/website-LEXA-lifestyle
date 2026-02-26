@@ -39,7 +39,8 @@ import {
   FlaskConical,
   MapPin,
   TrendingUp,
-  BookOpen
+  BookOpen,
+  ShieldCheck
 } from 'lucide-react'
 import { verifyToken, logout } from '@/lib/adminApi'
 
