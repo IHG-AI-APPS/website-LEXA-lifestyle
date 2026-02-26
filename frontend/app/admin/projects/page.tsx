@@ -175,7 +175,7 @@ export default function ProjectsAdminPage() {
     }
   }
 
-  const handleArrayInput = (field: 'systems' | 'technical_specs' | 'gallery', value: string) => {
+  const handleArrayInput = (field: 'systems' | 'technical_specs' | 'gallery' | 'features' | 'results', value: string) => {
     setFormData({
       ...formData,
       [field]: value.split(',').map(item => item.trim()).filter(Boolean)
