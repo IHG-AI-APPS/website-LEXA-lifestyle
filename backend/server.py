@@ -1108,6 +1108,64 @@ async def delete_brand(brand_id: str, user: dict = Depends(verify_token)):
         logger.error(f"Delete brand error: {str(e)}")
         raise HTTPException(status_code=500, detail="Failed to delete brand")
 
+
+# ============= ADMIN - CATALOGUES MANAGEMENT =============
+
+@api_router.post("/admin/catalogues")
+async def create_catalogue(data: dict, user: dict = Depends(verify_token)):
+    """Create a new catalogue"""
+    try:
+        from models.content import Catalogue
+        catalogue = Catalogue(**data)
+        cat_dict = catalogue.model_dump()
+        await db.catalogues.insert_one(cat_dict)
+        return {"message": "Catalogue created successfully", "id": catalogue.id}
+    except Exception as e:
+        logger.error(f"Create catalogue error: {str(e)}")
+        raise HTTPException(status_code=500, detail=f"Failed to create catalogue: {str(e)}")
+
+@api_router.put("/admin/catalogues/{catalogue_id}")
+async def update_catalogue(catalogue_id: str, data: dict, user: dict = Depends(verify_token)):
+    """Update a catalogue"""
+    try:
+        from models.content import Catalogue
+        catalogue = Catalogue(**data)
+        cat_dict = catalogue.model_dump()
+        result = await db.catalogues.update_one({"id": catalogue_id}, {"$set": cat_dict})
+        if result.matched_count == 0:
+            raise HTTPException(status_code=404, detail="Catalogue not found")
+        return {"message": "Catalogue updated successfully"}
+    except HTTPException:
+        raise
+    except Exception as e:
+        logger.error(f"Update catalogue error: {str(e)}")
+        raise HTTPException(status_code=500, detail=f"Failed to update catalogue: {str(e)}")
+
+@api_router.delete("/admin/catalogues/{catalogue_id}")
+async def delete_catalogue(catalogue_id: str, user: dict = Depends(verify_token)):
+    """Delete a catalogue"""
+    try:
+        result = await db.catalogues.delete_one({"id": catalogue_id})
+        if result.deleted_count == 0:
+            raise HTTPException(status_code=404, detail="Catalogue not found")
+        return {"message": "Catalogue deleted successfully"}
+    except HTTPException:
+        raise
+    except Exception as e:
+        logger.error(f"Delete catalogue error: {str(e)}")
+        raise HTTPException(status_code=500, detail="Failed to delete catalogue")
+
+@api_router.get("/admin/catalogues")
+async def admin_get_catalogues(user: dict = Depends(verify_token)):
+    """Get all catalogues (including unpublished) for admin"""
+    try:
+        catalogues = await db.catalogues.find({}, {"_id": 0}).sort([("priority", 1), ("title", 1)]).to_list(200)
+        return catalogues
+    except Exception as e:
+        logger.error(f"Admin get catalogues error: {str(e)}")
+        raise HTTPException(status_code=500, detail="Failed to fetch catalogues")
+
+
 # ============= ADMIN - PRODUCT CATEGORIES MANAGEMENT =============
 
 @api_router.post("/admin/products")
