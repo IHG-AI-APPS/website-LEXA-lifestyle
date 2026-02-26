@@ -9,7 +9,7 @@ import { Textarea } from '@/components/ui/textarea'
 import { Checkbox } from '@/components/ui/checkbox'
 import { createBrand, updateBrand, deleteBrand } from '@/lib/adminApi'
 import { toast } from 'sonner'
-import { ImageUpload } from '@/components/admin/ImageUpload'
+import { ImageUpload, MultiImageUpload } from '@/components/admin/ImageUpload'
 
 const BACKEND_URL = process.env.NEXT_PUBLIC_BACKEND_URL || ''
 
