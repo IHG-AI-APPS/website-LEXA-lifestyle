@@ -139,43 +139,23 @@ export default function ArchitectsPage() {
   const selectedResourceData = resources.find(r => r.id === selectedResource)
 
   return (
-    <div className="min-h-screen bg-white dark:bg-gray-900 pt-20">
+    <div className="min-h-screen bg-white dark:bg-gray-950 pt-20" data-testid="architects-page">
       {/* Hero Section */}
-      <section className="py-24 md:py-32 bg-gradient-to-br from-black via-gray-900 to-black text-white">
-        <div className="container mx-auto px-8 lg:px-16">
-          <div className="max-w-5xl mx-auto text-center">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-            >
-              <div className="inline-flex items-center justify-center w-20 h-20 mb-6 bg-white/10 backdrop-blur-sm rounded-full">
-                <Building2 size={36} strokeWidth={2} />
-              </div>
-              
-              <h1 className="text-5xl sm:text-6xl lg:text-7xl font-heading font-bold mb-6 ">
-                Architect Resource Portal
-              </h1>
-              
-              <p className="text-xl text-gray-300 mb-8 max-w-3xl mx-auto">
-                Technical resources designed by engineers, for architects. Get the drawings, specs, and details you need for seamless automation integration.
-              </p>
-
-              <div className="flex flex-wrap items-center justify-center gap-8 text-sm text-gray-400">
-                <div className="flex items-center gap-2">
-                  <Check size={20} className="text-green-400" />
-                  <span>No Gated Content</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <Check size={20} className="text-green-400" />
-                  <span>Industry Standard Formats</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <Check size={20} className="text-green-400" />
-                  <span>Professional Support</span>
-                </div>
-              </div>
-            </motion.div>
+      <section className="relative overflow-hidden bg-gray-900 text-white py-20 lg:py-28">
+        <div className="container mx-auto px-8 lg:px-16 relative z-10">
+          <div className="max-w-3xl mx-auto text-center">
+            <span className="inline-block px-3 py-1 rounded-full bg-[#C9A962]/15 border border-[#C9A962]/30 text-[#C9A962] text-xs uppercase tracking-widest mb-5">For Architects</span>
+            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-5 tracking-tight" data-testid="architects-title">
+              Architect Resource Portal
+            </h1>
+            <p className="text-base text-gray-300 mb-8 max-w-lg mx-auto">
+              Technical resources designed by engineers, for architects. Get the drawings, specs, and details you need.
+            </p>
+            <div className="flex flex-wrap items-center justify-center gap-6 text-sm text-gray-400">
+              <div className="flex items-center gap-2"><Check size={16} className="text-[#C9A962]" /><span>No Gated Content</span></div>
+              <div className="flex items-center gap-2"><Check size={16} className="text-[#C9A962]" /><span>Industry Standard Formats</span></div>
+              <div className="flex items-center gap-2"><Check size={16} className="text-[#C9A962]" /><span>Professional Support</span></div>
+            </div>
           </div>
         </div>
       </section>
