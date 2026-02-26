@@ -41,9 +41,20 @@ async def get_test_history(limit: int = 10):
 async def trigger_test_run():
     """Trigger a regression test run (non-blocking)"""
     import subprocess, sys
+    env = dict(__import__('os').environ)
+    if not env.get("REACT_APP_BACKEND_URL"):
+        try:
+            with open("/app/frontend/.env") as f:
+                for line in f:
+                    if line.startswith("REACT_APP_BACKEND_URL=") or line.startswith("NEXT_PUBLIC_BACKEND_URL="):
+                        env["REACT_APP_BACKEND_URL"] = line.strip().split("=", 1)[1]
+                        break
+        except FileNotFoundError:
+            pass
     subprocess.Popen(
         [sys.executable, "/app/backend/tests/nightly_runner.py"],
         stdout=open("/app/test_reports/nightly/last_run.log", "w"),
         stderr=subprocess.STDOUT,
+        env=env,
     )
     return {"status": "triggered", "message": "Regression test started. Check /api/admin/regression/latest for results."}
