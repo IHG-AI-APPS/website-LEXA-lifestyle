@@ -102,6 +102,23 @@ class Project(BaseModel):
     budget_range: Optional[str] = None
     systems: Optional[List[str]] = []
     type: Optional[str] = None
+    gallery: Optional[List[str]] = []
+    video_url: Optional[str] = None
+    challenge: Optional[str] = None
+    solution_details: Optional[str] = None
+    outcome: Optional[str] = None
+    client_testimonial: Optional[str] = None
+    client_name: Optional[str] = None
+    client_role: Optional[str] = None
+    technical_specs: Optional[List[str]] = []
+    timeline: Optional[str] = None
+    team_size: Optional[int] = None
+    completion_date: Optional[str] = None
+    consultant: Optional[str] = None
+    contractor: Optional[str] = None
+    results: Optional[List[str]] = []
+    brands: Optional[List[dict]] = []
+    products: Optional[List[dict]] = []
 
 
 class Testimonial(BaseModel):
