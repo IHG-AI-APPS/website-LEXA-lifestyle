@@ -335,6 +335,43 @@ export default function ProjectsAdminPage() {
                 />
               </div>
 
+              <div className="grid grid-cols-2 gap-4">
+                <div>
+                  <label className="block text-sm font-medium mb-1">Category</label>
+                  <Input
+                    value={formData.category || ''}
+                    onChange={(e) => setFormData({ ...formData, category: e.target.value })}
+                    placeholder="e.g., Smart Villa, Penthouse"
+                  />
+                </div>
+                <div>
+                  <label className="block text-sm font-medium mb-1">Video URL</label>
+                  <Input
+                    value={formData.video_url || ''}
+                    onChange={(e) => setFormData({ ...formData, video_url: e.target.value })}
+                    placeholder="https://youtube.com/..."
+                  />
+                </div>
+              </div>
+
+              <div>
+                <label className="block text-sm font-medium mb-1">Features (comma-separated)</label>
+                <Input
+                  value={formData.features?.join(', ')}
+                  onChange={(e) => handleArrayInput('features', e.target.value)}
+                  placeholder="e.g., Voice Control, Automated Blinds, Multi-room Audio"
+                />
+              </div>
+
+              <div>
+                <label className="block text-sm font-medium mb-1">Results / Metrics (comma-separated)</label>
+                <Input
+                  value={formData.results?.join(', ')}
+                  onChange={(e) => handleArrayInput('results', e.target.value)}
+                  placeholder="e.g., 30% energy savings, Seamless integration"
+                />
+              </div>
+
               <div className="border-t pt-4">
                 <h3 className="font-semibold text-lg mb-4">Case Study Details (Optional)</h3>
                 
