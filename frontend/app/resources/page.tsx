@@ -70,10 +70,6 @@ export default function ResourcesPage() {
           </div>
         </div>
       </section>
-            </motion.div>
-          </div>
-        </div>
-      </section>
 
       {/* Category Filter */}
       <section className="py-8 bg-white border-b border-gray-200 dark:border-gray-700 sticky top-20 z-40">
