@@ -5,7 +5,7 @@ import SafeImage from '@/components/ui/SafeImage'
 import Link from 'next/link'
 import { MapPin, ArrowRight, Phone, CheckCircle2, ChevronDown } from 'lucide-react'
 import { Button } from '@/components/ui/button'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 
 interface Community {
   name: string
@@ -31,6 +31,7 @@ interface Stat {
 }
 
 export interface GeoPageData {
+  slug?: string
   locationName: string
   region: string
   heroTitle: string
@@ -51,8 +52,6 @@ export interface GeoPageData {
   whatsappMessage?: string
   schemaData?: Record<string, unknown>
 }
-
-const ICON_MAP: Record<string, React.FC<{ className?: string; size?: number }>> = {}
 
 function FAQItem({ faq, index }: { faq: FAQ; index: number }) {
   const [open, setOpen] = useState(false)
@@ -81,10 +80,28 @@ function FAQItem({ faq, index }: { faq: FAQ; index: number }) {
   )
 }
 
-export default function GeoPageTemplate({ data }: { data: GeoPageData }) {
+const API_URL = process.env.NEXT_PUBLIC_BACKEND_URL || ''
+
+export default function GeoPageTemplate({ data: initialData, slug }: { data: GeoPageData; slug?: string }) {
+  const [data, setData] = useState<GeoPageData>(initialData)
+
+  useEffect(() => {
+    const pageSlug = slug || initialData.slug
+    if (!pageSlug) return
+
+    fetch(`${API_URL}/api/geo-pages/slug/${pageSlug}`)
+      .then(res => res.ok ? res.json() : null)
+      .then(apiData => {
+        if (apiData && apiData.locationName) {
+          setData(apiData)
+        }
+      })
+      .catch(() => {})
+  }, [slug, initialData.slug])
+
   return (
-    <div className="min-h-screen bg-white dark:bg-gray-950 pt-20">
-      {/* Hero Section — Split layout matching benchmark */}
+    <div className="min-h-screen bg-white dark:bg-gray-950 pt-20" data-testid="geo-page-container">
+      {/* Hero Section */}
       <section className="relative overflow-hidden bg-gray-900 text-white">
         <div className="grid grid-cols-1 lg:grid-cols-2 min-h-[520px]">
           <div className="flex flex-col justify-center px-8 lg:px-16 py-16 relative z-10">
@@ -126,7 +143,6 @@ export default function GeoPageTemplate({ data }: { data: GeoPageData }) {
                 </Link>
               </div>
 
-              {/* Stats row */}
               {data.stats.length > 0 && (
                 <div className="flex flex-wrap gap-8 mt-12">
                   {data.stats.map((stat, i) => (
@@ -140,7 +156,6 @@ export default function GeoPageTemplate({ data }: { data: GeoPageData }) {
             </motion.div>
           </div>
 
-          {/* Right side image */}
           <div className="relative min-h-[300px] lg:min-h-full">
             {data.heroImage ? (
               <SafeImage src={data.heroImage} alt={data.locationName} fill className="object-cover" priority sizes="(max-width: 1024px) 100vw, 50vw" />
@@ -153,7 +168,7 @@ export default function GeoPageTemplate({ data }: { data: GeoPageData }) {
         </div>
       </section>
 
-      {/* Communities Section */}
+      {/* Communities */}
       {data.communities.length > 0 && (
         <section className="py-16 lg:py-20 bg-white dark:bg-gray-950">
           <div className="container mx-auto px-8 lg:px-16">
@@ -195,7 +210,7 @@ export default function GeoPageTemplate({ data }: { data: GeoPageData }) {
         </section>
       )}
 
-      {/* Services Section */}
+      {/* Services */}
       {data.services && data.services.length > 0 && (
         <section className="py-16 lg:py-20 bg-gray-50 dark:bg-gray-900">
           <div className="container mx-auto px-8 lg:px-16">
@@ -205,9 +220,6 @@ export default function GeoPageTemplate({ data }: { data: GeoPageData }) {
                 <h2 className="text-2xl sm:text-3xl font-bold mt-2 text-gray-900 dark:text-white">
                   {data.servicesTitle || `Smart Solutions for ${data.locationName}`}
                 </h2>
-                {data.servicesSubtitle && (
-                  <p className="text-sm text-gray-500 dark:text-gray-400 mt-2 max-w-2xl mx-auto">{data.servicesSubtitle}</p>
-                )}
               </div>
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 {data.services.map((service, i) => (
@@ -236,7 +248,7 @@ export default function GeoPageTemplate({ data }: { data: GeoPageData }) {
         </section>
       )}
 
-      {/* Why LEXA Section */}
+      {/* Why LEXA */}
       <section className={`py-16 lg:py-20 ${data.services && data.services.length > 0 ? 'bg-white dark:bg-gray-950' : 'bg-gray-50 dark:bg-gray-900'}`}>
         <div className="container mx-auto px-8 lg:px-16">
           <div className="max-w-6xl mx-auto">
@@ -311,7 +323,7 @@ export default function GeoPageTemplate({ data }: { data: GeoPageData }) {
         </div>
       </section>
 
-      {/* FAQ Section */}
+      {/* FAQ */}
       {data.faqs && data.faqs.length > 0 && (
         <section className="py-16 lg:py-20 bg-gray-50 dark:bg-gray-900">
           <div className="container mx-auto px-8 lg:px-16">
@@ -332,7 +344,7 @@ export default function GeoPageTemplate({ data }: { data: GeoPageData }) {
         </section>
       )}
 
-      {/* CTA Section */}
+      {/* CTA */}
       <section className="py-20 bg-gray-900 text-white relative overflow-hidden">
         <div className="container mx-auto px-8 lg:px-16 relative z-10">
           <div className="max-w-3xl mx-auto text-center">
@@ -364,7 +376,6 @@ export default function GeoPageTemplate({ data }: { data: GeoPageData }) {
         </div>
       </section>
 
-      {/* JSON-LD Schema */}
       {data.schemaData && (
         <script
           type="application/ld+json"
