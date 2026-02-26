@@ -82,11 +82,15 @@ async def create_consultation_booking(
             )
             
             # ERPNext lead creation
-            await ERPNextService.create_lead(
-                lead_name=booking.name,
-                email=booking.email,
-                phone=booking.phone,
-                source="Website - Consultation",
+            await erpnext_service.create_lead(
+                submission_id=str(booking_result.inserted_id) if hasattr(booking_result, 'inserted_id') else "consultation",
+                contact_name=booking.name,
+                contact_email=booking.email,
+                contact_phone=booking.phone,
+                company="",
+                project_type="Consultation",
+                total_cost=0,
+                emirate="Dubai",
                 notes=booking.message or ""
             )
             
