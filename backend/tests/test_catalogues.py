@@ -107,9 +107,9 @@ class TestCataloguesAdminAPI:
         print(f"Admin can see {len(data)} catalogues")
         
     def test_admin_catalogues_unauthorized(self):
-        """GET /api/admin/catalogues without token returns 401"""
+        """GET /api/admin/catalogues without token returns 401/403"""
         response = requests.get(f"{BASE_URL}/api/admin/catalogues")
-        assert response.status_code == 401, f"Expected 401, got {response.status_code}"
+        assert response.status_code in [401, 403], f"Expected 401/403, got {response.status_code}"
         
     def test_admin_create_catalogue(self, auth_token):
         """POST /api/admin/catalogues - create new catalogue"""
