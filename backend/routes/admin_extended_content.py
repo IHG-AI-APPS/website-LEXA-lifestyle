@@ -665,6 +665,26 @@ async def delete_enhancement(enhancement_id: str, token: dict = Depends(verify_t
         raise HTTPException(status_code=500, detail="Failed to delete enhancement")
 
 
+@router.patch("/package-enhancements/{enhancement_id}")
+async def patch_enhancement(enhancement_id: str, data: Dict[str, Any], token: dict = Depends(verify_token)):
+    """Partially update package enhancement (only provided fields)"""
+    try:
+        data.pop("_id", None)
+        data.pop("id", None)
+        if not data:
+            raise HTTPException(status_code=400, detail="No fields to update")
+        data["updated_at"] = datetime.now(timezone.utc)
+        result = await db.package_enhancements.update_one({"id": enhancement_id}, {"$set": data})
+        if result.matched_count == 0:
+            raise HTTPException(status_code=404, detail="Enhancement not found")
+        return {"success": True, "message": "Enhancement patched successfully"}
+    except HTTPException:
+        raise
+    except Exception as e:
+        logger.error(f"Error patching enhancement: {str(e)}")
+        raise HTTPException(status_code=500, detail="Failed to patch enhancement")
+
+
 # ===== SPECIALTY ROOMS =====
 
 @router.get("/specialty-rooms")
@@ -723,6 +743,26 @@ async def delete_specialty_room(room_id: str, token: dict = Depends(verify_token
     except Exception as e:
         logger.error(f"Error deleting specialty room: {str(e)}")
         raise HTTPException(status_code=500, detail="Failed to delete specialty room")
+
+
+@router.patch("/specialty-rooms/{room_id}")
+async def patch_specialty_room(room_id: str, data: Dict[str, Any], token: dict = Depends(verify_token)):
+    """Partially update specialty room (only provided fields)"""
+    try:
+        data.pop("_id", None)
+        data.pop("id", None)
+        if not data:
+            raise HTTPException(status_code=400, detail="No fields to update")
+        data["updated_at"] = datetime.now(timezone.utc)
+        result = await db.specialty_rooms.update_one({"id": room_id}, {"$set": data})
+        if result.matched_count == 0:
+            raise HTTPException(status_code=404, detail="Room not found")
+        return {"success": True, "message": "Specialty room patched successfully"}
+    except HTTPException:
+        raise
+    except Exception as e:
+        logger.error(f"Error patching specialty room: {str(e)}")
+        raise HTTPException(status_code=500, detail="Failed to patch specialty room")
 
 
 # ===== PRODUCT CATEGORIES =====
