@@ -22,13 +22,17 @@ Complete website overhaul for LEXA Smart Home to:
 - Testing: 100% pass (12/12 backend + 9/9 frontend)
 
 ### Phase 12: Site-wide Design Consistency Review (Feb 26, 2026)
-- Updated 19 pages to benchmark dark hero (bg-gray-900 + #C9A962 gold accents)
+- Updated 19+ pages to benchmark dark hero (bg-gray-900 + #C9A962 gold accents)
 - Testing: 100% pass (27/27 pages verified)
 
 ### Phase 13: Page Transition Animations (Feb 26, 2026)
-- Enhanced `template.tsx` with smooth fade-in + blur transition using framer-motion
-- Added CSS-based staggered section reveals — sections cascade in with 80ms delay each
-- Zero performance impact — purely CSS animations + framer-motion
+- Enhanced template.tsx with smooth fade-in + blur transition
+- Added CSS staggered section reveals
+
+### Phase 14: Package Static Pages Benchmark Design (Feb 26, 2026)
+- **developer-packages**: Applied benchmark dark hero, replaced amber palette with #C9A962 gold, added data-testid, fixed dark mode
+- **smart-apartment-packages**: Applied benchmark dark hero, replaced blue palette with #C9A962 gold, updated apartment size selector, package cards, ecosystem section, CTA — all unified with benchmark
+- Both pages retain full functionality (forms, pricing tables, interactive selectors)
 
 ## Benchmark Design Standard
 | Element | Specification |
@@ -41,9 +45,8 @@ Complete website overhaul for LEXA Smart Home to:
 | Transitions | Fade-in + slide-up + blur via framer-motion template.tsx |
 
 ## Remaining / Backlog
-### P1 — Package static pages (developer-packages, smart-apartment-packages)
+### P1 — Content Change History for admin CMS (audit trail)
 ### P2 — Project pages design (excluded by user)
-### P3 — Content Change History for admin CMS (audit trail)
 
 ## Credentials
 - Admin: `/admin/login` (username: admin, password: lexa2026)
