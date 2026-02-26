@@ -78,10 +78,22 @@ app = FastAPI(title="LEXA Lifestyle API", version="2.0.0")
 
 # Add GZip compression middleware for faster responses
 from fastapi.middleware.gzip import GZipMiddleware
-app.add_middleware(GZipMiddleware, minimum_size=1000)
+app.add_middleware(GZipMiddleware, minimum_size=500)
 
 # Add security headers middleware
 app.add_middleware(SecurityHeadersMiddleware)
+
+# Add Cache-Control headers for public GET endpoints
+from starlette.middleware.base import BaseHTTPMiddleware
+
+class CacheControlMiddleware(BaseHTTPMiddleware):
+    async def dispatch(self, request, call_next):
+        response = await call_next(request)
+        if request.method == "GET" and request.url.path.startswith("/api/") and "/admin/" not in request.url.path:
+            response.headers["Cache-Control"] = "public, max-age=60, s-maxage=120, stale-while-revalidate=300"
+        return response
+
+app.add_middleware(CacheControlMiddleware)
 
 api_router = APIRouter(prefix="/api")
 
