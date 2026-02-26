@@ -22,11 +22,15 @@ db = client[os.environ.get('DB_NAME', 'lexa_lifestyle')]
 async def get_solutions(featured: Optional[bool] = None):
     """Get all solutions, optionally filtered by featured status"""
     try:
+        cache_key = f"solutions:featured={featured}"
+        cached = await cache.get(cache_key)
+        if cached is not None:
+            return cached
         query = {}
         if featured is not None:
             query["featured"] = featured
-        
         solutions = await db.solutions.find(query, {"_id": 0}).to_list(1000)
+        await cache.set(cache_key, solutions, ttl_seconds=300)
         return solutions
     except Exception as e:
         logger.error(f"Solutions error: {str(e)}")
@@ -37,6 +41,10 @@ async def get_solutions(featured: Optional[bool] = None):
 async def get_solutions_mega_menu():
     """Get solutions organized for mega menu display"""
     try:
+        cache_key = "solutions:mega_menu"
+        cached = await cache.get(cache_key)
+        if cached is not None:
+            return cached
         # Get featured solutions
         solutions = await db.solutions.find(
             {"featured": True},
