@@ -10,6 +10,9 @@ import { toast } from 'sonner'
 
 const API_URL = process.env.NEXT_PUBLIC_BACKEND_URL || ''
 
+interface FAQ { question: string; answer: string }
+interface FeatureCard { title: string; description: string; benefits: string[] }
+
 interface SpecialtyRoom {
   id: string
   name: string
@@ -24,6 +27,9 @@ interface SpecialtyRoom {
   price_range: string
   order: number
   active: boolean
+  faqs: FAQ[]
+  feature_cards: FeatureCard[]
+  related_solutions: string[]
 }
 
 const defaultFormData = {
@@ -38,7 +44,10 @@ const defaultFormData = {
   features: [] as string[],
   price_range: '',
   order: 0,
-  active: true
+  active: true,
+  faqs: [] as FAQ[],
+  feature_cards: [] as FeatureCard[],
+  related_solutions: [] as string[]
 }
 
 const categories = [
