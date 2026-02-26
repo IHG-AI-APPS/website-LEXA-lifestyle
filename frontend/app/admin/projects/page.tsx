@@ -107,7 +107,11 @@ export default function ProjectsAdminPage() {
       budget_range: project.budget_range || '',
       team_size: project.team_size,
       // Handle both gallery and images field names
-      gallery: project.gallery || projectAny.images || []
+      gallery: project.gallery || projectAny.images || [],
+      video_url: projectAny.video_url || '',
+      features: project.features || [],
+      results: projectAny.results || [],
+      category: projectAny.category || ''
     })
     setEditingId(project.id)
     setShowForm(true)
