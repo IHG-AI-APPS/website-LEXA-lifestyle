@@ -289,11 +289,15 @@ async def create_modal_booking(
             )
             
             # ERPNext lead creation
-            await ERPNextService.create_lead(
-                lead_name=sanitized_name,
-                email=booking_data.email,
-                phone=booking_data.phone,
-                source=f"Website - {booking_type_labels.get(booking_data.bookingType, 'Booking Modal')}",
+            await erpnext_service.create_lead(
+                submission_id=booking_id,
+                contact_name=sanitized_name,
+                contact_email=booking_data.email,
+                contact_phone=booking_data.phone,
+                company="",
+                project_type=booking_type_labels.get(booking_data.bookingType, 'Booking Modal'),
+                total_cost=0,
+                emirate="Dubai",
                 notes=f"Date: {booking_data.preferredDate}, Time: {booking_data.preferredTime}\n{sanitized_message or ''}"
             )
             
