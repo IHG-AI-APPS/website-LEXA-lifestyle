@@ -103,7 +103,7 @@ export default function HomeownerPage() {
                 <span className="inline-block px-3 py-1 rounded-full bg-[#C9A962]/15 border border-[#C9A962]/30 text-[#C9A962] text-xs uppercase tracking-widest mb-5">
                   For Homeowners
                 </span>
-                <h1 className="text-6xl sm:text-7xl font-semibold tracking-[-0.04em] leading-[0.9] mb-8">
+                <h1 className="text-4xl sm:text-5xl font-bold tracking-tight leading-tight mb-6 text-white">
                   YOUR HOME,
                   <br />
                   <span className="text-[#C9A962]">ELEVATED</span>
