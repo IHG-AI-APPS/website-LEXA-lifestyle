@@ -1181,6 +1181,24 @@ async def delete_brand(brand_id: str, user: dict = Depends(verify_token)):
         logger.error(f"Delete brand error: {str(e)}")
         raise HTTPException(status_code=500, detail="Failed to delete brand")
 
+@api_router.patch("/admin/brands/{brand_id}")
+async def patch_brand(brand_id: str, updates: Dict[str, Any], user: dict = Depends(verify_token)):
+    """Partially update a brand (only provided fields)"""
+    try:
+        updates.pop("_id", None)
+        updates.pop("id", None)
+        if not updates:
+            raise HTTPException(status_code=400, detail="No fields to update")
+        result = await db.brands.update_one({"id": brand_id}, {"$set": updates})
+        if result.matched_count == 0:
+            raise HTTPException(status_code=404, detail="Brand not found")
+        return {"message": "Brand patched successfully"}
+    except HTTPException:
+        raise
+    except Exception as e:
+        logger.error(f"Patch brand error: {str(e)}")
+        raise HTTPException(status_code=500, detail="Failed to patch brand")
+
 
 # ============= ADMIN - CATALOGUES MANAGEMENT =============
 
@@ -1227,6 +1245,24 @@ async def delete_catalogue(catalogue_id: str, user: dict = Depends(verify_token)
     except Exception as e:
         logger.error(f"Delete catalogue error: {str(e)}")
         raise HTTPException(status_code=500, detail="Failed to delete catalogue")
+
+@api_router.patch("/admin/catalogues/{catalogue_id}")
+async def patch_catalogue(catalogue_id: str, updates: Dict[str, Any], user: dict = Depends(verify_token)):
+    """Partially update a catalogue (only provided fields)"""
+    try:
+        updates.pop("_id", None)
+        updates.pop("id", None)
+        if not updates:
+            raise HTTPException(status_code=400, detail="No fields to update")
+        result = await db.catalogues.update_one({"id": catalogue_id}, {"$set": updates})
+        if result.matched_count == 0:
+            raise HTTPException(status_code=404, detail="Catalogue not found")
+        return {"message": "Catalogue patched successfully"}
+    except HTTPException:
+        raise
+    except Exception as e:
+        logger.error(f"Patch catalogue error: {str(e)}")
+        raise HTTPException(status_code=500, detail="Failed to patch catalogue")
 
 @api_router.get("/admin/catalogues")
 async def admin_get_catalogues(user: dict = Depends(verify_token)):
