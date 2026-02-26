@@ -15,7 +15,7 @@ interface FAQ { question: string; answer: string }
 interface FAQCategory { name: string; slug: string; faqs: FAQ[] }
 
 export default function FAQPage() {
-  const cms = useCms('page_faq', null)
+  const cms = useCms('page_faq', null) as any
   const { language } = useLanguage()
   const [categories, setCategories] = useState<FAQCategory[]>([])
   const [loading, setLoading] = useState(true)
