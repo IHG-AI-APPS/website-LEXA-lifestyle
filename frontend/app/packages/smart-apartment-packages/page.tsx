@@ -177,37 +177,28 @@ export default function SmartApartmentPackagesPage() {
 
   return (
     <>
-      <div className="min-h-screen bg-white">
+      <div className="min-h-screen bg-white dark:bg-gray-950 pt-20" data-testid="smart-apartment-packages-page">
         {/* Hero Section */}
-        <section className="relative bg-gradient-to-br from-sky-50 via-white to-blue-50 py-20 sm:py-32">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-              className="text-center max-w-4xl mx-auto"
-            >
-              <div className="inline-flex items-center gap-2 px-4 py-2 bg-blue-100 border border-blue-200 mb-6">
-                <Home className="h-4 w-4 text-blue-600" />
-                <span className="text-xs font-semibold uppercase tracking-wider text-blue-600">
-                  Smart Apartment Packages
-                </span>
-              </div>
+        <section className="relative overflow-hidden bg-gray-900 text-white py-20 lg:py-28">
+          <div className="container mx-auto px-8 lg:px-16 relative z-10">
+            <div className="max-w-3xl mx-auto text-center">
+              <span className="inline-block px-3 py-1 rounded-full bg-[#C9A962]/15 border border-[#C9A962]/30 text-[#C9A962] text-xs uppercase tracking-widest mb-5">
+                Smart Apartment Packages
+              </span>
               
-              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6 leading-tight text-gray-900 dark:text-white dark:text-white">
-                Smart Living for<br />
-                <span className="text-blue-600">Every Apartment</span>
+              <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-5 tracking-tight" data-testid="smart-apartment-title">
+                Smart Living for Every Apartment
               </h1>
               
-              <p className="text-lg sm:text-xl text-gray-600 dark:text-gray-400 mb-8 leading-relaxed max-w-3xl mx-auto">
+              <p className="text-base text-gray-300 mb-8 max-w-lg mx-auto">
                 Wireless-first smart home packages designed for apartments. From studios to duplexes, transform your space without rewiring. Starting from AED 3,000.
               </p>
               
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <div className="flex flex-col sm:flex-row gap-3 justify-center">
                 <Button
                   size="lg"
                   onClick={() => setShowConsultationForm(true)}
-                  className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-6 text-sm font-semibold uppercase tracking-wider"
+                  className="bg-[#C9A962] hover:bg-[#C9A962]/90 text-gray-900 px-8 font-semibold"
                 >
                   Get Your Quote
                 </Button>
@@ -215,14 +206,14 @@ export default function SmartApartmentPackagesPage() {
                   size="lg"
                   variant="outline"
                   asChild
-                  className="border-2 border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 hover:bg-gray-50 px-8 py-6 text-sm font-semibold uppercase tracking-wider"
+                  className="border-white/30 text-white hover:bg-white/10 px-8"
                 >
                   <Link href="#packages">
                     Compare Packages
                   </Link>
                 </Button>
               </div>
-            </motion.div>
+            </div>
           </div>
         </section>
 
