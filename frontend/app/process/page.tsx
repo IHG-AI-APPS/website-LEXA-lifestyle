@@ -43,7 +43,7 @@ export default function ProcessPage() {
       <section className="py-16 lg:py-20 bg-white dark:bg-gray-950" data-testid="phases-section">
         <div className="container mx-auto px-8 lg:px-16">
           <div className="max-w-5xl mx-auto space-y-16">
-            {phases.map((phase, index) => {
+            {processPhases.map((phase: any, index: number) => {
               const Icon = phase.icon
               return (
                 <motion.div key={phase.number} initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5 }}
