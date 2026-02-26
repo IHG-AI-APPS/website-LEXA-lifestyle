@@ -140,7 +140,7 @@ export default function CaseStudiesPage() {
       <section className="py-20">
         <div className="container mx-auto px-8 lg:px-16">
           <div className="max-w-7xl mx-auto space-y-20">
-            {caseStudies.map((project, index) => (
+            {studies.map((project: any, index: number) => (
               <motion.div
                 key={project.id}
                 initial={{ opacity: 0, y: 40 }}
