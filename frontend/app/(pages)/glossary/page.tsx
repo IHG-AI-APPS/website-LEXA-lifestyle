@@ -246,11 +246,11 @@ export default function GlossaryPage() {
   const terms = cms?.glossary_terms || glossaryTerms
   const filteredTerms = terms.map((section: any) => ({
     ...section,
-    terms: section.terms.filter(item =>
+    terms: section.terms.filter((item: any) =>
       item.term.toLowerCase().includes(searchTerm.toLowerCase()) ||
       item.definition.toLowerCase().includes(searchTerm.toLowerCase())
     )
-  })).filter(section => section.terms.length > 0)
+  })).filter((section: any) => section.terms.length > 0)
 
   return (
     <div className="min-h-screen bg-white dark:bg-gray-900 pt-20">
