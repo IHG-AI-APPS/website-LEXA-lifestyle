@@ -56,6 +56,16 @@ Complete website overhaul for LEXA Smart Home to:
 - **Navigation**: Added "Catalogues" to main header and admin sidebar
 - **Testing**: 100% pass rate (14/14 backend + all frontend UI)
 
+### Phase 9: Static Override Cleanup & CMS Migration (Feb 26, 2026)
+- **Deleted 9 static override files** that were blocking dynamic CMS routes:
+  - 3 location pages (`downtown-dubai-smart-home`, `emirates-hills-smart-home`, `palm-jumeirah-smart-home`)
+  - 4 resource articles (`knx-vs-control4-luxury`, `architect-automation-guide`, `best-home-automation-uae`, `smart-home-cost-dubai-villas`)
+  - 1 blog post (`smart-home-guide-dubai-2025`)
+  - 1 intelligence feature (`staff-accountability`)
+- **Seeded content into DB**: 5 articles into `articles` collection, 1 feature into `intelligence_features`
+- **Fixed intelligence/[id] page**: Added slug-based lookup (`f.slug === featureId`)
+- **Testing**: 100% pass rate (17/17 backend + 9/9 frontend)
+
 ## Current State: Design Consistency
 | Section | Pages | Design Status | CMS Status |
 |---------|-------|---------------|------------|
