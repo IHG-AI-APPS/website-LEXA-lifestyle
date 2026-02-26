@@ -20,20 +20,14 @@ Complete website overhaul for LEXA Smart Home to:
 
 ### Phase 15-16: Backend Audit & Bug Fixes (Feb 26, 2026)
 - **Total: 198/198 tests passed across 4 audit rounds**
-  - Iteration 41: 54/54 basic CRUD
-  - Iteration 42: 27/27 deep logical verification
-  - Iteration 43: 21/22 modal form e2e + frontend modals
-  - Iteration 44: 96/96 full regression (ALL endpoints)
-- **9 total bugs fixed:**
-  1. Solutions model `long_description` made Optional
-  2. News CRUD: Fixed ID override in `create_news()`
-  3. Videos CRUD: Fixed ID override in `create_video()`
-  4. Admin consultations: Fixed collection name mismatch
-  5. Admin stats: Fixed consultation count query
-  6. WhatsApp: 3 calls fixed from `send_message()` → `send_lead_notification()`
-  7. ERPNext: 3 calls fixed param names + instance usage
-  8. Package inquiry: Fixed email params + made non-blocking
-  9. News model: Fixed datetime serialization with model_validator
+- **9 total bugs fixed** (serialization, ID overwrites, integration params, email/WhatsApp logic)
+
+### Phase 17: Automated Regression Testing (Feb 26, 2026)
+- **Backend**: `nightly_runner.py` runs 96-endpoint test suite, saves JSON results
+- **Backend**: `regression_tests.py` API: GET `/api/admin/regression/latest`, `/history`, POST `/run`
+- **Frontend**: Admin page at `/admin/test-results` with live status card, history table, "Run Tests Now" trigger
+- **Cron**: Automated every 4 hours via `/etc/cron.d/test-runner`
+- **Testing**: 100% pass rate (7/7 backend, 9/9 frontend — iteration_45)
 
 ### Verified API Coverage (96 endpoints across 18 areas)
 | Area | Count | Status |
@@ -58,9 +52,11 @@ Complete website overhaul for LEXA Smart Home to:
 | Health & Root | 2 | PASS |
 
 ## Remaining / Backlog
-### P1 — Content Change History for admin CMS (audit trail)
-### P2 — Approve WhatsApp templates on Interakt dashboard (ops)
-### P3 — Consider PATCH endpoints for partial updates
+### P1 — Redesign Projects Landing Page (`/projects`) to match benchmark design
+### P2 — Site-wide Consistency Review (final QA pass)
+### P3 — Content Change History for admin CMS (audit trail)
+### P4 — Approve WhatsApp templates on Interakt dashboard (ops)
+### P5 — Consider PATCH endpoints for partial updates
 
 ## Credentials
 - Admin: `/admin/login` (username: admin, password: lexa2026)
