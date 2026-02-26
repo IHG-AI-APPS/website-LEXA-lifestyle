@@ -86,22 +86,27 @@ async def submit_package_inquiry(inquiry: PackageInquirySubmission):
             for enh in inquiry.enhancements
         ]
         
-        email_result = await EmailService.send_package_inquiry_notification(
-            name=inquiry.customer_name,
-            email=inquiry.customer_email,
-            phone=inquiry.customer_phone,
-            package_name=inquiry.package_tier,
-            property_type=inquiry.property_type,
-            property_size=str(inquiry.total_price),
-            message=inquiry.message or "",
-            submission_id=inquiry_record['id'],
-        )
+        email_sent = False
+        try:
+            email_result = await EmailService.send_package_inquiry_notification(
+                name=inquiry.customer_name,
+                email=inquiry.customer_email,
+                phone=inquiry.customer_phone,
+                package_name=inquiry.package_tier,
+                property_type=inquiry.property_type,
+                property_size=str(inquiry.total_price),
+                message=inquiry.message or "",
+                submission_id=inquiry_record['id'],
+            )
+            email_sent = email_result.get('status') == 'success' if isinstance(email_result, dict) else bool(email_result)
+        except Exception as email_err:
+            logger.error(f"Package inquiry email failed: {str(email_err)}")
         
         return {
             "status": "success",
             "inquiry_id": inquiry_record['id'],
             "message": "Your package inquiry has been submitted successfully. Our team will contact you within 24 hours.",
-            "email_sent": email_result.get('status') == 'success'
+            "email_sent": email_sent
         }
         
     except Exception as e:
