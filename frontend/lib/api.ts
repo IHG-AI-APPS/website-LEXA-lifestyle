@@ -63,6 +63,10 @@ export interface Project {
   images?: string[]
   systems: string[]
   description?: string
+  features?: string[]
+  category?: string
+  video_url?: string
+  results?: string[]
   // Case Study fields
   challenge?: string
   solution_details?: string
