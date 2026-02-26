@@ -24,11 +24,23 @@ import {
   Loader2
 } from 'lucide-react'
 import { submitCalculator } from '@/lib/calculator-api'
-import BookingModal from '@/components/modals/BookingModal'
-import TabbyWidget from '@/components/TabbyWidget'
-import RelatedPagesNav from '@/components/navigation/RelatedPagesNav'
-import FloorPlanUploader from '@/components/FloorPlanUploader'
+import dynamic from 'next/dynamic'
 import { useCms } from '@/hooks/useCms'
+import {
+  PROJECT_TYPES,
+  SOLUTIONS_MATRIX,
+  ADDITIONAL_FEATURES,
+  CONTROL_PLATFORMS,
+  SECURITY_BRANDS,
+  LIGHTING_BRANDS,
+  LOCATIONS,
+  DEFAULT_BUNDLES
+} from '@/lib/calculator-data'
+
+const BookingModal = dynamic(() => import('@/components/modals/BookingModal'), { ssr: false })
+const TabbyWidget = dynamic(() => import('@/components/TabbyWidget'), { ssr: false })
+const RelatedPagesNav = dynamic(() => import('@/components/navigation/RelatedPagesNav'), { ssr: false })
+const FloorPlanUploader = dynamic(() => import('@/components/FloorPlanUploader'), { ssr: false })
 
 const API_URL = process.env.NEXT_PUBLIC_BACKEND_URL || ''
 
