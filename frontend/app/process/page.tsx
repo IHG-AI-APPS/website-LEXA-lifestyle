@@ -17,8 +17,11 @@ const phases = [
 ]
 
 export default function ProcessPage() {
-  const cms = useCms('page_process', null)
+  const cms = useCms('page_process', null) as any
   const [showConsultationForm, setShowConsultationForm] = useState(false)
+
+  const iconMap: Record<string, any> = { Search, Pencil, Wrench, Code, Headphones }
+  const processPhases = (cms?.phases || phases).map((p: any, i: number) => ({ ...p, icon: iconMap[p.icon] || phases[i]?.icon || Search, number: p.number || String(i + 1).padStart(2, '0') }))
 
   return (
     <div className="min-h-screen bg-white dark:bg-gray-950 pt-20" data-testid="process-page">
