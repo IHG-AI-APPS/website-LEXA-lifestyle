@@ -80,7 +80,7 @@ const navigation = [
   { name: 'Activity Logs', href: '/admin/logs', icon: Clock },
   { name: 'CMS / Page Content', href: '/admin/cms', icon: FileText },
   { name: 'System Health', href: '/admin/system', icon: Activity },
-  { name: 'API Test Results', href: '/admin/test-results', icon: FlaskConical },
+  { name: 'API Test Results', href: '/admin/test-results', icon: ShieldCheck },
 ]
 
 export default function AdminLayout({ children }: { children: React.ReactNode }) {
