@@ -8,13 +8,12 @@ Complete website overhaul for LEXA Smart Home to:
 
 ## Architecture
 - **Frontend**: Next.js 14 (App Router) | **Backend**: FastAPI (Python) | **Database**: MongoDB
-- **No websockets** — REST-only architecture
+- REST-only architecture (no websockets)
 
 ## Completed Work
 
 ### Phase 1-10: Content & CMS
 - All solutions, services, brands, geo pages, locations, specialty rooms, intelligence — CMS-driven
-- Admin CMS, Catalogue/Flipbook, 30+ pages converted to CMS
 
 ### Phase 11-14: Design & Transitions
 - 9 final CMS pages, 19+ benchmark design updates, page transitions, package pages
@@ -23,13 +22,12 @@ Complete website overhaul for LEXA Smart Home to:
 - 198/198 tests passed, 9 bugs fixed
 
 ### Phase 17: Automated Regression Testing
-- Backend: nightly_runner.py, regression_tests.py API, admin UI at /admin/test-results
-- Cron: Every 4 hours, 96 endpoints tested
+- nightly_runner.py, admin UI at /admin/test-results, cron every 4h
 
-### Phase 18: PATCH Endpoints for Partial Updates
-- 17 new PATCH endpoints across all admin CRUD entities (61/61 tests passed)
+### Phase 18: PATCH Endpoints
+- 17 new PATCH endpoints (61/61 tests passed)
 
-### Phase 19: Site-Wide Performance Optimization
+### Phase 19: Performance Optimization
 - 52 MongoDB indexes, server-side caching, lightweight projections
 - Solutions 462KB→48KB, Articles 418KB→28KB
 
@@ -37,10 +35,14 @@ Complete website overhaul for LEXA Smart Home to:
 - ETag middleware on all public GET endpoints, 304 Not Modified support
 
 ### Phase 21: Full Route Audit (Feb 26, 2026)
-- **337 backend routes** audited (GET, POST, PUT, PATCH, DELETE)
-- **110 frontend pages** + **45 admin pages** tested
-- **1 bug found & fixed**: `/api/videos/{id}` datetime serialization error
-- Results: 52/52 public GETs, 47/47 admin GETs, 109/110 frontend pages, 44/45 admin pages
+- 337 backend routes, 110 frontend pages, 45 admin pages audited
+- 1 bug fixed: /api/videos/{id} datetime serialization
+
+### Phase 22: Calculator Page Optimization (Feb 26, 2026)
+- Dynamic imports for 4 heavy components (BookingModal, TabbyWidget, FloorPlanUploader, RelatedPagesNav)
+- Data constants extracted to separate `calculator-data.ts` (code-split from 1950-line main component)
+- Unused lucide-react icon imports removed
+- Page load: 52ms cold, 43ms warm (server-side), 159KB HTML
 
 ## Remaining / Backlog
 ### P1 — Site-wide Consistency Review (final QA pass)
