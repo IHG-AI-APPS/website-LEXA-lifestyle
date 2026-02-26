@@ -677,10 +677,12 @@ class TestAdminCRUD:
     def test_73_solutions_crud(self, admin_token):
         """Solutions: POST create → GET read → PUT update → DELETE"""
         headers = {"Authorization": f"Bearer {admin_token}"}
-        slug = f"test-solution-{uuid.uuid4().hex[:8]}"
+        test_id = f"test-solution-{uuid.uuid4().hex[:8]}"
+        slug = test_id
         
-        # CREATE
+        # CREATE - including required id field
         create_resp = requests.post(f"{BASE_URL}/api/admin/solutions", headers=headers, json={
+            "id": test_id,
             "slug": slug,
             "title": "TEST Solution",
             "description": "Test description",
@@ -690,7 +692,7 @@ class TestAdminCRUD:
         })
         assert create_resp.status_code in [200, 201], f"Create failed: {create_resp.text}"
         created = create_resp.json()
-        item_id = created.get("id") or created.get("_id") or slug
+        item_id = created.get("id") or test_id
         
         # UPDATE
         update_resp = requests.put(f"{BASE_URL}/api/admin/solutions/{item_id}", headers=headers, json={
@@ -706,16 +708,20 @@ class TestAdminCRUD:
     def test_74_projects_crud(self, admin_token):
         """Projects: POST create → GET read → PUT update → DELETE"""
         headers = {"Authorization": f"Bearer {admin_token}"}
+        test_id = f"test-project-{uuid.uuid4().hex[:8]}"
         
         create_resp = requests.post(f"{BASE_URL}/api/admin/projects", headers=headers, json={
+            "id": test_id,
             "title": f"TEST Project {uuid.uuid4().hex[:8]}",
             "location": "Dubai",
             "year": "2026",
-            "description": "Test project"
+            "description": "Test project",
+            "type": "residential",
+            "image": "https://example.com/image.jpg"
         })
         assert create_resp.status_code in [200, 201], f"Create failed: {create_resp.text}"
         created = create_resp.json()
-        item_id = created.get("id") or created.get("_id")
+        item_id = created.get("id") or test_id
         
         update_resp = requests.put(f"{BASE_URL}/api/admin/projects/{item_id}", headers=headers, json={
             "title": "TEST Project Updated"
@@ -729,9 +735,11 @@ class TestAdminCRUD:
     def test_75_brands_crud(self, admin_token):
         """Brands: POST create → GET read → PUT update → DELETE"""
         headers = {"Authorization": f"Bearer {admin_token}"}
-        slug = f"test-brand-{uuid.uuid4().hex[:8]}"
+        test_id = f"test-brand-{uuid.uuid4().hex[:8]}"
+        slug = test_id
         
         create_resp = requests.post(f"{BASE_URL}/api/admin/brands", headers=headers, json={
+            "id": test_id,
             "slug": slug,
             "name": "TEST Brand",
             "description": "Test brand",
@@ -739,7 +747,7 @@ class TestAdminCRUD:
         })
         assert create_resp.status_code in [200, 201], f"Create failed: {create_resp.text}"
         created = create_resp.json()
-        item_id = created.get("id") or created.get("_id") or slug
+        item_id = created.get("id") or test_id
         
         update_resp = requests.put(f"{BASE_URL}/api/admin/brands/{item_id}", headers=headers, json={
             "name": "TEST Brand Updated"
@@ -753,9 +761,11 @@ class TestAdminCRUD:
     def test_76_articles_crud(self, admin_token):
         """Articles: POST create → GET read → PUT update → DELETE"""
         headers = {"Authorization": f"Bearer {admin_token}"}
-        slug = f"test-article-{uuid.uuid4().hex[:8]}"
+        test_id = f"test-article-{uuid.uuid4().hex[:8]}"
+        slug = test_id
         
         create_resp = requests.post(f"{BASE_URL}/api/admin/articles", headers=headers, json={
+            "id": test_id,
             "slug": slug,
             "title": "TEST Article",
             "excerpt": "Test excerpt",
@@ -763,11 +773,13 @@ class TestAdminCRUD:
             "author": "Test Author",
             "category": "test",
             "published_date": "2026-01-15",
-            "featured_image": "https://example.com/image.jpg"
+            "featured_image": "https://example.com/image.jpg",
+            "image": "https://example.com/image.jpg",
+            "read_time": "5 min"
         })
         assert create_resp.status_code in [200, 201], f"Create failed: {create_resp.text}"
         created = create_resp.json()
-        item_id = created.get("id") or created.get("_id") or slug
+        item_id = created.get("id") or test_id
         
         update_resp = requests.put(f"{BASE_URL}/api/admin/articles/{item_id}", headers=headers, json={
             "title": "TEST Article Updated"
