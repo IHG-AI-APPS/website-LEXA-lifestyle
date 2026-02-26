@@ -264,14 +264,13 @@ export default function GlossaryPage() {
               transition={{ duration: 0.8 }}
             >
               <span className="text-xs tracking-[0.5em] uppercase text-gray-400 font-medium mb-6 block">
-                Knowledge Base
+                {cms?.hero_badge || 'Knowledge Base'}
               </span>
               <h1 className="h1 uppercase mb-6">
-                SMART HOME GLOSSARY
+                {cms?.hero_title || 'SMART HOME GLOSSARY'}
               </h1>
               <p className="text-xl text-gray-600 dark:text-gray-400 mb-8">
-                Complete guide to smart home automation terminology for UAE homeowners. 
-                Understanding these terms will help you make informed decisions about your luxury smart home project in Dubai.
+                {cms?.hero_description || 'Complete guide to smart home automation terminology for UAE homeowners. Understanding these terms will help you make informed decisions about your luxury smart home project in Dubai.'}
               </p>
 
               {/* Search */}
