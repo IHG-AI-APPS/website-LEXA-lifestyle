@@ -13,7 +13,7 @@ class Solution(BaseModel):
     title: str
     category: str
     description: str
-    long_description: str
+    long_description: Optional[str] = None
     meta_description: Optional[str] = None
     image: str
     hero_image: Optional[str] = None
