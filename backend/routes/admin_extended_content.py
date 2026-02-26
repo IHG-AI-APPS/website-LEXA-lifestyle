@@ -825,6 +825,26 @@ async def delete_product_category(category_id: str, token: dict = Depends(verify
         raise HTTPException(status_code=500, detail="Failed to delete product category")
 
 
+@router.patch("/product-categories/{category_id}")
+async def patch_product_category_ext(category_id: str, data: Dict[str, Any], token: dict = Depends(verify_token)):
+    """Partially update product category (only provided fields)"""
+    try:
+        data.pop("_id", None)
+        data.pop("id", None)
+        if not data:
+            raise HTTPException(status_code=400, detail="No fields to update")
+        data["updated_at"] = datetime.now(timezone.utc)
+        result = await db.product_categories.update_one({"id": category_id}, {"$set": data})
+        if result.matched_count == 0:
+            raise HTTPException(status_code=404, detail="Category not found")
+        return {"success": True, "message": "Product category patched successfully"}
+    except HTTPException:
+        raise
+    except Exception as e:
+        logger.error(f"Error patching product category: {str(e)}")
+        raise HTTPException(status_code=500, detail="Failed to patch product category")
+
+
 
 # ===== ARTICLES IMAGE UPDATE =====
 
