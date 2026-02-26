@@ -59,6 +59,7 @@ const navigation = [
   { name: 'Blog', href: '/admin/blog', icon: FileText },
   { name: 'News', href: '/admin/news', icon: Newspaper },
   { name: 'Brands', href: '/admin/brands', icon: Tag },
+  { name: 'Catalogues', href: '/admin/catalogues', icon: BookOpen },
   { name: 'Products', href: '/admin/products', icon: Box },
   { name: 'Product Categories', href: '/admin/product-categories', icon: Layers },
   { name: 'Intelligence Features', href: '/admin/intelligence-features', icon: Brain },
