@@ -80,7 +80,7 @@ def run_tests():
 
     # Extract duration from pytest output
     for line in reversed(lines):
-        if "seconds" in line and ("passed" in line or "failed" in line):
+        if ("passed" in line or "failed" in line) and ("in " in line):
             try:
                 import re
                 m = re.search(r"in ([\d.]+)s", line)
