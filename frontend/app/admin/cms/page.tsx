@@ -45,6 +45,12 @@ const CMS_SECTIONS: CMSSection[] = [
   { key: 'page_experience_centre', label: 'Experience Centre Page', icon: Building2, category: 'pages', description: 'Zones, features, visit info' },
   { key: 'site_footer', label: 'Footer', icon: Layout, category: 'pages', description: 'Company description, social links' },
   { key: 'careers_positions', label: 'Career Positions', icon: Briefcase, category: 'pages', description: 'Open positions on Work With Us page' },
+  { key: 'page_why_lexa', label: 'Why LEXA Page', icon: Award, category: 'pages', description: 'Advantages, comparisons, stats — why choose LEXA' },
+  { key: 'page_big_homes_break_smart', label: 'Big Homes Break Smart', icon: Home, category: 'pages', description: 'Industry insight: problems, hidden costs, LEXA comparison' },
+  { key: 'page_villa_operating_model', label: 'Villa Operating Model', icon: Users, category: 'pages', description: 'Roles (Owner, Family, Guest, Staff), access rules, benefits' },
+  { key: 'page_integrations', label: 'Integrations & Partners', icon: Layers, category: 'pages', description: 'Platform categories, brand lists, tier labels' },
+  { key: 'page_case_studies', label: 'Case Studies Listing', icon: FileText, category: 'pages', description: 'Case study cards with location, budget, features, results' },
+  { key: 'page_glossary', label: 'Glossary Page', icon: Type, category: 'pages', description: 'Hero text, badge, description for glossary page' },
   // Services
   { key: 'service_home_theater', label: 'Service: Home Theater', icon: Film, category: 'services', description: 'Features, projects, FAQs' },
   { key: 'service_smart_lighting', label: 'Service: Smart Lighting', icon: Lightbulb, category: 'services', description: 'Features, projects' },
