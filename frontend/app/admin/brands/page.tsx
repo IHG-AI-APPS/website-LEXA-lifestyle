@@ -175,7 +175,10 @@ export default function BrandsAdminPage() {
       seo_description: '',
       long_description: '',
       certifications: [],
-      key_features: []
+      key_features: [],
+      gallery_images: [],
+      feature_cards: [],
+      related_solutions: []
     })
     setEditingId(null)
     setShowForm(true)
