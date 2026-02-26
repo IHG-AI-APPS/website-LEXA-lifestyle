@@ -138,7 +138,11 @@ export default function ProjectsAdminPage() {
       timeline: '',
       budget_range: '',
       team_size: undefined,
-      gallery: []
+      gallery: [],
+      video_url: '',
+      features: [],
+      results: [],
+      category: ''
     })
     setEditingId(null)
     setShowForm(true)
