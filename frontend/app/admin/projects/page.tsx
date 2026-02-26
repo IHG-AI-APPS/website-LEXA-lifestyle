@@ -69,7 +69,11 @@ export default function ProjectsAdminPage() {
         budget_range: p.budget_range || '',
         team_size: p.team_size,
         // Handle both gallery and images field names
-        gallery: p.gallery || p.images || []
+        gallery: p.gallery || p.images || [],
+        video_url: p.video_url || '',
+        features: p.features || [],
+        results: p.results || [],
+        category: p.category || ''
       }))
       setProjects(projectsWithDefaults)
     } catch (err) {
