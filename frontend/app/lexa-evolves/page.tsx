@@ -86,46 +86,26 @@ export default function LexaEvolvesPage() {
 
   return (
     <>
-      <div className="min-h-screen bg-white">
+      <div className="min-h-screen bg-white dark:bg-gray-950 pt-20" data-testid="lexa-evolves-page">
         {/* Hero Section */}
-        <section className="relative bg-gradient-to-br from-violet-900 via-[#1A1A1A] to-gray-900 text-white py-20 sm:py-32 overflow-hidden">
-          <div className="absolute inset-0 opacity-10">
-            <div className="absolute inset-0 bg-grid-white/[0.05] bg-[size:32px_32px]" />
-          </div>
-          
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl relative z-10">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-              className="max-w-4xl"
-            >
-              <div className="inline-flex items-center gap-2 px-4 py-2 bg-white/10 backdrop-blur-sm border border-white/20 mb-6">
-                <Sparkles className="h-4 w-4" />
-                <span className="text-xs font-semibold uppercase tracking-wider">
-                  Evolution Philosophy
-                </span>
-              </div>
-              
-              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
-                LEXA<br />
-                <span className="text-gray-300">Evolves</span>
+        <section className="relative overflow-hidden bg-gray-900 text-white py-20 lg:py-28">
+          <div className="container mx-auto px-8 lg:px-16 relative z-10">
+            <div className="max-w-3xl mx-auto text-center">
+              <span className="inline-block px-3 py-1 rounded-full bg-[#C9A962]/15 border border-[#C9A962]/30 text-[#C9A962] text-xs uppercase tracking-widest mb-5">Evolution Philosophy</span>
+              <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-5 tracking-tight" data-testid="lexa-evolves-title">
+                LEXA Evolves
               </h1>
-              
-              <p className="text-lg sm:text-xl text-gray-300 mb-8 leading-relaxed max-w-3xl">
-                Your smart home grows with you. Start with the essentials, expand at your pace, and evolve into a fully intelligent living environment. No rip-and-replace, just continuous enhancement.
+              <p className="text-base text-gray-300 mb-8 max-w-lg mx-auto">
+                Your smart home grows with you. Start with the essentials, expand at your pace, and evolve into a fully intelligent living environment.
               </p>
-              
-              <div className="flex flex-col sm:flex-row gap-4">
-                <Button
-                  size="lg"
-                  onClick={() => setShowConsultationForm(true)}
-                  className="bg-white text-[#1A1A1A] dark:text-white hover:bg-gray-100 dark:bg-gray-800 px-8 py-6 text-sm font-semibold uppercase tracking-wider"
-                >
-                  Start Your Journey
-                </Button>
-              </div>
-            </motion.div>
+              <Button
+                size="lg"
+                onClick={() => setShowConsultationForm(true)}
+                className="bg-[#C9A962] text-gray-900 hover:bg-[#C9A962]/90 px-8 font-semibold"
+              >
+                Start Your Journey
+              </Button>
+            </div>
           </div>
         </section>
 
