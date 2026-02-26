@@ -11,6 +11,8 @@ from models.bookings import (
 )
 from services.email_service import EmailService
 from services.whatsapp_service import WhatsAppService
+
+whatsapp_service = WhatsAppService()
 from services.erpnext_service import ERPNextService
 from middleware.simple_rate_limiter import check_rate_limit
 from middleware.security import SecurityValidator, get_client_ip
