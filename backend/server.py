@@ -803,6 +803,24 @@ async def delete_video(video_id: str, token_data: dict = Depends(verify_token)):
         logger.error(f"Delete video error: {str(e)}")
         raise HTTPException(status_code=500, detail="Failed to delete video")
 
+@api_router.patch("/admin/videos/{video_id}")
+async def patch_video(video_id: str, updates: Dict[str, Any], user: dict = Depends(verify_token)):
+    """Partially update a video (only provided fields)"""
+    try:
+        updates.pop("_id", None)
+        updates.pop("id", None)
+        if not updates:
+            raise HTTPException(status_code=400, detail="No fields to update")
+        result = await db.videos.update_one({"id": video_id}, {"$set": updates})
+        if result.matched_count == 0:
+            raise HTTPException(status_code=404, detail="Video not found")
+        return {"message": "Video patched successfully"}
+    except HTTPException:
+        raise
+    except Exception as e:
+        logger.error(f"Patch video error: {str(e)}")
+        raise HTTPException(status_code=500, detail="Failed to patch video")
+
 # ============= ADMIN AUTHENTICATION =============
 
 @api_router.post("/admin/login", response_model=TokenResponse)
@@ -1319,6 +1337,24 @@ async def delete_product_category(product_id: str, user: dict = Depends(verify_t
     except Exception as e:
         logger.error(f"Delete product error: {str(e)}")
         raise HTTPException(status_code=500, detail="Failed to delete product category")
+
+@api_router.patch("/admin/products/{product_id}")
+async def patch_product_category(product_id: str, updates: Dict[str, Any], user: dict = Depends(verify_token)):
+    """Partially update a product category (only provided fields)"""
+    try:
+        updates.pop("_id", None)
+        updates.pop("id", None)
+        if not updates:
+            raise HTTPException(status_code=400, detail="No fields to update")
+        result = await db.product_categories.update_one({"id": product_id}, {"$set": updates})
+        if result.matched_count == 0:
+            raise HTTPException(status_code=404, detail="Product category not found")
+        return {"message": "Product category patched successfully"}
+    except HTTPException:
+        raise
+    except Exception as e:
+        logger.error(f"Patch product error: {str(e)}")
+        raise HTTPException(status_code=500, detail="Failed to patch product category")
 
 # ============= ADMIN - FORM SUBMISSIONS VIEWER =============
 
