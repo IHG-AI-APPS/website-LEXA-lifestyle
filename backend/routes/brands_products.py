@@ -3,6 +3,7 @@ from fastapi import APIRouter, HTTPException, Query
 from motor.motor_asyncio import AsyncIOMotorClient
 from typing import List, Optional
 from models.content import Brand, ProductCategory, Video
+from utils.cache import cache
 from datetime import datetime
 import os
 import logging
@@ -19,14 +20,17 @@ db = client[os.environ.get('DB_NAME', 'lexa_lifestyle')]
 async def get_brands(category: Optional[str] = None, featured: Optional[bool] = None):
     """Get all brands, optionally filtered by category or featured status. Sorted by priority (lower = first)"""
     try:
+        cache_key = f"brands:cat={category}:feat={featured}"
+        cached = await cache.get(cache_key)
+        if cached is not None:
+            return cached
         query = {}
         if category:
             query["categories"] = category
         if featured is not None:
             query["featured"] = featured
-        
-        # Sort by priority (ascending) first, then by name
         brands = await db.brands.find(query, {"_id": 0}).sort([("priority", 1), ("name", 1)]).to_list(200)
+        await cache.set(cache_key, brands, ttl_seconds=300)
         return brands
     except Exception as e:
         logger.error(f"Get brands error: {str(e)}")
@@ -71,11 +75,15 @@ async def reorder_brands(priorities: List[dict]):
 async def get_product_categories(featured: Optional[bool] = None):
     """Get all product categories"""
     try:
+        cache_key = f"products:feat={featured}"
+        cached = await cache.get(cache_key)
+        if cached is not None:
+            return cached
         query = {}
         if featured is not None:
             query["featured"] = featured
-        
         products = await db.product_categories.find(query, {"_id": 0}).sort([("name", 1)]).to_list(100)
+        await cache.set(cache_key, products, ttl_seconds=300)
         return products
     except Exception as e:
         logger.error(f"Get products error: {str(e)}")
@@ -107,6 +115,10 @@ async def get_videos(
 ):
     """Get all videos, optionally filtered by category, service, or project"""
     try:
+        cache_key = f"videos:cat={category}:feat={featured}:lim={limit}:svc={related_service}:proj={related_project}"
+        cached = await cache.get(cache_key)
+        if cached is not None:
+            return cached
         query = {}
         if category:
             query["category"] = category
@@ -116,8 +128,8 @@ async def get_videos(
             query["related_service"] = related_service
         if related_project:
             query["related_project"] = related_project
-        
         videos = await db.videos.find(query, {"_id": 0}).sort([("published_date", -1)]).limit(limit).to_list(limit)
+        await cache.set(cache_key, videos, ttl_seconds=300)
         return videos
     except Exception as e:
         logger.error(f"Get videos error: {str(e)}")
