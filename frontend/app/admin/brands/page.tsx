@@ -602,6 +602,72 @@ export default function BrandsAdminPage() {
                 )}
               </div>
 
+              {/* Feature Cards */}
+              <div className="border-b pb-6">
+                <div className="flex items-center justify-between mb-4">
+                  <h3 className="font-semibold text-lg">Feature Cards</h3>
+                  <Button type="button" variant="outline" size="sm" onClick={addFeatureCard}>
+                    <Plus size={16} className="mr-1" /> Add Card
+                  </Button>
+                </div>
+                {(formData.feature_cards || []).length === 0 ? (
+                  <p className="text-sm text-gray-500 italic">No feature cards. Add cards to highlight brand capabilities on the detail page.</p>
+                ) : (
+                  <div className="space-y-4">
+                    {(formData.feature_cards || []).map((card, index) => (
+                      <div key={index} className="border border-gray-200 rounded-lg p-4 bg-gray-50">
+                        <div className="flex justify-between items-start mb-3">
+                          <span className="text-sm font-medium text-gray-600">Card #{index + 1}</span>
+                          <Button type="button" variant="ghost" size="sm" onClick={() => removeFeatureCard(index)} className="text-red-600 h-6">
+                            <Trash2 size={14} />
+                          </Button>
+                        </div>
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+                          <div>
+                            <label className="block text-xs font-medium mb-1">Title *</label>
+                            <Input value={card.title} onChange={(e) => updateFeatureCard(index, 'title', e.target.value)} placeholder="e.g., Smart Lighting" className="text-sm" />
+                          </div>
+                          <div>
+                            <label className="block text-xs font-medium mb-1">Benefits (comma-separated)</label>
+                            <Input value={card.benefits?.join(', ') || ''} onChange={(e) => updateFeatureCard(index, 'benefits', e.target.value.split(',').map((s: string) => s.trim()).filter(Boolean))} placeholder="Benefit 1, Benefit 2" className="text-sm" />
+                          </div>
+                        </div>
+                        <div className="mt-3">
+                          <label className="block text-xs font-medium mb-1">Description</label>
+                          <Input value={card.description} onChange={(e) => updateFeatureCard(index, 'description', e.target.value)} placeholder="Describe this feature category" className="text-sm" />
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                )}
+              </div>
+
+              {/* Gallery Images */}
+              <div className="border-b pb-6">
+                <h3 className="font-semibold text-lg mb-4">Gallery / Inspiration Images</h3>
+                <MultiImageUpload
+                  values={formData.gallery_images || []}
+                  onChange={(urls) => setFormData({ ...formData, gallery_images: urls })}
+                  label="Brand Gallery"
+                  category="brands"
+                  maxImages={10}
+                />
+              </div>
+
+              {/* Related Solutions */}
+              <div className="pb-6">
+                <h3 className="font-semibold text-lg mb-4">Related Solutions</h3>
+                <div>
+                  <label className="block text-sm font-medium mb-1">Solution Slugs (comma-separated)</label>
+                  <Input
+                    value={formData.related_solutions?.join(', ')}
+                    onChange={(e) => setFormData({ ...formData, related_solutions: e.target.value.split(',').map((s: string) => s.trim()).filter(Boolean) })}
+                    placeholder="smart-lighting, home-cinema, home-automation"
+                  />
+                  <p className="text-xs text-gray-400 mt-1">Enter solution slugs that use this brand. These will appear in the &quot;Solutions We Deploy&quot; section.</p>
+                </div>
+              </div>
+
               <div className="flex gap-2 pt-4 border-t sticky bottom-0 bg-white py-4">
                 <Button type="submit" className="flex-1">{editingId ? 'Update Brand' : 'Create Brand'}</Button>
                 <Button type="button" variant="outline" onClick={() => setShowForm(false)}>Cancel</Button>
