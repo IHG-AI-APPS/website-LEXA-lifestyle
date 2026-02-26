@@ -40,6 +40,15 @@ interface Brand {
   long_description?: string
   certifications: string[]
   key_features: string[]
+  gallery_images: string[]
+  feature_cards: FeatureCard[]
+  related_solutions: string[]
+}
+
+interface FeatureCard {
+  title: string
+  description: string
+  benefits: string[]
 }
 
 export default function BrandsAdminPage() {
