@@ -97,6 +97,51 @@ async def upload_image(
         raise HTTPException(status_code=500, detail=f"Upload failed: {str(e)}")
 
 
+@router.post("/pdf")
+async def upload_pdf(
+    file: UploadFile = File(...),
+    category: Optional[str] = Form(default="catalogues")
+):
+    """Upload a PDF document"""
+    try:
+        if file.content_type != "application/pdf":
+            raise HTTPException(status_code=400, detail="Only PDF files are allowed")
+
+        content = await file.read()
+
+        if len(content) > MAX_PDF_SIZE:
+            raise HTTPException(status_code=400, detail=f"File too large. Maximum: {MAX_PDF_SIZE // (1024*1024)}MB")
+
+        file_ext = "pdf"
+        unique_filename = f"{uuid.uuid4().hex[:12]}_{datetime.now().strftime('%Y%m%d%H%M%S')}.{file_ext}"
+
+        category_dir = f"{UPLOAD_DIR}/{category}"
+        os.makedirs(category_dir, exist_ok=True)
+
+        file_path = f"{category_dir}/{unique_filename}"
+        async with aiofiles.open(file_path, "wb") as f:
+            await f.write(content)
+
+        file_url = f"/api/uploads/files/{category}/{unique_filename}"
+        logger.info(f"PDF uploaded: {file_url}")
+
+        return {
+            "success": True,
+            "url": file_url,
+            "filename": unique_filename,
+            "original_filename": file.filename,
+            "size": len(content),
+            "content_type": "application/pdf",
+            "category": category
+        }
+    except HTTPException:
+        raise
+    except Exception as e:
+        logger.error(f"PDF upload failed: {str(e)}")
+        raise HTTPException(status_code=500, detail=f"Upload failed: {str(e)}")
+
+
+
 @router.post("/multiple")
 async def upload_multiple_images(
     files: list[UploadFile] = File(...),
