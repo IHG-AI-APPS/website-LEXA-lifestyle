@@ -41,9 +41,9 @@ export default function SmartApartmentPackagesPage() {
 
   // Static color map for Tailwind JIT compatibility
   const colorMap: Record<string, { bg: string; text: string }> = {
-    blue: { bg: 'bg-[#C9A962]/15', text: 'text-[#C9A962]' },
+    blue: { bg: 'bg-sky-100', text: 'text-sky-600' },
     orange: { bg: 'bg-orange-100', text: 'text-orange-600' },
-    amber: { bg: 'bg-amber-100', text: 'text-amber-600' },
+    amber: { bg: 'bg-[#C9A962]/15', text: 'text-[#C9A962]' },
     purple: { bg: 'bg-purple-100', text: 'text-purple-600' }
   }
 
