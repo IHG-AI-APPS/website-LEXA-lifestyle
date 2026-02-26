@@ -71,6 +71,7 @@ const navigation = [
   { name: 'Specialty Rooms', href: '/admin/specialty-rooms', icon: DoorOpen },
   { name: 'Arabic Pages', href: '/admin/arabic-pages', icon: Globe },
   { name: 'Geo Pages (SEO)', href: '/admin/geo-pages', icon: MapPin },
+  { name: 'Locations', href: '/admin/locations', icon: MapPin },
   { name: 'Submissions', href: '/admin/submissions', icon: MessageSquare },
   { name: 'SEO Tools', href: '/admin/seo', icon: Search },
   { name: 'Activity Logs', href: '/admin/logs', icon: Clock },
