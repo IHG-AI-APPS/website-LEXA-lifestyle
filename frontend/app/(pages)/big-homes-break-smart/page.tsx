@@ -79,12 +79,10 @@ export default function BigHomesBreakSmartPage() {
           >
             <div className="inline-flex items-center gap-2 bg-red-100 text-red-700 px-4 py-2 rounded-full text-xs font-semibold uppercase tracking-wider mb-6">
               <AlertTriangle className="w-4 h-4" />
-              Critical Challenge
+              {cms?.hero_badge || 'Critical Challenge'}
             </div>
             <h1 className="text-4xl sm:text-5xl md:text-6xl font-semibold tracking-[-0.04em] leading-[0.95] mb-8">
-              BIG HOMES
-              <br />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-600 to-orange-600">BREAK SMART</span>
+              {cms?.hero_title || <>BIG HOMES<br /><span className="text-transparent bg-clip-text bg-gradient-to-r from-red-600 to-orange-600">BREAK SMART</span></>}
             </h1>
             <div className="h-px w-32 bg-gradient-to-r from-red-400 to-transparent mb-8 mx-auto" />
             <p className="text-xl text-gray-700 dark:text-gray-300 leading-relaxed max-w-3xl mx-auto">
