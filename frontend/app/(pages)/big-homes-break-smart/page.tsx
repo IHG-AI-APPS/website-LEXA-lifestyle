@@ -6,47 +6,19 @@ import Link from 'next/link'
 import { useCms } from '@/hooks/useCms'
 
 export default function BigHomesBreakSmartPage() {
-  const cms = useCms('page_big_homes_break_smart', null)
+  const cms = useCms('page_big_homes_break_smart', null) as any
 
-  const problems = [
-    {
-      icon: Smartphone,
-      title: 'App Chaos',
-      problem: '15+ different apps to control your home',
-      impact: 'Confusion, frustration, and systems that nobody actually uses',
-      stat: '78% of smart devices become abandoned within 6 months'
-    },
-    {
-      icon: Users,
-      title: 'Vendor Dependency',
-      problem: 'Multiple contractors, each protecting their territory',
-      impact: 'No single point of contact. Finger-pointing when issues arise.',
-      stat: 'Average 8-12 different vendors involved in luxury installations'
-    },
-    {
-      icon: Zap,
-      title: 'Failure Cascades',
-      problem: 'One system fails, everything else breaks',
-      impact: 'Your climate control goes down, security cameras stop recording, lights won\'t turn off',
-      stat: '3-5 days average downtime for system failures in fragmented setups'
-    },
-    {
-      icon: Brain,
-      title: 'No Intelligence',
-      problem: 'Devices that don\'t learn, adapt, or communicate',
-      impact: 'You manually adjust everything. The "smart" home isn\'t actually smart.',
-      stat: '0 learning capability in traditional installations'
-    },
-    {
-      icon: DollarSign,
-      title: 'Hidden Costs',
-      problem: 'Energy waste, water damage risk, security gaps',
-      impact: 'Cooling bills 35% higher than optimized homes. Water leaks cause AED 500K+ in damage.',
-      stat: 'AED 50,000-100,000 annual waste in non-intelligent systems'
-    }
-  ]
+  const iconMap: Record<string, any> = { Smartphone, Users, Zap, Brain, DollarSign, AlertTriangle }
 
-  const hiddenCosts = [
+  const problems = (cms?.problems || [
+    { icon: 'Smartphone', title: 'App Chaos', problem: '15+ different apps to control your home', impact: 'Confusion, frustration, and systems that nobody actually uses', stat: '78% of smart devices become abandoned within 6 months' },
+    { icon: 'Users', title: 'Vendor Dependency', problem: 'Multiple contractors, each protecting their territory', impact: 'No single point of contact. Finger-pointing when issues arise.', stat: 'Average 8-12 different vendors involved in luxury installations' },
+    { icon: 'Zap', title: 'Failure Cascades', problem: 'One system fails, everything else breaks', impact: "Your climate control goes down, security cameras stop recording, lights won't turn off", stat: '3-5 days average downtime for system failures in fragmented setups' },
+    { icon: 'Brain', title: 'No Intelligence', problem: "Devices that don't learn, adapt, or communicate", impact: 'You manually adjust everything. The "smart" home isn\'t actually smart.', stat: '0 learning capability in traditional installations' },
+    { icon: 'DollarSign', title: 'Hidden Costs', problem: 'Energy waste, water damage risk, security gaps', impact: 'Cooling bills 35% higher than optimized homes. Water leaks cause AED 500K+ in damage.', stat: 'AED 50,000-100,000 annual waste in non-intelligent systems' }
+  ]).map((p: any) => ({ ...p, icon: iconMap[p.icon] || AlertTriangle }))
+
+  const hiddenCosts = cms?.hidden_costs || [
     {
       category: 'Energy Waste',
       cost: 'AED 30,000-50,000/year',
