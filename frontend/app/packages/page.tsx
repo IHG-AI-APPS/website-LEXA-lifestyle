@@ -52,23 +52,21 @@ export default function PackagesPage() {
   ]
 
   return (
-    <div className="min-h-screen bg-white dark:bg-gray-900 pt-20">
-      {/* Hero - Centered */}
-      <section className="py-16 border-b dark:border-gray-700 bg-gray-50 dark:bg-gray-800">
-        <div className="container mx-auto px-6 lg:px-12">
-          <div className="max-w-4xl mx-auto text-center">
-            <span className="text-xs tracking-[0.3em] uppercase text-gray-400 font-medium mb-4 block">
-              Smart Home Solutions
-            </span>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
+    <div className="min-h-screen bg-white dark:bg-gray-950 pt-20" data-testid="packages-page">
+      {/* Hero */}
+      <section className="relative overflow-hidden bg-gray-900 text-white py-20 lg:py-28">
+        <div className="container mx-auto px-8 lg:px-16 relative z-10">
+          <div className="max-w-3xl mx-auto text-center">
+            <span className="inline-block px-3 py-1 rounded-full bg-[#C9A962]/15 border border-[#C9A962]/30 text-[#C9A962] text-xs uppercase tracking-widest mb-5">Smart Home Solutions</span>
+            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-5 tracking-tight" data-testid="packages-title">
               All Packages
             </h1>
-            <p className="text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto mb-8">
+            <p className="text-base text-gray-300 max-w-lg mx-auto mb-8">
               Pre-configured smart home packages tailored for every property type and budget
             </p>
             <Link
               href="/package-builder"
-              className="inline-flex items-center gap-2 px-6 py-3 bg-black text-white font-medium rounded-lg hover:bg-gray-800 transition-colors"
+              className="inline-flex items-center gap-2 px-6 py-3 bg-[#C9A962] text-gray-900 font-semibold rounded-lg hover:bg-[#C9A962]/90 transition-colors"
             >
               <Sparkles className="h-5 w-5" />
               Build Custom Package
