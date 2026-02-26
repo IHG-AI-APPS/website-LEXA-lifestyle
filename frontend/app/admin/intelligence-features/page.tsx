@@ -697,6 +697,95 @@ function AddFeatureModal({
             </div>
           </div>
 
+          {/* Feature Cards */}
+          <div>
+            <label className="block text-sm font-medium text-gray-700 mb-2">Feature Cards ({formData.feature_cards?.length || 0})</label>
+            <div className="space-y-3">
+              {(formData.feature_cards || []).map((card: any, i: number) => (
+                <div key={i} className="bg-gray-50 p-3 rounded-lg space-y-2">
+                  <div className="flex gap-2 items-center">
+                    <Input
+                      value={card.title || ''}
+                      onChange={(e) => {
+                        const cards = [...(formData.feature_cards || [])]
+                        cards[i] = { ...cards[i], title: e.target.value }
+                        setFormData(prev => ({ ...prev, feature_cards: cards }))
+                      }}
+                      placeholder="Card title"
+                      className="flex-1"
+                    />
+                    <button type="button" onClick={() => setFormData(prev => ({
+                      ...prev,
+                      feature_cards: (prev.feature_cards || []).filter((_: any, j: number) => j !== i)
+                    }))}>
+                      <X className="w-4 h-4 text-red-500" />
+                    </button>
+                  </div>
+                  <Input
+                    value={card.description || ''}
+                    onChange={(e) => {
+                      const cards = [...(formData.feature_cards || [])]
+                      cards[i] = { ...cards[i], description: e.target.value }
+                      setFormData(prev => ({ ...prev, feature_cards: cards }))
+                    }}
+                    placeholder="Description"
+                  />
+                </div>
+              ))}
+              <Button type="button" variant="outline" size="sm" onClick={() => setFormData(prev => ({
+                ...prev,
+                feature_cards: [...(prev.feature_cards || []), { title: '', description: '', benefits: [] }]
+              }))}>
+                <Plus className="w-3.5 h-3.5 mr-1" /> Add Feature Card
+              </Button>
+            </div>
+          </div>
+
+          {/* FAQs */}
+          <div>
+            <label className="block text-sm font-medium text-gray-700 mb-2">FAQs ({formData.faqs?.length || 0})</label>
+            <div className="space-y-3">
+              {(formData.faqs || []).map((faq: any, i: number) => (
+                <div key={i} className="bg-gray-50 p-3 rounded-lg space-y-2">
+                  <div className="flex gap-2 items-center">
+                    <Input
+                      value={faq.question || ''}
+                      onChange={(e) => {
+                        const faqs = [...(formData.faqs || [])]
+                        faqs[i] = { ...faqs[i], question: e.target.value }
+                        setFormData(prev => ({ ...prev, faqs }))
+                      }}
+                      placeholder="Question"
+                      className="flex-1"
+                    />
+                    <button type="button" onClick={() => setFormData(prev => ({
+                      ...prev,
+                      faqs: (prev.faqs || []).filter((_: any, j: number) => j !== i)
+                    }))}>
+                      <X className="w-4 h-4 text-red-500" />
+                    </button>
+                  </div>
+                  <Textarea
+                    value={faq.answer || ''}
+                    onChange={(e) => {
+                      const faqs = [...(formData.faqs || [])]
+                      faqs[i] = { ...faqs[i], answer: e.target.value }
+                      setFormData(prev => ({ ...prev, faqs }))
+                    }}
+                    placeholder="Answer"
+                    rows={2}
+                  />
+                </div>
+              ))}
+              <Button type="button" variant="outline" size="sm" onClick={() => setFormData(prev => ({
+                ...prev,
+                faqs: [...(prev.faqs || []), { question: '', answer: '' }]
+              }))}>
+                <Plus className="w-3.5 h-3.5 mr-1" /> Add FAQ
+              </Button>
+            </div>
+          </div>
+
           {/* Toggles */}
           <div className="flex gap-6">
             <label className="flex items-center gap-2 cursor-pointer">
