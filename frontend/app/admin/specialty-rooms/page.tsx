@@ -73,10 +73,10 @@ export default function SpecialtyRoomsAdmin() {
 
   const fetchRooms = async () => {
     try {
-      const response = await fetch(`${API_URL}/api/specialty-rooms`)
+      const response = await fetch(`${API_URL}/api/packages/specialty-rooms`)
       if (response.ok) {
         const data = await response.json()
-        const rawRooms = Array.isArray(data) ? data : data.rooms || []
+        const rawRooms = Array.isArray(data) ? data : data.specialty_rooms || data.rooms || []
         // Ensure all rooms have proper defaults
         const roomsWithDefaults = rawRooms.map((r: any) => ({
           ...r,
