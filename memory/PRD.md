@@ -57,14 +57,18 @@ Complete website overhaul for LEXA Smart Home to:
 - **Testing**: 100% pass rate (14/14 backend + all frontend UI)
 
 ### Phase 9: Static Override Cleanup & CMS Migration (Feb 26, 2026)
-- **Deleted 9 static override files** that were blocking dynamic CMS routes:
-  - 3 location pages (`downtown-dubai-smart-home`, `emirates-hills-smart-home`, `palm-jumeirah-smart-home`)
-  - 4 resource articles (`knx-vs-control4-luxury`, `architect-automation-guide`, `best-home-automation-uae`, `smart-home-cost-dubai-villas`)
-  - 1 blog post (`smart-home-guide-dubai-2025`)
-  - 1 intelligence feature (`staff-accountability`)
+- **Deleted 9 static override files** that were blocking dynamic CMS routes
 - **Seeded content into DB**: 5 articles into `articles` collection, 1 feature into `intelligence_features`
-- **Fixed intelligence/[id] page**: Added slug-based lookup (`f.slug === featureId`)
-- **Testing**: 100% pass rate (17/17 backend + 9/9 frontend)
+- **Fixed intelligence/[id] page**: Added slug-based lookup
+- **Testing**: 100% pass rate
+
+### Phase 10: CMS Conversion of 6 Standalone Pages (Feb 26, 2026)
+- **Converted 6 pages** to fully dynamic CMS: `why-lexa`, `big-homes-break-smart`, `villa-operating-model`, `integrations`, `case-studies`, `glossary`
+- All page content (hero text, feature arrays, comparisons, roles, brand lists, case studies) now editable from Admin CMS
+- Seeded all content into `settings` collection with structured JSON objects
+- Added 6 new CMS section entries in Admin > CMS panel under "Core Pages"
+- Uses `useCms()` hook with hardcoded fallback for zero-downtime migration
+- **Testing**: 100% pass rate (9/9 backend + 6/6 frontend)
 
 ## Current State: Design Consistency
 | Section | Pages | Design Status | CMS Status |
