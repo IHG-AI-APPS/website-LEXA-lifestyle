@@ -88,8 +88,8 @@ const nextConfig = {
     NEXT_PUBLIC_BACKEND_URL: process.env.REACT_APP_BACKEND_URL || 'http://localhost:8001',
   },
   
-  // Source maps for production debugging
-  productionBrowserSourceMaps: true,
+  // Source maps disabled in production for faster loading
+  productionBrowserSourceMaps: false,
 
   // Allow dev origins for preview environment
   allowedDevOrigins: [
