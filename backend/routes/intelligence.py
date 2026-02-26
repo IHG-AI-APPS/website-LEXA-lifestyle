@@ -891,6 +891,27 @@ async def admin_update_system(system_id: str, system_data: Dict[str, Any], token
         raise HTTPException(status_code=500, detail="Failed to update system")
 
 
+@router.patch("/admin/control-systems/{system_id}")
+async def admin_patch_system(system_id: str, updates: Dict[str, Any], token: dict = Depends(verify_admin_token)):
+    """Admin: Partially update control system (only provided fields)"""
+    try:
+        updates.pop("_id", None)
+        updates.pop("id", None)
+        if not updates:
+            raise HTTPException(status_code=400, detail="No fields to update")
+        updates["updated_at"] = datetime.now(timezone.utc)
+        result = await db.control_systems.update_one({"id": system_id}, {"$set": updates})
+        if result.matched_count == 0:
+            raise HTTPException(status_code=404, detail="System not found")
+        logger.info(f"Admin {token.get('username')} patched system: {system_id}")
+        return {"success": True, "message": "System patched successfully"}
+    except HTTPException:
+        raise
+    except Exception as e:
+        logger.error(f"Admin system patch error: {str(e)}")
+        raise HTTPException(status_code=500, detail="Failed to patch system")
+
+
 @router.get("/admin/sessions")
 async def admin_get_sessions(
     limit: int = 50,
