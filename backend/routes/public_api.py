@@ -64,6 +64,7 @@ async def get_news(limit: Optional[int] = None, category: Optional[str] = None):
             cursor = cursor.limit(limit)
         
         news = await cursor.to_list(1000)
+        await cache.set(cache_key, news, ttl_seconds=300)
         return news
     except Exception as e:
         logger.error(f"Get news error: {str(e)}")
