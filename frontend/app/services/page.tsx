@@ -114,32 +114,24 @@ export default function ServicesPage() {
   }
 
   return (
-    <div className="min-h-screen bg-white dark:bg-gray-900 pt-20">
-      {/* Hero - Centered */}
-      <section className="py-16 md:py-20 bg-gray-50 dark:bg-gray-800">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
-          <div className="mx-auto">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-              className="max-w-4xl mx-auto text-center"
-            >
-              <span className="text-xs tracking-[0.3em] uppercase text-gray-400 font-medium mb-4 block">
-                {language === 'ar' ? 'خدماتنا' : 'Our Services'}
-              </span>
-              <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6">
-                {language === 'ar' ? 'خدمة متكاملة' : 'Full-Service'} <span className="text-gray-400">{language === 'ar' ? '' : 'Integration'}</span>
-              </h1>
-              <div className="h-px w-32 bg-[#9F8B65] mb-6 mx-auto" />
-              <p className="text-base md:text-lg text-gray-600 dark:text-gray-400 leading-relaxed max-w-2xl mx-auto">
-                {language === 'ar' ? (
-                  <>التصميم. التكامل. التشغيل. الدعم. أربع مراحل من التميز لتقديم الفخامة المنسقة.</>
-                ) : (
-                  <>Design. Integrate. Commission. Support. Four phases of excellence delivering luxury, orchestrated.</>
-                )}
-              </p>
-            </motion.div>
+    <div className="min-h-screen bg-white dark:bg-gray-950 pt-20" data-testid="services-page">
+      {/* Hero */}
+      <section className="relative overflow-hidden bg-gray-900 text-white py-20 lg:py-28">
+        <div className="container mx-auto px-8 lg:px-16 relative z-10">
+          <div className="max-w-3xl mx-auto text-center">
+            <span className="inline-block px-3 py-1 rounded-full bg-[#C9A962]/15 border border-[#C9A962]/30 text-[#C9A962] text-xs uppercase tracking-widest mb-5">
+              {language === 'ar' ? 'خدماتنا' : 'Our Services'}
+            </span>
+            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-5 tracking-tight" data-testid="services-title">
+              {language === 'ar' ? 'خدمة متكاملة' : 'Full-Service Integration'}
+            </h1>
+            <p className="text-base text-gray-300 max-w-lg mx-auto">
+              {language === 'ar' ? (
+                <>التصميم. التكامل. التشغيل. الدعم. أربع مراحل من التميز لتقديم الفخامة المنسقة.</>
+              ) : (
+                <>Design. Integrate. Commission. Support. Four phases of excellence delivering luxury, orchestrated.</>
+              )}
+            </p>
           </div>
         </div>
       </section>
