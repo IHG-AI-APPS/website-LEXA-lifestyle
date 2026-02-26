@@ -83,9 +83,14 @@ async def get_solutions_mega_menu():
 async def get_solution(slug: str):
     """Get solution by slug"""
     try:
+        cache_key = f"solution:{slug}"
+        cached = await cache.get(cache_key)
+        if cached is not None:
+            return cached
         solution = await db.solutions.find_one({"slug": slug}, {"_id": 0})
         if not solution:
             raise HTTPException(status_code=404, detail="Solution not found")
+        await cache.set(cache_key, solution, ttl_seconds=300)
         return solution
     except HTTPException:
         raise
@@ -98,6 +103,10 @@ async def get_solution(slug: str):
 async def get_services():
     """Get all services from database (dynamic)"""
     try:
+        cache_key = "services:all"
+        cached = await cache.get(cache_key)
+        if cached is not None:
+            return cached
         # Fetch all active services from database
         services = await db.services.find(
             {"active": {"$ne": False}},  # Only active services
@@ -121,6 +130,7 @@ async def get_services():
                 "order": s.get("order", s.get("priority", 100))
             })
         
+        await cache.set(cache_key, mapped_services, ttl_seconds=300)
         return mapped_services
     except Exception as e:
         logger.error(f"Services error: {str(e)}")
