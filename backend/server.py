@@ -311,6 +311,14 @@ class Project(BaseModel):
     image: str
     systems: List[str] = []
     description: Optional[str] = None
+    # Extended fields for Admin CMS
+    category: Optional[str] = None
+    video_url: Optional[str] = None
+    features: List[str] = []
+    results: List[str] = []  # Results/metrics
+    images: List[str] = []  # Alternative to gallery
+    thumbnail: Optional[str] = None
+    size: Optional[str] = None
     # Case Study fields
     challenge: Optional[str] = None
     solution_details: Optional[str] = None
@@ -323,6 +331,11 @@ class Project(BaseModel):
     budget_range: Optional[str] = None
     team_size: Optional[int] = None
     gallery: List[str] = []
+    completion_date: Optional[str] = None
+    consultant: Optional[str] = None
+    contractor: Optional[str] = None
+    brands: List[dict] = []
+    products: List[dict] = []
 
 class Testimonial(BaseModel):
     model_config = ConfigDict(extra="ignore")
