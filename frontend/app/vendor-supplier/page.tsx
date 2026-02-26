@@ -156,40 +156,22 @@ export default function VendorSupplierPage() {
   }
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-white dark:bg-gray-950 pt-20" data-testid="vendor-supplier-page">
       {/* Hero Section */}
-      <section className="relative bg-[#1A1A1A] py-20 md:py-28 overflow-hidden">
-        <div className="absolute inset-0 opacity-20">
-          <SafeImage
-            src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=1920&q=80"
-            alt="Warehouse distribution"
-            fill
-            className="object-cover"
-          />
-        </div>
-        <div className="absolute inset-0 bg-gradient-to-r from-black/80 to-black/40" />
-        
-        <div className="relative container mx-auto px-4 max-w-6xl">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-          >
-            <div className="inline-block px-4 py-1.5 bg-[#E8DCC8]/20 border border-[#E8DCC8]/30 text-[#E8DCC8] text-xs uppercase tracking-widest mb-6">
-              Vendor & Supplier Portal
-            </div>
-            <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold text-white mb-6 max-w-4xl">
-              Become a LEXA 
-              <span className="text-[#E8DCC8]"> Approved Vendor</span>
+      <section className="relative overflow-hidden bg-gray-900 text-white py-20 lg:py-28">
+        <div className="container mx-auto px-8 lg:px-16 relative z-10">
+          <div className="max-w-3xl mx-auto text-center">
+            <span className="inline-block px-3 py-1 rounded-full bg-[#C9A962]/15 border border-[#C9A962]/30 text-[#C9A962] text-xs uppercase tracking-widest mb-5">Vendor & Supplier Portal</span>
+            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-5 tracking-tight" data-testid="vendor-supplier-title">
+              Become a LEXA Approved Vendor
             </h1>
-            <p className="text-lg md:text-xl text-white/80 max-w-2xl mb-8">
-              We&apos;re always looking for innovative brands and quality suppliers to expand our 
-              smart home portfolio. Join our network and access the growing GCC market.
+            <p className="text-base text-gray-300 mb-8 max-w-lg mx-auto">
+              We&apos;re always looking for innovative brands and quality suppliers to expand our smart home portfolio. Join our network.
             </p>
-            <div className="flex flex-wrap gap-4">
+            <div className="flex flex-wrap gap-3 justify-center">
               <Button 
                 size="lg"
-                className="bg-[#E8DCC8] text-[#1A1A1A] dark:text-white hover:bg-[#E8DCC8]/90 rounded-none px-8"
+                className="bg-[#C9A962] text-gray-900 hover:bg-[#C9A962]/90 px-8 font-semibold"
                 onClick={() => document.getElementById('vendor-form')?.scrollIntoView({ behavior: 'smooth' })}
               >
                 Register as Vendor
@@ -198,13 +180,13 @@ export default function VendorSupplierPage() {
               <Button 
                 size="lg"
                 variant="outline"
-                className="border-white/30 text-white hover:bg-white/10 rounded-none px-8"
+                className="border-white/30 text-white hover:bg-white/10 px-8"
                 asChild
               >
                 <a href="mailto:procurement@lexalifestyle.com">Email Procurement Team</a>
               </Button>
             </div>
-          </motion.div>
+          </div>
         </div>
       </section>
 
