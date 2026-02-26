@@ -681,7 +681,7 @@ class TestAdminCRUD:
         slug = test_id
         
         # CREATE - including required id field
-        create_resp = requests.post(f"{BASE_URL}/api/admin/solutions", headers=headers, json={
+        create_payload = {
             "id": test_id,
             "slug": slug,
             "title": "TEST Solution",
@@ -689,15 +689,15 @@ class TestAdminCRUD:
             "category": "test",
             "image": "https://example.com/image.jpg",
             "features": ["Feature 1", "Feature 2"]
-        })
+        }
+        create_resp = requests.post(f"{BASE_URL}/api/admin/solutions", headers=headers, json=create_payload)
         assert create_resp.status_code in [200, 201], f"Create failed: {create_resp.text}"
         created = create_resp.json()
         item_id = created.get("id") or test_id
         
-        # UPDATE
-        update_resp = requests.put(f"{BASE_URL}/api/admin/solutions/{item_id}", headers=headers, json={
-            "title": "TEST Solution Updated"
-        })
+        # UPDATE - full payload required (PUT semantics)
+        create_payload["title"] = "TEST Solution Updated"
+        update_resp = requests.put(f"{BASE_URL}/api/admin/solutions/{item_id}", headers=headers, json=create_payload)
         assert update_resp.status_code == 200, f"Update failed: {update_resp.text}"
         
         # DELETE
@@ -710,22 +710,23 @@ class TestAdminCRUD:
         headers = {"Authorization": f"Bearer {admin_token}"}
         test_id = f"test-project-{uuid.uuid4().hex[:8]}"
         
-        create_resp = requests.post(f"{BASE_URL}/api/admin/projects", headers=headers, json={
+        create_payload = {
             "id": test_id,
-            "title": f"TEST Project {uuid.uuid4().hex[:8]}",
+            "title": f"TEST Project",
             "location": "Dubai",
             "year": "2026",
             "description": "Test project",
             "type": "residential",
             "image": "https://example.com/image.jpg"
-        })
+        }
+        create_resp = requests.post(f"{BASE_URL}/api/admin/projects", headers=headers, json=create_payload)
         assert create_resp.status_code in [200, 201], f"Create failed: {create_resp.text}"
         created = create_resp.json()
         item_id = created.get("id") or test_id
         
-        update_resp = requests.put(f"{BASE_URL}/api/admin/projects/{item_id}", headers=headers, json={
-            "title": "TEST Project Updated"
-        })
+        # UPDATE - full payload required
+        create_payload["title"] = "TEST Project Updated"
+        update_resp = requests.put(f"{BASE_URL}/api/admin/projects/{item_id}", headers=headers, json=create_payload)
         assert update_resp.status_code == 200, f"Update failed: {update_resp.text}"
         
         delete_resp = requests.delete(f"{BASE_URL}/api/admin/projects/{item_id}", headers=headers)
@@ -738,20 +739,21 @@ class TestAdminCRUD:
         test_id = f"test-brand-{uuid.uuid4().hex[:8]}"
         slug = test_id
         
-        create_resp = requests.post(f"{BASE_URL}/api/admin/brands", headers=headers, json={
+        create_payload = {
             "id": test_id,
             "slug": slug,
             "name": "TEST Brand",
             "description": "Test brand",
             "logo": "https://example.com/logo.png"
-        })
+        }
+        create_resp = requests.post(f"{BASE_URL}/api/admin/brands", headers=headers, json=create_payload)
         assert create_resp.status_code in [200, 201], f"Create failed: {create_resp.text}"
         created = create_resp.json()
         item_id = created.get("id") or test_id
         
-        update_resp = requests.put(f"{BASE_URL}/api/admin/brands/{item_id}", headers=headers, json={
-            "name": "TEST Brand Updated"
-        })
+        # UPDATE - full payload required
+        create_payload["name"] = "TEST Brand Updated"
+        update_resp = requests.put(f"{BASE_URL}/api/admin/brands/{item_id}", headers=headers, json=create_payload)
         assert update_resp.status_code == 200, f"Update failed: {update_resp.text}"
         
         delete_resp = requests.delete(f"{BASE_URL}/api/admin/brands/{item_id}", headers=headers)
@@ -764,7 +766,7 @@ class TestAdminCRUD:
         test_id = f"test-article-{uuid.uuid4().hex[:8]}"
         slug = test_id
         
-        create_resp = requests.post(f"{BASE_URL}/api/admin/articles", headers=headers, json={
+        create_payload = {
             "id": test_id,
             "slug": slug,
             "title": "TEST Article",
@@ -775,15 +777,16 @@ class TestAdminCRUD:
             "published_date": "2026-01-15",
             "featured_image": "https://example.com/image.jpg",
             "image": "https://example.com/image.jpg",
-            "read_time": "5 min"
-        })
+            "read_time": 5  # Integer, not string
+        }
+        create_resp = requests.post(f"{BASE_URL}/api/admin/articles", headers=headers, json=create_payload)
         assert create_resp.status_code in [200, 201], f"Create failed: {create_resp.text}"
         created = create_resp.json()
         item_id = created.get("id") or test_id
         
-        update_resp = requests.put(f"{BASE_URL}/api/admin/articles/{item_id}", headers=headers, json={
-            "title": "TEST Article Updated"
-        })
+        # UPDATE - full payload required
+        create_payload["title"] = "TEST Article Updated"
+        update_resp = requests.put(f"{BASE_URL}/api/admin/articles/{item_id}", headers=headers, json=create_payload)
         assert update_resp.status_code == 200, f"Update failed: {update_resp.text}"
         
         delete_resp = requests.delete(f"{BASE_URL}/api/admin/articles/{item_id}", headers=headers)
