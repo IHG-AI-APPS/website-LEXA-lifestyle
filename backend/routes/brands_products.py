@@ -143,6 +143,10 @@ async def get_video(video_id: str):
         video = await db.videos.find_one({"id": video_id}, {"_id": 0})
         if not video:
             raise HTTPException(status_code=404, detail="Video not found")
+        # Convert datetime fields to ISO strings for Pydantic
+        for key in ("created_at", "updated_at", "published_date"):
+            if key in video and hasattr(video[key], 'isoformat'):
+                video[key] = video[key].isoformat()
         return video
     except HTTPException:
         raise
