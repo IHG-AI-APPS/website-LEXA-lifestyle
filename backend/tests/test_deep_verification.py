@@ -478,15 +478,26 @@ class TestIntelligenceScoreCalculation:
         if not features:
             pytest.skip("No intelligence features configured")
         
-        # Select a few features
-        selected_features = [{"feature_id": f.get('id')} for f in features[:5] if f.get('id')]
+        # Select a few features - include category as required by FeatureSelection model
+        selected_features = []
+        for f in features[:5]:
+            if f.get('id') and f.get('category'):
+                selected_features.append({
+                    "feature_id": f.get('id'),
+                    "category": f.get('category'),
+                    "selected": True
+                })
         
         if not selected_features:
-            pytest.skip("No features with IDs found")
+            pytest.skip("No features with IDs and categories found")
         
+        # Lifestyle selections need to be objects with category and priority
         calc_data = {
             "selected_features": selected_features,
-            "lifestyle_selections": ["convenience", "security"]
+            "lifestyle_selections": [
+                {"category": "convenience", "priority": 1},
+                {"category": "security", "priority": 2}
+            ]
         }
         
         response = requests.post(f"{BASE_URL}/api/intelligence/calculate-score", json=calc_data)
