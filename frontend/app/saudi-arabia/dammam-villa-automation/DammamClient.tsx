@@ -68,5 +68,5 @@ const pageData: GeoPageData = {
 }
 
 export default function DammamClient() {
-  return <GeoPageTemplate data={pageData} />
+  return <GeoPageTemplate data={pageData} slug="saudi-arabia/dammam-villa-automation" />
 }

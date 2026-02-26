@@ -69,5 +69,5 @@ const pageData: GeoPageData = {
 }
 
 export default function ManamaClient() {
-  return <GeoPageTemplate data={pageData} />
+  return <GeoPageTemplate data={pageData} slug="bahrain/manama-smart-homes" />
 }

@@ -107,5 +107,5 @@ const pageData: GeoPageData = {
 }
 
 export default function JBRClient() {
-  return <GeoPageTemplate data={pageData} />
+  return <GeoPageTemplate data={pageData} slug="dubai/jumeirah-beach-residence" />
 }

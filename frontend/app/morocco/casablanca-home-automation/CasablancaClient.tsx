@@ -68,5 +68,5 @@ const pageData: GeoPageData = {
 }
 
 export default function CasablancaClient() {
-  return <GeoPageTemplate data={pageData} />
+  return <GeoPageTemplate data={pageData} slug="morocco/casablanca-home-automation" />
 }

@@ -106,5 +106,5 @@ const pageData: GeoPageData = {
 }
 
 export default function DubaiMarinaClient() {
-  return <GeoPageTemplate data={pageData} />
+  return <GeoPageTemplate data={pageData} slug="dubai/dubai-marina-smart-homes" />
 }

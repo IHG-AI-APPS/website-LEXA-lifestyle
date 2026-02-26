@@ -69,5 +69,5 @@ const pageData: GeoPageData = {
 }
 
 export default function NairobiClient() {
-  return <GeoPageTemplate data={pageData} />
+  return <GeoPageTemplate data={pageData} slug="kenya/nairobi-home-automation" />
 }

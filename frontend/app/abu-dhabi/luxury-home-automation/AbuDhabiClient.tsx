@@ -135,5 +135,5 @@ const pageData: GeoPageData = {
 }
 
 export default function AbuDhabiClient() {
-  return <GeoPageTemplate data={pageData} />
+  return <GeoPageTemplate data={pageData} slug="abu-dhabi/luxury-home-automation" />
 }

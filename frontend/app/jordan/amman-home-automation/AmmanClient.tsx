@@ -68,5 +68,5 @@ const pageData: GeoPageData = {
 }
 
 export default function AmmanClient() {
-  return <GeoPageTemplate data={pageData} />
+  return <GeoPageTemplate data={pageData} slug="jordan/amman-home-automation" />
 }

@@ -73,5 +73,5 @@ const pageData: GeoPageData = {
 }
 
 export default function JeddahClient() {
-  return <GeoPageTemplate data={pageData} />
+  return <GeoPageTemplate data={pageData} slug="saudi-arabia/jeddah-home-automation" />
 }

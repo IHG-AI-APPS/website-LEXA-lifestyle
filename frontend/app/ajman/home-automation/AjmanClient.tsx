@@ -78,5 +78,5 @@ const pageData: GeoPageData = {
 }
 
 export default function AjmanClient() {
-  return <GeoPageTemplate data={pageData} />
+  return <GeoPageTemplate data={pageData} slug="ajman/home-automation" />
 }

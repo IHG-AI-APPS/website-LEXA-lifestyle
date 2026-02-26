@@ -49,5 +49,5 @@ const pageData: GeoPageData = {
 }
 
 export default function DubaiGeoClient() {
-  return <GeoPageTemplate data={pageData} />
+  return <GeoPageTemplate data={pageData} slug="uae/dubai" />
 }

@@ -71,5 +71,5 @@ const pageData: GeoPageData = {
 }
 
 export default function FujairahClient() {
-  return <GeoPageTemplate data={pageData} />
+  return <GeoPageTemplate data={pageData} slug="fujairah/smart-homes" />
 }

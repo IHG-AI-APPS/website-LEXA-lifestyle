@@ -119,5 +119,5 @@ const pageData: GeoPageData = {
 }
 
 export default function SharjahClient() {
-  return <GeoPageTemplate data={pageData} />
+  return <GeoPageTemplate data={pageData} slug="sharjah/smart-home-automation" />
 }

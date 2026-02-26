@@ -78,5 +78,5 @@ const pageData: GeoPageData = {
 }
 
 export default function RAKClient() {
-  return <GeoPageTemplate data={pageData} />
+  return <GeoPageTemplate data={pageData} slug="ras-al-khaimah/villa-automation" />
 }

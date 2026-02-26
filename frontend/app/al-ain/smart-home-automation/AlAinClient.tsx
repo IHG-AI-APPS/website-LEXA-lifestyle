@@ -100,5 +100,5 @@ const pageData: GeoPageData = {
 }
 
 export default function AlAinClient() {
-  return <GeoPageTemplate data={pageData} />
+  return <GeoPageTemplate data={pageData} slug="al-ain/smart-home-automation" />
 }

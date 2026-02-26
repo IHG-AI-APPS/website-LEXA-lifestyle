@@ -74,5 +74,5 @@ const pageData: GeoPageData = {
 }
 
 export default function CairoClient() {
-  return <GeoPageTemplate data={pageData} />
+  return <GeoPageTemplate data={pageData} slug="egypt/cairo-smart-homes" />
 }

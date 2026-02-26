@@ -84,5 +84,5 @@ const pageData: GeoPageData = {
 }
 
 export default function DohaClient() {
-  return <GeoPageTemplate data={pageData} />
+  return <GeoPageTemplate data={pageData} slug="qatar/doha-smart-homes" />
 }

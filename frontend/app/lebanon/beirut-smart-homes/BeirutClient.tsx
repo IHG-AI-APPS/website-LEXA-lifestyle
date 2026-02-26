@@ -68,5 +68,5 @@ const pageData: GeoPageData = {
 }
 
 export default function BeirutClient() {
-  return <GeoPageTemplate data={pageData} />
+  return <GeoPageTemplate data={pageData} slug="lebanon/beirut-smart-homes" />
 }

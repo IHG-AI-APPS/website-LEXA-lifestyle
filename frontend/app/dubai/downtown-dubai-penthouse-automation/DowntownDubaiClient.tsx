@@ -92,5 +92,5 @@ const pageData: GeoPageData = {
 }
 
 export default function DowntownDubaiClient() {
-  return <GeoPageTemplate data={pageData} />
+  return <GeoPageTemplate data={pageData} slug="dubai/downtown-dubai-penthouse-automation" />
 }

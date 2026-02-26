@@ -71,5 +71,5 @@ const pageData: GeoPageData = {
 }
 
 export default function UAQClient() {
-  return <GeoPageTemplate data={pageData} />
+  return <GeoPageTemplate data={pageData} slug="umm-al-quwain/home-automation" />
 }

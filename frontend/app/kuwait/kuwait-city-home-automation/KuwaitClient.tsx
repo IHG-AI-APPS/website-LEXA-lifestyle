@@ -68,5 +68,5 @@ const pageData: GeoPageData = {
 }
 
 export default function KuwaitClient() {
-  return <GeoPageTemplate data={pageData} />
+  return <GeoPageTemplate data={pageData} slug="kuwait/kuwait-city-home-automation" />
 }

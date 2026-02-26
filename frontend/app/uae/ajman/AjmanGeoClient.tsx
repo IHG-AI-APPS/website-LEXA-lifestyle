@@ -37,5 +37,5 @@ const pageData: GeoPageData = {
 }
 
 export default function AjmanGeoClient() {
-  return <GeoPageTemplate data={pageData} />
+  return <GeoPageTemplate data={pageData} slug="uae/ajman" />
 }

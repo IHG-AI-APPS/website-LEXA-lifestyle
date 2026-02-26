@@ -140,5 +140,5 @@ const pageData: GeoPageData = {
 }
 
 export default function PalmJumeirahClient() {
-  return <GeoPageTemplate data={pageData} />
+  return <GeoPageTemplate data={pageData} slug="dubai/palm-jumeirah-smart-homes" />
 }

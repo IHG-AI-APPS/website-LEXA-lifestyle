@@ -69,5 +69,5 @@ const pageData: GeoPageData = {
 }
 
 export default function NEOMClient() {
-  return <GeoPageTemplate data={pageData} />
+  return <GeoPageTemplate data={pageData} slug="saudi-arabia/neom-smart-living" />
 }

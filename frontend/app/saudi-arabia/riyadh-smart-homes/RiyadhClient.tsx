@@ -74,5 +74,5 @@ const pageData: GeoPageData = {
 }
 
 export default function RiyadhClient() {
-  return <GeoPageTemplate data={pageData} />
+  return <GeoPageTemplate data={pageData} slug="saudi-arabia/riyadh-smart-homes" />
 }

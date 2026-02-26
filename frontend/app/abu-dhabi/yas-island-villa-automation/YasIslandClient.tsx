@@ -130,5 +130,5 @@ const pageData: GeoPageData = {
 }
 
 export default function YasIslandClient() {
-  return <GeoPageTemplate data={pageData} />
+  return <GeoPageTemplate data={pageData} slug="abu-dhabi/yas-island-villa-automation" />
 }

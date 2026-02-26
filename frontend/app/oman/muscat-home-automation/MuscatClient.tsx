@@ -68,5 +68,5 @@ const pageData: GeoPageData = {
 }
 
 export default function MuscatClient() {
-  return <GeoPageTemplate data={pageData} />
+  return <GeoPageTemplate data={pageData} slug="oman/muscat-home-automation" />
 }

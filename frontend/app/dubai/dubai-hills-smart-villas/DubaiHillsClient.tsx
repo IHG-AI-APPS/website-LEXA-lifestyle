@@ -91,5 +91,5 @@ const pageData: GeoPageData = {
 }
 
 export default function DubaiHillsClient() {
-  return <GeoPageTemplate data={pageData} />
+  return <GeoPageTemplate data={pageData} slug="dubai/dubai-hills-smart-villas" />
 }

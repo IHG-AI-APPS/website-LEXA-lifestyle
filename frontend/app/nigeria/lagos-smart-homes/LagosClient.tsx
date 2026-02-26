@@ -69,5 +69,5 @@ const pageData: GeoPageData = {
 }
 
 export default function LagosClient() {
-  return <GeoPageTemplate data={pageData} />
+  return <GeoPageTemplate data={pageData} slug="nigeria/lagos-smart-homes" />
 }

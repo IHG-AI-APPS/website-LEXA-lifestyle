@@ -130,5 +130,5 @@ const pageData: GeoPageData = {
 }
 
 export default function AlReemIslandClient() {
-  return <GeoPageTemplate data={pageData} />
+  return <GeoPageTemplate data={pageData} slug="abu-dhabi/al-reem-island-automation" />
 }
