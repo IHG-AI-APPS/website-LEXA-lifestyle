@@ -57,14 +57,6 @@ export default function BlogPage() {
           </div>
         </div>
       </section>
-              <div className="h-px w-32 bg-[#9F8B65] mb-6 mx-auto" />
-              <p className="text-base md:text-lg text-gray-600 dark:text-gray-400 leading-relaxed max-w-2xl mx-auto">
-                Expert insights, guides, and trends in smart home technology, automation, and luxury living from the Middle East&apos;s leading integrator.
-              </p>
-            </motion.div>
-          </div>
-        </div>
-      </section>
 
       {/* Category Filter */}
       <section className="py-12 bg-white dark:bg-gray-900 border-b dark:border-gray-700">
