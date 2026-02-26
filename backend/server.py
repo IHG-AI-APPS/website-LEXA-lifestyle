@@ -1835,6 +1835,7 @@ app.include_router(geo_pages.router)  # Geo pages management
 app.include_router(tracking_settings.router)  # Tracking pixel settings
 app.include_router(locations.router)  # Dynamic location pages
 app.include_router(catalogues.router)  # Catalogues
+app.include_router(regression_tests.router)  # Nightly regression test results
 
 # Register main API router (remaining endpoints)
 app.include_router(api_router)
