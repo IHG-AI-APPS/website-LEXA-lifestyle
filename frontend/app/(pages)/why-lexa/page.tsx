@@ -6,52 +6,22 @@ import Link from 'next/link'
 import { useCms } from '@/hooks/useCms'
 
 export default function WhyLexaPage() {
-  const cms = useCms('page_why_lexa', null)
+  const cms = useCms('page_why_lexa', null) as any
 
-  const advantages = [
-    {
-      icon: Award,
-      title: 'Authorized Premium Dealer',
-      description: 'Official Control4, Crestron, and Lutron partner - one of few UAE companies with dual platform certification.'
-    },
-    {
-      icon: Users,
-      title: '15+ Years UAE Experience',
-      description: '500+ completed luxury villa projects across Emirates Hills, Palm Jumeirah, Downtown Dubai, and Abu Dhabi.'
-    },
-    {
-      icon: Shield,
-      title: 'Comprehensive Warranty',
-      description: '5-year warranty on installation workmanship, manufacturer warranties on all equipment, lifetime support.'
-    },
-    {
-      icon: Clock,
-      title: '24/7 Support Guarantee',
-      description: 'Dedicated support team with guaranteed response times. Emergency callouts available across UAE.'
-    },
-    {
-      icon: Star,
-      title: 'Experience Centre',
-      description: 'Live demonstration showroom in Dubai - test Control4, Crestron, Lutron systems before purchasing.'
-    },
-    {
-      icon: TrendingUp,
-      title: 'Proven ROI',
-      description: 'Our systems deliver 25-35% energy savings and 15-20% property value increase. Avg. payback: 3-5 years.'
-    },
-    {
-      icon: Zap,
-      title: 'Future-Proof Technology',
-      description: 'Open protocols, regular updates, scalable infrastructure. Your system stays current for decades.'
-    },
-    {
-      icon: Users,
-      title: 'Single Accountability',
-      description: 'One company for design, installation, programming, training, and support. No finger-pointing.'
-    }
-  ]
+  const iconMap: Record<string, any> = { Award, Users, Shield, Clock, Star, TrendingUp, Zap }
 
-  const comparisons = [
+  const advantages = (cms?.advantages || [
+    { icon: 'Award', title: 'Authorized Premium Dealer', description: 'Official Control4, Crestron, and Lutron partner - one of few UAE companies with dual platform certification.' },
+    { icon: 'Users', title: '15+ Years UAE Experience', description: '500+ completed luxury villa projects across Emirates Hills, Palm Jumeirah, Downtown Dubai, and Abu Dhabi.' },
+    { icon: 'Shield', title: 'Comprehensive Warranty', description: '5-year warranty on installation workmanship, manufacturer warranties on all equipment, lifetime support.' },
+    { icon: 'Clock', title: '24/7 Support Guarantee', description: 'Dedicated support team with guaranteed response times. Emergency callouts available across UAE.' },
+    { icon: 'Star', title: 'Experience Centre', description: 'Live demonstration showroom in Dubai - test Control4, Crestron, Lutron systems before purchasing.' },
+    { icon: 'TrendingUp', title: 'Proven ROI', description: 'Our systems deliver 25-35% energy savings and 15-20% property value increase. Avg. payback: 3-5 years.' },
+    { icon: 'Zap', title: 'Future-Proof Technology', description: 'Open protocols, regular updates, scalable infrastructure. Your system stays current for decades.' },
+    { icon: 'Users', title: 'Single Accountability', description: 'One company for design, installation, programming, training, and support. No finger-pointing.' }
+  ]).map((a: any) => ({ ...a, icon: iconMap[a.icon] || Award }))
+
+  const comparisons = cms?.comparisons || [
     {
       feature: 'Control4 Certification',
       lexa: true,
