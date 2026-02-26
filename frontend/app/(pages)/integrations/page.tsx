@@ -6,99 +6,21 @@ import Link from 'next/link'
 import { useCms } from '@/hooks/useCms'
 
 export default function IntegrationsPage() {
-  const cms = useCms('page_integrations', null)
+  const cms = useCms('page_integrations', null) as any
 
-  const platforms = [
-    {
-      category: 'Control Systems',
-      icon: Cpu,
-      description: 'Professional automation platforms for luxury residences',
-      brands: [
-        { name: 'Control4', tier: 'Primary' },
-        { name: 'Crestron', tier: 'Enterprise' },
-        { name: 'Savant', tier: 'Premium' },
-        { name: 'KNX', tier: 'Building-Scale' },
-        { name: 'Lutron', tier: 'Lighting Expert' }
-      ]
-    },
-    {
-      category: 'Audio Systems',
-      icon: Volume2,
-      description: 'High-fidelity audio and whole-home music distribution',
-      brands: [
-        { name: 'Sonos', tier: 'Wireless' },
-        { name: 'Bowers & Wilkins', tier: 'Audiophile' },
-        { name: 'KEF', tier: 'Reference' },
-        { name: 'K-ARRAY', tier: 'Architectural' },
-        { name: 'Russound', tier: 'Multi-Room' },
-        { name: 'Rotel', tier: 'Hi-Fi' },
-        { name: 'Anthem', tier: 'Cinema' },
-        { name: 'Marantz', tier: 'Premium' }
-      ]
-    },
-    {
-      category: 'Video & Display',
-      icon: Video,
-      description: '4K/8K projection and display systems',
-      brands: [
-        { name: 'Sony', tier: '8K Leader' },
-        { name: 'Epson', tier: 'Projection' },
-        { name: 'B&O', tier: 'Design' },
-        { name: 'AWOL Vision', tier: 'Laser TV' },
-        { name: 'Samsung', tier: 'Display' },
-        { name: 'LG', tier: 'OLED' }
-      ]
-    },
-    {
-      category: 'Lighting Control',
-      icon: Lightbulb,
-      description: 'Intelligent lighting and shading systems',
-      brands: [
-        { name: 'Lutron', tier: 'Industry Leader' },
-        { name: 'KNX', tier: 'Open Standard' },
-        { name: 'DALI', tier: 'Digital Protocol' },
-        { name: 'DMX', tier: 'Entertainment' },
-        { name: 'Philips Hue', tier: 'Smart Color' },
-        { name: 'Tridonic', tier: 'Professional' }
-      ]
-    },
-    {
-      category: 'Network & Connectivity',
-      icon: Wifi,
-      description: 'Enterprise-grade networking for smart homes',
-      brands: [
-        { name: 'Ubiquiti', tier: 'Pro Network' },
-        { name: 'Cisco', tier: 'Enterprise' },
-        { name: 'Ruckus', tier: 'High-Density' },
-        { name: 'Aruba', tier: 'Managed' },
-        { name: 'Wi-Fi 6/6E', tier: 'Protocol' }
-      ]
-    },
-    {
-      category: 'Security & Surveillance',
-      icon: Shield,
-      description: 'AI-powered security and access control',
-      brands: [
-        { name: 'Hikvision', tier: 'IP Cameras' },
-        { name: 'Axis', tier: 'Premium' },
-        { name: 'Dahua', tier: 'Smart Detection' },
-        { name: 'Yale', tier: 'Smart Locks' },
-        { name: 'Schlage', tier: 'Access Control' },
-        { name: 'Honeywell', tier: 'Integrated' }
-      ]
-    },
-    {
-      category: 'Voice & AI',
-      icon: Smartphone,
-      description: 'Natural language control and AI assistants',
-      brands: [
-        { name: 'Amazon Alexa', tier: 'Voice Assistant' },
-        { name: 'Google Assistant', tier: 'AI-Powered' },
-        { name: 'Apple Siri / HomeKit', tier: 'Ecosystem' },
-        { name: 'Josh.ai', tier: 'Luxury Private' }
-      ]
-    }
+  const iconMap: Record<string, any> = { Cpu, Volume2, Video, Lightbulb, Wifi, Shield, Smartphone }
+
+  const defaultPlatforms = [
+    { category: 'Control Systems', icon: 'Cpu', description: 'Professional automation platforms for luxury residences', brands: [{ name: 'Control4', tier: 'Primary' }, { name: 'Crestron', tier: 'Enterprise' }, { name: 'Savant', tier: 'Premium' }, { name: 'KNX', tier: 'Building-Scale' }, { name: 'Lutron', tier: 'Lighting Expert' }] },
+    { category: 'Audio Systems', icon: 'Volume2', description: 'High-fidelity audio and whole-home music distribution', brands: [{ name: 'Sonos', tier: 'Wireless' }, { name: 'Bowers & Wilkins', tier: 'Audiophile' }, { name: 'KEF', tier: 'Reference' }, { name: 'K-ARRAY', tier: 'Architectural' }, { name: 'Russound', tier: 'Multi-Room' }, { name: 'Rotel', tier: 'Hi-Fi' }, { name: 'Anthem', tier: 'Cinema' }, { name: 'Marantz', tier: 'Premium' }] },
+    { category: 'Video & Display', icon: 'Video', description: '4K/8K projection and display systems', brands: [{ name: 'Sony', tier: '8K Leader' }, { name: 'Epson', tier: 'Projection' }, { name: 'B&O', tier: 'Design' }, { name: 'AWOL Vision', tier: 'Laser TV' }, { name: 'Samsung', tier: 'Display' }, { name: 'LG', tier: 'OLED' }] },
+    { category: 'Lighting Control', icon: 'Lightbulb', description: 'Intelligent lighting and shading systems', brands: [{ name: 'Lutron', tier: 'Industry Leader' }, { name: 'KNX', tier: 'Open Standard' }, { name: 'DALI', tier: 'Digital Protocol' }, { name: 'DMX', tier: 'Entertainment' }, { name: 'Philips Hue', tier: 'Smart Color' }, { name: 'Tridonic', tier: 'Professional' }] },
+    { category: 'Network & Connectivity', icon: 'Wifi', description: 'Enterprise-grade networking for smart homes', brands: [{ name: 'Ubiquiti', tier: 'Pro Network' }, { name: 'Cisco', tier: 'Enterprise' }, { name: 'Ruckus', tier: 'High-Density' }, { name: 'Aruba', tier: 'Managed' }, { name: 'Wi-Fi 6/6E', tier: 'Protocol' }] },
+    { category: 'Security & Surveillance', icon: 'Shield', description: 'AI-powered security and access control', brands: [{ name: 'Hikvision', tier: 'IP Cameras' }, { name: 'Axis', tier: 'Premium' }, { name: 'Dahua', tier: 'Smart Detection' }, { name: 'Yale', tier: 'Smart Locks' }, { name: 'Schlage', tier: 'Access Control' }, { name: 'Honeywell', tier: 'Integrated' }] },
+    { category: 'Voice & AI', icon: 'Smartphone', description: 'Natural language control and AI assistants', brands: [{ name: 'Amazon Alexa', tier: 'Voice Assistant' }, { name: 'Google Assistant', tier: 'AI-Powered' }, { name: 'Apple Siri / HomeKit', tier: 'Ecosystem' }, { name: 'Josh.ai', tier: 'Luxury Private' }] }
   ]
+
+  const platforms = (cms?.platforms || defaultPlatforms).map((p: any) => ({ ...p, icon: iconMap[p.icon] || Cpu }))
 
   const protocols = [
     {
