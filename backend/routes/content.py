@@ -18,7 +18,7 @@ client = AsyncIOMotorClient(mongo_url)
 db = client[os.environ.get('DB_NAME', 'lexa_lifestyle')]
 
 
-@router.get("/solutions", response_model=List[Solution])
+@router.get("/solutions")
 async def get_solutions(featured: Optional[bool] = None):
     """Get all solutions, optionally filtered by featured status"""
     try:
