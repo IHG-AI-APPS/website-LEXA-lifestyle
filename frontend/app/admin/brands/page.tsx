@@ -293,6 +293,24 @@ export default function BrandsAdminPage() {
     setFormData({ ...formData, products: newProducts })
   }
 
+  // Feature card management
+  const addFeatureCard = () => {
+    setFormData({
+      ...formData,
+      feature_cards: [...(formData.feature_cards || []), { title: '', description: '', benefits: [] }]
+    })
+  }
+
+  const updateFeatureCard = (index: number, field: keyof FeatureCard, value: any) => {
+    const cards = [...(formData.feature_cards || [])]
+    cards[index] = { ...cards[index], [field]: value }
+    setFormData({ ...formData, feature_cards: cards })
+  }
+
+  const removeFeatureCard = (index: number) => {
+    setFormData({ ...formData, feature_cards: (formData.feature_cards || []).filter((_, i) => i !== index) })
+  }
+
   if (loading) {
     return <div className="p-8">Loading...</div>
   }
