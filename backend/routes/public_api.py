@@ -4,6 +4,7 @@ from motor.motor_asyncio import AsyncIOMotorClient
 from typing import List, Optional
 from models.content import News
 from models.submissions import LeadRequest
+from utils.cache import cache
 from datetime import datetime, timezone
 import os
 import logging
@@ -50,6 +51,10 @@ async def create_lead(lead: LeadRequest):
 async def get_news(limit: Optional[int] = None, category: Optional[str] = None):
     """Get all news articles"""
     try:
+        cache_key = f"news:cat={category}:limit={limit}"
+        cached = await cache.get(cache_key)
+        if cached is not None:
+            return cached
         query = {}
         if category:
             query["category"] = category
