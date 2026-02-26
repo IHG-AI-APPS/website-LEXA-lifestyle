@@ -12,7 +12,7 @@ import { useCms } from '@/hooks/useCms'
 
 export default function ContactPage() {
   const { t, language } = useLanguage()
-  const cms = useCms('page_contact', null)
+  const cms = useCms('page_contact', null) as any
   const [formData, setFormData] = useState({ name: '', email: '', phone: '', subject: '', message: '' })
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle')

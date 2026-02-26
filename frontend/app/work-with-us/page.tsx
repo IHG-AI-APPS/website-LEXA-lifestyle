@@ -31,7 +31,7 @@ const openPositions = [
 ]
 
 export default function WorkWithUsPage() {
-  const cms = useCms('page_work_with_us', null)
+  const cms = useCms('page_work_with_us', null) as any
   const [expandedJob, setExpandedJob] = useState<number | null>(null)
 
   return (

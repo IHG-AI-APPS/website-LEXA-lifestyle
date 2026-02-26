@@ -10,7 +10,7 @@ import { Building, TrendingUp, Clock, CheckCircle, ArrowRight } from 'lucide-rea
 import { useCms } from '@/hooks/useCms'
 
 export default function DeveloperPage() {
-  const cms = useCms('page_persona_developer', null)
+  const cms = useCms('page_persona_developer', null) as any
 
   const [showConsultationForm, setShowConsultationForm] = useState(false)
 

@@ -10,7 +10,7 @@ import { Briefcase, Users, Shield, TrendingUp, ArrowRight } from 'lucide-react'
 import { useCms } from '@/hooks/useCms'
 
 export default function CommercialPage() {
-  const cms = useCms('page_persona_commercial', null)
+  const cms = useCms('page_persona_commercial', null) as any
 
   const [showConsultationForm, setShowConsultationForm] = useState(false)
 

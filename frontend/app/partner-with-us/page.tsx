@@ -26,7 +26,7 @@ const partnerBenefits = [
 ]
 
 export default function PartnerWithUsPage() {
-  const cms = useCms('page_partner_with_us', null)
+  const cms = useCms('page_partner_with_us', null) as any
   const [selectedType, setSelectedType] = useState('dealer')
   const [formData, setFormData] = useState({ company: '', name: '', email: '', phone: '', type: 'dealer', message: '' })
   const [isSubmitting, setIsSubmitting] = useState(false)

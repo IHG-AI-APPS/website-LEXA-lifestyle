@@ -10,7 +10,7 @@ import PricingDisclaimer from '@/components/shared/PricingDisclaimer'
 import { useCms } from '@/hooks/useCms'
 
 export default function InvestmentPricingPage() {
-  const cms = useCms('page_investment_pricing', null)
+  const cms = useCms('page_investment_pricing', null) as any
   const [showConsultationForm, setShowConsultationForm] = useState(false)
 
   const pricingTiers = [

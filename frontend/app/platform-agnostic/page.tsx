@@ -19,7 +19,7 @@ import ConsultationForm from '@/components/forms/ConsultationForm'
 import { useCms } from '@/hooks/useCms'
 
 export default function PlatformAgnosticPage() {
-  const cms = useCms('page_platform_agnostic', null)
+  const cms = useCms('page_platform_agnostic', null) as any
 
   const [showConsultationForm, setShowConsultationForm] = useState(false)
 

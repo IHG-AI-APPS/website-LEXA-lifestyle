@@ -12,7 +12,7 @@ const ICON_MAP: Record<string, any> = { Calendar, MapPin, Home, Video, FileText,
 
 export default function ConsultationPage() {
   const [showBookingModal, setShowBookingModal] = useState(false)
-  const cms = useCms('page_consultation', null)
+  const cms = useCms('page_consultation', null) as any
 
   const consultationTypes = cms?.consultation_types?.length ? cms.consultation_types.map((t: any) => ({ icon: ICON_MAP[t.icon] || MapPin, title: t.title, duration: t.duration, description: t.description, features: t.features || [], cta: t.cta, popular: t.popular || false })) : [
     { icon: MapPin, title: 'Free Site Visit', duration: '60-90 minutes', description: 'Our expert team visits your property for a comprehensive survey', features: ['Property assessment', 'Technical recommendations', 'Budget discussion', 'Timeline planning'], cta: 'Schedule Site Visit', popular: true },

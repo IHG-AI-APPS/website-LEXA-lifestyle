@@ -69,7 +69,7 @@ const timelines = [
 ]
 
 export default function DevelopersPage() {
-  const cms = useCms('page_developers', null)
+  const cms = useCms('page_developers', null) as any
 
   const [selectedResource, setSelectedResource] = useState<string | null>(null)
   const [isSubmitting, setIsSubmitting] = useState(false)

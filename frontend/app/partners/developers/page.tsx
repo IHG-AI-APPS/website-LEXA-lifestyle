@@ -11,7 +11,7 @@ import { useTheme } from '@/contexts/ThemeContext'
 import { useCms } from '@/hooks/useCms'
 
 export default function DeveloperToolkitPage() {
-  const cms = useCms('page_partners_developers', null)
+  const cms = useCms('page_partners_developers', null) as any
 
   const { theme } = useTheme()
   const isDark = theme === 'dark'

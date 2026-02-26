@@ -16,7 +16,7 @@ const amcPackages = [
 ]
 
 export default function AMCPackagesPage() {
-  const cms = useCms('page_amc_packages', null)
+  const cms = useCms('page_amc_packages', null) as any
   const [showConsultationForm, setShowConsultationForm] = useState(false)
 
   return (

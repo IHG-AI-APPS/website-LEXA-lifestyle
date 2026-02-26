@@ -54,7 +54,7 @@ const timelines = [
 ]
 
 export default function ContractorsPage() {
-  const cms = useCms('page_contractors', null)
+  const cms = useCms('page_contractors', null) as any
 
   const [showForm, setShowForm] = useState(false)
   const [isSubmitting, setIsSubmitting] = useState(false)

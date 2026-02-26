@@ -99,7 +99,7 @@ const lookingFor = [
 ]
 
 export default function VendorSupplierPage() {
-  const cms = useCms('page_vendor_supplier', null)
+  const cms = useCms('page_vendor_supplier', null) as any
 
   const [selectedCategories, setSelectedCategories] = useState<string[]>([])
   const [formData, setFormData] = useState({

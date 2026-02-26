@@ -19,7 +19,7 @@ import ConsultationForm from '@/components/forms/ConsultationForm'
 import { useCms } from '@/hooks/useCms'
 
 export default function HiddenCostsPage() {
-  const cms = useCms('page_hidden_costs', null)
+  const cms = useCms('page_hidden_costs', null) as any
 
   const [showConsultationForm, setShowConsultationForm] = useState(false)
 

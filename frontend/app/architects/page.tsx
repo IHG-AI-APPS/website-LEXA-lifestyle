@@ -74,7 +74,7 @@ const resources = [
 ]
 
 export default function ArchitectsPage() {
-  const cms = useCms('page_architects', null)
+  const cms = useCms('page_architects', null) as any
 
   const [selectedResource, setSelectedResource] = useState<string | null>(null)
   const [isSubmitting, setIsSubmitting] = useState(false)

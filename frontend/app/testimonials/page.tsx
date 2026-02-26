@@ -13,7 +13,7 @@ const BACKEND_URL = process.env.NEXT_PUBLIC_BACKEND_URL || ''
 interface Testimonial { id?: string; name: string; role?: string; company?: string; location?: string; content?: string; testimonial?: string; rating?: number; image?: string; project_type?: string }
 
 export default function TestimonialsPage() {
-  const cms = useCms('page_testimonials_listing', null)
+  const cms = useCms('page_testimonials_listing', null) as any
   const { language } = useLanguage()
   const [testimonials, setTestimonials] = useState<Testimonial[]>([])
   const [loading, setLoading] = useState(true)

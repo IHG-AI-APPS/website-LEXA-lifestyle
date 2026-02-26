@@ -10,7 +10,7 @@ import { Home, Shield, Lightbulb, Smartphone, ArrowRight } from 'lucide-react'
 import { useCms } from '@/hooks/useCms'
 
 export default function HomeownerPage() {
-  const cms = useCms('page_persona_homeowner', null)
+  const cms = useCms('page_persona_homeowner', null) as any
 
   const [showConsultationForm, setShowConsultationForm] = useState(false)
 

@@ -7,7 +7,7 @@ import Link from 'next/link'
 import { useCms } from '@/hooks/useCms'
 
 export default function CertificationStandardPage() {
-  const cms = useCms('page_certification_standard', null)
+  const cms = useCms('page_certification_standard', null) as any
 
   const standards = [
     { icon: FileCheck, title: 'Installation Standards', description: 'Rigorous 47-point installation protocol ensuring consistent quality', items: ['Pre-installation site verification', 'Cable management to TIA/EIA-568 standards', 'Equipment mounting per manufacturer specs', 'System integration testing protocols', 'Final quality inspection checklist'] },

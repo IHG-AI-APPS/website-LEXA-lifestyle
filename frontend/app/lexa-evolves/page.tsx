@@ -19,7 +19,7 @@ import ConsultationForm from '@/components/forms/ConsultationForm'
 import { useCms } from '@/hooks/useCms'
 
 export default function LexaEvolvesPage() {
-  const cms = useCms('page_lexa_evolves', null)
+  const cms = useCms('page_lexa_evolves', null) as any
 
   const [showConsultationForm, setShowConsultationForm] = useState(false)
 

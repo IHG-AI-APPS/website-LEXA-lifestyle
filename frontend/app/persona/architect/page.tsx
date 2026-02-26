@@ -10,7 +10,7 @@ import { Ruler, Palette, Layers, FileText, ArrowRight } from 'lucide-react'
 import { useCms } from '@/hooks/useCms'
 
 export default function ArchitectPage() {
-  const cms = useCms('page_persona_architect', null)
+  const cms = useCms('page_persona_architect', null) as any
 
   const [showConsultationForm, setShowConsultationForm] = useState(false)
 
