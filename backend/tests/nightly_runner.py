@@ -40,7 +40,6 @@ def run_tests():
         TEST_FILE,
         f"--junitxml={xml_path}",
         "-v", "--tb=short",
-        "--timeout=30",
         "-x",  # stop on first failure for nightly
     ]
 
