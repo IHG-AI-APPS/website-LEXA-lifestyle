@@ -454,7 +454,7 @@ export default function BrandDetailPage({ params }: { params: { slug: string } }
         </section>
       )}
 
-      {showConsultationForm && <ConsultationForm onClose={() => setShowConsultationForm(false)} initialContext={`Brand Inquiry: ${brand.name}`} />}
+      <ConsultationForm isOpen={showConsultationForm} onClose={() => setShowConsultationForm(false)} />
     </div>
   )
 }
