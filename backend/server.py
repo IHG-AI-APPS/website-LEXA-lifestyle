@@ -24,7 +24,7 @@ from middleware.security_headers import SecurityHeadersMiddleware
 from utils.cache import cache, cached
 
 # Import route modules
-from routes import public_api, content, bookings, submissions, calculator, brands_products, admin_content, packages, package_inquiry, intelligence, admin_extended_content, admin_arabic_pages, patches, ai_recommendations, project_builder, smart_home_features, pricing, admin_solutions_services, ai_chatbot, lead_enhancement, seo_enhancement, uploads, analytics, schedule_visit, smart_recommendations, geo_pages, tracking_settings, sales_intelligence, locations
+from routes import public_api, content, bookings, submissions, calculator, brands_products, admin_content, packages, package_inquiry, intelligence, admin_extended_content, admin_arabic_pages, patches, ai_recommendations, project_builder, smart_home_features, pricing, admin_solutions_services, ai_chatbot, lead_enhancement, seo_enhancement, uploads, analytics, schedule_visit, smart_recommendations, geo_pages, tracking_settings, sales_intelligence, locations, catalogues
 
 ROOT_DIR = Path(__file__).parent
 load_dotenv(ROOT_DIR / '.env')
