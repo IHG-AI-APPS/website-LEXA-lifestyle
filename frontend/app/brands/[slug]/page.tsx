@@ -7,7 +7,6 @@ import Link from 'next/link'
 import { Button } from '@/components/ui/button'
 import { ArrowRight, CheckCircle2, MapPin, Calendar, Award, ExternalLink, Monitor, Volume2, Cpu, Sparkles, ShoppingBag } from 'lucide-react'
 import ConsultationForm from '@/components/forms/ConsultationForm'
-import { useCms } from '@/hooks/useCms'
 import { useRecentlyViewed } from '@/hooks/useRecentlyViewed'
 
 const BACKEND_URL = process.env.NEXT_PUBLIC_BACKEND_URL || ''
@@ -58,8 +57,19 @@ interface BrandData {
   related_solutions?: string[]
 }
 
+function BrandInitials({ name, size = 'lg' }: { name: string; size?: 'sm' | 'lg' }) {
+  const initials = name.split(' ').map(w => w[0]).join('').substring(0, 3).toUpperCase()
+  const cls = size === 'lg'
+    ? 'w-28 h-12 text-lg'
+    : 'w-20 h-8 text-sm'
+  return (
+    <div className={`${cls} bg-white/10 border border-white/20 rounded-lg flex items-center justify-center`}>
+      <span className="font-bold tracking-[0.15em] text-white">{initials}</span>
+    </div>
+  )
+}
+
 export default function BrandDetailPage({ params }: { params: { slug: string } }) {
-  const cms = useCms('page_brands_detail', null)
   const [showConsultationForm, setShowConsultationForm] = useState(false)
   const [brand, setBrand] = useState<BrandData | null>(null)
   const [otherBrands, setOtherBrands] = useState<BrandData[]>([])
@@ -73,9 +83,7 @@ export default function BrandDetailPage({ params }: { params: { slug: string } }
       if (response.ok) {
         const data = await response.json()
         setBrand(data)
-        addItem({ id: data.id || data.slug, type: 'brand', slug: data.slug, title: data.name, image: data.logo, category: data.categories?.[0] })
-
-        // Fetch related solutions
+        addItem({ id: data.id || data.slug, type: 'brand', slug: data.slug, title: data.name, image: data.logo || data.hero_image, category: data.categories?.[0] })
         if (data.related_solutions?.length > 0) {
           try {
             const solRes = await fetch(`${API}/solutions`)
@@ -84,11 +92,11 @@ export default function BrandDetailPage({ params }: { params: { slug: string } }
               const allSols = Array.isArray(solData) ? solData : solData.solutions || []
               setRelatedSolutions(data.related_solutions.map((slug: string) => allSols.find((s: SolutionItem) => s.slug === slug)).filter(Boolean))
             }
-          } catch (err) { /* silent */ }
+          } catch { /* silent */ }
         }
       }
       setLoading(false)
-    } catch (error) { setLoading(false) }
+    } catch { setLoading(false) }
   }, [params.slug])
 
   const fetchOtherBrands = useCallback(async () => {
@@ -98,7 +106,7 @@ export default function BrandDetailPage({ params }: { params: { slug: string } }
         const data = await response.json()
         setOtherBrands(data.filter((b: BrandData) => b.slug !== params.slug).slice(0, 8))
       }
-    } catch (error) { /* silent */ }
+    } catch { /* silent */ }
   }, [params.slug])
 
   useEffect(() => { fetchBrand(); fetchOtherBrands() }, [fetchBrand, fetchOtherBrands])
@@ -107,7 +115,11 @@ export default function BrandDetailPage({ params }: { params: { slug: string } }
     return (
       <div className="min-h-screen bg-white dark:bg-gray-950 pt-20">
         <div className="container mx-auto px-4 py-8">
-          <div className="animate-pulse"><div className="h-64 bg-gray-200 rounded-xl mb-8" /><div className="h-10 bg-gray-200 rounded w-1/3 mb-4" /><div className="h-4 bg-gray-100 rounded w-2/3 mb-8" /></div>
+          <div className="animate-pulse">
+            <div className="h-[480px] bg-gray-200 dark:bg-gray-800 mb-8" />
+            <div className="h-10 bg-gray-200 dark:bg-gray-800 rounded w-1/3 mb-4" />
+            <div className="h-4 bg-gray-100 dark:bg-gray-900 rounded w-2/3 mb-8" />
+          </div>
         </div>
       </div>
     )
@@ -115,30 +127,37 @@ export default function BrandDetailPage({ params }: { params: { slug: string } }
 
   if (!brand) {
     return (
-      <div className="min-h-screen flex flex-col items-center justify-center px-6">
+      <div className="min-h-screen flex flex-col items-center justify-center px-6 pt-20">
         <h1 className="text-4xl font-bold mb-4">Brand Not Found</h1>
         <Link href="/brands"><Button variant="outline">Back to Brands</Button></Link>
       </div>
     )
   }
 
-  const galleryImages = brand.gallery_images || []
+  const hasLogo = brand.logo && brand.logo.trim() !== ''
+  const hasHeroImage = brand.hero_image && brand.hero_image.trim() !== ''
+  const galleryImages = (brand.gallery_images || []).filter((img: string) => img && img.trim() !== '' && !img.includes('unsplash.com'))
   const featureCards = (brand.feature_cards || []) as FeatureCard[]
   const featureCardIcons = [Monitor, Volume2, Cpu]
+  const validProducts = (brand.products || []).filter(p => p.name)
 
   return (
-    <div className="min-h-screen bg-white dark:bg-gray-950 pt-20">
+    <div className="min-h-screen bg-white dark:bg-gray-950 pt-20" data-testid="brand-detail-page">
       {/* Hero — Split Layout */}
       <section className="relative overflow-hidden bg-gray-900 text-white">
         <div className="grid grid-cols-1 lg:grid-cols-2 min-h-[480px]">
           <div className="flex flex-col justify-center px-8 lg:px-16 py-16 relative z-10">
             <motion.div initial={{ opacity: 0, x: -30 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.6 }}>
               <div className="flex items-center gap-3 mb-5">
-                <div className="bg-white p-3 rounded-lg">
-                  <div className="relative w-24 h-10">
-                    <SafeImage src={brand.logo} alt={brand.name} fill className="object-contain" />
+                {hasLogo ? (
+                  <div className="bg-white p-3 rounded-lg">
+                    <div className="relative w-24 h-10">
+                      <SafeImage src={brand.logo} alt={brand.name} fill className="object-contain" />
+                    </div>
                   </div>
-                </div>
+                ) : (
+                  <BrandInitials name={brand.name} />
+                )}
                 {brand.featured && (
                   <span className="px-3 py-1 rounded-full bg-[#C9A962]/15 border border-[#C9A962]/30 text-[#C9A962] text-xs uppercase tracking-widest">
                     Featured Partner
@@ -165,9 +184,21 @@ export default function BrandDetailPage({ params }: { params: { slug: string } }
             </motion.div>
           </div>
           <div className="relative min-h-[300px] lg:min-h-full">
-            <SafeImage src={brand.hero_image || brand.logo} alt={brand.name} fill className="object-cover" priority sizes="(max-width: 1024px) 100vw, 50vw" />
-            <div className="absolute inset-0 bg-gradient-to-r from-gray-900 via-gray-900/40 to-transparent lg:block hidden" />
-            <div className="absolute inset-0 bg-gradient-to-t from-gray-900/60 to-transparent lg:hidden" />
+            {hasHeroImage ? (
+              <>
+                <SafeImage src={brand.hero_image!} alt={brand.name} fill className="object-cover" priority sizes="(max-width: 1024px) 100vw, 50vw" />
+                <div className="absolute inset-0 bg-gradient-to-r from-gray-900 via-gray-900/40 to-transparent lg:block hidden" />
+                <div className="absolute inset-0 bg-gradient-to-t from-gray-900/60 to-transparent lg:hidden" />
+              </>
+            ) : (
+              <div className="absolute inset-0 bg-gradient-to-br from-gray-800 via-gray-900 to-gray-800 flex items-center justify-center">
+                <div className="text-center opacity-20">
+                  <span className="text-[120px] font-bold tracking-[0.2em] text-white">
+                    {brand.name.split(' ').map(w => w[0]).join('').substring(0, 2).toUpperCase()}
+                  </span>
+                </div>
+              </div>
+            )}
           </div>
         </div>
       </section>
@@ -201,16 +232,28 @@ export default function BrandDetailPage({ params }: { params: { slug: string } }
                     <h3 className="text-lg font-semibold mb-4">Brand Details</h3>
                     <div className="space-y-4">
                       {brand.country && (
-                        <div className="flex gap-3"><div className="w-8 h-8 rounded-full bg-[#C9A962]/20 flex items-center justify-center flex-shrink-0"><MapPin size={14} className="text-[#C9A962]" /></div><div><p className="text-sm font-medium">Origin</p><p className="text-xs text-gray-400">{brand.country}</p></div></div>
+                        <div className="flex gap-3">
+                          <div className="w-8 h-8 rounded-full bg-[#C9A962]/20 flex items-center justify-center flex-shrink-0"><MapPin size={14} className="text-[#C9A962]" /></div>
+                          <div><p className="text-sm font-medium">Origin</p><p className="text-xs text-gray-400">{brand.country}</p></div>
+                        </div>
                       )}
                       {brand.year_established && (
-                        <div className="flex gap-3"><div className="w-8 h-8 rounded-full bg-[#C9A962]/20 flex items-center justify-center flex-shrink-0"><Calendar size={14} className="text-[#C9A962]" /></div><div><p className="text-sm font-medium">Est. {brand.year_established}</p><p className="text-xs text-gray-400">{new Date().getFullYear() - parseInt(brand.year_established)}+ years</p></div></div>
+                        <div className="flex gap-3">
+                          <div className="w-8 h-8 rounded-full bg-[#C9A962]/20 flex items-center justify-center flex-shrink-0"><Calendar size={14} className="text-[#C9A962]" /></div>
+                          <div><p className="text-sm font-medium">Est. {brand.year_established}</p><p className="text-xs text-gray-400">{new Date().getFullYear() - parseInt(brand.year_established)}+ years</p></div>
+                        </div>
                       )}
                       {brand.categories?.length > 0 && (
-                        <div className="flex gap-3"><div className="w-8 h-8 rounded-full bg-[#C9A962]/20 flex items-center justify-center flex-shrink-0"><Award size={14} className="text-[#C9A962]" /></div><div><p className="text-sm font-medium">Categories</p><p className="text-xs text-gray-400">{brand.categories.join(', ')}</p></div></div>
+                        <div className="flex gap-3">
+                          <div className="w-8 h-8 rounded-full bg-[#C9A962]/20 flex items-center justify-center flex-shrink-0"><Award size={14} className="text-[#C9A962]" /></div>
+                          <div><p className="text-sm font-medium">Categories</p><p className="text-xs text-gray-400">{brand.categories.join(', ')}</p></div>
+                        </div>
                       )}
                       {brand.certifications && brand.certifications.length > 0 && (
-                        <div className="flex gap-3"><div className="w-8 h-8 rounded-full bg-[#C9A962]/20 flex items-center justify-center flex-shrink-0"><CheckCircle2 size={14} className="text-[#C9A962]" /></div><div><p className="text-sm font-medium">Certifications</p><p className="text-xs text-gray-400">{brand.certifications.join(', ')}</p></div></div>
+                        <div className="flex gap-3">
+                          <div className="w-8 h-8 rounded-full bg-[#C9A962]/20 flex items-center justify-center flex-shrink-0"><CheckCircle2 size={14} className="text-[#C9A962]" /></div>
+                          <div><p className="text-sm font-medium">Certifications</p><p className="text-xs text-gray-400">{brand.certifications.join(', ')}</p></div>
+                        </div>
                       )}
                     </div>
                   </div>
@@ -266,7 +309,7 @@ export default function BrandDetailPage({ params }: { params: { slug: string } }
       )}
 
       {/* Products */}
-      {brand.products && brand.products.length > 0 && (
+      {validProducts.length > 0 && (
         <section className="py-16 lg:py-20 bg-white dark:bg-gray-950" data-testid="products-section">
           <div className="container mx-auto px-8 lg:px-16">
             <div className="max-w-6xl mx-auto">
@@ -275,21 +318,33 @@ export default function BrandDetailPage({ params }: { params: { slug: string } }
                 <h2 className="text-2xl sm:text-3xl font-bold mt-2 text-gray-900 dark:text-white">{brand.name} Products</h2>
               </div>
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                {brand.products.map((product, i) => (
-                  <motion.div key={i} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.3, delay: i * 0.08 }}
-                    className="bg-gray-50 dark:bg-gray-900 rounded-xl overflow-hidden border border-gray-100 dark:border-gray-800 hover:shadow-lg transition-shadow group">
-                    <div className="relative aspect-[4/3]">
-                      <SafeImage src={product.image} alt={product.name} fill className="object-cover group-hover:scale-105 transition-transform duration-500" sizes="(max-width: 768px) 100vw, 33vw" />
-                    </div>
-                    <div className="p-5">
-                      <h3 className="text-base font-bold mb-1 text-gray-900 dark:text-white">{product.name}</h3>
-                      <p className="text-sm text-gray-600 dark:text-gray-400 mb-3">{product.description}</p>
-                      {product.price_range && (
-                        <p className="text-sm font-semibold text-[#C9A962]"><ShoppingBag size={14} className="inline mr-1" />{product.price_range}</p>
+                {validProducts.map((product, i) => {
+                  const hasProductImage = product.image && product.image.trim() !== ''
+                  return (
+                    <motion.div key={i} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.3, delay: i * 0.08 }}
+                      className="bg-gray-50 dark:bg-gray-900 rounded-xl overflow-hidden border border-gray-100 dark:border-gray-800 hover:shadow-lg transition-shadow group">
+                      {hasProductImage ? (
+                        <div className="relative aspect-[4/3]">
+                          <SafeImage src={product.image} alt={product.name} fill className="object-cover group-hover:scale-105 transition-transform duration-500" sizes="(max-width: 768px) 100vw, 33vw" />
+                        </div>
+                      ) : (
+                        <div className="aspect-[4/3] bg-gradient-to-br from-gray-100 to-gray-200 dark:from-gray-800 dark:to-gray-900 flex items-center justify-center">
+                          <div className="text-center">
+                            <ShoppingBag size={32} className="text-gray-300 dark:text-gray-600 mx-auto mb-2" />
+                            <span className="text-xs text-gray-400 font-medium">{brand.name}</span>
+                          </div>
+                        </div>
                       )}
-                    </div>
-                  </motion.div>
-                ))}
+                      <div className="p-5">
+                        <h3 className="text-base font-bold mb-1 text-gray-900 dark:text-white">{product.name}</h3>
+                        <p className="text-sm text-gray-600 dark:text-gray-400 mb-3">{product.description}</p>
+                        {product.price_range && (
+                          <p className="text-sm font-semibold text-[#C9A962]"><ShoppingBag size={14} className="inline mr-1" />{product.price_range}</p>
+                        )}
+                      </div>
+                    </motion.div>
+                  )
+                })}
               </div>
             </div>
           </div>
@@ -336,11 +391,11 @@ export default function BrandDetailPage({ params }: { params: { slug: string } }
                 <h2 className="text-2xl sm:text-3xl font-bold mt-2 text-gray-900 dark:text-white">Inspirations</h2>
               </div>
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-                {galleryImages.slice(0, 6).map((img, i) => (
+                {galleryImages.slice(0, 6).map((img: string, i: number) => (
                   <motion.div key={i} initial={{ opacity: 0, scale: 0.95 }} whileInView={{ opacity: 1, scale: 1 }} viewport={{ once: true }} transition={{ duration: 0.3, delay: i * 0.06 }}
                     className={`relative overflow-hidden rounded-xl group cursor-pointer ${i === 0 ? 'md:col-span-2 md:row-span-2' : ''}`}>
                     <div className={`relative ${i === 0 ? 'aspect-[4/3]' : 'aspect-[3/2]'}`}>
-                      <SafeImage src={typeof img === 'string' ? img : ''} alt={`${brand.name} inspiration ${i + 1}`} fill className="object-cover group-hover:scale-105 transition-transform duration-700" sizes={i === 0 ? '(max-width: 768px) 100vw, 66vw' : '(max-width: 768px) 100vw, 33vw'} />
+                      <SafeImage src={img} alt={`${brand.name} inspiration ${i + 1}`} fill className="object-cover group-hover:scale-105 transition-transform duration-700" sizes={i === 0 ? '(max-width: 768px) 100vw, 66vw' : '(max-width: 768px) 100vw, 33vw'} />
                       <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                     </div>
                   </motion.div>
@@ -353,6 +408,7 @@ export default function BrandDetailPage({ params }: { params: { slug: string } }
 
       {/* CTA */}
       <section className="py-20 bg-gray-900 text-white relative overflow-hidden">
+        <div className="absolute inset-0 opacity-[0.03]" style={{ backgroundImage: 'radial-gradient(circle at 1px 1px, white 1px, transparent 0)', backgroundSize: '40px 40px' }} />
         <div className="container mx-auto px-8 lg:px-16 relative z-10">
           <div className="max-w-3xl mx-auto text-center">
             <span className="text-[#C9A962] text-xs uppercase tracking-widest font-semibold">Authorized Dealer</span>
@@ -386,8 +442,8 @@ export default function BrandDetailPage({ params }: { params: { slug: string } }
                 <h2 className="text-2xl sm:text-3xl font-bold mt-2 text-gray-900 dark:text-white">Explore More Brands</h2>
               </div>
               <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
-                {otherBrands.map((b, i) => (
-                  <Link key={b.slug} href={`/brands/${b.slug}`} className="group flex flex-col items-center justify-center p-5 h-24 rounded-xl bg-gray-50 dark:bg-gray-900 border border-gray-200 dark:border-gray-800 hover:border-[#C9A962]/60 hover:shadow-md transition-all">
+                {otherBrands.map((b) => (
+                  <Link key={b.slug} href={`/brands/${b.slug}`} className="group flex flex-col items-center justify-center p-5 h-24 rounded-xl bg-gray-50 dark:bg-gray-900 border border-gray-200 dark:border-gray-800 hover:border-[#C9A962]/60 hover:shadow-md transition-all" data-testid={`other-brand-${b.slug}`}>
                     <span className="text-base font-bold text-gray-800 dark:text-gray-200 group-hover:text-[#C9A962] transition-colors tracking-wide">{b.name}</span>
                     <span className="text-[10px] text-gray-400 uppercase tracking-widest mt-1">{b.categories?.[0] || 'Partner'}</span>
                   </Link>
