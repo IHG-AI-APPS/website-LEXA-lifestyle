@@ -14,7 +14,7 @@ export default function Breadcrumbs() {
   // Generate breadcrumb items
   const pathSegments = pathname.split('/').filter(Boolean)
   const breadcrumbItems = [
-    { name: 'Home', url: 'https://brands-fix.preview.emergentagent.com' }
+    { name: 'Home', url: 'https://dynamic-content-push.preview.emergentagent.com' }
   ]
   
   let currentPath = ''
@@ -27,7 +27,7 @@ export default function Breadcrumbs() {
     
     breadcrumbItems.push({
       name,
-      url: `https://brands-fix.preview.emergentagent.com${currentPath}`
+      url: `https://dynamic-content-push.preview.emergentagent.com${currentPath}`
     })
   })
   
