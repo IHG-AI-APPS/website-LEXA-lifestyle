@@ -409,7 +409,9 @@ function AddFeatureModal({
     lifestyle_tags: [] as string[],
     is_premium: false,
     featured: false,
-    display_order: 0
+    display_order: 0,
+    faqs: [] as any[],
+    feature_cards: [] as any[]
   })
 
   const generateSlug = (title: string) => {
