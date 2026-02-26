@@ -203,41 +203,8 @@ export default function IndustryCalculatorPage() {
       })
       return bundles
     }
-    // Fallback to hardcoded
-    return {
-      'starter-home': {
-        name: 'Smart Starter Home',
-        description: 'Essential automation for modern living',
-        solutions: { 'security-access': 'basic', 'lighting': 'basic', 'climate': 'basic' },
-        features: ['voice-control'],
-        priceRange: 'AED 50K-80K',
-        bestFor: 'Apartments & small homes'
-      },
-      'premium-villa': {
-        name: 'Premium Villa Package',
-        description: 'Comprehensive automation for luxury villas',
-        solutions: { 'security-access': 'standard', 'lighting': 'standard', 'climate': 'standard', 'entertainment': 'standard', 'shades': 'standard' },
-        features: ['voice-control', 'landscape-lighting'],
-        priceRange: 'AED 150K-220K',
-        bestFor: 'Villas & large homes'
-      },
-      'ultimate-smart': {
-        name: 'Ultimate Smart Home',
-        description: 'Full premium automation with all features',
-        solutions: { 'security-access': 'premium', 'lighting': 'premium', 'climate': 'premium', 'entertainment': 'premium', 'energy': 'premium', 'shades': 'premium', 'wellness': 'premium', 'integration': 'crestron' },
-        features: ['voice-control', 'outdoor-entertainment', 'pool-spa', 'landscape-lighting', 'ev-charging'],
-        priceRange: 'AED 400K-600K',
-        bestFor: 'Luxury villas & mansions'
-      },
-      'smart-office': {
-        name: 'Smart Office Essentials',
-        description: 'Efficient automation for modern workspaces',
-        solutions: { 'hvac': 'standard', 'lighting': 'standard', 'security-access': 'standard' },
-        features: [],
-        priceRange: 'AED 180K-280K',
-        bestFor: 'Offices & commercial spaces'
-      }
-    }
+    // Fallback to imported defaults
+    return DEFAULT_BUNDLES
   }, [dynamicPackageBundles])
 
   // Load saved progress on mount
