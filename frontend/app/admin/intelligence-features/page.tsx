@@ -480,7 +480,9 @@ function AddFeatureModal({
       const cleanedData = {
         ...formData,
         benefits: formData.benefits.filter(b => b.trim()),
-        required_devices: formData.required_devices.filter(d => d.trim())
+        required_devices: formData.required_devices.filter(d => d.trim()),
+        faqs: (formData.faqs || []).filter((f: any) => f.question?.trim()),
+        feature_cards: (formData.feature_cards || []).filter((c: any) => c.title?.trim())
       }
 
       const response = await fetch(`${backendUrl}/api/intelligence/admin/features`, {
