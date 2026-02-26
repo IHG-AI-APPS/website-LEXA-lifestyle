@@ -239,11 +239,12 @@ const glossaryTerms = [
 ]
 
 export default function GlossaryPage() {
-  const cms = useCms('page_glossary', null)
+  const cms = useCms('page_glossary', null) as any
 
   const [searchTerm, setSearchTerm] = useState('')
 
-  const filteredTerms = glossaryTerms.map(section => ({
+  const terms = cms?.glossary_terms || glossaryTerms
+  const filteredTerms = terms.map((section: any) => ({
     ...section,
     terms: section.terms.filter(item =>
       item.term.toLowerCase().includes(searchTerm.toLowerCase()) ||
