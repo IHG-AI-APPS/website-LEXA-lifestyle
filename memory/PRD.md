@@ -53,7 +53,7 @@ Complete website overhaul for LEXA Smart Home to:
 |---------|-------|---------------|------------|
 | Solutions | 103 | Benchmark | DB-driven |
 | Services | 19 | Benchmark | DB-driven |
-| Brands | 36 | Benchmark | DB-driven |
+| Brands | 36 | Benchmark | DB-driven + CMS enriched |
 | Geo Pages | 34 | Benchmark | DB-driven + CMS |
 | Locations | 7 | Benchmark | DB-driven + CMS |
 | Specialty Rooms | 22 | Benchmark | DB + CMS enriched |
