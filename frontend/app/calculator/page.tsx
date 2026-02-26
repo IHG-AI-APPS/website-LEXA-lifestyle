@@ -695,7 +695,7 @@ export default function IndustryCalculatorPage() {
                             : 'border-gray-200 dark:border-gray-700 hover:border-gray-400'
                         }`}
                       >
-                        <type.icon className="w-10 h-10 mb-3" />
+                        {(() => { const Icon = ICON_MAP[type.iconName]; return Icon ? <Icon className="w-10 h-10 mb-3" /> : null })()}
                         <div className="font-semibold text-lg mb-1">{type.label}</div>
                         <div className="text-sm text-gray-600 dark:text-gray-400 dark:text-gray-400">{type.description}</div>
                       </button>
