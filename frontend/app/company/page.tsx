@@ -7,14 +7,15 @@ import RelatedPagesNav from '@/components/navigation/RelatedPagesNav'
 import { useCms } from '@/hooks/useCms'
 
 export default function CompanyPage() {
-  const cms = useCms('page_company', null)
+  const cms = useCms('page_company', null) as any
 
-  const values = [
-    { icon: Award, title: 'Excellence', description: 'Uncompromising quality in every project' },
-    { icon: Users, title: 'Partnership', description: 'Long-term relationships built on trust' },
-    { icon: Building, title: 'Integration', description: 'Holistic approach to smart living' },
-    { icon: Target, title: 'Innovation', description: 'Leading edge technology solutions' },
-  ]
+  const iconMap: Record<string, any> = { Award, Users, Building, Target }
+  const values = (cms?.values || [
+    { icon: 'Award', title: 'Excellence', description: 'Uncompromising quality in every project' },
+    { icon: 'Users', title: 'Partnership', description: 'Long-term relationships built on trust' },
+    { icon: 'Building', title: 'Integration', description: 'Holistic approach to smart living' },
+    { icon: 'Target', title: 'Innovation', description: 'Leading edge technology solutions' },
+  ]).map((v: any) => ({ ...v, icon: iconMap[v.icon] || Award }))
 
   return (
     <div className="min-h-screen bg-white pt-20">
