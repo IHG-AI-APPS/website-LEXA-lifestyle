@@ -29,7 +29,14 @@ async def get_solutions(featured: Optional[bool] = None):
         query = {}
         if featured is not None:
             query["featured"] = featured
-        solutions = await db.solutions.find(query, {"_id": 0}).to_list(1000)
+        # Return lightweight projection for listing pages
+        projection = {
+            "_id": 0, "id": 1, "slug": 1, "title": 1, "description": 1,
+            "category": 1, "badge": 1, "featured": 1, "icon": 1, "image": 1,
+            "mega_menu_category": 1, "mega_menu_order": 1, "order": 1,
+            "short_description": 1, "price_from": 1, "key_features": 1
+        }
+        solutions = await db.solutions.find(query, projection).to_list(1000)
         await cache.set(cache_key, solutions, ttl_seconds=300)
         return solutions
     except Exception as e:
@@ -227,8 +234,14 @@ async def get_articles(category: Optional[str] = None, limit: Optional[int] = No
         query = {"status": {"$ne": "draft"}}  # Only published articles
         if category:
             query["category"] = category
-        
-        cursor = db.articles.find(query, {"_id": 0}).sort([("published_date", -1)])
+        # Lightweight projection for listing pages
+        projection = {
+            "_id": 0, "id": 1, "slug": 1, "title": 1, "excerpt": 1,
+            "category": 1, "author": 1, "image": 1, "published_date": 1,
+            "tags": 1, "read_time": 1, "featured": 1, "status": 1,
+            "short_description": 1, "description": 1
+        }
+        cursor = db.articles.find(query, projection).sort([("published_date", -1)])
         if limit:
             cursor = cursor.limit(limit)
         
