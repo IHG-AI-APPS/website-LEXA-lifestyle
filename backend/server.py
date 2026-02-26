@@ -375,6 +375,17 @@ class Brand(BaseModel):
     year_established: Optional[str] = None
     tagline: Optional[str] = None
     hero_image: Optional[str] = None
+    # Extended fields for Admin CMS
+    priority: int = 100  # Lower number = higher priority (shown first)
+    products: List[dict] = []  # Top selling products with name, description, image, price_range
+    seo_title: Optional[str] = None
+    seo_description: Optional[str] = None
+    long_description: Optional[str] = None  # Extended description for SEO
+    certifications: List[str] = []  # e.g., ["CEDIA Certified", "THX Certified"]
+    key_features: List[str] = []  # Key brand features/benefits
+    gallery_images: List[str] = []  # Inspiration gallery
+    feature_cards: List[dict] = []  # Feature category cards [{title, description, benefits[]}]
+    related_solutions: List[str] = []  # Related solution slugs
 
 class ProductCategory(BaseModel):
     model_config = ConfigDict(extra="ignore")
