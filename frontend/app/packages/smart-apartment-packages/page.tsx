@@ -229,10 +229,10 @@ export default function SmartApartmentPackagesPage() {
                 <button
                   key={size.id}
                   onClick={() => setSelectedSize(size.id)}
-                  className={`px-6 py-3 border-2 font-semibold transition-all ${
+                  className={`px-6 py-3 border-2 rounded-lg font-semibold transition-all ${
                     selectedSize === size.id
                       ? 'border-[#C9A962] bg-[#C9A962]/10 text-[#C9A962]'
-                      : 'border-gray-200 dark:border-gray-700 bg-white text-gray-700 dark:text-gray-300 hover:border-[#C9A962]/50'
+                      : 'border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-900 text-gray-700 dark:text-gray-300 hover:border-[#C9A962]/50'
                   }`}
                 >
                   <span className="mr-2">{size.icon}</span>
