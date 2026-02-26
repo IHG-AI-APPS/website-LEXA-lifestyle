@@ -85,8 +85,9 @@ Complete website overhaul for LEXA Smart Home to:
 
 ## Remaining / Backlog
 
-### P1 — Site-wide Consistency Review
-### P2 — Package static pages (developer-packages, smart-apartment-packages) — custom layouts
+### P1 — Convert remaining ~30 standalone pages to CMS (about, company, contact, careers, faq, process, persona pages, partner pages, etc.)
+### P2 — Site-wide Consistency Review
+### P3 — Package static pages (developer-packages, smart-apartment-packages) — custom layouts
 
 ## Key API Endpoints
 - `GET/PUT/POST/DELETE /api/geo-pages` — Geo pages CRUD
