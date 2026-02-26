@@ -219,7 +219,9 @@ async def get_videos(token: dict = Depends(verify_token)):
 async def create_video(data: Dict[str, Any], token: dict = Depends(verify_token)):
     """Create new video"""
     try:
-        data["id"] = str(uuid4())
+        # Preserve passed-in ID if provided, otherwise generate new UUID
+        if not data.get("id"):
+            data["id"] = str(uuid4())
         data["created_at"] = datetime.now(timezone.utc)
         await db.videos.insert_one(data)
         logger.info(f"Admin {token.get('username')} created video: {data['id']}")
