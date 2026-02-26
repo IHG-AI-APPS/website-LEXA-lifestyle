@@ -37,6 +37,7 @@ class TestPatchEndpoints:
             pytest.skip("No solutions available to patch")
         
         solution_id = solutions[0].get("id")
+        solution_slug = solutions[0].get("slug")
         original_title = solutions[0].get("title")
         
         # Patch only description
@@ -46,9 +47,9 @@ class TestPatchEndpoints:
         assert resp.status_code == 200, f"Patch failed: {resp.text}"
         assert "message" in resp.json()
         
-        # Verify the change
-        resp = requests.get(f"{BASE_URL}/api/solutions/{solution_id}")
-        assert resp.status_code == 200
+        # Verify the change via slug (public endpoint uses slug)
+        resp = requests.get(f"{BASE_URL}/api/solutions/{solution_slug}")
+        assert resp.status_code == 200, f"Verify failed: {resp.text}"
         data = resp.json()
         assert data.get("description") == patch_data["description"]
         assert data.get("title") == original_title  # Other fields unchanged
