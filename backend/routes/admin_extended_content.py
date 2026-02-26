@@ -79,6 +79,26 @@ async def delete_testimonial(testimonial_id: str, token: dict = Depends(verify_t
         raise HTTPException(status_code=500, detail="Failed to delete testimonial")
 
 
+@router.patch("/testimonials/{testimonial_id}")
+async def patch_testimonial(testimonial_id: str, data: Dict[str, Any], token: dict = Depends(verify_token)):
+    """Partially update testimonial (only provided fields)"""
+    try:
+        data.pop("_id", None)
+        data.pop("id", None)
+        if not data:
+            raise HTTPException(status_code=400, detail="No fields to update")
+        data["updated_at"] = datetime.now(timezone.utc)
+        result = await db.testimonials.update_one({"id": testimonial_id}, {"$set": data})
+        if result.matched_count == 0:
+            raise HTTPException(status_code=404, detail="Testimonial not found")
+        return {"success": True, "message": "Testimonial patched successfully"}
+    except HTTPException:
+        raise
+    except Exception as e:
+        logger.error(f"Error patching testimonial: {str(e)}")
+        raise HTTPException(status_code=500, detail="Failed to patch testimonial")
+
+
 # ===== BLOG =====
 
 @router.get("/blog")
