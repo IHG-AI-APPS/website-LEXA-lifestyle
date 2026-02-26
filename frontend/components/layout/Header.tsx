@@ -6,17 +6,19 @@ import { useState, useEffect, useRef } from 'react'
 import { usePathname } from 'next/navigation'
 import { Button } from '@/components/ui/button'
 import { Menu, X, ChevronDown } from 'lucide-react'
-import ConsultationForm from '@/components/forms/ConsultationForm'
 import { motion, AnimatePresence } from 'framer-motion'
-import SolutionsMegaMenu from '@/components/navigation/SolutionsMegaMenu'
-import ServicesMegaMenu from '@/components/navigation/ServicesMegaMenu'
-import IntelligenceMegaMenu from '@/components/navigation/IntelligenceMegaMenu'
-import PackagesMegaMenu from '@/components/navigation/PackagesMegaMenu'
-import MobileMegaMenu from '@/components/navigation/MobileMegaMenu'
 import { LanguageSwitcherCompact } from '@/components/ui/LanguageSwitcher'
 import { ThemeToggle } from '@/components/ui/ThemeToggle'
 import { useLanguage } from '@/contexts/LanguageContext'
 import { useTheme } from '@/contexts/ThemeContext'
+import dynamic from 'next/dynamic'
+
+const ConsultationForm = dynamic(() => import('@/components/forms/ConsultationForm'), { ssr: false })
+const SolutionsMegaMenu = dynamic(() => import('@/components/navigation/SolutionsMegaMenu'), { ssr: false })
+const ServicesMegaMenu = dynamic(() => import('@/components/navigation/ServicesMegaMenu'), { ssr: false })
+const IntelligenceMegaMenu = dynamic(() => import('@/components/navigation/IntelligenceMegaMenu'), { ssr: false })
+const PackagesMegaMenu = dynamic(() => import('@/components/navigation/PackagesMegaMenu'), { ssr: false })
+const MobileMegaMenu = dynamic(() => import('@/components/navigation/MobileMegaMenu'), { ssr: false })
 
 export default function Header() {
   const { t, language } = useLanguage()
