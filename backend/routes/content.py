@@ -140,9 +140,14 @@ async def get_services():
 async def get_service_by_slug(service_slug: str):
     """Get a single service by slug"""
     try:
+        cache_key = f"service:{service_slug}"
+        cached = await cache.get(cache_key)
+        if cached is not None:
+            return cached
         service = await db.services.find_one({"slug": service_slug}, {"_id": 0})
         if not service:
             raise HTTPException(status_code=404, detail=f"Service '{service_slug}' not found")
+        await cache.set(cache_key, service, ttl_seconds=300)
         return service
     except HTTPException:
         raise
@@ -155,7 +160,12 @@ async def get_service_by_slug(service_slug: str):
 async def get_projects():
     """Get all projects"""
     try:
+        cache_key = "projects:all"
+        cached = await cache.get(cache_key)
+        if cached is not None:
+            return cached
         projects = await db.projects.find({}, {"_id": 0}).to_list(1000)
+        await cache.set(cache_key, projects, ttl_seconds=300)
         return projects
     except Exception as e:
         logger.error(f"Projects error: {str(e)}")
@@ -194,7 +204,12 @@ async def get_project(project_id: str):
 async def get_testimonials():
     """Get all testimonials"""
     try:
+        cache_key = "testimonials:all"
+        cached = await cache.get(cache_key)
+        if cached is not None:
+            return cached
         testimonials = await db.testimonials.find({}, {"_id": 0}).to_list(1000)
+        await cache.set(cache_key, testimonials, ttl_seconds=300)
         return testimonials
     except Exception as e:
         logger.error(f"Testimonials error: {str(e)}")
@@ -203,8 +218,12 @@ async def get_testimonials():
 
 @router.get("/articles")
 async def get_articles(category: Optional[str] = None, limit: Optional[int] = None):
-    """Get all articles (dynamic, no cache)"""
+    """Get all articles"""
     try:
+        cache_key = f"articles:cat={category}:limit={limit}"
+        cached = await cache.get(cache_key)
+        if cached is not None:
+            return cached
         query = {"status": {"$ne": "draft"}}  # Only published articles
         if category:
             query["category"] = category
