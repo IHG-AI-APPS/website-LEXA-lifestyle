@@ -21,10 +21,11 @@ export default function VillaOperatingModelPage() {
     { icon: 'Shield', title: 'Enhanced Security', description: 'Granular control ensures only authorized individuals access specific areas at appropriate times.' },
     { icon: 'Key', title: 'Operational Efficiency', description: 'Staff can work seamlessly while family privacy is automatically protected.' },
     { icon: 'FileText', title: 'Complete Accountability', description: 'Comprehensive audit trails provide visibility into all access events and system usage.' },
-      title: 'Time-Based Intelligence',
-      description: 'Access permissions automatically adjust based on time, day, and occupancy patterns.'
-    }
+    { icon: 'Clock', title: 'Time-Based Intelligence', description: 'Access permissions automatically adjust based on time, day, and occupancy patterns.' }
   ]
+
+  const roles = (cms?.roles || defaultRoles).map((r: any) => ({ ...r, icon: iconMap[r.icon] || Home }))
+  const benefits = (cms?.benefits || defaultBenefits).map((b: any) => ({ ...b, icon: iconMap[b.icon] || Shield }))
 
   return (
     <div className="min-h-screen bg-white dark:bg-gray-900 pt-20">
