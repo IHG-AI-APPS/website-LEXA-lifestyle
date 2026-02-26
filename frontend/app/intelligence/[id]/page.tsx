@@ -59,7 +59,7 @@ export default function IntelligenceDetailPage() {
         if (!response.ok) return
         const data = await response.json()
         const allFeatures = data.features || []
-        const found = allFeatures.find((f: IntelligenceFeature) => f.id === featureId || String(allFeatures.indexOf(f)) === featureId)
+        const found = allFeatures.find((f: IntelligenceFeature) => f.id === featureId || f.slug === featureId || String(allFeatures.indexOf(f)) === featureId)
         if (found) {
           setFeature(found)
           addItem({ id: found.id || featureId, type: 'service', slug: found.slug || featureId, title: found.title, image: found.image, category: found.category })
