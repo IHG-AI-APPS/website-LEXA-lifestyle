@@ -11,7 +11,7 @@ Complete website overhaul for LEXA Smart Home to:
 
 ## Completed Work
 
-### Phase 1-10: Content & CMS (see CHANGELOG)
+### Phase 1-10: Content & CMS
 - All solutions, services, brands, geo pages, locations, specialty rooms, intelligence features — all CMS-driven
 - Admin CMS at `/admin/cms` for full content management
 - Catalogue/Flipbook feature
@@ -19,17 +19,16 @@ Complete website overhaul for LEXA Smart Home to:
 
 ### Phase 11: Final CMS Conversion — 9 Remaining Pages (Feb 26, 2026)
 - Converted: careers, media, support, warranty, developer-toolkit, privacy-policy, terms, terms-of-service, privacy
-- Pattern: Server component (page.tsx with SEO metadata) + Client component (Content.tsx with useCms)
 - Testing: 100% pass (12/12 backend + 9/9 frontend)
 
 ### Phase 12: Site-wide Design Consistency Review (Feb 26, 2026)
-- **Updated 19 pages** to benchmark dark hero pattern (bg-gray-900 + #C9A962 gold accents)
-- **Listing pages fixed**: solutions, services, specialty-rooms, packages, resources, blog, news
-- **Standalone pages fixed**: hidden-costs, lexa-evolves, platform-agnostic, architects, contractors, developers, vendor-supplier, developer-partner-toolkit
-- **Persona pages fixed**: homeowner, architect, developer, commercial
-- Added data-testid attributes across all updated pages
-- **Testing: 100% pass rate (27/27 pages verified)**, no old patterns remain
-- **Excluded**: Project pages (`/projects`, `/projects/[slug]`) as per user request
+- Updated 19 pages to benchmark dark hero (bg-gray-900 + #C9A962 gold accents)
+- Testing: 100% pass (27/27 pages verified)
+
+### Phase 13: Page Transition Animations (Feb 26, 2026)
+- Enhanced `template.tsx` with smooth fade-in + blur transition using framer-motion
+- Added CSS-based staggered section reveals — sections cascade in with 80ms delay each
+- Zero performance impact — purely CSS animations + framer-motion
 
 ## Benchmark Design Standard
 | Element | Specification |
@@ -37,35 +36,14 @@ Complete website overhaul for LEXA Smart Home to:
 | Hero BG | `bg-gray-900` (solid dark) |
 | Badge | `rounded-full bg-[#C9A962]/15 border border-[#C9A962]/30 text-[#C9A962]` |
 | Title | `text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-white` |
-| Body text | `text-base text-gray-300` |
 | Primary CTA | `bg-[#C9A962] text-gray-900 hover:bg-[#C9A962]/90 font-semibold` |
 | Page BG | `bg-white dark:bg-gray-950` |
-
-## Current State
-| Section | Pages | Design | CMS |
-|---------|-------|--------|-----|
-| Solutions | 103 | Benchmark | DB-driven |
-| Services | 19 | Benchmark | DB-driven |
-| Brands | 36 | Benchmark | DB + CMS |
-| Geo Pages | 34 | Benchmark | DB + CMS |
-| Locations | 7 | Benchmark | DB + CMS |
-| Specialty Rooms | 22 | Benchmark | DB + CMS |
-| Intelligence | 693 | Benchmark | DB + CMS |
-| Standalone Pages | 30+ | Benchmark | **100% CMS-driven** |
-| Packages | 7 types | Benchmark | DB-driven |
-| Catalogues | Dynamic | Benchmark | DB + CMS |
-| Persona Pages | 4 | Benchmark | CMS |
-| Professional Pages | 5 | Benchmark | CMS |
+| Transitions | Fade-in + slide-up + blur via framer-motion template.tsx |
 
 ## Remaining / Backlog
-### P1 — Package static pages (developer-packages, smart-apartment-packages) — custom layouts
-### P2 — Project pages design consistency (currently excluded by user)
-
-## Key API Endpoints
-- `GET/PUT /api/cms/sections/{key}` — CMS content for any page
-- `POST /api/cms/register-defaults` — Seed CMS defaults
-- `GET /api/solutions/{slug}`, `/api/services/{slug}`, `/api/packages/specialty-rooms`
-- `GET/POST/PUT/DELETE /api/catalogues`, `/api/geo-pages`
+### P1 — Package static pages (developer-packages, smart-apartment-packages)
+### P2 — Project pages design (excluded by user)
+### P3 — Content Change History for admin CMS (audit trail)
 
 ## Credentials
 - Admin: `/admin/login` (username: admin, password: lexa2026)
