@@ -188,7 +188,7 @@ class TestCalculatorAndPricing:
             "additional_features": ["voice-control", "energy-monitoring"],
             "timeline": "3-6 months",
             "budget_range": "luxury",
-            "privilege_card": False,
+            "privilege_card": "",  # Empty string instead of boolean
             "emirate": "Dubai",
             "city": "Palm Jumeirah",
             "contact_name": "TEST_Calculator User",
@@ -223,7 +223,7 @@ class TestCalculatorAndPricing:
             "additional_features": [],
             "timeline": "1-3 months",
             "budget_range": "standard",
-            "privilege_card": False,
+            "privilege_card": "",  # Empty string instead of boolean
             "emirate": "Dubai",
             "contact_name": "TEST_Quote Preview",
             "contact_email": f"test_quote_{uuid.uuid4().hex[:6]}@test.com",
