@@ -1053,6 +1053,25 @@ async def delete_article(article_id: str, user: dict = Depends(verify_token)):
         logger.error(f"Delete article error: {str(e)}")
         raise HTTPException(status_code=500, detail="Failed to delete article")
 
+@api_router.patch("/admin/articles/{article_id}")
+async def patch_article(article_id: str, updates: Dict[str, Any], user: dict = Depends(verify_token)):
+    """Partially update an article (only provided fields)"""
+    try:
+        updates.pop("_id", None)
+        updates.pop("id", None)
+        if not updates:
+            raise HTTPException(status_code=400, detail="No fields to update")
+        await cache.delete("articles:cat=None:limit=None")
+        result = await db.articles.update_one({"id": article_id}, {"$set": updates})
+        if result.matched_count == 0:
+            raise HTTPException(status_code=404, detail="Article not found")
+        return {"message": "Article patched successfully"}
+    except HTTPException:
+        raise
+    except Exception as e:
+        logger.error(f"Patch article error: {str(e)}")
+        raise HTTPException(status_code=500, detail="Failed to patch article")
+
 
 # ============= ADMIN - NEWS MANAGEMENT =============
 
@@ -1098,6 +1117,24 @@ async def delete_news(news_id: str, user: dict = Depends(verify_token)):
     except Exception as e:
         logger.error(f"Delete news error: {str(e)}")
         raise HTTPException(status_code=500, detail="Failed to delete news article")
+
+@api_router.patch("/admin/news/{news_id}")
+async def patch_news(news_id: str, updates: Dict[str, Any], user: dict = Depends(verify_token)):
+    """Partially update a news article (only provided fields)"""
+    try:
+        updates.pop("_id", None)
+        updates.pop("id", None)
+        if not updates:
+            raise HTTPException(status_code=400, detail="No fields to update")
+        result = await db.news.update_one({"id": news_id}, {"$set": updates})
+        if result.matched_count == 0:
+            raise HTTPException(status_code=404, detail="News article not found")
+        return {"message": "News article patched successfully"}
+    except HTTPException:
+        raise
+    except Exception as e:
+        logger.error(f"Patch news error: {str(e)}")
+        raise HTTPException(status_code=500, detail="Failed to patch news article")
 
 # ============= ADMIN - BRANDS MANAGEMENT =============
 
