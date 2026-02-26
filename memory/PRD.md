@@ -33,17 +33,8 @@ Complete website overhaul for LEXA Smart Home to:
 - **Cultural/religious pages** (church, majlis, masjid, temple, marine-yacht) converted from nested routes to standard solution slugs
 - **Result**: 103 solutions + 19 services all render with unified benchmark design
 
-## Current State: Design Consistency
-| Section | Pages | Design Status | CMS Status |
-|---------|-------|---------------|------------|
-| Solutions | 103 | Benchmark | DB-driven |
-| Services | 19 | Benchmark | DB-driven |
-| Geo Pages | 34 | Benchmark | DB-driven + CMS |
-| Locations | 7 | Benchmark | DB-driven + CMS |
-| Specialty Rooms | 22 | Benchmark | DB + CMS enriched |
-| Intelligence | 693 | Benchmark | DB + CMS enriched |
-| Standalone Pages | 15+ | Benchmark | CMS keys |
-| Packages | 7 types | Benchmark | DB-driven |
+## Current Design State (Pre-Phase 6)
+(See Phase 6 below for updated table)
 
 ### Phase 6: Brand Pages Styling & Image Fix (Feb 26, 2026)
 - **Listing page** (`/brands`): Applied benchmark design — dark hero, gold #C9A962 accents, category-colored filter pills, search bar, refined cards with text initials
