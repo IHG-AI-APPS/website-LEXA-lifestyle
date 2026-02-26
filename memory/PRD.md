@@ -8,6 +8,7 @@ Complete website overhaul for LEXA Smart Home to:
 
 ## Architecture
 - **Frontend**: Next.js 14 (App Router) | **Backend**: FastAPI (Python) | **Database**: MongoDB
+- **No websockets** — REST-only architecture
 
 ## Completed Work
 
@@ -28,28 +29,23 @@ Complete website overhaul for LEXA Smart Home to:
 ### Phase 18: PATCH Endpoints for Partial Updates
 - 17 new PATCH endpoints across all admin CRUD entities (61/61 tests passed)
 
-### Phase 19: Site-Wide Performance Optimization (Feb 26, 2026)
-- 52 MongoDB indexes across 25 collections
-- Server-side caching (300s TTL) on all public read endpoints
-- Lightweight projections: Solutions 462KB→48KB, Articles 418KB→28KB
-- Disabled Lenis smooth scroll, lazy-loaded Header mega menus
-- Added loading.tsx skeletons, disabled production source maps
+### Phase 19: Site-Wide Performance Optimization
+- 52 MongoDB indexes, server-side caching, lightweight projections
+- Solutions 462KB→48KB, Articles 418KB→28KB
 
-### Phase 20: ETag Conditional Caching (Feb 26, 2026)
-- **ETag middleware** added to all public GET endpoints
-- Computes MD5 hash of response body, returns as ETag header
-- Handles `If-None-Match` header — returns **304 Not Modified** (0 bytes) when content unchanged
-- All 10 main public endpoints verified: solutions, services, brands, articles, projects, testimonials, news, videos, mega-menu, products
-- Admin endpoints correctly excluded from ETag caching
-- CDN-ready: Once Cloudflare/CDN is configured at DNS level, ETags enable edge caching with conditional revalidation
+### Phase 20: ETag Conditional Caching
+- ETag middleware on all public GET endpoints, 304 Not Modified support
+
+### Phase 21: Full Route Audit (Feb 26, 2026)
+- **337 backend routes** audited (GET, POST, PUT, PATCH, DELETE)
+- **110 frontend pages** + **45 admin pages** tested
+- **1 bug found & fixed**: `/api/videos/{id}` datetime serialization error
+- Results: 52/52 public GETs, 47/47 admin GETs, 109/110 frontend pages, 44/45 admin pages
 
 ## Remaining / Backlog
 ### P1 — Site-wide Consistency Review (final QA pass)
 ### P2 — Content Change History for admin CMS (audit trail)
 ### P3 — Approve WhatsApp templates on Interakt dashboard (ops)
-
-## Note
-- Projects page redesign scrapped per user request
 
 ## Credentials
 - Admin: `/admin/login` (username: admin, password: lexa2026)
