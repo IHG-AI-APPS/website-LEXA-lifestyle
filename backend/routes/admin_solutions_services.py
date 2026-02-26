@@ -193,6 +193,30 @@ async def admin_delete_solution(solution_id: str, token: dict = Depends(verify_a
         raise HTTPException(status_code=500, detail="Failed to delete solution")
 
 
+@router.patch("/solutions-full/{solution_id}")
+async def admin_patch_solution(solution_id: str, updates: Dict[str, Any], token: dict = Depends(verify_admin_token)):
+    """Partially update a solution (only provided fields)"""
+    try:
+        updates.pop("_id", None)
+        updates.pop("id", None)
+        if not updates:
+            raise HTTPException(status_code=400, detail="No fields to update")
+        updates["updated_at"] = datetime.now(timezone.utc)
+        result = await db.solutions.update_one(
+            {"$or": [{"id": solution_id}, {"slug": solution_id}]},
+            {"$set": updates}
+        )
+        if result.matched_count == 0:
+            raise HTTPException(status_code=404, detail="Solution not found")
+        logger.info(f"Admin {token.get('username')} patched solution: {solution_id}")
+        return {"success": True, "message": "Solution patched successfully"}
+    except HTTPException:
+        raise
+    except Exception as e:
+        logger.error(f"Error patching solution: {str(e)}")
+        raise HTTPException(status_code=500, detail="Failed to patch solution")
+
+
 @router.put("/solutions-full/reorder")
 async def admin_reorder_solutions(data: PriorityReorder, token: dict = Depends(verify_admin_token)):
     """Bulk update solution priorities for reordering"""
@@ -342,6 +366,30 @@ async def admin_delete_service(service_id: str, token: dict = Depends(verify_adm
     except Exception as e:
         logger.error(f"Error deleting service: {str(e)}")
         raise HTTPException(status_code=500, detail="Failed to delete service")
+
+
+@router.patch("/services/{service_id}")
+async def admin_patch_service(service_id: str, updates: Dict[str, Any], token: dict = Depends(verify_admin_token)):
+    """Partially update a service (only provided fields)"""
+    try:
+        updates.pop("_id", None)
+        updates.pop("id", None)
+        if not updates:
+            raise HTTPException(status_code=400, detail="No fields to update")
+        updates["updated_at"] = datetime.now(timezone.utc)
+        result = await db.services.update_one(
+            {"$or": [{"id": service_id}, {"slug": service_id}]},
+            {"$set": updates}
+        )
+        if result.matched_count == 0:
+            raise HTTPException(status_code=404, detail="Service not found")
+        logger.info(f"Admin {token.get('username')} patched service: {service_id}")
+        return {"success": True, "message": "Service patched successfully"}
+    except HTTPException:
+        raise
+    except Exception as e:
+        logger.error(f"Error patching service: {str(e)}")
+        raise HTTPException(status_code=500, detail="Failed to patch service")
 
 
 @router.put("/services/reorder")
