@@ -20,11 +20,13 @@ UPLOAD_DIR = "/app/backend/uploads"
 ALLOWED_IMAGE_TYPES = ["image/jpeg", "image/png", "image/gif", "image/webp", "image/svg+xml"]
 ALLOWED_DOC_TYPES = ["application/pdf", "application/msword", "application/vnd.openxmlformats-officedocument.wordprocessingml.document"]
 MAX_FILE_SIZE = 10 * 1024 * 1024  # 10MB
+MAX_PDF_SIZE = 50 * 1024 * 1024  # 50MB for PDFs
 
 # Ensure upload directories exist
 os.makedirs(f"{UPLOAD_DIR}/images", exist_ok=True)
 os.makedirs(f"{UPLOAD_DIR}/documents", exist_ok=True)
 os.makedirs(f"{UPLOAD_DIR}/logos", exist_ok=True)
+os.makedirs(f"{UPLOAD_DIR}/catalogues", exist_ok=True)
 
 
 @router.post("/image")
