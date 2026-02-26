@@ -160,11 +160,15 @@ async def create_experience_centre_booking(
                 lead_type=f"Experience Centre - {booking.date}"
             )
             
-            await ERPNextService.create_lead(
-                lead_name=booking.name,
-                email=booking.email,
-                phone=booking.phone,
-                source="Website - Experience Centre",
+            await erpnext_service.create_lead(
+                submission_id=str(booking_result.inserted_id) if hasattr(booking_result, 'inserted_id') else "experience-centre",
+                contact_name=booking.name,
+                contact_email=booking.email,
+                contact_phone=booking.phone,
+                company="",
+                project_type="Experience Centre Visit",
+                total_cost=0,
+                emirate="Dubai",
                 notes=f"Date: {booking.date}, Time: {booking.time}, Interests: {', '.join(booking.interests) if booking.interests else 'None'}"
             )
             
