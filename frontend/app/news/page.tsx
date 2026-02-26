@@ -52,27 +52,18 @@ export default function NewsPage() {
   const otherNews = news.filter(n => !n.featured)
 
   return (
-    <div className="min-h-screen bg-white pt-20">
-      {/* Hero - Centered */}
-      <section className="py-16 md:py-20 bg-gray-50 dark:bg-gray-800">
-        <div className="container mx-auto px-6 lg:px-12">
-          <div className="max-w-4xl mx-auto text-center">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-            >
-              <span className="text-xs tracking-[0.3em] uppercase text-gray-400 font-medium mb-4 block">
-                Latest Updates
-              </span>
-              <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 text-[#1A1A1A] dark:text-white dark:text-white">
-                Company <span className="text-gray-400">News</span>
-              </h1>
-              <div className="h-px w-32 bg-[#9F8B65] mb-6 mx-auto" />
-              <p className="text-base md:text-lg text-gray-600 dark:text-gray-400 leading-relaxed max-w-2xl mx-auto">
-                Company announcements, product launches, and industry updates from LEXA Lifestyle.
-              </p>
-            </motion.div>
+    <div className="min-h-screen bg-white dark:bg-gray-950 pt-20" data-testid="news-page">
+      {/* Hero */}
+      <section className="relative overflow-hidden bg-gray-900 text-white py-20 lg:py-28">
+        <div className="container mx-auto px-8 lg:px-16 relative z-10">
+          <div className="max-w-3xl mx-auto text-center">
+            <span className="inline-block px-3 py-1 rounded-full bg-[#C9A962]/15 border border-[#C9A962]/30 text-[#C9A962] text-xs uppercase tracking-widest mb-5">Latest Updates</span>
+            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-5 tracking-tight" data-testid="news-title">
+              Company News
+            </h1>
+            <p className="text-base text-gray-300 max-w-lg mx-auto">
+              Company announcements, product launches, and industry updates from LEXA Lifestyle.
+            </p>
           </div>
         </div>
       </section>

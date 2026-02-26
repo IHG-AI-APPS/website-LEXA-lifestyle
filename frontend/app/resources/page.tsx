@@ -55,29 +55,21 @@ export default function ResourcesPage() {
   }
 
   return (
-    <div className="min-h-screen bg-white pt-20">
-      {/* Header */}
-      <section className="py-20 bg-gray-50 dark:bg-gray-800">
-        <div className="container mx-auto px-8 lg:px-16">
-          <div className="max-w-4xl mx-auto text-center">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-            >
-              <span className="text-xs tracking-[0.5em] uppercase text-gray-400 font-medium mb-6 block">
-                Knowledge Hub
-              </span>
-              
-              <h1 className="text-7xl sm:text-8xl font-semibold tracking-[-0.04em] leading-[0.9] mb-8">
-                RESOURCES
-              </h1>
-              
-              <div className="h-px w-32 bg-gradient-to-r from-platinum to-transparent mx-auto mb-8" />
-              
-              <p className="text-xl text-gray-600 dark:text-gray-400 font-normal">
-                Guides, insights, and expertise to help you make informed decisions about smart living
-              </p>
+    <div className="min-h-screen bg-white dark:bg-gray-950 pt-20" data-testid="resources-page">
+      {/* Hero */}
+      <section className="relative overflow-hidden bg-gray-900 text-white py-20 lg:py-28">
+        <div className="container mx-auto px-8 lg:px-16 relative z-10">
+          <div className="max-w-3xl mx-auto text-center">
+            <span className="inline-block px-3 py-1 rounded-full bg-[#C9A962]/15 border border-[#C9A962]/30 text-[#C9A962] text-xs uppercase tracking-widest mb-5">Knowledge Hub</span>
+            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-5 tracking-tight" data-testid="resources-title">
+              Resources
+            </h1>
+            <p className="text-base text-gray-300 max-w-lg mx-auto">
+              Guides, insights, and expertise to help you make informed decisions about smart living
+            </p>
+          </div>
+        </div>
+      </section>
             </motion.div>
           </div>
         </div>
