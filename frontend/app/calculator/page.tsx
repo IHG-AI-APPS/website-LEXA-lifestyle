@@ -44,11 +44,6 @@ const FloorPlanUploader = dynamic(() => import('@/components/FloorPlanUploader')
 
 const API_URL = process.env.NEXT_PUBLIC_BACKEND_URL || ''
 
-// Icon mapping for project types
-const ICON_MAP: Record<string, any> = {
-  Home, Building2, Hotel, Hospital, GraduationCap, ShoppingBag, Building
-}
-
 export default function IndustryCalculatorPage() {
   const cms = useCms('page_calculator', null)
 
@@ -662,7 +657,7 @@ export default function IndustryCalculatorPage() {
                             : 'border-gray-200 dark:border-gray-700 hover:border-gray-400'
                         }`}
                       >
-                        {(() => { const Icon = ICON_MAP[type.iconName]; return Icon ? <Icon className="w-10 h-10 mb-3" /> : null })()}
+                        <type.icon className="w-10 h-10 mb-3" />
                         <div className="font-semibold text-lg mb-1">{type.label}</div>
                         <div className="text-sm text-gray-600 dark:text-gray-400 dark:text-gray-400">{type.description}</div>
                       </button>
