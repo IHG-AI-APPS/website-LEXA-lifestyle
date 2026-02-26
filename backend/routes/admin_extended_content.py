@@ -160,6 +160,26 @@ async def delete_blog_post(post_id: str, token: dict = Depends(verify_token)):
         raise HTTPException(status_code=500, detail="Failed to delete blog post")
 
 
+@router.patch("/blog/{post_id}")
+async def patch_blog_post(post_id: str, data: Dict[str, Any], token: dict = Depends(verify_token)):
+    """Partially update blog post (only provided fields)"""
+    try:
+        data.pop("_id", None)
+        data.pop("id", None)
+        if not data:
+            raise HTTPException(status_code=400, detail="No fields to update")
+        data["updated_at"] = datetime.now(timezone.utc)
+        result = await db.blog.update_one({"id": post_id}, {"$set": data})
+        if result.matched_count == 0:
+            raise HTTPException(status_code=404, detail="Blog post not found")
+        return {"success": True, "message": "Blog post patched successfully"}
+    except HTTPException:
+        raise
+    except Exception as e:
+        logger.error(f"Error patching blog post: {str(e)}")
+        raise HTTPException(status_code=500, detail="Failed to patch blog post")
+
+
 # ===== NEWS =====
 
 @router.get("/news")
@@ -563,6 +583,26 @@ async def delete_property_package(package_id: str, token: dict = Depends(verify_
     except Exception as e:
         logger.error(f"Error deleting property package: {str(e)}")
         raise HTTPException(status_code=500, detail="Failed to delete property package")
+
+
+@router.patch("/property-packages/{package_id}")
+async def patch_property_package(package_id: str, data: Dict[str, Any], token: dict = Depends(verify_token)):
+    """Partially update property package (only provided fields)"""
+    try:
+        data.pop("_id", None)
+        data.pop("id", None)
+        if not data:
+            raise HTTPException(status_code=400, detail="No fields to update")
+        data["updated_at"] = datetime.now(timezone.utc)
+        result = await db.property_packages.update_one({"id": package_id}, {"$set": data})
+        if result.matched_count == 0:
+            raise HTTPException(status_code=404, detail="Package not found")
+        return {"success": True, "message": "Property package patched successfully"}
+    except HTTPException:
+        raise
+    except Exception as e:
+        logger.error(f"Error patching property package: {str(e)}")
+        raise HTTPException(status_code=500, detail="Failed to patch property package")
 
 
 # ===== PACKAGE ENHANCEMENTS =====
