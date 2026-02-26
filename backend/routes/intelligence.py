@@ -785,6 +785,27 @@ async def admin_delete_feature(feature_id: str, token: dict = Depends(verify_adm
         raise HTTPException(status_code=500, detail="Failed to delete feature")
 
 
+@router.patch("/admin/features/{feature_id}")
+async def admin_patch_feature(feature_id: str, updates: Dict[str, Any], token: dict = Depends(verify_admin_token)):
+    """Admin: Partially update intelligence feature (only provided fields)"""
+    try:
+        updates.pop("_id", None)
+        updates.pop("id", None)
+        if not updates:
+            raise HTTPException(status_code=400, detail="No fields to update")
+        updates["updated_at"] = datetime.now(timezone.utc)
+        result = await db.intelligence_features.update_one({"id": feature_id}, {"$set": updates})
+        if result.matched_count == 0:
+            raise HTTPException(status_code=404, detail="Feature not found")
+        logger.info(f"Admin {token.get('username')} patched feature: {feature_id}")
+        return {"success": True, "message": "Feature patched successfully"}
+    except HTTPException:
+        raise
+    except Exception as e:
+        logger.error(f"Admin feature patch error: {str(e)}")
+        raise HTTPException(status_code=500, detail="Failed to patch feature")
+
+
 @router.patch("/admin/features/{feature_id}/toggle-featured")
 async def admin_toggle_featured(feature_id: str, token: dict = Depends(verify_admin_token)):
     """Admin: Toggle featured status of feature"""
