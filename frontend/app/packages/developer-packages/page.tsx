@@ -167,39 +167,29 @@ export default function DeveloperPackagesPage() {
   ]
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-white dark:bg-gray-950 pt-20" data-testid="developer-packages-page">
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 py-20 sm:py-32 text-white overflow-hidden">
-        <div className="absolute inset-0 bg-[url('/grid-pattern.svg')] opacity-5"></div>
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl relative z-10">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="text-center max-w-4xl mx-auto"
-          >
-            <div className="inline-flex items-center gap-2 px-4 py-2 bg-amber-500/20 border border-amber-500/30 mb-6">
-              <Building2 className="h-4 w-4 text-amber-400" />
-              <span className="text-xs font-semibold uppercase tracking-wider text-amber-400">
-                Developer & Property Manager Packages
-              </span>
-            </div>
+      <section className="relative overflow-hidden bg-gray-900 text-white py-20 lg:py-28">
+        <div className="container mx-auto px-8 lg:px-16 relative z-10">
+          <div className="max-w-3xl mx-auto text-center">
+            <span className="inline-block px-3 py-1 rounded-full bg-[#C9A962]/15 border border-[#C9A962]/30 text-[#C9A962] text-xs uppercase tracking-widest mb-5">
+              Developer & Property Manager Packages
+            </span>
             
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
-              Bulk Smart Home<br />
-              <span className="text-amber-400">Solutions for Developers</span>
+            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-5 tracking-tight" data-testid="developer-packages-title">
+              Bulk Smart Home Solutions for Developers
             </h1>
             
-            <p className="text-lg sm:text-xl text-gray-300 mb-8 leading-relaxed max-w-3xl mx-auto">
+            <p className="text-base text-gray-300 mb-8 max-w-lg mx-auto">
               Transform entire residential towers, villa communities, and managed properties with smart home technology. 
               Special pricing and dedicated support for multi-unit projects across Dubai and UAE.
             </p>
             
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <div className="flex flex-col sm:flex-row gap-3 justify-center">
               <Button
                 size="lg"
                 asChild
-                className="bg-amber-500 hover:bg-amber-600 text-black px-8 py-6 text-sm font-semibold uppercase tracking-wider"
+                className="bg-[#C9A962] hover:bg-[#C9A962]/90 text-gray-900 px-8 font-semibold"
               >
                 <a href="#inquiry-form">
                   Request Developer Pricing
@@ -210,7 +200,7 @@ export default function DeveloperPackagesPage() {
                 size="lg"
                 variant="outline"
                 asChild
-                className="border-2 border-white/30 text-white hover:bg-white/10 px-8 py-6 text-sm font-semibold uppercase tracking-wider"
+                className="border-white/30 text-white hover:bg-white/10 px-8"
               >
                 <a href="https://wa.me/97142670470?text=Hi%2C%20I%27m%20interested%20in%20bulk%20smart%20home%20packages%20for%20developers" target="_blank" rel="noopener noreferrer">
                   <MessageCircle className="mr-2 h-4 w-4" />
@@ -218,30 +208,24 @@ export default function DeveloperPackagesPage() {
                 </a>
               </Button>
             </div>
-          </motion.div>
+          </div>
         </div>
       </section>
 
       {/* Stats Section */}
-      <section className="py-12 bg-amber-500">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
+      <section className="py-10 bg-[#C9A962]">
+        <div className="container mx-auto px-8 lg:px-16">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
             {[
               { value: '500+', label: 'Units Installed' },
               { value: '50+', label: 'Developer Projects' },
               { value: '15+', label: 'Years Experience' },
               { value: '100%', label: 'Handover Success' }
-            ].map((stat, index) => (
-              <motion.div
-                key={stat.label}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.2 }}
-                viewport={{ once: true }}
-              >
-                <div className="text-3xl sm:text-4xl font-bold text-black mb-1">{stat.value}</div>
-                <div className="text-sm text-black/70 font-medium">{stat.label}</div>
-              </motion.div>
+            ].map((stat) => (
+              <div key={stat.label}>
+                <div className="text-2xl sm:text-3xl font-bold text-gray-900 mb-1">{stat.value}</div>
+                <div className="text-xs text-gray-900/70 font-medium">{stat.label}</div>
+              </div>
             ))}
           </div>
         </div>
