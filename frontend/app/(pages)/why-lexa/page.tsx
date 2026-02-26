@@ -102,13 +102,13 @@ export default function WhyLexaPage() {
               transition={{ duration: 0.8 }}
             >
               <span className="text-xs tracking-[0.5em] uppercase text-gray-400 font-medium mb-6 block">
-                Why LEXA Lifestyle
+                {cms?.hero_badge || 'Why LEXA Lifestyle'}
               </span>
               <h1 className="h1 uppercase mb-6">
-                DUBAI&apos;S #1 CHOICE FOR LUXURY SMART HOMES
+                {cms?.hero_title || "DUBAI'S #1 CHOICE FOR LUXURY SMART HOMES"}
               </h1>
               <p className="text-xl text-gray-300 mb-8">
-                When UAE&apos;s most discerning homeowners need premium automation, they choose LEXA Lifestyle. Here&apos;s why we&apos;re different.
+                {cms?.hero_subtitle || "When UAE's most discerning homeowners need premium automation, they choose LEXA Lifestyle. Here's why we're different."}
               </p>
               <div className="flex gap-4 justify-center">
                 <Link href="/contact" className="bg-white text-gray-900 dark:text-white px-8 py-4 font-semibold hover:bg-gray-100 dark:bg-gray-800 transition-colors">
