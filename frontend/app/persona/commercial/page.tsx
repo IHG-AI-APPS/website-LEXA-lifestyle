@@ -89,9 +89,9 @@ export default function CommercialPage() {
   ]
 
   return (
-    <div className="min-h-screen bg-white dark:bg-gray-900 pt-20">
+    <div className="min-h-screen bg-white dark:bg-gray-950 pt-20">
       {/* Hero */}
-      <section className="py-20 bg-gray-50 dark:bg-gray-800">
+      <section className="relative overflow-hidden bg-gray-900 text-white py-20 lg:py-28">
         <div className="container mx-auto px-8 lg:px-16">
           <div className="max-w-7xl mx-auto">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
@@ -100,22 +100,22 @@ export default function CommercialPage() {
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.8 }}
               >
-                <span className="text-xs tracking-[0.5em] uppercase text-gray-400 font-medium mb-6 block">
+                <span className="inline-block px-3 py-1 rounded-full bg-[#C9A962]/15 border border-[#C9A962]/30 text-[#C9A962] text-xs uppercase tracking-widest mb-5">
                   For Commercial & Enterprise
                 </span>
                 <h1 className="text-6xl sm:text-7xl font-semibold tracking-[-0.04em] leading-[0.9] mb-8">
                   INTELLIGENT
                   <br />
-                  <span className="text-transparent bg-clip-text metallic-gradient">WORKSPACES</span>
+                  <span className="text-[#C9A962]">WORKSPACES</span>
                 </h1>
-                <div className="h-px w-24 bg-gradient-to-r from-platinum to-transparent mb-8" />
-                <p className="text-xl text-gray-600 dark:text-gray-400 font-normal leading-relaxed mb-10">
+                <div className="h-px w-24 bg-[#C9A962]/30 mb-8" />
+                <p className="text-base text-gray-300 leading-relaxed mb-10">
                   Enterprise automation for offices, hotels, retail, and commercial buildings. Enhance operations, reduce costs, and improve experiences.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4">
                   <Button
                     size="lg"
-                    className="bg-charcoal hover:bg-charcoal-light text-white"
+                    className="bg-[#C9A962] hover:bg-[#C9A962]/90 text-gray-900 font-semibold"
                     onClick={() => setShowConsultationForm(true)}
                   >
                     Commercial Consultation
@@ -124,7 +124,7 @@ export default function CommercialPage() {
                     <Button
                       size="lg"
                       variant="outline"
-                      className="border border-gray-300 dark:border-gray-600 hover:border-charcoal w-full"
+                      className="border-white/30 text-white hover:bg-white/10 w-full"
                     >
                       Visit Showroom
                     </Button>
@@ -192,7 +192,7 @@ export default function CommercialPage() {
       </section>
 
       {/* Solutions Grid */}
-      <section className="py-20 bg-gray-50 dark:bg-gray-800">
+      <section className="relative overflow-hidden bg-gray-900 text-white py-20 lg:py-28">
         <div className="container mx-auto px-8 lg:px-16">
           <div className="max-w-7xl mx-auto">
             <motion.div

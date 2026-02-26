@@ -89,9 +89,9 @@ export default function DeveloperPage() {
   ]
 
   return (
-    <div className="min-h-screen bg-white dark:bg-gray-900 pt-20">
+    <div className="min-h-screen bg-white dark:bg-gray-950 pt-20">
       {/* Hero */}
-      <section className="py-20 bg-gray-50 dark:bg-gray-800">
+      <section className="relative overflow-hidden bg-gray-900 text-white py-20 lg:py-28">
         <div className="container mx-auto px-8 lg:px-16">
           <div className="max-w-7xl mx-auto">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
@@ -100,23 +100,23 @@ export default function DeveloperPage() {
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.8 }}
               >
-                <span className="text-xs tracking-[0.5em] uppercase text-gray-400 font-medium mb-6 block">
+                <span className="inline-block px-3 py-1 rounded-full bg-[#C9A962]/15 border border-[#C9A962]/30 text-[#C9A962] text-xs uppercase tracking-widest mb-5">
                   For Developers
                 </span>
                 <h1 className="text-6xl sm:text-7xl font-semibold tracking-[-0.04em] leading-[0.9] mb-8">
                   SMART
                   <br />
-                  <span className="text-transparent bg-clip-text metallic-gradient">DEVELOPMENTS</span>
+                  <span className="text-[#C9A962]">DEVELOPMENTS</span>
                 </h1>
-                <div className="h-px w-24 bg-gradient-to-r from-platinum to-transparent mb-8" />
-                <p className="text-xl text-gray-600 dark:text-gray-400 font-normal leading-relaxed mb-10">
+                <div className="h-px w-24 bg-[#C9A962]/30 mb-8" />
+                <p className="text-base text-gray-300 leading-relaxed mb-10">
                   Turn-key automation for luxury developments. Scale your projects with consistent quality and on-time delivery.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4">
                   <Link href="/partners/developers">
                     <Button
                       size="lg"
-                      className="bg-charcoal hover:bg-charcoal-light text-white w-full"
+                      className="bg-[#C9A962] hover:bg-[#C9A962]/90 text-gray-900 font-semibold w-full"
                     >
                       Download Toolkit
                     </Button>
@@ -192,7 +192,7 @@ export default function DeveloperPage() {
       </section>
 
       {/* Solutions Grid */}
-      <section className="py-20 bg-gray-50 dark:bg-gray-800">
+      <section className="relative overflow-hidden bg-gray-900 text-white py-20 lg:py-28">
         <div className="container mx-auto px-8 lg:px-16">
           <div className="max-w-7xl mx-auto">
             <motion.div
