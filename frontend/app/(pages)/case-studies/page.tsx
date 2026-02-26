@@ -123,13 +123,13 @@ export default function CaseStudiesPage() {
               transition={{ duration: 0.8 }}
             >
               <span className="text-xs tracking-[0.5em] uppercase text-gray-400 font-medium mb-6 block">
-                Our Work
+                {cms?.hero_badge || 'Our Work'}
               </span>
               <h1 className="h1 uppercase mb-6">
-                SMART HOME CASE STUDIES
+                {cms?.hero_title || 'SMART HOME CASE STUDIES'}
               </h1>
               <p className="text-xl text-gray-600 dark:text-gray-400 dark:text-gray-400">
-                Real projects, real results. Explore how LEXA Lifestyle has transformed luxury properties across Dubai, Abu Dhabi, and UAE with cutting-edge smart home automation.
+                {cms?.hero_subtitle || 'Real projects, real results. Explore how LEXA Lifestyle has transformed luxury properties across Dubai, Abu Dhabi, and UAE with cutting-edge smart home automation.'}
               </p>
             </motion.div>
           </div>
