@@ -1217,8 +1217,13 @@ async def delete_product_category(product_id: str, user: dict = Depends(verify_t
 async def get_consultation_submissions(user: dict = Depends(verify_token), limit: int = Query(50, le=200)):
     """Get all consultation form submissions"""
     try:
-        submissions = await db.consultations.find({}, {"_id": 0}).sort([("timestamp", -1)]).limit(limit).to_list(limit)
-        return submissions
+        # Check both collections: consultation_bookings (from bookings.py) and consultations (legacy)
+        submissions_new = await db.consultation_bookings.find({}, {"_id": 0}).sort([("timestamp", -1)]).limit(limit).to_list(limit)
+        submissions_legacy = await db.consultations.find({}, {"_id": 0}).sort([("timestamp", -1)]).limit(limit).to_list(limit)
+        # Combine and sort by timestamp
+        all_submissions = submissions_new + submissions_legacy
+        all_submissions.sort(key=lambda x: x.get('timestamp', ''), reverse=True)
+        return all_submissions[:limit]
     except Exception as e:
         logger.error(f"Get submissions error: {str(e)}")
         raise HTTPException(status_code=500, detail="Failed to fetch submissions")
