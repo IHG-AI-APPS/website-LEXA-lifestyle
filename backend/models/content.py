@@ -176,6 +176,18 @@ class News(BaseModel):
     category: Optional[str] = None
     published: Optional[bool] = True
     created_at: Optional[str] = None
+    
+    @model_validator(mode='before')
+    @classmethod
+    def serialize_dates(cls, data):
+        """Convert datetime objects to strings"""
+        from datetime import datetime
+        if isinstance(data, dict):
+            if 'created_at' in data and isinstance(data['created_at'], datetime):
+                data['created_at'] = data['created_at'].isoformat()
+            if 'published_date' in data and isinstance(data['published_date'], datetime):
+                data['published_date'] = data['published_date'].isoformat()
+        return data
 
 
 class Brand(BaseModel):
