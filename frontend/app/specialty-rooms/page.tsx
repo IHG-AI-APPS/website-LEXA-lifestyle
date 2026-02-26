@@ -72,49 +72,36 @@ export default function SpecialtyRoomsPage() {
   }
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-white dark:bg-gray-950 pt-20" data-testid="specialty-rooms-page">
       {/* Hero */}
-      <section className="bg-gradient-to-br from-blue-50 via-purple-50 to-pink-50 py-20">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            className="max-w-4xl mx-auto text-center"
-          >
-            <div className="inline-flex items-center gap-2 px-4 py-2 bg-white dark:bg-gray-800 rounded-full mb-6 shadow-sm">
-              <Plus className="h-4 w-4 text-blue-600" />
-              <span className="text-sm font-medium text-gray-900 dark:text-white dark:text-white">À La Carte Add-Ons</span>
-            </div>
-
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 dark:text-white mb-6">
-              Specialty Room
-              <span className="block mt-2 bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
-                Automation
-              </span>
+      <section className="relative overflow-hidden bg-gray-900 text-white py-20 lg:py-28">
+        <div className="container mx-auto px-8 lg:px-16 relative z-10">
+          <div className="max-w-3xl mx-auto text-center">
+            <span className="inline-block px-3 py-1 rounded-full bg-[#C9A962]/15 border border-[#C9A962]/30 text-[#C9A962] text-xs uppercase tracking-widest mb-5">A La Carte Add-Ons</span>
+            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-5 tracking-tight" data-testid="specialty-rooms-title">
+              Specialty Room Automation
             </h1>
-
-            <p className="text-lg sm:text-xl text-gray-600 dark:text-gray-400 mb-8">
+            <p className="text-base text-gray-300 max-w-lg mx-auto mb-8">
               Elevate your smart home with bespoke automation for wine cellars, game rooms, 
-              private gyms, spas, and more. Each solution is professionally designed and seamlessly integrated.
+              private gyms, spas, and more.
             </p>
-
             <div className="flex flex-wrap gap-3 justify-center">
-              <div className="px-4 py-2 bg-white dark:bg-gray-800 rounded-lg shadow-sm">
-                <p className="text-sm text-gray-600 dark:text-gray-400 dark:text-gray-400">Price Range</p>
-                <p className="font-bold text-gray-900 dark:text-white dark:text-white">AED 28K - 85K</p>
+              <div className="px-4 py-2 bg-white/10 backdrop-blur-sm rounded-lg border border-white/20">
+                <p className="text-xs text-gray-400">Price Range</p>
+                <p className="font-bold text-[#C9A962]">AED 28K - 85K</p>
               </div>
-              <div className="px-4 py-2 bg-white dark:bg-gray-800 rounded-lg shadow-sm">
-                <p className="text-sm text-gray-600 dark:text-gray-400 dark:text-gray-400">Total Options</p>
-                <p className="font-bold text-gray-900 dark:text-white dark:text-white">{rooms.length} Rooms</p>
+              <div className="px-4 py-2 bg-white/10 backdrop-blur-sm rounded-lg border border-white/20">
+                <p className="text-xs text-gray-400">Total Options</p>
+                <p className="font-bold text-[#C9A962]">{rooms.length} Rooms</p>
               </div>
             </div>
-          </motion.div>
+          </div>
         </div>
       </section>
 
       {/* Filter */}
-      <section className="border-b sticky top-16 bg-white z-30">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="border-b sticky top-16 bg-white dark:bg-gray-950 z-30">
+        <div className="container mx-auto px-8 lg:px-16">
           <div className="flex overflow-x-auto gap-2 py-4 hide-scrollbar">
             {categories.map((cat) => (
               <button
@@ -122,7 +109,7 @@ export default function SpecialtyRoomsPage() {
                 onClick={() => setFilter(cat)}
                 className={`px-4 py-2 rounded-lg whitespace-nowrap font-medium transition-colors ${
                   filter === cat
-                    ? 'bg-blue-600 text-white'
+                    ? 'bg-[#C9A962] text-gray-900'
                     : 'bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:bg-gray-200'
                 }`}
               >
