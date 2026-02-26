@@ -15,52 +15,37 @@ Complete website overhaul for LEXA Smart Home to:
 - All solutions, services, brands, geo pages, locations, specialty rooms, intelligence — CMS-driven
 - Admin CMS, Catalogue/Flipbook, 30+ pages converted to CMS
 
-### Phase 11-14: Design & Transitions (Feb 26, 2026)
+### Phase 11-14: Design & Transitions
 - 9 final CMS pages, 19+ benchmark design updates, page transitions, package pages
 
-### Phase 15-16: Backend Audit & Bug Fixes (Feb 26, 2026)
-- **Total: 198/198 tests passed across 4 audit rounds**
-- **9 total bugs fixed** (serialization, ID overwrites, integration params, email/WhatsApp logic)
+### Phase 15-16: Backend Audit & Bug Fixes
+- 198/198 tests passed, 9 bugs fixed
 
-### Phase 17: Automated Regression Testing (Feb 26, 2026)
-- Backend: `nightly_runner.py` runs 96-endpoint test suite, saves JSON results
-- Backend: `regression_tests.py` API: GET `/api/admin/regression/latest`, `/history`, POST `/run`
-- Frontend: Admin page at `/admin/test-results` with live status card, history table, trigger button
-- Cron: Automated every 4 hours via `/etc/cron.d/test-runner`
-- Testing: 100% pass rate (iteration_45)
+### Phase 17: Automated Regression Testing
+- Backend: nightly_runner.py, regression_tests.py API, admin UI at /admin/test-results
+- Cron: Every 4 hours, 96 endpoints tested
 
-### Phase 18: PATCH Endpoints for Partial Updates (Feb 26, 2026)
-- **17 new PATCH endpoints** added across all admin CRUD entities
-- Entities covered in `server.py`: Solutions, Projects, Articles, News, Brands, Products, Videos, Catalogues
-- Entities covered in `admin_solutions_services.py`: Solutions-full, Services
-- Entities covered in `intelligence.py`: Features, Control Systems
-- Entities covered in `admin_extended_content.py`: Testimonials, Blog, Property Packages, Package Enhancements, Specialty Rooms, Product Categories
-- Pattern: Accept Dict body → strip _id/id → validate non-empty → `$set` partial update
-- Error handling: 400 for empty body, 404 for not found, auth required
-- Testing: 100% pass rate — 61/61 tests (iteration_46)
+### Phase 18: PATCH Endpoints for Partial Updates
+- 17 new PATCH endpoints across all admin CRUD entities (61/61 tests passed)
 
-### Verified API Coverage (96+ endpoints across 18 areas)
-| Area | Count | Status |
-|------|-------|--------|
-| Auth & Admin | 8 | PASS |
-| Public Content | 14 | PASS |
-| CMS & Settings | 4 | PASS |
-| Geo Pages | 1 | PASS |
-| Intelligence | 5 | PASS |
-| Packages & Pricing | 12 | PASS |
-| Calculator | 2 | PASS |
-| Form Submissions | 12 | PASS |
-| Smart Home Features | 6 | PASS |
-| AI Chatbot | 2 | PASS |
-| SEO | 6 | PASS |
-| Admin CRUD (10 entities) | 10 | PASS |
-| Admin Extended | 4 | PASS |
-| Analytics | 2 | PASS |
-| Sales Intelligence | 2 | PASS |
-| Tracking | 2 | PASS |
-| Project Builder | 2 | PASS |
-| Health & Root | 2 | PASS |
-| PATCH Endpoints | 17 | PASS |
+### Phase 19: Site-Wide Performance Optimization (Feb 26, 2026)
+**Backend Optimizations:**
+- 52 MongoDB indexes added across 25 collections
+- Server-side caching (300s TTL) on all public read endpoints: solutions, services, brands, articles, projects, testimonials, news, videos, mega-menu, products
+- Lightweight projections for listing endpoints: Solutions 462KB→48KB (90% reduction), Articles 418KB→28KB (93% reduction)
+- Cache-Control headers for public GET endpoints
+- GZip threshold lowered from 1000→500 bytes
+
+**Frontend Optimizations:**
+- Disabled Lenis smooth scroll (continuous rAF was burning CPU)
+- Header mega menus (5 components) lazy-loaded via dynamic imports
+- Added loading.tsx skeletons for 7 main route groups
+- Disabled productionBrowserSourceMaps (was shipping source maps to browser)
+
+**Measured Results:**
+- All 8 main API endpoints in parallel: 57ms total, 204KB payload (was ~1000KB+)
+- Individual endpoint: 24-45ms locally (was 130-460ms)
+- Testing: 100% pass — 19/19 backend + 7/7 frontend (iteration_47)
 
 ## Remaining / Backlog
 ### P1 — Redesign Projects Landing Page (`/projects`) to match benchmark design
