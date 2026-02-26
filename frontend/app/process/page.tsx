@@ -29,8 +29,8 @@ export default function ProcessPage() {
       <section className="relative overflow-hidden bg-gray-900 text-white py-20 lg:py-28">
         <div className="container mx-auto px-8 lg:px-16 relative z-10">
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }} className="max-w-3xl">
-            <span className="inline-block px-3 py-1 rounded-full bg-[#C9A962]/15 border border-[#C9A962]/30 text-[#C9A962] text-xs uppercase tracking-widest mb-5">Our Process</span>
-            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-5 tracking-tight leading-tight" data-testid="process-title">From Vision to Reality</h1>
+            <span className="inline-block px-3 py-1 rounded-full bg-[#C9A962]/15 border border-[#C9A962]/30 text-[#C9A962] text-xs uppercase tracking-widest mb-5">{cms?.hero_badge || 'Our Process'}</span>
+            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-5 tracking-tight leading-tight" data-testid="process-title">{cms?.hero_title || 'From Vision to Reality'}</h1>
             <p className="text-base text-gray-300 max-w-lg leading-relaxed mb-8">A proven methodology refined over 1,000+ projects. Structured phases with clear milestones, transparent communication, and predictable outcomes.</p>
             <Button size="lg" className="bg-[#C9A962] text-gray-900 hover:bg-[#C9A962]/90 font-semibold" onClick={() => setShowConsultationForm(true)} data-testid="hero-cta">
               Start Your Project <ArrowRight className="ml-2" size={18} />
