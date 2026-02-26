@@ -48,6 +48,14 @@ Complete website overhaul for LEXA Smart Home to:
 - **Synced models**: Fixed duplicate Project/Brand models in server.py to match models/content.py
 - **Testing**: 100% pass rate (12/12 backend + all frontend)
 
+### Phase 8: Catalogue/Flipbook Feature (Feb 26, 2026)
+- **Catalogues Listing Page** (`/catalogues`): Benchmark-designed page with category filters (Company Profile, Pre-qualification, Brand Catalogues)
+- **Flipbook Viewer** (`/catalogues/[slug]`): Interactive PDF flipbook using react-pageflip + pdfjs-dist with page-turn animation, fullscreen, keyboard nav, view-only mode
+- **Admin CMS** (`/admin/catalogues`): Full CRUD — PDF upload (50MB max), metadata, thumbnail, category, publish/draft, priority
+- **Backend**: New Catalogue model, CRUD API, dedicated PDF upload endpoint
+- **Navigation**: Added "Catalogues" to main header and admin sidebar
+- **Testing**: 100% pass rate (14/14 backend + all frontend UI)
+
 ## Current State: Design Consistency
 | Section | Pages | Design Status | CMS Status |
 |---------|-------|---------------|------------|
