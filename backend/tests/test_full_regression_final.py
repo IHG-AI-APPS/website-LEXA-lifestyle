@@ -885,9 +885,11 @@ class TestAdminCRUD:
     def test_81_catalogues_crud(self, admin_token):
         """Catalogues: POST create → PUT update → DELETE"""
         headers = {"Authorization": f"Bearer {admin_token}"}
-        slug = f"test-catalogue-{uuid.uuid4().hex[:8]}"
+        test_id = f"test-catalogue-{uuid.uuid4().hex[:8]}"
+        slug = test_id
         
         create_resp = requests.post(f"{BASE_URL}/api/admin/catalogues", headers=headers, json={
+            "id": test_id,
             "slug": slug,
             "title": "TEST Catalogue",
             "description": "Test description",
@@ -896,10 +898,14 @@ class TestAdminCRUD:
         })
         assert create_resp.status_code in [200, 201], f"Create failed: {create_resp.text}"
         created = create_resp.json()
-        item_id = created.get("id") or created.get("_id") or slug
+        item_id = created.get("id") or test_id
         
+        # Update with all required fields
         update_resp = requests.put(f"{BASE_URL}/api/admin/catalogues/{item_id}", headers=headers, json={
-            "title": "TEST Catalogue Updated"
+            "slug": slug,
+            "title": "TEST Catalogue Updated",
+            "category": "brand-catalogues",
+            "pdf_url": "https://example.com/test.pdf"
         })
         assert update_resp.status_code == 200, f"Update failed: {update_resp.text}"
         
@@ -910,9 +916,11 @@ class TestAdminCRUD:
     def test_82_products_crud(self, admin_token):
         """Products: POST create → PUT update → DELETE"""
         headers = {"Authorization": f"Bearer {admin_token}"}
-        slug = f"test-product-{uuid.uuid4().hex[:8]}"
+        test_id = f"test-product-{uuid.uuid4().hex[:8]}"
+        slug = test_id
         
         create_resp = requests.post(f"{BASE_URL}/api/admin/products", headers=headers, json={
+            "id": test_id,
             "slug": slug,
             "name": "TEST Product",
             "description": "Test product",
@@ -920,7 +928,7 @@ class TestAdminCRUD:
         })
         assert create_resp.status_code in [200, 201], f"Create failed: {create_resp.text}"
         created = create_resp.json()
-        item_id = created.get("id") or created.get("_id") or slug
+        item_id = created.get("id") or test_id
         
         update_resp = requests.put(f"{BASE_URL}/api/admin/products/{item_id}", headers=headers, json={
             "name": "TEST Product Updated"
