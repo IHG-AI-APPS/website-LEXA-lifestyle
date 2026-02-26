@@ -78,69 +78,52 @@ export default function DeveloperPartnerToolkitPage() {
 
   if (!isUnlocked) {
     return (
-      <div className="min-h-screen bg-gradient-to-br from-black via-gray-900 to-black text-white pt-32 pb-20">
-        <div className="container mx-auto px-8 lg:px-16">
-          <div className="max-w-2xl mx-auto text-center">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              className="mb-8"
-            >
-              <div className="inline-flex items-center justify-center w-20 h-20 bg-white/10 rounded-full mb-6">
-                <Lock className="w-10 h-10" />
-              </div>
-              <h1 className="text-5xl font-bold mb-4">
+      <div className="min-h-screen bg-gray-950 text-white pt-20" data-testid="developer-partner-toolkit-locked">
+        {/* Hero */}
+        <section className="relative overflow-hidden bg-gray-900 py-20 lg:py-28">
+          <div className="container mx-auto px-8 lg:px-16 relative z-10">
+            <div className="max-w-2xl mx-auto text-center">
+              <span className="inline-block px-3 py-1 rounded-full bg-[#C9A962]/15 border border-[#C9A962]/30 text-[#C9A962] text-xs uppercase tracking-widest mb-5">Protected Resource</span>
+              <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-5 tracking-tight">
                 Developer Partner Toolkit
               </h1>
-              <p className="text-xl text-gray-400">
+              <p className="text-base text-gray-300 mb-10 max-w-lg mx-auto">
                 Technical resources and project enablement materials for real estate developers and master planners
               </p>
-            </motion.div>
 
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.2 }}
-              className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-lg p-8"
-            >
-              <div className="mb-6">
-                <Shield className="w-12 h-12 mx-auto mb-4 text-gold" />
-                <h2 className="text-2xl font-bold mb-2">Access Required</h2>
-                <p className="text-gray-400">
+              <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-8 max-w-md mx-auto">
+                <Lock className="w-10 h-10 mx-auto mb-4 text-[#C9A962]" />
+                <h2 className="text-xl font-bold mb-2">Access Required</h2>
+                <p className="text-sm text-gray-400 mb-6">
                   This toolkit is exclusively for verified developer partners. Enter your access code to continue.
                 </p>
+                <div className="space-y-4">
+                  <Input
+                    type="text"
+                    placeholder="Enter access code"
+                    value={accessCode}
+                    onChange={(e) => setAccessCode(e.target.value)}
+                    onKeyPress={(e) => e.key === 'Enter' && handleUnlock()}
+                    className="bg-white/10 border-white/20 text-white placeholder:text-gray-500"
+                  />
+                  <Button 
+                    onClick={handleUnlock}
+                    size="lg"
+                    className="w-full bg-[#C9A962] text-gray-900 hover:bg-[#C9A962]/90 font-semibold"
+                  >
+                    Unlock Toolkit
+                  </Button>
+                </div>
+                <div className="mt-6 pt-6 border-t border-white/10">
+                  <p className="text-xs text-gray-500">
+                    Don&apos;t have access? Contact{' '}
+                    <a href="mailto:sales@lexalifestyle.com" className="text-[#C9A962] hover:underline">sales@lexalifestyle.com</a>
+                  </p>
+                </div>
               </div>
-
-              <div className="space-y-4">
-                <Input
-                  type="text"
-                  placeholder="Enter access code"
-                  value={accessCode}
-                  onChange={(e) => setAccessCode(e.target.value)}
-                  onKeyPress={(e) => e.key === 'Enter' && handleUnlock()}
-                  className="bg-white/10 border-white/20 text-white placeholder:text-gray-500"
-                />
-                <Button 
-                  onClick={handleUnlock}
-                  size="lg"
-                  className="w-full bg-white text-black hover:bg-gray-100 dark:bg-gray-800"
-                >
-                  Unlock Toolkit
-                </Button>
-              </div>
-
-              <div className="mt-8 pt-8 border-t border-white/10">
-                <p className="text-sm text-gray-500">
-                  Don&apos;t have access? Contact{' '}
-                  <a href="mailto:sales@lexalifestyle.com" className="text-white hover:underline">
-                    sales@lexalifestyle.com
-                  </a>
-                  {' '}for partnership opportunities.
-                </p>
-              </div>
-            </motion.div>
+            </div>
           </div>
-        </div>
+        </section>
       </div>
     )
   }
