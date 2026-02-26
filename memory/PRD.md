@@ -29,29 +29,27 @@ Complete website overhaul for LEXA Smart Home to:
 - 17 new PATCH endpoints across all admin CRUD entities (61/61 tests passed)
 
 ### Phase 19: Site-Wide Performance Optimization (Feb 26, 2026)
-**Backend Optimizations:**
-- 52 MongoDB indexes added across 25 collections
-- Server-side caching (300s TTL) on all public read endpoints: solutions, services, brands, articles, projects, testimonials, news, videos, mega-menu, products
-- Lightweight projections for listing endpoints: Solutions 462KB→48KB (90% reduction), Articles 418KB→28KB (93% reduction)
-- Cache-Control headers for public GET endpoints
-- GZip threshold lowered from 1000→500 bytes
+- 52 MongoDB indexes across 25 collections
+- Server-side caching (300s TTL) on all public read endpoints
+- Lightweight projections: Solutions 462KB→48KB, Articles 418KB→28KB
+- Disabled Lenis smooth scroll, lazy-loaded Header mega menus
+- Added loading.tsx skeletons, disabled production source maps
 
-**Frontend Optimizations:**
-- Disabled Lenis smooth scroll (continuous rAF was burning CPU)
-- Header mega menus (5 components) lazy-loaded via dynamic imports
-- Added loading.tsx skeletons for 7 main route groups
-- Disabled productionBrowserSourceMaps (was shipping source maps to browser)
-
-**Measured Results:**
-- All 8 main API endpoints in parallel: 57ms total, 204KB payload (was ~1000KB+)
-- Individual endpoint: 24-45ms locally (was 130-460ms)
-- Testing: 100% pass — 19/19 backend + 7/7 frontend (iteration_47)
+### Phase 20: ETag Conditional Caching (Feb 26, 2026)
+- **ETag middleware** added to all public GET endpoints
+- Computes MD5 hash of response body, returns as ETag header
+- Handles `If-None-Match` header — returns **304 Not Modified** (0 bytes) when content unchanged
+- All 10 main public endpoints verified: solutions, services, brands, articles, projects, testimonials, news, videos, mega-menu, products
+- Admin endpoints correctly excluded from ETag caching
+- CDN-ready: Once Cloudflare/CDN is configured at DNS level, ETags enable edge caching with conditional revalidation
 
 ## Remaining / Backlog
-### P1 — Redesign Projects Landing Page (`/projects`) to match benchmark design
-### P2 — Site-wide Consistency Review (final QA pass)
-### P3 — Content Change History for admin CMS (audit trail)
-### P4 — Approve WhatsApp templates on Interakt dashboard (ops)
+### P1 — Site-wide Consistency Review (final QA pass)
+### P2 — Content Change History for admin CMS (audit trail)
+### P3 — Approve WhatsApp templates on Interakt dashboard (ops)
+
+## Note
+- Projects page redesign scrapped per user request
 
 ## Credentials
 - Admin: `/admin/login` (username: admin, password: lexa2026)
