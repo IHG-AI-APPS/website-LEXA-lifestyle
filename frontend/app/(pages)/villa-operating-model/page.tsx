@@ -39,17 +39,14 @@ export default function VillaOperatingModelPage() {
             className="max-w-4xl mx-auto text-center"
           >
             <span className="text-xs tracking-[0.5em] uppercase text-gray-400 font-medium mb-6 block">
-              Access Intelligence
+              {cms?.hero_badge || 'Access Intelligence'}
             </span>
             <h1 className="text-4xl sm:text-5xl md:text-6xl font-semibold tracking-[-0.04em] leading-[0.95] mb-8">
-              THE VILLA
-              <br />
-              <span className="text-transparent bg-clip-text metallic-gradient">OPERATING MODEL</span>
+              {cms?.hero_title || <>THE VILLA<br /><span className="text-transparent bg-clip-text metallic-gradient">OPERATING MODEL</span></>}
             </h1>
             <div className="h-px w-32 bg-gradient-to-r from-platinum to-transparent mb-8 mx-auto" />
             <p className="text-lg text-gray-600 dark:text-gray-400 leading-relaxed max-w-2xl mx-auto">
-              Your home adapts to people, not keys. Four distinct roles ensure everyone has the right access 
-              at the right time—from full control for owners to time-restricted zones for staff.
+              {cms?.hero_subtitle || "Your home adapts to people, not keys. Four distinct roles ensure everyone has the right access at the right time—from full control for owners to time-restricted zones for staff."}
             </p>
           </motion.div>
         </div>
