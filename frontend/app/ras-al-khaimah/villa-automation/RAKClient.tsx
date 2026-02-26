@@ -1,100 +1,82 @@
 'use client'
 
-import { motion } from 'framer-motion'
-import SafeImage from '@/components/ui/SafeImage'
-import Link from 'next/link'
-import { Phone, MapPin, ArrowRight, Mountain, Waves } from 'lucide-react'
-import { Button } from '@/components/ui/button'
-import { useTheme } from '@/contexts/ThemeContext'
-import { useCms } from '@/hooks/useCms'
+import GeoPageTemplate from '@/components/geo/GeoPageTemplate'
+import type { GeoPageData } from '@/components/geo/GeoPageTemplate'
 
-const communities = [
-  { name: 'Al Hamra Village', type: 'Golf & marina resort', price: 'AED 2M+' },
-  { name: 'Mina Al Arab', type: 'Waterfront living', price: 'AED 1.5M+' },
-  { name: 'Al Marjan Island', type: 'Island resort villas', price: 'AED 3M+' },
-  { name: 'Bayti Townhouses', type: 'Family community', price: 'AED 800K+' },
-  { name: 'Bermuda Villas', type: 'Beach access homes', price: 'AED 1.2M+' },
-  { name: 'Falcon Island', type: 'Exclusive residences', price: 'AED 5M+' },
-]
-
-const faqs = [
-  { question: 'How much does RAK villa automation cost?', answer: 'RAK smart home costs range from AED 50,000 for townhouses to AED 300,000+ for Al Marjan Island villas. Al Hamra properties typically invest AED 80,000-150,000.' },
-  { question: 'Do you service remote RAK locations?', answer: 'Yes, LEXA covers all RAK areas including mountain properties. We have local technicians for quick response throughout the emirate.' },
-  { question: 'Can automation handle RAK\'s climate variations?', answer: 'Absolutely. We design systems for RAK\'s unique climate—cooler mountains and humid coast. Smart climate control adapts automatically.' },
-  { question: 'What about vacation home automation?', answer: 'Perfect for RAK vacation homes! Remote monitoring, climate pre-conditioning before arrival, and security alerts keep your property safe and comfortable.' },
-]
+const pageData: GeoPageData = {
+  "locationName": "Ras Al Khaimah",
+  "region": "RAK, UAE",
+  "heroTitle": "Villa Automation",
+  "heroHighlight": "Ras Al Khaimah",
+  "heroDescription": "Smart home automation for RAK's premium residences. From Al Hamra Village to Mina Al Arab, LEXA delivers intelligent living with mountain and sea views.",
+  "stats": [
+    {
+      "value": "20+",
+      "label": "RAK Projects"
+    },
+    {
+      "value": "Premium",
+      "label": "Quality"
+    },
+    {
+      "value": "24/7",
+      "label": "Support"
+    }
+  ],
+  "communities": [
+    {
+      "name": "Al Hamra Village",
+      "type": "Golf & Marina",
+      "projects": "10+"
+    },
+    {
+      "name": "Mina Al Arab",
+      "type": "Waterfront Living",
+      "projects": "8+"
+    },
+    {
+      "name": "Hayat Island",
+      "type": "Resort Community",
+      "projects": "5+"
+    },
+    {
+      "name": "Al Marjan Island",
+      "type": "Island Residences",
+      "projects": "4+"
+    }
+  ],
+  "ctaTitle": "Ready for Smart Living in RAK?",
+  "faqs": [
+    {
+      "question": "Does LEXA service Ras Al Khaimah?",
+      "answer": "Yes, LEXA provides complete smart home services across RAK including Al Hamra Village and Mina Al Arab."
+    },
+    {
+      "question": "What packages are available for RAK homes?",
+      "answer": "RAK packages start from AED 35,000 for apartments and AED 70,000 for villas. We offer special packages for Al Hamra residents."
+    }
+  ],
+  "schemaData": {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "LEXA Lifestyle - Ras Al Khaimah Smart Homes",
+    "description": "Smart home automation for RAK's premium residences. From Al Hamra Village to Mina Al Arab, LEXA delivers intelligent living with mountain and sea views.",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Ras Al Khaimah",
+      "addressRegion": "RAK, UAE",
+      "addressCountry": "UAE"
+    },
+    "areaServed": [
+      "Ras Al Khaimah",
+      "Al Hamra Village",
+      "Mina Al Arab"
+    ],
+    "priceRange": "AED 35,000 - 200,000+",
+    "telephone": "+971-42-670-470"
+  }
+}
 
 export default function RAKClient() {
-  const cms = useCms('page_geo_ras_al_khaimah_villa_automation', null)
-
-  const { theme } = useTheme()
-  const isDark = theme === 'dark'
-
-  return (
-    <div className={`min-h-screen transition-colors duration-300 ${isDark ? 'bg-gray-900 text-white' : 'bg-white text-gray-900'}`}>
-      <section className="relative min-h-[80vh] flex items-center">
-        <div className="absolute inset-0 z-0">
-          <SafeImage src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1920" alt="Ras Al Khaimah Mountains" fill className="object-cover" priority />
-          <div className={`absolute inset-0 ${isDark ? 'bg-gradient-to-r from-gray-900/90 via-gray-900/70 to-transparent' : 'bg-gradient-to-r from-white/90 via-white/70 to-transparent'}`} />
-        </div>
-        <div className="relative z-10 container mx-auto px-4 py-20">
-          <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} className="max-w-3xl">
-            <div className="flex items-center gap-2 mb-4"><MapPin className="h-5 w-5 text-[#C9A962]" /><span className={`text-sm ${isDark ? 'text-gray-300' : 'text-gray-600'}`}>Ras Al Khaimah, UAE</span></div>
-            <h1 className={`text-4xl md:text-5xl lg:text-6xl font-bold mb-6 ${isDark ? 'text-white' : 'text-gray-900'}`}>Villa Automation<br /><span className="text-[#C9A962]">Ras Al Khaimah</span></h1>
-            <p className={`text-lg md:text-xl mb-8 ${isDark ? 'text-gray-300' : 'text-gray-600'}`}>From mountain retreats to beachfront villas, LEXA brings smart living to RAK&apos;s diverse landscapes. Expert automation for resort and residential properties.</p>
-            <div className="flex flex-col sm:flex-row gap-4">
-              <Button size="lg" className="bg-[#C9A962] hover:bg-[#B8994D] text-white px-8 rounded-xl" asChild>
-                <a href="https://wa.me/971501234567?text=Hi%20LEXA%2C%20I%20have%20a%20property%20in%20Ras%20Al%20Khaimah." target="_blank">Get Free Quote <ArrowRight className="ml-2 h-5 w-5" /></a>
-              </Button>
-              <Button size="lg" variant="outline" className={`rounded-xl ${isDark ? 'border-white text-white' : 'border-gray-900'}`} asChild><Link href="/experience-centre">Visit Showroom</Link></Button>
-            </div>
-            <div className="flex gap-8 mt-12">
-              <div className="flex items-center gap-2"><Mountain className="h-6 w-6 text-[#C9A962]" /><span className={`text-sm ${isDark ? 'text-gray-400' : 'text-gray-500'}`}>Mountain Properties</span></div>
-              <div className="flex items-center gap-2"><Waves className="h-6 w-6 text-[#C9A962]" /><span className={`text-sm ${isDark ? 'text-gray-400' : 'text-gray-500'}`}>Coastal Villas</span></div>
-            </div>
-          </motion.div>
-        </div>
-      </section>
-
-      <section className={`py-20 ${isDark ? 'bg-gray-800/50' : 'bg-gray-50'}`}>
-        <div className="container mx-auto px-4">
-          <h2 className={`text-3xl font-bold text-center mb-12 ${isDark ? 'text-white' : 'text-gray-900'}`}>RAK Communities</h2>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
-            {communities.map((c, i) => (
-              <motion.div key={c.name} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ delay: i * 0.1 }} className={`p-6 rounded-2xl border ${isDark ? 'bg-gray-800 border-gray-700' : 'bg-white border-gray-200'}`}>
-                <h3 className={`text-xl font-bold mb-2 ${isDark ? 'text-white' : 'text-gray-900'}`}>{c.name}</h3>
-                <p className={`text-sm mb-3 ${isDark ? 'text-gray-400' : 'text-gray-600'}`}>{c.type}</p>
-                <div className="text-[#C9A962] font-semibold">{c.price}</div>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className={`py-20 ${isDark ? 'bg-gray-900' : 'bg-white'}`}>
-        <div className="container mx-auto px-4 max-w-4xl">
-          <h2 className={`text-3xl font-bold text-center mb-12 ${isDark ? 'text-white' : 'text-gray-900'}`}>RAK Smart Home FAQs</h2>
-          <div className="space-y-4">
-            {faqs.map((faq, i) => (
-              <div key={i} className={`p-6 rounded-xl ${isDark ? 'bg-gray-800' : 'bg-gray-50'} shadow-sm`}>
-                <h3 className={`text-lg font-bold mb-3 ${isDark ? 'text-white' : 'text-gray-900'}`}>{faq.question}</h3>
-                <p className={`${isDark ? 'text-gray-400' : 'text-gray-600'}`}>{faq.answer}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="py-20 bg-[#C9A962]">
-        <div className="container mx-auto px-4 text-center">
-          <h2 className="text-3xl font-bold text-white mb-6">Ready to Automate Your RAK Property?</h2>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" className="bg-white text-[#C9A962] px-8 rounded-xl" asChild><a href="tel:+97142670470"><Phone className="mr-2 h-5 w-5" />Call Now</a></Button>
-            <Button size="lg" variant="outline" className="border-white text-white rounded-xl" asChild><a href="https://wa.me/971501234567" target="_blank">WhatsApp Us</a></Button>
-          </div>
-        </div>
-      </section>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({ "@context": "https://schema.org", "@type": "LocalBusiness", "name": "LEXA - RAK Smart Homes", "areaServed": ["Ras Al Khaimah", "Al Hamra", "Al Marjan Island"], "priceRange": "AED 50,000 - 300,000+" })}} />
-    </div>
-  )
+  return <GeoPageTemplate data={pageData} />
 }
