@@ -47,33 +47,39 @@ Complete website overhaul for LEXA Smart Home to:
 - `/media` — Video gallery with categories (fixed broken import)
 - `/partner-with-us` — Partner types, benefits, application form
 
+### Phase 3: SEO/Geo Pages Redesign (Feb 26, 2026) ✅
+- Created shared `GeoPageTemplate.tsx` component matching benchmark design
+- Batch-rewrote all **34 geo/city pages** to use the template:
+  - 6 Dubai city pages (Palm Jumeirah, Emirates Hills, Dubai Hills, Downtown, Marina, JBR)
+  - 4 Abu Dhabi pages (main, Al Reem Island, Saadiyat Island, Yas Island)
+  - 4 Saudi Arabia pages (Riyadh, Jeddah, Dammam, NEOM)
+  - 1 Qatar (Doha), 1 Bahrain (Manama), 1 Oman (Muscat), 1 Kuwait (Kuwait City)
+  - 1 Jordan (Amman), 1 Lebanon (Beirut), 1 Egypt (Cairo), 1 Morocco (Casablanca)
+  - 1 Kenya (Nairobi), 1 Nigeria (Lagos)
+  - 5 UAE emirates (Sharjah, Ajman, Al Ain, Fujairah, RAK, UAQ)
+  - 4 UAE overview pages (/uae/dubai, /uae/abu-dhabi, /uae/sharjah, /uae/ajman)
+- All pages verified: 100% pass rate on 22 tested pages, all 34 return HTTP 200
+
 ## Remaining / Backlog
 
-### P0 — Brand Pages Redesign (Deferred by user)
+### P0 — Admin CMS Extensions (NOT STARTED)
+- Add editing forms for enriched fields on: Packages, Intelligence, Specialty Rooms, Locations, Geo Pages
+- Fulfills the user's core requirement of 100% CMS control
+
+### P1 — Brand Pages Redesign (Deferred by user)
 - Backend model updated, enrichment script created
 - Frontend page + admin CMS still needed
 
-### P1 — Admin CMS Extensions
-- Add editing forms for enriched fields on: Packages, Intelligence, Specialty Rooms, Locations
+### P2 — Projects Landing Page Redesign (Deferred by user)
 
-### P2 — Projects Pages Redesign (Deferred by user)
-
-### P3 — SEO/Geo Pages (30+ city-specific pages)
-- `/dubai/palm-jumeirah-smart-homes`, `/saudi-arabia/riyadh-smart-homes`, etc.
+### P3 — Site-wide Consistency Review
 
 ## Key Files
+- `/app/frontend/components/geo/GeoPageTemplate.tsx` — Shared geo page template
 - `/app/frontend/app/solutions/[slug]/SolutionClient.tsx` — Benchmark reference
-- `/app/frontend/app/services/[slug]/page.tsx` — Services benchmark
-- `/app/frontend/app/packages/[slug]/page.tsx` — Packages benchmark
-- `/app/frontend/app/intelligence/[id]/page.tsx` — Intelligence benchmark
-- `/app/frontend/app/specialty-rooms/[slug]/page.tsx` — Specialty rooms benchmark
-- `/app/frontend/app/locations/[slug]/page.tsx` — Locations dynamic page
-- `/app/frontend/app/case-studies/[slug]/page.tsx` — Case studies benchmark
-- `/app/frontend/app/experience-centre/page.tsx` — Experience centre
-- `/app/frontend/app/about/page.tsx` — About page
-- `/app/frontend/app/process/page.tsx` — Process page
 - `/app/frontend/app/admin/cms/page.tsx` — Admin CMS panel
 - `/app/backend/routes/locations.py` — Locations API
+- `/app/backend/models/content.py` — All Pydantic models
 
 ## Credentials
 - Admin: `/admin/login` (username: admin, password: lexa2026)
