@@ -875,6 +875,24 @@ async def delete_solution(solution_id: str, user: dict = Depends(verify_token)):
         logger.error(f"Delete solution error: {str(e)}")
         raise HTTPException(status_code=500, detail="Failed to delete solution")
 
+@api_router.patch("/admin/solutions/{solution_id}")
+async def patch_solution(solution_id: str, updates: Dict[str, Any], user: dict = Depends(verify_token)):
+    """Partially update a solution (only provided fields)"""
+    try:
+        updates.pop("_id", None)
+        updates.pop("id", None)
+        if not updates:
+            raise HTTPException(status_code=400, detail="No fields to update")
+        result = await db.solutions.update_one({"id": solution_id}, {"$set": updates})
+        if result.matched_count == 0:
+            raise HTTPException(status_code=404, detail="Solution not found")
+        return {"message": "Solution patched successfully"}
+    except HTTPException:
+        raise
+    except Exception as e:
+        logger.error(f"Patch solution error: {str(e)}")
+        raise HTTPException(status_code=500, detail="Failed to patch solution")
+
 # ============= ADMIN - PROJECTS MANAGEMENT =============
 
 @api_router.get("/projects")
@@ -967,6 +985,24 @@ async def delete_project(project_id: str, user: dict = Depends(verify_token)):
     except Exception as e:
         logger.error(f"Delete project error: {str(e)}")
         raise HTTPException(status_code=500, detail="Failed to delete project")
+
+@api_router.patch("/admin/projects/{project_id}")
+async def patch_project(project_id: str, updates: Dict[str, Any], user: dict = Depends(verify_token)):
+    """Partially update a project (only provided fields)"""
+    try:
+        updates.pop("_id", None)
+        updates.pop("id", None)
+        if not updates:
+            raise HTTPException(status_code=400, detail="No fields to update")
+        result = await db.projects.update_one({"id": project_id}, {"$set": updates})
+        if result.matched_count == 0:
+            raise HTTPException(status_code=404, detail="Project not found")
+        return {"message": "Project patched successfully"}
+    except HTTPException:
+        raise
+    except Exception as e:
+        logger.error(f"Patch project error: {str(e)}")
+        raise HTTPException(status_code=500, detail="Failed to patch project")
 
 # ============= ADMIN - ARTICLES MANAGEMENT =============
 
