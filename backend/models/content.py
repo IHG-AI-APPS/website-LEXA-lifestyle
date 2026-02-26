@@ -170,9 +170,12 @@ class News(BaseModel):
     content: str
     image: str
     author: str
-    published_date: str
+    published_date: Optional[str] = None  # Made optional to handle legacy data
     tags: List[str] = []
     featured: bool = False
+    category: Optional[str] = None
+    published: Optional[bool] = True
+    created_at: Optional[str] = None
 
 
 class Brand(BaseModel):
@@ -223,15 +226,17 @@ class Video(BaseModel):
     video_url: str
     thumbnail_url: Optional[str] = None
     duration: Optional[str] = None
-    category: str
+    category: Optional[str] = None
     tags: List[str] = []
     featured: bool = False
     view_count: int = 0
-    published_date: str
+    published_date: Optional[str] = None  # Made optional to handle legacy data
     related_service: Optional[str] = None
     related_project: Optional[str] = None
     related_solution: Optional[str] = None
     embed_code: Optional[str] = None
+    published: Optional[bool] = True
+    created_at: Optional[str] = None
 
 
 class Catalogue(BaseModel):
