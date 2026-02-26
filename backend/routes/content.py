@@ -68,10 +68,6 @@ async def get_solutions_mega_menu():
         for cat in categories:
             categories[cat].sort(key=lambda x: x.get("mega_menu_order", 99))
         
-        return {
-            "categories": categories,
-            "featured_solution": solutions[0] if solutions else None
-        }
         result = {
             "categories": categories,
             "featured_solution": solutions[0] if solutions else None
