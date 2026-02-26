@@ -38,7 +38,8 @@ import {
   BarChart3,
   FlaskConical,
   MapPin,
-  TrendingUp
+  TrendingUp,
+  BookOpen
 } from 'lucide-react'
 import { verifyToken, logout } from '@/lib/adminApi'
 
