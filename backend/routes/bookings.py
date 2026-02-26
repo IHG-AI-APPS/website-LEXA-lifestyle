@@ -74,10 +74,11 @@ async def create_consultation_booking(
             )
             
             # WhatsApp notification
-            await WhatsAppService.send_message(
-                phone_number=os.environ.get('WHATSAPP_NOTIFICATION_NUMBER', '+971501234567'),
-                template_name="lead_notification",
-                parameters=[booking.name, "Consultation Request"]
+            await whatsapp_service.send_lead_notification(
+                lead_name=booking.name,
+                lead_email=booking.email,
+                lead_phone=booking.phone,
+                lead_type="Consultation Request"
             )
             
             # ERPNext lead creation
@@ -148,10 +149,11 @@ async def create_experience_centre_booking(
                 message=booking.message or ""
             )
             
-            await WhatsAppService.send_message(
-                phone_number=os.environ.get('WHATSAPP_NOTIFICATION_NUMBER'),
-                template_name="lead_notification",
-                parameters=[booking.name, f"Experience Centre - {booking.date}"]
+            await whatsapp_service.send_lead_notification(
+                lead_name=booking.name,
+                lead_email=booking.email,
+                lead_phone=booking.phone,
+                lead_type=f"Experience Centre - {booking.date}"
             )
             
             await ERPNextService.create_lead(
@@ -271,10 +273,11 @@ async def create_modal_booking(
             )
             
             # WhatsApp notification
-            await WhatsAppService.send_message(
-                phone_number=os.environ.get('WHATSAPP_NOTIFICATION_NUMBER', '+971501234567'),
-                template_name="lead_notification",
-                parameters=[sanitized_name, booking_type_labels.get(booking_data.bookingType, "Booking")]
+            await whatsapp_service.send_lead_notification(
+                lead_name=sanitized_name,
+                lead_email=booking_data.email,
+                lead_phone=booking_data.phone,
+                lead_type=booking_type_labels.get(booking_data.bookingType, "Booking")
             )
             
             # ERPNext lead creation
