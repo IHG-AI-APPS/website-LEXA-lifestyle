@@ -159,7 +159,10 @@ export default function SpecialtyRoomsAdmin() {
       features: room.features || [],
       price_range: room.price_range || '',
       order: room.order || 0,
-      active: room.active !== false
+      active: room.active !== false,
+      faqs: room.faqs || [],
+      feature_cards: room.feature_cards || [],
+      related_solutions: room.related_solutions || []
     })
     setEditingId(room.id)
     setShowForm(true)
