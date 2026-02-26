@@ -624,16 +624,26 @@ class TestIntelligenceFeatures:
         """Full CRUD cycle for intelligence features"""
         test_id = f"test-{uuid.uuid4().hex[:8]}"
         
-        # CREATE
+        # CREATE - IntelligenceFeature model requires: title, icon, short_description, 
+        # detailed_description, scoring_category (not just 'name' and 'description')
         feature_data = {
             "id": test_id,
             "slug": f"test-feature-{test_id}",
-            "name": "TEST Intelligence Feature",
+            "title": "TEST Intelligence Feature",
             "category": "scene_automation",
-            "description": "Test feature for CRUD audit",
+            "icon": "Wand2",
+            "short_description": "Test feature short desc",
+            "detailed_description": "Test feature detailed description for CRUD audit",
             "iq_points": 5,
+            "scoring_category": "automation_coverage",
             "featured": False,
-            "display_order": 999
+            "display_order": 999,
+            "scenarios": [],
+            "benefits": [],
+            "required_devices": [],
+            "compatible_systems": [],
+            "lifestyle_tags": [],
+            "is_premium": False
         }
         
         response = requests.post(f"{BASE_URL}/api/intelligence/admin/features", 
@@ -643,7 +653,7 @@ class TestIntelligenceFeatures:
         print(f"CREATE intelligence feature: {test_id} SUCCESS")
         
         # UPDATE
-        feature_data["name"] = "TEST Feature UPDATED"
+        feature_data["title"] = "TEST Feature UPDATED"
         response = requests.put(f"{BASE_URL}/api/intelligence/admin/features/{test_id}", 
                                json=feature_data, 
                                headers=authenticated_headers)
