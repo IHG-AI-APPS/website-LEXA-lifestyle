@@ -28,43 +28,30 @@ Complete website overhaul for LEXA Smart Home to:
 - **Locations** (`/locations/[slug]`): Converted from 7 static pages to dynamic route + new API + DB seeded
 - **Case Studies** (`/case-studies/[slug]`): Redesigned, fixed API fallback to projects collection
 
-### Phase 2: Standalone Pages — Batch 1 (Feb 25, 2026)
-- `/experience-centre` — Split hero, facilities grid, booking modal, stats
-- `/about` — Hero, values, journey timeline, brand partners, team section
-- `/process` — 5-phase process with activities and deliverables
-- `/amc-packages` — 3 AMC tiers with feature comparison
-- `/consultation` — 3 consultation types, booking modal, process steps
-- `/faq` — Search, dynamic FAQ loading from solutions/services APIs
-- `/work-with-us` — Expertise areas, benefits, expandable job cards
-- `/testimonials` — API-driven testimonial grid with ratings
+### Phase 2: Standalone Pages (15+ pages)
+- `/experience-centre`, `/about`, `/process`, `/amc-packages`, `/consultation`, `/faq`, `/work-with-us`, `/testimonials`, `/contact`, `/support`, `/investment-pricing`, `/warranty`, `/certification-standard`, `/media`, `/partner-with-us`
 
-### Phase 2: Standalone Pages — Batch 2 (Feb 25, 2026)
-- `/contact` — Contact form with sidebar quick links
-- `/support` — Emergency scenarios, AMC benefits, support contacts
-- `/investment-pricing` — 3 commercial tiers, ROI factors, investment breakdown
-- `/warranty` — Warranty coverage, exclusions, claim process
-- `/certification-standard` — 6 engineering standards, certifications, QA metrics
-- `/media` — Video gallery with categories (fixed broken import)
-- `/partner-with-us` — Partner types, benefits, application form
+### Phase 3: SEO/Geo Pages — Visual Redesign (Feb 26, 2026) 
+- Created shared `GeoPageTemplate.tsx` with benchmark design
+- Batch-rewrote all **34 geo pages** to use the template
 
-### Phase 3: SEO/Geo Pages Redesign (Feb 26, 2026) ✅
-- Created shared `GeoPageTemplate.tsx` component matching benchmark design
-- Batch-rewrote all **34 geo/city pages** to use the template:
-  - 6 Dubai city pages (Palm Jumeirah, Emirates Hills, Dubai Hills, Downtown, Marina, JBR)
-  - 4 Abu Dhabi pages (main, Al Reem Island, Saadiyat Island, Yas Island)
-  - 4 Saudi Arabia pages (Riyadh, Jeddah, Dammam, NEOM)
-  - 1 Qatar (Doha), 1 Bahrain (Manama), 1 Oman (Muscat), 1 Kuwait (Kuwait City)
-  - 1 Jordan (Amman), 1 Lebanon (Beirut), 1 Egypt (Cairo), 1 Morocco (Casablanca)
-  - 1 Kenya (Nairobi), 1 Nigeria (Lagos)
-  - 5 UAE emirates (Sharjah, Ajman, Al Ain, Fujairah, RAK, UAQ)
-  - 4 UAE overview pages (/uae/dubai, /uae/abu-dhabi, /uae/sharjah, /uae/ajman)
-- All pages verified: 100% pass rate on 22 tested pages, all 34 return HTTP 200
+### Phase 3B: Geo Pages — Database-Driven + CMS (Feb 26, 2026)
+- **Backend API**: Full CRUD at `/api/geo-pages` with slug-based routing (`/api/geo-pages/slug/{path}`)
+- **MongoDB Collection**: `geo_pages` with 34 seeded documents, unique slug index
+- **API Fetching**: GeoPageTemplate fetches from API on mount, falls back to static props
+- **Admin CMS**: Rich editing panel at `/admin/geo-pages` with:
+  - List view with search/filter, grouped by region
+  - Stats cards (Total, Dubai, Abu Dhabi, International)
+  - Full edit form: Hero, Stats, Communities, Services, FAQs, CTA sections
+  - Add/remove array items (communities, services, FAQs, stats)
+  - Save to MongoDB via PUT API
+- **Test Results**: 100% pass — 17/17 backend tests, 4/4 frontend, all admin CMS features
 
 ## Remaining / Backlog
 
-### P0 — Admin CMS Extensions (NOT STARTED)
-- Add editing forms for enriched fields on: Packages, Intelligence, Specialty Rooms, Locations, Geo Pages
-- Fulfills the user's core requirement of 100% CMS control
+### P0 — Admin CMS Extensions for Other Content Types (NOT STARTED)
+- Add CMS editing for: Packages, Intelligence, Specialty Rooms content enrichment fields
+- These sections have API support but no admin UI for editing enriched fields
 
 ### P1 — Brand Pages Redesign (Deferred by user)
 - Backend model updated, enrichment script created
@@ -74,12 +61,21 @@ Complete website overhaul for LEXA Smart Home to:
 
 ### P3 — Site-wide Consistency Review
 
+## Key API Endpoints
+- `GET /api/geo-pages` — List all geo pages
+- `GET /api/geo-pages/slug/{slug}` — Get geo page by path slug
+- `PUT /api/geo-pages/slug/{slug}` — Update geo page by slug
+- `POST /api/geo-pages` — Create new geo page
+- `DELETE /api/geo-pages/slug/{slug}` — Delete geo page
+- `GET/PUT /api/locations/{slug}` — Dynamic locations
+- `GET /api/packages/{slug}`, `/api/intelligence/{slug}`, `/api/specialty-rooms/{slug}`, `/api/projects/{slug}`
+
 ## Key Files
-- `/app/frontend/components/geo/GeoPageTemplate.tsx` — Shared geo page template
+- `/app/frontend/components/geo/GeoPageTemplate.tsx` — Shared geo template with API fetch
+- `/app/backend/routes/geo_pages.py` — Geo pages CRUD API
+- `/app/frontend/app/admin/geo-pages/page.tsx` — Admin CMS for geo pages
 - `/app/frontend/app/solutions/[slug]/SolutionClient.tsx` — Benchmark reference
-- `/app/frontend/app/admin/cms/page.tsx` — Admin CMS panel
-- `/app/backend/routes/locations.py` — Locations API
-- `/app/backend/models/content.py` — All Pydantic models
+- `/app/frontend/app/admin/cms/page.tsx` — Main admin CMS panel
 
 ## Credentials
 - Admin: `/admin/login` (username: admin, password: lexa2026)
