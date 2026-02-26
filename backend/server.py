@@ -1249,7 +1249,7 @@ async def get_admin_stats(user: dict = Depends(verify_token)):
             "projects_count": await db.projects.count_documents({}),
             "articles_count": await db.articles.count_documents({}),
             "testimonials_count": await db.testimonials.count_documents({}),
-            "consultations_count": await db.consultations.count_documents({}),
+            "consultations_count": await db.consultations.count_documents({}) + await db.consultation_bookings.count_documents({}),
             "contacts_count": await db.contact_messages.count_documents({}),
             "brands_count": await db.brands.count_documents({}),
             "products_count": await db.product_categories.count_documents({})
