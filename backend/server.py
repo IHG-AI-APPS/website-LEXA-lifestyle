@@ -85,15 +85,53 @@ app.add_middleware(SecurityHeadersMiddleware)
 
 # Add Cache-Control headers for public GET endpoints
 from starlette.middleware.base import BaseHTTPMiddleware
+from starlette.responses import Response as StarletteResponse
+import hashlib
 
-class CacheControlMiddleware(BaseHTTPMiddleware):
+class ETagCacheMiddleware(BaseHTTPMiddleware):
+    """Adds ETag + Cache-Control headers to public GET endpoints.
+    Returns 304 Not Modified when client sends matching If-None-Match."""
+    
     async def dispatch(self, request, call_next):
         response = await call_next(request)
-        if request.method == "GET" and request.url.path.startswith("/api/") and "/admin/" not in request.url.path:
-            response.headers["Cache-Control"] = "public, max-age=60, s-maxage=120, stale-while-revalidate=300"
-        return response
+        
+        is_public_get = (
+            request.method == "GET"
+            and request.url.path.startswith("/api/")
+            and "/admin/" not in request.url.path
+        )
+        
+        if not is_public_get:
+            return response
+        
+        # Add Cache-Control
+        response.headers["Cache-Control"] = "public, max-age=60, s-maxage=120, stale-while-revalidate=300"
+        
+        # Read response body to compute ETag
+        body = b""
+        async for chunk in response.body_iterator:
+            body += chunk if isinstance(chunk, bytes) else chunk.encode()
+        
+        etag = '"' + hashlib.md5(body).hexdigest() + '"'
+        response.headers["ETag"] = etag
+        
+        # Check If-None-Match from client
+        client_etag = request.headers.get("if-none-match", "")
+        if client_etag == etag:
+            return StarletteResponse(status_code=304, headers={
+                "ETag": etag,
+                "Cache-Control": response.headers.get("Cache-Control", ""),
+            })
+        
+        # Return full response with body
+        return StarletteResponse(
+            content=body,
+            status_code=response.status_code,
+            headers=dict(response.headers),
+            media_type=response.media_type,
+        )
 
-app.add_middleware(CacheControlMiddleware)
+app.add_middleware(ETagCacheMiddleware)
 
 api_router = APIRouter(prefix="/api")
 
