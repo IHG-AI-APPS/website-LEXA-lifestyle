@@ -232,3 +232,19 @@ class Video(BaseModel):
     related_project: Optional[str] = None
     related_solution: Optional[str] = None
     embed_code: Optional[str] = None
+
+
+class Catalogue(BaseModel):
+    model_config = ConfigDict(extra="ignore")
+    id: str = Field(default_factory=lambda: str(uuid4()))
+    slug: str
+    title: str
+    description: Optional[str] = ""
+    category: str  # company-profile, pre-qualification, brand-catalogues
+    pdf_url: str
+    thumbnail: Optional[str] = ""
+    page_count: Optional[int] = 0
+    brand_slug: Optional[str] = None  # Link to a brand if it's a brand catalogue
+    featured: bool = False
+    priority: int = 100
+    published: bool = True
