@@ -87,18 +87,14 @@ async def submit_package_inquiry(inquiry: PackageInquirySubmission):
         ]
         
         email_result = await EmailService.send_package_inquiry_notification(
-            customer_name=inquiry.customer_name,
-            customer_email=inquiry.customer_email,
-            customer_phone=inquiry.customer_phone,
+            name=inquiry.customer_name,
+            email=inquiry.customer_email,
+            phone=inquiry.customer_phone,
+            package_name=inquiry.package_tier,
             property_type=inquiry.property_type,
-            package_tier=inquiry.package_tier,
-            base_price=inquiry.base_price,
-            specialty_rooms=specialty_rooms_data,
-            included_rooms_count=inquiry.included_rooms_count,
-            enhancements=enhancements_data,
-            total_price=inquiry.total_price,
+            property_size=str(inquiry.total_price),
             message=inquiry.message or "",
-            source_page=inquiry.source_page,
+            submission_id=inquiry_record['id'],
         )
         
         return {
