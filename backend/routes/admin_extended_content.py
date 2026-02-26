@@ -157,7 +157,9 @@ async def get_news(token: dict = Depends(verify_token)):
 async def create_news(data: Dict[str, Any], token: dict = Depends(verify_token)):
     """Create new news item"""
     try:
-        data["id"] = str(uuid4())
+        # Preserve passed-in ID if provided, otherwise generate new UUID
+        if not data.get("id"):
+            data["id"] = str(uuid4())
         data["created_at"] = datetime.now(timezone.utc)
         await db.news.insert_one(data)
         logger.info(f"Admin {token.get('username')} created news: {data['id']}")
