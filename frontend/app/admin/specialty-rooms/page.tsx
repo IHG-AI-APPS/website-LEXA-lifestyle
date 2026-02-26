@@ -432,6 +432,119 @@ export default function SpecialtyRoomsAdmin() {
                 maxImages={10}
               />
 
+              {/* Feature Cards */}
+              <div>
+                <label className="block text-sm font-medium mb-2">Feature Cards ({formData.feature_cards.length})</label>
+                <div className="space-y-3">
+                  {formData.feature_cards.map((card, i) => (
+                    <div key={i} className="bg-gray-50 p-3 rounded-lg space-y-2">
+                      <div className="flex gap-2 items-center">
+                        <Input
+                          value={card.title}
+                          onChange={(e) => {
+                            const cards = [...formData.feature_cards]
+                            cards[i] = { ...cards[i], title: e.target.value }
+                            setFormData({ ...formData, feature_cards: cards })
+                          }}
+                          placeholder="Card title"
+                          className="flex-1"
+                        />
+                        <button type="button" onClick={() => setFormData({
+                          ...formData,
+                          feature_cards: formData.feature_cards.filter((_, j) => j !== i)
+                        })}>
+                          <X className="w-4 h-4 text-red-500" />
+                        </button>
+                      </div>
+                      <Input
+                        value={card.description}
+                        onChange={(e) => {
+                          const cards = [...formData.feature_cards]
+                          cards[i] = { ...cards[i], description: e.target.value }
+                          setFormData({ ...formData, feature_cards: cards })
+                        }}
+                        placeholder="Card description"
+                      />
+                      <Textarea
+                        value={(card.benefits || []).join('\n')}
+                        onChange={(e) => {
+                          const cards = [...formData.feature_cards]
+                          cards[i] = { ...cards[i], benefits: e.target.value.split('\n').filter(b => b.trim()) }
+                          setFormData({ ...formData, feature_cards: cards })
+                        }}
+                        placeholder="Benefits (one per line)"
+                        rows={2}
+                      />
+                    </div>
+                  ))}
+                  <Button type="button" variant="outline" size="sm" onClick={() => setFormData({
+                    ...formData,
+                    feature_cards: [...formData.feature_cards, { title: '', description: '', benefits: [] }]
+                  })}>
+                    <Plus className="w-3.5 h-3.5 mr-1" /> Add Feature Card
+                  </Button>
+                </div>
+              </div>
+
+              {/* FAQs */}
+              <div>
+                <label className="block text-sm font-medium mb-2">FAQs ({formData.faqs.length})</label>
+                <div className="space-y-3">
+                  {formData.faqs.map((faq, i) => (
+                    <div key={i} className="bg-gray-50 p-3 rounded-lg space-y-2">
+                      <div className="flex gap-2 items-center">
+                        <Input
+                          value={faq.question}
+                          onChange={(e) => {
+                            const faqs = [...formData.faqs]
+                            faqs[i] = { ...faqs[i], question: e.target.value }
+                            setFormData({ ...formData, faqs: faqs })
+                          }}
+                          placeholder="Question"
+                          className="flex-1"
+                        />
+                        <button type="button" onClick={() => setFormData({
+                          ...formData,
+                          faqs: formData.faqs.filter((_, j) => j !== i)
+                        })}>
+                          <X className="w-4 h-4 text-red-500" />
+                        </button>
+                      </div>
+                      <Textarea
+                        value={faq.answer}
+                        onChange={(e) => {
+                          const faqs = [...formData.faqs]
+                          faqs[i] = { ...faqs[i], answer: e.target.value }
+                          setFormData({ ...formData, faqs: faqs })
+                        }}
+                        placeholder="Answer"
+                        rows={2}
+                      />
+                    </div>
+                  ))}
+                  <Button type="button" variant="outline" size="sm" onClick={() => setFormData({
+                    ...formData,
+                    faqs: [...formData.faqs, { question: '', answer: '' }]
+                  })}>
+                    <Plus className="w-3.5 h-3.5 mr-1" /> Add FAQ
+                  </Button>
+                </div>
+              </div>
+
+              {/* Related Solutions */}
+              <div>
+                <label className="block text-sm font-medium mb-1">Related Solutions (one per line)</label>
+                <Textarea
+                  value={formData.related_solutions.join('\n')}
+                  onChange={(e) => setFormData({
+                    ...formData,
+                    related_solutions: e.target.value.split('\n').filter(s => s.trim())
+                  })}
+                  placeholder="home-cinema&#10;lighting-automation&#10;audio-systems"
+                  rows={3}
+                />
+              </div>
+
               <div className="flex items-center gap-4">
                 <div className="flex items-center gap-2">
                   <input
