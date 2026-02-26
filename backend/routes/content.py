@@ -72,6 +72,12 @@ async def get_solutions_mega_menu():
             "categories": categories,
             "featured_solution": solutions[0] if solutions else None
         }
+        result = {
+            "categories": categories,
+            "featured_solution": solutions[0] if solutions else None
+        }
+        await cache.set(cache_key, result, ttl_seconds=300)
+        return result
     except Exception as e:
         logger.error(f"Mega menu error: {str(e)}")
         raise HTTPException(status_code=500, detail="Failed to fetch mega menu data")
