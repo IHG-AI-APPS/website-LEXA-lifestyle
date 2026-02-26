@@ -108,7 +108,8 @@ const caseStudies = [
 ]
 
 export default function CaseStudiesPage() {
-  const cms = useCms('page_case_studies', null)
+  const cms = useCms('page_case_studies', null) as any
+  const studies = cms?.studies || caseStudies
 
   return (
     <div className="min-h-screen bg-white dark:bg-gray-900 pt-20">
