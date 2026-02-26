@@ -891,25 +891,22 @@ class TestAdminCRUD:
         test_id = f"test-catalogue-{uuid.uuid4().hex[:8]}"
         slug = test_id
         
-        create_resp = requests.post(f"{BASE_URL}/api/admin/catalogues", headers=headers, json={
+        create_payload = {
             "id": test_id,
             "slug": slug,
             "title": "TEST Catalogue",
             "description": "Test description",
             "category": "brand-catalogues",
             "pdf_url": "https://example.com/test.pdf"
-        })
+        }
+        create_resp = requests.post(f"{BASE_URL}/api/admin/catalogues", headers=headers, json=create_payload)
         assert create_resp.status_code in [200, 201], f"Create failed: {create_resp.text}"
         created = create_resp.json()
         item_id = created.get("id") or test_id
         
-        # Update with all required fields
-        update_resp = requests.put(f"{BASE_URL}/api/admin/catalogues/{item_id}", headers=headers, json={
-            "slug": slug,
-            "title": "TEST Catalogue Updated",
-            "category": "brand-catalogues",
-            "pdf_url": "https://example.com/test.pdf"
-        })
+        # Update with all required fields (PUT semantics)
+        create_payload["title"] = "TEST Catalogue Updated"
+        update_resp = requests.put(f"{BASE_URL}/api/admin/catalogues/{item_id}", headers=headers, json=create_payload)
         assert update_resp.status_code == 200, f"Update failed: {update_resp.text}"
         
         delete_resp = requests.delete(f"{BASE_URL}/api/admin/catalogues/{item_id}", headers=headers)
@@ -922,20 +919,21 @@ class TestAdminCRUD:
         test_id = f"test-product-{uuid.uuid4().hex[:8]}"
         slug = test_id
         
-        create_resp = requests.post(f"{BASE_URL}/api/admin/products", headers=headers, json={
+        create_payload = {
             "id": test_id,
             "slug": slug,
             "name": "TEST Product",
             "description": "Test product",
             "image": "https://example.com/image.jpg"
-        })
+        }
+        create_resp = requests.post(f"{BASE_URL}/api/admin/products", headers=headers, json=create_payload)
         assert create_resp.status_code in [200, 201], f"Create failed: {create_resp.text}"
         created = create_resp.json()
         item_id = created.get("id") or test_id
         
-        update_resp = requests.put(f"{BASE_URL}/api/admin/products/{item_id}", headers=headers, json={
-            "name": "TEST Product Updated"
-        })
+        # UPDATE - full payload required
+        create_payload["name"] = "TEST Product Updated"
+        update_resp = requests.put(f"{BASE_URL}/api/admin/products/{item_id}", headers=headers, json=create_payload)
         assert update_resp.status_code == 200, f"Update failed: {update_resp.text}"
         
         delete_resp = requests.delete(f"{BASE_URL}/api/admin/products/{item_id}", headers=headers)
