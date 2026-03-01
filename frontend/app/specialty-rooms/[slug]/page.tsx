@@ -70,7 +70,7 @@ export default function SpecialtyRoomDetailPage() {
         <div className="grid grid-cols-1 lg:grid-cols-2 min-h-[480px]">
           <div className="flex flex-col justify-center px-8 lg:px-16 py-16 relative z-10">
             <motion.div initial={{ opacity: 0, x: -30 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.6 }}>
-              <span className="inline-block px-3 py-1 rounded-full bg-[#C9A962]/15 border border-[#C9A962]/30 text-[#C9A962] text-xs uppercase tracking-widest mb-5" data-testid="room-category">
+              <span className="hero-animate-badge inline-block px-3 py-1 rounded-full bg-[#C9A962]/15 border border-[#C9A962]/30 text-[#C9A962] text-xs uppercase tracking-widest mb-5" data-testid="room-category">
                 {room.category}
               </span>
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold uppercase mb-5 tracking-tight leading-tight" data-testid="room-title">

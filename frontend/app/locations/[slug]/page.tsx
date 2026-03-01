@@ -71,7 +71,7 @@ export default function LocationPage() {
                 <MapPin className="h-4 w-4 text-[#C9A962]" />
                 <span className="text-sm text-gray-400">{location.region || location.name}</span>
               </div>
-              <span className="inline-block px-3 py-1 rounded-full bg-[#C9A962]/15 border border-[#C9A962]/30 text-[#C9A962] text-xs uppercase tracking-widest mb-5" data-testid="location-region">
+              <span className="hero-animate-badge inline-block px-3 py-1 rounded-full bg-[#C9A962]/15 border border-[#C9A962]/30 text-[#C9A962] text-xs uppercase tracking-widest mb-5" data-testid="location-region">
                 Smart Home Automation
               </span>
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold uppercase mb-5 tracking-tight leading-tight" data-testid="location-title">
