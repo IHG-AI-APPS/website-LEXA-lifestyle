@@ -7,7 +7,7 @@ import { toast } from 'sonner'
 import { 
   Activity, AlertCircle, CheckCircle, Database, Server, 
   Wifi, HardDrive, Clock, TrendingUp, Package, Bug,
-  RefreshCw, AlertTriangle
+  RefreshCw, AlertTriangle, Hammer, Loader2
 } from 'lucide-react'
 
 interface SystemHealth {
