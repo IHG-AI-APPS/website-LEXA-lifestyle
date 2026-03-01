@@ -93,7 +93,7 @@ export default function HeroCurator({ onPersonaClick }: HeroCuratorProps) {
 
       {/* Content — Bottom-aligned for immersive feel, centered on tablet */}
       <div className="relative z-10 flex h-full min-h-[100dvh] items-end lg:items-end">
-        <div className="w-full px-5 sm:px-6 md:px-8 lg:px-16 max-w-7xl mx-auto pb-32 lg:pb-32 pt-20">
+        <div className="w-full px-5 sm:px-6 md:px-8 lg:px-16 max-w-7xl mx-auto pb-40 sm:pb-36 lg:pb-32 pt-20">
           <motion.div
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
