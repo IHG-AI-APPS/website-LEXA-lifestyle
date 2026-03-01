@@ -65,7 +65,7 @@ export default function VillaDesignerPage() {
     { id: 'audio', label: 'Multi-Room Audio', icon: Music, color: 'from-red-500 to-pink-500' },
     { id: 'climate', label: 'Climate Control', icon: Wind, color: 'from-cyan-500 to-blue-500' },
     { id: 'surveillance', label: 'CCTV & Surveillance', icon: Camera, color: 'from-gray-500 to-slate-600' },
-    { id: 'access', label: 'Access Control', icon: Lock, color: 'from-indigo-500 to-purple-500' }
+    { id: 'access', label: 'Access Control', icon: Lock, color: 'from-slate-500 to-zinc-600' }
   ]
 
   const timelines = [

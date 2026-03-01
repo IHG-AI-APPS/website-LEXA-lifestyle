@@ -25,7 +25,7 @@ const fallback = {
     { title: 'Marketing Brochure Inserts', description: 'Professional insert pages showcasing smart home features for your sales brochures', formats: ['PDF', 'InDesign'], color: 'from-[#C9A962] to-[#A68B4B]' },
     { title: 'Sales Team Talking Points', description: 'Key benefits, FAQs, and objection handling for your sales representatives', formats: ['PDF', 'PPT'], color: 'from-green-500 to-teal-500' },
     { title: 'Unit Upgrade Options Sheet', description: 'Tiered automation packages (Silver/Gold/Platinum) with pricing for buyer upgrades', formats: ['PDF', 'XLSX'], color: 'from-red-500 to-pink-500' },
-    { title: 'Client Presentation PDF', description: 'Professional presentation deck explaining automation value proposition', formats: ['PDF', 'PPT'], color: 'from-indigo-500 to-purple-500' },
+    { title: 'Client Presentation PDF', description: 'Professional presentation deck explaining automation value proposition', formats: ['PDF', 'PPT'], color: 'from-slate-500 to-zinc-600' },
   ],
   partnership_steps: [
     { num: '1', title: 'Initial Meeting', description: 'Schedule a developer partnership consultation. We review your project, unit types, and target market.' },

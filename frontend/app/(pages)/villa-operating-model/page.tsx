@@ -198,7 +198,7 @@ export default function VillaOperatingModelPage() {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: 0.2 }}
-                className="bg-gradient-to-r from-purple-50 to-transparent p-6 border-l-4 border-[#C9A962]"
+                className="bg-gradient-to-r from-[#C9A962]/5 to-transparent p-6 border-l-4 border-[#C9A962]"
               >
                 <h3 className="text-xl font-semibold mb-2">Scenario: Family Personalization</h3>
                 <p className="text-gray-700 dark:text-gray-300 mb-4">

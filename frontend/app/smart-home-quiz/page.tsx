@@ -577,7 +577,7 @@ export default function SmartHomeQuizPage() {
                                 type="text"
                                 value={saveName}
                                 onChange={(e) => setSaveName(e.target.value)}
-                                className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-xl focus:outline-none focus:ring-2 focus:ring-purple-500"
+                                className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#C9A962]"
                                 placeholder="Your name"
                               />
                             </div>
@@ -588,7 +588,7 @@ export default function SmartHomeQuizPage() {
                                 required
                                 value={saveEmail}
                                 onChange={(e) => setSaveEmail(e.target.value)}
-                                className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-xl focus:outline-none focus:ring-2 focus:ring-purple-500"
+                                className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#C9A962]"
                                 placeholder="your@email.com"
                               />
                             </div>
