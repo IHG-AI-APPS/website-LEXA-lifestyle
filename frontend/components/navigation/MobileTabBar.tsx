@@ -1,8 +1,3 @@
-/**
- * Mobile Tab Bar — Luxury Dark Glass
- * Thumb-friendly bottom navigation with gold active accents
- */
-
 'use client'
 
 import { usePathname, useRouter } from 'next/navigation'
@@ -11,7 +6,7 @@ import {
   Home,
   Sparkles,
   FolderOpen,
-  Grid3X3,
+  Layers,
   Phone
 } from 'lucide-react'
 
@@ -19,7 +14,7 @@ const TABS = [
   { id: 'home', icon: Home, label: 'Home', path: '/' },
   { id: 'builder', icon: Sparkles, label: 'Builder', path: '/project-builder' },
   { id: 'dashboard', icon: FolderOpen, label: 'Projects', path: '/dashboard' },
-  { id: 'services', icon: Grid3X3, label: 'Services', path: '/services' },
+  { id: 'services', icon: Layers, label: 'Services', path: '/services' },
   { id: 'contact', icon: Phone, label: 'Contact', path: '/contact' }
 ]
 
@@ -33,62 +28,64 @@ export default function MobileTabBar() {
     if (pathname.startsWith('/dashboard')) return 'dashboard'
     if (pathname.startsWith('/services')) return 'services'
     if (pathname.startsWith('/contact')) return 'contact'
-    return 'home'
+    return ''
   }
 
   const activeTab = getActiveTab()
 
   return (
-    <nav
-      data-testid="mobile-tab-bar"
-      className="fixed bottom-0 left-0 right-0 z-50 lg:hidden"
-    >
-      {/* Glass background */}
-      <div className="bg-black/80 backdrop-blur-2xl border-t border-white/[0.08]">
-        <div className="flex justify-around items-center h-[68px] max-w-lg mx-auto px-2">
-          {TABS.map((tab) => {
-            const Icon = tab.icon
-            const isActive = activeTab === tab.id
+    <div className="fixed bottom-0 left-0 right-0 z-50 lg:hidden" data-testid="mobile-tab-bar">
+      {/* Floating island container with safe-area */}
+      <div className="px-4 pb-[env(safe-area-inset-bottom,6px)] pt-0">
+        <nav className="relative bg-[#0A0A0A]/90 backdrop-blur-2xl border border-white/[0.06] rounded-t-2xl shadow-[0_-8px_40px_rgba(0,0,0,0.5)]">
+          <div className="flex justify-around items-stretch h-[72px] max-w-md mx-auto">
+            {TABS.map((tab) => {
+              const Icon = tab.icon
+              const isActive = activeTab === tab.id
 
-            return (
-              <button
-                key={tab.id}
-                data-testid={`tab-${tab.id}`}
-                onClick={() => router.push(tab.path)}
-                className="flex flex-col items-center justify-center flex-1 h-full relative group"
-              >
-                {/* Active pill background */}
-                {isActive && (
-                  <motion.div
-                    layoutId="tab-pill"
-                    className="absolute inset-x-2 top-1.5 bottom-1.5 rounded-2xl bg-white/[0.08]"
-                    transition={{ type: 'spring', stiffness: 400, damping: 28 }}
-                  />
-                )}
-                
-                <div className="relative z-10 flex flex-col items-center gap-0.5">
-                  <Icon
-                    className={`w-[22px] h-[22px] transition-colors duration-200 ${
-                      isActive ? 'text-[#C9A962]' : 'text-white/40 group-active:text-white/60'
-                    }`}
-                    strokeWidth={isActive ? 2.2 : 1.8}
-                  />
-                  <span
-                    className={`text-[10px] font-medium tracking-wide transition-colors duration-200 ${
-                      isActive ? 'text-[#C9A962]' : 'text-white/40'
-                    }`}
-                  >
-                    {tab.label}
-                  </span>
-                </div>
-              </button>
-            )
-          })}
-        </div>
-        
-        {/* Safe area spacer for iPhones with home indicator */}
-        <div className="h-[env(safe-area-inset-bottom,0px)]" />
+              return (
+                <button
+                  key={tab.id}
+                  data-testid={`tab-${tab.id}`}
+                  onClick={() => router.push(tab.path)}
+                  className="flex flex-col items-center justify-center flex-1 relative group active:scale-95 transition-transform duration-150"
+                >
+                  {/* Active indicator line */}
+                  {isActive && (
+                    <motion.div
+                      layoutId="tab-indicator"
+                      className="absolute top-0 left-[25%] right-[25%] h-[2px] bg-gradient-to-r from-transparent via-[#C9A962] to-transparent"
+                      transition={{ type: 'spring', stiffness: 350, damping: 30 }}
+                    />
+                  )}
+
+                  <div className="flex flex-col items-center gap-1 pt-1">
+                    <div className={`p-2 rounded-xl transition-all duration-200 ${
+                      isActive 
+                        ? 'bg-[#C9A962]/10' 
+                        : 'bg-transparent'
+                    }`}>
+                      <Icon
+                        className={`w-5 h-5 transition-colors duration-200 ${
+                          isActive ? 'text-[#C9A962]' : 'text-white/30 group-active:text-white/50'
+                        }`}
+                        strokeWidth={isActive ? 2.2 : 1.5}
+                      />
+                    </div>
+                    <span
+                      className={`text-[9px] font-semibold uppercase tracking-[0.08em] transition-colors duration-200 ${
+                        isActive ? 'text-[#C9A962]' : 'text-white/30'
+                      }`}
+                    >
+                      {tab.label}
+                    </span>
+                  </div>
+                </button>
+              )
+            })}
+          </div>
+        </nav>
       </div>
-    </nav>
+    </div>
   )
 }
