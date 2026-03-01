@@ -48,20 +48,26 @@ export default function ExperienceCentrePage() {
   }
 
   return (
-    <div className="min-h-screen bg-white dark:bg-gray-950 pt-20" data-testid="experience-centre-page">
-      {/* Hero — Split Layout */}
-      <section className="relative overflow-hidden bg-gray-900 text-white">
-        <div className="grid grid-cols-1 lg:grid-cols-2 min-h-[520px]">
-          <div className="flex flex-col justify-center px-8 lg:px-16 py-16 relative z-10">
-            <motion.div initial={{ opacity: 0, x: -30 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.6 }}>
+    <div className="min-h-screen bg-white dark:bg-[#050505] pt-20" data-testid="experience-centre-page">
+      {/* Hero — Center Aligned with Background Image */}
+      <section className="relative overflow-hidden bg-[#0A0A0A] dark:bg-[#050505] text-white pt-12 pb-20">
+        {/* Background Image */}
+        <div className="absolute inset-0">
+          <SafeImage src="https://images.unsplash.com/photo-1735320858258-12fbcefcb3a7?crop=entropy&cs=srgb&fm=jpg&q=85" alt="LEXA Experience Centre" fill className="object-cover opacity-30" priority sizes="100vw" />
+          <div className="absolute inset-0 bg-gradient-to-t from-[#0A0A0A] via-[#0A0A0A]/70 to-[#0A0A0A]/40" />
+        </div>
+
+        <div className="container relative z-10 mx-auto px-8 lg:px-16">
+          <div className="max-w-3xl mx-auto text-center">
+            <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
               <span className="inline-block px-3 py-1 rounded-full bg-[#C9A962]/15 border border-[#C9A962]/30 text-[#C9A962] text-xs uppercase tracking-widest mb-5" data-testid="experience-badge">Visit Us</span>
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold uppercase mb-5 tracking-tight leading-tight" data-testid="experience-title">
-                LEXA Experience Centre
+                LEXA EXPERIENCE CENTRE
               </h1>
-              <p className="text-base text-gray-300 mb-8 max-w-lg leading-relaxed">
+              <p className="text-base text-gray-300 mb-8 max-w-xl mx-auto leading-relaxed">
                 Visit our 5,000+ sq ft showroom in Dubai and experience luxury smart living first-hand. Touch, feel, and interact with the latest technology solutions.
               </p>
-              <div className="flex flex-col sm:flex-row gap-3">
+              <div className="flex flex-col sm:flex-row gap-3 justify-center">
                 <Button size="lg" className="bg-[#C9A962] text-gray-900 hover:bg-[#C9A962]/90 font-semibold" onClick={() => setShowBookingModal(true)} data-testid="hero-book-visit">
                   Book a Private Tour <ArrowRight className="ml-2" size={18} />
                 </Button>
@@ -70,11 +76,6 @@ export default function ExperienceCentrePage() {
                 </a>
               </div>
             </motion.div>
-          </div>
-          <div className="relative min-h-[300px] lg:min-h-full">
-            <SafeImage src="https://images.unsplash.com/photo-1735320858258-12fbcefcb3a7?crop=entropy&cs=srgb&fm=jpg&q=85" alt="LEXA Experience Centre" fill className="object-cover" priority sizes="(max-width: 1024px) 100vw, 50vw" />
-            <div className="absolute inset-0 bg-gradient-to-r from-gray-900 via-gray-900/40 to-transparent lg:block hidden" />
-            <div className="absolute inset-0 bg-gradient-to-t from-gray-900/60 to-transparent lg:hidden" />
           </div>
         </div>
       </section>
