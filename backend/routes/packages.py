@@ -17,6 +17,22 @@ client = AsyncIOMotorClient(mongo_url)
 db = client[os.environ.get('DB_NAME', 'lexa_lifestyle')]
 
 
+
+@router.get("")
+async def get_packages_overview():
+    """Get packages overview with property types and stats"""
+    try:
+        property_types = await db.property_packages.find(
+            {"featured": True},
+            {"_id": 0, "slug": 1, "title": 1, "subtitle": 1, "description": 1, "hero_image": 1, "image": 1}
+        ).sort("display_order", 1).to_list(20)
+        total = await db.property_packages.count_documents({})
+        return {"property_types": property_types, "total": total}
+    except Exception as e:
+        logger.error(f"Error fetching packages overview: {e}")
+        return {"property_types": [], "total": 0}
+
+
 @router.get("/property-types")
 async def get_property_types():
     """Get all property package types"""
