@@ -63,7 +63,7 @@ export default function CataloguesPage() {
         </div>
         <div className="absolute inset-0 opacity-[0.03]" style={{ backgroundImage: 'radial-gradient(circle at 1px 1px, white 1px, transparent 0)', backgroundSize: '40px 40px' }} />
         <div className="container mx-auto px-8 lg:px-16 py-20 lg:py-28 relative z-10">
-          <div className="max-w-3xl">
+          <div className="max-w-3xl mx-auto text-center">
             <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }}>
               <span className="inline-block px-3 py-1 rounded-full bg-[#C9A962]/15 border border-[#C9A962]/30 text-[#C9A962] text-xs uppercase tracking-widest mb-5">
                 Resources
@@ -71,10 +71,10 @@ export default function CataloguesPage() {
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold uppercase mb-5 tracking-tight leading-tight" data-testid="catalogues-heading">
                 Our <span className="text-[#C9A962]">Catalogues</span>
               </h1>
-              <p className="text-base text-gray-300 mb-8 max-w-lg leading-relaxed">
+              <p className="text-base text-gray-300 mb-8 max-w-lg mx-auto leading-relaxed">
                 Browse our company profile, pre-qualification documents, and brand catalogues in an interactive flipbook viewer.
               </p>
-              <div className="flex items-center gap-6 text-sm">
+              <div className="flex items-center gap-6 text-sm justify-center">
                 <div className="flex items-center gap-2">
                   <BookOpen className="text-[#C9A962]" size={18} />
                   <span className="text-gray-400">Interactive Viewer</span>
