@@ -38,11 +38,11 @@ export default function TetrisProjects() {
 
   if (loading) {
     return (
-      <section className="bg-[#F9F9F7] dark:bg-[#0a0f1a] py-10 md:py-12">
+      <section className="bg-[#050505] py-10 md:py-12" data-testid="tetris-projects-loading">
         <div className="content-container">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
             {[1, 2, 3, 4].map((i) => (
-              <div key={i} className="h-[380px] animate-pulse bg-zinc-200 dark:bg-zinc-800 rounded-lg" />
+              <div key={i} className="h-[380px] animate-pulse bg-neutral-900 rounded-lg" />
             ))}
           </div>
         </div>
