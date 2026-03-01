@@ -6,9 +6,9 @@ const nextConfig = {
   compress: true,
   poweredByHeader: false,
 
-  // TypeScript - ignore build errors from existing pages
+  // TypeScript - strict checking enabled
   typescript: {
-    ignoreBuildErrors: true,
+    ignoreBuildErrors: false,
   },
 
   // ESLint - ignore during build (warnings only)
