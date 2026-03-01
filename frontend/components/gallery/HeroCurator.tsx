@@ -86,9 +86,9 @@ export default function HeroCurator({ onPersonaClick }: HeroCuratorProps) {
           <track kind="captions" src="" label="English" srcLang="en" default />
         </video>
         
-        {/* Dark Luxury Overlay - Stronger on mobile for text legibility */}
-        <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-black/30 md:from-black md:via-black/30 md:to-black/40" />
-        <div className="absolute inset-0 bg-gradient-to-r from-black/50 via-transparent to-black/20 md:from-black/40" />
+        {/* Dark Luxury Overlay - Stronger on mobile/tablet for text legibility */}
+        <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-black/30 lg:from-black lg:via-black/30 lg:to-black/40" />
+        <div className="absolute inset-0 bg-gradient-to-r from-black/50 via-transparent to-black/20 lg:from-black/40" />
       </div>
 
       {/* Content — Centered on mobile/tablet, bottom-aligned on desktop */}
