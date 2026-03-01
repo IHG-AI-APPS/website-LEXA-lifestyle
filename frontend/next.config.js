@@ -19,9 +19,6 @@ const nextConfig = {
   // Production optimizations - CSS/JS minification is enabled by default in production
   // swcMinify is enabled by default in Next.js 13+
   
-  // Output optimization
-  // output: 'standalone', // Disabled for production build compatibility
-  
   // Image optimization
   images: {
     formats: ['image/avif', 'image/webp'],
