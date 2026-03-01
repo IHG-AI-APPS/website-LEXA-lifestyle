@@ -139,7 +139,7 @@ export default function AIChatWidget() {
             initial={{ opacity: 0, y: 100, scale: 0.8 }}
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 100, scale: 0.8 }}
-            className="fixed bottom-4 right-4 z-50 w-[400px] max-w-[calc(100vw-32px)] h-[620px] max-h-[calc(100vh-100px)] bg-white dark:bg-gray-900 rounded-2xl shadow-2xl flex flex-col overflow-hidden border border-gray-200 dark:border-gray-700"
+            className="fixed bottom-4 right-4 z-50 w-[400px] max-w-[calc(100vw-32px)] h-[620px] max-h-[calc(100vh-100px)] sm:max-h-[calc(100vh-100px)] bg-white dark:bg-gray-900 rounded-2xl shadow-2xl flex flex-col overflow-hidden border border-gray-200 dark:border-gray-700"
           >
             {/* Header */}
             <div className="bg-gradient-to-r from-[#1a1a2e] to-[#16213e] text-white p-4 flex items-center justify-between">
