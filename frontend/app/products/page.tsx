@@ -3,6 +3,10 @@
 import { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
 import { ArrowRight, Monitor, Cpu, Wifi, Code } from 'lucide-react'
+import SafeImage from '@/components/ui/SafeImage'
+import Link from 'next/link'
+import { Button } from '@/components/ui/button'
+import ConsultationForm from '@/components/forms/ConsultationForm'
 import { useCms } from '@/hooks/useCms'
 import dynamic from 'next/dynamic'
 
