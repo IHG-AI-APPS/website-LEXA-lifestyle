@@ -3,6 +3,7 @@
 import { useEffect, useState } from 'react'
 import { motion } from 'framer-motion'
 import Link from 'next/link'
+import SafeImage from '@/components/ui/SafeImage'
 import { ArrowUpRight } from 'lucide-react'
 
 interface Project {
