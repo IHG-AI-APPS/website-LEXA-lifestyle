@@ -29,7 +29,7 @@ export default function ProcessPage() {
       <section className="relative overflow-hidden bg-[#0A0A0A] dark:bg-[#050505] text-white py-20 lg:py-28">
         {/* Hero Background Image */}
         <div className="absolute inset-0">
-          <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=1200IMAGE_URLq=50" alt="" className="w-full h-full object-cover opacity-20" loading="eager" />
+          <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=1200&q=50" alt="" className="w-full h-full object-cover opacity-20" loading="eager" />
           <div className="absolute inset-0 bg-gradient-to-t from-[#0A0A0A] via-[#0A0A0A]/70 to-[#0A0A0A]/40" />
         </div>
         <div className="container mx-auto px-8 lg:px-16 relative z-10">
