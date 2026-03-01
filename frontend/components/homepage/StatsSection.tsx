@@ -98,9 +98,7 @@ export default function StatsSection() {
                 >
                   <Icon className="h-7 w-7 sm:h-8 sm:w-8 mx-auto mb-3 sm:mb-4 text-[#C9A962] transition-colors group-hover:text-[#E8DCC8]" />
                 </motion.div>
-                <div ref={null} className="text-4xl md:text-5xl font-light text-transparent bg-clip-text bg-gradient-to-b from-[#C9A962] to-[#8a7035] mb-2">
-                  <AnimatedCounter value={stat.value} suffix={stat.suffix} />
-                </div>
+                <AnimatedCounter value={stat.value} suffix={stat.suffix} />
                 <p className="text-xs sm:text-sm text-neutral-500 uppercase tracking-[0.2em] transition-colors group-hover:text-neutral-300">
                   {stat.label}
                 </p>
