@@ -11,7 +11,7 @@ import re
 from datetime import datetime
 from typing import Dict, Any, List
 
-BASE_URL = os.environ.get('REACT_APP_BACKEND_URL', 'https://world-class-mobile.preview.emergentagent.com').rstrip('/')
+BASE_URL = os.environ.get('REACT_APP_BACKEND_URL', 'https://premium-redesign-22.preview.emergentagent.com').rstrip('/')
 
 # ============= FIXTURES =============
 
