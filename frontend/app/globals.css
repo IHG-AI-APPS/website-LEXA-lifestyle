@@ -1221,3 +1221,12 @@ input[type="date"]::-webkit-datetime-edit-year-field {
 .will-change-opacity {
   will-change: opacity;
 }
+
+/* Hide scrollbar for horizontal scroll sections */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
