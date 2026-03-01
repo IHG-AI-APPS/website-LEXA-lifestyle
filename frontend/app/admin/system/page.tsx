@@ -132,8 +132,6 @@ export default function SystemPage() {
     }, 5000)
   }
 
-  }
-
   const handleCheckUpdates = async () => {
     setCheckingUpdates(true)
     try {
