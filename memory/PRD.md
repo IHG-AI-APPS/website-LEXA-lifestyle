@@ -11,6 +11,13 @@ Complete website overhaul for LEXA Smart Home to:
 
 ## Completed Work (Latest First)
 
+### Phase 39: 429 Rate Limiting Defense — Inline Critical CSS + Chunk Optimization (Mar 1, 2026)
+- **Inline critical CSS**: Added dark theme background (#050505), hidden sr-only, header positioning directly in `<head>` — page never appears unstyled even if CSS chunks are 429'd
+- **Webpack chunk optimization**: Merged framer-motion + lucide-react + radix-ui into single `vendor-ui` chunk. Reduced initial requests from 35 → 24. Set minSize=80KB, maxSize=500KB, maxInitialRequests=12
+- **CSS recovery script**: Auto-detects missing CSS on page load and performs one automatic reload
+- **Font optimization**: Arabic fonts (Tajawal) changed to `preload: false` — reduces initial requests by 3
+- **Testing**: 100% pass (iteration_65). CRITICAL: Desktop + mobile back-to-back load with zero 429 errors confirmed
+
 ### Phase 38: Staggered Hero Entrance Animations — Site-Wide (Mar 1, 2026)
 - **CSS-only approach**: 6 utility classes (`hero-animate-badge`, `hero-animate-title`, `hero-animate-desc`, `hero-animate-cta`, `hero-animate-extra`) with staggered delays (0ms → 150ms → 300ms → 450ms → 600ms)
 - **Scope**: Applied to 53 badge elements, 49+ h1 titles, 15+ descriptions, 22+ CTA containers across ALL pages
