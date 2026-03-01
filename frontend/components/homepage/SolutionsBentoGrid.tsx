@@ -175,13 +175,13 @@ export default function SolutionsBentoGrid() {
           viewport={{ once: true }}
           className="mb-10 md:mb-12 text-center"
         >
-          <span className="mb-3 inline-block rounded-full bg-black px-4 py-1.5 text-xs font-bold uppercase tracking-widest text-white">
+          <span className="mb-3 inline-block rounded-full bg-[#C9A962]/10 border border-[#C9A962]/30 px-4 py-1.5 text-xs font-bold uppercase tracking-widest text-[#C9A962]">
             Solutions
           </span>
-          <h2 className="h2 mb-4">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4 font-heading">
             Technology That Transforms Spaces
           </h2>
-          <p className="text-base md:text-lg text-gray-600 dark:text-gray-400 dark:text-gray-400 max-w-2xl mx-auto">
+          <p className="text-base md:text-lg text-neutral-400 max-w-2xl mx-auto">
             From private cinemas to complete home automation, discover our flagship solutions.
           </p>
         </motion.div>
@@ -307,7 +307,7 @@ export default function SolutionsBentoGrid() {
         >
           <Link 
             href="/solutions"
-            className="inline-flex items-center gap-2 text-sm font-semibold text-black dark:text-white hover:text-[#E8DCC8] transition-colors"
+            className="inline-flex items-center gap-2 text-sm font-semibold text-[#C9A962] hover:text-[#E8DCC8] transition-colors"
           >
             View All Solutions
             <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
