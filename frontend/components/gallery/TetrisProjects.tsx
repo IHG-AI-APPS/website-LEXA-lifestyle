@@ -83,10 +83,14 @@ export default function TetrisProjects() {
                 className="min-w-[80vw] snap-center flex-shrink-0"
               >
                 <Link href={`/projects/${project.slug || project.id}`} className="group relative block h-[260px] overflow-hidden rounded-2xl">
-                  <motion.img
+                  <SafeImage
                     src={project.image || 'https://images.unsplash.com/photo-1697137663650-f0f95349aed3?crop=entropy&cs=srgb&fm=jpg&q=85'}
                     alt={project.title}
-                    className="h-full w-full object-cover"
+                    fill
+                    sizes="80vw"
+                    className="object-cover"
+                    loading="lazy"
+                    quality={75}
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent" />
                   <div className="absolute bottom-0 left-0 right-0 p-5 text-center">
