@@ -155,8 +155,44 @@ export default function CalculatorCardsSection() {
           </Link>
         </motion.div>
 
-        {/* Other Tools Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-6 max-w-7xl mx-auto">
+        {/* Other Tools - Horizontal Scroll on Mobile, Grid on Desktop */}
+        <div className="md:hidden -mx-6 px-6">
+          <div className="flex overflow-x-auto snap-x snap-mandatory gap-4 pb-4 no-scrollbar">
+            {tools.map((tool, index) => (
+              <motion.div
+                key={tool.title}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.4, delay: index * 0.05 }}
+                className="min-w-[80vw] snap-center flex-shrink-0"
+              >
+                <Link href={tool.href} className="block group">
+                  <div className="relative h-[280px] overflow-hidden rounded-2xl bg-gray-900">
+                    <div 
+                      className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110"
+                      style={{ backgroundImage: `url(${tool.image})` }}
+                    />
+                    <div className={`absolute inset-0 bg-gradient-to-t from-black via-black/80 to-black/30`} />
+                    <div className="relative h-full flex flex-col items-center justify-end p-6 text-center">
+                      <div className="inline-flex items-center justify-center w-11 h-11 bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl mb-3">
+                        <tool.icon className="w-5 h-5 text-[#C9A962]" />
+                      </div>
+                      <h3 className="text-xl font-bold text-white mb-1.5">{tool.title}</h3>
+                      <p className="text-white/70 text-xs mb-4 max-w-[240px]">{tool.description}</p>
+                      <span className="inline-flex items-center gap-1.5 text-[#C9A962] text-xs font-semibold uppercase tracking-wider">
+                        {tool.cta} <ArrowRight className="w-3.5 h-3.5" />
+                      </span>
+                    </div>
+                  </div>
+                </Link>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+
+        {/* Desktop Grid */}
+        <div className="hidden md:grid grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-6 max-w-7xl mx-auto">
           {tools.map((tool, index) => (
             <motion.div
               key={tool.title}
@@ -167,33 +203,19 @@ export default function CalculatorCardsSection() {
             >
               <Link href={tool.href} className="block group">
                 <div className="relative h-[400px] overflow-hidden bg-gray-900">
-                  {/* Background Image */}
                   <div 
                     className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110"
                     style={{ backgroundImage: `url(${tool.image})` }}
                   />
-                  
-                  {/* Gradient Overlay */}
                   <div className={`absolute inset-0 bg-gradient-to-t ${tool.gradient}`} />
-                  
-                  {/* Content */}
                   <div className="relative h-full flex flex-col justify-end p-6">
-                    {/* Icon */}
                     <div className="mb-4">
                       <div className="inline-flex items-center justify-center w-12 h-12 bg-white/10 backdrop-blur-sm border border-white/20">
                         <tool.icon className="w-6 h-6 text-white" />
                       </div>
                     </div>
-
-                    {/* Text */}
-                    <h3 className="text-2xl font-bold text-white mb-2 font-heading">
-                      {tool.title}
-                    </h3>
-                    <p className="text-white/80 text-sm mb-6">
-                      {tool.description}
-                    </p>
-
-                    {/* CTA Button */}
+                    <h3 className="text-2xl font-bold text-white mb-2 font-heading">{tool.title}</h3>
+                    <p className="text-white/80 text-sm mb-6">{tool.description}</p>
                     <Button 
                       className="w-full bg-white hover:bg-[#E8DCC8] text-[#1A1A1A] dark:text-white font-semibold py-6 transition-all duration-300 group-hover:shadow-lg"
                       size="lg"
@@ -202,8 +224,6 @@ export default function CalculatorCardsSection() {
                       <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
                     </Button>
                   </div>
-
-                  {/* Hover Border Effect */}
                   <div className="absolute inset-0 border-2 border-white/0 group-hover:border-white/30 transition-colors duration-300 pointer-events-none" />
                 </div>
               </Link>
