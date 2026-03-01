@@ -65,7 +65,7 @@ export default function FinalSubmission({ sessionId, projectData, onComplete }: 
           <CheckCircle2 className="w-20 h-20 text-green-600 mx-auto mb-6" />
         </motion.div>
         <h2 className="text-3xl sm:text-4xl font-semibold tracking-tight text-gray-900 dark:text-white mb-4">
-          Project <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600">Submitted</span>
+          Project <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#C9A962] to-[#A68B4B]">Submitted</span>
         </h2>
         <p className="text-sm text-gray-500 uppercase tracking-widest mb-2">Intelligence Analysis Complete</p>
         <p className="text-gray-600 dark:text-gray-400 text-sm">Our team will contact you within 24 hours</p>
@@ -82,14 +82,14 @@ export default function FinalSubmission({ sessionId, projectData, onComplete }: 
       >
         {/* Header */}
         <div className="text-center mb-12">
-          <div className="inline-flex items-center gap-2 px-6 py-2 bg-purple-50 rounded-full mb-6">
-            <Sparkles className="w-5 h-5 text-purple-600" />
-            <span className="text-xs uppercase tracking-widest text-purple-900 font-medium">
+          <div className="inline-flex items-center gap-2 px-6 py-2 bg-[#C9A962]/5 rounded-full mb-6">
+            <Sparkles className="w-5 h-5 text-[#C9A962]" />
+            <span className="text-xs uppercase tracking-widest text-[#8B7340] font-medium">
               Final Step
             </span>
           </div>
           <h1 className="text-4xl sm:text-5xl font-semibold tracking-tight text-gray-900 dark:text-white mb-4">
-            Let&apos;s <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600">Connect</span>
+            Let&apos;s <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#C9A962] to-[#A68B4B]">Connect</span>
           </h1>
           <p className="text-sm text-gray-500 uppercase tracking-widest mb-2">
             Expert Consultation

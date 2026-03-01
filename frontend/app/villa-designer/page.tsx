@@ -58,7 +58,7 @@ export default function VillaDesignerPage() {
   ]
 
   const lifestyleGoals = [
-    { id: 'cinema', label: 'Private Cinema', icon: Film, color: 'from-purple-500 to-pink-500' },
+    { id: 'cinema', label: 'Private Cinema', icon: Film, color: 'from-[#C9A962] to-[#A68B4B]' },
     { id: 'lighting', label: 'Smart Lighting', icon: Lightbulb, color: 'from-yellow-500 to-orange-500' },
     { id: 'security', label: 'Security Systems', icon: Shield, color: 'from-blue-500 to-cyan-500' },
     { id: 'automation', label: 'Full Automation', icon: Cpu, color: 'from-green-500 to-teal-500' },

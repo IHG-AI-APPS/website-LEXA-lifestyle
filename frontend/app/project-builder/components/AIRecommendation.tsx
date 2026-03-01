@@ -465,7 +465,7 @@ export default function AIRecommendation({
   // Package icons and colors
   const PACKAGE_CONFIG: Record<string, { icon: typeof Crown; gradient: string }> = {
     Essential: { icon: Zap, gradient: 'from-emerald-500 to-emerald-600' },
-    Premium: { icon: Star, gradient: 'from-purple-500 to-purple-600' },
+    Premium: { icon: Star, gradient: 'from-[#C9A962] to-[#A68B4B]' },
     Ultimate: { icon: Crown, gradient: 'from-amber-500 to-amber-600' }
   }
 
@@ -473,7 +473,7 @@ export default function AIRecommendation({
     return (
       <div className="max-w-5xl mx-auto px-4 py-12">
         <div className="text-center mb-10">
-          <div className="inline-flex items-center gap-3 px-6 py-3 rounded-full bg-gradient-to-r from-purple-600 to-indigo-600 text-white mb-6">
+          <div className="inline-flex items-center gap-3 px-6 py-3 rounded-full bg-gradient-to-r from-[#C9A962] to-[#A68B4B] text-white mb-6">
             <Sparkles className="w-6 h-6 animate-pulse" />
             <span className="font-semibold text-lg">AI is calculating your package...</span>
           </div>
@@ -502,7 +502,7 @@ export default function AIRecommendation({
         <motion.div
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
-          className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-purple-600 to-indigo-600 text-white mb-4"
+          className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-[#C9A962] to-[#A68B4B] text-white mb-4"
         >
           <Sparkles className="w-5 h-5" />
           <span className="font-semibold">AI Recommendation</span>
@@ -567,8 +567,8 @@ export default function AIRecommendation({
         className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-10"
       >
         <div className="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-xl p-4 text-center">
-          <div className="w-10 h-10 bg-purple-100 rounded-lg flex items-center justify-center mx-auto mb-2">
-            <Package className="w-5 h-5 text-purple-600" />
+          <div className="w-10 h-10 bg-[#C9A962]/10 rounded-lg flex items-center justify-center mx-auto mb-2">
+            <Package className="w-5 h-5 text-[#C9A962]" />
           </div>
           <div className="text-2xl font-bold text-gray-900 dark:text-white dark:text-white">{recommendation.summary.total_features}</div>
           <div className="text-sm text-gray-500">Features</div>
@@ -612,7 +612,7 @@ export default function AIRecommendation({
             variant="outline"
             size="sm"
             onClick={() => setShowCompareModal(true)}
-            className="text-purple-600 border-purple-200 hover:bg-purple-50"
+            className="text-[#C9A962] border-[#C9A962]/20 hover:bg-[#C9A962]/5"
             data-testid="compare-packages-btn"
           >
             <LayoutGrid className="w-4 h-4 mr-2" />
@@ -636,18 +636,18 @@ export default function AIRecommendation({
                 transition={{ delay: 0.5 + index * 0.1 }}
                 className={`relative p-6 rounded-2xl border-2 text-left transition-all ${
                   isSelected
-                    ? 'border-purple-500 bg-purple-50 shadow-xl ring-2 ring-purple-500/20'
+                    ? 'border-[#C9A962] bg-[#C9A962]/5 shadow-xl ring-2 ring-[#C9A962]/20'
                     : 'border-gray-200 dark:border-gray-700 bg-white hover:border-gray-400 hover:shadow-lg'
                 }`}
               >
                 {pkg.recommended && (
-                  <div className="absolute -top-3 left-1/2 -translate-x-1/2 px-4 py-1 bg-gradient-to-r from-purple-500 to-indigo-500 text-white text-xs font-bold rounded-full">
+                  <div className="absolute -top-3 left-1/2 -translate-x-1/2 px-4 py-1 bg-gradient-to-r from-[#C9A962] to-[#A68B4B] text-white text-xs font-bold rounded-full">
                     RECOMMENDED
                   </div>
                 )}
 
                 <div className={`absolute top-4 right-4 w-7 h-7 rounded-full flex items-center justify-center ${
-                  isSelected ? 'bg-purple-500 text-white' : 'bg-gray-100'
+                  isSelected ? 'bg-[#C9A962]/50 text-white' : 'bg-gray-100'
                 }`}>
                   {isSelected && <Check className="w-5 h-5" />}
                 </div>
@@ -675,10 +675,10 @@ export default function AIRecommendation({
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.8 }}
-        className="bg-gradient-to-br from-purple-50 to-indigo-50 border border-purple-200 rounded-2xl p-6 mb-10"
+        className="bg-gradient-to-br from-[#C9A962]/5 to-[#A68B4B]/5 border border-[#C9A962]/20 rounded-2xl p-6 mb-10"
       >
         <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-4 flex items-center gap-2">
-          <Lightbulb className="w-5 h-5 text-purple-600" />
+          <Lightbulb className="w-5 h-5 text-[#C9A962]" />
           AI Insights
         </h3>
         <div className="space-y-3">
@@ -690,8 +690,8 @@ export default function AIRecommendation({
               transition={{ delay: 0.9 + index * 0.1 }}
               className="flex items-start gap-3 bg-white dark:bg-gray-800 rounded-lg p-4"
             >
-              <div className="w-8 h-8 bg-purple-100 rounded-full flex items-center justify-center flex-shrink-0">
-                <Sparkles className="w-4 h-4 text-purple-600" />
+              <div className="w-8 h-8 bg-[#C9A962]/10 rounded-full flex items-center justify-center flex-shrink-0">
+                <Sparkles className="w-4 h-4 text-[#C9A962]" />
               </div>
               <p className="text-gray-700 dark:text-gray-300 dark:text-gray-300">{insight}</p>
             </motion.div>
@@ -713,7 +713,7 @@ export default function AIRecommendation({
               must_have: { label: 'Must Have', color: 'bg-red-500' },
               should_have: { label: 'Should Have', color: 'bg-orange-500' },
               could_have: { label: 'Could Have', color: 'bg-yellow-500' },
-              want_to_have: { label: 'Want to Have', color: 'bg-purple-500' }
+              want_to_have: { label: 'Want to Have', color: 'bg-[#C9A962]/50' }
             }
             const config = tierLabels[tier] || { label: tier, color: 'bg-gray-500' }
             
@@ -776,7 +776,7 @@ export default function AIRecommendation({
                 onComplete(selectedPackage, pkg?.price_indicator || '')
               }}
               disabled={!selectedPackage}
-              className="bg-gradient-to-r from-purple-600 to-indigo-600 hover:opacity-90 text-white"
+              className="bg-gradient-to-r from-[#C9A962] to-[#A68B4B] hover:opacity-90 text-white"
             >
               Continue to Upgrades
               <ChevronRight className="w-4 h-4 ml-2" />
@@ -860,7 +860,7 @@ export default function AIRecommendation({
                         onClick={() => setConsultationForm({...consultationForm, preferredTime: time})}
                         className={`p-2 rounded-lg border-2 text-sm font-medium capitalize ${
                           consultationForm.preferredTime === time
-                            ? 'border-purple-500 bg-purple-50 text-purple-600'
+                            ? 'border-[#C9A962] bg-[#C9A962]/5 text-[#C9A962]'
                             : 'border-gray-200 dark:border-gray-700 hover:border-gray-300'
                         }`}
                       >
@@ -891,7 +891,7 @@ export default function AIRecommendation({
                   Cancel
                 </Button>
                 <Button
-                  className="flex-1 bg-gradient-to-r from-purple-600 to-indigo-600 text-white"
+                  className="flex-1 bg-gradient-to-r from-[#C9A962] to-[#A68B4B] text-white"
                   onClick={handleBookConsultation}
                 >
                   <Calendar className="w-4 h-4 mr-2" />
@@ -948,7 +948,7 @@ export default function AIRecommendation({
                       key={pkg.name}
                       className={`text-center p-4 rounded-xl ${
                         pkg.recommended 
-                          ? 'bg-gradient-to-br from-purple-500 to-indigo-600 text-white' 
+                          ? 'bg-gradient-to-br from-[#C9A962] to-[#A68B4B] text-white' 
                           : 'bg-gray-100'
                       }`}
                     >
@@ -1012,7 +1012,7 @@ export default function AIRecommendation({
                 {/* Nice-to-Have Upgrades */}
                 <div className="grid grid-cols-4 gap-4 p-4 border-b border-gray-100 dark:border-gray-800 dark:border-gray-800">
                   <div className="flex items-center gap-2">
-                    <div className="w-3 h-3 rounded-full bg-purple-500" />
+                    <div className="w-3 h-3 rounded-full bg-[#C9A962]/50" />
                     <span className="text-gray-700 dark:text-gray-300 dark:text-gray-300">Nice-to-Have Upgrades</span>
                   </div>
                   {recommendation.packages.map((pkg, idx) => (
@@ -1056,7 +1056,7 @@ export default function AIRecommendation({
                       ) : idx === 1 ? (
                         <span className="text-green-600 font-medium">2 Years</span>
                       ) : (
-                        <span className="text-purple-600 font-medium">3 Years</span>
+                        <span className="text-[#C9A962] font-medium">3 Years</span>
                       )}
                     </div>
                   ))}
@@ -1109,7 +1109,7 @@ export default function AIRecommendation({
                       ) : idx === 1 ? (
                         <span className="text-green-600 font-medium">2 Visits/Year</span>
                       ) : (
-                        <span className="text-purple-600 font-medium">4 Visits/Year</span>
+                        <span className="text-[#C9A962] font-medium">4 Visits/Year</span>
                       )}
                     </div>
                   ))}
@@ -1128,7 +1128,7 @@ export default function AIRecommendation({
                     variant={selectedPackage === pkg.name ? "primary" : "outline"}
                     className={`py-6 ${
                       selectedPackage === pkg.name 
-                        ? 'bg-gradient-to-r from-purple-600 to-indigo-600 text-white' 
+                        ? 'bg-gradient-to-r from-[#C9A962] to-[#A68B4B] text-white' 
                         : ''
                     }`}
                     data-testid={`select-${pkg.name.toLowerCase()}-btn`}

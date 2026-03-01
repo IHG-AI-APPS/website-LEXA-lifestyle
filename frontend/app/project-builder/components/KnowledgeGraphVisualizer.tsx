@@ -45,7 +45,7 @@ const CustomNode = ({ data }: any) => {
     <div
       className={`px-6 py-4 rounded-lg border-2 shadow-lg transition-all duration-300 ${
         isSelected
-          ? 'bg-gradient-to-br from-blue-50 to-purple-50 border-blue-600'
+          ? 'bg-gradient-to-br from-[#C9A962]/5 to-[#A68B4B]/5 border-blue-600'
           : 'bg-gradient-to-br from-orange-50 to-red-50 border-orange-600'
       }`}
     >
@@ -170,7 +170,7 @@ export default function KnowledgeGraphVisualizer({
   return (
     <div className="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg overflow-hidden">
       {/* Header */}
-      <div className="bg-gradient-to-r from-blue-50 to-purple-50 border-b border-gray-200 dark:border-gray-700 p-6">
+      <div className="bg-gradient-to-r from-[#C9A962]/5 to-[#A68B4B]/5 border-b border-gray-200 dark:border-gray-700 p-6">
         <div className="flex items-center justify-between mb-4">
           <div>
             <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-1">

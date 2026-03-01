@@ -70,7 +70,7 @@ const lifestylePriorities: LifestylePriority[] = [
     name: 'Entertainment', 
     icon: Music, 
     description: 'Multi-room audio, home cinema, immersive experiences',
-    color: 'purple'
+    color: 'gold'
   },
   { 
     id: 'wellness', 
@@ -190,7 +190,7 @@ export default function SmartHomeQuizPage() {
       blue: { bg: 'bg-blue-50', border: 'border-blue-500', text: 'text-blue-600' },
       emerald: { bg: 'bg-emerald-50', border: 'border-emerald-500', text: 'text-emerald-600' },
       amber: { bg: 'bg-amber-50', border: 'border-amber-500', text: 'text-amber-600' },
-      purple: { bg: 'bg-purple-50', border: 'border-purple-500', text: 'text-purple-600' },
+      purple: { bg: 'bg-[#C9A962]/5', border: 'border-[#C9A962]', text: 'text-[#C9A962]' },
       rose: { bg: 'bg-rose-50', border: 'border-rose-500', text: 'text-rose-600' },
       cyan: { bg: 'bg-cyan-50', border: 'border-cyan-500', text: 'text-cyan-600' }
     }
@@ -501,7 +501,7 @@ export default function SmartHomeQuizPage() {
                   {/* Save Results Button */}
                   <button
                     onClick={() => setShowSaveModal(true)}
-                    className="w-full mb-4 flex items-center justify-center gap-2 px-4 py-3 bg-gradient-to-r from-purple-500 to-pink-500 text-white rounded-xl hover:from-purple-600 hover:to-pink-600 transition-all shadow-lg"
+                    className="w-full mb-4 flex items-center justify-center gap-2 px-4 py-3 bg-gradient-to-r from-[#C9A962] to-[#A68B4B] text-white rounded-xl hover:from-[#A68B4B] hover:to-[#A68B4B] transition-all shadow-lg"
                   >
                     <Mail className="h-5 w-5" />
                     <span className="font-semibold">Save My Results</span>
@@ -555,7 +555,7 @@ export default function SmartHomeQuizPage() {
                         <>
                           <div className="flex items-center justify-between mb-6">
                             <div className="flex items-center gap-2">
-                              <Mail className="h-5 w-5 text-purple-500" />
+                              <Mail className="h-5 w-5 text-[#C9A962]" />
                               <h3 className="text-lg font-bold text-gray-900 dark:text-white dark:text-white">Save Your Results</h3>
                             </div>
                             <button
@@ -597,7 +597,7 @@ export default function SmartHomeQuizPage() {
                           <Button
                             onClick={saveResults}
                             disabled={!saveEmail || saving}
-                            className="w-full mt-6 bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 py-6"
+                            className="w-full mt-6 bg-gradient-to-r from-[#C9A962] to-[#A68B4B] hover:from-[#A68B4B] hover:to-[#A68B4B] py-6"
                           >
                             {saving ? (
                               <div className="animate-spin rounded-full h-5 w-5 border-2 border-white border-t-transparent" />

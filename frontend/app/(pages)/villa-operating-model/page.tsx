@@ -12,7 +12,7 @@ export default function VillaOperatingModelPage() {
 
   const defaultRoles = [
     { icon: 'Home', title: 'Owners', color: 'from-blue-600 to-blue-400', description: 'Complete control and comprehensive oversight', features: ['Full system access and configuration', 'Energy and cost analytics', 'Performance monitoring and optimization', 'Remote management from anywhere', 'Override all automation rules', 'Access all security footage and logs'], permissions: 'Unrestricted', useCase: 'Property owners managing their smart home ecosystem' },
-    { icon: 'Users', title: 'Family', color: 'from-purple-600 to-purple-400', description: 'Personalized comfort and independent control', features: ['Individual user profiles with preferences', 'Personalized room scenes and automation', 'Independent zone control (own bedroom, study)', 'Music and entertainment preferences', 'Privacy-protected personal spaces', 'Guest invitation capabilities'], permissions: 'Zone-specific with personalization', useCase: 'Family members with their own spaces and preferences' },
+    { icon: 'Users', title: 'Family', color: 'from-[#C9A962] to-[#E8DCC8]', description: 'Personalized comfort and independent control', features: ['Individual user profiles with preferences', 'Personalized room scenes and automation', 'Independent zone control (own bedroom, study)', 'Music and entertainment preferences', 'Privacy-protected personal spaces', 'Guest invitation capabilities'], permissions: 'Zone-specific with personalization', useCase: 'Family members with their own spaces and preferences' },
     { icon: 'UserPlus', title: 'Guests', color: 'from-green-600 to-green-400', description: 'Guided access with simplified controls', features: ['Temporary access codes (time-limited)', 'Guest room and common area control', 'Simplified interface for easy use', 'Pre-set "Guest Mode" scenes', 'Wi-Fi access with network isolation', 'Automatic access expiration'], permissions: 'Limited to guest areas, temporary', useCase: 'Short-term visitors needing comfortable, guided access' },
     { icon: 'UserCog', title: 'Staff', color: 'from-orange-600 to-orange-400', description: 'Time-restricted, zone-based operational access', features: ['Working hours-based access (e.g., 7 AM - 5 PM)', 'Permitted zones only (kitchen, laundry, service areas)', 'Movement tracking with audit trails', 'Restricted from private family areas', 'Emergency protocols override', 'Activity logs for accountability'], permissions: 'Time and zone restricted with full audit', useCase: 'Household staff requiring monitored, operational access' }
   ]
@@ -198,7 +198,7 @@ export default function VillaOperatingModelPage() {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: 0.2 }}
-                className="bg-gradient-to-r from-purple-50 to-transparent p-6 border-l-4 border-purple-600"
+                className="bg-gradient-to-r from-purple-50 to-transparent p-6 border-l-4 border-[#C9A962]"
               >
                 <h3 className="text-xl font-semibold mb-2">Scenario: Family Personalization</h3>
                 <p className="text-gray-700 dark:text-gray-300 mb-4">

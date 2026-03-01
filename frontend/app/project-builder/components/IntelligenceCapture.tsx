@@ -51,7 +51,7 @@ export default function IntelligenceCapture({ sessionId, onComplete }: Intellige
         {/* Header */}
         <div className="text-center mb-12">
           <h1 className="text-4xl sm:text-5xl font-semibold tracking-tight text-gray-900 dark:text-white mb-4">
-            Project <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600">Intelligence</span>
+            Project <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#C9A962] to-[#A68B4B]">Intelligence</span>
           </h1>
           <p className="text-sm text-gray-500 uppercase tracking-widest mb-2">
             Constraints & Documentation (Optional)
@@ -126,7 +126,7 @@ export default function IntelligenceCapture({ sessionId, onComplete }: Intellige
         </div>
 
         {/* File Upload */}
-        <div className="bg-gradient-to-br from-blue-50 to-purple-50 border border-blue-200 p-8 mb-12">
+        <div className="bg-gradient-to-br from-[#C9A962]/5 to-[#A68B4B]/5 border border-blue-200 p-8 mb-12">
           <div className="flex items-start gap-3 mb-4">
             <Upload className="w-6 h-6 text-blue-600" />
             <div>

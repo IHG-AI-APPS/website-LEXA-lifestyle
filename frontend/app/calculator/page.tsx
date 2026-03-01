@@ -659,18 +659,18 @@ export default function IndustryCalculatorPage() {
 
                   {/* Link to Smart Project Builder */}
                   <div className="mt-8 pt-6 border-t border-gray-200 dark:border-gray-700 dark:border-gray-700">
-                    <div className="bg-gradient-to-r from-purple-50 to-indigo-50 border border-purple-200 rounded-xl p-5">
+                    <div className="bg-gradient-to-r from-[#C9A962]/5 to-[#A68B4B]/5 border border-[#C9A962]/20 rounded-xl p-5">
                       <div className="flex flex-col md:flex-row items-center justify-between gap-4">
                         <div>
-                          <h3 className="text-lg font-bold text-purple-900 mb-1">Looking for Feature-by-Feature Selection?</h3>
-                          <p className="text-sm text-purple-700">
+                          <h3 className="text-lg font-bold text-[#8B7340] mb-1">Looking for Feature-by-Feature Selection?</h3>
+                          <p className="text-sm text-[#A68B4B]">
                             Our Smart Project Builder offers detailed Must-Have, Should-Have, and Nice-to-Have feature selection
                           </p>
                         </div>
                         <Button
                           onClick={() => window.location.href = '/project-builder/smart'}
                           variant="outline"
-                          className="border-purple-300 text-purple-700 hover:bg-purple-100 px-6 py-2 whitespace-nowrap"
+                          className="border-[#C9A962]/30 text-[#A68B4B] hover:bg-[#C9A962]/10 px-6 py-2 whitespace-nowrap"
                         >
                           Try Smart Builder →
                         </Button>
@@ -1498,17 +1498,17 @@ export default function IndustryCalculatorPage() {
                   </div>
 
                   {/* Link to Smart Project Builder */}
-                  <div className="bg-gradient-to-r from-purple-50 to-indigo-50 border border-purple-200 rounded-xl p-6 mt-8">
+                  <div className="bg-gradient-to-r from-[#C9A962]/5 to-[#A68B4B]/5 border border-[#C9A962]/20 rounded-xl p-6 mt-8">
                     <div className="flex flex-col md:flex-row items-center justify-between gap-4">
                       <div>
-                        <h3 className="text-lg font-bold text-purple-900 mb-1">Want More Control?</h3>
-                        <p className="text-sm text-purple-700">
+                        <h3 className="text-lg font-bold text-[#8B7340] mb-1">Want More Control?</h3>
+                        <p className="text-sm text-[#A68B4B]">
                           Try our Smart Project Builder for a detailed, feature-by-feature customization experience
                         </p>
                       </div>
                       <Button
                         onClick={() => window.location.href = '/project-builder/smart'}
-                        className="bg-gradient-to-r from-purple-600 to-indigo-600 text-white px-6 py-3 whitespace-nowrap"
+                        className="bg-gradient-to-r from-[#C9A962] to-[#A68B4B] text-white px-6 py-3 whitespace-nowrap"
                       >
                         Open Smart Builder →
                       </Button>

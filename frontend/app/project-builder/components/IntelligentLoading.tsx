@@ -85,8 +85,8 @@ export default function IntelligentLoading({ estimatedTime = 30 }: IntelligentLo
         className="mb-8"
       >
         <div className="relative">
-          <div className="absolute inset-0 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full blur-xl opacity-30 animate-pulse" />
-          <div className="relative bg-gradient-to-br from-blue-50 to-purple-50 p-8 rounded-full">
+          <div className="absolute inset-0 bg-gradient-to-r from-[#C9A962] to-[#A68B4B] rounded-full blur-xl opacity-30 animate-pulse" />
+          <div className="relative bg-gradient-to-br from-[#C9A962]/5 to-[#A68B4B]/5 p-8 rounded-full">
             <IconComponent className="w-16 h-16 text-blue-600" />
           </div>
         </div>
@@ -112,7 +112,7 @@ export default function IntelligentLoading({ estimatedTime = 30 }: IntelligentLo
       <div className="w-full max-w-md">
         <div className="h-1 bg-gray-200 rounded-full overflow-hidden">
           <motion.div
-            className="h-full bg-gradient-to-r from-blue-600 to-purple-600"
+            className="h-full bg-gradient-to-r from-[#C9A962] to-[#A68B4B]"
             initial={{ width: 0 }}
             animate={{ width: `${progress}%` }}
             transition={{ duration: 0.3 }}

@@ -194,7 +194,7 @@ export default function ProjectDetailsForm({
         <motion.div
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
-          className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-indigo-600 to-purple-600 text-white mb-4"
+          className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-[#C9A962] to-[#A68B4B] text-white mb-4"
         >
           <Sparkles className="w-5 h-5" />
           <span className="font-semibold">Step 1: Tell Us About Your Project</span>
@@ -524,7 +524,7 @@ export default function ProjectDetailsForm({
           <Button 
             onClick={handleContinue}
             disabled={!canContinue}
-            className="bg-gradient-to-r from-indigo-600 to-purple-600 hover:opacity-90 text-white px-8"
+            className="bg-gradient-to-r from-[#C9A962] to-[#A68B4B] hover:opacity-90 text-white px-8"
             size="lg"
           >
             Continue to Categories

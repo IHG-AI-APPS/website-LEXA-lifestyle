@@ -44,7 +44,7 @@ export default function SmartApartmentPackagesPage() {
     blue: { bg: 'bg-sky-100', text: 'text-sky-600' },
     orange: { bg: 'bg-orange-100', text: 'text-orange-600' },
     amber: { bg: 'bg-[#C9A962]/15', text: 'text-[#C9A962]' },
-    purple: { bg: 'bg-purple-100', text: 'text-purple-600' }
+    purple: { bg: 'bg-[#C9A962]/10', text: 'text-[#C9A962]' }
   }
 
   const packages = [
@@ -128,7 +128,7 @@ export default function SmartApartmentPackagesPage() {
     {
       tier: 'Platinum',
       icon: Crown,
-      color: 'purple',
+      color: 'gold',
       tagline: 'Predictive Luxury',
       description: 'AI-driven automation with concierge-grade experience',
       pricing: {

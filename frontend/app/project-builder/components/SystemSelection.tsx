@@ -28,7 +28,7 @@ const BACKEND_URL = process.env.NEXT_PUBLIC_BACKEND_URL || process.env.NEXT_PUBL
 // Tier icons and colors
 const TIER_CONFIG: Record<string, { icon: typeof Crown; color: string; label: string }> = {
   ultra_luxury: { icon: Crown, color: 'from-yellow-500 to-amber-600', label: 'Ultra Luxury' },
-  luxury: { icon: Award, color: 'from-purple-500 to-purple-600', label: 'Luxury' },
+  luxury: { icon: Award, color: 'from-[#C9A962] to-[#A68B4B]', label: 'Luxury' },
   enterprise: { icon: Zap, color: 'from-blue-600 to-blue-700', label: 'Enterprise' },
   premium: { icon: Star, color: 'from-emerald-500 to-emerald-600', label: 'Premium' },
   commercial: { icon: Zap, color: 'from-gray-600 to-gray-700', label: 'Commercial' },
@@ -155,7 +155,7 @@ export default function SystemSelection({
     <div className="max-w-6xl mx-auto px-4">
       {/* Header */}
       <div className="text-center mb-10">
-        <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-indigo-600 to-purple-600 text-white mb-4">
+        <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-[#C9A962] to-[#A68B4B] text-white mb-4">
           <Award className="w-5 h-5" />
           <span className="font-semibold">System Selection</span>
         </div>
@@ -385,7 +385,7 @@ export default function SystemSelection({
             <Button 
               onClick={handleContinue}
               disabled={selectedSystems.length === 0}
-              className="bg-gradient-to-r from-indigo-600 to-purple-600 hover:opacity-90 text-white"
+              className="bg-gradient-to-r from-[#C9A962] to-[#A68B4B] hover:opacity-90 text-white"
             >
               Generate AI Recommendation
               <ChevronRight className="w-4 h-4 ml-1" />

@@ -22,7 +22,7 @@ const fallback = {
   toolkit_resources: [
     { title: 'Smart-Ready Certification Badge', description: 'Official LEXA Smart-Ready badge for your marketing materials and unit specifications', formats: ['PNG', 'SVG', 'EPS'], color: 'from-yellow-500 to-orange-500' },
     { title: 'Sample Floorplan Automation Layouts', description: 'Standard automation layouts for 1BR, 2BR, 3BR, and penthouse units with device placement', formats: ['DWG', 'PDF'], color: 'from-blue-500 to-cyan-500' },
-    { title: 'Marketing Brochure Inserts', description: 'Professional insert pages showcasing smart home features for your sales brochures', formats: ['PDF', 'InDesign'], color: 'from-purple-500 to-pink-500' },
+    { title: 'Marketing Brochure Inserts', description: 'Professional insert pages showcasing smart home features for your sales brochures', formats: ['PDF', 'InDesign'], color: 'from-[#C9A962] to-[#A68B4B]' },
     { title: 'Sales Team Talking Points', description: 'Key benefits, FAQs, and objection handling for your sales representatives', formats: ['PDF', 'PPT'], color: 'from-green-500 to-teal-500' },
     { title: 'Unit Upgrade Options Sheet', description: 'Tiered automation packages (Silver/Gold/Platinum) with pricing for buyer upgrades', formats: ['PDF', 'XLSX'], color: 'from-red-500 to-pink-500' },
     { title: 'Client Presentation PDF', description: 'Professional presentation deck explaining automation value proposition', formats: ['PDF', 'PPT'], color: 'from-indigo-500 to-purple-500' },

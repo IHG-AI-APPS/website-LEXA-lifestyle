@@ -270,7 +270,7 @@ export default function AnalyticsDashboard() {
               colors={{
                 value: 'bg-blue-500',
                 balanced: 'bg-green-500',
-                flagship: 'bg-purple-500'
+                flagship: 'bg-[#C9A962]/50'
               }}
             />
           </motion.div>
@@ -283,14 +283,14 @@ export default function AnalyticsDashboard() {
             className="bg-white dark:bg-gray-800 rounded-xl border border-gray-200 dark:border-gray-700 p-6"
           >
             <h3 className="text-lg font-medium text-gray-900 dark:text-white mb-4 flex items-center gap-2">
-              <Building2 className="w-5 h-5 text-purple-600" />
+              <Building2 className="w-5 h-5 text-[#C9A962]" />
               Segment Distribution
             </h3>
             <DistributionBar
               data={data?.segments || {}}
               colors={{
                 Residential: 'bg-blue-500',
-                Commercial: 'bg-purple-500',
+                Commercial: 'bg-[#C9A962]/50',
                 Hospitality: 'bg-orange-500'
               }}
             />
@@ -312,7 +312,7 @@ export default function AnalyticsDashboard() {
               colors={{
                 Villa: 'bg-blue-500',
                 Apartment: 'bg-green-500',
-                Penthouse: 'bg-purple-500',
+                Penthouse: 'bg-[#C9A962]/50',
                 Estate: 'bg-orange-500'
               }}
             />

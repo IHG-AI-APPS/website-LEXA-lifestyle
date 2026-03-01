@@ -53,7 +53,7 @@ const PROTOCOL_TYPES = [
     name: 'Hybrid',
     icon: Shuffle,
     color: 'from-purple-600 to-purple-700',
-    bgColor: 'bg-purple-600',
+    bgColor: 'bg-[#C9A962]',
     description: 'Best of both worlds - wired backbone with wireless flexibility',
     pros: ['Balanced approach', 'Flexible deployment', 'Reliable core systems', 'Easy expansion'],
     cons: ['More complex planning', 'Multiple technologies to manage'],

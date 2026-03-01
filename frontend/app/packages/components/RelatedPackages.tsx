@@ -105,7 +105,7 @@ export default function RelatedPackages({ currentSlug, currentTitle }: RelatedPa
                           className="object-cover transition-transform duration-500 group-hover:scale-110"
                         />
                       ) : (
-                        <div className="w-full h-full bg-gradient-to-br from-blue-500 via-purple-500 to-pink-500" />
+                        <div className="w-full h-full bg-gradient-to-br from-[#C9A962] via-[#B89A52] to-[#A68B4B]" />
                       )}
                       
                       {/* Overlay Gradient */}
@@ -179,7 +179,7 @@ export default function RelatedPackages({ currentSlug, currentTitle }: RelatedPa
         >
           <Link
             href="/packages"
-            className="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white font-semibold rounded-full hover:shadow-xl transition-all duration-300 hover:scale-105"
+            className="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-[#C9A962] to-[#A68B4B] text-white font-semibold rounded-full hover:shadow-xl transition-all duration-300 hover:scale-105"
           >
             <span>View All Packages</span>
             <ArrowRight className="h-5 w-5" />

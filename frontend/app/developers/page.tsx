@@ -205,9 +205,9 @@ export default function DevelopersPage() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.2 }}
-              className="bg-gradient-to-br from-purple-50 to-pink-50 rounded-2xl p-8 border-2 border-purple-200"
+              className="bg-gradient-to-br from-[#C9A962]/5 to-[#A68B4B]/5 rounded-2xl p-8 border-2 border-[#C9A962]/20"
             >
-              <Award size={40} className="text-purple-600 mb-4" />
+              <Award size={40} className="text-[#C9A962] mb-4" />
               <h3 className="text-2xl font-bold mb-2">Market Differentiation</h3>
               <p className="text-gray-700 dark:text-gray-300 dark:text-gray-300">
                 Smart-Ready badge sets you apart from competition

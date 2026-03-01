@@ -53,7 +53,7 @@ export default function SolutionsPage() {
     commercial: { 
       title: language === 'ar' ? 'الحلول التجارية' : 'Commercial Solutions', 
       subtitle: language === 'ar' ? 'الأعمال والضيافة' : 'Business & Hospitality', 
-      color: 'purple' 
+      color: 'gold' 
     },
     specialized: { 
       title: language === 'ar' ? 'الحلول المتخصصة' : 'Specialized Solutions', 

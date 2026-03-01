@@ -72,7 +72,7 @@ export default function ServiceLayer({ sessionId, projectData, onComplete }: Ser
         {/* Header */}
         <div className="text-center mb-12">
           <h1 className="text-4xl sm:text-5xl font-semibold tracking-tight text-gray-900 dark:text-white mb-4">
-            Professional <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600">Services</span>
+            Professional <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#C9A962] to-[#A68B4B]">Services</span>
           </h1>
           <p className="text-sm text-gray-500 uppercase tracking-widest mb-2">
             Design • Installation • Support

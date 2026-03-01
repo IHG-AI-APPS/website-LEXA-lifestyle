@@ -83,7 +83,7 @@ const BUILDER_STEPS = [
     label: 'Systems',
     description: 'Control systems',
     icon: Settings,
-    color: 'from-violet-500 to-purple-500'
+    color: 'from-[#C9A962] to-[#A68B4B]'
   },
   {
     id: 'package',

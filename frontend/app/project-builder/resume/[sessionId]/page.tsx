@@ -140,7 +140,7 @@ export default function ResumePage() {
           className="bg-white dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden"
         >
           {/* Header */}
-          <div className="bg-gradient-to-r from-blue-600 to-purple-600 p-6 text-white">
+          <div className="bg-gradient-to-r from-[#C9A962] to-[#A68B4B] p-6 text-white">
             <div className="flex items-center gap-3 mb-2">
               <CheckCircle2 className="w-6 h-6" />
               <h1 className="text-xl font-semibold">Session Restored</h1>

@@ -20,7 +20,7 @@ interface IntelligenceEngineProps {
 const CLASSIFICATION_CONFIG = {
   mandatory: { icon: Shield, color: 'text-red-600', bg: 'bg-red-50', label: 'Mandatory' },
   recommended: { icon: Zap, color: 'text-blue-600', bg: 'bg-blue-50', label: 'Recommended' },
-  luxury: { icon: Lightbulb, color: 'text-purple-600', bg: 'bg-purple-50', label: 'Luxury Enhancement' }
+  luxury: { icon: Lightbulb, color: 'text-[#C9A962]', bg: 'bg-[#C9A962]/5', label: 'Luxury Enhancement' }
 }
 
 export default function IntelligenceEngine({ sessionId, projectData, onComplete }: IntelligenceEngineProps) {
@@ -222,14 +222,14 @@ export default function IntelligenceEngine({ sessionId, projectData, onComplete 
       >
         {/* Header */}
         <div className="text-center mb-12">
-          <div className="inline-flex items-center gap-2 px-6 py-2 bg-gradient-to-r from-blue-50 to-purple-50 rounded-full mb-6 border border-blue-200">
+          <div className="inline-flex items-center gap-2 px-6 py-2 bg-gradient-to-r from-[#C9A962]/5 to-[#A68B4B]/5 rounded-full mb-6 border border-blue-200">
             <Brain className="w-5 h-5 text-blue-600" />
             <span className="text-xs uppercase tracking-widest text-blue-900 font-medium">
               AI Intelligence Analysis Complete
             </span>
           </div>
           <h1 className="text-4xl sm:text-5xl font-semibold tracking-tight text-gray-900 dark:text-white mb-4">
-            Knowledge <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600">Graph</span>
+            Knowledge <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#C9A962] to-[#A68B4B]">Graph</span>
           </h1>
           <p className="text-sm text-gray-500 uppercase tracking-widest mb-2">
             693 Features Analyzed • {mandatoryCount} Selected • {resolution.recommended_bundles?.length || 0} Systems
@@ -243,7 +243,7 @@ export default function IntelligenceEngine({ sessionId, projectData, onComplete 
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-12">
           {[
             { label: 'Systems', value: resolution.recommended_bundles?.length || 0, icon: Network, color: 'blue' },
-            { label: 'Features', value: totalFeatures, icon: Zap, color: 'purple' },
+            { label: 'Features', value: totalFeatures, icon: Zap, color: 'gold' },
             { label: 'Selected', value: mandatoryCount, icon: CheckCircle2, color: 'green' },
             { label: 'Dependencies', value: resolution.dependencies?.auto_added_systems?.length || 0, icon: AlertTriangle, color: 'orange' }
           ].map((stat, index) => (
@@ -366,7 +366,7 @@ export default function IntelligenceEngine({ sessionId, projectData, onComplete 
                     </div>
                   </div>
                   <div className="flex items-center gap-3">
-                    <div className="px-3 py-1 bg-gradient-to-r from-blue-600 to-purple-600 text-white text-xs font-mono rounded">
+                    <div className="px-3 py-1 bg-gradient-to-r from-[#C9A962] to-[#A68B4B] text-white text-xs font-mono rounded">
                       {bundle.tier}
                     </div>
                     <span className="text-xs text-gray-500">Click to expand</span>

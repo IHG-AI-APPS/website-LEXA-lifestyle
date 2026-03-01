@@ -246,7 +246,7 @@ export default function NiceToHaveUpgrades({
         <motion.div
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
-          className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-purple-500 to-indigo-600 text-white mb-4"
+          className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-[#C9A962] to-[#A68B4B] text-white mb-4"
         >
           <Gift className="w-5 h-5" />
           <span className="font-semibold">Enhance Your Package</span>
@@ -304,14 +304,14 @@ export default function NiceToHaveUpgrades({
               whileTap={{ scale: 0.98 }}
               className={`relative p-5 rounded-2xl border-2 text-left transition-all ${
                 isSelected
-                  ? 'border-purple-500 bg-purple-50 shadow-lg'
+                  ? 'border-[#C9A962] bg-[#C9A962]/5 shadow-lg'
                   : 'border-gray-200 dark:border-gray-700 bg-white hover:border-gray-300 dark:border-gray-600 hover:shadow-md'
               }`}
             >
               {/* Price Badge */}
               <div className={`absolute -top-3 -right-3 px-3 py-1 rounded-full text-sm font-bold ${
                 isSelected
-                  ? 'bg-purple-500 text-white'
+                  ? 'bg-[#C9A962]/50 text-white'
                   : 'bg-green-100 text-green-700'
               }`}>
                 +AED {upgrade.price.toLocaleString()}
@@ -319,7 +319,7 @@ export default function NiceToHaveUpgrades({
 
               {/* Selection Indicator */}
               <div className={`absolute top-4 left-4 w-6 h-6 rounded-full flex items-center justify-center ${
-                isSelected ? 'bg-purple-500 text-white' : 'bg-gray-100'
+                isSelected ? 'bg-[#C9A962]/50 text-white' : 'bg-gray-100'
               }`}>
                 {isSelected ? <Check className="w-4 h-4" /> : <Plus className="w-4 h-4 text-gray-400" />}
               </div>
@@ -358,7 +358,7 @@ export default function NiceToHaveUpgrades({
             {selectedUpgrades.size > 0 ? (
               <div>
                 <span className="text-sm text-gray-500">Total Upgrades:</span>
-                <span className="text-xl font-bold text-purple-600 ml-2">
+                <span className="text-xl font-bold text-[#C9A962] ml-2">
                   +AED {totalUpgradePrice.toLocaleString()}
                 </span>
               </div>
@@ -375,7 +375,7 @@ export default function NiceToHaveUpgrades({
             )}
             <Button 
               onClick={handleContinue}
-              className="bg-gradient-to-r from-purple-500 to-indigo-600 hover:opacity-90 text-white"
+              className="bg-gradient-to-r from-[#C9A962] to-[#A68B4B] hover:opacity-90 text-white"
             >
               {selectedUpgrades.size > 0 ? 'Finalize Package' : 'Continue'}
               <ChevronRight className="w-4 h-4 ml-1" />

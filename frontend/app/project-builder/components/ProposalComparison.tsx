@@ -62,7 +62,7 @@ export default function ProposalComparison({ sessionId, resolutionData, onSelect
         {/* Header */}
         <div className="text-center mb-12">
           <h1 className="text-4xl sm:text-5xl font-semibold tracking-tight text-gray-900 dark:text-white mb-4">
-            Architecture <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600">Proposals</span>
+            Architecture <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#C9A962] to-[#A68B4B]">Proposals</span>
           </h1>
           <p className="text-sm text-gray-500 uppercase tracking-widest mb-2">
             Three Options • Compare • Select
@@ -97,7 +97,7 @@ export default function ProposalComparison({ sessionId, resolutionData, onSelect
                 {/* Recommended Badge */}
                 {isRecommended && (
                   <div className="absolute -top-3 left-1/2 transform -translate-x-1/2">
-                    <div className="px-4 py-1 bg-gradient-to-r from-blue-600 to-purple-600 text-white text-xs uppercase tracking-widest font-medium rounded-full">
+                    <div className="px-4 py-1 bg-gradient-to-r from-[#C9A962] to-[#A68B4B] text-white text-xs uppercase tracking-widest font-medium rounded-full">
                       Recommended
                     </div>
                   </div>

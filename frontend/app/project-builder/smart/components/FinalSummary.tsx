@@ -836,10 +836,10 @@ export default function FinalSummary({
             <div className="text-2xl font-bold text-orange-600">{shouldHaveFeatures.length}</div>
             <div className="text-sm text-orange-700">Should-Have</div>
           </div>
-          <div className="p-4 bg-purple-50 rounded-xl text-center">
-            <Gift className="w-6 h-6 text-purple-500 mx-auto mb-2" />
-            <div className="text-2xl font-bold text-purple-600">{upgradeFeatures.length}</div>
-            <div className="text-sm text-purple-700">Upgrades</div>
+          <div className="p-4 bg-[#C9A962]/5 rounded-xl text-center">
+            <Gift className="w-6 h-6 text-[#C9A962] mx-auto mb-2" />
+            <div className="text-2xl font-bold text-[#C9A962]">{upgradeFeatures.length}</div>
+            <div className="text-sm text-[#A68B4B]">Upgrades</div>
           </div>
         </div>
       </motion.div>
@@ -866,7 +866,7 @@ export default function FinalSummary({
           </div>
           <div className="p-4 bg-gray-50 rounded-xl">
             <div className="flex items-center gap-2 mb-2">
-              <Settings className="w-5 h-5 text-purple-500" />
+              <Settings className="w-5 h-5 text-[#C9A962]" />
               <span className="font-semibold text-gray-900 dark:text-white dark:text-white">Control System</span>
             </div>
             <div className="text-gray-600 dark:text-gray-400 dark:text-gray-400">{selectedSystems.join(', ')}</div>
@@ -879,7 +879,7 @@ export default function FinalSummary({
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.4 }}
-        className="bg-gradient-to-br from-indigo-600 to-purple-700 rounded-2xl p-6 mb-6 text-white"
+        className="bg-gradient-to-br from-[#C9A962] to-[#A68B4B] rounded-2xl p-6 mb-6 text-white"
       >
         <div className="flex items-center justify-between mb-4">
           <h2 className="text-lg font-bold flex items-center gap-2">

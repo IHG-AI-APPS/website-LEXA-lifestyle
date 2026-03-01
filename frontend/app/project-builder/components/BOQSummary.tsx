@@ -127,7 +127,7 @@ export default function BOQSummary({ sessionId, selectedProposal, onComplete }: 
             </span>
           </div>
           <h1 className="text-4xl sm:text-5xl font-semibold tracking-tight text-gray-900 dark:text-white mb-4">
-            Project <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600">Summary</span>
+            Project <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#C9A962] to-[#A68B4B]">Summary</span>
           </h1>
           <p className="text-sm text-gray-500 uppercase tracking-widest">
             {proposal?.name} • {proposal?.feature_count} Features
@@ -231,7 +231,7 @@ export default function BOQSummary({ sessionId, selectedProposal, onComplete }: 
         </div>
 
         {/* Key Highlights */}
-        <div className="bg-gradient-to-br from-blue-50 to-purple-50 border border-blue-200 p-8 mb-8">
+        <div className="bg-gradient-to-br from-[#C9A962]/5 to-[#A68B4B]/5 border border-blue-200 p-8 mb-8">
           <h3 className="text-sm font-medium mb-4 uppercase tracking-widest text-gray-900 dark:text-white dark:text-white">Key Highlights</h3>
           <div className="space-y-3">
             {proposal?.highlights?.map((highlight: string, index: number) => (

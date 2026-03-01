@@ -48,7 +48,7 @@ export default function PackagesPage() {
     { name: 'Basic', price: '3,000', color: 'bg-blue-500' },
     { name: 'Advanced', price: '4,400', color: 'bg-orange-500' },
     { name: 'Gold', price: '7,000', color: 'bg-amber-500', popular: true },
-    { name: 'Platinum', price: '11,000', color: 'bg-purple-500' }
+    { name: 'Platinum', price: '11,000', color: 'bg-[#C9A962]/50' }
   ]
 
   return (
@@ -81,7 +81,7 @@ export default function PackagesPage() {
           <div className="max-w-7xl mx-auto">
             <div className="flex flex-wrap items-center gap-3">
               <span className="text-sm text-gray-500">Tools:</span>
-              <Link href="/smart-home-quiz" className="inline-flex items-center gap-1.5 px-3 py-1.5 text-sm bg-purple-50 text-purple-700 rounded-full hover:bg-purple-100 transition-colors">
+              <Link href="/smart-home-quiz" className="inline-flex items-center gap-1.5 px-3 py-1.5 text-sm bg-[#C9A962]/5 text-[#A68B4B] rounded-full hover:bg-[#C9A962]/10 transition-colors">
                 <Brain className="h-3.5 w-3.5" />
                 AI Quiz
               </Link>
@@ -200,7 +200,7 @@ export default function PackagesPage() {
             {/* Package Tiers Explanation */}
             <div>
               <div className="flex items-center gap-3 mb-6">
-                <Crown className="h-5 w-5 text-purple-500" />
+                <Crown className="h-5 w-5 text-[#C9A962]" />
                 <h2 className="text-xl font-semibold">Package Tiers</h2>
               </div>
               
@@ -223,9 +223,9 @@ export default function PackagesPage() {
                     Advanced features with extended coverage. Ideal for comprehensive home automation.
                   </p>
                 </div>
-                <div className="border border-gray-200 dark:border-gray-700 rounded-lg p-5 bg-gradient-to-br from-purple-50 to-white">
+                <div className="border border-gray-200 dark:border-gray-700 rounded-lg p-5 bg-gradient-to-br from-[#C9A962]/5 to-white">
                   <div className="flex items-center gap-2 mb-2">
-                    <Crown className="h-4 w-4 text-purple-500" />
+                    <Crown className="h-4 w-4 text-[#C9A962]" />
                     <span className="font-semibold text-gray-900 dark:text-white dark:text-white">High-End</span>
                   </div>
                   <p className="text-sm text-gray-600 dark:text-gray-400 dark:text-gray-400">
@@ -251,7 +251,7 @@ export default function PackagesPage() {
               <div className="flex gap-3">
                 <Link
                   href="/smart-home-quiz"
-                  className="px-5 py-2.5 bg-purple-600 text-white text-sm font-medium rounded-lg hover:bg-purple-700 transition-colors"
+                  className="px-5 py-2.5 bg-[#C9A962] text-white text-sm font-medium rounded-lg hover:bg-[#A68B4B] transition-colors"
                 >
                   Take AI Quiz
                 </Link>

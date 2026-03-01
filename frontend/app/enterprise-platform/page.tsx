@@ -62,7 +62,7 @@ export default function EnterprisePerformanceOSPage() {
       number: 3,
       title: 'Asset & Operations Intelligence',
       icon: Activity,
-      color: 'purple',
+      color: 'gold',
       features: [
         'Predictive Maintenance - Anticipate needs',
         'Equipment Health - Real-time monitoring',

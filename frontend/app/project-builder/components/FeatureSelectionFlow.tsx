@@ -74,8 +74,8 @@ const TIERS = [
     id: 'want_to_have',
     name: 'Want to Have',
     description: 'Dream features for the ultimate experience',
-    color: 'from-purple-500 to-purple-600',
-    bgColor: 'bg-purple-500',
+    color: 'from-[#C9A962] to-[#A68B4B]',
+    bgColor: 'bg-[#C9A962]/50',
     icon: Sparkles,
     instruction: 'Select your dream features and aspirational additions'
   }

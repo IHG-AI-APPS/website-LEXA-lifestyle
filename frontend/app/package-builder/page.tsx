@@ -335,12 +335,12 @@ export default function PackageBuilderPage() {
                     key={tier.tier_level}
                     className={`relative rounded-2xl border-2 p-8 transition-all ${
                       tier.recommended 
-                        ? 'border-purple-500 shadow-2xl scale-105' 
+                        ? 'border-[#C9A962] shadow-2xl scale-105' 
                         : 'border-gray-200 dark:border-gray-700 hover:border-blue-500'
                     }`}
                   >
                     {tier.badge && (
-                      <div className="absolute -top-4 left-1/2 -translate-x-1/2 px-4 py-1 bg-purple-500 text-white text-sm font-bold rounded-full">
+                      <div className="absolute -top-4 left-1/2 -translate-x-1/2 px-4 py-1 bg-[#C9A962]/50 text-white text-sm font-bold rounded-full">
                         {tier.badge}
                       </div>
                     )}
@@ -369,7 +369,7 @@ export default function PackageBuilderPage() {
                       onClick={() => selectTier(tier)}
                       className={`w-full py-4 rounded-lg font-bold transition-all ${
                         tier.recommended
-                          ? 'bg-purple-500 text-white hover:bg-purple-600 shadow-lg'
+                          ? 'bg-[#C9A962]/50 text-white hover:bg-[#C9A962] shadow-lg'
                           : 'bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-white hover:bg-gray-200'
                       }`}
                     >
@@ -448,7 +448,7 @@ export default function PackageBuilderPage() {
                           <p className="text-xs text-gray-500 mb-1">Type</p>
                           <span className={`text-xs px-2 py-1 rounded ${
                             system.type === 'proprietary' 
-                              ? 'bg-purple-100 text-purple-700' 
+                              ? 'bg-[#C9A962]/10 text-[#A68B4B]' 
                               : 'bg-green-100 text-green-700'
                           }`}>
                             {system.type === 'proprietary' ? 'Proprietary' : 'Open Standard'}
@@ -605,7 +605,7 @@ export default function PackageBuilderPage() {
                               <div className="flex items-center justify-between pt-3 border-t border-gray-200 dark:border-gray-700 dark:border-gray-700">
                                 <span className={`text-xs px-2 py-1 rounded ${
                                   item.type === 'upgrade' 
-                                    ? 'bg-purple-100 text-purple-700' 
+                                    ? 'bg-[#C9A962]/10 text-[#A68B4B]' 
                                     : 'bg-blue-100 text-blue-700'
                                 }`}>
                                   {item.type === 'upgrade' ? 'Upgrade' : 'Add-on'}

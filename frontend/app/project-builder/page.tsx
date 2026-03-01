@@ -43,7 +43,7 @@ export default function ProjectBuilderLanding() {
               <h1 className="text-[clamp(3rem,10vw,10rem)] font-semibold tracking-[-0.04em] leading-[0.9] mb-8">
                 SMART
                 <br />
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 via-purple-600 to-blue-700">PROJECT</span>
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#C9A962] via-[#B89A52] to-[#A68B4B]">PROJECT</span>
                 <br />
                 BUILDER
               </h1>
@@ -63,7 +63,7 @@ export default function ProjectBuilderLanding() {
                 <Link href="/project-builder/smart">
                   <Button
                     size="lg"
-                    className="bg-gradient-to-r from-purple-600 to-indigo-600 hover:opacity-90 text-white border-0 px-10 py-7 text-sm font-medium tracking-wide transition-all duration-300 group"
+                    className="bg-gradient-to-r from-[#C9A962] to-[#A68B4B] hover:opacity-90 text-white border-0 px-10 py-7 text-sm font-medium tracking-wide transition-all duration-300 group"
                     data-testid="smart-builder-cta"
                   >
                     <Sparkles className="mr-2 h-4 w-4" />
@@ -147,7 +147,7 @@ export default function ProjectBuilderLanding() {
                   className="group relative bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 hover:border-gray-300 dark:border-gray-600 p-8 transition-all duration-500 hover:shadow-lg"
                 >
                   {/* Number Badge */}
-                  <div className="absolute -top-4 -left-4 w-12 h-12 bg-gradient-to-br from-blue-600 to-purple-600 text-white flex items-center justify-center font-mono text-sm font-medium">
+                  <div className="absolute -top-4 -left-4 w-12 h-12 bg-gradient-to-br from-[#C9A962] to-[#A68B4B] text-white flex items-center justify-center font-mono text-sm font-medium">
                     {step.number}
                   </div>
 

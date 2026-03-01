@@ -19,7 +19,7 @@ const BACKEND_URL = process.env.NEXT_PUBLIC_BACKEND_URL || 'http://localhost:800
 
 const tierColorClasses = {
   essential: { border: 'border-blue-500', bg: 'bg-blue-500', bgHover: 'hover:bg-blue-600', bgLight: 'bg-blue-50', text: 'text-blue-600', borderHover: 'hover:border-blue-500', textHover: 'hover:text-blue-600', shadow: 'shadow-blue-500/20' },
-  enhanced: { border: 'border-purple-500', bg: 'bg-purple-500', bgHover: 'hover:bg-purple-600', bgLight: 'bg-purple-50', text: 'text-purple-600', borderHover: 'hover:border-purple-500', textHover: 'hover:text-purple-600', shadow: 'shadow-purple-500/20' },
+  enhanced: { border: 'border-[#C9A962]', bg: 'bg-[#C9A962]/50', bgHover: 'hover:bg-[#C9A962]', bgLight: 'bg-[#C9A962]/5', text: 'text-[#C9A962]', borderHover: 'hover:border-[#C9A962]', textHover: 'hover:text-[#C9A962]', shadow: 'shadow-[#C9A962]/20' },
   highend: { border: 'border-amber-500', bg: 'bg-amber-500', bgHover: 'hover:bg-amber-600', bgLight: 'bg-amber-50', text: 'text-amber-600', borderHover: 'hover:border-amber-500', textHover: 'hover:text-amber-600', shadow: 'shadow-amber-500/20' }
 }
 

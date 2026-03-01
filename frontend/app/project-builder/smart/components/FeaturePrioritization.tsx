@@ -278,11 +278,11 @@ export default function FeaturePrioritization({
           key={currentCategory.id}
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
-          className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-purple-600 to-pink-600 text-white mb-4"
+          className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-[#C9A962] to-[#A68B4B] text-white mb-4"
         >
           <IconComponent className="w-5 h-5" />
           <span className="font-semibold">{currentCategory.name}</span>
-          <span className="text-purple-200">({currentCategoryIndex + 1}/{categories.length})</span>
+          <span className="text-[#E8DCC8]">({currentCategoryIndex + 1}/{categories.length})</span>
         </motion.div>
         <motion.h2
           initial={{ opacity: 0 }}
@@ -319,7 +319,7 @@ export default function FeaturePrioritization({
             key={cat.id}
             className={`h-2 flex-1 rounded-full transition-all ${
               idx < currentCategoryIndex ? 'bg-green-500' :
-              idx === currentCategoryIndex ? 'bg-purple-500' : 'bg-gray-200'
+              idx === currentCategoryIndex ? 'bg-[#C9A962]/50' : 'bg-gray-200'
             }`}
           />
         ))}
@@ -430,7 +430,7 @@ export default function FeaturePrioritization({
           
           <Button 
             onClick={goToNextCategory}
-            className="bg-gradient-to-r from-purple-600 to-pink-600 hover:opacity-90 text-white"
+            className="bg-gradient-to-r from-[#C9A962] to-[#A68B4B] hover:opacity-90 text-white"
           >
             {currentCategoryIndex < categories.length - 1 ? (
               <>
