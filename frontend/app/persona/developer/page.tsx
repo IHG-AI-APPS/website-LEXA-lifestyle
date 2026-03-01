@@ -250,7 +250,7 @@ export default function DeveloperPage() {
       </section>
 
       {/* Project Builder CTA */}
-      <section className="py-20 bg-gradient-to-br from-blue-600 to-purple-700 text-white relative overflow-hidden">
+      <section className="py-20 bg-[#0a0a0a] text-white relative overflow-hidden">
         <div className="absolute inset-0 bg-black/20"></div>
         <div className="container mx-auto px-8 lg:px-16 relative z-10">
           <div className="max-w-5xl mx-auto">

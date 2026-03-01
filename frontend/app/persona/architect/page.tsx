@@ -250,7 +250,7 @@ export default function ArchitectPage() {
       </section>
 
       {/* Project Builder CTA */}
-      <section className="py-20 bg-gradient-to-br from-blue-600 to-purple-700 text-white relative overflow-hidden">
+      <section className="py-20 bg-[#0a0a0a] text-white relative overflow-hidden">
         <div className="absolute inset-0 bg-black/20"></div>
         <div className="container mx-auto px-8 lg:px-16 relative z-10">
           <div className="max-w-5xl mx-auto">
@@ -274,7 +274,7 @@ export default function ArchitectPage() {
                 <Link href="/home-intelligence-builder">
                   <Button
                     size="lg"
-                    className="bg-white text-blue-600 hover:bg-gray-100 dark:bg-gray-800 px-8 py-6 text-lg font-semibold shadow-2xl"
+                    className="bg-[#C9A962] text-black hover:bg-[#E8DCC8] dark:bg-[#C9A962] px-8 py-6 text-lg font-semibold shadow-2xl"
                   >
                     Launch Project Builder
                     <ArrowRight className="ml-2" size={20} />
