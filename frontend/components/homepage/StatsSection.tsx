@@ -38,7 +38,7 @@ function AnimatedCounter({ value, suffix }: { value: number; suffix: string }) {
     })
   }, [springValue, suffix])
 
-  return <div ref={ref} className="h2 text-[#1A1A1A] dark:text-white dark:text-white mb-2" />
+  return <div ref={ref} className="text-4xl md:text-5xl font-light text-transparent bg-clip-text bg-gradient-to-b from-[#C9A962] to-[#8a7035] mb-2" />
 }
 
 export default function StatsSection() {
@@ -70,7 +70,7 @@ export default function StatsSection() {
 
   if (loading) {
     return (
-      <section className="py-16 md:py-20 bg-white dark:bg-gray-900">
+      <section className="py-16 md:py-20 bg-[#050505]">
         <div className="px-6 md:px-12 lg:px-24">
           <div className="text-center dark:text-gray-400">Loading...</div>
         </div>
