@@ -11,43 +11,39 @@ Complete website overhaul for LEXA Smart Home to:
 
 ## Completed Work (Latest First)
 
-### Phase 33: "Dark Luxury" Full Redesign (Mar 1, 2026) — MAJOR
-**Design system: "The Invisible Butler"** — Unified OLED-black (#050505) experience
-- **Homepage wrapper**: `bg-[#050505]` eliminates ALL white/light section backgrounds
-- **Purple gradient killed**: Smart Project Builder now uses `from-[#0A0A0A] to-[#111111]` with gold border + accents
-- **Gold gradient stats**: `text-transparent bg-clip-text bg-gradient-to-b from-[#C9A962] to-[#8a7035]`
-- **Trust badges**: Dark glass strip (`bg-black/60 backdrop-blur-xl`) with `text-[#C9A962]` gold icons
-- **Solutions section**: Gold pill badge, dark bg, white headings
-- **Projects section**: Gold `OUR PORTFOLIO` label, dark bg
-- **TrustedInUAE**: Full dark theme with `bg-white/[0.03]` glass cards
-- **Tab bar**: Floating pill (`rounded-2xl max-w-sm mx-auto`, 64px height)
-- **Hero cleanup**: "We serve" text hidden on mobile (`hidden sm:block`)
-- **ExperienceCentreCTA**: Normalized to `bg-[#050505]`
-- **All CTA buttons**: Gold `bg-[#C9A962]` with black text, `rounded-none` sharp edges
-- Testing: 100% pass on mobile + desktop (iteration_58.json)
+### Phase 33: Design Overhaul with Theme-Aware Dark/Light (Mar 1, 2026)
+- **Gold accent system**: All sections now use `#C9A962` gold accents consistently
+- **Purple gradient killed**: Smart Project Builder → dark bg with gold border/accents
+- **Stats**: Gold gradient numbers (`bg-clip-text bg-gradient-to-b from-[#C9A962] to-[#8a7035]`)
+- **Trust badges**: Gold icons, theme-aware bg (`bg-gray-50/80 dark:bg-black/60`)
+- **All sections theme-aware**: Using `bg-white dark:bg-[#050505]` pattern — toggle works
+- **Floating pill tab bar**: `rounded-2xl max-w-sm mx-auto`, 64px height
+- **"We serve" text**: Hidden on mobile (`hidden sm:block`)
+- **Solutions badge**: Gold pill with `bg-[#C9A962]/10 border-[#C9A962]/30`
+- Testing: Theme toggle verified working on both light/dark modes
 
 ### Phase 32: Data Cleanup + Projects Tab Fix (Mar 1, 2026)
 - MobileTabBar "Projects" → `/projects` (was `/dashboard`)
-- Cleaned "PUT_TEST_462a0b9a" + "TEST_PATCHED_66761588" from DB
+- Test data cleaned from DB
 
 ### Phase 31: Image Performance (Mar 1, 2026)
-- TetrisProjects + CalculatorCardsSection → SafeImage (quality=75, lazy, sizes)
+- SafeImage optimization (quality=75, lazy, sizes)
 
 ### Phase 30: Mobile UX Redesign (Mar 1, 2026)
-- Hero center-aligned, horizontal snap scroll for tools + projects
+- Center-aligned hero, horizontal snap scroll for tools + projects
 
-### Phase 29: Quick Actions FAB (Mar 1, 2026)
+### Phase 29: Quick Actions FAB
 ### Phase 28: Hero CTA Optimization
 ### Phase 27-1: Native Gestures, Speed, AURA, Full CMS
 
 ## Design System
-- **Primary bg**: #050505 (OLED black)
-- **Gold accent**: #C9A962
+- **Light bg**: white / gray-50
+- **Dark bg**: #050505 (OLED black)
+- **Gold accent**: #C9A962 (light+dark)
 - **Gold hover**: #E8DCC8
-- **Glass cards**: bg-white/[0.03] border-white/[0.06]
-- **Text primary**: white
-- **Text secondary**: neutral-400/neutral-500
-- **Buttons**: bg-[#C9A962] text-black rounded-none
+- **Glass cards (dark)**: bg-white/[0.03] border-white/[0.06]
+- **Glass cards (light)**: bg-gray-50 border-gray-200
+- **Theme toggle**: Uses `dark:` Tailwind variants throughout
 
 ## Remaining / Backlog
 ### P1 — Redesign Projects Landing Page
