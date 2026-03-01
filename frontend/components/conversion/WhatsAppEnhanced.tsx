@@ -298,7 +298,7 @@ export default function WhatsAppEnhanced() {
               initial={{ opacity: 0, y: 20, scale: 0.95 }}
               animate={{ opacity: 1, y: 0, scale: 1 }}
               exit={{ opacity: 0, y: 20, scale: 0.95 }}
-              className="fixed bottom-24 right-6 z-50 w-[420px] overflow-hidden rounded-2xl border-2 border-[#E8DCC8]/30 bg-gradient-to-br from-[#0A0A0A] via-[#121212] to-[#0A0A0A] shadow-2xl"
+              className="fixed bottom-24 right-2 left-2 sm:left-auto sm:right-6 z-50 sm:w-[420px] overflow-hidden rounded-2xl border-2 border-[#E8DCC8]/30 bg-gradient-to-br from-[#0A0A0A] via-[#121212] to-[#0A0A0A] shadow-2xl"
             >
               {/* Header */}
               <div className="border-b border-white/10 bg-[#25D366] p-4 text-white">
