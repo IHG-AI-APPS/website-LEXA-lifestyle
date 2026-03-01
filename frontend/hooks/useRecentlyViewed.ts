@@ -4,7 +4,7 @@ import { useState, useEffect, useCallback } from 'react'
 
 export interface RecentlyViewedItem {
   id: string
-  type: 'solution' | 'project' | 'service' | 'package'
+  type: 'solution' | 'project' | 'service' | 'package' | 'brand'
   slug: string
   title: string
   image?: string
