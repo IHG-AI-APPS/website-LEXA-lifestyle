@@ -1,7 +1,7 @@
 'use client'
 
 import { usePathname, useRouter } from 'next/navigation'
-import { useEffect, useCallback } from 'react'
+import { useState, useEffect, useCallback } from 'react'
 import Header from '@/components/layout/Header'
 import Footer from '@/components/layout/Footer'
 import MobileTabBar from '@/components/navigation/MobileTabBar'
@@ -24,7 +24,7 @@ const CookieConsent = dynamic(() => import('@/components/widgets/CookieConsent')
 const LinkPrefetcher = dynamic(() => import('@/components/performance/LinkPrefetcher').catch(() => ({ default: Noop })), { ssr: false })
 const ScheduleVisitButton = dynamic(() => import('@/components/widgets/ScheduleVisitButton').catch(() => ({ default: Noop })), { ssr: false })
 const PullToRefresh = dynamic(() => import('@/components/mobile/PullToRefresh'), { ssr: false })
-const MobileQuickActions = dynamic(() => import('@/components/mobile/MobileQuickActions'), { ssr: false })
+const ConsultationFormLazy = dynamic(() => import('@/components/forms/ConsultationForm').catch(() => ({ default: Noop })), { ssr: false })
 
 export default function ClientLayout({ children }: { children: React.ReactNode }) {
   const pathname = usePathname()
