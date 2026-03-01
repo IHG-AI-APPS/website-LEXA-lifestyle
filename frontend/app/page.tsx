@@ -38,14 +38,14 @@ export default function HomePage() {
   }, [])
 
   return (
-    <div className="bg-[#050505] min-h-screen">
+    <div className="bg-white dark:bg-[#050505] min-h-screen">
       <HeroCurator onPersonaClick={() => setShowPersonaModal(true)} />
       
-      <TrustBadges variant="compact" className="bg-black/60 backdrop-blur-xl border-b border-white/5" />
+      <TrustBadges variant="compact" className="bg-gray-50/80 dark:bg-black/60 backdrop-blur-xl border-b border-gray-200 dark:border-white/5" />
       
-      <RecentlyViewedSection maxItems={4} variant="horizontal" className="bg-[#050505]" />
+      <RecentlyViewedSection maxItems={4} variant="horizontal" className="bg-white dark:bg-[#050505]" />
       
-      <SmartRecommendations maxItems={4} variant="horizontal" className="bg-[#050505]" />
+      <SmartRecommendations maxItems={4} variant="horizontal" className="bg-white dark:bg-[#050505]" />
       
       <SolutionsBentoGrid />
       
