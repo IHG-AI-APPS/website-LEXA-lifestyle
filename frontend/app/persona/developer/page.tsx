@@ -274,7 +274,7 @@ export default function DeveloperPage() {
                 <Link href="/home-intelligence-builder">
                   <Button
                     size="lg"
-                    className="bg-white text-blue-600 hover:bg-gray-100 dark:bg-gray-800 px-8 py-6 text-lg font-semibold shadow-2xl"
+                    className="bg-[#C9A962] text-black hover:bg-[#E8DCC8] dark:bg-[#C9A962] px-8 py-6 text-lg font-semibold shadow-2xl"
                   >
                     Launch Project Builder
                     <ArrowRight className="ml-2" size={20} />
