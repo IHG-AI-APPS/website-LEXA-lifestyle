@@ -63,24 +63,28 @@ export default function ProjectsPage() {
   }
 
   return (
-    <div className="min-h-screen bg-[#F9F9F7] pt-20">
+    <div className="min-h-screen bg-[#F9F9F7] dark:bg-[#050505] pt-20">
       {/* Header - Centered */}
-      <section className="py-12 md:py-16 lg:py-20 bg-white">
-        <div className="content-container">
+      <section className="relative overflow-hidden bg-[#0A0A0A] dark:bg-[#050505] text-white py-12 md:py-16 lg:py-20">
+        {/* Hero Background Image */}
+        <div className="absolute inset-0">
+          <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1200&q=50" alt="" className="w-full h-full object-cover opacity-20" loading="eager" />
+          <div className="absolute inset-0 bg-gradient-to-t from-[#0A0A0A] via-[#0A0A0A]/70 to-[#0A0A0A]/40" />
+        </div>
+        <div className="container mx-auto px-8 lg:px-16 relative z-10">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            className="max-w-4xl mx-auto text-center"
+            className="max-w-3xl mx-auto text-center"
           >
-            <span className="text-xs tracking-widest uppercase text-[#9F8B65] font-medium mb-4 md:mb-6 block">
+            <span className="inline-block px-3 py-1 rounded-full bg-[#C9A962]/15 border border-[#C9A962]/30 text-[#C9A962] text-xs uppercase tracking-widest mb-5">
               Portfolio
             </span>
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold uppercase mb-6 md:mb-8">
-              Our Projects
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold uppercase mb-5 tracking-tight">
+              OUR PROJECTS
             </h1>
-            <div className="h-px w-32 bg-[#9F8B65] mb-6 md:mb-8 mx-auto" />
-            <p className="text-base md:text-lg text-[#4A4A4A] leading-relaxed max-w-2xl mx-auto">
+            <p className="text-base text-gray-300 max-w-lg mx-auto leading-relaxed">
               A comprehensive showcase of our luxury smart living installations across the region.
             </p>
           </motion.div>
