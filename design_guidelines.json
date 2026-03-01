@@ -1,192 +1,151 @@
 {
-  "project_name": "LEXA Smart Project Builder - The Intelligence Engine",
-  "version": "1.0.0",
-  "last_updated": "2026-05-20",
-  "identity": {
-    "persona": "E1 - The Anti-AI Designer",
-    "core_philosophy": "Consultative Intelligence over Linear Forms. The user is an architect, not a data entry clerk.",
-    "emotional_tone": "Professional, Exclusive, Intelligent, Trustworthy (High-Agency)",
-    "visual_archetype": "Luxury Technical (Archetype 5 + 2)",
-    "anti_patterns": [
-      "No 'Wizard' Steppers (Step 1 of 7)",
-      "No generic 'Success' modals with confetti",
-      "No 'Spinners' - Use data visualization for loading states",
-      "No 'Primary Blue' buttons - Use Gold or Monochrome",
-      "No 'Lorem Ipsum' - Use industry-specific terminology"
-    ]
-  },
-  "design_system": {
+  "brand_identity": {
     "colors": {
-      "base": {
-        "background": "#050505",
-        "surface": "#121212",
-        "surface_highlight": "#1E1E1E",
-        "border": "#2A2A2A"
-      },
-      "brand": {
-        "primary": "#D4AF37",
-        "primary_dim": "#8A7030",
-        "secondary": "#E2E8F0",
-        "accent_glow": "rgba(212, 175, 55, 0.15)"
-      },
-      "functional": {
-        "success": "#10B981",
-        "warning": "#F59E0B",
-        "error": "#EF4444",
-        "text_primary": "#F8FAFC",
-        "text_secondary": "#94A3B8",
-        "text_tertiary": "#475569"
-      }
+      "primary": "#C9A962",
+      "primary_foreground": "#0A0A0A",
+      "background": "#0A0A0A",
+      "surface": "#121212",
+      "surface_highlight": "#1E1E1E",
+      "text_primary": "#FFFFFF",
+      "text_secondary": "#A1A1AA",
+      "border": "rgba(255, 255, 255, 0.1)",
+      "glass_bg": "rgba(10, 10, 10, 0.8)",
+      "glass_border": "rgba(255, 255, 255, 0.08)"
     },
     "typography": {
       "headings": {
-        "family": "Cormorant Garamond, serif",
-        "weights": ["Light (300)", "Medium (500)"],
-        "usage": "Hero titles, high-impact statements"
+        "font_family": "Outfit, sans-serif",
+        "weight": "700",
+        "mobile_size": "text-3xl sm:text-4xl",
+        "letter_spacing": "tracking-tight"
       },
       "body": {
-        "family": "DM Sans, sans-serif",
-        "weights": ["Regular (400)", "Medium (500)"],
-        "usage": "General UI text, inputs, explanations"
+        "font_family": "DM Sans, sans-serif",
+        "weight": "400",
+        "mobile_size": "text-base",
+        "line_height": "leading-relaxed"
       },
-      "technical": {
-        "family": "JetBrains Mono, monospace",
-        "weights": ["Regular (400)"],
-        "usage": "Specs, pricing, BOQ data, confidence scores"
+      "accent": {
+        "font_family": "Cormorant Garamond, serif",
+        "usage": "Italicized highlights, quotes, luxury subheaders"
       }
     },
     "shadows": {
-      "gold_glow": "0 0 20px rgba(212, 175, 55, 0.1)",
-      "gold_glow_hover": "0 0 30px rgba(212, 175, 55, 0.25)",
-      "glass_surface": "0 8px 32px 0 rgba(0, 0, 0, 0.37)"
-    },
-    "radius": {
-      "xs": "2px",
-      "sm": "4px",
-      "md": "8px",
-      "lg": "12px",
-      "xl": "24px"
-    },
-    "layout": {
-      "grid_system": "CSS Grid / Bento Grid",
-      "spacing_scale": "Tailwind Base (p-4, p-8, p-12)",
-      "max_width": "max-w-7xl mx-auto"
+      "glow": "0 0 20px rgba(201, 169, 98, 0.3)",
+      "card": "0 10px 30px -10px rgba(0, 0, 0, 0.5)",
+      "glass": "0 8px 32px 0 rgba(0, 0, 0, 0.36)"
     }
   },
-  "components": {
-    "common": {
-      "Button": {
-        "styles": {
-          "primary": "bg-[#D4AF37] text-black hover:bg-[#FAD02C] transition-all duration-300 font-medium rounded-none uppercase tracking-widest text-xs px-8 py-3",
-          "secondary": "bg-transparent border border-[#2A2A2A] text-[#94A3B8] hover:border-[#D4AF37] hover:text-[#D4AF37] transition-all duration-300 rounded-none uppercase tracking-widest text-xs px-8 py-3",
-          "ghost": "text-[#94A3B8] hover:text-white transition-colors uppercase tracking-widest text-[10px]"
-        }
-      },
-      "Card": {
-        "style": "bg-[#121212]/80 backdrop-blur-md border border-[#2A2A2A] hover:border-[#D4AF37]/50 transition-colors duration-500",
-        "interaction": "Scale 1.01 on hover, Gold Glow shadow"
-      },
-      "Input": {
-        "style": "bg-transparent border-b border-[#2A2A2A] focus:border-[#D4AF37] outline-none text-[#F8FAFC] placeholder-[#475569] py-3 text-lg font-light transition-colors rounded-none",
-        "label": "text-xs uppercase tracking-widest text-[#94A3B8] mb-1 block"
-      }
+  "mobile_layout_rules": {
+    "viewport_height": {
+      "rule": "Use 100dvh (dynamic viewport height) for full-screen hero sections to prevent mobile browser bar issues.",
+      "class": "min-h-[100dvh]"
     },
-    "views": {
-      "Landing_ConsultantIntro": {
-        "concept": "The Digital Architect",
-        "elements": [
-          "Hero: 'Design Intelligence for Luxury Spaces' (Cormorant, 5xl)",
-          "Sub: 'A logic-driven engine for project specification. Not a catalog.' (DM Sans)",
-          "CTA: 'Initialize Project DNA' (Primary Button)",
-          "Visual: Abstract slowly rotating 3D node structure (Spline or CSS lines) in background"
-        ]
+    "safe_zones": {
+      "bottom_padding": "pb-28",
+      "description": "Ensure content does not get hidden behind the floating mobile tab bar. Add 'pb-28' to the last section or main container."
+    },
+    "z_index_hierarchy": {
+      "mobile_tab_bar": "z-50",
+      "cookie_consent": "z-40",
+      "floating_actions": "z-30 (AURA, WhatsApp)",
+      "modals": "z-[60]",
+      "header": "z-40"
+    },
+    "container_spacing": {
+      "mobile": "px-6 py-12",
+      "tablet": "px-8 py-16",
+      "desktop": "px-12 py-24"
+    }
+  },
+  "component_specs": {
+    "hero_section": {
+      "layout": "Full screen video background",
+      "video_style": "absolute inset-0 w-full h-full object-cover opacity-60",
+      "overlay": "bg-gradient-to-t from-[#0A0A0A] via-[#0A0A0A]/40 to-transparent",
+      "content_position": "relative z-10 flex flex-col justify-end h-full pb-32 px-6",
+      "typography": "Left-aligned or Center-aligned with 'text-balance' for headers"
+    },
+    "mobile_tab_bar": {
+      "position": "fixed bottom-0 left-0 right-0",
+      "height": "h-20",
+      "background": "bg-black/80 backdrop-blur-xl border-t border-white/10",
+      "items": [
+        {"icon": "Home", "label": "Home", "path": "/"},
+        {"icon": "Package", "label": "Builder", "path": "/package-builder"},
+        {"icon": "Briefcase", "label": "Projects", "path": "/projects"},
+        {"icon": "Grid", "label": "Services", "path": "/services"},
+        {"icon": "Phone", "label": "Contact", "path": "/contact"}
+      ],
+      "active_state": "text-[#C9A962]",
+      "inactive_state": "text-gray-400"
+    },
+    "floating_action_buttons": {
+      "wrapper": "fixed bottom-24 right-4 flex flex-col gap-4 items-end",
+      "aura_avatar": "w-14 h-14 rounded-full border-2 border-[#C9A962] shadow-[0_0_15px_rgba(201,169,98,0.4)]",
+      "whatsapp": "w-12 h-12 bg-[#25D366] rounded-full flex items-center justify-center shadow-lg"
+    },
+    "calculator_wizard": {
+      "mobile_mode": "Full-screen modal feel",
+      "header": "Sticky top bar with progress indicator (dots or thin line)",
+      "navigation": "Large 'Next' and 'Back' buttons at the bottom (fixed)",
+      "content": "Scrollable middle area, focused on one question at a time",
+      "input_style": "Large touch targets (min-h-[48px])"
+    },
+    "cards": {
+      "solutions": {
+        "mobile": "w-full aspect-[4/3] relative overflow-hidden rounded-xl border border-white/10",
+        "tablet": "grid-cols-2 gap-6"
       },
-      "ProjectDNA_Capture": {
-        "concept": "The Specification Sheet (Not a Form)",
-        "layout": "Two-column split. Left: Questions. Right: Real-time 'DNA String' construction.",
-        "interaction": "As user selects 'Villa', the 3D model/icon on right morphs into a Villa structure.",
-        "fields": [
-          "Segment (Residential/Commercial)",
-          "Property Type (Villa/Penthouse)",
-          "Stage (Concept/Construction)",
-      "Toast": {
-        "library": "Sonner",
-        "style": "bg-[#121212] border border-[#D4AF37]/30 text-[#F8FAFC]",
-        "success_icon": "CheckCircle (Gold)",
-        "error_icon": "AlertTriangle (Red)"
-      },
-          "Dimensions (Area, Floors)"
-        ]
-      },
-      "Objective_Selector": {
-        "concept": "The Strategic Priorities",
-        "layout": "Bento Grid of Cards",
-        "cards": [
-          "Comfort (Icon: Sun/Thermometer)",
-          "Security (Icon: Shield/Eye)",
-          "Entertainment (Icon: Note/Film)",
-          "Wellness (Icon: Lotus/Drop)",
-          "Energy (Icon: Leaf/Bolt)"
-        ],
-        "behavior": "Multi-select. Selected cards glow Gold. Non-selected fade to 30% opacity."
-      },
-      "Intelligence_Engine": {
-        "concept": "The Brain at Work",
-        "visual": "A force-directed graph (using D3 or React Flow) where nodes pop up as dependencies are calculated.",
-        "nodes": ["Lighting", "HVAC", "Network", "Security", "Cinema"],
-        "edges": "Gold lines connecting dependent systems (e.g., Cinema -> requires -> Network).",
-        "tooltip": "Hovering a link explains 'Why?': 'Cinema projectors require hardwired Cat6 connection.'"
-      },
-      "Proposal_Comparison": {
-        "concept": "The Executive Summary",
-        "layout": "Three vertical columns (Value, Balanced, Flagship).",
-        "highlight": "The 'Balanced' or 'Flagship' column is slightly elevated (z-10) with a subtle gold border.",
-        "features": "Accordion lists for features. Price estimates in blurred text (reveal on hover) or ranges.",
-        "action": "Select 'Architecture' to proceed to BOQ."
+      "products": {
+        "mobile": "grid grid-cols-2 gap-4",
+        "style": "bg-white/5 backdrop-blur-sm p-4 rounded-lg border border-white/5 hover:border-[#C9A962]/50 transition-colors"
       }
     }
   },
-  "implementation_guide": {
-    "tech_stack": {
-      "frontend": "Next.js (React)",
-      "styling": "Tailwind CSS",
-      "icons": "Lucide React (Technical), Phosphor (UI)",
-      "animation": "Framer Motion (for page transitions and graph nodes)"
+  "visual_enhancers": {
+    "gradients": {
+      "gold_text": "bg-clip-text text-transparent bg-gradient-to-r from-[#C9A962] via-[#E8DCC8] to-[#C9A962]",
+      "dark_scrim": "bg-gradient-to-b from-transparent to-[#0A0A0A]"
     },
-    "file_extension_rule": "Use .js / .jsx for all new component files as requested. Use PropTypes for type checking if needed.",
-    "accessibility": {
-      "contrast": "Ensure Gold text is readable on Black (use #D4AF37 minimum).",
-      "aria": "All graph nodes must be keyboard navigable.",
-      "motion": "Respect prefers-reduced-motion."
+    "borders": {
+      "subtle": "border border-white/10",
+      "glow": "border border-[#C9A962]/30 shadow-[0_0_10px_rgba(201,169,98,0.1)]"
+    },
+    "animations": {
+      "reveal": "animate-in fade-in slide-in-from-bottom-4 duration-700",
+      "hover_lift": "hover:-translate-y-1 transition-transform duration-300 ease-out"
     }
   },
-  "asset_requirements": {
-    "images": [
-      {
-        "key": "luxury_villa_night",
-        "query": "modern luxury villa night lighting architecture gold",
-        "usage": "Hero Background (overlay with 90% opacity black)"
-      },
-      {
-        "key": "smart_home_interface",
-        "query": "futuristic smart home interface hologram dark",
-        "usage": "Abstract Graph Background"
-      },
-      {
-        "key": "server_rack_artistic",
-        "query": "server rack data center artistic lighting dark",
-        "usage": "Network System Card"
-      },
-      {
-        "key": "home_cinema_luxury",
-        "query": "luxury home cinema dark moody lighting",
-        "usage": "Entertainment System Card"
-      }
-    ]
+  "image_strategy": {
+    "source": "Use strictly high-end architectural/lifestyle photography. Dark tones preferred.",
+    "treatment": "Apply 20% black overlay on all background images to ensure text legibility.",
+    "categories": {
+      "smart_home": "Modern living room, iPad control, automated lighting",
+      "cinema": "Home theater, dark luxury interior, projector screen",
+      "lighting": "Architectural lighting, warm ambient light, chandelier",
+      "security": "Smart lock, security camera, gate control"
+    }
   },
-  "universal_guidelines": {
-    "do_not_use": ["Gradients on text", "Neumorphism (Soft UI)", "Default Shadcn Slate colors"],
-    "must_use": ["1px Borders", "Backdrop Blur", "Monospace numbers"],
-    "interactions": "Hover states must be instantaneous (duration-200). Page transitions should be smooth (opacity/y-axis)."
-  }
+  "implementation_instructions": {
+    "step_1": "Update global CSS/Tailwind config if missing 'lexa-gold' (#C9A962).",
+    "step_2": "Refactor Hero Section to use '100dvh' and proper video sizing.",
+    "step_3": "Implement 'MobileTabBar' component and add padding-bottom to Layout.",
+    "step_4": "Refactor 'Calculator' to be mobile-responsive (wizard style).",
+    "step_5": "Adjust z-indexes of sticky elements to prevent overlapping.",
+    "step_6": "Apply 'glass' and 'border-white/10' styles to cards for the dark luxury feel."
+  },
+  "UNIVERSAL_GUIDELINES_FOR_MAIN_AGENT": [
+    "You tend to converge toward generic, 'on distribution' outputs. In frontend design, this creates what users call the 'AI slop' aesthetic. Avoid this.",
+    "Dark colors look good when used independently without gradients. DO NOT use dark colors as gradients.",
+    "Don't make generic centered layouts, simplistic gradients, and uniform styling.",
+    "Create depth through layered design elements with z-index hierarchy.",
+    "Use glass-morphism effects with backdrop filters (12-24px blur).",
+    "You MUST NOT apply universal transition. Eg: 'transition: all'. This results in breaking transforms.",
+    "You MUST NOT center align the app container, ie do not add '.App { text-align: center; }'.",
+    "Always use modern button styles like pill-shaped, or sharp button with interaction animations & color relevant to the app style.",
+    "Every interaction needs micro-animations - hover states, transitions, parallax effects.",
+    "Use 2-3x more spacing than feels comfortable. Cramped designs look cheap.",
+    "All interactive and key informational elements MUST include a 'data-testid' attribute."
+  ]
 }
