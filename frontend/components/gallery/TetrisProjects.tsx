@@ -151,11 +151,14 @@ function ProjectCard({ project, gridClass, index }: { project: Project; gridClas
       <Link href={`/projects/${project.slug || project.id}`}>
         {/* Image */}
         <div className="relative h-full w-full overflow-hidden">
-          <motion.img
+          <SafeImage
             src={project.image || 'https://images.unsplash.com/photo-1697137663650-f0f95349aed3?crop=entropy&cs=srgb&fm=jpg&q=85'}
             alt={project.title}
-            className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
-            whileHover={{ scale: 1.05 }}
+            fill
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
+            className="object-cover transition-transform duration-700 group-hover:scale-105"
+            loading="lazy"
+            quality={75}
           />
           
           {/* Overlay on Hover */}
