@@ -70,11 +70,13 @@ export default function ClientLayout({ children }: { children: React.ReactNode }
           {!isAdminPage && <FloatingContactButton />}
           {!isAdminPage && <WhatsAppEnhanced />}
           {!isAdminPage && <AIChatWidget />}
+          {!isAdminPage && <MobileQuickActions onBookConsultation={() => setShowConsultation(true)} />}
           {!isAdminPage && <SocialProofWidget />}
           {!isAdminPage && <ExitIntentPopup />}
           {!isAdminPage && <CookieConsent />}
           {!isAdminPage && <LinkPrefetcher />}
           {!isAdminPage && <ScheduleVisitButton />}
+          {showConsultation && <ConsultationFormLazy isOpen={showConsultation} onClose={() => setShowConsultation(false)} />}
           <Toaster 
             position="top-right"
             toastOptions={{
