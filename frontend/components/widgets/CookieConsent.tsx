@@ -53,8 +53,8 @@ export default function CookieConsent() {
   }
 
   return (
-    <div className="fixed bottom-0 left-0 right-0 z-[45] p-3 pb-[76px] lg:pb-4 animate-slide-up pointer-events-none">
-      <div className="max-w-sm mx-auto pointer-events-auto bg-black/90 backdrop-blur-xl rounded-2xl shadow-2xl border border-white/[0.08] overflow-hidden">
+    <div className="fixed bottom-0 left-0 right-0 z-[45] p-3 pb-[84px] lg:pb-4 animate-slide-up pointer-events-none">
+      <div className="max-w-sm mx-auto lg:mx-0 lg:ml-4 pointer-events-auto bg-black/90 backdrop-blur-xl rounded-2xl shadow-2xl border border-white/[0.08] overflow-hidden">
         {/* Header */}
         <div className="px-4 py-2.5 flex items-center justify-between border-b border-white/[0.06]">
           <div className="flex items-center gap-2">
