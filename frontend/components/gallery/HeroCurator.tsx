@@ -64,7 +64,7 @@ export default function HeroCurator({ onPersonaClick }: HeroCuratorProps) {
   }, [currentClip])
   
   return (
-    <section className="relative min-h-[100svh] w-full overflow-hidden bg-black">
+    <section className="relative min-h-[100dvh] w-full overflow-hidden bg-black">
       {/* Video Background */}
       <div className="absolute inset-0 z-0">
         <video
@@ -86,14 +86,14 @@ export default function HeroCurator({ onPersonaClick }: HeroCuratorProps) {
           <track kind="captions" src="" label="English" srcLang="en" default />
         </video>
         
-        {/* Dark Luxury Overlay - Balanced for video visibility */}
-        <div className="absolute inset-0 bg-gradient-to-t from-black via-black/30 to-black/40" />
-        <div className="absolute inset-0 bg-gradient-to-r from-black/40 via-transparent to-black/20" />
+        {/* Dark Luxury Overlay - Stronger on mobile for text legibility */}
+        <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-black/30 md:from-black md:via-black/30 md:to-black/40" />
+        <div className="absolute inset-0 bg-gradient-to-r from-black/50 via-transparent to-black/20 md:from-black/40" />
       </div>
 
-      {/* Content */}
-      <div className="relative z-10 flex h-full min-h-[100svh] items-end pt-20 md:pt-24">
-        <div className="w-full px-4 pb-16 sm:px-6 sm:pb-20 md:px-8 md:pb-24 lg:px-16 lg:pb-32 max-w-7xl mx-auto">
+      {/* Content — Centered on mobile, bottom-aligned on desktop */}
+      <div className="relative z-10 flex h-full min-h-[100dvh] items-center md:items-end pt-20 pb-28 md:pb-24 lg:pb-32">
+        <div className="w-full px-6 sm:px-6 md:px-8 lg:px-16 max-w-7xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
