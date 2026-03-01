@@ -56,6 +56,11 @@ export default function CataloguesPage() {
     <div className="min-h-screen bg-white dark:bg-gray-950 pt-20" data-testid="catalogues-page">
       {/* Hero */}
       <section className="relative overflow-hidden bg-[#0A0A0A] dark:bg-[#050505] text-white">
+        {/* Hero Background Image */}
+        <div className="absolute inset-0">
+          <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=1200IMAGE_URLq=50" alt="" className="w-full h-full object-cover opacity-20" loading="eager" />
+          <div className="absolute inset-0 bg-gradient-to-t from-[#0A0A0A] via-[#0A0A0A]/70 to-[#0A0A0A]/40" />
+        </div>
         <div className="absolute inset-0 opacity-[0.03]" style={{ backgroundImage: 'radial-gradient(circle at 1px 1px, white 1px, transparent 0)', backgroundSize: '40px 40px' }} />
         <div className="container mx-auto px-8 lg:px-16 py-20 lg:py-28 relative z-10">
           <div className="max-w-3xl">
