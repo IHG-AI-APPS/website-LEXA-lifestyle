@@ -44,7 +44,7 @@ export default function CookieConsent() {
     return (
       <button
         onClick={() => setIsMinimized(false)}
-        className="fixed bottom-4 left-4 z-50 p-3 bg-[#1A1A1A] text-white rounded-full shadow-lg hover:bg-[#2D2D2D] transition-colors"
+        className="fixed bottom-20 lg:bottom-4 left-4 z-[45] p-2.5 bg-black/80 backdrop-blur-xl text-[#C9A962] rounded-full shadow-lg border border-white/[0.08] hover:bg-black/90 transition-colors"
         aria-label="Cookie Settings"
       >
         <Cookie className="w-5 h-5" />
