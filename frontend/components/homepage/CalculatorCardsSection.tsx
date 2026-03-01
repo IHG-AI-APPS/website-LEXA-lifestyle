@@ -28,8 +28,8 @@ const DEFAULT_TOOLS = [
 
 const GRADIENTS = [
   'from-amber-900/80 via-amber-800/70 to-transparent',
-  'from-purple-900/80 via-purple-800/70 to-transparent',
-  'from-blue-900/80 via-blue-800/70 to-transparent',
+  'from-black via-black/80 to-black/30',
+  'from-black via-black/80 to-black/30',
   'from-emerald-900/80 via-emerald-800/70 to-transparent'
 ]
 
