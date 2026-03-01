@@ -81,7 +81,7 @@ export default function BigHomesBreakSmartPage() {
               <AlertTriangle className="w-4 h-4" />
               {cms?.hero_badge || 'Critical Challenge'}
             </div>
-            <h1 className="text-4xl sm:text-5xl md:text-6xl font-semibold tracking-[-0.04em] leading-[0.95] mb-8">
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold uppercase tracking-tight mb-8">
               {cms?.hero_title || <>BIG HOMES<br /><span className="text-transparent bg-clip-text bg-gradient-to-r from-red-600 to-orange-600">BREAK SMART</span></>}
             </h1>
             <div className="h-px w-32 bg-gradient-to-r from-red-400 to-transparent mb-8 mx-auto" />

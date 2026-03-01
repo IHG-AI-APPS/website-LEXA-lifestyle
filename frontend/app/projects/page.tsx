@@ -76,7 +76,7 @@ export default function ProjectsPage() {
             <span className="text-xs tracking-widest uppercase text-[#9F8B65] font-medium mb-4 md:mb-6 block">
               Portfolio
             </span>
-            <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 md:mb-8">
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold uppercase mb-6 md:mb-8">
               Our Projects
             </h1>
             <div className="h-px w-32 bg-[#9F8B65] mb-6 md:mb-8 mx-auto" />

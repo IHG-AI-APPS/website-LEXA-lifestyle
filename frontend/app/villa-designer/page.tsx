@@ -145,7 +145,7 @@ export default function VillaDesignerPage() {
               <Check size={40} className="text-green-600" />
             </div>
             
-            <h1 className="text-4xl font-bold mb-4 text-gray-900 dark:text-white dark:text-white">
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold uppercase mb-4 text-gray-900 dark:text-white">
               Thank You, {formData.name}!
             </h1>
             
@@ -204,7 +204,7 @@ export default function VillaDesignerPage() {
           transition={{ duration: 0.6 }}
           className="text-center mb-12"
         >
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-4">
+          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold uppercase mb-4">
             Design My Villa
           </h1>
           <p className="text-lg sm:text-xl text-gray-300 mb-8">

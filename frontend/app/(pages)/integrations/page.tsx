@@ -98,7 +98,7 @@ export default function IntegrationsPage() {
             <span className="text-xs tracking-[0.5em] uppercase text-gray-400 font-medium mb-6 block">
               Technology Partners
             </span>
-            <h1 className="text-4xl sm:text-5xl md:text-6xl font-semibold tracking-[-0.04em] leading-[0.95] mb-8">
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold uppercase tracking-tight mb-8">
               PLATFORM
               <br />
               <span className="text-transparent bg-clip-text metallic-gradient">AGNOSTIC ARCHITECTURE</span>

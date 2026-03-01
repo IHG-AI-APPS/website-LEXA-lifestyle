@@ -211,7 +211,7 @@ export default function SmartHomeQuizPage() {
               <Brain className="h-4 w-4 text-blue-600" />
               <span className="text-sm font-medium text-blue-900">AI-Powered Recommendations</span>
             </div>
-            <h1 className="text-4xl sm:text-5xl font-bold text-gray-900 dark:text-white mb-4">
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold uppercase text-gray-900 dark:text-white mb-4">
               Find Your Perfect<br />
               <span className="text-blue-600">Smart Home</span>
             </h1>

@@ -519,7 +519,7 @@ export default function IndustryCalculatorPage() {
               <Calculator size={28} strokeWidth={2} />
             </div>
             
-            <h1 className="text-3xl sm:text-5xl md:text-6xl font-bold mb-4">
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold uppercase mb-4">
               PROJECT CALCULATOR
             </h1>
             
