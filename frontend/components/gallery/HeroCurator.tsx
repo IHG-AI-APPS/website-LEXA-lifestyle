@@ -93,30 +93,31 @@ export default function HeroCurator({ onPersonaClick }: HeroCuratorProps) {
 
       {/* Content — Bottom-aligned for immersive feel, centered on tablet */}
       <div className="relative z-10 flex h-full min-h-[100dvh] items-end lg:items-end">
-        <div className="w-full px-6 sm:px-6 md:px-8 lg:px-16 max-w-7xl mx-auto pb-28 lg:pb-32 pt-20">
+        <div className="w-full px-5 sm:px-6 md:px-8 lg:px-16 max-w-7xl mx-auto pb-32 lg:pb-32 pt-20">
           <motion.div
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 0.5 }}
             className="max-w-5xl"
           >
-            <h1 className={`text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-black tracking-tighter uppercase text-white leading-[0.95] ${language === 'ar' ? 'font-arabic' : ''}`}>
+            <h1 className={`text-4xl sm:text-5xl md:text-5xl lg:text-6xl xl:text-7xl font-black tracking-tighter uppercase text-white leading-[0.92] ${language === 'ar' ? 'font-arabic' : ''}`}>
               {heading || (<>{t('hero.title1')}<br />{t('hero.title2')}<br />{t('hero.title3')}</>)}
             </h1>
             
-            <p className="mt-4 sm:mt-6 max-w-xl text-sm sm:text-base text-white/80 md:text-lg leading-relaxed">
+            <p className="mt-4 sm:mt-5 max-w-xl text-sm sm:text-base text-white/80 md:text-lg leading-relaxed">
               {subheading || (language === 'ar' 
                 ? 'مصمم ومُسلّم من البداية للنهاية. جرّب حلول المنزل الذكي الفاخرة الرائدة في دبي.'
                 : "Designed & delivered end-to-end. Experience Dubai's premier luxury smart home solutions."
               )}
             </p>
 
-            <div className="mt-6 sm:mt-8 flex flex-col gap-3 sm:flex-row sm:gap-4">
+            <div className="mt-6 sm:mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:gap-3">
               {/* PRIMARY CTA: Persona Selection */}
               <Button 
                 size="lg"
                 onClick={onPersonaClick}
-                className="bg-gradient-to-r from-[#E8DCC8] to-[#C19A2E] text-black uppercase tracking-widest hover:from-[#C19A2E] hover:to-[#E8DCC8] rounded-none px-6 py-5 sm:px-8 sm:py-6 text-xs sm:text-sm font-medium transition-all shadow-lg"
+                data-testid="hero-find-solution-btn"
+                className="bg-gradient-to-r from-[#E8DCC8] to-[#C19A2E] text-black uppercase tracking-widest hover:from-[#C19A2E] hover:to-[#E8DCC8] rounded-none px-6 py-5 sm:px-8 sm:py-5 text-xs sm:text-sm font-medium transition-all shadow-lg"
               >
                 <Users className={`${language === 'ar' ? 'ml-2' : 'mr-2'} h-4 w-4 sm:h-5 sm:w-5`} />
                 {ctaPrimaryText || (language === 'ar' ? 'ابحث عن الحل المثالي' : 'Find Your Perfect Solution')}
@@ -127,17 +128,20 @@ export default function HeroCurator({ onPersonaClick }: HeroCuratorProps) {
               <Button 
                 size="lg"
                 onClick={() => openWhatsApp(whatsAppMessages.homepage.getStarted, 'hero', 'get_started')}
-                className="bg-green-500 hover:bg-green-600 text-white uppercase tracking-widest rounded-none px-6 py-5 sm:px-8 sm:py-6 text-xs sm:text-sm font-medium transition-all shadow-lg"
+                data-testid="hero-whatsapp-btn"
+                className="bg-green-500 hover:bg-green-600 text-white uppercase tracking-widest rounded-none px-6 py-5 sm:px-8 sm:py-5 text-xs sm:text-sm font-medium transition-all shadow-lg"
               >
                 <MessageCircle className={`${language === 'ar' ? 'ml-2' : 'mr-2'} h-4 w-4 sm:h-5 sm:w-5`} />
                 {language === 'ar' ? 'تواصل عبر واتساب' : 'WhatsApp Us'}
               </Button>
               
-              <Link href="/projects">
+              {/* View Projects - Hidden on mobile for cleaner layout */}
+              <Link href="/projects" className="hidden sm:block">
                 <Button 
                   size="lg"
                   variant="outline"
-                  className="border-white/40 text-white uppercase tracking-widest hover:bg-white hover:text-black rounded-none px-6 py-5 sm:px-8 sm:py-6 text-xs sm:text-sm font-medium transition-all backdrop-blur-sm w-full sm:w-auto"
+                  data-testid="hero-view-projects-btn"
+                  className="border-white/40 text-white uppercase tracking-widest hover:bg-white hover:text-black rounded-none px-6 py-5 sm:px-8 sm:py-5 text-xs sm:text-sm font-medium transition-all backdrop-blur-sm w-full sm:w-auto"
                 >
                   {t('common.viewProjects')}
                 </Button>
