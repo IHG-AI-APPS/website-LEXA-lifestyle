@@ -31,6 +31,7 @@ export default function ClientLayout({ children }: { children: React.ReactNode }
   const pathname = usePathname()
   const router = useRouter()
   const isAdminPage = pathname?.startsWith('/admin')
+  const [showConsultation, setShowConsultation] = useState(false)
 
   // Track page views (excluding admin pages)
   useEffect(() => {
