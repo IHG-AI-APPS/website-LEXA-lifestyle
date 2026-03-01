@@ -31,12 +31,6 @@ export default function HomePage() {
 
   const [showPersonaModal, setShowPersonaModal] = useState(false)
 
-  useEffect(() => {
-    if ('serviceWorker' in navigator && process.env.NODE_ENV === 'production') {
-      navigator.serviceWorker.register('/sw.js').catch(() => {})
-    }
-  }, [])
-
   return (
     <div className="bg-white dark:bg-[#050505] min-h-screen">
       <HeroCurator onPersonaClick={() => setShowPersonaModal(true)} />
