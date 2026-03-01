@@ -109,11 +109,11 @@ export default function AIChatWidget() {
 
   return (
     <>
-      {/* AURA Chat Button — aligned with WhatsApp below */}
+      {/* AURA Chat Button — above WhatsApp, accounts for MobileTabBar on small screens */}
       <motion.button
         data-testid="ai-chat-button"
         onClick={() => setIsOpen(true)}
-        className={`fixed bottom-[104px] right-6 z-40 w-16 h-16 rounded-full overflow-hidden shadow-2xl ring-2 ring-white/30 hover:ring-white/60 transition-all chat-pulse ${isOpen ? 'hidden' : ''}`}
+        className={`fixed bottom-[104px] lg:bottom-[104px] right-6 z-40 w-14 h-14 lg:w-16 lg:h-16 rounded-full overflow-hidden shadow-2xl ring-2 ring-white/30 hover:ring-white/60 transition-all chat-pulse ${isOpen ? 'hidden' : ''}`}
         whileHover={{ scale: 1.1 }}
         whileTap={{ scale: 0.95 }}
         initial={{ scale: 0 }}
@@ -124,8 +124,8 @@ export default function AIChatWidget() {
         <Image
           src="/images/aura-avatar.png"
           alt="AURA - Smart Home Consultant"
-          width={64}
-          height={64}
+          width={56}
+          height={56}
           className="w-full h-full object-cover"
           unoptimized
         />
