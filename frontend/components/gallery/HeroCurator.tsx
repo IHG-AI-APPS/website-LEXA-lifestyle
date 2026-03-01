@@ -100,18 +100,18 @@ export default function HeroCurator({ onPersonaClick }: HeroCuratorProps) {
             transition={{ duration: 1, delay: 0.5 }}
             className="max-w-5xl"
           >
-            <h1 className={`text-2xl xs:text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-black tracking-tighter uppercase text-white leading-[0.95] ${language === 'ar' ? 'font-arabic' : ''}`}>
+            <h1 className={`text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-black tracking-tighter uppercase text-white leading-[0.95] ${language === 'ar' ? 'font-arabic' : ''}`}>
               {heading || (<>{t('hero.title1')}<br />{t('hero.title2')}<br />{t('hero.title3')}</>)}
             </h1>
             
-            <p className="mt-6 max-w-xl text-sm sm:text-base text-white/90 md:text-lg leading-relaxed">
+            <p className="mt-4 sm:mt-6 max-w-xl text-sm sm:text-base text-white/80 md:text-lg leading-relaxed">
               {subheading || (language === 'ar' 
                 ? 'مصمم ومُسلّم من البداية للنهاية. جرّب حلول المنزل الذكي الفاخرة الرائدة في دبي.'
                 : "Designed & delivered end-to-end. Experience Dubai's premier luxury smart home solutions."
               )}
             </p>
 
-            <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:gap-4">
+            <div className="mt-6 sm:mt-8 flex flex-col gap-3 sm:flex-row sm:gap-4">
               {/* PRIMARY CTA: Persona Selection */}
               <Button 
                 size="lg"
