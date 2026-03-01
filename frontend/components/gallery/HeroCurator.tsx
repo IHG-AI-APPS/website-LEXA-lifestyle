@@ -148,12 +148,12 @@ export default function HeroCurator({ onPersonaClick }: HeroCuratorProps) {
               </Link>
             </div>
 
-            {/* Helper Text - Softer */}
+            {/* Helper Text - Hidden on mobile for cleaner hero */}
             <motion.p 
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 1.5, duration: 1 }}
-              className="mt-4 sm:mt-6 text-xs sm:text-sm text-white/50"
+              className="mt-4 sm:mt-6 text-xs sm:text-sm text-white/40 hidden sm:block"
             >
               {language === 'ar' 
                 ? 'نخدم: أصحاب المنازل • المهندسين المعماريين • المطورين • الشركات'
