@@ -51,7 +51,7 @@ export default function TetrisProjects() {
   }
 
   return (
-    <section className="bg-[#F9F9F7] dark:bg-[#0a0f1a] py-10 md:py-12">
+    <section className="bg-[#050505] py-10 md:py-12">
       <div className="content-container">
         {/* Section Header - Compact */}
         <motion.div
@@ -61,11 +61,11 @@ export default function TetrisProjects() {
           transition={{ duration: 0.6 }}
           className="mb-10 text-center"
         >
-          <div className="section-label mb-3 dark:text-gray-400">OUR PORTFOLIO</div>
-          <h2 className="h2 text-[#1A1A1A] dark:text-white dark:text-white mb-4">
+          <div className="text-[10px] font-semibold uppercase tracking-[0.3em] text-[#C9A962] mb-3">OUR PORTFOLIO</div>
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4 font-heading">
             Featured Projects
           </h2>
-          <p className="text-base text-[#4A4A4A] dark:text-gray-300 max-w-xl">
+          <p className="text-base text-neutral-400 max-w-xl mx-auto">
             A curated collection of distinguished projects across the region.
           </p>
         </motion.div>
