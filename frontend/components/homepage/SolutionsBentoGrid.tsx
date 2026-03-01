@@ -147,7 +147,7 @@ export default function SolutionsBentoGrid() {
 
   if (loading) {
     return (
-      <section className="bg-[#050505] py-10 md:py-12">
+      <section className="bg-white dark:bg-[#050505] py-10 md:py-12">
         <div className="content-container">
           <div className="mb-10 md:mb-12 text-center">
             <span className="mb-3 inline-block rounded-full bg-black px-4 py-1.5 text-xs font-bold uppercase tracking-widest text-white">
@@ -166,7 +166,7 @@ export default function SolutionsBentoGrid() {
   }
 
   return (
-    <section className="bg-[#050505] py-10 md:py-12">
+    <section className="bg-white dark:bg-[#050505] py-10 md:py-12">
       <div className="content-container">
         {/* Section Header */}
         <motion.div
@@ -178,10 +178,10 @@ export default function SolutionsBentoGrid() {
           <span className="mb-3 inline-block rounded-full bg-[#C9A962]/10 border border-[#C9A962]/30 px-4 py-1.5 text-xs font-bold uppercase tracking-widest text-[#C9A962]">
             Solutions
           </span>
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4 font-heading">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 dark:text-white mb-4 font-heading">
             Technology That Transforms Spaces
           </h2>
-          <p className="text-base md:text-lg text-neutral-400 max-w-2xl mx-auto">
+          <p className="text-base md:text-lg text-gray-600 dark:text-neutral-400 max-w-2xl mx-auto">
             From private cinemas to complete home automation, discover our flagship solutions.
           </p>
         </motion.div>
