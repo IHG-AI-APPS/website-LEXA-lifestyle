@@ -114,7 +114,7 @@ export default function AIChatWidget() {
       <motion.button
         data-testid="ai-chat-button"
         onClick={() => setIsOpen(true)}
-        className={`fixed bottom-24 sm:bottom-28 right-4 sm:right-6 z-40 w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-gradient-to-r from-purple-600 to-blue-600 text-white shadow-lg flex items-center justify-center hover:scale-110 transition-transform ${isOpen ? 'hidden' : ''}`}
+        className={`fixed bottom-24 sm:bottom-28 right-4 sm:right-6 z-40 w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-gradient-to-r from-purple-600 to-blue-600 text-white shadow-lg flex items-center justify-center hover:scale-110 transition-transform chat-pulse ${isOpen ? 'hidden' : ''}`}
         whileHover={{ scale: 1.1 }}
         whileTap={{ scale: 0.95 }}
         initial={{ scale: 0 }}
