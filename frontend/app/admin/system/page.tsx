@@ -27,6 +27,8 @@ export default function SystemPage() {
   const [checkingUpdates, setCheckingUpdates] = useState(false)
   const [showBugReport, setShowBugReport] = useState(false)
   const [bugReport, setBugReport] = useState({ title: '', description: '' })
+  const [rebuilding, setRebuilding] = useState(false)
+  const [rebuildStatus, setRebuildStatus] = useState<any>(null)
 
   useEffect(() => {
     fetchSystemHealth()
