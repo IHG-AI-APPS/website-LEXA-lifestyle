@@ -25,7 +25,7 @@ export default function MobileTabBar() {
   const getActiveTab = () => {
     if (pathname === '/') return 'home'
     if (pathname.startsWith('/project-builder')) return 'builder'
-    if (pathname.startsWith('/dashboard')) return 'dashboard'
+    if (pathname.startsWith('/projects')) return 'projects'
     if (pathname.startsWith('/services')) return 'services'
     if (pathname.startsWith('/contact')) return 'contact'
     return ''
