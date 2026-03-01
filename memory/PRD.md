@@ -12,49 +12,40 @@ Complete website overhaul for LEXA Smart Home to:
 
 ## Completed Work (Latest First)
 
-### Phase 29: Mobile Quick Actions FAB (Mar 1, 2026)
-- Created `MobileQuickActions.tsx` — single floating action button replacing standalone WhatsApp button on mobile
-- 3 consolidated actions: Book Consultation (opens form modal), Call Us, WhatsApp
-- Dark glass aesthetic with animated expand/collapse, Sparkles icon trigger
-- Positioned at `bottom-[84px]` above tab bar, `lg:hidden` for mobile/tablet only
-- WhatsApp Enhanced button hidden on mobile (`hidden lg:flex`), kept on desktop
-- AURA avatar repositioned to `bottom-[148px]` above FAB
-- Testing: 100% pass across all 3 viewports (iteration_55.json)
+### Phase 30: World-Class Mobile UX Redesign (Mar 1, 2026)
+- **Hero**: Center-aligned text on mobile (`text-center lg:text-left`), stronger dark overlay (`via-black/70`), drop shadows for readability
+- **Solutions**: Swipe carousel cards with centered text, reduced height (280px vs 340px), stronger overlay
+- **Calculator Tools**: Converted from stacked 4-card grid to horizontal snap scroll on mobile (`flex overflow-x-auto snap-x snap-mandatory`), cards use `min-w-[80vw] snap-center`
+- **Featured Projects**: Converted from stacked grid to horizontal snap scroll on mobile with always-visible text overlay (no hover required)
+- **CSS**: Added `no-scrollbar` utility class for clean horizontal scrolling
+- Desktop completely unaffected — uses `hidden md:grid` while mobile uses `md:hidden`
+- Testing: 100% pass on mobile + desktop (iteration_56.json)
 
-### Phase 28: World-Class Mobile UX Overhaul — Round 2 (Mar 1, 2026)
-- Hero CTA optimization: Only 2 buttons on mobile (Find Solution + WhatsApp), 3rd (View Projects) hidden via `hidden sm:block`
-- Hero heading enlarged on mobile: `text-4xl` (was `text-3xl`) for better impact
-- Hero bottom padding increased (`pb-40 sm:pb-36 lg:pb-32`) for tab bar clearance
-- Cookie consent positioning refined with `pb-[84px]` and left-aligned on desktop
-- Verified across 3 viewports (mobile 390px, tablet 768px, desktop 1920px) — 100% pass
+### Phase 29: Mobile Quick Actions FAB (Mar 1, 2026)
+- Single FAB replacing standalone WhatsApp button on mobile
+- 3 consolidated actions: Book Consultation (opens form modal), Call Us, WhatsApp
+- Dark glass aesthetic, `lg:hidden` for mobile/tablet only
+- WhatsApp Enhanced hidden on mobile (`hidden lg:flex`)
+- Testing: 100% pass (iteration_55.json)
+
+### Phase 28: Hero CTA Mobile Optimization (Mar 1, 2026)
+- 2 CTAs on mobile (Find Solution + WhatsApp), View Projects hidden via `hidden sm:block`
+- Hero heading `text-4xl`, increased bottom padding for tab bar clearance
+- Testing: 100% pass (iteration_54.json)
 
 ### Phase 27: Native Mobile Gestures (Mar 1, 2026)
-- **SwipeCarousel**: Horizontal swipeable card carousel on mobile
-- **PullToRefresh**: Touch-based pull-down refresh with rubber-band damping
-- Testing: 100% pass (11/11, iteration_53.json)
+- SwipeCarousel + PullToRefresh components
+- Testing: 100% pass (iteration_53.json)
 
 ### Phase 26: Mobile/Tablet Design Overhaul (Mar 1, 2026)
-- Dark glass MobileTabBar with gold active accent + animated pill
-- Hero centered on mobile/tablet, stronger overlays for legibility
-- Dark glass cookie consent with gold Accept button
+- Dark glass MobileTabBar, Hero overlays, Cookie consent redesign
 
 ### Phase 25: Speed Optimization (Mar 1, 2026)
-- Production build: All pages <150ms
-- Admin Rebuild Button in System page
+- Production build, Admin Rebuild Button
 
-### Phase 24: AURA AI Chat Agent (Mar 1, 2026)
-- Female avatar via Nano Banana, comprehensive knowledge base
-
+### Phase 24: AURA AI Chat Agent
 ### Phase 23: UI/UX Animation Enhancements
-### Phase 22: Calculator Page Optimization
-### Phase 21: Full Route Audit (337 routes, 155 pages)
-### Phase 20: ETag Conditional Caching
-### Phase 19: Performance (52 indexes, lightweight projections)
-### Phase 18: PATCH Endpoints (17 endpoints)
-### Phase 17: Automated Regression Testing
-### Phase 15-16: Backend Audit (198/198 tests, 9 bugs fixed)
-### Phase 11-14: Design & Transitions
-### Phase 1-10: Full CMS Content Migration
+### Phase 22-1: Full CMS, Backend Audit, Performance, Design
 
 ## Remaining / Backlog
 ### P1 — Redesign Projects Landing Page (paused by user)
