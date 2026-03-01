@@ -179,8 +179,8 @@ export default function HeroCurator({ onPersonaClick }: HeroCuratorProps) {
         </motion.div>
       </motion.div>
 
-      {/* Subtle Video Progress Dots — hidden on mobile */}
-      <div className="absolute bottom-24 left-1/2 z-10 -translate-x-1/2 hidden md:flex gap-1.5">
+      {/* Subtle Video Progress Dots — hidden on mobile/tablet */}
+      <div className="absolute bottom-24 left-1/2 z-10 -translate-x-1/2 hidden lg:flex gap-1.5">
         {heroClips.map((_, index) => (
           <div
             key={index}
