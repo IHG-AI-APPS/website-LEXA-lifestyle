@@ -41,7 +41,7 @@ export default function CertificationStandardPage() {
         <div className="container mx-auto px-8 lg:px-16 relative z-10">
           <div className="max-w-3xl mx-auto text-center">
             <span className="hero-animate-badge inline-block px-3 py-1 rounded-full bg-[#C9A962]/15 border border-[#C9A962]/30 text-[#C9A962] text-xs uppercase tracking-widest mb-5">Quality Assured</span>
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold uppercase mb-5 tracking-tight" data-testid="certification-title">LEXA Certified Integration Standard</h1>
+            <h1 className="hero-animate-title text-4xl sm:text-5xl lg:text-6xl font-bold uppercase mb-5 tracking-tight" data-testid="certification-title">LEXA Certified Integration Standard</h1>
             <p className="text-base text-gray-300 max-w-lg mx-auto mb-8">The UAE&apos;s only smart home integrator with documented engineering standards, manufacturer certifications, and quality-assured processes.</p>
             <div className="flex flex-wrap items-center justify-center gap-6 text-sm text-gray-400">
               <div className="flex items-center gap-2"><Shield size={16} className="text-green-400" /><span>ISO 9001 Processes</span></div>

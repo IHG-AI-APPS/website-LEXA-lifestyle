@@ -33,7 +33,7 @@ export default function ProjectBuilderLanding() {
                 AI-Powered Intelligence
               </span>
 
-              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold uppercase mb-5 tracking-tight text-white" data-testid="project-builder-title">
+              <h1 className="hero-animate-title text-4xl sm:text-5xl lg:text-6xl font-bold uppercase mb-5 tracking-tight text-white" data-testid="project-builder-title">
                 SMART PROJECT BUILDER
               </h1>
 
