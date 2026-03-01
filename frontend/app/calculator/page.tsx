@@ -513,7 +513,7 @@ export default function IndustryCalculatorPage() {
     <div className="min-h-screen bg-gradient-to-b from-gray-50 to-white pt-20">
       {/* Header */}
       <section className="py-12 bg-gradient-to-br from-gray-900 via-gray-800 to-black text-white">
-        <div className="container mx-auto px-8 lg:px-16">
+        <div className="container mx-auto px-4 sm:px-8 lg:px-16">
           <div className="max-w-4xl mx-auto text-center">
             <div className="inline-flex items-center justify-center w-16 h-16 mb-4 bg-white/10 backdrop-blur-sm rounded-full">
               <Calculator size={28} strokeWidth={2} />
