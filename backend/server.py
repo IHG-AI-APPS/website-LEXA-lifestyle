@@ -78,6 +78,8 @@ app = FastAPI(title="LEXA Lifestyle API", version="2.0.0")
 
 # Add GZip compression middleware for faster responses
 from fastapi.middleware.gzip import GZipMiddleware
+import subprocess
+import asyncio as _asyncio
 app.add_middleware(GZipMiddleware, minimum_size=500)
 
 # Add security headers middleware
