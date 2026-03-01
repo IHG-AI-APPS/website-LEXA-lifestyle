@@ -3,6 +3,7 @@
 import { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
 import Link from 'next/link'
+import SafeImage from '@/components/ui/SafeImage'
 import { Calculator, TrendingUp, Package, Sparkles, ArrowRight, Brain, Zap } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 
