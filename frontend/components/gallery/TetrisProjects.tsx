@@ -58,7 +58,7 @@ export default function TetrisProjects() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="mb-10 text-center md:text-left"
+          className="mb-10 text-center"
         >
           <div className="section-label mb-3 dark:text-gray-400">OUR PORTFOLIO</div>
           <h2 className="h2 text-[#1A1A1A] dark:text-white dark:text-white mb-4">
