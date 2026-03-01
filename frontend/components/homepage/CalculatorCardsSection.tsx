@@ -223,7 +223,7 @@ export default function CalculatorCardsSection() {
                     <h3 className="text-2xl font-bold text-white mb-2 font-heading">{tool.title}</h3>
                     <p className="text-white/80 text-sm mb-6">{tool.description}</p>
                     <Button 
-                      className="w-full bg-white hover:bg-[#E8DCC8] text-[#1A1A1A] dark:text-white font-semibold py-6 transition-all duration-300 group-hover:shadow-lg"
+                      className="w-full bg-[#C9A962] hover:bg-[#E8DCC8] text-black font-semibold py-6 transition-all duration-300 group-hover:shadow-lg rounded-none"
                       size="lg"
                     >
                       <span>{tool.cta}</span>
