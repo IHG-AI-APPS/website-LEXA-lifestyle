@@ -421,6 +421,229 @@ body {
 }
 
 /* ========================================
+   UX Animation & Effects System
+   ======================================== */
+
+/* 1. Card Image Zoom on Hover */
+.card-image-zoom {
+  overflow: hidden;
+}
+.card-image-zoom img,
+.card-image-zoom [data-nimg] {
+  transition: transform 0.6s var(--ease-luxury), filter 0.6s var(--ease-luxury);
+  will-change: transform;
+}
+.card-image-zoom:hover img,
+.card-image-zoom:hover [data-nimg] {
+  transform: scale(1.08);
+  filter: brightness(1.05);
+}
+
+/* Auto-apply zoom to common card patterns */
+a[href] .relative.overflow-hidden img,
+a[href] .aspect-video img,
+a[href] .aspect-square img {
+  transition: transform 0.6s var(--ease-luxury), filter 0.6s var(--ease-luxury);
+  will-change: transform;
+}
+a[href]:hover .relative.overflow-hidden img,
+a[href]:hover .aspect-video img,
+a[href]:hover .aspect-square img {
+  transform: scale(1.08);
+  filter: brightness(1.05);
+}
+
+/* 3. Image Swap on Hover (luxury pattern) */
+.image-swap-container {
+  position: relative;
+  overflow: hidden;
+}
+.image-swap-container .image-primary {
+  transition: opacity 0.5s var(--ease-luxury);
+}
+.image-swap-container .image-secondary {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transition: opacity 0.5s var(--ease-luxury);
+}
+.image-swap-container:hover .image-primary {
+  opacity: 0;
+}
+.image-swap-container:hover .image-secondary {
+  opacity: 1;
+}
+
+/* 4. Page Entrance Animations — Enhanced */
+@keyframes pageEnter {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.page-enter {
+  animation: pageEnter 0.7s var(--ease-luxury) both;
+}
+
+/* Scroll-triggered reveal for sections */
+.reveal-on-scroll {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s var(--ease-luxury), transform 0.8s var(--ease-luxury);
+}
+.reveal-on-scroll.revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Enhanced staggered section reveals */
+[data-testid] > section,
+[data-testid] > div > section,
+main > section {
+  animation: sectionReveal 0.6s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+[data-testid] > section:nth-child(1),
+main > section:nth-child(1) { animation-delay: 0ms; }
+[data-testid] > section:nth-child(2),
+main > section:nth-child(2) { animation-delay: 100ms; }
+[data-testid] > section:nth-child(3),
+main > section:nth-child(3) { animation-delay: 200ms; }
+[data-testid] > section:nth-child(4),
+main > section:nth-child(4) { animation-delay: 300ms; }
+[data-testid] > section:nth-child(5),
+main > section:nth-child(5) { animation-delay: 400ms; }
+[data-testid] > section:nth-child(n+6),
+main > section:nth-child(n+6) { animation-delay: 500ms; }
+
+/* 5. Button Hover Lift Effects — Global */
+button:not([disabled]):not(.no-lift),
+a.inline-flex:not(.no-lift),
+[role="button"]:not([disabled]):not(.no-lift) {
+  transition: transform 0.25s var(--ease-luxury), box-shadow 0.25s var(--ease-luxury), background-color 0.25s ease, color 0.25s ease, opacity 0.25s ease, border-color 0.25s ease;
+}
+
+/* Primary/filled buttons get stronger lift */
+button[class*="bg-"]:not([disabled]):not(.no-lift):hover,
+a.inline-flex[class*="bg-"]:not(.no-lift):hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgb(0 0 0 / 0.15);
+}
+
+/* Outlined/ghost buttons get subtle lift */
+button[class*="border"]:not([class*="bg-"]):not([disabled]):not(.no-lift):hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgb(0 0 0 / 0.08);
+}
+
+/* Active press effect */
+button:not([disabled]):active,
+a.inline-flex:active,
+[role="button"]:not([disabled]):active {
+  transform: translateY(0) !important;
+  box-shadow: none !important;
+}
+
+/* 6. AI Chat Pulse Animation */
+@keyframes chatPulse {
+  0%, 100% {
+    box-shadow: 0 0 0 0 rgba(147, 51, 234, 0.5);
+  }
+  50% {
+    box-shadow: 0 0 0 12px rgba(147, 51, 234, 0);
+  }
+}
+
+@keyframes chatBreathe {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+}
+
+.chat-pulse {
+  animation: chatPulse 2.5s ease-in-out infinite, chatBreathe 3s ease-in-out infinite;
+}
+
+/* 7. Image Fade-In on Load */
+@keyframes imageFadeIn {
+  from {
+    opacity: 0;
+    filter: blur(4px);
+  }
+  to {
+    opacity: 1;
+    filter: blur(0);
+  }
+}
+
+img[data-loaded="true"],
+[data-nimg][data-loaded="true"] {
+  animation: imageFadeIn 0.5s var(--ease-luxury) both;
+}
+
+img:not([data-loaded]) {
+  opacity: 0;
+}
+
+/* Fallback: ensure images visible after brief delay even without JS */
+img {
+  animation: imageFadeIn 0.4s ease 0.1s both;
+}
+
+/* 8. Style Match / Luxury Badge Styling */
+.style-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 3px 10px;
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  border-radius: 2px;
+  backdrop-filter: blur(8px);
+  transition: all 0.3s var(--ease-luxury);
+}
+
+.style-badge-gold {
+  background: linear-gradient(135deg, rgba(201, 169, 98, 0.9), rgba(232, 220, 200, 0.9));
+  color: #1a1a1a;
+}
+
+.style-badge-new {
+  background: linear-gradient(135deg, rgba(34, 197, 94, 0.9), rgba(16, 185, 129, 0.9));
+  color: white;
+}
+
+.style-badge-premium {
+  background: linear-gradient(135deg, rgba(0, 0, 0, 0.85), rgba(30, 30, 30, 0.85));
+  color: #C9A962;
+  border: 1px solid rgba(201, 169, 98, 0.3);
+}
+
+/* Card overlay badge positioning */
+.card-badge-top-left {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  z-index: 10;
+}
+
+.card-badge-top-right {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  z-index: 10;
+}
+
+/* ========================================
    Performance & Loading Animations
    ======================================== */
 
