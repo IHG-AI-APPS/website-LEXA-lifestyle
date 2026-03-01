@@ -23,6 +23,7 @@ const ExitIntentPopup = dynamic(() => import('@/components/widgets/ExitIntentPop
 const CookieConsent = dynamic(() => import('@/components/widgets/CookieConsent').catch(() => ({ default: Noop })), { ssr: false })
 const LinkPrefetcher = dynamic(() => import('@/components/performance/LinkPrefetcher').catch(() => ({ default: Noop })), { ssr: false })
 const ScheduleVisitButton = dynamic(() => import('@/components/widgets/ScheduleVisitButton').catch(() => ({ default: Noop })), { ssr: false })
+const PullToRefresh = dynamic(() => import('@/components/mobile/PullToRefresh'), { ssr: false })
 
 export default function ClientLayout({ children }: { children: React.ReactNode }) {
   const pathname = usePathname()
