@@ -86,32 +86,32 @@ export default function HeroCurator({ onPersonaClick }: HeroCuratorProps) {
           <track kind="captions" src="" label="English" srcLang="en" default />
         </video>
         
-        {/* Dark Luxury Overlay - Stronger on mobile/tablet for text legibility */}
-        <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-black/30 lg:from-black lg:via-black/30 lg:to-black/40" />
-        <div className="absolute inset-0 bg-gradient-to-r from-black/50 via-transparent to-black/20 lg:from-black/40" />
+        {/* Dark Luxury Overlay - Stronger on mobile for text legibility */}
+        <div className="absolute inset-0 bg-gradient-to-t from-black via-black/70 to-black/40 lg:from-black lg:via-black/30 lg:to-black/40" />
+        <div className="absolute inset-0 bg-gradient-to-r from-black/40 via-transparent to-black/20 lg:from-black/40" />
       </div>
 
-      {/* Content — Bottom-aligned for immersive feel, centered on tablet */}
-      <div className="relative z-10 flex h-full min-h-[100dvh] items-end lg:items-end">
-        <div className="w-full px-5 sm:px-6 md:px-8 lg:px-16 max-w-7xl mx-auto pb-40 sm:pb-36 lg:pb-32 pt-20">
+      {/* Content — Centered on mobile, bottom-aligned on desktop */}
+      <div className="relative z-10 flex h-full min-h-[100dvh] items-center lg:items-end">
+        <div className="w-full px-5 sm:px-6 md:px-8 lg:px-16 max-w-7xl mx-auto pb-28 sm:pb-36 lg:pb-32 pt-24 lg:pt-20">
           <motion.div
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 0.5 }}
-            className="max-w-5xl"
+            className="max-w-5xl text-center lg:text-left mx-auto lg:mx-0"
           >
-            <h1 className={`text-4xl sm:text-5xl md:text-5xl lg:text-6xl xl:text-7xl font-black tracking-tighter uppercase text-white leading-[0.92] ${language === 'ar' ? 'font-arabic' : ''}`}>
+            <h1 className={`text-4xl sm:text-5xl md:text-5xl lg:text-6xl xl:text-7xl font-black tracking-tighter uppercase text-white leading-[0.92] drop-shadow-lg ${language === 'ar' ? 'font-arabic' : ''}`}>
               {heading || (<>{t('hero.title1')}<br />{t('hero.title2')}<br />{t('hero.title3')}</>)}
             </h1>
             
-            <p className="mt-4 sm:mt-5 max-w-xl text-sm sm:text-base text-white/80 md:text-lg leading-relaxed">
+            <p className="mt-4 sm:mt-5 max-w-xl text-sm sm:text-base text-white/80 md:text-lg leading-relaxed drop-shadow-md mx-auto lg:mx-0">
               {subheading || (language === 'ar' 
                 ? 'مصمم ومُسلّم من البداية للنهاية. جرّب حلول المنزل الذكي الفاخرة الرائدة في دبي.'
                 : "Designed & delivered end-to-end. Experience Dubai's premier luxury smart home solutions."
               )}
             </p>
 
-            <div className="mt-6 sm:mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:gap-3">
+            <div className="mt-6 sm:mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:gap-3 items-center lg:items-start">
               {/* PRIMARY CTA: Persona Selection */}
               <Button 
                 size="lg"
@@ -153,7 +153,7 @@ export default function HeroCurator({ onPersonaClick }: HeroCuratorProps) {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 1.5, duration: 1 }}
-              className="mt-4 sm:mt-6 text-xs sm:text-sm text-white/60"
+              className="mt-4 sm:mt-6 text-xs sm:text-sm text-white/50"
             >
               {language === 'ar' 
                 ? 'نخدم: أصحاب المنازل • المهندسين المعماريين • المطورين • الشركات'
