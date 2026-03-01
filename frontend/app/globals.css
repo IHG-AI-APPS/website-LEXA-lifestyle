@@ -452,6 +452,18 @@ a[href]:hover .aspect-square img {
   opacity: 1;
 }
 
+/* Section reveal animation for staggered entrance */
+@keyframes sectionReveal {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 /* 4. Page Entrance Animations — Enhanced */
 @keyframes pageEnter {
   from {
