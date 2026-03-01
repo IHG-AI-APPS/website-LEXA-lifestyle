@@ -55,41 +55,43 @@ export default function CookieConsent() {
   return (
     <div className="fixed bottom-0 left-0 right-0 z-[45] p-3 pb-[76px] lg:pb-4 animate-slide-up pointer-events-none">
       <div className="max-w-sm mx-auto pointer-events-auto bg-black/90 backdrop-blur-xl rounded-2xl shadow-2xl border border-white/[0.08] overflow-hidden">
-        {/* Header - Very compact */}
-        <div className="bg-[#1A1A1A] px-3 py-2 flex items-center justify-between">
+        {/* Header */}
+        <div className="px-4 py-2.5 flex items-center justify-between border-b border-white/[0.06]">
           <div className="flex items-center gap-2">
             <Shield className="w-4 h-4 text-[#C9A962]" />
             <span className="text-white font-medium text-sm">Privacy & Cookies</span>
           </div>
           <button
             onClick={() => setIsMinimized(true)}
-            className="p-1 text-gray-400 hover:text-white transition-colors"
+            className="p-1 text-white/40 hover:text-white transition-colors"
             aria-label="Minimize"
           >
             <X className="w-4 h-4" />
           </button>
         </div>
 
-        {/* Content - Compact */}
-        <div className="p-3">
-          <p className="text-gray-600 dark:text-gray-400 dark:text-gray-400 text-xs leading-relaxed mb-3">
+        {/* Content */}
+        <div className="px-4 py-3">
+          <p className="text-white/60 text-xs leading-relaxed mb-3">
             We use cookies to enhance your experience.{' '}
             <Link href="/privacy-policy" className="text-[#C9A962] hover:underline font-medium">
               Learn more
             </Link>
           </p>
 
-          {/* Actions - Side by side buttons */}
+          {/* Actions */}
           <div className="flex gap-2">
             <button
               onClick={acceptAll}
-              className="flex-1 px-3 py-2 bg-[#1A1A1A] text-white font-medium text-xs rounded-lg hover:bg-[#2D2D2D] transition-colors"
+              data-testid="cookie-accept-all"
+              className="flex-1 px-3 py-2.5 bg-[#C9A962] text-black font-semibold text-xs rounded-lg hover:bg-[#d4b46e] transition-colors"
             >
               Accept All
             </button>
             <button
               onClick={acceptEssential}
-              className="flex-1 px-3 py-2 bg-gray-100 dark:bg-gray-800 dark:bg-gray-700 text-gray-700 dark:text-gray-300 dark:text-gray-300 font-medium text-xs rounded-lg hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors"
+              data-testid="cookie-essential-only"
+              className="flex-1 px-3 py-2.5 bg-white/10 text-white/80 font-medium text-xs rounded-lg hover:bg-white/15 transition-colors border border-white/[0.08]"
             >
               Essential Only
             </button>
