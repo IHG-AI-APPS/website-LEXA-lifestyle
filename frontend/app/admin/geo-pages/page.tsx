@@ -88,7 +88,7 @@ export default function GeoPageAdmin() {
     p.slug.toLowerCase().includes(search.toLowerCase())
   )
 
-  const regions = [...new Set(pages.map(p => p.region))].sort()
+  const regions = Array.from(new Set(pages.map(p => p.region))).sort()
 
   if (editing) return <EditForm page={editing} setPage={setEditing} onSave={handleSave} onCancel={() => setEditing(null)} saving={saving} />
 
