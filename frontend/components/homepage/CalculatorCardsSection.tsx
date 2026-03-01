@@ -54,7 +54,7 @@ export default function CalculatorCardsSection() {
     href: featuredData.href,
     cta: featuredData.cta,
     badge: featuredData.badge,
-    gradient: 'from-blue-600 via-purple-600 to-indigo-600'
+    gradient: 'from-[#0A0A0A] via-[#111111] to-[#0A0A0A]'
   }
 
   const tools = toolsData.map((t: any, i: number) => ({
@@ -94,11 +94,11 @@ export default function CalculatorCardsSection() {
           className="mb-8"
         >
           <Link href={featuredTool.href} className="block group">
-            <div className={`relative overflow-hidden bg-gradient-to-r ${featuredTool.gradient} rounded-2xl`}>
-              {/* Animated Background */}
-              <div className="absolute inset-0 opacity-20">
-                <div className="absolute top-0 left-1/4 w-96 h-96 bg-white/30 rounded-full blur-3xl animate-pulse" />
-                <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-white/20 rounded-full blur-3xl animate-pulse delay-1000" />
+            <div className={`relative overflow-hidden bg-gradient-to-br from-[#0A0A0A] to-[#111111] rounded-2xl border border-[#C9A962]/20`}>
+              {/* Subtle gold glow */}
+              <div className="absolute inset-0 opacity-10">
+                <div className="absolute top-0 left-1/4 w-96 h-96 bg-[#C9A962]/30 rounded-full blur-3xl" />
+                <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-[#C9A962]/20 rounded-full blur-3xl" />
               </div>
               
               <div className="relative p-6 md:p-12 flex flex-col md:flex-row items-center gap-6 md:gap-8">
@@ -107,9 +107,9 @@ export default function CalculatorCardsSection() {
                   <div className="w-24 h-24 md:w-32 md:h-32 rounded-2xl bg-white/10 backdrop-blur-sm border border-white/20 flex items-center justify-center group-hover:scale-110 transition-transform duration-500">
                     <Brain className="w-12 h-12 md:w-16 md:h-16 text-white" />
                   </div>
-                  <div className="absolute -top-2 -right-2 flex items-center gap-1 px-2 py-1 bg-yellow-400 rounded-full">
-                    <Zap className="w-3 h-3 text-yellow-900" />
-                    <span className="text-xs font-bold text-yellow-900">AI</span>
+                  <div className="absolute -top-2 -right-2 flex items-center gap-1 px-2 py-1 bg-[#C9A962] rounded-full">
+                    <Zap className="w-3 h-3 text-black" />
+                    <span className="text-xs font-bold text-black">AI</span>
                   </div>
                 </div>
                 
@@ -143,7 +143,7 @@ export default function CalculatorCardsSection() {
                   </div>
 
                   <Button 
-                    className="bg-white hover:bg-[#E8DCC8] text-[#1A1A1A] dark:text-white font-semibold py-6 px-8 transition-all duration-300 group-hover:shadow-lg"
+                    className="bg-[#C9A962] hover:bg-[#E8DCC8] text-black font-semibold py-6 px-8 transition-all duration-300 group-hover:shadow-lg rounded-none"
                     size="lg"
                     data-testid="homepage-project-builder-cta"
                   >
