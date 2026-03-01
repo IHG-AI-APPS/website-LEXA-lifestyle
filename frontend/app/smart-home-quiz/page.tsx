@@ -198,24 +198,28 @@ export default function SmartHomeQuizPage() {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-blue-50">
+    <div className="min-h-screen bg-white dark:bg-[#050505]">
       {/* Hero */}
-      <section className="pt-24 pb-12 px-4">
-        <div className="container mx-auto max-w-4xl text-center">
+      <section className="relative overflow-hidden bg-[#0A0A0A] dark:bg-[#050505] text-white pt-24 pb-12">
+        {/* Hero Background Image */}
+        <div className="absolute inset-0">
+          <img src="https://images.unsplash.com/photo-1558618666-fcd25c85f82e?w=1200&q=50" alt="" className="w-full h-full object-cover opacity-20" loading="eager" />
+          <div className="absolute inset-0 bg-gradient-to-t from-[#0A0A0A] via-[#0A0A0A]/70 to-[#0A0A0A]/40" />
+        </div>
+        <div className="container mx-auto max-w-4xl text-center relative z-10">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
           >
-            <div className="inline-flex items-center gap-2 px-4 py-2 bg-blue-100 border border-blue-200 rounded-full mb-6">
-              <Brain className="h-4 w-4 text-blue-600" />
-              <span className="text-sm font-medium text-blue-900">AI-Powered Recommendations</span>
-            </div>
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold uppercase text-gray-900 dark:text-white mb-4">
+            <span className="inline-block px-3 py-1 rounded-full bg-[#C9A962]/15 border border-[#C9A962]/30 text-[#C9A962] text-xs uppercase tracking-widest mb-5">
+              AI-Powered Recommendations
+            </span>
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold uppercase text-white mb-4">
               Find Your Perfect<br />
-              <span className="text-blue-600">Smart Home</span>
+              <span className="text-[#C9A962]">Smart Home</span>
             </h1>
-            <p className="text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
+            <p className="text-base text-gray-300 max-w-2xl mx-auto">
               Answer a few questions and our AI will recommend the best smart home features for your lifestyle
             </p>
           </motion.div>
