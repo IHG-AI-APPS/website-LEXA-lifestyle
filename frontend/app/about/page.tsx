@@ -16,7 +16,7 @@ const ICON_MAP: Record<string, any> = { Award, Users, Building, Target }
 export default function AboutPage() {
   const { t, language } = useLanguage()
   const [showConsultationForm, setShowConsultationForm] = useState(false)
-  const cmsData = useCms('page_about', null)
+  const cmsData = useCms<any>('page_about', null)
 
   const values = cmsData?.values?.length ? cmsData.values.map((v: any) => ({ icon: ICON_MAP[v.icon] || Award, title: language === 'ar' ? v.title_ar : v.title_en, description: language === 'ar' ? v.description_ar : v.description_en })) : [
     { icon: Award, title: 'Innovation with Purpose', description: 'We select and integrate technologies that genuinely improve comfort, control, and lifestyle.' },
