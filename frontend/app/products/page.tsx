@@ -50,7 +50,7 @@ export default function ProductsPage() {
               <span className="text-xs tracking-[0.5em] uppercase text-gray-400 font-medium mb-6 block">
                 Product Catalog
               </span>
-              <h1 className="text-7xl sm:text-8xl font-semibold tracking-[-0.04em] leading-[0.9] mb-8">
+              <h1 className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-semibold tracking-[-0.04em] leading-[0.9] mb-8">
                 PREMIUM
                 <br />
                 <span className="text-transparent bg-clip-text metallic-gradient">EQUIPMENT</span>
