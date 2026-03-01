@@ -20,7 +20,7 @@ const nextConfig = {
   // swcMinify is enabled by default in Next.js 13+
   
   // Output optimization
-  output: 'standalone',
+  // output: 'standalone', // Disabled for production build compatibility
   
   // Image optimization
   images: {
