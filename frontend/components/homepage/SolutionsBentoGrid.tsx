@@ -4,6 +4,7 @@ import { motion } from 'framer-motion'
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import SafeImage from '@/components/ui/SafeImage'
+import dynamic from 'next/dynamic'
 import {
   Film,
   Home,
@@ -15,8 +16,11 @@ import {
   Music,
   Camera,
   Wifi,
-  LucideIcon
+  LucideIcon,
+  ArrowRight
 } from 'lucide-react'
+
+const SwipeCarousel = dynamic(() => import('@/components/mobile/SwipeCarousel'), { ssr: false })
 
 const BACKEND_URL = process.env.NEXT_PUBLIC_BACKEND_URL || ''
 
