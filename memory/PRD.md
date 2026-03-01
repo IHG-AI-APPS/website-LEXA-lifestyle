@@ -11,6 +11,16 @@ Complete website overhaul for LEXA Smart Home to:
 
 ## Completed Work (Latest First)
 
+### Phase 37: Site-Wide Hero Standardization — Uppercase, Center-Aligned, Background Images (Mar 1, 2026)
+- **47 pages**: Standardized h1 to `text-4xl sm:text-5xl lg:text-6xl font-bold uppercase tracking-tight`
+- **62 pages**: Replaced `bg-gray-900` hero backgrounds with OLED-black `bg-[#0A0A0A] dark:bg-[#050505]`
+- **15+ pages**: Added hero background images (20% opacity Unsplash images with dark gradient overlay) to: services, contact, packages, consultation, faq, testimonials, architects, developers, calculator, brands, blog, catalogues, projects, process, digital-twin, intelligence, enterprise-platform
+- **Project-builder**: Completely redesigned landing page — center-aligned, dark hero with gold badge, trust signals, matching Dark Luxury theme
+- **About/Experience-Centre**: Converted from split layout to center-aligned with full-width background image overlay
+- **Brands/Catalogues/Projects**: Fixed from left-aligned to center-aligned hero
+- **Smart-home-quiz/ROI-calculator/Villa-designer**: Hero sections redesigned with dark bg + gold accents
+- **Testing**: 100% backend, 100% frontend pass rate (iteration_63)
+
 ### Phase 36: Project Builder + Site-Wide Purple-to-Gold Refactor (Mar 1, 2026)
 - **Scope**: Eliminated ALL purple/violet styling from 35 user-facing files. Replaced with Dark Luxury gold (#C9A962) accent system.
 - **Files updated**: project-builder (17 components), calculator, packages (4), smart-home-quiz, villa-designer, developer-toolkit, developers, enterprise-platform, villa-operating-model, package-builder, analytics
