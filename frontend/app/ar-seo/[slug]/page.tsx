@@ -22,6 +22,7 @@ interface ArabicPageData {
   cta_text?: string
   cta_url?: string
   published: boolean
+  faqs?: any[]
 }
 
 async function getArabicPage(slug: string): Promise<ArabicPageData | null> {
