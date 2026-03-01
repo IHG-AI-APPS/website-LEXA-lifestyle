@@ -169,9 +169,13 @@ export default function ROICalculatorPage() {
   return (
     <div className="min-h-screen bg-gradient-to-b from-gray-950 via-gray-900 to-black pt-20">
       {/* Hero Section */}
-      <section className="py-16 relative overflow-hidden">
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-emerald-900/20 via-transparent to-transparent" />
-        <div className="container mx-auto px-6 lg:px-16 relative">
+      <section className="relative overflow-hidden bg-[#0A0A0A] dark:bg-[#050505] text-white py-16">
+        {/* Hero Background Image */}
+        <div className="absolute inset-0">
+          <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=1200&q=50" alt="" className="w-full h-full object-cover opacity-20" loading="eager" />
+          <div className="absolute inset-0 bg-gradient-to-t from-[#0A0A0A] via-[#0A0A0A]/70 to-[#0A0A0A]/40" />
+        </div>
+        <div className="container mx-auto px-6 lg:px-16 relative z-10">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
