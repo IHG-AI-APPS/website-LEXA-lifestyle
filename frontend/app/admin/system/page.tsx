@@ -79,6 +79,59 @@ export default function SystemPage() {
       console.error('Error submitting bug report:', error)
       toast.error('Failed to submit bug report')
     }
+
+  const handleRebuild = async () => {
+    if (rebuilding) return
+    setRebuilding(true)
+    setRebuildStatus({ running: true, last_result: 'building' })
+    try {
+      const token = localStorage.getItem('admin_token')
+      const res = await fetch(`${process.env.NEXT_PUBLIC_BACKEND_URL}/api/admin/rebuild-frontend`, {
+        method: 'POST',
+        headers: { 'Authorization': `Bearer ${token}` }
+      })
+      if (res.ok) {
+        toast.info('Frontend rebuild started...')
+        pollRebuildStatus()
+      } else if (res.status === 409) {
+        toast.warning('A build is already in progress')
+        pollRebuildStatus()
+      } else {
+        toast.error('Failed to start rebuild')
+        setRebuilding(false)
+      }
+    } catch (error) {
+      toast.error('Failed to start rebuild')
+      setRebuilding(false)
+    }
+  }
+
+  const pollRebuildStatus = () => {
+    const interval = setInterval(async () => {
+      try {
+        const token = localStorage.getItem('admin_token')
+        const res = await fetch(`${process.env.NEXT_PUBLIC_BACKEND_URL}/api/admin/rebuild-status`, {
+          headers: { 'Authorization': `Bearer ${token}` }
+        })
+        const data = await res.json()
+        setRebuildStatus(data)
+        if (!data.running) {
+          clearInterval(interval)
+          setRebuilding(false)
+          if (data.last_result === 'success') {
+            toast.success('Frontend rebuilt successfully! Refreshing in 3s...')
+            setTimeout(() => window.location.reload(), 3000)
+          } else if (data.last_result === 'failed') {
+            toast.error('Build failed. Check logs for details.')
+          }
+        }
+      } catch {
+        clearInterval(interval)
+        setRebuilding(false)
+      }
+    }, 5000)
+  }
+
   }
 
   const handleCheckUpdates = async () => {
