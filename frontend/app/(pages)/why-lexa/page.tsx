@@ -93,7 +93,7 @@ export default function WhyLexaPage() {
   return (
     <div className="min-h-screen bg-white dark:bg-gray-900 pt-20">
       {/* Hero */}
-      <section className="py-20 bg-gray-900 text-white">
+      <section className="py-20 bg-[#0A0A0A] dark:bg-[#050505] text-white">
         <div className="container mx-auto px-8 lg:px-16">
           <div className="max-w-4xl mx-auto text-center">
             <motion.div
@@ -144,7 +144,7 @@ export default function WhyLexaPage() {
                     viewport={{ once: true }}
                     className="text-center"
                   >
-                    <div className="inline-flex items-center justify-center w-16 h-16 bg-gray-900 text-white rounded-full mb-4">
+                    <div className="inline-flex items-center justify-center w-16 h-16 bg-[#0A0A0A] dark:bg-[#050505] text-white rounded-full mb-4">
                       <Icon size={28} />
                     </div>
                     <h3 className="text-lg font-semibold mb-2">{item.title}</h3>
@@ -168,7 +168,7 @@ export default function WhyLexaPage() {
 
             <div className="bg-white dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden">
               <table className="w-full">
-                <thead className="bg-gray-900 text-white">
+                <thead className="bg-[#0A0A0A] dark:bg-[#050505] text-white">
                   <tr>
                     <th className="px-6 py-4 text-left">Feature</th>
                     <th className="px-6 py-4 text-center">LEXA Lifestyle</th>
@@ -236,7 +236,7 @@ export default function WhyLexaPage() {
       </section>
 
       {/* By the Numbers */}
-      <section className="py-20 bg-gray-900 text-white">
+      <section className="py-20 bg-[#0A0A0A] dark:bg-[#050505] text-white">
         <div className="container mx-auto px-8 lg:px-16">
           <div className="max-w-5xl mx-auto text-center">
             <h2 className="h2 uppercase mb-16">LEXA BY THE NUMBERS</h2>
@@ -270,7 +270,7 @@ export default function WhyLexaPage() {
             Visit our Dubai Experience Centre to see Control4, Crestron, and Lutron systems in action. Compare before you commit.
           </p>
           <div className="flex gap-4 justify-center flex-wrap">
-            <Link href="/contact" className="bg-gray-900 text-white px-8 py-4 text-lg font-semibold hover:bg-gray-800 transition-colors">
+            <Link href="/contact" className="bg-[#0A0A0A] dark:bg-[#050505] text-white px-8 py-4 text-lg font-semibold hover:bg-gray-800 transition-colors">
               Schedule Consultation
             </Link>
             <Link href="/case-studies" className="border-2 border-gray-900 px-8 py-4 text-lg font-semibold hover:bg-gray-900 hover:text-white transition-colors">

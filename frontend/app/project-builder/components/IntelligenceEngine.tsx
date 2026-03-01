@@ -455,7 +455,7 @@ export default function IntelligenceEngine({ sessionId, projectData, onComplete 
                                 <motion.div
                                   initial={{ opacity: 0, y: 10 }}
                                   animate={{ opacity: 1, y: 0 }}
-                                  className="absolute left-0 right-0 top-full mt-2 p-3 bg-gray-900 text-white text-xs rounded shadow-lg z-10"
+                                  className="absolute left-0 right-0 top-full mt-2 p-3 bg-[#0A0A0A] dark:bg-[#050505] text-white text-xs rounded shadow-lg z-10"
                                 >
                                   <div className="font-medium mb-1">AI Analysis:</div>
                                   <div>{reasoning}</div>

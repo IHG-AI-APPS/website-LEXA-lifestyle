@@ -22,7 +22,7 @@ export default function NotFound() {
           <div className="flex gap-4 justify-center flex-wrap">
             <Link
               href="/"
-              className="inline-flex items-center gap-2 bg-gray-900 text-white px-6 py-3 font-semibold hover:bg-gray-800 transition-colors"
+              className="inline-flex items-center gap-2 bg-[#0A0A0A] dark:bg-[#050505] text-white px-6 py-3 font-semibold hover:bg-gray-800 transition-colors"
             >
               <Home size={20} />
               Go to Homepage

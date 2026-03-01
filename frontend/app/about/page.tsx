@@ -109,7 +109,7 @@ export default function AboutPage() {
       </section>
 
       {/* Journey / Timeline */}
-      <section className="py-16 lg:py-20 bg-gray-900 text-white" data-testid="journey-section">
+      <section className="py-16 lg:py-20 bg-[#0A0A0A] dark:bg-[#050505] text-white" data-testid="journey-section">
         <div className="container mx-auto px-8 lg:px-16">
           <div className="max-w-4xl mx-auto">
             <span className="text-xs uppercase tracking-widest text-[#C9A962] font-semibold">Our Journey</span>
@@ -157,7 +157,7 @@ export default function AboutPage() {
       <TeamSection />
 
       {/* CTA */}
-      <section className="py-20 bg-gray-900 text-white">
+      <section className="py-20 bg-[#0A0A0A] dark:bg-[#050505] text-white">
         <div className="container mx-auto px-8 lg:px-16 relative z-10">
           <div className="max-w-3xl mx-auto text-center">
             <span className="text-[#C9A962] text-xs uppercase tracking-widest font-semibold">Work With Us</span>

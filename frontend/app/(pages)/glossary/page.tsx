@@ -331,7 +331,7 @@ export default function GlossaryPage() {
       </section>
 
       {/* CTA */}
-      <section className="py-20 bg-gray-900 text-white">
+      <section className="py-20 bg-[#0A0A0A] dark:bg-[#050505] text-white">
         <div className="container mx-auto px-8 lg:px-16 text-center">
           <h2 className="h2 uppercase mb-6">HAVE QUESTIONS?</h2>
           <p className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">

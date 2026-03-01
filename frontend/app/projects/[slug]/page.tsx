@@ -420,7 +420,7 @@ export default function ProjectDetailPage() {
                 )}
 
                 {/* CTA */}
-                <div className="bg-gray-900 text-white p-6 rounded-lg">
+                <div className="bg-[#0A0A0A] dark:bg-[#050505] text-white p-6 rounded-lg">
                   <h3 className="font-semibold mb-2">Start Your Project</h3>
                   <p className="text-sm text-gray-300 mb-4">
                     Let's create something similar for your space.

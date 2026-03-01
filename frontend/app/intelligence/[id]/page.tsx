@@ -105,7 +105,7 @@ export default function IntelligenceDetailPage() {
   return (
     <div className="min-h-screen bg-white dark:bg-gray-950 pt-20" data-testid="intelligence-detail-page">
       {/* Hero — Split Layout */}
-      <section className="relative overflow-hidden bg-gray-900 text-white">
+      <section className="relative overflow-hidden bg-[#0A0A0A] dark:bg-[#050505] text-white">
         <div className="grid grid-cols-1 lg:grid-cols-2 min-h-[480px]">
           <div className="flex flex-col justify-center px-8 lg:px-16 py-16 relative z-10">
             <motion.div initial={{ opacity: 0, x: -30 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.6 }}>
@@ -294,7 +294,7 @@ export default function IntelligenceDetailPage() {
       )}
 
       {/* CTA Section */}
-      <section className="py-20 bg-gray-900 text-white relative overflow-hidden">
+      <section className="py-20 bg-[#0A0A0A] dark:bg-[#050505] text-white relative overflow-hidden">
         <div className="container mx-auto px-8 lg:px-16 relative z-10">
           <div className="max-w-3xl mx-auto text-center">
             <span className="text-[#C9A962] text-xs uppercase tracking-widest font-semibold">Ready to Start?</span>

@@ -157,7 +157,7 @@ export default function ProtocolSelection({
           >
             {/* Header */}
             <div className="text-center mb-10">
-              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gray-900 text-white mb-4">
+              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#0A0A0A] dark:bg-[#050505] text-white mb-4">
                 <Zap className="w-5 h-5" />
                 <span className="font-semibold">Protocol Selection</span>
               </div>

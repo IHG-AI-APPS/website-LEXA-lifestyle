@@ -96,7 +96,7 @@ export default function BrandsPage() {
   return (
     <div className="min-h-screen bg-white dark:bg-gray-950 pt-20" data-testid="brands-page">
       {/* Hero */}
-      <section className="relative overflow-hidden bg-gray-900 text-white">
+      <section className="relative overflow-hidden bg-[#0A0A0A] dark:bg-[#050505] text-white">
         <div className="absolute inset-0 opacity-[0.03]" style={{ backgroundImage: 'radial-gradient(circle at 1px 1px, white 1px, transparent 0)', backgroundSize: '40px 40px' }} />
         <div className="container mx-auto px-8 lg:px-16 py-20 lg:py-28 relative z-10">
           <div className="max-w-3xl">
@@ -317,7 +317,7 @@ export default function BrandsPage() {
       </section>
 
       {/* CTA */}
-      <section className="py-20 bg-gray-900 text-white relative overflow-hidden">
+      <section className="py-20 bg-[#0A0A0A] dark:bg-[#050505] text-white relative overflow-hidden">
         <div className="absolute inset-0 opacity-[0.03]" style={{ backgroundImage: 'radial-gradient(circle at 1px 1px, white 1px, transparent 0)', backgroundSize: '40px 40px' }} />
         <div className="container mx-auto px-8 lg:px-16 relative z-10">
           <div className="max-w-3xl mx-auto text-center">

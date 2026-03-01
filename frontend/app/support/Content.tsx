@@ -50,7 +50,7 @@ export default function SupportContent() {
   return (
     <div className="min-h-screen bg-white dark:bg-gray-950 pt-20" data-testid="support-page">
       {/* Hero */}
-      <section className="relative overflow-hidden bg-gray-900 text-white py-20 lg:py-28">
+      <section className="relative overflow-hidden bg-[#0A0A0A] dark:bg-[#050505] text-white py-20 lg:py-28">
         <div className="container mx-auto px-8 lg:px-16 relative z-10">
           <div className="max-w-3xl mx-auto text-center">
             <span className="inline-block px-3 py-1 rounded-full bg-red-500/15 border border-red-500/30 text-red-400 text-xs uppercase tracking-widest mb-5">{badge}</span>
@@ -137,7 +137,7 @@ export default function SupportContent() {
       </section>
 
       {/* CTA */}
-      <section className="py-20 bg-gray-900 text-white">
+      <section className="py-20 bg-[#0A0A0A] dark:bg-[#050505] text-white">
         <div className="container mx-auto px-8 lg:px-16 relative z-10">
           <div className="max-w-3xl mx-auto text-center">
             <span className="text-[#C9A962] text-xs uppercase tracking-widest font-semibold">{ctaBadge}</span>

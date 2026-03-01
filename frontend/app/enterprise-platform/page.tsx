@@ -411,7 +411,7 @@ export default function EnterprisePerformanceOSPage() {
         </section>
 
         {/* Proven Results */}
-        <section className="py-20 bg-gray-900 text-white">
+        <section className="py-20 bg-[#0A0A0A] dark:bg-[#050505] text-white">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
             <motion.div
               initial={{ opacity: 0, y: 20 }}

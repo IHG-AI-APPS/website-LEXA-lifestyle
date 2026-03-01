@@ -110,7 +110,7 @@ export default function ArchitectResourcePortalPage() {
 
   return (
     <div className={`min-h-screen pt-20 transition-colors duration-300 ${
-      isDark ? 'bg-gray-900 text-white' : 'bg-white text-gray-900'
+      isDark ? 'bg-[#0A0A0A] dark:bg-[#050505] text-white' : 'bg-white text-gray-900'
     }`}>
       {/* HERO */}
       <section className="relative min-h-[70vh] flex items-center justify-center">

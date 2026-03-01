@@ -67,7 +67,7 @@ export default function Error({
             onClick={() => {
               reset()
             }}
-            className="inline-flex items-center gap-2 bg-gray-900 text-white px-6 py-3 font-semibold hover:bg-gray-800 transition-colors"
+            className="inline-flex items-center gap-2 bg-[#0A0A0A] dark:bg-[#050505] text-white px-6 py-3 font-semibold hover:bg-gray-800 transition-colors"
             data-testid="error-try-again"
           >
             <RefreshCcw size={20} />

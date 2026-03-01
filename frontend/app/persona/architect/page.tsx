@@ -91,7 +91,7 @@ export default function ArchitectPage() {
   return (
     <div className="min-h-screen bg-white dark:bg-gray-950 pt-20">
       {/* Hero */}
-      <section className="relative overflow-hidden bg-gray-900 text-white py-20 lg:py-28">
+      <section className="relative overflow-hidden bg-[#0A0A0A] dark:bg-[#050505] text-white py-20 lg:py-28">
         <div className="container mx-auto px-8 lg:px-16">
           <div className="max-w-7xl mx-auto">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
@@ -192,7 +192,7 @@ export default function ArchitectPage() {
       </section>
 
       {/* Solutions Grid */}
-      <section className="relative overflow-hidden bg-gray-900 text-white py-20 lg:py-28">
+      <section className="relative overflow-hidden bg-[#0A0A0A] dark:bg-[#050505] text-white py-20 lg:py-28">
         <div className="container mx-auto px-8 lg:px-16">
           <div className="max-w-7xl mx-auto">
             <motion.div

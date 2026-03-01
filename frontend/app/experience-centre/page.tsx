@@ -152,7 +152,7 @@ export default function ExperienceCentrePage() {
       </section>
 
       {/* Stats */}
-      <section className="py-16 bg-gray-900 text-white">
+      <section className="py-16 bg-[#0A0A0A] dark:bg-[#050505] text-white">
         <div className="container mx-auto px-8 lg:px-16">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-5xl mx-auto text-center">
             {[{ value: '500+', label: 'Projects Delivered' }, { value: '15+', label: 'Years in Dubai' }, { value: '4.9/5', label: 'Client Satisfaction' }, { value: '32+', label: 'Premium Brands' }].map((stat, i) => (
@@ -188,7 +188,7 @@ export default function ExperienceCentrePage() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-gray-900 text-white">
+      <section className="py-20 bg-[#0A0A0A] dark:bg-[#050505] text-white">
         <div className="container mx-auto px-8 lg:px-16 relative z-10">
           <div className="max-w-3xl mx-auto text-center">
             <span className="text-[#C9A962] text-xs uppercase tracking-widest font-semibold">Ready to Visit?</span>
