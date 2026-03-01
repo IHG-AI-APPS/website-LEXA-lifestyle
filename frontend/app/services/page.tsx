@@ -122,7 +122,7 @@ export default function ServicesPage() {
             <span className="inline-block px-3 py-1 rounded-full bg-[#C9A962]/15 border border-[#C9A962]/30 text-[#C9A962] text-xs uppercase tracking-widest mb-5">
               {language === 'ar' ? 'خدماتنا' : 'Our Services'}
             </span>
-            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-5 tracking-tight" data-testid="services-title">
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold uppercase mb-5 tracking-tight" data-testid="services-title">
               {language === 'ar' ? 'خدمة متكاملة' : 'Full-Service Integration'}
             </h1>
             <p className="text-base text-gray-300 max-w-lg mx-auto">

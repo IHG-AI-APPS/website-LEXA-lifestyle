@@ -54,7 +54,7 @@ export default function SupportContent() {
         <div className="container mx-auto px-8 lg:px-16 relative z-10">
           <div className="max-w-3xl mx-auto text-center">
             <span className="inline-block px-3 py-1 rounded-full bg-red-500/15 border border-red-500/30 text-red-400 text-xs uppercase tracking-widest mb-5">{badge}</span>
-            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-5 tracking-tight" data-testid="support-title">{title}</h1>
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold uppercase mb-5 tracking-tight" data-testid="support-title">{title}</h1>
             <p className="text-base text-gray-300 mb-8 max-w-lg mx-auto">{desc}</p>
             <div className="flex flex-col sm:flex-row gap-3 justify-center">
               <Button size="lg" className="bg-red-600 text-white hover:bg-red-700 font-semibold" asChild>

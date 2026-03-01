@@ -84,7 +84,7 @@ export default function SolutionsPage() {
             <span className="inline-block px-3 py-1 rounded-full bg-[#C9A962]/15 border border-[#C9A962]/30 text-[#C9A962] text-xs uppercase tracking-widest mb-5">
               {language === 'ar' ? 'حلولنا' : 'Our Solutions'}
             </span>
-            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-5 tracking-tight" data-testid="solutions-title">
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold uppercase mb-5 tracking-tight" data-testid="solutions-title">
               {language === 'ar' ? 'أنظمة متكاملة' : 'Integrated Systems'}
             </h1>
             <p className="text-base text-gray-300 max-w-lg mx-auto">
