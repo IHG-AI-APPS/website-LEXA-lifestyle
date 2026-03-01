@@ -27,6 +27,7 @@ const PullToRefresh = dynamic(() => import('@/components/mobile/PullToRefresh'),
 
 export default function ClientLayout({ children }: { children: React.ReactNode }) {
   const pathname = usePathname()
+  const router = useRouter()
   const isAdminPage = pathname?.startsWith('/admin')
 
   // Track page views (excluding admin pages)
@@ -35,6 +36,11 @@ export default function ClientLayout({ children }: { children: React.ReactNode }
       trackPageView(pathname)
     }
   }, [pathname, isAdminPage])
+
+  const handleRefresh = useCallback(async () => {
+    router.refresh()
+    await new Promise(resolve => setTimeout(resolve, 800))
+  }, [router])
 
   return (
     <ThemeProvider>
