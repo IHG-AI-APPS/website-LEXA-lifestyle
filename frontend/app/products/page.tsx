@@ -8,6 +8,9 @@ import { Button } from '@/components/ui/button'
 import ConsultationForm from '@/components/forms/ConsultationForm'
 import { Monitor, Cpu, Wifi, Code, ArrowRight } from 'lucide-react'
 import { useCms } from '@/hooks/useCms'
+import dynamic from 'next/dynamic'
+
+const SwipeCarousel = dynamic(() => import('@/components/mobile/SwipeCarousel'), { ssr: false })
 
 const BACKEND_URL = process.env.NEXT_PUBLIC_BACKEND_URL || 'http://localhost:8001'
 const API = `${BACKEND_URL}/api`
