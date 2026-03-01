@@ -19,15 +19,18 @@ export default function SafeImage({
   src,
   alt,
   fallbackSrc = '/images/solutions/smart-lighting-1.jpg',
+  className,
   ...props
-}: SafeImageProps) {
+}: SafeImageProps & { className?: string }) {
   const [imgSrc, setImgSrc] = useState(src)
   const [hasError, setHasError] = useState(false)
+  const [loaded, setLoaded] = useState(false)
 
   // Sync state when src prop changes (e.g., theme/route change)
   useEffect(() => {
     setImgSrc(src)
     setHasError(false)
+    setLoaded(false)
   }, [src])
 
   // Validate and normalize the image source
@@ -66,8 +69,16 @@ export default function SafeImage({
       {...props}
       src={validSrc}
       alt={alt}
+      className={`${className || ''} ${loaded ? '' : 'opacity-0'}`}
+      style={{
+        ...props.style,
+        transition: 'opacity 0.5s cubic-bezier(0.16, 1, 0.3, 1), filter 0.5s cubic-bezier(0.16, 1, 0.3, 1)',
+        opacity: loaded ? 1 : 0,
+        filter: loaded ? 'blur(0)' : 'blur(4px)',
+      }}
       sizes={props.sizes || (props.fill ? '(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw' : undefined)}
       onError={handleError}
+      onLoad={() => setLoaded(true)}
     />
   )
 }
