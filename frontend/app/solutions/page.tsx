@@ -87,7 +87,7 @@ export default function SolutionsPage() {
             <h1 className="hero-animate-title text-4xl sm:text-5xl lg:text-6xl font-bold uppercase mb-5 tracking-tight" data-testid="solutions-title">
               {language === 'ar' ? 'أنظمة متكاملة' : 'Integrated Systems'}
             </h1>
-            <p className="text-base text-gray-300 max-w-lg mx-auto">
+            <p className="hero-animate-desc text-base text-gray-300 max-w-lg mx-auto">
               {language === 'ar' 
                 ? 'كل حل مصمم للعمل معًا بسلاسة. واجهة واحدة. تحكم كامل.'
                 : 'Every solution designed to work together seamlessly. One interface. Total control.'

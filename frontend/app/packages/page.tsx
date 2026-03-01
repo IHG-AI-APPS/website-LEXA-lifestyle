@@ -66,7 +66,7 @@ export default function PackagesPage() {
             <h1 className="hero-animate-title text-4xl sm:text-5xl lg:text-6xl font-bold uppercase mb-5 tracking-tight" data-testid="packages-title">
               All Packages
             </h1>
-            <p className="text-base text-gray-300 max-w-lg mx-auto mb-8">
+            <p className="hero-animate-desc text-base text-gray-300 max-w-lg mx-auto mb-8">
               Pre-configured smart home packages tailored for every property type and budget
             </p>
             <Link

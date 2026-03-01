@@ -56,7 +56,7 @@ export default function BlogPage() {
             <h1 className="hero-animate-title text-4xl sm:text-5xl lg:text-6xl font-bold uppercase mb-5 tracking-tight" data-testid="blog-title">
               Smart Living Insights
             </h1>
-            <p className="text-base text-gray-300 max-w-lg mx-auto">
+            <p className="hero-animate-desc text-base text-gray-300 max-w-lg mx-auto">
               Expert guides, industry trends, and practical advice for your smart home journey
             </p>
           </div>

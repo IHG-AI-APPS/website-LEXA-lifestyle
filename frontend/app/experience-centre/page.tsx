@@ -64,7 +64,7 @@ export default function ExperienceCentrePage() {
               <h1 className="hero-animate-title text-4xl sm:text-5xl lg:text-6xl font-bold uppercase mb-5 tracking-tight leading-tight" data-testid="experience-title">
                 LEXA EXPERIENCE CENTRE
               </h1>
-              <p className="text-base text-gray-300 mb-8 max-w-xl mx-auto leading-relaxed">
+              <p className="hero-animate-desc text-base text-gray-300 mb-8 max-w-xl mx-auto leading-relaxed">
                 Visit our 5,000+ sq ft showroom in Dubai and experience luxury smart living first-hand. Touch, feel, and interact with the latest technology solutions.
               </p>
               <div className="flex flex-col sm:flex-row gap-3 justify-center">

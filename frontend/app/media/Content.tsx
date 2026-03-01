@@ -32,7 +32,7 @@ export default function MediaContent() {
           <div className="max-w-3xl mx-auto text-center">
             <span className="hero-animate-badge inline-block px-3 py-1 rounded-full bg-[#C9A962]/15 border border-[#C9A962]/30 text-[#C9A962] text-xs uppercase tracking-widest mb-5">{badge}</span>
             <h1 className="hero-animate-title text-4xl sm:text-5xl lg:text-6xl font-bold uppercase mb-5 tracking-tight" data-testid="media-title">{title}</h1>
-            <p className="text-base text-gray-300 max-w-lg mx-auto">{desc}</p>
+            <p className="hero-animate-desc text-base text-gray-300 max-w-lg mx-auto">{desc}</p>
           </div>
         </div>
       </section>

@@ -51,7 +51,7 @@ export default function ContactPage() {
           <div className="max-w-3xl mx-auto text-center">
             <span className="hero-animate-badge inline-block px-3 py-1 rounded-full bg-[#C9A962]/15 border border-[#C9A962]/30 text-[#C9A962] text-xs uppercase tracking-widest mb-5">Get in Touch</span>
             <h1 className="hero-animate-title text-4xl sm:text-5xl lg:text-6xl font-bold uppercase mb-5 tracking-tight" data-testid="contact-title">Contact LEXA</h1>
-            <p className="text-base text-gray-300 max-w-lg mx-auto">Whether you have a question, need a quote, or want to discuss your project, we&apos;re here to help.</p>
+            <p className="hero-animate-desc text-base text-gray-300 max-w-lg mx-auto">Whether you have a question, need a quote, or want to discuss your project, we&apos;re here to help.</p>
           </div>
         </div>
       </section>

@@ -37,7 +37,7 @@ export default function ProjectBuilderLanding() {
                 SMART PROJECT BUILDER
               </h1>
 
-              <p className="text-base sm:text-lg text-gray-400 mb-8 max-w-xl mx-auto leading-relaxed">
+              <p className="hero-animate-desc text-base sm:text-lg text-gray-400 mb-8 max-w-xl mx-auto leading-relaxed">
                 Intelligence-driven specification for luxury automation. 693 features, dependency resolution, and instant proposals.
               </p>
 

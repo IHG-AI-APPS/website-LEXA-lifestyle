@@ -81,7 +81,7 @@ export default function SpecialtyRoomsPage() {
             <h1 className="hero-animate-title text-4xl sm:text-5xl lg:text-6xl font-bold uppercase mb-5 tracking-tight" data-testid="specialty-rooms-title">
               Specialty Room Automation
             </h1>
-            <p className="text-base text-gray-300 max-w-lg mx-auto mb-8">
+            <p className="hero-animate-desc text-base text-gray-300 max-w-lg mx-auto mb-8">
               Elevate your smart home with bespoke automation for wine cellars, game rooms, 
               private gyms, spas, and more.
             </p>

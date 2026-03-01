@@ -54,7 +54,7 @@ export default function AboutPage() {
               <h1 className="hero-animate-title text-4xl sm:text-5xl lg:text-6xl font-bold uppercase mb-5 tracking-tight leading-tight" data-testid="about-title">
                 Designed for Excellence
               </h1>
-              <p className="text-base text-gray-300 mb-8 max-w-xl mx-auto leading-relaxed">
+              <p className="hero-animate-desc text-base text-gray-300 mb-8 max-w-xl mx-auto leading-relaxed">
                 At Lexa Lifestyle, we believe luxury is defined by seamless experiences, intelligent design, and refined living. Based in Dubai, we specialize in high-end audio-visual systems, smart home automation, and bespoke lifestyle solutions.
               </p>
               <div className="flex flex-col sm:flex-row gap-3 justify-center">

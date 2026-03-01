@@ -130,7 +130,7 @@ export default function ServicesPage() {
             <h1 className="hero-animate-title text-4xl sm:text-5xl lg:text-6xl font-bold uppercase mb-5 tracking-tight" data-testid="services-title">
               {language === 'ar' ? 'خدمة متكاملة' : 'Full-Service Integration'}
             </h1>
-            <p className="text-base text-gray-300 max-w-lg mx-auto">
+            <p className="hero-animate-desc text-base text-gray-300 max-w-lg mx-auto">
               {language === 'ar' ? (
                 <>التصميم. التكامل. التشغيل. الدعم. أربع مراحل من التميز لتقديم الفخامة المنسقة.</>
               ) : (
