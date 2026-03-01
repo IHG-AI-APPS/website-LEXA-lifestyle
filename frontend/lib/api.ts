@@ -79,6 +79,7 @@ export interface Project {
   budget_range?: string
   team_size?: number
   gallery?: string[]
+  size?: string
 }
 
 export interface Testimonial {

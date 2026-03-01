@@ -10,7 +10,7 @@ import { useCms } from '@/hooks/useCms'
 export default function Footer() {
   const currentYear = new Date().getFullYear()
   const { language } = useLanguage()
-  const cms = useCms('site_footer', null)
+  const cms = useCms<Record<string, any> | null>('site_footer', null)
 
   const description = cms
     ? (language === 'ar' ? cms.company_description_ar : cms.company_description_en)

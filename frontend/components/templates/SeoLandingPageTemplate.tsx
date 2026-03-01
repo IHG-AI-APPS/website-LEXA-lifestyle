@@ -201,7 +201,7 @@ export default function SeoLandingPageTemplate({
   geoPages: geoPagesProp
 }: SeoLandingPageProps) {
   // CMS override: fetch dynamic content if cmsKey provided
-  const cmsRaw = useCms(cmsKey || '_noop_', null)
+  const cmsRaw = useCms<Record<string, any> | null>(cmsKey || '_noop_', null)
   const cms = cmsKey ? cmsRaw : null
 
   // Section-level overrides: CMS data takes priority over hardcoded props

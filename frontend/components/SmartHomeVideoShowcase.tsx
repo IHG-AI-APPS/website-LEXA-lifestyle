@@ -124,7 +124,7 @@ export default function SmartHomeVideoShowcase({ className = '', autoPlay = true
             muted={isMuted}
             playsInline
             onEnded={handleVideoEnd}
-            aria-label={`Smart home showcase - ${currentClip.name}`}
+            aria-label={`Smart home showcase - ${currentClip.title}`}
           >
             <source src={currentClip.src} type="video/mp4" />
             <track kind="captions" src="" label="English" srcLang="en" default />
@@ -151,17 +151,17 @@ export default function SmartHomeVideoShowcase({ className = '', autoPlay = true
           <div className="absolute top-4 right-4 flex gap-2">
             <Button
               variant="ghost"
-              size="icon"
+              size="sm"
               onClick={toggleMute}
-              className="bg-black/30 hover:bg-black/50 text-white rounded-full"
+              className="bg-black/30 hover:bg-black/50 text-white rounded-full p-2"
             >
               {isMuted ? <VolumeX className="h-5 w-5" /> : <Volume2 className="h-5 w-5" />}
             </Button>
             <Button
               variant="ghost"
-              size="icon"
+              size="sm"
               onClick={togglePlay}
-              className="bg-black/30 hover:bg-black/50 text-white rounded-full"
+              className="bg-black/30 hover:bg-black/50 text-white rounded-full p-2"
             >
               {isPlaying ? <Pause className="h-5 w-5" /> : <Play className="h-5 w-5" />}
             </Button>
@@ -170,17 +170,17 @@ export default function SmartHomeVideoShowcase({ className = '', autoPlay = true
           {/* Navigation Arrows */}
           <Button
             variant="ghost"
-            size="icon"
+            size="sm"
             onClick={handlePrevious}
-            className="absolute left-4 top-1/2 -translate-y-1/2 bg-black/30 hover:bg-black/50 text-white rounded-full"
+            className="absolute left-4 top-1/2 -translate-y-1/2 bg-black/30 hover:bg-black/50 text-white rounded-full p-2"
           >
             <ChevronLeft className="h-6 w-6" />
           </Button>
           <Button
             variant="ghost"
-            size="icon"
+            size="sm"
             onClick={handleNext}
-            className="absolute right-4 top-1/2 -translate-y-1/2 bg-black/30 hover:bg-black/50 text-white rounded-full"
+            className="absolute right-4 top-1/2 -translate-y-1/2 bg-black/30 hover:bg-black/50 text-white rounded-full p-2"
           >
             <ChevronRight className="h-6 w-6" />
           </Button>
