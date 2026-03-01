@@ -11,6 +11,13 @@ Complete website overhaul for LEXA Smart Home to:
 
 ## Completed Work (Latest First)
 
+### Phase 36: Project Builder + Site-Wide Purple-to-Gold Refactor (Mar 1, 2026)
+- **Scope**: Eliminated ALL purple/violet styling from 35 user-facing files. Replaced with Dark Luxury gold (#C9A962) accent system.
+- **Files updated**: project-builder (17 components), calculator, packages (4), smart-home-quiz, villa-designer, developer-toolkit, developers, enterprise-platform, villa-operating-model, package-builder, analytics
+- **Pattern**: `purple-500/600/700` → `#C9A962`, `purple-50/100` → `#C9A962/5` or `/10`, purple gradients → gold gradients
+- **Admin panel**: Intentionally unchanged (specialized internal tool)
+- **Testing**: 100% backend + 100% frontend pass rate (iteration_62). Zero visually purple elements on any user-facing page.
+
 ### Phase 35: TypeScript Strict Mode + Site-Wide Design Consistency (Mar 1, 2026)
 - **TypeScript**: Removed `ignoreBuildErrors: true` from `next.config.js`. Fixed all 21 TS errors across 4 files (Project interface, SmartHomeVideoShowcase, Footer, SeoLandingPageTemplate). Build now compiles with strict type checking.
 - **Design Consistency**: Removed purple/violet gradients from ALL user-facing pages:
