@@ -11,6 +11,16 @@ Complete website overhaul for LEXA Smart Home to:
 
 ## Completed Work (Latest First)
 
+### Phase 35: TypeScript Strict Mode + Site-Wide Design Consistency (Mar 1, 2026)
+- **TypeScript**: Removed `ignoreBuildErrors: true` from `next.config.js`. Fixed all 21 TS errors across 4 files (Project interface, SmartHomeVideoShowcase, Footer, SeoLandingPageTemplate). Build now compiles with strict type checking.
+- **Design Consistency**: Removed purple/violet gradients from ALL user-facing pages:
+  - Persona pages (architect, developer, homeowner, commercial): CTA sections → dark #0a0a0a bg + gold #C9A962 buttons
+  - Visualize-3D: Purple header → dark header + gold accent cards
+  - RelatedSolutions: Purple gradient CTA → gold button
+  - Architects page: Purple resource colors → gold/slate
+  - Locations: Added dark: theme variant
+- **Testing**: 100% backend + 100% frontend pass rate (iteration_61)
+
 ### Phase 34: Critical Bug Fix — Video Retry Loop / 429 Rate Limiting (Mar 1, 2026)
 - **Root cause**: HeroCurator.tsx had an infinite video error retry loop (onError → setNextClip → error → repeat). This generated hundreds of network requests, exhausting the platform's 429 rate limit, causing ALL CSS/JS/font files to fail loading. The site appeared completely broken/unstyled for users.
 - **Fix**: Added MAX_VIDEO_ERRORS=3 cap, reduced DEFAULT_CLIPS from 6→2, changed preload from 'auto'→'metadata', added videoFailed state to gracefully stop video loading after max errors.
