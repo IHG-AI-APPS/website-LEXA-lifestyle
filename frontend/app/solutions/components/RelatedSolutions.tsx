@@ -94,7 +94,7 @@ export default function RelatedSolutions({ solutions, currentSlug }: RelatedSolu
                           className="object-cover transition-transform duration-500 group-hover:scale-110"
                         />
                       ) : (
-                        <div className="w-full h-full bg-gradient-to-br from-blue-600 via-indigo-600 to-purple-600" />
+                        <div className="w-full h-full bg-gradient-to-br from-[#1a1a1a] via-[#0a0a0a] to-[#1a1a1a]" />
                       )}
                       
                       {/* Overlay Gradient */}
@@ -164,7 +164,7 @@ export default function RelatedSolutions({ solutions, currentSlug }: RelatedSolu
         >
           <Link
             href="/solutions"
-            className="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white font-semibold rounded-full hover:shadow-xl transition-all duration-300 hover:scale-105"
+            className="inline-flex items-center gap-2 px-8 py-4 bg-[#C9A962] text-black font-semibold rounded-full hover:shadow-xl transition-all duration-300 hover:scale-105"
           >
             <span>View All Solutions</span>
             <ArrowRight className="h-5 w-5" />
