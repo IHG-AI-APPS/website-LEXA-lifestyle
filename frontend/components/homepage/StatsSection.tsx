@@ -70,7 +70,7 @@ export default function StatsSection() {
 
   if (loading) {
     return (
-      <section className="py-16 md:py-20 bg-[#050505]">
+      <section className="py-16 md:py-20 bg-white dark:bg-[#050505]">
         <div className="px-6 md:px-12 lg:px-24">
           <div className="text-center dark:text-gray-400">Loading...</div>
         </div>
@@ -78,7 +78,7 @@ export default function StatsSection() {
     )
   }
   return (
-    <section className="py-8 md:py-10 bg-[#050505] border-y border-white/5">
+    <section className="py-8 md:py-10 bg-gray-50 dark:bg-[#050505] border-y border-gray-200 dark:border-white/5">
       <div className="content-container">
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
           {stats.map((stat, index) => {
@@ -99,7 +99,7 @@ export default function StatsSection() {
                   <Icon className="h-7 w-7 sm:h-8 sm:w-8 mx-auto mb-3 sm:mb-4 text-[#C9A962] transition-colors group-hover:text-[#E8DCC8]" />
                 </motion.div>
                 <AnimatedCounter value={stat.value} suffix={stat.suffix} />
-                <p className="text-xs sm:text-sm text-neutral-500 uppercase tracking-[0.2em] transition-colors group-hover:text-neutral-300">
+                <p className="text-xs sm:text-sm text-gray-600 dark:text-neutral-500 uppercase tracking-[0.2em] transition-colors group-hover:text-gray-900 dark:group-hover:text-neutral-300">
                   {stat.label}
                 </p>
               </motion.div>
