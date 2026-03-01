@@ -152,7 +152,7 @@ export default function TrustedInUAE({
 
   // Full variant
   return (
-    <section className={`py-16 md:py-24 bg-[#050505] ${className}`}>
+    <section className={`py-16 md:py-24 bg-white dark:bg-[#050505] ${className}`}>
       <div className="container mx-auto px-4 max-w-7xl">
         {/* Header */}
         <div className="text-center mb-12">
@@ -169,7 +169,7 @@ export default function TrustedInUAE({
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
-            className="text-3xl md:text-4xl lg:text-5xl font-bold mt-3 text-white"
+            className="text-3xl md:text-4xl lg:text-5xl font-bold mt-3 text-gray-900 dark:text-white"
           >
             The UAE&apos;s Premier Smart Home Partner
           </motion.h2>
@@ -178,7 +178,7 @@ export default function TrustedInUAE({
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.2 }}
-            className="mt-4 text-lg max-w-2xl mx-auto text-neutral-400"
+            className="mt-4 text-lg max-w-2xl mx-auto text-gray-600 dark:text-neutral-400"
           >
             Trusted by leading developers, architects, and homeowners across Dubai, Abu Dhabi, and the GCC.
           </motion.p>
@@ -194,12 +194,12 @@ export default function TrustedInUAE({
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1 }}
-                className="text-center p-6 rounded-2xl bg-white/[0.03] border border-white/[0.06]"
+                className="text-center p-6 rounded-2xl bg-gray-50 dark:bg-white/[0.03] border border-gray-200 dark:border-white/[0.06]"
               >
                 <div className="text-4xl md:text-5xl font-light text-transparent bg-clip-text bg-gradient-to-b from-[#C9A962] to-[#8a7035]">
                   {stat.number}
                 </div>
-                <div className="text-sm mt-2 font-medium text-neutral-500">
+                <div className="text-sm mt-2 font-medium text-gray-600 dark:text-neutral-500">
                   {stat.label}
                 </div>
               </motion.div>
@@ -209,7 +209,7 @@ export default function TrustedInUAE({
 
         {/* Technology Partners */}
         <div className="mb-12">
-          <h3 className="text-center text-sm uppercase tracking-widest mb-8 text-neutral-500">
+          <h3 className="text-center text-sm uppercase tracking-widest mb-8 text-gray-500 dark:text-neutral-500">
             Official Technology Partners
           </h3>
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
@@ -220,9 +220,9 @@ export default function TrustedInUAE({
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.05 }}
-                className="p-4 rounded-xl text-center bg-white/[0.03] border border-white/[0.06] hover:bg-white/[0.06] transition-all"
+                className="p-4 rounded-xl text-center bg-gray-50 dark:bg-white/[0.03] border border-gray-200 dark:border-white/[0.06] hover:bg-gray-100 dark:hover:bg-white/[0.06] transition-all"
               >
-                <div className="text-lg font-bold text-white">
+                <div className="text-lg font-bold text-gray-900 dark:text-white">
                   {partner.name}
                 </div>
                 <div className="text-xs mt-1 text-[#C9A962]">
@@ -235,7 +235,7 @@ export default function TrustedInUAE({
 
         {/* Trusted By Developers */}
         <div className="mb-12">
-          <h3 className="text-center text-sm uppercase tracking-widest mb-8 text-neutral-500">
+          <h3 className="text-center text-sm uppercase tracking-widest mb-8 text-gray-500 dark:text-neutral-500">
             Trusted by Leading UAE Developers
           </h3>
           <div className="flex flex-wrap justify-center gap-4">
@@ -246,7 +246,7 @@ export default function TrustedInUAE({
                 whileInView={{ opacity: 1 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.05 }}
-                className="px-6 py-3 rounded-full bg-white/[0.03] border border-white/[0.06] text-neutral-300"
+                className="px-6 py-3 rounded-full bg-gray-50 dark:bg-white/[0.03] border border-gray-200 dark:border-white/[0.06] text-gray-700 dark:text-neutral-300"
               >
                 <span className="font-medium">{client.name}</span>
               </motion.div>
@@ -255,8 +255,8 @@ export default function TrustedInUAE({
         </div>
 
         {/* Certifications */}
-        <div className="p-8 rounded-2xl bg-white/[0.02] border border-white/[0.05]">
-          <h3 className="text-center text-sm uppercase tracking-widest mb-6 text-neutral-500">
+        <div className="p-8 rounded-2xl bg-gray-50 dark:bg-white/[0.02] border border-gray-200 dark:border-white/[0.05]">
+          <h3 className="text-center text-sm uppercase tracking-widest mb-6 text-gray-500 dark:text-neutral-500">
             Industry Certifications & Accreditations
           </h3>
           <div className="flex flex-wrap justify-center gap-6">
@@ -270,8 +270,8 @@ export default function TrustedInUAE({
                 className="flex items-center gap-2"
               >
                 <div className="w-2 h-2 rounded-full bg-[#C9A962]" />
-                <span className="font-medium text-white">{cert.name}</span>
-                <span className="text-sm text-neutral-500">({cert.year})</span>
+                <span className="font-medium text-gray-900 dark:text-white">{cert.name}</span>
+                <span className="text-sm text-gray-400 dark:text-neutral-500">({cert.year})</span>
               </motion.div>
             ))}
           </div>
