@@ -109,11 +109,11 @@ export default function AIChatWidget() {
 
   return (
     <>
-      {/* AURA Chat Button — stacked above WhatsApp */}
+      {/* AURA Chat Button — above quick actions on mobile, above WhatsApp on desktop */}
       <motion.button
         data-testid="ai-chat-button"
         onClick={() => setIsOpen(true)}
-        className={`fixed bottom-[152px] lg:bottom-[104px] right-4 lg:right-6 z-40 w-14 h-14 rounded-full overflow-hidden shadow-2xl ring-2 ring-[#C9A962]/40 hover:ring-[#C9A962]/70 transition-all chat-pulse ${isOpen ? 'hidden' : ''}`}
+        className={`fixed bottom-[148px] lg:bottom-[104px] right-4 lg:right-6 z-40 w-14 h-14 rounded-full overflow-hidden shadow-2xl ring-2 ring-[#C9A962]/40 hover:ring-[#C9A962]/70 transition-all chat-pulse ${isOpen ? 'hidden' : ''}`}
         whileHover={{ scale: 1.08 }}
         whileTap={{ scale: 0.95 }}
         initial={{ scale: 0, opacity: 0 }}
