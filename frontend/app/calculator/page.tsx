@@ -576,7 +576,7 @@ export default function IndustryCalculatorPage() {
 
       {/* Form Content */}
       <section className="py-12">
-        <div className="container mx-auto px-8 lg:px-16">
+        <div className="container mx-auto px-4 sm:px-8 lg:px-16">
           <div className="max-w-6xl mx-auto">
             <AnimatePresence mode="wait">
               {/* STEP 1: Project Type */}
