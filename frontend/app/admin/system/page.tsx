@@ -79,6 +79,7 @@ export default function SystemPage() {
       console.error('Error submitting bug report:', error)
       toast.error('Failed to submit bug report')
     }
+  }
 
   const handleRebuild = async () => {
     if (rebuilding) return
