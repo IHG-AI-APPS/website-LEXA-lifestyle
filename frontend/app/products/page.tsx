@@ -66,7 +66,7 @@ export default function ProductsPage() {
 
       {/* Product Categories */}
       <section className="py-20">
-        <div className="container mx-auto px-8 lg:px-16">
+        <div className="container mx-auto px-4 sm:px-8 lg:px-16">
           <div className="max-w-7xl mx-auto">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -75,7 +75,7 @@ export default function ProductsPage() {
               viewport={{ once: true }}
               className="text-center mb-16"
             >
-              <h2 className="text-5xl font-semibold mb-6">Product Categories</h2>
+              <h2 className="text-3xl sm:text-5xl font-semibold mb-6">Product Categories</h2>
               <p className="text-lg text-gray-600 dark:text-gray-400 font-normal max-w-2xl mx-auto">
                 Browse by equipment type to find the perfect components for your system.
               </p>
@@ -149,7 +149,7 @@ export default function ProductsPage() {
 
       {/* CTA */}
       <section className="py-20 bg-charcoal">
-        <div className="container mx-auto px-8 lg:px-16">
+        <div className="container mx-auto px-4 sm:px-8 lg:px-16">
           <div className="max-w-4xl mx-auto text-center">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -157,7 +157,7 @@ export default function ProductsPage() {
               transition={{ duration: 0.8 }}
               viewport={{ once: true }}
             >
-              <h2 className="text-5xl font-semibold text-white mb-6">Need Product Recommendations?</h2>
+              <h2 className="text-3xl sm:text-5xl font-semibold text-white mb-6">Need Product Recommendations?</h2>
               <p className="text-xl text-gray-400 mb-10">
                 Our experts will specify the ideal equipment for your requirements and budget.
               </p>
