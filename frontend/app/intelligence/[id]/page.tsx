@@ -300,7 +300,7 @@ export default function IntelligenceDetailPage() {
             <span className="text-[#C9A962] text-xs uppercase tracking-widest font-semibold">Ready to Start?</span>
             <h2 className="text-3xl sm:text-4xl font-bold mt-3 mb-4">Upgrade Your Space with {feature.title}</h2>
             <p className="text-gray-400 mb-8 max-w-xl mx-auto">Get a bespoke proposal from our engineering team. Free consultation with no obligation.</p>
-            <div className="flex flex-col sm:flex-row gap-3 justify-center">
+            <div className="hero-animate-cta flex flex-col sm:flex-row gap-3 justify-center">
               <Button size="lg" className="bg-[#C9A962] text-gray-900 hover:bg-[#C9A962]/90 font-semibold px-8" onClick={() => setShowConsultationForm(true)} data-testid="cta-get-quote">
                 Get a Free Quote
               </Button>

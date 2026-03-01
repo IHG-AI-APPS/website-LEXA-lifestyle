@@ -132,7 +132,7 @@ export default function ProcessPage() {
             <span className="text-[#C9A962] text-xs uppercase tracking-widest font-semibold">Ready to Start?</span>
             <h2 className="text-3xl sm:text-4xl font-bold mt-3 mb-4">Let&apos;s Begin Your Project</h2>
             <p className="text-gray-400 mb-8 max-w-xl mx-auto">From concept to completion, we&apos;ll guide you every step of the way.</p>
-            <div className="flex flex-col sm:flex-row gap-3 justify-center">
+            <div className="hero-animate-cta flex flex-col sm:flex-row gap-3 justify-center">
               <Button size="lg" className="bg-[#C9A962] text-gray-900 hover:bg-[#C9A962]/90 font-semibold px-8" onClick={() => setShowConsultationForm(true)} data-testid="cta-button">
                 Book Free Consultation
               </Button>

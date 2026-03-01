@@ -280,7 +280,7 @@ export default function LocationPage() {
               Ready to Automate Your {location.name} Home?
             </h2>
             <p className="text-gray-400 mb-8 max-w-xl mx-auto">Book a private design session for your property. Free consultation with no obligation.</p>
-            <div className="flex flex-col sm:flex-row gap-3 justify-center">
+            <div className="hero-animate-cta flex flex-col sm:flex-row gap-3 justify-center">
               <Button size="lg" className="bg-[#C9A962] text-gray-900 hover:bg-[#C9A962]/90 font-semibold px-8" onClick={() => setShowConsultationForm(true)} data-testid="cta-get-quote">
                 Villa Technology Review
               </Button>

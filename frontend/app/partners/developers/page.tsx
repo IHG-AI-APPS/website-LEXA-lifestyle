@@ -169,7 +169,7 @@ export default function DeveloperToolkitPage() {
             }`}>
               Turn-key automation for luxury developments. Consistent quality, predictable timelines, competitive rates.
             </p>
-            <div className="flex flex-wrap gap-4 justify-center">
+            <div className="hero-animate-cta flex flex-wrap gap-4 justify-center">
               <Button
                 size="lg"
                 className="bg-[#C9A962] hover:bg-[#B5952F] text-white rounded-none px-12 py-7 text-sm font-bold uppercase tracking-widest"

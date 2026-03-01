@@ -258,7 +258,7 @@ export default function LuxuryHomeCinemaDubaiPage() {
             <p className="text-xl text-black/80 mb-12 max-w-2xl mx-auto">
               Get your personalized cinema concept within 24 hours.
             </p>
-            <div className="flex flex-wrap gap-4 justify-center">
+            <div className="hero-animate-cta flex flex-wrap gap-4 justify-center">
               <Button
                 size="lg"
                 onClick={() => window.open(`https://wa.me/${process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || '971501234567'}?text=${encodeURIComponent('Hi LEXA! I want a cinema concept within 24 hours.')}`, '_blank')}

@@ -185,7 +185,7 @@ export default function DeveloperPackagesPage() {
               Special pricing and dedicated support for multi-unit projects across Dubai and UAE.
             </p>
             
-            <div className="flex flex-col sm:flex-row gap-3 justify-center">
+            <div className="hero-animate-cta flex flex-col sm:flex-row gap-3 justify-center">
               <Button
                 size="lg"
                 asChild

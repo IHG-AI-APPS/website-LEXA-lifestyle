@@ -57,7 +57,7 @@ export default function AboutPage() {
               <p className="hero-animate-desc text-base text-gray-300 mb-8 max-w-xl mx-auto leading-relaxed">
                 At Lexa Lifestyle, we believe luxury is defined by seamless experiences, intelligent design, and refined living. Based in Dubai, we specialize in high-end audio-visual systems, smart home automation, and bespoke lifestyle solutions.
               </p>
-              <div className="flex flex-col sm:flex-row gap-3 justify-center">
+              <div className="hero-animate-cta flex flex-col sm:flex-row gap-3 justify-center">
                 <Button size="lg" className="bg-[#C9A962] text-gray-900 hover:bg-[#C9A962]/90 font-semibold" onClick={() => setShowConsultationForm(true)} data-testid="hero-cta">
                   Start Your Project <ArrowRight className="ml-2" size={18} />
                 </Button>
@@ -163,7 +163,7 @@ export default function AboutPage() {
             <span className="text-[#C9A962] text-xs uppercase tracking-widest font-semibold">Work With Us</span>
             <h2 className="text-3xl sm:text-4xl font-bold mt-3 mb-4">Let&apos;s Build Something Extraordinary</h2>
             <p className="text-gray-400 mb-8 max-w-xl mx-auto">Start your smart home journey with Dubai&apos;s most trusted automation partner.</p>
-            <div className="flex flex-col sm:flex-row gap-3 justify-center">
+            <div className="hero-animate-cta flex flex-col sm:flex-row gap-3 justify-center">
               <Button size="lg" className="bg-[#C9A962] text-gray-900 hover:bg-[#C9A962]/90 font-semibold px-8" onClick={() => setShowConsultationForm(true)} data-testid="cta-button">
                 Start Your Project
               </Button>

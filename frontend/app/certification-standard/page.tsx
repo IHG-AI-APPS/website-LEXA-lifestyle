@@ -129,7 +129,7 @@ export default function CertificationStandardPage() {
             <span className="text-[#C9A962] text-xs uppercase tracking-widest font-semibold">Experience the Difference</span>
             <h2 className="text-3xl sm:text-4xl font-bold mt-3 mb-4">Ready for Certified Quality?</h2>
             <p className="text-gray-400 mb-8 max-w-xl mx-auto">Experience the LEXA standard — from consultation to installation to lifetime support.</p>
-            <div className="flex flex-col sm:flex-row gap-3 justify-center">
+            <div className="hero-animate-cta flex flex-col sm:flex-row gap-3 justify-center">
               <Button size="lg" className="bg-[#C9A962] text-gray-900 hover:bg-[#C9A962]/90 font-semibold px-8" asChild>
                 <Link href="/consultation">Book Consultation <ArrowRight className="ml-2" size={16} /></Link>
               </Button>

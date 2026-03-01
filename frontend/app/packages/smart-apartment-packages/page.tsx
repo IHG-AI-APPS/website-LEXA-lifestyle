@@ -194,7 +194,7 @@ export default function SmartApartmentPackagesPage() {
                 Wireless-first smart home packages designed for apartments. From studios to duplexes, transform your space without rewiring. Starting from AED 3,000.
               </p>
               
-              <div className="flex flex-col sm:flex-row gap-3 justify-center">
+              <div className="hero-animate-cta flex flex-col sm:flex-row gap-3 justify-center">
                 <Button
                   size="lg"
                   onClick={() => setShowConsultationForm(true)}

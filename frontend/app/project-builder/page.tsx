@@ -41,7 +41,7 @@ export default function ProjectBuilderLanding() {
                 Intelligence-driven specification for luxury automation. 693 features, dependency resolution, and instant proposals.
               </p>
 
-              <div className="flex flex-wrap gap-4 justify-center">
+              <div className="hero-animate-cta flex flex-wrap gap-4 justify-center">
                 <Link href="/project-builder/smart">
                   <Button
                     size="lg"
@@ -66,7 +66,7 @@ export default function ProjectBuilderLanding() {
               </div>
 
               {/* Trust Signals */}
-              <div className="flex flex-wrap items-center gap-6 mt-10 justify-center text-xs text-gray-500 uppercase tracking-widest">
+              <div className="hero-animate-extra flex flex-wrap items-center gap-6 mt-10 justify-center text-xs text-gray-500 uppercase tracking-widest">
                 <div className="flex items-center gap-2">
                   <Sparkles className="w-3 h-3 text-[#C9A962]" />
                   <span>No signup required</span>

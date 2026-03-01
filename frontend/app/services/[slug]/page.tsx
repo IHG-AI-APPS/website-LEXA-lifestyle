@@ -497,7 +497,7 @@ export default function ServiceDetailPage() {
             <p className="text-gray-400 mb-8 max-w-xl mx-auto">
               Get a bespoke proposal from our engineering team. Free consultation with no obligation.
             </p>
-            <div className="flex flex-col sm:flex-row gap-3 justify-center">
+            <div className="hero-animate-cta flex flex-col sm:flex-row gap-3 justify-center">
               <Link href="/contact">
                 <Button size="lg" className="bg-[#C9A962] text-gray-900 hover:bg-[#C9A962]/90 font-semibold px-8" data-testid="cta-book">
                   Book Consultation

@@ -67,7 +67,7 @@ export default function ExperienceCentrePage() {
               <p className="hero-animate-desc text-base text-gray-300 mb-8 max-w-xl mx-auto leading-relaxed">
                 Visit our 5,000+ sq ft showroom in Dubai and experience luxury smart living first-hand. Touch, feel, and interact with the latest technology solutions.
               </p>
-              <div className="flex flex-col sm:flex-row gap-3 justify-center">
+              <div className="hero-animate-cta flex flex-col sm:flex-row gap-3 justify-center">
                 <Button size="lg" className="bg-[#C9A962] text-gray-900 hover:bg-[#C9A962]/90 font-semibold" onClick={() => setShowBookingModal(true)} data-testid="hero-book-visit">
                   Book a Private Tour <ArrowRight className="ml-2" size={18} />
                 </Button>

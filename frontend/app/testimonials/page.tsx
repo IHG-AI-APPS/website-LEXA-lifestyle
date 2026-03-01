@@ -92,7 +92,7 @@ export default function TestimonialsPage() {
             <span className="text-[#C9A962] text-xs uppercase tracking-widest font-semibold">Join Our Clients</span>
             <h2 className="text-3xl sm:text-4xl font-bold mt-3 mb-4">Ready to Transform Your Space?</h2>
             <p className="text-gray-400 mb-8 max-w-xl mx-auto">Join our satisfied clients and experience the LEXA difference.</p>
-            <div className="flex flex-col sm:flex-row gap-3 justify-center">
+            <div className="hero-animate-cta flex flex-col sm:flex-row gap-3 justify-center">
               <Button size="lg" className="bg-[#C9A962] text-gray-900 hover:bg-[#C9A962]/90 font-semibold px-8" asChild>
                 <Link href="/consultation" data-testid="testimonials-consultation-btn">Book Free Consultation <ArrowRight className="ml-2" size={16} /></Link>
               </Button>

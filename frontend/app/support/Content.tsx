@@ -56,7 +56,7 @@ export default function SupportContent() {
             <span className="inline-block px-3 py-1 rounded-full bg-red-500/15 border border-red-500/30 text-red-400 text-xs uppercase tracking-widest mb-5">{badge}</span>
             <h1 className="hero-animate-title text-4xl sm:text-5xl lg:text-6xl font-bold uppercase mb-5 tracking-tight" data-testid="support-title">{title}</h1>
             <p className="text-base text-gray-300 mb-8 max-w-lg mx-auto">{desc}</p>
-            <div className="flex flex-col sm:flex-row gap-3 justify-center">
+            <div className="hero-animate-cta flex flex-col sm:flex-row gap-3 justify-center">
               <Button size="lg" className="bg-red-600 text-white hover:bg-red-700 font-semibold" asChild>
                 <a href={`tel:${emergencyPhone.replace(/\s/g, '')}`}><Phone className="mr-2" size={18} /> Emergency: {emergencyPhone}</a>
               </Button>
