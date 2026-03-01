@@ -195,7 +195,7 @@ export default function VillaDesignerPage() {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-black via-gray-900 to-black text-white pt-20 pb-12 px-4">
+    <div className="min-h-screen bg-[#050505] text-white pt-20 pb-12 px-4">
       <div className="max-w-4xl mx-auto">
         {/* Header */}
         <motion.div
@@ -204,8 +204,11 @@ export default function VillaDesignerPage() {
           transition={{ duration: 0.6 }}
           className="text-center mb-12"
         >
+          <span className="inline-block px-3 py-1 rounded-full bg-[#C9A962]/15 border border-[#C9A962]/30 text-[#C9A962] text-xs uppercase tracking-widest mb-5">
+            Bespoke Design
+          </span>
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold uppercase mb-4">
-            Design My Villa
+            DESIGN MY VILLA
           </h1>
           <p className="text-lg sm:text-xl text-gray-300 mb-8">
             Bespoke smart home systems for discerning clients
