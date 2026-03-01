@@ -2034,6 +2034,61 @@ app.include_router(locations.router)  # Dynamic location pages
 app.include_router(catalogues.router)  # Catalogues
 app.include_router(regression_tests.router)  # Nightly regression test results
 
+# --- Frontend Rebuild Endpoints ---
+_rebuild_status = {"running": False, "last_result": None, "last_time": None, "log": ""}
+
+@app.post("/api/admin/rebuild-frontend", dependencies=[Depends(verify_token)])
+async def rebuild_frontend(user: dict = Depends(verify_token)):
+    """Trigger a frontend production rebuild"""
+    if _rebuild_status["running"]:
+        raise HTTPException(status_code=409, detail="A build is already in progress")
+    
+    _rebuild_status["running"] = True
+    _rebuild_status["last_result"] = "building"
+    _rebuild_status["log"] = ""
+    
+    async def do_build():
+        try:
+            proc = await _asyncio.create_subprocess_exec(
+                "bash", "-c", "cd /app/frontend && npx next build 2>&1",
+                stdout=_asyncio.subprocess.PIPE,
+                stderr=_asyncio.subprocess.STDOUT
+            )
+            stdout, _ = await proc.communicate()
+            log = stdout.decode()[-2000:] if stdout else ""
+            
+            if proc.returncode == 0:
+                # Restart frontend via supervisor
+                restart = await _asyncio.create_subprocess_exec(
+                    "sudo", "supervisorctl", "restart", "frontend",
+                    stdout=_asyncio.subprocess.PIPE, stderr=_asyncio.subprocess.PIPE
+                )
+                await restart.communicate()
+                _rebuild_status["last_result"] = "success"
+                _rebuild_status["log"] = log
+            else:
+                _rebuild_status["last_result"] = "failed"
+                _rebuild_status["log"] = log
+        except Exception as e:
+            _rebuild_status["last_result"] = "failed"
+            _rebuild_status["log"] = str(e)
+        finally:
+            _rebuild_status["running"] = False
+            _rebuild_status["last_time"] = datetime.now(timezone.utc).isoformat()
+    
+    _asyncio.create_task(do_build())
+    return {"status": "started", "message": "Frontend rebuild started in background"}
+
+@app.get("/api/admin/rebuild-status", dependencies=[Depends(verify_token)])
+async def get_rebuild_status(user: dict = Depends(verify_token)):
+    """Check frontend rebuild status"""
+    return {
+        "running": _rebuild_status["running"],
+        "last_result": _rebuild_status["last_result"],
+        "last_time": _rebuild_status["last_time"],
+        "log": _rebuild_status["log"][-500:] if _rebuild_status["log"] else ""
+    }
+
 # Register main API router (remaining endpoints)
 app.include_router(api_router)
 
