@@ -170,9 +170,14 @@ export default function CalculatorCardsSection() {
               >
                 <Link href={tool.href} className="block group">
                   <div className="relative h-[280px] overflow-hidden rounded-2xl bg-gray-900">
-                    <div 
-                      className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110"
-                      style={{ backgroundImage: `url(${tool.image})` }}
+                    <SafeImage
+                      src={tool.image}
+                      alt={tool.title}
+                      fill
+                      sizes="80vw"
+                      className="object-cover"
+                      loading="lazy"
+                      quality={75}
                     />
                     <div className={`absolute inset-0 bg-gradient-to-t from-black via-black/80 to-black/30`} />
                     <div className="relative h-full flex flex-col items-center justify-end p-6 text-center">
