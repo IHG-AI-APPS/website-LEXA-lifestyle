@@ -51,9 +51,9 @@ export default function Visualize3DPage() {
               </p>
             </div>
 
-            <div className="bg-white dark:bg-gray-800 rounded-xl p-6 shadow-lg text-center">
-              <div className="inline-flex items-center justify-center w-14 h-14 mb-4 bg-blue-100 rounded-full">
-                <Lightbulb className="text-blue-600" size={28} />
+            <div className="bg-white dark:bg-white/5 rounded-xl p-6 shadow-lg text-center border border-transparent dark:border-white/10">
+              <div className="inline-flex items-center justify-center w-14 h-14 mb-4 bg-blue-100 dark:bg-blue-900/30 rounded-full">
+                <Lightbulb className="text-blue-600 dark:text-blue-400" size={28} />
               </div>
               <h3 className="font-bold text-lg mb-2">Design Confidence</h3>
               <p className="text-gray-600 dark:text-gray-400 text-sm">
@@ -61,9 +61,9 @@ export default function Visualize3DPage() {
               </p>
             </div>
 
-            <div className="bg-white dark:bg-gray-800 rounded-xl p-6 shadow-lg text-center">
-              <div className="inline-flex items-center justify-center w-14 h-14 mb-4 bg-green-100 rounded-full">
-                <Zap className="text-green-600" size={28} />
+            <div className="bg-white dark:bg-white/5 rounded-xl p-6 shadow-lg text-center border border-transparent dark:border-white/10">
+              <div className="inline-flex items-center justify-center w-14 h-14 mb-4 bg-green-100 dark:bg-green-900/30 rounded-full">
+                <Zap className="text-green-600 dark:text-green-400" size={28} />
               </div>
               <h3 className="font-bold text-lg mb-2">Interactive Experience</h3>
               <p className="text-gray-600 dark:text-gray-400 text-sm">
@@ -71,9 +71,9 @@ export default function Visualize3DPage() {
               </p>
             </div>
 
-            <div className="bg-white dark:bg-gray-800 rounded-xl p-6 shadow-lg text-center">
-              <div className="inline-flex items-center justify-center w-14 h-14 mb-4 bg-pink-100 rounded-full">
-                <Sparkles className="text-pink-600" size={28} />
+            <div className="bg-white dark:bg-white/5 rounded-xl p-6 shadow-lg text-center border border-transparent dark:border-white/10">
+              <div className="inline-flex items-center justify-center w-14 h-14 mb-4 bg-[#C9A962]/10 rounded-full">
+                <Sparkles className="text-[#C9A962]" size={28} />
               </div>
               <h3 className="font-bold text-lg mb-2">Realistic Preview</h3>
               <p className="text-gray-600 dark:text-gray-400 text-sm">
@@ -95,22 +95,22 @@ export default function Visualize3DPage() {
                 title: 'Living Room',
                 description: 'Entertainment, lighting, climate control',
                 devices: ['Smart TV', 'Voice Control', 'Mood Lighting', 'Smart Blinds'],
-                gradient: 'from-blue-500 to-purple-600'
+                gradient: 'from-[#1a1a1a] to-[#0a0a0a]'
               },
               {
                 title: 'Kitchen',
                 description: 'Appliances, safety, convenience',
                 devices: ['Smart Appliances', 'Leak Sensors', 'Voice Assistant', 'Smart Lighting'],
-                gradient: 'from-green-500 to-teal-600'
+                gradient: 'from-[#1a1a1a] to-[#0a0a0a]'
               },
               {
                 title: 'Bedroom',
                 description: 'Comfort, privacy, security',
                 devices: ['Sleep Tracking', 'Smart Locks', 'Climate Control', 'Curtain Automation'],
-                gradient: 'from-purple-500 to-pink-600'
+                gradient: 'from-[#1a1a1a] to-[#0a0a0a]'
               },
             ].map((room, idx) => (
-              <div key={idx} className="bg-white dark:bg-gray-800 rounded-xl shadow-lg overflow-hidden">
+              <div key={idx} className="bg-white dark:bg-white/5 rounded-xl shadow-lg overflow-hidden border border-transparent dark:border-white/10">
                 <div className={`h-32 bg-gradient-to-br ${room.gradient}`} />
                 <div className="p-6">
                   <h3 className="text-xl font-bold mb-2">{room.title}</h3>
