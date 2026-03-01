@@ -77,10 +77,10 @@ export default function CalculatorCardsSection() {
           transition={{ duration: 0.6 }}
           className="text-center mb-12"
         >
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-[#1A1A1A] dark:text-white dark:text-white mb-4 font-heading">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4 font-heading">
             Planning & Design Tools
           </h2>
-          <p className="text-base md:text-lg text-gray-600 dark:text-gray-400 dark:text-gray-300 max-w-2xl mx-auto">
+          <p className="text-base md:text-lg text-neutral-400 max-w-2xl mx-auto">
             Explore our tools to plan, calculate costs, and build your perfect smart home solution
           </p>
         </motion.div>
@@ -129,15 +129,15 @@ export default function CalculatorCardsSection() {
                   
                   <div className="flex flex-wrap items-center justify-center md:justify-start gap-4 mb-6">
                     <div className="flex items-center gap-2 text-white/60 text-sm">
-                      <span className="w-2 h-2 rounded-full bg-green-400" />
+                      <span className="w-2 h-2 rounded-full bg-[#C9A962]" />
                       8-step guided flow
                     </div>
                     <div className="flex items-center gap-2 text-white/60 text-sm">
-                      <span className="w-2 h-2 rounded-full bg-green-400" />
+                      <span className="w-2 h-2 rounded-full bg-[#C9A962]" />
                       650+ smart features
                     </div>
                     <div className="flex items-center gap-2 text-white/60 text-sm">
-                      <span className="w-2 h-2 rounded-full bg-green-400" />
+                      <span className="w-2 h-2 rounded-full bg-[#C9A962]" />
                       Instant AI proposal
                     </div>
                   </div>
