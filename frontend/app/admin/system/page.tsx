@@ -372,7 +372,49 @@ export default function SystemPage() {
       </div>
 
       {/* Actions */}
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        {/* Rebuild Frontend */}
+        <motion.div
+          data-testid="rebuild-frontend-card"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.55 }}
+          className="bg-gradient-to-br from-amber-50 to-orange-50 border-2 border-amber-200 p-6 hover:shadow-lg transition-shadow"
+        >
+          <Hammer className="text-amber-600 mb-3" size={32} />
+          <h3 className="text-lg font-semibold mb-2">Rebuild Frontend</h3>
+          <p className="text-sm text-gray-600 mb-4">
+            Rebuild the production frontend after CMS or code changes
+          </p>
+          {rebuildStatus?.running ? (
+            <div className="space-y-2">
+              <div className="flex items-center gap-2 text-sm text-amber-700">
+                <Loader2 size={16} className="animate-spin" />
+                Building... this takes ~60s
+              </div>
+              <div className="w-full bg-amber-200 rounded-full h-1.5 overflow-hidden">
+                <div className="bg-amber-600 h-full rounded-full animate-pulse" style={{ width: '60%' }} />
+              </div>
+            </div>
+          ) : (
+            <>
+              <button
+                data-testid="rebuild-frontend-btn"
+                onClick={handleRebuild}
+                disabled={rebuilding}
+                className="text-sm bg-amber-600 text-white px-4 py-2 hover:bg-amber-700 transition-colors disabled:opacity-50"
+              >
+                {rebuilding ? 'Starting...' : 'Rebuild Now'}
+              </button>
+              {rebuildStatus?.last_result && rebuildStatus.last_result !== 'building' && (
+                <p className={`text-xs mt-2 ${rebuildStatus.last_result === 'success' ? 'text-green-600' : 'text-red-600'}`}>
+                  Last build: {rebuildStatus.last_result} {rebuildStatus.last_time ? `at ${new Date(rebuildStatus.last_time).toLocaleTimeString()}` : ''}
+                </p>
+              )}
+            </>
+          )}
+        </motion.div>
+
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
