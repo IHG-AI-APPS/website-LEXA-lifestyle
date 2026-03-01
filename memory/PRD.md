@@ -7,7 +7,7 @@ Complete website overhaul for LEXA Smart Home to:
 3. Eliminate all hardcoded static pages in favor of database-driven content
 
 ## Architecture
-- **Frontend**: Next.js 14 (App Router) | **Backend**: FastAPI (Python) | **Database**: MongoDB
+- **Frontend**: Next.js 14 (App Router, Production Build) | **Backend**: FastAPI (Python) | **Database**: MongoDB
 - REST-only architecture (no websockets)
 
 ## Completed Work
@@ -39,34 +39,52 @@ Complete website overhaul for LEXA Smart Home to:
 - 1 bug fixed: /api/videos/{id} datetime serialization
 
 ### Phase 22: Calculator Page Optimization (Feb 26, 2026)
-- Dynamic imports for 4 heavy components
-- Data constants extracted to separate calculator-data.ts
-- Page load: 52ms cold, 43ms warm
+- Dynamic imports for 4 heavy components, data constants extracted
 
 ### Phase 23: UI/UX Animation Enhancements (Mar 1, 2026)
-All 8 micro-interaction features implemented and verified (8/8 PASS):
-1. Card image zoom on hover, 2. Image swap on hover, 3. Page entrance animations (framer-motion)
-4. Button hover lift effects, 5. AI Chat pulse animation, 6. Image fade-in (SafeImage)
-7. Smooth scrolling (Lenis), 8. Section stagger reveals
+- 8/8 micro-interaction features: card zoom, page transitions, button lift, pulse, fade-in, smooth scroll, stagger reveals
 
 ### Phase 24: AURA AI Chat Agent (Mar 1, 2026)
-- Renamed AI chat from "LEXA AI" to "AURA" across frontend and backend
-- Generated female avatar using Gemini Nano Banana image generation
-- Comprehensive AURA_SYSTEM_PROMPT with full LEXA knowledge base:
-  - 70+ solutions catalog with page links
-  - 30+ partner brands (Control4, Crestron, Lutron, B&O, etc.)
-  - 5 pricing tiers (AED 8K–280K+)
-  - 20+ specialty rooms
-  - Services, geographic coverage, lead qualification guidelines
-- Fixed WhatsApp & AURA button alignment (vertically stacked, same right-edge)
-- Updated pulse animation to gold (#C9A962) matching brand colors
-- Testing: 100% backend (8/8 API tests), 100% frontend (12/12 UI features)
+- Renamed AI from "LEXA AI" to "AURA", generated female avatar via Nano Banana
+- Comprehensive system prompt: 70+ solutions, 30+ brands, 5 pricing tiers
+- Fixed WhatsApp & AURA button alignment
+
+### Phase 25: Speed & Responsive Optimization (Mar 1, 2026)
+**Speed:**
+- Switched frontend from dev mode (`next dev`) to production build (`next build && next start`)
+- Page load improvements:
+  | Page | Before | After | Improvement |
+  |------|--------|-------|-------------|
+  | Calculator | 16.61s | 0.09s | 184x faster |
+  | Services | 2.04s | 0.09s | 23x faster |
+  | Contact | 1.26s | 0.10s | 13x faster |
+  | All pages | 0.2-16.6s | <0.15s | Sub-150ms |
+
+**Mobile/Tablet Responsive:**
+- Added global `overflow-x: hidden` on html/body
+- Responsive container padding: `px-4` on mobile (<640px), `px-8` on sm+
+- Floating buttons repositioned for MobileTabBar (64px):
+  - AURA: `bottom-[168px]` mobile / `bottom-[104px]` desktop
+  - WhatsApp: `bottom-[88px]` mobile / `bottom-6` desktop
+  - Cookie consent: `pb-[72px]` mobile / `pb-3` desktop
+  - ScheduleVisitButton: hidden on mobile (`hidden lg:block`)
+- WhatsApp panel made responsive width (`left-2 right-2 sm:left-auto sm:w-[420px]`)
+- Calculator heading: `text-3xl sm:text-5xl md:text-6xl`
+- Products heading: `text-4xl sm:text-6xl md:text-7xl lg:text-8xl`
+- All 6 key pages verified 0px overflow on 390px mobile viewport
+- Testing: 98% pass (minor 22px tablet scrollbar non-visual)
 
 ## Remaining / Backlog
-### P1 — Redesign Projects Landing Page (paused by user, last major page not matching benchmark design)
+### P1 — Redesign Projects Landing Page (paused by user)
 ### P2 — Site-wide Consistency Review (final QA pass)
 ### P3 — Content Change History for admin CMS (audit trail)
-### P4 — Approve WhatsApp templates on Interakt dashboard (ops)
+### P4 — WhatsApp template approval on Interakt dashboard
+
+## Note on Production Build
+The frontend now runs `next build && next start` instead of `next dev`. This means:
+- Pages load 10-180x faster (pre-compiled, minified, optimized)
+- Hot reload is disabled; code changes require a rebuild
+- Rebuild command: `cd /app/frontend && npx next build && sudo supervisorctl restart frontend`
 
 ## Credentials
 - Admin: `/admin/login` (username: admin, password: lexa2026)
