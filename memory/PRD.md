@@ -12,32 +12,31 @@ Complete website overhaul for LEXA Smart Home to:
 
 ## Completed Work (Latest First)
 
+### Phase 29: Mobile Quick Actions FAB (Mar 1, 2026)
+- Created `MobileQuickActions.tsx` — single floating action button replacing standalone WhatsApp button on mobile
+- 3 consolidated actions: Book Consultation (opens form modal), Call Us, WhatsApp
+- Dark glass aesthetic with animated expand/collapse, Sparkles icon trigger
+- Positioned at `bottom-[84px]` above tab bar, `lg:hidden` for mobile/tablet only
+- WhatsApp Enhanced button hidden on mobile (`hidden lg:flex`), kept on desktop
+- AURA avatar repositioned to `bottom-[148px]` above FAB
+- Testing: 100% pass across all 3 viewports (iteration_55.json)
+
 ### Phase 28: World-Class Mobile UX Overhaul — Round 2 (Mar 1, 2026)
 - Hero CTA optimization: Only 2 buttons on mobile (Find Solution + WhatsApp), 3rd (View Projects) hidden via `hidden sm:block`
 - Hero heading enlarged on mobile: `text-4xl` (was `text-3xl`) for better impact
 - Hero bottom padding increased (`pb-40 sm:pb-36 lg:pb-32`) for tab bar clearance
 - Cookie consent positioning refined with `pb-[84px]` and left-aligned on desktop
 - Verified across 3 viewports (mobile 390px, tablet 768px, desktop 1920px) — 100% pass
-- No regressions on desktop or tablet
 
 ### Phase 27: Native Mobile Gestures (Mar 1, 2026)
-- **SwipeCarousel**: Horizontal swipeable card carousel on mobile using framer-motion `drag="x"` with spring physics (stiffness: 300, damping: 30)
-  - Homepage solutions: 4 cards, 280px wide, gold progress bar + counter
-  - Products page: 9 cards, 300px wide, peek effect showing next card
-  - Cards feature full-bleed images, dark gradient overlays, gold accents, "Explore/Browse" CTAs
-- **PullToRefresh**: Touch-based pull-down refresh with rubber-band damping (40%), gold branded spinner, 80px activation threshold
-  - Wraps all non-admin page content via ClientLayout
-  - Uses native touch events (passive listeners for performance)
-- Both components SSR-safe (`dynamic import, ssr: false`)
-- Responsive: `md:hidden` on mobile, `hidden md:grid` on desktop — existing layouts preserved
+- **SwipeCarousel**: Horizontal swipeable card carousel on mobile
+- **PullToRefresh**: Touch-based pull-down refresh with rubber-band damping
 - Testing: 100% pass (11/11, iteration_53.json)
 
 ### Phase 26: Mobile/Tablet Design Overhaul (Mar 1, 2026)
 - Dark glass MobileTabBar with gold active accent + animated pill
 - Hero centered on mobile/tablet, stronger overlays for legibility
 - Dark glass cookie consent with gold Accept button
-- Floating buttons repositioned for 68px tab bar clearance
-- 100% pass (15/15 across 3 viewports)
 
 ### Phase 25: Speed Optimization (Mar 1, 2026)
 - Production build: All pages <150ms
