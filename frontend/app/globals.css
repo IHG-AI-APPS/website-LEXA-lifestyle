@@ -543,13 +543,13 @@ a.inline-flex:active,
   box-shadow: none !important;
 }
 
-/* 6. AI Chat Pulse Animation */
+/* 6. AURA Chat Pulse Animation */
 @keyframes chatPulse {
   0%, 100% {
-    box-shadow: 0 0 0 0 rgba(147, 51, 234, 0.5);
+    box-shadow: 0 0 0 0 rgba(201, 169, 98, 0.5);
   }
   50% {
-    box-shadow: 0 0 0 12px rgba(147, 51, 234, 0);
+    box-shadow: 0 0 0 10px rgba(201, 169, 98, 0);
   }
 }
 
@@ -558,7 +558,7 @@ a.inline-flex:active,
     transform: scale(1);
   }
   50% {
-    transform: scale(1.05);
+    transform: scale(1.04);
   }
 }
 
