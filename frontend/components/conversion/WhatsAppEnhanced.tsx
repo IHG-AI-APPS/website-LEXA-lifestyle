@@ -271,11 +271,11 @@ export default function WhatsAppEnhanced() {
 
   return (
     <>
-      {/* Floating Button — aligned under AURA chat, above MobileTabBar on small screens */}
+      {/* Floating Button — stacked below AURA */}
       <motion.button
         data-testid="whatsapp-button"
         onClick={() => setIsOpen(true)}
-        className="fixed bottom-[88px] lg:bottom-6 right-4 lg:right-6 z-40 flex h-14 w-14 lg:h-16 lg:w-16 items-center justify-center rounded-full bg-[#25D366] shadow-2xl transition-all hover:scale-110 hover:shadow-[0_0_30px_rgba(37,211,102,0.5)]"
+        className="fixed bottom-[84px] lg:bottom-6 right-4 lg:right-6 z-40 flex h-12 w-12 lg:h-14 lg:w-14 items-center justify-center rounded-full bg-[#25D366] shadow-2xl transition-all hover:shadow-[0_0_24px_rgba(37,211,102,0.4)]"
         whileHover={{ scale: 1.1 }}
         whileTap={{ scale: 0.95 }}
       >
