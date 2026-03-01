@@ -492,22 +492,27 @@ a[href]:hover .aspect-square img {
 }
 
 /* Enhanced staggered section reveals */
-[data-testid] > section,
-[data-testid] > div > section,
-main > section {
+/* Targets sections inside main, including through framer-motion wrappers */
+main section:not(section section) {
   animation: sectionReveal 0.6s cubic-bezier(0.22, 1, 0.36, 1) both;
 }
-[data-testid] > section:nth-child(1),
+main > div > div > section:nth-child(1),
+main > div > section:nth-child(1),
 main > section:nth-child(1) { animation-delay: 0ms; }
-[data-testid] > section:nth-child(2),
+main > div > div > section:nth-child(2),
+main > div > section:nth-child(2),
 main > section:nth-child(2) { animation-delay: 100ms; }
-[data-testid] > section:nth-child(3),
+main > div > div > section:nth-child(3),
+main > div > section:nth-child(3),
 main > section:nth-child(3) { animation-delay: 200ms; }
-[data-testid] > section:nth-child(4),
+main > div > div > section:nth-child(4),
+main > div > section:nth-child(4),
 main > section:nth-child(4) { animation-delay: 300ms; }
-[data-testid] > section:nth-child(5),
+main > div > div > section:nth-child(5),
+main > div > section:nth-child(5),
 main > section:nth-child(5) { animation-delay: 400ms; }
-[data-testid] > section:nth-child(n+6),
+main > div > div > section:nth-child(n+6),
+main > div > section:nth-child(n+6),
 main > section:nth-child(n+6) { animation-delay: 500ms; }
 
 /* 5. Button Hover Lift Effects — Global */
