@@ -363,28 +363,6 @@
   .animation-delay-300 { animation-delay: 300ms; }
   .animation-delay-400 { animation-delay: 400ms; }
   .animation-delay-500 { animation-delay: 500ms; }
-
-  /* Staggered section reveal — applies automatically to sections within pages */
-  [data-testid] > section {
-    animation: sectionReveal 0.5s cubic-bezier(0.22, 1, 0.36, 1) both;
-  }
-  [data-testid] > section:nth-child(1) { animation-delay: 0ms; }
-  [data-testid] > section:nth-child(2) { animation-delay: 80ms; }
-  [data-testid] > section:nth-child(3) { animation-delay: 160ms; }
-  [data-testid] > section:nth-child(4) { animation-delay: 240ms; }
-  [data-testid] > section:nth-child(5) { animation-delay: 320ms; }
-  [data-testid] > section:nth-child(n+6) { animation-delay: 400ms; }
-
-  @keyframes sectionReveal {
-    from {
-      opacity: 0;
-      transform: translateY(16px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
 }
 
 /* Google Translate Widget Styling */
