@@ -25,6 +25,7 @@ const LinkPrefetcher = dynamic(() => import('@/components/performance/LinkPrefet
 const ScheduleVisitButton = dynamic(() => import('@/components/widgets/ScheduleVisitButton').catch(() => ({ default: Noop })), { ssr: false })
 const PullToRefresh = dynamic(() => import('@/components/mobile/PullToRefresh'), { ssr: false })
 const ConsultationFormLazy = dynamic(() => import('@/components/forms/ConsultationForm').catch(() => ({ default: Noop })), { ssr: false })
+const MobileQuickActions = dynamic(() => import('@/components/mobile/MobileQuickActions'), { ssr: false })
 
 export default function ClientLayout({ children }: { children: React.ReactNode }) {
   const pathname = usePathname()
