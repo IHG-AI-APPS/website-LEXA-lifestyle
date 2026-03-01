@@ -31,7 +31,7 @@ export default function ScheduleVisitButton() {
             exit={{ opacity: 0, x: 100 }}
             transition={{ type: 'spring', damping: 20, stiffness: 300 }}
             onClick={() => setIsModalOpen(true)}
-            className="fixed right-4 bottom-24 lg:bottom-8 z-40 group"
+            className="fixed right-4 bottom-24 lg:bottom-8 z-40 group hidden lg:block"
             data-testid="schedule-visit-btn"
           >
             {/* Pulse animation ring */}
