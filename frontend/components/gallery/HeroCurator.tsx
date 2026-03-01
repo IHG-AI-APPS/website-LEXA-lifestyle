@@ -160,12 +160,12 @@ export default function HeroCurator({ onPersonaClick }: HeroCuratorProps) {
         </div>
       </div>
 
-      {/* Scroll Indicator */}
+      {/* Scroll Indicator — hidden on mobile */}
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 2, duration: 1 }}
-        className="absolute bottom-8 left-1/2 z-10 -translate-x-1/2"
+        className="absolute bottom-8 left-1/2 z-10 -translate-x-1/2 hidden md:flex"
       >
         <motion.div
           animate={{ y: [0, 8, 0] }}
