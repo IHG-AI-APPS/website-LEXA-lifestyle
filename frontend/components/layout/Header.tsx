@@ -144,16 +144,18 @@ export default function Header() {
           duration: 0.3,
           ease: [0.16, 1, 0.3, 1] // Luxury easing
         }}
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
           shouldUseDarkText
-            ? 'bg-white/95 dark:bg-gray-900/95 backdrop-blur-md elevation-4 border-b border-gray-200 dark:border-gray-700 dark:border-gray-700' 
-            : 'bg-transparent'
+            ? 'bg-white/90 dark:bg-[#0A0A0A]/90 backdrop-blur-xl border-b border-gray-200/50 dark:border-white/[0.06]' 
+            : isScrolled
+              ? 'bg-black/70 backdrop-blur-xl border-b border-white/[0.04]'
+              : 'bg-transparent'
         }`}
       >
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
+        <div className="container mx-auto px-5 sm:px-6 lg:px-8 max-w-7xl">
           <div className="flex items-center justify-between h-16 sm:h-18 md:h-20">
             <Link href="/" className="relative group">
-              <div className="relative w-24 h-10 sm:w-28 sm:h-12 lg:w-36 lg:h-14 transition-opacity duration-300 group-hover:opacity-70">
+              <div className="relative w-28 h-11 sm:w-28 sm:h-12 lg:w-36 lg:h-14 transition-opacity duration-300 group-hover:opacity-70">
                 <SafeImage
                   src={shouldUseDarkText ? "/lexa-black.png" : "/lexa-white.png"}
                   alt="LEXA"
