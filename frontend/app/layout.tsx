@@ -27,7 +27,7 @@ const tajawal = Tajawal({
   subsets: ['arabic'],
   variable: '--font-tajawal',
   display: 'swap',
-  preload: true,
+  preload: false,
   weight: ['400', '500', '700'],
   fallback: ['Noto Sans Arabic', 'Arial', 'sans-serif']
 })
