@@ -69,8 +69,41 @@ export default function TetrisProjects() {
           </p>
         </motion.div>
 
-        {/* Uniform 2x2 Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-5">
+        {/* Mobile: Horizontal Scroll */}
+        <div className="md:hidden -mx-6 px-6">
+          <div className="flex overflow-x-auto snap-x snap-mandatory gap-4 pb-4 no-scrollbar">
+            {projects.map((project, index) => (
+              <motion.div
+                key={project.id}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: index * 0.08 }}
+                className="min-w-[80vw] snap-center flex-shrink-0"
+              >
+                <Link href={`/projects/${project.slug || project.id}`} className="group relative block h-[260px] overflow-hidden rounded-2xl">
+                  <motion.img
+                    src={project.image || 'https://images.unsplash.com/photo-1697137663650-f0f95349aed3?crop=entropy&cs=srgb&fm=jpg&q=85'}
+                    alt={project.title}
+                    className="h-full w-full object-cover"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent" />
+                  <div className="absolute bottom-0 left-0 right-0 p-5 text-center">
+                    <h3 className="font-heading text-lg font-semibold text-white">{project.title}</h3>
+                    <div className="mt-1.5 flex items-center justify-center gap-2 text-[10px] uppercase tracking-widest text-white/70 font-sans">
+                      <span>{project.type}</span>
+                      <span className="text-[#C9A962]">&bull;</span>
+                      <span>{project.location}</span>
+                    </div>
+                  </div>
+                </Link>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+
+        {/* Desktop: Grid */}
+        <div className="hidden md:grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-5">
           {projects.map((project, index) => (
             <ProjectCard 
               key={project.id} 
