@@ -137,29 +137,20 @@ const nextConfig = {
         tls: false,
       }
       
-      // Split chunks more aggressively
+      // Merge chunks to reduce parallel request count (prevents 429 rate limiting)
       config.optimization.splitChunks = {
         ...config.optimization.splitChunks,
         chunks: 'all',
-        minSize: 20000,
-        maxSize: 244000,
+        minSize: 80000,     // Merge chunks under 80KB
+        maxSize: 500000,    // Allow chunks up to 500KB before splitting
+        maxInitialRequests: 12, // Limit initial parallel requests
+        maxAsyncRequests: 15,
         cacheGroups: {
           ...config.optimization.splitChunks?.cacheGroups,
-          framerMotion: {
-            test: /[\\/]node_modules[\\/]framer-motion[\\/]/,
-            name: 'framer-motion',
-            chunks: 'all',
-            priority: 30,
-          },
-          lucideReact: {
-            test: /[\\/]node_modules[\\/]lucide-react[\\/]/,
-            name: 'lucide-react',
-            chunks: 'all',
-            priority: 30,
-          },
-          radixUi: {
-            test: /[\\/]node_modules[\\/]@radix-ui[\\/]/,
-            name: 'radix-ui',
+          // Merge all vendor libs into fewer chunks
+          vendorBundle: {
+            test: /[\\/]node_modules[\\/](framer-motion|lucide-react|@radix-ui)[\\/]/,
+            name: 'vendor-ui',
             chunks: 'all',
             priority: 30,
           },
