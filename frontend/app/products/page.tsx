@@ -84,7 +84,42 @@ export default function ProductsPage() {
               </p>
             </motion.div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {/* Mobile: Swipeable Carousel */}
+            <div className="md:hidden -mx-4" data-testid="products-swipe-carousel">
+              {loading ? (
+                <div className="text-center py-12 text-gray-600">Loading products...</div>
+              ) : products.length === 0 ? (
+                <div className="text-center py-12 text-gray-600">No products available.</div>
+              ) : (
+                <SwipeCarousel cardWidth={300} gap={14}>
+                  {products.map((category: any, index: number) => (
+                    <Link key={category.slug} href={`/products/${category.slug}`} data-testid={`product-mobile-${index}`}>
+                      <div className="group h-[360px] bg-black/40 backdrop-blur-sm border border-white/[0.06] rounded-2xl overflow-hidden">
+                        <div className="relative h-[200px] overflow-hidden">
+                          <SafeImage src={category.image} alt={category.name} fill className="object-cover group-active:scale-105 transition-transform duration-500" />
+                          <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent" />
+                          <div className="absolute top-3 right-3">
+                            <span className="px-2.5 py-1 bg-black/60 backdrop-blur text-white text-[10px] font-medium rounded-full border border-white/10">
+                              {category.brands?.length || 0} Brands
+                            </span>
+                          </div>
+                        </div>
+                        <div className="p-4">
+                          <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-2">{category.name}</h3>
+                          <p className="text-xs text-gray-500 dark:text-gray-400 line-clamp-3 leading-relaxed">{category.description}</p>
+                          <div className="mt-3 flex items-center gap-1.5 text-[#C9A962] text-xs font-medium">
+                            Browse <ArrowRight className="w-3.5 h-3.5" />
+                          </div>
+                        </div>
+                      </div>
+                    </Link>
+                  ))}
+                </SwipeCarousel>
+              )}
+            </div>
+
+            {/* Desktop: Grid */}
+            <div className="hidden md:grid grid-cols-2 gap-8">
               {loading ? (
                 <div className="col-span-2 text-center py-12 text-gray-600 dark:text-gray-400 dark:text-gray-400">Loading products...</div>
               ) : products.length === 0 ? (
