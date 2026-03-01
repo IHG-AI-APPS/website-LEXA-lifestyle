@@ -13,7 +13,7 @@ import {
 const TABS = [
   { id: 'home', icon: Home, label: 'Home', path: '/' },
   { id: 'builder', icon: Sparkles, label: 'Builder', path: '/project-builder' },
-  { id: 'dashboard', icon: FolderOpen, label: 'Projects', path: '/dashboard' },
+  { id: 'projects', icon: FolderOpen, label: 'Projects', path: '/projects' },
   { id: 'services', icon: Layers, label: 'Services', path: '/services' },
   { id: 'contact', icon: Phone, label: 'Contact', path: '/contact' }
 ]
