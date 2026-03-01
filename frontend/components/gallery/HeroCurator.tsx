@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useEffect, useRef } from 'react'
+import { useState, useEffect, useRef, useCallback } from 'react'
 import { motion } from 'framer-motion'
 import { Button } from '@/components/ui/button'
 import { ArrowRight, Users, MessageCircle } from 'lucide-react'
@@ -14,22 +14,22 @@ interface HeroCuratorProps {
 
 const BACKEND_URL = process.env.NEXT_PUBLIC_BACKEND_URL || ''
 
-// Fallback clips if CMS data not yet loaded
+// Only use 2 clips to reduce network load and prevent rate limiting
 const DEFAULT_CLIPS = [
   '/videos/hero-v3/v3_01_dramatic_entrance.mp4',
-  '/videos/hero/01_arrival.mp4',
-  '/videos/hero/02_interior_reveal.mp4',
-  '/videos/hero/04_living_tech.mp4',
   '/videos/hero/05_cinema_room.mp4',
-  '/videos/hero/07_villa_night.mp4',
 ]
+
+const MAX_VIDEO_ERRORS = 3
 
 export default function HeroCurator({ onPersonaClick }: HeroCuratorProps) {
   const { t, language } = useLanguage()
   const [currentClip, setCurrentClip] = useState(0)
   const [isFading, setIsFading] = useState(false)
   const [isLoaded, setIsLoaded] = useState(false)
+  const [videoFailed, setVideoFailed] = useState(false)
   const videoRef = useRef<HTMLVideoElement>(null)
+  const errorCountRef = useRef(0)
   const [cmsData, setCmsData] = useState<any>(null)
 
   // Fetch CMS hero data
@@ -40,51 +40,62 @@ export default function HeroCurator({ onPersonaClick }: HeroCuratorProps) {
       .catch(() => {})
   }, [])
 
-  const heroClips = cmsData?.video_clips?.length ? cmsData.video_clips : DEFAULT_CLIPS
+  const heroClips = cmsData?.video_clips?.length ? cmsData.video_clips.slice(0, 3) : DEFAULT_CLIPS
   const heading = cmsData ? (language === 'ar' ? cmsData.heading_ar : cmsData.heading_en) : null
   const subheading = cmsData ? (language === 'ar' ? cmsData.subheading_ar : cmsData.subheading_en) : null
   const ctaPrimaryText = cmsData ? (language === 'ar' ? cmsData.cta_primary_text_ar : cmsData.cta_primary_text_en) : null
 
   // Handle video end - smooth transition to next clip
-  const handleVideoEnd = () => {
+  const handleVideoEnd = useCallback(() => {
     setIsFading(true)
     setTimeout(() => {
       setCurrentClip((prev) => (prev + 1) % heroClips.length)
       setIsFading(false)
     }, 400)
-  }
+  }, [heroClips.length])
+
+  // Handle video error with a hard limit to prevent infinite retry loops
+  const handleVideoError = useCallback(() => {
+    errorCountRef.current += 1
+    if (errorCountRef.current >= MAX_VIDEO_ERRORS) {
+      // Stop trying to load videos — show static fallback
+      setVideoFailed(true)
+      return
+    }
+    // Try next clip
+    setCurrentClip((prev) => (prev + 1) % heroClips.length)
+  }, [heroClips.length])
 
   // Load and play new clip when index changes
   useEffect(() => {
-    if (videoRef.current) {
+    if (videoRef.current && !videoFailed) {
       setIsLoaded(false)
       videoRef.current.load()
       videoRef.current.play().catch(() => {})
     }
-  }, [currentClip])
+  }, [currentClip, videoFailed])
   
   return (
     <section className="relative min-h-[100dvh] w-full overflow-hidden bg-black">
-      {/* Video Background */}
+      {/* Video Background — disabled when errors exceed limit */}
       <div className="absolute inset-0 z-0">
-        <video
-          ref={videoRef}
-          className={`h-full w-full object-cover transition-opacity duration-500 ${isFading ? 'opacity-0' : 'opacity-100'}`}
-          autoPlay
-          muted
-          playsInline
-          preload="auto"
-          onLoadedData={() => setIsLoaded(true)}
-          onEnded={handleVideoEnd}
-          onError={() => {
-            // Skip to next clip on error
-            setCurrentClip((prev) => (prev + 1) % heroClips.length)
-          }}
-          aria-label="LEXA Smart Home luxury showcase"
-        >
-          <source src={heroClips[currentClip]} type="video/mp4" />
-          <track kind="captions" src="" label="English" srcLang="en" default />
-        </video>
+        {!videoFailed && (
+          <video
+            ref={videoRef}
+            className={`h-full w-full object-cover transition-opacity duration-500 ${isFading ? 'opacity-0' : 'opacity-100'}`}
+            autoPlay
+            muted
+            playsInline
+            preload="metadata"
+            onLoadedData={() => { setIsLoaded(true); errorCountRef.current = 0 }}
+            onEnded={handleVideoEnd}
+            onError={handleVideoError}
+            aria-label="LEXA Smart Home luxury showcase"
+          >
+            <source src={heroClips[currentClip]} type="video/mp4" />
+            <track kind="captions" src="" label="English" srcLang="en" default />
+          </video>
+        )}
         
         {/* Dark Luxury Overlay - Stronger on mobile for text legibility */}
         <div className="absolute inset-0 bg-gradient-to-t from-black via-black/70 to-black/40 lg:from-black lg:via-black/30 lg:to-black/40" />
