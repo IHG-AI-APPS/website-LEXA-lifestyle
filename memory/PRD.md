@@ -11,6 +11,11 @@ Complete website overhaul for LEXA Smart Home to:
 
 ## Completed Work (Latest First)
 
+### Phase 34: Critical Bug Fix — Video Retry Loop / 429 Rate Limiting (Mar 1, 2026)
+- **Root cause**: HeroCurator.tsx had an infinite video error retry loop (onError → setNextClip → error → repeat). This generated hundreds of network requests, exhausting the platform's 429 rate limit, causing ALL CSS/JS/font files to fail loading. The site appeared completely broken/unstyled for users.
+- **Fix**: Added MAX_VIDEO_ERRORS=3 cap, reduced DEFAULT_CLIPS from 6→2, changed preload from 'auto'→'metadata', added videoFailed state to gracefully stop video loading after max errors.
+- **Testing**: 100% pass rate — desktop, mobile, navigation, admin, API endpoints, theme toggle all verified working. Zero 429 errors in console.
+
 ### Phase 33: Design Overhaul with Theme-Aware Dark/Light (Mar 1, 2026)
 - **Gold accent system**: All sections now use `#C9A962` gold accents consistently
 - **Purple gradient killed**: Smart Project Builder → dark bg with gold border/accents
