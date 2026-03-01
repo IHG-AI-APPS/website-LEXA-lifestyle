@@ -29,7 +29,7 @@ Complete website overhaul for LEXA Smart Home to:
 
 ### Phase 19: Performance Optimization
 - 52 MongoDB indexes, server-side caching, lightweight projections
-- Solutions 462KB→48KB, Articles 418KB→28KB
+- Solutions 462KB->48KB, Articles 418KB->28KB
 
 ### Phase 20: ETag Conditional Caching
 - ETag middleware on all public GET endpoints, 304 Not Modified support
@@ -39,15 +39,26 @@ Complete website overhaul for LEXA Smart Home to:
 - 1 bug fixed: /api/videos/{id} datetime serialization
 
 ### Phase 22: Calculator Page Optimization (Feb 26, 2026)
-- Dynamic imports for 4 heavy components (BookingModal, TabbyWidget, FloorPlanUploader, RelatedPagesNav)
-- Data constants extracted to separate `calculator-data.ts` (code-split from 1950-line main component)
-- Unused lucide-react icon imports removed
-- Page load: 52ms cold, 43ms warm (server-side), 159KB HTML
+- Dynamic imports for 4 heavy components
+- Data constants extracted to separate calculator-data.ts
+- Page load: 52ms cold, 43ms warm
+
+### Phase 23: UI/UX Animation Enhancements (Mar 1, 2026)
+All 8 micro-interaction features implemented and verified (8/8 PASS):
+1. Card image zoom on hover (CSS auto-apply to link images)
+2. Image swap on hover (luxury pattern CSS classes)
+3. Page entrance animations (framer-motion template.tsx)
+4. Button hover lift effects (global CSS + button.tsx variants)
+5. AI Chat pulse animation (chatPulse + chatBreathe keyframes)
+6. Image fade-in on load (SafeImage.tsx with opacity/blur transition)
+7. Smooth scrolling (Lenis provider)
+8. Section stagger reveals (sectionReveal keyframe with nth-child delays)
 
 ## Remaining / Backlog
-### P1 — Site-wide Consistency Review (final QA pass)
-### P2 — Content Change History for admin CMS (audit trail)
-### P3 — Approve WhatsApp templates on Interakt dashboard (ops)
+### P1 — Redesign Projects Landing Page (paused by user, last major page not matching benchmark design)
+### P2 — Site-wide Consistency Review (final QA pass)
+### P3 — Content Change History for admin CMS (audit trail)
+### P4 — Approve WhatsApp templates on Interakt dashboard (ops)
 
 ## Credentials
 - Admin: `/admin/login` (username: admin, password: lexa2026)
