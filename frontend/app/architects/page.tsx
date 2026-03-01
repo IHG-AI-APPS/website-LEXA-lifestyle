@@ -36,7 +36,7 @@ const resources = [
     title: 'Sample Shop Drawings',
     description: 'Detailed installation drawings with dimensions and specifications',
     icon: FileText,
-    color: 'from-purple-500 to-pink-500',
+    color: 'from-[#C9A962] to-[#A68B4B]',
     formats: ['DWG', 'PDF', 'Revit']
   },
   {
@@ -44,7 +44,7 @@ const resources = [
     title: 'Lighting Control Layouts',
     description: 'DALI, DMX, and smart lighting control schematics',
     icon: Lightbulb,
-    color: 'from-yellow-500 to-orange-500',
+    color: 'from-amber-500 to-yellow-600',
     formats: ['DWG', 'PDF']
   },
   {
@@ -68,7 +68,7 @@ const resources = [
     title: 'Revit / CAD Symbols',
     description: 'Device symbols and families for all major systems',
     icon: Boxes,
-    color: 'from-indigo-500 to-purple-500',
+    color: 'from-slate-500 to-zinc-600',
     formats: ['RFA', 'DWG', 'DXF']
   }
 ]
