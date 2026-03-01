@@ -2,12 +2,7 @@
 
 import { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
-import { ArrowRight } from 'lucide-react'
-import SafeImage from '@/components/ui/SafeImage'
-import Link from 'next/link'
-import { Button } from '@/components/ui/button'
-import ConsultationForm from '@/components/forms/ConsultationForm'
-import { Monitor, Cpu, Wifi, Code, ArrowRight } from 'lucide-react'
+import { ArrowRight, Monitor, Cpu, Wifi, Code } from 'lucide-react'
 import { useCms } from '@/hooks/useCms'
 import dynamic from 'next/dynamic'
 
