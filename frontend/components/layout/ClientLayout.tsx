@@ -40,6 +40,13 @@ export default function ClientLayout({ children }: { children: React.ReactNode }
     }
   }, [pathname, isAdminPage])
 
+  // Register service worker for static asset caching (prevents 429 rate limiting)
+  useEffect(() => {
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('/sw.js').catch(() => {})
+    }
+  }, [])
+
   const handleRefresh = useCallback(async () => {
     router.refresh()
     await new Promise(resolve => setTimeout(resolve, 800))
