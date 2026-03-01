@@ -532,9 +532,9 @@ export default function IndustryCalculatorPage() {
 
       {/* Progress Bar - Below main navigation */}
       <div className="bg-white border-b sticky top-16 sm:top-18 md:top-20 z-40">
-        <div className="container mx-auto px-8 lg:px-16">
+        <div className="container mx-auto px-4 sm:px-8 lg:px-16">
           <div className="max-w-6xl mx-auto py-4">
-            <div className="flex items-center justify-between">
+            <div className="flex items-center justify-between overflow-x-auto">
               {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((s) => (
                 <div key={s} className="flex items-center flex-1">
                   <div className={`w-8 h-8 rounded-full flex items-center justify-center text-xs font-semibold transition-all ${
