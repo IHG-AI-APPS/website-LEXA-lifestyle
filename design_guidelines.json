@@ -1,103 +1,124 @@
 {
-  "design_system": {
-    "identity": {
-      "name": "LEXA Luxury Mobile",
-      "archetype": "Luxury Tech (Dark Mode + Gold)",
-      "core_values": ["Readability", "Central Alignment", "App-like Navigation", "Smoothness"]
+  "project_name": "LEXA Smart Home - Mobile Redesign",
+  "design_philosophy": {
+    "core_concept": "The Invisible Butler",
+    "visual_style": "Dark Luxury (OLED Black + Gold Accents)",
+    "principles": [
+      "No Light Mode: The mobile experience is exclusively Dark Mode for premium impact.",
+      "Cinematic Continuity: No abrupt background color changes between sections.",
+      "Glass over Solid: Use glassmorphism for overlays (Nav, Badges) instead of solid blocks.",
+      "Content is King: Reduce UI chrome, let the imagery and video breathe."
+    ]
+  },
+  "typography": {
+    "font_families": {
+      "heading": "Outfit, sans-serif",
+      "serif": "Cormorant Garamond, serif",
+      "body": "DM Sans, sans-serif"
     },
-    "typography": {
-      "headings": {
-        "family": "Outfit, sans-serif",
-        "weight": "Bold/Black",
-        "style": "Uppercase or Capitalized",
-        "mobile_size": "text-3xl md:text-4xl",
-        "letter_spacing": "tracking-tight"
-      },
-      "body": {
-        "family": "DM Sans, sans-serif",
-        "weight": "Regular",
-        "mobile_size": "text-sm",
-        "color": "text-gray-300"
-      },
-      "alignment": "text-center (Mobile), text-left (Desktop)"
-    },
-    "colors": {
-      "background": {
-        "main": "#000000",
-        "card": "#0A0A0A",
-        "overlay": "rgba(0,0,0,0.8)"
-      },
-      "primary": {
-        "gold": "#C9A962",
-        "gold_dim": "#9F8B65"
-      },
-      "text": {
-        "primary": "#FFFFFF",
-        "secondary": "rgba(255,255,255,0.7)"
-      },
-      "gradients": {
-        "readability_overlay": "bg-gradient-to-t from-black via-black/80 to-transparent",
-        "gold_sheen": "bg-gradient-to-r from-[#E8DCC8] to-[#C19A2E]"
-      }
-    },
-    "layout_rules": {
-      "mobile_container": "px-6",
-      "spacing": "space-y-12 md:space-y-20",
-      "safe_area_bottom": "pb-24 (To clear Mobile Tab Bar)",
-      "horizontal_scroll": "flex overflow-x-auto snap-x snap-mandatory no-scrollbar -mx-6 px-6 gap-4"
+    "hierarchy": {
+      "display_hero": "text-4xl md:text-6xl font-black uppercase tracking-tighter leading-[0.9]",
+      "section_heading": "text-2xl md:text-3xl font-serif font-light tracking-wide text-white",
+      "card_title": "text-lg md:text-xl font-bold tracking-tight text-white",
+      "body_text": "text-sm md:text-base text-neutral-400 font-light leading-relaxed",
+      "label": "text-xs font-bold uppercase tracking-[0.2em] text-[#C9A962]"
     }
   },
-  "component_instructions": {
-    "HeroCurator": {
-      "file": "/app/frontend/components/gallery/HeroCurator.tsx",
-      "changes": [
-        "CHANGE alignment of text container from 'items-end' to 'items-center justify-center' on mobile (h-full).",
-        "UPDATE Gradient Overlay: Increase opacity for readability. Use 'from-black via-black/70 to-black/30'.",
-        "REFACTOR Buttons: Change from 'flex-col' to 'grid grid-cols-2 gap-3 w-full'. Primary CTA spans full width if needed, or split 50/50.",
-        "TYPOGRAPHY: Ensure H1 is text-center. Add 'drop-shadow-lg' to text.",
-        "REMOVE: 'hidden sm:block' from View Projects button if client wants it, otherwise keep it hidden to reduce clutter."
-      ]
+  "colors": {
+    "background": {
+      "page": "bg-[#050505]",
+      "card": "bg-[#0A0A0A]",
+      "card_hover": "bg-[#111111]",
+      "glass": "bg-black/60 backdrop-blur-xl"
     },
-    "SolutionsBentoGrid": {
-      "file": "/app/frontend/components/homepage/SolutionsBentoGrid.tsx",
-      "changes": [
-        "LAYOUT: Keep 'SwipeCarousel' but ensure cards are 'h-[280px]' instead of 'h-[340px]' to reduce vertical space.",
-        "CARD DESIGN: Add 'text-center' to card content wrapper.",
-        "READABILITY: Change image overlay to 'bg-gradient-to-t from-black via-black/90 to-transparent' (Stronger bottom).",
-        "TEXT: Center the icon, subtitle, title, and description.",
-        "NAVIGATION: Ensure swipe indicators (dots) are visible and gold."
-      ]
+    "text": {
+      "primary": "text-white",
+      "secondary": "text-neutral-400",
+      "accent": "text-[#C9A962]",
+      "muted": "text-white/20"
     },
-    "CalculatorCardsSection": {
-      "file": "/app/frontend/components/homepage/CalculatorCardsSection.tsx",
-      "changes": [
-        "CRITICAL: Convert vertical stack of cards to Horizontal Scroll (Snap) on mobile.",
-        "WRAPPER: Change mobile container to 'flex overflow-x-auto snap-x snap-mandatory gap-4 px-6 -mx-6 pb-4'.",
-        "ITEM: Add 'min-w-[85vw] snap-center' to each tool card.",
-        "FEATURED CARD: Reduce padding on mobile ('p-6' instead of 'p-8'). Center align text.",
-        "REMOVE: 'grid-cols-1' on mobile wrapper."
-      ]
+    "border": {
+      "subtle": "border-white/5",
+      "highlight": "border-[#C9A962]/30"
     },
-    "TetrisProjects": {
-      "file": "/app/frontend/components/gallery/TetrisProjects.tsx",
-      "changes": [
-        "CRITICAL: Fix Hover State. Remove 'opacity-0 translate-y-4' on mobile. Text must be permanently visible.",
-        "CLASS CHANGE: 'opacity-0' -> 'opacity-100 lg:opacity-0'. 'translate-y-4' -> 'translate-y-0 lg:translate-y-4'.",
-        "LAYOUT: Convert Grid to Horizontal Scroll. Container: 'flex overflow-x-auto snap-x snap-mandatory gap-4 px-6 -mx-6'.",
-        "ITEM: 'min-w-[80vw] snap-center h-[260px]'.",
-        "OVERLAY: Ensure 'bg-black/60' is always present on mobile for text readability."
-      ]
-    },
-    "GlobalNavigation": {
-      "MobileTabBar": "Ensure z-index is 50. Background must be 'bg-black/90 backdrop-blur-xl' (High quality glass).",
-      "FAB": "Position FABs at 'bottom-24 right-6' to clear the tab bar."
+    "gradients": {
+      "gold_glow": "bg-gradient-to-br from-[#C9A962]/20 via-transparent to-transparent",
+      "obsidian_shimmer": "bg-gradient-to-t from-black via-black/50 to-transparent",
+      "purple_replacement": "bg-gradient-to-br from-[#1a1a1a] to-black border border-[#C9A962]/20"
     }
   },
-  "universal_guidelines": [
-    "ALWAYS include 'data-testid' on interactive elements.",
-    "NEVER use pure transparent backgrounds on text overlays.",
-    "CENTER align all headings and hero content on mobile.",
-    "USE 'snap-x' and 'overflow-x-auto' for any list > 2 items on mobile.",
-    "ENSURE 44px minimum touch targets for all buttons."
+  "layout_strategies": {
+    "mobile_container": "px-4 md:px-6 w-full max-w-7xl mx-auto",
+    "section_spacing": "py-16 md:py-24",
+    "grid_system": {
+      "bento_mobile": "grid grid-cols-1 gap-4",
+      "bento_tablet": "grid grid-cols-2 gap-6",
+      "scroll_snap": "flex overflow-x-auto snap-x snap-mandatory gap-4 pb-8 no-scrollbar"
+    }
+  },
+  "component_rules": {
+    "Hero Section": {
+      "styles": "h-[85vh] relative overflow-hidden bg-black",
+      "fixes": [
+        "Ensure video poster/fallback is a high-res dark interior image, never black.",
+        "Remove 'We serve...' text from hero to reduce clutter.",
+        "Gradient overlay must be 'from-black via-black/40 to-transparent' to make text pop."
+      ]
+    },
+    "Trust Badges": {
+      "redesign": "Glass Strip",
+      "styles": "absolute bottom-0 left-0 right-0 z-20 bg-black/80 backdrop-blur-md border-t border-white/10 py-4",
+      "content": "Monochrome logos (opacity-50) + minimalist stats (text-xs uppercase). Single row, scrolling if needed."
+    },
+    "Solutions Section": {
+      "styles": "bg-[#050505] relative",
+      "card_style": "aspect-[4/5] relative rounded-2xl overflow-hidden group border border-white/5",
+      "typography": "Title at bottom-left, overlaid on image gradient. No 'Read More' buttons - entire card is clickable."
+    },
+    "Planning Tools (The Purple Fix)": {
+      "container": "bg-[#050505]",
+      "smart_builder_card": "col-span-full aspect-video rounded-3xl relative overflow-hidden border border-[#C9A962]/20 group",
+      "background": "Use a dark architectural wireframe video or image. NO PURPLE GRADIENTS.",
+      "overlay": "bg-gradient-to-r from-black/90 via-black/50 to-transparent",
+      "text": "Gold accent for 'AI Powered', White for main title."
+    },
+    "Stats Section": {
+      "styles": "bg-[#050505] py-20 border-y border-white/5",
+      "number_style": "text-5xl md:text-7xl font-serif text-transparent bg-clip-text bg-gradient-to-b from-[#C9A962] to-[#8a7035]",
+      "label_style": "text-xs tracking-[0.3em] uppercase text-neutral-500 mt-2"
+    },
+    "Navigation (Mobile)": {
+      "tab_bar": "fixed bottom-4 left-4 right-4 h-16 bg-black/80 backdrop-blur-2xl rounded-full border border-white/10 shadow-2xl z-50 flex items-center justify-around px-2",
+      "fab_integration": "The central item of the tab bar should be the 'Quick Actions' trigger (Gold Icon).",
+      "aura_avatar": "Move AURA avatar to inside the 'Quick Actions' menu or make it a subtle animated icon in the top-right header."
+    }
+  },
+  "visual_enhancers": {
+    "glass_morphism": "backdrop-blur-xl bg-white/5 border border-white/10",
+    "text_glow": "drop-shadow-[0_0_15px_rgba(201,169,98,0.3)]",
+    "borders": "1px solid rgba(255,255,255,0.08)"
+  },
+  "image_strategy": {
+    "hero": {
+      "search_query": "luxury dark interior penthouse night dubai",
+      "alt": "Dark luxury penthouse interior in Dubai"
+    },
+    "solutions": {
+      "cinema": "home theater dark luxury cinematic",
+      "lighting": "smart lighting interior mood dark",
+      "security": "smart home security system sleek"
+    },
+    "tools": {
+      "builder": "architectural blueprint digital dark glowing",
+      "calculator": "luxury calculator gold minimalist"
+    }
+  },
+  "universal_guidelines_for_main_agent": [
+    "FORCE DARK MODE: Apply 'dark' class to the html tag or wrap the main provider.",
+    "REMOVE WHITE BACKGROUNDS: Grep for 'bg-white', 'bg-gray-50', 'bg-slate-50' and replace with 'bg-[#050505]' or 'bg-transparent'.",
+    "GOLD ACCENTS ONLY: Use #C9A962 for primary actions/highlights. Avoid green/blue/purple unless functionally critical (e.g. success states).",
+    "REDUCE PADDING: On mobile, use p-4 or p-5. Avoid p-12 or p-16 which wastes screen real estate.",
+    "SNAP SCROLLING: For all horizontal lists (Tools, Projects), use 'snap-x snap-mandatory' for a native app feel.",
+    "DATA-TESTID: Ensure all interactive elements have data-testid attributes."
   ]
 }
