@@ -54,7 +54,13 @@ export default function ClientLayout({ children }: { children: React.ReactNode }
             Skip to main content
           </a>
           {!isAdminPage && <Header />}
-          <main id="main-content" role="main" aria-label="Main content" className={isAdminPage ? '' : 'pb-20 lg:pb-0'}>{children}</main>
+          {!isAdminPage ? (
+            <PullToRefresh onRefresh={handleRefresh}>
+              <main id="main-content" role="main" aria-label="Main content" className="pb-20 lg:pb-0">{children}</main>
+            </PullToRefresh>
+          ) : (
+            <main id="main-content" role="main" aria-label="Main content">{children}</main>
+          )}
           {!isAdminPage && <Footer />}
           {!isAdminPage && <MobileTabBar />}
           {!isAdminPage && <CommandPalette />}
