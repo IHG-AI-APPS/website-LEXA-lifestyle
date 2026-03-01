@@ -147,7 +147,7 @@ export default function SolutionsBentoGrid() {
 
   if (loading) {
     return (
-      <section className="bg-white dark:bg-gray-900 py-10 md:py-12">
+      <section className="bg-[#050505] py-10 md:py-12">
         <div className="content-container">
           <div className="mb-10 md:mb-12 text-center">
             <span className="mb-3 inline-block rounded-full bg-black px-4 py-1.5 text-xs font-bold uppercase tracking-widest text-white">
@@ -166,7 +166,7 @@ export default function SolutionsBentoGrid() {
   }
 
   return (
-    <section className="bg-white dark:bg-gray-900 py-10 md:py-12">
+    <section className="bg-[#050505] py-10 md:py-12">
       <div className="content-container">
         {/* Section Header */}
         <motion.div
