@@ -24,6 +24,7 @@ const CookieConsent = dynamic(() => import('@/components/widgets/CookieConsent')
 const LinkPrefetcher = dynamic(() => import('@/components/performance/LinkPrefetcher').catch(() => ({ default: Noop })), { ssr: false })
 const ScheduleVisitButton = dynamic(() => import('@/components/widgets/ScheduleVisitButton').catch(() => ({ default: Noop })), { ssr: false })
 const PullToRefresh = dynamic(() => import('@/components/mobile/PullToRefresh'), { ssr: false })
+const MobileQuickActions = dynamic(() => import('@/components/mobile/MobileQuickActions'), { ssr: false })
 
 export default function ClientLayout({ children }: { children: React.ReactNode }) {
   const pathname = usePathname()
