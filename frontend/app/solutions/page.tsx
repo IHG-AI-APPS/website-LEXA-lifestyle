@@ -9,6 +9,9 @@ import { getSolutions, type Solution } from '@/lib/api'
 import { useLanguage } from '@/contexts/LanguageContext'
 import dynamic from 'next/dynamic'
 import { useCms } from '@/hooks/useCms'
+import { ArrowRight } from 'lucide-react'
+
+const SwipeCarousel = dynamic(() => import('@/components/mobile/SwipeCarousel'), { ssr: false })
 
 const RecentlyViewedSection = dynamic(() => import('@/components/widgets/RecentlyViewedSection').catch(() => ({ default: () => null })), {
   ssr: false
