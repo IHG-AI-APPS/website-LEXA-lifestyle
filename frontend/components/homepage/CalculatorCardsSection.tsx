@@ -100,7 +100,7 @@ export default function CalculatorCardsSection() {
                 <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-white/20 rounded-full blur-3xl animate-pulse delay-1000" />
               </div>
               
-              <div className="relative p-8 md:p-12 flex flex-col md:flex-row items-center gap-8">
+              <div className="relative p-6 md:p-12 flex flex-col md:flex-row items-center gap-6 md:gap-8">
                 {/* Icon */}
                 <div className="relative">
                   <div className="w-24 h-24 md:w-32 md:h-32 rounded-2xl bg-white/10 backdrop-blur-sm border border-white/20 flex items-center justify-center group-hover:scale-110 transition-transform duration-500">
