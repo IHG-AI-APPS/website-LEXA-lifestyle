@@ -198,19 +198,19 @@ export default function SolutionsBentoGrid() {
                 <Link
                   key={solution.slug || index}
                   href={`/solutions/${solution.slug}`}
-                  className="group relative block h-[340px] overflow-hidden rounded-2xl border border-white/[0.08]"
+                  className="group relative block h-[280px] overflow-hidden rounded-2xl border border-white/[0.08]"
                   data-testid={`solution-mobile-${index}`}
                 >
                   <div className="absolute inset-0">
                     <SafeImage src={imageUrl} alt={solution.title} fill className="object-cover transition-transform duration-500 group-active:scale-105" />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black via-black/60 to-black/20" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black via-black/80 to-black/30" />
                   </div>
-                  <div className="relative h-full flex flex-col justify-end p-5">
+                  <div className="relative h-full flex flex-col items-center justify-end p-5 text-center">
                     <Icon className="h-7 w-7 text-[#C9A962] mb-2" />
                     <span className="text-[10px] font-semibold uppercase tracking-wider text-[#C9A962] mb-1">
                       {solution.subtitle || solution.tagline || 'Smart Solution'}
                     </span>
-                    <h3 className="text-xl font-bold text-white mb-1.5">{solution.title}</h3>
+                    <h3 className="text-lg font-bold text-white mb-1.5">{solution.title}</h3>
                     <p className="text-xs text-white/70 leading-relaxed line-clamp-2">
                       {solution.short_description || solution.description || ''}
                     </p>
