@@ -77,8 +77,35 @@ export default function RootLayout({
         {/* Preconnect for critical resources */}
         <link rel="preconnect" href={process.env.NEXT_PUBLIC_BACKEND_URL || ''} crossOrigin="anonymous" />
         
-        {/* Chunk load error recovery - auto-reload on stale chunks */}
+        {/* CRITICAL INLINE CSS - Prevents unstyled flash when CSS chunks are 429'd */}
+        <style dangerouslySetInnerHTML={{ __html: `
+          html, body { background: #050505; color: #fff; margin: 0; padding: 0; font-family: system-ui, -apple-system, sans-serif; }
+          .sr-only, [class*="sr-only"], a[href="#main-content"] { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0,0,0,0); }
+          header { position: fixed; top: 0; left: 0; right: 0; z-index: 50; background: rgba(5,5,5,0.9); }
+          footer svg { max-width: 48px; max-height: 48px; }
+          img { max-width: 100%; height: auto; }
+          section { overflow: hidden; }
+          @media (prefers-color-scheme: light) { html:not(.dark) body { background: #fff; color: #111; } }
+        ` }} />
+        
+        {/* Chunk load error recovery - auto-reload on stale chunks or 429 failures */}
         <script dangerouslySetInnerHTML={{ __html: `
+          var retryKey = 'css_retry';
+          function checkCSS() {
+            var sheets = document.styleSheets;
+            var hasCSS = false;
+            for (var i = 0; i < sheets.length; i++) {
+              if (sheets[i].href && sheets[i].href.includes('/_next/')) { hasCSS = true; break; }
+            }
+            if (!hasCSS && !sessionStorage.getItem(retryKey)) {
+              sessionStorage.setItem(retryKey, '1');
+              setTimeout(function() { window.location.reload(); }, 2000);
+            } else if (sessionStorage.getItem(retryKey)) {
+              sessionStorage.removeItem(retryKey);
+            }
+          }
+          if (document.readyState === 'complete') { checkCSS(); }
+          else { window.addEventListener('load', checkCSS); }
           window.addEventListener('error', function(e) {
             if (e.message && (
               e.message.includes("Cannot read properties of undefined (reading 'call')") ||
