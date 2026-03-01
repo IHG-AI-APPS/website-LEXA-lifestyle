@@ -38,7 +38,7 @@ export default function TetrisProjects() {
 
   if (loading) {
     return (
-      <section className="bg-[#050505] py-10 md:py-12" data-testid="tetris-projects-loading">
+      <section className="bg-gray-50 dark:bg-[#050505] py-10 md:py-12" data-testid="tetris-projects-loading">
         <div className="content-container">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
             {[1, 2, 3, 4].map((i) => (
@@ -51,7 +51,7 @@ export default function TetrisProjects() {
   }
 
   return (
-    <section className="bg-[#050505] py-10 md:py-12">
+    <section className="bg-gray-50 dark:bg-[#050505] py-10 md:py-12">
       <div className="content-container">
         {/* Section Header - Compact */}
         <motion.div
@@ -62,10 +62,10 @@ export default function TetrisProjects() {
           className="mb-10 text-center"
         >
           <div className="text-[10px] font-semibold uppercase tracking-[0.3em] text-[#C9A962] mb-3">OUR PORTFOLIO</div>
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4 font-heading">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 dark:text-white mb-4 font-heading">
             Featured Projects
           </h2>
-          <p className="text-base text-neutral-400 max-w-xl mx-auto">
+          <p className="text-base text-gray-600 dark:text-neutral-400 max-w-xl mx-auto">
             A curated collection of distinguished projects across the region.
           </p>
         </motion.div>
