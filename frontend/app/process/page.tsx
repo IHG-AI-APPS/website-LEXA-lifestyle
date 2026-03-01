@@ -27,6 +27,11 @@ export default function ProcessPage() {
     <div className="min-h-screen bg-white dark:bg-gray-950 pt-20" data-testid="process-page">
       {/* Hero */}
       <section className="relative overflow-hidden bg-[#0A0A0A] dark:bg-[#050505] text-white py-20 lg:py-28">
+        {/* Hero Background Image */}
+        <div className="absolute inset-0">
+          <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=1200IMAGE_URLq=50" alt="" className="w-full h-full object-cover opacity-20" loading="eager" />
+          <div className="absolute inset-0 bg-gradient-to-t from-[#0A0A0A] via-[#0A0A0A]/70 to-[#0A0A0A]/40" />
+        </div>
         <div className="container mx-auto px-8 lg:px-16 relative z-10">
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }} className="max-w-3xl">
             <span className="inline-block px-3 py-1 rounded-full bg-[#C9A962]/15 border border-[#C9A962]/30 text-[#C9A962] text-xs uppercase tracking-widest mb-5">{cms?.hero_badge || 'Our Process'}</span>
