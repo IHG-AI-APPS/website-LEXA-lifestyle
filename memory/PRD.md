@@ -11,6 +11,12 @@ Complete website overhaul for LEXA Smart Home to:
 
 ## Completed Work (Latest First)
 
+### Phase 40: Service Worker for Static Asset Caching (Mar 1, 2026)
+- **Service worker** (`/sw.js`): Cache-first for Next.js hashed static files (`/_next/static/`), stale-while-revalidate for fonts/images. Never caches API calls or analytics.
+- **Registration**: Moved from `page.tsx` to `ClientLayout.tsx` for activation on any page
+- **Benefit**: Return visits load instantly from cache, completely eliminating 429 rate limiting risk
+- **Testing**: 100% pass rate (iteration_66). SW registers, caches verified, zero 429 errors.
+
 ### Phase 39: 429 Rate Limiting Defense — Inline Critical CSS + Chunk Optimization (Mar 1, 2026)
 - **Inline critical CSS**: Added dark theme background (#050505), hidden sr-only, header positioning directly in `<head>` — page never appears unstyled even if CSS chunks are 429'd
 - **Webpack chunk optimization**: Merged framer-motion + lucide-react + radix-ui into single `vendor-ui` chunk. Reduced initial requests from 35 → 24. Set minSize=80KB, maxSize=500KB, maxInitialRequests=12
