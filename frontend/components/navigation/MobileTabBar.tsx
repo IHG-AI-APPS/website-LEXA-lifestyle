@@ -35,10 +35,10 @@ export default function MobileTabBar() {
 
   return (
     <div className="fixed bottom-0 left-0 right-0 z-50 lg:hidden" data-testid="mobile-tab-bar">
-      {/* Floating island container with safe-area */}
-      <div className="px-4 pb-[env(safe-area-inset-bottom,6px)] pt-0">
-        <nav className="relative bg-[#0A0A0A]/90 backdrop-blur-2xl border border-white/[0.06] rounded-t-2xl shadow-[0_-8px_40px_rgba(0,0,0,0.5)]">
-          <div className="flex justify-around items-stretch h-[72px] max-w-md mx-auto">
+      {/* Floating pill container */}
+      <div className="px-4 pb-[env(safe-area-inset-bottom,8px)] pt-0">
+        <nav className="relative bg-[#0A0A0A]/95 backdrop-blur-2xl border border-white/[0.08] rounded-2xl shadow-[0_-4px_30px_rgba(0,0,0,0.6)] mx-auto max-w-sm">
+          <div className="flex justify-around items-stretch h-[64px]">
             {TABS.map((tab) => {
               const Icon = tab.icon
               const isActive = activeTab === tab.id
