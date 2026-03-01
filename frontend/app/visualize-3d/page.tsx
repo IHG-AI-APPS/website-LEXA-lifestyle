@@ -140,7 +140,7 @@ export default function Visualize3DPage() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <button
               onClick={() => window.location.href = '/calculator'}
-              className="bg-white text-black font-semibold px-8 py-4 rounded-lg hover:bg-gray-100 dark:bg-gray-800 transition-all text-lg"
+              className="bg-[#C9A962] text-black font-semibold px-8 py-4 rounded-lg hover:bg-[#E8DCC8] transition-all text-lg"
             >
               Get Your Free Quote
             </button>

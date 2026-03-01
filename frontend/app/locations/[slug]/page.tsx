@@ -33,7 +33,7 @@ export default function LocationPage() {
 
   if (loading) {
     return (
-      <div className="min-h-screen bg-white pt-20">
+      <div className="min-h-screen bg-white dark:bg-[#050505] pt-20">
         <div className="animate-pulse">
           <div className="h-[480px] bg-gray-200" />
           <div className="container mx-auto px-8 py-12"><div className="h-10 bg-gray-200 rounded w-1/2 mb-4" /></div>
