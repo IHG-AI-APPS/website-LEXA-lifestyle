@@ -11,6 +11,13 @@ Complete website overhaul for LEXA Smart Home to:
 
 ## Completed Work (Latest First)
 
+### Phase 38: Staggered Hero Entrance Animations — Site-Wide (Mar 1, 2026)
+- **CSS-only approach**: 6 utility classes (`hero-animate-badge`, `hero-animate-title`, `hero-animate-desc`, `hero-animate-cta`, `hero-animate-extra`) with staggered delays (0ms → 150ms → 300ms → 450ms → 600ms)
+- **Scope**: Applied to 53 badge elements, 49+ h1 titles, 15+ descriptions, 22+ CTA containers across ALL pages
+- **Uses**: `@keyframes heroFadeUp` with `--ease-luxury: cubic-bezier(0.16, 1, 0.3, 1)` easing curve
+- **Accessibility**: `prefers-reduced-motion` media query disables all animations for users who prefer reduced motion
+- **Testing**: 100% backend + 100% frontend pass rate (iteration_64). Every page's hero section verified.
+
 ### Phase 37: Site-Wide Hero Standardization — Uppercase, Center-Aligned, Background Images (Mar 1, 2026)
 - **47 pages**: Standardized h1 to `text-4xl sm:text-5xl lg:text-6xl font-bold uppercase tracking-tight`
 - **62 pages**: Replaced `bg-gray-900` hero backgrounds with OLED-black `bg-[#0A0A0A] dark:bg-[#050505]`
