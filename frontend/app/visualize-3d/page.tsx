@@ -8,9 +8,9 @@ export default function Visualize3DPage() {
   const cms = useCms('page_visualize_3d', null)
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-gray-50 to-white pt-20">
+    <div className="min-h-screen bg-white dark:bg-[#050505] pt-20">
       {/* Header */}
-      <section className="py-12 bg-gradient-to-br from-purple-900 via-purple-800 to-indigo-900 text-white">
+      <section className="py-12 bg-[#0a0a0a] text-white">
         <div className="container mx-auto px-8 lg:px-16">
           <div className="max-w-4xl mx-auto text-center">
             <div className="inline-flex items-center justify-center w-16 h-16 mb-4 bg-white/10 backdrop-blur-sm rounded-full">
@@ -21,7 +21,7 @@ export default function Visualize3DPage() {
               3D SMART HOME VISUALIZATION
             </h1>
             
-            <p className="text-xl text-purple-100">
+            <p className="text-xl text-gray-300">
               Explore our smart home solutions in interactive 3D
             </p>
           </div>
@@ -36,14 +36,14 @@ export default function Visualize3DPage() {
       </section>
 
       {/* Features Grid */}
-      <section className="py-16 bg-gray-50 dark:bg-gray-800">
+      <section className="py-16 bg-gray-50 dark:bg-[#0a0a0a]">
         <div className="container mx-auto px-8 lg:px-16">
           <h2 className="text-3xl font-bold text-center mb-12">Why Visualize in 3D?</h2>
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            <div className="bg-white dark:bg-gray-800 rounded-xl p-6 shadow-lg text-center">
-              <div className="inline-flex items-center justify-center w-14 h-14 mb-4 bg-purple-100 rounded-full">
-                <Eye className="text-purple-600" size={28} />
+            <div className="bg-white dark:bg-white/5 rounded-xl p-6 shadow-lg text-center border border-transparent dark:border-white/10">
+              <div className="inline-flex items-center justify-center w-14 h-14 mb-4 bg-[#C9A962]/10 rounded-full">
+                <Eye className="text-[#C9A962]" size={28} />
               </div>
               <h3 className="font-bold text-lg mb-2">Better Understanding</h3>
               <p className="text-gray-600 dark:text-gray-400 text-sm">
