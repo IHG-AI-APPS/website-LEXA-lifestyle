@@ -12,26 +12,33 @@ Complete website overhaul for LEXA Smart Home to:
 
 ## Completed Work (Latest First)
 
+### Phase 27: Native Mobile Gestures (Mar 1, 2026)
+- **SwipeCarousel**: Horizontal swipeable card carousel on mobile using framer-motion `drag="x"` with spring physics (stiffness: 300, damping: 30)
+  - Homepage solutions: 4 cards, 280px wide, gold progress bar + counter
+  - Products page: 9 cards, 300px wide, peek effect showing next card
+  - Cards feature full-bleed images, dark gradient overlays, gold accents, "Explore/Browse" CTAs
+- **PullToRefresh**: Touch-based pull-down refresh with rubber-band damping (40%), gold branded spinner, 80px activation threshold
+  - Wraps all non-admin page content via ClientLayout
+  - Uses native touch events (passive listeners for performance)
+- Both components SSR-safe (`dynamic import, ssr: false`)
+- Responsive: `md:hidden` on mobile, `hidden md:grid` on desktop — existing layouts preserved
+- Testing: 100% pass (11/11, iteration_53.json)
+
 ### Phase 26: Mobile/Tablet Design Overhaul (Mar 1, 2026)
-Design agent was used for comprehensive mobile/tablet guidelines. Implemented:
-- **MobileTabBar**: Redesigned from white to dark glass-morphism (`bg-black/80 backdrop-blur-2xl`) with gold (#C9A962) active accent + animated pill
-- **Hero Section**: Content vertically centered on mobile/tablet (`items-center lg:items-end`), stronger overlay gradients for text legibility, `100dvh` for modern viewport units
-- **Cookie Consent**: Dark glass-morphism (`bg-black/90 backdrop-blur-xl`) with gold "Accept All" button, proper tab bar clearance
-- **Floating Buttons**: AURA at `bottom-[152px]`, WhatsApp at `bottom-[84px]` on mobile, properly clearing 68px tab bar
-- **Scroll/Video Dots**: Hidden on mobile/tablet (`hidden lg:flex`)
-- **Global**: All containers have responsive padding (`px-4` <640px, `px-8` sm+), overflow-x hidden
-- Testing: 100% pass (15/15 features across all 3 viewports)
+- Dark glass MobileTabBar with gold active accent + animated pill
+- Hero centered on mobile/tablet, stronger overlays for legibility
+- Dark glass cookie consent with gold Accept button
+- Floating buttons repositioned for 68px tab bar clearance
+- 100% pass (15/15 across 3 viewports)
 
 ### Phase 25: Speed Optimization (Mar 1, 2026)
-- Production build: All pages <150ms (Calculator 16.6s→0.09s)
-- Admin Rebuild Button: One-click rebuild in Admin > System page
+- Production build: All pages <150ms
+- Admin Rebuild Button in System page
 
 ### Phase 24: AURA AI Chat Agent (Mar 1, 2026)
-- AURA with female avatar, comprehensive knowledge base
+- Female avatar via Nano Banana, comprehensive knowledge base
 
 ### Phase 23: UI/UX Animation Enhancements
-- 8/8 micro-interactions verified
-
 ### Phase 22: Calculator Page Optimization
 ### Phase 21: Full Route Audit (337 routes, 155 pages)
 ### Phase 20: ETag Conditional Caching
