@@ -374,6 +374,11 @@
   .animation-delay-400 { animation-delay: 400ms; }
   .animation-delay-500 { animation-delay: 500ms; }
 
+
+  /* Hide broken image icons for hero background images */
+  img[alt=""] { color: transparent; }
+  img[alt=""]:not([src]) { display: none; }
+
   /* Hero Entrance Animations — Staggered children */
   @keyframes heroFadeUp {
     from {
