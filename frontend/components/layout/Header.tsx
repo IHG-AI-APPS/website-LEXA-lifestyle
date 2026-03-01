@@ -301,12 +301,15 @@ export default function Header() {
 
             <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className={`lg:hidden p-2 transition-colors duration-300 ${
-                shouldUseDarkText ? 'text-charcoal' : 'text-white'
+              className={`lg:hidden p-2.5 rounded-xl transition-all duration-300 active:scale-95 ${
+                shouldUseDarkText 
+                  ? 'text-charcoal hover:bg-gray-100 dark:text-white dark:hover:bg-white/10' 
+                  : 'text-white hover:bg-white/10'
               }`}
               aria-label="Toggle menu"
+              data-testid="mobile-menu-toggle"
             >
-              {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+              {isMobileMenuOpen ? <X size={22} strokeWidth={1.5} /> : <Menu size={22} strokeWidth={1.5} />}
             </button>
           </div>
 
