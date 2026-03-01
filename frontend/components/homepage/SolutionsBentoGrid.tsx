@@ -186,8 +186,46 @@ export default function SolutionsBentoGrid() {
           </p>
         </motion.div>
 
-        {/* Dynamic Bento Tetris Grid - 4 Items */}
-        <div className="grid grid-cols-1 md:grid-cols-4 auto-rows-fr gap-3 md:gap-4 max-h-[800px]">
+        {/* Mobile: Swipeable Carousel */}
+        <div className="md:hidden -mx-4" data-testid="solutions-swipe-carousel">
+          <SwipeCarousel cardWidth={280} gap={12} showPeek={true}>
+            {solutions.map((solution, index) => {
+              const iconName = solution.icon || 'Home'
+              const Icon = ICON_MAP[iconName] || Home
+              const imageUrl = solution.hero_image || solution.image || 'https://images.unsplash.com/photo-1558036117-15d82a90b9b1'
+              
+              return (
+                <Link
+                  key={solution.slug || index}
+                  href={`/solutions/${solution.slug}`}
+                  className="group relative block h-[340px] overflow-hidden rounded-2xl border border-white/[0.08]"
+                  data-testid={`solution-mobile-${index}`}
+                >
+                  <div className="absolute inset-0">
+                    <SafeImage src={imageUrl} alt={solution.title} fill className="object-cover transition-transform duration-500 group-active:scale-105" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black via-black/60 to-black/20" />
+                  </div>
+                  <div className="relative h-full flex flex-col justify-end p-5">
+                    <Icon className="h-7 w-7 text-[#C9A962] mb-2" />
+                    <span className="text-[10px] font-semibold uppercase tracking-wider text-[#C9A962] mb-1">
+                      {solution.subtitle || solution.tagline || 'Smart Solution'}
+                    </span>
+                    <h3 className="text-xl font-bold text-white mb-1.5">{solution.title}</h3>
+                    <p className="text-xs text-white/70 leading-relaxed line-clamp-2">
+                      {solution.short_description || solution.description || ''}
+                    </p>
+                    <div className="mt-3 flex items-center gap-1.5 text-[#C9A962] text-xs font-medium">
+                      Explore <ArrowRight className="w-3.5 h-3.5" />
+                    </div>
+                  </div>
+                </Link>
+              )
+            })}
+          </SwipeCarousel>
+        </div>
+
+        {/* Desktop: Bento Grid */}
+        <div className="hidden md:grid grid-cols-4 auto-rows-fr gap-3 md:gap-4 max-h-[800px]">
           {solutions.map((solution, index) => {
             const iconName = solution.icon || 'Home'
             const Icon = ICON_MAP[iconName] || Home
