@@ -111,7 +111,7 @@ export default function ProductDetailPage({ params }: { params: { slug: string }
               {product.icon && (
                 <div className="text-7xl mb-6">{product.icon}</div>
               )}
-              <h1 className="text-5xl md:text-6xl font-semibold mb-6">{product.name}</h1>
+              <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6">{product.name}</h1>
               <p className="text-xl text-gray-200 mb-6 leading-relaxed">
                 {product.description}
               </p>

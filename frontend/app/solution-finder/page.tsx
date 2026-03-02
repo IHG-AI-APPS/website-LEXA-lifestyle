@@ -378,7 +378,7 @@ export default function SolutionFinderPage() {
                     <Sparkles size={32} strokeWidth={2} />
                   </div>
 
-                  <h1 className="text-6xl sm:text-7xl font-semibold tracking-[-0.04em] leading-[0.9] mb-8">
+                  <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight mb-8">
                     YOUR PERFECT
                     <br />
                     <span className="text-transparent bg-clip-text metallic-gradient">SOLUTIONS</span>

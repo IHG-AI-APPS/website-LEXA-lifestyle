@@ -31,7 +31,7 @@ export default function CompanyPage() {
                 <span className="text-xs tracking-[0.5em] uppercase text-gray-400 font-medium mb-6 block">
                   About LEXA
                 </span>
-                <h1 className="text-6xl sm:text-7xl font-semibold tracking-[-0.04em] leading-[0.9] mb-8">
+                <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight mb-8">
                   DESIGNED
                   <br />
                   FOR
