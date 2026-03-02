@@ -51,7 +51,7 @@ export default function AboutPage() {
               <span className="hero-animate-badge inline-block px-3 py-1 rounded-full bg-[#C9A962]/15 border border-[#C9A962]/30 text-[#C9A962] text-xs uppercase tracking-widest mb-5" data-testid="about-badge">
                 {language === 'ar' ? 'عن ليكسا' : 'About LEXA'}
               </span>
-              <h1 className="hero-animate-title text-4xl sm:text-5xl lg:text-6xl font-bold uppercase mb-5 tracking-tight leading-tight" data-testid="about-title">
+              <h1 className="hero-animate-title text-3xl sm:text-4xl lg:text-5xl font-bold uppercase mb-5 tracking-tight leading-tight" data-testid="about-title">
                 Designed for Excellence
               </h1>
               <p className="hero-animate-desc text-base text-gray-300 mb-8 max-w-xl mx-auto leading-relaxed">

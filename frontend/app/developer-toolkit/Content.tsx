@@ -61,7 +61,7 @@ export default function DeveloperToolkitContent() {
             <div className="inline-flex items-center justify-center w-16 h-16 bg-white/10 backdrop-blur-sm rounded-full mb-6">
               <Lock size={28} strokeWidth={2} />
             </div>
-            <h1 className="hero-animate-title text-4xl sm:text-5xl lg:text-6xl font-bold uppercase mb-5 tracking-tight" data-testid="toolkit-title">{heroTitle}</h1>
+            <h1 className="hero-animate-title text-3xl sm:text-4xl lg:text-5xl font-bold uppercase mb-5 tracking-tight" data-testid="toolkit-title">{heroTitle}</h1>
             <p className="text-base text-gray-300 mb-6 max-w-lg mx-auto">{heroDesc}</p>
             <span className="inline-block bg-[#C9A962] text-gray-900 px-5 py-2 rounded-full font-bold text-xs tracking-wider">{accessLabel}</span>
           </div>

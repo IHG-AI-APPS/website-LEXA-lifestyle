@@ -251,7 +251,7 @@ export default function EnterprisePerformanceOSPage() {
                 </span>
               </div>
               
-              <h1 className="hero-animate-title text-4xl sm:text-5xl lg:text-6xl font-bold uppercase mb-6 leading-tight">
+              <h1 className="hero-animate-title text-3xl sm:text-4xl lg:text-5xl font-bold uppercase mb-6 leading-tight">
                 Intelligent Building<br />
                 <span className="text-blue-400">Performance OS</span>
               </h1>

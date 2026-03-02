@@ -145,7 +145,7 @@ export default function VillaDesignerPage() {
               <Check size={40} className="text-green-600" />
             </div>
             
-            <h1 className="hero-animate-title text-4xl sm:text-5xl lg:text-6xl font-bold uppercase mb-4 text-gray-900 dark:text-white">
+            <h1 className="hero-animate-title text-3xl sm:text-4xl lg:text-5xl font-bold uppercase mb-4 text-gray-900 dark:text-white">
               Thank You, {formData.name}!
             </h1>
             
@@ -207,7 +207,7 @@ export default function VillaDesignerPage() {
           <span className="hero-animate-badge inline-block px-3 py-1 rounded-full bg-[#C9A962]/15 border border-[#C9A962]/30 text-[#C9A962] text-xs uppercase tracking-widest mb-5">
             Bespoke Design
           </span>
-          <h1 className="hero-animate-title text-4xl sm:text-5xl lg:text-6xl font-bold uppercase mb-4">
+          <h1 className="hero-animate-title text-3xl sm:text-4xl lg:text-5xl font-bold uppercase mb-4">
             DESIGN MY VILLA
           </h1>
           <p className="text-lg sm:text-xl text-gray-300 mb-8">

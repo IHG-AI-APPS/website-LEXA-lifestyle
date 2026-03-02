@@ -176,7 +176,7 @@ export default function DeveloperPackagesPage() {
               Developer & Property Manager Packages
             </span>
             
-            <h1 className="hero-animate-title text-4xl sm:text-5xl lg:text-6xl font-bold uppercase mb-5 tracking-tight" data-testid="developer-packages-title">
+            <h1 className="hero-animate-title text-3xl sm:text-4xl lg:text-5xl font-bold uppercase mb-5 tracking-tight" data-testid="developer-packages-title">
               Bulk Smart Home Solutions for Developers
             </h1>
             

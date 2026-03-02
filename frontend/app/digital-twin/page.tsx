@@ -93,7 +93,7 @@ export default function DigitalTwinPage() {
                 </span>
               </div>
               
-              <h1 className="hero-animate-title text-4xl sm:text-5xl lg:text-6xl font-bold uppercase mb-6 leading-tight">
+              <h1 className="hero-animate-title text-3xl sm:text-4xl lg:text-5xl font-bold uppercase mb-6 leading-tight">
                 Living<br />
                 <span className="text-gray-300">Digital Twin</span>
               </h1>

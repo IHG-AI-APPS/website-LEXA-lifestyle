@@ -215,7 +215,7 @@ export default function SmartHomeQuizPage() {
             <span className="hero-animate-badge inline-block px-3 py-1 rounded-full bg-[#C9A962]/15 border border-[#C9A962]/30 text-[#C9A962] text-xs uppercase tracking-widest mb-5">
               AI-Powered Recommendations
             </span>
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold uppercase text-white mb-4">
+            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold uppercase text-white mb-4">
               Find Your Perfect<br />
               <span className="text-[#C9A962]">Smart Home</span>
             </h1>

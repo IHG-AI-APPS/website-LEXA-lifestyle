@@ -121,7 +121,7 @@ export default function EnhancedServicePage({
             <span className="text-sm font-semibold uppercase tracking-wider text-gray-400 mb-4 block">
               SERVICES
             </span>
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6">
+            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-6">
               {service.title}
             </h1>
             <p className="text-lg sm:text-xl text-gray-300 mb-8 max-w-2xl">

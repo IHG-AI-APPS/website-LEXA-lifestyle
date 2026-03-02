@@ -102,7 +102,7 @@ export default function VirtualShowroomPage() {
               <span className="text-xs tracking-[0.5em] uppercase text-gray-400 font-medium mb-6 block">
                 Experience Center
               </span>
-              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold uppercase tracking-tight mb-8">
+              <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold uppercase tracking-tight mb-8">
                 VIRTUAL
                 <br />
                 <span className="text-transparent bg-clip-text metallic-gradient">SHOWROOM</span>

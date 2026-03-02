@@ -52,7 +52,7 @@ export default function CareersContent() {
         <div className="container mx-auto px-8 lg:px-16 relative z-10">
           <div className="max-w-3xl mx-auto text-center">
             <span className="hero-animate-badge inline-block px-3 py-1 rounded-full bg-[#C9A962]/15 border border-[#C9A962]/30 text-[#C9A962] text-xs uppercase tracking-widest mb-5">Careers</span>
-            <h1 className="hero-animate-title text-4xl sm:text-5xl lg:text-6xl font-bold uppercase mb-5 tracking-tight" data-testid="careers-title">{heroTitle}</h1>
+            <h1 className="hero-animate-title text-3xl sm:text-4xl lg:text-5xl font-bold uppercase mb-5 tracking-tight" data-testid="careers-title">{heroTitle}</h1>
             <p className="hero-animate-desc text-base text-gray-300 max-w-lg mx-auto">{heroDesc}</p>
           </div>
         </div>

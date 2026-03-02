@@ -186,7 +186,7 @@ export default function SmartApartmentPackagesPage() {
                 Smart Apartment Packages
               </span>
               
-              <h1 className="hero-animate-title text-4xl sm:text-5xl lg:text-6xl font-bold uppercase mb-5 tracking-tight" data-testid="smart-apartment-title">
+              <h1 className="hero-animate-title text-3xl sm:text-4xl lg:text-5xl font-bold uppercase mb-5 tracking-tight" data-testid="smart-apartment-title">
                 Smart Living for Every Apartment
               </h1>
               

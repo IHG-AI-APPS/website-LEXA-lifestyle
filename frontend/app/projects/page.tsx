@@ -75,7 +75,7 @@ export default function ProjectsPage() {
             <span className="hero-animate-badge inline-block px-3 py-1 rounded-full bg-[#C9A962]/15 border border-[#C9A962]/30 text-[#C9A962] text-xs uppercase tracking-widest mb-5">
               Portfolio
             </span>
-            <h1 className="hero-animate-title text-4xl sm:text-5xl lg:text-6xl font-bold uppercase mb-5 tracking-tight" data-testid="projects-title">
+            <h1 className="hero-animate-title text-3xl sm:text-4xl lg:text-5xl font-bold uppercase mb-5 tracking-tight" data-testid="projects-title">
               OUR PROJECTS
             </h1>
             <p className="hero-animate-desc text-base text-gray-300 max-w-lg mx-auto leading-relaxed">

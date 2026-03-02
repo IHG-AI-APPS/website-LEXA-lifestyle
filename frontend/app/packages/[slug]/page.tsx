@@ -90,7 +90,7 @@ export default function PropertyPackageDetailPage() {
               <span className="hero-animate-badge inline-block px-3 py-1 rounded-full bg-[#C9A962]/15 border border-[#C9A962]/30 text-[#C9A962] text-xs uppercase tracking-widest mb-5" data-testid="package-subtitle">
                 {packageData.subtitle}
               </span>
-              <h1 className="hero-animate-title text-4xl sm:text-5xl lg:text-6xl font-bold uppercase mb-5 tracking-tight leading-tight" data-testid="package-title">
+              <h1 className="hero-animate-title text-3xl sm:text-4xl lg:text-5xl font-bold uppercase mb-5 tracking-tight leading-tight" data-testid="package-title">
                 {packageData.title}
               </h1>
               <p className="text-base text-gray-300 mb-8 max-w-lg leading-relaxed">{packageData.description}</p>
