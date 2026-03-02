@@ -125,8 +125,8 @@ export default function ProjectsPage() {
                 className="group"
                 data-testid={`project-card-${index}`}
               >
-                <Link href={`/projects/${project.slug || project.id}`}>
-                  <div className="relative h-[320px] sm:h-[360px] overflow-hidden rounded-lg mb-5">
+                <div className="relative h-[320px] sm:h-[360px] overflow-hidden rounded-lg mb-5">
+                  <Link href={`/projects/${project.slug || project.id}`}>
                     <SafeImage
                       src={project.image || project.images?.[0] || '/images/placeholder-project.jpg'}
                       alt={project.title}
@@ -135,15 +135,38 @@ export default function ProjectsPage() {
                       className="object-cover transition-transform duration-700 group-hover:scale-105"
                       priority={index < 3}
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                    <div className="absolute top-4 left-4 px-3 py-1 bg-black/60 backdrop-blur-sm text-white text-xs tracking-wider uppercase rounded-full">
-                      {project.year}
-                    </div>
-                    <div className="absolute top-4 right-4 px-3 py-1 bg-[#C9A962]/90 backdrop-blur-sm text-white text-xs tracking-wider uppercase rounded-full">
-                      {project.type || 'Residential'}
-                    </div>
+                  </Link>
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
+                  <div className="absolute top-4 left-4 px-3 py-1 bg-black/60 backdrop-blur-sm text-white text-xs tracking-wider uppercase rounded-full pointer-events-none">
+                    {project.year}
                   </div>
+                  <div className="absolute top-4 right-4 px-3 py-1 bg-[#C9A962]/90 backdrop-blur-sm text-white text-xs tracking-wider uppercase rounded-full pointer-events-none">
+                    {project.type || 'Residential'}
+                  </div>
+                  {/* Quick View button */}
+                  <button
+                    onClick={(e) => {
+                      e.preventDefault()
+                      e.stopPropagation()
+                      setQuickViewItem({
+                        title: project.title,
+                        image: project.image || project.images?.[0],
+                        description: project.description,
+                        type: project.type || 'Residential',
+                        location: project.location,
+                        year: project.year,
+                        systems: project.systems,
+                        href: `/projects/${project.slug || project.id}`
+                      })
+                    }}
+                    className="absolute bottom-4 left-1/2 -translate-x-1/2 px-5 py-2 bg-white/90 dark:bg-black/70 backdrop-blur-sm text-gray-900 dark:text-white text-xs font-medium tracking-wider uppercase rounded-full opacity-0 group-hover:opacity-100 translate-y-2 group-hover:translate-y-0 transition-all duration-300 hover:bg-[#C9A962] hover:text-white"
+                    data-testid={`quickview-btn-${index}`}
+                  >
+                    Quick View
+                  </button>
+                </div>
 
+                <Link href={`/projects/${project.slug || project.id}`}>
                   <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-2 group-hover:text-[#C9A962] transition-colors" data-testid={`project-title-${index}`}>
                     {project.title}
                   </h3>
