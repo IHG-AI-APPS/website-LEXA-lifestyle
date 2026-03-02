@@ -37,10 +37,6 @@ export default function HomePage() {
       
       <TrustBadges variant="compact" className="bg-gray-50/80 dark:bg-black/60 backdrop-blur-xl border-b border-gray-200 dark:border-white/5" />
       
-      <RecentlyViewedSection maxItems={4} variant="horizontal" className="bg-white dark:bg-[#050505]" />
-      
-      <SmartRecommendations maxItems={4} variant="horizontal" className="bg-white dark:bg-[#050505]" />
-      
       <SolutionsBentoGrid />
       
       <CalculatorCardsSection />
