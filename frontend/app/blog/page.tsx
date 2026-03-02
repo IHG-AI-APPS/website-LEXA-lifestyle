@@ -91,9 +91,9 @@ export default function BlogPage() {
         <div className="container mx-auto px-8 lg:px-16">
           <div className="max-w-7xl mx-auto">
             {loading ? (
-              <div className="text-center py-12 text-gray-600 dark:text-gray-400 dark:text-gray-400">Loading articles...</div>
+              <div className="text-center py-12 text-gray-600 dark:text-gray-400">Loading articles...</div>
             ) : filteredArticles.length === 0 ? (
-              <div className="text-center py-12 text-gray-600 dark:text-gray-400 dark:text-gray-400">No articles found in this category.</div>
+              <div className="text-center py-12 text-gray-600 dark:text-gray-400">No articles found in this category.</div>
             ) : (
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 {filteredArticles.map((article: any, index: number) => (
@@ -104,7 +104,7 @@ export default function BlogPage() {
                     transition={{ duration: 0.3 }}
                   >
                     <Link href={`/blog/${article.slug}`}>
-                      <div className="group h-full border border-gray-200 dark:border-gray-700 dark:border-gray-700 hover:border-charcoal transition-all bg-white dark:bg-gray-800 rounded-lg overflow-hidden">
+                      <div className="group h-full border border-gray-200 dark:border-gray-700 hover:border-charcoal transition-all bg-white dark:bg-gray-800 rounded-lg overflow-hidden">
                         {/* Image */}
                         <div className="relative h-64 overflow-hidden bg-gradient-to-br from-gray-100 to-gray-200">
                           {(article.featured_image || article.image) ? (
@@ -138,7 +138,7 @@ export default function BlogPage() {
                             </div>
                           </div>
 
-                          <h3 className="text-xl font-semibold mb-3 group-hover:text-gray-600 dark:text-gray-400 transition-colors line-clamp-2">
+                          <h3 className="text-xl font-semibold mb-3 text-gray-900 dark:text-gray-100 group-hover:text-[#C9A962] transition-colors line-clamp-2">
                             {article.title}
                           </h3>
 
