@@ -99,62 +99,24 @@ class WhatsAppService:
         phone_number: str,
         text: str,
     ) -> Dict[str, Any]:
-        """
-        Send a plain text WhatsApp message (note: may not work for business-initiated messages)
-        
-        Args:
-            country_code: Country code (e.g., "+971")
-            phone_number: Phone number without country code
-            text: Message text
-            
-        Returns:
-            Dict with status and message_id
-        """
+        """Send a plain text WhatsApp message"""
         
         if not self.enabled:
             return {"status": "skipped", "reason": "WhatsApp not configured"}
         
-        try:
-            clean_phone = ''.join(filter(str.isdigit, phone_number))
-            
-            payload = {
-                "countryCode": country_code,
-                "phoneNumber": clean_phone,
-                "type": "Text",
-                "text": {
-                    "body": text
-                }
-            }
-            
-            headers = {
-                "Authorization": self.auth_token,
-                "Content-Type": "application/json",
-            }
-            
-            async with httpx.AsyncClient(timeout=30.0) as client:
-                response = await client.post(
-                    self.api_url,
-                    json=payload,
-                    headers=headers,
-                )
-                
-                if response.status_code in [200, 201]:
-                    result = response.json()
-                    logger.info(f"WhatsApp text sent to {country_code}{clean_phone}")
-                    return {
-                        "status": "success",
-                        "message_id": result.get("id")
-                    }
-                else:
-                    logger.error(f"Interakt text message error: {response.status_code}")
-                    return {
-                        "status": "error",
-                        "error": response.text
-                    }
-                    
-        except Exception as e:
-            logger.error(f"WhatsApp text message error: {str(e)}")
-            return {"status": "error", "error": str(e)}
+        clean_phone = ''.join(filter(str.isdigit, phone_number))
+        
+        payload = {
+            "countryCode": country_code,
+            "phoneNumber": clean_phone,
+            "type": "Text",
+            "text": {"body": text}
+        }
+        
+        result = await self._make_request(payload)
+        if result["status"] == "success":
+            logger.info(f"WhatsApp text sent to {country_code}{clean_phone}")
+        return result
     
     async def send_lead_notification(
         self,
