@@ -120,7 +120,7 @@ export default function ServiceLayer({ sessionId, projectData, onComplete }: Ser
                 {/* Content */}
                 <div className="flex items-start gap-6">
                   {/* Icon */}
-                  <div className={`${isSelected ? 'bg-blue-50' : 'bg-gray-50'} p-4 transition-colors`}>
+                  <div className={`${isSelected ? 'bg-[#C9A962]/5' : 'bg-gray-50'} p-4 transition-colors`}>
                     <ServiceIcon className={`w-8 h-8 ${isSelected ? 'text-[#C9A962]' : 'text-gray-400'}`} />
                   </div>
 

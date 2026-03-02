@@ -253,7 +253,7 @@ export default function EnterprisePerformanceOSPage() {
               
               <h1 className="hero-animate-title text-3xl sm:text-4xl lg:text-5xl font-bold uppercase mb-6 leading-tight">
                 Intelligent Building<br />
-                <span className="text-blue-400">Performance OS</span>
+                <span className="text-[#C9A962]">Performance OS</span>
               </h1>
               
               <p className="text-lg sm:text-xl text-gray-300 mb-8 leading-relaxed max-w-3xl">
@@ -268,7 +268,7 @@ export default function EnterprisePerformanceOSPage() {
                   { value: '8 Weeks', label: 'Implementation' }
                 ].map((stat) => (
                   <div key={stat.label} className="bg-white/10 backdrop-blur-sm p-4 border border-white/20">
-                    <div className="text-2xl font-bold text-blue-400 mb-1">{stat.value}</div>
+                    <div className="text-2xl font-bold text-[#C9A962] mb-1">{stat.value}</div>
                     <div className="text-xs text-gray-300">{stat.label}</div>
                   </div>
                 ))}
@@ -325,7 +325,7 @@ export default function EnterprisePerformanceOSPage() {
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.6, delay: 0.2 }}
                     viewport={{ once: true }}
-                    className="bg-white dark:bg-gray-800 p-8 border-2 border-gray-200 dark:border-gray-700 hover:border-blue-500 transition-all"
+                    className="bg-white dark:bg-gray-800 p-8 border-2 border-gray-200 dark:border-gray-700 hover:border-[#C9A962] transition-all"
                   >
                     <div className="flex items-start gap-4 mb-6">
                       <div className={`p-4 bg-${layer.color}-100`}>
@@ -378,8 +378,8 @@ export default function EnterprisePerformanceOSPage() {
                     onClick={() => setSelectedUseCase(useCase.id)}
                     className={`px-6 py-3 border-2 font-semibold transition-all flex items-center gap-2 ${
                       selectedUseCase === useCase.id
-                        ? 'border-[#C9A962] bg-blue-50 text-blue-700'
-                        : 'border-gray-200 dark:border-gray-700 bg-white text-gray-700 dark:text-gray-300 hover:border-blue-300'
+                        ? 'border-[#C9A962] bg-[#C9A962]/5 text-[#C9A962]'
+                        : 'border-gray-200 dark:border-gray-700 bg-white text-gray-700 dark:text-gray-300 hover:border-[#C9A962]/30'
                     }`}
                   >
                     <Icon className="h-5 w-5" />
@@ -394,10 +394,10 @@ export default function EnterprisePerformanceOSPage() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.4 }}
-              className="bg-gradient-to-br from-blue-50 to-white p-8 lg:p-12 border-2 border-blue-200"
+              className="bg-gradient-to-br from-blue-50 to-white p-8 lg:p-12 border-2 border-[#C9A962]/20"
             >
               <div className="flex items-center gap-4 mb-8">
-                <div className="p-4 bg-blue-100">
+                <div className="p-4 bg-[#C9A962]/10">
                   <SelectedIcon className="h-10 w-10 text-[#C9A962]" />
                 </div>
                 <h3 className="text-3xl font-bold text-gray-900 dark:text-white dark:text-white">{selectedCase.name}</h3>
@@ -449,7 +449,7 @@ export default function EnterprisePerformanceOSPage() {
                     viewport={{ once: true }}
                     className="text-center p-8 bg-white/10 backdrop-blur-sm border border-white/20"
                   >
-                    <Icon className="h-12 w-12 mx-auto mb-4 text-blue-400" />
+                    <Icon className="h-12 w-12 mx-auto mb-4 text-[#C9A962]" />
                     <div className="text-4xl font-bold mb-2">{result.metric}</div>
                     <div className="text-lg font-semibold mb-2">{result.label}</div>
                     <div className="text-sm text-gray-400">{result.detail}</div>
@@ -553,7 +553,7 @@ export default function EnterprisePerformanceOSPage() {
               <Button
                 size="lg"
                 onClick={() => setShowConsultationForm(true)}
-                className="bg-white text-[#C9A962] hover:bg-blue-50 px-8 py-6 text-sm font-semibold uppercase tracking-wider"
+                className="bg-white text-[#C9A962] hover:bg-[#C9A962]/5 px-8 py-6 text-sm font-semibold uppercase tracking-wider"
               >
                 Request Enterprise Demo
                 <ArrowRight className="ml-2 h-4 w-4" />

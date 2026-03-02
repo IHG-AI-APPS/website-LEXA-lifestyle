@@ -213,7 +213,7 @@ export default function DashboardPage() {
                 data-testid={`project-card-${session.session_id}`}
               >
                 {/* Card Header */}
-                <div className={`p-4 ${session.completed ? 'bg-green-50' : 'bg-blue-50'}`}>
+                <div className={`p-4 ${session.completed ? 'bg-green-50' : 'bg-[#C9A962]/5'}`}>
                   <div className="flex items-center justify-between">
                     <div className="flex items-center gap-2">
                       <Building2 className={`w-5 h-5 ${session.completed ? 'text-green-600' : 'text-[#C9A962]'}`} />
@@ -225,7 +225,7 @@ export default function DashboardPage() {
                         Complete
                       </span>
                     ) : (
-                      <span className="text-xs text-blue-700 bg-blue-100 px-2 py-1 rounded-full">
+                      <span className="text-xs text-[#C9A962] bg-[#C9A962]/10 px-2 py-1 rounded-full">
                         In Progress
                       </span>
                     )}

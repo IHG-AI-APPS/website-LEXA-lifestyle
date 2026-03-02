@@ -228,7 +228,7 @@ export default function VendorSupplierPage() {
                     <div className="text-sm text-gray-600 dark:text-gray-400 dark:text-gray-400">Outdoor audio, Motorized shading, EV charging</div>
                   </div>
                 </div>
-                <div className="flex items-center gap-4 p-4 bg-blue-50 rounded-lg border border-blue-200">
+                <div className="flex items-center gap-4 p-4 bg-[#C9A962]/5 rounded-lg border border-[#C9A962]/20">
                   <div className="w-3 h-3 bg-[#C9A962] rounded-full" />
                   <div>
                     <div className="font-semibold text-gray-900 dark:text-white dark:text-white">Open Categories</div>
@@ -577,12 +577,12 @@ export default function VendorSupplierPage() {
               </div>
 
               {/* Document Upload Notice */}
-              <div className="bg-blue-50 border border-blue-200 rounded-lg p-4">
+              <div className="bg-[#C9A962]/5 border border-[#C9A962]/20 rounded-lg p-4">
                 <div className="flex gap-3">
                   <Upload className="h-5 w-5 text-[#C9A962] flex-shrink-0 mt-0.5" />
                   <div>
-                    <h4 className="font-semibold text-blue-900 mb-1">Documents to Prepare</h4>
-                    <p className="text-sm text-blue-700">
+                    <h4 className="font-semibold text-[#8A7035] mb-1">Documents to Prepare</h4>
+                    <p className="text-sm text-[#C9A962]">
                       After submitting this form, you&apos;ll receive an email with instructions to upload:
                       product catalog, price list, certifications, and company profile.
                     </p>

@@ -112,7 +112,7 @@ export default function RelatedSolutions({ solutions, currentSlug }: RelatedSolu
 
                       {/* Title at Bottom */}
                       <div className="absolute bottom-0 left-0 right-0 p-6">
-                        <h3 className="text-2xl font-bold text-white mb-2 group-hover:text-blue-300 transition-colors">
+                        <h3 className="text-2xl font-bold text-white mb-2 group-hover:text-[#C9A962] transition-colors">
                           {solution.title}
                         </h3>
                       </div>
@@ -141,7 +141,7 @@ export default function RelatedSolutions({ solutions, currentSlug }: RelatedSolu
 
                       {/* CTA */}
                       <div className="flex items-center justify-between pt-4 border-t border-gray-100 dark:border-gray-800 dark:border-gray-800">
-                        <span className="text-sm font-semibold text-[#C9A962] group-hover:text-blue-700 transition-colors">
+                        <span className="text-sm font-semibold text-[#C9A962] group-hover:text-[#C9A962] transition-colors">
                           Explore Solution
                         </span>
                         <ArrowRight className="h-5 w-5 text-[#C9A962] group-hover:translate-x-2 transition-transform" />

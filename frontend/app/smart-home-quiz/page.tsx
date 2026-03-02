@@ -187,7 +187,7 @@ export default function SmartHomeQuizPage() {
 
   const getColorClasses = (color: string, isSelected: boolean) => {
     const colors: Record<string, { bg: string; border: string; text: string }> = {
-      blue: { bg: 'bg-blue-50', border: 'border-blue-500', text: 'text-[#C9A962]' },
+      blue: { bg: 'bg-[#C9A962]/5', border: 'border-[#C9A962]', text: 'text-[#C9A962]' },
       emerald: { bg: 'bg-emerald-50', border: 'border-emerald-500', text: 'text-emerald-600' },
       amber: { bg: 'bg-amber-50', border: 'border-amber-500', text: 'text-amber-600' },
       purple: { bg: 'bg-[#C9A962]/5', border: 'border-[#C9A962]', text: 'text-[#C9A962]' },
@@ -339,7 +339,7 @@ export default function SmartHomeQuizPage() {
                       onClick={() => setPropertyType(type.id)}
                       className={`p-6 rounded-xl border-2 text-center transition-all ${
                         isSelected 
-                          ? 'bg-blue-50 border-blue-500 shadow-md' 
+                          ? 'bg-[#C9A962]/5 border-[#C9A962] shadow-md' 
                           : 'border-gray-200 dark:border-gray-700 hover:border-gray-300'
                       }`}
                     >
@@ -391,7 +391,7 @@ export default function SmartHomeQuizPage() {
                       onClick={() => setBudgetRange(budget.id)}
                       className={`p-6 rounded-xl border-2 text-left transition-all ${
                         isSelected 
-                          ? 'bg-blue-50 border-blue-500 shadow-md' 
+                          ? 'bg-[#C9A962]/5 border-[#C9A962] shadow-md' 
                           : 'border-gray-200 dark:border-gray-700 hover:border-gray-300'
                       }`}
                     >
@@ -473,9 +473,9 @@ export default function SmartHomeQuizPage() {
                       initial={{ opacity: 0, y: 10 }}
                       animate={{ opacity: 1, y: 0 }}
                       transition={{ duration: 0.15 }}
-                      className="flex items-center gap-4 p-4 rounded-xl border border-gray-200 dark:border-gray-700 hover:border-blue-300 hover:shadow-sm transition-all"
+                      className="flex items-center gap-4 p-4 rounded-xl border border-gray-200 dark:border-gray-700 hover:border-[#C9A962]/30 hover:shadow-sm transition-all"
                     >
-                      <div className="w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center text-[#C9A962] font-bold">
+                      <div className="w-10 h-10 rounded-full bg-[#C9A962]/10 flex items-center justify-center text-[#C9A962] font-bold">
                         {index + 1}
                       </div>
                       <div className="flex-1">

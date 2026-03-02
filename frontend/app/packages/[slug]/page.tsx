@@ -18,7 +18,7 @@ import { useCms } from '@/hooks/useCms'
 const BACKEND_URL = process.env.NEXT_PUBLIC_BACKEND_URL || 'http://localhost:8001'
 
 const tierColorClasses = {
-  essential: { border: 'border-blue-500', bg: 'bg-[#C9A962]', bgHover: 'hover:bg-[#C9A962]', bgLight: 'bg-blue-50', text: 'text-[#C9A962]', borderHover: 'hover:border-blue-500', textHover: 'hover:text-[#C9A962]', shadow: 'shadow-blue-500/20' },
+  essential: { border: 'border-[#C9A962]', bg: 'bg-[#C9A962]', bgHover: 'hover:bg-[#C9A962]', bgLight: 'bg-[#C9A962]/5', text: 'text-[#C9A962]', borderHover: 'hover:border-[#C9A962]', textHover: 'hover:text-[#C9A962]', shadow: 'shadow-blue-500/20' },
   enhanced: { border: 'border-[#C9A962]', bg: 'bg-[#C9A962]/50', bgHover: 'hover:bg-[#C9A962]', bgLight: 'bg-[#C9A962]/5', text: 'text-[#C9A962]', borderHover: 'hover:border-[#C9A962]', textHover: 'hover:text-[#C9A962]', shadow: 'shadow-[#C9A962]/20' },
   highend: { border: 'border-amber-500', bg: 'bg-amber-500', bgHover: 'hover:bg-amber-600', bgLight: 'bg-amber-50', text: 'text-amber-600', borderHover: 'hover:border-amber-500', textHover: 'hover:text-amber-600', shadow: 'shadow-amber-500/20' }
 }

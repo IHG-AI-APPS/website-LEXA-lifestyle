@@ -702,7 +702,7 @@ export default function AdvancedCalculatorPage() {
                   </div>
 
                   {/* Next Steps */}
-                  <div className="bg-blue-50 border-2 border-blue-200 rounded-lg p-6">
+                  <div className="bg-[#C9A962]/5 border-2 border-[#C9A962]/20 rounded-lg p-6">
                     <h3 className="text-xl font-bold mb-3">Next Steps</h3>
                     <ul className="space-y-2 text-gray-700 dark:text-gray-300 dark:text-gray-300">
                       <li className="flex items-start gap-2">

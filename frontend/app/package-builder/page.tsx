@@ -262,9 +262,9 @@ export default function PackageBuilderPage() {
               
               {/* AI Recommendations Badge */}
               {aiRecommendations.length > 0 && (
-                <div className="bg-blue-50 border border-blue-200 rounded-xl p-4 mb-8 flex items-center gap-3">
+                <div className="bg-[#C9A962]/5 border border-[#C9A962]/20 rounded-xl p-4 mb-8 flex items-center gap-3">
                   <Star className="h-5 w-5 text-[#C9A962] fill-blue-600" />
-                  <span className="text-sm text-blue-800">
+                  <span className="text-sm text-[#B8983F]">
                     <strong>{aiRecommendations.length}</strong> personalized feature recommendations ready! 
                     Look for the <Star className="h-4 w-4 inline text-amber-500 fill-amber-500" /> badge on matching enhancements.
                   </span>
@@ -336,7 +336,7 @@ export default function PackageBuilderPage() {
                     className={`relative rounded-2xl border-2 p-8 transition-all ${
                       tier.recommended 
                         ? 'border-[#C9A962] shadow-2xl scale-105' 
-                        : 'border-gray-200 dark:border-gray-700 hover:border-blue-500'
+                        : 'border-gray-200 dark:border-gray-700 hover:border-[#C9A962]'
                     }`}
                   >
                     {tier.badge && (
@@ -417,7 +417,7 @@ export default function PackageBuilderPage() {
                     <div
                       key={system.id}
                       onClick={() => selectControlSystem(system)}
-                      className="group relative rounded-2xl border-2 border-gray-200 dark:border-gray-700 p-6 cursor-pointer hover:border-blue-500 hover:shadow-xl transition-all bg-white"
+                      className="group relative rounded-2xl border-2 border-gray-200 dark:border-gray-700 p-6 cursor-pointer hover:border-[#C9A962] hover:shadow-xl transition-all bg-white"
                     >
                       {system.featured && (
                         <div className="absolute -top-3 left-6 px-3 py-1 bg-[#C9A962] text-white text-xs font-bold rounded-full">
@@ -559,7 +559,7 @@ export default function PackageBuilderPage() {
                               onClick={() => toggleEnhancement(item)}
                               className={`relative rounded-xl border-2 p-5 cursor-pointer transition-all ${
                                 isSelected 
-                                  ? 'border-blue-500 bg-blue-50 shadow-lg' 
+                                  ? 'border-[#C9A962] bg-[#C9A962]/5 shadow-lg' 
                                   : isAiRecommended
                                     ? 'border-amber-300 bg-amber-50/50 hover:border-amber-400'
                                     : 'border-gray-200 dark:border-gray-700 hover:border-gray-400'
@@ -606,7 +606,7 @@ export default function PackageBuilderPage() {
                                 <span className={`text-xs px-2 py-1 rounded ${
                                   item.type === 'upgrade' 
                                     ? 'bg-[#C9A962]/10 text-[#A68B4B]' 
-                                    : 'bg-blue-100 text-blue-700'
+                                    : 'bg-[#C9A962]/10 text-[#C9A962]'
                                 }`}>
                                   {item.type === 'upgrade' ? 'Upgrade' : 'Add-on'}
                                 </span>
@@ -729,7 +729,7 @@ export default function PackageBuilderPage() {
                                 onClick={() => selectBrand(category.id, option)}
                                 className={`relative rounded-xl border-2 p-5 cursor-pointer transition-all ${
                                   isSelected
-                                    ? 'border-blue-500 bg-blue-50 shadow-lg' 
+                                    ? 'border-[#C9A962] bg-[#C9A962]/5 shadow-lg' 
                                     : 'border-gray-200 dark:border-gray-700 hover:border-gray-400'
                                 }`}
                               >
@@ -840,7 +840,7 @@ export default function PackageBuilderPage() {
                       onClick={() => toggleRoom(room)}
                       className={`relative rounded-xl border-2 p-6 cursor-pointer transition-all ${
                         isSelected 
-                          ? 'border-blue-500 bg-blue-50 shadow-lg' 
+                          ? 'border-[#C9A962] bg-[#C9A962]/5 shadow-lg' 
                           : 'border-gray-200 dark:border-gray-700 hover:border-gray-400'
                       }`}
                     >
@@ -1142,11 +1142,11 @@ export default function PackageBuilderPage() {
                 Thank you for choosing LEXA. Our team will review your custom package and contact you within 24 hours with a detailed quote.
               </p>
 
-              <div className="bg-blue-50 rounded-2xl p-8 mb-8">
+              <div className="bg-[#C9A962]/5 rounded-2xl p-8 mb-8">
                 <p className="text-gray-600 dark:text-gray-400 mb-2">Your Selected Package</p>
                 <p className="text-3xl font-bold text-gray-900 dark:text-white mb-1">{propertyType?.title}</p>
                 <p className="text-2xl font-bold text-[#C9A962]">{selectedTier?.tier_name} Tier</p>
-                <div className="mt-4 pt-4 border-t border-blue-200">
+                <div className="mt-4 pt-4 border-t border-[#C9A962]/20">
                   <p className="text-gray-600 dark:text-gray-400 mb-1">Estimated Investment</p>
                   <p className="text-4xl font-bold text-gray-900 dark:text-white dark:text-white">AED {(calculateTotal() / 1000).toFixed(0)}K</p>
                 </div>

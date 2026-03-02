@@ -126,7 +126,7 @@ export default function IntelligenceCapture({ sessionId, onComplete }: Intellige
         </div>
 
         {/* File Upload */}
-        <div className="bg-gradient-to-br from-[#C9A962]/5 to-[#A68B4B]/5 border border-blue-200 p-8 mb-12">
+        <div className="bg-gradient-to-br from-[#C9A962]/5 to-[#A68B4B]/5 border border-[#C9A962]/20 p-8 mb-12">
           <div className="flex items-start gap-3 mb-4">
             <Upload className="w-6 h-6 text-[#C9A962]" />
             <div>
@@ -147,7 +147,7 @@ export default function IntelligenceCapture({ sessionId, onComplete }: Intellige
           />
           <label
             htmlFor="file-upload"
-            className="block w-full p-8 border-2 border-dashed border-blue-300 hover:border-[#C9A962] cursor-pointer transition-colors text-center"
+            className="block w-full p-8 border-2 border-dashed border-[#C9A962]/30 hover:border-[#C9A962] cursor-pointer transition-colors text-center"
           >
             <Upload className="w-8 h-8 text-[#C9A962] mx-auto mb-2" />
             <div className="text-sm text-gray-700 dark:text-gray-300 dark:text-gray-300">Click to upload or drag files here</div>
@@ -174,7 +174,7 @@ export default function IntelligenceCapture({ sessionId, onComplete }: Intellige
         </div>
 
         {/* Info Box */}
-        <div className="bg-blue-50 border border-blue-200 p-4 mb-8 flex items-start gap-3">
+        <div className="bg-[#C9A962]/5 border border-[#C9A962]/20 p-4 mb-8 flex items-start gap-3">
           <AlertCircle className="w-5 h-5 text-[#C9A962] flex-shrink-0 mt-0.5" />
           <div className="text-xs text-gray-700 dark:text-gray-300 dark:text-gray-300">
             <span className="font-medium">AI Enhancement:</span> Constraints help the recommendation engine filter out incompatible features and prioritize solutions that fit your specific requirements. This step is optional but improves proposal accuracy.

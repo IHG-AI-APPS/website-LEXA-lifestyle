@@ -28,7 +28,7 @@ const resources = [
     title: 'Typical Wiring Diagrams',
     description: 'Standard wiring layouts for KNX, Control4, and hybrid systems',
     icon: Cable,
-    color: 'from-blue-500 to-cyan-500',
+    color: 'from-[#C9A962] to-[#C9A962]/50',
     formats: ['DWG', 'PDF', 'Visio']
   },
   {
@@ -301,7 +301,7 @@ export default function ArchitectsPage() {
                 </div>
 
                 <form aria-label="Form" onSubmit={handleSubmit} className="p-8 space-y-6">
-                  <p className="text-gray-700 dark:text-gray-300 bg-blue-50 border-l-4 border-blue-500 p-4 rounded">
+                  <p className="text-gray-700 dark:text-gray-300 bg-[#C9A962]/5 border-l-4 border-[#C9A962] p-4 rounded">
                     Fill in your details and our project engineer will send you the requested resources along with technical support.
                   </p>
 

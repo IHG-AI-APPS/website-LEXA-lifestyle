@@ -198,7 +198,7 @@ export default function ProjectDNACapture({ onComplete }: ProjectDNACaptureProps
                     onClick={() => setFormData({ ...formData, area_sqft: preset })}
                     className={`px-3 py-1 text-xs border transition-all ${
                       formData.area_sqft === preset
-                        ? 'border-[#C9A962] bg-blue-50 text-[#C9A962]'
+                        ? 'border-[#C9A962] bg-[#C9A962]/5 text-[#C9A962]'
                         : 'border-gray-200 dark:border-gray-700 text-gray-600 dark:text-gray-400 hover:border-gray-300'
                     }`}
                   >
@@ -233,7 +233,7 @@ export default function ProjectDNACapture({ onComplete }: ProjectDNACaptureProps
                       onClick={() => setFormData({ ...formData, num_floors: preset === '4+' ? '4' : preset })}
                       className={`flex-1 px-3 py-2 text-sm border transition-all ${
                         formData.num_floors === (preset === '4+' ? '4' : preset)
-                          ? 'border-[#C9A962] bg-blue-50 text-[#C9A962]'
+                          ? 'border-[#C9A962] bg-[#C9A962]/5 text-[#C9A962]'
                           : 'border-gray-200 dark:border-gray-700 text-gray-600 dark:text-gray-400 hover:border-gray-300'
                       }`}
                     >
@@ -251,7 +251,7 @@ export default function ProjectDNACapture({ onComplete }: ProjectDNACaptureProps
                       onClick={() => setFormData({ ...formData, num_rooms: preset === '6+' ? '6' : preset })}
                       className={`flex-1 px-3 py-2 text-sm border transition-all ${
                         formData.num_rooms === (preset === '6+' ? '6' : preset)
-                          ? 'border-[#C9A962] bg-blue-50 text-[#C9A962]'
+                          ? 'border-[#C9A962] bg-[#C9A962]/5 text-[#C9A962]'
                           : 'border-gray-200 dark:border-gray-700 text-gray-600 dark:text-gray-400 hover:border-gray-300'
                       }`}
                     >

@@ -190,7 +190,7 @@ export default function ResumePage() {
                         {sessionState.completed_steps.includes(step) ? (
                           <CheckCircle2 className="w-5 h-5 text-green-500" />
                         ) : sessionState.current_step === step ? (
-                          <div className="w-5 h-5 rounded-full border-2 border-blue-500 flex items-center justify-center">
+                          <div className="w-5 h-5 rounded-full border-2 border-[#C9A962] flex items-center justify-center">
                             <div className="w-2 h-2 rounded-full bg-[#C9A962]" />
                           </div>
                         ) : (
@@ -200,7 +200,7 @@ export default function ResumePage() {
                           sessionState.completed_steps.includes(step) 
                             ? 'text-green-700' 
                             : sessionState.current_step === step 
-                              ? 'text-blue-700 font-medium' 
+                              ? 'text-[#C9A962] font-medium' 
                               : 'text-gray-400'
                         }>
                           {getStepName(step)}

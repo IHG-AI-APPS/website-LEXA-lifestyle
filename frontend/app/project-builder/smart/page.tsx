@@ -55,7 +55,7 @@ const BUILDER_STEPS = [
     label: 'Categories',
     description: 'What do you want to automate?',
     icon: Grid3X3,
-    color: 'from-blue-500 to-cyan-500'
+    color: 'from-[#C9A962] to-[#C9A962]/50'
   },
   {
     id: 'must_have',
@@ -90,7 +90,7 @@ const BUILDER_STEPS = [
     label: 'Package',
     description: 'AI recommendation',
     icon: Package,
-    color: 'from-indigo-500 to-blue-500'
+    color: 'from-indigo-500 to-[#B8983F]'
   },
   {
     id: 'upgrades',

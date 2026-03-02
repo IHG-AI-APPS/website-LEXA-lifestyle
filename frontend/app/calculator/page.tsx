@@ -590,14 +590,14 @@ export default function IndustryCalculatorPage() {
                 >
                   {/* Resume Saved Progress Banner */}
                   {hasSavedProgress && projectType === '' && (
-                    <div className="bg-blue-50 border border-blue-200 rounded-xl p-4 flex items-center justify-between">
+                    <div className="bg-[#C9A962]/5 border border-[#C9A962]/20 rounded-xl p-4 flex items-center justify-between">
                       <div className="flex items-center gap-3">
-                        <div className="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center">
+                        <div className="w-10 h-10 bg-[#C9A962]/10 rounded-full flex items-center justify-center">
                           <Save className="w-5 h-5 text-[#C9A962]" />
                         </div>
                         <div>
-                          <div className="font-semibold text-blue-900">You have saved progress</div>
-                          <div className="text-sm text-blue-700">Continue where you left off</div>
+                          <div className="font-semibold text-[#8A7035]">You have saved progress</div>
+                          <div className="text-sm text-[#C9A962]">Continue where you left off</div>
                         </div>
                       </div>
                       <div className="flex gap-2">
@@ -605,7 +605,7 @@ export default function IndustryCalculatorPage() {
                           variant="outline"
                           size="sm"
                           onClick={clearSavedProgress}
-                          className="text-blue-700 border-blue-300"
+                          className="text-[#C9A962] border-[#C9A962]/30"
                         >
                           Start Fresh
                         </Button>
@@ -836,7 +836,7 @@ export default function IndustryCalculatorPage() {
                     <div className="mb-6">
                       <h3 className="text-lg font-semibold mb-3 flex items-center gap-2">
                         <span className="text-xl">⚡</span> Quick Start Packages
-                        <span className="text-xs bg-blue-100 text-blue-700 px-2 py-1 rounded-full">Recommended</span>
+                        <span className="text-xs bg-[#C9A962]/10 text-[#C9A962] px-2 py-1 rounded-full">Recommended</span>
                       </h3>
                       <div className="grid md:grid-cols-3 gap-4">
                         {Object.entries(PACKAGE_BUNDLES)
@@ -1343,7 +1343,7 @@ export default function IndustryCalculatorPage() {
                     </div>
                   </div>
 
-                  <div className="bg-blue-50 border-2 border-blue-200 rounded-lg p-6">
+                  <div className="bg-[#C9A962]/5 border-2 border-[#C9A962]/20 rounded-lg p-6">
                     <h3 className="font-semibold text-lg mb-2">Ready to see your estimate?</h3>
                     <p className="text-gray-700 dark:text-gray-300 dark:text-gray-300">
                       Click &quot;View Results&quot; to see your detailed project estimate with itemized breakdown, timeline, and next steps.
@@ -1418,7 +1418,7 @@ export default function IndustryCalculatorPage() {
                   </div>
 
                   {/* Next Steps */}
-                  <div className="bg-blue-50 border-2 border-blue-200 rounded-lg p-6">
+                  <div className="bg-[#C9A962]/5 border-2 border-[#C9A962]/20 rounded-lg p-6">
                     <h3 className="text-xl font-bold mb-3">Next Steps</h3>
                     <ul className="space-y-2 text-gray-700 dark:text-gray-300 dark:text-gray-300">
                       <li className="flex items-start gap-2">
@@ -1486,7 +1486,7 @@ export default function IndustryCalculatorPage() {
                       <Button
                         size="lg"
                         variant="outline"
-                        className="border-2 border-[#C9A962] text-[#C9A962] hover:bg-blue-50 px-8 py-4 w-full md:w-auto"
+                        className="border-2 border-[#C9A962] text-[#C9A962] hover:bg-[#C9A962]/5 px-8 py-4 w-full md:w-auto"
                         onClick={() => setShowBookingModal(true)}
                       >
                         <Calendar className="w-6 h-6 mr-2" />

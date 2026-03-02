@@ -60,10 +60,10 @@ export default function VillaDesignerPage() {
   const lifestyleGoals = [
     { id: 'cinema', label: 'Private Cinema', icon: Film, color: 'from-[#C9A962] to-[#A68B4B]' },
     { id: 'lighting', label: 'Smart Lighting', icon: Lightbulb, color: 'from-yellow-500 to-orange-500' },
-    { id: 'security', label: 'Security Systems', icon: Shield, color: 'from-blue-500 to-cyan-500' },
+    { id: 'security', label: 'Security Systems', icon: Shield, color: 'from-[#C9A962] to-[#C9A962]/50' },
     { id: 'automation', label: 'Full Automation', icon: Cpu, color: 'from-green-500 to-teal-500' },
     { id: 'audio', label: 'Multi-Room Audio', icon: Music, color: 'from-red-500 to-pink-500' },
-    { id: 'climate', label: 'Climate Control', icon: Wind, color: 'from-cyan-500 to-blue-500' },
+    { id: 'climate', label: 'Climate Control', icon: Wind, color: 'from-cyan-500 to-[#B8983F]' },
     { id: 'surveillance', label: 'CCTV & Surveillance', icon: Camera, color: 'from-gray-500 to-slate-600' },
     { id: 'access', label: 'Access Control', icon: Lock, color: 'from-slate-500 to-zinc-600' }
   ]

@@ -107,7 +107,7 @@ export default function BlogArticlePage({ params }: { params: { slug: string } }
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.3 }}
             >
-              <Badge className="mb-4 bg-blue-100 text-blue-700 hover:bg-blue-100">{article.category}</Badge>
+              <Badge className="mb-4 bg-[#C9A962]/10 text-[#C9A962] hover:bg-[#C9A962]/10">{article.category}</Badge>
               <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6 tracking-tight text-gray-900 dark:text-white dark:text-white leading-tight">
                 {article.title}
               </h1>
@@ -185,7 +185,7 @@ export default function BlogArticlePage({ params }: { params: { slug: string } }
                 prose-ul:my-4 prose-ul:pl-6
                 prose-ol:my-4 prose-ol:pl-6
                 prose-li:text-gray-700 dark:text-gray-300 prose-li:mb-2
-                prose-blockquote:border-l-4 prose-blockquote:border-blue-500 prose-blockquote:bg-blue-50 prose-blockquote:py-2 prose-blockquote:px-4 prose-blockquote:italic prose-blockquote:text-gray-700
+                prose-blockquote:border-l-4 prose-blockquote:border-[#C9A962] prose-blockquote:bg-[#C9A962]/5 prose-blockquote:py-2 prose-blockquote:px-4 prose-blockquote:italic prose-blockquote:text-gray-700
                 prose-code:bg-gray-100 dark:bg-gray-800 prose-code:px-1.5 prose-code:py-0.5 prose-code:rounded prose-code:text-sm
                 prose-pre:bg-gray-900 prose-pre:text-gray-100 prose-pre:rounded-lg prose-pre:overflow-x-auto
                 prose-table:w-full prose-table:border-collapse
@@ -205,7 +205,7 @@ export default function BlogArticlePage({ params }: { params: { slug: string } }
                   ol: ({ children }) => <ol className="list-decimal pl-6 my-4 space-y-2">{children}</ol>,
                   li: ({ children }) => <li className="text-gray-700 dark:text-gray-300 dark:text-gray-300">{children}</li>,
                   blockquote: ({ children }) => (
-                    <blockquote className="border-l-4 border-blue-500 bg-blue-50 py-3 px-4 my-4 italic text-gray-700 dark:text-gray-300 rounded-r-lg">
+                    <blockquote className="border-l-4 border-[#C9A962] bg-[#C9A962]/5 py-3 px-4 my-4 italic text-gray-700 dark:text-gray-300 rounded-r-lg">
                       {children}
                     </blockquote>
                   ),

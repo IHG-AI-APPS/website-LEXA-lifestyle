@@ -51,7 +51,7 @@ const CustomNode = ({ data }: any) => {
     >
       <div className="flex items-center gap-3">
         <div className={`p-2 rounded ${
-          isSelected ? 'bg-blue-100' : 'bg-orange-100'
+          isSelected ? 'bg-[#C9A962]/10' : 'bg-orange-100'
         }`}>
           {isSelected ? (
             <CheckCircle2 className={`w-5 h-5 ${isSelected ? 'text-[#C9A962]' : 'text-orange-600'}`} />

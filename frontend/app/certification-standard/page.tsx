@@ -46,7 +46,7 @@ export default function CertificationStandardPage() {
             <div className="flex flex-wrap items-center justify-center gap-6 text-sm text-gray-400">
               <div className="flex items-center gap-2"><Shield size={16} className="text-green-400" /><span>ISO 9001 Processes</span></div>
               <div className="flex items-center gap-2"><Award size={16} className="text-[#C9A962]" /><span>6 Certifications</span></div>
-              <div className="flex items-center gap-2"><CheckCircle2 size={16} className="text-blue-400" /><span>500+ Projects</span></div>
+              <div className="flex items-center gap-2"><CheckCircle2 size={16} className="text-[#C9A962]" /><span>500+ Projects</span></div>
             </div>
           </div>
         </div>

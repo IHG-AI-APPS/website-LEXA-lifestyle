@@ -417,10 +417,10 @@ export default function NeedPrioritization({
               
               {/* Selected feature indicator - shows on both */}
               {selectedFeature && (
-                <div className="mt-3 inline-flex items-center gap-2 px-4 py-2 bg-blue-100 text-blue-800 rounded-full text-sm">
+                <div className="mt-3 inline-flex items-center gap-2 px-4 py-2 bg-[#C9A962]/10 text-[#B8983F] rounded-full text-sm">
                   <Hand className="w-4 h-4" />
                   <span>Selected: {SAMPLE_FEATURES.find(f => f.id === selectedFeature)?.name}</span>
-                  <button onClick={() => setSelectedFeature(null)} className="hover:text-blue-900">
+                  <button onClick={() => setSelectedFeature(null)} className="hover:text-[#8A7035]">
                     <X className="w-4 h-4" />
                   </button>
                 </div>
@@ -497,7 +497,7 @@ export default function NeedPrioritization({
                     data-testid={`tier-${tier.id}`}
                     className={`border-2 border-dashed rounded-xl md:rounded-2xl p-4 md:p-6 min-h-[180px] md:min-h-[400px] transition-all cursor-pointer ${
                       selectedFeature 
-                        ? 'border-blue-400 bg-blue-50 hover:bg-blue-100 hover:border-blue-500' 
+                        ? 'border-[#C9A962]/50 bg-[#C9A962]/5 hover:bg-[#C9A962]/10 hover:border-[#C9A962]' 
                         : 'border-gray-300 dark:border-gray-600 bg-gray-50 hover:border-gray-400'
                     }`}
                   >

@@ -19,7 +19,7 @@ interface IntelligenceEngineProps {
 // Classification icons
 const CLASSIFICATION_CONFIG = {
   mandatory: { icon: Shield, color: 'text-red-600', bg: 'bg-red-50', label: 'Mandatory' },
-  recommended: { icon: Zap, color: 'text-[#C9A962]', bg: 'bg-blue-50', label: 'Recommended' },
+  recommended: { icon: Zap, color: 'text-[#C9A962]', bg: 'bg-[#C9A962]/5', label: 'Recommended' },
   luxury: { icon: Lightbulb, color: 'text-[#C9A962]', bg: 'bg-[#C9A962]/5', label: 'Luxury Enhancement' }
 }
 
@@ -222,9 +222,9 @@ export default function IntelligenceEngine({ sessionId, projectData, onComplete 
       >
         {/* Header */}
         <div className="text-center mb-12">
-          <div className="inline-flex items-center gap-2 px-6 py-2 bg-gradient-to-r from-[#C9A962]/5 to-[#A68B4B]/5 rounded-full mb-6 border border-blue-200">
+          <div className="inline-flex items-center gap-2 px-6 py-2 bg-gradient-to-r from-[#C9A962]/5 to-[#A68B4B]/5 rounded-full mb-6 border border-[#C9A962]/20">
             <Brain className="w-5 h-5 text-[#C9A962]" />
-            <span className="text-xs uppercase tracking-widest text-blue-900 font-medium">
+            <span className="text-xs uppercase tracking-widest text-[#8A7035] font-medium">
               AI Intelligence Analysis Complete
             </span>
           </div>

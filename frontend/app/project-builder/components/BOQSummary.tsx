@@ -172,9 +172,9 @@ export default function BOQSummary({ sessionId, selectedProposal, onComplete }: 
           <motion.div
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: 'auto' }}
-            className="bg-blue-50 border border-blue-200 rounded-lg p-4 mb-8 text-center"
+            className="bg-[#C9A962]/5 border border-[#C9A962]/20 rounded-lg p-4 mb-8 text-center"
           >
-            <p className="text-sm text-blue-800 mb-2">Your resume link (valid for 30 days):</p>
+            <p className="text-sm text-[#B8983F] mb-2">Your resume link (valid for 30 days):</p>
             <code className="text-xs bg-white px-3 py-1 rounded border text-[#C9A962] break-all">
               {resumeLink}
             </code>
@@ -231,7 +231,7 @@ export default function BOQSummary({ sessionId, selectedProposal, onComplete }: 
         </div>
 
         {/* Key Highlights */}
-        <div className="bg-gradient-to-br from-[#C9A962]/5 to-[#A68B4B]/5 border border-blue-200 p-8 mb-8">
+        <div className="bg-gradient-to-br from-[#C9A962]/5 to-[#A68B4B]/5 border border-[#C9A962]/20 p-8 mb-8">
           <h3 className="text-sm font-medium mb-4 uppercase tracking-widest text-gray-900 dark:text-white dark:text-white">Key Highlights</h3>
           <div className="space-y-3">
             {proposal?.highlights?.map((highlight: string, index: number) => (
@@ -299,7 +299,7 @@ export default function BOQSummary({ sessionId, selectedProposal, onComplete }: 
                   type="text"
                   value={emailForm.name}
                   onChange={(e) => setEmailForm({ ...emailForm, name: e.target.value })}
-                  className="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-[#C9A962] focus:border-blue-500"
+                  className="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-[#C9A962] focus:border-[#C9A962]"
                   placeholder="John Smith"
                   data-testid="email-modal-name"
                 />
@@ -310,7 +310,7 @@ export default function BOQSummary({ sessionId, selectedProposal, onComplete }: 
                   type="email"
                   value={emailForm.email}
                   onChange={(e) => setEmailForm({ ...emailForm, email: e.target.value })}
-                  className="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-[#C9A962] focus:border-blue-500"
+                  className="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-[#C9A962] focus:border-[#C9A962]"
                   placeholder="john@example.com"
                   data-testid="email-modal-email"
                 />

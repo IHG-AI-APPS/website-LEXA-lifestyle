@@ -427,7 +427,7 @@ export default function ROICalculatorPage() {
                       initial={{ opacity: 0, y: 20 }}
                       animate={{ opacity: 1, y: 0 }}
                       transition={{ delay: 0.3 }}
-                      className="bg-gradient-to-br from-cyan-500/20 to-cyan-500/5 border border-cyan-500/30 rounded-2xl p-6"
+                      className="bg-gradient-to-br from-cyan-500/20 to-[#C9A962]/50/5 border border-cyan-500/30 rounded-2xl p-6"
                     >
                       <div className="flex items-center gap-2 mb-2">
                         <Home className="w-5 h-5 text-cyan-400" />
@@ -725,7 +725,7 @@ export default function ROICalculatorPage() {
                             initial={{ opacity: 0, scale: 0.9 }}
                             animate={{ opacity: 1, scale: 1 }}
                             transition={{ delay: 0.3 }}
-                            className="bg-gradient-to-br from-cyan-500/20 to-cyan-500/5 border border-cyan-500/30 rounded-2xl p-6 text-center"
+                            className="bg-gradient-to-br from-cyan-500/20 to-[#C9A962]/50/5 border border-cyan-500/30 rounded-2xl p-6 text-center"
                           >
                             <TreePine className="w-8 h-8 text-cyan-400 mx-auto mb-3" />
                             <div className="text-3xl font-bold text-white mb-1">
@@ -738,9 +738,9 @@ export default function ROICalculatorPage() {
                             initial={{ opacity: 0, scale: 0.9 }}
                             animate={{ opacity: 1, scale: 1 }}
                             transition={{ delay: 0.4 }}
-                            className="bg-gradient-to-br from-blue-500/20 to-blue-500/5 border border-blue-500/30 rounded-2xl p-6 text-center"
+                            className="bg-gradient-to-br from-[#C9A962]/20 to-[#B8983F]/5 border border-[#C9A962]/30 rounded-2xl p-6 text-center"
                           >
-                            <Droplets className="w-8 h-8 text-blue-400 mx-auto mb-3" />
+                            <Droplets className="w-8 h-8 text-[#C9A962] mx-auto mb-3" />
                             <div className="text-3xl font-bold text-white mb-1">
                               {formatNumber(results.environmental.water_savings_liters_annual)}
                             </div>
@@ -758,7 +758,7 @@ export default function ROICalculatorPage() {
             <section className="py-16">
               <div className="container mx-auto px-6 lg:px-16">
                 <div className="max-w-4xl mx-auto text-center">
-                  <div className="bg-gradient-to-r from-emerald-500/10 via-teal-500/10 to-cyan-500/10 border border-emerald-500/20 rounded-3xl p-8 lg:p-12">
+                  <div className="bg-gradient-to-r from-emerald-500/10 via-teal-500/10 to-[#C9A962]/50/10 border border-emerald-500/20 rounded-3xl p-8 lg:p-12">
                     <h3 className="text-2xl lg:text-3xl font-bold text-white mb-4">
                       Ready to Upgrade Your Property?
                     </h3>

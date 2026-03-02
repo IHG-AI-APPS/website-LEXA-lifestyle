@@ -51,7 +51,7 @@ const PROJECT_TYPES = [
     description: 'Adding smart features to existing property',
     icon: RefreshCw,
     recommendation: 'Wireless/Hybrid recommended',
-    color: 'from-blue-500 to-cyan-600'
+    color: 'from-[#C9A962] to-cyan-600'
   },
   {
     id: 'renovation',
@@ -464,7 +464,7 @@ export default function ProjectDetailsForm({
                 onClick={() => setLocation(loc)}
                 className={`p-3 rounded-lg border-2 text-sm font-medium transition-all ${
                   location === loc
-                    ? 'border-blue-500 bg-blue-50 text-[#C9A962]'
+                    ? 'border-[#C9A962] bg-[#C9A962]/5 text-[#C9A962]'
                     : 'border-gray-200 dark:border-gray-700 bg-white text-gray-700 dark:text-gray-300 hover:border-gray-300'
                 }`}
               >
@@ -493,18 +493,18 @@ export default function ProjectDetailsForm({
 
       {/* Link to Calculator */}
       <div className="mt-8 pt-6 border-t border-gray-200 dark:border-gray-700 dark:border-gray-700">
-        <div className="bg-gradient-to-r from-blue-50 to-cyan-50 border border-blue-200 rounded-xl p-5">
+        <div className="bg-gradient-to-r from-blue-50 to-[#C9A962]/5 border border-[#C9A962]/20 rounded-xl p-5">
           <div className="flex flex-col md:flex-row items-center justify-between gap-4">
             <div>
-              <h3 className="text-lg font-bold text-blue-900 mb-1">Need a Quick Estimate?</h3>
-              <p className="text-sm text-blue-700">
+              <h3 className="text-lg font-bold text-[#8A7035] mb-1">Need a Quick Estimate?</h3>
+              <p className="text-sm text-[#C9A962]">
                 Our Industry Calculator provides instant quotes by project type with fewer steps
               </p>
             </div>
             <Button
               onClick={() => window.location.href = '/calculator'}
               variant="outline"
-              className="border-blue-300 text-blue-700 hover:bg-blue-100 px-6 py-2 whitespace-nowrap"
+              className="border-[#C9A962]/30 text-[#C9A962] hover:bg-[#C9A962]/10 px-6 py-2 whitespace-nowrap"
             >
               Try Quick Calculator →
             </Button>
