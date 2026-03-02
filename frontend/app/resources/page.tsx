@@ -58,7 +58,7 @@ export default function ResourcesPage() {
     <div className="min-h-screen bg-white dark:bg-gray-950 pt-20" data-testid="resources-page">
       {/* Hero */}
       <section className="relative overflow-hidden bg-[#0A0A0A] dark:bg-[#050505] text-white py-20 lg:py-28">
-        <div className="container mx-auto px-8 lg:px-16 relative z-10">
+        <div className="container mx-auto px-5 sm:px-8 lg:px-16 relative z-10">
           <div className="max-w-3xl mx-auto text-center">
             <span className="hero-animate-badge inline-block px-3 py-1 rounded-full bg-[#C9A962]/15 border border-[#C9A962]/30 text-[#C9A962] text-xs uppercase tracking-widest mb-5">Knowledge Hub</span>
             <h1 className="hero-animate-title text-3xl sm:text-4xl lg:text-5xl font-bold uppercase mb-5 tracking-tight" data-testid="resources-title">
@@ -73,7 +73,7 @@ export default function ResourcesPage() {
 
       {/* Category Filter */}
       <section className="py-8 bg-white border-b border-gray-200 dark:border-gray-700 sticky top-20 z-40">
-        <div className="container mx-auto px-8 lg:px-16">
+        <div className="container mx-auto px-5 sm:px-8 lg:px-16">
           <div className="max-w-6xl mx-auto">
             <div className="flex flex-wrap gap-3 justify-center">
               {categories.map((category) => (
@@ -96,7 +96,7 @@ export default function ResourcesPage() {
 
       {/* Articles Grid */}
       <section className="py-20">
-        <div className="container mx-auto px-8 lg:px-16">
+        <div className="container mx-auto px-5 sm:px-8 lg:px-16">
           <div className="max-w-6xl mx-auto">
             {filteredArticles.length === 0 ? (
               <div className="text-center py-20">
@@ -161,7 +161,7 @@ export default function ResourcesPage() {
 
       {/* CTA Section */}
       <section className="py-20 bg-gray-50 dark:bg-gray-800">
-        <div className="container mx-auto px-8 lg:px-16">
+        <div className="container mx-auto px-5 sm:px-8 lg:px-16">
           <div className="max-w-4xl mx-auto text-center">
             <motion.div
               initial={{ opacity: 0, y: 20 }}

@@ -199,7 +199,7 @@ export default function AnalyticsDashboard() {
             value={`${data?.overview.conversion_rate || 0}%`}
             subtitle="Sessions to submissions"
             icon={TrendingUp}
-            color="purple"
+            color="#C9A962"
           />
           <StatCard
             title="Active This Week"

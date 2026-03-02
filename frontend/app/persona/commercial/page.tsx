@@ -92,7 +92,7 @@ export default function CommercialPage() {
     <div className="min-h-screen bg-white dark:bg-gray-950 pt-20">
       {/* Hero */}
       <section className="relative overflow-hidden bg-[#0A0A0A] dark:bg-[#050505] text-white py-20 lg:py-28">
-        <div className="container mx-auto px-8 lg:px-16">
+        <div className="container mx-auto px-5 sm:px-8 lg:px-16">
           <div className="max-w-7xl mx-auto">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
               <motion.div
@@ -152,7 +152,7 @@ export default function CommercialPage() {
 
       {/* Benefits */}
       <section className="py-20 bg-white">
-        <div className="container mx-auto px-8 lg:px-16">
+        <div className="container mx-auto px-5 sm:px-8 lg:px-16">
           <div className="max-w-7xl mx-auto">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -193,7 +193,7 @@ export default function CommercialPage() {
 
       {/* Solutions Grid */}
       <section className="relative overflow-hidden bg-[#0A0A0A] dark:bg-[#050505] text-white py-20 lg:py-28">
-        <div className="container mx-auto px-8 lg:px-16">
+        <div className="container mx-auto px-5 sm:px-8 lg:px-16">
           <div className="max-w-7xl mx-auto">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -252,7 +252,7 @@ export default function CommercialPage() {
       {/* Project Builder CTA */}
       <section className="py-20 bg-[#0a0a0a] text-white relative overflow-hidden">
         <div className="absolute inset-0 bg-black/20"></div>
-        <div className="container mx-auto px-8 lg:px-16 relative z-10">
+        <div className="container mx-auto px-5 sm:px-8 lg:px-16 relative z-10">
           <div className="max-w-5xl mx-auto">
             <motion.div
               initial={{ opacity: 0, y: 30 }}
@@ -289,7 +289,7 @@ export default function CommercialPage() {
 
       {/* CTA */}
       <section className="py-20 bg-charcoal text-white">
-        <div className="container mx-auto px-8 lg:px-16">
+        <div className="container mx-auto px-5 sm:px-8 lg:px-16">
           <div className="max-w-4xl mx-auto text-center">
             <motion.div
               initial={{ opacity: 0, y: 20 }}

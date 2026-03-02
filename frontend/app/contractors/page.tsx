@@ -124,7 +124,7 @@ export default function ContractorsPage() {
     <div className="min-h-screen bg-white dark:bg-gray-950 pt-20" data-testid="contractors-page">
       {/* Hero Section */}
       <section className="relative overflow-hidden bg-[#0A0A0A] dark:bg-[#050505] text-white py-20 lg:py-28">
-        <div className="container mx-auto px-8 lg:px-16 relative z-10">
+        <div className="container mx-auto px-5 sm:px-8 lg:px-16 relative z-10">
           <div className="max-w-3xl mx-auto text-center">
             <span className="hero-animate-badge inline-block px-3 py-1 rounded-full bg-[#C9A962]/15 border border-[#C9A962]/30 text-[#C9A962] text-xs uppercase tracking-widest mb-5">For Contractors</span>
             <h1 className="hero-animate-title text-3xl sm:text-4xl lg:text-5xl font-bold uppercase mb-5 tracking-tight" data-testid="contractors-title">
@@ -151,7 +151,7 @@ export default function ContractorsPage() {
 
       {/* Why Contractors Choose LEXA */}
       <section className="py-24 md:py-32">
-        <div className="container mx-auto px-8 lg:px-16">
+        <div className="container mx-auto px-5 sm:px-8 lg:px-16">
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-16">
               <h2 className="text-4xl sm:text-5xl font-bold mb-4 ">Speed + Simplicity + Support</h2>
@@ -230,7 +230,7 @@ export default function ContractorsPage() {
 
       {/* Services */}
       <section className="py-24 md:py-32 bg-gallery-base">
-        <div className="container mx-auto px-8 lg:px-16">
+        <div className="container mx-auto px-5 sm:px-8 lg:px-16">
           <div className="max-w-4xl mx-auto">
             <h2 className="text-4xl sm:text-5xl font-bold text-center mb-12 ">What We Deliver</h2>
 
@@ -289,7 +289,7 @@ export default function ContractorsPage() {
 
       {/* CTA */}
       <section className="py-24 md:py-32">
-        <div className="container mx-auto px-8 lg:px-16">
+        <div className="container mx-auto px-5 sm:px-8 lg:px-16">
           <div className="max-w-4xl mx-auto text-center bg-gradient-to-br from-black via-gray-900 to-black rounded-3xl p-12 text-white">
             <h2 className="text-4xl sm:text-5xl font-bold mb-4 ">
               Ready to Simplify Your Next Project?

@@ -49,7 +49,7 @@ export default function CareersContent() {
     <div className="min-h-screen bg-white dark:bg-gray-950 pt-20" data-testid="careers-page">
       {/* Hero */}
       <section className="relative overflow-hidden bg-[#0A0A0A] dark:bg-[#050505] text-white py-20 lg:py-28">
-        <div className="container mx-auto px-8 lg:px-16 relative z-10">
+        <div className="container mx-auto px-5 sm:px-8 lg:px-16 relative z-10">
           <div className="max-w-3xl mx-auto text-center">
             <span className="hero-animate-badge inline-block px-3 py-1 rounded-full bg-[#C9A962]/15 border border-[#C9A962]/30 text-[#C9A962] text-xs uppercase tracking-widest mb-5">Careers</span>
             <h1 className="hero-animate-title text-3xl sm:text-4xl lg:text-5xl font-bold uppercase mb-5 tracking-tight" data-testid="careers-title">{heroTitle}</h1>
@@ -60,7 +60,7 @@ export default function CareersContent() {
 
       {/* Why Join Us */}
       <section className="py-16 lg:py-20 bg-white dark:bg-gray-950">
-        <div className="container mx-auto px-8 lg:px-16">
+        <div className="container mx-auto px-5 sm:px-8 lg:px-16">
           <div className="max-w-5xl mx-auto">
             <span className="text-xs uppercase tracking-widest text-[#C9A962] font-semibold">Why LEXA Lifestyle?</span>
             <h2 className="text-2xl sm:text-3xl font-bold mt-2 mb-8 text-gray-900 dark:text-white">Benefits of Joining</h2>
@@ -78,7 +78,7 @@ export default function CareersContent() {
 
       {/* Open Positions */}
       <section className="py-16 lg:py-20 bg-gray-50 dark:bg-gray-900" data-testid="positions-section">
-        <div className="container mx-auto px-8 lg:px-16">
+        <div className="container mx-auto px-5 sm:px-8 lg:px-16">
           <div className="max-w-5xl mx-auto">
             <span className="text-xs uppercase tracking-widest text-[#C9A962] font-semibold">Opportunities</span>
             <h2 className="text-2xl sm:text-3xl font-bold mt-2 mb-8 text-gray-900 dark:text-white">Open Positions</h2>
@@ -109,7 +109,7 @@ export default function CareersContent() {
 
       {/* How to Apply */}
       <section className="py-16 lg:py-20 bg-white dark:bg-gray-950">
-        <div className="container mx-auto px-8 lg:px-16">
+        <div className="container mx-auto px-5 sm:px-8 lg:px-16">
           <div className="max-w-4xl mx-auto">
             <span className="text-xs uppercase tracking-widest text-[#C9A962] font-semibold">Application</span>
             <h2 className="text-2xl sm:text-3xl font-bold mt-2 mb-6 text-gray-900 dark:text-white">How to Apply</h2>

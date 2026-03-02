@@ -68,7 +68,7 @@ export default function FAQPage() {
           <div style={{backgroundImage: "url(https://images.unsplash.com/photo-1640357960494-9242650846d3?w=1200&q=50)"}} className="absolute inset-0 bg-cover bg-center opacity-80" />
           <div className="absolute inset-0 bg-gradient-to-t from-[#0A0A0A]/80 via-[#0A0A0A]/40 to-transparent" />
         </div>
-        <div className="container mx-auto px-8 lg:px-16 relative z-10">
+        <div className="container mx-auto px-5 sm:px-8 lg:px-16 relative z-10">
           <div className="max-w-3xl mx-auto text-center">
             <span className="hero-animate-badge inline-block px-3 py-1 rounded-full bg-[#C9A962]/15 border border-[#C9A962]/30 text-[#C9A962] text-xs uppercase tracking-widest mb-5">Help Centre</span>
             <h1 className="hero-animate-title text-3xl sm:text-4xl lg:text-5xl font-bold uppercase mb-5 tracking-tight" data-testid="faq-title">Frequently Asked Questions</h1>
@@ -85,7 +85,7 @@ export default function FAQPage() {
 
       {/* FAQ Content */}
       <section className="py-16 lg:py-20 bg-white dark:bg-gray-950">
-        <div className="container mx-auto px-8 lg:px-16 max-w-4xl">
+        <div className="container mx-auto px-5 sm:px-8 lg:px-16 max-w-4xl">
           {loading ? (
             <div className="space-y-6">{[1, 2, 3].map(i => (<div key={i} className="animate-pulse"><div className="h-6 bg-gray-200 rounded w-48 mb-4" /><div className="h-14 bg-gray-100 rounded mb-3" /><div className="h-14 bg-gray-100 rounded" /></div>))}</div>
           ) : filteredCategories.length === 0 ? (
@@ -130,7 +130,7 @@ export default function FAQPage() {
 
       {/* CTA */}
       <section className="py-20 bg-[#0A0A0A] dark:bg-[#050505] text-white">
-        <div className="container mx-auto px-8 lg:px-16 relative z-10">
+        <div className="container mx-auto px-5 sm:px-8 lg:px-16 relative z-10">
           <div className="max-w-3xl mx-auto text-center">
             <span className="text-[#C9A962] text-xs uppercase tracking-widest font-semibold">Need More Help?</span>
             <h2 className="text-3xl sm:text-4xl font-bold mt-3 mb-4">Didn&apos;t Find Your Answer?</h2>

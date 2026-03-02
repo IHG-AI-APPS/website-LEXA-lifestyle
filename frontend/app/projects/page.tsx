@@ -48,7 +48,7 @@ export default function ProjectsPage() {
   if (loading) {
     return (
       <div className="min-h-screen bg-white dark:bg-[#050505] pt-20">
-        <div className="container mx-auto px-8 lg:px-16 py-8">
+        <div className="container mx-auto px-5 sm:px-8 lg:px-16 py-8">
           <div className="animate-pulse">
             <div className="h-8 bg-gray-200 dark:bg-gray-800 rounded w-1/4 mb-6"></div>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -70,7 +70,7 @@ export default function ProjectsPage() {
           <div style={{backgroundImage: "url(https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1200&q=50)"}} className="absolute inset-0 bg-cover bg-center opacity-80" />
           <div className="absolute inset-0 bg-gradient-to-t from-[#0A0A0A]/80 via-[#0A0A0A]/40 to-transparent" />
         </div>
-        <div className="container mx-auto px-8 lg:px-16 relative z-10">
+        <div className="container mx-auto px-5 sm:px-8 lg:px-16 relative z-10">
           <div className="max-w-3xl mx-auto text-center">
             <span className="hero-animate-badge inline-block px-3 py-1 rounded-full bg-[#C9A962]/15 border border-[#C9A962]/30 text-[#C9A962] text-xs uppercase tracking-widest mb-5">
               Portfolio
@@ -87,7 +87,7 @@ export default function ProjectsPage() {
 
       {/* Filters */}
       <section className="py-8 bg-white dark:bg-[#0A0A0A] border-b border-gray-200 dark:border-white/10">
-        <div className="container mx-auto px-8 lg:px-16">
+        <div className="container mx-auto px-5 sm:px-8 lg:px-16">
           <div className="flex flex-wrap gap-3 justify-center">
             {filters.map((f) => (
               <button
@@ -112,7 +112,7 @@ export default function ProjectsPage() {
 
       {/* Projects Grid */}
       <section className="py-16 lg:py-20 bg-gray-50 dark:bg-[#050505]">
-        <div className="container mx-auto px-8 lg:px-16">
+        <div className="container mx-auto px-5 sm:px-8 lg:px-16">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {filteredProjects.map((project, index) => (
               <motion.div
@@ -177,7 +177,7 @@ export default function ProjectsPage() {
 
       {/* CTA Section */}
       <section className="py-16 bg-[#0A0A0A] text-white">
-        <div className="container mx-auto px-8 lg:px-16 text-center">
+        <div className="container mx-auto px-5 sm:px-8 lg:px-16 text-center">
           <h2 className="text-2xl sm:text-3xl font-bold mb-4">Ready to Start Your Project?</h2>
           <p className="text-gray-400 max-w-md mx-auto mb-8">
             Let us design and deliver a bespoke smart home tailored to your lifestyle.

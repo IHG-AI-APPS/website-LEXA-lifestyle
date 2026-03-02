@@ -115,7 +115,7 @@ export default function CaseStudiesPage() {
     <div className="min-h-screen bg-white dark:bg-gray-900 pt-20">
       {/* Hero */}
       <section className="py-20 bg-gray-50 dark:bg-gray-800">
-        <div className="container mx-auto px-8 lg:px-16">
+        <div className="container mx-auto px-5 sm:px-8 lg:px-16">
           <div className="max-w-4xl mx-auto text-center">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -138,7 +138,7 @@ export default function CaseStudiesPage() {
 
       {/* Case Studies Grid */}
       <section className="py-20">
-        <div className="container mx-auto px-8 lg:px-16">
+        <div className="container mx-auto px-5 sm:px-8 lg:px-16">
           <div className="max-w-7xl mx-auto space-y-20">
             {studies.map((project: any, index: number) => (
               <motion.div
@@ -237,7 +237,7 @@ export default function CaseStudiesPage() {
 
       {/* Video Case Studies Section */}
       <section className="py-20 bg-gray-50 dark:bg-gray-800">
-        <div className="container mx-auto px-8 lg:px-16">
+        <div className="container mx-auto px-5 sm:px-8 lg:px-16">
           <div className="text-center mb-12">
             <h2 className="h2 uppercase mb-4">VIDEO CASE STUDIES</h2>
             <p className="text-xl text-gray-600 dark:text-gray-400 max-w-3xl mx-auto">
@@ -256,7 +256,7 @@ export default function CaseStudiesPage() {
 
       {/* CTA */}
       <section className="py-20 bg-[#0A0A0A] dark:bg-[#050505] text-white">
-        <div className="container mx-auto px-8 lg:px-16 text-center">
+        <div className="container mx-auto px-5 sm:px-8 lg:px-16 text-center">
           <h2 className="h2 uppercase mb-6">READY TO TRANSFORM YOUR PROPERTY?</h2>
           <p className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
             Let&apos;s create a case study for your Dubai villa, penthouse, or apartment. Schedule a consultation with our smart home experts.

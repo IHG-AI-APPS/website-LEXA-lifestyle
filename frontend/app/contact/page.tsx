@@ -47,7 +47,7 @@ export default function ContactPage() {
           <div style={{backgroundImage: "url(https://images.unsplash.com/photo-1497366216548-37526070297c?w=1200&q=50)"}} className="absolute inset-0 bg-cover bg-center opacity-80" />
           <div className="absolute inset-0 bg-gradient-to-t from-[#0A0A0A]/80 via-[#0A0A0A]/40 to-transparent" />
         </div>
-        <div className="container mx-auto px-8 lg:px-16 relative z-10">
+        <div className="container mx-auto px-5 sm:px-8 lg:px-16 relative z-10">
           <div className="max-w-3xl mx-auto text-center">
             <span className="hero-animate-badge inline-block px-3 py-1 rounded-full bg-[#C9A962]/15 border border-[#C9A962]/30 text-[#C9A962] text-xs uppercase tracking-widest mb-5">Get in Touch</span>
             <h1 className="hero-animate-title text-3xl sm:text-4xl lg:text-5xl font-bold uppercase mb-5 tracking-tight" data-testid="contact-title">Contact LEXA</h1>
@@ -58,7 +58,7 @@ export default function ContactPage() {
 
       {/* Contact Info Bar */}
       <section className="py-10 bg-gray-50 dark:bg-gray-900 border-b border-gray-200 dark:border-gray-800">
-        <div className="container mx-auto px-8 lg:px-16">
+        <div className="container mx-auto px-5 sm:px-8 lg:px-16">
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-5xl mx-auto">
             {contactInfo.map((info, i) => {
               const Icon = info.icon
@@ -79,7 +79,7 @@ export default function ContactPage() {
 
       {/* Contact Form + Quick Links */}
       <section className="py-16 lg:py-20 bg-white dark:bg-gray-950">
-        <div className="container mx-auto px-8 lg:px-16">
+        <div className="container mx-auto px-5 sm:px-8 lg:px-16">
           <div className="max-w-6xl mx-auto">
             <div className="grid grid-cols-1 lg:grid-cols-5 gap-12">
               {/* Form */}
@@ -148,7 +148,7 @@ export default function ContactPage() {
 
       {/* CTA */}
       <section className="py-20 bg-[#0A0A0A] dark:bg-[#050505] text-white">
-        <div className="container mx-auto px-8 lg:px-16 relative z-10">
+        <div className="container mx-auto px-5 sm:px-8 lg:px-16 relative z-10">
           <div className="max-w-3xl mx-auto text-center">
             <span className="text-[#C9A962] text-xs uppercase tracking-widest font-semibold">Prefer to Visit?</span>
             <h2 className="text-3xl sm:text-4xl font-bold mt-3 mb-4">See Our Work in Person</h2>

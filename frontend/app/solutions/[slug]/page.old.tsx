@@ -79,7 +79,7 @@ export default function SolutionDetailPage() {
     <div className="min-h-screen bg-white pt-20">
       {/* Hero Section */}
       <section className="relative py-20 bg-gray-50 overflow-hidden">
-        <div className="container mx-auto px-8 lg:px-16">
+        <div className="container mx-auto px-5 sm:px-8 lg:px-16">
           <div className="max-w-7xl mx-auto">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
               {/* Left - Content */}
@@ -158,7 +158,7 @@ export default function SolutionDetailPage() {
       {/* Long Description Section */}
       {solution.long_description && (
         <section className="py-20 border-b border-gray-200 dark:border-gray-700">
-          <div className="container mx-auto px-8 lg:px-16">
+          <div className="container mx-auto px-5 sm:px-8 lg:px-16">
             <div className="max-w-4xl mx-auto">
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
@@ -179,7 +179,7 @@ export default function SolutionDetailPage() {
       {/* Feature Cards Section - Rich Content */}
       {solution.feature_cards && solution.feature_cards.length > 0 && (
         <section className="py-20 bg-white">
-          <div className="container mx-auto px-8 lg:px-16">
+          <div className="container mx-auto px-5 sm:px-8 lg:px-16">
             <div className="max-w-6xl mx-auto">
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
@@ -229,7 +229,7 @@ export default function SolutionDetailPage() {
 
       {/* Features Section */}
       <section className="py-20 bg-gray-50">
-        <div className="container mx-auto px-8 lg:px-16">
+        <div className="container mx-auto px-5 sm:px-8 lg:px-16">
           <div className="max-w-6xl mx-auto">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -268,7 +268,7 @@ export default function SolutionDetailPage() {
       {/* Technology Brands Section */}
       {solution.brands.length > 0 && (
         <section className="py-20 border-b border-gray-200 dark:border-gray-700">
-          <div className="container mx-auto px-8 lg:px-16">
+          <div className="container mx-auto px-5 sm:px-8 lg:px-16">
             <div className="max-w-6xl mx-auto">
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
@@ -307,7 +307,7 @@ export default function SolutionDetailPage() {
       {/* Benefits Section */}
       {solution.benefits && solution.benefits.length > 0 ? (
         <section className="py-20 bg-charcoal text-white">
-          <div className="container mx-auto px-8 lg:px-16">
+          <div className="container mx-auto px-5 sm:px-8 lg:px-16">
             <div className="max-w-6xl mx-auto">
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
@@ -344,7 +344,7 @@ export default function SolutionDetailPage() {
         </section>
       ) : (
         <section className="py-20 bg-charcoal text-white">
-          <div className="container mx-auto px-8 lg:px-16">
+          <div className="container mx-auto px-5 sm:px-8 lg:px-16">
             <div className="max-w-6xl mx-auto">
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
@@ -383,7 +383,7 @@ export default function SolutionDetailPage() {
       {/* FAQs Section */}
       {solution.faqs && solution.faqs.length > 0 && (
         <section className="py-20 bg-gray-50">
-          <div className="container mx-auto px-8 lg:px-16">
+          <div className="container mx-auto px-5 sm:px-8 lg:px-16">
             <div className="max-w-4xl mx-auto">
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
@@ -421,7 +421,7 @@ export default function SolutionDetailPage() {
       {/* Use Cases Section */}
       {solution.use_cases && solution.use_cases.length > 0 && (
         <section className="py-20 border-b border-gray-200 dark:border-gray-700">
-          <div className="container mx-auto px-8 lg:px-16">
+          <div className="container mx-auto px-5 sm:px-8 lg:px-16">
             <div className="max-w-6xl mx-auto">
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
@@ -459,7 +459,7 @@ export default function SolutionDetailPage() {
       {/* Technical Specs Section */}
       {solution.technical_specs && Object.keys(solution.technical_specs).length > 0 && (
         <section className="py-20 bg-gray-50">
-          <div className="container mx-auto px-8 lg:px-16">
+          <div className="container mx-auto px-5 sm:px-8 lg:px-16">
             <div className="max-w-6xl mx-auto">
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
@@ -502,7 +502,7 @@ export default function SolutionDetailPage() {
       {/* Related Projects */}
       {relatedProjects.length > 0 && (
         <section className="py-20">
-          <div className="container mx-auto px-8 lg:px-16">
+          <div className="container mx-auto px-5 sm:px-8 lg:px-16">
             <div className="max-w-6xl mx-auto">
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
@@ -552,7 +552,7 @@ export default function SolutionDetailPage() {
 
       {/* Final CTA */}
       <section className="py-20 bg-gray-50">
-        <div className="container mx-auto px-8 lg:px-16">
+        <div className="container mx-auto px-5 sm:px-8 lg:px-16">
           <div className="max-w-4xl mx-auto text-center">
             <motion.div
               initial={{ opacity: 0, y: 20 }}

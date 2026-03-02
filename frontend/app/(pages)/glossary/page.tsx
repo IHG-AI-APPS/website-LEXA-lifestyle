@@ -256,7 +256,7 @@ export default function GlossaryPage() {
     <div className="min-h-screen bg-white dark:bg-gray-900 pt-20">
       {/* Hero */}
       <section className="py-20 bg-gray-50 border-b">
-        <div className="container mx-auto px-8 lg:px-16">
+        <div className="container mx-auto px-5 sm:px-8 lg:px-16">
           <div className="max-w-4xl mx-auto">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -291,7 +291,7 @@ export default function GlossaryPage() {
 
       {/* Glossary Terms */}
       <section className="py-20">
-        <div className="container mx-auto px-8 lg:px-16">
+        <div className="container mx-auto px-5 sm:px-8 lg:px-16">
           <div className="max-w-5xl mx-auto">
             {filteredTerms.map((section, sectionIndex) => (
               <motion.div
@@ -332,7 +332,7 @@ export default function GlossaryPage() {
 
       {/* CTA */}
       <section className="py-20 bg-[#0A0A0A] dark:bg-[#050505] text-white">
-        <div className="container mx-auto px-8 lg:px-16 text-center">
+        <div className="container mx-auto px-5 sm:px-8 lg:px-16 text-center">
           <h2 className="h2 uppercase mb-6">HAVE QUESTIONS?</h2>
           <p className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
             Our smart home experts in Dubai are here to help you understand and choose the right automation solutions for your property.

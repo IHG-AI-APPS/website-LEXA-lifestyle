@@ -76,7 +76,7 @@ export default function ArticleDetailPage() {
     <div className="min-h-screen bg-white pt-20">
       {/* Breadcrumb */}
       <section className="py-6 border-b border-gray-200 dark:border-gray-700">
-        <div className="container mx-auto px-8 lg:px-16">
+        <div className="container mx-auto px-5 sm:px-8 lg:px-16">
           <div className="max-w-4xl mx-auto">
             <Link href="/resources" className="flex items-center gap-2 text-gray-600 dark:text-gray-400 hover:text-charcoal transition-colors">
               <ArrowLeft size={16} />
@@ -88,7 +88,7 @@ export default function ArticleDetailPage() {
 
       {/* Article Header */}
       <section className="py-12 bg-gray-50 dark:bg-gray-800">
-        <div className="container mx-auto px-8 lg:px-16">
+        <div className="container mx-auto px-5 sm:px-8 lg:px-16">
           <div className="max-w-4xl mx-auto">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -124,7 +124,7 @@ export default function ArticleDetailPage() {
 
       {/* Featured Image */}
       <section className="py-0">
-        <div className="container mx-auto px-8 lg:px-16">
+        <div className="container mx-auto px-5 sm:px-8 lg:px-16">
           <div className="max-w-5xl mx-auto">
             <motion.div
               initial={{ opacity: 0, scale: 0.95 }}
@@ -147,7 +147,7 @@ export default function ArticleDetailPage() {
 
       {/* Article Content */}
       <section className="py-16">
-        <div className="container mx-auto px-8 lg:px-16">
+        <div className="container mx-auto px-5 sm:px-8 lg:px-16">
           <div className="max-w-3xl mx-auto">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -217,7 +217,7 @@ export default function ArticleDetailPage() {
 
       {/* CTA */}
       <section className="py-16 bg-gray-50 dark:bg-gray-800">
-        <div className="container mx-auto px-8 lg:px-16">
+        <div className="container mx-auto px-5 sm:px-8 lg:px-16">
           <div className="max-w-3xl mx-auto text-center">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -256,7 +256,7 @@ export default function ArticleDetailPage() {
       {/* Related Articles */}
       {relatedArticles.length > 0 && (
         <section className="py-20">
-          <div className="container mx-auto px-8 lg:px-16">
+          <div className="container mx-auto px-5 sm:px-8 lg:px-16">
             <div className="max-w-6xl mx-auto">
               <motion.div
                 initial={{ opacity: 0, y: 20 }}

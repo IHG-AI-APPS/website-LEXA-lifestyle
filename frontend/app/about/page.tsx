@@ -72,7 +72,7 @@ export default function AboutPage() {
 
       {/* Stats Bar */}
       <section className="py-10 bg-gray-50 dark:bg-gray-900 border-b border-gray-200 dark:border-gray-800">
-        <div className="container mx-auto px-8 lg:px-16">
+        <div className="container mx-auto px-5 sm:px-8 lg:px-16">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-5xl mx-auto text-center">
             {[{ value: '1,000+', label: 'Projects Delivered' }, { value: '20+', label: 'Years Experience' }, { value: '32+', label: 'Brand Partners' }, { value: '4.9/5', label: 'Client Rating' }].map((stat, i) => (
               <div key={i}><p className="text-2xl font-bold text-[#C9A962]">{stat.value}</p><p className="text-xs text-gray-500 dark:text-gray-400 uppercase tracking-wider mt-1">{stat.label}</p></div>
@@ -83,7 +83,7 @@ export default function AboutPage() {
 
       {/* Values */}
       <section className="py-16 lg:py-20 bg-white dark:bg-gray-950" data-testid="values-section">
-        <div className="container mx-auto px-8 lg:px-16">
+        <div className="container mx-auto px-5 sm:px-8 lg:px-16">
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-12">
               <span className="text-xs uppercase tracking-widest text-[#C9A962] font-semibold">Our Principles</span>
@@ -110,7 +110,7 @@ export default function AboutPage() {
 
       {/* Journey / Timeline */}
       <section className="py-16 lg:py-20 bg-[#0A0A0A] dark:bg-[#050505] text-white" data-testid="journey-section">
-        <div className="container mx-auto px-8 lg:px-16">
+        <div className="container mx-auto px-5 sm:px-8 lg:px-16">
           <div className="max-w-4xl mx-auto">
             <span className="text-xs uppercase tracking-widest text-[#C9A962] font-semibold">Our Journey</span>
             <h2 className="text-2xl sm:text-3xl font-bold mt-2 mb-10">Two Decades of Innovation</h2>
@@ -132,7 +132,7 @@ export default function AboutPage() {
 
       {/* Brand Partners */}
       <section className="py-16 lg:py-20 bg-white dark:bg-gray-950" data-testid="partners-section">
-        <div className="container mx-auto px-8 lg:px-16">
+        <div className="container mx-auto px-5 sm:px-8 lg:px-16">
           <div className="max-w-5xl mx-auto">
             <div className="text-center mb-12">
               <span className="text-xs uppercase tracking-widest text-[#C9A962] font-semibold">Certified Partners</span>
@@ -158,7 +158,7 @@ export default function AboutPage() {
 
       {/* CTA */}
       <section className="py-20 bg-[#0A0A0A] dark:bg-[#050505] text-white">
-        <div className="container mx-auto px-8 lg:px-16 relative z-10">
+        <div className="container mx-auto px-5 sm:px-8 lg:px-16 relative z-10">
           <div className="max-w-3xl mx-auto text-center">
             <span className="text-[#C9A962] text-xs uppercase tracking-widest font-semibold">Work With Us</span>
             <h2 className="text-3xl sm:text-4xl font-bold mt-3 mb-4">Let&apos;s Build Something Extraordinary</h2>

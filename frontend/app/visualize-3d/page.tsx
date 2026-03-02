@@ -11,7 +11,7 @@ export default function Visualize3DPage() {
     <div className="min-h-screen bg-white dark:bg-[#050505] pt-20">
       {/* Header */}
       <section className="py-12 bg-[#0a0a0a] text-white">
-        <div className="container mx-auto px-8 lg:px-16">
+        <div className="container mx-auto px-5 sm:px-8 lg:px-16">
           <div className="max-w-4xl mx-auto text-center">
             <div className="inline-flex items-center justify-center w-16 h-16 mb-4 bg-white/10 backdrop-blur-sm rounded-full">
               <Sparkles size={28} strokeWidth={2} />
@@ -30,14 +30,14 @@ export default function Visualize3DPage() {
 
       {/* Main 3D Viewer */}
       <section className="py-16">
-        <div className="container mx-auto px-8 lg:px-16">
+        <div className="container mx-auto px-5 sm:px-8 lg:px-16">
           <SplineViewer />
         </div>
       </section>
 
       {/* Features Grid */}
       <section className="py-16 bg-gray-50 dark:bg-[#0a0a0a]">
-        <div className="container mx-auto px-8 lg:px-16">
+        <div className="container mx-auto px-5 sm:px-8 lg:px-16">
           <h2 className="text-3xl font-bold text-center mb-12">Why Visualize in 3D?</h2>
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -86,7 +86,7 @@ export default function Visualize3DPage() {
 
       {/* Room Showcases */}
       <section className="py-16">
-        <div className="container mx-auto px-8 lg:px-16">
+        <div className="container mx-auto px-5 sm:px-8 lg:px-16">
           <h2 className="text-3xl font-bold text-center mb-12">Explore Different Spaces</h2>
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -132,7 +132,7 @@ export default function Visualize3DPage() {
 
       {/* CTA Section */}
       <section className="py-16 bg-gradient-to-br from-black to-gray-900 text-white">
-        <div className="container mx-auto px-8 lg:px-16 text-center">
+        <div className="container mx-auto px-5 sm:px-8 lg:px-16 text-center">
           <h2 className="text-4xl font-bold mb-4">Ready to Bring Your Vision to Life?</h2>
           <p className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
             Get a personalized quote based on your space and requirements

@@ -82,7 +82,7 @@ export default function ProductDetailPage({ params }: { params: { slug: string }
   return (
     <div className="min-h-screen bg-white pt-20">
       {/* Breadcrumb Navigation */}
-      <div className="container mx-auto px-8 lg:px-16">
+      <div className="container mx-auto px-5 sm:px-8 lg:px-16">
         <Breadcrumb 
           items={[
             { label: 'Products', href: '/products' },
@@ -127,7 +127,7 @@ export default function ProductDetailPage({ params }: { params: { slug: string }
 
       {/* Product Details */}
       <section className="py-20">
-        <div className="container mx-auto px-8 lg:px-16">
+        <div className="container mx-auto px-5 sm:px-8 lg:px-16">
           <div className="max-w-7xl mx-auto">
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
               {/* Main Content - Specifications */}
@@ -212,7 +212,7 @@ export default function ProductDetailPage({ params }: { params: { slug: string }
 
       {/* CTA */}
       <section className="py-20 bg-charcoal">
-        <div className="container mx-auto px-8 lg:px-16">
+        <div className="container mx-auto px-5 sm:px-8 lg:px-16">
           <div className="max-w-4xl mx-auto text-center">
             <motion.div
               initial={{ opacity: 0, y: 20 }}

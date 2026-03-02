@@ -125,7 +125,7 @@ export default function CostCalculatorPage() {
     <div className="min-h-screen bg-white pt-20">
       {/* Header */}
       <section className="py-20 bg-gray-50">
-        <div className="container mx-auto px-8 lg:px-16">
+        <div className="container mx-auto px-5 sm:px-8 lg:px-16">
           <div className="max-w-4xl mx-auto text-center">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -160,7 +160,7 @@ export default function CostCalculatorPage() {
 
       {/* Calculator Form */}
       <section className="py-20">
-        <div className="container mx-auto px-8 lg:px-16">
+        <div className="container mx-auto px-5 sm:px-8 lg:px-16">
           <div className="max-w-6xl mx-auto">
             <div className="grid grid-cols-1 lg:grid-cols-5 gap-12">
               {/* Left - Form */}
@@ -354,7 +354,7 @@ export default function CostCalculatorPage() {
 
       {/* Disclaimer */}
       <section className="py-12 bg-gray-50">
-        <div className="container mx-auto px-8 lg:px-16">
+        <div className="container mx-auto px-5 sm:px-8 lg:px-16">
           <div className="max-w-4xl mx-auto text-center text-sm text-gray-600 dark:text-gray-400">
             <p>
               * This is an estimated range based on typical installations. Final pricing will be determined after a detailed site assessment and consultation. Prices are in AED and exclude VAT.

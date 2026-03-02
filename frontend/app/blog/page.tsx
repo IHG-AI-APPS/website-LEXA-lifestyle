@@ -50,7 +50,7 @@ export default function BlogPage() {
           <div style={{backgroundImage: "url(https://images.unsplash.com/photo-1696694138288-d3c14bdd35f1?w=1200&q=50)"}} className="absolute inset-0 bg-cover bg-center opacity-80" />
           <div className="absolute inset-0 bg-gradient-to-t from-[#0A0A0A]/80 via-[#0A0A0A]/40 to-transparent" />
         </div>
-        <div className="container mx-auto px-8 lg:px-16 relative z-10">
+        <div className="container mx-auto px-5 sm:px-8 lg:px-16 relative z-10">
           <div className="max-w-3xl mx-auto text-center">
             <span className="hero-animate-badge inline-block px-3 py-1 rounded-full bg-[#C9A962]/15 border border-[#C9A962]/30 text-[#C9A962] text-xs uppercase tracking-widest mb-5">Insights & Articles</span>
             <h1 className="hero-animate-title text-3xl sm:text-4xl lg:text-5xl font-bold uppercase mb-5 tracking-tight" data-testid="blog-title">
@@ -65,7 +65,7 @@ export default function BlogPage() {
 
       {/* Category Filter */}
       <section className="py-12 bg-white dark:bg-gray-900 border-b dark:border-gray-700">
-        <div className="container mx-auto px-8 lg:px-16">
+        <div className="container mx-auto px-5 sm:px-8 lg:px-16">
           <div className="max-w-7xl mx-auto">
             <div className="flex flex-wrap gap-3 justify-center">
               {categories.map((category) => (
@@ -88,7 +88,7 @@ export default function BlogPage() {
 
       {/* Articles Grid */}
       <section className="py-20">
-        <div className="container mx-auto px-8 lg:px-16">
+        <div className="container mx-auto px-5 sm:px-8 lg:px-16">
           <div className="max-w-7xl mx-auto">
             {loading ? (
               <div className="text-center py-12 text-gray-600 dark:text-gray-400">Loading articles...</div>

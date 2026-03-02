@@ -116,7 +116,7 @@ export default function PropertyPackageDetailPage() {
 
       {/* Property Specs */}
       <section className="py-10 bg-gray-50 dark:bg-gray-900 border-b border-gray-200 dark:border-gray-800">
-        <div className="container mx-auto px-8 lg:px-16">
+        <div className="container mx-auto px-5 sm:px-8 lg:px-16">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-5xl mx-auto">
             <div className="text-center">
               <Home className="h-7 w-7 mx-auto mb-2 text-[#C9A962]" />
@@ -136,7 +136,7 @@ export default function PropertyPackageDetailPage() {
       {/* Overview + Sidebar */}
       {packageData.long_description && (
         <section className="py-16 lg:py-20 bg-white dark:bg-gray-950">
-          <div className="container mx-auto px-8 lg:px-16">
+          <div className="container mx-auto px-5 sm:px-8 lg:px-16">
             <div className="max-w-6xl mx-auto">
               <div className="grid grid-cols-1 lg:grid-cols-5 gap-12">
                 <div className="lg:col-span-3">
@@ -183,7 +183,7 @@ export default function PropertyPackageDetailPage() {
       {/* Feature Cards — What You Get */}
       {featureCards.length > 0 && (
         <section className="py-16 lg:py-20 bg-gray-50 dark:bg-gray-900" data-testid="feature-cards-section">
-          <div className="container mx-auto px-8 lg:px-16">
+          <div className="container mx-auto px-5 sm:px-8 lg:px-16">
             <div className="max-w-6xl mx-auto">
               <div className="text-center mb-12">
                 <span className="text-xs uppercase tracking-widest text-[#C9A962] font-semibold">System Categories</span>
@@ -224,7 +224,7 @@ export default function PropertyPackageDetailPage() {
 
       {/* Package Tiers */}
       <section className="py-16 lg:py-24 bg-white dark:bg-gray-950" data-testid="tiers-section">
-        <div className="container mx-auto px-8 lg:px-16">
+        <div className="container mx-auto px-5 sm:px-8 lg:px-16">
           <div className="text-center mb-12">
             <span className="text-xs uppercase tracking-widest text-[#C9A962] font-semibold">Choose Your Level</span>
             <h2 className="text-2xl sm:text-3xl font-bold mt-2 text-gray-900 dark:text-white">Package Tiers</h2>
@@ -302,7 +302,7 @@ export default function PropertyPackageDetailPage() {
       {/* Brands We Partner With */}
       {brands.length > 0 && (
         <section className="py-16 lg:py-20 bg-gray-50 dark:bg-gray-900" data-testid="brands-section">
-          <div className="container mx-auto px-8 lg:px-16">
+          <div className="container mx-auto px-5 sm:px-8 lg:px-16">
             <div className="max-w-5xl mx-auto">
               <div className="text-center mb-12">
                 <span className="text-xs uppercase tracking-widest text-[#C9A962] font-semibold">Certified Partners</span>
@@ -327,7 +327,7 @@ export default function PropertyPackageDetailPage() {
       {/* Inspirations Gallery */}
       {galleryImages.length > 0 && (
         <section className="py-16 lg:py-20 bg-white dark:bg-gray-950" data-testid="gallery-section">
-          <div className="container mx-auto px-8 lg:px-16">
+          <div className="container mx-auto px-5 sm:px-8 lg:px-16">
             <div className="max-w-6xl mx-auto">
               <div className="text-center mb-12">
                 <span className="text-xs uppercase tracking-widest text-[#C9A962] font-semibold">Design Ideas</span>
@@ -352,7 +352,7 @@ export default function PropertyPackageDetailPage() {
       {/* FAQ Section */}
       {allFaqs.length > 0 && (
         <section className="py-16 lg:py-20 bg-gray-50 dark:bg-gray-900" data-testid="faq-section">
-          <div className="container mx-auto px-8 lg:px-16">
+          <div className="container mx-auto px-5 sm:px-8 lg:px-16">
             <div className="max-w-4xl mx-auto">
               <div className="text-center mb-12">
                 <span className="text-xs uppercase tracking-widest text-[#C9A962] font-semibold">Got Questions?</span>
@@ -376,7 +376,7 @@ export default function PropertyPackageDetailPage() {
 
       {/* CTA Section */}
       <section className="py-20 bg-[#0A0A0A] dark:bg-[#050505] text-white relative overflow-hidden">
-        <div className="container mx-auto px-8 lg:px-16 relative z-10">
+        <div className="container mx-auto px-5 sm:px-8 lg:px-16 relative z-10">
           <div className="max-w-3xl mx-auto text-center">
             <span className="text-[#C9A962] text-xs uppercase tracking-widest font-semibold">Ready to Start?</span>
             <h2 className="text-3xl sm:text-4xl font-bold mt-3 mb-4">

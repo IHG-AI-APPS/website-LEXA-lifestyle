@@ -87,7 +87,7 @@ export default function ProjectBuilderLanding() {
 
       {/* Process Section */}
       <section className="py-20 bg-gray-50 dark:bg-[#0A0A0A] border-t border-gray-200 dark:border-white/5">
-        <div className="container mx-auto px-8 lg:px-16">
+        <div className="container mx-auto px-5 sm:px-8 lg:px-16">
           <div className="max-w-5xl mx-auto">
             <div className="text-center mb-16">
               <span className="text-xs uppercase tracking-widest text-[#C9A962] font-semibold">Process</span>
@@ -128,7 +128,7 @@ export default function ProjectBuilderLanding() {
 
       {/* Features Grid */}
       <section className="py-20 bg-white dark:bg-[#050505] border-t border-gray-200 dark:border-white/5">
-        <div className="container mx-auto px-8 lg:px-16">
+        <div className="container mx-auto px-5 sm:px-8 lg:px-16">
           <div className="max-w-5xl mx-auto">
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
               {[
@@ -153,7 +153,7 @@ export default function ProjectBuilderLanding() {
 
       {/* Final CTA */}
       <section className="py-20 bg-[#0A0A0A] border-t border-white/5">
-        <div className="container mx-auto px-8 lg:px-16 max-w-4xl text-center">
+        <div className="container mx-auto px-5 sm:px-8 lg:px-16 max-w-4xl text-center">
           <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-white mb-4">
             Ready to Begin?
           </h2>

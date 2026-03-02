@@ -31,7 +31,7 @@ export default function TestimonialsPage() {
           <div style={{backgroundImage: "url(https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1200&q=50)"}} className="absolute inset-0 bg-cover bg-center opacity-80" />
           <div className="absolute inset-0 bg-gradient-to-t from-[#0A0A0A]/80 via-[#0A0A0A]/40 to-transparent" />
         </div>
-        <div className="container mx-auto px-8 lg:px-16 relative z-10">
+        <div className="container mx-auto px-5 sm:px-8 lg:px-16 relative z-10">
           <div className="max-w-3xl mx-auto text-center">
             <span className="hero-animate-badge inline-block px-3 py-1 rounded-full bg-[#C9A962]/15 border border-[#C9A962]/30 text-[#C9A962] text-xs uppercase tracking-widest mb-5">Client Reviews</span>
             <h1 className="hero-animate-title text-3xl sm:text-4xl lg:text-5xl font-bold uppercase mb-5 tracking-tight" data-testid="testimonials-title">What Our Clients Say</h1>
@@ -42,7 +42,7 @@ export default function TestimonialsPage() {
 
       {/* Testimonials Grid */}
       <section className="py-16 lg:py-20 bg-white dark:bg-gray-950" data-testid="testimonials-grid">
-        <div className="container mx-auto px-8 lg:px-16 max-w-6xl">
+        <div className="container mx-auto px-5 sm:px-8 lg:px-16 max-w-6xl">
           {loading ? (
             <div className="grid gap-6 md:grid-cols-2">{[1, 2, 3, 4].map(i => (<div key={i} className="animate-pulse border border-gray-200 dark:border-gray-800 rounded-xl p-6"><div className="h-4 bg-gray-200 rounded w-24 mb-4" /><div className="h-20 bg-gray-100 rounded mb-4" /><div className="h-4 bg-gray-200 rounded w-32" /></div>))}</div>
           ) : testimonials.length === 0 ? (
@@ -87,7 +87,7 @@ export default function TestimonialsPage() {
 
       {/* CTA */}
       <section className="py-20 bg-[#0A0A0A] dark:bg-[#050505] text-white">
-        <div className="container mx-auto px-8 lg:px-16 relative z-10">
+        <div className="container mx-auto px-5 sm:px-8 lg:px-16 relative z-10">
           <div className="max-w-3xl mx-auto text-center">
             <span className="text-[#C9A962] text-xs uppercase tracking-widest font-semibold">Join Our Clients</span>
             <h2 className="text-3xl sm:text-4xl font-bold mt-3 mb-4">Ready to Transform Your Space?</h2>

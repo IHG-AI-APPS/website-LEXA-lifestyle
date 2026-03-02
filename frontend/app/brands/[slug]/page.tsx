@@ -205,7 +205,7 @@ export default function BrandDetailPage({ params }: { params: { slug: string } }
 
       {/* Brand Info + Key Features */}
       <section className="py-16 lg:py-20 bg-white dark:bg-gray-950">
-        <div className="container mx-auto px-8 lg:px-16">
+        <div className="container mx-auto px-5 sm:px-8 lg:px-16">
           <div className="max-w-6xl mx-auto">
             <div className="grid grid-cols-1 lg:grid-cols-5 gap-12">
               <div className="lg:col-span-3">
@@ -270,7 +270,7 @@ export default function BrandDetailPage({ params }: { params: { slug: string } }
       {/* Feature Cards */}
       {featureCards.length > 0 && (
         <section className="py-16 lg:py-20 bg-gray-50 dark:bg-gray-900" data-testid="feature-cards-section">
-          <div className="container mx-auto px-8 lg:px-16">
+          <div className="container mx-auto px-5 sm:px-8 lg:px-16">
             <div className="max-w-6xl mx-auto">
               <div className="text-center mb-12">
                 <span className="text-xs uppercase tracking-widest text-[#C9A962] font-semibold">{brand.name} Ecosystem</span>
@@ -311,7 +311,7 @@ export default function BrandDetailPage({ params }: { params: { slug: string } }
       {/* Products */}
       {validProducts.length > 0 && (
         <section className="py-16 lg:py-20 bg-white dark:bg-gray-950" data-testid="products-section">
-          <div className="container mx-auto px-8 lg:px-16">
+          <div className="container mx-auto px-5 sm:px-8 lg:px-16">
             <div className="max-w-6xl mx-auto">
               <div className="text-center mb-12">
                 <span className="text-xs uppercase tracking-widest text-[#C9A962] font-semibold">Top Products</span>
@@ -354,7 +354,7 @@ export default function BrandDetailPage({ params }: { params: { slug: string } }
       {/* Related Solutions */}
       {relatedSolutions.length > 0 && (
         <section className="py-16 lg:py-20 bg-gray-50 dark:bg-gray-900" data-testid="solutions-section">
-          <div className="container mx-auto px-8 lg:px-16">
+          <div className="container mx-auto px-5 sm:px-8 lg:px-16">
             <div className="max-w-6xl mx-auto">
               <div className="text-center mb-12">
                 <span className="text-xs uppercase tracking-widest text-[#C9A962] font-semibold">Where We Use {brand.name}</span>
@@ -384,7 +384,7 @@ export default function BrandDetailPage({ params }: { params: { slug: string } }
       {/* Inspirations Gallery */}
       {galleryImages.length > 0 && (
         <section className="py-16 lg:py-20 bg-white dark:bg-gray-950" data-testid="inspirations-section">
-          <div className="container mx-auto px-8 lg:px-16">
+          <div className="container mx-auto px-5 sm:px-8 lg:px-16">
             <div className="max-w-6xl mx-auto">
               <div className="text-center mb-12">
                 <span className="text-xs uppercase tracking-widest text-[#C9A962] font-semibold">{brand.name} Installations</span>
@@ -409,7 +409,7 @@ export default function BrandDetailPage({ params }: { params: { slug: string } }
       {/* CTA */}
       <section className="py-20 bg-[#0A0A0A] dark:bg-[#050505] text-white relative overflow-hidden">
         <div className="absolute inset-0 opacity-[0.03]" style={{ backgroundImage: 'radial-gradient(circle at 1px 1px, white 1px, transparent 0)', backgroundSize: '40px 40px' }} />
-        <div className="container mx-auto px-8 lg:px-16 relative z-10">
+        <div className="container mx-auto px-5 sm:px-8 lg:px-16 relative z-10">
           <div className="max-w-3xl mx-auto text-center">
             <span className="text-[#C9A962] text-xs uppercase tracking-widest font-semibold">Authorized Dealer</span>
             <h2 className="text-3xl sm:text-4xl font-bold mt-3 mb-4">
@@ -435,7 +435,7 @@ export default function BrandDetailPage({ params }: { params: { slug: string } }
       {/* Other Brands */}
       {otherBrands.length > 0 && (
         <section className="py-16 lg:py-20 bg-white dark:bg-gray-950">
-          <div className="container mx-auto px-8 lg:px-16">
+          <div className="container mx-auto px-5 sm:px-8 lg:px-16">
             <div className="max-w-6xl mx-auto">
               <div className="text-center mb-12">
                 <span className="text-xs uppercase tracking-widest text-[#C9A962] font-semibold">More Partners</span>

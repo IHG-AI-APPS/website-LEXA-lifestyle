@@ -94,7 +94,7 @@ export default function WhyLexaPage() {
     <div className="min-h-screen bg-white dark:bg-gray-900 pt-20">
       {/* Hero */}
       <section className="py-20 bg-[#0A0A0A] dark:bg-[#050505] text-white">
-        <div className="container mx-auto px-8 lg:px-16">
+        <div className="container mx-auto px-5 sm:px-8 lg:px-16">
           <div className="max-w-4xl mx-auto text-center">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -125,7 +125,7 @@ export default function WhyLexaPage() {
 
       {/* Key Advantages */}
       <section className="py-20">
-        <div className="container mx-auto px-8 lg:px-16">
+        <div className="container mx-auto px-5 sm:px-8 lg:px-16">
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-16">
               <h2 className="h2 uppercase mb-4">WHAT SETS LEXA APART</h2>
@@ -159,7 +159,7 @@ export default function WhyLexaPage() {
 
       {/* Comparison Table */}
       <section className="py-20 bg-gray-50 dark:bg-gray-800">
-        <div className="container mx-auto px-8 lg:px-16">
+        <div className="container mx-auto px-5 sm:px-8 lg:px-16">
           <div className="max-w-4xl mx-auto">
             <div className="text-center mb-12">
               <h2 className="h2 uppercase mb-4">LEXA VS. OTHER DUBAI INTEGRATORS</h2>
@@ -200,7 +200,7 @@ export default function WhyLexaPage() {
 
       {/* Client Testimonials */}
       <section className="py-20">
-        <div className="container mx-auto px-8 lg:px-16">
+        <div className="container mx-auto px-5 sm:px-8 lg:px-16">
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-16">
               <h2 className="h2 uppercase mb-4">WHAT OUR CLIENTS SAY</h2>
@@ -237,7 +237,7 @@ export default function WhyLexaPage() {
 
       {/* By the Numbers */}
       <section className="py-20 bg-[#0A0A0A] dark:bg-[#050505] text-white">
-        <div className="container mx-auto px-8 lg:px-16">
+        <div className="container mx-auto px-5 sm:px-8 lg:px-16">
           <div className="max-w-5xl mx-auto text-center">
             <h2 className="h2 uppercase mb-16">LEXA BY THE NUMBERS</h2>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
@@ -264,7 +264,7 @@ export default function WhyLexaPage() {
 
       {/* CTA */}
       <section className="py-20 bg-white">
-        <div className="container mx-auto px-8 lg:px-16 text-center">
+        <div className="container mx-auto px-5 sm:px-8 lg:px-16 text-center">
           <h2 className="h2 uppercase mb-6">EXPERIENCE THE LEXA DIFFERENCE</h2>
           <p className="text-xl text-gray-600 dark:text-gray-400 mb-8 max-w-2xl mx-auto">
             Visit our Dubai Experience Centre to see Control4, Crestron, and Lutron systems in action. Compare before you commit.

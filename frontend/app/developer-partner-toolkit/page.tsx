@@ -81,7 +81,7 @@ export default function DeveloperPartnerToolkitPage() {
       <div className="min-h-screen bg-gray-950 text-white pt-20" data-testid="developer-partner-toolkit-locked">
         {/* Hero */}
         <section className="relative overflow-hidden bg-gray-900 py-20 lg:py-28">
-          <div className="container mx-auto px-8 lg:px-16 relative z-10">
+          <div className="container mx-auto px-5 sm:px-8 lg:px-16 relative z-10">
             <div className="max-w-2xl mx-auto text-center">
               <span className="hero-animate-badge inline-block px-3 py-1 rounded-full bg-[#C9A962]/15 border border-[#C9A962]/30 text-[#C9A962] text-xs uppercase tracking-widest mb-5">Protected Resource</span>
               <h1 className="hero-animate-title text-3xl sm:text-4xl lg:text-5xl font-bold uppercase mb-5 tracking-tight">
@@ -130,7 +130,7 @@ export default function DeveloperPartnerToolkitPage() {
 
   return (
     <div className="min-h-screen bg-white pt-32 pb-20">
-      <div className="container mx-auto px-8 lg:px-16">
+      <div className="container mx-auto px-5 sm:px-8 lg:px-16">
         {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}

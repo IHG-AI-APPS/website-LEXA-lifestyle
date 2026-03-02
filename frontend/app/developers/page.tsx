@@ -149,7 +149,7 @@ export default function DevelopersPage() {
           <div style={{backgroundImage: "url(https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=1200&q=50)"}} className="absolute inset-0 bg-cover bg-center opacity-80" />
           <div className="absolute inset-0 bg-gradient-to-t from-[#0A0A0A]/80 via-[#0A0A0A]/40 to-transparent" />
         </div>
-        <div className="container mx-auto px-8 lg:px-16 relative z-10">
+        <div className="container mx-auto px-5 sm:px-8 lg:px-16 relative z-10">
           <div className="max-w-3xl mx-auto text-center">
             <span className="hero-animate-badge inline-block px-3 py-1 rounded-full bg-[#C9A962]/15 border border-[#C9A962]/30 text-[#C9A962] text-xs uppercase tracking-widest mb-5">For Developers</span>
             <h1 className="hero-animate-title text-3xl sm:text-4xl lg:text-5xl font-bold uppercase mb-5 tracking-tight" data-testid="developers-title">
@@ -169,7 +169,7 @@ export default function DevelopersPage() {
 
       {/* Value Proposition */}
       <section className="py-24 md:py-32">
-        <div className="container mx-auto px-8 lg:px-16">
+        <div className="container mx-auto px-5 sm:px-8 lg:px-16">
           <div className="max-w-4xl mx-auto text-center mb-16">
             <h2 className="text-4xl sm:text-5xl font-bold mb-4 ">Smart Homes = Value-Add, Not Expense</h2>
             <p className="text-xl text-gray-600 dark:text-gray-400">
@@ -224,7 +224,7 @@ export default function DevelopersPage() {
 
       {/* Resources Grid */}
       <section className="py-24 md:py-32 bg-gallery-base">
-        <div className="container mx-auto px-8 lg:px-16">
+        <div className="container mx-auto px-5 sm:px-8 lg:px-16">
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-16">
               <h2 className="text-4xl sm:text-5xl font-bold mb-4 ">Developer Resources</h2>
@@ -267,7 +267,7 @@ export default function DevelopersPage() {
 
       {/* CTA */}
       <section className="py-24 md:py-32">
-        <div className="container mx-auto px-8 lg:px-16">
+        <div className="container mx-auto px-5 sm:px-8 lg:px-16">
           <div className="max-w-4xl mx-auto text-center bg-gradient-to-br from-black via-gray-900 to-black rounded-3xl p-12 text-white">
             <h2 className="text-4xl sm:text-5xl font-bold mb-4 ">
               Ready to Add Value to Your Development?

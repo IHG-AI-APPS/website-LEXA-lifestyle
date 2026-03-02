@@ -103,7 +103,7 @@ export default function BrandsPage() {
           <div className="absolute inset-0 bg-gradient-to-t from-[#0A0A0A]/80 via-[#0A0A0A]/40 to-transparent" />
         </div>
         <div className="absolute inset-0 opacity-[0.03]" style={{ backgroundImage: 'radial-gradient(circle at 1px 1px, white 1px, transparent 0)', backgroundSize: '40px 40px' }} />
-        <div className="container mx-auto px-8 lg:px-16 py-20 lg:py-28 relative z-10">
+        <div className="container mx-auto px-5 sm:px-8 lg:px-16 py-20 lg:py-28 relative z-10">
           <div className="max-w-3xl mx-auto text-center">
             <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }}>
               <span className="hero-animate-badge inline-block px-3 py-1 rounded-full bg-[#C9A962]/15 border border-[#C9A962]/30 text-[#C9A962] text-xs uppercase tracking-widest mb-5">
@@ -137,7 +137,7 @@ export default function BrandsPage() {
       {/* Featured Brands Strip */}
       {featuredBrands.length > 0 && (
         <section className="py-10 bg-gray-50 dark:bg-gray-900 border-b border-gray-200 dark:border-gray-800" data-testid="featured-brands">
-          <div className="container mx-auto px-8 lg:px-16">
+          <div className="container mx-auto px-5 sm:px-8 lg:px-16">
             <div className="max-w-7xl mx-auto">
               <div className="flex items-center gap-3 mb-6">
                 <Star className="text-[#C9A962]" size={16} fill="currentColor" />
@@ -166,7 +166,7 @@ export default function BrandsPage() {
 
       {/* Category Filter + Search */}
       <section className="py-5 bg-white dark:bg-gray-950 border-b border-gray-200 dark:border-gray-800 sticky top-[72px] z-30" data-testid="category-filter">
-        <div className="container mx-auto px-8 lg:px-16">
+        <div className="container mx-auto px-5 sm:px-8 lg:px-16">
           <div className="max-w-7xl mx-auto">
             <div className="flex flex-col sm:flex-row sm:items-center gap-4">
               <div className="flex flex-wrap gap-2 flex-1">
@@ -223,7 +223,7 @@ export default function BrandsPage() {
 
       {/* Brands by Category */}
       <section className="py-12 bg-white dark:bg-gray-950" data-testid="brands-grid">
-        <div className="container mx-auto px-8 lg:px-16">
+        <div className="container mx-auto px-5 sm:px-8 lg:px-16">
           <div className="max-w-7xl mx-auto space-y-14">
             {loading ? (
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
@@ -324,7 +324,7 @@ export default function BrandsPage() {
       {/* CTA */}
       <section className="py-20 bg-[#0A0A0A] dark:bg-[#050505] text-white relative overflow-hidden">
         <div className="absolute inset-0 opacity-[0.03]" style={{ backgroundImage: 'radial-gradient(circle at 1px 1px, white 1px, transparent 0)', backgroundSize: '40px 40px' }} />
-        <div className="container mx-auto px-8 lg:px-16 relative z-10">
+        <div className="container mx-auto px-5 sm:px-8 lg:px-16 relative z-10">
           <div className="max-w-3xl mx-auto text-center">
             <span className="text-[#C9A962] text-xs uppercase tracking-widest font-semibold">Expert Consultation</span>
             <h2 className="text-3xl sm:text-4xl font-bold mt-3 mb-4">

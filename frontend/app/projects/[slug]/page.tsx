@@ -100,7 +100,7 @@ export default function ProjectDetailPage() {
       <div className="min-h-screen bg-white dark:bg-[#050505] pt-20">
         <div className="animate-pulse">
           <div className="w-full h-64 bg-gray-100 dark:bg-gray-800"></div>
-          <div className="container mx-auto px-8 lg:px-16 py-8">
+          <div className="container mx-auto px-5 sm:px-8 lg:px-16 py-8">
             <div className="h-8 bg-gray-100 dark:bg-gray-800 rounded w-1/3 mb-4"></div>
             <div className="h-4 bg-gray-100 dark:bg-gray-800 rounded w-2/3 mb-8"></div>
           </div>
@@ -164,7 +164,7 @@ export default function ProjectDetailPage() {
 
       {/* Main Content */}
       <section className="py-10 md:py-16">
-        <div className="container mx-auto px-8 lg:px-16 max-w-7xl">
+        <div className="container mx-auto px-5 sm:px-8 lg:px-16 max-w-7xl">
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-10 lg:gap-14">
             
             {/* Left Column */}
@@ -419,7 +419,7 @@ export default function ProjectDetailPage() {
       {/* Related Projects */}
       {relatedProjects.length > 0 && (
         <section className="py-16 border-t border-gray-200 dark:border-white/10 bg-gray-50 dark:bg-[#0A0A0A]">
-          <div className="container mx-auto px-8 lg:px-16 max-w-7xl">
+          <div className="container mx-auto px-5 sm:px-8 lg:px-16 max-w-7xl">
             <h2 className="text-xs font-bold uppercase tracking-wider text-[#C9A962] mb-8">
               Similar Projects
             </h2>

@@ -38,7 +38,7 @@ export default function TermsContent() {
     <div className="min-h-screen bg-white dark:bg-gray-950 pt-20" data-testid="terms-page">
       {/* Hero */}
       <section className="relative overflow-hidden bg-[#0A0A0A] dark:bg-[#050505] text-white py-20 lg:py-28">
-        <div className="container mx-auto px-8 lg:px-16 relative z-10">
+        <div className="container mx-auto px-5 sm:px-8 lg:px-16 relative z-10">
           <div className="max-w-3xl mx-auto text-center">
             <span className="hero-animate-badge inline-block px-3 py-1 rounded-full bg-[#C9A962]/15 border border-[#C9A962]/30 text-[#C9A962] text-xs uppercase tracking-widest mb-5">Legal</span>
             <h1 className="hero-animate-title text-3xl sm:text-4xl lg:text-5xl font-bold uppercase mb-5 tracking-tight" data-testid="terms-title">{title}</h1>
@@ -49,7 +49,7 @@ export default function TermsContent() {
 
       {/* Content */}
       <section className="py-16 lg:py-20 bg-white dark:bg-gray-950">
-        <div className="container mx-auto px-8 lg:px-16">
+        <div className="container mx-auto px-5 sm:px-8 lg:px-16">
           <div className="max-w-4xl mx-auto">
             <p className="text-base text-gray-600 dark:text-gray-400 leading-relaxed mb-4">{intro}</p>
             <p className="text-base text-gray-600 dark:text-gray-400 leading-relaxed mb-10">{intro2}</p>

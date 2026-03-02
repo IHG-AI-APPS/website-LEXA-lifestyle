@@ -38,7 +38,7 @@ export default function CertificationStandardPage() {
     <div className="min-h-screen bg-white dark:bg-gray-950 pt-20" data-testid="certification-page">
       {/* Hero */}
       <section className="relative overflow-hidden bg-[#0A0A0A] dark:bg-[#050505] text-white py-20 lg:py-28">
-        <div className="container mx-auto px-8 lg:px-16 relative z-10">
+        <div className="container mx-auto px-5 sm:px-8 lg:px-16 relative z-10">
           <div className="max-w-3xl mx-auto text-center">
             <span className="hero-animate-badge inline-block px-3 py-1 rounded-full bg-[#C9A962]/15 border border-[#C9A962]/30 text-[#C9A962] text-xs uppercase tracking-widest mb-5">Quality Assured</span>
             <h1 className="hero-animate-title text-3xl sm:text-4xl lg:text-5xl font-bold uppercase mb-5 tracking-tight" data-testid="certification-title">LEXA Certified Integration Standard</h1>
@@ -54,7 +54,7 @@ export default function CertificationStandardPage() {
 
       {/* QA Metrics */}
       <section className="py-10 bg-gray-50 dark:bg-gray-900 border-b border-gray-200 dark:border-gray-800">
-        <div className="container mx-auto px-8 lg:px-16">
+        <div className="container mx-auto px-5 sm:px-8 lg:px-16">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-5xl mx-auto text-center">
             {qaMetrics.map((m, i) => (
               <div key={i}><p className="text-2xl font-bold text-[#C9A962]">{m.value}</p><p className="text-xs text-gray-500 uppercase tracking-wider mt-1">{m.metric}</p></div>
@@ -65,7 +65,7 @@ export default function CertificationStandardPage() {
 
       {/* Standards */}
       <section className="py-16 lg:py-20 bg-white dark:bg-gray-950" data-testid="standards-section">
-        <div className="container mx-auto px-8 lg:px-16">
+        <div className="container mx-auto px-5 sm:px-8 lg:px-16">
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-12">
               <span className="text-xs uppercase tracking-widest text-[#C9A962] font-semibold">Our Processes</span>
@@ -98,7 +98,7 @@ export default function CertificationStandardPage() {
 
       {/* Certifications */}
       <section className="py-16 lg:py-20 bg-gray-50 dark:bg-gray-900" data-testid="certifications-section">
-        <div className="container mx-auto px-8 lg:px-16">
+        <div className="container mx-auto px-5 sm:px-8 lg:px-16">
           <div className="max-w-5xl mx-auto">
             <div className="text-center mb-12">
               <span className="text-xs uppercase tracking-widest text-[#C9A962] font-semibold">Credentials</span>
@@ -124,7 +124,7 @@ export default function CertificationStandardPage() {
 
       {/* CTA */}
       <section className="py-20 bg-[#0A0A0A] dark:bg-[#050505] text-white">
-        <div className="container mx-auto px-8 lg:px-16 relative z-10">
+        <div className="container mx-auto px-5 sm:px-8 lg:px-16 relative z-10">
           <div className="max-w-3xl mx-auto text-center">
             <span className="text-[#C9A962] text-xs uppercase tracking-widest font-semibold">Experience the Difference</span>
             <h2 className="text-3xl sm:text-4xl font-bold mt-3 mb-4">Ready for Certified Quality?</h2>

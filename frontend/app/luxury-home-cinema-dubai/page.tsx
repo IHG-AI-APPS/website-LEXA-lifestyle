@@ -246,7 +246,7 @@ export default function LuxuryHomeCinemaDubaiPage() {
 
       {/* READY TO BUILD YOUR CINEMA */}
       <section className="py-12 md:py-16 lg:py-20 bg-gradient-to-br from-[#E8DCC8] via-[#B5952F] to-[#E8DCC8]">
-        <div className="container mx-auto px-8 lg:px-16 text-center">
+        <div className="container mx-auto px-5 sm:px-8 lg:px-16 text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}

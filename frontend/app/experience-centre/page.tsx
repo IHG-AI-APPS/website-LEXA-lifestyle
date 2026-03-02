@@ -82,7 +82,7 @@ export default function ExperienceCentrePage() {
 
       {/* Location Info Bar */}
       <section className="py-10 bg-gray-50 dark:bg-gray-900 border-b border-gray-200 dark:border-gray-800">
-        <div className="container mx-auto px-8 lg:px-16">
+        <div className="container mx-auto px-5 sm:px-8 lg:px-16">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
             <div className="flex items-start gap-4">
               <MapPin className="h-6 w-6 text-[#C9A962] flex-shrink-0 mt-0.5" />
@@ -106,7 +106,7 @@ export default function ExperienceCentrePage() {
 
       {/* About the Centre */}
       <section className="py-16 lg:py-20 bg-white dark:bg-gray-950">
-        <div className="container mx-auto px-8 lg:px-16">
+        <div className="container mx-auto px-5 sm:px-8 lg:px-16">
           <div className="max-w-4xl">
             <span className="text-xs uppercase tracking-widest text-[#C9A962] font-semibold">Our Capabilities</span>
             <h2 className="text-2xl sm:text-3xl font-bold mt-2 mb-6 text-gray-900 dark:text-white">More Than a Showroom</h2>
@@ -122,7 +122,7 @@ export default function ExperienceCentrePage() {
 
       {/* Facilities Grid */}
       <section className="py-16 lg:py-20 bg-gray-50 dark:bg-gray-900" data-testid="facilities-section">
-        <div className="container mx-auto px-8 lg:px-16">
+        <div className="container mx-auto px-5 sm:px-8 lg:px-16">
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-12">
               <span className="text-xs uppercase tracking-widest text-[#C9A962] font-semibold">Explore</span>
@@ -153,7 +153,7 @@ export default function ExperienceCentrePage() {
 
       {/* Stats */}
       <section className="py-16 bg-[#0A0A0A] dark:bg-[#050505] text-white">
-        <div className="container mx-auto px-8 lg:px-16">
+        <div className="container mx-auto px-5 sm:px-8 lg:px-16">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-5xl mx-auto text-center">
             {[{ value: '500+', label: 'Projects Delivered' }, { value: '15+', label: 'Years in Dubai' }, { value: '4.9/5', label: 'Client Satisfaction' }, { value: '32+', label: 'Premium Brands' }].map((stat, i) => (
               <motion.div key={i} initial={{ opacity: 0, y: 15 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.3, delay: i * 0.1 }}>
@@ -167,7 +167,7 @@ export default function ExperienceCentrePage() {
 
       {/* What to Expect */}
       <section className="py-16 lg:py-20 bg-white dark:bg-gray-950">
-        <div className="container mx-auto px-8 lg:px-16">
+        <div className="container mx-auto px-5 sm:px-8 lg:px-16">
           <div className="max-w-4xl mx-auto text-center">
             <span className="text-xs uppercase tracking-widest text-[#C9A962] font-semibold">What To Expect</span>
             <h2 className="text-2xl sm:text-3xl font-bold mt-2 mb-10 text-gray-900 dark:text-white">Your Visit Experience</h2>
@@ -189,7 +189,7 @@ export default function ExperienceCentrePage() {
 
       {/* CTA Section */}
       <section className="py-20 bg-[#0A0A0A] dark:bg-[#050505] text-white">
-        <div className="container mx-auto px-8 lg:px-16 relative z-10">
+        <div className="container mx-auto px-5 sm:px-8 lg:px-16 relative z-10">
           <div className="max-w-3xl mx-auto text-center">
             <span className="text-[#C9A962] text-xs uppercase tracking-widest font-semibold">Ready to Visit?</span>
             <h2 className="text-3xl sm:text-4xl font-bold mt-3 mb-4">Experience the Future of Smart Living</h2>

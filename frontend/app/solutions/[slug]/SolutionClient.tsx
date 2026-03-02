@@ -91,7 +91,7 @@ export default function SolutionClient({
       {/* Detailed Content — What We Deliver */}
       {solution.long_description && (
         <section className="py-16 lg:py-20 bg-white dark:bg-gray-950">
-          <div className="container mx-auto px-8 lg:px-16">
+          <div className="container mx-auto px-5 sm:px-8 lg:px-16">
             <div className="max-w-6xl mx-auto">
               <div className="grid grid-cols-1 lg:grid-cols-5 gap-12">
                 <div className="lg:col-span-3">
@@ -166,7 +166,7 @@ export default function SolutionClient({
       {/* Feature Cards — What You Get */}
       {solution.feature_cards && solution.feature_cards.length > 0 && (
         <section className="py-16 lg:py-20 bg-gray-50 dark:bg-gray-900">
-          <div className="container mx-auto px-8 lg:px-16">
+          <div className="container mx-auto px-5 sm:px-8 lg:px-16">
             <div className="max-w-6xl mx-auto">
               <div className="text-center mb-12">
                 <span className="text-xs uppercase tracking-widest text-[#C9A962] font-semibold">System Categories</span>
@@ -214,7 +214,7 @@ export default function SolutionClient({
       {/* Products We Offer — Image-based clickable cards */}
       {productSolutions.length > 0 && (
         <section className="py-16 lg:py-20 bg-white dark:bg-gray-950" data-testid="products-section">
-          <div className="container mx-auto px-8 lg:px-16">
+          <div className="container mx-auto px-5 sm:px-8 lg:px-16">
             <div className="max-w-6xl mx-auto">
               <div className="text-center mb-12">
                 <span className="text-xs uppercase tracking-widest text-[#C9A962] font-semibold">Solutions & Systems</span>
@@ -265,7 +265,7 @@ export default function SolutionClient({
       {/* Brands We Partner With */}
       {solution.brands && solution.brands.length > 0 && (
         <section className="py-16 lg:py-20 bg-gray-50 dark:bg-gray-900" data-testid="brands-section">
-          <div className="container mx-auto px-8 lg:px-16">
+          <div className="container mx-auto px-5 sm:px-8 lg:px-16">
             <div className="max-w-5xl mx-auto">
               <div className="text-center mb-12">
                 <span className="text-xs uppercase tracking-widest text-[#C9A962] font-semibold">Certified Partners</span>
@@ -305,7 +305,7 @@ export default function SolutionClient({
       {/* Inspirations Gallery */}
       {galleryImages.length > 0 && (
         <section className="py-16 lg:py-20 bg-white dark:bg-gray-950" data-testid="inspirations-section">
-          <div className="container mx-auto px-8 lg:px-16">
+          <div className="container mx-auto px-5 sm:px-8 lg:px-16">
             <div className="max-w-6xl mx-auto">
               <div className="text-center mb-12">
                 <span className="text-xs uppercase tracking-widest text-[#C9A962] font-semibold">Design Ideas</span>
@@ -345,7 +345,7 @@ export default function SolutionClient({
       {/* Related Projects */}
       {relatedProjects.length > 0 && (
         <section className="py-16 lg:py-20 bg-gray-50 dark:bg-gray-900">
-          <div className="container mx-auto px-8 lg:px-16">
+          <div className="container mx-auto px-5 sm:px-8 lg:px-16">
             <RelatedItemsCarousel title="Related Projects" items={relatedProjects} basePath="/projects" />
           </div>
         </section>
@@ -353,7 +353,7 @@ export default function SolutionClient({
 
       {/* FAQ Section */}
       <section className="py-16 lg:py-20 bg-white dark:bg-gray-950">
-        <div className="container mx-auto px-8 lg:px-16">
+        <div className="container mx-auto px-5 sm:px-8 lg:px-16">
           <div className="max-w-4xl mx-auto">
             <div className="text-center mb-12">
               <span className="text-xs uppercase tracking-widest text-[#C9A962] font-semibold">Got Questions?</span>
@@ -403,7 +403,7 @@ export default function SolutionClient({
 
       {/* CTA Section */}
       <section className="py-20 bg-[#0A0A0A] dark:bg-[#050505] text-white relative overflow-hidden">
-        <div className="container mx-auto px-8 lg:px-16 relative z-10">
+        <div className="container mx-auto px-5 sm:px-8 lg:px-16 relative z-10">
           <div className="max-w-3xl mx-auto text-center">
             <span className="text-[#C9A962] text-xs uppercase tracking-widest font-semibold">Ready to Start?</span>
             <h2 className="text-3xl sm:text-4xl font-bold mt-3 mb-4">
@@ -434,7 +434,7 @@ export default function SolutionClient({
       {/* Other Solutions */}
       {otherSolutions.length > 0 && (
         <section className="py-16 lg:py-20 bg-white dark:bg-gray-950">
-          <div className="container mx-auto px-8 lg:px-16">
+          <div className="container mx-auto px-5 sm:px-8 lg:px-16">
             <RelatedItemsCarousel title="Explore More Solutions" items={otherSolutions} basePath="/solutions" />
           </div>
         </section>

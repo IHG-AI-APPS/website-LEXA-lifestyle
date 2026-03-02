@@ -56,7 +56,7 @@ export default function DeveloperToolkitContent() {
     <div className="min-h-screen bg-white dark:bg-gray-950 pt-20" data-testid="developer-toolkit-page">
       {/* Hero */}
       <section className="relative overflow-hidden bg-[#0A0A0A] dark:bg-[#050505] text-white py-20 lg:py-28">
-        <div className="container mx-auto px-8 lg:px-16 relative z-10">
+        <div className="container mx-auto px-5 sm:px-8 lg:px-16 relative z-10">
           <div className="max-w-3xl mx-auto text-center">
             <div className="inline-flex items-center justify-center w-16 h-16 bg-white/10 backdrop-blur-sm rounded-full mb-6">
               <Lock size={28} strokeWidth={2} />
@@ -70,7 +70,7 @@ export default function DeveloperToolkitContent() {
 
       {/* Benefits */}
       <section className="py-16 lg:py-20 bg-white dark:bg-gray-950">
-        <div className="container mx-auto px-8 lg:px-16">
+        <div className="container mx-auto px-5 sm:px-8 lg:px-16">
           <div className="max-w-4xl mx-auto">
             <span className="text-xs uppercase tracking-widest text-[#C9A962] font-semibold">Advantages</span>
             <h2 className="text-2xl sm:text-3xl font-bold mt-2 mb-8 text-gray-900 dark:text-white">Why Developers Partner With LEXA</h2>
@@ -88,7 +88,7 @@ export default function DeveloperToolkitContent() {
 
       {/* Toolkit Resources */}
       <section className="py-16 lg:py-20 bg-gray-50 dark:bg-gray-900">
-        <div className="container mx-auto px-8 lg:px-16">
+        <div className="container mx-auto px-5 sm:px-8 lg:px-16">
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-12">
               <span className="text-xs uppercase tracking-widest text-[#C9A962] font-semibold">Resources</span>
@@ -117,7 +117,7 @@ export default function DeveloperToolkitContent() {
 
       {/* Partnership Steps */}
       <section className="py-16 lg:py-20 bg-white dark:bg-gray-950">
-        <div className="container mx-auto px-8 lg:px-16">
+        <div className="container mx-auto px-5 sm:px-8 lg:px-16">
           <div className="max-w-4xl mx-auto">
             <div className="text-center mb-12">
               <span className="text-xs uppercase tracking-widest text-[#C9A962] font-semibold">Process</span>
@@ -140,7 +140,7 @@ export default function DeveloperToolkitContent() {
 
       {/* Access Request CTA */}
       <section className="py-20 bg-[#0A0A0A] dark:bg-[#050505] text-white">
-        <div className="container mx-auto px-8 lg:px-16 relative z-10">
+        <div className="container mx-auto px-5 sm:px-8 lg:px-16 relative z-10">
           <div className="max-w-3xl mx-auto text-center">
             <span className="text-[#C9A962] text-xs uppercase tracking-widest font-semibold">Get Started</span>
             <h2 className="text-3xl sm:text-4xl font-bold mt-3 mb-4">Request Toolkit Access</h2>

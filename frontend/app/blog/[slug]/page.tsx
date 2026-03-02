@@ -90,7 +90,7 @@ export default function BlogArticlePage({ params }: { params: { slug: string } }
   return (
     <div className="min-h-screen bg-white dark:bg-gray-900 pt-20">
       {/* Breadcrumb Navigation */}
-      <div className="container mx-auto px-8 lg:px-16">
+      <div className="container mx-auto px-5 sm:px-8 lg:px-16">
         <Breadcrumb 
           items={[
             { label: 'Blog', href: '/blog' },
@@ -304,7 +304,7 @@ export default function BlogArticlePage({ params }: { params: { slug: string } }
       )}
 
       <section className="py-20 bg-charcoal">
-        <div className="container mx-auto px-8 lg:px-16">
+        <div className="container mx-auto px-5 sm:px-8 lg:px-16">
           <div className="max-w-4xl mx-auto text-center">
             <motion.div
               initial={{ opacity: 0, y: 20 }}

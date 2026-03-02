@@ -115,7 +115,7 @@ export default function CaseStudyPage() {
       {/* Challenge Section */}
       {(project as any).challenge && (
         <section className="py-16 lg:py-20 bg-white dark:bg-gray-950">
-          <div className="container mx-auto px-8 lg:px-16">
+          <div className="container mx-auto px-5 sm:px-8 lg:px-16">
             <div className="max-w-4xl mx-auto">
               <span className="text-xs uppercase tracking-widest text-[#C9A962] font-semibold">The Challenge</span>
               <h2 className="text-2xl sm:text-3xl font-bold mt-2 mb-6 text-gray-900 dark:text-white">Project Requirements</h2>
@@ -128,7 +128,7 @@ export default function CaseStudyPage() {
       {/* Solution Section */}
       {(project as any).solution_details && (
         <section className="py-16 lg:py-20 bg-[#0A0A0A] dark:bg-[#050505] text-white">
-          <div className="container mx-auto px-8 lg:px-16">
+          <div className="container mx-auto px-5 sm:px-8 lg:px-16">
             <div className="max-w-4xl mx-auto">
               <span className="text-xs uppercase tracking-widest text-[#C9A962] font-semibold">Our Approach</span>
               <h2 className="text-2xl sm:text-3xl font-bold mt-2 mb-6">The LEXA Solution</h2>
@@ -141,7 +141,7 @@ export default function CaseStudyPage() {
       {/* Technical Specs */}
       {techSpecs.length > 0 && (
         <section className="py-16 lg:py-20 bg-gray-50 dark:bg-gray-900" data-testid="tech-specs-section">
-          <div className="container mx-auto px-8 lg:px-16">
+          <div className="container mx-auto px-5 sm:px-8 lg:px-16">
             <div className="max-w-6xl mx-auto">
               <div className="text-center mb-12">
                 <span className="text-xs uppercase tracking-widest text-[#C9A962] font-semibold">Technical Details</span>
@@ -164,7 +164,7 @@ export default function CaseStudyPage() {
       {/* Outcome */}
       {(project as any).outcome && (
         <section className="py-16 lg:py-20 bg-white dark:bg-gray-950">
-          <div className="container mx-auto px-8 lg:px-16">
+          <div className="container mx-auto px-5 sm:px-8 lg:px-16">
             <div className="max-w-4xl mx-auto">
               <span className="text-xs uppercase tracking-widest text-[#C9A962] font-semibold">The Result</span>
               <h2 className="text-2xl sm:text-3xl font-bold mt-2 mb-6 text-gray-900 dark:text-white">Project Outcome</h2>
@@ -177,7 +177,7 @@ export default function CaseStudyPage() {
       {/* Client Testimonial */}
       {(project as any).client_testimonial && (
         <section className="py-16 lg:py-20 bg-gray-50 dark:bg-gray-900">
-          <div className="container mx-auto px-8 lg:px-16">
+          <div className="container mx-auto px-5 sm:px-8 lg:px-16">
             <div className="max-w-3xl mx-auto text-center">
               <span className="text-xs uppercase tracking-widest text-[#C9A962] font-semibold mb-4 block">Client Feedback</span>
               <p className="text-xl sm:text-2xl text-gray-700 dark:text-gray-300 italic mb-6 leading-relaxed">
@@ -197,7 +197,7 @@ export default function CaseStudyPage() {
       {/* Gallery */}
       {gallery.length > 0 && (
         <section className="py-16 lg:py-20 bg-white dark:bg-gray-950" data-testid="gallery-section">
-          <div className="container mx-auto px-8 lg:px-16">
+          <div className="container mx-auto px-5 sm:px-8 lg:px-16">
             <div className="max-w-6xl mx-auto">
               <div className="text-center mb-12">
                 <span className="text-xs uppercase tracking-widest text-[#C9A962] font-semibold">Visual Tour</span>
@@ -221,7 +221,7 @@ export default function CaseStudyPage() {
 
       {/* CTA Section */}
       <section className="py-20 bg-[#0A0A0A] dark:bg-[#050505] text-white relative overflow-hidden">
-        <div className="container mx-auto px-8 lg:px-16 relative z-10">
+        <div className="container mx-auto px-5 sm:px-8 lg:px-16 relative z-10">
           <div className="max-w-3xl mx-auto text-center">
             <span className="text-[#C9A962] text-xs uppercase tracking-widest font-semibold">Ready to Start?</span>
             <h2 className="text-3xl sm:text-4xl font-bold mt-3 mb-4">Ready for Your Project?</h2>

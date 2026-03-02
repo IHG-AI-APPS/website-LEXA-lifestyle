@@ -20,7 +20,7 @@ export default function CompanyPage() {
   return (
     <div className="min-h-screen bg-white pt-20">
       <section className="py-20 bg-gray-50 dark:bg-gray-800">
-        <div className="container mx-auto px-8 lg:px-16">
+        <div className="container mx-auto px-5 sm:px-8 lg:px-16">
           <div className="max-w-7xl mx-auto">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
               <motion.div
@@ -66,7 +66,7 @@ export default function CompanyPage() {
       </section>
 
       <section className="py-20">
-        <div className="container mx-auto px-8 lg:px-16">
+        <div className="container mx-auto px-5 sm:px-8 lg:px-16">
           <div className="max-w-7xl mx-auto">
             <h2 className="text-5xl font-semibold mb-16 text-center">Our Values</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -95,7 +95,7 @@ export default function CompanyPage() {
       </section>
 
       <section className="py-20 bg-charcoal">
-        <div className="container mx-auto px-8 lg:px-16">
+        <div className="container mx-auto px-5 sm:px-8 lg:px-16">
           <div className="max-w-4xl mx-auto text-center">
             <h2 className="text-5xl font-semibold text-white mb-6">Experience Center</h2>
             <p className="text-xl text-gray-400 mb-4">60,000 sq ft showroom in Dubai</p>

@@ -195,7 +195,7 @@ export default function ServiceDetailPage() {
 
       {/* Service Overview — Content + Features */}
       <section className="py-16 lg:py-20 bg-white dark:bg-gray-950">
-        <div className="container mx-auto px-8 lg:px-16">
+        <div className="container mx-auto px-5 sm:px-8 lg:px-16">
           <div className="max-w-6xl mx-auto">
             <div className="grid grid-cols-1 lg:grid-cols-5 gap-12">
               <div className="lg:col-span-3">
@@ -269,7 +269,7 @@ export default function ServiceDetailPage() {
       {/* Feature Cards — What You Get */}
       {featureCards.length > 0 && (
         <section className="py-16 lg:py-20 bg-gray-50 dark:bg-gray-900" data-testid="feature-cards-section">
-          <div className="container mx-auto px-8 lg:px-16">
+          <div className="container mx-auto px-5 sm:px-8 lg:px-16">
             <div className="max-w-6xl mx-auto">
               <div className="text-center mb-12">
                 <span className="text-xs uppercase tracking-widest text-[#C9A962] font-semibold">Service Breakdown</span>
@@ -326,7 +326,7 @@ export default function ServiceDetailPage() {
       {/* Solutions We Deploy — Image-based clickable cards */}
       {productSolutions.length > 0 && (
         <section className="py-16 lg:py-20 bg-white dark:bg-gray-950" data-testid="solutions-section">
-          <div className="container mx-auto px-8 lg:px-16">
+          <div className="container mx-auto px-5 sm:px-8 lg:px-16">
             <div className="max-w-6xl mx-auto">
               <div className="text-center mb-12">
                 <span className="text-xs uppercase tracking-widest text-[#C9A962] font-semibold">Solutions & Systems</span>
@@ -361,7 +361,7 @@ export default function ServiceDetailPage() {
       {/* Brands */}
       {service.brands && service.brands.length > 0 && (
         <section className="py-16 lg:py-20 bg-gray-50 dark:bg-gray-900" data-testid="brands-section">
-          <div className="container mx-auto px-8 lg:px-16">
+          <div className="container mx-auto px-5 sm:px-8 lg:px-16">
             <div className="max-w-5xl mx-auto">
               <div className="text-center mb-12">
                 <span className="text-xs uppercase tracking-widest text-[#C9A962] font-semibold">Certified Partners</span>
@@ -386,7 +386,7 @@ export default function ServiceDetailPage() {
       {/* Inspirations Gallery */}
       {galleryImages.length > 0 && (
         <section className="py-16 lg:py-20 bg-white dark:bg-gray-950" data-testid="inspirations-section">
-          <div className="container mx-auto px-8 lg:px-16">
+          <div className="container mx-auto px-5 sm:px-8 lg:px-16">
             <div className="max-w-6xl mx-auto">
               <div className="text-center mb-12">
                 <span className="text-xs uppercase tracking-widest text-[#C9A962] font-semibold">Our Work</span>
@@ -411,7 +411,7 @@ export default function ServiceDetailPage() {
       {/* Deliverables */}
       {service.deliverables && service.deliverables.length > 0 && (
         <section className="py-16 lg:py-20 bg-gray-50 dark:bg-gray-900">
-          <div className="container mx-auto px-8 lg:px-16">
+          <div className="container mx-auto px-5 sm:px-8 lg:px-16">
             <div className="max-w-6xl mx-auto">
               <div className="text-center mb-12">
                 <span className="text-xs uppercase tracking-widest text-[#C9A962] font-semibold">Deliverables</span>
@@ -434,7 +434,7 @@ export default function ServiceDetailPage() {
       {/* Case Studies */}
       {service.case_studies && service.case_studies.length > 0 && (
         <section className="py-16 lg:py-20 bg-white dark:bg-gray-950">
-          <div className="container mx-auto px-8 lg:px-16">
+          <div className="container mx-auto px-5 sm:px-8 lg:px-16">
             <div className="max-w-5xl mx-auto">
               <div className="text-center mb-12">
                 <span className="text-xs uppercase tracking-widest text-[#C9A962] font-semibold">Results</span>
@@ -467,7 +467,7 @@ export default function ServiceDetailPage() {
       {/* FAQ */}
       {allFaqs.length > 0 && (
         <section className="py-16 lg:py-20 bg-gray-50 dark:bg-gray-900">
-          <div className="container mx-auto px-8 lg:px-16">
+          <div className="container mx-auto px-5 sm:px-8 lg:px-16">
             <div className="max-w-4xl mx-auto">
               <div className="text-center mb-12">
                 <span className="text-xs uppercase tracking-widest text-[#C9A962] font-semibold">Got Questions?</span>
@@ -488,7 +488,7 @@ export default function ServiceDetailPage() {
 
       {/* CTA */}
       <section className="py-20 bg-[#0A0A0A] dark:bg-[#050505] text-white relative overflow-hidden">
-        <div className="container mx-auto px-8 lg:px-16 relative z-10">
+        <div className="container mx-auto px-5 sm:px-8 lg:px-16 relative z-10">
           <div className="max-w-3xl mx-auto text-center">
             <span className="text-[#C9A962] text-xs uppercase tracking-widest font-semibold">Ready to Start?</span>
             <h2 className="text-3xl sm:text-4xl font-bold mt-3 mb-4">

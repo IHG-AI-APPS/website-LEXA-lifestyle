@@ -240,7 +240,7 @@ export default function SolutionFinderPage() {
         <>
           {/* Header */}
           <section className="py-12 bg-gray-50 border-b border-gray-200 dark:border-gray-700">
-            <div className="container mx-auto px-8 lg:px-16">
+            <div className="container mx-auto px-5 sm:px-8 lg:px-16">
               <div className="max-w-4xl mx-auto">
                 <div className="flex items-center justify-between mb-6">
                   <div>
@@ -281,7 +281,7 @@ export default function SolutionFinderPage() {
 
           {/* Question */}
           <section className="py-20">
-            <div className="container mx-auto px-8 lg:px-16">
+            <div className="container mx-auto px-5 sm:px-8 lg:px-16">
               <div className="max-w-4xl mx-auto">
                 <AnimatePresence mode="wait">
                   <motion.div
@@ -367,7 +367,7 @@ export default function SolutionFinderPage() {
         <>
           {/* Results Header */}
           <section className="py-20 bg-gray-50 dark:bg-gray-800">
-            <div className="container mx-auto px-8 lg:px-16">
+            <div className="container mx-auto px-5 sm:px-8 lg:px-16">
               <div className="max-w-6xl mx-auto text-center">
                 <motion.div
                   initial={{ opacity: 0, y: 20 }}
@@ -396,7 +396,7 @@ export default function SolutionFinderPage() {
 
           {/* Recommendations */}
           <section className="py-20">
-            <div className="container mx-auto px-8 lg:px-16">
+            <div className="container mx-auto px-5 sm:px-8 lg:px-16">
               <div className="max-w-6xl mx-auto">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
                   {recommendations.map((rec, index) => (
