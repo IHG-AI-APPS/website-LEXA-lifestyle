@@ -203,7 +203,7 @@ export default function SmartHomeQuizPage() {
       <section className="relative overflow-hidden bg-[#0A0A0A] dark:bg-[#050505] text-white pt-24 pb-12">
         {/* Hero Background Image */}
         <div className="absolute inset-0">
-          <div style={{backgroundImage: "url(https://images.unsplash.com/photo-1558618666-fcd25c85f82e?w=1200&q=50)"}} className="absolute inset-0 bg-cover bg-center opacity-50" />
+          <div style={{backgroundImage: "url(https://images.unsplash.com/photo-1558618666-fcd25c85f82e?w=1200&q=50)"}} className="absolute inset-0 bg-cover bg-center opacity-80" />
           <div className="absolute inset-0 bg-gradient-to-t from-[#0A0A0A]/90 via-[#0A0A0A]/50 to-[#0A0A0A]/30" />
         </div>
         <div className="container mx-auto max-w-4xl text-center relative z-10">
