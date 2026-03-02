@@ -8,6 +8,7 @@ import { Calendar, Clock, Tag } from 'lucide-react'
 import { Badge } from '@/components/ui/badge'
 import RelatedPagesNav from '@/components/navigation/RelatedPagesNav'
 import { useCms } from '@/hooks/useCms'
+import QuickViewModal from '@/components/QuickViewModal'
 
 const BACKEND_URL = process.env.NEXT_PUBLIC_BACKEND_URL || 'http://localhost:8001'
 const API = `${BACKEND_URL}/api`
@@ -18,6 +19,7 @@ export default function BlogPage() {
   const [articles, setArticles] = useState([])
   const [loading, setLoading] = useState(true)
   const [selectedCategory, setSelectedCategory] = useState('All')
+  const [quickViewItem, setQuickViewItem] = useState<any>(null)
 
   const categories = ['All', 'Smart Home', 'Installation', 'Audio Systems', 'Automation', 'Lighting', 'Security']
 
