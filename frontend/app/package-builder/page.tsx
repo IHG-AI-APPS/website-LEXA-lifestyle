@@ -222,7 +222,7 @@ export default function PackageBuilderPage() {
             {selectedTier && (
               <div className="text-right">
                 <p className="text-sm text-gray-600 dark:text-gray-400 dark:text-gray-400">Estimated Total</p>
-                <p className="text-2xl font-bold text-blue-600">
+                <p className="text-2xl font-bold text-[#C9A962]">
                   AED {(calculateTotal() / 1000).toFixed(0)}K
                 </p>
               </div>
@@ -263,7 +263,7 @@ export default function PackageBuilderPage() {
               {/* AI Recommendations Badge */}
               {aiRecommendations.length > 0 && (
                 <div className="bg-blue-50 border border-blue-200 rounded-xl p-4 mb-8 flex items-center gap-3">
-                  <Star className="h-5 w-5 text-blue-600 fill-blue-600" />
+                  <Star className="h-5 w-5 text-[#C9A962] fill-blue-600" />
                   <span className="text-sm text-blue-800">
                     <strong>{aiRecommendations.length}</strong> personalized feature recommendations ready! 
                     Look for the <Star className="h-4 w-4 inline text-amber-500 fill-amber-500" /> badge on matching enhancements.
@@ -420,7 +420,7 @@ export default function PackageBuilderPage() {
                       className="group relative rounded-2xl border-2 border-gray-200 dark:border-gray-700 p-6 cursor-pointer hover:border-blue-500 hover:shadow-xl transition-all bg-white"
                     >
                       {system.featured && (
-                        <div className="absolute -top-3 left-6 px-3 py-1 bg-blue-500 text-white text-xs font-bold rounded-full">
+                        <div className="absolute -top-3 left-6 px-3 py-1 bg-[#C9A962] text-white text-xs font-bold rounded-full">
                           Popular
                         </div>
                       )}
@@ -432,10 +432,10 @@ export default function PackageBuilderPage() {
                       )}
 
                       <div className="mb-4">
-                        <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-2 group-hover:text-blue-600 transition-colors">
+                        <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-2 group-hover:text-[#C9A962] transition-colors">
                           {system.name}
                         </h3>
-                        <p className="text-sm text-blue-600 font-semibold mb-3">
+                        <p className="text-sm text-[#C9A962] font-semibold mb-3">
                           {system.tagline}
                         </p>
                         <p className="text-sm text-gray-600 dark:text-gray-400 mb-4 line-clamp-3">
@@ -490,7 +490,7 @@ export default function PackageBuilderPage() {
                         </p>
                       </div>
 
-                      <button className="mt-4 w-full px-6 py-3 bg-gray-100 dark:bg-gray-800 group-hover:bg-blue-600 text-gray-900 dark:text-white group-hover:text-white rounded-lg font-bold transition-all">
+                      <button className="mt-4 w-full px-6 py-3 bg-gray-100 dark:bg-gray-800 group-hover:bg-[#C9A962] text-gray-900 dark:text-white group-hover:text-white rounded-lg font-bold transition-all">
                         Select {system.name}
                       </button>
                     </div>
@@ -574,7 +574,7 @@ export default function PackageBuilderPage() {
                               )}
                               
                               {isSelected && (
-                                <div className="absolute top-4 right-4 w-6 h-6 bg-blue-500 rounded-full flex items-center justify-center">
+                                <div className="absolute top-4 right-4 w-6 h-6 bg-[#C9A962] rounded-full flex items-center justify-center">
                                   <Check className="h-4 w-4 text-white" />
                                 </div>
                               )}
@@ -632,7 +632,7 @@ export default function PackageBuilderPage() {
                 </button>
                 <button
                   onClick={() => setStep(5)}
-                  className="px-12 py-4 bg-blue-600 text-white rounded-xl hover:bg-blue-700 font-bold text-lg flex items-center gap-3 shadow-xl hover:shadow-2xl transition-all"
+                  className="px-12 py-4 bg-[#C9A962] text-white rounded-xl hover:bg-[#B8983F] font-bold text-lg flex items-center gap-3 shadow-xl hover:shadow-2xl transition-all"
                 >
                   Continue to Brand Selection
                   <ArrowRight className="h-6 w-6" />
@@ -665,7 +665,7 @@ export default function PackageBuilderPage() {
                 Step 5: Select preferred equipment brands
               </p>
               {selectedControlSystem && (
-                <p className="text-sm text-blue-600 font-semibold mb-2 text-center">
+                <p className="text-sm text-[#C9A962] font-semibold mb-2 text-center">
                   Showing brands compatible with {selectedControlSystem.name}
                 </p>
               )}
@@ -734,7 +734,7 @@ export default function PackageBuilderPage() {
                                 }`}
                               >
                                 {isSelected && (
-                                  <div className="absolute top-4 right-4 w-6 h-6 bg-blue-500 rounded-full flex items-center justify-center">
+                                  <div className="absolute top-4 right-4 w-6 h-6 bg-[#C9A962] rounded-full flex items-center justify-center">
                                     <Check className="h-4 w-4 text-white" />
                                   </div>
                                 )}
@@ -767,7 +767,7 @@ export default function PackageBuilderPage() {
                                       ? 'text-green-600' 
                                       : option.price_adjustment > 0 
                                         ? 'text-gray-900'
-                                        : 'text-blue-600'
+                                        : 'text-[#C9A962]'
                                   }`}>
                                     {priceLabel}
                                   </span>
@@ -790,7 +790,7 @@ export default function PackageBuilderPage() {
                 </button>
                 <button
                   onClick={() => setStep(6)}
-                  className="px-12 py-4 bg-blue-600 text-white rounded-xl hover:bg-blue-700 font-bold text-lg flex items-center gap-3 shadow-xl hover:shadow-2xl transition-all"
+                  className="px-12 py-4 bg-[#C9A962] text-white rounded-xl hover:bg-[#B8983F] font-bold text-lg flex items-center gap-3 shadow-xl hover:shadow-2xl transition-all"
                 >
                   Continue to Specialty Rooms
                   <ArrowRight className="h-6 w-6" />
@@ -846,7 +846,7 @@ export default function PackageBuilderPage() {
                     >
                       {isSelected && (
                         <div className={`absolute top-4 right-4 w-8 h-8 rounded-full flex items-center justify-center ${
-                          isIncluded ? 'bg-green-500' : 'bg-blue-500'
+                          isIncluded ? 'bg-green-500' : 'bg-[#C9A962]'
                         }`}>
                           <Check className="h-5 w-5 text-white" />
                         </div>
@@ -877,7 +877,7 @@ export default function PackageBuilderPage() {
               <div className="flex justify-center">
                 <button
                   onClick={() => setStep(7)}
-                  className="px-12 py-5 bg-blue-600 text-white rounded-xl hover:bg-blue-700 font-bold text-lg flex items-center gap-3 shadow-xl hover:shadow-2xl transition-all"
+                  className="px-12 py-5 bg-[#C9A962] text-white rounded-xl hover:bg-[#B8983F] font-bold text-lg flex items-center gap-3 shadow-xl hover:shadow-2xl transition-all"
                 >
                   Continue to Summary
                   <ArrowRight className="h-6 w-6" />
@@ -914,7 +914,7 @@ export default function PackageBuilderPage() {
                     <div className="pt-4 border-t">
                       <p className="text-sm text-gray-600 dark:text-gray-400 mb-1">Package Tier</p>
                       <p className="text-xl font-bold text-gray-900 dark:text-white dark:text-white">{selectedTier?.tier_name}</p>
-                      <p className="text-lg text-blue-600 font-semibold">
+                      <p className="text-lg text-[#C9A962] font-semibold">
                         AED {(selectedTier?.base_price_aed / 1000).toFixed(0)}K
                       </p>
                     </div>
@@ -987,7 +987,7 @@ export default function PackageBuilderPage() {
                     <div className="pt-6 border-t">
                       <div className="flex justify-between items-center mb-2">
                         <p className="text-2xl font-bold text-gray-900 dark:text-white dark:text-white">Total Estimate</p>
-                        <p className="text-3xl font-bold text-blue-600">
+                        <p className="text-3xl font-bold text-[#C9A962]">
                           AED {(calculateTotal() / 1000).toFixed(0)}K
                         </p>
                       </div>
@@ -1009,7 +1009,7 @@ export default function PackageBuilderPage() {
                         type="text"
                         value={contactInfo.name}
                         onChange={(e) => setContactInfo({...contactInfo, name: e.target.value})}
-                        className="w-full px-4 py-4 border-2 border-gray-300 dark:border-gray-600 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent text-lg"
+                        className="w-full px-4 py-4 border-2 border-gray-300 dark:border-gray-600 rounded-xl focus:ring-2 focus:ring-[#C9A962] focus:border-transparent text-lg"
                         placeholder="John Smith"
                         required
                       />
@@ -1023,7 +1023,7 @@ export default function PackageBuilderPage() {
                         type="email"
                         value={contactInfo.email}
                         onChange={(e) => setContactInfo({...contactInfo, email: e.target.value})}
-                        className="w-full px-4 py-4 border-2 border-gray-300 dark:border-gray-600 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent text-lg"
+                        className="w-full px-4 py-4 border-2 border-gray-300 dark:border-gray-600 rounded-xl focus:ring-2 focus:ring-[#C9A962] focus:border-transparent text-lg"
                         placeholder="john@example.com"
                         required
                       />
@@ -1037,7 +1037,7 @@ export default function PackageBuilderPage() {
                         type="tel"
                         value={contactInfo.phone}
                         onChange={(e) => setContactInfo({...contactInfo, phone: e.target.value})}
-                        className="w-full px-4 py-4 border-2 border-gray-300 dark:border-gray-600 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent text-lg"
+                        className="w-full px-4 py-4 border-2 border-gray-300 dark:border-gray-600 rounded-xl focus:ring-2 focus:ring-[#C9A962] focus:border-transparent text-lg"
                         placeholder="+971 50 123 4567"
                         required
                       />
@@ -1051,7 +1051,7 @@ export default function PackageBuilderPage() {
                         value={contactInfo.message}
                         onChange={(e) => setContactInfo({...contactInfo, message: e.target.value})}
                         rows={5}
-                        className="w-full px-4 py-4 border-2 border-gray-300 dark:border-gray-600 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent text-lg"
+                        className="w-full px-4 py-4 border-2 border-gray-300 dark:border-gray-600 rounded-xl focus:ring-2 focus:ring-[#C9A962] focus:border-transparent text-lg"
                         placeholder="Tell us about your project timeline, specific requirements, or any questions..."
                       />
                     </div>
@@ -1109,7 +1109,7 @@ export default function PackageBuilderPage() {
                         }
                       }}
                       disabled={!contactInfo.name || !contactInfo.email || !contactInfo.phone}
-                      className="w-full py-5 bg-blue-600 text-white rounded-xl hover:bg-blue-700 font-bold text-lg disabled:bg-gray-300 disabled:cursor-not-allowed transition-all shadow-xl hover:shadow-2xl"
+                      className="w-full py-5 bg-[#C9A962] text-white rounded-xl hover:bg-[#B8983F] font-bold text-lg disabled:bg-gray-300 disabled:cursor-not-allowed transition-all shadow-xl hover:shadow-2xl"
                     >
                       Request Custom Quote
                     </button>
@@ -1145,7 +1145,7 @@ export default function PackageBuilderPage() {
               <div className="bg-blue-50 rounded-2xl p-8 mb-8">
                 <p className="text-gray-600 dark:text-gray-400 mb-2">Your Selected Package</p>
                 <p className="text-3xl font-bold text-gray-900 dark:text-white mb-1">{propertyType?.title}</p>
-                <p className="text-2xl font-bold text-blue-600">{selectedTier?.tier_name} Tier</p>
+                <p className="text-2xl font-bold text-[#C9A962]">{selectedTier?.tier_name} Tier</p>
                 <div className="mt-4 pt-4 border-t border-blue-200">
                   <p className="text-gray-600 dark:text-gray-400 mb-1">Estimated Investment</p>
                   <p className="text-4xl font-bold text-gray-900 dark:text-white dark:text-white">AED {(calculateTotal() / 1000).toFixed(0)}K</p>
@@ -1155,7 +1155,7 @@ export default function PackageBuilderPage() {
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <button
                   onClick={() => window.location.href = '/packages'}
-                  className="px-8 py-4 bg-blue-600 text-white rounded-xl hover:bg-blue-700 font-bold text-lg shadow-lg"
+                  className="px-8 py-4 bg-[#C9A962] text-white rounded-xl hover:bg-[#B8983F] font-bold text-lg shadow-lg"
                 >
                   View All Packages
                 </button>

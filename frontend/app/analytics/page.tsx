@@ -160,7 +160,7 @@ export default function AnalyticsDashboard() {
         <div className="flex items-center justify-between mb-8">
           <div>
             <h1 className="text-2xl font-semibold text-gray-900 dark:text-white flex items-center gap-2">
-              <BarChart3 className="w-6 h-6 text-blue-600" />
+              <BarChart3 className="w-6 h-6 text-[#C9A962]" />
               Analytics Dashboard
             </h1>
             <p className="text-sm text-gray-500 mt-1">
@@ -220,7 +220,7 @@ export default function AnalyticsDashboard() {
             className="bg-white dark:bg-gray-800 rounded-xl border border-gray-200 dark:border-gray-700 p-6"
           >
             <h3 className="text-lg font-medium text-gray-900 dark:text-white mb-4 flex items-center gap-2">
-              <Target className="w-5 h-5 text-blue-600" />
+              <Target className="w-5 h-5 text-[#C9A962]" />
               Lead Quality Distribution
             </h3>
             <div className="space-y-4">
@@ -268,7 +268,7 @@ export default function AnalyticsDashboard() {
             <DistributionBar
               data={data?.proposal_selections || {}}
               colors={{
-                value: 'bg-blue-500',
+                value: 'bg-[#C9A962]',
                 balanced: 'bg-green-500',
                 flagship: 'bg-[#C9A962]/50'
               }}
@@ -289,7 +289,7 @@ export default function AnalyticsDashboard() {
             <DistributionBar
               data={data?.segments || {}}
               colors={{
-                Residential: 'bg-blue-500',
+                Residential: 'bg-[#C9A962]',
                 Commercial: 'bg-[#C9A962]/50',
                 Hospitality: 'bg-orange-500'
               }}
@@ -304,13 +304,13 @@ export default function AnalyticsDashboard() {
             className="bg-white dark:bg-gray-800 rounded-xl border border-gray-200 dark:border-gray-700 p-6"
           >
             <h3 className="text-lg font-medium text-gray-900 dark:text-white mb-4 flex items-center gap-2">
-              <Building2 className="w-5 h-5 text-blue-600" />
+              <Building2 className="w-5 h-5 text-[#C9A962]" />
               Property Types
             </h3>
             <DistributionBar
               data={data?.property_types || {}}
               colors={{
-                Villa: 'bg-blue-500',
+                Villa: 'bg-[#C9A962]',
                 Apartment: 'bg-green-500',
                 Penthouse: 'bg-[#C9A962]/50',
                 Estate: 'bg-orange-500'

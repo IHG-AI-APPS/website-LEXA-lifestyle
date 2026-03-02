@@ -706,15 +706,15 @@ export default function AdvancedCalculatorPage() {
                     <h3 className="text-xl font-bold mb-3">Next Steps</h3>
                     <ul className="space-y-2 text-gray-700 dark:text-gray-300 dark:text-gray-300">
                       <li className="flex items-start gap-2">
-                        <CheckCircle2 size={20} className="text-blue-500 mt-0.5 flex-shrink-0" />
+                        <CheckCircle2 size={20} className="text-[#C9A962] mt-0.5 flex-shrink-0" />
                         <span>Book a free consultation with our smart home experts</span>
                       </li>
                       <li className="flex items-start gap-2">
-                        <CheckCircle2 size={20} className="text-blue-500 mt-0.5 flex-shrink-0" />
+                        <CheckCircle2 size={20} className="text-[#C9A962] mt-0.5 flex-shrink-0" />
                         <span>Site survey and detailed proposal within 3-5 business days</span>
                       </li>
                       <li className="flex items-start gap-2">
-                        <CheckCircle2 size={20} className="text-blue-500 mt-0.5 flex-shrink-0" />
+                        <CheckCircle2 size={20} className="text-[#C9A962] mt-0.5 flex-shrink-0" />
                         <span>Flexible payment plans and financing options available</span>
                       </li>
                     </ul>

@@ -53,7 +53,7 @@ export default function Visualize3DPage() {
 
             <div className="bg-white dark:bg-white/5 rounded-xl p-6 shadow-lg text-center border border-transparent dark:border-white/10">
               <div className="inline-flex items-center justify-center w-14 h-14 mb-4 bg-blue-100 dark:bg-blue-900/30 rounded-full">
-                <Lightbulb className="text-blue-600 dark:text-blue-400" size={28} />
+                <Lightbulb className="text-[#C9A962] dark:text-blue-400" size={28} />
               </div>
               <h3 className="font-bold text-lg mb-2">Design Confidence</h3>
               <p className="text-gray-600 dark:text-gray-400 text-sm">

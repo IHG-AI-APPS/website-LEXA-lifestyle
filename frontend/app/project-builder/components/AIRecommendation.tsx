@@ -575,7 +575,7 @@ export default function AIRecommendation({
         </div>
         <div className="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-xl p-4 text-center">
           <div className="w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center mx-auto mb-2">
-            <Zap className="w-5 h-5 text-blue-600" />
+            <Zap className="w-5 h-5 text-[#C9A962]" />
           </div>
           <div className="text-2xl font-bold text-gray-900 dark:text-white capitalize">{recommendation.summary.protocol_type}</div>
           <div className="text-sm text-gray-500">Protocol</div>

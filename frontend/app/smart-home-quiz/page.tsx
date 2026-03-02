@@ -187,7 +187,7 @@ export default function SmartHomeQuizPage() {
 
   const getColorClasses = (color: string, isSelected: boolean) => {
     const colors: Record<string, { bg: string; border: string; text: string }> = {
-      blue: { bg: 'bg-blue-50', border: 'border-blue-500', text: 'text-blue-600' },
+      blue: { bg: 'bg-blue-50', border: 'border-blue-500', text: 'text-[#C9A962]' },
       emerald: { bg: 'bg-emerald-50', border: 'border-emerald-500', text: 'text-emerald-600' },
       amber: { bg: 'bg-amber-50', border: 'border-amber-500', text: 'text-amber-600' },
       purple: { bg: 'bg-[#C9A962]/5', border: 'border-[#C9A962]', text: 'text-[#C9A962]' },
@@ -232,13 +232,13 @@ export default function SmartHomeQuizPage() {
           {[1, 2, 3, 4].map((s) => (
             <div key={s} className="flex items-center">
               <div className={`w-10 h-10 rounded-full flex items-center justify-center font-bold transition-all ${
-                s < step ? 'bg-blue-600 text-white' :
-                s === step ? 'bg-blue-600 text-white ring-4 ring-blue-200' :
+                s < step ? 'bg-[#C9A962] text-white' :
+                s === step ? 'bg-[#C9A962] text-white ring-4 ring-[#C9A962]' :
                 'bg-gray-200 text-gray-500'
               }`}>
                 {s < step ? <CheckCircle2 className="h-5 w-5" /> : s}
               </div>
-              {s < 4 && <div className={`w-16 h-1 mx-2 ${s < step ? 'bg-blue-600' : 'bg-gray-200'}`} />}
+              {s < 4 && <div className={`w-16 h-1 mx-2 ${s < step ? 'bg-[#C9A962]' : 'bg-gray-200'}`} />}
             </div>
           ))}
         </div>
@@ -307,7 +307,7 @@ export default function SmartHomeQuizPage() {
                 <Button
                   onClick={() => setStep(2)}
                   disabled={selectedPriorities.length === 0}
-                  className="bg-blue-600 hover:bg-blue-700"
+                  className="bg-[#C9A962] hover:bg-[#B8983F]"
                 >
                   Continue
                   <ArrowRight className="ml-2 h-4 w-4" />
@@ -343,8 +343,8 @@ export default function SmartHomeQuizPage() {
                           : 'border-gray-200 dark:border-gray-700 hover:border-gray-300'
                       }`}
                     >
-                      <Icon className={`h-10 w-10 mx-auto mb-3 ${isSelected ? 'text-blue-600' : 'text-gray-600'}`} />
-                      <h3 className={`font-bold ${isSelected ? 'text-blue-600' : 'text-gray-900'}`}>
+                      <Icon className={`h-10 w-10 mx-auto mb-3 ${isSelected ? 'text-[#C9A962]' : 'text-gray-600'}`} />
+                      <h3 className={`font-bold ${isSelected ? 'text-[#C9A962]' : 'text-gray-900'}`}>
                         {type.name}
                       </h3>
                     </button>
@@ -360,7 +360,7 @@ export default function SmartHomeQuizPage() {
                 <Button
                   onClick={() => setStep(3)}
                   disabled={!propertyType}
-                  className="bg-blue-600 hover:bg-blue-700"
+                  className="bg-[#C9A962] hover:bg-[#B8983F]"
                 >
                   Continue
                   <ArrowRight className="ml-2 h-4 w-4" />
@@ -395,7 +395,7 @@ export default function SmartHomeQuizPage() {
                           : 'border-gray-200 dark:border-gray-700 hover:border-gray-300'
                       }`}
                     >
-                      <h3 className={`font-bold text-lg ${isSelected ? 'text-blue-600' : 'text-gray-900'}`}>
+                      <h3 className={`font-bold text-lg ${isSelected ? 'text-[#C9A962]' : 'text-gray-900'}`}>
                         {budget.name}
                       </h3>
                       <p className="text-sm text-gray-600 dark:text-gray-400 mt-1">{budget.range}</p>
@@ -412,7 +412,7 @@ export default function SmartHomeQuizPage() {
                 <Button
                   onClick={getAIRecommendations}
                   disabled={!budgetRange || loading}
-                  className="bg-blue-600 hover:bg-blue-700"
+                  className="bg-[#C9A962] hover:bg-[#B8983F]"
                 >
                   {loading ? (
                     <>
@@ -475,7 +475,7 @@ export default function SmartHomeQuizPage() {
                       transition={{ duration: 0.15 }}
                       className="flex items-center gap-4 p-4 rounded-xl border border-gray-200 dark:border-gray-700 hover:border-blue-300 hover:shadow-sm transition-all"
                     >
-                      <div className="w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center text-blue-600 font-bold">
+                      <div className="w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center text-[#C9A962] font-bold">
                         {index + 1}
                       </div>
                       <div className="flex-1">
@@ -514,7 +514,7 @@ export default function SmartHomeQuizPage() {
                   
                   <div className="flex flex-col sm:flex-row gap-4">
                     <Link href="/package-builder" className="flex-1">
-                      <Button className="w-full bg-blue-600 hover:bg-blue-700 py-6">
+                      <Button className="w-full bg-[#C9A962] hover:bg-[#B8983F] py-6">
                         Build Your Package
                         <ArrowRight className="ml-2 h-4 w-4" />
                       </Button>
@@ -527,7 +527,7 @@ export default function SmartHomeQuizPage() {
                     </Link>
                   </div>
                   <p className="text-center text-sm text-gray-500 mt-4">
-                    Or <Link href="/contact" className="text-blue-600 hover:underline">contact us</Link> for a personalized consultation
+                    Or <Link href="/contact" className="text-[#C9A962] hover:underline">contact us</Link> for a personalized consultation
                   </p>
                 </div>
               </div>

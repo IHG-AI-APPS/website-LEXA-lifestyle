@@ -99,7 +99,7 @@ export default function ServiceLayer({ sessionId, projectData, onComplete }: Ser
                 disabled={service.mandatory}
                 className={`w-full p-8 border text-left transition-all duration-300 relative ${
                   isSelected
-                    ? 'border-blue-600 bg-white dark:bg-gray-800 shadow-lg'
+                    ? 'border-[#C9A962] bg-white dark:bg-gray-800 shadow-lg'
                     : 'border-gray-200 dark:border-gray-700 bg-white hover:border-gray-300 dark:border-gray-600 hover:shadow-md'
                 } ${service.mandatory ? 'cursor-not-allowed' : 'cursor-pointer'}`}
               >
@@ -111,7 +111,7 @@ export default function ServiceLayer({ sessionId, projectData, onComplete }: Ser
                     </span>
                   )}
                   {recommended && !service.mandatory && (
-                    <span className="px-3 py-1 bg-blue-600 text-white text-[10px] uppercase tracking-widest font-medium">
+                    <span className="px-3 py-1 bg-[#C9A962] text-white text-[10px] uppercase tracking-widest font-medium">
                       Recommended
                     </span>
                   )}
@@ -121,7 +121,7 @@ export default function ServiceLayer({ sessionId, projectData, onComplete }: Ser
                 <div className="flex items-start gap-6">
                   {/* Icon */}
                   <div className={`${isSelected ? 'bg-blue-50' : 'bg-gray-50'} p-4 transition-colors`}>
-                    <ServiceIcon className={`w-8 h-8 ${isSelected ? 'text-blue-600' : 'text-gray-400'}`} />
+                    <ServiceIcon className={`w-8 h-8 ${isSelected ? 'text-[#C9A962]' : 'text-gray-400'}`} />
                   </div>
 
                   {/* Details */}
@@ -147,7 +147,7 @@ export default function ServiceLayer({ sessionId, projectData, onComplete }: Ser
                         initial={{ scale: 0 }}
                         animate={{ scale: 1 }}
                       >
-                        <CheckCircle2 className="w-8 h-8 text-blue-600" />
+                        <CheckCircle2 className="w-8 h-8 text-[#C9A962]" />
                       </motion.div>
                     )}
                   </div>

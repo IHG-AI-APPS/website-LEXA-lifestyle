@@ -278,7 +278,7 @@ export default function EnterprisePerformanceOSPage() {
                 <Button
                   size="lg"
                   onClick={() => setShowConsultationForm(true)}
-                  className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-6 text-sm font-semibold uppercase tracking-wider"
+                  className="bg-[#C9A962] hover:bg-[#B8983F] text-white px-8 py-6 text-sm font-semibold uppercase tracking-wider"
                 >
                   Request Enterprise Demo
                 </Button>
@@ -339,7 +339,7 @@ export default function EnterprisePerformanceOSPage() {
                     <div className="space-y-2">
                       {layer.features.map((feature) => (
                         <div key={feature} className="flex items-start gap-2">
-                          <CheckCircle2 className="h-5 w-5 text-blue-600 flex-shrink-0 mt-0.5" />
+                          <CheckCircle2 className="h-5 w-5 text-[#C9A962] flex-shrink-0 mt-0.5" />
                           <span className="text-sm text-gray-700 dark:text-gray-300 dark:text-gray-300">{feature}</span>
                         </div>
                       ))}
@@ -378,7 +378,7 @@ export default function EnterprisePerformanceOSPage() {
                     onClick={() => setSelectedUseCase(useCase.id)}
                     className={`px-6 py-3 border-2 font-semibold transition-all flex items-center gap-2 ${
                       selectedUseCase === useCase.id
-                        ? 'border-blue-600 bg-blue-50 text-blue-700'
+                        ? 'border-[#C9A962] bg-blue-50 text-blue-700'
                         : 'border-gray-200 dark:border-gray-700 bg-white text-gray-700 dark:text-gray-300 hover:border-blue-300'
                     }`}
                   >
@@ -398,7 +398,7 @@ export default function EnterprisePerformanceOSPage() {
             >
               <div className="flex items-center gap-4 mb-8">
                 <div className="p-4 bg-blue-100">
-                  <SelectedIcon className="h-10 w-10 text-blue-600" />
+                  <SelectedIcon className="h-10 w-10 text-[#C9A962]" />
                 </div>
                 <h3 className="text-3xl font-bold text-gray-900 dark:text-white dark:text-white">{selectedCase.name}</h3>
               </div>
@@ -407,7 +407,7 @@ export default function EnterprisePerformanceOSPage() {
                 {selectedCase.benefits.map((benefit) => (
                   <div key={benefit.label} className="bg-white dark:bg-gray-800 p-6 border border-gray-200 dark:border-gray-700 dark:border-gray-700">
                     <div className="font-semibold text-gray-900 dark:text-white mb-2">{benefit.label}</div>
-                    <div className="text-sm text-blue-600 font-semibold">{benefit.value}</div>
+                    <div className="text-sm text-[#C9A962] font-semibold">{benefit.value}</div>
                   </div>
                 ))}
               </div>
@@ -425,7 +425,7 @@ export default function EnterprisePerformanceOSPage() {
               viewport={{ once: true }}
               className="text-center mb-16"
             >
-              <div className="inline-flex items-center gap-2 px-4 py-2 bg-blue-600 mb-4">
+              <div className="inline-flex items-center gap-2 px-4 py-2 bg-[#C9A962] mb-4">
                 <Award className="h-4 w-4" />
                 <span className="text-xs font-bold uppercase">Industry-Leading Performance</span>
               </div>
@@ -487,22 +487,22 @@ export default function EnterprisePerformanceOSPage() {
                   transition={{ duration: 0.6, delay: 0.2 }}
                   viewport={{ once: true }}
                   className={`bg-white dark:bg-gray-800 p-8 border-2 transition-all hover:shadow-xl ${
-                    tier.popular ? 'border-blue-600 shadow-lg scale-105' : 'border-gray-200'
+                    tier.popular ? 'border-[#C9A962] shadow-lg scale-105' : 'border-gray-200'
                   }`}
                 >
                   {tier.popular && (
-                    <div className="inline-block px-3 py-1 bg-blue-600 text-white text-xs font-bold uppercase mb-4">
+                    <div className="inline-block px-3 py-1 bg-[#C9A962] text-white text-xs font-bold uppercase mb-4">
                       Most Popular
                     </div>
                   )}
                   <h3 className="text-2xl font-bold mb-2 text-gray-900 dark:text-white dark:text-white">{tier.name}</h3>
                   <div className="text-sm text-gray-600 dark:text-gray-400 mb-4">{tier.size}</div>
-                  <div className="text-3xl font-bold text-blue-600 mb-6">{tier.investment}</div>
+                  <div className="text-3xl font-bold text-[#C9A962] mb-6">{tier.investment}</div>
                   
                   <div className="space-y-3 mb-8">
                     {tier.includes.map((item) => (
                       <div key={item} className="flex items-start gap-2">
-                        <CheckCircle2 className="h-5 w-5 text-blue-600 flex-shrink-0 mt-0.5" />
+                        <CheckCircle2 className="h-5 w-5 text-[#C9A962] flex-shrink-0 mt-0.5" />
                         <span className="text-sm text-gray-700 dark:text-gray-300 dark:text-gray-300">{item}</span>
                       </div>
                     ))}
@@ -512,7 +512,7 @@ export default function EnterprisePerformanceOSPage() {
                     onClick={() => setShowConsultationForm(true)}
                     className={`w-full ${
                       tier.popular
-                        ? 'bg-blue-600 hover:bg-blue-700 text-white'
+                        ? 'bg-[#C9A962] hover:bg-[#B8983F] text-white'
                         : 'bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 text-gray-900'
                     }`}
                   >
@@ -553,7 +553,7 @@ export default function EnterprisePerformanceOSPage() {
               <Button
                 size="lg"
                 onClick={() => setShowConsultationForm(true)}
-                className="bg-white text-blue-600 hover:bg-blue-50 px-8 py-6 text-sm font-semibold uppercase tracking-wider"
+                className="bg-white text-[#C9A962] hover:bg-blue-50 px-8 py-6 text-sm font-semibold uppercase tracking-wider"
               >
                 Request Enterprise Demo
                 <ArrowRight className="ml-2 h-4 w-4" />

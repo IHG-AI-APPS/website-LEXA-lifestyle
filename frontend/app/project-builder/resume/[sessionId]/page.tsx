@@ -191,7 +191,7 @@ export default function ResumePage() {
                           <CheckCircle2 className="w-5 h-5 text-green-500" />
                         ) : sessionState.current_step === step ? (
                           <div className="w-5 h-5 rounded-full border-2 border-blue-500 flex items-center justify-center">
-                            <div className="w-2 h-2 rounded-full bg-blue-500" />
+                            <div className="w-2 h-2 rounded-full bg-[#C9A962]" />
                           </div>
                         ) : (
                           <div className="w-5 h-5 rounded-full border-2 border-gray-300" />
@@ -230,7 +230,7 @@ export default function ResumePage() {
                   </Button>
                   <Button
                     onClick={handleContinue}
-                    className="flex-1 gap-2 bg-blue-600 hover:bg-blue-700"
+                    className="flex-1 gap-2 bg-[#C9A962] hover:bg-[#B8983F]"
                     data-testid="continue-session-btn"
                   >
                     Continue Project

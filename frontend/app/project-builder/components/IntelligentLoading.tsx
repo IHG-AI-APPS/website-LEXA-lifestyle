@@ -87,7 +87,7 @@ export default function IntelligentLoading({ estimatedTime = 30 }: IntelligentLo
         <div className="relative">
           <div className="absolute inset-0 bg-gradient-to-r from-[#C9A962] to-[#A68B4B] rounded-full blur-xl opacity-30 animate-pulse" />
           <div className="relative bg-gradient-to-br from-[#C9A962]/5 to-[#A68B4B]/5 p-8 rounded-full">
-            <IconComponent className="w-16 h-16 text-blue-600" />
+            <IconComponent className="w-16 h-16 text-[#C9A962]" />
           </div>
         </div>
       </motion.div>
@@ -131,7 +131,7 @@ export default function IntelligentLoading({ estimatedTime = 30 }: IntelligentLo
             key={index}
             className={`h-1.5 rounded-full transition-all duration-300 ${
               index === currentStateIndex
-                ? 'w-8 bg-blue-600'
+                ? 'w-8 bg-[#C9A962]'
                 : index < currentStateIndex
                 ? 'w-1.5 bg-blue-400'
                 : 'w-1.5 bg-gray-300'

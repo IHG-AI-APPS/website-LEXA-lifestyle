@@ -175,7 +175,7 @@ export default function BOQSummary({ sessionId, selectedProposal, onComplete }: 
             className="bg-blue-50 border border-blue-200 rounded-lg p-4 mb-8 text-center"
           >
             <p className="text-sm text-blue-800 mb-2">Your resume link (valid for 30 days):</p>
-            <code className="text-xs bg-white px-3 py-1 rounded border text-blue-600 break-all">
+            <code className="text-xs bg-white px-3 py-1 rounded border text-[#C9A962] break-all">
               {resumeLink}
             </code>
           </motion.div>
@@ -187,28 +187,28 @@ export default function BOQSummary({ sessionId, selectedProposal, onComplete }: 
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
             <div className="flex items-start gap-3">
-              <Layers className="w-5 h-5 text-blue-600 mt-1" />
+              <Layers className="w-5 h-5 text-[#C9A962] mt-1" />
               <div>
                 <div className="text-xs text-gray-600 dark:text-gray-400 uppercase tracking-widest mb-1">Tier Mix</div>
                 <div className="text-base text-gray-900 dark:text-white font-medium">{proposal?.tier_mix}</div>
               </div>
             </div>
             <div className="flex items-start gap-3">
-              <Target className="w-5 h-5 text-blue-600 mt-1" />
+              <Target className="w-5 h-5 text-[#C9A962] mt-1" />
               <div>
                 <div className="text-xs text-gray-600 dark:text-gray-400 uppercase tracking-widest mb-1">System Count</div>
                 <div className="text-base text-gray-900 dark:text-white font-medium font-mono">{proposal?.system_count} Integrated Systems</div>
               </div>
             </div>
             <div className="flex items-start gap-3">
-              <Clock className="w-5 h-5 text-blue-600 mt-1" />
+              <Clock className="w-5 h-5 text-[#C9A962] mt-1" />
               <div>
                 <div className="text-xs text-gray-600 dark:text-gray-400 uppercase tracking-widest mb-1">Estimated Timeline</div>
                 <div className="text-base text-gray-900 dark:text-white font-medium font-mono">{proposal?.estimated_timeline}</div>
               </div>
             </div>
             <div className="flex items-start gap-3">
-              <CheckCircle2 className="w-5 h-5 text-blue-600 mt-1" />
+              <CheckCircle2 className="w-5 h-5 text-[#C9A962] mt-1" />
               <div>
                 <div className="text-xs text-gray-600 dark:text-gray-400 uppercase tracking-widest mb-1">Complexity Score</div>
                 <div className="text-base text-gray-900 dark:text-white font-medium font-mono">{proposal?.complexity_score}/10</div>
@@ -236,7 +236,7 @@ export default function BOQSummary({ sessionId, selectedProposal, onComplete }: 
           <div className="space-y-3">
             {proposal?.highlights?.map((highlight: string, index: number) => (
               <div key={index} className="flex items-start gap-3 text-sm text-gray-700 dark:text-gray-300 dark:text-gray-300">
-                <CheckCircle2 className="w-4 h-4 text-blue-600 mt-0.5 flex-shrink-0" />
+                <CheckCircle2 className="w-4 h-4 text-[#C9A962] mt-0.5 flex-shrink-0" />
                 <span>{highlight}</span>
               </div>
             ))}
@@ -248,19 +248,19 @@ export default function BOQSummary({ sessionId, selectedProposal, onComplete }: 
           <h3 className="text-sm font-medium mb-4 uppercase tracking-widest text-gray-900 dark:text-white dark:text-white">Next Steps</h3>
           <ol className="space-y-3 text-sm text-gray-700 dark:text-gray-300 dark:text-gray-300">
             <li className="flex items-start gap-3">
-              <span className="text-blue-600 font-mono font-medium">01.</span>
+              <span className="text-[#C9A962] font-mono font-medium">01.</span>
               <span>Site survey and detailed measurements</span>
             </li>
             <li className="flex items-start gap-3">
-              <span className="text-blue-600 font-mono font-medium">02.</span>
+              <span className="text-[#C9A962] font-mono font-medium">02.</span>
               <span>Final system design and engineering</span>
             </li>
             <li className="flex items-start gap-3">
-              <span className="text-blue-600 font-mono font-medium">03.</span>
+              <span className="text-[#C9A962] font-mono font-medium">03.</span>
               <span>Detailed quotation with itemized pricing</span>
             </li>
             <li className="flex items-start gap-3">
-              <span className="text-blue-600 font-mono font-medium">04.</span>
+              <span className="text-[#C9A962] font-mono font-medium">04.</span>
               <span>Project timeline and phasing plan</span>
             </li>
           </ol>
@@ -299,7 +299,7 @@ export default function BOQSummary({ sessionId, selectedProposal, onComplete }: 
                   type="text"
                   value={emailForm.name}
                   onChange={(e) => setEmailForm({ ...emailForm, name: e.target.value })}
-                  className="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                  className="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-[#C9A962] focus:border-blue-500"
                   placeholder="John Smith"
                   data-testid="email-modal-name"
                 />
@@ -310,7 +310,7 @@ export default function BOQSummary({ sessionId, selectedProposal, onComplete }: 
                   type="email"
                   value={emailForm.email}
                   onChange={(e) => setEmailForm({ ...emailForm, email: e.target.value })}
-                  className="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                  className="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-[#C9A962] focus:border-blue-500"
                   placeholder="john@example.com"
                   data-testid="email-modal-email"
                 />

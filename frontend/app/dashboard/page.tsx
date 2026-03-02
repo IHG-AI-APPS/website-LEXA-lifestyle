@@ -157,7 +157,7 @@ export default function DashboardPage() {
                 Refresh
               </Button>
               <Link href="/project-builder">
-                <Button className="gap-2 bg-blue-600 hover:bg-blue-700" data-testid="new-project-btn">
+                <Button className="gap-2 bg-[#C9A962] hover:bg-[#B8983F]" data-testid="new-project-btn">
                   <Plus className="w-4 h-4" />
                   New Project
                 </Button>
@@ -192,7 +192,7 @@ export default function DashboardPage() {
               Your progress is automatically saved.
             </p>
             <Link href="/project-builder">
-              <Button className="gap-2 bg-blue-600 hover:bg-blue-700">
+              <Button className="gap-2 bg-[#C9A962] hover:bg-[#B8983F]">
                 <Plus className="w-4 h-4" />
                 Start Your First Project
               </Button>
@@ -216,7 +216,7 @@ export default function DashboardPage() {
                 <div className={`p-4 ${session.completed ? 'bg-green-50' : 'bg-blue-50'}`}>
                   <div className="flex items-center justify-between">
                     <div className="flex items-center gap-2">
-                      <Building2 className={`w-5 h-5 ${session.completed ? 'text-green-600' : 'text-blue-600'}`} />
+                      <Building2 className={`w-5 h-5 ${session.completed ? 'text-green-600' : 'text-[#C9A962]'}`} />
                       <span className="font-medium text-gray-900 dark:text-white dark:text-white">{session.property_type}</span>
                     </div>
                     {session.completed ? (
@@ -258,7 +258,7 @@ export default function DashboardPage() {
                       </div>
                       <div className="h-2 bg-gray-100 dark:bg-gray-800 rounded-full overflow-hidden">
                         <div 
-                          className="h-full bg-blue-600 rounded-full transition-all"
+                          className="h-full bg-[#C9A962] rounded-full transition-all"
                           style={{ width: `${getStepProgress(session)}%` }}
                         />
                       </div>
@@ -325,7 +325,7 @@ export default function DashboardPage() {
               <div className="text-sm text-gray-500">Total Projects</div>
             </div>
             <div className="bg-white dark:bg-gray-800 rounded-xl border border-gray-200 dark:border-gray-700 p-4 text-center">
-              <div className="text-3xl font-semibold text-blue-600">
+              <div className="text-3xl font-semibold text-[#C9A962]">
                 {sessions.filter(s => !s.completed).length}
               </div>
               <div className="text-sm text-gray-500">In Progress</div>

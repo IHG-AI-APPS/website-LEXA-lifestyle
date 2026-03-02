@@ -19,7 +19,7 @@ interface IntelligenceEngineProps {
 // Classification icons
 const CLASSIFICATION_CONFIG = {
   mandatory: { icon: Shield, color: 'text-red-600', bg: 'bg-red-50', label: 'Mandatory' },
-  recommended: { icon: Zap, color: 'text-blue-600', bg: 'bg-blue-50', label: 'Recommended' },
+  recommended: { icon: Zap, color: 'text-[#C9A962]', bg: 'bg-blue-50', label: 'Recommended' },
   luxury: { icon: Lightbulb, color: 'text-[#C9A962]', bg: 'bg-[#C9A962]/5', label: 'Luxury Enhancement' }
 }
 
@@ -223,7 +223,7 @@ export default function IntelligenceEngine({ sessionId, projectData, onComplete 
         {/* Header */}
         <div className="text-center mb-12">
           <div className="inline-flex items-center gap-2 px-6 py-2 bg-gradient-to-r from-[#C9A962]/5 to-[#A68B4B]/5 rounded-full mb-6 border border-blue-200">
-            <Brain className="w-5 h-5 text-blue-600" />
+            <Brain className="w-5 h-5 text-[#C9A962]" />
             <span className="text-xs uppercase tracking-widest text-blue-900 font-medium">
               AI Intelligence Analysis Complete
             </span>
@@ -252,7 +252,7 @@ export default function IntelligenceEngine({ sessionId, projectData, onComplete 
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.2 }}
-              className="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 p-6 text-center hover:border-blue-600 hover:shadow-md transition-all duration-300"
+              className="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 p-6 text-center hover:border-[#C9A962] hover:shadow-md transition-all duration-300"
             >
               <stat.icon className={`w-6 h-6 mx-auto mb-3 text-${stat.color}-600`} />
               <div className="text-3xl font-semibold text-gray-900 dark:text-white mb-1">
@@ -295,7 +295,7 @@ export default function IntelligenceEngine({ sessionId, projectData, onComplete 
               onClick={() => setViewMode('list')}
               className={`px-4 py-2 text-sm font-medium rounded transition-all ${
                 viewMode === 'list'
-                  ? 'bg-white text-blue-600 shadow-sm'
+                  ? 'bg-white text-[#C9A962] shadow-sm'
                   : 'text-gray-600 dark:text-gray-400 hover:text-gray-900'
               }`}
             >
@@ -305,7 +305,7 @@ export default function IntelligenceEngine({ sessionId, projectData, onComplete 
               onClick={() => setViewMode('graph')}
               className={`px-4 py-2 text-sm font-medium rounded transition-all flex items-center gap-2 ${
                 viewMode === 'graph'
-                  ? 'bg-white text-blue-600 shadow-sm'
+                  ? 'bg-white text-[#C9A962] shadow-sm'
                   : 'text-gray-600 dark:text-gray-400 hover:text-gray-900'
               }`}
             >
@@ -345,7 +345,7 @@ export default function IntelligenceEngine({ sessionId, projectData, onComplete 
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: bundleIndex * 0.1 }}
-                className="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 overflow-hidden hover:border-blue-600 transition-all duration-300"
+                className="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 overflow-hidden hover:border-[#C9A962] transition-all duration-300"
               >
                 {/* Domain Header - Clickable */}
                 <button
@@ -354,7 +354,7 @@ export default function IntelligenceEngine({ sessionId, projectData, onComplete 
                 >
                   <div className="flex items-center gap-4">
                     {isExpanded ? (
-                      <ChevronDown className="w-5 h-5 text-blue-600" />
+                      <ChevronDown className="w-5 h-5 text-[#C9A962]" />
                     ) : (
                       <ChevronRight className="w-5 h-5 text-gray-400" />
                     )}
@@ -403,14 +403,14 @@ export default function IntelligenceEngine({ sessionId, projectData, onComplete 
                               onMouseLeave={() => setHoveredFeature(null)}
                               className={`w-full p-4 border rounded text-left transition-all duration-300 relative group ${
                                 isSelected
-                                  ? 'border-blue-600 bg-white dark:bg-gray-800 shadow-md'
+                                  ? 'border-[#C9A962] bg-white dark:bg-gray-800 shadow-md'
                                   : 'border-gray-200 dark:border-gray-700 bg-white hover:border-gray-300 dark:border-gray-600 hover:shadow-sm'
                               }`}
                             >
                               {/* Selection Checkbox */}
                               <div className="flex items-start gap-3">
                                 <div className={`mt-0.5 flex-shrink-0 ${
-                                  isSelected ? 'text-blue-600' : 'text-gray-300'
+                                  isSelected ? 'text-[#C9A962]' : 'text-gray-300'
                                 }`}>
                                   <CheckCircle2 className="w-5 h-5" />
                                 </div>
@@ -431,7 +431,7 @@ export default function IntelligenceEngine({ sessionId, projectData, onComplete 
 
                                   {/* AI Reasoning */}
                                   <div className="text-xs text-gray-600 dark:text-gray-400 mb-2 flex items-start gap-1">
-                                    <Brain className="w-3 h-3 text-blue-600 mt-0.5 flex-shrink-0" />
+                                    <Brain className="w-3 h-3 text-[#C9A962] mt-0.5 flex-shrink-0" />
                                     <span>{reasoning}</span>
                                   </div>
 
@@ -511,7 +511,7 @@ export default function IntelligenceEngine({ sessionId, projectData, onComplete 
         {/* Continue Button */}
         <div className="text-center">
           <div className="mb-4 text-sm text-gray-600 dark:text-gray-400 dark:text-gray-400">
-            <span className="font-semibold text-blue-600">{mandatoryCount}</span> features selected from {totalFeatures} analyzed
+            <span className="font-semibold text-[#C9A962]">{mandatoryCount}</span> features selected from {totalFeatures} analyzed
           </div>
           <Button
             onClick={handleContinue}

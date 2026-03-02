@@ -593,7 +593,7 @@ export default function IndustryCalculatorPage() {
                     <div className="bg-blue-50 border border-blue-200 rounded-xl p-4 flex items-center justify-between">
                       <div className="flex items-center gap-3">
                         <div className="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center">
-                          <Save className="w-5 h-5 text-blue-600" />
+                          <Save className="w-5 h-5 text-[#C9A962]" />
                         </div>
                         <div>
                           <div className="font-semibold text-blue-900">You have saved progress</div>
@@ -629,7 +629,7 @@ export default function IndustryCalculatorPage() {
                               if (data.step) setStep(data.step)
                             }
                           }}
-                          className="bg-blue-600 text-white"
+                          className="bg-[#C9A962] text-white"
                         >
                           Resume Progress
                         </Button>
@@ -1422,15 +1422,15 @@ export default function IndustryCalculatorPage() {
                     <h3 className="text-xl font-bold mb-3">Next Steps</h3>
                     <ul className="space-y-2 text-gray-700 dark:text-gray-300 dark:text-gray-300">
                       <li className="flex items-start gap-2">
-                        <CheckCircle2 size={20} className="text-blue-500 mt-0.5 flex-shrink-0" />
+                        <CheckCircle2 size={20} className="text-[#C9A962] mt-0.5 flex-shrink-0" />
                         <span>Our team will contact you within 24 hours</span>
                       </li>
                       <li className="flex items-start gap-2">
-                        <CheckCircle2 size={20} className="text-blue-500 mt-0.5 flex-shrink-0" />
+                        <CheckCircle2 size={20} className="text-[#C9A962] mt-0.5 flex-shrink-0" />
                         <span>Free site survey and detailed proposal</span>
                       </li>
                       <li className="flex items-start gap-2">
-                        <CheckCircle2 size={20} className="text-blue-500 mt-0.5 flex-shrink-0" />
+                        <CheckCircle2 size={20} className="text-[#C9A962] mt-0.5 flex-shrink-0" />
                         <span>Flexible payment plans available</span>
                       </li>
                     </ul>
@@ -1486,7 +1486,7 @@ export default function IndustryCalculatorPage() {
                       <Button
                         size="lg"
                         variant="outline"
-                        className="border-2 border-blue-600 text-blue-600 hover:bg-blue-50 px-8 py-4 w-full md:w-auto"
+                        className="border-2 border-[#C9A962] text-[#C9A962] hover:bg-blue-50 px-8 py-4 w-full md:w-auto"
                         onClick={() => setShowBookingModal(true)}
                       >
                         <Calendar className="w-6 h-6 mr-2" />

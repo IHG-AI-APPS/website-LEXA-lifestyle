@@ -37,7 +37,7 @@ export default function ProgressBreadcrumbs({ currentStep, completedSteps }: Bre
                       w-10 h-10 rounded-full flex items-center justify-center text-sm font-semibold
                       transition-all duration-300
                       ${isCompleted ? 'bg-green-600 text-white' : ''}
-                      ${isCurrent ? 'bg-blue-600 text-white ring-4 ring-blue-100' : ''}
+                      ${isCurrent ? 'bg-[#C9A962] text-white ring-4 ring-[#C9A962]' : ''}
                       ${isUpcoming ? 'bg-gray-200 text-gray-500' : ''}
                     `}
                   >
@@ -50,7 +50,7 @@ export default function ProgressBreadcrumbs({ currentStep, completedSteps }: Bre
                   <span
                     className={`
                       mt-2 text-xs font-medium hidden sm:block
-                      ${isCurrent ? 'text-blue-600' : ''}
+                      ${isCurrent ? 'text-[#C9A962]' : ''}
                       ${isCompleted ? 'text-green-600' : ''}
                       ${isUpcoming ? 'text-gray-500' : ''}
                     `}
@@ -60,7 +60,7 @@ export default function ProgressBreadcrumbs({ currentStep, completedSteps }: Bre
                   <span
                     className={`
                       mt-2 text-xs font-medium sm:hidden
-                      ${isCurrent ? 'text-blue-600' : ''}
+                      ${isCurrent ? 'text-[#C9A962]' : ''}
                       ${isCompleted ? 'text-green-600' : ''}
                       ${isUpcoming ? 'text-gray-500' : ''}
                     `}

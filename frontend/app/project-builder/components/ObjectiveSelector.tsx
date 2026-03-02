@@ -107,7 +107,7 @@ export default function ObjectiveSelector({ sessionId, onComplete }: ObjectiveSe
                 onClick={() => toggleObjective(objective.id)}
                 className={`relative p-8 text-left transition-all duration-300 group bg-white dark:bg-gray-800 border ${
                   isSelected
-                    ? 'border-blue-600 shadow-lg scale-105'
+                    ? 'border-[#C9A962] shadow-lg scale-105'
                     : 'border-gray-200 dark:border-gray-700 hover:border-gray-300 dark:border-gray-600 hover:shadow-md'
                 }`}
               >
@@ -118,13 +118,13 @@ export default function ObjectiveSelector({ sessionId, onComplete }: ObjectiveSe
                     animate={{ scale: 1 }}
                     className="absolute top-4 right-4"
                   >
-                    <CheckCircle2 className="w-6 h-6 text-blue-600" />
+                    <CheckCircle2 className="w-6 h-6 text-[#C9A962]" />
                   </motion.div>
                 )}
 
                 {/* Icon */}
                 <div className={`mb-6 transition-colors duration-300 ${
-                  isSelected ? 'text-blue-600' : 'text-gray-400 group-hover:text-blue-600'
+                  isSelected ? 'text-[#C9A962]' : 'text-gray-400 group-hover:text-[#C9A962]'
                 }`}>
                   <Icon className="w-10 h-10" />
                 </div>
@@ -138,7 +138,7 @@ export default function ObjectiveSelector({ sessionId, onComplete }: ObjectiveSe
 
                 {/* Selection Badge */}
                 {isSelected && (
-                  <div className="text-xs text-blue-600 uppercase tracking-widest mt-4 font-medium">
+                  <div className="text-xs text-[#C9A962] uppercase tracking-widest mt-4 font-medium">
                     Selected
                   </div>
                 )}
@@ -152,7 +152,7 @@ export default function ObjectiveSelector({ sessionId, onComplete }: ObjectiveSe
           <div className="text-sm text-gray-600 dark:text-gray-400 mb-6">
             {selectedObjectives.length > 0 ? (
               <span>
-                <span className="text-blue-600 font-semibold font-mono">{selectedObjectives.length}</span> objective{selectedObjectives.length > 1 ? 's' : ''} selected
+                <span className="text-[#C9A962] font-semibold font-mono">{selectedObjectives.length}</span> objective{selectedObjectives.length > 1 ? 's' : ''} selected
               </span>
             ) : (
               <span className="text-gray-500">Select at least one objective to continue</span>

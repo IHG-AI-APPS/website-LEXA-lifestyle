@@ -858,7 +858,7 @@ export default function FinalSummary({
         <div className="grid grid-cols-2 gap-4">
           <div className="p-4 bg-gray-50 rounded-xl">
             <div className="flex items-center gap-2 mb-2">
-              <Zap className="w-5 h-5 text-blue-500" />
+              <Zap className="w-5 h-5 text-[#C9A962]" />
               <span className="font-semibold text-gray-900 dark:text-white dark:text-white">Protocol</span>
             </div>
             <div className="text-gray-600 dark:text-gray-400 dark:text-gray-400">{formatLabel(protocolType)}</div>

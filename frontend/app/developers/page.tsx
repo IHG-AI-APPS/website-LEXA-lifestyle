@@ -198,7 +198,7 @@ export default function DevelopersPage() {
               transition={{ delay: 0.1 }}
               className="bg-gradient-to-br from-blue-50 to-cyan-50 rounded-2xl p-8 border-2 border-blue-200"
             >
-              <Clock size={40} className="text-blue-600 mb-4" />
+              <Clock size={40} className="text-[#C9A962] mb-4" />
               <h3 className="text-2xl font-bold mb-2">Reduce Support Calls</h3>
               <p className="text-gray-700 dark:text-gray-300 dark:text-gray-300">
                 Proper documentation = fewer post-handover issues
@@ -245,10 +245,10 @@ export default function DevelopersPage() {
                 >
                   <button
                     onClick={() => handleResourceClick(resource.id)}
-                    className="w-full bg-white border-2 border-gray-200 dark:border-gray-700 rounded-2xl p-8 hover:border-blue-600 hover:shadow-2xl transition-all transform hover:scale-105 text-left"
+                    className="w-full bg-white border-2 border-gray-200 dark:border-gray-700 rounded-2xl p-8 hover:border-[#C9A962] hover:shadow-2xl transition-all transform hover:scale-105 text-left"
                   >
                     <div className="inline-flex items-center justify-center w-16 h-16 mb-6 rounded-full bg-blue-100">
-                      <resource.icon size={32} className="text-blue-600" />
+                      <resource.icon size={32} className="text-[#C9A962]" />
                     </div>
 
                     <h3 className="text-xl font-bold mb-2">{resource.title}</h3>

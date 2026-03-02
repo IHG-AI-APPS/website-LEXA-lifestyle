@@ -163,8 +163,8 @@ export default function SpecialtyRoomsPage() {
 
                     {/* Content */}
                     <div className="p-6">
-                      <p className="text-xs font-medium text-blue-600 mb-2">{room.category}</p>
-                      <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2 group-hover:text-blue-600 transition-colors">
+                      <p className="text-xs font-medium text-[#C9A962] mb-2">{room.category}</p>
+                      <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2 group-hover:text-[#C9A962] transition-colors">
                         {room.name}
                       </h3>
                       <p className="text-sm text-gray-600 dark:text-gray-400 mb-4 line-clamp-2">
@@ -174,7 +174,7 @@ export default function SpecialtyRoomsPage() {
                       {/* Quick Features */}
                       <div className="flex items-center justify-between text-sm">
                         <span className="text-gray-500">{room.features?.length || 0} features</span>
-                        <span className="text-blue-600 font-medium group-hover:gap-2 flex items-center transition-all">
+                        <span className="text-[#C9A962] font-medium group-hover:gap-2 flex items-center transition-all">
                           View Details
                           <Plus className="h-4 w-4 group-hover:rotate-90 transition-transform" />
                         </span>
@@ -201,13 +201,13 @@ export default function SpecialtyRoomsPage() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
               href="/packages"
-              className="inline-flex items-center justify-center px-8 py-4 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors font-medium"
+              className="inline-flex items-center justify-center px-8 py-4 bg-[#C9A962] text-white rounded-lg hover:bg-[#B8983F] transition-colors font-medium"
             >
               View Packages
             </Link>
             <Link
               href="/consultation"
-              className="inline-flex items-center justify-center px-8 py-4 bg-white text-gray-900 dark:text-white rounded-lg border-2 border-gray-200 dark:border-gray-700 hover:border-blue-600 transition-colors font-medium"
+              className="inline-flex items-center justify-center px-8 py-4 bg-white text-gray-900 dark:text-white rounded-lg border-2 border-gray-200 dark:border-gray-700 hover:border-[#C9A962] transition-colors font-medium"
             >
               Schedule Consultation
             </Link>

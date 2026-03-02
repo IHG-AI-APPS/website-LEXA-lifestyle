@@ -45,7 +45,7 @@ const CustomNode = ({ data }: any) => {
     <div
       className={`px-6 py-4 rounded-lg border-2 shadow-lg transition-all duration-300 ${
         isSelected
-          ? 'bg-gradient-to-br from-[#C9A962]/5 to-[#A68B4B]/5 border-blue-600'
+          ? 'bg-gradient-to-br from-[#C9A962]/5 to-[#A68B4B]/5 border-[#C9A962]'
           : 'bg-gradient-to-br from-orange-50 to-red-50 border-orange-600'
       }`}
     >
@@ -54,7 +54,7 @@ const CustomNode = ({ data }: any) => {
           isSelected ? 'bg-blue-100' : 'bg-orange-100'
         }`}>
           {isSelected ? (
-            <CheckCircle2 className={`w-5 h-5 ${isSelected ? 'text-blue-600' : 'text-orange-600'}`} />
+            <CheckCircle2 className={`w-5 h-5 ${isSelected ? 'text-[#C9A962]' : 'text-orange-600'}`} />
           ) : (
             <Zap className="w-5 h-5 text-orange-600" />
           )}
@@ -62,7 +62,7 @@ const CustomNode = ({ data }: any) => {
         <div>
           <div className="text-sm font-semibold text-gray-900 dark:text-white dark:text-white">{data.label}</div>
           <div className={`text-[10px] uppercase tracking-widest mt-1 ${
-            isSelected ? 'text-blue-600' : 'text-orange-600'
+            isSelected ? 'text-[#C9A962]' : 'text-orange-600'
           }`}>
             {isSelected ? 'Selected' : 'Auto-Added'}
           </div>
@@ -180,13 +180,13 @@ export default function KnowledgeGraphVisualizer({
               Interactive visualization of system relationships and prerequisites
             </p>
           </div>
-          <Network className="w-8 h-8 text-blue-600" />
+          <Network className="w-8 h-8 text-[#C9A962]" />
         </div>
         
         {/* Stats */}
         <div className="flex items-center gap-6 text-sm">
           <div className="flex items-center gap-2">
-            <div className="w-3 h-3 rounded-full bg-blue-600"></div>
+            <div className="w-3 h-3 rounded-full bg-[#C9A962]"></div>
             <span className="text-gray-700 dark:text-gray-300 dark:text-gray-300">
               <span className="font-semibold">{selectedCount}</span> Selected Systems
             </span>
@@ -243,7 +243,7 @@ export default function KnowledgeGraphVisualizer({
             </div>
             <div className="space-y-2 text-xs">
               <div className="flex items-center gap-2">
-                <div className="w-3 h-3 rounded bg-blue-600"></div>
+                <div className="w-3 h-3 rounded bg-[#C9A962]"></div>
                 <span className="text-gray-700 dark:text-gray-300 dark:text-gray-300">Your Selection</span>
               </div>
               <div className="flex items-center gap-2">
@@ -251,7 +251,7 @@ export default function KnowledgeGraphVisualizer({
                 <span className="text-gray-700 dark:text-gray-300 dark:text-gray-300">Required Dependency</span>
               </div>
               <div className="flex items-center gap-2">
-                <div className="w-6 h-0.5 bg-blue-600"></div>
+                <div className="w-6 h-0.5 bg-[#C9A962]"></div>
                 <span className="text-gray-700 dark:text-gray-300 dark:text-gray-300">Dependency Link</span>
               </div>
             </div>
@@ -296,7 +296,7 @@ export default function KnowledgeGraphVisualizer({
         </h4>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs text-gray-700 dark:text-gray-300 dark:text-gray-300">
           <div className="flex items-start gap-2">
-            <CheckCircle2 className="w-4 h-4 text-blue-600 mt-0.5 flex-shrink-0" />
+            <CheckCircle2 className="w-4 h-4 text-[#C9A962] mt-0.5 flex-shrink-0" />
             <div>
               <span className="font-medium">Blue nodes</span> represent systems you explicitly selected based on your project requirements
             </div>
@@ -308,7 +308,7 @@ export default function KnowledgeGraphVisualizer({
             </div>
           </div>
           <div className="flex items-start gap-2">
-            <div className="w-4 h-0.5 bg-blue-600 mt-2 flex-shrink-0"></div>
+            <div className="w-4 h-0.5 bg-[#C9A962] mt-2 flex-shrink-0"></div>
             <div>
               <span className="font-medium">Arrows</span> show dependency relationships - systems at the arrow&apos;s origin require the target system
             </div>

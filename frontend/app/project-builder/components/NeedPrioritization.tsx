@@ -431,7 +431,7 @@ export default function NeedPrioritization({
             {uncategorized.length > 0 && (
               <div className="md:hidden bg-white border-2 border-gray-300 dark:border-gray-600 rounded-xl p-4 mb-6">
                 <h3 className="font-bold text-gray-900 dark:text-white mb-3 flex items-center gap-2 text-sm">
-                  <Hand className="w-4 h-4 text-blue-600" />
+                  <Hand className="w-4 h-4 text-[#C9A962]" />
                   <span>Select a Feature</span>
                   <span className="text-xs font-normal text-gray-500">({uncategorized.length} remaining)</span>
                 </h3>
@@ -450,7 +450,7 @@ export default function NeedPrioritization({
                         data-testid={`feature-${featureId}`}
                         className={`p-3 rounded-xl text-left transition-all relative ${
                           isSelected 
-                            ? 'bg-blue-600 text-white border-2 border-blue-600 shadow-lg scale-[1.02]' 
+                            ? 'bg-[#C9A962] text-white border-2 border-[#C9A962] shadow-lg scale-[1.02]' 
                             : aiRec
                               ? 'bg-amber-50 border-2 border-amber-300 hover:border-amber-400'
                               : 'bg-gray-100 dark:bg-gray-800 border-2 border-gray-200 dark:border-gray-700 hover:border-gray-400 active:scale-95'
@@ -510,7 +510,7 @@ export default function NeedPrioritization({
                         <p className="text-[10px] md:text-xs text-gray-500">{featuresInTier.length} features</p>
                       </div>
                       {selectedFeature && (
-                        <Plus className="w-5 h-5 text-blue-600 flex-shrink-0 animate-pulse" />
+                        <Plus className="w-5 h-5 text-[#C9A962] flex-shrink-0 animate-pulse" />
                       )}
                     </div>
 
@@ -553,7 +553,7 @@ export default function NeedPrioritization({
                     {featuresInTier.length === 0 && (
                       <div className="text-center py-6 md:py-12 text-gray-400 text-xs md:text-sm">
                         {selectedFeature ? (
-                          <span className="text-blue-600 font-medium">Tap to add here</span>
+                          <span className="text-[#C9A962] font-medium">Tap to add here</span>
                         ) : (
                           <>
                             {/* Mobile empty state */}

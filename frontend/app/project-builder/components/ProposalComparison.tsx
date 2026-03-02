@@ -89,7 +89,7 @@ export default function ProposalComparison({ sessionId, resolutionData, onSelect
                 onMouseLeave={() => setHoveredProposal(null)}
                 className={`relative p-8 text-left transition-all duration-500 bg-white dark:bg-gray-800 border ${
                   isSelected
-                    ? 'border-blue-600 shadow-xl scale-105 z-10'
+                    ? 'border-[#C9A962] shadow-xl scale-105 z-10'
                     : 'border-gray-200 dark:border-gray-700 hover:border-gray-300 dark:border-gray-600 hover:shadow-lg'
                 }`}
                 whileHover={{ y: -4 }}
@@ -110,14 +110,14 @@ export default function ProposalComparison({ sessionId, resolutionData, onSelect
                     animate={{ scale: 1 }}
                     className="absolute top-4 right-4"
                   >
-                    <CheckCircle2 className="w-6 h-6 text-blue-600" />
+                    <CheckCircle2 className="w-6 h-6 text-[#C9A962]" />
                   </motion.div>
                 )}
 
                 {/* Icon */}
                 <div className="flex items-center gap-3 mb-6">
                   <TierIcon className={`w-8 h-8 ${
-                    isSelected ? 'text-blue-600' : 'text-gray-400'
+                    isSelected ? 'text-[#C9A962]' : 'text-gray-400'
                   }`} />
                 </div>
 
@@ -126,7 +126,7 @@ export default function ProposalComparison({ sessionId, resolutionData, onSelect
                   <h3 className="text-2xl font-semibold text-gray-900 dark:text-white mb-2">
                     {proposal.name}
                   </h3>
-                  <p className="text-xs text-blue-600 uppercase tracking-widest mb-3 font-medium">
+                  <p className="text-xs text-[#C9A962] uppercase tracking-widest mb-3 font-medium">
                     {proposal.tier_mix}
                   </p>
                   <p className="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">
@@ -177,7 +177,7 @@ export default function ProposalComparison({ sessionId, resolutionData, onSelect
                 <tr className="border-b border-gray-200 dark:border-gray-700 dark:border-gray-700">
                   <th className="text-left py-3 text-gray-600 dark:text-gray-400 uppercase tracking-widest font-medium">Feature</th>
                   <th className="text-center py-3 text-gray-600 dark:text-gray-400 uppercase tracking-widest font-medium">Value</th>
-                  <th className="text-center py-3 text-blue-600 uppercase tracking-widest font-medium">Balanced</th>
+                  <th className="text-center py-3 text-[#C9A962] uppercase tracking-widest font-medium">Balanced</th>
                   <th className="text-center py-3 text-gray-600 dark:text-gray-400 uppercase tracking-widest font-medium">Flagship</th>
                 </tr>
               </thead>
@@ -189,7 +189,7 @@ export default function ProposalComparison({ sessionId, resolutionData, onSelect
                   >
                     <td className="py-3 text-gray-700 dark:text-gray-300 dark:text-gray-300">{row.feature}</td>
                     <td className="py-3 text-center text-gray-900 dark:text-white font-mono">{row.value}</td>
-                    <td className="py-3 text-center text-blue-600 font-mono font-medium">{row.balanced}</td>
+                    <td className="py-3 text-center text-[#C9A962] font-mono font-medium">{row.balanced}</td>
                     <td className="py-3 text-center text-gray-900 dark:text-white font-mono">{row.flagship}</td>
                   </tr>
                 ))}

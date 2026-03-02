@@ -31,7 +31,7 @@ const PROTOCOL_TYPES = [
     name: 'Wired',
     icon: Cable,
     color: 'from-blue-600 to-blue-700',
-    bgColor: 'bg-blue-600',
+    bgColor: 'bg-[#C9A962]',
     description: 'Most reliable, best for new construction',
     pros: ['Maximum reliability', 'No interference', 'Fastest response', 'Future-proof'],
     cons: ['Requires cabling', 'Higher installation cost', 'Less flexible for changes'],

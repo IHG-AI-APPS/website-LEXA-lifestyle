@@ -229,7 +229,7 @@ export default function VendorSupplierPage() {
                   </div>
                 </div>
                 <div className="flex items-center gap-4 p-4 bg-blue-50 rounded-lg border border-blue-200">
-                  <div className="w-3 h-3 bg-blue-500 rounded-full" />
+                  <div className="w-3 h-3 bg-[#C9A962] rounded-full" />
                   <div>
                     <div className="font-semibold text-gray-900 dark:text-white dark:text-white">Open Categories</div>
                     <div className="text-sm text-gray-600 dark:text-gray-400 dark:text-gray-400">Smart appliances, Wellness tech, Energy management</div>
@@ -579,7 +579,7 @@ export default function VendorSupplierPage() {
               {/* Document Upload Notice */}
               <div className="bg-blue-50 border border-blue-200 rounded-lg p-4">
                 <div className="flex gap-3">
-                  <Upload className="h-5 w-5 text-blue-600 flex-shrink-0 mt-0.5" />
+                  <Upload className="h-5 w-5 text-[#C9A962] flex-shrink-0 mt-0.5" />
                   <div>
                     <h4 className="font-semibold text-blue-900 mb-1">Documents to Prepare</h4>
                     <p className="text-sm text-blue-700">

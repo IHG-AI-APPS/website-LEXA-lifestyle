@@ -162,7 +162,7 @@ export default function VillaOperatingModelPage() {
                 initial={{ opacity: 0, x: -20 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
-                className="bg-gradient-to-r from-blue-50 to-transparent p-6 border-l-4 border-blue-600"
+                className="bg-gradient-to-r from-blue-50 to-transparent p-6 border-l-4 border-[#C9A962]"
               >
                 <h3 className="text-xl font-semibold mb-2">Scenario: Weekend Guests</h3>
                 <p className="text-gray-700 dark:text-gray-300 mb-4">

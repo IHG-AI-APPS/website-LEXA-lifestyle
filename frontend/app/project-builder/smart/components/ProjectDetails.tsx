@@ -464,7 +464,7 @@ export default function ProjectDetailsForm({
                 onClick={() => setLocation(loc)}
                 className={`p-3 rounded-lg border-2 text-sm font-medium transition-all ${
                   location === loc
-                    ? 'border-blue-500 bg-blue-50 text-blue-600'
+                    ? 'border-blue-500 bg-blue-50 text-[#C9A962]'
                     : 'border-gray-200 dark:border-gray-700 bg-white text-gray-700 dark:text-gray-300 hover:border-gray-300'
                 }`}
               >

@@ -180,7 +180,7 @@ export default function BlogArticlePage({ params }: { params: { slug: string } }
                 prose-h2:text-2xl prose-h2:mt-8 prose-h2:mb-4 prose-h2:border-b prose-h2:border-gray-200 dark:border-gray-700 prose-h2:pb-2
                 prose-h3:text-xl prose-h3:mt-6 prose-h3:mb-3
                 prose-p:text-gray-700 dark:text-gray-300 prose-p:leading-relaxed prose-p:mb-4
-                prose-a:text-blue-600 prose-a:no-underline hover:prose-a:underline
+                prose-a:text-[#C9A962] prose-a:no-underline hover:prose-a:underline
                 prose-strong:text-gray-900 dark:text-white dark:prose-strong:text-white prose-strong:font-semibold
                 prose-ul:my-4 prose-ul:pl-6
                 prose-ol:my-4 prose-ol:pl-6
@@ -219,7 +219,7 @@ export default function BlogArticlePage({ params }: { params: { slug: string } }
                   th: ({ children }) => <th className="bg-gray-100 dark:bg-gray-800 dark:bg-gray-800 border border-gray-300 dark:border-gray-600 dark:border-gray-600 px-4 py-3 text-left font-semibold text-gray-900 dark:text-white dark:text-white">{children}</th>,
                   td: ({ children }) => <td className="border border-gray-300 dark:border-gray-600 px-4 py-3 text-gray-700 dark:text-gray-300 dark:text-gray-300">{children}</td>,
                   a: ({ href, children }) => (
-                    <a href={href} className="text-blue-600 hover:text-blue-800 hover:underline transition-colors" target="_blank" rel="noopener noreferrer">
+                    <a href={href} className="text-[#C9A962] hover:text-[#B8983F] hover:underline transition-colors" target="_blank" rel="noopener noreferrer">
                       {children}
                     </a>
                   ),
@@ -287,7 +287,7 @@ export default function BlogArticlePage({ params }: { params: { slug: string } }
                       </div>
                       <div className="p-5">
                         <Badge variant="secondary" className="mb-2 text-xs">{relatedArticle.category}</Badge>
-                        <h3 className="font-semibold mb-2 group-hover:text-blue-600 transition-colors line-clamp-2 text-gray-900 dark:text-white dark:text-white">
+                        <h3 className="font-semibold mb-2 group-hover:text-[#C9A962] transition-colors line-clamp-2 text-gray-900 dark:text-white dark:text-white">
                           {relatedArticle.title}
                         </h3>
                         <p className="text-sm text-gray-500 line-clamp-2">

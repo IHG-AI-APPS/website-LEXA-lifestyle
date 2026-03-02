@@ -72,7 +72,7 @@ export default function IntelligenceCapture({ sessionId, onComplete }: Intellige
                 value={constraints.budget_max}
                 onChange={(e) => setConstraints({ ...constraints, budget_max: e.target.value })}
                 placeholder="e.g., AED 500,000"
-                className="border-gray-200 dark:border-gray-700 focus:border-blue-600"
+                className="border-gray-200 dark:border-gray-700 focus:border-[#C9A962]"
               />
             </div>
             <div>
@@ -82,7 +82,7 @@ export default function IntelligenceCapture({ sessionId, onComplete }: Intellige
                 value={constraints.timeline_constraint}
                 onChange={(e) => setConstraints({ ...constraints, timeline_constraint: e.target.value })}
                 placeholder="e.g., Must complete in 3 months"
-                className="border-gray-200 dark:border-gray-700 focus:border-blue-600"
+                className="border-gray-200 dark:border-gray-700 focus:border-[#C9A962]"
               />
             </div>
           </div>
@@ -97,12 +97,12 @@ export default function IntelligenceCapture({ sessionId, onComplete }: Intellige
               { key: 'no_wall_drilling', label: 'Minimize wall drilling', desc: 'Prefer wireless/surface-mount solutions' },
               { key: 'noise_restrictions', label: 'Noise restrictions', desc: 'Limit installation noise (occupied building)' }
             ].map((constraint) => (
-              <label key={constraint.key} className="flex items-start gap-3 p-4 border border-gray-200 dark:border-gray-700 hover:border-blue-600 cursor-pointer transition-colors">
+              <label key={constraint.key} className="flex items-start gap-3 p-4 border border-gray-200 dark:border-gray-700 hover:border-[#C9A962] cursor-pointer transition-colors">
                 <input
                   type="checkbox"
                   checked={constraints[constraint.key as keyof typeof constraints] as boolean}
                   onChange={(e) => setConstraints({ ...constraints, [constraint.key]: e.target.checked })}
-                  className="mt-1 w-4 h-4 text-blue-600 border-gray-300 dark:border-gray-600 rounded focus:ring-blue-500"
+                  className="mt-1 w-4 h-4 text-[#C9A962] border-gray-300 dark:border-gray-600 rounded focus:ring-[#C9A962]"
                 />
                 <div>
                   <div className="text-sm font-medium text-gray-900 dark:text-white dark:text-white">{constraint.label}</div>
@@ -121,14 +121,14 @@ export default function IntelligenceCapture({ sessionId, onComplete }: Intellige
             onChange={(e) => setConstraints({ ...constraints, custom_constraints: e.target.value })}
             placeholder="Any other specific requirements or constraints...\ne.g., 'Must use specific brand for lighting', 'Avoid smart speakers due to privacy', 'Integration with existing Crestron system required'"
             rows={4}
-            className="w-full border border-gray-200 dark:border-gray-700 focus:border-blue-600 outline-none text-gray-900 dark:text-white placeholder-gray-400 p-4 text-sm"
+            className="w-full border border-gray-200 dark:border-gray-700 focus:border-[#C9A962] outline-none text-gray-900 dark:text-white placeholder-gray-400 p-4 text-sm"
           />
         </div>
 
         {/* File Upload */}
         <div className="bg-gradient-to-br from-[#C9A962]/5 to-[#A68B4B]/5 border border-blue-200 p-8 mb-12">
           <div className="flex items-start gap-3 mb-4">
-            <Upload className="w-6 h-6 text-blue-600" />
+            <Upload className="w-6 h-6 text-[#C9A962]" />
             <div>
               <h3 className="text-sm font-medium uppercase tracking-widest text-gray-900 dark:text-white mb-2">Upload Drawings (Optional)</h3>
               <p className="text-xs text-gray-600 dark:text-gray-400 mb-4">
@@ -147,9 +147,9 @@ export default function IntelligenceCapture({ sessionId, onComplete }: Intellige
           />
           <label
             htmlFor="file-upload"
-            className="block w-full p-8 border-2 border-dashed border-blue-300 hover:border-blue-600 cursor-pointer transition-colors text-center"
+            className="block w-full p-8 border-2 border-dashed border-blue-300 hover:border-[#C9A962] cursor-pointer transition-colors text-center"
           >
-            <Upload className="w-8 h-8 text-blue-600 mx-auto mb-2" />
+            <Upload className="w-8 h-8 text-[#C9A962] mx-auto mb-2" />
             <div className="text-sm text-gray-700 dark:text-gray-300 dark:text-gray-300">Click to upload or drag files here</div>
             <div className="text-xs text-gray-500 mt-1">PDF, JPG, PNG, DWG (Max 10MB each)</div>
           </label>
@@ -160,7 +160,7 @@ export default function IntelligenceCapture({ sessionId, onComplete }: Intellige
               {uploadedFiles.map((file, index) => (
                 <div key={index} className="flex items-center justify-between p-3 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 dark:border-gray-700">
                   <div className="flex items-center gap-2">
-                    <FileText className="w-4 h-4 text-blue-600" />
+                    <FileText className="w-4 h-4 text-[#C9A962]" />
                     <span className="text-sm text-gray-900 dark:text-white dark:text-white">{file.name}</span>
                     <span className="text-xs text-gray-500">({(file.size / 1024).toFixed(0)} KB)</span>
                   </div>
@@ -175,7 +175,7 @@ export default function IntelligenceCapture({ sessionId, onComplete }: Intellige
 
         {/* Info Box */}
         <div className="bg-blue-50 border border-blue-200 p-4 mb-8 flex items-start gap-3">
-          <AlertCircle className="w-5 h-5 text-blue-600 flex-shrink-0 mt-0.5" />
+          <AlertCircle className="w-5 h-5 text-[#C9A962] flex-shrink-0 mt-0.5" />
           <div className="text-xs text-gray-700 dark:text-gray-300 dark:text-gray-300">
             <span className="font-medium">AI Enhancement:</span> Constraints help the recommendation engine filter out incompatible features and prioritize solutions that fit your specific requirements. This step is optional but improves proposal accuracy.
           </div>

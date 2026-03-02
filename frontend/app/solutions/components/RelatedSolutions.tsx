@@ -54,7 +54,7 @@ export default function RelatedSolutions({ solutions, currentSlug }: RelatedSolu
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <span className="text-sm font-semibold uppercase tracking-wider text-blue-600 mb-2 block">
+            <span className="text-sm font-semibold uppercase tracking-wider text-[#C9A962] mb-2 block">
               Explore More
             </span>
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 dark:text-white mb-4">
@@ -103,7 +103,7 @@ export default function RelatedSolutions({ solutions, currentSlug }: RelatedSolu
                       {/* Category Badge */}
                       <div className="absolute top-4 right-4">
                         <div className="bg-white/90 backdrop-blur-sm px-3 py-1.5 rounded-full flex items-center gap-2">
-                          <Icon className="h-4 w-4 text-blue-600" />
+                          <Icon className="h-4 w-4 text-[#C9A962]" />
                           <span className="text-xs font-semibold text-gray-900 dark:text-white dark:text-white">
                             {solution.category}
                           </span>
@@ -141,10 +141,10 @@ export default function RelatedSolutions({ solutions, currentSlug }: RelatedSolu
 
                       {/* CTA */}
                       <div className="flex items-center justify-between pt-4 border-t border-gray-100 dark:border-gray-800 dark:border-gray-800">
-                        <span className="text-sm font-semibold text-blue-600 group-hover:text-blue-700 transition-colors">
+                        <span className="text-sm font-semibold text-[#C9A962] group-hover:text-blue-700 transition-colors">
                           Explore Solution
                         </span>
-                        <ArrowRight className="h-5 w-5 text-blue-600 group-hover:translate-x-2 transition-transform" />
+                        <ArrowRight className="h-5 w-5 text-[#C9A962] group-hover:translate-x-2 transition-transform" />
                       </div>
                     </div>
                   </div>
