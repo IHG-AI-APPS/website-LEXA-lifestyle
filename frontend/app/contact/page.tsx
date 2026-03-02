@@ -41,7 +41,7 @@ export default function ContactPage() {
   return (
     <div className="min-h-screen bg-white dark:bg-gray-950 pt-20" data-testid="contact-page">
       {/* Hero */}
-      <section className="relative overflow-hidden bg-[#0A0A0A] dark:bg-[#050505] text-white py-20 lg:py-28">
+      <section className="relative overflow-hidden bg-[#0A0A0A] dark:bg-[#050505] text-white py-16 lg:py-24">
         {/* Hero Background Image */}
         <div className="absolute inset-0">
           <div style={{backgroundImage: "url(https://images.unsplash.com/photo-1497366216548-37526070297c?w=1200&q=50)"}} className="absolute inset-0 bg-cover bg-center opacity-80" />

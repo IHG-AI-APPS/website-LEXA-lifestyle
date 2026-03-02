@@ -55,7 +55,7 @@ export default function DeveloperToolkitContent() {
   return (
     <div className="min-h-screen bg-white dark:bg-gray-950 pt-20" data-testid="developer-toolkit-page">
       {/* Hero */}
-      <section className="relative overflow-hidden bg-[#0A0A0A] dark:bg-[#050505] text-white py-20 lg:py-28">
+      <section className="relative overflow-hidden bg-[#0A0A0A] dark:bg-[#050505] text-white py-16 lg:py-24">
         <div className="container mx-auto px-5 sm:px-8 lg:px-16 relative z-10">
           <div className="max-w-3xl mx-auto text-center">
             <div className="inline-flex items-center justify-center w-16 h-16 bg-white/10 backdrop-blur-sm rounded-full mb-6">

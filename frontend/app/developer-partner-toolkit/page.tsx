@@ -80,7 +80,7 @@ export default function DeveloperPartnerToolkitPage() {
     return (
       <div className="min-h-screen bg-gray-950 text-white pt-20" data-testid="developer-partner-toolkit-locked">
         {/* Hero */}
-        <section className="relative overflow-hidden bg-gray-900 py-20 lg:py-28">
+        <section className="relative overflow-hidden bg-gray-900 py-16 lg:py-24">
           <div className="container mx-auto px-5 sm:px-8 lg:px-16 relative z-10">
             <div className="max-w-2xl mx-auto text-center">
               <span className="hero-animate-badge inline-block px-3 py-1 rounded-full bg-[#C9A962]/15 border border-[#C9A962]/30 text-[#C9A962] text-xs uppercase tracking-widest mb-5">Protected Resource</span>

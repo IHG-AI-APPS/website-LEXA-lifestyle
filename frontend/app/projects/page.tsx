@@ -65,7 +65,7 @@ export default function ProjectsPage() {
   return (
     <div className="min-h-screen bg-white dark:bg-[#050505] pt-20" data-testid="projects-page">
       {/* Hero */}
-      <section className="relative overflow-hidden bg-[#0A0A0A] dark:bg-[#050505] text-white py-20 lg:py-28">
+      <section className="relative overflow-hidden bg-[#0A0A0A] dark:bg-[#050505] text-white py-16 lg:py-24">
         <div className="absolute inset-0">
           <div style={{backgroundImage: "url(https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1200&q=50)"}} className="absolute inset-0 bg-cover bg-center opacity-80" />
           <div className="absolute inset-0 bg-gradient-to-t from-[#0A0A0A]/80 via-[#0A0A0A]/40 to-transparent" />
