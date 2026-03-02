@@ -47,8 +47,8 @@ export default function BlogPage() {
       <section className="relative overflow-hidden bg-[#0A0A0A] dark:bg-[#050505] text-white py-20 lg:py-28">
         {/* Hero Background Image */}
         <div className="absolute inset-0">
-          <div style={{backgroundImage: "url(https://images.unsplash.com/photo-1696694138288-d3c14bdd35f1?w=1200&q=50)"}} className="absolute inset-0 bg-cover bg-center opacity-50" />
-          <div className="absolute inset-0 bg-gradient-to-t from-[#0A0A0A]/90 via-[#0A0A0A]/50 to-[#0A0A0A]/30" />
+          <div style={{backgroundImage: "url(https://images.unsplash.com/photo-1696694138288-d3c14bdd35f1?w=1200&q=50)"}} className="absolute inset-0 bg-cover bg-center opacity-80" />
+          <div className="absolute inset-0 bg-gradient-to-t from-[#0A0A0A]/80 via-[#0A0A0A]/40 to-transparent" />
         </div>
         <div className="container mx-auto px-8 lg:px-16 relative z-10">
           <div className="max-w-3xl mx-auto text-center">
