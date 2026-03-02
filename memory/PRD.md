@@ -11,6 +11,13 @@ Complete website overhaul for LEXA Smart Home to:
 
 ## Completed Work (Latest First)
 
+### Phase 45: Quick View Modal for Projects & Solutions (Mar 2, 2026)
+- **Shared component** (`/components/QuickViewModal.tsx`): Reusable modal with framer-motion animations, mobile bottom sheet (slides up), desktop centered overlay, backdrop blur, Escape/click-outside close
+- **Projects page**: "Quick View" button appears on card image hover → opens modal with image, title, type/year badges, location, description (3 lines), system tags, gold "View Full Details" CTA
+- **Solutions page**: Eye icon button added alongside arrow on each solution row → opens same modal with solution image, title, category, description, features
+- **Mobile UX**: Modal acts as a bottom sheet with drag handle, rounded top corners, and full-width positioning on 390px viewport
+- **Testing**: 100% pass (iteration_71). 12 tests: hover reveal, modal open/close (X, Escape, backdrop), CTA navigation, title click still navigates, mobile bottom sheet verified.
+
 ### Phase 44: Site-Wide Consistency Review (P2) — Mobile Optimization & Theme Cleanup (Mar 2, 2026)
 - **H1 sizes standardized**: All 61+ pages changed from `text-4xl sm:text-5xl lg:text-6xl` to `text-3xl sm:text-4xl lg:text-5xl` — mobile-friendly 30px, desktop 48px
 - **Hero backgrounds brightened**: 16 pages with `opacity-50` → `opacity-80`, 18 pages with heavy gradient → lighter `from-[#0A0A0A]/80 via-[#0A0A0A]/40 to-transparent`
