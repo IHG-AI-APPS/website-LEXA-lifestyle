@@ -60,11 +60,11 @@ export default function ExperienceCentrePage() {
         <div className="container relative z-10 mx-auto px-8 lg:px-16">
           <div className="max-w-3xl mx-auto text-center">
             <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
-              <span className="hero-animate-badge inline-block px-3 py-1 rounded-full bg-[#C9A962]/15 border border-[#C9A962]/30 text-[#C9A962] text-xs uppercase tracking-widest mb-5" data-testid="experience-badge">Visit Us</span>
+              <span className="hero-animate-badge inline-block px-2.5 py-1 sm:px-3 rounded-full bg-[#C9A962]/15 border border-[#C9A962]/30 text-[#C9A962] text-xs uppercase tracking-widest mb-5" data-testid="experience-badge">Visit Us</span>
               <h1 className="hero-animate-title text-3xl sm:text-4xl lg:text-5xl font-bold uppercase mb-5 tracking-tight leading-tight" data-testid="experience-title">
                 LEXA EXPERIENCE CENTRE
               </h1>
-              <p className="hero-animate-desc text-base text-gray-300 mb-8 max-w-xl mx-auto leading-relaxed">
+              <p className="hero-animate-desc text-sm sm:text-base text-gray-300 mb-8 max-w-xl mx-auto leading-relaxed">
                 Visit our 5,000+ sq ft showroom in Dubai and experience luxury smart living first-hand. Touch, feel, and interact with the latest technology solutions.
               </p>
               <div className="hero-animate-cta flex flex-col sm:flex-row gap-3 justify-center">

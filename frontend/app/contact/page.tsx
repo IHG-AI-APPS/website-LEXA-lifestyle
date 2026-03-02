@@ -49,9 +49,9 @@ export default function ContactPage() {
         </div>
         <div className="container mx-auto px-5 sm:px-8 lg:px-16 relative z-10">
           <div className="max-w-3xl mx-auto text-center">
-            <span className="hero-animate-badge inline-block px-3 py-1 rounded-full bg-[#C9A962]/15 border border-[#C9A962]/30 text-[#C9A962] text-xs uppercase tracking-widest mb-5">Get in Touch</span>
+            <span className="hero-animate-badge inline-block px-2.5 py-1 sm:px-3 rounded-full bg-[#C9A962]/15 border border-[#C9A962]/30 text-[#C9A962] text-xs uppercase tracking-widest mb-5">Get in Touch</span>
             <h1 className="hero-animate-title text-3xl sm:text-4xl lg:text-5xl font-bold uppercase mb-5 tracking-tight" data-testid="contact-title">Contact LEXA</h1>
-            <p className="hero-animate-desc text-base text-gray-300 max-w-lg mx-auto">Whether you have a question, need a quote, or want to discuss your project, we&apos;re here to help.</p>
+            <p className="hero-animate-desc text-sm sm:text-base text-gray-300 max-w-lg mx-auto">Whether you have a question, need a quote, or want to discuss your project, we&apos;re here to help.</p>
           </div>
         </div>
       </section>
