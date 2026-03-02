@@ -149,8 +149,26 @@ export default function SolutionsPage() {
                               {solution.description}
                             </p>
                           </div>
-                          <div className="lg:col-span-2 flex justify-end">
-                            <ArrowUpRight
+                          <div className="lg:col-span-2 flex items-center justify-end gap-3">
+                            <button
+                                onClick={(e) => {
+                                  e.preventDefault()
+                                  e.stopPropagation()
+                                  setQuickViewItem({
+                                    title: solution.title,
+                                    image: solution.image,
+                                    description: solution.description,
+                                    category: solution.category,
+                                    features: solution.features,
+                                    href: `/solutions/${solution.slug}`
+                                  })
+                                }}
+                                className="w-10 h-10 flex items-center justify-center rounded-full bg-gray-100 dark:bg-white/5 border border-gray-200 dark:border-white/10 text-gray-500 dark:text-gray-400 hover:bg-[#C9A962] hover:text-white hover:border-[#C9A962] transition-all"
+                                data-testid={`quickview-solution-${index}`}
+                              >
+                                <Eye size={16} />
+                              </button>
+                              <ArrowUpRight
                               size={28}
                               className="text-black group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform duration-300"
                               strokeWidth={2}
@@ -212,8 +230,26 @@ export default function SolutionsPage() {
                               {solution.description}
                             </p>
                           </div>
-                          <div className="lg:col-span-2 flex justify-end">
-                            <ArrowUpRight
+                          <div className="lg:col-span-2 flex items-center justify-end gap-3">
+                            <button
+                                onClick={(e) => {
+                                  e.preventDefault()
+                                  e.stopPropagation()
+                                  setQuickViewItem({
+                                    title: solution.title,
+                                    image: solution.image,
+                                    description: solution.description,
+                                    category: solution.category,
+                                    features: solution.features,
+                                    href: `/solutions/${solution.slug}`
+                                  })
+                                }}
+                                className="w-10 h-10 flex items-center justify-center rounded-full bg-gray-100 dark:bg-white/5 border border-gray-200 dark:border-white/10 text-gray-500 dark:text-gray-400 hover:bg-[#C9A962] hover:text-white hover:border-[#C9A962] transition-all"
+                                data-testid={`quickview-solution-${index}`}
+                              >
+                                <Eye size={16} />
+                              </button>
+                              <ArrowUpRight
                               size={28}
                               className="text-black group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform duration-300"
                               strokeWidth={2}
@@ -275,8 +311,26 @@ export default function SolutionsPage() {
                               {solution.description}
                             </p>
                           </div>
-                          <div className="lg:col-span-2 flex justify-end">
-                            <ArrowUpRight
+                          <div className="lg:col-span-2 flex items-center justify-end gap-3">
+                            <button
+                                onClick={(e) => {
+                                  e.preventDefault()
+                                  e.stopPropagation()
+                                  setQuickViewItem({
+                                    title: solution.title,
+                                    image: solution.image,
+                                    description: solution.description,
+                                    category: solution.category,
+                                    features: solution.features,
+                                    href: `/solutions/${solution.slug}`
+                                  })
+                                }}
+                                className="w-10 h-10 flex items-center justify-center rounded-full bg-gray-100 dark:bg-white/5 border border-gray-200 dark:border-white/10 text-gray-500 dark:text-gray-400 hover:bg-[#C9A962] hover:text-white hover:border-[#C9A962] transition-all"
+                                data-testid={`quickview-solution-${index}`}
+                              >
+                                <Eye size={16} />
+                              </button>
+                              <ArrowUpRight
                               size={28}
                               className="text-black group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform duration-300"
                               strokeWidth={2}
@@ -338,8 +392,26 @@ export default function SolutionsPage() {
                               {solution.description}
                             </p>
                           </div>
-                          <div className="lg:col-span-2 flex justify-end">
-                            <ArrowUpRight
+                          <div className="lg:col-span-2 flex items-center justify-end gap-3">
+                            <button
+                                onClick={(e) => {
+                                  e.preventDefault()
+                                  e.stopPropagation()
+                                  setQuickViewItem({
+                                    title: solution.title,
+                                    image: solution.image,
+                                    description: solution.description,
+                                    category: solution.category,
+                                    features: solution.features,
+                                    href: `/solutions/${solution.slug}`
+                                  })
+                                }}
+                                className="w-10 h-10 flex items-center justify-center rounded-full bg-gray-100 dark:bg-white/5 border border-gray-200 dark:border-white/10 text-gray-500 dark:text-gray-400 hover:bg-[#C9A962] hover:text-white hover:border-[#C9A962] transition-all"
+                                data-testid={`quickview-solution-${index}`}
+                              >
+                                <Eye size={16} />
+                              </button>
+                              <ArrowUpRight
                               size={28}
                               className="text-black group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform duration-300"
                               strokeWidth={2}
