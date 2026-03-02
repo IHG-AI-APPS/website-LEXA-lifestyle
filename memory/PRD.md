@@ -11,6 +11,11 @@ Complete website overhaul for LEXA Smart Home to:
 
 ## Completed Work (Latest First)
 
+### Phase 46: Quick View Modal for Blog Articles (Mar 2, 2026)
+- **Blog integration**: "Quick View" button on article card image hover → opens modal with article image, title, category badge, excerpt (3 lines), tags, gold "View Full Details" CTA linking to /blog/{slug}
+- **Consistent UX**: Same QuickViewModal component now used across Projects, Solutions, and Blog — unified interaction pattern site-wide
+- **Testing**: 100% pass (iteration_72). 15 tests: hover reveal, modal content (image, title, category, excerpt, tags), close (X, Escape), CTA navigation, category filters, title click navigation.
+
 ### Phase 45: Quick View Modal for Projects & Solutions (Mar 2, 2026)
 - **Shared component** (`/components/QuickViewModal.tsx`): Reusable modal with framer-motion animations, mobile bottom sheet (slides up), desktop centered overlay, backdrop blur, Escape/click-outside close
 - **Projects page**: "Quick View" button appears on card image hover → opens modal with image, title, type/year badges, location, description (3 lines), system tags, gold "View Full Details" CTA
