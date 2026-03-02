@@ -219,6 +219,13 @@ export default function BlogPage() {
         title="Ready to Start?"
         subtitle="Transform your ideas into reality"
       />
+
+      {/* Quick View Modal */}
+      <QuickViewModal
+        isOpen={!!quickViewItem}
+        onClose={() => setQuickViewItem(null)}
+        item={quickViewItem}
+      />
     </div>
   )
 }
