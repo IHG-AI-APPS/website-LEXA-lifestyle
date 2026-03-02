@@ -11,6 +11,18 @@ Complete website overhaul for LEXA Smart Home to:
 
 ## Completed Work (Latest First)
 
+### Phase 44: Site-Wide Consistency Review (P2) — Mobile Optimization & Theme Cleanup (Mar 2, 2026)
+- **H1 sizes standardized**: All 61+ pages changed from `text-4xl sm:text-5xl lg:text-6xl` to `text-3xl sm:text-4xl lg:text-5xl` — mobile-friendly 30px, desktop 48px
+- **Hero backgrounds brightened**: 16 pages with `opacity-50` → `opacity-80`, 18 pages with heavy gradient → lighter `from-[#0A0A0A]/80 via-[#0A0A0A]/40 to-transparent`
+- **Blue accents eradicated**: 34+ files with `text-blue-*`, `bg-blue-*`, `border-blue-*` → gold `#C9A962` equivalents
+- **Purple/violet remnants removed**: Final 5 files cleaned (lexa-evolves, smart-home-quiz, analytics, enterprise-platform, blog slug)
+- **Duplicate dark: classes cleaned**: 77 files with redundant `dark:text-white dark:text-white` patterns removed
+- **Missing dark mode added**: 5 pages with `bg-white` only → `bg-white dark:bg-[#050505]`
+- **Mobile container padding**: Standardized to `px-5 sm:px-8 lg:px-16` for proper mobile spacing
+- **Hero padding**: Standardized to `py-16 lg:py-24` — compact on mobile
+- **Hero description**: Made responsive `text-sm sm:text-base`
+- **Testing**: 100% pass (iteration_70). 12 pages tested on mobile (390px) and desktop. Zero blue/purple, gold theme consistent.
+
 ### Phase 43: Projects Landing Page Redesign (P1) (Mar 2, 2026)
 - **Listing page**: Redesigned with Dark Luxury theme — OLED black (#050505), gold pill filter buttons (#C9A962), project count display, category/year badges on cards, MapPin location icons, system tag chips, gold hover effects, CTA section
 - **Detail page**: Full dark mode support — glass-morphism sidebar (bg-white/[0.03]), gold accent section headers, proper dark borders, gold CTA buttons, gold lightbox ring, removed all blue/purple remnants
@@ -68,7 +80,6 @@ Complete website overhaul for LEXA Smart Home to:
 - **Theme toggle**: Uses `dark:` Tailwind variants throughout
 
 ## Remaining / Backlog
-### P2 — Site-wide Consistency Review (inner pages)
 ### P3 — Content Change History for admin CMS
 ### P4 — WhatsApp template approval on Interakt
 ### P5 — Refine Service Worker caching strategy
