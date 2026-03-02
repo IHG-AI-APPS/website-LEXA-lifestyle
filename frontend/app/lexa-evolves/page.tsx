@@ -135,18 +135,18 @@ export default function LexaEvolvesPage() {
                   whileInView={{ opacity: 1, x: 0 }}
                   transition={{ duration: 0.6, delay: 0.2 }}
                   viewport={{ once: true }}
-                  className="bg-white dark:bg-gray-800 p-8 border-2 border-gray-200 dark:border-gray-700 hover:border-violet-600 transition-all"
+                  className="bg-white dark:bg-gray-800 p-8 border-2 border-gray-200 dark:border-gray-700 hover:border-[#B8983F] transition-all"
                 >
                   <div className="flex items-start gap-6">
                     <div className="flex-shrink-0">
                       <div className="w-16 h-16 rounded-full bg-violet-100 flex items-center justify-center">
-                        <span className="text-2xl font-bold text-violet-600">{index + 1}</span>
+                        <span className="text-2xl font-bold text-[#B8983F]">{index + 1}</span>
                       </div>
                     </div>
                     <div className="flex-1">
                       <div className="flex items-center justify-between mb-2">
                         <h3 className="text-2xl font-bold text-[#1A1A1A] dark:text-white">{stage.title}</h3>
-                        <span className="text-sm font-semibold text-violet-600 px-3 py-1 bg-violet-50">
+                        <span className="text-sm font-semibold text-[#B8983F] px-3 py-1 bg-violet-50">
                           {stage.stage}
                         </span>
                       </div>
@@ -154,7 +154,7 @@ export default function LexaEvolvesPage() {
                       <div className="grid grid-cols-2 md:grid-cols-4 gap-3 mb-4">
                         {stage.features.map((feature) => (
                           <div key={feature} className="flex items-start gap-2">
-                            <CheckCircle2 className="h-4 w-4 text-violet-600 flex-shrink-0 mt-0.5" />
+                            <CheckCircle2 className="h-4 w-4 text-[#B8983F] flex-shrink-0 mt-0.5" />
                             <span className="text-sm text-gray-700 dark:text-gray-300">{feature}</span>
                           </div>
                         ))}
@@ -195,11 +195,11 @@ export default function LexaEvolvesPage() {
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.6, delay: 0.2 }}
                     viewport={{ once: true }}
-                    className="bg-gray-50 p-8 border-l-4 border-violet-600"
+                    className="bg-gray-50 p-8 border-l-4 border-[#B8983F]"
                   >
                     <div className="flex items-start gap-4">
                       <div className="p-3 bg-violet-100">
-                        <Icon className="h-6 w-6 text-violet-600" />
+                        <Icon className="h-6 w-6 text-[#B8983F]" />
                       </div>
                       <div>
                         <h3 className="text-xl font-bold mb-2 text-[#1A1A1A] dark:text-white">{benefit.title}</h3>
@@ -238,7 +238,7 @@ export default function LexaEvolvesPage() {
                   viewport={{ once: true }}
                   className="bg-white dark:bg-gray-800 p-6 text-center border-2 border-gray-200 dark:border-gray-700"
                 >
-                  <div className="text-3xl font-bold text-violet-600 mb-2">{milestone.year}</div>
+                  <div className="text-3xl font-bold text-[#B8983F] mb-2">{milestone.year}</div>
                   <div className="text-lg font-semibold text-[#1A1A1A] dark:text-white mb-2">{milestone.focus}</div>
                   <div className="text-sm text-green-600 font-semibold">{milestone.savings}</div>
                 </motion.div>
