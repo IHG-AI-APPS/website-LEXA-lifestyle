@@ -1,10 +1,10 @@
 'use client'
 
-import { useEffect, useCallback } from 'react'
+import { useEffect, useCallback, useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import SafeImage from '@/components/ui/SafeImage'
 import Link from 'next/link'
-import { X, MapPin, Calendar, ArrowRight, Layers } from 'lucide-react'
+import { X, MapPin, Calendar, ArrowRight, Layers, Link2, Check } from 'lucide-react'
 
 interface QuickViewProps {
   isOpen: boolean
