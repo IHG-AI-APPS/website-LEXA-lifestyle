@@ -1,18 +1,20 @@
 'use client'
 
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useCallback } from 'react'
 import { motion } from 'framer-motion'
 import SafeImage from '@/components/ui/SafeImage'
 import Link from 'next/link'
 import { getProjects, type Project } from '@/lib/api'
 import { useCms } from '@/hooks/useCms'
 import { MapPin, Layers } from 'lucide-react'
+import QuickViewModal from '@/components/QuickViewModal'
 
 export default function ProjectsPage() {
   const cms = useCms('page_projects_listing', null)
 
   const [filter, setFilter] = useState('all')
   const [projects, setProjects] = useState<Project[]>([])
+  const [quickViewItem, setQuickViewItem] = useState<any>(null)
   const [loading, setLoading] = useState(true)
 
   const filters = ['all', 'Residential', 'Commercial', 'Villa']
