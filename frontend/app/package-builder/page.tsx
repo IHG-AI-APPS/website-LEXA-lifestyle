@@ -210,7 +210,7 @@ export default function PackageBuilderPage() {
   }
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-white dark:bg-[#050505]">
       {/* Header - Below main navigation */}
       <div className="border-b bg-white sticky top-16 sm:top-18 md:top-20 z-40">
         <div className="container mx-auto px-4 py-6">

@@ -67,7 +67,7 @@ export default function DigitalTwinPage() {
 
   return (
     <>
-      <div className="min-h-screen bg-white">
+      <div className="min-h-screen bg-white dark:bg-[#050505]">
         {/* Hero Section */}
         <section className="relative overflow-hidden bg-[#0A0A0A] dark:bg-[#050505] text-white py-20 sm:py-32">
         {/* Hero Background Image */}

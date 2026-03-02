@@ -91,7 +91,7 @@ export default function EnhancedServicePage({
   }, [])
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-white dark:bg-[#050505]">
       {/* Hero Section - Full Width with Image */}
       <section className="relative h-[60vh] min-h-[500px] flex items-center overflow-hidden">
         {/* Background Image */}

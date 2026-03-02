@@ -67,7 +67,7 @@ export default function HowToInstallPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
       />
       
-      <div className="min-h-screen bg-white">
+      <div className="min-h-screen bg-white dark:bg-[#050505]">
         <header className="bg-gradient-to-br from-black to-gray-900 text-white py-16">
           <div className="container mx-auto px-4 max-w-4xl">
             <Link href="/" className="inline-flex items-center gap-2 text-gray-400 hover:text-[#E8DCC8] mb-6 transition">
