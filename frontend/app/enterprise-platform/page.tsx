@@ -547,7 +547,7 @@ export default function EnterprisePerformanceOSPage() {
               <h2 className="text-3xl sm:text-4xl font-bold mb-4">
                 Ready to Transform Your Building Performance?
               </h2>
-              <p className="text-lg text-blue-100 mb-8 max-w-2xl mx-auto">
+              <p className="text-lg text-[#C9A962]/80 mb-8 max-w-2xl mx-auto">
                 Schedule an enterprise demo and discover how LEXA Performance OS can optimize your operations, reduce costs, and automate ESG compliance.
               </p>
               <Button

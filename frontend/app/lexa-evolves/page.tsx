@@ -139,14 +139,14 @@ export default function LexaEvolvesPage() {
                 >
                   <div className="flex items-start gap-6">
                     <div className="flex-shrink-0">
-                      <div className="w-16 h-16 rounded-full bg-violet-100 flex items-center justify-center">
+                      <div className="w-16 h-16 rounded-full bg-[#C9A962]/10 flex items-center justify-center">
                         <span className="text-2xl font-bold text-[#B8983F]">{index + 1}</span>
                       </div>
                     </div>
                     <div className="flex-1">
                       <div className="flex items-center justify-between mb-2">
                         <h3 className="text-2xl font-bold text-[#1A1A1A] dark:text-white">{stage.title}</h3>
-                        <span className="text-sm font-semibold text-[#B8983F] px-3 py-1 bg-violet-50">
+                        <span className="text-sm font-semibold text-[#B8983F] px-3 py-1 bg-[#C9A962]/5">
                           {stage.stage}
                         </span>
                       </div>
@@ -198,7 +198,7 @@ export default function LexaEvolvesPage() {
                     className="bg-gray-50 p-8 border-l-4 border-[#B8983F]"
                   >
                     <div className="flex items-start gap-4">
-                      <div className="p-3 bg-violet-100">
+                      <div className="p-3 bg-[#C9A962]/10">
                         <Icon className="h-6 w-6 text-[#B8983F]" />
                       </div>
                       <div>
@@ -248,7 +248,7 @@ export default function LexaEvolvesPage() {
         </section>
 
         {/* CTA */}
-        <section className="py-20 bg-gradient-to-br from-violet-900 to-[#1A1A1A] text-white">
+        <section className="py-20 bg-gradient-to-br from-[#1A1A1A] to-[#1A1A1A] text-white">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
             <motion.div
               initial={{ opacity: 0, y: 20 }}

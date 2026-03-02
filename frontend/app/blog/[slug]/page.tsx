@@ -279,7 +279,7 @@ export default function BlogArticlePage({ params }: { params: { slug: string } }
                           />
                         ) : (
                           <div className="w-full h-full flex items-center justify-center">
-                            <div className="text-4xl font-bold text-blue-200">
+                            <div className="text-4xl font-bold text-[#C9A962]/60">
                               {relatedArticle.category?.charAt(0) || 'A'}
                             </div>
                           </div>

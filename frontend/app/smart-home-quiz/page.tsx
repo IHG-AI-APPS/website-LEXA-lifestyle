@@ -444,7 +444,7 @@ export default function SmartHomeQuizPage() {
                   <Brain className="h-8 w-8" />
                   <div>
                     <h2 className="text-2xl font-bold">Your AI Recommendations</h2>
-                    <p className="text-blue-100">Analyzed {totalAnalyzed} features based on your preferences</p>
+                    <p className="text-[#C9A962]/80">Analyzed {totalAnalyzed} features based on your preferences</p>
                   </div>
                 </div>
                 

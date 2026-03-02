@@ -145,7 +145,7 @@ export default function ResumePage() {
               <CheckCircle2 className="w-6 h-6" />
               <h1 className="text-xl font-semibold">Session Restored</h1>
             </div>
-            <p className="text-blue-100 text-sm">
+            <p className="text-[#C9A962]/80 text-sm">
               Welcome back! Your project progress has been saved.
             </p>
           </div>
