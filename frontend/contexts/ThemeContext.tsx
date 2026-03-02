@@ -11,24 +11,24 @@ interface ThemeContextType {
 }
 
 const ThemeContext = createContext<ThemeContextType>({
-  theme: 'light',
+  theme: 'dark',
   toggleTheme: () => {},
   setTheme: () => {},
 })
 
 export function ThemeProvider({ children }: { children: ReactNode }) {
-  const [theme, setThemeState] = useState<Theme>('light')
+  const [theme, setThemeState] = useState<Theme>('dark')
   const [mounted, setMounted] = useState(false)
 
   // Load theme from localStorage on mount
   useEffect(() => {
     setMounted(true)
     const savedTheme = localStorage.getItem('lexa-theme') as Theme | null
-    const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches
     
     if (savedTheme) {
       setThemeState(savedTheme)
-    } else if (systemPrefersDark) {
+    } else {
+      // Default to dark — this is a luxury brand
       setThemeState('dark')
     }
   }, [])
