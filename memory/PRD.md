@@ -11,6 +11,12 @@ Complete website overhaul for LEXA Smart Home to:
 
 ## Completed Work (Latest First)
 
+### Phase 47: Quick View Share Buttons — WhatsApp & Copy Link (Mar 2, 2026)
+- **WhatsApp share**: Green branded button opens `wa.me/?text={title + URL}` in new tab
+- **Copy Link**: Copies full page URL to clipboard, shows "Copied!" with checkmark for 2 seconds
+- **Site-wide**: Both buttons appear on ALL Quick View modals (Projects, Solutions, Blog) via shared `QuickViewModal.tsx`
+- **Testing**: 100% pass (iteration_73). 10 tests across all 3 pages — buttons visible, styled correctly, functionality verified.
+
 ### Phase 46: Quick View Modal for Blog Articles (Mar 2, 2026)
 - **Blog integration**: "Quick View" button on article card image hover → opens modal with article image, title, category badge, excerpt (3 lines), tags, gold "View Full Details" CTA linking to /blog/{slug}
 - **Consistent UX**: Same QuickViewModal component now used across Projects, Solutions, and Blog — unified interaction pattern site-wide
