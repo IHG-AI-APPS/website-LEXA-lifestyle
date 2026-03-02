@@ -16,12 +16,6 @@ const SolutionsBentoGrid = dynamic(() => import('@/components/homepage/Solutions
 const TetrisProjects = dynamic(() => import('@/components/gallery/TetrisProjects').catch(() => ({ default: Noop })))
 const CalculatorCardsSection = dynamic(() => import('@/components/homepage/CalculatorCardsSection').catch(() => ({ default: Noop })))
 const ExperienceCentreCTA = dynamic(() => import('@/components/homepage/ExperienceCentreCTA').catch(() => ({ default: Noop })))
-const RecentlyViewedSection = dynamic(() => import('@/components/widgets/RecentlyViewedSection').catch(() => ({ default: Noop })), {
-  ssr: false
-})
-const SmartRecommendations = dynamic(() => import('@/components/widgets/SmartRecommendations').catch(() => ({ default: Noop })), {
-  ssr: false
-})
 const TrustedInUAE = dynamic(() => import('@/components/sections/TrustedInUAE').catch(() => ({ default: Noop })), {
   loading: () => <div className="h-[300px] bg-[#050505]" />
 })
