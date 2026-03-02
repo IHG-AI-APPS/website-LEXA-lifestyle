@@ -216,6 +216,13 @@ export default function ProjectsPage() {
           </Link>
         </div>
       </section>
+
+      {/* Quick View Modal */}
+      <QuickViewModal
+        isOpen={!!quickViewItem}
+        onClose={() => setQuickViewItem(null)}
+        item={quickViewItem}
+      />
     </div>
   )
 }
