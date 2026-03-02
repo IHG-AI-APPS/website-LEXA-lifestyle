@@ -71,23 +71,21 @@ export default function LifestyleQuizMini({ onComplete, onSkip }: LifestyleQuizP
   }
 
   const colorMap: Record<string, string> = {
-    blue: 'bg-blue-100 text-blue-600 border-blue-500',
+    gold: 'bg-[#C9A962]/20 text-[#C9A962] border-[#C9A962]',
     emerald: 'bg-emerald-100 text-emerald-600 border-emerald-500',
     amber: 'bg-amber-100 text-amber-600 border-amber-500',
-    purple: 'bg-purple-100 text-purple-600 border-purple-500',
-    rose: 'bg-rose-100 text-rose-600 border-rose-500',
-    cyan: 'bg-cyan-100 text-cyan-600 border-cyan-500'
+    rose: 'bg-rose-100 text-rose-600 border-rose-500'
   }
 
   return (
     <motion.div
       initial={{ opacity: 0, scale: 0.95 }}
       animate={{ opacity: 1, scale: 1 }}
-      className="bg-gradient-to-br from-blue-50 to-indigo-50 rounded-2xl p-6 mb-8 border border-blue-200"
+      className="bg-gradient-to-br from-[#C9A962]/10 to-[#C9A962]/5 rounded-2xl p-6 mb-8 border border-[#C9A962]/30"
     >
       <div className="flex items-start justify-between mb-4">
         <div className="flex items-center gap-2">
-          <Sparkles className="h-5 w-5 text-blue-600" />
+          <Sparkles className="h-5 w-5 text-[#C9A962]" />
           <h3 className="font-bold text-gray-900 dark:text-white dark:text-white">Quick: What matters most to you?</h3>
         </div>
         <button
@@ -139,7 +137,7 @@ export default function LifestyleQuizMini({ onComplete, onSkip }: LifestyleQuizP
             size="sm"
             onClick={getRecommendations}
             disabled={selected.length === 0 || loading}
-            className="bg-blue-600 hover:bg-blue-700"
+            className="bg-[#C9A962] hover:bg-[#B8983F] text-gray-900"
           >
             {loading ? (
               <div className="animate-spin rounded-full h-4 w-4 border-2 border-white border-t-transparent" />
