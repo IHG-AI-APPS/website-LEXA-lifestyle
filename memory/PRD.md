@@ -11,6 +11,15 @@ Complete website overhaul for LEXA Smart Home to:
 
 ## Completed Work (Latest First)
 
+### Phase 50: WhatsApp Admin Dashboard UI (Mar 2, 2026)
+- **Admin page** (`/admin/whatsapp`): Full WhatsApp management dashboard with 4 stat cards (Integration status, Templates count, Messages Sent/Failed), 4 tabs (Overview, Templates, Logs, Test)
+- **Overview tab**: Connection details (API endpoint, masked auth token), recent messages list
+- **Templates tab**: Full CRUD — create form (name, description, body_text, variables), status dropdown (approved/pending/rejected), delete with confirmation
+- **Logs tab**: Message log table (status, phone, template, sent by, date, error)
+- **Test tab**: Send test message form — country code, phone, template selector (only approved), body values. Shows success/error result inline
+- **Sidebar**: WhatsApp nav item added to admin sidebar
+- **Testing**: 100% pass (iteration_75). 19 tests: page load, stat cards, all 4 tabs, CRUD operations, form validation, sidebar nav.
+
 ### Phase 49: Service Worker v3 — API Caching (P5) (Mar 2, 2026)
 - **Stale-while-revalidate for API**: Responses from `/api/solutions`, `/api/projects`, `/api/articles`, `/api/services`, `/api/brands`, `/api/packages`, `/api/testimonials`, `/api/locations`, `/api/settings` cached with 5-minute TTL
 - **Separate caches**: `lexa-static-v3` for immutable assets, `lexa-api-v1` for API data — clearable independently via `clearAPICache` message
