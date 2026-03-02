@@ -150,7 +150,7 @@ export default function RootLayout({
           ]) }}
         />
       </head>
-      <body className={dmSans.className} suppressHydrationWarning>
+      <body className={dmSans.className}>
         <TrackingPixels />
         <ClientLayout>{children}</ClientLayout>
       </body>
