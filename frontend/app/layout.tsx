@@ -49,8 +49,19 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" className={`${outfit.variable} ${dmSans.variable} ${tajawal.variable} ${notoArabic.variable}`}>
+    <html lang="en" suppressHydrationWarning className={`dark ${outfit.variable} ${dmSans.variable} ${tajawal.variable} ${notoArabic.variable}`}>
       <head>
+        {/* Theme blocking script — runs BEFORE first paint to prevent white flash */}
+        <script dangerouslySetInnerHTML={{ __html: `
+          (function() {
+            try {
+              var t = localStorage.getItem('lexa-theme');
+              if (t === 'light') {
+                document.documentElement.classList.remove('dark');
+              }
+            } catch(e) {}
+          })();
+        ` }} />
         {/* Favicon & App Icons */}
         <link rel="icon" href="/favicon.ico" sizes="32x32" />
         <link rel="icon" href="/favicon.ico" type="image/x-icon" />
