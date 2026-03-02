@@ -11,6 +11,23 @@ Complete website overhaul for LEXA Smart Home to:
 
 ## Completed Work (Latest First)
 
+### Phase 49: Service Worker v3 — API Caching (P5) (Mar 2, 2026)
+- **Stale-while-revalidate for API**: Responses from `/api/solutions`, `/api/projects`, `/api/articles`, `/api/services`, `/api/brands`, `/api/packages`, `/api/testimonials`, `/api/locations`, `/api/settings` cached with 5-minute TTL
+- **Separate caches**: `lexa-static-v3` for immutable assets, `lexa-api-v1` for API data — clearable independently via `clearAPICache` message
+- **Extended static caching**: Added `.png`, `.jpg`, `.jpeg`, `.webp`, `.svg`, `.ico` to cacheable patterns
+- **Smart TTL**: API responses stamped with `sw-cached-at` header — fresh cache served instantly, stale cache triggers background update
+- **Offline fallback**: Returns JSON `{error: "offline"}` with 503 for failed API calls when no cache available
+- **Testing**: 100% pass (iteration_74). Service worker content verified — correct cache names, API patterns, NEVER_CACHE exclusions.
+
+### Phase 48: WhatsApp/Interakt Admin Management (P4) (Mar 2, 2026)
+- **Admin API** (`/api/admin/whatsapp/`): Full CRUD for WhatsApp message templates — create, list, update status (pending/approved/rejected), delete
+- **Integration status**: `/status` endpoint returns enabled state, token presence, template count, recent message logs, success/failure counts
+- **Test messaging**: `/test` endpoint sends real template messages via Interakt (admin-only)
+- **Message logging**: All sent messages logged to `whatsapp_logs` collection with timestamp, status, sender
+- **Retry logic**: WhatsApp service enhanced with 2 retries + exponential backoff for 429 rate limits
+- **Seeded templates**: 3 default templates (lead_notification=approved, booking_confirmation=pending, project_update=pending)
+- **Testing**: 100% pass (iteration_74). 19 tests: auth protection (5), template CRUD (7), logs (1), service worker (6).
+
 ### Phase 47: Quick View Share Buttons — WhatsApp & Copy Link (Mar 2, 2026)
 - **WhatsApp share**: Green branded button opens `wa.me/?text={title + URL}` in new tab
 - **Copy Link**: Copies full page URL to clipboard, shows "Copied!" with checkmark for 2 seconds
@@ -98,9 +115,8 @@ Complete website overhaul for LEXA Smart Home to:
 - **Theme toggle**: Uses `dark:` Tailwind variants throughout
 
 ## Remaining / Backlog
-### P3 — Content Change History for admin CMS
-### P4 — WhatsApp template approval on Interakt
-### P5 — Refine Service Worker caching strategy
+### P3 — Content Change History for admin CMS (SKIPPED by user)
+### P6 — Admin panel theme alignment (internal tool)
 
 ## Credentials
 - Admin: `/admin/login` (username: admin, password: lexa2026)
