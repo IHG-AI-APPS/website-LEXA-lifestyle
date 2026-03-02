@@ -434,6 +434,13 @@ export default function SolutionsPage() {
         variant="horizontal" 
         className="bg-white dark:bg-gray-950 border-t border-gray-100 dark:border-gray-800" 
       />
+
+      {/* Quick View Modal */}
+      <QuickViewModal
+        isOpen={!!quickViewItem}
+        onClose={() => setQuickViewItem(null)}
+        item={quickViewItem}
+      />
     </div>
   )
 }
