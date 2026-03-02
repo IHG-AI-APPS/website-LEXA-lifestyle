@@ -25,9 +25,30 @@ interface QuickViewProps {
 }
 
 export default function QuickViewModal({ isOpen, onClose, item }: QuickViewProps) {
+  const [copied, setCopied] = useState(false)
+
   const handleEscape = useCallback((e: KeyboardEvent) => {
     if (e.key === 'Escape') onClose()
   }, [onClose])
+
+  const getFullUrl = () => {
+    if (typeof window === 'undefined' || !item) return ''
+    return `${window.location.origin}${item.href}`
+  }
+
+  const handleCopyLink = async () => {
+    try {
+      await navigator.clipboard.writeText(getFullUrl())
+      setCopied(true)
+      setTimeout(() => setCopied(false), 2000)
+    } catch { /* fallback for older browsers */ }
+  }
+
+  const handleWhatsAppShare = () => {
+    if (!item) return
+    const text = `${item.title} — ${getFullUrl()}`
+    window.open(`https://wa.me/?text=${encodeURIComponent(text)}`, '_blank')
+  }
 
   useEffect(() => {
     if (isOpen) {
