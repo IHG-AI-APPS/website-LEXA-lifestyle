@@ -69,84 +69,29 @@ class WhatsAppService:
         template_name: str,
         body_values: Optional[List[str]] = None,
     ) -> Dict[str, Any]:
-        """
-        Send a WhatsApp template message via Interakt
-        
-        Args:
-            country_code: Country code (e.g., "+971" for UAE)
-            phone_number: Phone number without country code
-            template_name: Name of approved WhatsApp template
-            body_values: List of values to fill template placeholders
-            
-        Returns:
-            Dict with status and message_id
-        """
+        """Send a WhatsApp template message via Interakt"""
         
         if not self.enabled:
             logger.info("WhatsApp integration disabled, skipping message")
-            return {
-                "status": "skipped",
-                "reason": "WhatsApp not configured"
-            }
+            return {"status": "skipped", "reason": "WhatsApp not configured"}
         
-        try:
-            # Clean phone number (remove spaces, hyphens, etc.)
-            clean_phone = ''.join(filter(str.isdigit, phone_number))
-            
-            # Prepare payload
-            payload = {
-                "countryCode": country_code,
-                "phoneNumber": clean_phone,
-                "type": "Template",
-                "template": {
-                    "name": template_name,
-                    "languageCode": "en",
-                    "bodyValues": body_values or [],
-                }
+        clean_phone = ''.join(filter(str.isdigit, phone_number))
+        
+        payload = {
+            "countryCode": country_code,
+            "phoneNumber": clean_phone,
+            "type": "Template",
+            "template": {
+                "name": template_name,
+                "languageCode": "en",
+                "bodyValues": body_values or [],
             }
-            
-            # Make API request
-            headers = {
-                "Authorization": self.auth_token,
-                "Content-Type": "application/json",
-            }
-            
-            async with httpx.AsyncClient(timeout=30.0) as client:
-                response = await client.post(
-                    self.api_url,
-                    json=payload,
-                    headers=headers,
-                )
-                
-                if response.status_code in [200, 201]:
-                    result = response.json()
-                    logger.info(f"WhatsApp message sent to {country_code}{clean_phone}")
-                    
-                    return {
-                        "status": "success",
-                        "message_id": result.get("id"),
-                        "message": "WhatsApp message sent successfully"
-                    }
-                else:
-                    logger.error(f"Interakt API error: {response.status_code} - {response.text}")
-                    return {
-                        "status": "error",
-                        "error": f"API returned {response.status_code}",
-                        "details": response.text
-                    }
-                    
-        except httpx.TimeoutException:
-            logger.error("Interakt API timeout")
-            return {
-                "status": "error",
-                "error": "API timeout"
-            }
-        except Exception as e:
-            logger.error(f"WhatsApp integration error: {str(e)}")
-            return {
-                "status": "error",
-                "error": str(e)
-            }
+        }
+        
+        result = await self._make_request(payload)
+        if result["status"] == "success":
+            logger.info(f"WhatsApp template '{template_name}' sent to {country_code}{clean_phone}")
+        return result
     
     async def send_text_message(
         self,
