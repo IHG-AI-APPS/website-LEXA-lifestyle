@@ -88,15 +88,17 @@ export default function RootLayout({
         {/* Preconnect for critical resources */}
         <link rel="preconnect" href={process.env.NEXT_PUBLIC_BACKEND_URL || ''} crossOrigin="anonymous" />
         
-        {/* CRITICAL INLINE CSS - Prevents unstyled flash when CSS chunks are 429'd */}
+        {/* CRITICAL INLINE CSS - Dark-first: ALWAYS dark bg, never white flash */}
         <style dangerouslySetInnerHTML={{ __html: `
-          html, body { background: #050505; color: #fff; margin: 0; padding: 0; font-family: system-ui, -apple-system, sans-serif; }
-          .sr-only, [class*="sr-only"], a[href="#main-content"] { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0,0,0,0); }
-          header { position: fixed; top: 0; left: 0; right: 0; z-index: 50; background: rgba(5,5,5,0.9); }
-          footer svg { max-width: 48px; max-height: 48px; }
+          html, body { background: #050505 !important; color: #fff; margin: 0; padding: 0; font-family: system-ui, -apple-system, sans-serif; }
+          html:not(.dark) body { background: #fff !important; color: #111; }
+          .sr-only, [class*="sr-only"], a[href="#main-content"] { position: absolute !important; width: 1px !important; height: 1px !important; overflow: hidden !important; clip: rect(0,0,0,0) !important; white-space: nowrap !important; }
+          header { position: fixed; top: 0; left: 0; right: 0; z-index: 50; background: rgba(5,5,5,0.95); }
+          footer svg { width: 16px !important; height: 16px !important; max-width: 16px !important; max-height: 16px !important; }
+          footer a { display: inline-flex; align-items: center; }
           img { max-width: 100%; height: auto; }
           section { overflow: hidden; }
-          @media (prefers-color-scheme: light) { html:not(.dark) body { background: #fff; color: #111; } }
+          [data-testid] { visibility: visible; }
         ` }} />
         
         {/* Chunk load error recovery - auto-reload on stale chunks or 429 failures */}
