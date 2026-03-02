@@ -172,11 +172,11 @@ export default function SystemSelection({
       <div className="bg-gray-50 rounded-xl p-4 mb-8">
         <div className="grid grid-cols-3 gap-4 text-center">
           <div>
-            <div className="text-2xl font-bold text-gray-900 dark:text-white dark:text-white">{totalFeatures}</div>
+            <div className="text-2xl font-bold text-gray-900 dark:text-white">{totalFeatures}</div>
             <div className="text-sm text-gray-500">Features Selected</div>
           </div>
           <div>
-            <div className="text-2xl font-bold text-gray-900 dark:text-white dark:text-white">{selectedProtocols.length}</div>
+            <div className="text-2xl font-bold text-gray-900 dark:text-white">{selectedProtocols.length}</div>
             <div className="text-sm text-gray-500">Protocols Chosen</div>
           </div>
           <div>
@@ -297,7 +297,7 @@ export default function SystemSelection({
                         {system.strengths.slice(0, 3).map((strength, i) => (
                           <div key={i} className="flex items-center gap-2 text-sm">
                             <Check className="w-4 h-4 text-green-500 flex-shrink-0" />
-                            <span className="text-gray-700 dark:text-gray-300 dark:text-gray-300">{strength}</span>
+                            <span className="text-gray-700 dark:text-gray-300">{strength}</span>
                           </div>
                         ))}
                       </div>

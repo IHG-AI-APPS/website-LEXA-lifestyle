@@ -128,7 +128,7 @@ export default function CaseStudiesPage() {
               <h1 className="h1 uppercase mb-6">
                 {cms?.hero_title || 'SMART HOME CASE STUDIES'}
               </h1>
-              <p className="text-xl text-gray-600 dark:text-gray-400 dark:text-gray-400">
+              <p className="text-xl text-gray-600 dark:text-gray-400">
                 {cms?.hero_subtitle || 'Real projects, real results. Explore how LEXA Lifestyle has transformed luxury properties across Dubai, Abu Dhabi, and UAE with cutting-edge smart home automation.'}
               </p>
             </motion.div>
@@ -208,7 +208,7 @@ export default function CaseStudiesPage() {
                       <h4 className="text-sm font-semibold text-gray-900 dark:text-white mb-3">KEY FEATURES</h4>
                       <div className="flex flex-wrap gap-2">
                         {project.features.map((feature, i) => (
-                          <span key={i} className="text-xs px-3 py-1 bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 dark:text-gray-300">
+                          <span key={i} className="text-xs px-3 py-1 bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300">
                             {feature}
                           </span>
                         ))}
@@ -218,7 +218,7 @@ export default function CaseStudiesPage() {
                     {/* Results */}
                     <div className="bg-gray-50 p-6 mb-6">
                       <h4 className="text-sm font-semibold text-gray-900 dark:text-white mb-2">RESULTS</h4>
-                      <p className="text-sm text-gray-700 dark:text-gray-300 dark:text-gray-300">{project.results}</p>
+                      <p className="text-sm text-gray-700 dark:text-gray-300">{project.results}</p>
                     </div>
 
                     <Link

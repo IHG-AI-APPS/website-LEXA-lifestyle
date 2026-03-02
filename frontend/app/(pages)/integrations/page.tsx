@@ -127,7 +127,7 @@ export default function IntegrationsPage() {
               >
                 <CheckCircle2 className="w-10 h-10 text-green-500 mx-auto mb-4" strokeWidth={2} />
                 <h3 className="text-lg font-semibold mb-2">{benefit.title}</h3>
-                <p className="text-sm text-gray-600 dark:text-gray-400 dark:text-gray-400">{benefit.description}</p>
+                <p className="text-sm text-gray-600 dark:text-gray-400">{benefit.description}</p>
               </motion.div>
             ))}
           </div>
@@ -167,7 +167,7 @@ export default function IntegrationsPage() {
                     </div>
                     <div>
                       <h3 className="text-2xl font-bold mb-1">{platform.category}</h3>
-                      <p className="text-sm text-gray-600 dark:text-gray-400 dark:text-gray-400">{platform.description}</p>
+                      <p className="text-sm text-gray-600 dark:text-gray-400">{platform.description}</p>
                     </div>
                   </div>
 
@@ -220,7 +220,7 @@ export default function IntegrationsPage() {
                     {protocol.status}
                   </span>
                 </div>
-                <p className="text-sm text-gray-600 dark:text-gray-400 dark:text-gray-400">{protocol.description}</p>
+                <p className="text-sm text-gray-600 dark:text-gray-400">{protocol.description}</p>
               </motion.div>
             ))}
           </div>

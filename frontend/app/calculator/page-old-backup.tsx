@@ -233,7 +233,7 @@ export default function CostCalculatorPage() {
                             </div>
                             <div>
                               <div className="font-medium mb-1">{system.label}</div>
-                              <div className="text-sm text-gray-600 dark:text-gray-400 dark:text-gray-400">{system.description}</div>
+                              <div className="text-sm text-gray-600 dark:text-gray-400">{system.description}</div>
                             </div>
                           </div>
                         </button>
@@ -271,14 +271,14 @@ export default function CostCalculatorPage() {
                   <div className="sticky top-24 glass border border-gray-200 dark:border-gray-700 p-8 space-y-8">
                     <div>
                       <h3 className="text-2xl font-semibold mb-2">Your Estimate</h3>
-                      <p className="text-sm text-gray-600 dark:text-gray-400 dark:text-gray-400">
+                      <p className="text-sm text-gray-600 dark:text-gray-400">
                         Based on {selectedSystems.length} systems for a {squareFootage} sq ft {propertyType}
                       </p>
                     </div>
 
                     <div className="space-y-6">
                       {/* Cost Range */}
-                      <div className="pb-6 border-b border-gray-200 dark:border-gray-700 dark:border-gray-700">
+                      <div className="pb-6 border-b border-gray-200 dark:border-gray-700">
                         <div className="flex items-center gap-3 mb-3">
                           <TrendingUp className="text-charcoal" size={20} />
                           <span className="text-xs tracking-wider uppercase text-gray-500">Investment Range</span>
@@ -286,13 +286,13 @@ export default function CostCalculatorPage() {
                         <div className="text-4xl font-semibold mb-2">
                           {formatCurrency(result.estimated_cost_min)}
                         </div>
-                        <div className="text-lg text-gray-600 dark:text-gray-400 dark:text-gray-400">
+                        <div className="text-lg text-gray-600 dark:text-gray-400">
                           to {formatCurrency(result.estimated_cost_max)}
                         </div>
                       </div>
 
                       {/* Timeline */}
-                      <div className="pb-6 border-b border-gray-200 dark:border-gray-700 dark:border-gray-700">
+                      <div className="pb-6 border-b border-gray-200 dark:border-gray-700">
                         <div className="flex items-center gap-3 mb-3">
                           <Clock className="text-charcoal" size={20} />
                           <span className="text-xs tracking-wider uppercase text-gray-500">Timeline</span>
@@ -322,7 +322,7 @@ export default function CostCalculatorPage() {
                     </div>
 
                     {/* CTA */}
-                    <div className="pt-6 border-t border-gray-200 dark:border-gray-700 dark:border-gray-700">
+                    <div className="pt-6 border-t border-gray-200 dark:border-gray-700">
                       <p className="text-sm text-gray-600 dark:text-gray-400 mb-4">
                         Ready to bring your vision to life? Book a free consultation with our experts.
                       </p>
@@ -341,7 +341,7 @@ export default function CostCalculatorPage() {
                       <Calculator size={48} className="mx-auto" strokeWidth={1} />
                     </div>
                     <h3 className="text-xl font-semibold mb-2">Your Estimate</h3>
-                    <p className="text-sm text-gray-600 dark:text-gray-400 dark:text-gray-400">
+                    <p className="text-sm text-gray-600 dark:text-gray-400">
                       Fill out the form to see your personalized cost estimate and project timeline.
                     </p>
                   </div>
@@ -355,7 +355,7 @@ export default function CostCalculatorPage() {
       {/* Disclaimer */}
       <section className="py-12 bg-gray-50">
         <div className="container mx-auto px-8 lg:px-16">
-          <div className="max-w-4xl mx-auto text-center text-sm text-gray-600 dark:text-gray-400 dark:text-gray-400">
+          <div className="max-w-4xl mx-auto text-center text-sm text-gray-600 dark:text-gray-400">
             <p>
               * This is an estimated range based on typical installations. Final pricing will be determined after a detailed site assessment and consultation. Prices are in AED and exclude VAT.
             </p>

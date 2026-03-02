@@ -117,7 +117,7 @@ export default function Visualize3DPage() {
                   <p className="text-gray-600 dark:text-gray-400 text-sm mb-4">{room.description}</p>
                   <div className="space-y-2">
                     {room.devices.map((device, i) => (
-                      <div key={i} className="flex items-center gap-2 text-sm text-gray-700 dark:text-gray-300 dark:text-gray-300">
+                      <div key={i} className="flex items-center gap-2 text-sm text-gray-700 dark:text-gray-300">
                         <div className="w-2 h-2 bg-green-500 rounded-full" />
                         {device}
                       </div>

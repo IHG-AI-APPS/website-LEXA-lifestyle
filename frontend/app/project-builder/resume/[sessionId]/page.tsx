@@ -161,15 +161,15 @@ export default function ResumePage() {
                   </h2>
                   <div className="bg-gray-50 rounded-lg p-4 space-y-2">
                     <div className="flex justify-between text-sm">
-                      <span className="text-gray-600 dark:text-gray-400 dark:text-gray-400">Property Type:</span>
+                      <span className="text-gray-600 dark:text-gray-400">Property Type:</span>
                       <span className="font-medium">{sessionState.project_data.property_type || 'Not set'}</span>
                     </div>
                     <div className="flex justify-between text-sm">
-                      <span className="text-gray-600 dark:text-gray-400 dark:text-gray-400">Segment:</span>
+                      <span className="text-gray-600 dark:text-gray-400">Segment:</span>
                       <span className="font-medium">{sessionState.project_data.segment || 'Not set'}</span>
                     </div>
                     <div className="flex justify-between text-sm">
-                      <span className="text-gray-600 dark:text-gray-400 dark:text-gray-400">Area:</span>
+                      <span className="text-gray-600 dark:text-gray-400">Area:</span>
                       <span className="font-medium">
                         {sessionState.project_data.area_sqft 
                           ? `${sessionState.project_data.area_sqft.toLocaleString()} sqft` 

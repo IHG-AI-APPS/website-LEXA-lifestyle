@@ -157,7 +157,7 @@ export default function SolutionDetailPage() {
 
       {/* Long Description Section */}
       {solution.long_description && (
-        <section className="py-20 border-b border-gray-200 dark:border-gray-700 dark:border-gray-700">
+        <section className="py-20 border-b border-gray-200 dark:border-gray-700">
           <div className="container mx-auto px-8 lg:px-16">
             <div className="max-w-4xl mx-auto">
               <motion.div
@@ -189,7 +189,7 @@ export default function SolutionDetailPage() {
                 className="mb-12 text-center"
               >
                 <h2 className="text-5xl font-semibold mb-4">Comprehensive Features</h2>
-                <p className="text-xl text-gray-600 dark:text-gray-400 dark:text-gray-400">
+                <p className="text-xl text-gray-600 dark:text-gray-400">
                   Everything you need for the ultimate {solution.title.toLowerCase()} experience
                 </p>
               </motion.div>
@@ -212,7 +212,7 @@ export default function SolutionDetailPage() {
                     {card.benefits && card.benefits.length > 0 && (
                       <ul className="space-y-2">
                         {card.benefits.map((benefit, bIndex) => (
-                          <li key={bIndex} className="flex items-start gap-2 text-sm text-gray-700 dark:text-gray-300 dark:text-gray-300">
+                          <li key={bIndex} className="flex items-start gap-2 text-sm text-gray-700 dark:text-gray-300">
                             <CheckCircle2 size={16} className="text-charcoal flex-shrink-0 mt-0.5" />
                             <span>{benefit}</span>
                           </li>
@@ -239,7 +239,7 @@ export default function SolutionDetailPage() {
               className="mb-12"
             >
               <h2 className="text-5xl font-semibold mb-4">Key Features</h2>
-              <p className="text-xl text-gray-600 dark:text-gray-400 dark:text-gray-400">
+              <p className="text-xl text-gray-600 dark:text-gray-400">
                 Everything you need for the ultimate {solution.title.toLowerCase()} experience
               </p>
             </motion.div>
@@ -252,7 +252,7 @@ export default function SolutionDetailPage() {
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: 0.2 }}
                   viewport={{ once: true }}
-                  className="flex items-start gap-4 p-6 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 dark:border-gray-700"
+                  className="flex items-start gap-4 p-6 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700"
                 >
                   <CheckCircle2 className="text-charcoal flex-shrink-0 mt-1" size={24} strokeWidth={2} />
                   <div>
@@ -267,7 +267,7 @@ export default function SolutionDetailPage() {
 
       {/* Technology Brands Section */}
       {solution.brands.length > 0 && (
-        <section className="py-20 border-b border-gray-200 dark:border-gray-700 dark:border-gray-700">
+        <section className="py-20 border-b border-gray-200 dark:border-gray-700">
           <div className="container mx-auto px-8 lg:px-16">
             <div className="max-w-6xl mx-auto">
               <motion.div
@@ -278,7 +278,7 @@ export default function SolutionDetailPage() {
                 className="text-center mb-12"
               >
                 <h2 className="text-4xl font-semibold mb-4">Premium Technology Partners</h2>
-                <p className="text-xl text-gray-600 dark:text-gray-400 dark:text-gray-400">
+                <p className="text-xl text-gray-600 dark:text-gray-400">
                   We work with the world&apos;s leading brands
                 </p>
               </motion.div>
@@ -393,7 +393,7 @@ export default function SolutionDetailPage() {
                 className="mb-12"
               >
                 <h2 className="text-4xl font-semibold mb-4">Frequently Asked Questions</h2>
-                <p className="text-xl text-gray-600 dark:text-gray-400 dark:text-gray-400">
+                <p className="text-xl text-gray-600 dark:text-gray-400">
                   Everything you need to know about {solution.title.toLowerCase()}
                 </p>
               </motion.div>
@@ -406,7 +406,7 @@ export default function SolutionDetailPage() {
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.6, delay: 0.2 }}
                     viewport={{ once: true }}
-                    className="bg-white dark:bg-gray-800 p-8 border border-gray-200 dark:border-gray-700 dark:border-gray-700"
+                    className="bg-white dark:bg-gray-800 p-8 border border-gray-200 dark:border-gray-700"
                   >
                     <h3 className="text-xl font-semibold mb-3">{faq.question}</h3>
                     <p className="text-gray-600 dark:text-gray-400 leading-relaxed">{faq.answer}</p>
@@ -420,7 +420,7 @@ export default function SolutionDetailPage() {
 
       {/* Use Cases Section */}
       {solution.use_cases && solution.use_cases.length > 0 && (
-        <section className="py-20 border-b border-gray-200 dark:border-gray-700 dark:border-gray-700">
+        <section className="py-20 border-b border-gray-200 dark:border-gray-700">
           <div className="container mx-auto px-8 lg:px-16">
             <div className="max-w-6xl mx-auto">
               <motion.div
@@ -431,7 +431,7 @@ export default function SolutionDetailPage() {
                 className="mb-12 text-center"
               >
                 <h2 className="text-4xl font-semibold mb-4">Real-World Applications</h2>
-                <p className="text-xl text-gray-600 dark:text-gray-400 dark:text-gray-400">
+                <p className="text-xl text-gray-600 dark:text-gray-400">
                   See how {solution.title} transforms different properties
                 </p>
               </motion.div>
@@ -469,7 +469,7 @@ export default function SolutionDetailPage() {
                 className="mb-12 text-center"
               >
                 <h2 className="text-4xl font-semibold mb-4">Technical Specifications</h2>
-                <p className="text-xl text-gray-600 dark:text-gray-400 dark:text-gray-400">
+                <p className="text-xl text-gray-600 dark:text-gray-400">
                   Industry-leading technology and components
                 </p>
               </motion.div>
@@ -482,14 +482,14 @@ export default function SolutionDetailPage() {
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.6, delay: 0.15 }}
                     viewport={{ once: true }}
-                    className="flex items-start gap-4 p-6 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 dark:border-gray-700"
+                    className="flex items-start gap-4 p-6 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700"
                   >
                     <CheckCircle2 className="text-charcoal flex-shrink-0 mt-1" size={24} strokeWidth={2} />
                     <div>
                       <h3 className="text-lg font-semibold mb-1 capitalize">
                         {key.replace(/_/g, ' ')}
                       </h3>
-                      <p className="text-gray-600 dark:text-gray-400 dark:text-gray-400">{value}</p>
+                      <p className="text-gray-600 dark:text-gray-400">{value}</p>
                     </div>
                   </motion.div>
                 ))}
@@ -512,7 +512,7 @@ export default function SolutionDetailPage() {
                 className="mb-12"
               >
                 <h2 className="text-4xl font-semibold mb-4">Featured Projects</h2>
-                <p className="text-xl text-gray-600 dark:text-gray-400 dark:text-gray-400">
+                <p className="text-xl text-gray-600 dark:text-gray-400">
                   See how we&apos;ve implemented {solution.title} in real projects
                 </p>
               </motion.div>

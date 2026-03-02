@@ -182,7 +182,7 @@ export default function ArchitectPage() {
                       <Icon size={32} className="text-charcoal" />
                     </div>
                     <h3 className="text-xl font-semibold mb-3">{benefit.title}</h3>
-                    <p className="text-gray-600 dark:text-gray-400 dark:text-gray-400">{benefit.description}</p>
+                    <p className="text-gray-600 dark:text-gray-400">{benefit.description}</p>
                   </motion.div>
                 )
               })}

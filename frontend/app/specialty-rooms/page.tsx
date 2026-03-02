@@ -155,7 +155,7 @@ export default function SpecialtyRoomsPage() {
 
                       {/* Price Badge */}
                       <div className="absolute bottom-4 right-4 px-3 py-1 bg-white/90 backdrop-blur-sm rounded-full">
-                        <p className="text-sm font-bold text-gray-900 dark:text-white dark:text-white">
+                        <p className="text-sm font-bold text-gray-900 dark:text-white">
                           +AED {(room.base_price_aed / 1000).toFixed(0)}K
                         </p>
                       </div>

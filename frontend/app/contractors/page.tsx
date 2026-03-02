@@ -155,7 +155,7 @@ export default function ContractorsPage() {
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-16">
               <h2 className="text-4xl sm:text-5xl font-bold mb-4 ">Speed + Simplicity + Support</h2>
-              <p className="text-xl text-gray-600 dark:text-gray-400 dark:text-gray-400">
+              <p className="text-xl text-gray-600 dark:text-gray-400">
                 We make automation easy for contractors
               </p>
             </div>
@@ -241,7 +241,7 @@ export default function ContractorsPage() {
                 </div>
                 <div>
                   <h3 className="font-bold text-lg mb-2">Comprehensive BOQ</h3>
-                  <p className="text-gray-600 dark:text-gray-400 dark:text-gray-400">
+                  <p className="text-gray-600 dark:text-gray-400">
                     Detailed Bill of Quantities with material specs, labor, and timelines
                   </p>
                 </div>
@@ -253,7 +253,7 @@ export default function ContractorsPage() {
                 </div>
                 <div>
                   <h3 className="font-bold text-lg mb-2">Coordinated Scope</h3>
-                  <p className="text-gray-600 dark:text-gray-400 dark:text-gray-400">
+                  <p className="text-gray-600 dark:text-gray-400">
                     Clear scope with MEP coordination points and installation sequence
                   </p>
                 </div>
@@ -265,7 +265,7 @@ export default function ContractorsPage() {
                 </div>
                 <div>
                   <h3 className="font-bold text-lg mb-2">Project Management</h3>
-                  <p className="text-gray-600 dark:text-gray-400 dark:text-gray-400">
+                  <p className="text-gray-600 dark:text-gray-400">
                     Dedicated PM from start to handover with regular updates
                   </p>
                 </div>
@@ -277,7 +277,7 @@ export default function ContractorsPage() {
                 </div>
                 <div>
                   <h3 className="font-bold text-lg mb-2">Professional Installation</h3>
-                  <p className="text-gray-600 dark:text-gray-400 dark:text-gray-400">
+                  <p className="text-gray-600 dark:text-gray-400">
                     Certified technicians with proper commissioning and testing
                   </p>
                 </div>

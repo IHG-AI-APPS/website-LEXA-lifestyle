@@ -58,7 +58,7 @@ export default function ProductDetailPage({ params }: { params: { slug: string }
   if (loading) {
     return (
       <div className="min-h-screen bg-white pt-20 flex items-center justify-center">
-        <div className="text-gray-600 dark:text-gray-400 dark:text-gray-400">Loading...</div>
+        <div className="text-gray-600 dark:text-gray-400">Loading...</div>
       </div>
     )
   }
@@ -144,7 +144,7 @@ export default function ProductDetailPage({ params }: { params: { slug: string }
                     {product.specifications.map((spec: string, index: number) => (
                       <div key={index} className="flex items-start gap-3">
                         <CheckCircle size={24} className="text-charcoal mt-1 flex-shrink-0" strokeWidth={1.5} />
-                        <p className="text-lg text-gray-700 dark:text-gray-300 dark:text-gray-300">{spec}</p>
+                        <p className="text-lg text-gray-700 dark:text-gray-300">{spec}</p>
                       </div>
                     ))}
                   </div>

@@ -75,7 +75,7 @@ export default function VillaOperatingModelPage() {
                       </div>
                       <div className="flex-1">
                         <h3 className="text-2xl font-semibold mb-2">{role.title}</h3>
-                        <p className="text-sm text-gray-600 dark:text-gray-400 dark:text-gray-400">{role.description}</p>
+                        <p className="text-sm text-gray-600 dark:text-gray-400">{role.description}</p>
                       </div>
                     </div>
 
@@ -84,7 +84,7 @@ export default function VillaOperatingModelPage() {
                       {role.features.map((feature, i) => (
                         <div key={i} className="flex items-start gap-2">
                           <div className="w-1 h-1 rounded-full bg-black mt-2 flex-shrink-0" />
-                          <span className="text-sm text-gray-700 dark:text-gray-300 dark:text-gray-300">{feature}</span>
+                          <span className="text-sm text-gray-700 dark:text-gray-300">{feature}</span>
                         </div>
                       ))}
                     </div>
@@ -136,7 +136,7 @@ export default function VillaOperatingModelPage() {
                     <Icon className="w-8 h-8 text-black" strokeWidth={1.5} />
                   </div>
                   <h3 className="text-lg font-semibold mb-2">{benefit.title}</h3>
-                  <p className="text-sm text-gray-600 dark:text-gray-400 dark:text-gray-400">{benefit.description}</p>
+                  <p className="text-sm text-gray-600 dark:text-gray-400">{benefit.description}</p>
                 </motion.div>
               )
             })}

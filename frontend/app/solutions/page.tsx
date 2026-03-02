@@ -114,7 +114,7 @@ export default function SolutionsPage() {
                   {language === 'ar' ? 'الفئة' : 'Category'}
                 </span>
                 <h2 className="text-3xl md:text-4xl font-bold mb-2">{categoryConfig.residential.title}</h2>
-                <p className="text-lg text-gray-600 dark:text-gray-400 dark:text-gray-400">{categoryConfig.residential.subtitle}</p>
+                <p className="text-lg text-gray-600 dark:text-gray-400">{categoryConfig.residential.subtitle}</p>
               </motion.div>
 
               <div className="space-y-2">
@@ -127,7 +127,7 @@ export default function SolutionsPage() {
                     viewport={{ once: true }}
                   >
                     <Link href={`/solutions/${solution.slug}`}>
-                      <div className="group py-8 border-b border-gray-200 dark:border-gray-700 dark:border-gray-700 hover:border-gray-400 dark:hover:border-gray-500 transition-all duration-300">
+                      <div className="group py-8 border-b border-gray-200 dark:border-gray-700 hover:border-gray-400 dark:hover:border-gray-500 transition-all duration-300">
                         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
                           <div className="lg:col-span-1">
                             <span className="text-4xl font-semibold text-gray-300 group-hover:text-black transition-colors">
@@ -177,7 +177,7 @@ export default function SolutionsPage() {
                   {language === 'ar' ? 'الفئة' : 'Category'}
                 </span>
                 <h2 className="text-3xl md:text-4xl font-bold mb-2">{categoryConfig.commercial.title}</h2>
-                <p className="text-lg text-gray-600 dark:text-gray-400 dark:text-gray-400">{categoryConfig.commercial.subtitle}</p>
+                <p className="text-lg text-gray-600 dark:text-gray-400">{categoryConfig.commercial.subtitle}</p>
               </motion.div>
 
               <div className="space-y-2">
@@ -190,7 +190,7 @@ export default function SolutionsPage() {
                     viewport={{ once: true }}
                   >
                     <Link href={`/solutions/${solution.slug}`}>
-                      <div className="group py-8 border-b border-gray-200 dark:border-gray-700 dark:border-gray-700 hover:border-gray-400 dark:hover:border-gray-500 transition-all duration-300">
+                      <div className="group py-8 border-b border-gray-200 dark:border-gray-700 hover:border-gray-400 dark:hover:border-gray-500 transition-all duration-300">
                         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
                           <div className="lg:col-span-1">
                             <span className="text-4xl font-semibold text-gray-300 group-hover:text-black transition-colors">
@@ -240,7 +240,7 @@ export default function SolutionsPage() {
                   {language === 'ar' ? 'الفئة' : 'Category'}
                 </span>
                 <h2 className="text-3xl md:text-4xl font-bold mb-2">{categoryConfig.specialized.title}</h2>
-                <p className="text-lg text-gray-600 dark:text-gray-400 dark:text-gray-400">{categoryConfig.specialized.subtitle}</p>
+                <p className="text-lg text-gray-600 dark:text-gray-400">{categoryConfig.specialized.subtitle}</p>
               </motion.div>
 
               <div className="space-y-2">
@@ -253,7 +253,7 @@ export default function SolutionsPage() {
                     viewport={{ once: true }}
                   >
                     <Link href={`/solutions/${solution.slug}`}>
-                      <div className="group py-8 border-b border-gray-200 dark:border-gray-700 dark:border-gray-700 hover:border-gray-400 dark:hover:border-gray-500 transition-all duration-300">
+                      <div className="group py-8 border-b border-gray-200 dark:border-gray-700 hover:border-gray-400 dark:hover:border-gray-500 transition-all duration-300">
                         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
                           <div className="lg:col-span-1">
                             <span className="text-4xl font-semibold text-gray-300 group-hover:text-black transition-colors">
@@ -303,7 +303,7 @@ export default function SolutionsPage() {
                   {language === 'ar' ? 'الفئة' : 'Category'}
                 </span>
                 <h2 className="text-3xl md:text-4xl font-bold mb-2">{categoryConfig.other.title}</h2>
-                <p className="text-lg text-gray-600 dark:text-gray-400 dark:text-gray-400">{categoryConfig.other.subtitle}</p>
+                <p className="text-lg text-gray-600 dark:text-gray-400">{categoryConfig.other.subtitle}</p>
               </motion.div>
 
               <div className="space-y-2">
@@ -316,7 +316,7 @@ export default function SolutionsPage() {
                     viewport={{ once: true }}
                   >
                     <Link href={`/solutions/${solution.slug}`}>
-                      <div className="group py-8 border-b border-gray-200 dark:border-gray-700 dark:border-gray-700 hover:border-gray-400 dark:hover:border-gray-500 transition-all duration-300">
+                      <div className="group py-8 border-b border-gray-200 dark:border-gray-700 hover:border-gray-400 dark:hover:border-gray-500 transition-all duration-300">
                         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
                           <div className="lg:col-span-1">
                             <span className="text-4xl font-semibold text-gray-300 group-hover:text-black transition-colors">

@@ -144,7 +144,7 @@ export default function DashboardPage() {
           <div className="flex items-center justify-between flex-wrap gap-4">
             <div>
               <h1 className="text-3xl font-semibold text-gray-900 dark:text-white mb-2">My Projects</h1>
-              <p className="text-gray-600 dark:text-gray-400 dark:text-gray-400">Track and manage your smart home projects</p>
+              <p className="text-gray-600 dark:text-gray-400">Track and manage your smart home projects</p>
             </div>
             <div className="flex items-center gap-3">
               <Button
@@ -217,7 +217,7 @@ export default function DashboardPage() {
                   <div className="flex items-center justify-between">
                     <div className="flex items-center gap-2">
                       <Building2 className={`w-5 h-5 ${session.completed ? 'text-green-600' : 'text-[#C9A962]'}`} />
-                      <span className="font-medium text-gray-900 dark:text-white dark:text-white">{session.property_type}</span>
+                      <span className="font-medium text-gray-900 dark:text-white">{session.property_type}</span>
                     </div>
                     {session.completed ? (
                       <span className="flex items-center gap-1 text-xs text-green-700 bg-green-100 px-2 py-1 rounded-full">
@@ -321,7 +321,7 @@ export default function DashboardPage() {
             className="mt-8 grid grid-cols-1 sm:grid-cols-3 gap-4"
           >
             <div className="bg-white dark:bg-gray-800 rounded-xl border border-gray-200 dark:border-gray-700 p-4 text-center">
-              <div className="text-3xl font-semibold text-gray-900 dark:text-white dark:text-white">{sessions.length}</div>
+              <div className="text-3xl font-semibold text-gray-900 dark:text-white">{sessions.length}</div>
               <div className="text-sm text-gray-500">Total Projects</div>
             </div>
             <div className="bg-white dark:bg-gray-800 rounded-xl border border-gray-200 dark:border-gray-700 p-4 text-center">

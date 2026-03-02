@@ -137,7 +137,7 @@ export default function BigHomesBreakSmartPage() {
                           <span className="text-sm uppercase tracking-wider text-orange-600 font-semibold">Impact:</span>
                           <p className="text-gray-700 dark:text-gray-300 mt-1">{problem.impact}</p>
                         </div>
-                        <div className="pt-3 border-t border-gray-200 dark:border-gray-700 dark:border-gray-700">
+                        <div className="pt-3 border-t border-gray-200 dark:border-gray-700">
                           <div className="text-sm text-gray-500 italic">📊 {problem.stat}</div>
                         </div>
                       </div>
@@ -180,7 +180,7 @@ export default function BigHomesBreakSmartPage() {
                   <span className="text-red-600 font-bold text-lg">{item.cost}</span>
                 </div>
                 <p className="text-gray-600 dark:text-gray-400 text-sm mb-4">{item.description}</p>
-                <div className="pt-3 border-t border-gray-200 dark:border-gray-700 dark:border-gray-700">
+                <div className="pt-3 border-t border-gray-200 dark:border-gray-700">
                   <span className="text-xs uppercase tracking-wider text-green-600 font-semibold">LEXA Solution:</span>
                   <p className="text-sm text-gray-700 dark:text-gray-300 mt-1">{item.solution}</p>
                 </div>
@@ -197,7 +197,7 @@ export default function BigHomesBreakSmartPage() {
             <DollarSign className="w-12 h-12 text-red-600 mx-auto mb-4" />
             <h3 className="text-2xl font-bold mb-2">Total Annual Hidden Cost</h3>
             <div className="text-4xl font-bold text-red-600 mb-2">AED 100,000 - 150,000</div>
-            <p className="text-gray-700 dark:text-gray-300 dark:text-gray-300">
+            <p className="text-gray-700 dark:text-gray-300">
               Plus catastrophic risk exposure of AED 500K - 2M from undetected water damage
             </p>
           </motion.div>
@@ -214,7 +214,7 @@ export default function BigHomesBreakSmartPage() {
             className="text-center mb-12"
           >
             <h2 className="text-3xl md:text-4xl font-bold mb-4">Traditional vs LEXA Approach</h2>
-            <p className="text-lg text-gray-600 dark:text-gray-400 dark:text-gray-400">
+            <p className="text-lg text-gray-600 dark:text-gray-400">
               The difference between installed and orchestrated
             </p>
           </motion.div>
@@ -232,7 +232,7 @@ export default function BigHomesBreakSmartPage() {
                 {comparison.traditional.map((item, i) => (
                   <div key={i} className="flex items-start gap-3">
                     <X className="w-5 h-5 text-red-500 flex-shrink-0 mt-0.5" strokeWidth={2.5} />
-                    <span className="text-gray-700 dark:text-gray-300 dark:text-gray-300">{item.feature}</span>
+                    <span className="text-gray-700 dark:text-gray-300">{item.feature}</span>
                   </div>
                 ))}
               </div>
@@ -250,7 +250,7 @@ export default function BigHomesBreakSmartPage() {
                 {comparison.lexa.map((item, i) => (
                   <div key={i} className="flex items-start gap-3">
                     <Check className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" strokeWidth={2.5} />
-                    <span className="text-gray-700 dark:text-gray-300 dark:text-gray-300">{item.feature}</span>
+                    <span className="text-gray-700 dark:text-gray-300">{item.feature}</span>
                   </div>
                 ))}
               </div>

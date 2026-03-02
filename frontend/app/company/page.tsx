@@ -85,7 +85,7 @@ export default function CompanyPage() {
                       <Icon size={32} className="text-charcoal" strokeWidth={1.5} />
                     </div>
                     <h3 className="text-xl font-semibold mb-3">{value.title}</h3>
-                    <p className="text-sm text-gray-600 dark:text-gray-400 dark:text-gray-400">{value.description}</p>
+                    <p className="text-sm text-gray-600 dark:text-gray-400">{value.description}</p>
                   </motion.div>
                 )
               })}

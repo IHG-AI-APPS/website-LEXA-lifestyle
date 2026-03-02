@@ -108,7 +108,7 @@ export default function BlogArticlePage({ params }: { params: { slug: string } }
               transition={{ duration: 0.3 }}
             >
               <Badge className="mb-4 bg-[#C9A962]/10 text-[#C9A962] hover:bg-[#C9A962]/10">{article.category}</Badge>
-              <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6 tracking-tight text-gray-900 dark:text-white dark:text-white leading-tight">
+              <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6 tracking-tight text-gray-900 dark:text-white leading-tight">
                 {article.title}
               </h1>
               
@@ -121,9 +121,9 @@ export default function BlogArticlePage({ params }: { params: { slug: string } }
               <div className="flex flex-wrap items-center gap-4 text-sm text-gray-500 mb-6">
                 <div className="flex items-center gap-2">
                   <div className="w-8 h-8 rounded-full bg-gray-200 flex items-center justify-center">
-                    <User size={16} className="text-gray-600 dark:text-gray-400 dark:text-gray-400" />
+                    <User size={16} className="text-gray-600 dark:text-gray-400" />
                   </div>
-                  <span className="font-medium text-gray-700 dark:text-gray-300 dark:text-gray-300">{article.author}</span>
+                  <span className="font-medium text-gray-700 dark:text-gray-300">{article.author}</span>
                 </div>
                 <span className="text-gray-300">•</span>
                 <div className="flex items-center gap-1.5">
@@ -140,7 +140,7 @@ export default function BlogArticlePage({ params }: { params: { slug: string } }
               {article.tags && article.tags.length > 0 && (
                 <div className="flex flex-wrap gap-2">
                   {article.tags.map((tag: string) => (
-                    <span key={tag} className="px-3 py-1 bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 transition-colors rounded-full text-sm text-gray-600 dark:text-gray-400 dark:text-gray-400">
+                    <span key={tag} className="px-3 py-1 bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 transition-colors rounded-full text-sm text-gray-600 dark:text-gray-400">
                       #{tag}
                     </span>
                   ))}
@@ -197,13 +197,13 @@ export default function BlogArticlePage({ params }: { params: { slug: string } }
               <ReactMarkdown 
                 remarkPlugins={[remarkGfm]}
                 components={{
-                  h1: ({ children }) => <h1 className="text-3xl font-bold mt-8 mb-4 text-gray-900 dark:text-white dark:text-white">{children}</h1>,
-                  h2: ({ children }) => <h2 className="text-2xl font-bold mt-8 mb-4 text-gray-900 dark:text-white dark:text-white border-b border-gray-200 dark:border-gray-700 dark:border-gray-700 pb-2">{children}</h2>,
-                  h3: ({ children }) => <h3 className="text-xl font-bold mt-6 mb-3 text-gray-900 dark:text-white dark:text-white">{children}</h3>,
+                  h1: ({ children }) => <h1 className="text-3xl font-bold mt-8 mb-4 text-gray-900 dark:text-white">{children}</h1>,
+                  h2: ({ children }) => <h2 className="text-2xl font-bold mt-8 mb-4 text-gray-900 dark:text-white border-b border-gray-200 dark:border-gray-700 pb-2">{children}</h2>,
+                  h3: ({ children }) => <h3 className="text-xl font-bold mt-6 mb-3 text-gray-900 dark:text-white">{children}</h3>,
                   p: ({ children }) => <p className="text-gray-700 dark:text-gray-300 leading-relaxed mb-4">{children}</p>,
                   ul: ({ children }) => <ul className="list-disc pl-6 my-4 space-y-2">{children}</ul>,
                   ol: ({ children }) => <ol className="list-decimal pl-6 my-4 space-y-2">{children}</ol>,
-                  li: ({ children }) => <li className="text-gray-700 dark:text-gray-300 dark:text-gray-300">{children}</li>,
+                  li: ({ children }) => <li className="text-gray-700 dark:text-gray-300">{children}</li>,
                   blockquote: ({ children }) => (
                     <blockquote className="border-l-4 border-[#C9A962] bg-[#C9A962]/5 py-3 px-4 my-4 italic text-gray-700 dark:text-gray-300 rounded-r-lg">
                       {children}
@@ -216,14 +216,14 @@ export default function BlogArticlePage({ params }: { params: { slug: string } }
                       </table>
                     </div>
                   ),
-                  th: ({ children }) => <th className="bg-gray-100 dark:bg-gray-800 dark:bg-gray-800 border border-gray-300 dark:border-gray-600 dark:border-gray-600 px-4 py-3 text-left font-semibold text-gray-900 dark:text-white dark:text-white">{children}</th>,
-                  td: ({ children }) => <td className="border border-gray-300 dark:border-gray-600 px-4 py-3 text-gray-700 dark:text-gray-300 dark:text-gray-300">{children}</td>,
+                  th: ({ children }) => <th className="bg-gray-100 dark:bg-gray-800 border border-gray-300 dark:border-gray-600 dark:border-gray-600 px-4 py-3 text-left font-semibold text-gray-900 dark:text-white">{children}</th>,
+                  td: ({ children }) => <td className="border border-gray-300 dark:border-gray-600 px-4 py-3 text-gray-700 dark:text-gray-300">{children}</td>,
                   a: ({ href, children }) => (
                     <a href={href} className="text-[#C9A962] hover:text-[#B8983F] hover:underline transition-colors" target="_blank" rel="noopener noreferrer">
                       {children}
                     </a>
                   ),
-                  strong: ({ children }) => <strong className="font-semibold text-gray-900 dark:text-white dark:text-white">{children}</strong>,
+                  strong: ({ children }) => <strong className="font-semibold text-gray-900 dark:text-white">{children}</strong>,
                   code: ({ children, className }) => {
                     const isInline = !className
                     return isInline ? (
@@ -248,7 +248,7 @@ export default function BlogArticlePage({ params }: { params: { slug: string } }
               <div className="flex items-center gap-4">
                 <span className="text-sm text-gray-500">Share this article:</span>
                 <button className="p-2 rounded-full bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 transition-colors">
-                  <Share2 className="h-5 w-5 text-gray-600 dark:text-gray-400 dark:text-gray-400" />
+                  <Share2 className="h-5 w-5 text-gray-600 dark:text-gray-400" />
                 </button>
               </div>
               <button className="flex items-center gap-2 px-4 py-2 rounded-full bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 transition-colors text-sm font-medium">
@@ -264,7 +264,7 @@ export default function BlogArticlePage({ params }: { params: { slug: string } }
         <section className="py-16 bg-gray-50 dark:bg-gray-800">
           <div className="container mx-auto px-4 sm:px-8 lg:px-16">
             <div className="max-w-6xl mx-auto">
-              <h2 className="text-2xl font-bold mb-8 text-gray-900 dark:text-white dark:text-white">Continue Reading</h2>
+              <h2 className="text-2xl font-bold mb-8 text-gray-900 dark:text-white">Continue Reading</h2>
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                 {relatedArticles.filter(a => a.slug !== article.slug).slice(0, 3).map((relatedArticle) => (
                   <Link key={relatedArticle.id} href={`/blog/${relatedArticle.slug}`}>
@@ -287,7 +287,7 @@ export default function BlogArticlePage({ params }: { params: { slug: string } }
                       </div>
                       <div className="p-5">
                         <Badge variant="secondary" className="mb-2 text-xs">{relatedArticle.category}</Badge>
-                        <h3 className="font-semibold mb-2 group-hover:text-[#C9A962] transition-colors line-clamp-2 text-gray-900 dark:text-white dark:text-white">
+                        <h3 className="font-semibold mb-2 group-hover:text-[#C9A962] transition-colors line-clamp-2 text-gray-900 dark:text-white">
                           {relatedArticle.title}
                         </h3>
                         <p className="text-sm text-gray-500 line-clamp-2">

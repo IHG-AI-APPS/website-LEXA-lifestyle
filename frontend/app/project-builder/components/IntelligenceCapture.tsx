@@ -56,7 +56,7 @@ export default function IntelligenceCapture({ sessionId, onComplete }: Intellige
           <p className="text-sm text-gray-500 uppercase tracking-widest mb-2">
             Constraints & Documentation (Optional)
           </p>
-          <p className="text-xs text-gray-600 dark:text-gray-400 dark:text-gray-400">
+          <p className="text-xs text-gray-600 dark:text-gray-400">
             Help AI refine recommendations with project-specific requirements
           </p>
         </div>
@@ -105,8 +105,8 @@ export default function IntelligenceCapture({ sessionId, onComplete }: Intellige
                   className="mt-1 w-4 h-4 text-[#C9A962] border-gray-300 dark:border-gray-600 rounded focus:ring-[#C9A962]"
                 />
                 <div>
-                  <div className="text-sm font-medium text-gray-900 dark:text-white dark:text-white">{constraint.label}</div>
-                  <div className="text-xs text-gray-600 dark:text-gray-400 dark:text-gray-400">{constraint.desc}</div>
+                  <div className="text-sm font-medium text-gray-900 dark:text-white">{constraint.label}</div>
+                  <div className="text-xs text-gray-600 dark:text-gray-400">{constraint.desc}</div>
                 </div>
               </label>
             ))}
@@ -150,7 +150,7 @@ export default function IntelligenceCapture({ sessionId, onComplete }: Intellige
             className="block w-full p-8 border-2 border-dashed border-[#C9A962]/30 hover:border-[#C9A962] cursor-pointer transition-colors text-center"
           >
             <Upload className="w-8 h-8 text-[#C9A962] mx-auto mb-2" />
-            <div className="text-sm text-gray-700 dark:text-gray-300 dark:text-gray-300">Click to upload or drag files here</div>
+            <div className="text-sm text-gray-700 dark:text-gray-300">Click to upload or drag files here</div>
             <div className="text-xs text-gray-500 mt-1">PDF, JPG, PNG, DWG (Max 10MB each)</div>
           </label>
 
@@ -158,10 +158,10 @@ export default function IntelligenceCapture({ sessionId, onComplete }: Intellige
           {uploadedFiles.length > 0 && (
             <div className="mt-4 space-y-2">
               {uploadedFiles.map((file, index) => (
-                <div key={index} className="flex items-center justify-between p-3 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 dark:border-gray-700">
+                <div key={index} className="flex items-center justify-between p-3 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700">
                   <div className="flex items-center gap-2">
                     <FileText className="w-4 h-4 text-[#C9A962]" />
-                    <span className="text-sm text-gray-900 dark:text-white dark:text-white">{file.name}</span>
+                    <span className="text-sm text-gray-900 dark:text-white">{file.name}</span>
                     <span className="text-xs text-gray-500">({(file.size / 1024).toFixed(0)} KB)</span>
                   </div>
                   <button onClick={() => removeFile(index)} className="text-gray-400 hover:text-red-600">
@@ -176,7 +176,7 @@ export default function IntelligenceCapture({ sessionId, onComplete }: Intellige
         {/* Info Box */}
         <div className="bg-[#C9A962]/5 border border-[#C9A962]/20 p-4 mb-8 flex items-start gap-3">
           <AlertCircle className="w-5 h-5 text-[#C9A962] flex-shrink-0 mt-0.5" />
-          <div className="text-xs text-gray-700 dark:text-gray-300 dark:text-gray-300">
+          <div className="text-xs text-gray-700 dark:text-gray-300">
             <span className="font-medium">AI Enhancement:</span> Constraints help the recommendation engine filter out incompatible features and prioritize solutions that fit your specific requirements. This step is optional but improves proposal accuracy.
           </div>
         </div>

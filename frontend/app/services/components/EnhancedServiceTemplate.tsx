@@ -194,7 +194,7 @@ export default function EnhancedServicePage({
               <span className="text-sm font-semibold uppercase tracking-wider text-gray-600 dark:text-gray-400 mb-2 block">
                 What We Deliver
               </span>
-              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 dark:text-white dark:text-white">
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 dark:text-white">
                 Comprehensive Service Features
               </h2>
             </motion.div>
@@ -227,7 +227,7 @@ export default function EnhancedServicePage({
                   {/* Stats */}
                   {feature.stats && (
                     <div className="pt-4 border-t border-gray-100 dark:border-gray-800 dark:border-gray-800">
-                      <span className="text-xs font-semibold text-gray-700 dark:text-gray-300 dark:text-gray-300">
+                      <span className="text-xs font-semibold text-gray-700 dark:text-gray-300">
                         {feature.stats}
                       </span>
                     </div>
@@ -283,7 +283,7 @@ export default function EnhancedServicePage({
                   {/* Content */}
                   <div className="flex-1 bg-white dark:bg-gray-800 rounded-2xl p-8 shadow-md border border-gray-100 dark:border-gray-800 dark:border-gray-800">
                     <div className="flex items-start justify-between mb-3">
-                      <h3 className="text-2xl font-bold text-gray-900 dark:text-white dark:text-white">
+                      <h3 className="text-2xl font-bold text-gray-900 dark:text-white">
                         {step.title}
                       </h3>
                       {step.duration && (
@@ -340,9 +340,9 @@ export default function EnhancedServicePage({
                     className="flex items-start gap-3 p-4 rounded-xl hover:bg-white transition-colors"
                   >
                     <div className="flex-shrink-0 mt-1">
-                      <CheckCircle className="h-6 w-6 text-gray-700 dark:text-gray-300 dark:text-gray-300" />
+                      <CheckCircle className="h-6 w-6 text-gray-700 dark:text-gray-300" />
                     </div>
-                    <span className="text-base text-gray-700 dark:text-gray-300 dark:text-gray-300">
+                    <span className="text-base text-gray-700 dark:text-gray-300">
                       {item}
                     </span>
                   </motion.div>

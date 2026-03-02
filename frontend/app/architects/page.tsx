@@ -171,7 +171,7 @@ export default function ArchitectsPage() {
           <div className="max-w-7xl mx-auto">
             <div className="text-center mb-16">
               <h2 className="text-4xl sm:text-5xl font-heading font-bold mb-4 ">Technical Resources</h2>
-              <p className="text-xl text-gray-600 dark:text-gray-400 dark:text-gray-400">
+              <p className="text-xl text-gray-600 dark:text-gray-400">
                 Click on any resource to request instant access
               </p>
             </div>
@@ -226,7 +226,7 @@ export default function ArchitectsPage() {
           <div className="max-w-4xl mx-auto">
             <div className="text-center mb-12">
               <h2 className="text-4xl sm:text-5xl font-heading font-bold mb-4 ">Why Architects Trust LEXA</h2>
-              <p className="text-xl text-gray-600 dark:text-gray-400 dark:text-gray-400">
+              <p className="text-xl text-gray-600 dark:text-gray-400">
                 We speak your language - technical, precise, reliable
               </p>
             </div>
@@ -283,7 +283,7 @@ export default function ArchitectsPage() {
                 <p className="text-xl text-gray-700 dark:text-gray-300 mb-2">
                   Our project engineer will send you the resources within the next few hours.
                 </p>
-                <p className="text-gray-600 dark:text-gray-400 dark:text-gray-400">
+                <p className="text-gray-600 dark:text-gray-400">
                   Check your email at <strong>{formData.email}</strong>
                 </p>
               </div>

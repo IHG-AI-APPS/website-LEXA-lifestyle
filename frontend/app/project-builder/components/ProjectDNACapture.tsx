@@ -118,7 +118,7 @@ export default function ProjectDNACapture({ onComplete }: ProjectDNACaptureProps
                   formData.segment === segment.id ? 'text-[#C9A962]' : 'text-gray-400 group-hover:text-[#C9A962]'
                 }`} />
                 <div className="text-sm font-medium text-gray-900 dark:text-white mb-1">{segment.label}</div>
-                <div className="text-xs text-gray-600 dark:text-gray-400 dark:text-gray-400">{segment.desc}</div>
+                <div className="text-xs text-gray-600 dark:text-gray-400">{segment.desc}</div>
               </button>
             ))}
           </div>
@@ -211,7 +211,7 @@ export default function ProjectDNACapture({ onComplete }: ProjectDNACaptureProps
                 value={formData.area_sqft}
                 onChange={(e) => setFormData({ ...formData, area_sqft: e.target.value })}
                 placeholder="Or enter custom size"
-                className="border-gray-200 dark:border-gray-700 focus:border-[#C9A962] text-gray-900 dark:text-white dark:text-white"
+                className="border-gray-200 dark:border-gray-700 focus:border-[#C9A962] text-gray-900 dark:text-white"
               />
               {formData.area_sqft && (
                 <p className="text-xs text-gray-500 mt-1">

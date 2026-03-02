@@ -124,7 +124,7 @@ export default function PackagesPage() {
                       <div className="group h-full border border-gray-200 dark:border-gray-700 hover:border-gray-400 hover:shadow-md rounded-lg p-5 transition-all bg-white">
                         <div className="flex items-start justify-between mb-3">
                           <div className="w-10 h-10 rounded-lg bg-gray-100 dark:bg-gray-800 flex items-center justify-center">
-                            <Home className="h-5 w-5 text-gray-600 dark:text-gray-400 dark:text-gray-400" />
+                            <Home className="h-5 w-5 text-gray-600 dark:text-gray-400" />
                           </div>
                           <ChevronRight className="h-5 w-5 text-gray-300 group-hover:text-gray-600 dark:text-gray-400 transition-colors" />
                         </div>
@@ -163,8 +163,8 @@ export default function PackagesPage() {
                         </span>
                       )}
                       <div className={`w-2 h-2 rounded-full ${tier.color} mb-3`} />
-                      <div className="text-sm font-medium text-gray-600 dark:text-gray-400 dark:text-gray-400">{tier.name}</div>
-                      <div className="text-lg font-bold text-gray-900 dark:text-white dark:text-white">AED {tier.price}</div>
+                      <div className="text-sm font-medium text-gray-600 dark:text-gray-400">{tier.name}</div>
+                      <div className="text-lg font-bold text-gray-900 dark:text-white">AED {tier.price}</div>
                     </div>
                   </Link>
                 ))}
@@ -213,27 +213,27 @@ export default function PackagesPage() {
                 <div className="border border-gray-200 dark:border-gray-700 rounded-lg p-5 bg-gradient-to-br from-gray-50 to-white">
                   <div className="flex items-center gap-2 mb-2">
                     <Zap className="h-4 w-4 text-[#C9A962]" />
-                    <span className="font-semibold text-gray-900 dark:text-white dark:text-white">Essential</span>
+                    <span className="font-semibold text-gray-900 dark:text-white">Essential</span>
                   </div>
-                  <p className="text-sm text-gray-600 dark:text-gray-400 dark:text-gray-400">
+                  <p className="text-sm text-gray-600 dark:text-gray-400">
                     Core automation features for smart living. Perfect for those starting their smart home journey.
                   </p>
                 </div>
                 <div className="border border-gray-200 dark:border-gray-700 rounded-lg p-5 bg-gradient-to-br from-amber-50 to-white">
                   <div className="flex items-center gap-2 mb-2">
                     <Sparkles className="h-4 w-4 text-amber-500" />
-                    <span className="font-semibold text-gray-900 dark:text-white dark:text-white">Enhanced</span>
+                    <span className="font-semibold text-gray-900 dark:text-white">Enhanced</span>
                   </div>
-                  <p className="text-sm text-gray-600 dark:text-gray-400 dark:text-gray-400">
+                  <p className="text-sm text-gray-600 dark:text-gray-400">
                     Advanced features with extended coverage. Ideal for comprehensive home automation.
                   </p>
                 </div>
                 <div className="border border-gray-200 dark:border-gray-700 rounded-lg p-5 bg-gradient-to-br from-[#C9A962]/5 to-white">
                   <div className="flex items-center gap-2 mb-2">
                     <Crown className="h-4 w-4 text-[#C9A962]" />
-                    <span className="font-semibold text-gray-900 dark:text-white dark:text-white">High-End</span>
+                    <span className="font-semibold text-gray-900 dark:text-white">High-End</span>
                   </div>
-                  <p className="text-sm text-gray-600 dark:text-gray-400 dark:text-gray-400">
+                  <p className="text-sm text-gray-600 dark:text-gray-400">
                     Premium orchestration with cutting-edge technology. For discerning homeowners.
                   </p>
                 </div>
@@ -251,7 +251,7 @@ export default function PackagesPage() {
             <div className="flex flex-col md:flex-row items-center justify-between gap-6">
               <div>
                 <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-1">Not sure which package is right for you?</h3>
-                <p className="text-gray-600 dark:text-gray-400 dark:text-gray-400">Take our AI quiz or consult with our experts for personalized recommendations.</p>
+                <p className="text-gray-600 dark:text-gray-400">Take our AI quiz or consult with our experts for personalized recommendations.</p>
               </div>
               <div className="flex gap-3">
                 <Link

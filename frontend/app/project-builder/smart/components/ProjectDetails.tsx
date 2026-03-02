@@ -246,7 +246,7 @@ export default function ProjectDetailsForm({
                   <div className={`w-12 h-12 rounded-xl bg-gradient-to-br ${type.color} flex items-center justify-center mb-3`}>
                     <Icon className="w-6 h-6 text-white" />
                   </div>
-                  <h4 className="font-bold text-gray-900 dark:text-white dark:text-white">{type.name}</h4>
+                  <h4 className="font-bold text-gray-900 dark:text-white">{type.name}</h4>
                   <p className="text-sm text-gray-500 mt-1">{type.description}</p>
                   <p className="text-xs text-indigo-600 mt-2 font-medium">{type.recommendation}</p>
                   {isSelected && (
@@ -492,7 +492,7 @@ export default function ProjectDetailsForm({
       </div>
 
       {/* Link to Calculator */}
-      <div className="mt-8 pt-6 border-t border-gray-200 dark:border-gray-700 dark:border-gray-700">
+      <div className="mt-8 pt-6 border-t border-gray-200 dark:border-gray-700">
         <div className="bg-gradient-to-r from-blue-50 to-[#C9A962]/5 border border-[#C9A962]/20 rounded-xl p-5">
           <div className="flex flex-col md:flex-row items-center justify-between gap-4">
             <div>

@@ -778,7 +778,7 @@ export default function FinalSummary({
           className="inline-flex items-center gap-2 px-4 py-2 bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 rounded-full transition-colors"
         >
           <span className="text-sm text-gray-500">Quote Reference:</span>
-          <span className="font-mono font-bold text-gray-900 dark:text-white dark:text-white">{quoteRef}</span>
+          <span className="font-mono font-bold text-gray-900 dark:text-white">{quoteRef}</span>
           <Copy className="w-4 h-4 text-gray-400" />
         </button>
       </motion.div>
@@ -797,15 +797,15 @@ export default function FinalSummary({
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
           <div className="p-3 bg-gray-50 rounded-xl">
             <div className="text-xs text-gray-500 mb-1">Type</div>
-            <div className="font-semibold text-gray-900 dark:text-white dark:text-white">{formatLabel(projectDetails?.projectType)}</div>
+            <div className="font-semibold text-gray-900 dark:text-white">{formatLabel(projectDetails?.projectType)}</div>
           </div>
           <div className="p-3 bg-gray-50 rounded-xl">
             <div className="text-xs text-gray-500 mb-1">Property</div>
-            <div className="font-semibold text-gray-900 dark:text-white dark:text-white">{formatLabel(projectDetails?.propertyType)}</div>
+            <div className="font-semibold text-gray-900 dark:text-white">{formatLabel(projectDetails?.propertyType)}</div>
           </div>
           <div className="p-3 bg-gray-50 rounded-xl">
             <div className="text-xs text-gray-500 mb-1">Size</div>
-            <div className="font-semibold text-gray-900 dark:text-white dark:text-white">{projectDetails?.customSize || projectDetails?.propertySize}</div>
+            <div className="font-semibold text-gray-900 dark:text-white">{projectDetails?.customSize || projectDetails?.propertySize}</div>
           </div>
           <div className="p-3 bg-gray-50 rounded-xl">
             <div className="text-xs text-gray-500 mb-1">Location</div>
@@ -859,17 +859,17 @@ export default function FinalSummary({
           <div className="p-4 bg-gray-50 rounded-xl">
             <div className="flex items-center gap-2 mb-2">
               <Zap className="w-5 h-5 text-[#C9A962]" />
-              <span className="font-semibold text-gray-900 dark:text-white dark:text-white">Protocol</span>
+              <span className="font-semibold text-gray-900 dark:text-white">Protocol</span>
             </div>
-            <div className="text-gray-600 dark:text-gray-400 dark:text-gray-400">{formatLabel(protocolType)}</div>
+            <div className="text-gray-600 dark:text-gray-400">{formatLabel(protocolType)}</div>
             <div className="text-sm text-gray-500 mt-1">{selectedProtocols.join(', ')}</div>
           </div>
           <div className="p-4 bg-gray-50 rounded-xl">
             <div className="flex items-center gap-2 mb-2">
               <Settings className="w-5 h-5 text-[#C9A962]" />
-              <span className="font-semibold text-gray-900 dark:text-white dark:text-white">Control System</span>
+              <span className="font-semibold text-gray-900 dark:text-white">Control System</span>
             </div>
-            <div className="text-gray-600 dark:text-gray-400 dark:text-gray-400">{selectedSystems.join(', ')}</div>
+            <div className="text-gray-600 dark:text-gray-400">{selectedSystems.join(', ')}</div>
           </div>
         </div>
       </motion.div>
@@ -1020,7 +1020,7 @@ export default function FinalSummary({
             {!bookingSubmitted ? (
               <>
                 <div className="flex items-center justify-between mb-6">
-                  <h3 className="text-xl font-bold text-gray-900 dark:text-white dark:text-white">Book Consultation</h3>
+                  <h3 className="text-xl font-bold text-gray-900 dark:text-white">Book Consultation</h3>
                   <button
                     onClick={() => setShowBookingModal(false)}
                     className="p-2 hover:bg-gray-100 dark:bg-gray-800 rounded-full"

@@ -89,7 +89,7 @@ export default function HiddenCostsPage() {
               viewport={{ once: true }}
               className="text-center mb-16"
             >
-              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4 text-[#1A1A1A] dark:text-white dark:text-white">
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4 text-[#1A1A1A] dark:text-white">
                 The True Cost of Doing Nothing
               </h2>
               <p className="text-base sm:text-lg text-gray-600 dark:text-gray-400 max-w-3xl mx-auto">
@@ -107,30 +107,30 @@ export default function HiddenCostsPage() {
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.6, delay: 0.2 }}
                     viewport={{ once: true }}
-                    className="bg-white dark:bg-gray-800 p-8 border-2 border-gray-200 dark:border-gray-700 dark:border-gray-700"
+                    className="bg-white dark:bg-gray-800 p-8 border-2 border-gray-200 dark:border-gray-700"
                   >
                     <div className="flex items-start gap-4 mb-4">
                       <div className="p-3 bg-red-50">
                         <Icon className="h-6 w-6 text-red-600" />
                       </div>
-                      <h3 className="text-xl font-bold text-[#1A1A1A] dark:text-white dark:text-white">{cost.title}</h3>
+                      <h3 className="text-xl font-bold text-[#1A1A1A] dark:text-white">{cost.title}</h3>
                     </div>
                     <div className="space-y-3">
                       <div className="flex items-start gap-2">
                         <XCircle className="h-5 w-5 text-red-500 flex-shrink-0 mt-0.5" />
                         <div>
                           <div className="text-xs text-gray-500 mb-1">Without Intelligence:</div>
-                          <div className="text-sm font-semibold text-gray-700 dark:text-gray-300 dark:text-gray-300">{cost.without}</div>
+                          <div className="text-sm font-semibold text-gray-700 dark:text-gray-300">{cost.without}</div>
                         </div>
                       </div>
                       <div className="flex items-start gap-2">
                         <CheckCircle2 className="h-5 w-5 text-green-500 flex-shrink-0 mt-0.5" />
                         <div>
                           <div className="text-xs text-gray-500 mb-1">With Intelligence:</div>
-                          <div className="text-sm font-semibold text-gray-700 dark:text-gray-300 dark:text-gray-300">{cost.with}</div>
+                          <div className="text-sm font-semibold text-gray-700 dark:text-gray-300">{cost.with}</div>
                         </div>
                       </div>
-                      <div className="pt-2 border-t border-gray-200 dark:border-gray-700 dark:border-gray-700">
+                      <div className="pt-2 border-t border-gray-200 dark:border-gray-700">
                         <div className="inline-block px-3 py-1 bg-green-50 text-green-800 text-sm font-semibold">
                           💰 {cost.savings}
                         </div>

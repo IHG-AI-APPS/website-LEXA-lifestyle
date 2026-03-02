@@ -349,11 +349,11 @@ export default function AdvancedCalculatorPage() {
               ))}
             </div>
             <div className="flex justify-between mt-3 px-2">
-              <span className="text-xs font-medium text-gray-600 dark:text-gray-400 dark:text-gray-400">Property</span>
-              <span className="text-xs font-medium text-gray-600 dark:text-gray-400 dark:text-gray-400">Systems</span>
-              <span className="text-xs font-medium text-gray-600 dark:text-gray-400 dark:text-gray-400">Level</span>
-              <span className="text-xs font-medium text-gray-600 dark:text-gray-400 dark:text-gray-400">Extras</span>
-              <span className="text-xs font-medium text-gray-600 dark:text-gray-400 dark:text-gray-400">Results</span>
+              <span className="text-xs font-medium text-gray-600 dark:text-gray-400">Property</span>
+              <span className="text-xs font-medium text-gray-600 dark:text-gray-400">Systems</span>
+              <span className="text-xs font-medium text-gray-600 dark:text-gray-400">Level</span>
+              <span className="text-xs font-medium text-gray-600 dark:text-gray-400">Extras</span>
+              <span className="text-xs font-medium text-gray-600 dark:text-gray-400">Results</span>
             </div>
           </div>
         </div>
@@ -455,7 +455,7 @@ export default function AdvancedCalculatorPage() {
                           }`}
                         >
                           <div className="font-semibold mb-1">{stage.label}</div>
-                          <div className="text-sm text-gray-600 dark:text-gray-400 dark:text-gray-400">{stage.desc}</div>
+                          <div className="text-sm text-gray-600 dark:text-gray-400">{stage.desc}</div>
                         </button>
                       ))}
                     </div>
@@ -503,7 +503,7 @@ export default function AdvancedCalculatorPage() {
                           </div>
                           <div className="flex-1">
                             <div className="font-semibold text-lg mb-1">{system.label}</div>
-                            <div className="text-sm text-gray-600 dark:text-gray-400 dark:text-gray-400">{system.description}</div>
+                            <div className="text-sm text-gray-600 dark:text-gray-400">{system.description}</div>
                             <div className="text-sm font-medium text-gray-500 mt-2">
                               Starting from {formatCurrency(system.features[0].price)}
                             </div>
@@ -554,7 +554,7 @@ export default function AdvancedCalculatorPage() {
                                 }`}
                               >
                                 <div className="font-semibold mb-2">{feature.name}</div>
-                                <div className="text-2xl font-bold text-gray-900 dark:text-white dark:text-white">
+                                <div className="text-2xl font-bold text-gray-900 dark:text-white">
                                   {formatCurrency(feature.price)}
                                 </div>
                               </button>
@@ -607,7 +607,7 @@ export default function AdvancedCalculatorPage() {
                             <CheckCircle2 size={20} className="text-green-500" />
                           )}
                         </div>
-                        <div className="text-lg font-bold text-gray-700 dark:text-gray-300 dark:text-gray-300">
+                        <div className="text-lg font-bold text-gray-700 dark:text-gray-300">
                           +{formatCurrency(feature.price)}
                         </div>
                       </button>
@@ -667,7 +667,7 @@ export default function AdvancedCalculatorPage() {
                       <Sparkles size={32} className="text-green-600" />
                     </div>
                     <h2 className="text-4xl font-bold mb-3">Your Custom Estimate</h2>
-                    <p className="text-gray-600 dark:text-gray-400 dark:text-gray-400">Based on your selections, here&apos;s what your project will cost</p>
+                    <p className="text-gray-600 dark:text-gray-400">Based on your selections, here&apos;s what your project will cost</p>
                   </div>
 
                   {/* Total Cost Card */}
@@ -694,7 +694,7 @@ export default function AdvancedCalculatorPage() {
                     <div className="space-y-3">
                       {breakdown.map((item, index) => (
                         <div key={index} className="flex justify-between items-center py-3 border-b border-gray-100 dark:border-gray-800 dark:border-gray-800">
-                          <span className="text-gray-700 dark:text-gray-300 dark:text-gray-300">{item.name}</span>
+                          <span className="text-gray-700 dark:text-gray-300">{item.name}</span>
                           <span className="font-semibold">{formatCurrency(item.cost)}</span>
                         </div>
                       ))}
@@ -704,7 +704,7 @@ export default function AdvancedCalculatorPage() {
                   {/* Next Steps */}
                   <div className="bg-[#C9A962]/5 border-2 border-[#C9A962]/20 rounded-lg p-6">
                     <h3 className="text-xl font-bold mb-3">Next Steps</h3>
-                    <ul className="space-y-2 text-gray-700 dark:text-gray-300 dark:text-gray-300">
+                    <ul className="space-y-2 text-gray-700 dark:text-gray-300">
                       <li className="flex items-start gap-2">
                         <CheckCircle2 size={20} className="text-[#C9A962] mt-0.5 flex-shrink-0" />
                         <span>Book a free consultation with our smart home experts</span>

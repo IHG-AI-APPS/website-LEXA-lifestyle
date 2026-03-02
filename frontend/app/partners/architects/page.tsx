@@ -462,7 +462,7 @@ export default function ArchitectResourcePortalPage() {
                     <CheckCircle className="text-green-600" size={32} />
                   </div>
                   <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2">Request Received!</h3>
-                  <p className="text-gray-600 dark:text-gray-400 dark:text-gray-400">
+                  <p className="text-gray-600 dark:text-gray-400">
                     We&apos;ll send your requested resources within 24 hours. Check your email inbox.
                   </p>
                 </div>

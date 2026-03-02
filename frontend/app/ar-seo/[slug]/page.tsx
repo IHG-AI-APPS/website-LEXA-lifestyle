@@ -120,7 +120,7 @@ export default async function DynamicArabicPage({ params }: { params: { slug: st
                 English
               </a>
             )}
-            <span className="text-sm font-bold text-gray-900 dark:text-white dark:text-white">العربية</span>
+            <span className="text-sm font-bold text-gray-900 dark:text-white">العربية</span>
           </div>
         </div>
       </header>
@@ -190,7 +190,7 @@ export default async function DynamicArabicPage({ params }: { params: { slug: st
                       {section.stats.map((stat: any, idx: number) => (
                         <div key={idx}>
                           <div className="text-5xl font-bold text-[#E8DCC8] mb-2">{stat.value}</div>
-                          <div className="text-gray-700 dark:text-gray-300 dark:text-gray-300">{stat.label}</div>
+                          <div className="text-gray-700 dark:text-gray-300">{stat.label}</div>
                         </div>
                       ))}
                     </div>
@@ -203,7 +203,7 @@ export default async function DynamicArabicPage({ params }: { params: { slug: st
                       <h2 className="text-3xl md:text-4xl font-bold mb-6">{section.title}</h2>
                     )}
                     {section.content && (
-                      <p className="text-lg leading-relaxed text-gray-700 dark:text-gray-300 dark:text-gray-300">{section.content}</p>
+                      <p className="text-lg leading-relaxed text-gray-700 dark:text-gray-300">{section.content}</p>
                     )}
                   </article>
                 )}
@@ -221,7 +221,7 @@ export default async function DynamicArabicPage({ params }: { params: { slug: st
             <div className="space-y-6">
               {page.faqs.map((faq: { question: string; answer: string }, index: number) => (
                 <div key={index} className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-sm border border-gray-100 dark:border-gray-800 dark:border-gray-800">
-                  <h3 className="text-xl font-semibold mb-3 text-gray-900 dark:text-white dark:text-white">{faq.question}</h3>
+                  <h3 className="text-xl font-semibold mb-3 text-gray-900 dark:text-white">{faq.question}</h3>
                   <p className="text-gray-700 dark:text-gray-300 leading-relaxed">{faq.answer}</p>
                 </div>
               ))}
@@ -299,7 +299,7 @@ export default async function DynamicArabicPage({ params }: { params: { slug: st
       {/* Footer */}
       <footer className="py-8 border-t bg-white">
         <div className="container mx-auto px-4 text-center">
-          <p className="mb-4 text-gray-600 dark:text-gray-400 dark:text-gray-400">© 2025 LEXA Lifestyle - Dubai, UAE</p>
+          <p className="mb-4 text-gray-600 dark:text-gray-400">© 2025 LEXA Lifestyle - Dubai, UAE</p>
           <div className="flex gap-4 justify-center text-sm">
             <a href="/" className="text-[#E8DCC8] hover:underline flex items-center gap-1">
               <ArrowLeft className="h-4 w-4" />

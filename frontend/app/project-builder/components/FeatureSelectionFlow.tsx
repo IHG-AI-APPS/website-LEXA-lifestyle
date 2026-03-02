@@ -374,7 +374,7 @@ export default function FeatureSelectionFlow({
                       <IconComponent className="w-5 h-5 text-white" />
                     </div>
                     <div className="text-left">
-                      <h3 className="font-semibold text-gray-900 dark:text-white dark:text-white">{category.category_name}</h3>
+                      <h3 className="font-semibold text-gray-900 dark:text-white">{category.category_name}</h3>
                       <p className="text-sm text-gray-500">
                         {category.features.length} features
                         {selectedInCategory > 0 && (
@@ -393,7 +393,7 @@ export default function FeatureSelectionFlow({
                       initial={{ height: 0, opacity: 0 }}
                       animate={{ height: 'auto', opacity: 1 }}
                       exit={{ height: 0, opacity: 0 }}
-                      className="border-t border-gray-200 dark:border-gray-700 dark:border-gray-700"
+                      className="border-t border-gray-200 dark:border-gray-700"
                     >
                       <div className="p-4 grid grid-cols-1 md:grid-cols-2 gap-3">
                         {category.features.map(feature => {

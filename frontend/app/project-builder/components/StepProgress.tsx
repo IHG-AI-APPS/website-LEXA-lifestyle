@@ -175,7 +175,7 @@ export default function StepProgress({
                     </div>
                     <div>
                       <div className="text-xs text-gray-500">Step {currentIndex + 1} of {BUILDER_STEPS.length}</div>
-                      <div className="text-sm font-semibold text-gray-900 dark:text-white dark:text-white">{currentStepData.label}</div>
+                      <div className="text-sm font-semibold text-gray-900 dark:text-white">{currentStepData.label}</div>
                     </div>
                   </>
                 )

@@ -303,7 +303,7 @@ export default function GlossaryPage() {
                 className="mb-16"
               >
                 <div className="flex items-center gap-4 mb-8 pb-4 border-b-2 border-gray-900">
-                  <span className="text-6xl font-bold text-gray-900 dark:text-white dark:text-white">{section.letter}</span>
+                  <span className="text-6xl font-bold text-gray-900 dark:text-white">{section.letter}</span>
                 </div>
 
                 <div className="space-y-8">
@@ -323,7 +323,7 @@ export default function GlossaryPage() {
 
             {filteredTerms.length === 0 && (
               <div className="text-center py-20">
-                <p className="text-xl text-gray-600 dark:text-gray-400 dark:text-gray-400">No terms found matching &quot;{searchTerm}&quot;</p>
+                <p className="text-xl text-gray-600 dark:text-gray-400">No terms found matching &quot;{searchTerm}&quot;</p>
               </div>
             )}
           </div>
