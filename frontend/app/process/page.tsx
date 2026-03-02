@@ -30,7 +30,7 @@ export default function ProcessPage() {
         {/* Hero Background Image */}
         <div className="absolute inset-0">
           <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=1200&q=50" alt="" className="w-full h-full object-cover opacity-40" loading="eager" />
-          <div className="absolute inset-0 bg-gradient-to-t from-[#0A0A0A] via-[#0A0A0A]/70 to-[#0A0A0A]/40" />
+          <div className="absolute inset-0 bg-gradient-to-t from-[#0A0A0A]/90 via-[#0A0A0A]/50 to-[#0A0A0A]/30" />
         </div>
         <div className="container mx-auto px-8 lg:px-16 relative z-10">
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }} className="max-w-3xl">

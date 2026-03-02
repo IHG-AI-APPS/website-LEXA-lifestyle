@@ -204,7 +204,7 @@ export default function SmartHomeQuizPage() {
         {/* Hero Background Image */}
         <div className="absolute inset-0">
           <img src="https://images.unsplash.com/photo-1558618666-fcd25c85f82e?w=1200&q=50" alt="" className="w-full h-full object-cover opacity-40" loading="eager" />
-          <div className="absolute inset-0 bg-gradient-to-t from-[#0A0A0A] via-[#0A0A0A]/70 to-[#0A0A0A]/40" />
+          <div className="absolute inset-0 bg-gradient-to-t from-[#0A0A0A]/90 via-[#0A0A0A]/50 to-[#0A0A0A]/30" />
         </div>
         <div className="container mx-auto max-w-4xl text-center relative z-10">
           <motion.div

@@ -42,7 +42,7 @@ export default function AboutPage() {
         {/* Background Image */}
         <div className="absolute inset-0">
           <SafeImage src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?crop=entropy&cs=srgb&fm=jpg&q=85" alt="LEXA Lifestyle" fill className="object-cover opacity-40" priority sizes="100vw" />
-          <div className="absolute inset-0 bg-gradient-to-t from-[#0A0A0A] via-[#0A0A0A]/70 to-[#0A0A0A]/40" />
+          <div className="absolute inset-0 bg-gradient-to-t from-[#0A0A0A]/90 via-[#0A0A0A]/50 to-[#0A0A0A]/30" />
         </div>
 
         <div className="container relative z-10 mx-auto px-8 lg:px-16">
