@@ -4,12 +4,13 @@ import { useEffect, useState } from 'react'
 import { motion } from 'framer-motion'
 import SafeImage from '@/components/ui/SafeImage'
 import Link from 'next/link'
-import { ArrowUpRight } from 'lucide-react'
+import { ArrowUpRight, Eye } from 'lucide-react'
 import { getSolutions, type Solution } from '@/lib/api'
 import { useLanguage } from '@/contexts/LanguageContext'
 import dynamic from 'next/dynamic'
 import { useCms } from '@/hooks/useCms'
 import { ArrowRight } from 'lucide-react'
+import QuickViewModal from '@/components/QuickViewModal'
 
 const SwipeCarousel = dynamic(() => import('@/components/mobile/SwipeCarousel'), { ssr: false })
 
@@ -23,6 +24,7 @@ export default function SolutionsPage() {
   const { language } = useLanguage()
   const [solutions, setSolutions] = useState<Solution[]>([])
   const [loading, setLoading] = useState(true)
+  const [quickViewItem, setQuickViewItem] = useState<any>(null)
 
   useEffect(() => {
     getSolutions()
