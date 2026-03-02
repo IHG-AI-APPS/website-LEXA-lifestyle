@@ -54,7 +54,7 @@ export default function ExperienceCentrePage() {
         {/* Background Image */}
         <div className="absolute inset-0">
           <SafeImage src="https://images.unsplash.com/photo-1735320858258-12fbcefcb3a7?crop=entropy&cs=srgb&fm=jpg&q=85" alt="LEXA Experience Centre" fill className="object-cover opacity-40" priority sizes="100vw" />
-          <div className="absolute inset-0 bg-gradient-to-t from-[#0A0A0A]/90 via-[#0A0A0A]/50 to-[#0A0A0A]/30" />
+          <div className="absolute inset-0 bg-gradient-to-t from-[#0A0A0A]/80 via-[#0A0A0A]/40 to-transparent" />
         </div>
 
         <div className="container relative z-10 mx-auto px-8 lg:px-16">

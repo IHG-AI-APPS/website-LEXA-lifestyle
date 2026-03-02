@@ -173,7 +173,7 @@ export default function ROICalculatorPage() {
         {/* Hero Background Image */}
         <div className="absolute inset-0">
           <div style={{backgroundImage: "url(https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=1200&q=50)"}} className="absolute inset-0 bg-cover bg-center opacity-80" />
-          <div className="absolute inset-0 bg-gradient-to-t from-[#0A0A0A]/90 via-[#0A0A0A]/50 to-[#0A0A0A]/30" />
+          <div className="absolute inset-0 bg-gradient-to-t from-[#0A0A0A]/80 via-[#0A0A0A]/40 to-transparent" />
         </div>
         <div className="container mx-auto px-6 lg:px-16 relative z-10">
           <motion.div
