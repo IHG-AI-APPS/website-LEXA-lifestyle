@@ -104,11 +104,12 @@ export default function BlogPage() {
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.3 }}
+                    data-testid={`article-card-${index}`}
                   >
-                    <Link href={`/blog/${article.slug}`}>
-                      <div className="group h-full border border-gray-200 dark:border-gray-700 hover:border-charcoal transition-all bg-white dark:bg-gray-800 rounded-lg overflow-hidden">
-                        {/* Image */}
-                        <div className="relative h-64 overflow-hidden bg-gradient-to-br from-gray-100 to-gray-200">
+                    <div className="group h-full border border-gray-200 dark:border-gray-700 hover:border-charcoal transition-all bg-white dark:bg-gray-800 rounded-lg overflow-hidden">
+                      {/* Image */}
+                      <div className="relative h-64 overflow-hidden bg-gradient-to-br from-gray-100 to-gray-200">
+                        <Link href={`/blog/${article.slug}`}>
                           {(article.featured_image || article.image) ? (
                             <SafeImage
                               src={article.featured_image || article.image}
@@ -121,13 +122,34 @@ export default function BlogPage() {
                               }}
                             />
                           ) : null}
-                          {/* Fallback gradient overlay */}
-                          <div className="absolute inset-0 bg-gradient-to-t from-gray-900/60 to-transparent flex items-end p-4">
-                            <span className="text-white/80 text-sm font-medium">{article.category}</span>
-                          </div>
+                        </Link>
+                        {/* Category badge */}
+                        <div className="absolute top-0 left-0 right-0 bg-gradient-to-b from-black/40 to-transparent p-4 pointer-events-none">
+                          <span className="text-white/90 text-xs font-medium tracking-wider uppercase">{article.category}</span>
                         </div>
+                        {/* Quick View button */}
+                        <button
+                          onClick={(e) => {
+                            e.preventDefault()
+                            e.stopPropagation()
+                            setQuickViewItem({
+                              title: article.title,
+                              image: article.featured_image || article.image,
+                              description: article.excerpt,
+                              category: article.category,
+                              features: article.tags?.slice(0, 5),
+                              href: `/blog/${article.slug}`
+                            })
+                          }}
+                          className="absolute bottom-4 left-1/2 -translate-x-1/2 px-5 py-2 bg-white/90 dark:bg-black/70 backdrop-blur-sm text-gray-900 dark:text-white text-xs font-medium tracking-wider uppercase rounded-full opacity-0 group-hover:opacity-100 translate-y-2 group-hover:translate-y-0 transition-all duration-300 hover:bg-[#C9A962] hover:text-white z-10"
+                          data-testid={`quickview-article-${index}`}
+                        >
+                          Quick View
+                        </button>
+                      </div>
 
-                        {/* Content */}
+                      {/* Content */}
+                      <Link href={`/blog/${article.slug}`}>
                         <div className="p-6">
                           <div className="flex items-center gap-4 text-sm text-gray-500 mb-4">
                             <div className="flex items-center gap-1">
@@ -162,8 +184,8 @@ export default function BlogPage() {
                             Read More →
                           </div>
                         </div>
-                      </div>
-                    </Link>
+                      </Link>
+                    </div>
                   </motion.div>
                 ))}
               </div>
