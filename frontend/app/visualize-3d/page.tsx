@@ -17,7 +17,7 @@ export default function Visualize3DPage() {
               <Sparkles size={28} strokeWidth={2} />
             </div>
             
-            <h1 className="text-5xl sm:text-6xl font-bold mb-4">
+            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4">
               3D SMART HOME VISUALIZATION
             </h1>
             

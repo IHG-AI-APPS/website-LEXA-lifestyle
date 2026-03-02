@@ -41,7 +41,7 @@ export default function LuxuryHomeCinemaDubaiPage() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
-            <h1 className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl xl:text-8xl font-light tracking-tight leading-tight mb-6 md:mb-8">
+            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-light tracking-tight leading-tight mb-6 md:mb-8">
               Luxury Home Cinema<br />
               <span className="text-[#E8DCC8]">in Dubai</span>
             </h1>

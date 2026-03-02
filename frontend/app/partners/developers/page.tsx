@@ -157,7 +157,7 @@ export default function DeveloperToolkitPage() {
             }`}>
               For Real Estate Developers
             </span>
-            <h1 className={`text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight leading-tight mb-6 ${
+            <h1 className={`text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight leading-tight mb-6 ${
               isDark ? 'text-white' : 'text-gray-900'
             }`}>
               Smart Developments,

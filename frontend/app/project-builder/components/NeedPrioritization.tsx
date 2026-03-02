@@ -283,7 +283,7 @@ export default function NeedPrioritization({
                 <Heart className="w-8 h-8 md:w-12 md:h-12 text-white" />
               </motion.div>
 
-              <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold text-gray-900 dark:text-white mb-4 md:mb-6">
+              <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 dark:text-white mb-4 md:mb-6">
                 Prioritize Your Needs
               </h1>
               <p className="text-xs md:text-sm uppercase tracking-[0.2em] md:tracking-[0.3em] text-gray-500 mb-3 md:mb-4">
