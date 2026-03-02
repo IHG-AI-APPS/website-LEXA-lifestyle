@@ -11,6 +11,12 @@ Complete website overhaul for LEXA Smart Home to:
 
 ## Completed Work (Latest First)
 
+### Phase 41: CRITICAL — 429 Root Cause Fix (Dark-First SSR + Theme Blocking) (Mar 1, 2026)
+- **Root cause**: ThemeProvider defaulted to 'light' → SSR HTML had no `dark` class → browser rendered white bg before JS loaded. Combined with 429 blocking CSS chunks, page appeared permanently unstyled white.
+- **Fixes**: (1) `<html class="dark">` now SSR'd in HTML, (2) Theme blocking script in `<head>` runs before first paint, (3) Inline CSS uses `!important` for dark bg, (4) Footer SVGs capped at 16px !important, (5) sr-only hidden with !important, (6) ThemeContext defaults to 'dark'
+- **Impact**: Even if ALL CSS/JS chunks are 429'd, page now shows dark background with white text and no broken layout elements
+- **Testing**: 100% pass (iteration_67). Stress tested desktop+mobile with 2s gap — zero white flash, zero 429 errors
+
 ### Phase 40: Service Worker for Static Asset Caching (Mar 1, 2026)
 - **Service worker** (`/sw.js`): Cache-first for Next.js hashed static files (`/_next/static/`), stale-while-revalidate for fonts/images. Never caches API calls or analytics.
 - **Registration**: Moved from `page.tsx` to `ClientLayout.tsx` for activation on any page
