@@ -40,7 +40,8 @@ import {
   MapPin,
   TrendingUp,
   BookOpen,
-  ShieldCheck
+  ShieldCheck,
+  MessageCircle
 } from 'lucide-react'
 import { verifyToken, logout } from '@/lib/adminApi'
 
