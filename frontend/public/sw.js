@@ -1,35 +1,64 @@
-// LEXA Service Worker — Static Asset Cache
-// Caches CSS, JS, fonts, and images to eliminate 429 rate limiting on repeat visits
+// LEXA Service Worker v3 — Enhanced Caching Strategy
+// Cache-first for static assets, stale-while-revalidate for API, offline fallback
 
-const CACHE_NAME = 'lexa-static-v2';
+const STATIC_CACHE = 'lexa-static-v3';
+const API_CACHE = 'lexa-api-v1';
+const API_MAX_AGE_MS = 5 * 60 * 1000; // 5 minutes TTL for API cache
 
-// Patterns to cache on fetch
-const CACHEABLE_PATTERNS = [
-  /\/_next\/static\/.*/,        // Next.js static chunks (JS, CSS)
+// Patterns to cache on fetch (static assets)
+const STATIC_PATTERNS = [
+  /\/_next\/static\/.*/,        // Next.js hashed chunks (immutable)
   /\/_next\/image\?.*/,         // Next.js optimized images
-  /\.woff2$/,                    // Web fonts
+  /\.woff2$/,
   /\.woff$/,
   /\.css$/,
+  /\.png$/,
+  /\.jpg$/,
+  /\.jpeg$/,
+  /\.webp$/,
+  /\.svg$/,
+  /\.ico$/,
 ];
 
-// Patterns to NEVER cache
+// API patterns to cache with stale-while-revalidate
+const API_CACHE_PATTERNS = [
+  /\/api\/solutions/,
+  /\/api\/projects/,
+  /\/api\/articles/,
+  /\/api\/services/,
+  /\/api\/brands/,
+  /\/api\/packages/,
+  /\/api\/testimonials/,
+  /\/api\/locations/,
+  /\/api\/settings/,
+];
+
+// Never cache these
 const NEVER_CACHE = [
-  /\/api\//,                     // API calls
-  /\/_next\/data\//,            // Next.js data fetches (dynamic)
+  /\/api\/admin/,
+  /\/api\/auth/,
+  /\/api\/bookings/,
+  /\/api\/submissions/,
+  /\/api\/analytics/,
+  /\/api\/clear-cache/,
   /google-analytics/,
   /googletagmanager/,
   /facebook/,
   /hotjar/,
+  /interakt/,
 ];
 
-function shouldCache(url) {
+function shouldCacheStatic(url) {
   const urlStr = url.toString();
-  for (const pattern of NEVER_CACHE) {
-    if (pattern.test(urlStr)) return false;
-  }
-  for (const pattern of CACHEABLE_PATTERNS) {
-    if (pattern.test(urlStr)) return true;
-  }
+  for (const p of NEVER_CACHE) { if (p.test(urlStr)) return false; }
+  for (const p of STATIC_PATTERNS) { if (p.test(urlStr)) return true; }
+  return false;
+}
+
+function shouldCacheAPI(url) {
+  const urlStr = url.toString();
+  for (const p of NEVER_CACHE) { if (p.test(urlStr)) return false; }
+  for (const p of API_CACHE_PATTERNS) { if (p.test(urlStr)) return true; }
   return false;
 }
 
@@ -42,25 +71,30 @@ self.addEventListener('install', (event) => {
 self.addEventListener('activate', (event) => {
   event.waitUntil(
     caches.keys().then((names) =>
-      Promise.all(names.filter((n) => n !== CACHE_NAME).map((n) => caches.delete(n)))
+      Promise.all(
+        names
+          .filter((n) => n !== STATIC_CACHE && n !== API_CACHE)
+          .map((n) => caches.delete(n))
+      )
     ).then(() => self.clients.claim())
   );
 });
 
-// Fetch — cache-first for hashed static files, stale-while-revalidate for others
+// Fetch handler
 self.addEventListener('fetch', (event) => {
   if (event.request.method !== 'GET') return;
-  if (!shouldCache(event.request.url)) return;
 
-  // Next.js hashed static files are immutable — cache-first
-  if (event.request.url.includes('/_next/static/')) {
+  const url = event.request.url;
+
+  // 1. Static assets — cache-first (immutable hashed files)
+  if (shouldCacheStatic(url)) {
     event.respondWith(
       caches.match(event.request).then((cached) => {
         if (cached) return cached;
         return fetch(event.request).then((res) => {
           if (res && res.status === 200) {
             const clone = res.clone();
-            caches.open(CACHE_NAME).then((c) => c.put(event.request, clone));
+            caches.open(STATIC_CACHE).then((c) => c.put(event.request, clone));
           }
           return res;
         }).catch(() => cached || new Response('', { status: 503 }));
@@ -69,23 +103,62 @@ self.addEventListener('fetch', (event) => {
     return;
   }
 
-  // Other cacheable — stale-while-revalidate
-  event.respondWith(
-    caches.match(event.request).then((cached) => {
-      const fresh = fetch(event.request).then((res) => {
-        if (res && res.status === 200) {
-          const clone = res.clone();
-          caches.open(CACHE_NAME).then((c) => c.put(event.request, clone));
+  // 2. API data — stale-while-revalidate with TTL
+  if (shouldCacheAPI(url)) {
+    event.respondWith(
+      caches.open(API_CACHE).then(async (cache) => {
+        const cached = await cache.match(event.request);
+
+        const fetchPromise = fetch(event.request).then((res) => {
+          if (res && res.status === 200) {
+            // Store with timestamp header for TTL check
+            const headers = new Headers(res.headers);
+            headers.set('sw-cached-at', Date.now().toString());
+            const body = res.clone().body;
+            const timedResponse = new Response(body, {
+              status: res.status,
+              statusText: res.statusText,
+              headers: headers,
+            });
+            cache.put(event.request, timedResponse);
+          }
+          return res.clone();
+        }).catch(() => null);
+
+        // If cached and not expired, return immediately
+        if (cached) {
+          const cachedAt = parseInt(cached.headers.get('sw-cached-at') || '0');
+          const age = Date.now() - cachedAt;
+          if (age < API_MAX_AGE_MS) {
+            // Fresh enough — return cached, update in background
+            fetchPromise; // fire-and-forget background update
+            return cached;
+          }
         }
-        return res;
-      }).catch(() => cached);
-      return cached || fresh;
-    })
-  );
+
+        // No valid cache — wait for network
+        const networkResponse = await fetchPromise;
+        if (networkResponse) return networkResponse;
+        // Network failed, return stale cache as fallback
+        if (cached) return cached;
+        return new Response(JSON.stringify({ error: 'offline' }), {
+          status: 503,
+          headers: { 'Content-Type': 'application/json' },
+        });
+      })
+    );
+    return;
+  }
 });
 
 // Message handler for cache control
 self.addEventListener('message', (event) => {
   if (event.data === 'skipWaiting') self.skipWaiting();
-  if (event.data === 'clearCache') caches.delete(CACHE_NAME);
+  if (event.data === 'clearCache') {
+    caches.delete(STATIC_CACHE);
+    caches.delete(API_CACHE);
+  }
+  if (event.data === 'clearAPICache') {
+    caches.delete(API_CACHE);
+  }
 });
