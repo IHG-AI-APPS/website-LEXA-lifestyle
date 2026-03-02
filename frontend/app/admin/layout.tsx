@@ -77,6 +77,7 @@ const navigation = [
   { name: 'Geo Pages (SEO)', href: '/admin/geo-pages', icon: MapPin },
   { name: 'Locations', href: '/admin/locations', icon: MapPin },
   { name: 'Submissions', href: '/admin/submissions', icon: MessageSquare },
+  { name: 'WhatsApp', href: '/admin/whatsapp', icon: MessageCircle },
   { name: 'SEO Tools', href: '/admin/seo', icon: Search },
   { name: 'Activity Logs', href: '/admin/logs', icon: Clock },
   { name: 'CMS / Page Content', href: '/admin/cms', icon: FileText },
