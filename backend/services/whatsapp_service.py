@@ -18,9 +18,49 @@ class WhatsAppService:
         self.api_url = os.getenv('INTERAKT_API_URL', 'https://api.interakt.ai/v1/public/message/')
         self.auth_token = os.getenv('INTERAKT_AUTH_TOKEN', '')
         self.enabled = bool(self.auth_token)
+        self.max_retries = 2
         
         if not self.enabled:
             logger.warning("WhatsApp integration not configured. Set INTERAKT_AUTH_TOKEN in .env")
+    
+    async def _make_request(self, payload: Dict[str, Any]) -> Dict[str, Any]:
+        """Make API request to Interakt with retry logic"""
+        headers = {
+            "Authorization": self.auth_token,
+            "Content-Type": "application/json",
+        }
+        
+        last_error = None
+        for attempt in range(self.max_retries + 1):
+            try:
+                async with httpx.AsyncClient(timeout=30.0) as client:
+                    response = await client.post(
+                        self.api_url,
+                        json=payload,
+                        headers=headers,
+                    )
+                    
+                    if response.status_code in [200, 201]:
+                        result = response.json()
+                        return {"status": "success", "message_id": result.get("id"), "response": result}
+                    elif response.status_code == 429:
+                        # Rate limited — wait and retry
+                        if attempt < self.max_retries:
+                            import asyncio
+                            await asyncio.sleep(2 ** attempt)
+                            continue
+                    
+                    last_error = f"API returned {response.status_code}: {response.text}"
+                    logger.error(f"Interakt API error (attempt {attempt + 1}): {last_error}")
+                    
+            except httpx.TimeoutException:
+                last_error = "API timeout"
+                logger.error(f"Interakt API timeout (attempt {attempt + 1})")
+            except Exception as e:
+                last_error = str(e)
+                logger.error(f"WhatsApp error (attempt {attempt + 1}): {last_error}")
+        
+        return {"status": "error", "error": last_error}
     
     async def send_template_message(
         self,
