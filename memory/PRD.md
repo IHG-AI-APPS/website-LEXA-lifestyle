@@ -11,6 +11,12 @@ Complete website overhaul for LEXA Smart Home to:
 
 ## Completed Work (Latest First)
 
+### Phase 43: Projects Landing Page Redesign (P1) (Mar 2, 2026)
+- **Listing page**: Redesigned with Dark Luxury theme — OLED black (#050505), gold pill filter buttons (#C9A962), project count display, category/year badges on cards, MapPin location icons, system tag chips, gold hover effects, CTA section
+- **Detail page**: Full dark mode support — glass-morphism sidebar (bg-white/[0.03]), gold accent section headers, proper dark borders, gold CTA buttons, gold lightbox ring, removed all blue/purple remnants
+- **Both pages**: Consistent with site-wide theme, proper dark:bg variants throughout, responsive design
+- **Testing**: 100% pass (iteration_69). 12/12 backend + all frontend Playwright tests passed.
+
 ### Phase 42: Blog Page Visual Fixes — Hero Gradient & Image Distribution (Mar 2, 2026)
 - **Hero gradient lightened**: Changed from `opacity-50` to `opacity-80`, gradient from `from-[#0A0A0A]/90 via-[#0A0A0A]/50 to-[#0A0A0A]/30` to `from-[#0A0A0A]/80 via-[#0A0A0A]/40 to-transparent`. Background image now clearly visible.
 - **Image distribution**: Redistributed 12 unique AI-generated images across 53 articles so first 12 articles (visible on page load) all have unique images. No adjacent cards share same image.
@@ -62,7 +68,6 @@ Complete website overhaul for LEXA Smart Home to:
 - **Theme toggle**: Uses `dark:` Tailwind variants throughout
 
 ## Remaining / Backlog
-### P1 — Redesign Projects Landing Page
 ### P2 — Site-wide Consistency Review (inner pages)
 ### P3 — Content Change History for admin CMS
 ### P4 — WhatsApp template approval on Interakt
