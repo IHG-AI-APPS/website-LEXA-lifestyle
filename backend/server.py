@@ -2033,6 +2033,7 @@ app.include_router(tracking_settings.router)  # Tracking pixel settings
 app.include_router(locations.router)  # Dynamic location pages
 app.include_router(catalogues.router)  # Catalogues
 app.include_router(regression_tests.router)  # Nightly regression test results
+app.include_router(admin_whatsapp.router)  # WhatsApp/Interakt admin management
 
 # --- Frontend Rebuild Endpoints ---
 _rebuild_status = {"running": False, "last_result": None, "last_time": None, "log": ""}
