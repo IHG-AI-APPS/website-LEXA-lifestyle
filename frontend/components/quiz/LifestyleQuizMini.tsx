@@ -23,12 +23,12 @@ interface LifestyleQuizProps {
 }
 
 const priorities = [
-  { id: 'comfort', name: 'Comfort', icon: Home, color: 'blue' },
+  { id: 'comfort', name: 'Comfort', icon: Home, color: 'gold' },
   { id: 'security', name: 'Security', icon: Shield, color: 'emerald' },
   { id: 'energy', name: 'Energy Savings', icon: Zap, color: 'amber' },
-  { id: 'entertainment', name: 'Entertainment', icon: Music, color: 'purple' },
+  { id: 'entertainment', name: 'Entertainment', icon: Music, color: 'gold' },
   { id: 'wellness', name: 'Wellness', icon: Heart, color: 'rose' },
-  { id: 'convenience', name: 'Convenience', icon: Smartphone, color: 'cyan' }
+  { id: 'convenience', name: 'Convenience', icon: Smartphone, color: 'gold' }
 ]
 
 export default function LifestyleQuizMini({ onComplete, onSkip }: LifestyleQuizProps) {

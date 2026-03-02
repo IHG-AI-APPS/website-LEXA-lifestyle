@@ -263,7 +263,7 @@ export default function PackageBuilderPage() {
               {/* AI Recommendations Badge */}
               {aiRecommendations.length > 0 && (
                 <div className="bg-[#C9A962]/5 border border-[#C9A962]/20 rounded-xl p-4 mb-8 flex items-center gap-3">
-                  <Star className="h-5 w-5 text-[#C9A962] fill-blue-600" />
+                  <Star className="h-5 w-5 text-[#C9A962] fill-[#C9A962]" />
                   <span className="text-sm text-[#B8983F]">
                     <strong>{aiRecommendations.length}</strong> personalized feature recommendations ready! 
                     Look for the <Star className="h-4 w-4 inline text-amber-500 fill-amber-500" /> badge on matching enhancements.
@@ -905,7 +905,7 @@ export default function PackageBuilderPage() {
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
                 {/* Summary */}
                 <div>
-                  <div className="bg-gradient-to-br from-gray-50 to-blue-50 rounded-2xl p-8 space-y-6">
+                  <div className="bg-gradient-to-br from-gray-50 to-gray-100 dark:from-gray-800 dark:to-gray-900 rounded-2xl p-8 space-y-6">
                     <div>
                       <p className="text-sm text-gray-600 dark:text-gray-400 mb-1">Property Type</p>
                       <p className="text-xl font-bold text-gray-900 dark:text-white">{propertyType?.title}</p>
