@@ -100,10 +100,8 @@ const nextConfig = {
 
   // Allow dev origins for preview environment
   allowedDevOrigins: [
-    'cms-seo-live.preview.emergentagent.com',
-    'cms-seo-live.cluster-0.preview.emergentcf.cloud',
-    'qa-dashboard-13.preview.emergentagent.com',
-    'qa-dashboard-13.cluster-5.preview.emergentcf.cloud',
+    'dynamic-content-hub-3.preview.emergentagent.com',
+    'dynamic-content-hub-3.cluster-0.preview.emergentcf.cloud',
   ],
   
   // Compiler optimizations
