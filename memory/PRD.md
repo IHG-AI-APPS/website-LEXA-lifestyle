@@ -11,6 +11,12 @@ Complete website overhaul for LEXA Smart Home to:
 
 ## Completed Work (Latest First)
 
+### Phase 52: Realistic Price Correction — Services & Solutions (Mar 3, 2026)
+- **Deep recursive fix**: Scaled down ALL AED amounts across services and solutions collections — FAQs, pricing tiers, use_cases, descriptions, case_studies, benefits, security_packages, cinema_packages, etc.
+- **36 solutions** and **3 services** updated with realistic Dubai market pricing (AED 2,000-150,000 range)
+- **Pricing guide**: Security starting from AED 5,000, packages AED 5K-80K. Cinema AED 8K-120K. Lighting AED 3K-35K. Voice control AED 2K-12K.
+- **Zero remaining high prices**: Verification confirms no AED amounts > 50,000 remain in any nested field.
+
 ### Phase 51: ROOT CAUSE FIX — Permanent "Site Not Working" Resolution (Mar 3, 2026)
 - **Root cause**: `package.json` had `"start": "next build && next start"` — every supervisor restart triggered a 3-5 minute rebuild. If Next.js hit its known `500.html` ENOENT race condition during build, the site stayed down completely.
 - **Fix**: Changed `start` to `"next start -p 3000"` (no rebuild). Created `start.sh` safety script that auto-rebuilds only if `.next/BUILD_ID` is missing.
