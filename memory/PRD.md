@@ -11,6 +11,13 @@ Complete website overhaul for LEXA Smart Home to:
 
 ## Completed Work (Latest First)
 
+### Phase 51: ROOT CAUSE FIX — Permanent "Site Not Working" Resolution (Mar 3, 2026)
+- **Root cause**: `package.json` had `"start": "next build && next start"` — every supervisor restart triggered a 3-5 minute rebuild. If Next.js hit its known `500.html` ENOENT race condition during build, the site stayed down completely.
+- **Fix**: Changed `start` to `"next start -p 3000"` (no rebuild). Created `start.sh` safety script that auto-rebuilds only if `.next/BUILD_ID` is missing.
+- **Result**: Supervisor restart now takes **217ms** (was 3-5 minutes). Site instantly available after restart.
+- **Also fixed**: Cleaned broken image URLs (old `qa-dashboard-13` environment references) in 5 database collections.
+- **Verification**: 3 consecutive supervisor restarts all produced 200 in <5 seconds with zero rebuild.
+
 ### Phase 50: WhatsApp Admin Dashboard UI (Mar 2, 2026)
 - **Admin page** (`/admin/whatsapp`): Full WhatsApp management dashboard with 4 stat cards (Integration status, Templates count, Messages Sent/Failed), 4 tabs (Overview, Templates, Logs, Test)
 - **Overview tab**: Connection details (API endpoint, masked auth token), recent messages list
