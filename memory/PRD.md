@@ -17,45 +17,42 @@ Complete website overhaul: premium "Dark Luxury" design, 100% dynamic content, a
 ### Service Worker v4 — network-first CMS, SWR APIs, offline page
 ### 39+ Custom AI Images — all stock photos replaced site-wide
 
-### Interactive Virtual Tour with Ambient Sound (Mar 2026)
-**Full-screen cinematic experience at /experience-centre:**
-- 6 curated zones: Smart Home, Cinema, Brands, Audio, Lighting, Security
-- Ken Burns pan/zoom effect (15s cycles, alternating directions)
-- Glassmorphism info panels with badge, description, feature chips
-- Cinematic letterbox bars + gradient overlays
-- Floating gold particles (20 animated)
-- Navigation: dots, arrows, keyboard (left/right/ESC), auto-play (5s)
-- Fullscreen API + header auto-hide when tour active
-- **React Portal rendering** for correct fixed positioning (bypasses ancestor filter/transform issues)
-- Background-image approach for reliable image sizing across viewports
+### Hero Redesign (Mar 2026)
+- **Minimal cinematic hero**: Full-screen video background with AI-generated luxury interior poster/fallback
+- **Single quote**: "Where technology meets luxury" — no headings, no CTAs, no clutter
+- **Navigation preserved**: Full header navigation visible on top
+- **Video rotation**: Existing Sora 2 clips with crossfade transitions
+- **CMS-driven**: Quote, video clips configurable from backend
 
-**Procedural Ambient Sound Engine (Web Audio API):**
-- 6 unique soundscapes generated in real-time (zero audio files)
-- Zone 0 (Smart Home): Warm electronic ambient + gentle shimmer
-- Zone 1 (Cinema): Deep bass drone + cinematic sub-bass
-- Zone 2 (Gallery): Elegant minimal reverb wash
-- Zone 3 (Audio): Warm analog tone + vinyl warmth
-- Zone 4 (Lighting): Ethereal shimmer pad
-- Zone 5 (Security): Digital tech ambiance + scanning pulses
-- Smooth crossfade (1.5s) between zones
-- Mute/unmute with visual waveform indicator
-- Uses oscillators, filtered noise, LFO modulation, shimmer layers
-- Proper cleanup on component unmount
+### Testimonials Compact Redesign (Mar 2026)
+- **4-column single row**: Compact cards with star ratings, 2-line truncated quotes, author info
+- **"View All" button**: Links to /testimonials for full testimonial page
+- **Dramatically reduced footprint** from previous large 3-column layout
+
+### Footer Logo Fix (Mar 2026)
+- Footer LEXA logo now matches header logo size (144x56px at lg breakpoint)
+
+### Interactive Virtual Tour with Ambient Sound
+- 6 curated zones with Ken Burns effects, glassmorphism panels, ambient sound
+- **Portal rendering** (createPortal) for correct fixed positioning
+- Background-image approach for reliable sizing with Framer Motion transforms
 
 ### Virtual Tour Scaling Fix (Mar 2026)
-- **Root Cause**: Ancestor `filter: blur(0px)` created new containing block, causing `fixed inset-0` to inherit full page height (3064px) instead of viewport (768px)
-- **Fix**: Used `createPortal` to render tour directly in `document.body`, bypassing all ancestor CSS effects
-- **Additional**: Switched to CSS background-image approach for more reliable image sizing with Framer Motion transforms
+- Root cause: ancestor `filter: blur(0px)` broke `fixed` positioning
+- Fix: `createPortal` to render in `document.body`
 
 ## Admin Credentials
 - URL: `/admin/login`, Username: `admin`, Password: `lexa2026`
 
 ## Critical Notes
 - DO NOT modify `start` script in `package.json`
-- DO NOT re-add `X-Frame-Options` or blue-tinted colors
+- DO NOT re-add blue-tinted colors
 - Production mode: `npx next build` + `sudo supervisorctl restart frontend`
+- Emergent LLM Key balance is LOW — user needs to top up for video generation (Profile → Universal Key → Add Balance)
 
 ## Remaining Backlog
+- Generate new custom AI hero video (needs Emergent LLM Key balance top-up for Sora 2)
 - "Compare Packages" side-by-side conversion feature
 - Refine Service Worker Caching with more advanced strategies
 - Client Logo Integration (TrustedBy component uses placeholder SVG)
+- Create /testimonials full page (linked from "View All" button)
