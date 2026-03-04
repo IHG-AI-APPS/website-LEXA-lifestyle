@@ -1,7 +1,7 @@
 # LEXA Lifestyle Website - Product Requirements Document
 
 ## Original Problem Statement
-Complete website overhaul: premium "Dark Luxury" design, 100% dynamic content, app-like UX, site-wide color consistency (dark charcoal + gold), custom AI imagery, and immersive interactive experiences.
+Complete website overhaul: premium "Dark Luxury" design, 100% dynamic content, app-like UX, site-wide color consistency, custom AI imagery, immersive interactive experiences with ambient sound.
 
 ## Core Architecture
 - **Frontend**: Next.js (production mode `next start`)
@@ -12,23 +12,33 @@ Complete website overhaul: premium "Dark Luxury" design, 100% dynamic content, a
 ## What's Been Implemented
 
 ### All Audit Fixes (P0/P1/P2) — 23 items complete
-### Dark Charcoal Color Overhaul — 100+ files updated
+### Dark Charcoal Color Overhaul — 100+ files, zero blue tint
 ### Gold Shimmer Micro-Animations — hero, CTAs, badges
 ### Service Worker v4 — network-first CMS, SWR APIs, offline page
-### 39+ Custom AI Images — all stock photos replaced
+### 39+ Custom AI Images — all stock photos replaced site-wide
 
-### Interactive Virtual Tour (Mar 2026)
-**Full-screen cinematic experience on /experience-centre:**
+### Interactive Virtual Tour with Ambient Sound (Mar 2026)
+**Full-screen cinematic experience at /experience-centre:**
 - 6 curated zones: Smart Home, Cinema, Brands, Audio, Lighting, Security
-- Ken Burns pan/zoom effect on zone backgrounds (15s cycles)
-- Glassmorphism info panels with zone badge, description, feature chips
+- Ken Burns pan/zoom effect (15s cycles, alternating directions)
+- Glassmorphism info panels with badge, description, feature chips
 - Cinematic letterbox bars + gradient overlays
-- Floating gold particles animation (20 particles)
-- Zone navigation: dots, arrow buttons, keyboard (← → ESC)
-- Auto-play mode (5s per zone)
-- Fullscreen API support
-- Visited zone tracking (gold = active, white = visited, dim = unvisited)
-- "Begin Tour" CTA card with pulsing gold ring + parallax image
+- Floating gold particles (20 animated)
+- Navigation: dots, arrows, keyboard (← → ESC), auto-play (5s)
+- Fullscreen API + header auto-hide when tour active
+
+**Procedural Ambient Sound Engine (Web Audio API):**
+- 6 unique soundscapes generated in real-time (zero audio files)
+- Zone 0 (Smart Home): Warm electronic ambient + gentle shimmer
+- Zone 1 (Cinema): Deep bass drone + cinematic sub-bass
+- Zone 2 (Gallery): Elegant minimal reverb wash
+- Zone 3 (Audio): Warm analog tone + vinyl warmth
+- Zone 4 (Lighting): Ethereal shimmer pad
+- Zone 5 (Security): Digital tech ambiance + scanning pulses
+- Smooth crossfade (1.5s) between zones
+- Mute/unmute with visual waveform indicator
+- Uses oscillators, filtered noise, LFO modulation, shimmer layers
+- Proper cleanup on component unmount
 
 ## Admin Credentials
 - URL: `/admin/login`, Username: `admin`, Password: `lexa2026`
@@ -40,4 +50,3 @@ Complete website overhaul: premium "Dark Luxury" design, 100% dynamic content, a
 
 ## Remaining Backlog
 - "Compare Packages" side-by-side conversion feature
-- Add ambient sound effects to Virtual Tour zones (optional)

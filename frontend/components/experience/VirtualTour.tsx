@@ -3,6 +3,7 @@
 import { useState, useEffect, useCallback, useRef } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { ChevronLeft, ChevronRight, Maximize2, Minimize2, Volume2, VolumeX, Eye, X } from 'lucide-react'
+import { AmbientSoundEngine } from './AmbientSoundEngine'
 
 const zones = [
   {
@@ -13,7 +14,7 @@ const zones = [
     image: 'https://static.prod-images.emergentagent.com/jobs/9a576253-3f34-4de3-9ad4-57e7617524d7/images/612beb91b87e9b41f962da6eb8b91f5cf254e933d63cb3ef71ace28718b4eefa.png',
     features: ['Voice Control', 'Scene Automation', 'Climate Intelligence'],
     accent: '#C9A962',
-    panDirection: 'left' as const,
+    panDirection: 'left',
   },
   {
     id: 2,
@@ -23,7 +24,7 @@ const zones = [
     image: 'https://static.prod-images.emergentagent.com/jobs/9a576253-3f34-4de3-9ad4-57e7617524d7/images/dacc01ae1dc53730f34dd34f41895419010586a0427c0ebf9fc72d8a4b27d191.png',
     features: ['Dolby Atmos 7.2.4', '4K Laser Projection', 'Starlight Ceiling'],
     accent: '#C9A962',
-    panDirection: 'right' as const,
+    panDirection: 'right',
   },
   {
     id: 3,
@@ -33,7 +34,7 @@ const zones = [
     image: 'https://static.prod-images.emergentagent.com/jobs/9a576253-3f34-4de3-9ad4-57e7617524d7/images/e50d69f604abca478053403fb12ad5b8026c9ff4bf49192cfaa9c087b4094899.png',
     features: ['32+ Premium Brands', 'Live Demos', 'Expert Guides'],
     accent: '#C9A962',
-    panDirection: 'left' as const,
+    panDirection: 'left',
   },
   {
     id: 4,
@@ -43,7 +44,7 @@ const zones = [
     image: 'https://static.prod-images.emergentagent.com/jobs/9a576253-3f34-4de3-9ad4-57e7617524d7/images/035579baf2abef1ae0e1155e16b4bf57655af2910a4df976de3b3022006d5f2c.png',
     features: ['Reference Audio', 'Multi-Room Sync', 'Vinyl & Streaming'],
     accent: '#C9A962',
-    panDirection: 'right' as const,
+    panDirection: 'right',
   },
   {
     id: 5,
@@ -53,7 +54,7 @@ const zones = [
     image: 'https://static.prod-images.emergentagent.com/jobs/9a576253-3f34-4de3-9ad4-57e7617524d7/images/5da0e02776639111ed41adb48faaffd2c8968eaddda2ce0f3ba1dac514f0b82d.png',
     features: ['Scene Presets', 'Circadian Rhythm', 'Energy Analytics'],
     accent: '#C9A962',
-    panDirection: 'left' as const,
+    panDirection: 'left',
   },
   {
     id: 6,
@@ -63,7 +64,7 @@ const zones = [
     image: 'https://static.prod-images.emergentagent.com/jobs/9a576253-3f34-4de3-9ad4-57e7617524d7/images/cb41cf96a1bc018c222eb01f157f17fcd8d38fb84548fa77c8e27fabe2305b7c.png',
     features: ['Facial Recognition', 'Biometric Access', 'AI Monitoring'],
     accent: '#C9A962',
-    panDirection: 'right' as const,
+    panDirection: 'right',
   },
 ]
 
@@ -102,10 +103,39 @@ export default function VirtualTour() {
   const [isFullscreen, setIsFullscreen] = useState(false)
   const [isAutoPlay, setIsAutoPlay] = useState(false)
   const [isOpen, setIsOpen] = useState(false)
+  const [isSoundOn, setIsSoundOn] = useState(false)
   const [visited, setVisited] = useState<Set<number>>(new Set([0]))
   const [direction, setDirection] = useState(1)
   const containerRef = useRef<HTMLDivElement>(null)
   const autoPlayRef = useRef<NodeJS.Timeout>(undefined)
+  const soundEngineRef = useRef<AmbientSoundEngine | null>(null)
+
+  // Sound engine lifecycle
+  useEffect(() => {
+    if (isOpen) {
+      soundEngineRef.current = new AmbientSoundEngine()
+      soundEngineRef.current.init().then(() => {
+        soundEngineRef.current?.playZone(activeZone)
+      })
+    }
+    return () => {
+      soundEngineRef.current?.destroy()
+      soundEngineRef.current = null
+    }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [isOpen])
+
+  // Zone change -> crossfade sound
+  useEffect(() => {
+    if (isOpen && soundEngineRef.current) {
+      soundEngineRef.current.playZone(activeZone)
+    }
+  }, [activeZone, isOpen])
+
+  // Mute/unmute
+  useEffect(() => {
+    soundEngineRef.current?.setMuted(!isSoundOn)
+  }, [isSoundOn])
 
   const goToZone = useCallback((index: number) => {
     setDirection(index > activeZone ? 1 : -1)
@@ -127,13 +157,28 @@ export default function VirtualTour() {
     setVisited(prev => { const s = new Set(prev); s.add(p); return s })
   }, [activeZone])
 
+  // Body scroll lock + header hide when tour is open
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = 'hidden'
+      document.getElementById('main-header')?.classList.add('!hidden')
+    } else {
+      document.body.style.overflow = ''
+      document.getElementById('main-header')?.classList.remove('!hidden')
+    }
+    return () => {
+      document.body.style.overflow = ''
+      document.getElementById('main-header')?.classList.remove('!hidden')
+    }
+  }, [isOpen])
+
   // Keyboard navigation
   useEffect(() => {
     if (!isOpen) return
     const handler = (e: KeyboardEvent) => {
       if (e.key === 'ArrowRight') nextZone()
       else if (e.key === 'ArrowLeft') prevZone()
-      else if (e.key === 'Escape') { setIsOpen(false); setIsFullscreen(false) }
+      else if (e.key === 'Escape') { setIsOpen(false); setIsFullscreen(false); setIsSoundOn(false) }
     }
     window.addEventListener('keydown', handler)
     return () => window.removeEventListener('keydown', handler)
@@ -242,7 +287,7 @@ export default function VirtualTour() {
   return (
     <div
       ref={containerRef}
-      className="fixed inset-0 z-[100] bg-black"
+      className="fixed inset-0 z-[9999] bg-black"
       data-testid="virtual-tour-viewer"
     >
       {/* Background image with Ken Burns */}
@@ -271,15 +316,15 @@ export default function VirtualTour() {
       </AnimatePresence>
 
       {/* Cinematic overlays */}
-      <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/20 to-transparent z-10" />
-      <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-black/30 z-10" />
+      <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/40 to-black/10 z-10" />
+      <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-black/40 z-10" />
 
       {/* Gold particles */}
       <GoldParticles />
 
       {/* Letterbox bars */}
       <div className="absolute top-0 left-0 right-0 h-[6vh] bg-black z-30" />
-      <div className="absolute bottom-0 left-0 right-0 h-[6vh] bg-black z-30" />
+      <div className="absolute bottom-0 left-0 right-0 h-[8vh] bg-black z-30" />
 
       {/* Zone info panel — glassmorphism */}
       <div className="absolute left-0 top-0 bottom-0 w-full sm:w-[480px] z-20 flex items-center">
@@ -333,11 +378,26 @@ export default function VirtualTour() {
                 ))}
               </div>
 
-              {/* Zone counter */}
-              <div className="flex items-center gap-2 text-xs text-zinc-500">
-                <span className="text-[#C9A962] font-bold">{String(activeZone + 1).padStart(2, '0')}</span>
-                <span className="w-8 h-px bg-zinc-700" />
-                <span>{String(zones.length).padStart(2, '0')}</span>
+              {/* Zone counter + Sound indicator */}
+              <div className="flex items-center justify-between">
+                <div className="flex items-center gap-2 text-xs text-zinc-500">
+                  <span className="text-[#C9A962] font-bold">{String(activeZone + 1).padStart(2, '0')}</span>
+                  <span className="w-8 h-px bg-zinc-700" />
+                  <span>{String(zones.length).padStart(2, '0')}</span>
+                </div>
+                {isSoundOn && (
+                  <div className="flex items-center gap-1 h-4">
+                    {[0.6, 1, 0.4, 0.8, 0.5].map((h, i) => (
+                      <motion.div
+                        key={i}
+                        className="w-[3px] rounded-full bg-[#C9A962]/60"
+                        animate={{ height: [`${h * 16}px`, `${h * 6}px`, `${h * 16}px`] }}
+                        transition={{ duration: 0.8 + i * 0.15, repeat: Infinity, ease: 'easeInOut' }}
+                      />
+                    ))}
+                    <span className="text-[10px] text-[#C9A962]/50 ml-1.5 uppercase tracking-wider">Ambient</span>
+                  </div>
+                )}
               </div>
             </div>
           </motion.div>
@@ -403,17 +463,30 @@ export default function VirtualTour() {
 
       {/* Top bar controls */}
       <div className="absolute top-[7vh] right-6 z-30 flex items-center gap-3">
+        {/* Sound toggle */}
+        <motion.button
+          onClick={() => setIsSoundOn(!isSoundOn)}
+          className={`w-9 h-9 rounded-full flex items-center justify-center backdrop-blur-md border transition-all ${
+            isSoundOn ? 'bg-[#C9A962]/20 border-[#C9A962]/40 text-[#C9A962]' : 'bg-white/10 border-white/10 text-white/60'
+          }`}
+          whileHover={{ scale: 1.1 }}
+          title={isSoundOn ? 'Mute ambient sound' : 'Enable ambient sound'}
+          data-testid="tour-sound"
+        >
+          {isSoundOn ? <Volume2 size={16} /> : <VolumeX size={16} />}
+        </motion.button>
+
         {/* Auto-play toggle */}
         <motion.button
           onClick={() => setIsAutoPlay(!isAutoPlay)}
-          className={`w-9 h-9 rounded-full flex items-center justify-center backdrop-blur-md border transition-all ${
+          className={`w-9 h-9 rounded-full flex items-center justify-center backdrop-blur-md border transition-all text-xs font-bold ${
             isAutoPlay ? 'bg-[#C9A962]/20 border-[#C9A962]/40 text-[#C9A962]' : 'bg-white/10 border-white/10 text-white/60'
           }`}
           whileHover={{ scale: 1.1 }}
           title={isAutoPlay ? 'Pause auto-play' : 'Start auto-play'}
           data-testid="tour-autoplay"
         >
-          {isAutoPlay ? <Volume2 size={16} /> : <VolumeX size={16} />}
+          {isAutoPlay ? 'II' : <span className="tracking-tight">AP</span>}
         </motion.button>
 
         {/* Fullscreen */}
@@ -428,7 +501,7 @@ export default function VirtualTour() {
 
         {/* Close */}
         <motion.button
-          onClick={() => { setIsOpen(false); setIsFullscreen(false); document.exitFullscreen?.().catch(() => {}) }}
+          onClick={() => { setIsOpen(false); setIsFullscreen(false); setIsSoundOn(false); document.exitFullscreen?.().catch(() => {}) }}
           className="w-9 h-9 rounded-full bg-white/10 backdrop-blur-md border border-white/10 flex items-center justify-center text-white/60 hover:text-red-400 hover:bg-red-500/10 hover:border-red-500/30 transition-all"
           whileHover={{ scale: 1.1 }}
           data-testid="tour-close"

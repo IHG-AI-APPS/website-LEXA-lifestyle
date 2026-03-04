@@ -148,6 +148,7 @@ export default function Header() {
           duration: 0.3,
           ease: [0.16, 1, 0.3, 1] // Luxury easing
         }}
+        id="main-header"
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
           shouldUseDarkText
             ? 'bg-white/90 dark:bg-[#0A0A0A]/90 backdrop-blur-xl border-b border-gray-200/50 dark:border-white/[0.06]' 
