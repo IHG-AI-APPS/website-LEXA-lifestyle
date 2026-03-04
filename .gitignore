@@ -181,3 +181,4 @@ frontend/.next/cache/webpack/server-production/3.pack
 *.env
 *.env.*
 frontend/.next/cache/webpack/server-production/6.pack
+frontend/.next/cache/webpack/client-production/6.pack
