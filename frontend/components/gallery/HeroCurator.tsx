@@ -111,7 +111,7 @@ export default function HeroCurator({ onPersonaClick }: HeroCuratorProps) {
             transition={{ duration: 1, delay: 0.5 }}
             className="max-w-5xl text-center lg:text-left mx-auto lg:mx-0"
           >
-            <h1 className={`text-4xl sm:text-5xl md:text-5xl lg:text-6xl xl:text-7xl font-black tracking-tighter uppercase text-white leading-[0.92] drop-shadow-lg ${language === 'ar' ? 'font-arabic' : ''}`}>
+            <h1 className={`text-4xl sm:text-5xl md:text-5xl lg:text-6xl xl:text-7xl font-black tracking-tighter uppercase text-white leading-[0.92] drop-shadow-lg gold-shimmer-text gold-glow-text ${language === 'ar' ? 'font-arabic' : ''}`}>
               {heading || (<>{t('hero.title1')}<br />{t('hero.title2')}<br />{t('hero.title3')}</>)}
             </h1>
             
@@ -128,7 +128,7 @@ export default function HeroCurator({ onPersonaClick }: HeroCuratorProps) {
                 size="lg"
                 onClick={onPersonaClick}
                 data-testid="hero-find-solution-btn"
-                className="bg-gradient-to-r from-[#E8DCC8] to-[#C19A2E] text-black uppercase tracking-widest hover:from-[#C19A2E] hover:to-[#E8DCC8] rounded-none px-6 py-5 sm:px-8 sm:py-5 text-xs sm:text-sm font-medium transition-all shadow-lg"
+                className="bg-gradient-to-r from-[#E8DCC8] to-[#C19A2E] text-black uppercase tracking-widest hover:from-[#C19A2E] hover:to-[#E8DCC8] rounded-none px-6 py-5 sm:px-8 sm:py-5 text-xs sm:text-sm font-medium transition-all shadow-lg gold-shimmer-btn"
               >
                 <Users className={`${language === 'ar' ? 'ml-2' : 'mr-2'} h-4 w-4 sm:h-5 sm:w-5`} />
                 {ctaPrimaryText || (language === 'ar' ? 'ابحث عن الحل المثالي' : 'Find Your Perfect Solution')}

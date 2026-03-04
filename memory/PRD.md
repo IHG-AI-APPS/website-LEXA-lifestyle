@@ -1,7 +1,7 @@
 # LEXA Lifestyle Website - Product Requirements Document
 
 ## Original Problem Statement
-Complete website overhaul for 100% dynamic content, a premium "Dark Luxury" design, and an app-like user experience. Website audit report identified 23 specific UI/UX and functional issues to fix across P0, P1, and P2 priorities. User also requested site-wide color consistency (dark charcoal + gold only), mobile-first responsive enhancement, and typography standardization.
+Complete website overhaul for 100% dynamic content, a premium "Dark Luxury" design, and an app-like user experience. Site-wide color consistency (dark charcoal + gold only), mobile-first responsive enhancement, typography standardization, and premium micro-animations.
 
 ## Core Architecture
 - **Frontend**: Next.js (production mode with `next start`)
@@ -9,7 +9,9 @@ Complete website overhaul for 100% dynamic content, a premium "Dark Luxury" desi
 - **Theme**: Dark Charcoal (#050505, #0A0A0A, #171717) + Gold (#C9A962)
 - **Integrations**: OpenAI GPT (AURA chatbot), Gemini Nano Banana (avatar), WhatsApp/Interakt, Gmail SMTP, Google Maps, GA4, Meta Pixel
 
-## Design System — Color Palette
+## Design System
+
+### Color Palette
 | Token | Hex | Usage |
 |-------|-----|-------|
 | Void | #050505 | Page backgrounds, hero sections |
@@ -18,42 +20,35 @@ Complete website overhaul for 100% dynamic content, a premium "Dark Luxury" desi
 | Charcoal Light | #171717 | Elevated cards, hover states |
 | Border | zinc-800 (#27272a) | All borders in dark mode |
 | Gold | #C9A962 | Accent color, CTAs, highlights |
-| Text Primary | white | Headings, primary text |
-| Text Secondary | zinc-400/zinc-500 | Body text, captions |
+
+### Micro-Animations (globals.css)
+| Effect | Class | Duration | Where |
+|--------|-------|----------|-------|
+| Gold Shimmer Text | `gold-shimmer-text` | 6s linear infinite | Homepage hero H1 |
+| Gold Glow Pulse | `gold-glow-text` | 4s ease infinite | Homepage hero H1 |
+| CTA Button Shimmer | `gold-shimmer-btn` | 4s ease infinite | Primary CTA buttons |
+| Badge Border Pulse | `goldBadgeShimmer` | 4s ease infinite | All hero-animate-badge elements (20+ pages) |
+| Section Label Gold | `section-label-gold` | 8s linear infinite | Optional for section labels |
 
 ## What's Been Implemented
 
-### Completed - P0/P1/P2 Audit Fixes (All Done)
-- Fixed Aura chatbot, header logo, testimonials, Google Maps, Quick View
-- Package tier redirect, catalogue overlap, modal responsiveness
-- OurPromise icons, blog author names, footer social icons (6 total)
+### Completed - All Audit Fixes (P0/P1/P2)
+- All 23 audit items resolved
 
 ### Completed - Site-wide Color Consistency Overhaul (Mar 2026)
-- **CSS Variables**: Changed dark mode from blue HSL(222) to neutral HSL(0) in globals.css
-- **Dark mode overrides**: .bg-white → #0A0A0A, .bg-gray-50 → #0F0F0F, .bg-gray-100 → #171717
-- **Bulk replacement**: All dark:bg-gray-900/950/800 → charcoal hex values across 100+ files
-- **Slate → Zinc**: All slate-700/800/900 replaced with zinc equivalents for neutral tone
-- **Border standardization**: dark:border-gray-700/800 → dark:border-zinc-800
-- **Text normalization**: dark:text-gray-300/400 → dark:text-zinc-400/zinc-500
-- **Glass effect**: Fixed from blue-tinted rgb(17,24,39) to neutral rgb(10,10,10)
-- **Verified**: Testing agent confirmed ALL backgrounds are R≈G≈B (zero blue tint) — 11/11 tests passed
+- CSS variables: blue HSL(222) → neutral HSL(0)
+- Dark mode overrides: all charcoal tones, zero blue tint
+- Bulk sed across 100+ files
+- Testing: 11/11 visual QA tests passed
 
-### Completed - Service Worker v4 (Mar 2026)
-- Network-first for CMS, stale-while-revalidate for API, cache-first for static
-- Branded offline fallback page, cache size limits, proper versioning
+### Completed - Gold Shimmer Micro-Animations (Mar 2026)
+- Hero heading shimmer: subtle gold gradient sweep across "INTEGRATED LUXURY LIVING"
+- CTA button shimmer: light shine effect on gold "Find Your Perfect Solution" button
+- Badge shimmer: gold border pulse on all hero page badges (20+ pages)
+- All CSS-only, zero JS overhead, accessible (respects prefers-reduced-motion)
 
-### Completed - Major Features
-- WhatsApp Admin Dashboard, Quick View modal, pricing updates, design consistency pass
-
-## Typography System (globals.css)
-| Level | Mobile | Tablet | Desktop |
-|-------|--------|--------|---------|
-| H1 | text-3xl | text-4xl-5xl | text-5xl-6xl |
-| H2 | text-2xl | text-3xl-4xl | text-4xl-5xl |
-| H3 | text-xl | text-2xl | text-3xl |
-| H4 | text-lg | text-xl | text-2xl |
-| Body | text-base | text-base | text-base |
-| Small | text-sm | text-sm | text-sm |
+### Completed - Service Worker v4
+- Network-first CMS, stale-while-revalidate APIs, cache-first static, offline page
 
 ## Admin Credentials
 - URL: `/admin/login`, Username: `admin`, Password: `lexa2026`
@@ -65,5 +60,5 @@ Complete website overhaul for 100% dynamic content, a premium "Dark Luxury" desi
 - Frontend runs in production mode; changes require `npx next build` + `sudo supervisorctl restart frontend`
 
 ## Remaining Backlog
-- No critical pending issues. All audit items and color overhaul complete.
-- Potential enhancement: "Compare Packages" side-by-side feature
+- "Compare Packages" side-by-side feature
+- Potential: extend gold shimmer to more section headings on scroll
