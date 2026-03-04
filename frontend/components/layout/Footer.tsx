@@ -34,14 +34,14 @@ export default function Footer() {
           {/* Brand Section */}
           <div className="lg:col-span-4 space-y-6">
             <Link href="/">
-              <SafeImage 
-                src="/lexa-white.png" 
-                alt="LEXA Lifestyle" 
-                width={140} 
-                height={60}
-                className="object-contain"
-                style={{ width: 'auto', height: 'auto' }}
-              />
+              <div className="relative w-28 h-11 sm:w-28 sm:h-12 lg:w-36 lg:h-14">
+                <SafeImage 
+                  src="/lexa-white.png" 
+                  alt="LEXA Lifestyle" 
+                  fill
+                  className="object-contain object-left"
+                />
+              </div>
             </Link>
             <p className="text-gray-300 text-sm leading-relaxed max-w-xs">
               {description}
