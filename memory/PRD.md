@@ -67,6 +67,13 @@ Complete website overhaul: premium "Dark Luxury" design, 100% dynamic content, a
 - Production mode: `npx next build` + `sudo supervisorctl restart frontend`
 - Emergent LLM Key balance is LOW — user needs to top up for video generation (Profile → Universal Key → Add Balance)
 
+### Client Logo Integration (Mar 2026)
+- Replaced placeholder SVGs with clean text-based brand wordmarks in TrustedInUAE and ClientLogos components
+- Technology partners: Control4, Crestron, Lutron, Sonos, Samsung, Sony
+- UAE Developers: Emaar, Nakheel, DAMAC, Sobha Realty, Meraas, Dubai Holding
+- Certifications: Control4 Diamond Dealer, Crestron Certified, CEDIA, KNX
+- Stats: 500+ villas, 15+ years, 50+ projects, 98% satisfaction
+
 ## Remaining Backlog
 - Generate new custom AI hero video (needs Emergent LLM Key balance top-up for Sora 2)
 - "Compare Packages" side-by-side conversion feature
