@@ -11,6 +11,18 @@ Complete website overhaul for LEXA Smart Home to:
 
 ## Completed Work (Latest First)
 
+### Phase 53: Website Audit P0 Fixes — Critical Frontend (Mar 3, 2026)
+- **Footer logo**: Fixed — uses `/lexa-white.png` directly (was broken invert filter on black.png)
+- **Header logo dark mode**: Theme-aware switching — white logo on dark bg, black logo on light bg (removed broken `dark:invert` class)
+- **Testimonials on homepage**: Added Testimonials section between TrustedInUAE and StatsSection (34 star elements, 6 quotes rendered)
+- **Google Maps on contact**: Added responsive iframe with grayscale styling
+- **Quick View mobile**: Buttons always visible on mobile (sm: breakpoint for hover behavior)
+- **Luxury Home Cinema hero**: Fixed opacity (40→80), gradient lightened, title uppercase/bold, subtitle text sized down
+- **Scroll-to-top**: Added `window.scrollTo(0, 0)` on route change in ClientLayout
+- **Language switcher**: Added dark:text-gray-300 for dark mode visibility
+- **Schedule Visit modal**: Fixed mobile responsiveness (inset-x-4 on mobile)
+- **Testing**: 100% pass (iteration_76). 9 tests: footer logo, header logo (2 modes), testimonials, maps, Quick View mobile (2 pages), cinema hero, scroll-to-top, language switcher.
+
 ### Phase 52: Realistic Price Correction — Services & Solutions (Mar 3, 2026)
 - **Deep recursive fix**: Scaled down ALL AED amounts across services and solutions collections — FAQs, pricing tiers, use_cases, descriptions, case_studies, benefits, security_packages, cinema_packages, etc.
 - **36 solutions** and **3 services** updated with realistic Dubai market pricing (AED 2,000-150,000 range)
