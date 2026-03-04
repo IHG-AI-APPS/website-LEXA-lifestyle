@@ -165,6 +165,7 @@ export default function Footer() {
                     { name: 'Work With Us', href: '/work-with-us' },
                     { name: 'Partner Program', href: '/partner-with-us' },
                     { name: 'Vendor Registration', href: '/vendor-supplier' },
+                    { name: 'Catalogues', href: '/catalogues' },
                     { name: 'Blog & News', href: '/blog' },
                     { name: 'Privacy Policy', href: '/privacy-policy' },
                     { name: 'Terms of Service', href: '/terms-of-service' }

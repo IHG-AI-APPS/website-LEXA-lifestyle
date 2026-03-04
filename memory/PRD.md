@@ -41,6 +41,10 @@ Complete website overhaul: premium "Dark Luxury" design, 100% dynamic content, a
 - Root cause: ancestor `filter: blur(0px)` broke `fixed` positioning
 - Fix: `createPortal` to render in `document.body`
 
+### Header/Footer Navigation Update (Mar 2026)
+- Moved "Catalogues" from header navigation to footer "Quick Links"
+- Added golden CTA band below hero: "Find Your Perfect Solution" + "View Projects" equally divided
+
 ## Admin Credentials
 - URL: `/admin/login`, Username: `admin`, Password: `lexa2026`
 

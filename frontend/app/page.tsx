@@ -5,6 +5,7 @@ import dynamic from 'next/dynamic'
 import HeroCurator from '@/components/gallery/HeroCurator'
 import StatsSection from '@/components/homepage/StatsSection'
 import PersonaModal from '@/components/sections/PersonaModal'
+import HeroBand from '@/components/homepage/HeroBand'
 import { useCms } from '@/hooks/useCms'
 
 const Noop = () => null
@@ -29,6 +30,8 @@ export default function HomePage() {
   return (
     <div className="bg-white dark:bg-[#050505] min-h-screen">
       <HeroCurator onPersonaClick={() => setShowPersonaModal(true)} />
+      
+      <HeroBand onPersonaClick={() => setShowPersonaModal(true)} />
       
       <TrustBadges variant="compact" className="bg-gray-50/80 dark:bg-black/60 backdrop-blur-xl border-b border-gray-200 dark:border-white/5" />
       
