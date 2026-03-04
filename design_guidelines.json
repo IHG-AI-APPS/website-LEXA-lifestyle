@@ -1,124 +1,171 @@
 {
-  "project_name": "LEXA Smart Home - Mobile Redesign",
-  "design_philosophy": {
-    "core_concept": "The Invisible Butler",
-    "visual_style": "Dark Luxury (OLED Black + Gold Accents)",
-    "principles": [
-      "No Light Mode: The mobile experience is exclusively Dark Mode for premium impact.",
-      "Cinematic Continuity: No abrupt background color changes between sections.",
-      "Glass over Solid: Use glassmorphism for overlays (Nav, Badges) instead of solid blocks.",
-      "Content is King: Reduce UI chrome, let the imagery and video breathe."
-    ]
+  "meta": {
+    "project": "LEXA Lifestyle",
+    "version": "2.0",
+    "theme": "Dark Luxury (Charcoal + Gold)",
+    "designer": "E1",
+    "last_updated": "2026-05-20"
+  },
+  "brand_identity": {
+    "core_values": [
+      "Invisible Tech",
+      "Cinematic Luxury",
+      "Tactile Warmth",
+      "Precision"
+    ],
+    "archetype": "The Architect (Structure + Elegance)",
+    "visual_language": "Atmospheric, High-Contrast, Minimalist, Detail-Obsessed"
+  },
+  "color_system": {
+    "philosophy": "Strict 'No-Blue' Policy. All dark tones must be warm charcoal or neutral grey. Pure black is allowed only for depth.",
+    "palette": {
+      "background": {
+        "default": "#050505",
+        "name": "Void Charcoal",
+        "usage": "Main page background",
+        "tailwind": "bg-[#050505]"
+      },
+      "surface": {
+        "primary": "#0A0A0A",
+        "name": "Obsidian",
+        "usage": "Cards, Sidebar, Headers",
+        "tailwind": "bg-[#0A0A0A]"
+      },
+      "surface_highlight": {
+        "primary": "#171717",
+        "name": "Charcoal Light",
+        "usage": "Hover states, active items, secondary cards",
+        "tailwind": "bg-[#171717]"
+      },
+      "border": {
+        "subtle": "#27272A",
+        "name": "Zinc 800",
+        "usage": "Dividers, subtle card borders",
+        "tailwind": "border-zinc-800"
+      },
+      "accent": {
+        "primary": "#C9A962",
+        "name": "Lexa Gold",
+        "usage": "Primary Buttons, Highlights, Active States, Key Icons",
+        "tailwind": "text-[#C9A962] bg-[#C9A962] border-[#C9A962]"
+      },
+      "text": {
+        "primary": "#EDEDED",
+        "name": "Off-White",
+        "usage": "Headings, Body Text",
+        "tailwind": "text-[#EDEDED]"
+      },
+      "secondary": {
+        "value": "#A1A1AA",
+        "name": "Zinc 400",
+        "usage": "Subtitles, Captions, Labels",
+        "tailwind": "text-zinc-400"
+      }
+    }
   },
   "typography": {
-    "font_families": {
-      "heading": "Outfit, sans-serif",
-      "serif": "Cormorant Garamond, serif",
-      "body": "DM Sans, sans-serif"
+    "fonts": {
+      "heading": "Outfit",
+      "body": "DM Sans",
+      "accent": "Cormorant Garamond"
     },
-    "hierarchy": {
-      "display_hero": "text-4xl md:text-6xl font-black uppercase tracking-tighter leading-[0.9]",
-      "section_heading": "text-2xl md:text-3xl font-serif font-light tracking-wide text-white",
-      "card_title": "text-lg md:text-xl font-bold tracking-tight text-white",
-      "body_text": "text-sm md:text-base text-neutral-400 font-light leading-relaxed",
-      "label": "text-xs font-bold uppercase tracking-[0.2em] text-[#C9A962]"
+    "scale": {
+      "h1": {
+        "desktop": "text-6xl md:text-7xl font-light tracking-tight leading-tight",
+        "mobile": "text-4xl font-normal tracking-tight leading-tight",
+        "usage": "Hero Headlines"
+      },
+      "h2": {
+        "desktop": "text-4xl md:text-5xl font-light tracking-tight",
+        "mobile": "text-3xl font-normal tracking-tight",
+        "usage": "Section Headers"
+      },
+      "h3": {
+        "desktop": "text-2xl md:text-3xl font-medium",
+        "mobile": "text-xl font-medium",
+        "usage": "Card Titles, Feature Names"
+      },
+      "body_lg": {
+        "desktop": "text-lg md:text-xl font-light leading-relaxed",
+        "mobile": "text-base font-light leading-relaxed",
+        "usage": "Intro Text, Lead Paragraphs"
+      },
+      "body_base": {
+        "desktop": "text-base font-normal leading-relaxed text-zinc-400",
+        "mobile": "text-sm font-normal leading-relaxed text-zinc-400",
+        "usage": "Standard Description"
+      },
+      "label": {
+        "desktop": "text-sm font-medium tracking-[0.2em] uppercase text-[#C9A962]",
+        "mobile": "text-xs font-medium tracking-[0.15em] uppercase text-[#C9A962]",
+        "usage": "Eyebrows, Tags, Categories"
+      }
     }
   },
-  "colors": {
-    "background": {
-      "page": "bg-[#050505]",
-      "card": "bg-[#0A0A0A]",
-      "card_hover": "bg-[#111111]",
-      "glass": "bg-black/60 backdrop-blur-xl"
+  "spacing_layout": {
+    "container": {
+      "desktop": "max-w-7xl mx-auto px-8 md:px-12",
+      "mobile": "w-full px-5"
     },
-    "text": {
-      "primary": "text-white",
-      "secondary": "text-neutral-400",
-      "accent": "text-[#C9A962]",
-      "muted": "text-white/20"
+    "section_padding": {
+      "desktop": "py-24 md:py-32",
+      "mobile": "py-16"
     },
-    "border": {
-      "subtle": "border-white/5",
-      "highlight": "border-[#C9A962]/30"
-    },
-    "gradients": {
-      "gold_glow": "bg-gradient-to-br from-[#C9A962]/20 via-transparent to-transparent",
-      "obsidian_shimmer": "bg-gradient-to-t from-black via-black/50 to-transparent",
-      "purple_replacement": "bg-gradient-to-br from-[#1a1a1a] to-black border border-[#C9A962]/20"
-    }
-  },
-  "layout_strategies": {
-    "mobile_container": "px-4 md:px-6 w-full max-w-7xl mx-auto",
-    "section_spacing": "py-16 md:py-24",
     "grid_system": {
-      "bento_mobile": "grid grid-cols-1 gap-4",
-      "bento_tablet": "grid grid-cols-2 gap-6",
-      "scroll_snap": "flex overflow-x-auto snap-x snap-mandatory gap-4 pb-8 no-scrollbar"
+      "bento_marketing": "grid grid-cols-1 md:grid-cols-12 gap-6 md:gap-8",
+      "cards_standard": "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
+    },
+    "z_index": {
+      "sticky_nav": "z-50",
+      "modal": "z-[100]",
+      "toast": "z-[110]",
+      "overlay": "z-40"
     }
   },
-  "component_rules": {
-    "Hero Section": {
-      "styles": "h-[85vh] relative overflow-hidden bg-black",
-      "fixes": [
-        "Ensure video poster/fallback is a high-res dark interior image, never black.",
-        "Remove 'We serve...' text from hero to reduce clutter.",
-        "Gradient overlay must be 'from-black via-black/40 to-transparent' to make text pop."
-      ]
+  "components": {
+    "buttons": {
+      "primary": {
+        "base": "bg-[#C9A962] text-[#050505] hover:bg-[#D4B875] hover:-translate-y-1 transition-all duration-300 font-medium px-8 py-3 rounded-none uppercase tracking-widest text-sm",
+        "mobile": "w-full text-center justify-center"
+      },
+      "secondary": {
+        "base": "bg-transparent border border-zinc-700 text-white hover:border-[#C9A962] hover:text-[#C9A962] transition-all duration-300 px-8 py-3 rounded-none uppercase tracking-widest text-sm",
+        "mobile": "w-full text-center justify-center"
+      }
     },
-    "Trust Badges": {
-      "redesign": "Glass Strip",
-      "styles": "absolute bottom-0 left-0 right-0 z-20 bg-black/80 backdrop-blur-md border-t border-white/10 py-4",
-      "content": "Monochrome logos (opacity-50) + minimalist stats (text-xs uppercase). Single row, scrolling if needed."
+    "cards": {
+      "base": "bg-[#0A0A0A] border border-zinc-900 hover:border-[#C9A962]/50 transition-colors duration-300 p-8 flex flex-col gap-4",
+      "interactive": "group relative overflow-hidden bg-[#0A0A0A] border border-zinc-900 hover:border-[#C9A962] transition-all duration-500"
     },
-    "Solutions Section": {
-      "styles": "bg-[#050505] relative",
-      "card_style": "aspect-[4/5] relative rounded-2xl overflow-hidden group border border-white/5",
-      "typography": "Title at bottom-left, overlaid on image gradient. No 'Read More' buttons - entire card is clickable."
-    },
-    "Planning Tools (The Purple Fix)": {
-      "container": "bg-[#050505]",
-      "smart_builder_card": "col-span-full aspect-video rounded-3xl relative overflow-hidden border border-[#C9A962]/20 group",
-      "background": "Use a dark architectural wireframe video or image. NO PURPLE GRADIENTS.",
-      "overlay": "bg-gradient-to-r from-black/90 via-black/50 to-transparent",
-      "text": "Gold accent for 'AI Powered', White for main title."
-    },
-    "Stats Section": {
-      "styles": "bg-[#050505] py-20 border-y border-white/5",
-      "number_style": "text-5xl md:text-7xl font-serif text-transparent bg-clip-text bg-gradient-to-b from-[#C9A962] to-[#8a7035]",
-      "label_style": "text-xs tracking-[0.3em] uppercase text-neutral-500 mt-2"
-    },
-    "Navigation (Mobile)": {
-      "tab_bar": "fixed bottom-4 left-4 right-4 h-16 bg-black/80 backdrop-blur-2xl rounded-full border border-white/10 shadow-2xl z-50 flex items-center justify-around px-2",
-      "fab_integration": "The central item of the tab bar should be the 'Quick Actions' trigger (Gold Icon).",
-      "aura_avatar": "Move AURA avatar to inside the 'Quick Actions' menu or make it a subtle animated icon in the top-right header."
+    "inputs": {
+      "base": "bg-[#121212] border border-zinc-800 focus:border-[#C9A962] focus:ring-1 focus:ring-[#C9A962] text-white placeholder:text-zinc-600 px-4 py-3 rounded-none outline-none transition-all"
     }
   },
-  "visual_enhancers": {
-    "glass_morphism": "backdrop-blur-xl bg-white/5 border border-white/10",
-    "text_glow": "drop-shadow-[0_0_15px_rgba(201,169,98,0.3)]",
-    "borders": "1px solid rgba(255,255,255,0.08)"
+  "mobile_excellence_checklist": [
+    "Touch Targets: All interactive elements must be min-height 44px.",
+    "Typography: No font size smaller than 14px for readable text (12px allowed for labels).",
+    "Padding: Minimum 20px (px-5) horizontal padding on all containers.",
+    "Stacking: Grid columns must collapse to 1 column on mobile (grid-cols-1).",
+    "Navigation: Use bottom sheet or full-screen overlay for mobile menu. No tiny hamburger menus.",
+    "Performance: Lazy load all images below the fold."
+  ],
+  "migration_guide": {
+    "step_1_clean_palette": "Replace all instances of slate-800, slate-900, gray-900, #0d1321 with #0A0A0A or #050505.",
+    "step_2_gold_standard": "Ensure all accents are exactly #C9A962. Remove any blue-ish primary colors.",
+    "step_3_typography_audit": "Apply the H1-H6 classes to all pages. Remove arbitrary pixel sizes (e.g., text-[40px]).",
+    "step_4_spacing_expansion": "Increase all py-10 or py-12 to py-16 or py-24 for desktop.",
+    "step_5_border_refine": "Change all borders to border-zinc-800 (subtle) or border-[#C9A962] (active). Remove thick borders."
   },
+  "universal_guidelines": [
+    "Avoid Gradients on Backgrounds: Use solid #050505 with subtle noise texture if needed.",
+    "No Blue/Cool Tones: The palette is strictly Warm/Neutral.",
+    "Sharp Corners: Prefer rounded-none or rounded-sm for a technical, precise luxury feel.",
+    "Uppercase Labels: All small labels/tags must be uppercase with tracking-widest.",
+    "Data Test IDs: All interactive elements MUST have data-testid attributes."
+  ],
   "image_strategy": {
-    "hero": {
-      "search_query": "luxury dark interior penthouse night dubai",
-      "alt": "Dark luxury penthouse interior in Dubai"
-    },
-    "solutions": {
-      "cinema": "home theater dark luxury cinematic",
-      "lighting": "smart lighting interior mood dark",
-      "security": "smart home security system sleek"
-    },
-    "tools": {
-      "builder": "architectural blueprint digital dark glowing",
-      "calculator": "luxury calculator gold minimalist"
-    }
-  },
-  "universal_guidelines_for_main_agent": [
-    "FORCE DARK MODE: Apply 'dark' class to the html tag or wrap the main provider.",
-    "REMOVE WHITE BACKGROUNDS: Grep for 'bg-white', 'bg-gray-50', 'bg-slate-50' and replace with 'bg-[#050505]' or 'bg-transparent'.",
-    "GOLD ACCENTS ONLY: Use #C9A962 for primary actions/highlights. Avoid green/blue/purple unless functionally critical (e.g. success states).",
-    "REDUCE PADDING: On mobile, use p-4 or p-5. Avoid p-12 or p-16 which wastes screen real estate.",
-    "SNAP SCROLLING: For all horizontal lists (Tools, Projects), use 'snap-x snap-mandatory' for a native app feel.",
-    "DATA-TESTID: Ensure all interactive elements have data-testid attributes."
-  ]
+    "style": "Cinematic, dark, warm lighting, high contrast.",
+    "subject_matter": "Luxury interiors, smart home interfaces, affluent lifestyle, architectural details.",
+    "avoid": "Generic stock photos, bright daylight scenes (unless specific context), cartoony illustrations."
+  }
 }
