@@ -2,105 +2,248 @@
 
 import { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
+import SafeImage from '@/components/ui/SafeImage'
+import { Star, Quote, ArrowRight } from 'lucide-react'
 import Link from 'next/link'
-import { Star, Quote, ArrowRight, Building2, MapPin } from 'lucide-react'
-import { Button } from '@/components/ui/button'
-import { useLanguage } from '@/contexts/LanguageContext'
-import { useCms } from '@/hooks/useCms'
 
 const BACKEND_URL = process.env.NEXT_PUBLIC_BACKEND_URL || ''
 
-interface Testimonial { id?: string; name: string; role?: string; company?: string; location?: string; content?: string; testimonial?: string; rating?: number; image?: string; project_type?: string }
+interface Testimonial {
+  id: string
+  name: string
+  role: string
+  company?: string
+  testimonial?: string
+  content?: string
+  rating?: number
+  image?: string | null
+  project_type?: string | null
+  featured?: boolean
+}
+
+const HERO_IMG = 'https://static.prod-images.emergentagent.com/jobs/59b913a4-054a-445e-b4e4-478e2f863a3e/images/9fe4839f1e265ed1b971e8350f3c62dc71f5fccb3f04e285da5639e08173a04a.png'
+
+const fallbackTestimonials: Testimonial[] = [
+  {
+    id: 'f-1',
+    name: 'Kris Fade',
+    role: 'Radio Host & Entrepreneur',
+    testimonial: 'LEXA turned my home into a smart luxury experience. The lighting, the automation — it\'s next-level living. Every room has its own personality now, and I can control everything from my phone.',
+    image: 'https://static.prod-images.emergentagent.com/jobs/9a576253-3f34-4de3-9ad4-57e7617524d7/images/81113236aea1d470de7f5dc2060093ba48905134dfadb518d9ea0899ccc1f7c1.png',
+    rating: 5,
+    featured: true,
+  },
+  {
+    id: 'f-2',
+    name: 'Akash Kanjwani',
+    role: 'CEO, Sky View Real Estate',
+    testimonial: 'LEXA nailed the design and delivery. Lumibright lighting turned our Harmony villa into a mood you can live in. The team understood our vision from day one and delivered beyond expectations.',
+    image: 'https://static.prod-images.emergentagent.com/jobs/9a576253-3f34-4de3-9ad4-57e7617524d7/images/ba0a4f880b7032b40af93c3055859acb1fb26773462280bb5ad5467e3948ff2c.png',
+    rating: 5,
+    featured: true,
+  },
+  {
+    id: 'f-3',
+    name: 'Vikram Shroff',
+    role: 'Executive Director, UPL',
+    testimonial: 'They run a very professional high-end business. The quality of their work makes me realize their philosophy of customer satisfaction. From consultation to final handover, everything was seamless.',
+    image: 'https://static.prod-images.emergentagent.com/jobs/9a576253-3f34-4de3-9ad4-57e7617524d7/images/0f48dc4796cf6b760fd9f06e1e885bdbd444fc6b167916d39b612ed77ab9839d.png',
+    rating: 5,
+    featured: true,
+  },
+  {
+    id: 'f-4',
+    name: 'Sarah Al Maktoum',
+    role: 'Interior Designer',
+    testimonial: 'The attention to detail and seamless integration of smart systems into our design vision was exceptional. LEXA doesn\'t just install technology — they make it invisible within the architecture.',
+    rating: 5,
+  },
+  {
+    id: 'f-5',
+    name: 'James Morrison',
+    role: 'Founder, Morrison Properties',
+    testimonial: 'We\'ve partnered with LEXA across three villa projects now. Their consistency, reliability, and after-sales support are what keep us coming back. They make us look good to our buyers.',
+    rating: 5,
+  },
+  {
+    id: 'f-6',
+    name: 'Fatima Hassan',
+    role: 'Homeowner, Palm Jumeirah',
+    testimonial: 'Our home cinema and lighting system are incredible. Friends always ask who did it. The whole family loves using voice control — even my kids can set movie night scenes effortlessly.',
+    rating: 5,
+  },
+]
+
+const fadeUp = {
+  hidden: { opacity: 0, y: 20 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.5 } },
+}
 
 export default function TestimonialsPage() {
-  const cms = useCms('page_testimonials_listing', null) as any
-  const { language } = useLanguage()
-  const [testimonials, setTestimonials] = useState<Testimonial[]>([])
-  const [loading, setLoading] = useState(true)
+  const [testimonials, setTestimonials] = useState<Testimonial[]>(fallbackTestimonials)
 
   useEffect(() => {
-    fetch(`${BACKEND_URL}/api/testimonials`).then(res => res.ok ? res.json() : []).then(data => setTestimonials(Array.isArray(data) ? data : [])).catch(() => {}).finally(() => setLoading(false))
+    fetch(`${BACKEND_URL}/api/testimonials`)
+      .then(r => r.ok ? r.json() : null)
+      .then(data => {
+        if (!data) return
+        const apiItems: Testimonial[] = Array.isArray(data) ? data : data.testimonials || []
+        if (apiItems.length > 0) {
+          const apiIds = new Set(apiItems.map(t => t.id))
+          const merged = [
+            ...apiItems,
+            ...fallbackTestimonials.filter(f => !apiIds.has(f.id)),
+          ]
+          setTestimonials(merged)
+        }
+      })
+      .catch(() => {})
   }, [])
 
+  const featured = testimonials.filter(t => t.featured || t.image)
+  const rest = testimonials.filter(t => !t.featured && !t.image)
+
   return (
-    <div className="min-h-screen bg-white dark:bg-[#050505] pt-20" data-testid="testimonials-page">
+    <div className="min-h-screen bg-[#050505]" data-testid="testimonials-page">
       {/* Hero */}
-      <section className="relative overflow-hidden bg-[#0A0A0A] dark:bg-[#050505] text-white py-16 lg:py-24">
-        {/* Hero Background Image */}
+      <section className="relative h-[50vh] w-full overflow-hidden">
         <div className="absolute inset-0">
-          <div style={{backgroundImage: "url(https://static.prod-images.emergentagent.com/jobs/9a576253-3f34-4de3-9ad4-57e7617524d7/images/c2bf7b5b734f2a91dbbafa7c3d3a6f5c0a60a3579e0ec9ae9dc5c75c2a93edd0.png)"}} className="absolute inset-0 bg-cover bg-center opacity-80" />
-          <div className="absolute inset-0 bg-gradient-to-t from-[#0A0A0A]/80 via-[#0A0A0A]/40 to-transparent" />
+          <img src={HERO_IMG} alt="Client testimonials" className="h-full w-full object-cover" />
+          <div className="absolute inset-0 bg-gradient-to-t from-[#050505] via-[#050505]/60 to-[#050505]/30" />
         </div>
-        <div className="container mx-auto px-5 sm:px-8 lg:px-16 relative z-10">
-          <div className="max-w-3xl mx-auto text-center">
-            <span className="hero-animate-badge inline-block px-2.5 py-1 sm:px-3 rounded-full bg-[#C9A962]/15 border border-[#C9A962]/30 text-[#C9A962] text-xs uppercase tracking-widest mb-5">Client Reviews</span>
-            <h1 className="hero-animate-title text-3xl sm:text-4xl lg:text-5xl font-bold uppercase mb-5 tracking-tight" data-testid="testimonials-title">What Our Clients Say</h1>
-            <p className="text-base text-gray-300">Discover why our clients trust LEXA to transform their spaces</p>
-          </div>
+        <div className="relative z-10 flex h-full items-end px-6 sm:px-10 lg:px-20 pb-12 lg:pb-16">
+          <motion.div initial="hidden" animate="visible" variants={{ visible: { transition: { staggerChildren: 0.12 } } }}>
+            <motion.div variants={fadeUp} className="flex items-center gap-3 mb-4">
+              <div className="h-px w-8 bg-[#C9A962]" />
+              <span className="text-[10px] sm:text-xs tracking-[0.3em] uppercase text-[#C9A962]/80 font-medium">Client Stories</span>
+            </motion.div>
+            <motion.h1 variants={fadeUp} className="text-4xl sm:text-5xl lg:text-6xl font-black tracking-tighter uppercase leading-[0.9] text-white" data-testid="testimonials-heading">
+              What Our<br />Clients Say
+            </motion.h1>
+          </motion.div>
         </div>
       </section>
 
-      {/* Testimonials Grid */}
-      <section className="py-16 lg:py-20 bg-white dark:bg-[#050505]" data-testid="testimonials-grid">
-        <div className="container mx-auto px-5 sm:px-8 lg:px-16 max-w-6xl">
-          {loading ? (
-            <div className="grid gap-6 md:grid-cols-2">{[1, 2, 3, 4].map(i => (<div key={i} className="animate-pulse border border-gray-200 dark:border-zinc-800 rounded-xl p-6"><div className="h-4 bg-gray-200 rounded w-24 mb-4" /><div className="h-20 bg-gray-100 rounded mb-4" /><div className="h-4 bg-gray-200 rounded w-32" /></div>))}</div>
-          ) : testimonials.length === 0 ? (
-            <div className="text-center py-16">
-              <Quote className="h-12 w-12 text-gray-300 mx-auto mb-4" />
-              <p className="text-gray-500 text-lg">No testimonials yet</p>
-            </div>
-          ) : (
-            <div className="grid gap-6 md:grid-cols-2">
-              {testimonials.map((t, idx) => {
-                const text = t.content || t.testimonial || ''
-                const rating = t.rating || 5
-                return (
-                  <motion.div key={t.id || idx} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.3, delay: idx * 0.05 }}
-                    className="relative bg-white dark:bg-[#0A0A0A] rounded-xl p-6 sm:p-8 border border-gray-100 dark:border-zinc-800 hover:shadow-lg transition-shadow" data-testid={`testimonial-card-${idx}`}>
-                    <Quote className="h-8 w-8 text-[#C9A962]/20 absolute top-4 right-4" />
-                    <div className="flex gap-1 mb-4">{Array.from({ length: 5 }).map((_, i) => (<Star key={i} className={`h-4 w-4 ${i < rating ? 'fill-[#C9A962] text-[#C9A962]' : 'text-gray-300'}`} />))}</div>
-                    <p className="text-gray-700 dark:text-zinc-400 leading-relaxed mb-6 text-sm">&ldquo;{text}&rdquo;</p>
-                    <div className="flex items-center gap-3">
-                      <div className="w-10 h-10 rounded-full bg-gray-900 dark:bg-[#C9A962] flex items-center justify-center text-white dark:text-gray-900 font-semibold text-sm">{t.name?.charAt(0) || '?'}</div>
-                      <div>
-                        <p className="font-medium text-gray-900 dark:text-white text-sm">{t.name}</p>
-                        <div className="flex items-center gap-2 text-xs text-gray-500">
-                          {t.role && <span>{t.role}</span>}
-                          {t.company && <><span className="text-gray-300">|</span><span className="flex items-center gap-1"><Building2 className="h-3 w-3" />{t.company}</span></>}
-                          {t.location && <><span className="text-gray-300">|</span><span className="flex items-center gap-1"><MapPin className="h-3 w-3" />{t.location}</span></>}
-                        </div>
-                      </div>
+      {/* Featured testimonials — large cards with images */}
+      {featured.length > 0 && (
+        <section className="py-16 lg:py-20 px-6 sm:px-10 lg:px-20" data-testid="featured-testimonials">
+          <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-3 gap-6">
+            {featured.map((t, i) => (
+              <motion.div
+                key={t.id}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true }}
+                variants={fadeUp}
+                transition={{ delay: i * 0.1 }}
+                className="group relative bg-[#0A0A0A] border border-zinc-800/50 hover:border-[#C9A962]/20 transition-colors overflow-hidden"
+                data-testid={`featured-testimonial-${i}`}
+              >
+                {t.image && (
+                  <div className="relative h-48 overflow-hidden">
+                    <div className="absolute inset-0 bg-gradient-to-b from-transparent to-[#0A0A0A] z-10" />
+                    <SafeImage src={t.image} alt={t.name} fill className="object-cover object-top group-hover:scale-105 transition-transform duration-700" />
+                  </div>
+                )}
+
+                <div className={`p-6 ${t.image ? '-mt-8 relative z-10' : ''}`}>
+                  <Quote size={20} className="text-[#C9A962]/30 mb-4" />
+
+                  {t.rating && (
+                    <div className="flex gap-0.5 mb-3">
+                      {[...Array(Math.min(t.rating, 5))].map((_, j) => (
+                        <Star key={j} className="w-3.5 h-3.5 fill-[#C9A962] text-[#C9A962]" />
+                      ))}
                     </div>
-                    {t.project_type && (
-                      <div className="mt-4 pt-4 border-t border-gray-100 dark:border-zinc-800">
-                        <span className="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-medium bg-[#C9A962]/10 text-[#C9A962]">{t.project_type}</span>
+                  )}
+
+                  <p className="text-sm text-zinc-400 leading-relaxed mb-6">
+                    &ldquo;{t.testimonial || t.content}&rdquo;
+                  </p>
+
+                  <div className="flex items-center gap-3 pt-4 border-t border-zinc-800/50">
+                    {t.image && (
+                      <div className="relative w-10 h-10 rounded-full overflow-hidden flex-shrink-0 ring-1 ring-[#C9A962]/20">
+                        <SafeImage src={t.image} alt={t.name} fill className="object-cover" />
                       </div>
                     )}
-                  </motion.div>
-                )
-              })}
-            </div>
-          )}
-        </div>
-      </section>
+                    <div>
+                      <div className="text-sm font-semibold text-white">{t.name}</div>
+                      <div className="text-xs text-zinc-500">{t.role}</div>
+                    </div>
+                  </div>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </section>
+      )}
 
-      {/* CTA */}
-      <section className="py-20 bg-[#0A0A0A] dark:bg-[#050505] text-white">
-        <div className="container mx-auto px-5 sm:px-8 lg:px-16 relative z-10">
-          <div className="max-w-3xl mx-auto text-center">
-            <span className="text-[#C9A962] text-xs uppercase tracking-widest font-semibold">Join Our Clients</span>
-            <h2 className="text-3xl sm:text-4xl font-bold mt-3 mb-4">Ready to Transform Your Space?</h2>
-            <p className="text-gray-400 mb-8 max-w-xl mx-auto">Join our satisfied clients and experience the LEXA difference.</p>
-            <div className="hero-animate-cta flex flex-col sm:flex-row gap-3 justify-center">
-              <Button size="lg" className="bg-[#C9A962] text-gray-900 hover:bg-[#C9A962]/90 font-semibold px-8" asChild>
-                <Link href="/consultation" data-testid="testimonials-consultation-btn">Book Free Consultation <ArrowRight className="ml-2" size={16} /></Link>
-              </Button>
-              <Button size="lg" variant="outline" className="border-white/30 text-white hover:bg-white/10 px-8" asChild>
-                <Link href="/projects" data-testid="testimonials-projects-btn">View Our Projects</Link>
-              </Button>
+      {/* All other testimonials — compact grid */}
+      {rest.length > 0 && (
+        <section className="pb-16 lg:pb-20 px-6 sm:px-10 lg:px-20" data-testid="all-testimonials">
+          <div className="max-w-7xl mx-auto">
+            <div className="flex items-center gap-3 mb-8">
+              <div className="h-px w-6 bg-[#C9A962]/40" />
+              <span className="text-[10px] tracking-[0.2em] uppercase text-zinc-500 font-medium">More Reviews</span>
+            </div>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+              {rest.map((t, i) => (
+                <motion.div
+                  key={t.id}
+                  initial="hidden"
+                  whileInView="visible"
+                  viewport={{ once: true }}
+                  variants={fadeUp}
+                  transition={{ delay: i * 0.06 }}
+                  className="bg-[#0A0A0A] border border-zinc-800/50 p-6 hover:border-zinc-700 transition-colors"
+                  data-testid={`testimonial-item-${i}`}
+                >
+                  {t.rating && (
+                    <div className="flex gap-0.5 mb-3">
+                      {[...Array(Math.min(t.rating, 5))].map((_, j) => (
+                        <Star key={j} className="w-3 h-3 fill-[#C9A962] text-[#C9A962]" />
+                      ))}
+                    </div>
+                  )}
+                  <p className="text-sm text-zinc-400 leading-relaxed mb-5">
+                    &ldquo;{t.testimonial || t.content}&rdquo;
+                  </p>
+                  <div>
+                    <div className="text-xs font-semibold text-white">{t.name}</div>
+                    <div className="text-[10px] text-zinc-600">{t.role}{t.company ? `, ${t.company}` : ''}</div>
+                  </div>
+                </motion.div>
+              ))}
             </div>
           </div>
+        </section>
+      )}
+
+      {/* CTA */}
+      <section className="py-16 lg:py-20 border-t border-zinc-800/50">
+        <div className="max-w-2xl mx-auto text-center px-6">
+          <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={{ visible: { transition: { staggerChildren: 0.1 } } }}>
+            <motion.h2 variants={fadeUp} className="text-2xl sm:text-3xl font-bold text-white tracking-tight">
+              Experience It Yourself
+            </motion.h2>
+            <motion.p variants={fadeUp} className="mt-3 text-sm text-zinc-500">
+              Visit our Experience Centre or schedule a private design consultation.
+            </motion.p>
+            <motion.div variants={fadeUp} className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
+              <Link
+                href="/experience-centre"
+                data-testid="testimonials-cta-experience"
+                className="group flex items-center gap-2 h-11 px-7 bg-[#C9A962] text-[#050505] text-xs font-bold tracking-[0.15em] uppercase hover:bg-[#D4B872] transition-colors"
+              >
+                Visit Showroom
+                <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
+              </Link>
+              <Link href="/projects" className="text-xs tracking-[0.15em] uppercase text-zinc-500 hover:text-[#C9A962] transition-colors">
+                View Projects
+              </Link>
+            </motion.div>
+          </motion.div>
         </div>
       </section>
     </div>

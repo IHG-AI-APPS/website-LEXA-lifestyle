@@ -52,6 +52,12 @@ Complete website overhaul: premium "Dark Luxury" design, 100% dynamic content, a
 - Moved "Catalogues" from header navigation to footer "Quick Links"
 - Added golden CTA band below hero: "Find Your Perfect Solution" + "View Projects" equally divided
 
+### Testimonials Full Page (Mar 2026)
+- Created /testimonials page with cinematic hero, featured 3-col cards with client photos, and compact "More Reviews" grid
+- Merges API testimonials with fallback data (no duplicates)
+- Linked from homepage "View All" button
+- CTA section links to Experience Centre and Projects
+
 ## Admin Credentials
 - URL: `/admin/login`, Username: `admin`, Password: `lexa2026`
 
