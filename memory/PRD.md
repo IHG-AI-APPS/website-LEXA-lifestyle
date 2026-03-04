@@ -74,6 +74,16 @@ Complete website overhaul: premium "Dark Luxury" design, 100% dynamic content, a
 - Certifications: Control4 Diamond Dealer, Crestron Certified, CEDIA, KNX
 - Stats: 500+ villas, 15+ years, 50+ projects, 98% satisfaction
 
+### Service Worker v5 (Mar 2026)
+- External image caching (AI-generated images on emergentagent.com CDN) — dedicated IMAGE_CACHE
+- Navigation preload enabled for faster page transitions
+- API prefetching on install (solutions, services, testimonials, brands)
+- Video range-request passthrough (no caching, native browser handling)
+- Periodic stale API cleanup (30 min intervals)
+- Cache size limits: 200 static, 80 images, 120 API entries
+- Version messaging support (getVersion)
+- 4 dedicated caches: static-v5, images-v1, api-v3, offline-v2
+
 ## Remaining Backlog
 - Generate new custom AI hero video (needs Emergent LLM Key balance top-up for Sora 2)
 - "Compare Packages" side-by-side conversion feature
