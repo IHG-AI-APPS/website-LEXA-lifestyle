@@ -23,33 +23,30 @@ export default function LuxuryHomeCinemaDubaiPage() {
   return (
     <div className="min-h-screen bg-[#0A0A0A] text-white">
       {/* HERO */}
-      <section className="relative min-h-screen flex items-center justify-center">
+      <section className="relative min-h-[70vh] flex items-center justify-center pt-20">
         <div className="absolute inset-0 z-0">
           <SafeImage
             src="https://images.unsplash.com/photo-1673512703111-c38c42a1f1a3"
             alt="Luxury Home Cinema Dubai"
             fill
-            className="object-cover opacity-40"
+            className="object-cover opacity-80"
             priority
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-[#0A0A0A] via-[#0A0A0A]/80 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-t from-[#0A0A0A]/80 via-[#0A0A0A]/40 to-transparent" />
         </div>
 
-        <div className="relative z-10 content-container text-center">
+        <div className="relative z-10 container mx-auto px-5 sm:px-8 lg:px-16 text-center">
           <motion.div
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
-            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-light tracking-tight leading-tight mb-6 md:mb-8">
-              Luxury Home Cinema<br />
-              <span className="text-[#E8DCC8]">in Dubai</span>
+            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold uppercase tracking-tight leading-tight mb-5">
+              LUXURY HOME CINEMA<br />
+              <span className="text-[#E8DCC8]">IN DUBAI</span>
             </h1>
-            <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl text-zinc-300 mb-4 md:mb-6 max-w-4xl mx-auto font-light">
-              Private Cinematic Experiences. Designed, Engineered & Delivered End-to-End.
-            </p>
-            <p className="text-sm sm:text-base md:text-lg text-zinc-400 mb-8 md:mb-12 max-w-3xl mx-auto leading-relaxed">
-              Transform your villa or penthouse into a true private cinema — engineered with professional acoustics, architectural lighting, premium seating, AV systems, networking, and intelligent controls.
+            <p className="text-sm sm:text-base text-zinc-300 mb-8 max-w-2xl mx-auto leading-relaxed">
+              Private cinematic experiences — designed, engineered &amp; delivered end-to-end. Transform your villa into a true private cinema.
             </p>
             <div className="flex flex-col sm:flex-row flex-wrap gap-3 md:gap-4 justify-center">
               <Button

@@ -123,6 +123,10 @@ export default function Header() {
     return () => window.removeEventListener('scroll', handleScroll)
   }, [prevScroll])
 
+  // Logo logic: use white logo on dark backgrounds, black logo on light backgrounds
+  const useDarkLogo = shouldUseDarkText && theme !== 'dark'
+  const logoSrc = useDarkLogo ? "/lexa-black.png" : "/lexa-white.png"
+
   const navigation = [
     { name: t('nav.brands'), href: '/brands' },
     { name: t('nav.projects'), href: '/projects' },
@@ -157,11 +161,11 @@ export default function Header() {
             <Link href="/" className="relative group">
               <div className="relative w-28 h-11 sm:w-28 sm:h-12 lg:w-36 lg:h-14 transition-opacity duration-300 group-hover:opacity-70">
                 <SafeImage
-                  src={shouldUseDarkText ? "/lexa-black.png" : "/lexa-white.png"}
+                  src={logoSrc}
                   alt="LEXA"
                   fill
                   sizes="(max-width: 640px) 96px, (max-width: 1024px) 112px, 144px"
-                  className={`object-contain transition-all duration-300 ${shouldUseDarkText ? 'dark:invert' : ''}`}
+                  className="object-contain transition-all duration-300"
                   priority
                 />
               </div>

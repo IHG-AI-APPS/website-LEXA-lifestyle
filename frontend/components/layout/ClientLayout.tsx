@@ -37,6 +37,8 @@ export default function ClientLayout({ children }: { children: React.ReactNode }
   useEffect(() => {
     if (!isAdminPage && pathname) {
       trackPageView(pathname)
+      // Scroll to top on route change
+      window.scrollTo(0, 0)
     }
   }, [pathname, isAdminPage])
 

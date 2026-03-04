@@ -19,6 +19,7 @@ const ExperienceCentreCTA = dynamic(() => import('@/components/homepage/Experien
 const TrustedInUAE = dynamic(() => import('@/components/sections/TrustedInUAE').catch(() => ({ default: Noop })), {
   loading: () => <div className="h-[300px] bg-[#050505]" />
 })
+const Testimonials = dynamic(() => import('@/components/sections/Testimonials').catch(() => ({ default: Noop })))
 
 export default function HomePage() {
   const cms = useCms('page_homepage', null)
@@ -38,6 +39,8 @@ export default function HomePage() {
       <TetrisProjects />
       
       <TrustedInUAE variant="full" showStats={true} />
+      
+      <Testimonials />
       
       <StatsSection />
       

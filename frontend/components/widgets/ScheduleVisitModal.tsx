@@ -147,7 +147,7 @@ export default function ScheduleVisitModal({
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.95, y: 20 }}
             transition={{ type: 'spring', damping: 25, stiffness: 300 }}
-            className="fixed left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-sm sm:max-w-md bg-white dark:bg-[#0d1321] rounded-xl shadow-2xl z-50 overflow-hidden max-h-[85vh] overflow-y-auto"
+            className="fixed inset-x-4 sm:inset-x-auto sm:left-1/2 top-1/2 sm:-translate-x-1/2 -translate-y-1/2 w-auto sm:w-full max-w-sm sm:max-w-md bg-white dark:bg-[#0d1321] rounded-xl shadow-2xl z-50 overflow-hidden max-h-[85vh] overflow-y-auto"
           >
             {/* Header - Compact */}
             <div className="relative bg-gradient-to-r from-[#1A1A1A] to-[#2a2a2a] dark:from-[#E8DCC8] dark:to-[#d4c4a8] p-4 text-white dark:text-[#1A1A1A]">

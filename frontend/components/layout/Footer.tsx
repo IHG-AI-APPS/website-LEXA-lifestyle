@@ -35,11 +35,11 @@ export default function Footer() {
           <div className="lg:col-span-4 space-y-6">
             <Link href="/">
               <SafeImage 
-                src="/lexa-black.png" 
+                src="/lexa-white.png" 
                 alt="LEXA Lifestyle" 
                 width={140} 
                 height={60}
-                className="object-contain invert brightness-200"
+                className="object-contain"
                 style={{ width: 'auto', height: 'auto' }}
               />
             </Link>
