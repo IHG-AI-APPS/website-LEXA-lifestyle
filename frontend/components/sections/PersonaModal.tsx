@@ -4,6 +4,8 @@ import { useRouter } from 'next/navigation'
 import { X } from 'lucide-react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Button } from '@/components/ui/button'
+import { useState, useEffect } from 'react'
+import { createPortal } from 'react-dom'
 
 interface PersonaModalProps {
   isOpen: boolean
@@ -12,6 +14,9 @@ interface PersonaModalProps {
 
 export default function PersonaModal({ isOpen, onClose }: PersonaModalProps) {
   const router = useRouter()
+  const [mounted, setMounted] = useState(false)
+
+  useEffect(() => { setMounted(true) }, [])
 
   const personas = [
     {
@@ -45,10 +50,10 @@ export default function PersonaModal({ isOpen, onClose }: PersonaModalProps) {
     onClose()
   }
 
-  return (
+  const modalContent = (
     <AnimatePresence>
       {isOpen && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
+        <div className="fixed inset-0 z-[9998] flex items-center justify-center p-4" data-testid="persona-modal">
           {/* Backdrop */}
           <motion.div
             className="absolute inset-0 bg-black/80 backdrop-blur-sm"
@@ -60,7 +65,7 @@ export default function PersonaModal({ isOpen, onClose }: PersonaModalProps) {
 
           {/* Modal */}
           <motion.div
-            className="relative bg-lexa-black border border-gray-800 max-w-5xl w-full max-h-[90vh] overflow-y-auto"
+            className="relative bg-[#0A0A0A] border border-zinc-800 max-w-5xl w-full max-h-[90vh] overflow-y-auto"
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
             exit={{ opacity: 0, scale: 0.95 }}
@@ -69,8 +74,9 @@ export default function PersonaModal({ isOpen, onClose }: PersonaModalProps) {
             {/* Close Button */}
             <button
               onClick={onClose}
-              className="absolute top-4 right-4 text-white hover:text-accent transition-colors z-10"
+              className="absolute top-4 right-4 text-white hover:text-[#C9A962] transition-colors z-10"
               aria-label="Close modal"
+              data-testid="persona-modal-close"
             >
               <X size={28} />
             </button>
@@ -80,7 +86,7 @@ export default function PersonaModal({ isOpen, onClose }: PersonaModalProps) {
               <h2 className="text-3xl sm:text-4xl font-bold text-white mb-3 text-center">
                 HOW CAN WE HELP YOU?
               </h2>
-              <p className="text-gray-400 text-center mb-10 text-base">
+              <p className="text-zinc-400 text-center mb-10 text-base">
                 Choose the option that best describes you, or explore everything we offer
               </p>
 
@@ -93,6 +99,7 @@ export default function PersonaModal({ isOpen, onClose }: PersonaModalProps) {
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: index * 0.1 }}
                     onClick={() => handlePersonaClick(persona.href)}
+                    data-testid={`persona-card-${index}`}
                   >
                     {/* Background Image */}
                     <div
@@ -108,7 +115,7 @@ export default function PersonaModal({ isOpen, onClose }: PersonaModalProps) {
                       <Button
                         size="sm"
                         variant="outline"
-                        className="w-fit bg-transparent text-white border-white hover:bg-accent hover:text-lexa-black hover:border-accent"
+                        className="w-fit bg-transparent text-white border-white hover:bg-[#C9A962] hover:text-[#050505] hover:border-[#C9A962]"
                       >
                         EXPLORE
                       </Button>
@@ -117,11 +124,12 @@ export default function PersonaModal({ isOpen, onClose }: PersonaModalProps) {
                 ))}
               </div>
 
-              {/* Skip Option - Easy to find */}
-              <div className="text-center pt-4 border-t border-gray-800">
+              {/* Skip Option */}
+              <div className="text-center pt-4 border-t border-zinc-800">
                 <button
                   onClick={onClose}
-                  className="text-gray-400 hover:text-white text-sm transition-colors underline decoration-dotted underline-offset-4"
+                  className="text-zinc-500 hover:text-white text-sm transition-colors underline decoration-dotted underline-offset-4"
+                  data-testid="persona-skip"
                 >
                   Skip for now, I&apos;ll explore on my own
                 </button>
@@ -132,4 +140,7 @@ export default function PersonaModal({ isOpen, onClose }: PersonaModalProps) {
       )}
     </AnimatePresence>
   )
+
+  if (!mounted) return null
+  return createPortal(modalContent, document.body)
 }
