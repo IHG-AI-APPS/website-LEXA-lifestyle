@@ -1,34 +1,13 @@
 # LEXA Lifestyle Website - Product Requirements Document
 
 ## Original Problem Statement
-Complete website overhaul for 100% dynamic content, a premium "Dark Luxury" design, and an app-like user experience. Site-wide color consistency (dark charcoal + gold only), mobile-first responsive enhancement, typography standardization, and premium micro-animations.
+Complete website overhaul for 100% dynamic content, a premium "Dark Luxury" design, and an app-like user experience. Site-wide color consistency (dark charcoal + gold only), mobile-first responsive enhancement, typography standardization, premium micro-animations, and custom AI-generated images.
 
 ## Core Architecture
 - **Frontend**: Next.js (production mode with `next start`)
 - **Backend**: FastAPI with MongoDB
 - **Theme**: Dark Charcoal (#050505, #0A0A0A, #171717) + Gold (#C9A962)
 - **Integrations**: OpenAI GPT (AURA chatbot), Gemini Nano Banana (avatar), WhatsApp/Interakt, Gmail SMTP, Google Maps, GA4, Meta Pixel
-
-## Design System
-
-### Color Palette
-| Token | Hex | Usage |
-|-------|-----|-------|
-| Void | #050505 | Page backgrounds, hero sections |
-| Obsidian | #0A0A0A | Card backgrounds, secondary surfaces |
-| Charcoal | #0F0F0F | Gray-50 dark override |
-| Charcoal Light | #171717 | Elevated cards, hover states |
-| Border | zinc-800 (#27272a) | All borders in dark mode |
-| Gold | #C9A962 | Accent color, CTAs, highlights |
-
-### Micro-Animations (globals.css)
-| Effect | Class | Duration | Where |
-|--------|-------|----------|-------|
-| Gold Shimmer Text | `gold-shimmer-text` | 6s linear infinite | Homepage hero H1 |
-| Gold Glow Pulse | `gold-glow-text` | 4s ease infinite | Homepage hero H1 |
-| CTA Button Shimmer | `gold-shimmer-btn` | 4s ease infinite | Primary CTA buttons |
-| Badge Border Pulse | `goldBadgeShimmer` | 4s ease infinite | All hero-animate-badge elements (20+ pages) |
-| Section Label Gold | `section-label-gold` | 8s linear infinite | Optional for section labels |
 
 ## What's Been Implemented
 
@@ -37,15 +16,37 @@ Complete website overhaul for 100% dynamic content, a premium "Dark Luxury" desi
 
 ### Completed - Site-wide Color Consistency Overhaul (Mar 2026)
 - CSS variables: blue HSL(222) → neutral HSL(0)
-- Dark mode overrides: all charcoal tones, zero blue tint
-- Bulk sed across 100+ files
-- Testing: 11/11 visual QA tests passed
+- All dark mode backgrounds, borders, text standardized to charcoal + zinc
+- Zero blue tint confirmed by testing agent (11/11 passed)
 
 ### Completed - Gold Shimmer Micro-Animations (Mar 2026)
-- Hero heading shimmer: subtle gold gradient sweep across "INTEGRATED LUXURY LIVING"
-- CTA button shimmer: light shine effect on gold "Find Your Perfect Solution" button
-- Badge shimmer: gold border pulse on all hero page badges (20+ pages)
-- All CSS-only, zero JS overhead, accessible (respects prefers-reduced-motion)
+- Hero heading shimmer, CTA button shimmer, badge border pulse
+- All CSS-only, zero JS overhead
+
+### Completed - AI-Generated Custom Images (Mar 2026)
+**15 total custom images generated via Gemini Imagen 4.0:**
+
+*Experience Centre page (7):*
+- Hero background (luxury showroom)
+- Smart Home Showcase, Home Cinema, Brand Gallery
+- Audio Systems, Lighting Studio, Security & Surveillance
+
+*Homepage components (8):*
+- Solutions Bento Grid: Smart Lighting, Smart Interior, Luxury Villa, Security (4 images)
+- Calculator Cards: Package Builder, Specialty Rooms, Cost Calculator, ROI Calculator (4 images)
+- Experience Centre CTA: Reused 5 experience centre images
+
+*Page heroes (3):*
+- About page: LEXA HQ showroom lobby
+- Blog page: Tablet controlling home automation
+- Services page: Technician installing smart panel
+
+*Projects fallback (1):*
+- Dubai penthouse with all automation systems active
+
+### Completed - Data Cleanup (Mar 2026)
+- Fixed test testimonial "TEST_PATCHED" → "Ahmed Al Maktoum"
+- Removed 2 junk test testimonials
 
 ### Completed - Service Worker v4
 - Network-first CMS, stale-while-revalidate APIs, cache-first static, offline page
@@ -56,9 +57,10 @@ Complete website overhaul for 100% dynamic content, a premium "Dark Luxury" desi
 ## Critical Notes
 - DO NOT modify `start` script in `package.json`
 - DO NOT re-add `X-Frame-Options` header in `next.config.mjs`
-- DO NOT reintroduce blue-tinted colors (HSL 222, #0d1321, #0a0f1a, slate-*)
+- DO NOT reintroduce blue-tinted colors
 - Frontend runs in production mode; changes require `npx next build` + `sudo supervisorctl restart frontend`
 
 ## Remaining Backlog
+- Generate AI images for remaining 25+ pages (location pages, specialty rooms, consultation, etc.)
 - "Compare Packages" side-by-side feature
-- Potential: extend gold shimmer to more section headings on scroll
+- Further mobile UX polish on secondary pages

@@ -20,10 +20,10 @@ const DEFAULT_FEATURED = {
 }
 
 const DEFAULT_TOOLS = [
-  { icon: 'Package', title: 'Package Builder', description: 'Design your complete smart home package step-by-step with live pricing', href: '/package-builder', cta: 'Build Your Package', image: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&q=85&auto=format&fit=crop' },
-  { icon: 'Sparkles', title: 'Specialty Rooms', description: 'Explore 22 premium specialty room automation solutions', href: '/specialty-rooms', cta: 'Explore Rooms', image: 'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=800&q=85&auto=format&fit=crop' },
-  { icon: 'Calculator', title: 'Cost Calculator', description: 'Quick estimate your smart home investment', href: '/calculator', cta: 'Calculate Cost', image: 'https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=600&q=80&auto=format&fit=crop' },
-  { icon: 'TrendingUp', title: 'ROI Calculator', description: 'Analyze your return on investment over time', href: '/roi-calculator', cta: 'Calculate ROI', image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&q=80&auto=format&fit=crop' }
+  { icon: 'Package', title: 'Package Builder', description: 'Design your complete smart home package step-by-step with live pricing', href: '/package-builder', cta: 'Build Your Package', image: 'https://static.prod-images.emergentagent.com/jobs/9a576253-3f34-4de3-9ad4-57e7617524d7/images/34114c11b56578c5728056ef0bafd361d7b6dfdf4079276238e92eb92e359bf3.png' },
+  { icon: 'Sparkles', title: 'Specialty Rooms', description: 'Explore 22 premium specialty room automation solutions', href: '/specialty-rooms', cta: 'Explore Rooms', image: 'https://static.prod-images.emergentagent.com/jobs/9a576253-3f34-4de3-9ad4-57e7617524d7/images/8c306d4666df9606b080e5b49c3ce8e43077e359e8ad1927590e99204f5d77a0.png' },
+  { icon: 'Calculator', title: 'Cost Calculator', description: 'Quick estimate your smart home investment', href: '/calculator', cta: 'Calculate Cost', image: 'https://static.prod-images.emergentagent.com/jobs/9a576253-3f34-4de3-9ad4-57e7617524d7/images/d31fedcd0e70d8772764a98e900ed47531dca3ee168cf97ef1660b6fc784eff4.png' },
+  { icon: 'TrendingUp', title: 'ROI Calculator', description: 'Analyze your return on investment over time', href: '/roi-calculator', cta: 'Calculate ROI', image: 'https://static.prod-images.emergentagent.com/jobs/9a576253-3f34-4de3-9ad4-57e7617524d7/images/51e373474986a413a866bd26c89a1ffcc41170b89684d36885bac73bdc1b02ce.png' }
 ]
 
 const GRADIENTS = [

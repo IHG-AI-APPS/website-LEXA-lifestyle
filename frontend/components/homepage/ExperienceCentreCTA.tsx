@@ -35,11 +35,11 @@ const DEFAULT_HIGHLIGHTS = [
 ]
 
 const DEFAULT_GALLERY = [
-  { src: 'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=800&q=80', title: 'Smart Home Showcase', zone: 'Main Hall' },
-  { src: 'https://images.unsplash.com/photo-1560185007-c5ca9d2c014d?w=800&q=80', title: 'Home Cinema Experience', zone: 'Theater Zone' },
-  { src: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&q=80', title: 'Audio Listening Room', zone: 'Hi-Fi Zone' },
-  { src: 'https://images.unsplash.com/photo-1513506003901-1e6a229e2d15?w=800&q=80', title: 'Lighting Design Studio', zone: 'Lighting Zone' },
-  { src: 'https://images.unsplash.com/photo-1558002038-1055907df827?w=800&q=80', title: 'Security Command Center', zone: 'Security Zone' }
+  { src: 'https://static.prod-images.emergentagent.com/jobs/9a576253-3f34-4de3-9ad4-57e7617524d7/images/612beb91b87e9b41f962da6eb8b91f5cf254e933d63cb3ef71ace28718b4eefa.png', title: 'Smart Home Showcase', zone: 'Main Hall' },
+  { src: 'https://static.prod-images.emergentagent.com/jobs/9a576253-3f34-4de3-9ad4-57e7617524d7/images/dacc01ae1dc53730f34dd34f41895419010586a0427c0ebf9fc72d8a4b27d191.png', title: 'Home Cinema Experience', zone: 'Theater Zone' },
+  { src: 'https://static.prod-images.emergentagent.com/jobs/9a576253-3f34-4de3-9ad4-57e7617524d7/images/035579baf2abef1ae0e1155e16b4bf57655af2910a4df976de3b3022006d5f2c.png', title: 'Audio Listening Room', zone: 'Hi-Fi Zone' },
+  { src: 'https://static.prod-images.emergentagent.com/jobs/9a576253-3f34-4de3-9ad4-57e7617524d7/images/5da0e02776639111ed41adb48faaffd2c8968eaddda2ce0f3ba1dac514f0b82d.png', title: 'Lighting Design Studio', zone: 'Lighting Zone' },
+  { src: 'https://static.prod-images.emergentagent.com/jobs/9a576253-3f34-4de3-9ad4-57e7617524d7/images/cb41cf96a1bc018c222eb01f157f17fcd8d38fb84548fa77c8e27fabe2305b7c.png', title: 'Security Command Center', zone: 'Security Zone' }
 ]
 
 export default function ExperienceCentreCTA() {

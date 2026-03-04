@@ -43,7 +43,7 @@ const FALLBACK_SOLUTIONS = [
     title: 'Luxury Home Cinema',
     subtitle: 'Private Theatre Experiences',
     description: 'Dolby Atmos, acoustic design, and bespoke seating.',
-    image: 'https://images.unsplash.com/photo-1673512703111-c38c42a1f1a3',
+    image: 'https://static.prod-images.emergentagent.com/jobs/9a576253-3f34-4de3-9ad4-57e7617524d7/images/14bda4364129415663f1943a6e802b58725e25b08c852e41e66e988c494c88bf.png',
     slug: 'luxury-home-cinema-dubai',
     icon: 'Film',
     theme: 'dark'
@@ -52,7 +52,7 @@ const FALLBACK_SOLUTIONS = [
     title: 'Smart Residential Living',
     subtitle: 'Complete Home Automation',
     description: 'Lighting, climate, security, and entertainment unified.',
-    image: 'https://images.unsplash.com/photo-1558036117-15d82a90b9b1',
+    image: 'https://static.prod-images.emergentagent.com/jobs/9a576253-3f34-4de3-9ad4-57e7617524d7/images/c193135e35f6c6dd1fee05e1d3bafc72a4e032d72f082166de6964f10cad6852.png',
     slug: 'smart-home',
     icon: 'Home',
     theme: 'light'
@@ -61,7 +61,7 @@ const FALLBACK_SOLUTIONS = [
     title: 'Outdoor Living',
     subtitle: 'Smart Gardens & Pools',
     description: 'Automated outdoor entertainment.',
-    image: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c',
+    image: 'https://static.prod-images.emergentagent.com/jobs/9a576253-3f34-4de3-9ad4-57e7617524d7/images/936068f0524b9c9cc532513f25129e8f74338526303d701c7365d259f7061105.png',
     slug: 'outdoor-automation',
     icon: 'Trees',
     theme: 'dark'
@@ -70,7 +70,7 @@ const FALLBACK_SOLUTIONS = [
     title: 'Security & Access',
     subtitle: 'Smart Protection',
     description: 'AI-powered monitoring and access control.',
-    image: 'https://images.unsplash.com/photo-1558002038-1055907df827',
+    image: 'https://static.prod-images.emergentagent.com/jobs/9a576253-3f34-4de3-9ad4-57e7617524d7/images/05f4bf4952a204db5059f7a7cf1f6ef493dfc5149a3e330e23d22fbf2272eb52.png',
     slug: 'security',
     icon: 'Shield',
     theme: 'light'
@@ -192,7 +192,7 @@ export default function SolutionsBentoGrid() {
             {solutions.map((solution, index) => {
               const iconName = solution.icon || 'Home'
               const Icon = ICON_MAP[iconName] || Home
-              const imageUrl = solution.hero_image || solution.image || 'https://images.unsplash.com/photo-1558036117-15d82a90b9b1'
+              const imageUrl = solution.hero_image || solution.image || 'https://static.prod-images.emergentagent.com/jobs/9a576253-3f34-4de3-9ad4-57e7617524d7/images/c193135e35f6c6dd1fee05e1d3bafc72a4e032d72f082166de6964f10cad6852.png'
               
               return (
                 <Link
@@ -230,7 +230,7 @@ export default function SolutionsBentoGrid() {
             const iconName = solution.icon || 'Home'
             const Icon = ICON_MAP[iconName] || Home
             const theme = solution.theme || (index % 2 === 0 ? 'dark' : 'light')
-            const imageUrl = solution.hero_image || solution.image || 'https://images.unsplash.com/photo-1558036117-15d82a90b9b1'
+            const imageUrl = solution.hero_image || solution.image || 'https://static.prod-images.emergentagent.com/jobs/9a576253-3f34-4de3-9ad4-57e7617524d7/images/c193135e35f6c6dd1fee05e1d3bafc72a4e032d72f082166de6964f10cad6852.png'
             
             return (
               <motion.div
