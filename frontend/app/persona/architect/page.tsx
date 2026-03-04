@@ -2,332 +2,141 @@
 
 import { useState } from 'react'
 import { motion } from 'framer-motion'
-import SafeImage from '@/components/ui/SafeImage'
 import Link from 'next/link'
-import { Button } from '@/components/ui/button'
+import { ArrowRight } from 'lucide-react'
 import ConsultationForm from '@/components/forms/ConsultationForm'
-import { Ruler, Palette, Layers, FileText, ArrowRight } from 'lucide-react'
-import { useCms } from '@/hooks/useCms'
+
+const HERO_IMG = 'https://static.prod-images.emergentagent.com/jobs/59b913a4-054a-445e-b4e4-478e2f863a3e/images/ff101bf118d1ff358b480dff06f9a26bcc64286e415cfed4ffe1d0d916f10e41.png'
+
+const showcases = [
+  {
+    image: 'https://static.prod-images.emergentagent.com/jobs/59b913a4-054a-445e-b4e4-478e2f863a3e/images/2b760b43cd3f6e5a3ccdb6ecb49bd12ad5e536a08a4739c705f5749495d92bd9.png',
+    label: 'Lighting Design',
+    title: 'Design With Light',
+    description: 'Integrate scene-based lighting seamlessly into your architectural vision. From concept to commissioning.',
+    links: [
+      { name: 'Lighting Control', href: '/solutions/lighting-automation' },
+      { name: 'Consultation & Design', href: '/services/consultation-design' },
+    ],
+  },
+  {
+    image: 'https://static.prod-images.emergentagent.com/jobs/59b913a4-054a-445e-b4e4-478e2f863a3e/images/6fa45225683f61aba71458062924256e7eec1058d92c4ae334f474c0f58c30a6.png',
+    label: 'AV Integration',
+    title: 'Invisible Technology',
+    description: 'Hidden speakers, concealed screens, and architectural AV solutions that preserve your design intent.',
+    links: [
+      { name: 'Home Cinema', href: '/solutions/home-cinema' },
+      { name: 'System Engineering', href: '/services/system-engineering-integration' },
+    ],
+  },
+  {
+    image: 'https://static.prod-images.emergentagent.com/jobs/59b913a4-054a-445e-b4e4-478e2f863a3e/images/0fc00c111ed94684d005e986b1be25964e14babf4f51cf609f6d39f8918e96a2.png',
+    label: 'Smart Systems',
+    title: 'Unified Control',
+    description: 'One platform for lighting, HVAC, security, and AV. Clean interfaces that complement your interiors.',
+    links: [
+      { name: 'Smart Automation', href: '/solutions/smart-home-automation' },
+      { name: 'Network Infrastructure', href: '/solutions/home-network' },
+    ],
+  },
+  {
+    image: 'https://static.prod-images.emergentagent.com/jobs/59b913a4-054a-445e-b4e4-478e2f863a3e/images/8aa01c5e657737d456924397ccac796d22ab20e2bc69224c8a17c64e22485d35.png',
+    label: 'Outdoor Spaces',
+    title: 'Landscape Intelligence',
+    description: 'Smart irrigation, landscape lighting, and pool automation that extends the design language outdoors.',
+    links: [
+      { name: 'Landscape Lighting', href: '/solutions/landscape-lighting-automation' },
+      { name: 'Pool Automation', href: '/solutions/pool-spa-automation' },
+    ],
+  },
+]
+
+const fadeUp = {
+  hidden: { opacity: 0, y: 20 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.6 } },
+}
 
 export default function ArchitectPage() {
-  const cms = useCms('page_persona_architect', null) as any
-
-  const [showConsultationForm, setShowConsultationForm] = useState(false)
-
-  const benefits = [
-    {
-      icon: Ruler,
-      title: 'Design Integration',
-      description: 'Seamless automation that complements your architectural vision, not compromises it.'
-    },
-    {
-      icon: Palette,
-      title: 'Aesthetic Control',
-      description: 'Hidden technology. Visible elegance. Invisible speakers, concealed wiring, integrated panels.'
-    },
-    {
-      icon: Layers,
-      title: 'MEP Coordination',
-      description: 'Early-stage collaboration prevents costly mid-project redesigns and timeline delays.'
-    },
-    {
-      icon: FileText,
-      title: 'Technical Support',
-      description: 'CAD blocks, spec sheets, and coordination drawings for seamless project integration.'
-    },
-  ]
-
-  const solutions = [
-    {
-      category: 'Lighting Design Integration',
-      items: [
-        { name: 'Architectural Lighting Control', slug: 'lighting-automation', description: 'Lutron, KNX, Crestron systems' },
-        { name: 'Circadian Lighting', slug: 'lighting-automation', description: 'Human-centric design' },
-        { name: 'Facade & Landscape Lighting', slug: 'landscape-lighting-automation', description: 'Exterior automation' }
-      ]
-    },
-    {
-      category: 'Acoustic & AV Design',
-      items: [
-        { name: 'Home Cinema Design', slug: 'home-cinema', description: 'Reference-grade theaters' },
-        { name: 'Acoustic Treatment', slug: 'home-cinema', description: 'Sound isolation & tuning' },
-        { name: 'Invisible Audio', slug: 'multi-room-audio', description: 'In-ceiling & architectural speakers' }
-      ]
-    },
-    {
-      category: 'Smart Building Integration',
-      items: [
-        { name: 'Building Management Systems', slug: 'bms-automation', description: 'Commercial BMS integration' },
-        { name: 'Energy Management', slug: 'energy-management', description: 'LEED & sustainability' },
-        { name: 'Climate Control', slug: 'climate-control', description: 'Zone-based HVAC automation' }
-      ]
-    },
-    {
-      category: 'Security & Access',
-      items: [
-        { name: 'Access Control Systems', slug: 'access-control', description: 'Biometric & card systems' },
-        { name: 'Video Surveillance', slug: 'security-surveillance', description: 'AI camera integration' },
-        { name: 'Perimeter Security', slug: 'security-surveillance', description: 'Gate & fence automation' }
-      ]
-    },
-    {
-      category: 'Residential Automation',
-      items: [
-        { name: 'Villa Automation', slug: 'smart-home-automation', description: 'Whole-home systems' },
-        { name: 'Penthouse Systems', slug: 'smart-home-automation', description: 'High-rise integration' },
-        { name: 'Motorized Shading', slug: 'motorized-blinds-curtains', description: 'Solar control & privacy' }
-      ]
-    },
-    {
-      category: 'Technical Resources',
-      items: [
-        { name: 'CAD Block Library', slug: '/partners/architects', description: 'AutoCAD & Revit families' },
-        { name: 'Specification Sheets', slug: '/partners/architects', description: 'Technical documentation' },
-        { name: 'Coordination Services', slug: '/partners/architects', description: 'MEP integration support' }
-      ]
-    }
-  ]
+  const [showForm, setShowForm] = useState(false)
 
   return (
-    <div className="min-h-screen bg-white dark:bg-[#050505] pt-20">
-      {/* Hero */}
-      <section className="relative overflow-hidden bg-[#0A0A0A] dark:bg-[#050505] text-white py-16 lg:py-24">
-        <div className="container mx-auto px-5 sm:px-8 lg:px-16">
-          <div className="max-w-7xl mx-auto">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-              <motion.div
-                initial={{ opacity: 0, x: -30 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.8 }}
-              >
-                <span className="hero-animate-badge inline-block px-2.5 py-1 sm:px-3 rounded-full bg-[#C9A962]/15 border border-[#C9A962]/30 text-[#C9A962] text-xs uppercase tracking-widest mb-5">
-                  For Architects & Designers
-                </span>
-                <h1 className="text-4xl sm:text-5xl font-bold tracking-tight leading-tight mb-6 text-white">
-                  DESIGN
-                  <br />
-                  <span className="text-[#C9A962]">WITH INTELLIGENCE</span>
-                </h1>
-                <div className="h-px w-24 bg-[#C9A962]/30 mb-8" />
-                <p className="text-base text-gray-300 leading-relaxed mb-10">
-                  Integrate smart technology that enhances your design vision. From concept to completion, we collaborate to deliver spaces where technology disappears.
-                </p>
-                <div className="flex flex-col sm:flex-row gap-4">
-                  <Link href="/partners/architects">
-                    <Button
-                      size="lg"
-                      className="bg-[#C9A962] hover:bg-[#C9A962]/90 text-gray-900 font-semibold w-full"
-                    >
-                      Download Resources
-                    </Button>
-                  </Link>
-                  <Button
-                    size="lg"
-                    variant="outline"
-                    className="border border-gray-300 dark:border-zinc-700 hover:border-charcoal"
-                    onClick={() => setShowConsultationForm(true)}
-                  >
-                    Technical Consultation
-                  </Button>
-                </div>
-              </motion.div>
-
-              <motion.div
-                initial={{ opacity: 0, x: 30 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.8, delay: 0.2 }}
-                className="relative h-[500px]"
-              >
-                <SafeImage
-                  src="/images/premium/solutions/penthouse-3.jpg"
-                  alt="Architectural design"
-                  fill
-                  className="object-cover grayscale-[20%]"
-                />
-              </motion.div>
-            </div>
-          </div>
+    <div className="min-h-screen bg-[#050505]" data-testid="architect-page">
+      {/* ── Fullscreen Hero ── */}
+      <section className="relative h-[85vh] w-full overflow-hidden" data-testid="architect-hero">
+        <div className="absolute inset-0">
+          <img src={HERO_IMG} alt="Architectural design studio" className="h-full w-full object-cover" />
+          <div className="absolute inset-0 bg-gradient-to-t from-[#050505] via-[#050505]/40 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-r from-[#050505]/60 to-transparent" />
+        </div>
+        <div className="relative z-10 flex h-full items-end px-6 sm:px-10 lg:px-20 pb-16 lg:pb-20">
+          <motion.div initial="hidden" animate="visible" variants={{ visible: { transition: { staggerChildren: 0.12 } } }} className="max-w-xl">
+            <motion.div variants={fadeUp} className="flex items-center gap-3 mb-4">
+              <div className="h-px w-8 bg-[#C9A962]" />
+              <span className="text-[10px] sm:text-xs tracking-[0.3em] uppercase text-[#C9A962]/80 font-medium">For Architects & Designers</span>
+            </motion.div>
+            <motion.h1 variants={fadeUp} className="text-4xl sm:text-5xl lg:text-6xl font-black tracking-tighter uppercase leading-[0.9] text-white">
+              Design<br />Without Limits
+            </motion.h1>
+            <motion.p variants={fadeUp} className="mt-4 text-sm sm:text-base text-white/60 leading-relaxed max-w-md">
+              We integrate smart systems into your architectural vision — not the other way around. Your design leads, technology follows.
+            </motion.p>
+            <motion.div variants={fadeUp} className="mt-8 flex items-center gap-6">
+              <button onClick={() => setShowForm(true)} data-testid="architect-cta-consult" className="group flex items-center gap-2 h-11 px-6 bg-[#C9A962] text-[#050505] text-xs font-bold tracking-[0.15em] uppercase hover:bg-[#D4B872] transition-colors">
+                Partner With Us <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
+              </button>
+              <Link href="/brands" className="text-xs tracking-[0.15em] uppercase text-white/40 hover:text-[#C9A962] transition-colors">Our Brands</Link>
+            </motion.div>
+          </motion.div>
         </div>
       </section>
 
-      {/* Benefits */}
-      <section className="py-20 bg-white">
-        <div className="container mx-auto px-5 sm:px-8 lg:px-16">
-          <div className="max-w-7xl mx-auto">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="text-center mb-16"
-            >
-              <h2 className="text-4xl font-semibold mb-4">Why Partner with LEXA?</h2>
-              <p className="text-lg text-gray-600 dark:text-zinc-500 max-w-3xl mx-auto">
-                We support design teams from schematic design through construction documentation
-              </p>
-            </motion.div>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-              {benefits.map((benefit, index) => {
-                const Icon = benefit.icon
-                return (
-                  <motion.div
-                    key={benefit.title}
-                    initial={{ opacity: 0, y: 30 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.2 }}
-                    className="text-center"
-                  >
-                    <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-gray-100 dark:bg-[#171717] mb-6">
-                      <Icon size={32} className="text-charcoal" />
-                    </div>
-                    <h3 className="text-xl font-semibold mb-3">{benefit.title}</h3>
-                    <p className="text-gray-600 dark:text-zinc-500">{benefit.description}</p>
-                  </motion.div>
-                )
-              })}
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Solutions Grid */}
-      <section className="relative overflow-hidden bg-[#0A0A0A] dark:bg-[#050505] text-white py-16 lg:py-24">
-        <div className="container mx-auto px-5 sm:px-8 lg:px-16">
-          <div className="max-w-7xl mx-auto">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="text-center mb-16"
-            >
-              <h2 className="text-4xl font-semibold mb-4">Solutions for Architectural Projects</h2>
-              <p className="text-lg text-gray-600 dark:text-zinc-500 max-w-3xl mx-auto">
-                Complete systems integration for residential and commercial projects
-              </p>
-            </motion.div>
-
-            <div className="space-y-12">
-              {solutions.map((category, catIndex) => (
-                <motion.div
-                  key={category.category}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: catIndex * 0.1 }}
-                >
-                  <h3 className="text-2xl font-semibold mb-6 text-charcoal">{category.category}</h3>
-                  <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                    {category.items.map((item, itemIndex) => (
-                      <Link
-                        key={item.slug}
-                        href={`/solutions/${item.slug}`}
-                        className="group block"
-                      >
-                        <motion.div
-                          initial={{ opacity: 0, y: 20 }}
-                          whileInView={{ opacity: 1, y: 0 }}
-                          viewport={{ once: true }}
-                          transition={{ delay: itemIndex * 0.05 }}
-                          className="bg-white dark:bg-[#171717] p-6 border border-gray-200 dark:border-zinc-800 hover:border-charcoal transition-all hover:shadow-lg"
-                        >
-                          <h4 className="text-lg font-semibold mb-2 group-hover:text-charcoal transition-colors">
-                            {item.name}
-                          </h4>
-                          <p className="text-sm text-gray-600 dark:text-zinc-500 mb-3">{item.description}</p>
-                          <div className="flex items-center text-sm text-charcoal font-medium">
-                            Learn More <ArrowRight size={16} className="ml-2 group-hover:translate-x-1 transition-transform" />
-                          </div>
-                        </motion.div>
+      {/* ── Showcase Sections ── */}
+      {showcases.map((item, i) => {
+        const isReversed = i % 2 === 1
+        return (
+          <section key={item.label} className="relative" data-testid={`showcase-${i}`}>
+            <div className="grid grid-cols-1 lg:grid-cols-2 min-h-[70vh]">
+              <motion.div initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} transition={{ duration: 0.8 }} className={`relative h-[50vh] lg:h-auto ${isReversed ? 'lg:order-2' : ''}`}>
+                <img src={item.image} alt={item.title} className="absolute inset-0 w-full h-full object-cover" />
+              </motion.div>
+              <div className={`flex items-center ${isReversed ? 'lg:order-1' : ''}`}>
+                <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={{ visible: { transition: { staggerChildren: 0.1 } } }} className="px-8 sm:px-12 lg:px-16 xl:px-20 py-16 lg:py-0 max-w-lg">
+                  <motion.span variants={fadeUp} className="text-[10px] tracking-[0.3em] uppercase text-[#C9A962] font-semibold">{item.label}</motion.span>
+                  <motion.h2 variants={fadeUp} className="mt-3 text-3xl sm:text-4xl font-bold text-white tracking-tight">{item.title}</motion.h2>
+                  <motion.p variants={fadeUp} className="mt-4 text-sm text-white/50 leading-relaxed">{item.description}</motion.p>
+                  <motion.div variants={fadeUp} className="mt-8 flex flex-wrap gap-3">
+                    {item.links.map(link => (
+                      <Link key={link.href} href={link.href} className="group flex items-center gap-1.5 text-xs tracking-[0.1em] uppercase text-white/60 hover:text-[#C9A962] transition-colors border border-white/10 hover:border-[#C9A962]/30 px-4 py-2">
+                        {link.name} <ArrowRight size={10} className="group-hover:translate-x-0.5 transition-transform" />
                       </Link>
                     ))}
-                  </div>
+                  </motion.div>
                 </motion.div>
-              ))}
+              </div>
             </div>
-          </div>
+          </section>
+        )
+      })}
+
+      {/* ── CTA ── */}
+      <section className="relative h-[60vh] flex items-center justify-center overflow-hidden">
+        <div className="absolute inset-0">
+          <img src={HERO_IMG} alt="Design studio" className="h-full w-full object-cover opacity-30" />
+          <div className="absolute inset-0 bg-[#050505]/70" />
         </div>
+        <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={{ visible: { transition: { staggerChildren: 0.12 } } }} className="relative z-10 text-center px-6 max-w-2xl">
+          <motion.h2 variants={fadeUp} className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white tracking-tight">Let&apos;s Collaborate</motion.h2>
+          <motion.p variants={fadeUp} className="mt-4 text-sm sm:text-base text-white/50">We work alongside architects from schematic design through to handover.</motion.p>
+          <motion.div variants={fadeUp} className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
+            <button onClick={() => setShowForm(true)} className="group flex items-center gap-2 h-12 px-8 bg-[#C9A962] text-[#050505] text-xs font-bold tracking-[0.15em] uppercase hover:bg-[#D4B872] transition-colors">
+              Start a Project <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
+            </button>
+            <Link href="/projects" className="text-xs tracking-[0.15em] uppercase text-white/40 hover:text-[#C9A962] transition-colors">View Our Work</Link>
+          </motion.div>
+        </motion.div>
       </section>
 
-      {/* Project Builder CTA */}
-      <section className="py-20 bg-[#0a0a0a] text-white relative overflow-hidden">
-        <div className="absolute inset-0 bg-black/20"></div>
-        <div className="container mx-auto px-5 sm:px-8 lg:px-16 relative z-10">
-          <div className="max-w-5xl mx-auto">
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="text-center"
-            >
-              <div className="inline-block bg-white/20 backdrop-blur-sm px-6 py-2 rounded-full mb-6">
-                <p className="text-sm font-semibold uppercase tracking-wider">Design Tool</p>
-              </div>
-              <h2 className="text-5xl font-heading font-bold mb-6">Specify Smart Systems</h2>
-              <p className="text-2xl text-white/90 mb-4">
-                Use our builder to plan automation for your architectural projects
-              </p>
-              <p className="text-lg text-white/80 mb-10 max-w-3xl mx-auto">
-                Select lighting control, AV systems, climate automation, and security. Generate technical specifications and budget estimates for client presentations.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-                <Link href="/home-intelligence-builder">
-                  <Button
-                    size="lg"
-                    className="bg-[#C9A962] text-black hover:bg-[#E8DCC8] dark:bg-[#C9A962] px-8 py-6 text-lg font-semibold shadow-2xl"
-                  >
-                    Launch Project Builder
-                    <ArrowRight className="ml-2" size={20} />
-                  </Button>
-                </Link>
-                <p className="text-sm text-white/70">✓ Free to use  ✓ Technical specs  ✓ Budget estimates</p>
-              </div>
-            </motion.div>
-          </div>
-        </div>
-      </section>
-
-      {/* CTA */}
-      <section className="py-20 bg-charcoal text-white">
-        <div className="container mx-auto px-5 sm:px-8 lg:px-16">
-          <div className="max-w-4xl mx-auto text-center">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-            >
-              <h2 className="text-4xl font-semibold mb-6">Ready to Collaborate?</h2>
-              <p className="text-xl text-white/80 mb-10">
-                Download our CAD block library, spec sheets, and schedule a technical coordination call.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Link href="/partners/architects">
-                  <Button
-                    size="lg"
-                    className="bg-white text-black hover:bg-gray-100 dark:bg-[#171717]"
-                  >
-                    Access Resources
-                  </Button>
-                </Link>
-                <Button
-                  size="lg"
-                  variant="outline"
-                  className="border-2 border-white text-white hover:bg-white hover:text-black"
-                  onClick={() => setShowConsultationForm(true)}
-                >
-                  Schedule Call
-                </Button>
-              </div>
-            </motion.div>
-          </div>
-        </div>
-      </section>
-
-      <ConsultationForm
-        isOpen={showConsultationForm}
-        onClose={() => setShowConsultationForm(false)}
-        defaultPersona="architect"
-      />
+      <ConsultationForm isOpen={showForm} onClose={() => setShowForm(false)} />
     </div>
   )
 }
