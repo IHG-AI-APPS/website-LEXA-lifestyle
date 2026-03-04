@@ -9,6 +9,7 @@ import { Input } from '@/components/ui/input'
 import { Textarea } from '@/components/ui/textarea'
 import Link from 'next/link'
 import { useCms } from '@/hooks/useCms'
+import VirtualTour from '@/components/experience/VirtualTour'
 
 const BACKEND_URL = process.env.NEXT_PUBLIC_BACKEND_URL || 'http://localhost:8001'
 
@@ -119,6 +120,9 @@ export default function ExperienceCentrePage() {
           </div>
         </div>
       </section>
+
+      {/* Virtual Tour */}
+      <VirtualTour />
 
       {/* Facilities Grid */}
       <section className="py-16 lg:py-20 bg-gray-50 dark:bg-[#0A0A0A]" data-testid="facilities-section">
