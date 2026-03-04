@@ -206,9 +206,9 @@ export default function VirtualTour() {
   const zone = zones[activeZone]
 
   const imageVariants = {
-    enter: (dir: number) => ({ opacity: 0, scale: 1.15, x: dir > 0 ? 100 : -100 }),
+    enter: (dir: number) => ({ opacity: 0, scale: 1.03, x: dir > 0 ? 60 : -60 }),
     center: { opacity: 1, scale: 1, x: 0 },
-    exit: (dir: number) => ({ opacity: 0, scale: 0.95, x: dir > 0 ? -100 : 100 }),
+    exit: (dir: number) => ({ opacity: 0, scale: 0.97, x: dir > 0 ? -60 : 60 }),
   }
 
 
@@ -219,12 +219,12 @@ export default function VirtualTour() {
           <div className="max-w-5xl mx-auto">
             <div className="relative rounded-2xl overflow-hidden cursor-pointer group" onClick={() => setIsOpen(true)}>
               {/* Preview image with parallax */}
-              <div className="relative h-[400px] sm:h-[500px] overflow-hidden">
+              <div className="relative h-[320px] sm:h-[400px] lg:h-[440px] overflow-hidden">
                 <motion.img
                   src={zones[0].image}
                   alt="Virtual Tour Preview"
                   className="absolute inset-0 w-full h-full object-cover"
-                  animate={{ scale: [1, 1.05], x: [0, -15] }}
+                  animate={{ scale: [1, 1.04], x: [0, -10] }}
                   transition={{ duration: 12, repeat: Infinity, repeatType: 'reverse', ease: 'linear' }}
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-black/20" />
@@ -294,7 +294,7 @@ export default function VirtualTour() {
       <AnimatePresence mode="popLayout" custom={direction}>
         <motion.div
           key={activeZone}
-          className="absolute inset-0"
+          className="absolute inset-0 overflow-hidden"
           custom={direction}
           variants={imageVariants}
           initial="enter"
@@ -307,8 +307,8 @@ export default function VirtualTour() {
             alt={zone.title}
             className="absolute inset-0 w-full h-full object-cover"
             animate={{
-              scale: [1, 1.12],
-              x: zone.panDirection === 'left' ? [0, -30] : [0, 30],
+              scale: [1, 1.05],
+              x: zone.panDirection === 'left' ? [0, -15] : [0, 15],
             }}
             transition={{ duration: 15, ease: 'linear' }}
           />
