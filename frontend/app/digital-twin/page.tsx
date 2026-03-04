@@ -72,7 +72,7 @@ export default function DigitalTwinPage() {
         <section className="relative overflow-hidden bg-[#0A0A0A] dark:bg-[#050505] text-white py-20 sm:py-32">
         {/* Hero Background Image */}
         <div className="absolute inset-0">
-          <div style={{backgroundImage: "url(https://images.unsplash.com/photo-1765766601532-90e9b96320c8?w=1200&q=50)"}} className="absolute inset-0 bg-cover bg-center opacity-80" />
+          <div style={{backgroundImage: "url(https://static.prod-images.emergentagent.com/jobs/9a576253-3f34-4de3-9ad4-57e7617524d7/images/026c7a13febacdf1d1e4421cd4968c531af8421c0a31afaaa42462c572efffc3.png)"}} className="absolute inset-0 bg-cover bg-center opacity-80" />
           <div className="absolute inset-0 bg-gradient-to-t from-[#0A0A0A]/80 via-[#0A0A0A]/40 to-transparent" />
         </div>
           <div className="absolute inset-0 opacity-10">

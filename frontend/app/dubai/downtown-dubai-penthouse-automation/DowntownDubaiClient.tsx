@@ -52,7 +52,7 @@ const pageData: GeoPageData = {
     }
   ],
   "ctaTitle": "Ready to Automate Your Downtown Residence?",
-  "heroImage": "https://images.unsplash.com/photo-1546412414-e1885259563a?w=1920",
+  "heroImage": "https://static.prod-images.emergentagent.com/jobs/9a576253-3f34-4de3-9ad4-57e7617524d7/images/039ef87abc0eff1156299d3b56c34c5bd5198adaba104a28b23e7fe48db8a2cd.png",
   "faqs": [
     {
       "question": "How much does Downtown Dubai apartment automation cost?",

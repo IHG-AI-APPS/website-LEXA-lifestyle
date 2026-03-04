@@ -7,13 +7,13 @@ interface TeamMember {
 }
 
 const teamMembers: TeamMember[] = [
-  { name: 'Althaf Ali', role: 'Co-Founder', image: 'https://images.unsplash.com/photo-1560250097-0b93528c311a?w=400&h=500&fit=crop' },
-  { name: 'Munir Taher', role: 'Co-Founder', image: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&h=500&fit=crop' },
-  { name: 'Shahnawaz Sheikh', role: 'Business Head', image: 'https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=400&h=500&fit=crop' },
-  { name: 'Mohammad Salih', role: 'Project Head', image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=500&fit=crop' },
-  { name: 'Sri Harish', role: 'Junior Automation Engineer', image: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=400&h=500&fit=crop' },
-  { name: 'Maria Ralota', role: 'Admin & Sales Coordinator', image: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400&h=500&fit=crop' },
-  { name: 'Shibili Zahir', role: 'Operations Executive', image: 'https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=400&h=500&fit=crop' },
+  { name: 'Althaf Ali', role: 'Co-Founder', image: 'https://static.prod-images.emergentagent.com/jobs/9a576253-3f34-4de3-9ad4-57e7617524d7/images/189b2063a7c9f4fbf713db28c2fc309b0cbd08282a9e26f32177849125b480c7.png' },
+  { name: 'Munir Taher', role: 'Co-Founder', image: 'https://static.prod-images.emergentagent.com/jobs/9a576253-3f34-4de3-9ad4-57e7617524d7/images/81113236aea1d470de7f5dc2060093ba48905134dfadb518d9ea0899ccc1f7c1.png' },
+  { name: 'Shahnawaz Sheikh', role: 'Business Head', image: 'https://static.prod-images.emergentagent.com/jobs/9a576253-3f34-4de3-9ad4-57e7617524d7/images/ba0a4f880b7032b40af93c3055859acb1fb26773462280bb5ad5467e3948ff2c.png' },
+  { name: 'Mohammad Salih', role: 'Project Head', image: 'https://static.prod-images.emergentagent.com/jobs/9a576253-3f34-4de3-9ad4-57e7617524d7/images/0f48dc4796cf6b760fd9f06e1e885bdbd444fc6b167916d39b612ed77ab9839d.png' },
+  { name: 'Sri Harish', role: 'Junior Automation Engineer', image: 'https://static.prod-images.emergentagent.com/jobs/9a576253-3f34-4de3-9ad4-57e7617524d7/images/a58f940fe55587d1ffad529df3a455c7d9ec35f0e7738b4b2d3a804387778780.png' },
+  { name: 'Maria Ralota', role: 'Admin & Sales Coordinator', image: 'https://static.prod-images.emergentagent.com/jobs/9a576253-3f34-4de3-9ad4-57e7617524d7/images/32677d42d1e55588c33a9566236c3aafee694bddf693e2f9ea14bc6ee70e4091.png' },
+  { name: 'Shibili Zahir', role: 'Operations Executive', image: 'https://static.prod-images.emergentagent.com/jobs/9a576253-3f34-4de3-9ad4-57e7617524d7/images/7706427d769fae74912f274da47e9bf82bd33c743cd24ddbfebd9c7e662fd25a.png' },
 ]
 
 export default function TeamSection() {

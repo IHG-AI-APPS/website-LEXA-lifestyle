@@ -3,14 +3,14 @@
 import SafeImage from '@/components/ui/SafeImage'
 
 const clients = [
-  { name: 'Eagle Hills', logo: 'https://images.unsplash.com/photo-1560179707-f14e90ef3623?w=150&h=80&fit=crop' },
-  { name: 'Dubai World Trade Center', logo: 'https://images.unsplash.com/photo-1560179707-f14e90ef3623?w=150&h=80&fit=crop' },
-  { name: 'Emaar', logo: 'https://images.unsplash.com/photo-1560179707-f14e90ef3623?w=150&h=80&fit=crop' },
-  { name: 'Dubai Police', logo: 'https://images.unsplash.com/photo-1560179707-f14e90ef3623?w=150&h=80&fit=crop' },
-  { name: 'Landmark Group', logo: 'https://images.unsplash.com/photo-1560179707-f14e90ef3623?w=150&h=80&fit=crop' },
-  { name: 'Radisson', logo: 'https://images.unsplash.com/photo-1560179707-f14e90ef3623?w=150&h=80&fit=crop' },
-  { name: 'Rixos', logo: 'https://images.unsplash.com/photo-1560179707-f14e90ef3623?w=150&h=80&fit=crop' },
-  { name: 'Nestle', logo: 'https://images.unsplash.com/photo-1560179707-f14e90ef3623?w=150&h=80&fit=crop' },
+  { name: 'Eagle Hills', logo: '/images/client-logo-placeholder.svg' },
+  { name: 'Dubai World Trade Center', logo: '/images/client-logo-placeholder.svg' },
+  { name: 'Emaar', logo: '/images/client-logo-placeholder.svg' },
+  { name: 'Dubai Police', logo: '/images/client-logo-placeholder.svg' },
+  { name: 'Landmark Group', logo: '/images/client-logo-placeholder.svg' },
+  { name: 'Radisson', logo: '/images/client-logo-placeholder.svg' },
+  { name: 'Rixos', logo: '/images/client-logo-placeholder.svg' },
+  { name: 'Nestle', logo: '/images/client-logo-placeholder.svg' },
 ]
 
 export default function ClientLogos() {

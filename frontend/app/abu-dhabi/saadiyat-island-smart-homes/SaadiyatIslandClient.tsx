@@ -56,7 +56,7 @@ const pageData: GeoPageData = {
     }
   ],
   "ctaTitle": "Ready to Automate Your Saadiyat Villa?",
-  "heroImage": "https://images.unsplash.com/photo-1582407947304-fd86f028f716?w=1920",
+  "heroImage": "https://static.prod-images.emergentagent.com/jobs/9a576253-3f34-4de3-9ad4-57e7617524d7/images/fde448452b60b4d7082b20789cf57c345c47ef92d345d41e1e1e10bc87460a66.png",
   "services": [
     {
       "icon": "Lightbulb",

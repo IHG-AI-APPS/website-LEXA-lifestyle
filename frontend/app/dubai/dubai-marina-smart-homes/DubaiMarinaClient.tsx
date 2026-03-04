@@ -52,7 +52,7 @@ const pageData: GeoPageData = {
     }
   ],
   "ctaTitle": "Transform Your Marina Home",
-  "heroImage": "https://images.unsplash.com/photo-1518684079-3c830dcef090?w=1920",
+  "heroImage": "https://static.prod-images.emergentagent.com/jobs/9a576253-3f34-4de3-9ad4-57e7617524d7/images/7f712d04d30f0f9aaf852c0c66e731694ab0559eda7c7c291a7e774d940f023b.png",
   "ctaSubtitle": "Join hundreds of Dubai Marina residents enjoying smart home living.",
   "services": [
     {

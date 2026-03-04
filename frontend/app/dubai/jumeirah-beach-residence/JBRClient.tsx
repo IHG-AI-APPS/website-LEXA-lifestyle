@@ -52,7 +52,7 @@ const pageData: GeoPageData = {
     }
   ],
   "ctaTitle": "Ready for Smart JBR Living?",
-  "heroImage": "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=1920",
+  "heroImage": "https://static.prod-images.emergentagent.com/jobs/9a576253-3f34-4de3-9ad4-57e7617524d7/images/4edca8631e11ca9f4dec02b133b2353a5b85b70e16c0c8a664f375231ab3060f.png",
   "ctaSubtitle": "Book a free consultation and discover how we can transform your JBR apartment.",
   "services": [
     {
