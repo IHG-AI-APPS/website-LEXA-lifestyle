@@ -99,7 +99,7 @@ export default function BlogArticlePage({ params }: { params: { slug: string } }
         />
       </div>
 
-      <section className="relative overflow-hidden bg-gradient-to-b from-gray-50 to-white">
+      <section className="relative overflow-hidden bg-gradient-to-b from-gray-50 to-white dark:from-gray-900 dark:to-gray-900">
         <div className="container mx-auto px-4 sm:px-8 lg:px-16 py-12 lg:py-16">
           <div className="max-w-3xl mx-auto">
             <motion.div
