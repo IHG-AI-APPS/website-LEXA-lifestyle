@@ -1,69 +1,69 @@
 # LEXA Lifestyle Website - Product Requirements Document
 
 ## Original Problem Statement
-Complete website overhaul for 100% dynamic content, a premium "Dark Luxury" design, and an app-like user experience. Website audit report identified 23 specific UI/UX and functional issues to fix across P0, P1, and P2 priorities.
+Complete website overhaul for 100% dynamic content, a premium "Dark Luxury" design, and an app-like user experience. Website audit report identified 23 specific UI/UX and functional issues to fix across P0, P1, and P2 priorities. User also requested site-wide color consistency (dark charcoal + gold only), mobile-first responsive enhancement, and typography standardization.
 
 ## Core Architecture
 - **Frontend**: Next.js (production mode with `next start`)
 - **Backend**: FastAPI with MongoDB
-- **Theme**: Dark Luxury with gold (#C9A962) accent
+- **Theme**: Dark Charcoal (#050505, #0A0A0A, #171717) + Gold (#C9A962)
 - **Integrations**: OpenAI GPT (AURA chatbot), Gemini Nano Banana (avatar), WhatsApp/Interakt, Gmail SMTP, Google Maps, GA4, Meta Pixel
+
+## Design System — Color Palette
+| Token | Hex | Usage |
+|-------|-----|-------|
+| Void | #050505 | Page backgrounds, hero sections |
+| Obsidian | #0A0A0A | Card backgrounds, secondary surfaces |
+| Charcoal | #0F0F0F | Gray-50 dark override |
+| Charcoal Light | #171717 | Elevated cards, hover states |
+| Border | zinc-800 (#27272a) | All borders in dark mode |
+| Gold | #C9A962 | Accent color, CTAs, highlights |
+| Text Primary | white | Headings, primary text |
+| Text Secondary | zinc-400/zinc-500 | Body text, captions |
 
 ## What's Been Implemented
 
-### Completed - P0 Fixes (All Done)
-- Fixed Aura chatbot
-- Corrected header logo in dark mode
-- Added testimonials section to homepage
-- Added Google Maps to contact page
-- Improved Quick View button accessibility on mobile
+### Completed - P0/P1/P2 Audit Fixes (All Done)
+- Fixed Aura chatbot, header logo, testimonials, Google Maps, Quick View
+- Package tier redirect, catalogue overlap, modal responsiveness
+- OurPromise icons, blog author names, footer social icons (6 total)
 
-### Completed - P1 Fixes (All Done - Feb 2026)
-- Fixed package tier redirect: Apartment tier cards now link to `/package-builder` with correct query params
-- Fixed catalogue page header/content overlap: Increased top padding from pt-20 to pt-24
-- Improved Schedule Visit modal mobile responsiveness
-- Dark mode fixes applied to packages page (Quick Tools Bar, property cards)
-
-### Completed - P2 Fixes (All Done - Feb 2026)
-- Fixed icon alignment in "Why Choose Us" / OurPromise section
-- Blog author name fallback: Shows "LEXA Editorial" when author is "Aura"
-- Footer social icons: Added TikTok and X/Twitter (6 total)
-
-### Completed - Site-wide QA Pass (Mar 2026)
-- Comprehensive QA across 15+ pages: 16/16 frontend features passed, 15/16 backend tests passed
-- Fixed blog detail hero contrast in dark mode (added dark gradient background)
-- All pages verified: Homepage, Solutions, Services, Projects, Blog, Packages, Catalogues, Contact, Brands, Experience Centre, Admin
-- Dark mode toggle, mobile responsiveness (375px), header navigation, footer all verified working
+### Completed - Site-wide Color Consistency Overhaul (Mar 2026)
+- **CSS Variables**: Changed dark mode from blue HSL(222) to neutral HSL(0) in globals.css
+- **Dark mode overrides**: .bg-white → #0A0A0A, .bg-gray-50 → #0F0F0F, .bg-gray-100 → #171717
+- **Bulk replacement**: All dark:bg-gray-900/950/800 → charcoal hex values across 100+ files
+- **Slate → Zinc**: All slate-700/800/900 replaced with zinc equivalents for neutral tone
+- **Border standardization**: dark:border-gray-700/800 → dark:border-zinc-800
+- **Text normalization**: dark:text-gray-300/400 → dark:text-zinc-400/zinc-500
+- **Glass effect**: Fixed from blue-tinted rgb(17,24,39) to neutral rgb(10,10,10)
+- **Verified**: Testing agent confirmed ALL backgrounds are R≈G≈B (zero blue tint) — 11/11 tests passed
 
 ### Completed - Service Worker v4 (Mar 2026)
-- Upgraded from v3 to v4 with production-grade caching
-- **Network-first** for critical CMS/settings data (always fresh when online)
-- **Stale-while-revalidate** with 5-min TTL for regular API data
-- **Cache-first** for immutable static assets
-- **Branded offline fallback page** matching Dark Luxury theme
-- **Cache size limits** (100 max API entries) with automatic eviction
-- **Proper cache versioning** (old caches auto-cleaned on update)
-- Never-cache list expanded (WhatsApp, schedule-visit, contact submissions)
+- Network-first for CMS, stale-while-revalidate for API, cache-first for static
+- Branded offline fallback page, cache size limits, proper versioning
 
 ### Completed - Major Features
-- WhatsApp Admin Dashboard at `/admin/whatsapp`
-- Quick View modal across Projects, Solutions, Blog pages
-- Corrected all product pricing for Dubai market
-- Site-wide design consistency pass (100+ pages)
+- WhatsApp Admin Dashboard, Quick View modal, pricing updates, design consistency pass
 
-## Data Summary
-- 106 Solutions, 19 Services, 53 Articles, 19 Projects, 37 Brands, 6 Testimonials
+## Typography System (globals.css)
+| Level | Mobile | Tablet | Desktop |
+|-------|--------|--------|---------|
+| H1 | text-3xl | text-4xl-5xl | text-5xl-6xl |
+| H2 | text-2xl | text-3xl-4xl | text-4xl-5xl |
+| H3 | text-xl | text-2xl | text-3xl |
+| H4 | text-lg | text-xl | text-2xl |
+| Body | text-base | text-base | text-base |
+| Small | text-sm | text-sm | text-sm |
 
 ## Admin Credentials
-- URL: `/admin/login`
-- Username: `admin`
-- Password: `lexa2026`
+- URL: `/admin/login`, Username: `admin`, Password: `lexa2026`
 
 ## Critical Notes
 - DO NOT modify `start` script in `package.json`
 - DO NOT re-add `X-Frame-Options` header in `next.config.mjs`
+- DO NOT reintroduce blue-tinted colors (HSL 222, #0d1321, #0a0f1a, slate-*)
 - Frontend runs in production mode; changes require `npx next build` + `sudo supervisorctl restart frontend`
 
 ## Remaining Backlog
-- All audit items complete. No pending issues.
-- Potential: "Compare Packages" side-by-side feature for conversion optimization
+- No critical pending issues. All audit items and color overhaul complete.
+- Potential enhancement: "Compare Packages" side-by-side feature
