@@ -67,7 +67,7 @@ export default function ProposalComparison({ sessionId, resolutionData, onSelect
           <p className="text-sm text-gray-500 uppercase tracking-widest mb-2">
             Three Options • Compare • Select
           </p>
-          <p className="text-gray-600 dark:text-gray-400 text-sm">
+          <p className="text-gray-600 dark:text-zinc-500 text-sm">
             Each proposal is tailored to your project requirements
           </p>
         </div>
@@ -87,10 +87,10 @@ export default function ProposalComparison({ sessionId, resolutionData, onSelect
                 onClick={() => setSelectedProposal(type)}
                 onMouseEnter={() => setHoveredProposal(type)}
                 onMouseLeave={() => setHoveredProposal(null)}
-                className={`relative p-8 text-left transition-all duration-500 bg-white dark:bg-gray-800 border ${
+                className={`relative p-8 text-left transition-all duration-500 bg-white dark:bg-[#171717] border ${
                   isSelected
                     ? 'border-[#C9A962] shadow-xl scale-105 z-10'
-                    : 'border-gray-200 dark:border-gray-700 hover:border-gray-300 dark:border-gray-600 hover:shadow-lg'
+                    : 'border-gray-200 dark:border-zinc-800 hover:border-gray-300 dark:border-zinc-700 hover:shadow-lg'
                 }`}
                 whileHover={{ y: -4 }}
               >
@@ -129,27 +129,27 @@ export default function ProposalComparison({ sessionId, resolutionData, onSelect
                   <p className="text-xs text-[#C9A962] uppercase tracking-widest mb-3 font-medium">
                     {proposal.tier_mix}
                   </p>
-                  <p className="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">
+                  <p className="text-sm text-gray-600 dark:text-zinc-500 leading-relaxed">
                     {proposal.tagline}
                   </p>
                 </div>
 
                 {/* Stats */}
-                <div className="space-y-3 mb-6 pb-6 border-b border-gray-200 dark:border-gray-700">
+                <div className="space-y-3 mb-6 pb-6 border-b border-gray-200 dark:border-zinc-800">
                   <div className="flex justify-between text-xs">
-                    <span className="text-gray-600 dark:text-gray-400">Systems</span>
+                    <span className="text-gray-600 dark:text-zinc-500">Systems</span>
                     <span className="text-gray-900 dark:text-white font-mono font-medium">{proposal.system_count}</span>
                   </div>
                   <div className="flex justify-between text-xs">
-                    <span className="text-gray-600 dark:text-gray-400">Features</span>
+                    <span className="text-gray-600 dark:text-zinc-500">Features</span>
                     <span className="text-gray-900 dark:text-white font-mono font-medium">{proposal.feature_count}</span>
                   </div>
                   <div className="flex justify-between text-xs">
-                    <span className="text-gray-600 dark:text-gray-400">Complexity</span>
+                    <span className="text-gray-600 dark:text-zinc-500">Complexity</span>
                     <span className="text-gray-900 dark:text-white font-mono font-medium">{proposal.complexity_score}/10</span>
                   </div>
                   <div className="flex justify-between text-xs">
-                    <span className="text-gray-600 dark:text-gray-400">Timeline</span>
+                    <span className="text-gray-600 dark:text-zinc-500">Timeline</span>
                     <span className="text-gray-900 dark:text-white font-mono font-medium">{proposal.estimated_timeline}</span>
                   </div>
                 </div>
@@ -157,7 +157,7 @@ export default function ProposalComparison({ sessionId, resolutionData, onSelect
                 {/* Highlights */}
                 <div className="space-y-2">
                   {proposal.highlights?.slice(0, 3).map((highlight: string, index: number) => (
-                    <div key={index} className="flex items-start gap-2 text-xs text-gray-600 dark:text-gray-400">
+                    <div key={index} className="flex items-start gap-2 text-xs text-gray-600 dark:text-zinc-500">
                       <CheckCircle2 className="w-3 h-3 text-green-600 mt-0.5 flex-shrink-0" />
                       <span>{highlight}</span>
                     </div>
@@ -169,25 +169,25 @@ export default function ProposalComparison({ sessionId, resolutionData, onSelect
         </div>
 
         {/* Interactive Comparison Matrix */}
-        <div className="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 p-8 mb-12">
+        <div className="bg-white dark:bg-[#171717] border border-gray-200 dark:border-zinc-800 p-8 mb-12">
           <h3 className="text-sm font-medium mb-6 uppercase tracking-widest text-gray-900 dark:text-white">Detailed Comparison</h3>
           <div className="overflow-x-auto">
             <table className="w-full text-xs">
               <thead>
-                <tr className="border-b border-gray-200 dark:border-gray-700">
-                  <th className="text-left py-3 text-gray-600 dark:text-gray-400 uppercase tracking-widest font-medium">Feature</th>
-                  <th className="text-center py-3 text-gray-600 dark:text-gray-400 uppercase tracking-widest font-medium">Value</th>
+                <tr className="border-b border-gray-200 dark:border-zinc-800">
+                  <th className="text-left py-3 text-gray-600 dark:text-zinc-500 uppercase tracking-widest font-medium">Feature</th>
+                  <th className="text-center py-3 text-gray-600 dark:text-zinc-500 uppercase tracking-widest font-medium">Value</th>
                   <th className="text-center py-3 text-[#C9A962] uppercase tracking-widest font-medium">Balanced</th>
-                  <th className="text-center py-3 text-gray-600 dark:text-gray-400 uppercase tracking-widest font-medium">Flagship</th>
+                  <th className="text-center py-3 text-gray-600 dark:text-zinc-500 uppercase tracking-widest font-medium">Flagship</th>
                 </tr>
               </thead>
               <tbody>
                 {proposals.comparison_matrix?.rows?.map((row: any, index: number) => (
                   <tr
                     key={index}
-                    className="border-b border-gray-100 dark:border-gray-800 hover:bg-gray-50 transition-colors"
+                    className="border-b border-gray-100 dark:border-zinc-800 hover:bg-gray-50 transition-colors"
                   >
-                    <td className="py-3 text-gray-700 dark:text-gray-300">{row.feature}</td>
+                    <td className="py-3 text-gray-700 dark:text-zinc-400">{row.feature}</td>
                     <td className="py-3 text-center text-gray-900 dark:text-white font-mono">{row.value}</td>
                     <td className="py-3 text-center text-[#C9A962] font-mono font-medium">{row.balanced}</td>
                     <td className="py-3 text-center text-gray-900 dark:text-white font-mono">{row.flagship}</td>
@@ -208,7 +208,7 @@ export default function ProposalComparison({ sessionId, resolutionData, onSelect
             {loading ? 'Processing...' : `Select ${selectedProposal.charAt(0).toUpperCase() + selectedProposal.slice(1)} Architecture`}
             <ArrowRight className="ml-3 w-4 h-4 group-hover:translate-x-1 transition-transform" />
           </Button>
-          <p className="text-xs text-gray-600 dark:text-gray-400 mt-4">
+          <p className="text-xs text-gray-600 dark:text-zinc-500 mt-4">
             You&apos;ve selected the <span className="font-medium text-gray-900 dark:text-white">{selectedProposal}</span> option
           </p>
         </div>

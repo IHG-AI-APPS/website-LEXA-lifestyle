@@ -28,7 +28,7 @@ export default function ConsultationPage() {
   ]
 
   return (
-    <div className="min-h-screen bg-white dark:bg-gray-950 pt-20" data-testid="consultation-page">
+    <div className="min-h-screen bg-white dark:bg-[#050505] pt-20" data-testid="consultation-page">
       {/* Hero */}
       <section className="relative overflow-hidden bg-[#0A0A0A] dark:bg-[#050505] text-white py-16 lg:py-24">
         {/* Hero Background Image */}
@@ -49,7 +49,7 @@ export default function ConsultationPage() {
       </section>
 
       {/* Consultation Types */}
-      <section className="py-16 lg:py-20 bg-white dark:bg-gray-950" data-testid="consultation-types">
+      <section className="py-16 lg:py-20 bg-white dark:bg-[#050505]" data-testid="consultation-types">
         <div className="container mx-auto px-5 sm:px-8 lg:px-16">
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-12">
@@ -61,20 +61,20 @@ export default function ConsultationPage() {
                 const Icon = type.icon
                 return (
                   <motion.div key={i} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.3, delay: i * 0.1 }}
-                    className={`relative rounded-2xl border-2 bg-white dark:bg-gray-900 p-8 ${type.popular ? 'border-[#C9A962] shadow-xl' : 'border-gray-200 dark:border-gray-700'} transition-all hover:shadow-lg`}>
+                    className={`relative rounded-2xl border-2 bg-white dark:bg-[#0A0A0A] p-8 ${type.popular ? 'border-[#C9A962] shadow-xl' : 'border-gray-200 dark:border-zinc-800'} transition-all hover:shadow-lg`}>
                     {type.popular && <div className="absolute -top-3 left-1/2 -translate-x-1/2 px-3 py-0.5 bg-[#C9A962] text-gray-900 text-xs font-bold rounded-full">Most Popular</div>}
                     <div className="w-12 h-12 rounded-lg bg-gray-900 dark:bg-[#C9A962] flex items-center justify-center mb-5">
                       <Icon className="text-white dark:text-gray-900" size={22} />
                     </div>
                     <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-1">{type.title}</h3>
                     <div className="flex items-center gap-2 text-sm text-[#C9A962] mb-3"><Clock size={14} />{type.duration}</div>
-                    <p className="text-sm text-gray-600 dark:text-gray-400 mb-5">{type.description}</p>
+                    <p className="text-sm text-gray-600 dark:text-zinc-500 mb-5">{type.description}</p>
                     <ul className="space-y-2 mb-6">
                       {type.features.map((feat: string, j: number) => (
-                        <li key={j} className="flex items-start gap-2 text-sm text-gray-700 dark:text-gray-300"><CheckCircle2 size={14} className="text-[#C9A962] flex-shrink-0 mt-0.5" />{feat}</li>
+                        <li key={j} className="flex items-start gap-2 text-sm text-gray-700 dark:text-zinc-400"><CheckCircle2 size={14} className="text-[#C9A962] flex-shrink-0 mt-0.5" />{feat}</li>
                       ))}
                     </ul>
-                    <Button className={`w-full font-semibold ${type.popular ? 'bg-[#C9A962] text-gray-900 hover:bg-[#C9A962]/90' : 'bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-white hover:bg-gray-200'}`} onClick={() => setShowBookingModal(true)}>
+                    <Button className={`w-full font-semibold ${type.popular ? 'bg-[#C9A962] text-gray-900 hover:bg-[#C9A962]/90' : 'bg-gray-100 dark:bg-[#171717] text-gray-900 dark:text-white hover:bg-gray-200'}`} onClick={() => setShowBookingModal(true)}>
                       {type.cta} <ArrowRight className="ml-2" size={16} />
                     </Button>
                   </motion.div>
@@ -86,7 +86,7 @@ export default function ConsultationPage() {
       </section>
 
       {/* Process */}
-      <section className="py-16 lg:py-20 bg-gray-50 dark:bg-gray-900" data-testid="process-section">
+      <section className="py-16 lg:py-20 bg-gray-50 dark:bg-[#0A0A0A]" data-testid="process-section">
         <div className="container mx-auto px-5 sm:px-8 lg:px-16">
           <div className="max-w-5xl mx-auto">
             <div className="text-center mb-12">
@@ -99,11 +99,11 @@ export default function ConsultationPage() {
                 return (
                   <motion.div key={i} initial={{ opacity: 0, y: 15 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.3, delay: i * 0.1 }}
                     className="text-center">
-                    <div className="w-14 h-14 rounded-full bg-gray-900 dark:bg-gray-800 flex items-center justify-center mb-4 mx-auto border-2 border-[#C9A962]/30">
+                    <div className="w-14 h-14 rounded-full bg-gray-900 dark:bg-[#171717] flex items-center justify-center mb-4 mx-auto border-2 border-[#C9A962]/30">
                       <span className="text-[#C9A962] font-bold text-lg">{step.number}</span>
                     </div>
                     <h3 className="text-base font-bold mb-2 text-gray-900 dark:text-white">{step.title}</h3>
-                    <p className="text-sm text-gray-600 dark:text-gray-400">{step.description}</p>
+                    <p className="text-sm text-gray-600 dark:text-zinc-500">{step.description}</p>
                   </motion.div>
                 )
               })}
@@ -124,7 +124,7 @@ export default function ConsultationPage() {
       </section>
 
       {/* CTA */}
-      <section className="py-20 bg-white dark:bg-gray-950">
+      <section className="py-20 bg-white dark:bg-[#050505]">
         <div className="container mx-auto px-5 sm:px-8 lg:px-16">
           <div className="max-w-3xl mx-auto text-center">
             <span className="text-[#C9A962] text-xs uppercase tracking-widest font-semibold">Ready to Start?</span>
@@ -134,7 +134,7 @@ export default function ConsultationPage() {
               <Button size="lg" className="bg-[#C9A962] text-gray-900 hover:bg-[#C9A962]/90 font-semibold px-8" onClick={() => setShowBookingModal(true)} data-testid="cta-book">
                 Book Free Consultation
               </Button>
-              <a href="tel:+971503267227"><Button size="lg" variant="outline" className="border-gray-300 dark:border-gray-700 px-8"><Phone className="mr-2" size={16} /> Call Now</Button></a>
+              <a href="tel:+971503267227"><Button size="lg" variant="outline" className="border-gray-300 dark:border-zinc-800 px-8"><Phone className="mr-2" size={16} /> Call Now</Button></a>
             </div>
           </div>
         </div>

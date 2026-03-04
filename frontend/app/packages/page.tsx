@@ -52,7 +52,7 @@ export default function PackagesPage() {
   ]
 
   return (
-    <div className="min-h-screen bg-white dark:bg-gray-950 pt-20" data-testid="packages-page">
+    <div className="min-h-screen bg-white dark:bg-[#050505] pt-20" data-testid="packages-page">
       {/* Hero */}
       <section className="relative overflow-hidden bg-[#0A0A0A] dark:bg-[#050505] text-white py-16 lg:py-24">
         {/* Hero Background Image */}
@@ -81,11 +81,11 @@ export default function PackagesPage() {
       </section>
 
       {/* Quick Tools Bar */}
-      <section className="py-4 border-b bg-white dark:bg-gray-950 dark:border-gray-800">
+      <section className="py-4 border-b bg-white dark:bg-[#050505] dark:border-zinc-800">
         <div className="container mx-auto px-6 lg:px-12">
           <div className="max-w-7xl mx-auto">
             <div className="flex flex-wrap items-center gap-3">
-              <span className="text-sm text-gray-500 dark:text-gray-400">Tools:</span>
+              <span className="text-sm text-gray-500 dark:text-zinc-500">Tools:</span>
               <Link href="/smart-home-quiz" className="inline-flex items-center gap-1.5 px-3 py-1.5 text-sm bg-[#C9A962]/5 text-[#A68B4B] rounded-full hover:bg-[#C9A962]/10 transition-colors">
                 <Brain className="h-3.5 w-3.5" />
                 AI Quiz
@@ -121,12 +121,12 @@ export default function PackagesPage() {
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
                   {propertyPackages.map((pkg) => (
                     <Link key={pkg.slug} href={`/packages/${pkg.slug}`}>
-                      <div className="group h-full border border-gray-200 dark:border-gray-700 hover:border-gray-400 hover:shadow-md rounded-lg p-5 transition-all bg-white dark:bg-gray-900">
+                      <div className="group h-full border border-gray-200 dark:border-zinc-800 hover:border-gray-400 hover:shadow-md rounded-lg p-5 transition-all bg-white dark:bg-[#0A0A0A]">
                         <div className="flex items-start justify-between mb-3">
-                          <div className="w-10 h-10 rounded-lg bg-gray-100 dark:bg-gray-800 flex items-center justify-center">
-                            <Home className="h-5 w-5 text-gray-600 dark:text-gray-400" />
+                          <div className="w-10 h-10 rounded-lg bg-gray-100 dark:bg-[#171717] flex items-center justify-center">
+                            <Home className="h-5 w-5 text-gray-600 dark:text-zinc-500" />
                           </div>
-                          <ChevronRight className="h-5 w-5 text-gray-300 group-hover:text-gray-600 dark:text-gray-400 transition-colors" />
+                          <ChevronRight className="h-5 w-5 text-gray-300 group-hover:text-gray-600 dark:text-zinc-500 transition-colors" />
                         </div>
                         <h3 className="font-semibold text-gray-900 dark:text-white mb-1 group-hover:text-black">
                           {pkg.title}
@@ -156,14 +156,14 @@ export default function PackagesPage() {
               <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
                 {apartmentTiers.map((tier) => (
                   <Link key={tier.name} href={`/package-builder?property=smart-apartment-packages&tier=${tier.name.toLowerCase()}`} data-testid={`tier-${tier.name.toLowerCase()}`}>
-                    <div className={`relative border-2 rounded-lg p-4 transition-all hover:shadow-md ${tier.popular ? 'border-amber-400 bg-amber-50' : 'border-gray-200 dark:border-gray-700 bg-white hover:border-gray-400'}`}>
+                    <div className={`relative border-2 rounded-lg p-4 transition-all hover:shadow-md ${tier.popular ? 'border-amber-400 bg-amber-50' : 'border-gray-200 dark:border-zinc-800 bg-white hover:border-gray-400'}`}>
                       {tier.popular && (
                         <span className="absolute -top-2 right-3 px-2 py-0.5 bg-amber-500 text-white text-xs font-bold rounded">
                           Popular
                         </span>
                       )}
                       <div className={`w-2 h-2 rounded-full ${tier.color} mb-3`} />
-                      <div className="text-sm font-medium text-gray-600 dark:text-gray-400">{tier.name}</div>
+                      <div className="text-sm font-medium text-gray-600 dark:text-zinc-500">{tier.name}</div>
                       <div className="text-lg font-bold text-gray-900 dark:text-white">AED {tier.price}</div>
                     </div>
                   </Link>
@@ -184,7 +184,7 @@ export default function PackagesPage() {
               </div>
               
               <Link href="/packages/developer-packages">
-                <div className="bg-gradient-to-r from-slate-800 to-slate-900 rounded-lg p-6 text-white hover:shadow-xl transition-shadow">
+                <div className="bg-gradient-to-r from-zinc-800 to-zinc-900 rounded-lg p-6 text-white hover:shadow-xl transition-shadow">
                   <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
                     <div>
                       <h3 className="text-lg font-semibold mb-1">Multi-Unit Project Pricing</h3>
@@ -210,30 +210,30 @@ export default function PackagesPage() {
               </div>
               
               <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-                <div className="border border-gray-200 dark:border-gray-700 rounded-lg p-5 bg-gradient-to-br from-gray-50 to-white">
+                <div className="border border-gray-200 dark:border-zinc-800 rounded-lg p-5 bg-gradient-to-br from-gray-50 to-white">
                   <div className="flex items-center gap-2 mb-2">
                     <Zap className="h-4 w-4 text-[#C9A962]" />
                     <span className="font-semibold text-gray-900 dark:text-white">Essential</span>
                   </div>
-                  <p className="text-sm text-gray-600 dark:text-gray-400">
+                  <p className="text-sm text-gray-600 dark:text-zinc-500">
                     Core automation features for smart living. Perfect for those starting their smart home journey.
                   </p>
                 </div>
-                <div className="border border-gray-200 dark:border-gray-700 rounded-lg p-5 bg-gradient-to-br from-amber-50 to-white">
+                <div className="border border-gray-200 dark:border-zinc-800 rounded-lg p-5 bg-gradient-to-br from-amber-50 to-white">
                   <div className="flex items-center gap-2 mb-2">
                     <Sparkles className="h-4 w-4 text-amber-500" />
                     <span className="font-semibold text-gray-900 dark:text-white">Enhanced</span>
                   </div>
-                  <p className="text-sm text-gray-600 dark:text-gray-400">
+                  <p className="text-sm text-gray-600 dark:text-zinc-500">
                     Advanced features with extended coverage. Ideal for comprehensive home automation.
                   </p>
                 </div>
-                <div className="border border-gray-200 dark:border-gray-700 rounded-lg p-5 bg-gradient-to-br from-[#C9A962]/5 to-white">
+                <div className="border border-gray-200 dark:border-zinc-800 rounded-lg p-5 bg-gradient-to-br from-[#C9A962]/5 to-white">
                   <div className="flex items-center gap-2 mb-2">
                     <Crown className="h-4 w-4 text-[#C9A962]" />
                     <span className="font-semibold text-gray-900 dark:text-white">High-End</span>
                   </div>
-                  <p className="text-sm text-gray-600 dark:text-gray-400">
+                  <p className="text-sm text-gray-600 dark:text-zinc-500">
                     Premium orchestration with cutting-edge technology. For discerning homeowners.
                   </p>
                 </div>
@@ -245,13 +245,13 @@ export default function PackagesPage() {
       </section>
 
       {/* CTA */}
-      <section className="py-10 bg-gray-50 dark:bg-gray-800 border-t dark:border-gray-700">
+      <section className="py-10 bg-gray-50 dark:bg-[#171717] border-t dark:border-zinc-800">
         <div className="container mx-auto px-6 lg:px-12">
           <div className="max-w-7xl mx-auto">
             <div className="flex flex-col md:flex-row items-center justify-between gap-6">
               <div>
                 <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-1">Not sure which package is right for you?</h3>
-                <p className="text-gray-600 dark:text-gray-400">Take our AI quiz or consult with our experts for personalized recommendations.</p>
+                <p className="text-gray-600 dark:text-zinc-500">Take our AI quiz or consult with our experts for personalized recommendations.</p>
               </div>
               <div className="flex gap-3">
                 <Link
@@ -262,7 +262,7 @@ export default function PackagesPage() {
                 </Link>
                 <Link
                   href="/contact"
-                  className="px-5 py-2.5 border border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 text-sm font-medium rounded-lg hover:border-gray-400 transition-colors"
+                  className="px-5 py-2.5 border border-gray-300 dark:border-zinc-700 text-gray-700 dark:text-zinc-400 text-sm font-medium rounded-lg hover:border-gray-400 transition-colors"
                 >
                   Contact Us
                 </Link>

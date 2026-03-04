@@ -47,7 +47,7 @@ export default function PricingRanges() {
             <h2 className="h2 mb-3 md:mb-4">
               Typical Project Ranges
             </h2>
-            <p className="text-base md:text-lg text-gray-600 dark:text-gray-400 dark:text-gray-400">
+            <p className="text-base md:text-lg text-gray-600 dark:text-zinc-500">
               Transparent pricing to help you plan your investment
             </p>
           </motion.div>
@@ -60,7 +60,7 @@ export default function PricingRanges() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
-                className="bg-gallery-base rounded-xl p-6 sm:p-8 border-2 border-gray-200 dark:border-gray-700 hover:border-black hover:shadow-xl transition-all"
+                className="bg-gallery-base rounded-xl p-6 sm:p-8 border-2 border-gray-200 dark:border-zinc-800 hover:border-black hover:shadow-xl transition-all"
               >
                 <div className="w-14 h-14 sm:w-16 sm:h-16 bg-black rounded-full flex items-center justify-center mb-5 sm:mb-6">
                   <type.icon size={28} className="text-white sm:w-8 sm:h-8" />
@@ -71,11 +71,11 @@ export default function PricingRanges() {
                 
                 <div className="text-xl sm:text-2xl font-bold mb-3 sm:mb-4 text-black">{type.range}</div>
                 
-                <p className="text-sm sm:text-base text-gray-600 dark:text-gray-400 mb-5 sm:mb-6">{type.description}</p>
+                <p className="text-sm sm:text-base text-gray-600 dark:text-zinc-500 mb-5 sm:mb-6">{type.description}</p>
 
                 <div className="space-y-2 mb-5 sm:mb-6">
                   {type.features.map((feature, idx) => (
-                    <div key={idx} className="flex items-center gap-2 text-sm text-gray-700 dark:text-gray-300 dark:text-gray-300">
+                    <div key={idx} className="flex items-center gap-2 text-sm text-gray-700 dark:text-zinc-400">
                       <div className="w-1.5 h-1.5 bg-black rounded-full"></div>
                       <span>{feature}</span>
                     </div>

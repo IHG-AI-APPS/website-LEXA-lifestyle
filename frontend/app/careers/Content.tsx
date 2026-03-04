@@ -46,7 +46,7 @@ export default function CareersContent() {
   const address = cms?.contact_address || fallback.contact_address
 
   return (
-    <div className="min-h-screen bg-white dark:bg-gray-950 pt-20" data-testid="careers-page">
+    <div className="min-h-screen bg-white dark:bg-[#050505] pt-20" data-testid="careers-page">
       {/* Hero */}
       <section className="relative overflow-hidden bg-[#0A0A0A] dark:bg-[#050505] text-white py-16 lg:py-24">
         <div className="container mx-auto px-5 sm:px-8 lg:px-16 relative z-10">
@@ -59,16 +59,16 @@ export default function CareersContent() {
       </section>
 
       {/* Why Join Us */}
-      <section className="py-16 lg:py-20 bg-white dark:bg-gray-950">
+      <section className="py-16 lg:py-20 bg-white dark:bg-[#050505]">
         <div className="container mx-auto px-5 sm:px-8 lg:px-16">
           <div className="max-w-5xl mx-auto">
             <span className="text-xs uppercase tracking-widest text-[#C9A962] font-semibold">Why LEXA Lifestyle?</span>
             <h2 className="text-2xl sm:text-3xl font-bold mt-2 mb-8 text-gray-900 dark:text-white">Benefits of Joining</h2>
             <div className="grid md:grid-cols-3 gap-4">
               {benefits.map((b: any, i: number) => (
-                <div key={i} className="p-5 rounded-xl bg-gray-50 dark:bg-gray-900 border border-gray-100 dark:border-gray-800">
+                <div key={i} className="p-5 rounded-xl bg-gray-50 dark:bg-[#0A0A0A] border border-gray-100 dark:border-zinc-800">
                   <h3 className="text-sm font-bold text-gray-900 dark:text-white mb-2">{b.title}</h3>
-                  <p className="text-sm text-gray-600 dark:text-gray-400">{b.description}</p>
+                  <p className="text-sm text-gray-600 dark:text-zinc-500">{b.description}</p>
                 </div>
               ))}
             </div>
@@ -77,14 +77,14 @@ export default function CareersContent() {
       </section>
 
       {/* Open Positions */}
-      <section className="py-16 lg:py-20 bg-gray-50 dark:bg-gray-900" data-testid="positions-section">
+      <section className="py-16 lg:py-20 bg-gray-50 dark:bg-[#0A0A0A]" data-testid="positions-section">
         <div className="container mx-auto px-5 sm:px-8 lg:px-16">
           <div className="max-w-5xl mx-auto">
             <span className="text-xs uppercase tracking-widest text-[#C9A962] font-semibold">Opportunities</span>
             <h2 className="text-2xl sm:text-3xl font-bold mt-2 mb-8 text-gray-900 dark:text-white">Open Positions</h2>
             <div className="space-y-4">
               {positions.map((job: any, i: number) => (
-                <div key={i} className="bg-white dark:bg-gray-950 p-5 rounded-xl border border-gray-100 dark:border-gray-800 hover:border-[#C9A962]/40 transition-colors" data-testid={`position-${i}`}>
+                <div key={i} className="bg-white dark:bg-[#050505] p-5 rounded-xl border border-gray-100 dark:border-zinc-800 hover:border-[#C9A962]/40 transition-colors" data-testid={`position-${i}`}>
                   <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
                     <div>
                       <h3 className="text-base font-bold text-gray-900 dark:text-white mb-2">{job.title}</h3>
@@ -108,25 +108,25 @@ export default function CareersContent() {
       </section>
 
       {/* How to Apply */}
-      <section className="py-16 lg:py-20 bg-white dark:bg-gray-950">
+      <section className="py-16 lg:py-20 bg-white dark:bg-[#050505]">
         <div className="container mx-auto px-5 sm:px-8 lg:px-16">
           <div className="max-w-4xl mx-auto">
             <span className="text-xs uppercase tracking-widest text-[#C9A962] font-semibold">Application</span>
             <h2 className="text-2xl sm:text-3xl font-bold mt-2 mb-6 text-gray-900 dark:text-white">How to Apply</h2>
-            <p className="text-sm text-gray-600 dark:text-gray-400 mb-6">{applyIntro}</p>
+            <p className="text-sm text-gray-600 dark:text-zinc-500 mb-6">{applyIntro}</p>
             <ol className="space-y-3 mb-8">
               {applySteps.map((step: string, i: number) => (
-                <li key={i} className="flex items-start gap-3 text-sm text-gray-700 dark:text-gray-300">
+                <li key={i} className="flex items-start gap-3 text-sm text-gray-700 dark:text-zinc-400">
                   <span className="flex-shrink-0 w-6 h-6 rounded-full bg-[#C9A962]/15 text-[#C9A962] text-xs font-bold flex items-center justify-center">{i + 1}</span>
                   {step}
                 </li>
               ))}
             </ol>
-            <div className="bg-gray-50 dark:bg-gray-900 p-6 rounded-xl border border-gray-100 dark:border-gray-800">
+            <div className="bg-gray-50 dark:bg-[#0A0A0A] p-6 rounded-xl border border-gray-100 dark:border-zinc-800">
               <h3 className="text-sm font-bold text-gray-900 dark:text-white mb-3">Contact Us</h3>
-              <p className="text-sm text-gray-600 dark:text-gray-400 mb-1"><strong>Email:</strong> <a href={`mailto:${email}`} className="text-[#C9A962] hover:underline">{email}</a></p>
-              <p className="text-sm text-gray-600 dark:text-gray-400 mb-1"><strong>Phone:</strong> <a href={`tel:${phone.replace(/\s/g, '')}`} className="text-[#C9A962] hover:underline">{phone}</a></p>
-              <p className="text-sm text-gray-600 dark:text-gray-400"><strong>Address:</strong> {address}</p>
+              <p className="text-sm text-gray-600 dark:text-zinc-500 mb-1"><strong>Email:</strong> <a href={`mailto:${email}`} className="text-[#C9A962] hover:underline">{email}</a></p>
+              <p className="text-sm text-gray-600 dark:text-zinc-500 mb-1"><strong>Phone:</strong> <a href={`tel:${phone.replace(/\s/g, '')}`} className="text-[#C9A962] hover:underline">{phone}</a></p>
+              <p className="text-sm text-gray-600 dark:text-zinc-500"><strong>Address:</strong> {address}</p>
             </div>
           </div>
         </div>

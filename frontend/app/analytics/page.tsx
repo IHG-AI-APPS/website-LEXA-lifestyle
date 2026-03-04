@@ -76,7 +76,7 @@ export default function AnalyticsDashboard() {
     <motion.div
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
-      className="bg-white dark:bg-gray-800 rounded-xl border border-gray-200 dark:border-gray-700 p-6"
+      className="bg-white dark:bg-[#171717] rounded-xl border border-gray-200 dark:border-zinc-800 p-6"
     >
       <div className="flex items-start justify-between mb-4">
         <div className={`p-3 rounded-xl bg-${color}-50`}>
@@ -106,10 +106,10 @@ export default function AnalyticsDashboard() {
           return (
             <div key={key}>
               <div className="flex justify-between text-sm mb-1">
-                <span className="text-gray-600 dark:text-gray-400 capitalize">{key.replace(/_/g, ' ')}</span>
+                <span className="text-gray-600 dark:text-zinc-500 capitalize">{key.replace(/_/g, ' ')}</span>
                 <span className="text-gray-900 dark:text-white font-medium">{value} ({percentage}%)</span>
               </div>
-              <div className="h-2 bg-gray-100 dark:bg-gray-800 rounded-full overflow-hidden">
+              <div className="h-2 bg-gray-100 dark:bg-[#171717] rounded-full overflow-hidden">
                 <motion.div
                   initial={{ width: 0 }}
                   animate={{ width: `${percentage}%` }}
@@ -217,7 +217,7 @@ export default function AnalyticsDashboard() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.1 }}
-            className="bg-white dark:bg-gray-800 rounded-xl border border-gray-200 dark:border-gray-700 p-6"
+            className="bg-white dark:bg-[#171717] rounded-xl border border-gray-200 dark:border-zinc-800 p-6"
           >
             <h3 className="text-lg font-medium text-gray-900 dark:text-white mb-4 flex items-center gap-2">
               <Target className="w-5 h-5 text-[#C9A962]" />
@@ -259,7 +259,7 @@ export default function AnalyticsDashboard() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2 }}
-            className="bg-white dark:bg-gray-800 rounded-xl border border-gray-200 dark:border-gray-700 p-6"
+            className="bg-white dark:bg-[#171717] rounded-xl border border-gray-200 dark:border-zinc-800 p-6"
           >
             <h3 className="text-lg font-medium text-gray-900 dark:text-white mb-4 flex items-center gap-2">
               <DollarSign className="w-5 h-5 text-green-600" />
@@ -280,7 +280,7 @@ export default function AnalyticsDashboard() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.3 }}
-            className="bg-white dark:bg-gray-800 rounded-xl border border-gray-200 dark:border-gray-700 p-6"
+            className="bg-white dark:bg-[#171717] rounded-xl border border-gray-200 dark:border-zinc-800 p-6"
           >
             <h3 className="text-lg font-medium text-gray-900 dark:text-white mb-4 flex items-center gap-2">
               <Building2 className="w-5 h-5 text-[#C9A962]" />
@@ -301,7 +301,7 @@ export default function AnalyticsDashboard() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.4 }}
-            className="bg-white dark:bg-gray-800 rounded-xl border border-gray-200 dark:border-gray-700 p-6"
+            className="bg-white dark:bg-[#171717] rounded-xl border border-gray-200 dark:border-zinc-800 p-6"
           >
             <h3 className="text-lg font-medium text-gray-900 dark:text-white mb-4 flex items-center gap-2">
               <Building2 className="w-5 h-5 text-[#C9A962]" />

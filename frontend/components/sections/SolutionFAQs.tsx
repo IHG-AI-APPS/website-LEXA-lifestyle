@@ -67,7 +67,7 @@ export default function SolutionFAQs({ solutionSlug, title = "Frequently Asked Q
             className="mb-12 text-center"
           >
             <h2 className="text-4xl font-heading font-semibold mb-4">{title}</h2>
-            <p className="text-xl text-gray-600 dark:text-gray-400 dark:text-gray-400">
+            <p className="text-xl text-gray-600 dark:text-zinc-500">
               Everything you need to know about this solution
             </p>
           </motion.div>
@@ -80,10 +80,10 @@ export default function SolutionFAQs({ solutionSlug, title = "Frequently Asked Q
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
                 viewport={{ once: true }}
-                className="bg-white dark:bg-gray-800 p-8 border border-gray-200 dark:border-gray-700 rounded-lg shadow-sm hover:shadow-md transition-shadow"
+                className="bg-white dark:bg-[#171717] p-8 border border-gray-200 dark:border-zinc-800 rounded-lg shadow-sm hover:shadow-md transition-shadow"
               >
-                <h3 className="text-xl font-semibold mb-3 text-gray-900 dark:text-white dark:text-white">{faq.question}</h3>
-                <p className="text-gray-600 dark:text-gray-400 leading-relaxed">{faq.answer}</p>
+                <h3 className="text-xl font-semibold mb-3 text-gray-900 dark:text-white">{faq.question}</h3>
+                <p className="text-gray-600 dark:text-zinc-500 leading-relaxed">{faq.answer}</p>
               </motion.div>
             ))}
           </div>

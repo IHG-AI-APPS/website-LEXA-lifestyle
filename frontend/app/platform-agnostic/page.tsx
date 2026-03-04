@@ -103,7 +103,7 @@ export default function PlatformAgnosticPage() {
 
   return (
     <>
-      <div className="min-h-screen bg-white dark:bg-gray-950 pt-20" data-testid="platform-agnostic-page">
+      <div className="min-h-screen bg-white dark:bg-[#050505] pt-20" data-testid="platform-agnostic-page">
         {/* Hero Section */}
         <section className="relative overflow-hidden bg-[#0A0A0A] dark:bg-[#050505] text-white py-16 lg:py-24">
           <div className="container mx-auto px-5 sm:px-8 lg:px-16 relative z-10">
@@ -127,7 +127,7 @@ export default function PlatformAgnosticPage() {
         </section>
 
         {/* Benefits */}
-        <section className="py-20 bg-gray-50 dark:bg-gray-800">
+        <section className="py-20 bg-gray-50 dark:bg-[#171717]">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -139,7 +139,7 @@ export default function PlatformAgnosticPage() {
               <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4 text-[#1A1A1A] dark:text-white">
                 Why Platform Agnostic Matters
               </h2>
-              <p className="text-base sm:text-lg text-gray-600 dark:text-gray-400 max-w-3xl mx-auto">
+              <p className="text-base sm:text-lg text-gray-600 dark:text-zinc-500 max-w-3xl mx-auto">
                 The advantages of open architecture over proprietary systems
               </p>
             </motion.div>
@@ -154,7 +154,7 @@ export default function PlatformAgnosticPage() {
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.6, delay: 0.2 }}
                     viewport={{ once: true }}
-                    className="bg-white dark:bg-gray-800 p-8 border-2 border-gray-200 dark:border-gray-700 hover:border-[#1A1A1A] transition-all"
+                    className="bg-white dark:bg-[#171717] p-8 border-2 border-gray-200 dark:border-zinc-800 hover:border-[#1A1A1A] transition-all"
                   >
                     <div className="flex items-start gap-4 mb-4">
                       <div className="p-3 bg-indigo-50">
@@ -162,10 +162,10 @@ export default function PlatformAgnosticPage() {
                       </div>
                       <div className="flex-1">
                         <h3 className="text-xl font-bold mb-2 text-[#1A1A1A] dark:text-white">{benefit.title}</h3>
-                        <p className="text-gray-600 dark:text-gray-400 mb-3">{benefit.description}</p>
+                        <p className="text-gray-600 dark:text-zinc-500 mb-3">{benefit.description}</p>
                         <div className="bg-indigo-50 p-3 border-l-4 border-indigo-600">
                           <div className="text-xs text-indigo-600 font-semibold mb-1">Example:</div>
-                          <div className="text-sm text-gray-700 dark:text-gray-300">{benefit.example}</div>
+                          <div className="text-sm text-gray-700 dark:text-zinc-400">{benefit.example}</div>
                         </div>
                       </div>
                     </div>
@@ -189,7 +189,7 @@ export default function PlatformAgnosticPage() {
               <h2 className="text-3xl sm:text-4xl font-bold mb-4 text-[#1A1A1A] dark:text-white">
                 Four-Layer Integration Architecture
               </h2>
-              <p className="text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
+              <p className="text-lg text-gray-600 dark:text-zinc-500 max-w-2xl mx-auto">
                 How we create unified systems from diverse technologies
               </p>
             </motion.div>
@@ -208,10 +208,10 @@ export default function PlatformAgnosticPage() {
                     <h3 className="text-xl font-bold text-[#1A1A1A] dark:text-white">{layer.layer}</h3>
                     <span className="text-sm text-gray-500">Layer {index + 1}</span>
                   </div>
-                  <p className="text-gray-600 dark:text-gray-400 mb-4">{layer.description}</p>
+                  <p className="text-gray-600 dark:text-zinc-500 mb-4">{layer.description}</p>
                   <div className="flex flex-wrap gap-2">
                     {layer.examples.map((example) => (
-                      <span key={example} className="px-3 py-1 bg-white text-sm text-gray-700 dark:text-gray-300 border border-gray-200 dark:border-gray-700">
+                      <span key={example} className="px-3 py-1 bg-white text-sm text-gray-700 dark:text-zinc-400 border border-gray-200 dark:border-zinc-800">
                         {example}
                       </span>
                     ))}
@@ -223,7 +223,7 @@ export default function PlatformAgnosticPage() {
         </section>
 
         {/* Comparison */}
-        <section className="py-20 bg-gray-50 dark:bg-gray-800">
+        <section className="py-20 bg-gray-50 dark:bg-[#171717]">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -237,16 +237,16 @@ export default function PlatformAgnosticPage() {
               </h2>
             </motion.div>
 
-            <div className="bg-white border-2 border-gray-200 dark:border-gray-700 overflow-hidden">
-              <div className="grid grid-cols-3 bg-gray-100 dark:bg-gray-800 font-semibold text-sm">
-                <div className="p-4 border-r border-gray-200 dark:border-gray-700">Aspect</div>
-                <div className="p-4 border-r border-gray-200 dark:border-gray-700 text-center">Proprietary Systems</div>
+            <div className="bg-white border-2 border-gray-200 dark:border-zinc-800 overflow-hidden">
+              <div className="grid grid-cols-3 bg-gray-100 dark:bg-[#171717] font-semibold text-sm">
+                <div className="p-4 border-r border-gray-200 dark:border-zinc-800">Aspect</div>
+                <div className="p-4 border-r border-gray-200 dark:border-zinc-800 text-center">Proprietary Systems</div>
                 <div className="p-4 text-center">Platform Agnostic</div>
               </div>
               {comparison.map((row, index) => (
-                <div key={row.aspect} className={`grid grid-cols-3 border-t border-gray-200 dark:border-gray-700 ${index % 2 === 0 ? 'bg-gray-50' : 'bg-white'}`}>
-                  <div className="p-4 border-r border-gray-200 dark:border-gray-700 font-semibold text-gray-700 dark:text-gray-300">{row.aspect}</div>
-                  <div className="p-4 border-r border-gray-200 dark:border-gray-700 text-center text-red-600 text-sm">{row.proprietary}</div>
+                <div key={row.aspect} className={`grid grid-cols-3 border-t border-gray-200 dark:border-zinc-800 ${index % 2 === 0 ? 'bg-gray-50' : 'bg-white'}`}>
+                  <div className="p-4 border-r border-gray-200 dark:border-zinc-800 font-semibold text-gray-700 dark:text-zinc-400">{row.aspect}</div>
+                  <div className="p-4 border-r border-gray-200 dark:border-zinc-800 text-center text-red-600 text-sm">{row.proprietary}</div>
                   <div className="p-4 text-center text-green-600 font-semibold text-sm">{row.agnostic}</div>
                 </div>
               ))}
@@ -274,7 +274,7 @@ export default function PlatformAgnosticPage() {
               <Button
                 size="lg"
                 onClick={() => setShowConsultationForm(true)}
-                className="bg-white text-[#1A1A1A] dark:text-white hover:bg-gray-100 dark:bg-gray-800 px-8 py-6 text-sm font-semibold uppercase tracking-wider"
+                className="bg-white text-[#1A1A1A] dark:text-white hover:bg-gray-100 dark:bg-[#171717] px-8 py-6 text-sm font-semibold uppercase tracking-wider"
               >
                 Schedule Consultation
                 <ArrowRight className="ml-2 h-4 w-4" />

@@ -55,7 +55,7 @@ export default function CaseStudyPage() {
   const systems = project.systems || []
 
   return (
-    <div className="min-h-screen bg-white dark:bg-gray-950 pt-20" data-testid="case-study-detail-page">
+    <div className="min-h-screen bg-white dark:bg-[#050505] pt-20" data-testid="case-study-detail-page">
       {/* Hero — Split Layout */}
       <section className="relative overflow-hidden bg-[#0A0A0A] dark:bg-[#050505] text-white">
         <div className="grid grid-cols-1 lg:grid-cols-2 min-h-[480px]">
@@ -114,12 +114,12 @@ export default function CaseStudyPage() {
 
       {/* Challenge Section */}
       {(project as any).challenge && (
-        <section className="py-16 lg:py-20 bg-white dark:bg-gray-950">
+        <section className="py-16 lg:py-20 bg-white dark:bg-[#050505]">
           <div className="container mx-auto px-5 sm:px-8 lg:px-16">
             <div className="max-w-4xl mx-auto">
               <span className="text-xs uppercase tracking-widest text-[#C9A962] font-semibold">The Challenge</span>
               <h2 className="text-2xl sm:text-3xl font-bold mt-2 mb-6 text-gray-900 dark:text-white">Project Requirements</h2>
-              <p className="text-base text-gray-600 dark:text-gray-300 leading-relaxed whitespace-pre-line">{(project as any).challenge}</p>
+              <p className="text-base text-gray-600 dark:text-zinc-400 leading-relaxed whitespace-pre-line">{(project as any).challenge}</p>
             </div>
           </div>
         </section>
@@ -140,7 +140,7 @@ export default function CaseStudyPage() {
 
       {/* Technical Specs */}
       {techSpecs.length > 0 && (
-        <section className="py-16 lg:py-20 bg-gray-50 dark:bg-gray-900" data-testid="tech-specs-section">
+        <section className="py-16 lg:py-20 bg-gray-50 dark:bg-[#0A0A0A]" data-testid="tech-specs-section">
           <div className="container mx-auto px-5 sm:px-8 lg:px-16">
             <div className="max-w-6xl mx-auto">
               <div className="text-center mb-12">
@@ -150,9 +150,9 @@ export default function CaseStudyPage() {
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 max-w-4xl mx-auto">
                 {techSpecs.map((spec: string, i: number) => (
                   <motion.div key={i} initial={{ opacity: 0, y: 10 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.25, delay: i * 0.03 }}
-                    className="flex items-start gap-3 p-3 rounded-lg bg-white dark:bg-gray-950 border border-gray-100 dark:border-gray-800">
+                    className="flex items-start gap-3 p-3 rounded-lg bg-white dark:bg-[#050505] border border-gray-100 dark:border-zinc-800">
                     <CheckCircle2 size={16} className="text-[#C9A962] flex-shrink-0 mt-0.5" />
-                    <span className="text-sm text-gray-700 dark:text-gray-300">{spec}</span>
+                    <span className="text-sm text-gray-700 dark:text-zinc-400">{spec}</span>
                   </motion.div>
                 ))}
               </div>
@@ -163,12 +163,12 @@ export default function CaseStudyPage() {
 
       {/* Outcome */}
       {(project as any).outcome && (
-        <section className="py-16 lg:py-20 bg-white dark:bg-gray-950">
+        <section className="py-16 lg:py-20 bg-white dark:bg-[#050505]">
           <div className="container mx-auto px-5 sm:px-8 lg:px-16">
             <div className="max-w-4xl mx-auto">
               <span className="text-xs uppercase tracking-widest text-[#C9A962] font-semibold">The Result</span>
               <h2 className="text-2xl sm:text-3xl font-bold mt-2 mb-6 text-gray-900 dark:text-white">Project Outcome</h2>
-              <p className="text-base text-gray-600 dark:text-gray-300 leading-relaxed whitespace-pre-line">{(project as any).outcome}</p>
+              <p className="text-base text-gray-600 dark:text-zinc-400 leading-relaxed whitespace-pre-line">{(project as any).outcome}</p>
             </div>
           </div>
         </section>
@@ -176,11 +176,11 @@ export default function CaseStudyPage() {
 
       {/* Client Testimonial */}
       {(project as any).client_testimonial && (
-        <section className="py-16 lg:py-20 bg-gray-50 dark:bg-gray-900">
+        <section className="py-16 lg:py-20 bg-gray-50 dark:bg-[#0A0A0A]">
           <div className="container mx-auto px-5 sm:px-8 lg:px-16">
             <div className="max-w-3xl mx-auto text-center">
               <span className="text-xs uppercase tracking-widest text-[#C9A962] font-semibold mb-4 block">Client Feedback</span>
-              <p className="text-xl sm:text-2xl text-gray-700 dark:text-gray-300 italic mb-6 leading-relaxed">
+              <p className="text-xl sm:text-2xl text-gray-700 dark:text-zinc-400 italic mb-6 leading-relaxed">
                 &quot;{(project as any).client_testimonial}&quot;
               </p>
               {(project as any).client_name && (
@@ -196,7 +196,7 @@ export default function CaseStudyPage() {
 
       {/* Gallery */}
       {gallery.length > 0 && (
-        <section className="py-16 lg:py-20 bg-white dark:bg-gray-950" data-testid="gallery-section">
+        <section className="py-16 lg:py-20 bg-white dark:bg-[#050505]" data-testid="gallery-section">
           <div className="container mx-auto px-5 sm:px-8 lg:px-16">
             <div className="max-w-6xl mx-auto">
               <div className="text-center mb-12">

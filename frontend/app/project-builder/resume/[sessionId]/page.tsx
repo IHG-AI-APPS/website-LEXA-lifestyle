@@ -103,7 +103,7 @@ export default function ResumePage() {
       <div className="min-h-screen bg-gray-50 pt-20">
         <div className="container mx-auto px-4 py-8 max-w-md">
           <div className="animate-pulse text-center">
-            <div className="h-12 w-12 border-2 border-gray-200 dark:border-gray-700 border-t-blue-600 rounded-full animate-spin mx-auto mb-4"></div>
+            <div className="h-12 w-12 border-2 border-gray-200 dark:border-zinc-800 border-t-blue-600 rounded-full animate-spin mx-auto mb-4"></div>
             <div className="h-4 bg-gray-200 rounded w-2/3 mx-auto"></div>
           </div>
         </div>
@@ -117,11 +117,11 @@ export default function ResumePage() {
         <motion.div
           initial={{ opacity: 0, scale: 0.95 }}
           animate={{ opacity: 1, scale: 1 }}
-          className="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-8 max-w-md w-full text-center"
+          className="bg-white dark:bg-[#171717] rounded-lg shadow-lg p-8 max-w-md w-full text-center"
         >
           <AlertCircle className="w-16 h-16 text-red-500 mx-auto mb-4" />
           <h1 className="text-2xl font-semibold text-gray-900 dark:text-white mb-2">Session Unavailable</h1>
-          <p className="text-gray-600 dark:text-gray-400 mb-6">{error}</p>
+          <p className="text-gray-600 dark:text-zinc-500 mb-6">{error}</p>
           <Button onClick={() => router.push('/project-builder')} className="gap-2">
             Start New Project
             <ArrowRight className="w-4 h-4" />
@@ -137,7 +137,7 @@ export default function ResumePage() {
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          className="bg-white dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden"
+          className="bg-white dark:bg-[#171717] rounded-lg shadow-lg overflow-hidden"
         >
           {/* Header */}
           <div className="bg-gradient-to-r from-[#C9A962] to-[#A68B4B] p-6 text-white">
@@ -161,15 +161,15 @@ export default function ResumePage() {
                   </h2>
                   <div className="bg-gray-50 rounded-lg p-4 space-y-2">
                     <div className="flex justify-between text-sm">
-                      <span className="text-gray-600 dark:text-gray-400">Property Type:</span>
+                      <span className="text-gray-600 dark:text-zinc-500">Property Type:</span>
                       <span className="font-medium">{sessionState.project_data.property_type || 'Not set'}</span>
                     </div>
                     <div className="flex justify-between text-sm">
-                      <span className="text-gray-600 dark:text-gray-400">Segment:</span>
+                      <span className="text-gray-600 dark:text-zinc-500">Segment:</span>
                       <span className="font-medium">{sessionState.project_data.segment || 'Not set'}</span>
                     </div>
                     <div className="flex justify-between text-sm">
-                      <span className="text-gray-600 dark:text-gray-400">Area:</span>
+                      <span className="text-gray-600 dark:text-zinc-500">Area:</span>
                       <span className="font-medium">
                         {sessionState.project_data.area_sqft 
                           ? `${sessionState.project_data.area_sqft.toLocaleString()} sqft` 

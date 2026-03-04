@@ -42,11 +42,11 @@ export default function Breadcrumbs() {
       />
       
       {/* Visual Breadcrumbs */}
-      <nav aria-label="Breadcrumb" className="bg-gray-50 border-b border-gray-200 dark:border-gray-700 dark:border-gray-700">
+      <nav aria-label="Breadcrumb" className="bg-gray-50 border-b border-gray-200 dark:border-zinc-800">
         <div className="container mx-auto px-4 max-w-7xl py-3">
           <ol className="flex items-center space-x-2 text-sm">
             <li>
-              <Link href="/" className="flex items-center text-gray-600 dark:text-gray-400 hover:text-[#E8DCC8] transition">
+              <Link href="/" className="flex items-center text-gray-600 dark:text-zinc-500 hover:text-[#E8DCC8] transition">
                 <Home className="h-4 w-4" />
               </Link>
             </li>
@@ -64,7 +64,7 @@ export default function Breadcrumbs() {
                   {isLast ? (
                     <span className="text-[#E8DCC8] font-medium">{name}</span>
                   ) : (
-                    <Link href={path} className="text-gray-600 dark:text-gray-400 hover:text-[#E8DCC8] transition">
+                    <Link href={path} className="text-gray-600 dark:text-zinc-500 hover:text-[#E8DCC8] transition">
                       {name}
                     </Link>
                   )}

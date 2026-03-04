@@ -94,7 +94,7 @@ export default function ProjectBuilderLanding() {
               <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-gray-900 dark:text-white mt-3 mb-4">
                 How It Works
               </h2>
-              <p className="text-base text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
+              <p className="text-base text-gray-600 dark:text-zinc-500 max-w-2xl mx-auto">
                 From concept to specification in minutes
               </p>
             </div>
@@ -118,7 +118,7 @@ export default function ProjectBuilderLanding() {
                   </div>
                   <span className="text-xs text-[#C9A962] uppercase tracking-widest font-semibold">{step.number}</span>
                   <h3 className="text-lg font-bold text-gray-900 dark:text-white mt-2 mb-3">{step.title}</h3>
-                  <p className="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">{step.description}</p>
+                  <p className="text-sm text-gray-600 dark:text-zinc-500 leading-relaxed">{step.description}</p>
                 </motion.div>
               ))}
             </div>
@@ -143,7 +143,7 @@ export default function ProjectBuilderLanding() {
                 >
                   <feature.icon className="w-6 h-6 text-[#C9A962] mx-auto mb-4" />
                   <h4 className="text-sm font-semibold text-gray-900 dark:text-white mb-2 uppercase tracking-widest">{feature.label}</h4>
-                  <p className="text-xs text-gray-600 dark:text-gray-400">{feature.desc}</p>
+                  <p className="text-xs text-gray-600 dark:text-zinc-500">{feature.desc}</p>
                 </div>
               ))}
             </div>

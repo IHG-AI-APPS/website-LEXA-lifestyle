@@ -99,7 +99,7 @@ export default function ServicesPage() {
 
   if (loading) {
     return (
-      <div className="min-h-screen bg-white dark:bg-gray-900 pt-20">
+      <div className="min-h-screen bg-white dark:bg-[#0A0A0A] pt-20">
         <div className="container mx-auto px-4 py-8 max-w-7xl">
           <div className="animate-pulse space-y-4">
             <div className="h-8 bg-gray-200 rounded w-1/4"></div>
@@ -114,7 +114,7 @@ export default function ServicesPage() {
   }
 
   return (
-    <div className="min-h-screen bg-white dark:bg-gray-950 pt-20" data-testid="services-page">
+    <div className="min-h-screen bg-white dark:bg-[#050505] pt-20" data-testid="services-page">
       {/* Hero */}
       <section className="relative overflow-hidden bg-[#0A0A0A] dark:bg-[#050505] text-white py-16 lg:py-24">
         {/* Hero Background Image */}
@@ -165,7 +165,7 @@ export default function ServicesPage() {
                   <h2 className="text-3xl md:text-4xl font-bold mb-2">
                     {language === 'ar' ? groupConfig.titleAr : groupConfig.title}
                   </h2>
-                  <p className="text-lg text-gray-600 dark:text-gray-400">
+                  <p className="text-lg text-gray-600 dark:text-zinc-500">
                     {language === 'ar' ? groupConfig.subtitleAr : groupConfig.subtitle}
                   </p>
                 </motion.div>
@@ -180,7 +180,7 @@ export default function ServicesPage() {
                       viewport={{ once: true }}
                     >
                       <Link href={`/services/${service.slug}`}>
-                        <div className="group py-8 border-b border-gray-200 dark:border-gray-700 hover:border-gray-400 transition-all duration-300">
+                        <div className="group py-8 border-b border-gray-200 dark:border-zinc-800 hover:border-gray-400 transition-all duration-300">
                           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
                             <div className="lg:col-span-1">
                               <span className="text-4xl font-semibold text-gray-300 group-hover:text-black transition-colors">
@@ -196,7 +196,7 @@ export default function ServicesPage() {
                               </h3>
                             </div>
                             <div className="lg:col-span-5">
-                              <p className="text-gray-600 dark:text-gray-400 leading-relaxed">
+                              <p className="text-gray-600 dark:text-zinc-500 leading-relaxed">
                                 {service.description}
                               </p>
                             </div>
@@ -233,7 +233,7 @@ export default function ServicesPage() {
                 <h2 className="text-3xl md:text-4xl font-bold mb-2">
                   {language === 'ar' ? 'خدمات أخرى' : 'Other Services'}
                 </h2>
-                <p className="text-lg text-gray-600 dark:text-gray-400">
+                <p className="text-lg text-gray-600 dark:text-zinc-500">
                   {language === 'ar' ? 'خدمات متخصصة إضافية نقدمها' : 'Additional specialized services we offer'}
                 </p>
               </motion.div>
@@ -248,7 +248,7 @@ export default function ServicesPage() {
                     viewport={{ once: true }}
                   >
                     <Link href={`/services/${service.slug}`}>
-                      <div className="group py-8 border-b border-gray-200 dark:border-gray-700 hover:border-gray-400 transition-all duration-300">
+                      <div className="group py-8 border-b border-gray-200 dark:border-zinc-800 hover:border-gray-400 transition-all duration-300">
                         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
                           <div className="lg:col-span-1">
                             <span className="text-4xl font-semibold text-gray-300 group-hover:text-black transition-colors">
@@ -264,7 +264,7 @@ export default function ServicesPage() {
                             </h3>
                           </div>
                           <div className="lg:col-span-5">
-                            <p className="text-gray-600 dark:text-gray-400 leading-relaxed">
+                            <p className="text-gray-600 dark:text-zinc-500 leading-relaxed">
                               {service.description}
                             </p>
                           </div>

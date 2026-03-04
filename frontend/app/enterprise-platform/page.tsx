@@ -286,7 +286,7 @@ export default function EnterprisePerformanceOSPage() {
                   size="lg"
                   variant="outline"
                   asChild
-                  className="border-2 border-white text-white hover:bg-white hover:text-slate-900 px-8 py-6 text-sm font-semibold uppercase tracking-wider"
+                  className="border-2 border-white text-white hover:bg-white hover:text-zinc-900 px-8 py-6 text-sm font-semibold uppercase tracking-wider"
                 >
                   <Link href="#architecture">
                     Explore Platform
@@ -298,7 +298,7 @@ export default function EnterprisePerformanceOSPage() {
         </section>
 
         {/* 4-Layer Architecture */}
-        <section id="architecture" className="py-20 bg-gray-50 dark:bg-gray-800">
+        <section id="architecture" className="py-20 bg-gray-50 dark:bg-[#171717]">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -310,7 +310,7 @@ export default function EnterprisePerformanceOSPage() {
               <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4 text-gray-900 dark:text-white">
                 Four-Layer Architecture
               </h2>
-              <p className="text-base sm:text-lg text-gray-600 dark:text-gray-400 max-w-3xl mx-auto">
+              <p className="text-base sm:text-lg text-gray-600 dark:text-zinc-500 max-w-3xl mx-auto">
                 Complete building intelligence from infrastructure to ESG reporting
               </p>
             </motion.div>
@@ -325,7 +325,7 @@ export default function EnterprisePerformanceOSPage() {
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.6, delay: 0.2 }}
                     viewport={{ once: true }}
-                    className="bg-white dark:bg-gray-800 p-8 border-2 border-gray-200 dark:border-gray-700 hover:border-[#C9A962] transition-all"
+                    className="bg-white dark:bg-[#171717] p-8 border-2 border-gray-200 dark:border-zinc-800 hover:border-[#C9A962] transition-all"
                   >
                     <div className="flex items-start gap-4 mb-6">
                       <div className={`p-4 bg-${layer.color}-100`}>
@@ -340,7 +340,7 @@ export default function EnterprisePerformanceOSPage() {
                       {layer.features.map((feature) => (
                         <div key={feature} className="flex items-start gap-2">
                           <CheckCircle2 className="h-5 w-5 text-[#C9A962] flex-shrink-0 mt-0.5" />
-                          <span className="text-sm text-gray-700 dark:text-gray-300">{feature}</span>
+                          <span className="text-sm text-gray-700 dark:text-zinc-400">{feature}</span>
                         </div>
                       ))}
                     </div>
@@ -364,7 +364,7 @@ export default function EnterprisePerformanceOSPage() {
               <h2 className="text-3xl sm:text-4xl font-bold mb-4 text-gray-900 dark:text-white">
                 Enterprise Use Cases
               </h2>
-              <p className="text-lg text-gray-600 dark:text-gray-400">
+              <p className="text-lg text-gray-600 dark:text-zinc-500">
                 Designed for diverse building portfolios across the UAE
               </p>
             </motion.div>
@@ -379,7 +379,7 @@ export default function EnterprisePerformanceOSPage() {
                     className={`px-6 py-3 border-2 font-semibold transition-all flex items-center gap-2 ${
                       selectedUseCase === useCase.id
                         ? 'border-[#C9A962] bg-[#C9A962]/5 text-[#C9A962]'
-                        : 'border-gray-200 dark:border-gray-700 bg-white text-gray-700 dark:text-gray-300 hover:border-[#C9A962]/30'
+                        : 'border-gray-200 dark:border-zinc-800 bg-white text-gray-700 dark:text-zinc-400 hover:border-[#C9A962]/30'
                     }`}
                   >
                     <Icon className="h-5 w-5" />
@@ -405,7 +405,7 @@ export default function EnterprisePerformanceOSPage() {
               
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 {selectedCase.benefits.map((benefit) => (
-                  <div key={benefit.label} className="bg-white dark:bg-gray-800 p-6 border border-gray-200 dark:border-gray-700">
+                  <div key={benefit.label} className="bg-white dark:bg-[#171717] p-6 border border-gray-200 dark:border-zinc-800">
                     <div className="font-semibold text-gray-900 dark:text-white mb-2">{benefit.label}</div>
                     <div className="text-sm text-[#C9A962] font-semibold">{benefit.value}</div>
                   </div>
@@ -461,7 +461,7 @@ export default function EnterprisePerformanceOSPage() {
         </section>
 
         {/* Investment Tiers */}
-        <section className="py-20 bg-gray-50 dark:bg-gray-800">
+        <section className="py-20 bg-gray-50 dark:bg-[#171717]">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -473,7 +473,7 @@ export default function EnterprisePerformanceOSPage() {
               <h2 className="text-3xl sm:text-4xl font-bold mb-4 text-gray-900 dark:text-white">
                 Enterprise Investment Tiers
               </h2>
-              <p className="text-lg text-gray-600 dark:text-gray-400">
+              <p className="text-lg text-gray-600 dark:text-zinc-500">
                 Scalable solutions for every building size
               </p>
             </motion.div>
@@ -486,7 +486,7 @@ export default function EnterprisePerformanceOSPage() {
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: 0.2 }}
                   viewport={{ once: true }}
-                  className={`bg-white dark:bg-gray-800 p-8 border-2 transition-all hover:shadow-xl ${
+                  className={`bg-white dark:bg-[#171717] p-8 border-2 transition-all hover:shadow-xl ${
                     tier.popular ? 'border-[#C9A962] shadow-lg scale-105' : 'border-gray-200'
                   }`}
                 >
@@ -496,14 +496,14 @@ export default function EnterprisePerformanceOSPage() {
                     </div>
                   )}
                   <h3 className="text-2xl font-bold mb-2 text-gray-900 dark:text-white">{tier.name}</h3>
-                  <div className="text-sm text-gray-600 dark:text-gray-400 mb-4">{tier.size}</div>
+                  <div className="text-sm text-gray-600 dark:text-zinc-500 mb-4">{tier.size}</div>
                   <div className="text-3xl font-bold text-[#C9A962] mb-6">{tier.investment}</div>
                   
                   <div className="space-y-3 mb-8">
                     {tier.includes.map((item) => (
                       <div key={item} className="flex items-start gap-2">
                         <CheckCircle2 className="h-5 w-5 text-[#C9A962] flex-shrink-0 mt-0.5" />
-                        <span className="text-sm text-gray-700 dark:text-gray-300">{item}</span>
+                        <span className="text-sm text-gray-700 dark:text-zinc-400">{item}</span>
                       </div>
                     ))}
                   </div>
@@ -513,7 +513,7 @@ export default function EnterprisePerformanceOSPage() {
                     className={`w-full ${
                       tier.popular
                         ? 'bg-[#C9A962] hover:bg-[#B8983F] text-white'
-                        : 'bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 text-gray-900'
+                        : 'bg-gray-100 dark:bg-[#171717] hover:bg-gray-200 text-gray-900'
                     }`}
                   >
                     Request Quote
@@ -523,7 +523,7 @@ export default function EnterprisePerformanceOSPage() {
             </div>
 
             <div className="mt-12 text-center">
-              <p className="text-gray-600 dark:text-gray-400 mb-4">
+              <p className="text-gray-600 dark:text-zinc-500 mb-4">
                 <strong>Typical ROI:</strong> 18-24 months through energy savings alone
               </p>
               <p className="text-sm text-gray-500">
@@ -563,7 +563,7 @@ export default function EnterprisePerformanceOSPage() {
         </section>
 
         {/* Disclaimer */}
-        <section className="py-6 bg-gray-100 dark:bg-gray-800 border-t border-gray-200 dark:border-gray-700">
+        <section className="py-6 bg-gray-100 dark:bg-[#171717] border-t border-gray-200 dark:border-zinc-800">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
             <p className="text-xs text-gray-500 text-center">
               * Performance metrics shown are industry benchmarks and expected outcomes based on typical implementations of intelligent building management systems. 

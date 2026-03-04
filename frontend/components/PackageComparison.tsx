@@ -19,7 +19,7 @@ export default function PackageComparison({ packages, title = "Our Packages" }: 
   if (!packages || packages.length === 0) return null
 
   return (
-    <div className="py-16 bg-gray-50 dark:bg-gray-800">
+    <div className="py-16 bg-gray-50 dark:bg-[#171717]">
       <div className="max-w-7xl mx-auto px-4">
         <h2 className="text-3xl md:text-4xl font-heading font-bold text-center mb-12">
           {title}
@@ -33,7 +33,7 @@ export default function PackageComparison({ packages, title = "Our Packages" }: 
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ delay: index * 0.1 }}
               viewport={{ once: true }}
-              className={`relative bg-white dark:bg-gray-900 rounded-lg overflow-hidden ${
+              className={`relative bg-white dark:bg-[#0A0A0A] rounded-lg overflow-hidden ${
                 pkg.popular 
                   ? 'border-4 border-[#E8DCC8] shadow-2xl scale-105' 
                   : 'border-2 border-gray-200'
@@ -62,7 +62,7 @@ export default function PackageComparison({ packages, title = "Our Packages" }: 
                   {pkg.features.map((feature, fIndex) => (
                     <li key={fIndex} className="flex items-start gap-3">
                       <CheckCircle2 className="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" />
-                      <span className="text-sm text-gray-700 dark:text-gray-300 dark:text-gray-300">{feature}</span>
+                      <span className="text-sm text-gray-700 dark:text-zinc-400">{feature}</span>
                     </li>
                   ))}
                 </ul>

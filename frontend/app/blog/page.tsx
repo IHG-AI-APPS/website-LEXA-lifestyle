@@ -44,7 +44,7 @@ export default function BlogPage() {
     : articles.filter((article: any) => article.category === selectedCategory)
 
   return (
-    <div className="min-h-screen bg-white dark:bg-gray-950 pt-20" data-testid="blog-page">
+    <div className="min-h-screen bg-white dark:bg-[#050505] pt-20" data-testid="blog-page">
       {/* Hero */}
       <section className="relative overflow-hidden bg-[#0A0A0A] dark:bg-[#050505] text-white py-16 lg:py-24">
         {/* Hero Background Image */}
@@ -66,7 +66,7 @@ export default function BlogPage() {
       </section>
 
       {/* Category Filter */}
-      <section className="py-12 bg-white dark:bg-gray-900 border-b dark:border-gray-700">
+      <section className="py-12 bg-white dark:bg-[#0A0A0A] border-b dark:border-zinc-800">
         <div className="container mx-auto px-5 sm:px-8 lg:px-16">
           <div className="max-w-7xl mx-auto">
             <div className="flex flex-wrap gap-3 justify-center">
@@ -77,7 +77,7 @@ export default function BlogPage() {
                   className={`px-6 py-3 rounded-full text-sm font-medium transition-all ${
                     selectedCategory === category
                       ? 'bg-charcoal text-white'
-                      : 'bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:bg-gray-200'
+                      : 'bg-gray-100 dark:bg-[#171717] text-gray-700 dark:text-zinc-400 hover:bg-gray-200'
                   }`}
                 >
                   {category}
@@ -93,9 +93,9 @@ export default function BlogPage() {
         <div className="container mx-auto px-5 sm:px-8 lg:px-16">
           <div className="max-w-7xl mx-auto">
             {loading ? (
-              <div className="text-center py-12 text-gray-600 dark:text-gray-400">Loading articles...</div>
+              <div className="text-center py-12 text-gray-600 dark:text-zinc-500">Loading articles...</div>
             ) : filteredArticles.length === 0 ? (
-              <div className="text-center py-12 text-gray-600 dark:text-gray-400">No articles found in this category.</div>
+              <div className="text-center py-12 text-gray-600 dark:text-zinc-500">No articles found in this category.</div>
             ) : (
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 {filteredArticles.map((article: any, index: number) => (
@@ -106,7 +106,7 @@ export default function BlogPage() {
                     transition={{ duration: 0.3 }}
                     data-testid={`article-card-${index}`}
                   >
-                    <div className="group h-full border border-gray-200 dark:border-gray-700 hover:border-charcoal transition-all bg-white dark:bg-gray-800 rounded-lg overflow-hidden">
+                    <div className="group h-full border border-gray-200 dark:border-zinc-800 hover:border-charcoal transition-all bg-white dark:bg-[#171717] rounded-lg overflow-hidden">
                       {/* Image */}
                       <div className="relative h-64 overflow-hidden bg-gradient-to-br from-gray-100 to-gray-200">
                         <Link href={`/blog/${article.slug}`}>
@@ -166,14 +166,14 @@ export default function BlogPage() {
                             {article.title}
                           </h3>
 
-                          <p className="text-gray-600 dark:text-gray-400 text-sm mb-4 line-clamp-3">
+                          <p className="text-gray-600 dark:text-zinc-500 text-sm mb-4 line-clamp-3">
                             {article.excerpt}
                           </p>
 
                           {article.tags && article.tags.length > 0 && (
                             <div className="flex flex-wrap gap-2 mb-4">
                               {article.tags.slice(0, 3).map((tag: string) => (
-                                <span key={tag} className="text-xs px-2 py-1 bg-gray-100 dark:bg-gray-800 rounded">
+                                <span key={tag} className="text-xs px-2 py-1 bg-gray-100 dark:bg-[#171717] rounded">
                                   {tag}
                                 </span>
                               ))}

@@ -181,7 +181,7 @@ export default function PackagesMegaMenu({ isOpen, onClose, onMouseEnter, onMous
                                 {pkg.title}
                               </span>
                             </div>
-                            <ChevronRight className="h-4 w-4 text-gray-600 dark:text-gray-400 opacity-0 transition-all group-hover:opacity-100 group-hover:translate-x-1 flex-shrink-0" />
+                            <ChevronRight className="h-4 w-4 text-gray-600 dark:text-zinc-500 opacity-0 transition-all group-hover:opacity-100 group-hover:translate-x-1 flex-shrink-0" />
                           </div>
                         </Link>
                       )
@@ -250,7 +250,7 @@ export default function PackagesMegaMenu({ isOpen, onClose, onMouseEnter, onMous
                                 {pkg.title}
                               </span>
                             </div>
-                            <ChevronRight className="h-4 w-4 text-gray-600 dark:text-gray-400 opacity-0 transition-all group-hover:opacity-100 group-hover:translate-x-1 flex-shrink-0" />
+                            <ChevronRight className="h-4 w-4 text-gray-600 dark:text-zinc-500 opacity-0 transition-all group-hover:opacity-100 group-hover:translate-x-1 flex-shrink-0" />
                           </div>
                         </Link>
                       )
@@ -344,7 +344,7 @@ export default function PackagesMegaMenu({ isOpen, onClose, onMouseEnter, onMous
                             Package Builder
                           </span>
                         </div>
-                        <ChevronRight className="h-4 w-4 text-gray-600 dark:text-gray-400 opacity-0 transition-all group-hover:opacity-100 group-hover:translate-x-1 flex-shrink-0" />
+                        <ChevronRight className="h-4 w-4 text-gray-600 dark:text-zinc-500 opacity-0 transition-all group-hover:opacity-100 group-hover:translate-x-1 flex-shrink-0" />
                       </div>
                     </Link>
 
@@ -361,7 +361,7 @@ export default function PackagesMegaMenu({ isOpen, onClose, onMouseEnter, onMous
                             Cost Calculator
                           </span>
                         </div>
-                        <ChevronRight className="h-4 w-4 text-gray-600 dark:text-gray-400 opacity-0 transition-all group-hover:opacity-100 group-hover:translate-x-1 flex-shrink-0" />
+                        <ChevronRight className="h-4 w-4 text-gray-600 dark:text-zinc-500 opacity-0 transition-all group-hover:opacity-100 group-hover:translate-x-1 flex-shrink-0" />
                       </div>
                     </Link>
 
@@ -378,7 +378,7 @@ export default function PackagesMegaMenu({ isOpen, onClose, onMouseEnter, onMous
                             ROI Calculator
                           </span>
                         </div>
-                        <ChevronRight className="h-4 w-4 text-gray-600 dark:text-gray-400 opacity-0 transition-all group-hover:opacity-100 group-hover:translate-x-1 flex-shrink-0" />
+                        <ChevronRight className="h-4 w-4 text-gray-600 dark:text-zinc-500 opacity-0 transition-all group-hover:opacity-100 group-hover:translate-x-1 flex-shrink-0" />
                       </div>
                     </Link>
 
@@ -395,7 +395,7 @@ export default function PackagesMegaMenu({ isOpen, onClose, onMouseEnter, onMous
                             Specialty Rooms
                           </span>
                         </div>
-                        <ChevronRight className="h-4 w-4 text-gray-600 dark:text-gray-400 opacity-0 transition-all group-hover:opacity-100 group-hover:translate-x-1 flex-shrink-0" />
+                        <ChevronRight className="h-4 w-4 text-gray-600 dark:text-zinc-500 opacity-0 transition-all group-hover:opacity-100 group-hover:translate-x-1 flex-shrink-0" />
                       </div>
                     </Link>
 
@@ -412,7 +412,7 @@ export default function PackagesMegaMenu({ isOpen, onClose, onMouseEnter, onMous
                             Enterprise Platform
                           </span>
                         </div>
-                        <ChevronRight className="h-4 w-4 text-gray-600 dark:text-gray-400 opacity-0 transition-all group-hover:opacity-100 group-hover:translate-x-1 flex-shrink-0" />
+                        <ChevronRight className="h-4 w-4 text-gray-600 dark:text-zinc-500 opacity-0 transition-all group-hover:opacity-100 group-hover:translate-x-1 flex-shrink-0" />
                       </div>
                     </Link>
                     

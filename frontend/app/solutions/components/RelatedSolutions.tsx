@@ -60,7 +60,7 @@ export default function RelatedSolutions({ solutions, currentSlug }: RelatedSolu
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 dark:text-white mb-4">
               Related Solutions
             </h2>
-            <p className="text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
+            <p className="text-lg text-gray-600 dark:text-zinc-500 max-w-2xl mx-auto">
               Discover complementary automation solutions for your space
             </p>
           </motion.div>
@@ -83,7 +83,7 @@ export default function RelatedSolutions({ solutions, currentSlug }: RelatedSolu
                   href={`/solutions/${solution.slug}`}
                   className="group block h-full"
                 >
-                  <div className="relative h-full overflow-hidden rounded-2xl bg-white dark:bg-gray-800 shadow-lg hover:shadow-2xl transition-all duration-300">
+                  <div className="relative h-full overflow-hidden rounded-2xl bg-white dark:bg-[#171717] shadow-lg hover:shadow-2xl transition-all duration-300">
                     {/* Image Poster */}
                     <div className="relative h-64 overflow-hidden">
                       {solution.image ? (
@@ -121,7 +121,7 @@ export default function RelatedSolutions({ solutions, currentSlug }: RelatedSolu
                     {/* Content Section */}
                     <div className="p-6">
                       {/* Description */}
-                      <p className="text-sm text-gray-600 dark:text-gray-400 mb-4 line-clamp-3">
+                      <p className="text-sm text-gray-600 dark:text-zinc-500 mb-4 line-clamp-3">
                         {solution.description}
                       </p>
 
@@ -131,7 +131,7 @@ export default function RelatedSolutions({ solutions, currentSlug }: RelatedSolu
                           {solution.tags.slice(0, 3).map((tag) => (
                             <span
                               key={tag}
-                              className="text-xs px-2 py-1 bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 rounded-full"
+                              className="text-xs px-2 py-1 bg-gray-100 dark:bg-[#171717] text-gray-700 dark:text-zinc-400 rounded-full"
                             >
                               {tag}
                             </span>
@@ -140,7 +140,7 @@ export default function RelatedSolutions({ solutions, currentSlug }: RelatedSolu
                       )}
 
                       {/* CTA */}
-                      <div className="flex items-center justify-between pt-4 border-t border-gray-100 dark:border-gray-800 dark:border-gray-800">
+                      <div className="flex items-center justify-between pt-4 border-t border-gray-100 dark:border-zinc-800">
                         <span className="text-sm font-semibold text-[#C9A962] group-hover:text-[#C9A962] transition-colors">
                           Explore Solution
                         </span>

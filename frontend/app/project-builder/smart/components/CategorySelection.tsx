@@ -203,7 +203,7 @@ export default function CategorySelection({
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.2 }}
-          className="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto"
+          className="text-gray-600 dark:text-zinc-500 max-w-2xl mx-auto"
         >
           Select the categories that matter to you. We&apos;ll then help you prioritize 
           features within each category.
@@ -224,7 +224,7 @@ export default function CategorySelection({
       {loading ? (
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
           {[...Array(12)].map((_, i) => (
-            <div key={i} className="h-40 bg-gray-100 dark:bg-gray-800 animate-pulse rounded-xl" />
+            <div key={i} className="h-40 bg-gray-100 dark:bg-[#171717] animate-pulse rounded-xl" />
           ))}
         </div>
       ) : error ? (
@@ -232,7 +232,7 @@ export default function CategorySelection({
           <div className="text-red-400 mb-4">
             <Home className="w-16 h-16 mx-auto opacity-50" />
           </div>
-          <h3 className="text-lg font-semibold text-gray-700 dark:text-gray-300 mb-2">Unable to Load Categories</h3>
+          <h3 className="text-lg font-semibold text-gray-700 dark:text-zinc-400 mb-2">Unable to Load Categories</h3>
           <p className="text-gray-500 mb-4">{error}</p>
           <Button 
             variant="outline" 
@@ -246,7 +246,7 @@ export default function CategorySelection({
           <div className="text-gray-400 mb-4">
             <Home className="w-16 h-16 mx-auto opacity-50" />
           </div>
-          <h3 className="text-lg font-semibold text-gray-700 dark:text-gray-300 mb-2">No Categories Available</h3>
+          <h3 className="text-lg font-semibold text-gray-700 dark:text-zinc-400 mb-2">No Categories Available</h3>
           <p className="text-gray-500 mb-4">Please refresh the page.</p>
           <Button 
             variant="outline" 
@@ -279,7 +279,7 @@ export default function CategorySelection({
                 className={`relative p-5 rounded-xl border-2 text-left transition-all ${
                   isSelected
                     ? 'border-green-500 bg-green-50 shadow-lg'
-                    : 'border-gray-200 dark:border-gray-700 bg-white hover:border-gray-300 dark:border-gray-600 hover:shadow-md'
+                    : 'border-gray-200 dark:border-zinc-800 bg-white hover:border-gray-300 dark:border-zinc-700 hover:shadow-md'
                 }`}
               >
                 {/* Selection Indicator */}
@@ -293,7 +293,7 @@ export default function CategorySelection({
                 <div className={`w-12 h-12 rounded-xl flex items-center justify-center mb-3 ${
                   isSelected 
                     ? 'bg-green-500 text-white' 
-                    : 'bg-gray-100 dark:bg-gray-800 text-gray-600'
+                    : 'bg-gray-100 dark:bg-[#171717] text-gray-600'
                 }`}>
                   <IconComponent className="w-6 h-6" />
                 </div>
@@ -332,7 +332,7 @@ export default function CategorySelection({
       )}
 
       {/* Bottom Bar */}
-      <div className="sticky bottom-0 bg-white border-t border-gray-200 dark:border-gray-700 p-4 -mx-4">
+      <div className="sticky bottom-0 bg-white border-t border-gray-200 dark:border-zinc-800 p-4 -mx-4">
         <div className="max-w-6xl mx-auto flex items-center justify-between">
           <div>
             <span className="text-sm text-gray-500">Selected:</span>

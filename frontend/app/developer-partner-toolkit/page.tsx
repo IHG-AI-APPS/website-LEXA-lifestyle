@@ -139,14 +139,14 @@ export default function DeveloperPartnerToolkitPage() {
         >
           <div className="flex items-center gap-3 mb-4">
             <Building2 className="w-8 h-8" />
-            <span className="text-sm font-medium text-gray-600 dark:text-gray-400 uppercase tracking-wider">
+            <span className="text-sm font-medium text-gray-600 dark:text-zinc-500 uppercase tracking-wider">
               For Developer Partners
             </span>
           </div>
           <h1 className="text-5xl font-bold mb-6">
             Technical Resource Library
           </h1>
-          <p className="text-xl text-gray-600 dark:text-gray-400 max-w-3xl">
+          <p className="text-xl text-gray-600 dark:text-zinc-500 max-w-3xl">
             Complete project enablement materials for seamless integration of LEXA smart home systems into your developments.
           </p>
         </motion.div>
@@ -178,7 +178,7 @@ export default function DeveloperPartnerToolkitPage() {
             <div key={index} className="bg-gray-50 rounded-lg p-6">
               <benefit.icon className="w-10 h-10 mb-4 text-black" />
               <h3 className="text-xl font-bold mb-2">{benefit.title}</h3>
-              <p className="text-gray-600 dark:text-gray-400">{benefit.description}</p>
+              <p className="text-gray-600 dark:text-zinc-500">{benefit.description}</p>
             </div>
           ))}
         </motion.div>
@@ -201,7 +201,7 @@ export default function DeveloperPartnerToolkitPage() {
                 {section.items.map((item, itemIndex) => (
                   <div 
                     key={itemIndex}
-                    className="flex items-center justify-between p-4 bg-gray-50 rounded-lg hover:bg-gray-100 dark:bg-gray-800 transition-colors cursor-pointer group"
+                    className="flex items-center justify-between p-4 bg-gray-50 rounded-lg hover:bg-gray-100 dark:bg-[#171717] transition-colors cursor-pointer group"
                   >
                     <div className="flex items-center gap-4">
                       <div className="w-12 h-12 bg-black rounded-lg flex items-center justify-center text-white text-xs font-bold">
@@ -237,7 +237,7 @@ export default function DeveloperPartnerToolkitPage() {
           <p className="text-xl text-gray-400 mb-8 max-w-2xl mx-auto">
             Our developer partnerships team can provide project-specific consultations and custom technical documentation.
           </p>
-          <Button size="lg" className="bg-white text-black hover:bg-gray-100 dark:bg-gray-800">
+          <Button size="lg" className="bg-white text-black hover:bg-gray-100 dark:bg-[#171717]">
             Schedule Developer Consultation
           </Button>
         </motion.div>

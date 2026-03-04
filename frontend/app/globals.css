@@ -75,25 +75,25 @@
   }
 
   .dark {
-    --background: 222 47% 6%;
-    --foreground: 210 40% 98%;
-    --card: 222 47% 8%;
-    --card-foreground: 210 40% 98%;
-    --popover: 222 47% 8%;
-    --popover-foreground: 210 40% 98%;
-    --primary: 40 45% 70%;
-    --primary-foreground: 222 47% 6%;
-    --secondary: 222 47% 14%;
-    --secondary-foreground: 210 40% 98%;
-    --muted: 222 47% 14%;
-    --muted-foreground: 215 20% 65%;
-    --accent: 40 45% 70%;
-    --accent-foreground: 222 47% 6%;
+    --background: 0 0% 2%;
+    --foreground: 0 0% 93%;
+    --card: 0 0% 4%;
+    --card-foreground: 0 0% 93%;
+    --popover: 0 0% 4%;
+    --popover-foreground: 0 0% 93%;
+    --primary: 40 45% 59%;
+    --primary-foreground: 0 0% 2%;
+    --secondary: 0 0% 9%;
+    --secondary-foreground: 0 0% 93%;
+    --muted: 0 0% 9%;
+    --muted-foreground: 0 0% 64%;
+    --accent: 40 45% 59%;
+    --accent-foreground: 0 0% 2%;
     --destructive: 0 62.8% 50%;
-    --destructive-foreground: 210 40% 98%;
-    --border: 222 47% 18%;
-    --input: 222 47% 18%;
-    --ring: 40 45% 70%;
+    --destructive-foreground: 0 0% 93%;
+    --border: 0 0% 15%;
+    --input: 0 0% 15%;
+    --ring: 40 45% 59%;
     
     /* Luxury Dark Elevation System */
     --elevation-1: 0 1px 3px 0 rgb(0 0 0 / 0.3);
@@ -195,10 +195,10 @@
   
   /* Dark Mode Glass Effect */
   .dark .glass {
-    background-color: rgb(17 24 39 / 0.7);
+    background-color: rgb(10 10 10 / 0.8);
     -webkit-backdrop-filter: blur(24px);
     backdrop-filter: blur(24px);
-    border-color: rgb(55 65 81 / 0.5);
+    border-color: rgb(39 39 42 / 0.5);
   }
   
   /* Dark Mode Text Colors */
@@ -218,26 +218,26 @@
     color: rgb(243 244 246);
   }
   
-  /* Dark Mode Backgrounds */
+  /* Dark Mode Backgrounds — Neutral Charcoal (No Blue) */
   .dark .bg-white {
-    background-color: #0a0f1a;
+    background-color: #0A0A0A;
   }
   
   .dark .bg-gray-50 {
-    background-color: #0d1321;
+    background-color: #0F0F0F;
   }
   
   .dark .bg-gray-100 {
-    background-color: #111827;
+    background-color: #171717;
   }
   
-  /* Dark Mode Borders */
+  /* Dark Mode Borders — Neutral */
   .dark .border-gray-200 {
-    border-color: rgb(55 65 81);
+    border-color: rgb(39 39 42);
   }
   
   .dark .border-gray-100 {
-    border-color: rgb(31 41 55);
+    border-color: rgb(30 30 30);
   }
   
   .dark .border-black\/10 {

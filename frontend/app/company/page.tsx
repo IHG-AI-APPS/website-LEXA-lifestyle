@@ -19,7 +19,7 @@ export default function CompanyPage() {
 
   return (
     <div className="min-h-screen bg-white pt-20">
-      <section className="py-20 bg-gray-50 dark:bg-gray-800">
+      <section className="py-20 bg-gray-50 dark:bg-[#171717]">
         <div className="container mx-auto px-5 sm:px-8 lg:px-16">
           <div className="max-w-7xl mx-auto">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
@@ -39,10 +39,10 @@ export default function CompanyPage() {
                   <span className="text-transparent bg-clip-text metallic-gradient">EXCELLENCE</span>
                 </h1>
                 <div className="h-px w-24 bg-gradient-to-r from-platinum to-transparent mb-8" />
-                <p className="text-xl text-gray-600 dark:text-gray-400 font-normal leading-relaxed mb-6">
+                <p className="text-xl text-gray-600 dark:text-zinc-500 font-normal leading-relaxed mb-6">
                   LEXA Lifestyle is Dubai&apos;s premier smart living integrator since 2005.
                 </p>
-                <p className="text-lg text-gray-600 dark:text-gray-400 font-normal leading-relaxed">
+                <p className="text-lg text-gray-600 dark:text-zinc-500 font-normal leading-relaxed">
                   Over 1,000 projects delivered across the UAE, partnering with Crestron, Lutron, Control4, and Savant.
                 </p>
               </motion.div>
@@ -81,11 +81,11 @@ export default function CompanyPage() {
                     viewport={{ once: true }}
                     className="text-center"
                   >
-                    <div className="w-16 h-16 mx-auto mb-6 border border-gray-300 dark:border-gray-600 flex items-center justify-center">
+                    <div className="w-16 h-16 mx-auto mb-6 border border-gray-300 dark:border-zinc-700 flex items-center justify-center">
                       <Icon size={32} className="text-charcoal" strokeWidth={1.5} />
                     </div>
                     <h3 className="text-xl font-semibold mb-3">{value.title}</h3>
-                    <p className="text-sm text-gray-600 dark:text-gray-400">{value.description}</p>
+                    <p className="text-sm text-gray-600 dark:text-zinc-500">{value.description}</p>
                   </motion.div>
                 )
               })}

@@ -32,7 +32,7 @@ export default function AdditionalFeaturesSelector({
               className={`p-6 rounded-xl border-2 text-left transition-all relative ${
                 isSelected
                   ? 'border-black bg-gray-50'
-                  : 'border-gray-200 dark:border-gray-700 hover:border-gray-300'
+                  : 'border-gray-200 dark:border-zinc-800 hover:border-gray-300'
               }`}
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}

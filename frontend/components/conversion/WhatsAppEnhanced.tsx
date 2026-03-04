@@ -349,7 +349,7 @@ export default function WhatsAppEnhanced() {
                             {script.message.split('\n')[0]}
                           </p>
                         </div>
-                        <ArrowRight className="mt-1 h-4 w-4 flex-shrink-0 text-gray-600 dark:text-gray-400 opacity-0 transition-all group-hover:translate-x-1 group-hover:text-[#E8DCC8] group-hover:opacity-100" />
+                        <ArrowRight className="mt-1 h-4 w-4 flex-shrink-0 text-gray-600 dark:text-zinc-500 opacity-0 transition-all group-hover:translate-x-1 group-hover:text-[#E8DCC8] group-hover:opacity-100" />
                       </div>
                     </button>
                   )

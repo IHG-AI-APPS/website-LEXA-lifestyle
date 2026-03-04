@@ -44,7 +44,7 @@ export default function PartnerWithUsPage() {
   }
 
   return (
-    <div className="min-h-screen bg-white dark:bg-gray-950 pt-20" data-testid="partner-page">
+    <div className="min-h-screen bg-white dark:bg-[#050505] pt-20" data-testid="partner-page">
       {/* Hero */}
       <section className="relative overflow-hidden bg-[#0A0A0A] dark:bg-[#050505] text-white py-16 lg:py-24">
         <div className="container mx-auto px-5 sm:px-8 lg:px-16 relative z-10">
@@ -60,7 +60,7 @@ export default function PartnerWithUsPage() {
       </section>
 
       {/* Partner Types */}
-      <section className="py-16 lg:py-20 bg-white dark:bg-gray-950" data-testid="partner-types-section">
+      <section className="py-16 lg:py-20 bg-white dark:bg-[#050505]" data-testid="partner-types-section">
         <div className="container mx-auto px-5 sm:px-8 lg:px-16">
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-12">
@@ -73,14 +73,14 @@ export default function PartnerWithUsPage() {
                 return (
                   <motion.div key={type.id} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.3, delay: i * 0.1 }}
                     onClick={() => { setSelectedType(type.id); setFormData(p => ({ ...p, type: type.id })) }}
-                    className={`cursor-pointer rounded-xl p-6 border-2 transition-all ${selectedType === type.id ? 'border-[#C9A962] shadow-lg bg-[#C9A962]/5' : 'border-gray-200 dark:border-gray-700 hover:border-gray-300'}`}>
+                    className={`cursor-pointer rounded-xl p-6 border-2 transition-all ${selectedType === type.id ? 'border-[#C9A962] shadow-lg bg-[#C9A962]/5' : 'border-gray-200 dark:border-zinc-800 hover:border-gray-300'}`}>
                     <div className="w-11 h-11 rounded-lg bg-gray-900 dark:bg-[#C9A962] flex items-center justify-center mb-4">
                       <Icon className="text-white dark:text-gray-900" size={20} />
                     </div>
                     <h3 className="text-base font-bold mb-2 text-gray-900 dark:text-white">{type.title}</h3>
-                    <p className="text-sm text-gray-600 dark:text-gray-400 mb-4">{type.description}</p>
+                    <p className="text-sm text-gray-600 dark:text-zinc-500 mb-4">{type.description}</p>
                     <ul className="space-y-2">
-                      {type.benefits.map((b, j) => (<li key={j} className="flex items-start gap-2 text-xs text-gray-700 dark:text-gray-300"><CheckCircle2 size={12} className="text-[#C9A962] flex-shrink-0 mt-0.5" />{b}</li>))}
+                      {type.benefits.map((b, j) => (<li key={j} className="flex items-start gap-2 text-xs text-gray-700 dark:text-zinc-400"><CheckCircle2 size={12} className="text-[#C9A962] flex-shrink-0 mt-0.5" />{b}</li>))}
                     </ul>
                   </motion.div>
                 )
@@ -91,7 +91,7 @@ export default function PartnerWithUsPage() {
       </section>
 
       {/* Benefits */}
-      <section className="py-16 lg:py-20 bg-gray-50 dark:bg-gray-900">
+      <section className="py-16 lg:py-20 bg-gray-50 dark:bg-[#0A0A0A]">
         <div className="container mx-auto px-5 sm:px-8 lg:px-16">
           <div className="max-w-5xl mx-auto">
             <div className="text-center mb-12">
@@ -103,12 +103,12 @@ export default function PartnerWithUsPage() {
                 const Icon = b.icon
                 return (
                   <motion.div key={i} initial={{ opacity: 0, y: 15 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.3, delay: i * 0.1 }}
-                    className="text-center p-6 bg-white dark:bg-gray-950 rounded-xl border border-gray-100 dark:border-gray-800">
-                    <div className="w-12 h-12 rounded-full bg-gray-900 dark:bg-gray-800 flex items-center justify-center mb-3 mx-auto border-2 border-[#C9A962]/30">
+                    className="text-center p-6 bg-white dark:bg-[#050505] rounded-xl border border-gray-100 dark:border-zinc-800">
+                    <div className="w-12 h-12 rounded-full bg-gray-900 dark:bg-[#171717] flex items-center justify-center mb-3 mx-auto border-2 border-[#C9A962]/30">
                       <Icon className="text-[#C9A962]" size={20} />
                     </div>
                     <h3 className="text-sm font-bold mb-1 text-gray-900 dark:text-white">{b.title}</h3>
-                    <p className="text-xs text-gray-500 dark:text-gray-400">{b.desc}</p>
+                    <p className="text-xs text-gray-500 dark:text-zinc-500">{b.desc}</p>
                   </motion.div>
                 )
               })}
@@ -118,7 +118,7 @@ export default function PartnerWithUsPage() {
       </section>
 
       {/* Application Form */}
-      <section id="apply" className="py-16 lg:py-20 bg-white dark:bg-gray-950" data-testid="application-section">
+      <section id="apply" className="py-16 lg:py-20 bg-white dark:bg-[#050505]" data-testid="application-section">
         <div className="container mx-auto px-5 sm:px-8 lg:px-16">
           <div className="max-w-2xl mx-auto">
             <div className="text-center mb-10">
@@ -130,28 +130,28 @@ export default function PartnerWithUsPage() {
               <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="bg-green-50 dark:bg-green-900/20 p-8 rounded-xl border border-green-200 dark:border-green-800 text-center">
                 <CheckCircle2 className="h-12 w-12 text-green-500 mx-auto mb-4" />
                 <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-2">Application Submitted!</h3>
-                <p className="text-sm text-gray-600 dark:text-gray-400">Our partnerships team will review and contact you within 3 business days.</p>
+                <p className="text-sm text-gray-600 dark:text-zinc-500">Our partnerships team will review and contact you within 3 business days.</p>
               </motion.div>
             ) : (
               <form onSubmit={handleSubmit} className="space-y-5" data-testid="partner-form">
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                  <div><label className="text-sm font-medium text-gray-700 dark:text-gray-300 mb-1 block">Company</label><Input value={formData.company} onChange={e => setFormData(p => ({ ...p, company: e.target.value }))} placeholder="Company name" required data-testid="partner-company" /></div>
-                  <div><label className="text-sm font-medium text-gray-700 dark:text-gray-300 mb-1 block">Contact Name</label><Input value={formData.name} onChange={e => setFormData(p => ({ ...p, name: e.target.value }))} placeholder="Full name" required data-testid="partner-name" /></div>
+                  <div><label className="text-sm font-medium text-gray-700 dark:text-zinc-400 mb-1 block">Company</label><Input value={formData.company} onChange={e => setFormData(p => ({ ...p, company: e.target.value }))} placeholder="Company name" required data-testid="partner-company" /></div>
+                  <div><label className="text-sm font-medium text-gray-700 dark:text-zinc-400 mb-1 block">Contact Name</label><Input value={formData.name} onChange={e => setFormData(p => ({ ...p, name: e.target.value }))} placeholder="Full name" required data-testid="partner-name" /></div>
                 </div>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                  <div><label className="text-sm font-medium text-gray-700 dark:text-gray-300 mb-1 block">Email</label><Input type="email" value={formData.email} onChange={e => setFormData(p => ({ ...p, email: e.target.value }))} placeholder="your@company.com" required data-testid="partner-email" /></div>
-                  <div><label className="text-sm font-medium text-gray-700 dark:text-gray-300 mb-1 block">Phone</label><Input type="tel" value={formData.phone} onChange={e => setFormData(p => ({ ...p, phone: e.target.value }))} placeholder="+971 50 XXX XXXX" data-testid="partner-phone" /></div>
+                  <div><label className="text-sm font-medium text-gray-700 dark:text-zinc-400 mb-1 block">Email</label><Input type="email" value={formData.email} onChange={e => setFormData(p => ({ ...p, email: e.target.value }))} placeholder="your@company.com" required data-testid="partner-email" /></div>
+                  <div><label className="text-sm font-medium text-gray-700 dark:text-zinc-400 mb-1 block">Phone</label><Input type="tel" value={formData.phone} onChange={e => setFormData(p => ({ ...p, phone: e.target.value }))} placeholder="+971 50 XXX XXXX" data-testid="partner-phone" /></div>
                 </div>
                 <div>
-                  <label className="text-sm font-medium text-gray-700 dark:text-gray-300 mb-2 block">Partnership Type</label>
+                  <label className="text-sm font-medium text-gray-700 dark:text-zinc-400 mb-2 block">Partnership Type</label>
                   <div className="grid grid-cols-2 gap-2">
                     {partnerTypes.map(t => (
                       <button key={t.id} type="button" onClick={() => setFormData(p => ({ ...p, type: t.id }))}
-                        className={`py-2 px-3 text-sm rounded-lg border transition-colors ${formData.type === t.id ? 'bg-[#C9A962] text-gray-900 border-[#C9A962]' : 'border-gray-200 dark:border-gray-700 hover:border-[#C9A962]/50'}`}>{t.title}</button>
+                        className={`py-2 px-3 text-sm rounded-lg border transition-colors ${formData.type === t.id ? 'bg-[#C9A962] text-gray-900 border-[#C9A962]' : 'border-gray-200 dark:border-zinc-800 hover:border-[#C9A962]/50'}`}>{t.title}</button>
                     ))}
                   </div>
                 </div>
-                <div><label className="text-sm font-medium text-gray-700 dark:text-gray-300 mb-1 block">Message</label><Textarea value={formData.message} onChange={e => setFormData(p => ({ ...p, message: e.target.value }))} placeholder="Tell us about your company and partnership goals..." rows={4} /></div>
+                <div><label className="text-sm font-medium text-gray-700 dark:text-zinc-400 mb-1 block">Message</label><Textarea value={formData.message} onChange={e => setFormData(p => ({ ...p, message: e.target.value }))} placeholder="Tell us about your company and partnership goals..." rows={4} /></div>
                 <Button type="submit" size="lg" className="w-full bg-[#C9A962] text-gray-900 hover:bg-[#C9A962]/90 font-semibold" disabled={isSubmitting} data-testid="partner-submit">
                   {isSubmitting ? 'Submitting...' : 'Submit Application'} <Send className="ml-2" size={16} />
                 </Button>

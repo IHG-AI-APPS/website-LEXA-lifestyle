@@ -55,7 +55,7 @@ export default function ResourcesPage() {
   }
 
   return (
-    <div className="min-h-screen bg-white dark:bg-gray-950 pt-20" data-testid="resources-page">
+    <div className="min-h-screen bg-white dark:bg-[#050505] pt-20" data-testid="resources-page">
       {/* Hero */}
       <section className="relative overflow-hidden bg-[#0A0A0A] dark:bg-[#050505] text-white py-16 lg:py-24">
         <div className="container mx-auto px-5 sm:px-8 lg:px-16 relative z-10">
@@ -72,7 +72,7 @@ export default function ResourcesPage() {
       </section>
 
       {/* Category Filter */}
-      <section className="py-8 bg-white border-b border-gray-200 dark:border-gray-700 sticky top-20 z-40">
+      <section className="py-8 bg-white border-b border-gray-200 dark:border-zinc-800 sticky top-20 z-40">
         <div className="container mx-auto px-5 sm:px-8 lg:px-16">
           <div className="max-w-6xl mx-auto">
             <div className="flex flex-wrap gap-3 justify-center">
@@ -83,7 +83,7 @@ export default function ResourcesPage() {
                   className={`px-6 py-2 text-sm font-medium tracking-wide uppercase transition-all duration-300 ${
                     selectedCategory === category
                       ? 'bg-charcoal text-white'
-                      : 'border border-gray-300 dark:border-gray-600 text-gray-600 dark:text-gray-400 hover:border-charcoal'
+                      : 'border border-gray-300 dark:border-zinc-700 text-gray-600 dark:text-zinc-500 hover:border-charcoal'
                   }`}
                 >
                   {category}
@@ -100,7 +100,7 @@ export default function ResourcesPage() {
           <div className="max-w-6xl mx-auto">
             {filteredArticles.length === 0 ? (
               <div className="text-center py-20">
-                <p className="text-xl text-gray-600 dark:text-gray-400">No articles found in this category.</p>
+                <p className="text-xl text-gray-600 dark:text-zinc-500">No articles found in this category.</p>
               </div>
             ) : (
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -129,11 +129,11 @@ export default function ResourcesPage() {
 
                         {/* Content */}
                         <div className="flex-1 flex flex-col">
-                          <h3 className="text-2xl font-semibold mb-3 group-hover:text-gray-600 dark:text-gray-400 transition-colors">
+                          <h3 className="text-2xl font-semibold mb-3 group-hover:text-gray-600 dark:text-zinc-500 transition-colors">
                             {article.title}
                           </h3>
                           
-                          <p className="text-gray-600 dark:text-gray-400 mb-4 line-clamp-3">
+                          <p className="text-gray-600 dark:text-zinc-500 mb-4 line-clamp-3">
                             {article.excerpt}
                           </p>
 
@@ -160,7 +160,7 @@ export default function ResourcesPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-gray-50 dark:bg-gray-800">
+      <section className="py-20 bg-gray-50 dark:bg-[#171717]">
         <div className="container mx-auto px-5 sm:px-8 lg:px-16">
           <div className="max-w-4xl mx-auto text-center">
             <motion.div
@@ -172,7 +172,7 @@ export default function ResourcesPage() {
               <h2 className="text-5xl font-semibold mb-6">
                 Need Expert Guidance?
               </h2>
-              <p className="text-xl text-gray-600 dark:text-gray-400 mb-8">
+              <p className="text-xl text-gray-600 dark:text-zinc-500 mb-8">
                 Our team is ready to help you design the perfect smart living solution
               </p>
               <Button

@@ -106,7 +106,7 @@ export default function DigitalTwinPage() {
                 <Button
                   size="lg"
                   onClick={() => setShowConsultationForm(true)}
-                  className="bg-white text-[#1A1A1A] dark:text-white hover:bg-gray-100 dark:bg-gray-800 px-8 py-6 text-sm font-semibold uppercase tracking-wider"
+                  className="bg-white text-[#1A1A1A] dark:text-white hover:bg-gray-100 dark:bg-[#171717] px-8 py-6 text-sm font-semibold uppercase tracking-wider"
                 >
                   Schedule Virtual Demo
                 </Button>
@@ -126,7 +126,7 @@ export default function DigitalTwinPage() {
         </section>
 
         {/* Capabilities */}
-        <section className="py-20 bg-gray-50 dark:bg-gray-800">
+        <section className="py-20 bg-gray-50 dark:bg-[#171717]">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -138,7 +138,7 @@ export default function DigitalTwinPage() {
               <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4 text-[#1A1A1A] dark:text-white">
                 Next-Generation Building Intelligence
               </h2>
-              <p className="text-base sm:text-lg text-gray-600 dark:text-gray-400 max-w-3xl mx-auto">
+              <p className="text-base sm:text-lg text-gray-600 dark:text-zinc-500 max-w-3xl mx-auto">
                 More than visualization - a living, learning system that continuously optimizes your building
               </p>
             </motion.div>
@@ -153,7 +153,7 @@ export default function DigitalTwinPage() {
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.6, delay: 0.2 }}
                     viewport={{ once: true }}
-                    className="bg-white dark:bg-gray-800 p-8 border-2 border-gray-200 dark:border-gray-700 hover:border-[#1A1A1A] transition-all duration-300 hover:shadow-xl"
+                    className="bg-white dark:bg-[#171717] p-8 border-2 border-gray-200 dark:border-zinc-800 hover:border-[#1A1A1A] transition-all duration-300 hover:shadow-xl"
                   >
                     <div className="flex items-start gap-4">
                       <div className="flex-shrink-0 p-3 bg-gradient-to-br from-cyan-50 to-blue-50">
@@ -163,7 +163,7 @@ export default function DigitalTwinPage() {
                         <h3 className="text-lg font-semibold mb-2 text-[#1A1A1A] dark:text-white">
                           {capability.title}
                         </h3>
-                        <p className="text-gray-600 dark:text-gray-400 text-sm leading-relaxed">
+                        <p className="text-gray-600 dark:text-zinc-500 text-sm leading-relaxed">
                           {capability.description}
                         </p>
                       </div>
@@ -200,11 +200,11 @@ export default function DigitalTwinPage() {
                     whileInView={{ opacity: 1, scale: 1 }}
                     transition={{ duration: 0.6, delay: 0.2 }}
                     viewport={{ once: true }}
-                    className="text-center p-6 bg-gray-50 border-2 border-gray-200 dark:border-gray-700"
+                    className="text-center p-6 bg-gray-50 border-2 border-gray-200 dark:border-zinc-800"
                   >
                     <Icon className="h-10 w-10 mx-auto mb-4 text-[#1A1A1A] dark:text-white" />
                     <div className="text-4xl font-bold mb-2 text-[#1A1A1A] dark:text-white">{benefit.metric}</div>
-                    <div className="text-sm text-gray-600 dark:text-gray-400">{benefit.label}</div>
+                    <div className="text-sm text-gray-600 dark:text-zinc-500">{benefit.label}</div>
                   </motion.div>
                 )
               })}
@@ -232,7 +232,7 @@ export default function DigitalTwinPage() {
               <Button
                 size="lg"
                 onClick={() => setShowConsultationForm(true)}
-                className="bg-white text-[#1A1A1A] dark:text-white hover:bg-gray-100 dark:bg-gray-800 px-8 py-6 text-sm font-semibold uppercase tracking-wider"
+                className="bg-white text-[#1A1A1A] dark:text-white hover:bg-gray-100 dark:bg-[#171717] px-8 py-6 text-sm font-semibold uppercase tracking-wider"
               >
                 Schedule Virtual Demo
                 <ArrowRight className="ml-2 h-4 w-4" />

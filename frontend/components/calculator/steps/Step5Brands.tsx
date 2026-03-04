@@ -25,7 +25,7 @@ export default function Step5Brands({
     <div className="space-y-8 max-w-3xl mx-auto">
       <div className="text-center mb-8">
         <h2 className="text-3xl font-bold mb-3">Brand & Protocol Preferences</h2>
-        <p className="text-gray-600 dark:text-gray-400 dark:text-gray-400">
+        <p className="text-gray-600 dark:text-zinc-500">
           Select your preferred brands and control platforms
         </p>
       </div>
@@ -43,7 +43,7 @@ export default function Step5Brands({
               className={`p-4 border-2 rounded-lg transition-all ${
                 selectedControl === platform
                   ? 'border-black bg-gray-50'
-                  : 'border-gray-200 dark:border-gray-700 hover:border-gray-400'
+                  : 'border-gray-200 dark:border-zinc-800 hover:border-gray-400'
               }`}
             >
               <span className="font-semibold">{platform}</span>
@@ -65,7 +65,7 @@ export default function Step5Brands({
               className={`p-4 border-2 rounded-lg transition-all ${
                 selectedSecurity === brand
                   ? 'border-black bg-gray-50'
-                  : 'border-gray-200 dark:border-gray-700 hover:border-gray-400'
+                  : 'border-gray-200 dark:border-zinc-800 hover:border-gray-400'
               }`}
             >
               <span className="font-semibold">{brand}</span>
@@ -87,7 +87,7 @@ export default function Step5Brands({
               className={`p-4 border-2 rounded-lg transition-all ${
                 selectedLighting === brand
                   ? 'border-black bg-gray-50'
-                  : 'border-gray-200 dark:border-gray-700 hover:border-gray-400'
+                  : 'border-gray-200 dark:border-zinc-800 hover:border-gray-400'
               }`}
             >
               <span className="font-semibold">{brand}</span>

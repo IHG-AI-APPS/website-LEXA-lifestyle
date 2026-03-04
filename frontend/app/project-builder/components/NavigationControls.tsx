@@ -60,7 +60,7 @@ export default function NavigationControls({
             initial={{ y: 100, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ delay: 0.3, duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
-            className="bg-white/95 backdrop-blur-xl border border-gray-200 dark:border-gray-700 rounded-full px-6 py-4 elevation-6 flex items-center justify-between"
+            className="bg-white/95 backdrop-blur-xl border border-gray-200 dark:border-zinc-800 rounded-full px-6 py-4 elevation-6 flex items-center justify-between"
           >
             {/* Back Button */}
             <Button
@@ -80,13 +80,13 @@ export default function NavigationControls({
             {/* Keyboard Hint */}
             <div className="hidden xl:flex items-center gap-6 text-xs text-gray-500">
               <div className="flex items-center gap-2">
-                <kbd className="px-2 py-1 bg-gray-100 dark:bg-gray-800 border border-gray-300 dark:border-gray-600 rounded text-xs font-mono">⌘</kbd>
-                <kbd className="px-2 py-1 bg-gray-100 dark:bg-gray-800 border border-gray-300 dark:border-gray-600 rounded text-xs font-mono">←</kbd>
+                <kbd className="px-2 py-1 bg-gray-100 dark:bg-[#171717] border border-gray-300 dark:border-zinc-700 rounded text-xs font-mono">⌘</kbd>
+                <kbd className="px-2 py-1 bg-gray-100 dark:bg-[#171717] border border-gray-300 dark:border-zinc-700 rounded text-xs font-mono">←</kbd>
                 <span>Back</span>
               </div>
               <div className="flex items-center gap-2">
-                <kbd className="px-2 py-1 bg-gray-100 dark:bg-gray-800 border border-gray-300 dark:border-gray-600 rounded text-xs font-mono">⌘</kbd>
-                <kbd className="px-2 py-1 bg-gray-100 dark:bg-gray-800 border border-gray-300 dark:border-gray-600 rounded text-xs font-mono">→</kbd>
+                <kbd className="px-2 py-1 bg-gray-100 dark:bg-[#171717] border border-gray-300 dark:border-zinc-700 rounded text-xs font-mono">⌘</kbd>
+                <kbd className="px-2 py-1 bg-gray-100 dark:bg-[#171717] border border-gray-300 dark:border-zinc-700 rounded text-xs font-mono">→</kbd>
                 <span>Forward</span>
               </div>
             </div>
@@ -129,7 +129,7 @@ export default function NavigationControls({
           initial={{ y: 100, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ delay: 0.3, duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
-          className="bg-white/95 backdrop-blur-xl border border-gray-200 dark:border-gray-700 rounded-2xl p-4 elevation-6"
+          className="bg-white/95 backdrop-blur-xl border border-gray-200 dark:border-zinc-800 rounded-2xl p-4 elevation-6"
         >
           <div className="grid grid-cols-2 gap-3">
             {/* Back Button */}

@@ -147,7 +147,7 @@ export default function ScheduleVisitModal({
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.95, y: 20 }}
             transition={{ type: 'spring', damping: 25, stiffness: 300 }}
-            className="fixed inset-x-4 sm:inset-x-auto sm:left-1/2 top-1/2 sm:-translate-x-1/2 -translate-y-1/2 w-[calc(100%-2rem)] sm:w-full max-w-sm sm:max-w-md mx-auto bg-white dark:bg-[#0d1321] rounded-xl shadow-2xl z-50 overflow-hidden max-h-[85vh] overflow-y-auto"
+            className="fixed inset-x-4 sm:inset-x-auto sm:left-1/2 top-1/2 sm:-translate-x-1/2 -translate-y-1/2 w-[calc(100%-2rem)] sm:w-full max-w-sm sm:max-w-md mx-auto bg-white dark:bg-[#0A0A0A] rounded-xl shadow-2xl z-50 overflow-hidden max-h-[85vh] overflow-y-auto"
           >
             {/* Header - Compact */}
             <div className="relative bg-gradient-to-r from-[#1A1A1A] to-[#2a2a2a] dark:from-[#E8DCC8] dark:to-[#d4c4a8] p-4 text-white dark:text-[#1A1A1A]">
@@ -184,21 +184,21 @@ export default function ScheduleVisitModal({
                   <div className="w-12 h-12 bg-green-100 dark:bg-green-900/30 rounded-full flex items-center justify-center mx-auto mb-3">
                     <CheckCircle className="h-6 w-6 text-green-600 dark:text-green-400" />
                   </div>
-                  <h3 className="text-lg font-bold text-gray-900 dark:text-white dark:text-white mb-1">
+                  <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-1">
                     {language === 'ar' ? 'تم الحجز بنجاح!' : 'Visit Scheduled!'}
                   </h3>
-                  <p className="text-gray-600 dark:text-gray-400 dark:text-gray-400 mb-4 text-sm">
+                  <p className="text-gray-600 dark:text-zinc-500 mb-4 text-sm">
                     {language === 'ar' 
                       ? 'تم إرسال تأكيد إلى بريدك الإلكتروني'
                       : 'Confirmation sent to your email'}
                   </p>
                   
-                  <div className="bg-gray-50 dark:bg-gray-800/50 rounded-lg p-3 mb-4 text-left">
-                    <div className="flex items-center gap-2 text-xs text-gray-600 dark:text-gray-400 dark:text-gray-400 mb-1">
+                  <div className="bg-gray-50 dark:bg-[#171717]/50 rounded-lg p-3 mb-4 text-left">
+                    <div className="flex items-center gap-2 text-xs text-gray-600 dark:text-zinc-500 mb-1">
                       <Calendar className="h-3 w-3" />
                       <span>{formData.date}</span>
                     </div>
-                    <div className="flex items-center gap-2 text-xs text-gray-600 dark:text-gray-400 dark:text-gray-400">
+                    <div className="flex items-center gap-2 text-xs text-gray-600 dark:text-zinc-500">
                       <Clock className="h-3 w-3" />
                       <span>{formData.time}</span>
                     </div>
@@ -228,7 +228,7 @@ export default function ScheduleVisitModal({
                 /* Step 1: Select Date & Time - Compact */
                 <div className="space-y-4">
                   <div>
-                    <label className="block text-xs font-medium text-gray-700 dark:text-gray-300 dark:text-gray-300 mb-2">
+                    <label className="block text-xs font-medium text-gray-700 dark:text-zinc-400 mb-2">
                       {language === 'ar' ? 'اختر التاريخ' : 'Select Date'}
                     </label>
                     <div className="grid grid-cols-4 gap-1.5">
@@ -239,7 +239,7 @@ export default function ScheduleVisitModal({
                           className={`p-2 rounded-lg text-center transition-all ${
                             formData.date === formatDate(date)
                               ? 'bg-[#1A1A1A] dark:bg-[#E8DCC8] text-white dark:text-[#1A1A1A]'
-                              : 'bg-gray-100 dark:bg-gray-800 dark:bg-gray-800 text-gray-700 dark:text-gray-300 dark:text-gray-300 hover:bg-gray-200'
+                              : 'bg-gray-100 dark:bg-[#171717] text-gray-700 dark:text-zinc-400 hover:bg-gray-200'
                           }`}
                         >
                           <div className="text-[10px] opacity-70">{date.toLocaleDateString('en-US', { weekday: 'short' })}</div>
@@ -252,7 +252,7 @@ export default function ScheduleVisitModal({
 
                   {formData.date && (
                     <motion.div initial={{ opacity: 0, height: 0 }} animate={{ opacity: 1, height: 'auto' }}>
-                      <label className="block text-xs font-medium text-gray-700 dark:text-gray-300 dark:text-gray-300 mb-2">
+                      <label className="block text-xs font-medium text-gray-700 dark:text-zinc-400 mb-2">
                         {language === 'ar' ? 'اختر الوقت' : 'Select Time'}
                       </label>
                       <div className="grid grid-cols-4 gap-1.5">
@@ -263,7 +263,7 @@ export default function ScheduleVisitModal({
                             className={`p-1.5 rounded-lg text-xs transition-all ${
                               formData.time === time
                                 ? 'bg-[#1A1A1A] dark:bg-[#E8DCC8] text-white dark:text-[#1A1A1A]'
-                                : 'bg-gray-100 dark:bg-gray-800 dark:bg-gray-800 text-gray-700 dark:text-gray-300 dark:text-gray-300 hover:bg-gray-200'
+                                : 'bg-gray-100 dark:bg-[#171717] text-gray-700 dark:text-zinc-400 hover:bg-gray-200'
                             }`}
                           >
                             {time}
@@ -287,55 +287,55 @@ export default function ScheduleVisitModal({
                 <div className="space-y-3">
                   <button 
                     onClick={() => setStep(1)}
-                    className="text-xs text-gray-500 hover:text-gray-700 dark:text-gray-300 flex items-center gap-1"
+                    className="text-xs text-gray-500 hover:text-gray-700 dark:text-zinc-400 flex items-center gap-1"
                   >
                     ← {language === 'ar' ? 'تغيير' : 'Change'}
                   </button>
                   
                   <div className="bg-[#E8DCC8]/20 rounded-lg p-2 flex items-center gap-2">
                     <Calendar className="h-4 w-4 text-[#1A1A1A] dark:text-white dark:text-[#E8DCC8]" />
-                    <span className="text-xs font-medium text-gray-700 dark:text-gray-300 dark:text-gray-300">
+                    <span className="text-xs font-medium text-gray-700 dark:text-zinc-400">
                       {formData.date} at {formData.time}
                     </span>
                   </div>
 
                   <div>
-                    <label className="block text-xs font-medium text-gray-700 dark:text-gray-300 dark:text-gray-300 mb-1">
+                    <label className="block text-xs font-medium text-gray-700 dark:text-zinc-400 mb-1">
                       {language === 'ar' ? 'الاسم' : 'Name'} *
                     </label>
                     <input
                       type="text"
                       value={formData.name}
                       onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                      className="w-full px-3 py-2 rounded-lg border border-gray-200 dark:border-gray-700 dark:border-gray-700 bg-white dark:bg-gray-800 text-sm focus:ring-2 focus:ring-[#E8DCC8]"
+                      className="w-full px-3 py-2 rounded-lg border border-gray-200 dark:border-zinc-800 bg-white dark:bg-[#171717] text-sm focus:ring-2 focus:ring-[#E8DCC8]"
                       placeholder={language === 'ar' ? 'أدخل اسمك' : 'Your name'}
                       required
                     />
                   </div>
 
                   <div>
-                    <label className="block text-xs font-medium text-gray-700 dark:text-gray-300 dark:text-gray-300 mb-1">
+                    <label className="block text-xs font-medium text-gray-700 dark:text-zinc-400 mb-1">
                       {language === 'ar' ? 'البريد' : 'Email'} *
                     </label>
                     <input
                       type="email"
                       value={formData.email}
                       onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                      className="w-full px-3 py-2 rounded-lg border border-gray-200 dark:border-gray-700 dark:border-gray-700 bg-white dark:bg-gray-800 text-sm focus:ring-2 focus:ring-[#E8DCC8]"
+                      className="w-full px-3 py-2 rounded-lg border border-gray-200 dark:border-zinc-800 bg-white dark:bg-[#171717] text-sm focus:ring-2 focus:ring-[#E8DCC8]"
                       placeholder={language === 'ar' ? 'بريدك الإلكتروني' : 'Your email'}
                       required
                     />
                   </div>
 
                   <div>
-                    <label className="block text-xs font-medium text-gray-700 dark:text-gray-300 dark:text-gray-300 mb-1">
+                    <label className="block text-xs font-medium text-gray-700 dark:text-zinc-400 mb-1">
                       {language === 'ar' ? 'الهاتف' : 'Phone'} *
                     </label>
                     <input
                       type="tel"
                       value={formData.phone}
                       onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                      className="w-full px-3 py-2 rounded-lg border border-gray-200 dark:border-gray-700 dark:border-gray-700 bg-white dark:bg-gray-800 text-sm focus:ring-2 focus:ring-[#E8DCC8]"
+                      className="w-full px-3 py-2 rounded-lg border border-gray-200 dark:border-zinc-800 bg-white dark:bg-[#171717] text-sm focus:ring-2 focus:ring-[#E8DCC8]"
                       placeholder="+971 50 123 4567"
                       required
                     />

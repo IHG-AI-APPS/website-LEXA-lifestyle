@@ -87,7 +87,7 @@ export default function ObjectiveSelector({ sessionId, onComplete }: ObjectiveSe
           <p className="text-sm text-gray-500 uppercase tracking-widest mb-2">
             What matters most to you?
           </p>
-          <p className="text-gray-600 dark:text-gray-400 text-sm">
+          <p className="text-gray-600 dark:text-zinc-500 text-sm">
             Select 2-4 objectives. The intelligence engine will prioritize accordingly.
           </p>
         </div>
@@ -105,10 +105,10 @@ export default function ObjectiveSelector({ sessionId, onComplete }: ObjectiveSe
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.4, delay: 0.2 }}
                 onClick={() => toggleObjective(objective.id)}
-                className={`relative p-8 text-left transition-all duration-300 group bg-white dark:bg-gray-800 border ${
+                className={`relative p-8 text-left transition-all duration-300 group bg-white dark:bg-[#171717] border ${
                   isSelected
                     ? 'border-[#C9A962] shadow-lg scale-105'
-                    : 'border-gray-200 dark:border-gray-700 hover:border-gray-300 dark:border-gray-600 hover:shadow-md'
+                    : 'border-gray-200 dark:border-zinc-800 hover:border-gray-300 dark:border-zinc-700 hover:shadow-md'
                 }`}
               >
                 {/* Selection Indicator */}
@@ -131,7 +131,7 @@ export default function ObjectiveSelector({ sessionId, onComplete }: ObjectiveSe
 
                 {/* Label */}
                 <h3 className={`text-lg font-medium mb-2 transition-colors duration-300 ${
-                  isSelected ? 'text-gray-900' : 'text-gray-600 dark:text-gray-400 group-hover:text-gray-900'
+                  isSelected ? 'text-gray-900' : 'text-gray-600 dark:text-zinc-500 group-hover:text-gray-900'
                 }`}>
                   {objective.name}
                 </h3>
@@ -149,7 +149,7 @@ export default function ObjectiveSelector({ sessionId, onComplete }: ObjectiveSe
 
         {/* Counter & Continue */}
         <div className="text-center">
-          <div className="text-sm text-gray-600 dark:text-gray-400 mb-6">
+          <div className="text-sm text-gray-600 dark:text-zinc-500 mb-6">
             {selectedObjectives.length > 0 ? (
               <span>
                 <span className="text-[#C9A962] font-semibold font-mono">{selectedObjectives.length}</span> objective{selectedObjectives.length > 1 ? 's' : ''} selected

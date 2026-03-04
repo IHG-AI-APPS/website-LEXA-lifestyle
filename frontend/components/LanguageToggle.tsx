@@ -42,14 +42,14 @@ export function LanguageToggleDark() {
   const { language, setLanguage } = useLanguage()
 
   return (
-    <div className="flex items-center gap-2 bg-gray-100 dark:bg-gray-800 rounded-full p-1">
+    <div className="flex items-center gap-2 bg-gray-100 dark:bg-[#171717] rounded-full p-1">
       <button
         onClick={() => setLanguage('en')}
         className={`
           px-3 py-1.5 rounded-full text-sm font-medium transition-all flex items-center gap-1.5
           ${language === 'en' 
             ? 'bg-black text-white' 
-            : 'text-gray-600 dark:text-gray-400 hover:text-black'
+            : 'text-gray-600 dark:text-zinc-500 hover:text-black'
           }
         `}
       >
@@ -62,7 +62,7 @@ export function LanguageToggleDark() {
           px-3 py-1.5 rounded-full text-sm font-medium transition-all
           ${language === 'ar' 
             ? 'bg-black text-white' 
-            : 'text-gray-600 dark:text-gray-400 hover:text-black'
+            : 'text-gray-600 dark:text-zinc-500 hover:text-black'
           }
         `}
       >

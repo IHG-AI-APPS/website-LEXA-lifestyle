@@ -56,7 +56,7 @@ export default function HiddenCostsPage() {
 
   return (
     <>
-      <div className="min-h-screen bg-white dark:bg-gray-950 pt-20" data-testid="hidden-costs-page">
+      <div className="min-h-screen bg-white dark:bg-[#050505] pt-20" data-testid="hidden-costs-page">
         {/* Hero Section */}
         <section className="relative overflow-hidden bg-[#0A0A0A] dark:bg-[#050505] text-white py-16 lg:py-24">
           <div className="container mx-auto px-5 sm:px-8 lg:px-16 relative z-10">
@@ -80,7 +80,7 @@ export default function HiddenCostsPage() {
         </section>
 
         {/* Hidden Costs */}
-        <section className="py-20 bg-gray-50 dark:bg-gray-800">
+        <section className="py-20 bg-gray-50 dark:bg-[#171717]">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -92,7 +92,7 @@ export default function HiddenCostsPage() {
               <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4 text-[#1A1A1A] dark:text-white">
                 The True Cost of Doing Nothing
               </h2>
-              <p className="text-base sm:text-lg text-gray-600 dark:text-gray-400 max-w-3xl mx-auto">
+              <p className="text-base sm:text-lg text-gray-600 dark:text-zinc-500 max-w-3xl mx-auto">
                 Annual costs for typical luxury villa without building intelligence
               </p>
             </motion.div>
@@ -107,7 +107,7 @@ export default function HiddenCostsPage() {
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.6, delay: 0.2 }}
                     viewport={{ once: true }}
-                    className="bg-white dark:bg-gray-800 p-8 border-2 border-gray-200 dark:border-gray-700"
+                    className="bg-white dark:bg-[#171717] p-8 border-2 border-gray-200 dark:border-zinc-800"
                   >
                     <div className="flex items-start gap-4 mb-4">
                       <div className="p-3 bg-red-50">
@@ -120,17 +120,17 @@ export default function HiddenCostsPage() {
                         <XCircle className="h-5 w-5 text-red-500 flex-shrink-0 mt-0.5" />
                         <div>
                           <div className="text-xs text-gray-500 mb-1">Without Intelligence:</div>
-                          <div className="text-sm font-semibold text-gray-700 dark:text-gray-300">{cost.without}</div>
+                          <div className="text-sm font-semibold text-gray-700 dark:text-zinc-400">{cost.without}</div>
                         </div>
                       </div>
                       <div className="flex items-start gap-2">
                         <CheckCircle2 className="h-5 w-5 text-green-500 flex-shrink-0 mt-0.5" />
                         <div>
                           <div className="text-xs text-gray-500 mb-1">With Intelligence:</div>
-                          <div className="text-sm font-semibold text-gray-700 dark:text-gray-300">{cost.with}</div>
+                          <div className="text-sm font-semibold text-gray-700 dark:text-zinc-400">{cost.with}</div>
                         </div>
                       </div>
-                      <div className="pt-2 border-t border-gray-200 dark:border-gray-700">
+                      <div className="pt-2 border-t border-gray-200 dark:border-zinc-800">
                         <div className="inline-block px-3 py-1 bg-green-50 text-green-800 text-sm font-semibold">
                           💰 {cost.savings}
                         </div>
@@ -163,7 +163,7 @@ export default function HiddenCostsPage() {
               <Button
                 size="lg"
                 onClick={() => setShowConsultationForm(true)}
-                className="bg-white text-[#1A1A1A] dark:text-white hover:bg-gray-100 dark:bg-gray-800 px-8 py-6 text-sm font-semibold uppercase tracking-wider"
+                className="bg-white text-[#1A1A1A] dark:text-white hover:bg-gray-100 dark:bg-[#171717] px-8 py-6 text-sm font-semibold uppercase tracking-wider"
               >
                 Calculate Your Savings
                 <ArrowRight className="ml-2 h-4 w-4" />

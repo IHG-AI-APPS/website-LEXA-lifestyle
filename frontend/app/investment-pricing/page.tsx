@@ -34,7 +34,7 @@ export default function InvestmentPricingPage() {
   ]
 
   return (
-    <div className="min-h-screen bg-white dark:bg-gray-950 pt-20" data-testid="pricing-page">
+    <div className="min-h-screen bg-white dark:bg-[#050505] pt-20" data-testid="pricing-page">
       {/* Hero */}
       <section className="relative overflow-hidden bg-[#0A0A0A] dark:bg-[#050505] text-white py-16 lg:py-24">
         <div className="container mx-auto px-5 sm:px-8 lg:px-16 relative z-10">
@@ -53,7 +53,7 @@ export default function InvestmentPricingPage() {
       </section>
 
       {/* Pricing Tiers */}
-      <section className="py-16 lg:py-24 bg-white dark:bg-gray-950" data-testid="pricing-tiers">
+      <section className="py-16 lg:py-24 bg-white dark:bg-[#050505]" data-testid="pricing-tiers">
         <div className="container mx-auto px-5 sm:px-8 lg:px-16">
           <div className="text-center mb-12">
             <span className="text-xs uppercase tracking-widest text-[#C9A962] font-semibold">Choose Your Level</span>
@@ -62,7 +62,7 @@ export default function InvestmentPricingPage() {
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 max-w-6xl mx-auto items-start">
             {pricingTiers.map((tier, i) => (
               <motion.div key={i} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.4, delay: i * 0.1 }}
-                className={`relative rounded-2xl border-2 bg-white dark:bg-gray-900 ${tier.popular ? 'border-[#C9A962] shadow-xl lg:scale-105' : 'border-gray-200 dark:border-gray-700'}`}>
+                className={`relative rounded-2xl border-2 bg-white dark:bg-[#0A0A0A] ${tier.popular ? 'border-[#C9A962] shadow-xl lg:scale-105' : 'border-gray-200 dark:border-zinc-800'}`}>
                 {tier.popular && <div className="absolute -top-4 left-1/2 -translate-x-1/2 px-4 py-1 bg-[#C9A962] text-gray-900 text-sm font-bold rounded-full z-10">Most Popular</div>}
                 <div className="p-8">
                   <div className="text-center mb-6">
@@ -71,12 +71,12 @@ export default function InvestmentPricingPage() {
                     <p className="text-2xl font-bold text-[#C9A962]">{tier.price}</p>
                     <p className="text-xs text-gray-400 mt-2">ROI: {tier.roi}</p>
                   </div>
-                  <p className="text-sm text-gray-600 dark:text-gray-400 mb-5 text-center">{tier.description}</p>
+                  <p className="text-sm text-gray-600 dark:text-zinc-500 mb-5 text-center">{tier.description}</p>
                   <ul className="space-y-3 mb-6">
-                    {tier.features.map((feat, j) => (<li key={j} className="flex items-start gap-2 text-sm text-gray-700 dark:text-gray-300"><CheckCircle2 size={14} className="text-[#C9A962] flex-shrink-0 mt-0.5" />{feat}</li>))}
+                    {tier.features.map((feat, j) => (<li key={j} className="flex items-start gap-2 text-sm text-gray-700 dark:text-zinc-400"><CheckCircle2 size={14} className="text-[#C9A962] flex-shrink-0 mt-0.5" />{feat}</li>))}
                   </ul>
                   <p className="text-xs text-gray-500 mb-5">Ideal for: {tier.ideal}</p>
-                  <Button className={`w-full font-semibold ${tier.popular ? 'bg-[#C9A962] text-gray-900 hover:bg-[#C9A962]/90' : 'bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-white hover:bg-gray-200'}`} onClick={() => setShowConsultationForm(true)}>
+                  <Button className={`w-full font-semibold ${tier.popular ? 'bg-[#C9A962] text-gray-900 hover:bg-[#C9A962]/90' : 'bg-gray-100 dark:bg-[#171717] text-gray-900 dark:text-white hover:bg-gray-200'}`} onClick={() => setShowConsultationForm(true)}>
                     Get Started <ArrowRight className="ml-2" size={16} />
                   </Button>
                 </div>
@@ -87,7 +87,7 @@ export default function InvestmentPricingPage() {
       </section>
 
       {/* ROI Factors */}
-      <section className="py-16 lg:py-20 bg-gray-50 dark:bg-gray-900" data-testid="roi-section">
+      <section className="py-16 lg:py-20 bg-gray-50 dark:bg-[#0A0A0A]" data-testid="roi-section">
         <div className="container mx-auto px-5 sm:px-8 lg:px-16">
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-12">
@@ -99,12 +99,12 @@ export default function InvestmentPricingPage() {
                 const Icon = factor.icon
                 return (
                   <motion.div key={i} initial={{ opacity: 0, y: 15 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.3, delay: i * 0.1 }}
-                    className="bg-white dark:bg-gray-950 rounded-xl p-6 border border-gray-100 dark:border-gray-800 hover:shadow-lg transition-shadow group">
+                    className="bg-white dark:bg-[#050505] rounded-xl p-6 border border-gray-100 dark:border-zinc-800 hover:shadow-lg transition-shadow group">
                     <div className="w-11 h-11 rounded-lg bg-gray-900 dark:bg-[#C9A962] flex items-center justify-center mb-4 group-hover:bg-[#C9A962] transition-colors">
                       <Icon className="text-white dark:text-gray-900 group-hover:text-gray-900 transition-colors" size={20} />
                     </div>
                     <h3 className="text-base font-bold mb-1 text-gray-900 dark:text-white">{factor.title}</h3>
-                    <p className="text-sm text-gray-600 dark:text-gray-400 mb-3">{factor.desc}</p>
+                    <p className="text-sm text-gray-600 dark:text-zinc-500 mb-3">{factor.desc}</p>
                     <p className="text-xs font-semibold text-[#C9A962]">{factor.value}</p>
                   </motion.div>
                 )
@@ -115,7 +115,7 @@ export default function InvestmentPricingPage() {
       </section>
 
       {/* Investment Breakdown */}
-      <section className="py-16 lg:py-20 bg-white dark:bg-gray-950">
+      <section className="py-16 lg:py-20 bg-white dark:bg-[#050505]">
         <div className="container mx-auto px-5 sm:px-8 lg:px-16">
           <div className="max-w-4xl mx-auto">
             <div className="text-center mb-12">
@@ -124,7 +124,7 @@ export default function InvestmentPricingPage() {
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               {breakdown.map((item, i) => (
-                <div key={i} className="p-6 rounded-xl bg-gray-50 dark:bg-gray-900 border border-gray-100 dark:border-gray-800">
+                <div key={i} className="p-6 rounded-xl bg-gray-50 dark:bg-[#0A0A0A] border border-gray-100 dark:border-zinc-800">
                   <div className="flex items-center justify-between mb-3">
                     <h3 className="text-sm font-bold text-gray-900 dark:text-white">{item.category}</h3>
                     <span className="text-lg font-bold text-[#C9A962]">{item.pct}</span>

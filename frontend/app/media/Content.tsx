@@ -25,7 +25,7 @@ export default function MediaContent() {
   const sections = cms?.sections?.length ? cms.sections : fallback.sections
 
   return (
-    <main className="min-h-screen pt-20 bg-white dark:bg-gray-950" data-testid="media-page">
+    <main className="min-h-screen pt-20 bg-white dark:bg-[#050505]" data-testid="media-page">
       {/* Hero */}
       <section className="relative overflow-hidden bg-[#0A0A0A] dark:bg-[#050505] text-white py-16 lg:py-24">
         <div className="container mx-auto px-5 sm:px-8 lg:px-16 relative z-10">

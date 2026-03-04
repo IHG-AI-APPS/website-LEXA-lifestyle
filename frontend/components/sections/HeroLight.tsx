@@ -55,7 +55,7 @@ export default function HeroLight() {
             {/* Subtitle */}
             <div className="flex items-start gap-8 mb-12 max-w-3xl">
               <div className="h-px w-16 md:w-24 bg-gradient-to-r from-gray-400 to-transparent mt-3" />
-              <p className="text-base md:text-lg text-gray-600 dark:text-gray-400 font-light leading-relaxed">
+              <p className="text-base md:text-lg text-gray-600 dark:text-zinc-500 font-light leading-relaxed">
                 Experience the pinnacle of smart home automation. From luxury villas to premium developments, we create spaces where technology becomes invisible, effortless, and unforgettable.
               </p>
             </div>
@@ -66,7 +66,7 @@ export default function HeroLight() {
                 Private Design Session
                 <ArrowRight size={18} strokeWidth={3} />
               </Link>
-              <Link href="/solutions" className="inline-flex items-center gap-3 bg-transparent border border-gray-300 dark:border-gray-600 text-black px-8 py-4 font-medium uppercase tracking-widest text-sm hover:border-black transition-colors">
+              <Link href="/solutions" className="inline-flex items-center gap-3 bg-transparent border border-gray-300 dark:border-zinc-700 text-black px-8 py-4 font-medium uppercase tracking-widest text-sm hover:border-black transition-colors">
                 Explore Solutions
                 <ArrowRight size={18} strokeWidth={2} />
               </Link>
@@ -78,7 +78,7 @@ export default function HeroLight() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 0.3 }}
-            className="grid grid-cols-2 md:grid-cols-4 gap-8 pt-12 border-t border-gray-200 dark:border-gray-700 dark:border-gray-700"
+            className="grid grid-cols-2 md:grid-cols-4 gap-8 pt-12 border-t border-gray-200 dark:border-zinc-800"
           >
             <div>
               <div className="text-xs tracking-wider uppercase mb-2 text-gray-500">Experience</div>

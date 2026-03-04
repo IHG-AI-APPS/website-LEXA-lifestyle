@@ -71,7 +71,7 @@ export default function RelatedPackages({ currentSlug, currentTitle }: RelatedPa
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 dark:text-white mb-4">
               Other Smart Home Packages
             </h2>
-            <p className="text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
+            <p className="text-lg text-gray-600 dark:text-zinc-500 max-w-2xl mx-auto">
               Discover the perfect solution for every property type and lifestyle
             </p>
           </motion.div>
@@ -94,7 +94,7 @@ export default function RelatedPackages({ currentSlug, currentTitle }: RelatedPa
                   href={`/packages/${pkg.slug}`}
                   className="group block h-full"
                 >
-                  <div className="relative h-full overflow-hidden rounded-2xl bg-white dark:bg-gray-800 shadow-lg hover:shadow-2xl transition-all duration-300">
+                  <div className="relative h-full overflow-hidden rounded-2xl bg-white dark:bg-[#171717] shadow-lg hover:shadow-2xl transition-all duration-300">
                     {/* Image Poster */}
                     <div className="relative h-64 overflow-hidden">
                       {pkg.image_url ? (
@@ -135,7 +135,7 @@ export default function RelatedPackages({ currentSlug, currentTitle }: RelatedPa
                     {/* Content Section */}
                     <div className="p-6">
                       {/* Description */}
-                      <p className="text-sm text-gray-600 dark:text-gray-400 mb-4 line-clamp-2">
+                      <p className="text-sm text-gray-600 dark:text-zinc-500 mb-4 line-clamp-2">
                         {pkg.description || `Intelligent automation designed specifically for ${pkg.title.toLowerCase()}`}
                       </p>
 
@@ -155,7 +155,7 @@ export default function RelatedPackages({ currentSlug, currentTitle }: RelatedPa
                       </div>
 
                       {/* CTA */}
-                      <div className="flex items-center justify-between pt-4 border-t border-gray-100 dark:border-gray-800 dark:border-gray-800">
+                      <div className="flex items-center justify-between pt-4 border-t border-gray-100 dark:border-zinc-800">
                         <span className="text-sm font-semibold text-[#C9A962] group-hover:text-[#C9A962] transition-colors">
                           Explore Package
                         </span>

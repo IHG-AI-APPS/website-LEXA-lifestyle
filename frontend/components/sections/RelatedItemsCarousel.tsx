@@ -51,7 +51,7 @@ export default function RelatedItemsCarousel({ items, title, basePath }: Related
               <button
                 onClick={handlePrev}
                 disabled={!canGoPrev}
-                className="p-2 border border-gray-300 dark:border-gray-600 hover:border-black disabled:opacity-30 disabled:hover:border-gray-300 dark:border-gray-600 transition-colors"
+                className="p-2 border border-gray-300 dark:border-zinc-700 hover:border-black disabled:opacity-30 disabled:hover:border-gray-300 dark:border-zinc-700 transition-colors"
                 aria-label="Previous"
               >
                 <ChevronLeft size={20} strokeWidth={2} />
@@ -59,7 +59,7 @@ export default function RelatedItemsCarousel({ items, title, basePath }: Related
               <button
                 onClick={handleNext}
                 disabled={!canGoNext}
-                className="p-2 border border-gray-300 dark:border-gray-600 hover:border-black disabled:opacity-30 disabled:hover:border-gray-300 dark:border-gray-600 transition-colors"
+                className="p-2 border border-gray-300 dark:border-zinc-700 hover:border-black disabled:opacity-30 disabled:hover:border-gray-300 dark:border-zinc-700 transition-colors"
                 aria-label="Next"
               >
                 <ChevronRight size={20} strokeWidth={2} />
@@ -86,11 +86,11 @@ export default function RelatedItemsCarousel({ items, title, basePath }: Related
                     className="object-cover grayscale opacity-70 group-hover:grayscale-0 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700"
                   />
                 </div>
-                <h3 className="text-lg font-heading font-semibold text-black mb-2 group-hover:text-gray-600 dark:text-gray-400 transition-colors">
+                <h3 className="text-lg font-heading font-semibold text-black mb-2 group-hover:text-gray-600 dark:text-zinc-500 transition-colors">
                   {item.title || item.name}
                 </h3>
                 {(item.description || item.excerpt) && (
-                  <p className="text-sm text-gray-600 dark:text-gray-400 line-clamp-2">
+                  <p className="text-sm text-gray-600 dark:text-zinc-500 line-clamp-2">
                     {item.description || item.excerpt}
                   </p>
                 )}

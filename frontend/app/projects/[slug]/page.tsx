@@ -99,10 +99,10 @@ export default function ProjectDetailPage() {
     return (
       <div className="min-h-screen bg-white dark:bg-[#050505] pt-20">
         <div className="animate-pulse">
-          <div className="w-full h-64 bg-gray-100 dark:bg-gray-800"></div>
+          <div className="w-full h-64 bg-gray-100 dark:bg-[#171717]"></div>
           <div className="container mx-auto px-5 sm:px-8 lg:px-16 py-8">
-            <div className="h-8 bg-gray-100 dark:bg-gray-800 rounded w-1/3 mb-4"></div>
-            <div className="h-4 bg-gray-100 dark:bg-gray-800 rounded w-2/3 mb-8"></div>
+            <div className="h-8 bg-gray-100 dark:bg-[#171717] rounded w-1/3 mb-4"></div>
+            <div className="h-4 bg-gray-100 dark:bg-[#171717] rounded w-2/3 mb-8"></div>
           </div>
         </div>
       </div>
@@ -186,14 +186,14 @@ export default function ProjectDetailPage() {
                   About the project
                 </h2>
                 <div className="space-y-4">
-                  <p className="text-gray-700 dark:text-gray-300 leading-relaxed text-base lg:text-lg">
+                  <p className="text-gray-700 dark:text-zinc-400 leading-relaxed text-base lg:text-lg">
                     {project.description}
                   </p>
                   
                   {project.challenge && (
                     <>
                       <h3 className="text-lg font-semibold text-gray-900 dark:text-white mt-6 mb-2">The Challenge</h3>
-                      <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
+                      <p className="text-gray-700 dark:text-zinc-400 leading-relaxed">
                         {project.challenge}
                       </p>
                     </>
@@ -202,7 +202,7 @@ export default function ProjectDetailPage() {
                   {project.solution && (
                     <>
                       <h3 className="text-lg font-semibold text-gray-900 dark:text-white mt-6 mb-2">Our Solution</h3>
-                      <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
+                      <p className="text-gray-700 dark:text-zinc-400 leading-relaxed">
                         {project.solution}
                       </p>
                     </>
@@ -211,7 +211,7 @@ export default function ProjectDetailPage() {
                   {project.features && project.features.length > 0 && (
                     <>
                       <h3 className="text-lg font-semibold text-gray-900 dark:text-white mt-6 mb-2">Key Highlights</h3>
-                      <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
+                      <p className="text-gray-700 dark:text-zinc-400 leading-relaxed">
                         This project showcases our expertise in creating sophisticated smart home environments. 
                         {project.features.slice(0, 3).join('. ')}. 
                         Every detail was carefully considered to ensure seamless integration between aesthetics and technology.
@@ -220,7 +220,7 @@ export default function ProjectDetailPage() {
                   )}
 
                   {project.systems && project.systems.length > 0 && (
-                    <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
+                    <p className="text-gray-700 dark:text-zinc-400 leading-relaxed">
                       The comprehensive smart home ecosystem integrates {project.systems.slice(0, 4).join(', ').toLowerCase()}
                       {project.systems.length > 4 ? ` and ${project.systems.length - 4} more systems` : ''}, 
                       all working in perfect harmony to create an intuitive and luxurious environment.
@@ -241,7 +241,7 @@ export default function ProjectDetailPage() {
                       return (
                         <div 
                           key={idx}
-                          className={`relative cursor-pointer overflow-hidden rounded-lg bg-gray-100 dark:bg-gray-800 ${
+                          className={`relative cursor-pointer overflow-hidden rounded-lg bg-gray-100 dark:bg-[#171717] ${
                             isWide ? 'col-span-2 aspect-[16/9]' : 'aspect-[4/3]'
                           }`}
                           onClick={() => openLightbox(idx)}
@@ -275,7 +275,7 @@ export default function ProjectDetailPage() {
                     {project.systems.map((system, idx) => (
                       <span 
                         key={idx}
-                        className="px-4 py-2 bg-gray-100 dark:bg-white/5 text-gray-700 dark:text-gray-300 text-sm rounded-full border border-gray-200 dark:border-white/10"
+                        className="px-4 py-2 bg-gray-100 dark:bg-white/5 text-gray-700 dark:text-zinc-400 text-sm rounded-full border border-gray-200 dark:border-white/10"
                       >
                         {system}
                       </span>
@@ -292,7 +292,7 @@ export default function ProjectDetailPage() {
                   </h2>
                   <ul className="space-y-2">
                     {project.results.map((result, idx) => (
-                      <li key={idx} className="flex items-start gap-2 text-gray-700 dark:text-gray-300">
+                      <li key={idx} className="flex items-start gap-2 text-gray-700 dark:text-zinc-400">
                         <span className="text-[#C9A962] mt-1">&#10003;</span>
                         {result}
                       </li>
@@ -303,11 +303,11 @@ export default function ProjectDetailPage() {
 
               {/* Actions */}
               <div className="flex flex-wrap gap-3 py-6 border-t border-b border-gray-200 dark:border-white/10">
-                <button className="inline-flex items-center gap-2 px-4 py-2 text-sm text-gray-600 dark:text-gray-400 hover:text-[#C9A962] transition-colors">
+                <button className="inline-flex items-center gap-2 px-4 py-2 text-sm text-gray-600 dark:text-zinc-500 hover:text-[#C9A962] transition-colors">
                   <Heart className="h-4 w-4" />
                   Save
                 </button>
-                <button className="inline-flex items-center gap-2 px-4 py-2 text-sm text-gray-600 dark:text-gray-400 hover:text-[#C9A962] transition-colors">
+                <button className="inline-flex items-center gap-2 px-4 py-2 text-sm text-gray-600 dark:text-zinc-500 hover:text-[#C9A962] transition-colors">
                   <Share2 className="h-4 w-4" />
                   Share
                 </button>
@@ -430,7 +430,7 @@ export default function ProjectDetailPage() {
                   href={`/projects/${rp.slug || rp.id}`}
                   className="group"
                 >
-                  <div className="relative aspect-[4/3] bg-gray-200 dark:bg-gray-800 overflow-hidden rounded-lg mb-3">
+                  <div className="relative aspect-[4/3] bg-gray-200 dark:bg-[#171717] overflow-hidden rounded-lg mb-3">
                     <SafeImage
                       src={rp.image}
                       alt={rp.title}
@@ -442,7 +442,7 @@ export default function ProjectDetailPage() {
                   <h3 className="font-semibold text-gray-900 dark:text-white group-hover:text-[#C9A962] transition-colors mb-1">
                     {rp.title}
                   </h3>
-                  <p className="text-sm text-gray-500 dark:text-gray-400">{rp.location}</p>
+                  <p className="text-sm text-gray-500 dark:text-zinc-500">{rp.location}</p>
                 </Link>
               ))}
             </div>

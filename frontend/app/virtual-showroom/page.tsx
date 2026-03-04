@@ -88,9 +88,9 @@ export default function VirtualShowroomPage() {
     : showcaseAreas.filter(area => area.category === selectedCategory)
 
   return (
-    <div className="min-h-screen bg-white dark:bg-gray-900 pt-20">
+    <div className="min-h-screen bg-white dark:bg-[#0A0A0A] pt-20">
       {/* Hero */}
-      <section className="py-20 bg-gray-50 dark:bg-gray-800">
+      <section className="py-20 bg-gray-50 dark:bg-[#171717]">
         <div className="container mx-auto px-5 sm:px-8 lg:px-16">
           <div className="max-w-7xl mx-auto">
             <motion.div
@@ -108,7 +108,7 @@ export default function VirtualShowroomPage() {
                 <span className="text-transparent bg-clip-text metallic-gradient">SHOWROOM</span>
               </h1>
               <div className="h-px w-32 bg-gradient-to-r from-platinum to-transparent mb-8 mx-auto" />
-              <p className="text-xl text-gray-600 dark:text-gray-400 font-normal leading-relaxed max-w-3xl mx-auto mb-12">
+              <p className="text-xl text-gray-600 dark:text-zinc-500 font-normal leading-relaxed max-w-3xl mx-auto mb-12">
                 Explore our 60,000 sq ft experience center featuring fully integrated smart living solutions. See, touch, and experience the future of home automation.
               </p>
 
@@ -118,7 +118,7 @@ export default function VirtualShowroomPage() {
                   <MapPin className="text-charcoal" size={32} strokeWidth={1.5} />
                   <div>
                     <div className="font-medium">Al Quoz 1, Dubai</div>
-                    <div className="text-sm text-gray-600 dark:text-gray-400">Sheikh Zayed Road</div>
+                    <div className="text-sm text-gray-600 dark:text-zinc-500">Sheikh Zayed Road</div>
                   </div>
                 </div>
 
@@ -126,7 +126,7 @@ export default function VirtualShowroomPage() {
                   <Clock className="text-charcoal" size={32} strokeWidth={1.5} />
                   <div>
                     <div className="font-medium">Open Daily</div>
-                    <div className="text-sm text-gray-600 dark:text-gray-400">9 AM - 7 PM</div>
+                    <div className="text-sm text-gray-600 dark:text-zinc-500">9 AM - 7 PM</div>
                   </div>
                 </div>
 
@@ -134,7 +134,7 @@ export default function VirtualShowroomPage() {
                   <Phone className="text-charcoal" size={32} strokeWidth={1.5} />
                   <div>
                     <div className="font-medium">+971 4 XXX XXXX</div>
-                    <div className="text-sm text-gray-600 dark:text-gray-400">Book a visit</div>
+                    <div className="text-sm text-gray-600 dark:text-zinc-500">Book a visit</div>
                   </div>
                 </div>
               </div>
@@ -144,7 +144,7 @@ export default function VirtualShowroomPage() {
       </section>
 
       {/* Category Filter */}
-      <section className="py-8 border-b border-gray-200 dark:border-gray-700">
+      <section className="py-8 border-b border-gray-200 dark:border-zinc-800">
         <div className="container mx-auto px-5 sm:px-8 lg:px-16">
           <div className="max-w-7xl mx-auto">
             <div className="flex flex-wrap gap-3 justify-center">
@@ -155,7 +155,7 @@ export default function VirtualShowroomPage() {
                   className={`px-6 py-2 text-sm font-medium transition-all ${
                     selectedCategory === category
                       ? 'bg-charcoal text-white'
-                      : 'bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400 hover:bg-gray-200'
+                      : 'bg-gray-100 dark:bg-[#171717] text-gray-600 dark:text-zinc-500 hover:bg-gray-200'
                   }`}
                 >
                   {category}
@@ -197,10 +197,10 @@ export default function VirtualShowroomPage() {
                     </div>
                   </div>
 
-                  <h3 className="text-xl font-semibold mb-2 group-hover:text-gray-600 dark:text-gray-400 transition-colors">
+                  <h3 className="text-xl font-semibold mb-2 group-hover:text-gray-600 dark:text-zinc-500 transition-colors">
                     {area.title}
                   </h3>
-                  <p className="text-sm text-gray-600 dark:text-gray-400 line-clamp-2">
+                  <p className="text-sm text-gray-600 dark:text-zinc-500 line-clamp-2">
                     {area.description}
                   </p>
                 </motion.div>
@@ -226,7 +226,7 @@ export default function VirtualShowroomPage() {
               </p>
               <Button
                 size="lg"
-                className="bg-white hover:bg-gray-100 dark:bg-gray-800 text-charcoal px-12"
+                className="bg-white hover:bg-gray-100 dark:bg-[#171717] text-charcoal px-12"
                 onClick={() => setShowConsultationForm(true)}
               >
                 Schedule Visit

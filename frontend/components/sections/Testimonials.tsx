@@ -75,7 +75,7 @@ export default function Testimonials() {
     <section className="py-24 md:py-32 bg-white dark:bg-[#0a0f1a]">
       <div className="container mx-auto px-4 md:px-8 max-w-7xl">
         <div className="mb-16">
-          <span className="text-xs md:text-sm tracking-[0.2em] uppercase text-gray-600 dark:text-gray-400 dark:text-gray-400 font-bold block mb-6">
+          <span className="text-xs md:text-sm tracking-[0.2em] uppercase text-gray-600 dark:text-zinc-500 font-bold block mb-6">
             Client Feedback
           </span>
           <h2 className="text-4xl md:text-5xl font-heading font-semibold tracking-tight text-black dark:text-white">
@@ -91,9 +91,9 @@ export default function Testimonials() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: index * 0.1 }}
-              className="bg-gray-50 dark:bg-gray-800/50 border border-gray-200 dark:border-gray-700 dark:border-gray-700 p-8 group hover:border-gray-400 dark:hover:border-gray-500 transition-all duration-300"
+              className="bg-gray-50 dark:bg-[#171717]/50 border border-gray-200 dark:border-zinc-800 p-8 group hover:border-gray-400 dark:hover:border-gray-500 transition-all duration-300"
             >
-              <Quote className="w-10 h-10 text-gray-300 dark:text-gray-600 dark:text-gray-400 mb-6" strokeWidth={1.5} />
+              <Quote className="w-10 h-10 text-gray-300 dark:text-gray-600 dark:text-zinc-500 mb-6" strokeWidth={1.5} />
               
               {testimonial.rating && (
                 <div className="flex gap-1 mb-4">
@@ -103,11 +103,11 @@ export default function Testimonials() {
                 </div>
               )}
               
-              <p className="text-gray-700 dark:text-gray-300 dark:text-gray-300 text-base leading-relaxed mb-8">
+              <p className="text-gray-700 dark:text-zinc-400 text-base leading-relaxed mb-8">
                 {testimonial.testimonial || testimonial.content}
               </p>
 
-              <div className="flex items-center gap-4 pt-6 border-t border-gray-200 dark:border-gray-700 dark:border-gray-700">
+              <div className="flex items-center gap-4 pt-6 border-t border-gray-200 dark:border-zinc-800">
                 {testimonial.image && (
                   <div className="relative w-12 h-12 rounded-full overflow-hidden">
                     <SafeImage
@@ -120,7 +120,7 @@ export default function Testimonials() {
                 )}
                 <div>
                   <div className="text-black dark:text-white font-semibold">{testimonial.name}</div>
-                  <div className="text-xs text-gray-600 dark:text-gray-400 dark:text-gray-400">
+                  <div className="text-xs text-gray-600 dark:text-zinc-500">
                     {testimonial.company ? `${testimonial.role} at ${testimonial.company}` : testimonial.role}
                   </div>
                 </div>

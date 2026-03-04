@@ -38,7 +38,7 @@ function BrandLogo({ brand, size = 'md' }: { brand: any; size?: 'sm' | 'md' }) {
 
   if (hasLogo) {
     return (
-      <div className={`${dims} flex-shrink-0 bg-white rounded-lg border border-gray-200 dark:border-gray-700 flex items-center justify-center p-1.5 overflow-hidden`}>
+      <div className={`${dims} flex-shrink-0 bg-white rounded-lg border border-gray-200 dark:border-zinc-800 flex items-center justify-center p-1.5 overflow-hidden`}>
         <div className="relative w-full h-full">
           <SafeImage src={brand.logo} alt={brand.name} fill className="object-contain" />
         </div>
@@ -94,7 +94,7 @@ export default function BrandsPage() {
   const hasSearch = searchQuery.trim().length > 0
 
   return (
-    <div className="min-h-screen bg-white dark:bg-gray-950 pt-20" data-testid="brands-page">
+    <div className="min-h-screen bg-white dark:bg-[#050505] pt-20" data-testid="brands-page">
       {/* Hero */}
       <section className="relative overflow-hidden bg-[#0A0A0A] dark:bg-[#050505] text-white">
         {/* Hero Background Image */}
@@ -136,7 +136,7 @@ export default function BrandsPage() {
 
       {/* Featured Brands Strip */}
       {featuredBrands.length > 0 && (
-        <section className="py-10 bg-gray-50 dark:bg-gray-900 border-b border-gray-200 dark:border-gray-800" data-testid="featured-brands">
+        <section className="py-10 bg-gray-50 dark:bg-[#0A0A0A] border-b border-gray-200 dark:border-zinc-800" data-testid="featured-brands">
           <div className="container mx-auto px-5 sm:px-8 lg:px-16">
             <div className="max-w-7xl mx-auto">
               <div className="flex items-center gap-3 mb-6">
@@ -149,9 +149,9 @@ export default function BrandsPage() {
                 <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-8 gap-3">
                   {featuredBrands.map((brand) => (
                     <Link key={brand.slug} href={`/brands/${brand.slug}`} data-testid={`featured-${brand.slug}`}>
-                      <div className="group flex flex-col items-center justify-center text-center p-4 h-24 rounded-xl bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 hover:border-[#C9A962]/50 hover:shadow-md transition-all">
+                      <div className="group flex flex-col items-center justify-center text-center p-4 h-24 rounded-xl bg-white dark:bg-[#171717] border border-gray-200 dark:border-zinc-800 hover:border-[#C9A962]/50 hover:shadow-md transition-all">
                         <BrandLogo brand={brand} size="sm" />
-                        <span className="text-[11px] font-medium text-gray-600 dark:text-gray-300 mt-2 truncate w-full group-hover:text-[#C9A962] transition-colors">
+                        <span className="text-[11px] font-medium text-gray-600 dark:text-zinc-400 mt-2 truncate w-full group-hover:text-[#C9A962] transition-colors">
                           {brand.name}
                         </span>
                       </div>
@@ -165,7 +165,7 @@ export default function BrandsPage() {
       )}
 
       {/* Category Filter + Search */}
-      <section className="py-5 bg-white dark:bg-gray-950 border-b border-gray-200 dark:border-gray-800 sticky top-[72px] z-30" data-testid="category-filter">
+      <section className="py-5 bg-white dark:bg-[#050505] border-b border-gray-200 dark:border-zinc-800 sticky top-[72px] z-30" data-testid="category-filter">
         <div className="container mx-auto px-5 sm:px-8 lg:px-16">
           <div className="max-w-7xl mx-auto">
             <div className="flex flex-col sm:flex-row sm:items-center gap-4">
@@ -176,7 +176,7 @@ export default function BrandsPage() {
                   className={`px-4 py-2 text-xs font-semibold rounded-full uppercase tracking-wider transition-all ${
                     activeCategory === null
                       ? 'bg-gray-900 dark:bg-white text-white dark:text-gray-900'
-                      : 'bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400 hover:bg-gray-200 dark:hover:bg-gray-700'
+                      : 'bg-gray-100 dark:bg-[#171717] text-gray-600 dark:text-zinc-500 hover:bg-gray-200 dark:hover:bg-[#171717]'
                   }`}
                 >
                   All ({brands.length})
@@ -192,7 +192,7 @@ export default function BrandsPage() {
                       className={`px-4 py-2 text-xs font-semibold rounded-full transition-all ${
                         activeCategory === category
                           ? 'text-white'
-                          : 'text-gray-600 dark:text-gray-400 hover:opacity-80'
+                          : 'text-gray-600 dark:text-zinc-500 hover:opacity-80'
                       }`}
                       style={
                         activeCategory === category
@@ -213,7 +213,7 @@ export default function BrandsPage() {
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
                   data-testid="brand-search"
-                  className="w-full pl-9 pr-4 py-2 text-sm rounded-lg border border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-white placeholder-gray-400 focus:outline-none focus:ring-1 focus:ring-[#C9A962]/50 focus:border-[#C9A962]/50"
+                  className="w-full pl-9 pr-4 py-2 text-sm rounded-lg border border-gray-200 dark:border-zinc-800 bg-gray-50 dark:bg-[#0A0A0A] text-gray-900 dark:text-white placeholder-gray-400 focus:outline-none focus:ring-1 focus:ring-[#C9A962]/50 focus:border-[#C9A962]/50"
                 />
               </div>
             </div>
@@ -222,13 +222,13 @@ export default function BrandsPage() {
       </section>
 
       {/* Brands by Category */}
-      <section className="py-12 bg-white dark:bg-gray-950" data-testid="brands-grid">
+      <section className="py-12 bg-white dark:bg-[#050505]" data-testid="brands-grid">
         <div className="container mx-auto px-5 sm:px-8 lg:px-16">
           <div className="max-w-7xl mx-auto space-y-14">
             {loading ? (
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
                 {[...Array(8)].map((_, i) => (
-                  <div key={i} className="animate-pulse bg-gray-100 dark:bg-gray-900 rounded-xl h-36" />
+                  <div key={i} className="animate-pulse bg-gray-100 dark:bg-[#0A0A0A] rounded-xl h-36" />
                 ))}
               </div>
             ) : (
@@ -264,7 +264,7 @@ export default function BrandsPage() {
                     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
                       {categoryBrands.map((brand: any) => (
                         <Link key={brand.slug} href={`/brands/${brand.slug}`} data-testid={`brand-card-${brand.slug}`}>
-                          <div className="group bg-white dark:bg-gray-900 rounded-xl border border-gray-200 dark:border-gray-800 hover:border-[#C9A962]/50 hover:shadow-lg transition-all p-5 h-full">
+                          <div className="group bg-white dark:bg-[#0A0A0A] rounded-xl border border-gray-200 dark:border-zinc-800 hover:border-[#C9A962]/50 hover:shadow-lg transition-all p-5 h-full">
                             <div className="flex items-start gap-4">
                               <BrandLogo brand={brand} />
                               <div className="flex-1 min-w-0">
@@ -296,13 +296,13 @@ export default function BrandsPage() {
                             </div>
 
                             {brand.description && (
-                              <p className="text-xs text-gray-500 dark:text-gray-400 mt-3 line-clamp-2 leading-relaxed">
+                              <p className="text-xs text-gray-500 dark:text-zinc-500 mt-3 line-clamp-2 leading-relaxed">
                                 {brand.description}
                               </p>
                             )}
 
                             {brand.featured && (
-                              <div className="mt-3 pt-3 border-t border-gray-100 dark:border-gray-800">
+                              <div className="mt-3 pt-3 border-t border-gray-100 dark:border-zinc-800">
                                 <span className="inline-flex items-center gap-1 text-[10px] uppercase tracking-wider font-semibold text-[#C9A962]">
                                   <Star size={10} fill="currentColor" />
                                   Featured Partner

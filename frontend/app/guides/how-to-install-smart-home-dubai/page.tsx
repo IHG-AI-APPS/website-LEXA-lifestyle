@@ -94,7 +94,7 @@ export default function HowToInstallPage() {
         <div className="container mx-auto px-4 max-w-4xl py-12">
           <div className="space-y-12">
             {guideData.steps.map((step, index) => (
-              <div key={index} className="flex gap-6 pb-12 border-b border-gray-200 dark:border-gray-700 last:border-0">
+              <div key={index} className="flex gap-6 pb-12 border-b border-gray-200 dark:border-zinc-800 last:border-0">
                 <div className="flex-shrink-0">
                   <div className="w-14 h-14 rounded-full bg-gradient-to-br from-[#E8DCC8] to-[#c8b89c] text-black font-bold flex items-center justify-center text-xl shadow-lg">
                     {index + 1}
@@ -102,7 +102,7 @@ export default function HowToInstallPage() {
                 </div>
                 <div className="flex-1">
                   <h2 className="text-2xl font-bold mb-4 text-gray-900 dark:text-white">{step.name}</h2>
-                  <p className="text-gray-600 dark:text-gray-400 leading-relaxed text-lg">{step.text}</p>
+                  <p className="text-gray-600 dark:text-zinc-500 leading-relaxed text-lg">{step.text}</p>
                 </div>
               </div>
             ))}

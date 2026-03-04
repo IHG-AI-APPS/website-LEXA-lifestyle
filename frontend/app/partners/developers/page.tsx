@@ -192,7 +192,7 @@ export default function DeveloperToolkitPage() {
       </section>
 
       {/* WHAT'S INCLUDED */}
-      <section className={`py-20 ${isDark ? "bg-gray-800/50" : "bg-gray-50 dark:bg-gray-800"}`}>
+      <section className={`py-20 ${isDark ? "bg-gray-800/50" : "bg-gray-50 dark:bg-[#171717]"}`}>
         <div className="container mx-auto px-6 lg:px-12">
           <div className="max-w-6xl mx-auto">
             <motion.div
@@ -204,7 +204,7 @@ export default function DeveloperToolkitPage() {
               <h2 className={`text-3xl md:text-4xl font-bold mb-4 ${isDark ? 'text-white' : 'text-gray-900'}`}>
                 What&apos;s in the <span className="text-[#C9A962]">Developer Toolkit</span>
               </h2>
-              <p className={`text-lg max-w-3xl mx-auto ${isDark ? "text-gray-400" : "text-gray-600 dark:text-gray-400"}`}>
+              <p className={`text-lg max-w-3xl mx-auto ${isDark ? "text-gray-400" : "text-gray-600 dark:text-zinc-500"}`}>
                 Everything you need to integrate LEXA automation into your development—from initial planning to handover.
               </p>
             </motion.div>
@@ -222,12 +222,12 @@ export default function DeveloperToolkitPage() {
                     className={`p-8 rounded-2xl border transition-all hover:shadow-lg ${
                       isDark 
                         ? 'bg-gray-800 border-gray-700 hover:border-[#C9A962]' 
-                        : 'bg-white border-gray-200 dark:border-gray-700 hover:border-[#C9A962]'
+                        : 'bg-white border-gray-200 dark:border-zinc-800 hover:border-[#C9A962]'
                     }`}
                   >
                     <Icon size={40} className="text-[#C9A962] mb-4" strokeWidth={1.5} />
                     <h3 className={`text-xl font-bold mb-3 ${isDark ? 'text-white' : 'text-gray-900'}`}>{resource.title}</h3>
-                    <p className={`leading-relaxed mb-3 ${isDark ? "text-gray-400" : "text-gray-600 dark:text-gray-400"}`}>{resource.description}</p>
+                    <p className={`leading-relaxed mb-3 ${isDark ? "text-gray-400" : "text-gray-600 dark:text-zinc-500"}`}>{resource.description}</p>
                     <p className="text-sm text-[#C9A962] font-medium">{resource.fileCount}</p>
                   </motion.div>
                 )
@@ -267,7 +267,7 @@ export default function DeveloperToolkitPage() {
               <h2 className={`text-3xl md:text-4xl font-bold mb-4 ${isDark ? 'text-white' : 'text-gray-900'}`}>
                 The <span className="text-[#C9A962]">LEXA Advantage</span>
               </h2>
-              <p className={`text-lg max-w-3xl mx-auto ${isDark ? "text-gray-400" : "text-gray-600 dark:text-gray-400"}`}>
+              <p className={`text-lg max-w-3xl mx-auto ${isDark ? "text-gray-400" : "text-gray-600 dark:text-zinc-500"}`}>
                 Data-driven results from real developments across Dubai and Abu Dhabi.
               </p>
             </motion.div>
@@ -283,12 +283,12 @@ export default function DeveloperToolkitPage() {
                   className={`text-center p-8 rounded-2xl border ${
                     isDark 
                       ? "bg-gray-800/50 border-gray-700" 
-                      : "bg-gray-50 border-gray-200 dark:border-gray-700"
+                      : "bg-gray-50 border-gray-200 dark:border-zinc-800"
                   }`}
                 >
                   <div className="text-4xl font-bold text-[#C9A962] mb-4">{benefit.stat}</div>
                   <h3 className={`text-lg font-bold mb-3 ${isDark ? 'text-white' : 'text-gray-900'}`}>{benefit.label}</h3>
-                  <p className={`text-sm leading-relaxed ${isDark ? "text-gray-400" : "text-gray-600 dark:text-gray-400"}`}>{benefit.desc}</p>
+                  <p className={`text-sm leading-relaxed ${isDark ? "text-gray-400" : "text-gray-600 dark:text-zinc-500"}`}>{benefit.desc}</p>
                 </motion.div>
               ))}
             </div>
@@ -309,7 +309,7 @@ export default function DeveloperToolkitPage() {
               <h2 className={`text-3xl md:text-4xl font-bold mb-4 ${isDark ? 'text-white' : 'text-gray-900'}`}>
                 <span className="text-[#C9A962]">Volume Partner</span> Program
               </h2>
-              <p className={`text-lg ${isDark ? "text-gray-400" : "text-gray-600 dark:text-gray-400"}`}>
+              <p className={`text-lg ${isDark ? "text-gray-400" : "text-gray-600 dark:text-zinc-500"}`}>
                 Better rates and dedicated support as your projects scale
               </p>
             </motion.div>
@@ -399,7 +399,7 @@ export default function DeveloperToolkitPage() {
           >
             <button
               onClick={() => setShowEmailGate(false)}
-              className="absolute top-4 right-4 text-gray-600 dark:text-gray-400 hover:text-black z-10"
+              className="absolute top-4 right-4 text-gray-600 dark:text-zinc-500 hover:text-black z-10"
             >
               <X size={24} />
             </button>
@@ -408,7 +408,7 @@ export default function DeveloperToolkitPage() {
               <h2 className="text-3xl font-bold text-black mb-2">
                 DOWNLOAD DEVELOPER TOOLKIT
               </h2>
-              <p className="text-gray-600 dark:text-gray-400 mb-8">
+              <p className="text-gray-600 dark:text-zinc-500 mb-8">
                 Enter your details to receive the complete toolkit PDF via email and instant download.
               </p>
 
@@ -416,7 +416,7 @@ export default function DeveloperToolkitPage() {
                 <div className="py-12 text-center">
                   <div className="text-6xl mb-4 text-[#C9A962]">✓</div>
                   <h3 className="text-2xl font-bold text-[#C9A962] mb-2">Download Starting...</h3>
-                  <p className="text-gray-600 dark:text-gray-400">
+                  <p className="text-gray-600 dark:text-zinc-500">
                     Check your email for the toolkit. Download will begin automatically.
                   </p>
                 </div>
@@ -424,7 +424,7 @@ export default function DeveloperToolkitPage() {
                 <form aria-label="Form" onSubmit={handleEmailGateSubmit} className="space-y-6">
                   <div className="grid md:grid-cols-2 gap-6">
                     <div>
-                      <label className="block text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">Name *</label>
+                      <label className="block text-sm font-semibold text-gray-700 dark:text-zinc-400 mb-2">Name *</label>
                       <Input
                         required
                         value={emailGateData.name}
@@ -433,7 +433,7 @@ export default function DeveloperToolkitPage() {
                       />
                     </div>
                     <div>
-                      <label className="block text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">Company *</label>
+                      <label className="block text-sm font-semibold text-gray-700 dark:text-zinc-400 mb-2">Company *</label>
                       <Input
                         required
                         value={emailGateData.company}
@@ -445,7 +445,7 @@ export default function DeveloperToolkitPage() {
 
                   <div className="grid md:grid-cols-2 gap-6">
                     <div>
-                      <label className="block text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">Email *</label>
+                      <label className="block text-sm font-semibold text-gray-700 dark:text-zinc-400 mb-2">Email *</label>
                       <Input
                         type="email"
                         required
@@ -455,7 +455,7 @@ export default function DeveloperToolkitPage() {
                       />
                     </div>
                     <div>
-                      <label className="block text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">Phone *</label>
+                      <label className="block text-sm font-semibold text-gray-700 dark:text-zinc-400 mb-2">Phone *</label>
                       <Input
                         required
                         value={emailGateData.phone}
@@ -467,12 +467,12 @@ export default function DeveloperToolkitPage() {
 
                   <div className="grid md:grid-cols-2 gap-6">
                     <div>
-                      <label className="block text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">Project Scale *</label>
+                      <label className="block text-sm font-semibold text-gray-700 dark:text-zinc-400 mb-2">Project Scale *</label>
                       <select
                         required
                         value={emailGateData.project_scale}
                         onChange={(e) => setEmailGateData({ ...emailGateData, project_scale: e.target.value })}
-                        className="w-full border border-gray-300 dark:border-gray-600 rounded-md p-2"
+                        className="w-full border border-gray-300 dark:border-zinc-700 rounded-md p-2"
                       >
                         <option value="boutique">Boutique (1-10 units)</option>
                         <option value="mid-scale">Mid-Scale (10-50 units)</option>
@@ -481,7 +481,7 @@ export default function DeveloperToolkitPage() {
                       </select>
                     </div>
                     <div>
-                      <label className="block text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">Expected Units</label>
+                      <label className="block text-sm font-semibold text-gray-700 dark:text-zinc-400 mb-2">Expected Units</label>
                       <Input
                         type="number"
                         value={emailGateData.units_count || ''}
@@ -492,12 +492,12 @@ export default function DeveloperToolkitPage() {
                   </div>
 
                   <div>
-                    <label className="block text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">Project Timeline *</label>
+                    <label className="block text-sm font-semibold text-gray-700 dark:text-zinc-400 mb-2">Project Timeline *</label>
                     <select
                       required
                       value={emailGateData.timeline}
                       onChange={(e) => setEmailGateData({ ...emailGateData, timeline: e.target.value })}
-                      className="w-full border border-gray-300 dark:border-gray-600 rounded-md p-2"
+                      className="w-full border border-gray-300 dark:border-zinc-700 rounded-md p-2"
                     >
                       <option value="">Select timeline...</option>
                       <option value="immediate">Immediate (Next 3 months)</option>
@@ -508,7 +508,7 @@ export default function DeveloperToolkitPage() {
                   </div>
 
                   <div>
-                    <label className="block text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">Additional Notes</label>
+                    <label className="block text-sm font-semibold text-gray-700 dark:text-zinc-400 mb-2">Additional Notes</label>
                     <Textarea
                       value={emailGateData.message}
                       onChange={(e) => setEmailGateData({ ...emailGateData, message: e.target.value })}
@@ -542,11 +542,11 @@ export default function DeveloperToolkitPage() {
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
           <div className="absolute inset-0 bg-black/90 backdrop-blur-sm" onClick={() => setShowProjectForm(false)} />
           <div className="relative bg-white max-w-2xl w-full p-12 text-center">
-            <button onClick={() => setShowProjectForm(false)} className="absolute top-4 right-4 text-gray-600 dark:text-gray-400 hover:text-black">
+            <button onClick={() => setShowProjectForm(false)} className="absolute top-4 right-4 text-gray-600 dark:text-zinc-500 hover:text-black">
               <X size={24} />
             </button>
             <h2 className="text-3xl font-bold mb-4">Project Intake Form</h2>
-            <p className="text-gray-600 dark:text-gray-400 mb-6">Comprehensive project brief form will be implemented in the next phase.</p>
+            <p className="text-gray-600 dark:text-zinc-500 mb-6">Comprehensive project brief form will be implemented in the next phase.</p>
             <p className="text-sm text-gray-500">For now, please contact us directly at developers@lexa.ae</p>
           </div>
         </div>

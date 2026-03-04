@@ -112,9 +112,9 @@ export default function CaseStudiesPage() {
   const studies = cms?.studies || caseStudies
 
   return (
-    <div className="min-h-screen bg-white dark:bg-gray-900 pt-20">
+    <div className="min-h-screen bg-white dark:bg-[#0A0A0A] pt-20">
       {/* Hero */}
-      <section className="py-20 bg-gray-50 dark:bg-gray-800">
+      <section className="py-20 bg-gray-50 dark:bg-[#171717]">
         <div className="container mx-auto px-5 sm:px-8 lg:px-16">
           <div className="max-w-4xl mx-auto text-center">
             <motion.div
@@ -128,7 +128,7 @@ export default function CaseStudiesPage() {
               <h1 className="h1 uppercase mb-6">
                 {cms?.hero_title || 'SMART HOME CASE STUDIES'}
               </h1>
-              <p className="text-xl text-gray-600 dark:text-gray-400">
+              <p className="text-xl text-gray-600 dark:text-zinc-500">
                 {cms?.hero_subtitle || 'Real projects, real results. Explore how LEXA Lifestyle has transformed luxury properties across Dubai, Abu Dhabi, and UAE with cutting-edge smart home automation.'}
               </p>
             </motion.div>
@@ -170,11 +170,11 @@ export default function CaseStudiesPage() {
                       <span>{project.location}</span>
                     </div>
 
-                    <h2 className="text-3xl uppercase font-bold mb-4 group-hover:text-gray-600 dark:text-gray-400 transition-colors">
+                    <h2 className="text-3xl uppercase font-bold mb-4 group-hover:text-gray-600 dark:text-zinc-500 transition-colors">
                       {project.title}
                     </h2>
 
-                    <p className="text-gray-600 dark:text-gray-400 mb-6 leading-relaxed">
+                    <p className="text-gray-600 dark:text-zinc-500 mb-6 leading-relaxed">
                       {project.excerpt}
                     </p>
 
@@ -208,7 +208,7 @@ export default function CaseStudiesPage() {
                       <h4 className="text-sm font-semibold text-gray-900 dark:text-white mb-3">KEY FEATURES</h4>
                       <div className="flex flex-wrap gap-2">
                         {project.features.map((feature, i) => (
-                          <span key={i} className="text-xs px-3 py-1 bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300">
+                          <span key={i} className="text-xs px-3 py-1 bg-gray-100 dark:bg-[#171717] text-gray-700 dark:text-zinc-400">
                             {feature}
                           </span>
                         ))}
@@ -218,7 +218,7 @@ export default function CaseStudiesPage() {
                     {/* Results */}
                     <div className="bg-gray-50 p-6 mb-6">
                       <h4 className="text-sm font-semibold text-gray-900 dark:text-white mb-2">RESULTS</h4>
-                      <p className="text-sm text-gray-700 dark:text-gray-300">{project.results}</p>
+                      <p className="text-sm text-gray-700 dark:text-zinc-400">{project.results}</p>
                     </div>
 
                     <Link
@@ -236,11 +236,11 @@ export default function CaseStudiesPage() {
       </section>
 
       {/* Video Case Studies Section */}
-      <section className="py-20 bg-gray-50 dark:bg-gray-800">
+      <section className="py-20 bg-gray-50 dark:bg-[#171717]">
         <div className="container mx-auto px-5 sm:px-8 lg:px-16">
           <div className="text-center mb-12">
             <h2 className="h2 uppercase mb-4">VIDEO CASE STUDIES</h2>
-            <p className="text-xl text-gray-600 dark:text-gray-400 max-w-3xl mx-auto">
+            <p className="text-xl text-gray-600 dark:text-zinc-500 max-w-3xl mx-auto">
               Watch complete walkthroughs of our smart home projects
             </p>
           </div>
@@ -263,7 +263,7 @@ export default function CaseStudiesPage() {
           </p>
           <a
             href="/contact"
-            className="inline-block bg-white text-gray-900 dark:text-white px-8 py-4 text-lg font-semibold hover:bg-gray-100 dark:bg-gray-800 transition-colors"
+            className="inline-block bg-white text-gray-900 dark:text-white px-8 py-4 text-lg font-semibold hover:bg-gray-100 dark:bg-[#171717] transition-colors"
           >
             Book Free Consultation
           </a>

@@ -35,7 +35,7 @@ export default function CertificationStandardPage() {
   ]
 
   return (
-    <div className="min-h-screen bg-white dark:bg-gray-950 pt-20" data-testid="certification-page">
+    <div className="min-h-screen bg-white dark:bg-[#050505] pt-20" data-testid="certification-page">
       {/* Hero */}
       <section className="relative overflow-hidden bg-[#0A0A0A] dark:bg-[#050505] text-white py-16 lg:py-24">
         <div className="container mx-auto px-5 sm:px-8 lg:px-16 relative z-10">
@@ -53,7 +53,7 @@ export default function CertificationStandardPage() {
       </section>
 
       {/* QA Metrics */}
-      <section className="py-10 bg-gray-50 dark:bg-gray-900 border-b border-gray-200 dark:border-gray-800">
+      <section className="py-10 bg-gray-50 dark:bg-[#0A0A0A] border-b border-gray-200 dark:border-zinc-800">
         <div className="container mx-auto px-5 sm:px-8 lg:px-16">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-5xl mx-auto text-center">
             {qaMetrics.map((m, i) => (
@@ -64,7 +64,7 @@ export default function CertificationStandardPage() {
       </section>
 
       {/* Standards */}
-      <section className="py-16 lg:py-20 bg-white dark:bg-gray-950" data-testid="standards-section">
+      <section className="py-16 lg:py-20 bg-white dark:bg-[#050505]" data-testid="standards-section">
         <div className="container mx-auto px-5 sm:px-8 lg:px-16">
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-12">
@@ -76,16 +76,16 @@ export default function CertificationStandardPage() {
                 const Icon = std.icon
                 return (
                   <motion.div key={i} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.3, delay: i * 0.08 }}
-                    className="bg-gray-50 dark:bg-gray-900 rounded-xl overflow-hidden border border-gray-100 dark:border-gray-800 hover:shadow-lg transition-shadow group">
+                    className="bg-gray-50 dark:bg-[#0A0A0A] rounded-xl overflow-hidden border border-gray-100 dark:border-zinc-800 hover:shadow-lg transition-shadow group">
                     <div className="h-1 bg-gradient-to-r from-[#C9A962] to-[#C9A962]/30" />
                     <div className="p-7">
                       <div className="w-11 h-11 rounded-lg bg-gray-900 dark:bg-[#C9A962] flex items-center justify-center mb-5 group-hover:bg-[#C9A962] transition-colors">
                         <Icon className="text-white dark:text-gray-900 group-hover:text-gray-900 transition-colors" size={20} />
                       </div>
                       <h3 className="text-base font-bold mb-2 text-gray-900 dark:text-white">{std.title}</h3>
-                      <p className="text-sm text-gray-600 dark:text-gray-400 mb-4 leading-relaxed">{std.description}</p>
+                      <p className="text-sm text-gray-600 dark:text-zinc-500 mb-4 leading-relaxed">{std.description}</p>
                       <ul className="space-y-2">
-                        {std.items.map((item, j) => (<li key={j} className="flex items-start gap-2 text-sm text-gray-700 dark:text-gray-300"><CheckCircle2 size={14} className="text-[#C9A962] flex-shrink-0 mt-0.5" />{item}</li>))}
+                        {std.items.map((item, j) => (<li key={j} className="flex items-start gap-2 text-sm text-gray-700 dark:text-zinc-400"><CheckCircle2 size={14} className="text-[#C9A962] flex-shrink-0 mt-0.5" />{item}</li>))}
                       </ul>
                     </div>
                   </motion.div>
@@ -97,7 +97,7 @@ export default function CertificationStandardPage() {
       </section>
 
       {/* Certifications */}
-      <section className="py-16 lg:py-20 bg-gray-50 dark:bg-gray-900" data-testid="certifications-section">
+      <section className="py-16 lg:py-20 bg-gray-50 dark:bg-[#0A0A0A]" data-testid="certifications-section">
         <div className="container mx-auto px-5 sm:px-8 lg:px-16">
           <div className="max-w-5xl mx-auto">
             <div className="text-center mb-12">
@@ -107,7 +107,7 @@ export default function CertificationStandardPage() {
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
               {certifications.map((cert, i) => (
                 <motion.div key={i} initial={{ opacity: 0, scale: 0.95 }} whileInView={{ opacity: 1, scale: 1 }} viewport={{ once: true }} transition={{ duration: 0.3, delay: i * 0.05 }}
-                  className="flex items-center gap-4 p-5 rounded-xl bg-white dark:bg-gray-950 border border-gray-200 dark:border-gray-800 hover:border-[#C9A962]/60 transition-all">
+                  className="flex items-center gap-4 p-5 rounded-xl bg-white dark:bg-[#050505] border border-gray-200 dark:border-zinc-800 hover:border-[#C9A962]/60 transition-all">
                   <div className="w-12 h-12 rounded-full bg-[#C9A962]/10 flex items-center justify-center flex-shrink-0">
                     <Award className="text-[#C9A962]" size={20} />
                   </div>

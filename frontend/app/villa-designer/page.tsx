@@ -140,7 +140,7 @@ export default function VillaDesignerPage() {
           transition={{ duration: 0.6 }}
           className="max-w-2xl w-full text-center"
         >
-          <div className="bg-white dark:bg-gray-800 rounded-3xl p-12 shadow-2xl">
+          <div className="bg-white dark:bg-[#171717] rounded-3xl p-12 shadow-2xl">
             <div className="inline-flex items-center justify-center w-20 h-20 bg-green-100 rounded-full mb-6">
               <Check size={40} className="text-green-600" />
             </div>
@@ -149,13 +149,13 @@ export default function VillaDesignerPage() {
               Thank You, {formData.name}!
             </h1>
             
-            <p className="text-xl text-gray-700 dark:text-gray-300 mb-8">
+            <p className="text-xl text-gray-700 dark:text-zinc-400 mb-8">
               Your system concept will be prepared within 24 hours.
             </p>
             
             <div className="bg-gradient-to-r from-green-50 to-blue-50 rounded-2xl p-6 mb-8">
-              <p className="text-gray-700 dark:text-gray-300 font-medium mb-2">What&apos;s Next?</p>
-              <ul className="text-left text-gray-600 dark:text-gray-400 space-y-2">
+              <p className="text-gray-700 dark:text-zinc-400 font-medium mb-2">What&apos;s Next?</p>
+              <ul className="text-left text-gray-600 dark:text-zinc-500 space-y-2">
                 <li className="flex items-start gap-2">
                   <Check size={20} className="text-green-600 flex-shrink-0 mt-0.5" />
                   <span>Our luxury design team will review your requirements</span>

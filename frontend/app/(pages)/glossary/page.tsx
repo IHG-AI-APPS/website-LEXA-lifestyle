@@ -253,7 +253,7 @@ export default function GlossaryPage() {
   })).filter((section: any) => section.terms.length > 0)
 
   return (
-    <div className="min-h-screen bg-white dark:bg-gray-900 pt-20">
+    <div className="min-h-screen bg-white dark:bg-[#0A0A0A] pt-20">
       {/* Hero */}
       <section className="py-20 bg-gray-50 border-b">
         <div className="container mx-auto px-5 sm:px-8 lg:px-16">
@@ -269,7 +269,7 @@ export default function GlossaryPage() {
               <h1 className="h1 uppercase mb-6">
                 {cms?.hero_title || 'SMART HOME GLOSSARY'}
               </h1>
-              <p className="text-xl text-gray-600 dark:text-gray-400 mb-8">
+              <p className="text-xl text-gray-600 dark:text-zinc-500 mb-8">
                 {cms?.hero_description || 'Complete guide to smart home automation terminology for UAE homeowners. Understanding these terms will help you make informed decisions about your luxury smart home project in Dubai.'}
               </p>
 
@@ -281,7 +281,7 @@ export default function GlossaryPage() {
                   placeholder="Search terms..."
                   value={searchTerm}
                   onChange={(e) => setSearchTerm(e.target.value)}
-                  className="w-full pl-12 pr-4 py-4 border border-gray-300 dark:border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-900 focus:border-transparent"
+                  className="w-full pl-12 pr-4 py-4 border border-gray-300 dark:border-zinc-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-900 focus:border-transparent"
                 />
               </div>
             </motion.div>
@@ -312,7 +312,7 @@ export default function GlossaryPage() {
                       <h3 className="text-2xl uppercase font-semibold text-gray-900 dark:text-white mb-2">
                         {item.term}
                       </h3>
-                      <p className="text-gray-600 dark:text-gray-400 leading-relaxed">
+                      <p className="text-gray-600 dark:text-zinc-500 leading-relaxed">
                         {item.definition}
                       </p>
                     </div>
@@ -323,7 +323,7 @@ export default function GlossaryPage() {
 
             {filteredTerms.length === 0 && (
               <div className="text-center py-20">
-                <p className="text-xl text-gray-600 dark:text-gray-400">No terms found matching &quot;{searchTerm}&quot;</p>
+                <p className="text-xl text-gray-600 dark:text-zinc-500">No terms found matching &quot;{searchTerm}&quot;</p>
               </div>
             )}
           </div>
@@ -339,7 +339,7 @@ export default function GlossaryPage() {
           </p>
           <a
             href="/contact"
-            className="inline-block bg-white text-gray-900 dark:text-white px-8 py-4 text-lg font-semibold hover:bg-gray-100 dark:bg-gray-800 transition-colors"
+            className="inline-block bg-white text-gray-900 dark:text-white px-8 py-4 text-lg font-semibold hover:bg-gray-100 dark:bg-[#171717] transition-colors"
           >
             Schedule Consultation
           </a>

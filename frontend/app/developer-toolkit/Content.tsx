@@ -53,7 +53,7 @@ export default function DeveloperToolkitContent() {
   const requirements = cms?.access_requirements?.length ? cms.access_requirements : fallback.access_requirements
 
   return (
-    <div className="min-h-screen bg-white dark:bg-gray-950 pt-20" data-testid="developer-toolkit-page">
+    <div className="min-h-screen bg-white dark:bg-[#050505] pt-20" data-testid="developer-toolkit-page">
       {/* Hero */}
       <section className="relative overflow-hidden bg-[#0A0A0A] dark:bg-[#050505] text-white py-16 lg:py-24">
         <div className="container mx-auto px-5 sm:px-8 lg:px-16 relative z-10">
@@ -69,16 +69,16 @@ export default function DeveloperToolkitContent() {
       </section>
 
       {/* Benefits */}
-      <section className="py-16 lg:py-20 bg-white dark:bg-gray-950">
+      <section className="py-16 lg:py-20 bg-white dark:bg-[#050505]">
         <div className="container mx-auto px-5 sm:px-8 lg:px-16">
           <div className="max-w-4xl mx-auto">
             <span className="text-xs uppercase tracking-widest text-[#C9A962] font-semibold">Advantages</span>
             <h2 className="text-2xl sm:text-3xl font-bold mt-2 mb-8 text-gray-900 dark:text-white">Why Developers Partner With LEXA</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               {benefits.map((b: string, i: number) => (
-                <div key={i} className="flex items-start gap-3 p-4 rounded-xl bg-gray-50 dark:bg-gray-900 border border-gray-100 dark:border-gray-800">
+                <div key={i} className="flex items-start gap-3 p-4 rounded-xl bg-gray-50 dark:bg-[#0A0A0A] border border-gray-100 dark:border-zinc-800">
                   <CheckCircle2 className="text-[#C9A962] flex-shrink-0 mt-0.5" size={18} />
-                  <span className="text-sm text-gray-700 dark:text-gray-300 font-medium">{b}</span>
+                  <span className="text-sm text-gray-700 dark:text-zinc-400 font-medium">{b}</span>
                 </div>
               ))}
             </div>
@@ -87,7 +87,7 @@ export default function DeveloperToolkitContent() {
       </section>
 
       {/* Toolkit Resources */}
-      <section className="py-16 lg:py-20 bg-gray-50 dark:bg-gray-900">
+      <section className="py-16 lg:py-20 bg-gray-50 dark:bg-[#0A0A0A]">
         <div className="container mx-auto px-5 sm:px-8 lg:px-16">
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-12">
@@ -96,15 +96,15 @@ export default function DeveloperToolkitContent() {
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {resources.map((r: any, i: number) => (
-                <div key={i} className="bg-white dark:bg-gray-950 rounded-xl p-6 border border-gray-100 dark:border-gray-800 hover:border-[#C9A962]/40 transition-all">
+                <div key={i} className="bg-white dark:bg-[#050505] rounded-xl p-6 border border-gray-100 dark:border-zinc-800 hover:border-[#C9A962]/40 transition-all">
                   <div className={`inline-flex items-center justify-center w-12 h-12 mb-4 rounded-full bg-gradient-to-r ${r.color || 'from-gray-500 to-gray-600'}`}>
                     <FileText size={24} className="text-white" />
                   </div>
                   <h3 className="text-base font-bold text-gray-900 dark:text-white mb-2">{r.title}</h3>
-                  <p className="text-sm text-gray-600 dark:text-gray-400 mb-3">{r.description}</p>
+                  <p className="text-sm text-gray-600 dark:text-zinc-500 mb-3">{r.description}</p>
                   <div className="flex flex-wrap gap-2 mb-3">
                     {(r.formats || []).map((f: string) => (
-                      <span key={f} className="px-2 py-0.5 bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 text-xs font-semibold rounded-full">{f}</span>
+                      <span key={f} className="px-2 py-0.5 bg-gray-100 dark:bg-[#171717] text-gray-700 dark:text-zinc-400 text-xs font-semibold rounded-full">{f}</span>
                     ))}
                   </div>
                   <div className="text-xs text-gray-500 flex items-center gap-1"><Download size={14} /><span>Request access</span></div>
@@ -116,7 +116,7 @@ export default function DeveloperToolkitContent() {
       </section>
 
       {/* Partnership Steps */}
-      <section className="py-16 lg:py-20 bg-white dark:bg-gray-950">
+      <section className="py-16 lg:py-20 bg-white dark:bg-[#050505]">
         <div className="container mx-auto px-5 sm:px-8 lg:px-16">
           <div className="max-w-4xl mx-auto">
             <div className="text-center mb-12">
@@ -129,7 +129,7 @@ export default function DeveloperToolkitContent() {
                   <div className="flex-shrink-0 w-10 h-10 bg-gray-900 dark:bg-[#C9A962] text-white dark:text-gray-900 rounded-full flex items-center justify-center font-bold text-base">{s.num}</div>
                   <div>
                     <h3 className="text-base font-bold text-gray-900 dark:text-white mb-1">{s.title}</h3>
-                    <p className="text-sm text-gray-600 dark:text-gray-400">{s.description}</p>
+                    <p className="text-sm text-gray-600 dark:text-zinc-500">{s.description}</p>
                   </div>
                 </div>
               ))}

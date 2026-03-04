@@ -74,7 +74,7 @@ export default function FinalCTA() {
                 <div className="flex flex-col sm:flex-row gap-4">
                   <Button
                     size="lg"
-                    className="bg-white hover:bg-gray-100 dark:bg-gray-800 text-charcoal border-0 px-10 py-6 text-sm font-medium tracking-wide transition-all duration-300"
+                    className="bg-white hover:bg-gray-100 dark:bg-[#171717] text-charcoal border-0 px-10 py-6 text-sm font-medium tracking-wide transition-all duration-300"
                     onClick={() => setShowConsultationForm(true)}
                     data-testid="cta-book-consultation-btn"
                   >

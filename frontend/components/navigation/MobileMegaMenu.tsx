@@ -257,7 +257,7 @@ export default function MobileMegaMenu({ isOpen, onClose, type }: MobileMegaMenu
                                         {item.description}
                                       </p>
                                     </div>
-                                    <ChevronRight className="h-4 w-4 text-gray-600 dark:text-gray-400 opacity-0 group-hover:opacity-100 group-hover:translate-x-1 transition-all" />
+                                    <ChevronRight className="h-4 w-4 text-gray-600 dark:text-zinc-500 opacity-0 group-hover:opacity-100 group-hover:translate-x-1 transition-all" />
                                   </Link>
                                 ))}
                               </div>

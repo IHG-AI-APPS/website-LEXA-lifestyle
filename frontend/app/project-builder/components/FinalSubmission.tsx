@@ -68,7 +68,7 @@ export default function FinalSubmission({ sessionId, projectData, onComplete }: 
           Project <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#C9A962] to-[#A68B4B]">Submitted</span>
         </h2>
         <p className="text-sm text-gray-500 uppercase tracking-widest mb-2">Intelligence Analysis Complete</p>
-        <p className="text-gray-600 dark:text-gray-400 text-sm">Our team will contact you within 24 hours</p>
+        <p className="text-gray-600 dark:text-zinc-500 text-sm">Our team will contact you within 24 hours</p>
       </div>
     )
   }
@@ -94,77 +94,77 @@ export default function FinalSubmission({ sessionId, projectData, onComplete }: 
           <p className="text-sm text-gray-500 uppercase tracking-widest mb-2">
             Expert Consultation
           </p>
-          <p className="text-gray-600 dark:text-gray-400 text-sm">
+          <p className="text-gray-600 dark:text-zinc-500 text-sm">
             Our specialists will review your project and create a detailed proposal
           </p>
         </div>
 
         {/* Form */}
-        <div className="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 p-8 mb-12">
+        <div className="bg-white dark:bg-[#171717] border border-gray-200 dark:border-zinc-800 p-8 mb-12">
           <div className="space-y-6">
             <div>
-              <label className="text-xs uppercase tracking-widest text-gray-600 dark:text-gray-400 mb-2 block">Full Name *</label>
+              <label className="text-xs uppercase tracking-widest text-gray-600 dark:text-zinc-500 mb-2 block">Full Name *</label>
               <Input
                 type="text"
                 value={formData.contact_name}
                 onChange={(e) => setFormData({ ...formData, contact_name: e.target.value })}
                 placeholder="John Smith"
-                className="border-gray-200 dark:border-gray-700 focus:border-[#C9A962] text-gray-900 dark:text-white"
+                className="border-gray-200 dark:border-zinc-800 focus:border-[#C9A962] text-gray-900 dark:text-white"
               />
             </div>
 
             <div>
-              <label className="text-xs uppercase tracking-widest text-gray-600 dark:text-gray-400 mb-2 block">Email Address *</label>
+              <label className="text-xs uppercase tracking-widest text-gray-600 dark:text-zinc-500 mb-2 block">Email Address *</label>
               <Input
                 type="email"
                 value={formData.contact_email}
                 onChange={(e) => setFormData({ ...formData, contact_email: e.target.value })}
                 placeholder="john@example.com"
-                className="border-gray-200 dark:border-gray-700 focus:border-[#C9A962] text-gray-900 dark:text-white"
+                className="border-gray-200 dark:border-zinc-800 focus:border-[#C9A962] text-gray-900 dark:text-white"
               />
             </div>
 
             <div>
-              <label className="text-xs uppercase tracking-widest text-gray-600 dark:text-gray-400 mb-2 block">Phone Number *</label>
+              <label className="text-xs uppercase tracking-widest text-gray-600 dark:text-zinc-500 mb-2 block">Phone Number *</label>
               <Input
                 type="tel"
                 value={formData.contact_phone}
                 onChange={(e) => setFormData({ ...formData, contact_phone: e.target.value })}
                 placeholder="+971 50 123 4567"
-                className="border-gray-200 dark:border-gray-700 focus:border-[#C9A962] text-gray-900 dark:text-white"
+                className="border-gray-200 dark:border-zinc-800 focus:border-[#C9A962] text-gray-900 dark:text-white"
               />
             </div>
 
             <div>
-              <label className="text-xs uppercase tracking-widest text-gray-600 dark:text-gray-400 mb-2 block">Preferred Timeline</label>
+              <label className="text-xs uppercase tracking-widest text-gray-600 dark:text-zinc-500 mb-2 block">Preferred Timeline</label>
               <Input
                 type="text"
                 value={formData.timeline}
                 onChange={(e) => setFormData({ ...formData, timeline: e.target.value })}
                 placeholder="e.g., 3-6 months"
-                className="border-gray-200 dark:border-gray-700 focus:border-[#C9A962] text-gray-900 dark:text-white"
+                className="border-gray-200 dark:border-zinc-800 focus:border-[#C9A962] text-gray-900 dark:text-white"
               />
             </div>
 
             <div>
-              <label className="text-xs uppercase tracking-widest text-gray-600 dark:text-gray-400 mb-2 block">Budget Range (Optional)</label>
+              <label className="text-xs uppercase tracking-widest text-gray-600 dark:text-zinc-500 mb-2 block">Budget Range (Optional)</label>
               <Input
                 type="text"
                 value={formData.budget_band}
                 onChange={(e) => setFormData({ ...formData, budget_band: e.target.value })}
                 placeholder="e.g., AED 200,000 - 500,000"
-                className="border-gray-200 dark:border-gray-700 focus:border-[#C9A962] text-gray-900 dark:text-white"
+                className="border-gray-200 dark:border-zinc-800 focus:border-[#C9A962] text-gray-900 dark:text-white"
               />
             </div>
 
             <div>
-              <label className="text-xs uppercase tracking-widest text-gray-600 dark:text-gray-400 mb-2 block">Additional Notes</label>
+              <label className="text-xs uppercase tracking-widest text-gray-600 dark:text-zinc-500 mb-2 block">Additional Notes</label>
               <textarea
                 value={formData.notes}
                 onChange={(e) => setFormData({ ...formData, notes: e.target.value })}
                 placeholder="Any specific requirements or questions..."
                 rows={4}
-                className="w-full border border-gray-200 dark:border-gray-700 focus:border-[#C9A962] outline-none text-gray-900 dark:text-white placeholder-gray-400 py-3 px-4 text-sm transition-colors"
+                className="w-full border border-gray-200 dark:border-zinc-800 focus:border-[#C9A962] outline-none text-gray-900 dark:text-white placeholder-gray-400 py-3 px-4 text-sm transition-colors"
               />
             </div>
           </div>
@@ -179,7 +179,7 @@ export default function FinalSubmission({ sessionId, projectData, onComplete }: 
           >
             {loading ? 'Submitting...' : 'Submit Project for Review'}
           </Button>
-          <p className="text-xs text-gray-600 dark:text-gray-400 mt-4">
+          <p className="text-xs text-gray-600 dark:text-zinc-500 mt-4">
             Your project information is secure and will only be used for consultation purposes
           </p>
         </div>

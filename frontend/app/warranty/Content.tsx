@@ -48,7 +48,7 @@ export default function WarrantyContent() {
   const ctaDesc = cms?.cta_description || fallback.cta_description
 
   return (
-    <div className="min-h-screen bg-white dark:bg-gray-950 pt-20" data-testid="warranty-page">
+    <div className="min-h-screen bg-white dark:bg-[#050505] pt-20" data-testid="warranty-page">
       {/* Hero */}
       <section className="relative overflow-hidden bg-[#0A0A0A] dark:bg-[#050505] text-white py-16 lg:py-24">
         <div className="container mx-auto px-5 sm:px-8 lg:px-16 relative z-10">
@@ -61,27 +61,27 @@ export default function WarrantyContent() {
       </section>
 
       {/* Warranty Coverage */}
-      <section className="py-16 lg:py-20 bg-white dark:bg-gray-950">
+      <section className="py-16 lg:py-20 bg-white dark:bg-[#050505]">
         <div className="container mx-auto px-5 sm:px-8 lg:px-16">
           <div className="max-w-4xl mx-auto">
             <span className="text-xs uppercase tracking-widest text-[#C9A962] font-semibold">Coverage</span>
             <h2 className="text-2xl sm:text-3xl font-bold mt-2 mb-8 text-gray-900 dark:text-white">Product Warranty</h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-12">
               {items.map((item: any, i: number) => (
-                <div key={i} className="flex items-start gap-4 p-5 rounded-xl bg-gray-50 dark:bg-gray-900 border border-gray-100 dark:border-gray-800">
+                <div key={i} className="flex items-start gap-4 p-5 rounded-xl bg-gray-50 dark:bg-[#0A0A0A] border border-gray-100 dark:border-zinc-800">
                   <CheckCircle2 className="h-5 w-5 text-[#C9A962] flex-shrink-0 mt-0.5" />
-                  <div><h3 className="text-sm font-bold text-gray-900 dark:text-white mb-1">{item.title}</h3><p className="text-sm text-gray-600 dark:text-gray-400">{item.description}</p></div>
+                  <div><h3 className="text-sm font-bold text-gray-900 dark:text-white mb-1">{item.title}</h3><p className="text-sm text-gray-600 dark:text-zinc-500">{item.description}</p></div>
                 </div>
               ))}
             </div>
 
             <h2 className="text-xl font-bold mb-4 text-gray-900 dark:text-white">Extended Warranty</h2>
-            <p className="text-sm text-gray-600 dark:text-gray-400 mb-8 leading-relaxed">{extText}</p>
+            <p className="text-sm text-gray-600 dark:text-zinc-500 mb-8 leading-relaxed">{extText}</p>
 
             <h2 className="text-xl font-bold mb-4 text-gray-900 dark:text-white">Warranty Exclusions</h2>
             <div className="space-y-3 mb-12">
               {exclusions.map((item: string, i: number) => (
-                <div key={i} className="flex items-start gap-3 text-sm text-gray-600 dark:text-gray-400">
+                <div key={i} className="flex items-start gap-3 text-sm text-gray-600 dark:text-zinc-500">
                   <span className="text-gray-400 mt-0.5">-</span><span>{item}</span>
                 </div>
               ))}
@@ -90,7 +90,7 @@ export default function WarrantyContent() {
             <h2 className="text-xl font-bold mb-4 text-gray-900 dark:text-white">How to Claim Warranty</h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-12">
               {steps.map((step: any, i: number) => (
-                <div key={i} className="p-5 rounded-xl bg-gray-50 dark:bg-gray-900 border border-gray-100 dark:border-gray-800 text-center">
+                <div key={i} className="p-5 rounded-xl bg-gray-50 dark:bg-[#0A0A0A] border border-gray-100 dark:border-zinc-800 text-center">
                   <span className="text-2xl font-bold text-[#C9A962]">{step.num}</span>
                   <h3 className="text-sm font-bold text-gray-900 dark:text-white mt-2 mb-1">{step.title}</h3>
                   <p className="text-xs text-gray-500">{step.description}</p>

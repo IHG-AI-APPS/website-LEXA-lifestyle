@@ -122,7 +122,7 @@ export default function SocialShare({
       <button
         onClick={copyToClipboard}
         className={`${buttonBaseClass} ${getButtonSize()} ${
-          copied ? 'bg-green-500 text-white' : 'bg-gray-200 text-gray-700 dark:text-gray-300 hover:bg-gray-300'
+          copied ? 'bg-green-500 text-white' : 'bg-gray-200 text-gray-700 dark:text-zinc-400 hover:bg-gray-300'
         }`}
         title={copied ? 'Copied!' : 'Copy Link'}
         aria-label="Copy link to clipboard"
@@ -141,7 +141,7 @@ export function FloatingShareButton({ title, description }: { title: string; des
   return (
     <div className="fixed right-4 bottom-24 z-40 lg:bottom-8">
       {isOpen && (
-        <div className="absolute bottom-16 right-0 bg-white dark:bg-gray-800 rounded-2xl shadow-2xl p-4 animate-fade-in">
+        <div className="absolute bottom-16 right-0 bg-white dark:bg-[#171717] rounded-2xl shadow-2xl p-4 animate-fade-in">
           <p className="text-xs text-gray-500 mb-3 font-medium">Share this page</p>
           <SocialShare 
             title={title} 

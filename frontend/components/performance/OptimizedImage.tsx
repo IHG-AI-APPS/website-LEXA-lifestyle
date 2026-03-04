@@ -81,7 +81,7 @@ export default function OptimizedImage({
     <div
       ref={imageRef}
       className={cn(
-        'relative overflow-hidden bg-gray-100 dark:bg-gray-800 group',
+        'relative overflow-hidden bg-gray-100 dark:bg-[#171717] group',
         aspectRatioClasses[aspectRatio],
         className
       )}

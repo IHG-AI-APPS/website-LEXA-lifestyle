@@ -26,7 +26,7 @@ export default function Step7Location({
     <div className="space-y-6 max-w-2xl mx-auto">
       <div className="text-center mb-8">
         <h2 className="text-3xl font-bold mb-3">Property Location</h2>
-        <p className="text-gray-600 dark:text-gray-400 dark:text-gray-400">
+        <p className="text-gray-600 dark:text-zinc-500">
           Tell us where your property is located
         </p>
       </div>
@@ -43,7 +43,7 @@ export default function Step7Location({
               onEmirateChange(e.target.value)
               onCityChange('') // Reset city when emirate changes
             }}
-            className="w-full border-2 border-gray-200 dark:border-gray-700 px-4 py-3 rounded-lg focus:border-black"
+            className="w-full border-2 border-gray-200 dark:border-zinc-800 px-4 py-3 rounded-lg focus:border-black"
           >
             <option value="">Select emirate</option>
             {emirates.map((em) => (
@@ -63,7 +63,7 @@ export default function Step7Location({
             <select
               value={city}
               onChange={(e) => onCityChange(e.target.value)}
-              className="w-full border-2 border-gray-200 dark:border-gray-700 px-4 py-3 rounded-lg focus:border-black"
+              className="w-full border-2 border-gray-200 dark:border-zinc-800 px-4 py-3 rounded-lg focus:border-black"
             >
               <option value="">Select city/area</option>
               {cities.map((c) => (

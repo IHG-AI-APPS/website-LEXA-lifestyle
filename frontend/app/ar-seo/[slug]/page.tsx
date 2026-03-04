@@ -106,7 +106,7 @@ export default async function DynamicArabicPage({ params }: { params: { slug: st
   return (
         <>
       <CmsReg />
-    <div dir="rtl" lang="ar" className="min-h-screen bg-white dark:bg-gray-900">
+    <div dir="rtl" lang="ar" className="min-h-screen bg-white dark:bg-[#0A0A0A]">
       {/* Simple Header */}
       <header className="border-b py-4 bg-white sticky top-0 z-50">
         <div className="container mx-auto px-4 max-w-7xl flex justify-between items-center">
@@ -115,7 +115,7 @@ export default async function DynamicArabicPage({ params }: { params: { slug: st
           </Link>
           <div className="flex gap-4 items-center">
             {page.english_alternate_url && (
-              <a href={page.english_alternate_url} className="text-sm text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:text-white flex items-center gap-1">
+              <a href={page.english_alternate_url} className="text-sm text-gray-600 dark:text-zinc-500 hover:text-gray-900 dark:text-white flex items-center gap-1">
                 <ArrowLeft className="h-4 w-4" />
                 English
               </a>
@@ -190,7 +190,7 @@ export default async function DynamicArabicPage({ params }: { params: { slug: st
                       {section.stats.map((stat: any, idx: number) => (
                         <div key={idx}>
                           <div className="text-5xl font-bold text-[#E8DCC8] mb-2">{stat.value}</div>
-                          <div className="text-gray-700 dark:text-gray-300">{stat.label}</div>
+                          <div className="text-gray-700 dark:text-zinc-400">{stat.label}</div>
                         </div>
                       ))}
                     </div>
@@ -203,7 +203,7 @@ export default async function DynamicArabicPage({ params }: { params: { slug: st
                       <h2 className="text-3xl md:text-4xl font-bold mb-6">{section.title}</h2>
                     )}
                     {section.content && (
-                      <p className="text-lg leading-relaxed text-gray-700 dark:text-gray-300">{section.content}</p>
+                      <p className="text-lg leading-relaxed text-gray-700 dark:text-zinc-400">{section.content}</p>
                     )}
                   </article>
                 )}
@@ -215,14 +215,14 @@ export default async function DynamicArabicPage({ params }: { params: { slug: st
 
       {/* FAQ Section */}
       {page.faqs && page.faqs.length > 0 && (
-        <section className="py-16 bg-gray-50 dark:bg-gray-800">
+        <section className="py-16 bg-gray-50 dark:bg-[#171717]">
           <div className="container mx-auto px-4 max-w-4xl">
             <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center">الأسئلة الشائعة</h2>
             <div className="space-y-6">
               {page.faqs.map((faq: { question: string; answer: string }, index: number) => (
-                <div key={index} className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-sm border border-gray-100 dark:border-gray-800 dark:border-gray-800">
+                <div key={index} className="bg-white dark:bg-[#171717] p-6 rounded-lg shadow-sm border border-gray-100 dark:border-zinc-800">
                   <h3 className="text-xl font-semibold mb-3 text-gray-900 dark:text-white">{faq.question}</h3>
-                  <p className="text-gray-700 dark:text-gray-300 leading-relaxed">{faq.answer}</p>
+                  <p className="text-gray-700 dark:text-zinc-400 leading-relaxed">{faq.answer}</p>
                 </div>
               ))}
             </div>
@@ -299,7 +299,7 @@ export default async function DynamicArabicPage({ params }: { params: { slug: st
       {/* Footer */}
       <footer className="py-8 border-t bg-white">
         <div className="container mx-auto px-4 text-center">
-          <p className="mb-4 text-gray-600 dark:text-gray-400">© 2025 LEXA Lifestyle - Dubai, UAE</p>
+          <p className="mb-4 text-gray-600 dark:text-zinc-500">© 2025 LEXA Lifestyle - Dubai, UAE</p>
           <div className="flex gap-4 justify-center text-sm">
             <a href="/" className="text-[#E8DCC8] hover:underline flex items-center gap-1">
               <ArrowLeft className="h-4 w-4" />

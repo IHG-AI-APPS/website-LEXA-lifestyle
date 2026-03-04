@@ -77,7 +77,7 @@ export default function ServiceLayer({ sessionId, projectData, onComplete }: Ser
           <p className="text-sm text-gray-500 uppercase tracking-widest mb-2">
             Design • Installation • Support
           </p>
-          <p className="text-xs text-gray-600 dark:text-gray-400">
+          <p className="text-xs text-gray-600 dark:text-zinc-500">
             Select services to complete your project package
           </p>
         </div>
@@ -99,8 +99,8 @@ export default function ServiceLayer({ sessionId, projectData, onComplete }: Ser
                 disabled={service.mandatory}
                 className={`w-full p-8 border text-left transition-all duration-300 relative ${
                   isSelected
-                    ? 'border-[#C9A962] bg-white dark:bg-gray-800 shadow-lg'
-                    : 'border-gray-200 dark:border-gray-700 bg-white hover:border-gray-300 dark:border-gray-600 hover:shadow-md'
+                    ? 'border-[#C9A962] bg-white dark:bg-[#171717] shadow-lg'
+                    : 'border-gray-200 dark:border-zinc-800 bg-white hover:border-gray-300 dark:border-zinc-700 hover:shadow-md'
                 } ${service.mandatory ? 'cursor-not-allowed' : 'cursor-pointer'}`}
               >
                 {/* Badges */}
@@ -127,12 +127,12 @@ export default function ServiceLayer({ sessionId, projectData, onComplete }: Ser
                   {/* Details */}
                   <div className="flex-1">
                     <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-2">{service.name}</h3>
-                    <p className="text-sm text-gray-600 dark:text-gray-400 mb-4">{service.description}</p>
+                    <p className="text-sm text-gray-600 dark:text-zinc-500 mb-4">{service.description}</p>
                     
                     {/* Features */}
                     <div className="grid grid-cols-2 gap-2">
                       {service.features.map((feature, idx) => (
-                        <div key={idx} className="flex items-center gap-2 text-xs text-gray-700 dark:text-gray-300">
+                        <div key={idx} className="flex items-center gap-2 text-xs text-gray-700 dark:text-zinc-400">
                           <CheckCircle2 className="w-3 h-3 text-green-600" />
                           <span>{feature}</span>
                         </div>
@@ -158,10 +158,10 @@ export default function ServiceLayer({ sessionId, projectData, onComplete }: Ser
         </div>
 
         {/* Summary */}
-        <div className="bg-gray-50 border border-gray-200 dark:border-gray-700 p-6 mb-8">
-          <div className="text-sm text-gray-700 dark:text-gray-300">
+        <div className="bg-gray-50 border border-gray-200 dark:border-zinc-800 p-6 mb-8">
+          <div className="text-sm text-gray-700 dark:text-zinc-400">
             <span className="font-semibold">{selectedServices.length}</span> service{selectedServices.length > 1 ? 's' : ''} selected:
-            <span className="ml-2 text-gray-600 dark:text-gray-400">
+            <span className="ml-2 text-gray-600 dark:text-zinc-500">
               {SERVICES.filter(s => selectedServices.includes(s.id)).map(s => s.name).join(', ')}
             </span>
           </div>

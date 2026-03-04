@@ -67,7 +67,7 @@ export default function Workflow() {
               >
                 {/* Number Circle */}
                 <div className="relative mb-8">
-                  <div className="w-full aspect-square border border-gray-300 dark:border-gray-600 group-hover:border-charcoal transition-colors duration-300 flex items-center justify-center">
+                  <div className="w-full aspect-square border border-gray-300 dark:border-zinc-700 group-hover:border-charcoal transition-colors duration-300 flex items-center justify-center">
                     <span className="text-5xl font-semibold tracking-tight group-hover:scale-110 transition-transform duration-300">
                       {step.number}
                     </span>
@@ -82,7 +82,7 @@ export default function Workflow() {
                 <h3 className="text-xl font-semibold mb-3 tracking-tight">{step.title}</h3>
 
                 {/* Description */}
-                <p className="text-sm text-gray-600 dark:text-gray-400 leading-relaxed font-light">
+                <p className="text-sm text-gray-600 dark:text-zinc-500 leading-relaxed font-light">
                   {step.description}
                 </p>
               </motion.div>
@@ -101,14 +101,14 @@ export default function Workflow() {
                 className="flex gap-6"
               >
                 {/* Number */}
-                <div className="flex-shrink-0 w-20 h-20 border border-gray-300 dark:border-gray-600 flex items-center justify-center">
+                <div className="flex-shrink-0 w-20 h-20 border border-gray-300 dark:border-zinc-700 flex items-center justify-center">
                   <span className="text-3xl font-semibold tracking-tight">{step.number}</span>
                 </div>
 
                 {/* Content */}
                 <div className="flex-1 pt-2">
                   <h3 className="text-2xl font-semibold mb-3 tracking-tight">{step.title}</h3>
-                  <p className="text-sm text-gray-600 dark:text-gray-400 leading-relaxed font-light">
+                  <p className="text-sm text-gray-600 dark:text-zinc-500 leading-relaxed font-light">
                     {step.description}
                   </p>
                 </div>
@@ -124,10 +124,10 @@ export default function Workflow() {
             viewport={{ once: true }}
             className="mt-20 text-center"
           >
-            <p className="text-lg text-gray-600 dark:text-gray-400 font-light mb-8 max-w-2xl mx-auto">
+            <p className="text-lg text-gray-600 dark:text-zinc-500 font-light mb-8 max-w-2xl mx-auto">
               Every project follows our proven methodology, ensuring predictable outcomes and exceptional results.
             </p>
-            <button className="px-10 py-5 border border-gray-300 dark:border-gray-600 hover:border-charcoal hover:bg-gray-100 dark:bg-gray-800 text-charcoal text-sm font-medium tracking-wide transition-all duration-300">
+            <button className="px-10 py-5 border border-gray-300 dark:border-zinc-700 hover:border-charcoal hover:bg-gray-100 dark:bg-[#171717] text-charcoal text-sm font-medium tracking-wide transition-all duration-300">
               Learn More About Our Process
             </button>
           </motion.div>

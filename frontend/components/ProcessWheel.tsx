@@ -43,7 +43,7 @@ export default function ProcessWheel({ steps }: ProcessWheelProps) {
               )}
 
               {/* Step Card */}
-              <div className="relative bg-white dark:bg-gray-800 border-2 border-gray-200 dark:border-gray-700 dark:border-gray-700 rounded-lg p-6 hover:border-[#E8DCC8] transition-all hover:shadow-lg z-10">
+              <div className="relative bg-white dark:bg-[#171717] border-2 border-gray-200 dark:border-zinc-800 rounded-lg p-6 hover:border-[#E8DCC8] transition-all hover:shadow-lg z-10">
                 {/* Step Number */}
                 <div className={`w-16 h-16 rounded-full bg-gradient-to-br ${colors[index % colors.length]} flex items-center justify-center mb-4 mx-auto`}>
                   <span className="text-2xl font-bold text-white">{index + 1}</span>
@@ -51,7 +51,7 @@ export default function ProcessWheel({ steps }: ProcessWheelProps) {
 
                 {/* Duration Badge */}
                 <div className="text-center mb-3">
-                  <span className="inline-block px-3 py-1 bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 text-xs font-medium rounded-full">
+                  <span className="inline-block px-3 py-1 bg-gray-100 dark:bg-[#171717] text-gray-700 dark:text-zinc-400 text-xs font-medium rounded-full">
                     {step.duration}
                   </span>
                 </div>
@@ -62,7 +62,7 @@ export default function ProcessWheel({ steps }: ProcessWheelProps) {
                 </h3>
 
                 {/* Step Description */}
-                <p className="text-sm text-gray-600 dark:text-gray-400 text-center leading-relaxed">
+                <p className="text-sm text-gray-600 dark:text-zinc-500 text-center leading-relaxed">
                   {step.description}
                 </p>
               </div>

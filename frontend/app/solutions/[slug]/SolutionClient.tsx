@@ -44,7 +44,7 @@ export default function SolutionClient({
   const featureCardIcons = [Monitor, Volume2, Cpu]
 
   return (
-    <div className="min-h-screen bg-white dark:bg-gray-950 pt-20">
+    <div className="min-h-screen bg-white dark:bg-[#050505] pt-20">
       {/* Hero Section — Split layout */}
       <section className="relative overflow-hidden bg-[#0A0A0A] dark:bg-[#050505] text-white">
         <div className="grid grid-cols-1 lg:grid-cols-2 min-h-[480px]">
@@ -90,7 +90,7 @@ export default function SolutionClient({
 
       {/* Detailed Content — What We Deliver */}
       {solution.long_description && (
-        <section className="py-16 lg:py-20 bg-white dark:bg-gray-950">
+        <section className="py-16 lg:py-20 bg-white dark:bg-[#050505]">
           <div className="container mx-auto px-5 sm:px-8 lg:px-16">
             <div className="max-w-6xl mx-auto">
               <div className="grid grid-cols-1 lg:grid-cols-5 gap-12">
@@ -99,7 +99,7 @@ export default function SolutionClient({
                   <h2 className="text-2xl sm:text-3xl font-bold mt-2 mb-6 text-gray-900 dark:text-white">
                     Complete Smart Systems for {solution.title}
                   </h2>
-                  <p className="text-base text-gray-600 dark:text-gray-300 leading-relaxed mb-8">
+                  <p className="text-base text-gray-600 dark:text-zinc-400 leading-relaxed mb-8">
                     {solution.long_description}
                   </p>
                   
@@ -113,10 +113,10 @@ export default function SolutionClient({
                           whileInView={{ opacity: 1, y: 0 }}
                           viewport={{ once: true }}
                           transition={{ duration: 0.25, delay: i * 0.03 }}
-                          className="flex items-start gap-3 p-3 rounded-lg bg-gray-50 dark:bg-gray-900 border border-gray-100 dark:border-gray-800 hover:border-[#C9A962]/40 transition-colors"
+                          className="flex items-start gap-3 p-3 rounded-lg bg-gray-50 dark:bg-[#0A0A0A] border border-gray-100 dark:border-zinc-800 hover:border-[#C9A962]/40 transition-colors"
                         >
                           <CheckCircle2 size={16} className="text-[#C9A962] flex-shrink-0 mt-0.5" />
-                          <span className="text-sm text-gray-700 dark:text-gray-300">{feature}</span>
+                          <span className="text-sm text-gray-700 dark:text-zinc-400">{feature}</span>
                         </motion.div>
                       ))}
                     </div>
@@ -126,7 +126,7 @@ export default function SolutionClient({
                 {/* Right side — Quick stats / highlights */}
                 <div className="lg:col-span-2">
                   <div className="sticky top-28 space-y-5">
-                    <div className="bg-gray-900 dark:bg-gray-800 text-white rounded-xl p-6">
+                    <div className="bg-gray-900 dark:bg-[#171717] text-white rounded-xl p-6">
                       <h3 className="text-lg font-semibold mb-4">Why Choose LEXA?</h3>
                       <div className="space-y-4">
                         {[
@@ -165,7 +165,7 @@ export default function SolutionClient({
 
       {/* Feature Cards — What You Get */}
       {solution.feature_cards && solution.feature_cards.length > 0 && (
-        <section className="py-16 lg:py-20 bg-gray-50 dark:bg-gray-900">
+        <section className="py-16 lg:py-20 bg-gray-50 dark:bg-[#0A0A0A]">
           <div className="container mx-auto px-5 sm:px-8 lg:px-16">
             <div className="max-w-6xl mx-auto">
               <div className="text-center mb-12">
@@ -182,7 +182,7 @@ export default function SolutionClient({
                       whileInView={{ opacity: 1, y: 0 }}
                       viewport={{ once: true }}
                       transition={{ duration: 0.3, delay: i * 0.1 }}
-                      className="bg-white dark:bg-gray-950 rounded-xl overflow-hidden border border-gray-100 dark:border-gray-800 hover:shadow-lg transition-shadow group"
+                      className="bg-white dark:bg-[#050505] rounded-xl overflow-hidden border border-gray-100 dark:border-zinc-800 hover:shadow-lg transition-shadow group"
                     >
                       <div className="h-1 bg-gradient-to-r from-[#C9A962] to-[#C9A962]/30" />
                       <div className="p-7">
@@ -190,11 +190,11 @@ export default function SolutionClient({
                           <IconComp className="text-white dark:text-gray-900 group-hover:text-gray-900 transition-colors" size={20} />
                         </div>
                         <h3 className="text-lg font-bold mb-2 text-gray-900 dark:text-white">{card.title}</h3>
-                        <p className="text-sm text-gray-600 dark:text-gray-400 mb-5 leading-relaxed">{card.description}</p>
+                        <p className="text-sm text-gray-600 dark:text-zinc-500 mb-5 leading-relaxed">{card.description}</p>
                         {card.benefits && card.benefits.length > 0 && (
                           <ul className="space-y-2">
                             {card.benefits.map((benefit, j) => (
-                              <li key={j} className="flex items-start gap-2 text-sm text-gray-700 dark:text-gray-300">
+                              <li key={j} className="flex items-start gap-2 text-sm text-gray-700 dark:text-zinc-400">
                                 <CheckCircle2 size={14} className="text-[#C9A962] flex-shrink-0 mt-0.5" />
                                 {benefit}
                               </li>
@@ -213,13 +213,13 @@ export default function SolutionClient({
 
       {/* Products We Offer — Image-based clickable cards */}
       {productSolutions.length > 0 && (
-        <section className="py-16 lg:py-20 bg-white dark:bg-gray-950" data-testid="products-section">
+        <section className="py-16 lg:py-20 bg-white dark:bg-[#050505]" data-testid="products-section">
           <div className="container mx-auto px-5 sm:px-8 lg:px-16">
             <div className="max-w-6xl mx-auto">
               <div className="text-center mb-12">
                 <span className="text-xs uppercase tracking-widest text-[#C9A962] font-semibold">Solutions & Systems</span>
                 <h2 className="text-2xl sm:text-3xl font-bold mt-2 text-gray-900 dark:text-white">Products We Offer</h2>
-                <p className="text-sm text-gray-500 dark:text-gray-400 mt-2 max-w-2xl mx-auto">
+                <p className="text-sm text-gray-500 dark:text-zinc-500 mt-2 max-w-2xl mx-auto">
                   Explore the systems and technologies we integrate into {solution.title.toLowerCase()} environments
                 </p>
               </div>
@@ -234,7 +234,7 @@ export default function SolutionClient({
                   >
                     <Link
                       href={`/solutions/${product.slug}`}
-                      className="group block relative rounded-xl overflow-hidden bg-gray-100 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 hover:border-[#C9A962]/60 hover:shadow-xl transition-all"
+                      className="group block relative rounded-xl overflow-hidden bg-gray-100 dark:bg-[#171717] border border-gray-200 dark:border-zinc-800 hover:border-[#C9A962]/60 hover:shadow-xl transition-all"
                       data-testid={`product-card-${product.slug}`}
                     >
                       <div className="relative aspect-[4/3]">
@@ -264,13 +264,13 @@ export default function SolutionClient({
 
       {/* Brands We Partner With */}
       {solution.brands && solution.brands.length > 0 && (
-        <section className="py-16 lg:py-20 bg-gray-50 dark:bg-gray-900" data-testid="brands-section">
+        <section className="py-16 lg:py-20 bg-gray-50 dark:bg-[#0A0A0A]" data-testid="brands-section">
           <div className="container mx-auto px-5 sm:px-8 lg:px-16">
             <div className="max-w-5xl mx-auto">
               <div className="text-center mb-12">
                 <span className="text-xs uppercase tracking-widest text-[#C9A962] font-semibold">Certified Partners</span>
                 <h2 className="text-2xl sm:text-3xl font-bold mt-2 text-gray-900 dark:text-white">Brands We Integrate</h2>
-                <p className="text-sm text-gray-500 dark:text-gray-400 mt-2">
+                <p className="text-sm text-gray-500 dark:text-zinc-500 mt-2">
                   We work exclusively with world-class AV and automation manufacturers
                 </p>
               </div>
@@ -286,7 +286,7 @@ export default function SolutionClient({
                   >
                     <Link
                       href={`/brands/${brand.toLowerCase().replace(/\s+/g, '-')}`}
-                      className="flex flex-col items-center justify-center p-5 h-24 rounded-xl bg-white dark:bg-gray-950 border border-gray-200 dark:border-gray-800 hover:border-[#C9A962]/60 hover:shadow-md transition-all"
+                      className="flex flex-col items-center justify-center p-5 h-24 rounded-xl bg-white dark:bg-[#050505] border border-gray-200 dark:border-zinc-800 hover:border-[#C9A962]/60 hover:shadow-md transition-all"
                       data-testid={`brand-card-${brand.toLowerCase().replace(/\s+/g, '-')}`}
                     >
                       <span className="text-base font-bold text-gray-800 dark:text-gray-200 group-hover:text-[#C9A962] transition-colors tracking-wide">
@@ -304,13 +304,13 @@ export default function SolutionClient({
 
       {/* Inspirations Gallery */}
       {galleryImages.length > 0 && (
-        <section className="py-16 lg:py-20 bg-white dark:bg-gray-950" data-testid="inspirations-section">
+        <section className="py-16 lg:py-20 bg-white dark:bg-[#050505]" data-testid="inspirations-section">
           <div className="container mx-auto px-5 sm:px-8 lg:px-16">
             <div className="max-w-6xl mx-auto">
               <div className="text-center mb-12">
                 <span className="text-xs uppercase tracking-widest text-[#C9A962] font-semibold">Design Ideas</span>
                 <h2 className="text-2xl sm:text-3xl font-bold mt-2 text-gray-900 dark:text-white">Inspirations</h2>
-                <p className="text-sm text-gray-500 dark:text-gray-400 mt-2">
+                <p className="text-sm text-gray-500 dark:text-zinc-500 mt-2">
                   Modern {solution.title.toLowerCase()} designs featuring the latest in smart technology
                 </p>
               </div>
@@ -344,7 +344,7 @@ export default function SolutionClient({
 
       {/* Related Projects */}
       {relatedProjects.length > 0 && (
-        <section className="py-16 lg:py-20 bg-gray-50 dark:bg-gray-900">
+        <section className="py-16 lg:py-20 bg-gray-50 dark:bg-[#0A0A0A]">
           <div className="container mx-auto px-5 sm:px-8 lg:px-16">
             <RelatedItemsCarousel title="Related Projects" items={relatedProjects} basePath="/projects" />
           </div>
@@ -352,7 +352,7 @@ export default function SolutionClient({
       )}
 
       {/* FAQ Section */}
-      <section className="py-16 lg:py-20 bg-white dark:bg-gray-950">
+      <section className="py-16 lg:py-20 bg-white dark:bg-[#050505]">
         <div className="container mx-auto px-5 sm:px-8 lg:px-16">
           <div className="max-w-4xl mx-auto">
             <div className="text-center mb-12">
@@ -362,35 +362,35 @@ export default function SolutionClient({
             <div className="space-y-4">
               {solution.faqs && solution.faqs.length > 0 ? (
                 solution.faqs.map((faq, i) => (
-                  <div key={i} className="bg-gray-50 dark:bg-gray-900 p-6 rounded-xl border border-gray-100 dark:border-gray-800">
+                  <div key={i} className="bg-gray-50 dark:bg-[#0A0A0A] p-6 rounded-xl border border-gray-100 dark:border-zinc-800">
                     <h3 className="text-base font-semibold mb-2 text-gray-900 dark:text-white">{faq.question}</h3>
-                    <p className="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">{faq.answer}</p>
+                    <p className="text-sm text-gray-600 dark:text-zinc-500 leading-relaxed">{faq.answer}</p>
                   </div>
                 ))
               ) : (
                 <>
-                  <div className="bg-gray-50 dark:bg-gray-900 p-6 rounded-xl border border-gray-100 dark:border-gray-800">
+                  <div className="bg-gray-50 dark:bg-[#0A0A0A] p-6 rounded-xl border border-gray-100 dark:border-zinc-800">
                     <h3 className="text-base font-semibold mb-2 text-gray-900 dark:text-white">What is {solution.title}?</h3>
-                    <p className="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">
+                    <p className="text-sm text-gray-600 dark:text-zinc-500 leading-relaxed">
                       {solution.title} is the integration of intelligent systems — lighting, audio-visual equipment,
                       sensors, climate control, and user interfaces — designed specifically for this room experience.
                     </p>
                   </div>
-                  <div className="bg-gray-50 dark:bg-gray-900 p-6 rounded-xl border border-gray-100 dark:border-gray-800">
+                  <div className="bg-gray-50 dark:bg-[#0A0A0A] p-6 rounded-xl border border-gray-100 dark:border-zinc-800">
                     <h3 className="text-base font-semibold mb-2 text-gray-900 dark:text-white">How much does it cost in Dubai/UAE?</h3>
-                    <p className="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">
+                    <p className="text-sm text-gray-600 dark:text-zinc-500 leading-relaxed">
                       Costs vary based on room size, technology brands, and customization. Typical projects range from AED 25,000 to AED 85,000. Contact us for a detailed quote.
                     </p>
                   </div>
-                  <div className="bg-gray-50 dark:bg-gray-900 p-6 rounded-xl border border-gray-100 dark:border-gray-800">
+                  <div className="bg-gray-50 dark:bg-[#0A0A0A] p-6 rounded-xl border border-gray-100 dark:border-zinc-800">
                     <h3 className="text-base font-semibold mb-2 text-gray-900 dark:text-white">How long does installation take?</h3>
-                    <p className="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">
+                    <p className="text-sm text-gray-600 dark:text-zinc-500 leading-relaxed">
                       Most projects take 2-6 weeks from consultation to completion. We provide full design, engineering, and installation planning.
                     </p>
                   </div>
-                  <div className="bg-gray-50 dark:bg-gray-900 p-6 rounded-xl border border-gray-100 dark:border-gray-800">
+                  <div className="bg-gray-50 dark:bg-[#0A0A0A] p-6 rounded-xl border border-gray-100 dark:border-zinc-800">
                     <h3 className="text-base font-semibold mb-2 text-gray-900 dark:text-white">Do you provide support & maintenance?</h3>
-                    <p className="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">
+                    <p className="text-sm text-gray-600 dark:text-zinc-500 leading-relaxed">
                       Yes. LEXA offers comprehensive AMC packages for ongoing support, software updates, system health checks, and priority service across Dubai and UAE.
                     </p>
                   </div>
@@ -433,7 +433,7 @@ export default function SolutionClient({
 
       {/* Other Solutions */}
       {otherSolutions.length > 0 && (
-        <section className="py-16 lg:py-20 bg-white dark:bg-gray-950">
+        <section className="py-16 lg:py-20 bg-white dark:bg-[#050505]">
           <div className="container mx-auto px-5 sm:px-8 lg:px-16">
             <RelatedItemsCarousel title="Explore More Solutions" items={otherSolutions} basePath="/solutions" />
           </div>

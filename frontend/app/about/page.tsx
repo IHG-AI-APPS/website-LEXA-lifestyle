@@ -71,18 +71,18 @@ export default function AboutPage() {
       </section>
 
       {/* Stats Bar */}
-      <section className="py-10 bg-gray-50 dark:bg-gray-900 border-b border-gray-200 dark:border-gray-800">
+      <section className="py-10 bg-gray-50 dark:bg-[#0A0A0A] border-b border-gray-200 dark:border-zinc-800">
         <div className="container mx-auto px-5 sm:px-8 lg:px-16">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-5xl mx-auto text-center">
             {[{ value: '1,000+', label: 'Projects Delivered' }, { value: '20+', label: 'Years Experience' }, { value: '32+', label: 'Brand Partners' }, { value: '4.9/5', label: 'Client Rating' }].map((stat, i) => (
-              <div key={i}><p className="text-2xl font-bold text-[#C9A962]">{stat.value}</p><p className="text-xs text-gray-500 dark:text-gray-400 uppercase tracking-wider mt-1">{stat.label}</p></div>
+              <div key={i}><p className="text-2xl font-bold text-[#C9A962]">{stat.value}</p><p className="text-xs text-gray-500 dark:text-zinc-500 uppercase tracking-wider mt-1">{stat.label}</p></div>
             ))}
           </div>
         </div>
       </section>
 
       {/* Values */}
-      <section className="py-16 lg:py-20 bg-white dark:bg-gray-950" data-testid="values-section">
+      <section className="py-16 lg:py-20 bg-white dark:bg-[#050505]" data-testid="values-section">
         <div className="container mx-auto px-5 sm:px-8 lg:px-16">
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-12">
@@ -94,12 +94,12 @@ export default function AboutPage() {
                 const Icon = value.icon
                 return (
                   <motion.div key={i} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.3, delay: i * 0.1 }}
-                    className="bg-gray-50 dark:bg-gray-900 rounded-xl p-7 border border-gray-100 dark:border-gray-800 hover:shadow-lg transition-shadow group text-center">
+                    className="bg-gray-50 dark:bg-[#0A0A0A] rounded-xl p-7 border border-gray-100 dark:border-zinc-800 hover:shadow-lg transition-shadow group text-center">
                     <div className="w-14 h-14 rounded-lg bg-gray-900 dark:bg-[#C9A962] flex items-center justify-center mb-5 mx-auto group-hover:bg-[#C9A962] transition-colors">
                       <Icon className="text-white dark:text-gray-900 group-hover:text-gray-900 transition-colors" size={24} />
                     </div>
                     <h3 className="text-base font-bold mb-2 text-gray-900 dark:text-white">{value.title}</h3>
-                    <p className="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">{value.description}</p>
+                    <p className="text-sm text-gray-600 dark:text-zinc-500 leading-relaxed">{value.description}</p>
                   </motion.div>
                 )
               })}
@@ -131,7 +131,7 @@ export default function AboutPage() {
       </section>
 
       {/* Brand Partners */}
-      <section className="py-16 lg:py-20 bg-white dark:bg-gray-950" data-testid="partners-section">
+      <section className="py-16 lg:py-20 bg-white dark:bg-[#050505]" data-testid="partners-section">
         <div className="container mx-auto px-5 sm:px-8 lg:px-16">
           <div className="max-w-5xl mx-auto">
             <div className="text-center mb-12">
@@ -142,7 +142,7 @@ export default function AboutPage() {
               {partners.map((brand: string, i: number) => (
                 <motion.div key={i} initial={{ opacity: 0, y: 10 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.2, delay: i * 0.04 }} className="group">
                   <Link href={`/brands/${brand.toLowerCase().replace(/\s+/g, '-').replace(/&/g, '')}`}
-                    className="flex flex-col items-center justify-center p-5 h-24 rounded-xl bg-gray-50 dark:bg-gray-900 border border-gray-200 dark:border-gray-800 hover:border-[#C9A962]/60 hover:shadow-md transition-all">
+                    className="flex flex-col items-center justify-center p-5 h-24 rounded-xl bg-gray-50 dark:bg-[#0A0A0A] border border-gray-200 dark:border-zinc-800 hover:border-[#C9A962]/60 hover:shadow-md transition-all">
                     <span className="text-base font-bold text-gray-800 dark:text-gray-200 group-hover:text-[#C9A962] transition-colors">{brand}</span>
                     <span className="text-[10px] text-gray-400 uppercase tracking-widest mt-1">Partner</span>
                   </Link>

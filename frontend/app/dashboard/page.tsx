@@ -133,7 +133,7 @@ export default function DashboardPage() {
   }
 
   return (
-    <div className="min-h-screen bg-gray-50 dark:bg-gray-900 py-12">
+    <div className="min-h-screen bg-gray-50 dark:bg-[#0A0A0A] py-12">
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
         {/* Header */}
         <motion.div
@@ -144,7 +144,7 @@ export default function DashboardPage() {
           <div className="flex items-center justify-between flex-wrap gap-4">
             <div>
               <h1 className="text-3xl font-semibold text-gray-900 dark:text-white mb-2">My Projects</h1>
-              <p className="text-gray-600 dark:text-gray-400">Track and manage your smart home projects</p>
+              <p className="text-gray-600 dark:text-zinc-500">Track and manage your smart home projects</p>
             </div>
             <div className="flex items-center gap-3">
               <Button
@@ -170,8 +170,8 @@ export default function DashboardPage() {
         {loading && (
           <div className="py-8">
             <div className="animate-pulse space-y-4">
-              <div className="h-32 bg-gray-100 dark:bg-gray-800 rounded-xl"></div>
-              <div className="h-32 bg-gray-100 dark:bg-gray-800 rounded-xl"></div>
+              <div className="h-32 bg-gray-100 dark:bg-[#171717] rounded-xl"></div>
+              <div className="h-32 bg-gray-100 dark:bg-[#171717] rounded-xl"></div>
             </div>
           </div>
         )}
@@ -181,13 +181,13 @@ export default function DashboardPage() {
           <motion.div
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
-            className="bg-white dark:bg-gray-800 rounded-xl border border-gray-200 dark:border-gray-700 p-12 text-center"
+            className="bg-white dark:bg-[#171717] rounded-xl border border-gray-200 dark:border-zinc-800 p-12 text-center"
           >
-            <div className="w-16 h-16 bg-gray-100 dark:bg-gray-800 rounded-full flex items-center justify-center mx-auto mb-4">
+            <div className="w-16 h-16 bg-gray-100 dark:bg-[#171717] rounded-full flex items-center justify-center mx-auto mb-4">
               <FolderOpen className="w-8 h-8 text-gray-400" />
             </div>
             <h2 className="text-xl font-semibold text-gray-900 dark:text-white mb-2">No Projects Yet</h2>
-            <p className="text-gray-600 dark:text-gray-400 mb-6 max-w-md mx-auto">
+            <p className="text-gray-600 dark:text-zinc-500 mb-6 max-w-md mx-auto">
               Start building your smart home project and it will appear here. 
               Your progress is automatically saved.
             </p>
@@ -209,7 +209,7 @@ export default function DashboardPage() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.2 }}
-                className="bg-white dark:bg-gray-800 rounded-xl border border-gray-200 dark:border-gray-700 overflow-hidden hover:shadow-lg transition-shadow"
+                className="bg-white dark:bg-[#171717] rounded-xl border border-gray-200 dark:border-zinc-800 overflow-hidden hover:shadow-lg transition-shadow"
                 data-testid={`project-card-${session.session_id}`}
               >
                 {/* Card Header */}
@@ -256,7 +256,7 @@ export default function DashboardPage() {
                         <span>Progress</span>
                         <span>{getStepProgress(session)}%</span>
                       </div>
-                      <div className="h-2 bg-gray-100 dark:bg-gray-800 rounded-full overflow-hidden">
+                      <div className="h-2 bg-gray-100 dark:bg-[#171717] rounded-full overflow-hidden">
                         <div 
                           className="h-full bg-[#C9A962] rounded-full transition-all"
                           style={{ width: `${getStepProgress(session)}%` }}
@@ -320,17 +320,17 @@ export default function DashboardPage() {
             transition={{ delay: 0.3 }}
             className="mt-8 grid grid-cols-1 sm:grid-cols-3 gap-4"
           >
-            <div className="bg-white dark:bg-gray-800 rounded-xl border border-gray-200 dark:border-gray-700 p-4 text-center">
+            <div className="bg-white dark:bg-[#171717] rounded-xl border border-gray-200 dark:border-zinc-800 p-4 text-center">
               <div className="text-3xl font-semibold text-gray-900 dark:text-white">{sessions.length}</div>
               <div className="text-sm text-gray-500">Total Projects</div>
             </div>
-            <div className="bg-white dark:bg-gray-800 rounded-xl border border-gray-200 dark:border-gray-700 p-4 text-center">
+            <div className="bg-white dark:bg-[#171717] rounded-xl border border-gray-200 dark:border-zinc-800 p-4 text-center">
               <div className="text-3xl font-semibold text-[#C9A962]">
                 {sessions.filter(s => !s.completed).length}
               </div>
               <div className="text-sm text-gray-500">In Progress</div>
             </div>
-            <div className="bg-white dark:bg-gray-800 rounded-xl border border-gray-200 dark:border-gray-700 p-4 text-center">
+            <div className="bg-white dark:bg-[#171717] rounded-xl border border-gray-200 dark:border-zinc-800 p-4 text-center">
               <div className="text-3xl font-semibold text-green-600">
                 {sessions.filter(s => s.completed).length}
               </div>

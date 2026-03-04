@@ -56,7 +56,7 @@ export default function TrustBadges({
   }
 
   return (
-    <section className={`py-12 bg-gray-50 dark:bg-gray-900/50 ${className}`}>
+    <section className={`py-12 bg-gray-50 dark:bg-[#0A0A0A]/50 ${className}`}>
       <div className="container mx-auto px-4">
         {/* Stats Row */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-12">
@@ -70,16 +70,16 @@ export default function TrustBadges({
               className="text-center"
             >
               <stat.icon className="w-8 h-8 text-[#C9A962] mx-auto mb-2" />
-              <div className="text-3xl font-bold text-gray-900 dark:text-white dark:text-white">{stat.value}</div>
-              <div className="text-sm text-gray-600 dark:text-gray-400 dark:text-gray-400">{stat.label}</div>
+              <div className="text-3xl font-bold text-gray-900 dark:text-white">{stat.value}</div>
+              <div className="text-sm text-gray-600 dark:text-zinc-500">{stat.label}</div>
             </motion.div>
           ))}
         </div>
 
         {/* Certifications */}
         {showCertifications && (
-          <div className="border-t border-gray-200 dark:border-gray-700 dark:border-gray-700 pt-8">
-            <p className="text-center text-sm text-gray-500 dark:text-gray-400 uppercase tracking-widest mb-6">
+          <div className="border-t border-gray-200 dark:border-zinc-800 pt-8">
+            <p className="text-center text-sm text-gray-500 dark:text-zinc-500 uppercase tracking-widest mb-6">
               Certified Partners
             </p>
             <div className="flex flex-wrap justify-center items-center gap-8">
@@ -102,8 +102,8 @@ export default function TrustBadges({
 
         {/* Client Logos */}
         {showClients && (
-          <div className="border-t border-gray-200 dark:border-gray-700 dark:border-gray-700 pt-8 mt-8">
-            <p className="text-center text-sm text-gray-500 dark:text-gray-400 uppercase tracking-widest mb-6">
+          <div className="border-t border-gray-200 dark:border-zinc-800 pt-8 mt-8">
+            <p className="text-center text-sm text-gray-500 dark:text-zinc-500 uppercase tracking-widest mb-6">
               Trusted By Leading Developers
             </p>
             <div className="flex flex-wrap justify-center items-center gap-8">

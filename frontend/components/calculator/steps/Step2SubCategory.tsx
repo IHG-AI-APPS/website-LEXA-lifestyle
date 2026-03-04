@@ -9,7 +9,7 @@ export default function Step2SubCategory({ subCategories, selectedSubCategory, o
     <div className="space-y-6">
       <div className="text-center mb-8">
         <h2 className="text-3xl font-bold mb-3">Choose Your Property Sub-Type</h2>
-        <p className="text-gray-600 dark:text-gray-400 dark:text-gray-400">
+        <p className="text-gray-600 dark:text-zinc-500">
           Select the specific category for more accurate recommendations
         </p>
       </div>
@@ -22,7 +22,7 @@ export default function Step2SubCategory({ subCategories, selectedSubCategory, o
             className={`p-6 border-2 rounded-lg text-left transition-all ${
               selectedSubCategory === sub.id
                 ? 'border-black bg-gray-50'
-                : 'border-gray-200 dark:border-gray-700 hover:border-gray-400'
+                : 'border-gray-200 dark:border-zinc-800 hover:border-gray-400'
             }`}
           >
             <h3 className="font-semibold text-lg">{sub.label}</h3>

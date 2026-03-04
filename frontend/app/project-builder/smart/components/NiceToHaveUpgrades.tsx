@@ -228,10 +228,10 @@ export default function NiceToHaveUpgrades({
       <div className="max-w-4xl mx-auto px-4 py-12">
         <div className="animate-pulse">
           <div className="h-8 bg-gray-200 rounded w-1/3 mb-4 mx-auto"></div>
-          <div className="h-4 bg-gray-100 dark:bg-gray-800 rounded w-1/2 mb-8 mx-auto"></div>
+          <div className="h-4 bg-gray-100 dark:bg-[#171717] rounded w-1/2 mb-8 mx-auto"></div>
           <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
             {[...Array(6)].map((_, i) => (
-              <div key={i} className="h-24 bg-gray-100 dark:bg-gray-800 rounded-lg"></div>
+              <div key={i} className="h-24 bg-gray-100 dark:bg-[#171717] rounded-lg"></div>
             ))}
           </div>
         </div>
@@ -263,7 +263,7 @@ export default function NiceToHaveUpgrades({
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.2 }}
-          className="text-gray-600 dark:text-gray-400"
+          className="text-gray-600 dark:text-zinc-500"
         >
           Add these premium features to your {selectedPackage} package
         </motion.p>
@@ -273,7 +273,7 @@ export default function NiceToHaveUpgrades({
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.3 }}
-          className="mt-4 inline-flex items-center gap-3 px-5 py-3 bg-gray-100 dark:bg-gray-800 rounded-xl text-sm"
+          className="mt-4 inline-flex items-center gap-3 px-5 py-3 bg-gray-100 dark:bg-[#171717] rounded-xl text-sm"
         >
           <div>
             <span className="text-gray-500">Your Package:</span>
@@ -305,7 +305,7 @@ export default function NiceToHaveUpgrades({
               className={`relative p-5 rounded-2xl border-2 text-left transition-all ${
                 isSelected
                   ? 'border-[#C9A962] bg-[#C9A962]/5 shadow-lg'
-                  : 'border-gray-200 dark:border-gray-700 bg-white hover:border-gray-300 dark:border-gray-600 hover:shadow-md'
+                  : 'border-gray-200 dark:border-zinc-800 bg-white hover:border-gray-300 dark:border-zinc-700 hover:shadow-md'
               }`}
             >
               {/* Price Badge */}
@@ -347,7 +347,7 @@ export default function NiceToHaveUpgrades({
       )}
 
       {/* Bottom Navigation */}
-      <div className="sticky bottom-0 bg-white border-t border-gray-200 dark:border-gray-700 p-4 -mx-4">
+      <div className="sticky bottom-0 bg-white border-t border-gray-200 dark:border-zinc-800 p-4 -mx-4">
         <div className="max-w-4xl mx-auto flex items-center justify-between">
           <Button variant="outline" onClick={onBack}>
             <ChevronLeft className="w-4 h-4 mr-1" />

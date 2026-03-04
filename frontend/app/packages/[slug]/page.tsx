@@ -81,7 +81,7 @@ export default function PropertyPackageDetailPage() {
   const brands = packageData.brands || []
 
   return (
-    <div className="min-h-screen bg-white dark:bg-gray-950 pt-20" data-testid="package-detail-page">
+    <div className="min-h-screen bg-white dark:bg-[#050505] pt-20" data-testid="package-detail-page">
       {/* Hero — Split Layout */}
       <section className="relative overflow-hidden bg-[#0A0A0A] dark:bg-[#050505] text-white">
         <div className="grid grid-cols-1 lg:grid-cols-2 min-h-[480px]">
@@ -115,7 +115,7 @@ export default function PropertyPackageDetailPage() {
       </section>
 
       {/* Property Specs */}
-      <section className="py-10 bg-gray-50 dark:bg-gray-900 border-b border-gray-200 dark:border-gray-800">
+      <section className="py-10 bg-gray-50 dark:bg-[#0A0A0A] border-b border-gray-200 dark:border-zinc-800">
         <div className="container mx-auto px-5 sm:px-8 lg:px-16">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-5xl mx-auto">
             <div className="text-center">
@@ -135,7 +135,7 @@ export default function PropertyPackageDetailPage() {
 
       {/* Overview + Sidebar */}
       {packageData.long_description && (
-        <section className="py-16 lg:py-20 bg-white dark:bg-gray-950">
+        <section className="py-16 lg:py-20 bg-white dark:bg-[#050505]">
           <div className="container mx-auto px-5 sm:px-8 lg:px-16">
             <div className="max-w-6xl mx-auto">
               <div className="grid grid-cols-1 lg:grid-cols-5 gap-12">
@@ -144,11 +144,11 @@ export default function PropertyPackageDetailPage() {
                   <h2 className="text-2xl sm:text-3xl font-bold mt-2 mb-6 text-gray-900 dark:text-white">
                     Smart Home Solutions for {packageData.title}
                   </h2>
-                  <p className="text-base text-gray-600 dark:text-gray-300 leading-relaxed">{packageData.long_description}</p>
+                  <p className="text-base text-gray-600 dark:text-zinc-400 leading-relaxed">{packageData.long_description}</p>
                 </div>
                 <div className="lg:col-span-2">
                   <div className="sticky top-28 space-y-5">
-                    <div className="bg-gray-900 dark:bg-gray-800 text-white rounded-xl p-6">
+                    <div className="bg-gray-900 dark:bg-[#171717] text-white rounded-xl p-6">
                       <h3 className="text-lg font-semibold mb-4">Why Choose LEXA?</h3>
                       <div className="space-y-4">
                         {[
@@ -182,7 +182,7 @@ export default function PropertyPackageDetailPage() {
 
       {/* Feature Cards — What You Get */}
       {featureCards.length > 0 && (
-        <section className="py-16 lg:py-20 bg-gray-50 dark:bg-gray-900" data-testid="feature-cards-section">
+        <section className="py-16 lg:py-20 bg-gray-50 dark:bg-[#0A0A0A]" data-testid="feature-cards-section">
           <div className="container mx-auto px-5 sm:px-8 lg:px-16">
             <div className="max-w-6xl mx-auto">
               <div className="text-center mb-12">
@@ -194,18 +194,18 @@ export default function PropertyPackageDetailPage() {
                   const IconComp = featureCardIcons[i] || Sparkles
                   return (
                     <motion.div key={i} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.3, delay: i * 0.1 }}
-                      className="bg-white dark:bg-gray-950 rounded-xl overflow-hidden border border-gray-100 dark:border-gray-800 hover:shadow-lg transition-shadow group">
+                      className="bg-white dark:bg-[#050505] rounded-xl overflow-hidden border border-gray-100 dark:border-zinc-800 hover:shadow-lg transition-shadow group">
                       <div className="h-1 bg-gradient-to-r from-[#C9A962] to-[#C9A962]/30" />
                       <div className="p-7">
                         <div className="w-11 h-11 rounded-lg bg-gray-900 dark:bg-[#C9A962] flex items-center justify-center mb-5 group-hover:bg-[#C9A962] transition-colors">
                           <IconComp className="text-white dark:text-gray-900 group-hover:text-gray-900 transition-colors" size={20} />
                         </div>
                         <h3 className="text-lg font-bold mb-2 text-gray-900 dark:text-white">{card.title}</h3>
-                        <p className="text-sm text-gray-600 dark:text-gray-400 mb-5 leading-relaxed">{card.description}</p>
+                        <p className="text-sm text-gray-600 dark:text-zinc-500 mb-5 leading-relaxed">{card.description}</p>
                         {card.benefits?.length > 0 && (
                           <ul className="space-y-2">
                             {card.benefits.map((benefit, j) => (
-                              <li key={j} className="flex items-start gap-2 text-sm text-gray-700 dark:text-gray-300">
+                              <li key={j} className="flex items-start gap-2 text-sm text-gray-700 dark:text-zinc-400">
                                 <CheckCircle2 size={14} className="text-[#C9A962] flex-shrink-0 mt-0.5" />
                                 {benefit}
                               </li>
@@ -223,12 +223,12 @@ export default function PropertyPackageDetailPage() {
       )}
 
       {/* Package Tiers */}
-      <section className="py-16 lg:py-24 bg-white dark:bg-gray-950" data-testid="tiers-section">
+      <section className="py-16 lg:py-24 bg-white dark:bg-[#050505]" data-testid="tiers-section">
         <div className="container mx-auto px-5 sm:px-8 lg:px-16">
           <div className="text-center mb-12">
             <span className="text-xs uppercase tracking-widest text-[#C9A962] font-semibold">Choose Your Level</span>
             <h2 className="text-2xl sm:text-3xl font-bold mt-2 text-gray-900 dark:text-white">Package Tiers</h2>
-            <p className="text-sm text-gray-500 dark:text-gray-400 mt-2 max-w-2xl mx-auto">
+            <p className="text-sm text-gray-500 dark:text-zinc-500 mt-2 max-w-2xl mx-auto">
               Select the automation level that fits your lifestyle. Each tier builds on the previous.
             </p>
           </div>
@@ -241,7 +241,7 @@ export default function PropertyPackageDetailPage() {
 
               return (
                 <motion.div key={tier.tier_level} initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: 0.2 }}
-                  className={`relative rounded-2xl border-2 ${isRecommended ? `${colors.border} shadow-xl lg:scale-105` : 'border-gray-200 dark:border-gray-700 hover:border-gray-300'} transition-all duration-300 bg-white dark:bg-gray-900 self-start`}>
+                  className={`relative rounded-2xl border-2 ${isRecommended ? `${colors.border} shadow-xl lg:scale-105` : 'border-gray-200 dark:border-zinc-800 hover:border-gray-300'} transition-all duration-300 bg-white dark:bg-[#0A0A0A] self-start`}>
                   {isRecommended && (
                     <div className={`absolute -top-4 left-1/2 -translate-x-1/2 px-4 py-1 ${colors.bg} text-white text-sm font-bold rounded-full z-10`} data-testid="recommended-badge">
                       {tier.badge}
@@ -250,10 +250,10 @@ export default function PropertyPackageDetailPage() {
                   <div className="p-6 lg:p-8">
                     <div className="text-center mb-6">
                       <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-2">{tier.tier_name}</h3>
-                      <p className="text-gray-600 dark:text-gray-400 mb-4 text-sm">{tier.tier_subtitle}</p>
+                      <p className="text-gray-600 dark:text-zinc-500 mb-4 text-sm">{tier.tier_subtitle}</p>
                       <div className="mb-4">
                         <span className="text-4xl font-bold text-gray-900 dark:text-white">{formatPrice(tier.base_price_aed)}</span>
-                        <span className="text-gray-600 dark:text-gray-400">+</span>
+                        <span className="text-gray-600 dark:text-zinc-500">+</span>
                       </div>
                       <p className="text-sm text-gray-500">{tier.typical_rooms_count}</p>
                     </div>
@@ -264,17 +264,17 @@ export default function PropertyPackageDetailPage() {
                       <FeatureSection icon={Tv} title="Entertainment" count={tier.entertainment_features?.length || 0} colors={colors} />
                     </div>
                     <button onClick={() => setExpandedTier(isExpanded ? null : tier.tier_level)} data-testid={`toggle-tier-${tier.tier_level}`}
-                      className={`w-full py-3 px-4 rounded-lg border-2 font-medium transition-colors mb-4 flex items-center justify-center gap-2 ${isRecommended ? `${colors.bg} text-white ${colors.bgHover} ${colors.border}` : `border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 ${colors.borderHover} ${colors.textHover}`}`}>
+                      className={`w-full py-3 px-4 rounded-lg border-2 font-medium transition-colors mb-4 flex items-center justify-center gap-2 ${isRecommended ? `${colors.bg} text-white ${colors.bgHover} ${colors.border}` : `border-gray-300 dark:border-zinc-700 text-gray-700 dark:text-zinc-400 ${colors.borderHover} ${colors.textHover}`}`}>
                       {isExpanded ? 'Hide Details' : 'View Full Features'}
                       {isExpanded ? <ChevronUp className="h-5 w-5" /> : <ChevronDown className="h-5 w-5" />}
                     </button>
                     <button onClick={() => handleSelectTier(tier.tier_level)} data-testid={`select-tier-${tier.tier_level}`}
-                      className={`w-full py-4 px-6 rounded-lg font-bold text-lg transition-all flex items-center justify-center gap-2 ${isRecommended ? `${colors.bg} text-white ${colors.bgHover} shadow-lg hover:shadow-xl` : 'bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-white hover:bg-gray-200'}`}>
+                      className={`w-full py-4 px-6 rounded-lg font-bold text-lg transition-all flex items-center justify-center gap-2 ${isRecommended ? `${colors.bg} text-white ${colors.bgHover} shadow-lg hover:shadow-xl` : 'bg-gray-100 dark:bg-[#171717] text-gray-900 dark:text-white hover:bg-gray-200'}`}>
                       Select {tier.tier_name} <ArrowRight className="w-5 h-5" />
                     </button>
                   </div>
                   {isExpanded && (
-                    <motion.div initial={{ opacity: 0, height: 0 }} animate={{ opacity: 1, height: 'auto' }} className="border-t border-gray-200 dark:border-gray-700 p-6 lg:p-8 bg-gray-50 dark:bg-gray-800">
+                    <motion.div initial={{ opacity: 0, height: 0 }} animate={{ opacity: 1, height: 'auto' }} className="border-t border-gray-200 dark:border-zinc-800 p-6 lg:p-8 bg-gray-50 dark:bg-[#171717]">
                       <DetailedFeatureList title="Lighting Features" features={tier.lighting_features || []} />
                       <DetailedFeatureList title="Climate Features" features={tier.climate_features || []} />
                       <DetailedFeatureList title="Security Features" features={tier.security_features || []} />
@@ -286,7 +286,7 @@ export default function PropertyPackageDetailPage() {
                           <p className="text-sm text-amber-800 dark:text-amber-400">Wine Room, Vault, Game Room, Home Bar, Spa, Gym, and more</p>
                         </div>
                       )}
-                      <div className="mt-6 text-sm text-gray-600 dark:text-gray-400">
+                      <div className="mt-6 text-sm text-gray-600 dark:text-zinc-500">
                         <p className="font-semibold text-gray-900 dark:text-white mb-1">Support Level:</p>
                         <p>{tier.support_level}</p>
                       </div>
@@ -301,7 +301,7 @@ export default function PropertyPackageDetailPage() {
 
       {/* Brands We Partner With */}
       {brands.length > 0 && (
-        <section className="py-16 lg:py-20 bg-gray-50 dark:bg-gray-900" data-testid="brands-section">
+        <section className="py-16 lg:py-20 bg-gray-50 dark:bg-[#0A0A0A]" data-testid="brands-section">
           <div className="container mx-auto px-5 sm:px-8 lg:px-16">
             <div className="max-w-5xl mx-auto">
               <div className="text-center mb-12">
@@ -312,7 +312,7 @@ export default function PropertyPackageDetailPage() {
                 {brands.map((brand: string, i: number) => (
                   <motion.div key={i} initial={{ opacity: 0, y: 10 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.2, delay: i * 0.04 }} className="group">
                     <Link href={`/brands/${brand.toLowerCase().replace(/\s+/g, '-')}`}
-                      className="flex flex-col items-center justify-center p-5 h-24 rounded-xl bg-white dark:bg-gray-950 border border-gray-200 dark:border-gray-800 hover:border-[#C9A962]/60 hover:shadow-md transition-all">
+                      className="flex flex-col items-center justify-center p-5 h-24 rounded-xl bg-white dark:bg-[#050505] border border-gray-200 dark:border-zinc-800 hover:border-[#C9A962]/60 hover:shadow-md transition-all">
                       <span className="text-base font-bold text-gray-800 dark:text-gray-200 group-hover:text-[#C9A962] transition-colors tracking-wide">{brand}</span>
                       <span className="text-[10px] text-gray-400 uppercase tracking-widest mt-1">Partner</span>
                     </Link>
@@ -326,7 +326,7 @@ export default function PropertyPackageDetailPage() {
 
       {/* Inspirations Gallery */}
       {galleryImages.length > 0 && (
-        <section className="py-16 lg:py-20 bg-white dark:bg-gray-950" data-testid="gallery-section">
+        <section className="py-16 lg:py-20 bg-white dark:bg-[#050505]" data-testid="gallery-section">
           <div className="container mx-auto px-5 sm:px-8 lg:px-16">
             <div className="max-w-6xl mx-auto">
               <div className="text-center mb-12">
@@ -351,7 +351,7 @@ export default function PropertyPackageDetailPage() {
 
       {/* FAQ Section */}
       {allFaqs.length > 0 && (
-        <section className="py-16 lg:py-20 bg-gray-50 dark:bg-gray-900" data-testid="faq-section">
+        <section className="py-16 lg:py-20 bg-gray-50 dark:bg-[#0A0A0A]" data-testid="faq-section">
           <div className="container mx-auto px-5 sm:px-8 lg:px-16">
             <div className="max-w-4xl mx-auto">
               <div className="text-center mb-12">
@@ -360,9 +360,9 @@ export default function PropertyPackageDetailPage() {
               </div>
               <div className="space-y-4">
                 {allFaqs.map((faq: any, i: number) => (
-                  <div key={i} className="bg-white dark:bg-gray-950 p-6 rounded-xl border border-gray-100 dark:border-gray-800">
+                  <div key={i} className="bg-white dark:bg-[#050505] p-6 rounded-xl border border-gray-100 dark:border-zinc-800">
                     <h3 className="text-base font-semibold mb-2 text-gray-900 dark:text-white">{faq.question}</h3>
-                    <p className="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">{faq.answer}</p>
+                    <p className="text-sm text-gray-600 dark:text-zinc-500 leading-relaxed">{faq.answer}</p>
                   </div>
                 ))}
               </div>
@@ -421,7 +421,7 @@ function DetailedFeatureList({ title, features }: { title: string; features: str
       <h4 className="font-bold text-gray-900 dark:text-white mb-3">{title}</h4>
       <ul className="space-y-2">
         {features.map((feature, i) => (
-          <li key={i} className="flex items-start gap-2 text-sm text-gray-700 dark:text-gray-300">
+          <li key={i} className="flex items-start gap-2 text-sm text-gray-700 dark:text-zinc-400">
             <Check className="h-4 w-4 text-green-600 mt-0.5 flex-shrink-0" /><span>{feature}</span>
           </li>
         ))}

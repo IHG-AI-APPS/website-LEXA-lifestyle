@@ -234,7 +234,7 @@ export default function IntelligenceEngine({ sessionId, projectData, onComplete 
           <p className="text-sm text-gray-500 uppercase tracking-widest mb-2">
             693 Features Analyzed • {mandatoryCount} Selected • {resolution.recommended_bundles?.length || 0} Systems
           </p>
-          <p className="text-xs text-gray-600 dark:text-gray-400">
+          <p className="text-xs text-gray-600 dark:text-zinc-500">
             AI filtered down to {totalFeatures} relevant features for your project
           </p>
         </div>
@@ -252,19 +252,19 @@ export default function IntelligenceEngine({ sessionId, projectData, onComplete 
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.2 }}
-              className="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 p-6 text-center hover:border-[#C9A962] hover:shadow-md transition-all duration-300"
+              className="bg-white dark:bg-[#171717] border border-gray-200 dark:border-zinc-800 p-6 text-center hover:border-[#C9A962] hover:shadow-md transition-all duration-300"
             >
               <stat.icon className={`w-6 h-6 mx-auto mb-3 text-${stat.color}-600`} />
               <div className="text-3xl font-semibold text-gray-900 dark:text-white mb-1">
                 {stat.value}
               </div>
-              <div className="text-xs text-gray-600 dark:text-gray-400 uppercase tracking-widest">{stat.label}</div>
+              <div className="text-xs text-gray-600 dark:text-zinc-500 uppercase tracking-widest">{stat.label}</div>
             </motion.div>
           ))}
         </div>
 
         {/* Legend */}
-        <div className="bg-gradient-to-r from-gray-50 to-blue-50 border border-gray-200 dark:border-gray-700 p-6 mb-8">
+        <div className="bg-gradient-to-r from-gray-50 to-blue-50 border border-gray-200 dark:border-zinc-800 p-6 mb-8">
           <div className="flex items-center justify-between flex-wrap gap-4">
             <div className="flex items-center gap-6">
               {Object.entries(CLASSIFICATION_CONFIG).map(([key, config]) => {
@@ -274,12 +274,12 @@ export default function IntelligenceEngine({ sessionId, projectData, onComplete 
                     <div className={`${config.bg} p-2 rounded`}>
                       <Icon className={`w-4 h-4 ${config.color}`} />
                     </div>
-                    <span className="text-xs font-medium text-gray-700 dark:text-gray-300">{config.label}</span>
+                    <span className="text-xs font-medium text-gray-700 dark:text-zinc-400">{config.label}</span>
                   </div>
                 )
               })}
             </div>
-            <div className="text-xs text-gray-600 dark:text-gray-400">
+            <div className="text-xs text-gray-600 dark:text-zinc-500">
               💡 Click features to customize • Hover for AI reasoning
             </div>
           </div>
@@ -290,13 +290,13 @@ export default function IntelligenceEngine({ sessionId, projectData, onComplete 
           <h3 className="text-lg font-medium uppercase tracking-widest text-gray-900 dark:text-white">
             System Analysis
           </h3>
-          <div className="flex items-center gap-2 bg-gray-100 dark:bg-gray-800 p-1 rounded-lg">
+          <div className="flex items-center gap-2 bg-gray-100 dark:bg-[#171717] p-1 rounded-lg">
             <button
               onClick={() => setViewMode('list')}
               className={`px-4 py-2 text-sm font-medium rounded transition-all ${
                 viewMode === 'list'
                   ? 'bg-white text-[#C9A962] shadow-sm'
-                  : 'text-gray-600 dark:text-gray-400 hover:text-gray-900'
+                  : 'text-gray-600 dark:text-zinc-500 hover:text-gray-900'
               }`}
             >
               List View
@@ -306,7 +306,7 @@ export default function IntelligenceEngine({ sessionId, projectData, onComplete 
               className={`px-4 py-2 text-sm font-medium rounded transition-all flex items-center gap-2 ${
                 viewMode === 'graph'
                   ? 'bg-white text-[#C9A962] shadow-sm'
-                  : 'text-gray-600 dark:text-gray-400 hover:text-gray-900'
+                  : 'text-gray-600 dark:text-zinc-500 hover:text-gray-900'
               }`}
             >
               <Network className="w-4 h-4" />
@@ -345,7 +345,7 @@ export default function IntelligenceEngine({ sessionId, projectData, onComplete 
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: bundleIndex * 0.1 }}
-                className="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 overflow-hidden hover:border-[#C9A962] transition-all duration-300"
+                className="bg-white dark:bg-[#171717] border border-gray-200 dark:border-zinc-800 overflow-hidden hover:border-[#C9A962] transition-all duration-300"
               >
                 {/* Domain Header - Clickable */}
                 <button
@@ -360,7 +360,7 @@ export default function IntelligenceEngine({ sessionId, projectData, onComplete 
                     )}
                     <div className="text-left">
                       <h4 className="text-lg font-semibold text-gray-900 dark:text-white">{bundle.system_domain}</h4>
-                      <p className="text-xs text-gray-600 dark:text-gray-400 mt-1">
+                      <p className="text-xs text-gray-600 dark:text-zinc-500 mt-1">
                         {bundleFeatures.length} features • {selectedInBundle} selected • Score: {Math.round(bundle.score)}/100
                       </p>
                     </div>
@@ -381,7 +381,7 @@ export default function IntelligenceEngine({ sessionId, projectData, onComplete 
                       animate={{ height: 'auto', opacity: 1 }}
                       exit={{ height: 0, opacity: 0 }}
                       transition={{ duration: 0.3 }}
-                      className="border-t border-gray-200 dark:border-gray-700 bg-gray-50"
+                      className="border-t border-gray-200 dark:border-zinc-800 bg-gray-50"
                     >
                       <div className="p-6 space-y-3">
                         {bundleFeatures.slice(0, 10).map((feature: any, featureIndex: number) => {
@@ -403,8 +403,8 @@ export default function IntelligenceEngine({ sessionId, projectData, onComplete 
                               onMouseLeave={() => setHoveredFeature(null)}
                               className={`w-full p-4 border rounded text-left transition-all duration-300 relative group ${
                                 isSelected
-                                  ? 'border-[#C9A962] bg-white dark:bg-gray-800 shadow-md'
-                                  : 'border-gray-200 dark:border-gray-700 bg-white hover:border-gray-300 dark:border-gray-600 hover:shadow-sm'
+                                  ? 'border-[#C9A962] bg-white dark:bg-[#171717] shadow-md'
+                                  : 'border-gray-200 dark:border-zinc-800 bg-white hover:border-gray-300 dark:border-zinc-700 hover:shadow-sm'
                               }`}
                             >
                               {/* Selection Checkbox */}
@@ -430,7 +430,7 @@ export default function IntelligenceEngine({ sessionId, projectData, onComplete 
                                   </div>
 
                                   {/* AI Reasoning */}
-                                  <div className="text-xs text-gray-600 dark:text-gray-400 mb-2 flex items-start gap-1">
+                                  <div className="text-xs text-gray-600 dark:text-zinc-500 mb-2 flex items-start gap-1">
                                     <Brain className="w-3 h-3 text-[#C9A962] mt-0.5 flex-shrink-0" />
                                     <span>{reasoning}</span>
                                   </div>
@@ -493,7 +493,7 @@ export default function IntelligenceEngine({ sessionId, projectData, onComplete 
               <Network className="w-6 h-6 text-orange-600" />
               <div>
                 <h3 className="text-sm font-medium uppercase tracking-widest text-gray-900 dark:text-white mb-2">Auto-Resolved Dependencies</h3>
-                <p className="text-xs text-gray-600 dark:text-gray-400 mb-4">
+                <p className="text-xs text-gray-600 dark:text-zinc-500 mb-4">
                   These systems were automatically added as prerequisites:
                 </p>
               </div>
@@ -510,7 +510,7 @@ export default function IntelligenceEngine({ sessionId, projectData, onComplete 
 
         {/* Continue Button */}
         <div className="text-center">
-          <div className="mb-4 text-sm text-gray-600 dark:text-gray-400">
+          <div className="mb-4 text-sm text-gray-600 dark:text-zinc-500">
             <span className="font-semibold text-[#C9A962]">{mandatoryCount}</span> features selected from {totalFeatures} analyzed
           </div>
           <Button

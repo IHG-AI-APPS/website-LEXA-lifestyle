@@ -66,7 +66,7 @@ export default function SolutionDetailPage() {
       <div className="min-h-screen bg-white pt-20 flex items-center justify-center">
         <div className="text-center">
           <h1 className="text-4xl font-semibold mb-4">Solution Not Found</h1>
-          <p className="text-gray-600 dark:text-gray-400 mb-8">The solution you&apos;re looking for doesn&apos;t exist.</p>
+          <p className="text-gray-600 dark:text-zinc-500 mb-8">The solution you&apos;re looking for doesn&apos;t exist.</p>
           <Link href="/solutions">
             <Button>View All Solutions</Button>
           </Link>
@@ -98,7 +98,7 @@ export default function SolutionDetailPage() {
                 
                 <div className="h-px w-32 bg-gradient-to-r from-platinum to-transparent mb-8" />
                 
-                <p className="text-lg text-gray-600 dark:text-gray-400 leading-relaxed mb-8">
+                <p className="text-lg text-gray-600 dark:text-zinc-500 leading-relaxed mb-8">
                   {solution.description}
                 </p>
 
@@ -107,7 +107,7 @@ export default function SolutionDetailPage() {
                   {solution.tags.map((tag) => (
                     <span
                       key={tag}
-                      className="px-4 py-2 border border-gray-300 dark:border-gray-600 text-sm font-medium tracking-wide uppercase"
+                      className="px-4 py-2 border border-gray-300 dark:border-zinc-700 text-sm font-medium tracking-wide uppercase"
                     >
                       {tag}
                     </span>
@@ -157,7 +157,7 @@ export default function SolutionDetailPage() {
 
       {/* Long Description Section */}
       {solution.long_description && (
-        <section className="py-20 border-b border-gray-200 dark:border-gray-700">
+        <section className="py-20 border-b border-gray-200 dark:border-zinc-800">
           <div className="container mx-auto px-5 sm:px-8 lg:px-16">
             <div className="max-w-4xl mx-auto">
               <motion.div
@@ -167,7 +167,7 @@ export default function SolutionDetailPage() {
                 viewport={{ once: true }}
               >
                 <h2 className="text-4xl font-semibold mb-6">Overview</h2>
-                <p className="text-xl text-gray-600 dark:text-gray-400 leading-relaxed">
+                <p className="text-xl text-gray-600 dark:text-zinc-500 leading-relaxed">
                   {solution.long_description}
                 </p>
               </motion.div>
@@ -189,7 +189,7 @@ export default function SolutionDetailPage() {
                 className="mb-12 text-center"
               >
                 <h2 className="text-5xl font-semibold mb-4">Comprehensive Features</h2>
-                <p className="text-xl text-gray-600 dark:text-gray-400">
+                <p className="text-xl text-gray-600 dark:text-zinc-500">
                   Everything you need for the ultimate {solution.title.toLowerCase()} experience
                 </p>
               </motion.div>
@@ -202,17 +202,17 @@ export default function SolutionDetailPage() {
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.6, delay: 0.2 }}
                     viewport={{ once: true }}
-                    className="bg-gray-50 border border-gray-200 dark:border-gray-700 p-8 hover:border-charcoal transition-all duration-300"
+                    className="bg-gray-50 border border-gray-200 dark:border-zinc-800 p-8 hover:border-charcoal transition-all duration-300"
                   >
                     <div className="mb-4">
                       <Sparkles className="text-charcoal" size={32} strokeWidth={1.5} />
                     </div>
                     <h3 className="text-2xl font-semibold mb-3">{card.title}</h3>
-                    <p className="text-gray-600 dark:text-gray-400 mb-6 leading-relaxed">{card.description}</p>
+                    <p className="text-gray-600 dark:text-zinc-500 mb-6 leading-relaxed">{card.description}</p>
                     {card.benefits && card.benefits.length > 0 && (
                       <ul className="space-y-2">
                         {card.benefits.map((benefit, bIndex) => (
-                          <li key={bIndex} className="flex items-start gap-2 text-sm text-gray-700 dark:text-gray-300">
+                          <li key={bIndex} className="flex items-start gap-2 text-sm text-gray-700 dark:text-zinc-400">
                             <CheckCircle2 size={16} className="text-charcoal flex-shrink-0 mt-0.5" />
                             <span>{benefit}</span>
                           </li>
@@ -239,7 +239,7 @@ export default function SolutionDetailPage() {
               className="mb-12"
             >
               <h2 className="text-5xl font-semibold mb-4">Key Features</h2>
-              <p className="text-xl text-gray-600 dark:text-gray-400">
+              <p className="text-xl text-gray-600 dark:text-zinc-500">
                 Everything you need for the ultimate {solution.title.toLowerCase()} experience
               </p>
             </motion.div>
@@ -252,7 +252,7 @@ export default function SolutionDetailPage() {
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: 0.2 }}
                   viewport={{ once: true }}
-                  className="flex items-start gap-4 p-6 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700"
+                  className="flex items-start gap-4 p-6 bg-white dark:bg-[#171717] border border-gray-200 dark:border-zinc-800"
                 >
                   <CheckCircle2 className="text-charcoal flex-shrink-0 mt-1" size={24} strokeWidth={2} />
                   <div>
@@ -267,7 +267,7 @@ export default function SolutionDetailPage() {
 
       {/* Technology Brands Section */}
       {solution.brands.length > 0 && (
-        <section className="py-20 border-b border-gray-200 dark:border-gray-700">
+        <section className="py-20 border-b border-gray-200 dark:border-zinc-800">
           <div className="container mx-auto px-5 sm:px-8 lg:px-16">
             <div className="max-w-6xl mx-auto">
               <motion.div
@@ -278,7 +278,7 @@ export default function SolutionDetailPage() {
                 className="text-center mb-12"
               >
                 <h2 className="text-4xl font-semibold mb-4">Premium Technology Partners</h2>
-                <p className="text-xl text-gray-600 dark:text-gray-400">
+                <p className="text-xl text-gray-600 dark:text-zinc-500">
                   We work with the world&apos;s leading brands
                 </p>
               </motion.div>
@@ -293,7 +293,7 @@ export default function SolutionDetailPage() {
                 {solution.brands.map((brand, index) => (
                   <div
                     key={index}
-                    className="px-8 py-4 border border-gray-300 dark:border-gray-600 text-lg font-medium tracking-wide hover:border-charcoal transition-colors"
+                    className="px-8 py-4 border border-gray-300 dark:border-zinc-700 text-lg font-medium tracking-wide hover:border-charcoal transition-colors"
                   >
                     {brand}
                   </div>
@@ -393,7 +393,7 @@ export default function SolutionDetailPage() {
                 className="mb-12"
               >
                 <h2 className="text-4xl font-semibold mb-4">Frequently Asked Questions</h2>
-                <p className="text-xl text-gray-600 dark:text-gray-400">
+                <p className="text-xl text-gray-600 dark:text-zinc-500">
                   Everything you need to know about {solution.title.toLowerCase()}
                 </p>
               </motion.div>
@@ -406,10 +406,10 @@ export default function SolutionDetailPage() {
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.6, delay: 0.2 }}
                     viewport={{ once: true }}
-                    className="bg-white dark:bg-gray-800 p-8 border border-gray-200 dark:border-gray-700"
+                    className="bg-white dark:bg-[#171717] p-8 border border-gray-200 dark:border-zinc-800"
                   >
                     <h3 className="text-xl font-semibold mb-3">{faq.question}</h3>
-                    <p className="text-gray-600 dark:text-gray-400 leading-relaxed">{faq.answer}</p>
+                    <p className="text-gray-600 dark:text-zinc-500 leading-relaxed">{faq.answer}</p>
                   </motion.div>
                 ))}
               </div>
@@ -420,7 +420,7 @@ export default function SolutionDetailPage() {
 
       {/* Use Cases Section */}
       {solution.use_cases && solution.use_cases.length > 0 && (
-        <section className="py-20 border-b border-gray-200 dark:border-gray-700">
+        <section className="py-20 border-b border-gray-200 dark:border-zinc-800">
           <div className="container mx-auto px-5 sm:px-8 lg:px-16">
             <div className="max-w-6xl mx-auto">
               <motion.div
@@ -431,7 +431,7 @@ export default function SolutionDetailPage() {
                 className="mb-12 text-center"
               >
                 <h2 className="text-4xl font-semibold mb-4">Real-World Applications</h2>
-                <p className="text-xl text-gray-600 dark:text-gray-400">
+                <p className="text-xl text-gray-600 dark:text-zinc-500">
                   See how {solution.title} transforms different properties
                 </p>
               </motion.div>
@@ -444,10 +444,10 @@ export default function SolutionDetailPage() {
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.6, delay: 0.2 }}
                     viewport={{ once: true }}
-                    className="bg-white border-2 border-gray-200 dark:border-gray-700 p-8 hover:border-charcoal transition-colors"
+                    className="bg-white border-2 border-gray-200 dark:border-zinc-800 p-8 hover:border-charcoal transition-colors"
                   >
                     <h3 className="text-2xl font-semibold mb-4">{useCase.title}</h3>
-                    <p className="text-gray-600 dark:text-gray-400 leading-relaxed">{useCase.description}</p>
+                    <p className="text-gray-600 dark:text-zinc-500 leading-relaxed">{useCase.description}</p>
                   </motion.div>
                 ))}
               </div>
@@ -469,7 +469,7 @@ export default function SolutionDetailPage() {
                 className="mb-12 text-center"
               >
                 <h2 className="text-4xl font-semibold mb-4">Technical Specifications</h2>
-                <p className="text-xl text-gray-600 dark:text-gray-400">
+                <p className="text-xl text-gray-600 dark:text-zinc-500">
                   Industry-leading technology and components
                 </p>
               </motion.div>
@@ -482,14 +482,14 @@ export default function SolutionDetailPage() {
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.6, delay: 0.15 }}
                     viewport={{ once: true }}
-                    className="flex items-start gap-4 p-6 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700"
+                    className="flex items-start gap-4 p-6 bg-white dark:bg-[#171717] border border-gray-200 dark:border-zinc-800"
                   >
                     <CheckCircle2 className="text-charcoal flex-shrink-0 mt-1" size={24} strokeWidth={2} />
                     <div>
                       <h3 className="text-lg font-semibold mb-1 capitalize">
                         {key.replace(/_/g, ' ')}
                       </h3>
-                      <p className="text-gray-600 dark:text-gray-400">{value}</p>
+                      <p className="text-gray-600 dark:text-zinc-500">{value}</p>
                     </div>
                   </motion.div>
                 ))}
@@ -512,7 +512,7 @@ export default function SolutionDetailPage() {
                 className="mb-12"
               >
                 <h2 className="text-4xl font-semibold mb-4">Featured Projects</h2>
-                <p className="text-xl text-gray-600 dark:text-gray-400">
+                <p className="text-xl text-gray-600 dark:text-zinc-500">
                   See how we&apos;ve implemented {solution.title} in real projects
                 </p>
               </motion.div>
@@ -536,7 +536,7 @@ export default function SolutionDetailPage() {
                             className="object-cover grayscale-[20%] group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700"
                           />
                         </div>
-                        <h3 className="text-xl font-semibold mb-2 group-hover:text-gray-600 dark:text-gray-400 transition-colors">
+                        <h3 className="text-xl font-semibold mb-2 group-hover:text-gray-600 dark:text-zinc-500 transition-colors">
                           {project.title}
                         </h3>
                         <p className="text-sm text-gray-500">{project.location}</p>
@@ -563,7 +563,7 @@ export default function SolutionDetailPage() {
               <h2 className="text-5xl font-semibold mb-6">
                 Ready to Transform Your Space?
               </h2>
-              <p className="text-xl text-gray-600 dark:text-gray-400 mb-8">
+              <p className="text-xl text-gray-600 dark:text-zinc-500 mb-8">
                 Book a free consultation with our experts to discuss your {solution.title.toLowerCase()} project
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -577,7 +577,7 @@ export default function SolutionDetailPage() {
                 <Button
                   size="lg"
                   variant="outline"
-                  className="border-gray-300 dark:border-gray-600 px-12 py-7"
+                  className="border-gray-300 dark:border-zinc-700 px-12 py-7"
                   onClick={() => window.location.href = '/calculator'}
                 >
                   Calculate Cost

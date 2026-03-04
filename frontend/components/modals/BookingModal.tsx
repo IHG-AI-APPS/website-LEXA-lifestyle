@@ -100,7 +100,7 @@ export default function BookingModal({ isOpen, onClose, submissionId, customerNa
             exit={{ opacity: 0, scale: 0.95, y: 20 }}
             className="fixed inset-0 z-50 flex items-center justify-center p-4"
           >
-            <div className="bg-white dark:bg-gray-800 rounded-2xl shadow-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto">
+            <div className="bg-white dark:bg-[#171717] rounded-2xl shadow-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto">
               {/* Header */}
               <div className="bg-gradient-to-r from-black to-gray-800 text-white p-6 flex items-center justify-between sticky top-0">
                 <div>
@@ -132,12 +132,12 @@ export default function BookingModal({ isOpen, onClose, submissionId, customerNa
                         className={`p-5 border-2 rounded-lg transition-all text-left ${
                           bookingType === 'site-visit'
                             ? 'border-green-500 bg-green-50'
-                            : 'border-gray-200 dark:border-gray-700 hover:border-gray-400'
+                            : 'border-gray-200 dark:border-zinc-800 hover:border-gray-400'
                         }`}
                       >
                         <MapPin className={`mb-3 ${bookingType === 'site-visit' ? 'text-green-600' : 'text-gray-400'}`} size={28} />
                         <h3 className="font-bold mb-1">Free Site Visit</h3>
-                        <p className="text-xs text-gray-600 dark:text-gray-400 dark:text-gray-400">Our team visits your property</p>
+                        <p className="text-xs text-gray-600 dark:text-zinc-500">Our team visits your property</p>
                         <p className="text-xs text-gray-500 mt-2 flex items-center gap-1">
                           <Clock size={12} /> 60-90 min
                         </p>
@@ -148,12 +148,12 @@ export default function BookingModal({ isOpen, onClose, submissionId, customerNa
                         className={`p-5 border-2 rounded-lg transition-all text-left ${
                           bookingType === 'experience-center'
                             ? 'border-green-500 bg-green-50'
-                            : 'border-gray-200 dark:border-gray-700 hover:border-gray-400'
+                            : 'border-gray-200 dark:border-zinc-800 hover:border-gray-400'
                         }`}
                       >
                         <Calendar className={`mb-3 ${bookingType === 'experience-center' ? 'text-green-600' : 'text-gray-400'}`} size={28} />
                         <h3 className="font-bold mb-1">Experience Center</h3>
-                        <p className="text-xs text-gray-600 dark:text-gray-400 dark:text-gray-400">See smart home systems live</p>
+                        <p className="text-xs text-gray-600 dark:text-zinc-500">See smart home systems live</p>
                         <p className="text-xs text-gray-500 mt-2 flex items-center gap-1">
                           <Clock size={12} /> 45-60 min
                         </p>
@@ -164,12 +164,12 @@ export default function BookingModal({ isOpen, onClose, submissionId, customerNa
                         className={`p-5 border-2 rounded-lg transition-all text-left ${
                           bookingType === 'video-call'
                             ? 'border-green-500 bg-green-50'
-                            : 'border-gray-200 dark:border-gray-700 hover:border-gray-400'
+                            : 'border-gray-200 dark:border-zinc-800 hover:border-gray-400'
                         }`}
                       >
                         <Video className={`mb-3 ${bookingType === 'video-call' ? 'text-green-600' : 'text-gray-400'}`} size={28} />
                         <h3 className="font-bold mb-1">Video Call</h3>
-                        <p className="text-xs text-gray-600 dark:text-gray-400 dark:text-gray-400">Virtual meeting with experts</p>
+                        <p className="text-xs text-gray-600 dark:text-zinc-500">Virtual meeting with experts</p>
                         <p className="text-xs text-gray-500 mt-2 flex items-center gap-1">
                           <Clock size={12} /> 30 min
                         </p>
@@ -315,7 +315,7 @@ export default function BookingModal({ isOpen, onClose, submissionId, customerNa
                       <CheckCircle2 className="text-green-600" size={48} />
                     </div>
                     <h3 className="text-2xl font-bold mb-2">Booking Request Submitted!</h3>
-                    <p className="text-gray-600 dark:text-gray-400 mb-6">
+                    <p className="text-gray-600 dark:text-zinc-500 mb-6">
                       Thank you for your interest. Our team will contact you within 2 hours to confirm your {bookingTypeLabels[bookingType].toLowerCase()} appointment.
                     </p>
                     <div className="bg-gray-50 rounded-lg p-4 mb-6 text-left">

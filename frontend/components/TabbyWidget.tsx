@@ -34,12 +34,12 @@ export default function TabbyWidget({ totalAmount, currency = 'AED' }: TabbyWidg
     <div className="bg-gradient-to-br from-purple-50 to-pink-50 rounded-xl p-6 border-2 border-purple-200">
       {/* Header */}
       <div className="flex items-center gap-3 mb-4">
-        <div className="bg-white dark:bg-gray-800 p-2 rounded-lg">
+        <div className="bg-white dark:bg-[#171717] p-2 rounded-lg">
           <CreditCard className="text-purple-600" size={24} />
         </div>
         <div>
           <h3 className="font-bold text-lg">Buy Now, Pay Later with Tabby</h3>
-          <p className="text-sm text-gray-600 dark:text-gray-400 dark:text-gray-400">Split your purchase into easy installments</p>
+          <p className="text-sm text-gray-600 dark:text-zinc-500">Split your purchase into easy installments</p>
         </div>
       </div>
 
@@ -51,8 +51,8 @@ export default function TabbyWidget({ totalAmount, currency = 'AED' }: TabbyWidg
             onClick={() => setSelectedPlan(key as '4' | '12')}
             className={`relative p-4 border-2 rounded-lg transition-all text-left ${
               selectedPlan === key
-                ? 'border-purple-600 bg-white dark:bg-gray-800 shadow-md'
-                : 'border-purple-200 bg-white/50 dark:bg-gray-800/50 hover:border-purple-400'
+                ? 'border-purple-600 bg-white dark:bg-[#171717] shadow-md'
+                : 'border-purple-200 bg-white/50 dark:bg-[#171717]/50 hover:border-purple-400'
             }`}
           >
             {plan.popular && (
@@ -70,7 +70,7 @@ export default function TabbyWidget({ totalAmount, currency = 'AED' }: TabbyWidg
       </div>
 
       {/* Selected Plan Details */}
-      <div className="bg-white dark:bg-gray-800 rounded-lg p-4 mb-4">
+      <div className="bg-white dark:bg-[#171717] rounded-lg p-4 mb-4">
         <div className="flex items-center gap-2 mb-3">
           <TrendingDown className="text-green-600" size={20} />
           <span className="font-semibold text-sm">Your Payment Plan</span>
@@ -78,21 +78,21 @@ export default function TabbyWidget({ totalAmount, currency = 'AED' }: TabbyWidg
         
         <div className="space-y-2 text-sm">
           <div className="flex justify-between">
-            <span className="text-gray-600 dark:text-gray-400 dark:text-gray-400">Total Amount</span>
+            <span className="text-gray-600 dark:text-zinc-500">Total Amount</span>
             <span className="font-semibold">{currency} {totalAmount.toLocaleString()}</span>
           </div>
           <div className="flex justify-between">
-            <span className="text-gray-600 dark:text-gray-400 dark:text-gray-400">Monthly Payment</span>
+            <span className="text-gray-600 dark:text-zinc-500">Monthly Payment</span>
             <span className="font-semibold text-purple-600">
               {currency} {plans[selectedPlan].installment.toLocaleString()}
             </span>
           </div>
           <div className="flex justify-between">
-            <span className="text-gray-600 dark:text-gray-400 dark:text-gray-400">Duration</span>
+            <span className="text-gray-600 dark:text-zinc-500">Duration</span>
             <span className="font-semibold">{plans[selectedPlan].months} months</span>
           </div>
           <div className="flex justify-between pt-2 border-t">
-            <span className="text-gray-600 dark:text-gray-400 dark:text-gray-400">Interest Rate</span>
+            <span className="text-gray-600 dark:text-zinc-500">Interest Rate</span>
             <span className="font-semibold text-green-600">0% (Interest-free!)</span>
           </div>
         </div>
@@ -104,7 +104,7 @@ export default function TabbyWidget({ totalAmount, currency = 'AED' }: TabbyWidg
           <Info size={16} />
           Why Choose Tabby?
         </h4>
-        <ul className="space-y-1 text-xs text-gray-700 dark:text-gray-300 dark:text-gray-300">
+        <ul className="space-y-1 text-xs text-gray-700 dark:text-zinc-400">
           <li>✓ 0% interest & no hidden fees</li>
           <li>✓ Instant approval decision</li>
           <li>✓ No impact on your credit score</li>

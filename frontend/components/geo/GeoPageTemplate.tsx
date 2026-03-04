@@ -61,19 +61,19 @@ function FAQItem({ faq, index }: { faq: FAQ; index: number }) {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ delay: index * 0.05 }}
-      className="border border-gray-100 dark:border-gray-800 rounded-xl overflow-hidden"
+      className="border border-gray-100 dark:border-zinc-800 rounded-xl overflow-hidden"
     >
       <button
         onClick={() => setOpen(!open)}
-        className="w-full flex items-center justify-between p-5 text-left bg-gray-50 dark:bg-gray-900 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
+        className="w-full flex items-center justify-between p-5 text-left bg-gray-50 dark:bg-[#0A0A0A] hover:bg-gray-100 dark:hover:bg-[#171717] transition-colors"
         data-testid={`faq-toggle-${index}`}
       >
         <h3 className="text-base font-semibold text-gray-900 dark:text-white pr-4">{faq.question}</h3>
         <ChevronDown className={`h-5 w-5 text-[#C9A962] flex-shrink-0 transition-transform ${open ? 'rotate-180' : ''}`} />
       </button>
       {open && (
-        <div className="px-5 pb-5 bg-gray-50 dark:bg-gray-900">
-          <p className="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">{faq.answer}</p>
+        <div className="px-5 pb-5 bg-gray-50 dark:bg-[#0A0A0A]">
+          <p className="text-sm text-gray-600 dark:text-zinc-500 leading-relaxed">{faq.answer}</p>
         </div>
       )}
     </motion.div>
@@ -100,7 +100,7 @@ export default function GeoPageTemplate({ data: initialData, slug }: { data: Geo
   }, [slug, initialData.slug])
 
   return (
-    <div className="min-h-screen bg-white dark:bg-gray-950 pt-20" data-testid="geo-page-container">
+    <div className="min-h-screen bg-white dark:bg-[#050505] pt-20" data-testid="geo-page-container">
       {/* Hero Section */}
       <section className="relative overflow-hidden bg-gray-900 text-white">
         <div className="grid grid-cols-1 lg:grid-cols-2 min-h-[520px]">
@@ -170,7 +170,7 @@ export default function GeoPageTemplate({ data: initialData, slug }: { data: Geo
 
       {/* Communities */}
       {data.communities.length > 0 && (
-        <section className="py-16 lg:py-20 bg-white dark:bg-gray-950">
+        <section className="py-16 lg:py-20 bg-white dark:bg-[#050505]">
           <div className="container mx-auto px-8 lg:px-16">
             <div className="max-w-6xl mx-auto">
               <div className="text-center mb-12">
@@ -179,7 +179,7 @@ export default function GeoPageTemplate({ data: initialData, slug }: { data: Geo
                   {data.communityTitle || `${data.locationName} Communities`}
                 </h2>
                 {data.communitySubtitle && (
-                  <p className="text-sm text-gray-500 dark:text-gray-400 mt-2 max-w-2xl mx-auto">{data.communitySubtitle}</p>
+                  <p className="text-sm text-gray-500 dark:text-zinc-500 mt-2 max-w-2xl mx-auto">{data.communitySubtitle}</p>
                 )}
               </div>
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
@@ -190,13 +190,13 @@ export default function GeoPageTemplate({ data: initialData, slug }: { data: Geo
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.25, delay: i * 0.05 }}
-                    className="p-5 rounded-xl bg-gray-50 dark:bg-gray-900 border border-gray-100 dark:border-gray-800 hover:border-[#C9A962]/40 transition-colors group"
+                    className="p-5 rounded-xl bg-gray-50 dark:bg-[#0A0A0A] border border-gray-100 dark:border-zinc-800 hover:border-[#C9A962]/40 transition-colors group"
                     data-testid={`community-card-${i}`}
                   >
                     <div className="flex items-start justify-between">
                       <div>
                         <h3 className="font-semibold text-gray-900 dark:text-white group-hover:text-[#C9A962] transition-colors">{community.name}</h3>
-                        <p className="text-sm text-gray-500 dark:text-gray-400 mt-1">{community.type}</p>
+                        <p className="text-sm text-gray-500 dark:text-zinc-500 mt-1">{community.type}</p>
                       </div>
                       <span className="text-sm font-semibold text-[#C9A962] whitespace-nowrap">
                         {community.price || community.projects || ''}
@@ -212,7 +212,7 @@ export default function GeoPageTemplate({ data: initialData, slug }: { data: Geo
 
       {/* Services */}
       {data.services && data.services.length > 0 && (
-        <section className="py-16 lg:py-20 bg-gray-50 dark:bg-gray-900">
+        <section className="py-16 lg:py-20 bg-gray-50 dark:bg-[#0A0A0A]">
           <div className="container mx-auto px-8 lg:px-16">
             <div className="max-w-6xl mx-auto">
               <div className="text-center mb-12">
@@ -229,7 +229,7 @@ export default function GeoPageTemplate({ data: initialData, slug }: { data: Geo
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.3, delay: i * 0.08 }}
-                    className="bg-white dark:bg-gray-950 rounded-xl overflow-hidden border border-gray-100 dark:border-gray-800 hover:shadow-lg transition-shadow group"
+                    className="bg-white dark:bg-[#050505] rounded-xl overflow-hidden border border-gray-100 dark:border-zinc-800 hover:shadow-lg transition-shadow group"
                     data-testid={`service-card-${i}`}
                   >
                     <div className="h-1 bg-gradient-to-r from-[#C9A962] to-[#C9A962]/30" />
@@ -238,7 +238,7 @@ export default function GeoPageTemplate({ data: initialData, slug }: { data: Geo
                         <CheckCircle2 className="text-white dark:text-gray-900 group-hover:text-gray-900 transition-colors" size={18} />
                       </div>
                       <h3 className="text-lg font-bold mb-2 text-gray-900 dark:text-white">{service.title}</h3>
-                      <p className="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">{service.description}</p>
+                      <p className="text-sm text-gray-600 dark:text-zinc-500 leading-relaxed">{service.description}</p>
                     </div>
                   </motion.div>
                 ))}
@@ -249,7 +249,7 @@ export default function GeoPageTemplate({ data: initialData, slug }: { data: Geo
       )}
 
       {/* Why LEXA */}
-      <section className={`py-16 lg:py-20 ${data.services && data.services.length > 0 ? 'bg-white dark:bg-gray-950' : 'bg-gray-50 dark:bg-gray-900'}`}>
+      <section className={`py-16 lg:py-20 ${data.services && data.services.length > 0 ? 'bg-white dark:bg-[#050505]' : 'bg-gray-50 dark:bg-[#0A0A0A]'}`}>
         <div className="container mx-auto px-8 lg:px-16">
           <div className="max-w-6xl mx-auto">
             <div className="grid grid-cols-1 lg:grid-cols-5 gap-12">
@@ -258,7 +258,7 @@ export default function GeoPageTemplate({ data: initialData, slug }: { data: Geo
                 <h2 className="text-2xl sm:text-3xl font-bold mt-2 mb-6 text-gray-900 dark:text-white">
                   Trusted Smart Home Partner in {data.locationName}
                 </h2>
-                <p className="text-base text-gray-600 dark:text-gray-300 leading-relaxed mb-8">
+                <p className="text-base text-gray-600 dark:text-zinc-400 leading-relaxed mb-8">
                   LEXA Lifestyle brings over a decade of smart home expertise to {data.locationName}. Our certified engineers
                   design, install, and maintain premium automation systems tailored to each property&apos;s unique requirements.
                 </p>
@@ -277,17 +277,17 @@ export default function GeoPageTemplate({ data: initialData, slug }: { data: Geo
                       whileInView={{ opacity: 1, y: 0 }}
                       viewport={{ once: true }}
                       transition={{ duration: 0.2, delay: i * 0.04 }}
-                      className="flex items-start gap-3 p-3 rounded-lg bg-gray-50 dark:bg-gray-900 border border-gray-100 dark:border-gray-800"
+                      className="flex items-start gap-3 p-3 rounded-lg bg-gray-50 dark:bg-[#0A0A0A] border border-gray-100 dark:border-zinc-800"
                     >
                       <CheckCircle2 size={16} className="text-[#C9A962] flex-shrink-0 mt-0.5" />
-                      <span className="text-sm text-gray-700 dark:text-gray-300">{feature}</span>
+                      <span className="text-sm text-gray-700 dark:text-zinc-400">{feature}</span>
                     </motion.div>
                   ))}
                 </div>
               </div>
               <div className="lg:col-span-2">
                 <div className="sticky top-28 space-y-5">
-                  <div className="bg-gray-900 dark:bg-gray-800 text-white rounded-xl p-6">
+                  <div className="bg-gray-900 dark:bg-[#171717] text-white rounded-xl p-6">
                     <h3 className="text-lg font-semibold mb-4">LEXA at a Glance</h3>
                     <div className="space-y-4">
                       {[
@@ -325,7 +325,7 @@ export default function GeoPageTemplate({ data: initialData, slug }: { data: Geo
 
       {/* FAQ */}
       {data.faqs && data.faqs.length > 0 && (
-        <section className="py-16 lg:py-20 bg-gray-50 dark:bg-gray-900">
+        <section className="py-16 lg:py-20 bg-gray-50 dark:bg-[#0A0A0A]">
           <div className="container mx-auto px-8 lg:px-16">
             <div className="max-w-4xl mx-auto">
               <div className="text-center mb-12">

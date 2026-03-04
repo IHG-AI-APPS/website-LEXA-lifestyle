@@ -478,8 +478,8 @@ export default function AIRecommendation({
             <span className="font-semibold text-lg">AI is calculating your package...</span>
           </div>
           <div className="mt-8 animate-pulse">
-            <div className="h-32 bg-gray-100 dark:bg-gray-800 rounded-xl mb-4 max-w-md mx-auto"></div>
-            <div className="h-4 bg-gray-100 dark:bg-gray-800 rounded w-48 mx-auto"></div>
+            <div className="h-32 bg-gray-100 dark:bg-[#171717] rounded-xl mb-4 max-w-md mx-auto"></div>
+            <div className="h-4 bg-gray-100 dark:bg-[#171717] rounded w-48 mx-auto"></div>
           </div>
         </div>
       </div>
@@ -519,7 +519,7 @@ export default function AIRecommendation({
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.2 }}
-          className="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto"
+          className="text-gray-600 dark:text-zinc-500 max-w-2xl mx-auto"
         >
           Based on your {recommendation.summary.total_features} selected features, 
           we have curated the perfect package options for your project.
@@ -534,7 +534,7 @@ export default function AIRecommendation({
           transition={{ delay: 0.25 }}
           className="bg-gradient-to-r from-gray-50 to-gray-100 rounded-2xl p-5 mb-8"
         >
-          <h3 className="text-sm font-bold text-gray-700 dark:text-gray-300 mb-3 flex items-center gap-2">
+          <h3 className="text-sm font-bold text-gray-700 dark:text-zinc-400 mb-3 flex items-center gap-2">
             <Building2 className="w-4 h-4" />
             Your Project
           </h3>
@@ -566,28 +566,28 @@ export default function AIRecommendation({
         transition={{ delay: 0.3 }}
         className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-10"
       >
-        <div className="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-xl p-4 text-center">
+        <div className="bg-white dark:bg-[#171717] border border-gray-200 dark:border-zinc-800 rounded-xl p-4 text-center">
           <div className="w-10 h-10 bg-[#C9A962]/10 rounded-lg flex items-center justify-center mx-auto mb-2">
             <Package className="w-5 h-5 text-[#C9A962]" />
           </div>
           <div className="text-2xl font-bold text-gray-900 dark:text-white">{recommendation.summary.total_features}</div>
           <div className="text-sm text-gray-500">Features</div>
         </div>
-        <div className="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-xl p-4 text-center">
+        <div className="bg-white dark:bg-[#171717] border border-gray-200 dark:border-zinc-800 rounded-xl p-4 text-center">
           <div className="w-10 h-10 bg-[#C9A962]/10 rounded-lg flex items-center justify-center mx-auto mb-2">
             <Zap className="w-5 h-5 text-[#C9A962]" />
           </div>
           <div className="text-2xl font-bold text-gray-900 dark:text-white capitalize">{recommendation.summary.protocol_type}</div>
           <div className="text-sm text-gray-500">Protocol</div>
         </div>
-        <div className="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-xl p-4 text-center">
+        <div className="bg-white dark:bg-[#171717] border border-gray-200 dark:border-zinc-800 rounded-xl p-4 text-center">
           <div className="w-10 h-10 bg-green-100 rounded-lg flex items-center justify-center mx-auto mb-2">
             <Shield className="w-5 h-5 text-green-600" />
           </div>
           <div className="text-2xl font-bold text-gray-900 dark:text-white">{selectedSystems.length}</div>
           <div className="text-sm text-gray-500">Systems</div>
         </div>
-        <div className="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-xl p-4 text-center">
+        <div className="bg-white dark:bg-[#171717] border border-gray-200 dark:border-zinc-800 rounded-xl p-4 text-center">
           <div className="w-10 h-10 bg-amber-100 rounded-lg flex items-center justify-center mx-auto mb-2">
             <TrendingUp className="w-5 h-5 text-amber-600" />
           </div>
@@ -637,7 +637,7 @@ export default function AIRecommendation({
                 className={`relative p-6 rounded-2xl border-2 text-left transition-all ${
                   isSelected
                     ? 'border-[#C9A962] bg-[#C9A962]/5 shadow-xl ring-2 ring-[#C9A962]/20'
-                    : 'border-gray-200 dark:border-gray-700 bg-white hover:border-gray-400 hover:shadow-lg'
+                    : 'border-gray-200 dark:border-zinc-800 bg-white hover:border-gray-400 hover:shadow-lg'
                 }`}
               >
                 {pkg.recommended && (
@@ -658,9 +658,9 @@ export default function AIRecommendation({
 
                 <h4 className="text-xl font-bold text-gray-900 dark:text-white mb-1">{pkg.name}</h4>
                 <div className="text-2xl font-bold text-gray-900 dark:text-white mb-3">{pkg.price_indicator}</div>
-                <p className="text-sm text-gray-600 dark:text-gray-400 mb-4">{pkg.description}</p>
+                <p className="text-sm text-gray-600 dark:text-zinc-500 mb-4">{pkg.description}</p>
 
-                <div className="flex items-center gap-2 text-sm font-medium text-gray-700 dark:text-gray-300">
+                <div className="flex items-center gap-2 text-sm font-medium text-gray-700 dark:text-zinc-400">
                   <Check className="w-4 h-4 text-green-500" />
                   {pkg.features_included} features included
                 </div>
@@ -688,12 +688,12 @@ export default function AIRecommendation({
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ delay: 0.9 + index * 0.1 }}
-              className="flex items-start gap-3 bg-white dark:bg-gray-800 rounded-lg p-4"
+              className="flex items-start gap-3 bg-white dark:bg-[#171717] rounded-lg p-4"
             >
               <div className="w-8 h-8 bg-[#C9A962]/10 rounded-full flex items-center justify-center flex-shrink-0">
                 <Sparkles className="w-4 h-4 text-[#C9A962]" />
               </div>
-              <p className="text-gray-700 dark:text-gray-300">{insight}</p>
+              <p className="text-gray-700 dark:text-zinc-400">{insight}</p>
             </motion.div>
           ))}
         </div>
@@ -704,7 +704,7 @@ export default function AIRecommendation({
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 1.0 }}
-        className="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-2xl p-6 mb-10"
+        className="bg-white dark:bg-[#171717] border border-gray-200 dark:border-zinc-800 rounded-2xl p-6 mb-10"
       >
         <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-4">Feature Breakdown</h3>
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
@@ -731,7 +731,7 @@ export default function AIRecommendation({
       </motion.div>
 
       {/* Navigation */}
-      <div className="sticky bottom-0 bg-white border-t border-gray-200 dark:border-gray-700 p-4 -mx-4">
+      <div className="sticky bottom-0 bg-white border-t border-gray-200 dark:border-zinc-800 p-4 -mx-4">
         <div className="max-w-6xl mx-auto flex items-center justify-between">
           <div className="flex items-center gap-2">
             <Button 
@@ -800,13 +800,13 @@ export default function AIRecommendation({
               animate={{ scale: 1, opacity: 1 }}
               exit={{ scale: 0.9, opacity: 0 }}
               onClick={(e) => e.stopPropagation()}
-              className="bg-white dark:bg-gray-800 rounded-2xl p-6 max-w-md w-full shadow-2xl"
+              className="bg-white dark:bg-[#171717] rounded-2xl p-6 max-w-md w-full shadow-2xl"
             >
               <div className="flex items-center justify-between mb-6">
                 <h3 className="text-xl font-bold text-gray-900 dark:text-white">Book a Consultation</h3>
                 <button
                   onClick={() => setShowConsultationModal(false)}
-                  className="p-2 hover:bg-gray-100 dark:bg-gray-800 rounded-full"
+                  className="p-2 hover:bg-gray-100 dark:bg-[#171717] rounded-full"
                 >
                   <X className="w-5 h-5" />
                 </button>
@@ -814,7 +814,7 @@ export default function AIRecommendation({
 
               <div className="space-y-4">
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Full Name *</label>
+                  <label className="block text-sm font-medium text-gray-700 dark:text-zinc-400 mb-1">Full Name *</label>
                   <Input
                     value={consultationForm.name}
                     onChange={(e) => setConsultationForm({...consultationForm, name: e.target.value})}
@@ -823,7 +823,7 @@ export default function AIRecommendation({
                 </div>
                 
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Email *</label>
+                  <label className="block text-sm font-medium text-gray-700 dark:text-zinc-400 mb-1">Email *</label>
                   <Input
                     type="email"
                     value={consultationForm.email}
@@ -833,7 +833,7 @@ export default function AIRecommendation({
                 </div>
                 
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Phone Number *</label>
+                  <label className="block text-sm font-medium text-gray-700 dark:text-zinc-400 mb-1">Phone Number *</label>
                   <Input
                     type="tel"
                     value={consultationForm.phone}
@@ -843,7 +843,7 @@ export default function AIRecommendation({
                 </div>
                 
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Preferred Date</label>
+                  <label className="block text-sm font-medium text-gray-700 dark:text-zinc-400 mb-1">Preferred Date</label>
                   <Input
                     type="date"
                     value={consultationForm.preferredDate}
@@ -852,7 +852,7 @@ export default function AIRecommendation({
                 </div>
                 
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Preferred Time</label>
+                  <label className="block text-sm font-medium text-gray-700 dark:text-zinc-400 mb-1">Preferred Time</label>
                   <div className="grid grid-cols-3 gap-2">
                     {['morning', 'afternoon', 'evening'].map((time) => (
                       <button
@@ -861,7 +861,7 @@ export default function AIRecommendation({
                         className={`p-2 rounded-lg border-2 text-sm font-medium capitalize ${
                           consultationForm.preferredTime === time
                             ? 'border-[#C9A962] bg-[#C9A962]/5 text-[#C9A962]'
-                            : 'border-gray-200 dark:border-gray-700 hover:border-gray-300'
+                            : 'border-gray-200 dark:border-zinc-800 hover:border-gray-300'
                         }`}
                       >
                         {time}
@@ -871,12 +871,12 @@ export default function AIRecommendation({
                 </div>
 
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Additional Notes</label>
+                  <label className="block text-sm font-medium text-gray-700 dark:text-zinc-400 mb-1">Additional Notes</label>
                   <textarea
                     value={consultationForm.notes}
                     onChange={(e) => setConsultationForm({...consultationForm, notes: e.target.value})}
                     placeholder="Any specific requirements or questions..."
-                    className="w-full p-3 border border-gray-200 dark:border-gray-700 rounded-lg resize-none"
+                    className="w-full p-3 border border-gray-200 dark:border-zinc-800 rounded-lg resize-none"
                     rows={3}
                   />
                 </div>
@@ -922,7 +922,7 @@ export default function AIRecommendation({
               animate={{ scale: 1, opacity: 1 }}
               exit={{ scale: 0.9, opacity: 0 }}
               onClick={(e) => e.stopPropagation()}
-              className="bg-white dark:bg-gray-800 rounded-2xl p-6 max-w-5xl w-full shadow-2xl my-8"
+              className="bg-white dark:bg-[#171717] rounded-2xl p-6 max-w-5xl w-full shadow-2xl my-8"
             >
               <div className="flex items-center justify-between mb-6">
                 <div>
@@ -931,7 +931,7 @@ export default function AIRecommendation({
                 </div>
                 <button
                   onClick={() => setShowCompareModal(false)}
-                  className="p-2 hover:bg-gray-100 dark:bg-gray-800 rounded-full"
+                  className="p-2 hover:bg-gray-100 dark:bg-[#171717] rounded-full"
                 >
                   <X className="w-6 h-6" />
                 </button>
@@ -968,10 +968,10 @@ export default function AIRecommendation({
               </div>
 
               {/* Comparison Table */}
-              <div className="border border-gray-200 dark:border-gray-700 rounded-xl overflow-hidden">
+              <div className="border border-gray-200 dark:border-zinc-800 rounded-xl overflow-hidden">
                 {/* Features Included */}
-                <div className="grid grid-cols-4 gap-4 p-4 bg-gray-50 border-b border-gray-200 dark:border-gray-700">
-                  <div className="font-medium text-gray-700 dark:text-gray-300">Features Included</div>
+                <div className="grid grid-cols-4 gap-4 p-4 bg-gray-50 border-b border-gray-200 dark:border-zinc-800">
+                  <div className="font-medium text-gray-700 dark:text-zinc-400">Features Included</div>
                   {recommendation.packages.map((pkg) => (
                     <div key={pkg.name} className="text-center font-bold text-gray-900 dark:text-white">
                       {pkg.features_included}
@@ -980,10 +980,10 @@ export default function AIRecommendation({
                 </div>
 
                 {/* Must-Have Features */}
-                <div className="grid grid-cols-4 gap-4 p-4 border-b border-gray-100 dark:border-gray-800 dark:border-gray-800">
+                <div className="grid grid-cols-4 gap-4 p-4 border-b border-gray-100 dark:border-zinc-800">
                   <div className="flex items-center gap-2">
                     <div className="w-3 h-3 rounded-full bg-red-500" />
-                    <span className="text-gray-700 dark:text-gray-300">Must-Have Features</span>
+                    <span className="text-gray-700 dark:text-zinc-400">Must-Have Features</span>
                   </div>
                   {recommendation.packages.map((pkg, idx) => (
                     <div key={pkg.name} className="flex justify-center">
@@ -993,10 +993,10 @@ export default function AIRecommendation({
                 </div>
 
                 {/* Should-Have Features */}
-                <div className="grid grid-cols-4 gap-4 p-4 border-b border-gray-100 dark:border-gray-800 dark:border-gray-800">
+                <div className="grid grid-cols-4 gap-4 p-4 border-b border-gray-100 dark:border-zinc-800">
                   <div className="flex items-center gap-2">
                     <div className="w-3 h-3 rounded-full bg-orange-500" />
-                    <span className="text-gray-700 dark:text-gray-300">Should-Have Features</span>
+                    <span className="text-gray-700 dark:text-zinc-400">Should-Have Features</span>
                   </div>
                   {recommendation.packages.map((pkg, idx) => (
                     <div key={pkg.name} className="flex justify-center">
@@ -1010,10 +1010,10 @@ export default function AIRecommendation({
                 </div>
 
                 {/* Nice-to-Have Upgrades */}
-                <div className="grid grid-cols-4 gap-4 p-4 border-b border-gray-100 dark:border-gray-800 dark:border-gray-800">
+                <div className="grid grid-cols-4 gap-4 p-4 border-b border-gray-100 dark:border-zinc-800">
                   <div className="flex items-center gap-2">
                     <div className="w-3 h-3 rounded-full bg-[#C9A962]/50" />
-                    <span className="text-gray-700 dark:text-gray-300">Nice-to-Have Upgrades</span>
+                    <span className="text-gray-700 dark:text-zinc-400">Nice-to-Have Upgrades</span>
                   </div>
                   {recommendation.packages.map((pkg, idx) => (
                     <div key={pkg.name} className="flex justify-center">
@@ -1027,10 +1027,10 @@ export default function AIRecommendation({
                 </div>
 
                 {/* Premium Hardware */}
-                <div className="grid grid-cols-4 gap-4 p-4 border-b border-gray-100 dark:border-gray-800 dark:border-gray-800">
+                <div className="grid grid-cols-4 gap-4 p-4 border-b border-gray-100 dark:border-zinc-800">
                   <div className="flex items-center gap-2">
                     <Shield className="w-4 h-4 text-gray-400" />
-                    <span className="text-gray-700 dark:text-gray-300">Premium Hardware</span>
+                    <span className="text-gray-700 dark:text-zinc-400">Premium Hardware</span>
                   </div>
                   {recommendation.packages.map((pkg, idx) => (
                     <div key={pkg.name} className="flex justify-center">
@@ -1044,10 +1044,10 @@ export default function AIRecommendation({
                 </div>
 
                 {/* Extended Warranty */}
-                <div className="grid grid-cols-4 gap-4 p-4 border-b border-gray-100 dark:border-gray-800 dark:border-gray-800">
+                <div className="grid grid-cols-4 gap-4 p-4 border-b border-gray-100 dark:border-zinc-800">
                   <div className="flex items-center gap-2">
                     <CheckCircle2 className="w-4 h-4 text-gray-400" />
-                    <span className="text-gray-700 dark:text-gray-300">Extended Warranty</span>
+                    <span className="text-gray-700 dark:text-zinc-400">Extended Warranty</span>
                   </div>
                   {recommendation.packages.map((pkg, idx) => (
                     <div key={pkg.name} className="text-center text-sm">
@@ -1063,10 +1063,10 @@ export default function AIRecommendation({
                 </div>
 
                 {/* Priority Support */}
-                <div className="grid grid-cols-4 gap-4 p-4 border-b border-gray-100 dark:border-gray-800 dark:border-gray-800">
+                <div className="grid grid-cols-4 gap-4 p-4 border-b border-gray-100 dark:border-zinc-800">
                   <div className="flex items-center gap-2">
                     <Phone className="w-4 h-4 text-gray-400" />
-                    <span className="text-gray-700 dark:text-gray-300">Priority Support</span>
+                    <span className="text-gray-700 dark:text-zinc-400">Priority Support</span>
                   </div>
                   {recommendation.packages.map((pkg, idx) => (
                     <div key={pkg.name} className="flex justify-center">
@@ -1080,10 +1080,10 @@ export default function AIRecommendation({
                 </div>
 
                 {/* Dedicated Project Manager */}
-                <div className="grid grid-cols-4 gap-4 p-4 border-b border-gray-100 dark:border-gray-800 dark:border-gray-800">
+                <div className="grid grid-cols-4 gap-4 p-4 border-b border-gray-100 dark:border-zinc-800">
                   <div className="flex items-center gap-2">
                     <Building2 className="w-4 h-4 text-gray-400" />
-                    <span className="text-gray-700 dark:text-gray-300">Dedicated Project Manager</span>
+                    <span className="text-gray-700 dark:text-zinc-400">Dedicated Project Manager</span>
                   </div>
                   {recommendation.packages.map((pkg, idx) => (
                     <div key={pkg.name} className="flex justify-center">
@@ -1100,7 +1100,7 @@ export default function AIRecommendation({
                 <div className="grid grid-cols-4 gap-4 p-4">
                   <div className="flex items-center gap-2">
                     <Calendar className="w-4 h-4 text-gray-400" />
-                    <span className="text-gray-700 dark:text-gray-300">Free Maintenance Visits</span>
+                    <span className="text-gray-700 dark:text-zinc-400">Free Maintenance Visits</span>
                   </div>
                   {recommendation.packages.map((pkg, idx) => (
                     <div key={pkg.name} className="text-center text-sm">

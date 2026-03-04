@@ -302,7 +302,7 @@ export default function FeatureSelectionFlow({
         <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-2">
           Select Your {currentTier.name} Features
         </h2>
-        <p className="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
+        <p className="text-gray-600 dark:text-zinc-500 max-w-2xl mx-auto">
           {currentTier.instruction}
         </p>
       </motion.div>
@@ -336,8 +336,8 @@ export default function FeatureSelectionFlow({
                   isSelected(feature.id)
                     ? 'bg-green-500 text-white'
                     : isSelectedInOtherTier(feature.id)
-                    ? 'bg-gray-100 dark:bg-gray-800 text-gray-400 cursor-not-allowed'
-                    : 'bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 hover:border-amber-400 text-gray-700'
+                    ? 'bg-gray-100 dark:bg-[#171717] text-gray-400 cursor-not-allowed'
+                    : 'bg-white dark:bg-[#171717] border border-gray-200 dark:border-zinc-800 hover:border-amber-400 text-gray-700'
                 }`}
               >
                 {feature.name}
@@ -352,7 +352,7 @@ export default function FeatureSelectionFlow({
       {loading ? (
         <div className="space-y-4">
           {[1, 2, 3].map(i => (
-            <div key={i} className="h-24 bg-gray-100 dark:bg-gray-800 animate-pulse rounded-xl" />
+            <div key={i} className="h-24 bg-gray-100 dark:bg-[#171717] animate-pulse rounded-xl" />
           ))}
         </div>
       ) : (
@@ -363,11 +363,11 @@ export default function FeatureSelectionFlow({
             const selectedInCategory = category.features.filter(f => isSelected(f.id)).length
             
             return (
-              <div key={category.category_id} className="border border-gray-200 dark:border-gray-700 rounded-xl overflow-hidden">
+              <div key={category.category_id} className="border border-gray-200 dark:border-zinc-800 rounded-xl overflow-hidden">
                 {/* Category Header */}
                 <button
                   onClick={() => toggleCategory(category.category_id)}
-                  className="w-full flex items-center justify-between p-4 bg-gray-50 hover:bg-gray-100 dark:bg-gray-800 transition-colors"
+                  className="w-full flex items-center justify-between p-4 bg-gray-50 hover:bg-gray-100 dark:bg-[#171717] transition-colors"
                 >
                   <div className="flex items-center gap-3">
                     <div className={`w-10 h-10 rounded-lg bg-gradient-to-br ${currentTier.color} flex items-center justify-center`}>
@@ -393,7 +393,7 @@ export default function FeatureSelectionFlow({
                       initial={{ height: 0, opacity: 0 }}
                       animate={{ height: 'auto', opacity: 1 }}
                       exit={{ height: 0, opacity: 0 }}
-                      className="border-t border-gray-200 dark:border-gray-700"
+                      className="border-t border-gray-200 dark:border-zinc-800"
                     >
                       <div className="p-4 grid grid-cols-1 md:grid-cols-2 gap-3">
                         {category.features.map(feature => {
@@ -410,7 +410,7 @@ export default function FeatureSelectionFlow({
                                   ? `bg-gradient-to-r ${currentTier.color} text-white shadow-md`
                                   : otherTier
                                   ? 'bg-gray-50 text-gray-400 cursor-not-allowed'
-                                  : 'bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 hover:border-gray-400 hover:shadow-sm'
+                                  : 'bg-white dark:bg-[#171717] border border-gray-200 dark:border-zinc-800 hover:border-gray-400 hover:shadow-sm'
                               }`}
                             >
                               <div className={`w-6 h-6 rounded-full flex-shrink-0 flex items-center justify-center ${
@@ -454,7 +454,7 @@ export default function FeatureSelectionFlow({
       )}
 
       {/* Selection Summary */}
-      <div className="sticky bottom-0 bg-white border-t border-gray-200 dark:border-gray-700 p-4 -mx-4 mt-8">
+      <div className="sticky bottom-0 bg-white border-t border-gray-200 dark:border-zinc-800 p-4 -mx-4 mt-8">
         <div className="max-w-6xl mx-auto flex items-center justify-between">
           <div>
             <span className="text-sm text-gray-500">Selected in {currentTier.name}:</span>

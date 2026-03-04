@@ -191,7 +191,7 @@ export default function EnhancedServicePage({
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
             >
-              <span className="text-sm font-semibold uppercase tracking-wider text-gray-600 dark:text-gray-400 mb-2 block">
+              <span className="text-sm font-semibold uppercase tracking-wider text-gray-600 dark:text-zinc-500 mb-2 block">
                 What We Deliver
               </span>
               <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 dark:text-white">
@@ -210,7 +210,7 @@ export default function EnhancedServicePage({
                 transition={{ duration: 0.2 }}
                 className="group"
               >
-                <div className="bg-white dark:bg-gray-800 rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 h-full border border-gray-100 dark:border-gray-800 hover:border-gray-300">
+                <div className="bg-white dark:bg-[#171717] rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 h-full border border-gray-100 dark:border-zinc-800 hover:border-gray-300">
                   {/* Icon */}
                   <div className="w-16 h-16 bg-gradient-to-br from-gray-800 to-black rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
                     <feature.icon className="h-8 w-8 text-white" />
@@ -220,14 +220,14 @@ export default function EnhancedServicePage({
                   <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-3">
                     {feature.title}
                   </h3>
-                  <p className="text-sm text-gray-600 dark:text-gray-400 leading-relaxed mb-4">
+                  <p className="text-sm text-gray-600 dark:text-zinc-500 leading-relaxed mb-4">
                     {feature.description}
                   </p>
                   
                   {/* Stats */}
                   {feature.stats && (
-                    <div className="pt-4 border-t border-gray-100 dark:border-gray-800 dark:border-gray-800">
-                      <span className="text-xs font-semibold text-gray-700 dark:text-gray-300">
+                    <div className="pt-4 border-t border-gray-100 dark:border-zinc-800">
+                      <span className="text-xs font-semibold text-gray-700 dark:text-zinc-400">
                         {feature.stats}
                       </span>
                     </div>
@@ -248,13 +248,13 @@ export default function EnhancedServicePage({
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
             >
-              <span className="text-sm font-semibold uppercase tracking-wider text-gray-600 dark:text-gray-400 mb-2 block">
+              <span className="text-sm font-semibold uppercase tracking-wider text-gray-600 dark:text-zinc-500 mb-2 block">
                 Our Process
               </span>
               <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 dark:text-white mb-4">
                 How We Work
               </h2>
-              <p className="text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
+              <p className="text-lg text-gray-600 dark:text-zinc-500 max-w-2xl mx-auto">
                 A proven methodology refined over years of experience
               </p>
             </motion.div>
@@ -281,7 +281,7 @@ export default function EnhancedServicePage({
                   </div>
                   
                   {/* Content */}
-                  <div className="flex-1 bg-white dark:bg-gray-800 rounded-2xl p-8 shadow-md border border-gray-100 dark:border-gray-800 dark:border-gray-800">
+                  <div className="flex-1 bg-white dark:bg-[#171717] rounded-2xl p-8 shadow-md border border-gray-100 dark:border-zinc-800">
                     <div className="flex items-start justify-between mb-3">
                       <h3 className="text-2xl font-bold text-gray-900 dark:text-white">
                         {step.title}
@@ -293,7 +293,7 @@ export default function EnhancedServicePage({
                         </div>
                       )}
                     </div>
-                    <p className="text-base text-gray-600 dark:text-gray-400 leading-relaxed">
+                    <p className="text-base text-gray-600 dark:text-zinc-500 leading-relaxed">
                       {step.description}
                     </p>
                   </div>
@@ -320,7 +320,7 @@ export default function EnhancedServicePage({
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                 >
-                  <span className="text-sm font-semibold uppercase tracking-wider text-gray-600 dark:text-gray-400 mb-2 block">
+                  <span className="text-sm font-semibold uppercase tracking-wider text-gray-600 dark:text-zinc-500 mb-2 block">
                     Deliverables
                   </span>
                   <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 dark:text-white mb-4">
@@ -340,9 +340,9 @@ export default function EnhancedServicePage({
                     className="flex items-start gap-3 p-4 rounded-xl hover:bg-white transition-colors"
                   >
                     <div className="flex-shrink-0 mt-1">
-                      <CheckCircle className="h-6 w-6 text-gray-700 dark:text-gray-300" />
+                      <CheckCircle className="h-6 w-6 text-gray-700 dark:text-zinc-400" />
                     </div>
-                    <span className="text-base text-gray-700 dark:text-gray-300">
+                    <span className="text-base text-gray-700 dark:text-zinc-400">
                       {item}
                     </span>
                   </motion.div>

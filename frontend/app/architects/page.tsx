@@ -139,7 +139,7 @@ export default function ArchitectsPage() {
   const selectedResourceData = resources.find(r => r.id === selectedResource)
 
   return (
-    <div className="min-h-screen bg-white dark:bg-gray-950 pt-20" data-testid="architects-page">
+    <div className="min-h-screen bg-white dark:bg-[#050505] pt-20" data-testid="architects-page">
       {/* Hero Section */}
       <section className="relative overflow-hidden bg-[#0A0A0A] dark:bg-[#050505] text-white py-16 lg:py-24">
         {/* Hero Background Image */}
@@ -171,7 +171,7 @@ export default function ArchitectsPage() {
           <div className="max-w-7xl mx-auto">
             <div className="text-center mb-16">
               <h2 className="text-4xl sm:text-5xl font-heading font-bold mb-4 ">Technical Resources</h2>
-              <p className="text-xl text-gray-600 dark:text-gray-400">
+              <p className="text-xl text-gray-600 dark:text-zinc-500">
                 Click on any resource to request instant access
               </p>
             </div>
@@ -188,20 +188,20 @@ export default function ArchitectsPage() {
                 >
                   <button
                     onClick={() => handleResourceClick(resource.id)}
-                    className="w-full bg-white border-2 border-gray-200 dark:border-gray-700 rounded-2xl p-8 hover:border-black hover:shadow-2xl transition-all transform hover:scale-105 text-left"
+                    className="w-full bg-white border-2 border-gray-200 dark:border-zinc-800 rounded-2xl p-8 hover:border-black hover:shadow-2xl transition-all transform hover:scale-105 text-left"
                   >
                     <div className={`inline-flex items-center justify-center w-16 h-16 mb-6 rounded-full bg-gradient-to-r ${resource.color}`}>
                       <resource.icon size={32} className="text-white" />
                     </div>
 
                     <h3 className="text-2xl font-bold mb-2">{resource.title}</h3>
-                    <p className="text-gray-600 dark:text-gray-400 mb-4">{resource.description}</p>
+                    <p className="text-gray-600 dark:text-zinc-500 mb-4">{resource.description}</p>
 
                     <div className="flex flex-wrap gap-2">
                       {resource.formats.map((format) => (
                         <span
                           key={format}
-                          className="px-3 py-1 bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 text-xs font-semibold rounded-full"
+                          className="px-3 py-1 bg-gray-100 dark:bg-[#171717] text-gray-700 dark:text-zinc-400 text-xs font-semibold rounded-full"
                         >
                           {format}
                         </span>
@@ -226,7 +226,7 @@ export default function ArchitectsPage() {
           <div className="max-w-4xl mx-auto">
             <div className="text-center mb-12">
               <h2 className="text-4xl sm:text-5xl font-heading font-bold mb-4 ">Why Architects Trust LEXA</h2>
-              <p className="text-xl text-gray-600 dark:text-gray-400">
+              <p className="text-xl text-gray-600 dark:text-zinc-500">
                 We speak your language - technical, precise, reliable
               </p>
             </div>
@@ -237,7 +237,7 @@ export default function ArchitectsPage() {
                   <Zap size={32} className="text-white" />
                 </div>
                 <h3 className="font-bold text-lg mb-2">Fast Turnaround</h3>
-                <p className="text-gray-600 dark:text-gray-400 text-sm">
+                <p className="text-gray-600 dark:text-zinc-500 text-sm">
                   Get resources within hours, not days
                 </p>
               </div>
@@ -247,7 +247,7 @@ export default function ArchitectsPage() {
                   <FileText size={32} className="text-white" />
                 </div>
                 <h3 className="font-bold text-lg mb-2">Detailed Documentation</h3>
-                <p className="text-gray-600 dark:text-gray-400 text-sm">
+                <p className="text-gray-600 dark:text-zinc-500 text-sm">
                   Complete specs with all technical details
                 </p>
               </div>
@@ -257,7 +257,7 @@ export default function ArchitectsPage() {
                   <Building2 size={32} className="text-white" />
                 </div>
                 <h3 className="font-bold text-lg mb-2">Project Support</h3>
-                <p className="text-gray-600 dark:text-gray-400 text-sm">
+                <p className="text-gray-600 dark:text-zinc-500 text-sm">
                   Dedicated engineer for technical queries
                 </p>
               </div>
@@ -272,7 +272,7 @@ export default function ArchitectsPage() {
           <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
-            className="bg-white dark:bg-gray-800 rounded-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto"
+            className="bg-white dark:bg-[#171717] rounded-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto"
           >
             {showSuccess ? (
               <div className="p-12 text-center">
@@ -280,10 +280,10 @@ export default function ArchitectsPage() {
                   <Check size={40} className="text-green-600" />
                 </div>
                 <h2 className="text-3xl font-bold mb-4">Request Received!</h2>
-                <p className="text-xl text-gray-700 dark:text-gray-300 mb-2">
+                <p className="text-xl text-gray-700 dark:text-zinc-400 mb-2">
                   Our project engineer will send you the resources within the next few hours.
                 </p>
-                <p className="text-gray-600 dark:text-gray-400">
+                <p className="text-gray-600 dark:text-zinc-500">
                   Check your email at <strong>{formData.email}</strong>
                 </p>
               </div>
@@ -301,12 +301,12 @@ export default function ArchitectsPage() {
                 </div>
 
                 <form aria-label="Form" onSubmit={handleSubmit} className="p-8 space-y-6">
-                  <p className="text-gray-700 dark:text-gray-300 bg-[#C9A962]/5 border-l-4 border-[#C9A962] p-4 rounded">
+                  <p className="text-gray-700 dark:text-zinc-400 bg-[#C9A962]/5 border-l-4 border-[#C9A962] p-4 rounded">
                     Fill in your details and our project engineer will send you the requested resources along with technical support.
                   </p>
 
                   <div>
-                    <label className="block text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">
+                    <label className="block text-sm font-semibold text-gray-700 dark:text-zinc-400 mb-2">
                       Full Name *
                     </label>
                     <Input
@@ -319,7 +319,7 @@ export default function ArchitectsPage() {
                   </div>
 
                   <div>
-                    <label className="block text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">
+                    <label className="block text-sm font-semibold text-gray-700 dark:text-zinc-400 mb-2">
                       Email Address *
                     </label>
                     <Input
@@ -332,7 +332,7 @@ export default function ArchitectsPage() {
                   </div>
 
                   <div>
-                    <label className="block text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">
+                    <label className="block text-sm font-semibold text-gray-700 dark:text-zinc-400 mb-2">
                       Phone Number *
                     </label>
                     <Input
@@ -345,7 +345,7 @@ export default function ArchitectsPage() {
                   </div>
 
                   <div>
-                    <label className="block text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">
+                    <label className="block text-sm font-semibold text-gray-700 dark:text-zinc-400 mb-2">
                       Company Name
                     </label>
                     <Input
@@ -357,7 +357,7 @@ export default function ArchitectsPage() {
                   </div>
 
                   <div>
-                    <label className="block text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">
+                    <label className="block text-sm font-semibold text-gray-700 dark:text-zinc-400 mb-2">
                       Project Details (Optional)
                     </label>
                     <Textarea

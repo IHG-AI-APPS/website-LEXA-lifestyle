@@ -24,7 +24,7 @@ export default function ProcessPage() {
   const processPhases = (cms?.phases || phases).map((p: any, i: number) => ({ ...p, icon: iconMap[p.icon] || phases[i]?.icon || Search, number: p.number || String(i + 1).padStart(2, '0') }))
 
   return (
-    <div className="min-h-screen bg-white dark:bg-gray-950 pt-20" data-testid="process-page">
+    <div className="min-h-screen bg-white dark:bg-[#050505] pt-20" data-testid="process-page">
       {/* Hero */}
       <section className="relative overflow-hidden bg-[#0A0A0A] dark:bg-[#050505] text-white py-16 lg:py-24">
         {/* Hero Background Image */}
@@ -45,7 +45,7 @@ export default function ProcessPage() {
       </section>
 
       {/* Process Phases */}
-      <section className="py-16 lg:py-20 bg-white dark:bg-gray-950" data-testid="phases-section">
+      <section className="py-16 lg:py-20 bg-white dark:bg-[#050505]" data-testid="phases-section">
         <div className="container mx-auto px-5 sm:px-8 lg:px-16">
           <div className="max-w-5xl mx-auto space-y-16">
             {processPhases.map((phase: any, index: number) => {
@@ -64,7 +64,7 @@ export default function ProcessPage() {
                         <span className="px-3 py-1 rounded-full bg-[#C9A962]/10 text-[#C9A962] text-xs font-semibold uppercase tracking-widest">{phase.duration}</span>
                       </div>
                       <h3 className="text-xl sm:text-2xl font-bold text-gray-900 dark:text-white mb-2">{phase.title}</h3>
-                      <p className="text-base text-gray-600 dark:text-gray-400 leading-relaxed max-w-2xl">{phase.description}</p>
+                      <p className="text-base text-gray-600 dark:text-zinc-500 leading-relaxed max-w-2xl">{phase.description}</p>
                     </div>
                   </div>
 
@@ -76,7 +76,7 @@ export default function ProcessPage() {
                         {phase.activities.map((activity, i) => (
                           <li key={i} className="flex items-start gap-3">
                             <CheckCircle2 size={16} className="text-[#C9A962] flex-shrink-0 mt-0.5" />
-                            <span className="text-sm text-gray-700 dark:text-gray-300">{activity}</span>
+                            <span className="text-sm text-gray-700 dark:text-zinc-400">{activity}</span>
                           </li>
                         ))}
                       </ul>
@@ -85,13 +85,13 @@ export default function ProcessPage() {
                       <span className="text-xs uppercase tracking-widest text-[#C9A962] font-semibold mb-4 block">Deliverables</span>
                       <ul className="space-y-2">
                         {phase.deliverables.map((d, i) => (
-                          <li key={i} className="text-sm text-gray-600 dark:text-gray-400 border-l-2 border-[#C9A962]/40 pl-4 py-1">{d}</li>
+                          <li key={i} className="text-sm text-gray-600 dark:text-zinc-500 border-l-2 border-[#C9A962]/40 pl-4 py-1">{d}</li>
                         ))}
                       </ul>
                     </div>
                   </div>
 
-                  {index < phases.length - 1 && <div className="h-px bg-gray-200 dark:bg-gray-800 mt-12" />}
+                  {index < phases.length - 1 && <div className="h-px bg-gray-200 dark:bg-[#171717] mt-12" />}
                 </motion.div>
               )
             })}
@@ -100,7 +100,7 @@ export default function ProcessPage() {
       </section>
 
       {/* Principles */}
-      <section className="py-16 lg:py-20 bg-gray-50 dark:bg-gray-900">
+      <section className="py-16 lg:py-20 bg-gray-50 dark:bg-[#0A0A0A]">
         <div className="container mx-auto px-5 sm:px-8 lg:px-16">
           <div className="max-w-5xl mx-auto">
             <div className="text-center mb-12">
@@ -115,9 +115,9 @@ export default function ProcessPage() {
                 { title: 'Partnership', desc: 'Long-term relationship focused on your success, not just project completion.' },
               ].map((p, i) => (
                 <motion.div key={i} initial={{ opacity: 0, y: 15 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.3, delay: i * 0.1 }}
-                  className="bg-white dark:bg-gray-950 p-6 rounded-xl border border-gray-100 dark:border-gray-800">
+                  className="bg-white dark:bg-[#050505] p-6 rounded-xl border border-gray-100 dark:border-zinc-800">
                   <h3 className="text-base font-bold mb-2 text-gray-900 dark:text-white">{p.title}</h3>
-                  <p className="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">{p.desc}</p>
+                  <p className="text-sm text-gray-600 dark:text-zinc-500 leading-relaxed">{p.desc}</p>
                 </motion.div>
               ))}
             </div>

@@ -71,14 +71,14 @@ export default function SolutionsPage() {
 
   if (loading) {
     return (
-      <div className="min-h-screen bg-white dark:bg-gray-900 pt-20 flex items-center justify-center">
+      <div className="min-h-screen bg-white dark:bg-[#0A0A0A] pt-20 flex items-center justify-center">
         <div className="text-gray-400">Loading solutions...</div>
       </div>
     )
   }
 
   return (
-    <div className="min-h-screen bg-white dark:bg-gray-950 pt-20" data-testid="solutions-page">
+    <div className="min-h-screen bg-white dark:bg-[#050505] pt-20" data-testid="solutions-page">
       {/* Hero */}
       <section className="relative overflow-hidden bg-[#0A0A0A] dark:bg-[#050505] text-white py-16 lg:py-24">
         <div className="container mx-auto px-5 sm:px-8 lg:px-16 relative z-10">
@@ -116,7 +116,7 @@ export default function SolutionsPage() {
                   {language === 'ar' ? 'الفئة' : 'Category'}
                 </span>
                 <h2 className="text-3xl md:text-4xl font-bold mb-2">{categoryConfig.residential.title}</h2>
-                <p className="text-lg text-gray-600 dark:text-gray-400">{categoryConfig.residential.subtitle}</p>
+                <p className="text-lg text-gray-600 dark:text-zinc-500">{categoryConfig.residential.subtitle}</p>
               </motion.div>
 
               <div className="space-y-2">
@@ -129,7 +129,7 @@ export default function SolutionsPage() {
                     viewport={{ once: true }}
                   >
                     <Link href={`/solutions/${solution.slug}`}>
-                      <div className="group py-8 border-b border-gray-200 dark:border-gray-700 hover:border-gray-400 dark:hover:border-gray-500 transition-all duration-300">
+                      <div className="group py-8 border-b border-gray-200 dark:border-zinc-800 hover:border-gray-400 dark:hover:border-gray-500 transition-all duration-300">
                         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
                           <div className="lg:col-span-1">
                             <span className="text-4xl font-semibold text-gray-300 group-hover:text-black transition-colors">
@@ -145,7 +145,7 @@ export default function SolutionsPage() {
                             </h3>
                           </div>
                           <div className="lg:col-span-5">
-                            <p className="text-gray-600 dark:text-gray-400 leading-relaxed">
+                            <p className="text-gray-600 dark:text-zinc-500 leading-relaxed">
                               {solution.description}
                             </p>
                           </div>
@@ -163,7 +163,7 @@ export default function SolutionsPage() {
                                     href: `/solutions/${solution.slug}`
                                   })
                                 }}
-                                className="w-10 h-10 flex items-center justify-center rounded-full bg-gray-100 dark:bg-white/5 border border-gray-200 dark:border-white/10 text-gray-500 dark:text-gray-400 hover:bg-[#C9A962] hover:text-white hover:border-[#C9A962] transition-all"
+                                className="w-10 h-10 flex items-center justify-center rounded-full bg-gray-100 dark:bg-white/5 border border-gray-200 dark:border-white/10 text-gray-500 dark:text-zinc-500 hover:bg-[#C9A962] hover:text-white hover:border-[#C9A962] transition-all"
                                 data-testid={`quickview-solution-${index}`}
                               >
                                 <Eye size={16} />
@@ -197,7 +197,7 @@ export default function SolutionsPage() {
                   {language === 'ar' ? 'الفئة' : 'Category'}
                 </span>
                 <h2 className="text-3xl md:text-4xl font-bold mb-2">{categoryConfig.commercial.title}</h2>
-                <p className="text-lg text-gray-600 dark:text-gray-400">{categoryConfig.commercial.subtitle}</p>
+                <p className="text-lg text-gray-600 dark:text-zinc-500">{categoryConfig.commercial.subtitle}</p>
               </motion.div>
 
               <div className="space-y-2">
@@ -210,7 +210,7 @@ export default function SolutionsPage() {
                     viewport={{ once: true }}
                   >
                     <Link href={`/solutions/${solution.slug}`}>
-                      <div className="group py-8 border-b border-gray-200 dark:border-gray-700 hover:border-gray-400 dark:hover:border-gray-500 transition-all duration-300">
+                      <div className="group py-8 border-b border-gray-200 dark:border-zinc-800 hover:border-gray-400 dark:hover:border-gray-500 transition-all duration-300">
                         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
                           <div className="lg:col-span-1">
                             <span className="text-4xl font-semibold text-gray-300 group-hover:text-black transition-colors">
@@ -226,7 +226,7 @@ export default function SolutionsPage() {
                             </h3>
                           </div>
                           <div className="lg:col-span-5">
-                            <p className="text-gray-600 dark:text-gray-400 leading-relaxed">
+                            <p className="text-gray-600 dark:text-zinc-500 leading-relaxed">
                               {solution.description}
                             </p>
                           </div>
@@ -244,7 +244,7 @@ export default function SolutionsPage() {
                                     href: `/solutions/${solution.slug}`
                                   })
                                 }}
-                                className="w-10 h-10 flex items-center justify-center rounded-full bg-gray-100 dark:bg-white/5 border border-gray-200 dark:border-white/10 text-gray-500 dark:text-gray-400 hover:bg-[#C9A962] hover:text-white hover:border-[#C9A962] transition-all"
+                                className="w-10 h-10 flex items-center justify-center rounded-full bg-gray-100 dark:bg-white/5 border border-gray-200 dark:border-white/10 text-gray-500 dark:text-zinc-500 hover:bg-[#C9A962] hover:text-white hover:border-[#C9A962] transition-all"
                                 data-testid={`quickview-solution-${index}`}
                               >
                                 <Eye size={16} />
@@ -278,7 +278,7 @@ export default function SolutionsPage() {
                   {language === 'ar' ? 'الفئة' : 'Category'}
                 </span>
                 <h2 className="text-3xl md:text-4xl font-bold mb-2">{categoryConfig.specialized.title}</h2>
-                <p className="text-lg text-gray-600 dark:text-gray-400">{categoryConfig.specialized.subtitle}</p>
+                <p className="text-lg text-gray-600 dark:text-zinc-500">{categoryConfig.specialized.subtitle}</p>
               </motion.div>
 
               <div className="space-y-2">
@@ -291,7 +291,7 @@ export default function SolutionsPage() {
                     viewport={{ once: true }}
                   >
                     <Link href={`/solutions/${solution.slug}`}>
-                      <div className="group py-8 border-b border-gray-200 dark:border-gray-700 hover:border-gray-400 dark:hover:border-gray-500 transition-all duration-300">
+                      <div className="group py-8 border-b border-gray-200 dark:border-zinc-800 hover:border-gray-400 dark:hover:border-gray-500 transition-all duration-300">
                         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
                           <div className="lg:col-span-1">
                             <span className="text-4xl font-semibold text-gray-300 group-hover:text-black transition-colors">
@@ -307,7 +307,7 @@ export default function SolutionsPage() {
                             </h3>
                           </div>
                           <div className="lg:col-span-5">
-                            <p className="text-gray-600 dark:text-gray-400 leading-relaxed">
+                            <p className="text-gray-600 dark:text-zinc-500 leading-relaxed">
                               {solution.description}
                             </p>
                           </div>
@@ -325,7 +325,7 @@ export default function SolutionsPage() {
                                     href: `/solutions/${solution.slug}`
                                   })
                                 }}
-                                className="w-10 h-10 flex items-center justify-center rounded-full bg-gray-100 dark:bg-white/5 border border-gray-200 dark:border-white/10 text-gray-500 dark:text-gray-400 hover:bg-[#C9A962] hover:text-white hover:border-[#C9A962] transition-all"
+                                className="w-10 h-10 flex items-center justify-center rounded-full bg-gray-100 dark:bg-white/5 border border-gray-200 dark:border-white/10 text-gray-500 dark:text-zinc-500 hover:bg-[#C9A962] hover:text-white hover:border-[#C9A962] transition-all"
                                 data-testid={`quickview-solution-${index}`}
                               >
                                 <Eye size={16} />
@@ -359,7 +359,7 @@ export default function SolutionsPage() {
                   {language === 'ar' ? 'الفئة' : 'Category'}
                 </span>
                 <h2 className="text-3xl md:text-4xl font-bold mb-2">{categoryConfig.other.title}</h2>
-                <p className="text-lg text-gray-600 dark:text-gray-400">{categoryConfig.other.subtitle}</p>
+                <p className="text-lg text-gray-600 dark:text-zinc-500">{categoryConfig.other.subtitle}</p>
               </motion.div>
 
               <div className="space-y-2">
@@ -372,7 +372,7 @@ export default function SolutionsPage() {
                     viewport={{ once: true }}
                   >
                     <Link href={`/solutions/${solution.slug}`}>
-                      <div className="group py-8 border-b border-gray-200 dark:border-gray-700 hover:border-gray-400 dark:hover:border-gray-500 transition-all duration-300">
+                      <div className="group py-8 border-b border-gray-200 dark:border-zinc-800 hover:border-gray-400 dark:hover:border-gray-500 transition-all duration-300">
                         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
                           <div className="lg:col-span-1">
                             <span className="text-4xl font-semibold text-gray-300 group-hover:text-black transition-colors">
@@ -388,7 +388,7 @@ export default function SolutionsPage() {
                             </h3>
                           </div>
                           <div className="lg:col-span-5">
-                            <p className="text-gray-600 dark:text-gray-400 leading-relaxed">
+                            <p className="text-gray-600 dark:text-zinc-500 leading-relaxed">
                               {solution.description}
                             </p>
                           </div>
@@ -406,7 +406,7 @@ export default function SolutionsPage() {
                                     href: `/solutions/${solution.slug}`
                                   })
                                 }}
-                                className="w-10 h-10 flex items-center justify-center rounded-full bg-gray-100 dark:bg-white/5 border border-gray-200 dark:border-white/10 text-gray-500 dark:text-gray-400 hover:bg-[#C9A962] hover:text-white hover:border-[#C9A962] transition-all"
+                                className="w-10 h-10 flex items-center justify-center rounded-full bg-gray-100 dark:bg-white/5 border border-gray-200 dark:border-white/10 text-gray-500 dark:text-zinc-500 hover:bg-[#C9A962] hover:text-white hover:border-[#C9A962] transition-all"
                                 data-testid={`quickview-solution-${index}`}
                               >
                                 <Eye size={16} />
@@ -432,7 +432,7 @@ export default function SolutionsPage() {
       <RecentlyViewedSection 
         maxItems={4} 
         variant="horizontal" 
-        className="bg-white dark:bg-gray-950 border-t border-gray-100 dark:border-gray-800" 
+        className="bg-white dark:bg-[#050505] border-t border-gray-100 dark:border-zinc-800" 
       />
 
       {/* Quick View Modal */}

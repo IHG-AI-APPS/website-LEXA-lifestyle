@@ -23,7 +23,7 @@ export default function TestimonialsPage() {
   }, [])
 
   return (
-    <div className="min-h-screen bg-white dark:bg-gray-950 pt-20" data-testid="testimonials-page">
+    <div className="min-h-screen bg-white dark:bg-[#050505] pt-20" data-testid="testimonials-page">
       {/* Hero */}
       <section className="relative overflow-hidden bg-[#0A0A0A] dark:bg-[#050505] text-white py-16 lg:py-24">
         {/* Hero Background Image */}
@@ -41,10 +41,10 @@ export default function TestimonialsPage() {
       </section>
 
       {/* Testimonials Grid */}
-      <section className="py-16 lg:py-20 bg-white dark:bg-gray-950" data-testid="testimonials-grid">
+      <section className="py-16 lg:py-20 bg-white dark:bg-[#050505]" data-testid="testimonials-grid">
         <div className="container mx-auto px-5 sm:px-8 lg:px-16 max-w-6xl">
           {loading ? (
-            <div className="grid gap-6 md:grid-cols-2">{[1, 2, 3, 4].map(i => (<div key={i} className="animate-pulse border border-gray-200 dark:border-gray-800 rounded-xl p-6"><div className="h-4 bg-gray-200 rounded w-24 mb-4" /><div className="h-20 bg-gray-100 rounded mb-4" /><div className="h-4 bg-gray-200 rounded w-32" /></div>))}</div>
+            <div className="grid gap-6 md:grid-cols-2">{[1, 2, 3, 4].map(i => (<div key={i} className="animate-pulse border border-gray-200 dark:border-zinc-800 rounded-xl p-6"><div className="h-4 bg-gray-200 rounded w-24 mb-4" /><div className="h-20 bg-gray-100 rounded mb-4" /><div className="h-4 bg-gray-200 rounded w-32" /></div>))}</div>
           ) : testimonials.length === 0 ? (
             <div className="text-center py-16">
               <Quote className="h-12 w-12 text-gray-300 mx-auto mb-4" />
@@ -57,10 +57,10 @@ export default function TestimonialsPage() {
                 const rating = t.rating || 5
                 return (
                   <motion.div key={t.id || idx} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.3, delay: idx * 0.05 }}
-                    className="relative bg-white dark:bg-gray-900 rounded-xl p-6 sm:p-8 border border-gray-100 dark:border-gray-800 hover:shadow-lg transition-shadow" data-testid={`testimonial-card-${idx}`}>
+                    className="relative bg-white dark:bg-[#0A0A0A] rounded-xl p-6 sm:p-8 border border-gray-100 dark:border-zinc-800 hover:shadow-lg transition-shadow" data-testid={`testimonial-card-${idx}`}>
                     <Quote className="h-8 w-8 text-[#C9A962]/20 absolute top-4 right-4" />
                     <div className="flex gap-1 mb-4">{Array.from({ length: 5 }).map((_, i) => (<Star key={i} className={`h-4 w-4 ${i < rating ? 'fill-[#C9A962] text-[#C9A962]' : 'text-gray-300'}`} />))}</div>
-                    <p className="text-gray-700 dark:text-gray-300 leading-relaxed mb-6 text-sm">&ldquo;{text}&rdquo;</p>
+                    <p className="text-gray-700 dark:text-zinc-400 leading-relaxed mb-6 text-sm">&ldquo;{text}&rdquo;</p>
                     <div className="flex items-center gap-3">
                       <div className="w-10 h-10 rounded-full bg-gray-900 dark:bg-[#C9A962] flex items-center justify-center text-white dark:text-gray-900 font-semibold text-sm">{t.name?.charAt(0) || '?'}</div>
                       <div>
@@ -73,7 +73,7 @@ export default function TestimonialsPage() {
                       </div>
                     </div>
                     {t.project_type && (
-                      <div className="mt-4 pt-4 border-t border-gray-100 dark:border-gray-800">
+                      <div className="mt-4 pt-4 border-t border-gray-100 dark:border-zinc-800">
                         <span className="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-medium bg-[#C9A962]/10 text-[#C9A962]">{t.project_type}</span>
                       </div>
                     )}

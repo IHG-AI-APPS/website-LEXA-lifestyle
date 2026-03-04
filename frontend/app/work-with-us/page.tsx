@@ -35,7 +35,7 @@ export default function WorkWithUsPage() {
   const [expandedJob, setExpandedJob] = useState<number | null>(null)
 
   return (
-    <div className="min-h-screen bg-white dark:bg-gray-950 pt-20" data-testid="work-with-us-page">
+    <div className="min-h-screen bg-white dark:bg-[#050505] pt-20" data-testid="work-with-us-page">
       {/* Hero */}
       <section className="relative overflow-hidden bg-[#0A0A0A] dark:bg-[#050505] text-white py-16 lg:py-24">
         <div className="container mx-auto px-5 sm:px-8 lg:px-16 relative z-10">
@@ -51,7 +51,7 @@ export default function WorkWithUsPage() {
       </section>
 
       {/* Expertise Areas */}
-      <section className="py-16 lg:py-20 bg-white dark:bg-gray-950" data-testid="expertise-section">
+      <section className="py-16 lg:py-20 bg-white dark:bg-[#050505]" data-testid="expertise-section">
         <div className="container mx-auto px-5 sm:px-8 lg:px-16">
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-12">
@@ -63,14 +63,14 @@ export default function WorkWithUsPage() {
                 const Icon = area.icon
                 return (
                   <motion.div key={i} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.3, delay: i * 0.08 }}
-                    className="bg-gray-50 dark:bg-gray-900 rounded-xl p-7 border border-gray-100 dark:border-gray-800 hover:shadow-lg transition-shadow group">
+                    className="bg-gray-50 dark:bg-[#0A0A0A] rounded-xl p-7 border border-gray-100 dark:border-zinc-800 hover:shadow-lg transition-shadow group">
                     <div className="w-11 h-11 rounded-lg bg-gray-900 dark:bg-[#C9A962] flex items-center justify-center mb-5 group-hover:bg-[#C9A962] transition-colors">
                       <Icon className="text-white dark:text-gray-900 group-hover:text-gray-900 transition-colors" size={20} />
                     </div>
                     <h3 className="text-base font-bold mb-2 text-gray-900 dark:text-white">{area.title}</h3>
-                    <p className="text-sm text-gray-600 dark:text-gray-400 mb-4">{area.description}</p>
+                    <p className="text-sm text-gray-600 dark:text-zinc-500 mb-4">{area.description}</p>
                     <div className="flex flex-wrap gap-2">
-                      {area.skills.map((skill, j) => (<span key={j} className="px-2 py-1 bg-white dark:bg-gray-800 text-xs text-gray-600 dark:text-gray-300 rounded-full border border-gray-200 dark:border-gray-700">{skill}</span>))}
+                      {area.skills.map((skill, j) => (<span key={j} className="px-2 py-1 bg-white dark:bg-[#171717] text-xs text-gray-600 dark:text-zinc-400 rounded-full border border-gray-200 dark:border-zinc-800">{skill}</span>))}
                     </div>
                   </motion.div>
                 )
@@ -81,7 +81,7 @@ export default function WorkWithUsPage() {
       </section>
 
       {/* Benefits */}
-      <section className="py-16 lg:py-20 bg-gray-50 dark:bg-gray-900">
+      <section className="py-16 lg:py-20 bg-gray-50 dark:bg-[#0A0A0A]">
         <div className="container mx-auto px-5 sm:px-8 lg:px-16">
           <div className="max-w-5xl mx-auto">
             <div className="text-center mb-12">
@@ -94,11 +94,11 @@ export default function WorkWithUsPage() {
                 return (
                   <motion.div key={i} initial={{ opacity: 0, y: 15 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.3, delay: i * 0.1 }}
                     className="text-center p-5">
-                    <div className="w-12 h-12 rounded-full bg-gray-900 dark:bg-gray-800 flex items-center justify-center mb-3 mx-auto border-2 border-[#C9A962]/30">
+                    <div className="w-12 h-12 rounded-full bg-gray-900 dark:bg-[#171717] flex items-center justify-center mb-3 mx-auto border-2 border-[#C9A962]/30">
                       <Icon className="text-[#C9A962]" size={20} />
                     </div>
                     <h3 className="text-sm font-bold mb-1 text-gray-900 dark:text-white">{b.title}</h3>
-                    <p className="text-xs text-gray-500 dark:text-gray-400">{b.desc}</p>
+                    <p className="text-xs text-gray-500 dark:text-zinc-500">{b.desc}</p>
                   </motion.div>
                 )
               })}
@@ -108,7 +108,7 @@ export default function WorkWithUsPage() {
       </section>
 
       {/* Open Positions */}
-      <section id="positions" className="py-16 lg:py-20 bg-white dark:bg-gray-950" data-testid="positions-section">
+      <section id="positions" className="py-16 lg:py-20 bg-white dark:bg-[#050505]" data-testid="positions-section">
         <div className="container mx-auto px-5 sm:px-8 lg:px-16">
           <div className="max-w-4xl mx-auto">
             <div className="text-center mb-12">
@@ -118,8 +118,8 @@ export default function WorkWithUsPage() {
             <div className="space-y-4">
               {openPositions.map((job, i) => (
                 <motion.div key={i} initial={{ opacity: 0, y: 10 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.3, delay: i * 0.05 }}
-                  className="rounded-xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900 overflow-hidden" data-testid={`job-card-${i}`}>
-                  <button onClick={() => setExpandedJob(expandedJob === i ? null : i)} className="w-full flex items-center justify-between p-5 text-left hover:bg-gray-50 dark:hover:bg-gray-800/50 transition-colors">
+                  className="rounded-xl border border-gray-200 dark:border-zinc-800 bg-white dark:bg-[#0A0A0A] overflow-hidden" data-testid={`job-card-${i}`}>
+                  <button onClick={() => setExpandedJob(expandedJob === i ? null : i)} className="w-full flex items-center justify-between p-5 text-left hover:bg-gray-50 dark:hover:bg-[#171717]/50 transition-colors">
                     <div className="flex-1">
                       <h3 className="font-bold text-gray-900 dark:text-white text-sm">{job.title}</h3>
                       <div className="flex flex-wrap items-center gap-3 mt-1 text-xs text-gray-500">
@@ -132,8 +132,8 @@ export default function WorkWithUsPage() {
                   </button>
                   <AnimatePresence>
                     {expandedJob === i && (
-                      <motion.div initial={{ height: 0, opacity: 0 }} animate={{ height: 'auto', opacity: 1 }} exit={{ height: 0, opacity: 0 }} className="border-t border-gray-100 dark:border-gray-800 p-5 bg-gray-50 dark:bg-gray-800/50">
-                        <p className="text-sm text-gray-600 dark:text-gray-400 mb-4">{job.description}</p>
+                      <motion.div initial={{ height: 0, opacity: 0 }} animate={{ height: 'auto', opacity: 1 }} exit={{ height: 0, opacity: 0 }} className="border-t border-gray-100 dark:border-zinc-800 p-5 bg-gray-50 dark:bg-[#171717]/50">
+                        <p className="text-sm text-gray-600 dark:text-zinc-500 mb-4">{job.description}</p>
                         <Button size="sm" className="bg-[#C9A962] text-gray-900 hover:bg-[#C9A962]/90 font-semibold" asChild>
                           <a href={`mailto:careers@lexalifestyle.com?subject=Application: ${job.title}`}>Apply Now <ArrowRight className="ml-2" size={14} /></a>
                         </Button>

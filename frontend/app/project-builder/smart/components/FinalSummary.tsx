@@ -770,12 +770,12 @@ export default function FinalSummary({
           <CheckCircle2 className="w-10 h-10 text-green-600" />
         </div>
         <h1 className="text-3xl font-bold text-gray-900 dark:text-white mb-2">Your Smart Home Package is Ready!</h1>
-        <p className="text-gray-600 dark:text-gray-400 mb-4">Here&apos;s a summary of your personalized automation solution</p>
+        <p className="text-gray-600 dark:text-zinc-500 mb-4">Here&apos;s a summary of your personalized automation solution</p>
         
         {/* Quote Reference */}
         <button
           onClick={copyQuoteRef}
-          className="inline-flex items-center gap-2 px-4 py-2 bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 rounded-full transition-colors"
+          className="inline-flex items-center gap-2 px-4 py-2 bg-gray-100 dark:bg-[#171717] hover:bg-gray-200 rounded-full transition-colors"
         >
           <span className="text-sm text-gray-500">Quote Reference:</span>
           <span className="font-mono font-bold text-gray-900 dark:text-white">{quoteRef}</span>
@@ -788,7 +788,7 @@ export default function FinalSummary({
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.1 }}
-        className="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-2xl p-6 mb-6"
+        className="bg-white dark:bg-[#171717] border border-gray-200 dark:border-zinc-800 rounded-2xl p-6 mb-6"
       >
         <h2 className="text-lg font-bold text-gray-900 dark:text-white mb-4 flex items-center gap-2">
           <Building2 className="w-5 h-5 text-gray-400" />
@@ -819,7 +819,7 @@ export default function FinalSummary({
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.2 }}
-        className="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-2xl p-6 mb-6"
+        className="bg-white dark:bg-[#171717] border border-gray-200 dark:border-zinc-800 rounded-2xl p-6 mb-6"
       >
         <h2 className="text-lg font-bold text-gray-900 dark:text-white mb-4 flex items-center gap-2">
           <Sparkles className="w-5 h-5 text-gray-400" />
@@ -849,7 +849,7 @@ export default function FinalSummary({
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.3 }}
-        className="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-2xl p-6 mb-6"
+        className="bg-white dark:bg-[#171717] border border-gray-200 dark:border-zinc-800 rounded-2xl p-6 mb-6"
       >
         <h2 className="text-lg font-bold text-gray-900 dark:text-white mb-4 flex items-center gap-2">
           <Settings className="w-5 h-5 text-gray-400" />
@@ -861,7 +861,7 @@ export default function FinalSummary({
               <Zap className="w-5 h-5 text-[#C9A962]" />
               <span className="font-semibold text-gray-900 dark:text-white">Protocol</span>
             </div>
-            <div className="text-gray-600 dark:text-gray-400">{formatLabel(protocolType)}</div>
+            <div className="text-gray-600 dark:text-zinc-500">{formatLabel(protocolType)}</div>
             <div className="text-sm text-gray-500 mt-1">{selectedProtocols.join(', ')}</div>
           </div>
           <div className="p-4 bg-gray-50 rounded-xl">
@@ -869,7 +869,7 @@ export default function FinalSummary({
               <Settings className="w-5 h-5 text-[#C9A962]" />
               <span className="font-semibold text-gray-900 dark:text-white">Control System</span>
             </div>
-            <div className="text-gray-600 dark:text-gray-400">{selectedSystems.join(', ')}</div>
+            <div className="text-gray-600 dark:text-zinc-500">{selectedSystems.join(', ')}</div>
           </div>
         </div>
       </motion.div>
@@ -994,7 +994,7 @@ export default function FinalSummary({
       </motion.div>
 
       {/* Bottom Navigation */}
-      <div className="flex items-center justify-between pt-4 border-t border-gray-200 dark:border-gray-700">
+      <div className="flex items-center justify-between pt-4 border-t border-gray-200 dark:border-zinc-800">
         <Button variant="outline" onClick={onBack} className="text-gray-600">
           <ChevronLeft className="w-4 h-4 mr-1" />
           Modify Selections
@@ -1015,7 +1015,7 @@ export default function FinalSummary({
           <motion.div
             initial={{ scale: 0.9, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
-            className="bg-white dark:bg-gray-800 rounded-2xl p-6 max-w-md w-full shadow-2xl"
+            className="bg-white dark:bg-[#171717] rounded-2xl p-6 max-w-md w-full shadow-2xl"
           >
             {!bookingSubmitted ? (
               <>
@@ -1023,7 +1023,7 @@ export default function FinalSummary({
                   <h3 className="text-xl font-bold text-gray-900 dark:text-white">Book Consultation</h3>
                   <button
                     onClick={() => setShowBookingModal(false)}
-                    className="p-2 hover:bg-gray-100 dark:bg-gray-800 rounded-full"
+                    className="p-2 hover:bg-gray-100 dark:bg-[#171717] rounded-full"
                   >
                     <X className="w-5 h-5" />
                   </button>
@@ -1031,7 +1031,7 @@ export default function FinalSummary({
 
                 <div className="space-y-4">
                   <div>
-                    <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Full Name *</label>
+                    <label className="block text-sm font-medium text-gray-700 dark:text-zinc-400 mb-1">Full Name *</label>
                     <Input
                       value={bookingForm.name}
                       onChange={(e) => setBookingForm({...bookingForm, name: e.target.value})}
@@ -1039,7 +1039,7 @@ export default function FinalSummary({
                     />
                   </div>
                   <div>
-                    <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Email *</label>
+                    <label className="block text-sm font-medium text-gray-700 dark:text-zinc-400 mb-1">Email *</label>
                     <Input
                       type="email"
                       value={bookingForm.email}
@@ -1048,7 +1048,7 @@ export default function FinalSummary({
                     />
                   </div>
                   <div>
-                    <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Phone *</label>
+                    <label className="block text-sm font-medium text-gray-700 dark:text-zinc-400 mb-1">Phone *</label>
                     <Input
                       type="tel"
                       value={bookingForm.phone}
@@ -1057,7 +1057,7 @@ export default function FinalSummary({
                     />
                   </div>
                   <div>
-                    <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Preferred Date</label>
+                    <label className="block text-sm font-medium text-gray-700 dark:text-zinc-400 mb-1">Preferred Date</label>
                     <Input
                       type="date"
                       value={bookingForm.preferredDate}
@@ -1065,7 +1065,7 @@ export default function FinalSummary({
                     />
                   </div>
                   <div>
-                    <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Preferred Time</label>
+                    <label className="block text-sm font-medium text-gray-700 dark:text-zinc-400 mb-1">Preferred Time</label>
                     <div className="grid grid-cols-3 gap-2">
                       {['morning', 'afternoon', 'evening'].map((time) => (
                         <button
@@ -1074,7 +1074,7 @@ export default function FinalSummary({
                           className={`p-2 rounded-lg border-2 text-sm font-medium capitalize ${
                             bookingForm.preferredTime === time
                               ? 'border-green-500 bg-green-50 text-green-600'
-                              : 'border-gray-200 dark:border-gray-700 hover:border-gray-300'
+                              : 'border-gray-200 dark:border-zinc-800 hover:border-gray-300'
                           }`}
                         >
                           {time}
@@ -1118,11 +1118,11 @@ export default function FinalSummary({
                 <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2">Consultation Booked!</h3>
                 {bookingConfirmation && (
                   <div className="mb-4 p-3 bg-green-50 rounded-lg">
-                    <p className="text-sm text-gray-600 dark:text-gray-400 mb-1">Confirmation Number:</p>
+                    <p className="text-sm text-gray-600 dark:text-zinc-500 mb-1">Confirmation Number:</p>
                     <p className="font-mono font-bold text-green-700 text-lg">{bookingConfirmation}</p>
                   </div>
                 )}
-                <p className="text-gray-600 dark:text-gray-400 mb-6">
+                <p className="text-gray-600 dark:text-zinc-500 mb-6">
                   Our team will contact you within 24 hours to confirm your consultation.
                 </p>
                 <Button onClick={() => setShowBookingModal(false)}>

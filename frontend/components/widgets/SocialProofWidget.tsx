@@ -92,7 +92,7 @@ export default function SocialProofWidget() {
           initial={{ opacity: 0, x: -100, y: 0 }}
           animate={{ opacity: 1, x: 0, y: 0 }}
           exit={{ opacity: 0, x: -100, y: 0 }}
-          className="fixed bottom-24 left-4 z-40 max-w-[320px] bg-white dark:bg-gray-900 rounded-xl shadow-2xl border border-gray-100 dark:border-gray-800 dark:border-gray-700 overflow-hidden"
+          className="fixed bottom-24 left-4 z-40 max-w-[320px] bg-white dark:bg-[#0A0A0A] rounded-xl shadow-2xl border border-gray-100 dark:border-zinc-800 overflow-hidden"
         >
           <div className="p-4">
             <div className="flex items-start gap-3">
@@ -108,7 +108,7 @@ export default function SocialProofWidget() {
                   {' '}from{' '}
                   <span className="font-medium text-blue-600">{currentEvent.location}</span>
                 </p>
-                <p className="text-sm text-gray-600 dark:text-gray-400 mt-0.5">
+                <p className="text-sm text-gray-600 dark:text-zinc-500 mt-0.5">
                   {currentEvent.action}
                 </p>
                 <div className="flex items-center gap-2 mt-1.5 text-xs text-gray-400">
@@ -122,7 +122,7 @@ export default function SocialProofWidget() {
               {/* Close button */}
               <button 
                 onClick={dismiss}
-                className="text-gray-400 hover:text-gray-600 dark:text-gray-400 p-1 -mt-1 -mr-1"
+                className="text-gray-400 hover:text-gray-600 dark:text-zinc-500 p-1 -mt-1 -mr-1"
               >
                 <span className="sr-only">Dismiss</span>
                 <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -133,7 +133,7 @@ export default function SocialProofWidget() {
           </div>
 
           {/* Progress bar */}
-          <div className="h-1 bg-gray-100 dark:bg-gray-800">
+          <div className="h-1 bg-gray-100 dark:bg-[#171717]">
             <motion.div
               className="h-full bg-gradient-to-r from-green-400 to-blue-500"
               initial={{ width: '100%' }}

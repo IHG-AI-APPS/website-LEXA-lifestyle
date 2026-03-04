@@ -129,7 +129,7 @@ export default function IntelligencePage() {
 
   return (
     <>
-      <div className="min-h-screen bg-white dark:bg-gray-900">
+      <div className="min-h-screen bg-white dark:bg-[#0A0A0A]">
         {/* Hero Section */}
         <section className="relative overflow-hidden bg-[#0A0A0A] dark:bg-[#050505] text-white py-20 sm:py-32">
         {/* Hero Background Image */}
@@ -172,7 +172,7 @@ export default function IntelligencePage() {
                 <Button
                   size="lg"
                   onClick={() => setShowConsultationForm(true)}
-                  className="bg-white text-[#1A1A1A] dark:text-white hover:bg-gray-100 dark:bg-gray-800 px-8 py-6 text-sm font-semibold uppercase tracking-wider"
+                  className="bg-white text-[#1A1A1A] dark:text-white hover:bg-gray-100 dark:bg-[#171717] px-8 py-6 text-sm font-semibold uppercase tracking-wider"
                 >
                   {language === 'ar' ? 'جدولة تدقيق ذكي' : 'Schedule Intelligence Audit'}
                 </Button>
@@ -214,7 +214,7 @@ export default function IntelligencePage() {
         </section>
 
         {/* Category Filter with Previous/Next Navigation */}
-        <section className="py-8 bg-gray-50 dark:bg-gray-800 border-b border-gray-200 dark:border-gray-700 sticky top-16 sm:top-18 md:top-20 z-30">
+        <section className="py-8 bg-gray-50 dark:bg-[#171717] border-b border-gray-200 dark:border-zinc-800 sticky top-16 sm:top-18 md:top-20 z-30">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
             <div className="flex items-center justify-between gap-4">
               {/* Previous Button */}
@@ -228,7 +228,7 @@ export default function IntelligencePage() {
                   }
                 }}
                 disabled={selectedCategory === null}
-                className="flex-shrink-0 flex items-center gap-2 px-4 py-2 rounded-full text-sm font-medium transition-all bg-white dark:bg-gray-700 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:bg-gray-800 dark:hover:bg-gray-600 disabled:opacity-40 disabled:cursor-not-allowed border border-gray-200 dark:border-gray-700 dark:border-gray-600"
+                className="flex-shrink-0 flex items-center gap-2 px-4 py-2 rounded-full text-sm font-medium transition-all bg-white dark:bg-gray-700 text-gray-700 dark:text-zinc-400 hover:bg-gray-100 dark:bg-[#171717] dark:hover:bg-gray-600 disabled:opacity-40 disabled:cursor-not-allowed border border-gray-200 dark:border-zinc-800 dark:border-zinc-700"
               >
                 <ArrowRight className="h-4 w-4 rotate-180" />
                 <span className="hidden sm:inline">{language === 'ar' ? 'السابق' : 'Previous'}</span>
@@ -271,7 +271,7 @@ export default function IntelligencePage() {
                   }
                 }}
                 disabled={selectedCategory === categories[categories.length - 1]}
-                className="flex-shrink-0 flex items-center gap-2 px-4 py-2 rounded-full text-sm font-medium transition-all bg-white dark:bg-gray-700 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:bg-gray-800 dark:hover:bg-gray-600 disabled:opacity-40 disabled:cursor-not-allowed border border-gray-200 dark:border-gray-700 dark:border-gray-600"
+                className="flex-shrink-0 flex items-center gap-2 px-4 py-2 rounded-full text-sm font-medium transition-all bg-white dark:bg-gray-700 text-gray-700 dark:text-zinc-400 hover:bg-gray-100 dark:bg-[#171717] dark:hover:bg-gray-600 disabled:opacity-40 disabled:cursor-not-allowed border border-gray-200 dark:border-zinc-800 dark:border-zinc-700"
               >
                 <span className="hidden sm:inline">{language === 'ar' ? 'التالي' : 'Next'}</span>
                 <ArrowRight className="h-4 w-4" />
@@ -316,7 +316,7 @@ export default function IntelligencePage() {
                   ? categoryNames[selectedCategory]?.[language === 'ar' ? 'ar' : 'en'] || selectedCategory
                   : (language === 'ar' ? 'جميع الميزات الذكية' : 'All Intelligence Features')}
               </h2>
-              <p className="text-base sm:text-lg text-gray-600 dark:text-gray-400 max-w-3xl mx-auto">
+              <p className="text-base sm:text-lg text-gray-600 dark:text-zinc-500 max-w-3xl mx-auto">
                 {language === 'ar' 
                   ? 'استكشف مجموعتنا الشاملة من حلول المنزل والمبنى الذكي'
                   : 'Explore our comprehensive collection of smart home and building solutions'}
@@ -343,11 +343,11 @@ export default function IntelligencePage() {
                     >
                       <Link
                         href={`/intelligence/${feature.id || feature.slug || index}`}
-                        className="group block h-full bg-white dark:bg-gray-800 rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100 dark:border-gray-800 dark:border-gray-700"
+                        className="group block h-full bg-white dark:bg-[#171717] rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100 dark:border-zinc-800"
                       >
                         {/* Image/Icon Header */}
                         <div className="relative h-32 bg-gradient-to-br from-gray-100 to-gray-200 dark:from-gray-700 dark:to-gray-800 flex items-center justify-center">
-                          <div className="p-4 bg-white/80 dark:bg-gray-900/80 rounded-xl group-hover:scale-110 transition-transform">
+                          <div className="p-4 bg-white/80 dark:bg-[#0A0A0A]/80 rounded-xl group-hover:scale-110 transition-transform">
                             <Icon className="h-10 w-10 text-[#1A1A1A] dark:text-white dark:text-[#E8DCC8]" />
                           </div>
                           <div className="absolute top-3 right-3 px-2 py-1 bg-black/60 rounded-md text-[10px] text-white font-medium uppercase">
@@ -360,7 +360,7 @@ export default function IntelligencePage() {
                           <h3 className="font-semibold text-[#1A1A1A] dark:text-white mb-2 line-clamp-2 group-hover:text-[#C9A962] transition-colors">
                             {feature.title}
                           </h3>
-                          <p className="text-sm text-gray-600 dark:text-gray-400 line-clamp-2 mb-3">
+                          <p className="text-sm text-gray-600 dark:text-zinc-500 line-clamp-2 mb-3">
                             {feature.description}
                           </p>
                           <div className="flex items-center justify-between">
@@ -369,7 +369,7 @@ export default function IntelligencePage() {
                                 AED {feature.price.toLocaleString()}
                               </span>
                             )}
-                            <span className="inline-flex items-center gap-1 text-xs font-medium text-gray-500 dark:text-gray-400 group-hover:text-[#C9A962] group-hover:gap-2 transition-all">
+                            <span className="inline-flex items-center gap-1 text-xs font-medium text-gray-500 dark:text-zinc-500 group-hover:text-[#C9A962] group-hover:gap-2 transition-all">
                               {language === 'ar' ? 'المزيد' : 'Learn more'}
                               <ArrowRight className="h-3 w-3" />
                             </span>
@@ -398,7 +398,7 @@ export default function IntelligencePage() {
         </section>
 
         {/* Benefits Section */}
-        <section className="py-20 bg-gray-50 dark:bg-gray-800">
+        <section className="py-20 bg-gray-50 dark:bg-[#171717]">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
               <motion.div
@@ -410,7 +410,7 @@ export default function IntelligencePage() {
                 <h2 className="text-3xl sm:text-4xl font-bold mb-6 text-[#1A1A1A] dark:text-white">
                   {language === 'ar' ? 'ذكاء يحقق النتائج' : 'Intelligence That Delivers Results'}
                 </h2>
-                <p className="text-lg text-gray-600 dark:text-gray-400 mb-8 leading-relaxed">
+                <p className="text-lg text-gray-600 dark:text-zinc-500 mb-8 leading-relaxed">
                   {language === 'ar'
                     ? 'منصتنا لا تقوم بالأتمتة فحسب - بل تتعلم وتتنبأ وتحسن. استمتع بتحسينات قابلة للقياس في الكفاءة التشغيلية واستهلاك الطاقة ورضا السكان.'
                     : "Our platform doesn't just automate—it learns, predicts, and optimizes. Experience measurable improvements in operational efficiency, energy consumption, and occupant satisfaction."}
@@ -427,7 +427,7 @@ export default function IntelligencePage() {
                       className="flex items-center gap-3"
                     >
                       <CheckCircle2 className="h-5 w-5 text-green-600 flex-shrink-0" />
-                      <span className="text-gray-700 dark:text-gray-300">
+                      <span className="text-gray-700 dark:text-zinc-400">
                         {language === 'ar' ? benefit.ar : benefit.en}
                       </span>
                     </motion.div>

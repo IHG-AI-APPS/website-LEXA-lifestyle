@@ -165,10 +165,10 @@ export default function RecentlyViewedSection({
               <Clock className="h-5 w-5 text-[#1A1A1A] dark:text-white dark:text-[#E8DCC8]" />
             </div>
             <div>
-              <h2 className="text-lg font-bold text-gray-900 dark:text-white dark:text-white">
+              <h2 className="text-lg font-bold text-gray-900 dark:text-white">
                 {language === 'ar' ? 'تمت مشاهدتها مؤخراً' : 'Recently Viewed'}
               </h2>
-              <p className="text-sm text-gray-500 dark:text-gray-400">
+              <p className="text-sm text-gray-500 dark:text-zinc-500">
                 {language === 'ar' 
                   ? `${validatedItems.length} عناصر في السجل` 
                   : `${validatedItems.length} items in history`}
@@ -179,7 +179,7 @@ export default function RecentlyViewedSection({
           {showClearButton && validatedItems.length > 0 && (
             <button
               onClick={clearAll}
-              className="flex items-center gap-1.5 text-sm text-gray-500 dark:text-gray-400 hover:text-red-500 dark:hover:text-red-400 transition-colors"
+              className="flex items-center gap-1.5 text-sm text-gray-500 dark:text-zinc-500 hover:text-red-500 dark:hover:text-red-400 transition-colors"
               data-testid="clear-all-recently-viewed"
             >
               <Trash2 className="h-4 w-4" />
@@ -207,7 +207,7 @@ export default function RecentlyViewedSection({
                   transition={{ delay: index * 0.05 }}
                   className="flex-shrink-0 w-64 snap-start"
                 >
-                  <div className="group relative bg-white dark:bg-gray-800 rounded-xl overflow-hidden shadow-sm hover:shadow-lg transition-all duration-300 border border-gray-100 dark:border-gray-800 dark:border-gray-700">
+                  <div className="group relative bg-white dark:bg-[#171717] rounded-xl overflow-hidden shadow-sm hover:shadow-lg transition-all duration-300 border border-gray-100 dark:border-zinc-800">
                     {/* Remove button */}
                     <button
                       onClick={(e) => {
@@ -233,18 +233,18 @@ export default function RecentlyViewedSection({
                           className="object-cover group-hover:scale-105 transition-transform duration-500"
                         />
                         {/* Type badge */}
-                        <div className="absolute bottom-2 left-2 px-2 py-1 bg-white/90 dark:bg-gray-900/90 backdrop-blur-sm rounded-md text-xs font-medium text-gray-700 dark:text-gray-300 dark:text-gray-300">
+                        <div className="absolute bottom-2 left-2 px-2 py-1 bg-white/90 dark:bg-[#0A0A0A]/90 backdrop-blur-sm rounded-md text-xs font-medium text-gray-700 dark:text-zinc-400">
                           {typeIcons[item.type]} {typeLabels[item.type][language === 'ar' ? 'ar' : 'en']}
                         </div>
                       </div>
 
                       {/* Content */}
                       <div className="p-4">
-                        <h3 className="font-semibold text-gray-900 dark:text-white dark:text-white text-sm line-clamp-1 mb-1 group-hover:text-[#C9A962] transition-colors">
+                        <h3 className="font-semibold text-gray-900 dark:text-white text-sm line-clamp-1 mb-1 group-hover:text-[#C9A962] transition-colors">
                           {item.title}
                         </h3>
                         {item.category && (
-                          <p className="text-xs text-gray-500 dark:text-gray-400 mb-2">
+                          <p className="text-xs text-gray-500 dark:text-zinc-500 mb-2">
                             {item.category}
                           </p>
                         )}
@@ -272,7 +272,7 @@ export default function RecentlyViewedSection({
                   exit={{ opacity: 0, y: -20 }}
                   transition={{ delay: index * 0.05 }}
                 >
-                  <div className="group relative bg-white dark:bg-gray-800 rounded-xl overflow-hidden shadow-sm hover:shadow-lg transition-all duration-300 border border-gray-100 dark:border-gray-800 dark:border-gray-700">
+                  <div className="group relative bg-white dark:bg-[#171717] rounded-xl overflow-hidden shadow-sm hover:shadow-lg transition-all duration-300 border border-gray-100 dark:border-zinc-800">
                     {/* Remove button */}
                     <button
                       onClick={(e) => {
@@ -303,11 +303,11 @@ export default function RecentlyViewedSection({
                       <div className="p-3">
                         <div className="flex items-center gap-1.5 mb-1.5">
                           <span className="text-xs">{typeIcons[item.type]}</span>
-                          <span className="text-xs text-gray-500 dark:text-gray-400">
+                          <span className="text-xs text-gray-500 dark:text-zinc-500">
                             {typeLabels[item.type][language === 'ar' ? 'ar' : 'en']}
                           </span>
                         </div>
-                        <h3 className="font-semibold text-gray-900 dark:text-white dark:text-white text-sm line-clamp-2 group-hover:text-[#C9A962] transition-colors">
+                        <h3 className="font-semibold text-gray-900 dark:text-white text-sm line-clamp-2 group-hover:text-[#C9A962] transition-colors">
                           {item.title}
                         </h3>
                       </div>

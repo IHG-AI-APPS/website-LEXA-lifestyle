@@ -48,7 +48,7 @@ export default function SupportContent() {
   const ctaDesc = cms?.cta_description || fallback.cta_description
 
   return (
-    <div className="min-h-screen bg-white dark:bg-gray-950 pt-20" data-testid="support-page">
+    <div className="min-h-screen bg-white dark:bg-[#050505] pt-20" data-testid="support-page">
       {/* Hero */}
       <section className="relative overflow-hidden bg-[#0A0A0A] dark:bg-[#050505] text-white py-16 lg:py-24">
         <div className="container mx-auto px-5 sm:px-8 lg:px-16 relative z-10">
@@ -69,7 +69,7 @@ export default function SupportContent() {
       </section>
 
       {/* Emergency Scenarios */}
-      <section className="py-16 lg:py-20 bg-white dark:bg-gray-950" data-testid="scenarios-section">
+      <section className="py-16 lg:py-20 bg-white dark:bg-[#050505]" data-testid="scenarios-section">
         <div className="container mx-auto px-5 sm:px-8 lg:px-16">
           <div className="max-w-5xl mx-auto">
             <div className="text-center mb-12">
@@ -80,7 +80,7 @@ export default function SupportContent() {
               {scenarios.map((s: any, i: number) => {
                 const Icon = ICON_MAP[s.icon] || AlertCircle
                 return (
-                  <div key={i} className="flex items-start gap-4 p-5 rounded-xl bg-gray-50 dark:bg-gray-900 border border-gray-100 dark:border-gray-800">
+                  <div key={i} className="flex items-start gap-4 p-5 rounded-xl bg-gray-50 dark:bg-[#0A0A0A] border border-gray-100 dark:border-zinc-800">
                     <Icon className="h-5 w-5 text-red-500 flex-shrink-0 mt-0.5" />
                     <div>
                       <h3 className="text-sm font-semibold text-gray-900 dark:text-white mb-1">{s.issue}</h3>
@@ -95,7 +95,7 @@ export default function SupportContent() {
       </section>
 
       {/* Support Levels */}
-      <section className="py-16 lg:py-20 bg-gray-50 dark:bg-gray-900">
+      <section className="py-16 lg:py-20 bg-gray-50 dark:bg-[#0A0A0A]">
         <div className="container mx-auto px-5 sm:px-8 lg:px-16">
           <div className="max-w-6xl mx-auto">
             <div className="grid grid-cols-1 lg:grid-cols-5 gap-12">
@@ -104,16 +104,16 @@ export default function SupportContent() {
                 <h2 className="text-2xl sm:text-3xl font-bold mt-2 mb-6 text-gray-900 dark:text-white">Annual Maintenance Coverage</h2>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                   {benefits.map((b: string, i: number) => (
-                    <div key={i} className="flex items-start gap-3 p-3 rounded-lg bg-white dark:bg-gray-950 border border-gray-100 dark:border-gray-800">
+                    <div key={i} className="flex items-start gap-3 p-3 rounded-lg bg-white dark:bg-[#050505] border border-gray-100 dark:border-zinc-800">
                       <CheckCircle2 size={16} className="text-[#C9A962] flex-shrink-0 mt-0.5" />
-                      <span className="text-sm text-gray-700 dark:text-gray-300">{b}</span>
+                      <span className="text-sm text-gray-700 dark:text-zinc-400">{b}</span>
                     </div>
                   ))}
                 </div>
               </div>
               <div className="lg:col-span-2">
                 <div className="sticky top-28 space-y-5">
-                  <div className="bg-gray-900 dark:bg-gray-800 text-white rounded-xl p-6">
+                  <div className="bg-gray-900 dark:bg-[#171717] text-white rounded-xl p-6">
                     <h3 className="text-lg font-semibold mb-4">Need Help Now?</h3>
                     <div className="space-y-3">
                       <a href={`tel:${emergencyPhone.replace(/\s/g, '')}`} className="flex items-center gap-3 p-3 bg-red-500/20 rounded-lg hover:bg-red-500/30 transition-colors">

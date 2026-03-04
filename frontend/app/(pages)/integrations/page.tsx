@@ -85,7 +85,7 @@ export default function IntegrationsPage() {
   ]
 
   return (
-    <div className="min-h-screen bg-white dark:bg-gray-900 pt-20">
+    <div className="min-h-screen bg-white dark:bg-[#0A0A0A] pt-20">
       {/* Hero Section */}
       <section className="py-16 md:py-20 bg-gradient-to-br from-blue-50 to-white">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
@@ -104,7 +104,7 @@ export default function IntegrationsPage() {
               <span className="text-transparent bg-clip-text metallic-gradient">AGNOSTIC ARCHITECTURE</span>
             </h1>
             <div className="h-px w-32 bg-gradient-to-r from-platinum to-transparent mb-8 mx-auto" />
-            <p className="text-lg text-gray-600 dark:text-gray-400 leading-relaxed max-w-2xl mx-auto">
+            <p className="text-lg text-gray-600 dark:text-zinc-500 leading-relaxed max-w-2xl mx-auto">
               LEXA integrates with the world&apos;s leading smart home platforms, protocols, and brands. 
               Choose best-in-class equipment from any manufacturer—we orchestrate it all into one unified experience.
             </p>
@@ -113,7 +113,7 @@ export default function IntegrationsPage() {
       </section>
 
       {/* Benefits Grid */}
-      <section className="py-16 md:py-20 bg-gray-50 dark:bg-gray-800">
+      <section className="py-16 md:py-20 bg-gray-50 dark:bg-[#171717]">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {benefits.map((benefit, index) => (
@@ -127,7 +127,7 @@ export default function IntegrationsPage() {
               >
                 <CheckCircle2 className="w-10 h-10 text-green-500 mx-auto mb-4" strokeWidth={2} />
                 <h3 className="text-lg font-semibold mb-2">{benefit.title}</h3>
-                <p className="text-sm text-gray-600 dark:text-gray-400">{benefit.description}</p>
+                <p className="text-sm text-gray-600 dark:text-zinc-500">{benefit.description}</p>
               </motion.div>
             ))}
           </div>
@@ -144,7 +144,7 @@ export default function IntegrationsPage() {
             className="text-center mb-12"
           >
             <h2 className="text-3xl md:text-4xl font-bold mb-4">Compatible Platforms & Brands</h2>
-            <p className="text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
+            <p className="text-lg text-gray-600 dark:text-zinc-500 max-w-2xl mx-auto">
               World-class technology partners across every category
             </p>
           </motion.div>
@@ -159,7 +159,7 @@ export default function IntegrationsPage() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.6, delay: 0.2 }}
-                  className="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 p-8 hover:border-gray-400 transition-all duration-300"
+                  className="bg-white dark:bg-[#171717] border border-gray-200 dark:border-zinc-800 p-8 hover:border-gray-400 transition-all duration-300"
                 >
                   <div className="flex items-start gap-4 mb-6">
                     <div className="p-3 bg-black rounded-lg">
@@ -167,7 +167,7 @@ export default function IntegrationsPage() {
                     </div>
                     <div>
                       <h3 className="text-2xl font-bold mb-1">{platform.category}</h3>
-                      <p className="text-sm text-gray-600 dark:text-gray-400">{platform.description}</p>
+                      <p className="text-sm text-gray-600 dark:text-zinc-500">{platform.description}</p>
                     </div>
                   </div>
 
@@ -175,7 +175,7 @@ export default function IntegrationsPage() {
                     {platform.brands.map((brand) => (
                       <div
                         key={brand.name}
-                        className="bg-gray-50 p-4 border border-gray-200 dark:border-gray-700 hover:border-black transition-colors"
+                        className="bg-gray-50 p-4 border border-gray-200 dark:border-zinc-800 hover:border-black transition-colors"
                       >
                         <div className="font-semibold mb-1">{brand.name}</div>
                         <div className="text-xs text-gray-500">{brand.tier}</div>
@@ -190,7 +190,7 @@ export default function IntegrationsPage() {
       </section>
 
       {/* Protocols Section */}
-      <section className="py-16 md:py-20 bg-gray-50 dark:bg-gray-800">
+      <section className="py-16 md:py-20 bg-gray-50 dark:bg-[#171717]">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -199,7 +199,7 @@ export default function IntegrationsPage() {
             className="text-center mb-12"
           >
             <h2 className="text-3xl md:text-4xl font-bold mb-4">Supported Protocols</h2>
-            <p className="text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
+            <p className="text-lg text-gray-600 dark:text-zinc-500 max-w-2xl mx-auto">
               From latest 2025 standards to proven professional protocols
             </p>
           </motion.div>
@@ -212,7 +212,7 @@ export default function IntegrationsPage() {
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: 0.15 }}
-                className="bg-white dark:bg-gray-800 p-6 border-2 border-gray-200 dark:border-gray-700 hover:border-[#C9A962]/50 transition-all duration-300"
+                className="bg-white dark:bg-[#171717] p-6 border-2 border-gray-200 dark:border-zinc-800 hover:border-[#C9A962]/50 transition-all duration-300"
               >
                 <div className="flex items-center justify-between mb-2">
                   <h3 className="text-lg font-bold">{protocol.name}</h3>
@@ -220,7 +220,7 @@ export default function IntegrationsPage() {
                     {protocol.status}
                   </span>
                 </div>
-                <p className="text-sm text-gray-600 dark:text-gray-400">{protocol.description}</p>
+                <p className="text-sm text-gray-600 dark:text-zinc-500">{protocol.description}</p>
               </motion.div>
             ))}
           </div>
@@ -245,7 +245,7 @@ export default function IntegrationsPage() {
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link
                 href="/contact"
-                className="inline-flex items-center justify-center px-8 py-4 bg-white text-black font-medium hover:bg-gray-100 dark:bg-gray-800 transition-colors"
+                className="inline-flex items-center justify-center px-8 py-4 bg-white text-black font-medium hover:bg-gray-100 dark:bg-[#171717] transition-colors"
               >
                 Discuss Your Integration
               </Link>

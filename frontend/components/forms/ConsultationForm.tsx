@@ -90,7 +90,7 @@ export default function ConsultationForm({ isOpen, onClose, defaultPersona }: Co
             {/* Close Button */}
             <button
               onClick={onClose}
-              className="absolute top-4 right-4 text-gray-600 dark:text-gray-400 hover:text-lexa-black transition-colors z-10"
+              className="absolute top-4 right-4 text-gray-600 dark:text-zinc-500 hover:text-lexa-black transition-colors z-10"
               aria-label="Close modal"
             >
               <X size={24} />
@@ -101,7 +101,7 @@ export default function ConsultationForm({ isOpen, onClose, defaultPersona }: Co
               <h2 className="text-3xl font-bold text-lexa-black mb-2">
                 BOOK A CONSULTATION
               </h2>
-              <p className="text-gray-600 dark:text-gray-400 mb-8">
+              <p className="text-gray-600 dark:text-zinc-500 mb-8">
                 Share your vision, and we&apos;ll create a tailored smart living solution for you.
               </p>
 
@@ -109,14 +109,14 @@ export default function ConsultationForm({ isOpen, onClose, defaultPersona }: Co
                 <div className="py-12 text-center">
                   <div className="text-6xl mb-4">✓</div>
                   <h3 className="text-2xl font-bold text-accent mb-2">Thank You!</h3>
-                  <p className="text-gray-600 dark:text-gray-400 dark:text-gray-400">
+                  <p className="text-gray-600 dark:text-zinc-500">
                     We&apos;ve received your consultation request. Our team will contact you shortly.
                   </p>
                 </div>
               ) : (
                 <form onSubmit={handleSubmit} className="space-y-6">
                   <div>
-                    <label htmlFor="name" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+                    <label htmlFor="name" className="block text-sm font-medium text-gray-700 dark:text-zinc-400 mb-2">
                       Full Name *
                     </label>
                     <Input
@@ -132,7 +132,7 @@ export default function ConsultationForm({ isOpen, onClose, defaultPersona }: Co
                   </div>
 
                   <div>
-                    <label htmlFor="email" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+                    <label htmlFor="email" className="block text-sm font-medium text-gray-700 dark:text-zinc-400 mb-2">
                       Email Address *
                     </label>
                     <Input
@@ -148,7 +148,7 @@ export default function ConsultationForm({ isOpen, onClose, defaultPersona }: Co
                   </div>
 
                   <div>
-                    <label htmlFor="phone" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+                    <label htmlFor="phone" className="block text-sm font-medium text-gray-700 dark:text-zinc-400 mb-2">
                       Phone Number *
                     </label>
                     <Input
@@ -164,7 +164,7 @@ export default function ConsultationForm({ isOpen, onClose, defaultPersona }: Co
                   </div>
 
                   <div>
-                    <label htmlFor="message" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+                    <label htmlFor="message" className="block text-sm font-medium text-gray-700 dark:text-zinc-400 mb-2">
                       Tell us about your project (Optional)
                     </label>
                     <Textarea

@@ -10,7 +10,7 @@ import dynamic from 'next/dynamic'
 // Dynamically import ReactImageAnnotate to avoid SSR issues
 const ReactImageAnnotate = dynamic(
   () => import('react-image-annotate').then((mod: any) => mod.default || mod).catch(() => () => null),
-  { ssr: false, loading: () => <div className="h-[600px] flex items-center justify-center bg-gray-100 dark:bg-gray-800 rounded-lg">Loading annotation tool...</div> }
+  { ssr: false, loading: () => <div className="h-[600px] flex items-center justify-center bg-gray-100 dark:bg-[#171717] rounded-lg">Loading annotation tool...</div> }
 ) as any
 
 interface FloorPlanUploaderProps {
@@ -72,10 +72,10 @@ export default function FloorPlanUploader({ onSave, initialImage, initialAnnotat
     <div className="space-y-6">
       {/* Upload Section */}
       {!floorPlanImage && (
-        <div className="border-2 border-dashed border-gray-300 dark:border-gray-600 rounded-xl p-12 text-center hover:border-gray-400 transition-colors">
+        <div className="border-2 border-dashed border-gray-300 dark:border-zinc-700 rounded-xl p-12 text-center hover:border-gray-400 transition-colors">
           <Upload className="mx-auto mb-4 text-gray-400" size={48} />
           <h3 className="text-xl font-semibold mb-2">Upload Your Floor Plan</h3>
-          <p className="text-gray-600 dark:text-gray-400 mb-6">
+          <p className="text-gray-600 dark:text-zinc-500 mb-6">
             Upload an image of your floor plan to mark device locations
           </p>
           <label className="inline-block">
@@ -101,7 +101,7 @@ export default function FloorPlanUploader({ onSave, initialImage, initialAnnotat
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          className="bg-white dark:bg-gray-800 rounded-xl shadow-2xl overflow-hidden"
+          className="bg-white dark:bg-[#171717] rounded-xl shadow-2xl overflow-hidden"
         >
           {/* Device Type Selector */}
           <div className="bg-gray-50 border-b p-4">
@@ -113,8 +113,8 @@ export default function FloorPlanUploader({ onSave, initialImage, initialAnnotat
                   onClick={() => setSelectedDeviceType(device.id)}
                   className={`p-3 text-center rounded-lg border-2 transition-all text-sm ${
                     selectedDeviceType === device.id
-                      ? 'border-black bg-gray-100 dark:bg-gray-800 scale-105'
-                      : 'border-gray-200 dark:border-gray-700 hover:border-gray-400'
+                      ? 'border-black bg-gray-100 dark:bg-[#171717] scale-105'
+                      : 'border-gray-200 dark:border-zinc-800 hover:border-gray-400'
                   }`}
                   style={selectedDeviceType === device.id ? { borderColor: device.color } : {}}
                 >
@@ -149,7 +149,7 @@ export default function FloorPlanUploader({ onSave, initialImage, initialAnnotat
                         deviceType: e.target.value,
                       })
                     }}
-                    className="border-2 border-gray-300 dark:border-gray-600 rounded px-2 py-1"
+                    className="border-2 border-gray-300 dark:border-zinc-700 rounded px-2 py-1"
                   >
                     {DEVICE_TYPES.map(device => (
                       <option key={device.id} value={device.id}>
@@ -164,7 +164,7 @@ export default function FloorPlanUploader({ onSave, initialImage, initialAnnotat
 
           {/* Action Buttons */}
           <div className="bg-gray-50 border-t p-4 flex justify-between items-center">
-            <div className="text-sm text-gray-600 dark:text-gray-400 dark:text-gray-400">
+            <div className="text-sm text-gray-600 dark:text-zinc-500">
               <strong>{annotations.length}</strong> devices marked
             </div>
             <div className="flex gap-3">
@@ -196,7 +196,7 @@ export default function FloorPlanUploader({ onSave, initialImage, initialAnnotat
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          className="bg-white dark:bg-gray-800 rounded-xl shadow-lg overflow-hidden"
+          className="bg-white dark:bg-[#171717] rounded-xl shadow-lg overflow-hidden"
         >
           <div className="p-4 bg-green-50 border-b border-green-200">
             <div className="flex items-center justify-between">
@@ -224,7 +224,7 @@ export default function FloorPlanUploader({ onSave, initialImage, initialAnnotat
                 alt="Floor plan"
                 width={1200}
                 height={800}
-                className="w-full h-auto rounded-lg border-2 border-gray-200 dark:border-gray-700 dark:border-gray-700"
+                className="w-full h-auto rounded-lg border-2 border-gray-200 dark:border-zinc-800"
               />
             </div>
           </div>

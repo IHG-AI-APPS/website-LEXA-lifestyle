@@ -81,22 +81,22 @@ export default function ExperienceCentrePage() {
       </section>
 
       {/* Location Info Bar */}
-      <section className="py-10 bg-gray-50 dark:bg-gray-900 border-b border-gray-200 dark:border-gray-800">
+      <section className="py-10 bg-gray-50 dark:bg-[#0A0A0A] border-b border-gray-200 dark:border-zinc-800">
         <div className="container mx-auto px-5 sm:px-8 lg:px-16">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
             <div className="flex items-start gap-4">
               <MapPin className="h-6 w-6 text-[#C9A962] flex-shrink-0 mt-0.5" />
-              <div><h3 className="font-semibold text-gray-900 dark:text-white mb-1 text-sm">Location</h3><p className="text-sm text-gray-600 dark:text-gray-400">Al Quoz 1, Sheikh Zayed Road<br />3rd Interchange, Dubai, UAE</p></div>
+              <div><h3 className="font-semibold text-gray-900 dark:text-white mb-1 text-sm">Location</h3><p className="text-sm text-gray-600 dark:text-zinc-500">Al Quoz 1, Sheikh Zayed Road<br />3rd Interchange, Dubai, UAE</p></div>
             </div>
             <div className="flex items-start gap-4">
               <Calendar className="h-6 w-6 text-[#C9A962] flex-shrink-0 mt-0.5" />
-              <div><h3 className="font-semibold text-gray-900 dark:text-white mb-1 text-sm">Opening Hours</h3><p className="text-sm text-gray-600 dark:text-gray-400">Sat - Thu: 9 AM - 6 PM<br />Friday: 10 AM - 4 PM</p></div>
+              <div><h3 className="font-semibold text-gray-900 dark:text-white mb-1 text-sm">Opening Hours</h3><p className="text-sm text-gray-600 dark:text-zinc-500">Sat - Thu: 9 AM - 6 PM<br />Friday: 10 AM - 4 PM</p></div>
             </div>
             <div className="flex items-start gap-4">
               <Mail className="h-6 w-6 text-[#C9A962] flex-shrink-0 mt-0.5" />
               <div>
                 <h3 className="font-semibold text-gray-900 dark:text-white mb-1 text-sm">Book a Visit</h3>
-                <p className="text-sm text-gray-600 dark:text-gray-400 mb-2">Schedule a private tour with our experts</p>
+                <p className="text-sm text-gray-600 dark:text-zinc-500 mb-2">Schedule a private tour with our experts</p>
                 <Button size="sm" className="bg-gray-900 dark:bg-[#C9A962] text-white dark:text-gray-900 hover:bg-gray-800 text-xs uppercase tracking-widest" onClick={() => setShowBookingModal(true)}>Book Now</Button>
               </div>
             </div>
@@ -105,15 +105,15 @@ export default function ExperienceCentrePage() {
       </section>
 
       {/* About the Centre */}
-      <section className="py-16 lg:py-20 bg-white dark:bg-gray-950">
+      <section className="py-16 lg:py-20 bg-white dark:bg-[#050505]">
         <div className="container mx-auto px-5 sm:px-8 lg:px-16">
           <div className="max-w-4xl">
             <span className="text-xs uppercase tracking-widest text-[#C9A962] font-semibold">Our Capabilities</span>
             <h2 className="text-2xl sm:text-3xl font-bold mt-2 mb-6 text-gray-900 dark:text-white">More Than a Showroom</h2>
-            <p className="text-base text-gray-600 dark:text-gray-300 leading-relaxed mb-4">
+            <p className="text-base text-gray-600 dark:text-zinc-400 leading-relaxed mb-4">
               The LEXA Experience Centre is a fully functional smart home environment where you can experience the future of luxury living. With over 5,000 sq ft of space, our centre showcases integrated solutions from the world&apos;s leading brands.
             </p>
-            <p className="text-base text-gray-600 dark:text-gray-300 leading-relaxed">
+            <p className="text-base text-gray-600 dark:text-zinc-400 leading-relaxed">
               From home automation to cinema-grade audio-visual systems, our expert team will guide you through personalized demonstrations tailored to your project requirements.
             </p>
           </div>
@@ -121,7 +121,7 @@ export default function ExperienceCentrePage() {
       </section>
 
       {/* Facilities Grid */}
-      <section className="py-16 lg:py-20 bg-gray-50 dark:bg-gray-900" data-testid="facilities-section">
+      <section className="py-16 lg:py-20 bg-gray-50 dark:bg-[#0A0A0A]" data-testid="facilities-section">
         <div className="container mx-auto px-5 sm:px-8 lg:px-16">
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-12">
@@ -131,16 +131,16 @@ export default function ExperienceCentrePage() {
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {facilities.map((facility, i) => (
                 <motion.div key={facility.id} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.3, delay: i * 0.08 }}
-                  className="bg-white dark:bg-gray-950 rounded-xl overflow-hidden border border-gray-100 dark:border-gray-800 hover:shadow-lg transition-shadow group">
+                  className="bg-white dark:bg-[#050505] rounded-xl overflow-hidden border border-gray-100 dark:border-zinc-800 hover:shadow-lg transition-shadow group">
                   <div className="relative h-48 overflow-hidden">
                     <SafeImage src={facility.image} alt={facility.title} fill className="object-cover group-hover:scale-105 transition-transform duration-500" sizes="(max-width: 768px) 100vw, 33vw" />
                   </div>
                   <div className="p-6">
                     <h3 className="text-lg font-bold mb-2 text-gray-900 dark:text-white">{facility.title}</h3>
-                    <p className="text-sm text-gray-600 dark:text-gray-400 mb-4 leading-relaxed">{facility.description}</p>
+                    <p className="text-sm text-gray-600 dark:text-zinc-500 mb-4 leading-relaxed">{facility.description}</p>
                     <div className="flex flex-wrap gap-2">
                       {facility.features.map((feat) => (
-                        <span key={feat} className="px-2 py-1 bg-gray-100 dark:bg-gray-800 text-xs text-gray-700 dark:text-gray-300 rounded-full">{feat}</span>
+                        <span key={feat} className="px-2 py-1 bg-gray-100 dark:bg-[#171717] text-xs text-gray-700 dark:text-zinc-400 rounded-full">{feat}</span>
                       ))}
                     </div>
                   </div>
@@ -166,7 +166,7 @@ export default function ExperienceCentrePage() {
       </section>
 
       {/* What to Expect */}
-      <section className="py-16 lg:py-20 bg-white dark:bg-gray-950">
+      <section className="py-16 lg:py-20 bg-white dark:bg-[#050505]">
         <div className="container mx-auto px-5 sm:px-8 lg:px-16">
           <div className="max-w-4xl mx-auto text-center">
             <span className="text-xs uppercase tracking-widest text-[#C9A962] font-semibold">What To Expect</span>
@@ -176,7 +176,7 @@ export default function ExperienceCentrePage() {
                 const Icon = item.icon
                 return (
                   <motion.div key={i} initial={{ opacity: 0, y: 10 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.3, delay: i * 0.1 }}
-                    className="flex flex-col items-center p-5 rounded-xl bg-gray-50 dark:bg-gray-900 border border-gray-100 dark:border-gray-800">
+                    className="flex flex-col items-center p-5 rounded-xl bg-gray-50 dark:bg-[#0A0A0A] border border-gray-100 dark:border-zinc-800">
                     <div className="w-12 h-12 rounded-lg bg-gray-900 dark:bg-[#C9A962] flex items-center justify-center mb-3"><Icon className="text-white dark:text-gray-900" size={20} /></div>
                     <p className="text-sm font-semibold text-gray-900 dark:text-white text-center">{item.label}</p>
                   </motion.div>
@@ -204,33 +204,33 @@ export default function ExperienceCentrePage() {
       {/* Booking Modal */}
       {showBookingModal && (
         <div className="fixed inset-0 bg-black/60 backdrop-blur-sm z-50 flex items-center justify-center p-4" onClick={() => setShowBookingModal(false)}>
-          <motion.div initial={{ opacity: 0, scale: 0.95 }} animate={{ opacity: 1, scale: 1 }} className="bg-white dark:bg-gray-900 rounded-2xl max-w-lg w-full max-h-[90vh] overflow-y-auto p-8" onClick={e => e.stopPropagation()}>
+          <motion.div initial={{ opacity: 0, scale: 0.95 }} animate={{ opacity: 1, scale: 1 }} className="bg-white dark:bg-[#0A0A0A] rounded-2xl max-w-lg w-full max-h-[90vh] overflow-y-auto p-8" onClick={e => e.stopPropagation()}>
             <div className="flex items-center justify-between mb-6">
               <h2 className="text-xl font-bold text-gray-900 dark:text-white">Book Your Visit</h2>
-              <button onClick={() => setShowBookingModal(false)} className="p-2 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-lg"><X size={20} /></button>
+              <button onClick={() => setShowBookingModal(false)} className="p-2 hover:bg-gray-100 dark:hover:bg-[#171717] rounded-lg"><X size={20} /></button>
             </div>
 
             {bookingStep === 'date' && (
               <div className="space-y-4">
                 <div>
-                  <label className="text-sm font-medium text-gray-700 dark:text-gray-300 mb-1 block">Preferred Date</label>
+                  <label className="text-sm font-medium text-gray-700 dark:text-zinc-400 mb-1 block">Preferred Date</label>
                   <Input type="date" value={bookingData.date} onChange={e => setBookingData(p => ({ ...p, date: e.target.value }))} className="w-full" data-testid="booking-date" />
                 </div>
                 <div>
-                  <label className="text-sm font-medium text-gray-700 dark:text-gray-300 mb-2 block">Preferred Time</label>
+                  <label className="text-sm font-medium text-gray-700 dark:text-zinc-400 mb-2 block">Preferred Time</label>
                   <div className="grid grid-cols-3 gap-2">
                     {timeSlots.map(slot => (
                       <button key={slot} onClick={() => setBookingData(p => ({ ...p, time: slot }))}
-                        className={`py-2 px-3 text-sm rounded-lg border transition-colors ${bookingData.time === slot ? 'bg-[#C9A962] text-gray-900 border-[#C9A962]' : 'border-gray-200 dark:border-gray-700 hover:border-[#C9A962]/50'}`}>{slot}</button>
+                        className={`py-2 px-3 text-sm rounded-lg border transition-colors ${bookingData.time === slot ? 'bg-[#C9A962] text-gray-900 border-[#C9A962]' : 'border-gray-200 dark:border-zinc-800 hover:border-[#C9A962]/50'}`}>{slot}</button>
                     ))}
                   </div>
                 </div>
                 <div>
-                  <label className="text-sm font-medium text-gray-700 dark:text-gray-300 mb-2 block">Interests</label>
+                  <label className="text-sm font-medium text-gray-700 dark:text-zinc-400 mb-2 block">Interests</label>
                   <div className="flex flex-wrap gap-2">
                     {['Automation', 'Cinema', 'Audio', 'Lighting', 'Security', 'Climate'].map(interest => (
                       <button key={interest} onClick={() => handleInterestToggle(interest)}
-                        className={`px-3 py-1.5 text-sm rounded-full border transition-colors ${bookingData.interests.includes(interest) ? 'bg-[#C9A962] text-gray-900 border-[#C9A962]' : 'border-gray-200 dark:border-gray-700 hover:border-[#C9A962]/50'}`}>{interest}</button>
+                        className={`px-3 py-1.5 text-sm rounded-full border transition-colors ${bookingData.interests.includes(interest) ? 'bg-[#C9A962] text-gray-900 border-[#C9A962]' : 'border-gray-200 dark:border-zinc-800 hover:border-[#C9A962]/50'}`}>{interest}</button>
                     ))}
                   </div>
                 </div>
@@ -240,11 +240,11 @@ export default function ExperienceCentrePage() {
 
             {bookingStep === 'details' && (
               <div className="space-y-4">
-                <div><label className="text-sm font-medium text-gray-700 dark:text-gray-300 mb-1 block">Full Name</label><Input value={bookingData.name} onChange={e => setBookingData(p => ({ ...p, name: e.target.value }))} placeholder="Your name" data-testid="booking-name" /></div>
-                <div><label className="text-sm font-medium text-gray-700 dark:text-gray-300 mb-1 block">Email</label><Input type="email" value={bookingData.email} onChange={e => setBookingData(p => ({ ...p, email: e.target.value }))} placeholder="your@email.com" data-testid="booking-email" /></div>
-                <div><label className="text-sm font-medium text-gray-700 dark:text-gray-300 mb-1 block">Phone</label><Input type="tel" value={bookingData.phone} onChange={e => setBookingData(p => ({ ...p, phone: e.target.value }))} placeholder="+971 50 XXX XXXX" data-testid="booking-phone" /></div>
+                <div><label className="text-sm font-medium text-gray-700 dark:text-zinc-400 mb-1 block">Full Name</label><Input value={bookingData.name} onChange={e => setBookingData(p => ({ ...p, name: e.target.value }))} placeholder="Your name" data-testid="booking-name" /></div>
+                <div><label className="text-sm font-medium text-gray-700 dark:text-zinc-400 mb-1 block">Email</label><Input type="email" value={bookingData.email} onChange={e => setBookingData(p => ({ ...p, email: e.target.value }))} placeholder="your@email.com" data-testid="booking-email" /></div>
+                <div><label className="text-sm font-medium text-gray-700 dark:text-zinc-400 mb-1 block">Phone</label><Input type="tel" value={bookingData.phone} onChange={e => setBookingData(p => ({ ...p, phone: e.target.value }))} placeholder="+971 50 XXX XXXX" data-testid="booking-phone" /></div>
                 <div className="hidden"><Input type="text" value={bookingData.website} onChange={e => setBookingData(p => ({ ...p, website: e.target.value }))} tabIndex={-1} /></div>
-                <div><label className="text-sm font-medium text-gray-700 dark:text-gray-300 mb-1 block">Message (Optional)</label><Textarea value={bookingData.message} onChange={e => setBookingData(p => ({ ...p, message: e.target.value }))} placeholder="Tell us about your project..." rows={3} /></div>
+                <div><label className="text-sm font-medium text-gray-700 dark:text-zinc-400 mb-1 block">Message (Optional)</label><Textarea value={bookingData.message} onChange={e => setBookingData(p => ({ ...p, message: e.target.value }))} placeholder="Tell us about your project..." rows={3} /></div>
                 <div className="flex gap-3">
                   <Button variant="outline" onClick={() => setBookingStep('date')} className="flex-1">Back</Button>
                   <Button className="flex-1 bg-[#C9A962] text-gray-900 hover:bg-[#C9A962]/90 font-semibold" onClick={handleBookingSubmit} disabled={isSubmitting || !bookingData.name || !bookingData.email}>
@@ -259,7 +259,7 @@ export default function ExperienceCentrePage() {
               <div className="text-center py-6">
                 <CheckCircle2 className="h-16 w-16 text-green-500 mx-auto mb-4" />
                 <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2">Visit Booked!</h3>
-                <p className="text-gray-600 dark:text-gray-400 mb-4">We&apos;ll confirm your appointment via email at {bookingData.email}.</p>
+                <p className="text-gray-600 dark:text-zinc-500 mb-4">We&apos;ll confirm your appointment via email at {bookingData.email}.</p>
                 <p className="text-sm text-gray-500 mb-6">{bookingData.date} at {bookingData.time}</p>
                 <Button onClick={() => { setShowBookingModal(false); setBookingStep('date'); setSubmitStatus('idle') }} className="bg-[#C9A962] text-gray-900 hover:bg-[#C9A962]/90">Close</Button>
               </div>

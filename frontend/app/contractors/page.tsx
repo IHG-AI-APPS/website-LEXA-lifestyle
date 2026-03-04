@@ -121,7 +121,7 @@ export default function ContractorsPage() {
   }
 
   return (
-    <div className="min-h-screen bg-white dark:bg-gray-950 pt-20" data-testid="contractors-page">
+    <div className="min-h-screen bg-white dark:bg-[#050505] pt-20" data-testid="contractors-page">
       {/* Hero Section */}
       <section className="relative overflow-hidden bg-[#0A0A0A] dark:bg-[#050505] text-white py-16 lg:py-24">
         <div className="container mx-auto px-5 sm:px-8 lg:px-16 relative z-10">
@@ -155,7 +155,7 @@ export default function ContractorsPage() {
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-16">
               <h2 className="text-4xl sm:text-5xl font-bold mb-4 ">Speed + Simplicity + Support</h2>
-              <p className="text-xl text-gray-600 dark:text-gray-400">
+              <p className="text-xl text-gray-600 dark:text-zinc-500">
                 We make automation easy for contractors
               </p>
             </div>
@@ -167,11 +167,11 @@ export default function ContractorsPage() {
                 viewport={{ once: true }}
                 className="text-center"
               >
-                <div className="inline-flex items-center justify-center w-16 h-16 mb-4 bg-gray-100 dark:bg-gray-800 rounded-full">
+                <div className="inline-flex items-center justify-center w-16 h-16 mb-4 bg-gray-100 dark:bg-[#171717] rounded-full">
                   <Clock size={32} className="text-gallery-black" />
                 </div>
                 <h3 className="font-bold text-lg mb-2">Fast Response</h3>
-                <p className="text-gray-600 dark:text-gray-400 text-sm">
+                <p className="text-gray-600 dark:text-zinc-500 text-sm">
                   BOQ and scope within 24-48 hours
                 </p>
               </motion.div>
@@ -183,11 +183,11 @@ export default function ContractorsPage() {
                 transition={{ delay: 0.1 }}
                 className="text-center"
               >
-                <div className="inline-flex items-center justify-center w-16 h-16 mb-4 bg-gray-100 dark:bg-gray-800 rounded-full">
+                <div className="inline-flex items-center justify-center w-16 h-16 mb-4 bg-gray-100 dark:bg-[#171717] rounded-full">
                   <FileText size={32} className="text-gallery-black" />
                 </div>
                 <h3 className="font-bold text-lg mb-2">Clear Scope</h3>
-                <p className="text-gray-600 dark:text-gray-400 text-sm">
+                <p className="text-gray-600 dark:text-zinc-500 text-sm">
                   Detailed breakdown, no hidden costs
                 </p>
               </motion.div>
@@ -199,11 +199,11 @@ export default function ContractorsPage() {
                 transition={{ delay: 0.2 }}
                 className="text-center"
               >
-                <div className="inline-flex items-center justify-center w-16 h-16 mb-4 bg-gray-100 dark:bg-gray-800 rounded-full">
+                <div className="inline-flex items-center justify-center w-16 h-16 mb-4 bg-gray-100 dark:bg-[#171717] rounded-full">
                   <Users size={32} className="text-gallery-black" />
                 </div>
                 <h3 className="font-bold text-lg mb-2">Dedicated PM</h3>
-                <p className="text-gray-600 dark:text-gray-400 text-sm">
+                <p className="text-gray-600 dark:text-zinc-500 text-sm">
                   Single point of contact throughout
                 </p>
               </motion.div>
@@ -215,11 +215,11 @@ export default function ContractorsPage() {
                 transition={{ delay: 0.3 }}
                 className="text-center"
               >
-                <div className="inline-flex items-center justify-center w-16 h-16 mb-4 bg-gray-100 dark:bg-gray-800 rounded-full">
+                <div className="inline-flex items-center justify-center w-16 h-16 mb-4 bg-gray-100 dark:bg-[#171717] rounded-full">
                   <Wrench size={32} className="text-gallery-black" />
                 </div>
                 <h3 className="font-bold text-lg mb-2">MEP Coordination</h3>
-                <p className="text-gray-600 dark:text-gray-400 text-sm">
+                <p className="text-gray-600 dark:text-zinc-500 text-sm">
                   We handle all MEP + automation coordination
                 </p>
               </motion.div>
@@ -235,49 +235,49 @@ export default function ContractorsPage() {
             <h2 className="text-4xl sm:text-5xl font-bold text-center mb-12 ">What We Deliver</h2>
 
             <div className="space-y-6">
-              <div className="bg-white dark:bg-gray-800 rounded-xl p-6 shadow-lg flex items-start gap-4">
-                <div className="w-12 h-12 bg-gray-100 dark:bg-gray-800 rounded-full flex items-center justify-center flex-shrink-0">
+              <div className="bg-white dark:bg-[#171717] rounded-xl p-6 shadow-lg flex items-start gap-4">
+                <div className="w-12 h-12 bg-gray-100 dark:bg-[#171717] rounded-full flex items-center justify-center flex-shrink-0">
                   <DollarSign size={24} className="text-gallery-black" />
                 </div>
                 <div>
                   <h3 className="font-bold text-lg mb-2">Comprehensive BOQ</h3>
-                  <p className="text-gray-600 dark:text-gray-400">
+                  <p className="text-gray-600 dark:text-zinc-500">
                     Detailed Bill of Quantities with material specs, labor, and timelines
                   </p>
                 </div>
               </div>
 
-              <div className="bg-white dark:bg-gray-800 rounded-xl p-6 shadow-lg flex items-start gap-4">
-                <div className="w-12 h-12 bg-gray-100 dark:bg-gray-800 rounded-full flex items-center justify-center flex-shrink-0">
+              <div className="bg-white dark:bg-[#171717] rounded-xl p-6 shadow-lg flex items-start gap-4">
+                <div className="w-12 h-12 bg-gray-100 dark:bg-[#171717] rounded-full flex items-center justify-center flex-shrink-0">
                   <FileText size={24} className="text-gallery-black" />
                 </div>
                 <div>
                   <h3 className="font-bold text-lg mb-2">Coordinated Scope</h3>
-                  <p className="text-gray-600 dark:text-gray-400">
+                  <p className="text-gray-600 dark:text-zinc-500">
                     Clear scope with MEP coordination points and installation sequence
                   </p>
                 </div>
               </div>
 
-              <div className="bg-white dark:bg-gray-800 rounded-xl p-6 shadow-lg flex items-start gap-4">
-                <div className="w-12 h-12 bg-gray-100 dark:bg-gray-800 rounded-full flex items-center justify-center flex-shrink-0">
+              <div className="bg-white dark:bg-[#171717] rounded-xl p-6 shadow-lg flex items-start gap-4">
+                <div className="w-12 h-12 bg-gray-100 dark:bg-[#171717] rounded-full flex items-center justify-center flex-shrink-0">
                   <Users size={24} className="text-gallery-black" />
                 </div>
                 <div>
                   <h3 className="font-bold text-lg mb-2">Project Management</h3>
-                  <p className="text-gray-600 dark:text-gray-400">
+                  <p className="text-gray-600 dark:text-zinc-500">
                     Dedicated PM from start to handover with regular updates
                   </p>
                 </div>
               </div>
 
-              <div className="bg-white dark:bg-gray-800 rounded-xl p-6 shadow-lg flex items-start gap-4">
-                <div className="w-12 h-12 bg-gray-100 dark:bg-gray-800 rounded-full flex items-center justify-center flex-shrink-0">
+              <div className="bg-white dark:bg-[#171717] rounded-xl p-6 shadow-lg flex items-start gap-4">
+                <div className="w-12 h-12 bg-gray-100 dark:bg-[#171717] rounded-full flex items-center justify-center flex-shrink-0">
                   <Wrench size={24} className="text-gallery-black" />
                 </div>
                 <div>
                   <h3 className="font-bold text-lg mb-2">Professional Installation</h3>
-                  <p className="text-gray-600 dark:text-gray-400">
+                  <p className="text-gray-600 dark:text-zinc-500">
                     Certified technicians with proper commissioning and testing
                   </p>
                 </div>
@@ -300,7 +300,7 @@ export default function ContractorsPage() {
             <Button
               size="lg"
               onClick={() => setShowForm(true)}
-              className="bg-white text-black hover:bg-gray-100 dark:bg-gray-800 px-10 py-7 text-lg font-semibold uppercase tracking-widest"
+              className="bg-white text-black hover:bg-gray-100 dark:bg-[#171717] px-10 py-7 text-lg font-semibold uppercase tracking-widest"
             >
               Start Your Project
             </Button>
@@ -314,7 +314,7 @@ export default function ContractorsPage() {
           <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
-            className="bg-white dark:bg-gray-800 rounded-2xl max-w-3xl w-full my-8"
+            className="bg-white dark:bg-[#171717] rounded-2xl max-w-3xl w-full my-8"
           >
             {showSuccess ? (
               <div className="p-12 text-center">
@@ -322,10 +322,10 @@ export default function ContractorsPage() {
                   <Check size={40} className="text-green-600" />
                 </div>
                 <h2 className="text-3xl font-bold mb-4">Project Request Received!</h2>
-                <p className="text-xl text-gray-700 dark:text-gray-300 mb-2">
+                <p className="text-xl text-gray-700 dark:text-zinc-400 mb-2">
                   Your dedicated Project Manager will contact you within 24 hours with a comprehensive BOQ and project timeline.
                 </p>
-                <p className="text-gray-600 dark:text-gray-400 mb-8">
+                <p className="text-gray-600 dark:text-zinc-500 mb-8">
                   Check your email at <strong>{formData.email}</strong>
                 </p>
                 <Button onClick={handleClose} className="bg-black hover:bg-gray-800 uppercase tracking-widest">
@@ -348,7 +348,7 @@ export default function ContractorsPage() {
                 <form aria-label="Form" onSubmit={handleSubmit} className="p-8 space-y-6 max-h-[60vh] overflow-y-auto">
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div>
-                      <label className="block text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">
+                      <label className="block text-sm font-semibold text-gray-700 dark:text-zinc-400 mb-2">
                         Full Name *
                       </label>
                       <Input
@@ -361,7 +361,7 @@ export default function ContractorsPage() {
                     </div>
 
                     <div>
-                      <label className="block text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">
+                      <label className="block text-sm font-semibold text-gray-700 dark:text-zinc-400 mb-2">
                         Company Name *
                       </label>
                       <Input
@@ -376,7 +376,7 @@ export default function ContractorsPage() {
 
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div>
-                      <label className="block text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">
+                      <label className="block text-sm font-semibold text-gray-700 dark:text-zinc-400 mb-2">
                         Email Address *
                       </label>
                       <Input
@@ -389,7 +389,7 @@ export default function ContractorsPage() {
                     </div>
 
                     <div>
-                      <label className="block text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">
+                      <label className="block text-sm font-semibold text-gray-700 dark:text-zinc-400 mb-2">
                         Phone Number *
                       </label>
                       <Input
@@ -403,7 +403,7 @@ export default function ContractorsPage() {
                   </div>
 
                   <div>
-                    <label className="block text-sm font-semibold text-gray-700 dark:text-gray-300 mb-3">
+                    <label className="block text-sm font-semibold text-gray-700 dark:text-zinc-400 mb-3">
                       Project Type *
                     </label>
                     <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
@@ -415,7 +415,7 @@ export default function ContractorsPage() {
                           className={`p-3 border-2 rounded-lg text-sm font-medium transition-all ${
                             formData.project_type === type.label
                               ? 'border-black bg-gray-50 text-black'
-                              : 'border-gray-200 dark:border-gray-700 hover:border-gray-400'
+                              : 'border-gray-200 dark:border-zinc-800 hover:border-gray-400'
                           }`}
                         >
                           {type.label}
@@ -425,7 +425,7 @@ export default function ContractorsPage() {
                   </div>
 
                   <div>
-                    <label className="block text-sm font-semibold text-gray-700 dark:text-gray-300 mb-3">
+                    <label className="block text-sm font-semibold text-gray-700 dark:text-zinc-400 mb-3">
                       Systems Needed * (Select all that apply)
                     </label>
                     <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
@@ -437,7 +437,7 @@ export default function ContractorsPage() {
                           className={`p-4 border-2 rounded-lg text-left transition-all ${
                             formData.systems_needed.includes(system.id)
                               ? 'border-black bg-gray-50'
-                              : 'border-gray-200 dark:border-gray-700 hover:border-gray-400'
+                              : 'border-gray-200 dark:border-zinc-800 hover:border-gray-400'
                           }`}
                         >
                           <system.icon size={24} className={formData.systems_needed.includes(system.id) ? 'text-black mb-2' : 'text-gray-400 mb-2'} />
@@ -448,7 +448,7 @@ export default function ContractorsPage() {
                   </div>
 
                   <div>
-                    <label className="block text-sm font-semibold text-gray-700 dark:text-gray-300 mb-3">
+                    <label className="block text-sm font-semibold text-gray-700 dark:text-zinc-400 mb-3">
                       Project Timeline *
                     </label>
                     <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
@@ -460,7 +460,7 @@ export default function ContractorsPage() {
                           className={`p-3 border-2 rounded-lg text-sm font-medium transition-all ${
                             formData.project_timeline === timeline.label
                               ? 'border-black bg-gray-50 text-black'
-                              : 'border-gray-200 dark:border-gray-700 hover:border-gray-400'
+                              : 'border-gray-200 dark:border-zinc-800 hover:border-gray-400'
                           }`}
                         >
                           {timeline.label}
@@ -470,7 +470,7 @@ export default function ContractorsPage() {
                   </div>
 
                   <div>
-                    <label className="block text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">
+                    <label className="block text-sm font-semibold text-gray-700 dark:text-zinc-400 mb-2">
                       Additional Details
                     </label>
                     <Textarea

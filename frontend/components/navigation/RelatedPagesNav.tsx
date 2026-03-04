@@ -23,7 +23,7 @@ export default function RelatedPagesNav({
   subtitle = "Learn more about LEXA"
 }: RelatedPagesNavProps) {
   return (
-    <section className="py-12 md:py-16 bg-gray-50 border-t border-gray-200 dark:border-gray-700 dark:border-gray-700">
+    <section className="py-12 md:py-16 bg-gray-50 border-t border-gray-200 dark:border-zinc-800">
       <div className="content-container">
         <div className="max-w-5xl mx-auto">
           {/* Section Header */}
@@ -34,7 +34,7 @@ export default function RelatedPagesNav({
             className="text-center mb-8 md:mb-10"
           >
             <h2 className="text-2xl md:text-3xl font-bold mb-2">{title}</h2>
-            <p className="text-sm md:text-base text-gray-600 dark:text-gray-400 dark:text-gray-400">{subtitle}</p>
+            <p className="text-sm md:text-base text-gray-600 dark:text-zinc-500">{subtitle}</p>
           </motion.div>
 
           {/* Related Pages Grid */}
@@ -49,7 +49,7 @@ export default function RelatedPagesNav({
               >
                 <Link
                   href={page.href}
-                  className="group block p-6 bg-white dark:bg-gray-800 rounded-lg border border-gray-200 dark:border-gray-700 hover:border-[#E8DCC8] hover:shadow-lg transition-all duration-300 h-full"
+                  className="group block p-6 bg-white dark:bg-[#171717] rounded-lg border border-gray-200 dark:border-zinc-800 hover:border-[#E8DCC8] hover:shadow-lg transition-all duration-300 h-full"
                 >
                   {page.category && (
                     <span className="inline-block text-xs uppercase tracking-wider text-[#E8DCC8] font-semibold mb-3">
@@ -60,7 +60,7 @@ export default function RelatedPagesNav({
                     {page.title}
                     <ChevronRight className="h-5 w-5 transform group-hover:translate-x-1 transition-transform" />
                   </h3>
-                  <p className="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">
+                  <p className="text-sm text-gray-600 dark:text-zinc-500 leading-relaxed">
                     {page.description}
                   </p>
                 </Link>

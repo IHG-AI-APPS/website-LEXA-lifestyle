@@ -11,7 +11,7 @@ export default function Step4Solutions({ solutions, selectedSolutions, onSolutio
     <div className="space-y-6">
       <div className="text-center mb-8">
         <h2 className="text-3xl font-bold mb-3">Select Smart Home Solutions</h2>
-        <p className="text-gray-600 dark:text-gray-400 dark:text-gray-400">
+        <p className="text-gray-600 dark:text-zinc-500">
           Choose the systems you want and select your preferred feature level
         </p>
       </div>
@@ -29,7 +29,7 @@ export default function Step4Solutions({ solutions, selectedSolutions, onSolutio
             <div className="flex items-start justify-between mb-4">
               <div>
                 <h3 className="text-xl font-bold">{solution.label}</h3>
-                <p className="text-gray-600 dark:text-gray-400 text-sm mt-1">
+                <p className="text-gray-600 dark:text-zinc-500 text-sm mt-1">
                   Starting from AED {solution.basePrice.toLocaleString()}
                 </p>
               </div>
@@ -44,7 +44,7 @@ export default function Step4Solutions({ solutions, selectedSolutions, onSolutio
                   className={`p-4 border-2 rounded-lg text-left transition-all ${
                     selectedSolutions[solution.id] === level.id
                       ? 'border-black bg-white'
-                      : 'border-gray-200 dark:border-gray-700 hover:border-gray-400'
+                      : 'border-gray-200 dark:border-zinc-800 hover:border-gray-400'
                   }`}
                 >
                   <div className="font-semibold text-sm mb-1">{level.label}</div>

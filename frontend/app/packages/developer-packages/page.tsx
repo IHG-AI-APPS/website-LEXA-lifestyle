@@ -167,7 +167,7 @@ export default function DeveloperPackagesPage() {
   ]
 
   return (
-    <div className="min-h-screen bg-white dark:bg-gray-950 pt-20" data-testid="developer-packages-page">
+    <div className="min-h-screen bg-white dark:bg-[#050505] pt-20" data-testid="developer-packages-page">
       {/* Hero Section */}
       <section className="relative overflow-hidden bg-[#0A0A0A] dark:bg-[#050505] text-white py-16 lg:py-24">
         <div className="container mx-auto px-5 sm:px-8 lg:px-16 relative z-10">
@@ -232,7 +232,7 @@ export default function DeveloperPackagesPage() {
       </section>
 
       {/* Benefits Grid */}
-      <section className="py-20 bg-gray-50 dark:bg-gray-900">
+      <section className="py-20 bg-gray-50 dark:bg-[#0A0A0A]">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -244,7 +244,7 @@ export default function DeveloperPackagesPage() {
             <h2 className="text-3xl sm:text-4xl font-bold mb-4 text-gray-900 dark:text-white">
               Why Developers Choose LEXA
             </h2>
-            <p className="text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
+            <p className="text-lg text-gray-600 dark:text-zinc-500 max-w-2xl mx-auto">
               Comprehensive benefits designed for large-scale smart home deployments
             </p>
           </motion.div>
@@ -259,7 +259,7 @@ export default function DeveloperPackagesPage() {
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: 0.15 }}
                   viewport={{ once: true }}
-                  className="bg-white dark:bg-gray-800 p-6 border border-gray-200 dark:border-gray-700 hover:shadow-lg transition-shadow"
+                  className="bg-white dark:bg-[#171717] p-6 border border-gray-200 dark:border-zinc-800 hover:shadow-lg transition-shadow"
                 >
                   <div className="inline-flex p-3 bg-[#C9A962]/15 mb-4">
                     <Icon className="h-6 w-6 text-[#C9A962]" />
@@ -268,7 +268,7 @@ export default function DeveloperPackagesPage() {
                     {benefit.highlight}
                   </div>
                   <h3 className="text-lg font-bold mb-2 text-gray-900 dark:text-white">{benefit.title}</h3>
-                  <p className="text-sm text-gray-600 dark:text-gray-400">{benefit.description}</p>
+                  <p className="text-sm text-gray-600 dark:text-zinc-500">{benefit.description}</p>
                 </motion.div>
               )
             })}
@@ -289,7 +289,7 @@ export default function DeveloperPackagesPage() {
             <h2 className="text-3xl sm:text-4xl font-bold mb-4 text-gray-900 dark:text-white">
               Scalable Package Options
             </h2>
-            <p className="text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
+            <p className="text-lg text-gray-600 dark:text-zinc-500 max-w-2xl mx-auto">
               From basic automation to luxury smart living - packages for every project tier
             </p>
           </motion.div>
@@ -343,20 +343,20 @@ export default function DeveloperPackagesPage() {
                   {pkg.features.map((feature) => (
                     <div key={feature} className="flex items-center gap-2">
                       <CheckCircle2 className="h-4 w-4 text-[#C9A962] flex-shrink-0" />
-                      <span className="text-sm text-gray-700 dark:text-gray-300">{feature}</span>
+                      <span className="text-sm text-gray-700 dark:text-zinc-400">{feature}</span>
                     </div>
                   ))}
                 </div>
-                <div className="border-t border-gray-200 dark:border-gray-700 pt-4">
+                <div className="border-t border-gray-200 dark:border-zinc-800 pt-4">
                   <div className="text-xs text-gray-500">Ideal for:</div>
-                  <div className="text-sm font-semibold text-gray-700 dark:text-gray-300">{pkg.ideal}</div>
+                  <div className="text-sm font-semibold text-gray-700 dark:text-zinc-400">{pkg.ideal}</div>
                 </div>
               </motion.div>
             ))}
           </div>
 
           <div className="text-center">
-            <p className="text-gray-600 dark:text-gray-400 mb-4">
+            <p className="text-gray-600 dark:text-zinc-500 mb-4">
               All packages include bulk pricing discounts. Contact us for customized quotes.
             </p>
             <Button
@@ -461,9 +461,9 @@ export default function DeveloperPackagesPage() {
                         onChange={(e) => setFormData({ ...formData, projectType: e.target.value })}
                         className="w-full px-4 py-3 bg-white/10 border border-white/20 text-white focus:outline-none focus:border-[#C9A962]"
                       >
-                        <option value="" className="bg-slate-800">Select project type</option>
+                        <option value="" className="bg-zinc-800">Select project type</option>
                         {projectTypes.map((type) => (
-                          <option key={type.value} value={type.value} className="bg-slate-800">
+                          <option key={type.value} value={type.value} className="bg-zinc-800">
                             {type.label}
                           </option>
                         ))}
@@ -477,9 +477,9 @@ export default function DeveloperPackagesPage() {
                         onChange={(e) => setFormData({ ...formData, unitCount: e.target.value })}
                         className="w-full px-4 py-3 bg-white/10 border border-white/20 text-white focus:outline-none focus:border-[#C9A962]"
                       >
-                        <option value="" className="bg-slate-800">Select unit range</option>
+                        <option value="" className="bg-zinc-800">Select unit range</option>
                         {unitRanges.map((range) => (
-                          <option key={range.value} value={range.value} className="bg-slate-800">
+                          <option key={range.value} value={range.value} className="bg-zinc-800">
                             {range.label}
                           </option>
                         ))}
@@ -496,9 +496,9 @@ export default function DeveloperPackagesPage() {
                         onChange={(e) => setFormData({ ...formData, location: e.target.value })}
                         className="w-full px-4 py-3 bg-white/10 border border-white/20 text-white focus:outline-none focus:border-[#C9A962]"
                       >
-                        <option value="" className="bg-slate-800">Select location</option>
+                        <option value="" className="bg-zinc-800">Select location</option>
                         {dubaiLocations.map((loc) => (
-                          <option key={loc.value} value={loc.value} className="bg-slate-800">
+                          <option key={loc.value} value={loc.value} className="bg-zinc-800">
                             {loc.label}
                           </option>
                         ))}
@@ -512,9 +512,9 @@ export default function DeveloperPackagesPage() {
                         onChange={(e) => setFormData({ ...formData, timeline: e.target.value })}
                         className="w-full px-4 py-3 bg-white/10 border border-white/20 text-white focus:outline-none focus:border-[#C9A962]"
                       >
-                        <option value="" className="bg-slate-800">Select timeline</option>
+                        <option value="" className="bg-zinc-800">Select timeline</option>
                         {timelines.map((tl) => (
-                          <option key={tl.value} value={tl.value} className="bg-slate-800">
+                          <option key={tl.value} value={tl.value} className="bg-zinc-800">
                             {tl.label}
                           </option>
                         ))}
@@ -529,13 +529,13 @@ export default function DeveloperPackagesPage() {
                       onChange={(e) => setFormData({ ...formData, packageInterest: e.target.value })}
                       className="w-full px-4 py-3 bg-white/10 border border-white/20 text-white focus:outline-none focus:border-[#C9A962]"
                     >
-                      <option value="" className="bg-slate-800">Select preferred package tier</option>
-                      <option value="basic" className="bg-slate-800">Basic - Essential Automation</option>
-                      <option value="advanced" className="bg-slate-800">Advanced - Sensor-Driven</option>
-                      <option value="gold" className="bg-slate-800">Gold - Premium Living</option>
-                      <option value="platinum" className="bg-slate-800">Platinum - Luxury Experience</option>
-                      <option value="mixed" className="bg-slate-800">Mixed Tiers (Different units)</option>
-                      <option value="custom" className="bg-slate-800">Custom Requirements</option>
+                      <option value="" className="bg-zinc-800">Select preferred package tier</option>
+                      <option value="basic" className="bg-zinc-800">Basic - Essential Automation</option>
+                      <option value="advanced" className="bg-zinc-800">Advanced - Sensor-Driven</option>
+                      <option value="gold" className="bg-zinc-800">Gold - Premium Living</option>
+                      <option value="platinum" className="bg-zinc-800">Platinum - Luxury Experience</option>
+                      <option value="mixed" className="bg-zinc-800">Mixed Tiers (Different units)</option>
+                      <option value="custom" className="bg-zinc-800">Custom Requirements</option>
                     </select>
                   </div>
 

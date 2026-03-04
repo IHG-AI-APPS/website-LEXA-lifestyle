@@ -58,7 +58,7 @@ export default function ProductDetailPage({ params }: { params: { slug: string }
   if (loading) {
     return (
       <div className="min-h-screen bg-white pt-20 flex items-center justify-center">
-        <div className="text-gray-600 dark:text-gray-400">Loading...</div>
+        <div className="text-gray-600 dark:text-zinc-500">Loading...</div>
       </div>
     )
   }
@@ -136,7 +136,7 @@ export default function ProductDetailPage({ params }: { params: { slug: string }
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6 }}
-                  className="border border-gray-200 dark:border-gray-700 p-12 mb-8"
+                  className="border border-gray-200 dark:border-zinc-800 p-12 mb-8"
                 >
                   <h2 className="text-4xl font-semibold mb-6">Key Specifications</h2>
                   <div className="h-px w-24 bg-gradient-to-r from-charcoal to-transparent mb-8" />
@@ -144,7 +144,7 @@ export default function ProductDetailPage({ params }: { params: { slug: string }
                     {product.specifications.map((spec: string, index: number) => (
                       <div key={index} className="flex items-start gap-3">
                         <CheckCircle size={24} className="text-charcoal mt-1 flex-shrink-0" strokeWidth={1.5} />
-                        <p className="text-lg text-gray-700 dark:text-gray-300">{spec}</p>
+                        <p className="text-lg text-gray-700 dark:text-zinc-400">{spec}</p>
                       </div>
                     ))}
                   </div>
@@ -156,14 +156,14 @@ export default function ProductDetailPage({ params }: { params: { slug: string }
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.6, delay: 0.2 }}
-                    className="border border-gray-200 dark:border-gray-700 p-12"
+                    className="border border-gray-200 dark:border-zinc-800 p-12"
                   >
                     <h2 className="text-4xl font-semibold mb-6">Related Solutions</h2>
                     <div className="h-px w-24 bg-gradient-to-r from-charcoal to-transparent mb-8" />
                     <div className="flex flex-wrap gap-3">
                       {product.related_solutions.map((solution: string) => (
                         <Link key={solution} href={`/solutions/${solution}`}>
-                          <div className="px-6 py-3 border border-gray-300 dark:border-gray-600 hover:border-charcoal hover:bg-gray-50 transition-all cursor-pointer">
+                          <div className="px-6 py-3 border border-gray-300 dark:border-zinc-700 hover:border-charcoal hover:bg-gray-50 transition-all cursor-pointer">
                             <span className="font-medium capitalize">{solution.replace(/-/g, ' ')}</span>
                           </div>
                         </Link>
@@ -179,18 +179,18 @@ export default function ProductDetailPage({ params }: { params: { slug: string }
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: 0.1 }}
-                  className="border border-gray-200 dark:border-gray-700 p-8 sticky top-24"
+                  className="border border-gray-200 dark:border-zinc-800 p-8 sticky top-24"
                 >
                   <h3 className="text-2xl font-semibold mb-4">Available Brands</h3>
                   <div className="h-px w-16 bg-gradient-to-r from-charcoal to-transparent mb-6" />
-                  <p className="text-sm text-gray-600 dark:text-gray-400 mb-6">
+                  <p className="text-sm text-gray-600 dark:text-zinc-500 mb-6">
                     We carry {product.brands.length} premium brands in this category
                   </p>
                   <div className="space-y-3 max-h-96 overflow-y-auto">
                     {product.brands.map((brand: string) => (
                       <div
                         key={brand}
-                        className="p-4 border border-gray-200 dark:border-gray-700 hover:border-charcoal hover:bg-gray-50 transition-all"
+                        className="p-4 border border-gray-200 dark:border-zinc-800 hover:border-charcoal hover:bg-gray-50 transition-all"
                       >
                         <p className="font-medium">{brand}</p>
                       </div>
@@ -228,7 +228,7 @@ export default function ProductDetailPage({ params }: { params: { slug: string }
               </p>
               <Button 
                 size="lg" 
-                className="bg-white hover:bg-gray-100 dark:bg-gray-800 text-charcoal px-12"
+                className="bg-white hover:bg-gray-100 dark:bg-[#171717] text-charcoal px-12"
                 onClick={() => setShowConsultationForm(true)}
               >
                 Get Product Recommendation

@@ -72,7 +72,7 @@ export default function StatsSection() {
     return (
       <section className="py-16 md:py-20 bg-white dark:bg-[#050505]">
         <div className="px-6 md:px-12 lg:px-24">
-          <div className="text-center dark:text-gray-400">Loading...</div>
+          <div className="text-center dark:text-zinc-500">Loading...</div>
         </div>
       </section>
     )

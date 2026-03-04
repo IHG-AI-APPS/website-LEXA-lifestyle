@@ -117,18 +117,18 @@ export function ImageUpload({
   return (
     <div className={`space-y-3 ${className}`}>
       {label && (
-        <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 dark:text-gray-300">{label}</label>
+        <label className="block text-sm font-medium text-gray-700 dark:text-zinc-400">{label}</label>
       )}
 
       {/* Mode Toggle */}
-      <div className="flex rounded-lg border border-gray-200 dark:border-gray-700 p-1 bg-gray-50 w-fit">
+      <div className="flex rounded-lg border border-gray-200 dark:border-zinc-800 p-1 bg-gray-50 w-fit">
         <button
           type="button"
           onClick={() => setMode('upload')}
           className={`flex items-center gap-2 px-3 py-1.5 text-sm rounded-md transition-colors ${
             mode === 'upload'
               ? 'bg-white text-gray-900 dark:text-white shadow-sm'
-              : 'text-gray-600 dark:text-gray-400 hover:text-gray-900'
+              : 'text-gray-600 dark:text-zinc-500 hover:text-gray-900'
           }`}
         >
           <Upload className="w-4 h-4" />
@@ -140,7 +140,7 @@ export function ImageUpload({
           className={`flex items-center gap-2 px-3 py-1.5 text-sm rounded-md transition-colors ${
             mode === 'url'
               ? 'bg-white text-gray-900 dark:text-white shadow-sm'
-              : 'text-gray-600 dark:text-gray-400 hover:text-gray-900'
+              : 'text-gray-600 dark:text-zinc-500 hover:text-gray-900'
           }`}
         >
           <Link className="w-4 h-4" />
@@ -158,7 +158,7 @@ export function ImageUpload({
           className={`relative border-2 border-dashed rounded-lg p-6 text-center transition-colors ${
             dragActive
               ? 'border-blue-500 bg-blue-50'
-              : 'border-gray-300 dark:border-gray-600 hover:border-gray-400'
+              : 'border-gray-300 dark:border-zinc-700 hover:border-gray-400'
           } ${uploading ? 'pointer-events-none opacity-60' : 'cursor-pointer'}`}
           onClick={() => fileInputRef.current?.click()}
         >
@@ -173,12 +173,12 @@ export function ImageUpload({
           {uploading ? (
             <div className="flex flex-col items-center gap-2">
               <Loader2 className="w-8 h-8 text-blue-500 animate-spin" />
-              <p className="text-sm text-gray-600 dark:text-gray-400 dark:text-gray-400">Uploading...</p>
+              <p className="text-sm text-gray-600 dark:text-zinc-500">Uploading...</p>
             </div>
           ) : (
             <>
               <Upload className="w-10 h-10 text-gray-400 mx-auto mb-3" />
-              <p className="text-sm text-gray-600 dark:text-gray-400 mb-1">
+              <p className="text-sm text-gray-600 dark:text-zinc-500 mb-1">
                 <span className="font-medium text-blue-600">Click to upload</span> or drag and drop
               </p>
               <p className="text-xs text-gray-500">PNG, JPG, GIF, WebP up to 10MB</p>
@@ -195,13 +195,13 @@ export function ImageUpload({
             value={value}
             onChange={(e) => onChange(e.target.value)}
             placeholder={placeholder}
-            className="w-full px-4 py-2.5 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 pr-10"
+            className="w-full px-4 py-2.5 border border-gray-300 dark:border-zinc-700 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 pr-10"
           />
           {value && (
             <button
               type="button"
               onClick={clearImage}
-              className="absolute right-2 top-1/2 -translate-y-1/2 p-1 text-gray-400 hover:text-gray-600 dark:text-gray-400 dark:text-gray-400"
+              className="absolute right-2 top-1/2 -translate-y-1/2 p-1 text-gray-400 hover:text-gray-600 dark:text-zinc-500"
             >
               <X className="w-4 h-4" />
             </button>
@@ -217,7 +217,7 @@ export function ImageUpload({
       {/* Preview */}
       {showPreview && value && (
         <div className="relative mt-3">
-          <div className="relative rounded-lg overflow-hidden border border-gray-200 dark:border-gray-700 bg-gray-50">
+          <div className="relative rounded-lg overflow-hidden border border-gray-200 dark:border-zinc-800 bg-gray-50">
             <img
               src={value}
               alt="Preview"
@@ -330,7 +330,7 @@ export function MultiImageUpload({
   return (
     <div className={`space-y-3 ${className}`}>
       {label && (
-        <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 dark:text-gray-300">
+        <label className="block text-sm font-medium text-gray-700 dark:text-zinc-400">
           {label} ({values.length}/{maxImages})
         </label>
       )}
@@ -343,7 +343,7 @@ export function MultiImageUpload({
               <img
                 src={url}
                 alt={`Image ${index + 1}`}
-                className="w-full h-full object-cover rounded-lg border border-gray-200 dark:border-gray-700 dark:border-gray-700"
+                className="w-full h-full object-cover rounded-lg border border-gray-200 dark:border-zinc-800"
                 onError={(e) => {
                   (e.target as HTMLImageElement).src = 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="%239CA3AF" stroke-width="1"%3E%3Crect x="3" y="3" width="18" height="18" rx="2"/%3E%3C/svg%3E'
                 }}
@@ -375,7 +375,7 @@ export function MultiImageUpload({
             type="button"
             onClick={() => fileInputRef.current?.click()}
             disabled={uploading}
-            className="flex items-center gap-2 px-4 py-2 text-sm border border-gray-300 dark:border-gray-600 rounded-lg hover:bg-gray-50 disabled:opacity-50"
+            className="flex items-center gap-2 px-4 py-2 text-sm border border-gray-300 dark:border-zinc-700 rounded-lg hover:bg-gray-50 disabled:opacity-50"
           >
             {uploading ? (
               <Loader2 className="w-4 h-4 animate-spin" />
@@ -387,7 +387,7 @@ export function MultiImageUpload({
           <button
             type="button"
             onClick={addUrlImage}
-            className="flex items-center gap-2 px-4 py-2 text-sm border border-gray-300 dark:border-gray-600 rounded-lg hover:bg-gray-50"
+            className="flex items-center gap-2 px-4 py-2 text-sm border border-gray-300 dark:border-zinc-700 rounded-lg hover:bg-gray-50"
           >
             <Link className="w-4 h-4" />
             Add URL

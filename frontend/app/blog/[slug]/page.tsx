@@ -53,17 +53,17 @@ export default function BlogArticlePage({ params }: { params: { slug: string } }
 
   if (loading) {
     return (
-      <div className="min-h-screen bg-white dark:bg-gray-900 pt-20">
+      <div className="min-h-screen bg-white dark:bg-[#0A0A0A] pt-20">
         <div className="container mx-auto px-4 py-8 max-w-4xl">
           <div className="animate-pulse">
-            <div className="h-6 bg-gray-100 dark:bg-gray-800 rounded w-1/4 mb-4"></div>
+            <div className="h-6 bg-gray-100 dark:bg-[#171717] rounded w-1/4 mb-4"></div>
             <div className="h-80 bg-gray-200 rounded-xl mb-8"></div>
             <div className="h-10 bg-gray-200 rounded w-3/4 mb-4"></div>
-            <div className="h-4 bg-gray-100 dark:bg-gray-800 rounded w-1/4 mb-8"></div>
+            <div className="h-4 bg-gray-100 dark:bg-[#171717] rounded w-1/4 mb-8"></div>
             <div className="space-y-3">
-              <div className="h-4 bg-gray-100 dark:bg-gray-800 rounded"></div>
-              <div className="h-4 bg-gray-100 dark:bg-gray-800 rounded"></div>
-              <div className="h-4 bg-gray-100 dark:bg-gray-800 rounded w-5/6"></div>
+              <div className="h-4 bg-gray-100 dark:bg-[#171717] rounded"></div>
+              <div className="h-4 bg-gray-100 dark:bg-[#171717] rounded"></div>
+              <div className="h-4 bg-gray-100 dark:bg-[#171717] rounded w-5/6"></div>
             </div>
           </div>
         </div>
@@ -73,7 +73,7 @@ export default function BlogArticlePage({ params }: { params: { slug: string } }
 
   if (!article) {
     return (
-      <div className="min-h-screen bg-white dark:bg-gray-900 pt-20 flex items-center justify-center">
+      <div className="min-h-screen bg-white dark:bg-[#0A0A0A] pt-20 flex items-center justify-center">
         <div className="text-center">
           <h2 className="text-3xl font-semibold mb-6">Article Not Found</h2>
           <Link href="/blog">
@@ -88,7 +88,7 @@ export default function BlogArticlePage({ params }: { params: { slug: string } }
   }
 
   return (
-    <div className="min-h-screen bg-white dark:bg-gray-900 pt-20">
+    <div className="min-h-screen bg-white dark:bg-[#0A0A0A] pt-20">
       {/* Breadcrumb Navigation */}
       <div className="container mx-auto px-5 sm:px-8 lg:px-16">
         <Breadcrumb 
@@ -113,7 +113,7 @@ export default function BlogArticlePage({ params }: { params: { slug: string } }
               </h1>
               
               {article.excerpt && (
-                <p className="text-lg text-gray-600 dark:text-gray-400 mb-6 leading-relaxed">
+                <p className="text-lg text-gray-600 dark:text-zinc-500 mb-6 leading-relaxed">
                   {article.excerpt}
                 </p>
               )}
@@ -121,9 +121,9 @@ export default function BlogArticlePage({ params }: { params: { slug: string } }
               <div className="flex flex-wrap items-center gap-4 text-sm text-gray-500 mb-6">
                 <div className="flex items-center gap-2">
                   <div className="w-8 h-8 rounded-full bg-gray-200 flex items-center justify-center">
-                    <User size={16} className="text-gray-600 dark:text-gray-400" />
+                    <User size={16} className="text-gray-600 dark:text-zinc-500" />
                   </div>
-                  <span className="font-medium text-gray-700 dark:text-gray-300">{article.author && article.author !== 'Aura' ? article.author : 'LEXA Editorial'}</span>
+                  <span className="font-medium text-gray-700 dark:text-zinc-400">{article.author && article.author !== 'Aura' ? article.author : 'LEXA Editorial'}</span>
                 </div>
                 <span className="text-gray-300">•</span>
                 <div className="flex items-center gap-1.5">
@@ -140,7 +140,7 @@ export default function BlogArticlePage({ params }: { params: { slug: string } }
               {article.tags && article.tags.length > 0 && (
                 <div className="flex flex-wrap gap-2">
                   {article.tags.map((tag: string) => (
-                    <span key={tag} className="px-3 py-1 bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 transition-colors rounded-full text-sm text-gray-600 dark:text-gray-400">
+                    <span key={tag} className="px-3 py-1 bg-gray-100 dark:bg-[#171717] hover:bg-gray-200 transition-colors rounded-full text-sm text-gray-600 dark:text-zinc-500">
                       #{tag}
                     </span>
                   ))}
@@ -177,20 +177,20 @@ export default function BlogArticlePage({ params }: { params: { slug: string } }
               className="prose prose-lg prose-gray max-w-none
                 prose-headings:font-bold prose-headings:tracking-tight prose-headings:text-gray-900 dark:text-white dark:prose-headings:text-white
                 prose-h1:text-3xl prose-h1:mt-8 prose-h1:mb-4
-                prose-h2:text-2xl prose-h2:mt-8 prose-h2:mb-4 prose-h2:border-b prose-h2:border-gray-200 dark:border-gray-700 prose-h2:pb-2
+                prose-h2:text-2xl prose-h2:mt-8 prose-h2:mb-4 prose-h2:border-b prose-h2:border-gray-200 dark:border-zinc-800 prose-h2:pb-2
                 prose-h3:text-xl prose-h3:mt-6 prose-h3:mb-3
-                prose-p:text-gray-700 dark:text-gray-300 prose-p:leading-relaxed prose-p:mb-4
+                prose-p:text-gray-700 dark:text-zinc-400 prose-p:leading-relaxed prose-p:mb-4
                 prose-a:text-[#C9A962] prose-a:no-underline hover:prose-a:underline
                 prose-strong:text-gray-900 dark:text-white dark:prose-strong:text-white prose-strong:font-semibold
                 prose-ul:my-4 prose-ul:pl-6
                 prose-ol:my-4 prose-ol:pl-6
-                prose-li:text-gray-700 dark:text-gray-300 prose-li:mb-2
+                prose-li:text-gray-700 dark:text-zinc-400 prose-li:mb-2
                 prose-blockquote:border-l-4 prose-blockquote:border-[#C9A962] prose-blockquote:bg-[#C9A962]/5 prose-blockquote:py-2 prose-blockquote:px-4 prose-blockquote:italic prose-blockquote:text-gray-700
-                prose-code:bg-gray-100 dark:bg-gray-800 prose-code:px-1.5 prose-code:py-0.5 prose-code:rounded prose-code:text-sm
+                prose-code:bg-gray-100 dark:bg-[#171717] prose-code:px-1.5 prose-code:py-0.5 prose-code:rounded prose-code:text-sm
                 prose-pre:bg-gray-900 prose-pre:text-gray-100 prose-pre:rounded-lg prose-pre:overflow-x-auto
                 prose-table:w-full prose-table:border-collapse
-                prose-th:bg-gray-100 dark:bg-gray-800 prose-th:border prose-th:border-gray-300 dark:border-gray-600 prose-th:px-4 prose-th:py-2 prose-th:text-left prose-th:font-semibold
-                prose-td:border prose-td:border-gray-300 dark:border-gray-600 prose-td:px-4 prose-td:py-2
+                prose-th:bg-gray-100 dark:bg-[#171717] prose-th:border prose-th:border-gray-300 dark:border-zinc-700 prose-th:px-4 prose-th:py-2 prose-th:text-left prose-th:font-semibold
+                prose-td:border prose-td:border-gray-300 dark:border-zinc-700 prose-td:px-4 prose-td:py-2
                 prose-img:rounded-lg prose-img:shadow-md
               "
             >
@@ -198,26 +198,26 @@ export default function BlogArticlePage({ params }: { params: { slug: string } }
                 remarkPlugins={[remarkGfm]}
                 components={{
                   h1: ({ children }) => <h1 className="text-3xl font-bold mt-8 mb-4 text-gray-900 dark:text-white">{children}</h1>,
-                  h2: ({ children }) => <h2 className="text-2xl font-bold mt-8 mb-4 text-gray-900 dark:text-white border-b border-gray-200 dark:border-gray-700 pb-2">{children}</h2>,
+                  h2: ({ children }) => <h2 className="text-2xl font-bold mt-8 mb-4 text-gray-900 dark:text-white border-b border-gray-200 dark:border-zinc-800 pb-2">{children}</h2>,
                   h3: ({ children }) => <h3 className="text-xl font-bold mt-6 mb-3 text-gray-900 dark:text-white">{children}</h3>,
-                  p: ({ children }) => <p className="text-gray-700 dark:text-gray-300 leading-relaxed mb-4">{children}</p>,
+                  p: ({ children }) => <p className="text-gray-700 dark:text-zinc-400 leading-relaxed mb-4">{children}</p>,
                   ul: ({ children }) => <ul className="list-disc pl-6 my-4 space-y-2">{children}</ul>,
                   ol: ({ children }) => <ol className="list-decimal pl-6 my-4 space-y-2">{children}</ol>,
-                  li: ({ children }) => <li className="text-gray-700 dark:text-gray-300">{children}</li>,
+                  li: ({ children }) => <li className="text-gray-700 dark:text-zinc-400">{children}</li>,
                   blockquote: ({ children }) => (
-                    <blockquote className="border-l-4 border-[#C9A962] bg-[#C9A962]/5 py-3 px-4 my-4 italic text-gray-700 dark:text-gray-300 rounded-r-lg">
+                    <blockquote className="border-l-4 border-[#C9A962] bg-[#C9A962]/5 py-3 px-4 my-4 italic text-gray-700 dark:text-zinc-400 rounded-r-lg">
                       {children}
                     </blockquote>
                   ),
                   table: ({ children }) => (
                     <div className="overflow-x-auto my-6">
-                      <table className="w-full border-collapse border border-gray-300 dark:border-gray-600 rounded-lg overflow-hidden">
+                      <table className="w-full border-collapse border border-gray-300 dark:border-zinc-700 rounded-lg overflow-hidden">
                         {children}
                       </table>
                     </div>
                   ),
-                  th: ({ children }) => <th className="bg-gray-100 dark:bg-gray-800 border border-gray-300 dark:border-gray-600 dark:border-gray-600 px-4 py-3 text-left font-semibold text-gray-900 dark:text-white">{children}</th>,
-                  td: ({ children }) => <td className="border border-gray-300 dark:border-gray-600 px-4 py-3 text-gray-700 dark:text-gray-300">{children}</td>,
+                  th: ({ children }) => <th className="bg-gray-100 dark:bg-[#171717] border border-gray-300 dark:border-zinc-700 dark:border-zinc-700 px-4 py-3 text-left font-semibold text-gray-900 dark:text-white">{children}</th>,
+                  td: ({ children }) => <td className="border border-gray-300 dark:border-zinc-700 px-4 py-3 text-gray-700 dark:text-zinc-400">{children}</td>,
                   a: ({ href, children }) => (
                     <a href={href} className="text-[#C9A962] hover:text-[#B8983F] hover:underline transition-colors" target="_blank" rel="noopener noreferrer">
                       {children}
@@ -227,7 +227,7 @@ export default function BlogArticlePage({ params }: { params: { slug: string } }
                   code: ({ children, className }) => {
                     const isInline = !className
                     return isInline ? (
-                      <code className="bg-gray-100 dark:bg-gray-800 px-1.5 py-0.5 rounded text-sm font-mono text-gray-800 dark:text-gray-200 dark:text-gray-100">{children}</code>
+                      <code className="bg-gray-100 dark:bg-[#171717] px-1.5 py-0.5 rounded text-sm font-mono text-gray-800 dark:text-gray-200 dark:text-gray-100">{children}</code>
                     ) : (
                       <code className={className}>{children}</code>
                     )
@@ -244,14 +244,14 @@ export default function BlogArticlePage({ params }: { params: { slug: string } }
             </motion.article>
             
             {/* Share & Actions */}
-            <div className="mt-12 pt-8 border-t border-gray-200 dark:border-gray-700 flex items-center justify-between">
+            <div className="mt-12 pt-8 border-t border-gray-200 dark:border-zinc-800 flex items-center justify-between">
               <div className="flex items-center gap-4">
                 <span className="text-sm text-gray-500">Share this article:</span>
-                <button className="p-2 rounded-full bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 transition-colors">
-                  <Share2 className="h-5 w-5 text-gray-600 dark:text-gray-400" />
+                <button className="p-2 rounded-full bg-gray-100 dark:bg-[#171717] hover:bg-gray-200 transition-colors">
+                  <Share2 className="h-5 w-5 text-gray-600 dark:text-zinc-500" />
                 </button>
               </div>
-              <button className="flex items-center gap-2 px-4 py-2 rounded-full bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 transition-colors text-sm font-medium">
+              <button className="flex items-center gap-2 px-4 py-2 rounded-full bg-gray-100 dark:bg-[#171717] hover:bg-gray-200 transition-colors text-sm font-medium">
                 <BookmarkPlus className="h-4 w-4" />
                 Save for later
               </button>
@@ -261,14 +261,14 @@ export default function BlogArticlePage({ params }: { params: { slug: string } }
       </section>
 
       {relatedArticles.length > 0 && (
-        <section className="py-16 bg-gray-50 dark:bg-gray-800">
+        <section className="py-16 bg-gray-50 dark:bg-[#171717]">
           <div className="container mx-auto px-4 sm:px-8 lg:px-16">
             <div className="max-w-6xl mx-auto">
               <h2 className="text-2xl font-bold mb-8 text-gray-900 dark:text-white">Continue Reading</h2>
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                 {relatedArticles.filter(a => a.slug !== article.slug).slice(0, 3).map((relatedArticle) => (
                   <Link key={relatedArticle.id} href={`/blog/${relatedArticle.slug}`}>
-                    <div className="group bg-white dark:bg-gray-800 rounded-xl overflow-hidden shadow-sm hover:shadow-lg transition-all border border-gray-100 dark:border-gray-800 dark:border-gray-700">
+                    <div className="group bg-white dark:bg-[#171717] rounded-xl overflow-hidden shadow-sm hover:shadow-lg transition-all border border-gray-100 dark:border-zinc-800">
                       <div className="relative h-40 overflow-hidden bg-gradient-to-br from-blue-100 to-blue-50">
                         {relatedArticle.featured_image && !relatedArticle.featured_image.includes('photo-180') ? (
                           <SafeImage
@@ -319,7 +319,7 @@ export default function BlogArticlePage({ params }: { params: { slug: string } }
                 Let our experts design the perfect smart home solution for you.
               </p>
               <Link href="/contact">
-                <Button size="lg" className="bg-white dark:bg-gray-800 hover:bg-gray-100 dark:bg-gray-800 dark:hover:bg-gray-700 text-charcoal dark:text-gray-200 px-12">
+                <Button size="lg" className="bg-white dark:bg-[#171717] hover:bg-gray-100 dark:bg-[#171717] dark:hover:bg-[#171717] text-charcoal dark:text-gray-200 px-12">
                   Get in Touch
                 </Button>
               </Link>

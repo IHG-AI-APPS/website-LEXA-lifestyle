@@ -111,7 +111,7 @@ export default function SolutionsPreview() {
                           <div className="h-px w-16 bg-gradient-to-r from-platinum to-transparent" />
 
                           {/* Description */}
-                          <p className="text-lg text-gray-600 dark:text-gray-400 leading-relaxed font-light max-w-md">
+                          <p className="text-lg text-gray-600 dark:text-zinc-500 leading-relaxed font-light max-w-md">
                             {solution.description}
                           </p>
 
@@ -139,7 +139,7 @@ export default function SolutionsPreview() {
           >
             <Link
               href="/solutions"
-              className="inline-block px-10 py-5 border border-gray-300 dark:border-gray-600 hover:border-charcoal hover:bg-gray-50 text-charcoal text-sm font-medium tracking-wide transition-all duration-300"
+              className="inline-block px-10 py-5 border border-gray-300 dark:border-zinc-700 hover:border-charcoal hover:bg-gray-50 text-charcoal text-sm font-medium tracking-wide transition-all duration-300"
             >
               View All Solutions
             </Link>

@@ -282,13 +282,13 @@ function ArrayEditor({ items, onChange, fields }: { items: any[], onChange: (ite
   return (
     <div className="space-y-3">
       {items.map((item, idx) => (
-        <div key={idx} className="flex gap-2 items-start p-3 bg-gray-50 dark:bg-gray-800 rounded-lg border border-gray-200 dark:border-gray-700">
+        <div key={idx} className="flex gap-2 items-start p-3 bg-gray-50 dark:bg-[#171717] rounded-lg border border-gray-200 dark:border-zinc-800">
           <GripVertical className="h-4 w-4 mt-2 text-gray-400 flex-shrink-0" />
           <div className="flex-1 grid grid-cols-1 md:grid-cols-2 gap-2">
             {fields.map(field => (
               field.type === 'array' ? (
                 <div key={field.key} className="col-span-full">
-                  <label className="text-xs text-gray-500 dark:text-gray-400">{field.label} (comma-separated)</label>
+                  <label className="text-xs text-gray-500 dark:text-zinc-500">{field.label} (comma-separated)</label>
                   <Input
                     value={Array.isArray(item[field.key]) ? item[field.key].join(', ') : ''}
                     onChange={e => updateItem(idx, field.key, e.target.value.split(',').map((s: string) => s.trim()).filter(Boolean))}
@@ -297,17 +297,17 @@ function ArrayEditor({ items, onChange, fields }: { items: any[], onChange: (ite
                 </div>
               ) : field.type === 'textarea' ? (
                 <div key={field.key} className="col-span-full">
-                  <label className="text-xs text-gray-500 dark:text-gray-400">{field.label}</label>
+                  <label className="text-xs text-gray-500 dark:text-zinc-500">{field.label}</label>
                   <textarea
                     value={item[field.key] || ''}
                     onChange={e => updateItem(idx, field.key, e.target.value)}
-                    className="w-full text-sm p-2 rounded-md border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-900 text-gray-900 dark:text-white"
+                    className="w-full text-sm p-2 rounded-md border border-gray-300 dark:border-zinc-700 bg-white dark:bg-[#0A0A0A] text-gray-900 dark:text-white"
                     rows={2}
                   />
                 </div>
               ) : (
                 <div key={field.key}>
-                  <label className="text-xs text-gray-500 dark:text-gray-400">{field.label}</label>
+                  <label className="text-xs text-gray-500 dark:text-zinc-500">{field.label}</label>
                   <Input
                     value={item[field.key] || ''}
                     onChange={e => updateItem(idx, field.key, e.target.value)}
@@ -339,7 +339,7 @@ function SeoTemplateEditor({ data, onSave }: { data: any, onSave: (data: any) =>
   return (
     <div className="space-y-6">
       {/* Hero Section */}
-      <div className="border border-gray-200 dark:border-gray-700 rounded-lg p-4">
+      <div className="border border-gray-200 dark:border-zinc-800 rounded-lg p-4">
         <h4 className="text-sm font-bold mb-3 text-[#C9A962]">Hero Section</h4>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
           <div><label className="text-xs text-gray-500">Badge</label><Input value={formData.hero?.badge || ''} onChange={e => updateNested('hero', 'badge', e.target.value)} /></div>
@@ -347,21 +347,21 @@ function SeoTemplateEditor({ data, onSave }: { data: any, onSave: (data: any) =>
           <div><label className="text-xs text-gray-500">Title Highlight</label><Input value={formData.hero?.titleHighlight || ''} onChange={e => updateNested('hero', 'titleHighlight', e.target.value)} /></div>
           <div><label className="text-xs text-gray-500">Image URL</label><Input value={formData.hero?.image || ''} onChange={e => updateNested('hero', 'image', e.target.value)} /></div>
           <div className="col-span-full"><label className="text-xs text-gray-500">Subtitle</label><Input value={formData.hero?.subtitle || ''} onChange={e => updateNested('hero', 'subtitle', e.target.value)} /></div>
-          <div className="col-span-full"><label className="text-xs text-gray-500">Description</label><textarea value={formData.hero?.description || ''} onChange={e => updateNested('hero', 'description', e.target.value)} className="w-full text-sm p-2 rounded-md border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-900 text-gray-900 dark:text-white" rows={2} /></div>
+          <div className="col-span-full"><label className="text-xs text-gray-500">Description</label><textarea value={formData.hero?.description || ''} onChange={e => updateNested('hero', 'description', e.target.value)} className="w-full text-sm p-2 rounded-md border border-gray-300 dark:border-zinc-700 bg-white dark:bg-[#0A0A0A] text-gray-900 dark:text-white" rows={2} /></div>
           <div><label className="text-xs text-gray-500">Primary CTA Text</label><Input value={formData.hero?.primaryCTA?.text || ''} onChange={e => update('hero', { ...formData.hero, primaryCTA: { ...formData.hero?.primaryCTA, text: e.target.value } })} /></div>
           <div><label className="text-xs text-gray-500">Primary CTA Link</label><Input value={formData.hero?.primaryCTA?.href || ''} onChange={e => update('hero', { ...formData.hero, primaryCTA: { ...formData.hero?.primaryCTA, href: e.target.value } })} /></div>
         </div>
       </div>
 
       {/* Audience */}
-      <div className="border border-gray-200 dark:border-gray-700 rounded-lg p-4">
+      <div className="border border-gray-200 dark:border-zinc-800 rounded-lg p-4">
         <h4 className="text-sm font-bold mb-3 text-[#C9A962]">Target Audience</h4>
         <label className="text-xs text-gray-500">Audience items (comma-separated)</label>
         <Input value={(formData.audience || []).join(', ')} onChange={e => update('audience', e.target.value.split(',').map((s: string) => s.trim()).filter(Boolean))} />
       </div>
 
       {/* Problems */}
-      <div className="border border-gray-200 dark:border-gray-700 rounded-lg p-4">
+      <div className="border border-gray-200 dark:border-zinc-800 rounded-lg p-4">
         <h4 className="text-sm font-bold mb-3 text-[#C9A962]">Problems Section</h4>
         <div className="mb-3"><label className="text-xs text-gray-500">Section Title</label><Input value={formData.problems?.title || ''} onChange={e => update('problems', { ...formData.problems, title: e.target.value })} /></div>
         <ArrayEditor items={formData.problems?.items || []} onChange={v => update('problems', { ...formData.problems, items: v })} fields={[
@@ -370,7 +370,7 @@ function SeoTemplateEditor({ data, onSave }: { data: any, onSave: (data: any) =>
       </div>
 
       {/* Deliverables */}
-      <div className="border border-gray-200 dark:border-gray-700 rounded-lg p-4">
+      <div className="border border-gray-200 dark:border-zinc-800 rounded-lg p-4">
         <h4 className="text-sm font-bold mb-3 text-[#C9A962]">Deliverables</h4>
         <div className="mb-3"><label className="text-xs text-gray-500">Section Title</label><Input value={formData.deliverables?.title || ''} onChange={e => update('deliverables', { ...formData.deliverables, title: e.target.value })} /></div>
         <ArrayEditor items={formData.deliverables?.items || []} onChange={v => update('deliverables', { ...formData.deliverables, items: v })} fields={[
@@ -379,7 +379,7 @@ function SeoTemplateEditor({ data, onSave }: { data: any, onSave: (data: any) =>
       </div>
 
       {/* Process */}
-      <div className="border border-gray-200 dark:border-gray-700 rounded-lg p-4">
+      <div className="border border-gray-200 dark:border-zinc-800 rounded-lg p-4">
         <h4 className="text-sm font-bold mb-3 text-[#C9A962]">Process Steps</h4>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-3 mb-3">
           <div><label className="text-xs text-gray-500">Title</label><Input value={formData.process?.title || ''} onChange={e => update('process', { ...formData.process, title: e.target.value })} /></div>
@@ -391,10 +391,10 @@ function SeoTemplateEditor({ data, onSave }: { data: any, onSave: (data: any) =>
       </div>
 
       {/* Section 6 (Pricing/Custom) */}
-      <div className="border border-gray-200 dark:border-gray-700 rounded-lg p-4">
+      <div className="border border-gray-200 dark:border-zinc-800 rounded-lg p-4">
         <h4 className="text-sm font-bold mb-3 text-[#C9A962]">Section 6 (Pricing/Packages)</h4>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-3 mb-3">
-          <div><label className="text-xs text-gray-500">Type</label><select value={formData.section6?.type || 'pricing'} onChange={e => update('section6', { ...formData.section6, type: e.target.value })} className="w-full text-sm p-2 rounded-md border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-900 text-gray-900 dark:text-white"><option value="pricing">Pricing</option><option value="projects">Projects</option><option value="custom">Custom</option></select></div>
+          <div><label className="text-xs text-gray-500">Type</label><select value={formData.section6?.type || 'pricing'} onChange={e => update('section6', { ...formData.section6, type: e.target.value })} className="w-full text-sm p-2 rounded-md border border-gray-300 dark:border-zinc-700 bg-white dark:bg-[#0A0A0A] text-gray-900 dark:text-white"><option value="pricing">Pricing</option><option value="projects">Projects</option><option value="custom">Custom</option></select></div>
           <div><label className="text-xs text-gray-500">Title</label><Input value={formData.section6?.title || ''} onChange={e => update('section6', { ...formData.section6, title: e.target.value })} /></div>
           <div><label className="text-xs text-gray-500">Subtitle</label><Input value={formData.section6?.subtitle || ''} onChange={e => update('section6', { ...formData.section6, subtitle: e.target.value })} /></div>
         </div>
@@ -404,7 +404,7 @@ function SeoTemplateEditor({ data, onSave }: { data: any, onSave: (data: any) =>
       </div>
 
       {/* Trust Signals */}
-      <div className="border border-gray-200 dark:border-gray-700 rounded-lg p-4">
+      <div className="border border-gray-200 dark:border-zinc-800 rounded-lg p-4">
         <h4 className="text-sm font-bold mb-3 text-[#C9A962]">Trust Signals</h4>
         <ArrayEditor items={formData.trustSignals?.stats || []} onChange={v => update('trustSignals', { ...formData.trustSignals, stats: v })} fields={[
           { key: 'number', label: 'Number/Value' }, { key: 'label', label: 'Label' }
@@ -412,7 +412,7 @@ function SeoTemplateEditor({ data, onSave }: { data: any, onSave: (data: any) =>
       </div>
 
       {/* Conversion CTA */}
-      <div className="border border-gray-200 dark:border-gray-700 rounded-lg p-4">
+      <div className="border border-gray-200 dark:border-zinc-800 rounded-lg p-4">
         <h4 className="text-sm font-bold mb-3 text-[#C9A962]">Conversion CTA</h4>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
           <div><label className="text-xs text-gray-500">Title</label><Input value={formData.conversion?.title || ''} onChange={e => update('conversion', { ...formData.conversion, title: e.target.value })} /></div>
@@ -422,7 +422,7 @@ function SeoTemplateEditor({ data, onSave }: { data: any, onSave: (data: any) =>
         </div>
       </div>
 
-      <div className="flex justify-end pt-4 border-t border-gray-200 dark:border-gray-700">
+      <div className="flex justify-end pt-4 border-t border-gray-200 dark:border-zinc-800">
         <Button onClick={() => onSave(formData)} data-testid="save-template-page"><Save className="h-4 w-4 mr-2" /> Save Changes</Button>
       </div>
     </div>
@@ -447,11 +447,11 @@ function GenericPageEditor({ data, onSave }: { data: any, onSave: (data: any) =>
 
   return (
     <div className="space-y-3">
-      <p className="text-xs text-gray-500 dark:text-gray-400">Edit the page content as JSON. Changes will override the default hardcoded content.</p>
+      <p className="text-xs text-gray-500 dark:text-zinc-500">Edit the page content as JSON. Changes will override the default hardcoded content.</p>
       <textarea
         value={jsonStr}
         onChange={e => { setJsonStr(e.target.value); setError('') }}
-        className="w-full font-mono text-sm p-3 rounded-md border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-900 text-gray-900 dark:text-white"
+        className="w-full font-mono text-sm p-3 rounded-md border border-gray-300 dark:border-zinc-700 bg-white dark:bg-[#0A0A0A] text-gray-900 dark:text-white"
         rows={20}
         spellCheck={false}
         data-testid="json-editor"
@@ -491,16 +491,16 @@ function SectionEditor({ sectionKey, data, onSave }: { sectionKey: string, data:
         return (
           <div className="space-y-4">
             <div>
-              <label className="block text-sm font-medium mb-1 text-gray-700 dark:text-gray-300">Video Clips (one URL per line)</label>
-              <textarea value={(formData.video_clips || []).join('\n')} onChange={e => updateField('video_clips', e.target.value.split('\n').filter(Boolean))} className="w-full text-sm p-3 rounded-md border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-900 text-gray-900 dark:text-white font-mono" rows={6} data-testid="hero-video-clips" />
+              <label className="block text-sm font-medium mb-1 text-gray-700 dark:text-zinc-400">Video Clips (one URL per line)</label>
+              <textarea value={(formData.video_clips || []).join('\n')} onChange={e => updateField('video_clips', e.target.value.split('\n').filter(Boolean))} className="w-full text-sm p-3 rounded-md border border-gray-300 dark:border-zinc-700 bg-white dark:bg-[#0A0A0A] text-gray-900 dark:text-white font-mono" rows={6} data-testid="hero-video-clips" />
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              <div><label className="block text-sm font-medium mb-1 text-gray-700 dark:text-gray-300">Heading (EN)</label><Input value={formData.heading_en || ''} onChange={e => updateField('heading_en', e.target.value)} data-testid="hero-heading-en" /></div>
-              <div><label className="block text-sm font-medium mb-1 text-gray-700 dark:text-gray-300">Heading (AR)</label><Input value={formData.heading_ar || ''} onChange={e => updateField('heading_ar', e.target.value)} dir="rtl" data-testid="hero-heading-ar" /></div>
-              <div><label className="block text-sm font-medium mb-1 text-gray-700 dark:text-gray-300">Subheading (EN)</label><textarea value={formData.subheading_en || ''} onChange={e => updateField('subheading_en', e.target.value)} className="w-full text-sm p-2 rounded-md border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-900 text-gray-900 dark:text-white" rows={2} /></div>
-              <div><label className="block text-sm font-medium mb-1 text-gray-700 dark:text-gray-300">Subheading (AR)</label><textarea value={formData.subheading_ar || ''} onChange={e => updateField('subheading_ar', e.target.value)} className="w-full text-sm p-2 rounded-md border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-900 text-gray-900 dark:text-white" rows={2} dir="rtl" /></div>
-              <div><label className="block text-sm font-medium mb-1 text-gray-700 dark:text-gray-300">CTA Primary Text</label><Input value={formData.cta_primary_text_en || ''} onChange={e => updateField('cta_primary_text_en', e.target.value)} /></div>
-              <div><label className="block text-sm font-medium mb-1 text-gray-700 dark:text-gray-300">CTA Primary Link</label><Input value={formData.cta_primary_link || ''} onChange={e => updateField('cta_primary_link', e.target.value)} /></div>
+              <div><label className="block text-sm font-medium mb-1 text-gray-700 dark:text-zinc-400">Heading (EN)</label><Input value={formData.heading_en || ''} onChange={e => updateField('heading_en', e.target.value)} data-testid="hero-heading-en" /></div>
+              <div><label className="block text-sm font-medium mb-1 text-gray-700 dark:text-zinc-400">Heading (AR)</label><Input value={formData.heading_ar || ''} onChange={e => updateField('heading_ar', e.target.value)} dir="rtl" data-testid="hero-heading-ar" /></div>
+              <div><label className="block text-sm font-medium mb-1 text-gray-700 dark:text-zinc-400">Subheading (EN)</label><textarea value={formData.subheading_en || ''} onChange={e => updateField('subheading_en', e.target.value)} className="w-full text-sm p-2 rounded-md border border-gray-300 dark:border-zinc-700 bg-white dark:bg-[#0A0A0A] text-gray-900 dark:text-white" rows={2} /></div>
+              <div><label className="block text-sm font-medium mb-1 text-gray-700 dark:text-zinc-400">Subheading (AR)</label><textarea value={formData.subheading_ar || ''} onChange={e => updateField('subheading_ar', e.target.value)} className="w-full text-sm p-2 rounded-md border border-gray-300 dark:border-zinc-700 bg-white dark:bg-[#0A0A0A] text-gray-900 dark:text-white" rows={2} dir="rtl" /></div>
+              <div><label className="block text-sm font-medium mb-1 text-gray-700 dark:text-zinc-400">CTA Primary Text</label><Input value={formData.cta_primary_text_en || ''} onChange={e => updateField('cta_primary_text_en', e.target.value)} /></div>
+              <div><label className="block text-sm font-medium mb-1 text-gray-700 dark:text-zinc-400">CTA Primary Link</label><Input value={formData.cta_primary_link || ''} onChange={e => updateField('cta_primary_link', e.target.value)} /></div>
             </div>
           </div>
         )
@@ -508,52 +508,52 @@ function SectionEditor({ sectionKey, data, onSave }: { sectionKey: string, data:
         return (
           <div className="space-y-4">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              <div><label className="block text-sm font-medium mb-1 text-gray-700 dark:text-gray-300">Heading (EN)</label><Input value={formData.heading_en || ''} onChange={e => updateField('heading_en', e.target.value)} /></div>
-              <div><label className="block text-sm font-medium mb-1 text-gray-700 dark:text-gray-300">Subheading (EN)</label><Input value={formData.subheading_en || ''} onChange={e => updateField('subheading_en', e.target.value)} /></div>
-              <div><label className="block text-sm font-medium mb-1 text-gray-700 dark:text-gray-300">Address</label><Input value={formData.address || ''} onChange={e => updateField('address', e.target.value)} /></div>
-              <div><label className="block text-sm font-medium mb-1 text-gray-700 dark:text-gray-300">Phone</label><Input value={formData.phone || ''} onChange={e => updateField('phone', e.target.value)} /></div>
+              <div><label className="block text-sm font-medium mb-1 text-gray-700 dark:text-zinc-400">Heading (EN)</label><Input value={formData.heading_en || ''} onChange={e => updateField('heading_en', e.target.value)} /></div>
+              <div><label className="block text-sm font-medium mb-1 text-gray-700 dark:text-zinc-400">Subheading (EN)</label><Input value={formData.subheading_en || ''} onChange={e => updateField('subheading_en', e.target.value)} /></div>
+              <div><label className="block text-sm font-medium mb-1 text-gray-700 dark:text-zinc-400">Address</label><Input value={formData.address || ''} onChange={e => updateField('address', e.target.value)} /></div>
+              <div><label className="block text-sm font-medium mb-1 text-gray-700 dark:text-zinc-400">Phone</label><Input value={formData.phone || ''} onChange={e => updateField('phone', e.target.value)} /></div>
             </div>
             <div>
-              <label className="block text-sm font-medium mb-1 text-gray-700 dark:text-gray-300">Time Slots (comma-separated)</label>
+              <label className="block text-sm font-medium mb-1 text-gray-700 dark:text-zinc-400">Time Slots (comma-separated)</label>
               <Input value={(formData.time_slots || []).join(', ')} onChange={e => updateField('time_slots', e.target.value.split(',').map((s: string) => s.trim()).filter(Boolean))} />
             </div>
-            <div><label className="block text-sm font-medium mb-2 text-gray-700 dark:text-gray-300">Highlights</label><ArrayEditor items={formData.highlights || []} onChange={v => updateField('highlights', v)} fields={[{ key: 'icon', label: 'Icon' }, { key: 'label', label: 'Label' }, { key: 'desc', label: 'Description' }]} /></div>
-            <div><label className="block text-sm font-medium mb-2 text-gray-700 dark:text-gray-300">Gallery Images</label><ArrayEditor items={formData.gallery_images || []} onChange={v => updateField('gallery_images', v)} fields={[{ key: 'src', label: 'Image URL' }, { key: 'title', label: 'Title' }, { key: 'zone', label: 'Zone' }]} /></div>
+            <div><label className="block text-sm font-medium mb-2 text-gray-700 dark:text-zinc-400">Highlights</label><ArrayEditor items={formData.highlights || []} onChange={v => updateField('highlights', v)} fields={[{ key: 'icon', label: 'Icon' }, { key: 'label', label: 'Label' }, { key: 'desc', label: 'Description' }]} /></div>
+            <div><label className="block text-sm font-medium mb-2 text-gray-700 dark:text-zinc-400">Gallery Images</label><ArrayEditor items={formData.gallery_images || []} onChange={v => updateField('gallery_images', v)} fields={[{ key: 'src', label: 'Image URL' }, { key: 'title', label: 'Title' }, { key: 'zone', label: 'Zone' }]} /></div>
           </div>
         )
       case 'homepage_calculator_cards':
         return (
           <div className="space-y-4">
-            <h4 className="text-sm font-semibold text-gray-700 dark:text-gray-300">Featured Tool</h4>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-3 p-4 bg-gray-50 dark:bg-gray-800 rounded-lg">
+            <h4 className="text-sm font-semibold text-gray-700 dark:text-zinc-400">Featured Tool</h4>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-3 p-4 bg-gray-50 dark:bg-[#171717] rounded-lg">
               <div><label className="text-xs text-gray-500">Title</label><Input value={formData.featured_tool?.title || ''} onChange={e => updateField('featured_tool', { ...formData.featured_tool, title: e.target.value })} /></div>
               <div><label className="text-xs text-gray-500">Link</label><Input value={formData.featured_tool?.href || ''} onChange={e => updateField('featured_tool', { ...formData.featured_tool, href: e.target.value })} /></div>
-              <div className="col-span-full"><label className="text-xs text-gray-500">Description</label><textarea value={formData.featured_tool?.description || ''} onChange={e => updateField('featured_tool', { ...formData.featured_tool, description: e.target.value })} className="w-full text-sm p-2 rounded-md border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-900 text-gray-900 dark:text-white" rows={2} /></div>
+              <div className="col-span-full"><label className="text-xs text-gray-500">Description</label><textarea value={formData.featured_tool?.description || ''} onChange={e => updateField('featured_tool', { ...formData.featured_tool, description: e.target.value })} className="w-full text-sm p-2 rounded-md border border-gray-300 dark:border-zinc-700 bg-white dark:bg-[#0A0A0A] text-gray-900 dark:text-white" rows={2} /></div>
             </div>
-            <h4 className="text-sm font-semibold text-gray-700 dark:text-gray-300">Tool Cards</h4>
+            <h4 className="text-sm font-semibold text-gray-700 dark:text-zinc-400">Tool Cards</h4>
             <ArrayEditor items={formData.tools || []} onChange={v => updateField('tools', v)} fields={[{ key: 'title', label: 'Title' }, { key: 'description', label: 'Description' }, { key: 'href', label: 'Link' }, { key: 'cta', label: 'CTA' }, { key: 'image', label: 'Image URL' }]} />
           </div>
         )
       case 'homepage_trusted_uae':
         return (
           <div className="space-y-6">
-            <div><h4 className="text-sm font-semibold mb-2 text-gray-700 dark:text-gray-300">Technology Partners</h4><ArrayEditor items={formData.technology_partners || []} onChange={v => updateField('technology_partners', v)} fields={[{ key: 'name', label: 'Name' }, { key: 'logo', label: 'Logo URL' }, { key: 'type', label: 'Partner Type' }]} /></div>
-            <div><h4 className="text-sm font-semibold mb-2 text-gray-700 dark:text-gray-300">Trusted By</h4><ArrayEditor items={formData.trusted_by || []} onChange={v => updateField('trusted_by', v)} fields={[{ key: 'name', label: 'Name' }, { key: 'type', label: 'Type' }]} /></div>
-            <div><h4 className="text-sm font-semibold mb-2 text-gray-700 dark:text-gray-300">Certifications</h4><ArrayEditor items={formData.certifications || []} onChange={v => updateField('certifications', v)} fields={[{ key: 'name', label: 'Certification' }, { key: 'year', label: 'Year' }]} /></div>
-            <div><h4 className="text-sm font-semibold mb-2 text-gray-700 dark:text-gray-300">Stats</h4><ArrayEditor items={formData.stats || []} onChange={v => updateField('stats', v)} fields={[{ key: 'number', label: 'Number' }, { key: 'label', label: 'Label' }]} /></div>
+            <div><h4 className="text-sm font-semibold mb-2 text-gray-700 dark:text-zinc-400">Technology Partners</h4><ArrayEditor items={formData.technology_partners || []} onChange={v => updateField('technology_partners', v)} fields={[{ key: 'name', label: 'Name' }, { key: 'logo', label: 'Logo URL' }, { key: 'type', label: 'Partner Type' }]} /></div>
+            <div><h4 className="text-sm font-semibold mb-2 text-gray-700 dark:text-zinc-400">Trusted By</h4><ArrayEditor items={formData.trusted_by || []} onChange={v => updateField('trusted_by', v)} fields={[{ key: 'name', label: 'Name' }, { key: 'type', label: 'Type' }]} /></div>
+            <div><h4 className="text-sm font-semibold mb-2 text-gray-700 dark:text-zinc-400">Certifications</h4><ArrayEditor items={formData.certifications || []} onChange={v => updateField('certifications', v)} fields={[{ key: 'name', label: 'Certification' }, { key: 'year', label: 'Year' }]} /></div>
+            <div><h4 className="text-sm font-semibold mb-2 text-gray-700 dark:text-zinc-400">Stats</h4><ArrayEditor items={formData.stats || []} onChange={v => updateField('stats', v)} fields={[{ key: 'number', label: 'Number' }, { key: 'label', label: 'Label' }]} /></div>
           </div>
         )
       case 'page_about':
         return (
           <div className="space-y-4">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              <div><label className="block text-sm font-medium mb-1 text-gray-700 dark:text-gray-300">Hero Title (EN)</label><Input value={formData.hero_title_en || ''} onChange={e => updateField('hero_title_en', e.target.value)} /></div>
-              <div><label className="block text-sm font-medium mb-1 text-gray-700 dark:text-gray-300">Hero Title (AR)</label><Input value={formData.hero_title_ar || ''} onChange={e => updateField('hero_title_ar', e.target.value)} dir="rtl" /></div>
-              <div className="col-span-full"><label className="block text-sm font-medium mb-1 text-gray-700 dark:text-gray-300">Story (EN)</label><textarea value={formData.story_en || ''} onChange={e => updateField('story_en', e.target.value)} className="w-full text-sm p-2 rounded-md border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-900 text-gray-900 dark:text-white" rows={3} /></div>
+              <div><label className="block text-sm font-medium mb-1 text-gray-700 dark:text-zinc-400">Hero Title (EN)</label><Input value={formData.hero_title_en || ''} onChange={e => updateField('hero_title_en', e.target.value)} /></div>
+              <div><label className="block text-sm font-medium mb-1 text-gray-700 dark:text-zinc-400">Hero Title (AR)</label><Input value={formData.hero_title_ar || ''} onChange={e => updateField('hero_title_ar', e.target.value)} dir="rtl" /></div>
+              <div className="col-span-full"><label className="block text-sm font-medium mb-1 text-gray-700 dark:text-zinc-400">Story (EN)</label><textarea value={formData.story_en || ''} onChange={e => updateField('story_en', e.target.value)} className="w-full text-sm p-2 rounded-md border border-gray-300 dark:border-zinc-700 bg-white dark:bg-[#0A0A0A] text-gray-900 dark:text-white" rows={3} /></div>
             </div>
-            <h4 className="text-sm font-semibold text-gray-700 dark:text-gray-300">Values</h4>
+            <h4 className="text-sm font-semibold text-gray-700 dark:text-zinc-400">Values</h4>
             <ArrayEditor items={formData.values || []} onChange={v => updateField('values', v)} fields={[{ key: 'icon', label: 'Icon' }, { key: 'title_en', label: 'Title' }, { key: 'description_en', label: 'Description', type: 'textarea' }]} />
-            <h4 className="text-sm font-semibold text-gray-700 dark:text-gray-300">Milestones</h4>
+            <h4 className="text-sm font-semibold text-gray-700 dark:text-zinc-400">Milestones</h4>
             <ArrayEditor items={formData.milestones || []} onChange={v => updateField('milestones', v)} fields={[{ key: 'year', label: 'Year' }, { key: 'title_en', label: 'Title' }, { key: 'description_en', label: 'Description' }]} />
           </div>
         )
@@ -561,14 +561,14 @@ function SectionEditor({ sectionKey, data, onSave }: { sectionKey: string, data:
         return (
           <div className="space-y-4">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              <div><label className="block text-sm font-medium mb-1 text-gray-700 dark:text-gray-300">Hero Title (EN)</label><Input value={formData.hero_title_en || ''} onChange={e => updateField('hero_title_en', e.target.value)} /></div>
-              <div className="col-span-full"><label className="block text-sm font-medium mb-1 text-gray-700 dark:text-gray-300">Address</label><Input value={formData.address || ''} onChange={e => updateField('address', e.target.value)} /></div>
-              <div><label className="block text-sm font-medium mb-1 text-gray-700 dark:text-gray-300">Phone</label><Input value={formData.phone || ''} onChange={e => updateField('phone', e.target.value)} /></div>
-              <div><label className="block text-sm font-medium mb-1 text-gray-700 dark:text-gray-300">Email</label><Input value={formData.email || ''} onChange={e => updateField('email', e.target.value)} /></div>
-              <div><label className="block text-sm font-medium mb-1 text-gray-700 dark:text-gray-300">Map Lat</label><Input type="number" step="0.0001" value={formData.map_lat || ''} onChange={e => updateField('map_lat', parseFloat(e.target.value))} /></div>
-              <div><label className="block text-sm font-medium mb-1 text-gray-700 dark:text-gray-300">Map Lng</label><Input type="number" step="0.0001" value={formData.map_lng || ''} onChange={e => updateField('map_lng', parseFloat(e.target.value))} /></div>
+              <div><label className="block text-sm font-medium mb-1 text-gray-700 dark:text-zinc-400">Hero Title (EN)</label><Input value={formData.hero_title_en || ''} onChange={e => updateField('hero_title_en', e.target.value)} /></div>
+              <div className="col-span-full"><label className="block text-sm font-medium mb-1 text-gray-700 dark:text-zinc-400">Address</label><Input value={formData.address || ''} onChange={e => updateField('address', e.target.value)} /></div>
+              <div><label className="block text-sm font-medium mb-1 text-gray-700 dark:text-zinc-400">Phone</label><Input value={formData.phone || ''} onChange={e => updateField('phone', e.target.value)} /></div>
+              <div><label className="block text-sm font-medium mb-1 text-gray-700 dark:text-zinc-400">Email</label><Input value={formData.email || ''} onChange={e => updateField('email', e.target.value)} /></div>
+              <div><label className="block text-sm font-medium mb-1 text-gray-700 dark:text-zinc-400">Map Lat</label><Input type="number" step="0.0001" value={formData.map_lat || ''} onChange={e => updateField('map_lat', parseFloat(e.target.value))} /></div>
+              <div><label className="block text-sm font-medium mb-1 text-gray-700 dark:text-zinc-400">Map Lng</label><Input type="number" step="0.0001" value={formData.map_lng || ''} onChange={e => updateField('map_lng', parseFloat(e.target.value))} /></div>
             </div>
-            <h4 className="text-sm font-semibold text-gray-700 dark:text-gray-300">Social Links</h4>
+            <h4 className="text-sm font-semibold text-gray-700 dark:text-zinc-400">Social Links</h4>
             <ArrayEditor items={formData.social_links || []} onChange={v => updateField('social_links', v)} fields={[{ key: 'name', label: 'Platform' }, { key: 'url', label: 'URL' }]} />
           </div>
         )
@@ -576,12 +576,12 @@ function SectionEditor({ sectionKey, data, onSave }: { sectionKey: string, data:
         return (
           <div className="space-y-4">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              <div><label className="block text-sm font-medium mb-1 text-gray-700 dark:text-gray-300">Hero Title</label><Input value={formData.hero_title_en || ''} onChange={e => updateField('hero_title_en', e.target.value)} /></div>
-              <div><label className="block text-sm font-medium mb-1 text-gray-700 dark:text-gray-300">Hero Subtitle</label><Input value={formData.hero_subtitle_en || ''} onChange={e => updateField('hero_subtitle_en', e.target.value)} /></div>
+              <div><label className="block text-sm font-medium mb-1 text-gray-700 dark:text-zinc-400">Hero Title</label><Input value={formData.hero_title_en || ''} onChange={e => updateField('hero_title_en', e.target.value)} /></div>
+              <div><label className="block text-sm font-medium mb-1 text-gray-700 dark:text-zinc-400">Hero Subtitle</label><Input value={formData.hero_subtitle_en || ''} onChange={e => updateField('hero_subtitle_en', e.target.value)} /></div>
             </div>
-            <h4 className="text-sm font-semibold text-gray-700 dark:text-gray-300">Consultation Types</h4>
+            <h4 className="text-sm font-semibold text-gray-700 dark:text-zinc-400">Consultation Types</h4>
             <ArrayEditor items={formData.consultation_types || []} onChange={v => updateField('consultation_types', v)} fields={[{ key: 'icon', label: 'Icon' }, { key: 'title', label: 'Title' }, { key: 'duration', label: 'Duration' }, { key: 'description', label: 'Description', type: 'textarea' }, { key: 'cta', label: 'CTA' }, { key: 'features', label: 'Features', type: 'array' }]} />
-            <h4 className="text-sm font-semibold text-gray-700 dark:text-gray-300">Process Steps</h4>
+            <h4 className="text-sm font-semibold text-gray-700 dark:text-zinc-400">Process Steps</h4>
             <ArrayEditor items={formData.process_steps || []} onChange={v => updateField('process_steps', v)} fields={[{ key: 'number', label: '#' }, { key: 'icon', label: 'Icon' }, { key: 'title', label: 'Title' }, { key: 'description', label: 'Description' }]} />
           </div>
         )
@@ -589,10 +589,10 @@ function SectionEditor({ sectionKey, data, onSave }: { sectionKey: string, data:
         return (
           <div className="space-y-4">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              <div><label className="block text-sm font-medium mb-1 text-gray-700 dark:text-gray-300">Hero Title</label><Input value={formData.hero_title_en || ''} onChange={e => updateField('hero_title_en', e.target.value)} /></div>
-              <div><label className="block text-sm font-medium mb-1 text-gray-700 dark:text-gray-300">Hero Subtitle</label><Input value={formData.hero_subtitle_en || ''} onChange={e => updateField('hero_subtitle_en', e.target.value)} /></div>
+              <div><label className="block text-sm font-medium mb-1 text-gray-700 dark:text-zinc-400">Hero Title</label><Input value={formData.hero_title_en || ''} onChange={e => updateField('hero_title_en', e.target.value)} /></div>
+              <div><label className="block text-sm font-medium mb-1 text-gray-700 dark:text-zinc-400">Hero Subtitle</label><Input value={formData.hero_subtitle_en || ''} onChange={e => updateField('hero_subtitle_en', e.target.value)} /></div>
             </div>
-            <h4 className="text-sm font-semibold text-gray-700 dark:text-gray-300">Zones</h4>
+            <h4 className="text-sm font-semibold text-gray-700 dark:text-zinc-400">Zones</h4>
             <ArrayEditor items={formData.zones || []} onChange={v => updateField('zones', v)} fields={[{ key: 'name', label: 'Zone' }, { key: 'description', label: 'Description', type: 'textarea' }, { key: 'image', label: 'Image' }, { key: 'features', label: 'Features', type: 'array' }]} />
           </div>
         )
@@ -600,13 +600,13 @@ function SectionEditor({ sectionKey, data, onSave }: { sectionKey: string, data:
         return (
           <div className="space-y-4">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              <div className="col-span-full"><label className="block text-sm font-medium mb-1 text-gray-700 dark:text-gray-300">Description</label><textarea value={formData.company_description_en || ''} onChange={e => updateField('company_description_en', e.target.value)} className="w-full text-sm p-2 rounded-md border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-900 text-gray-900 dark:text-white" rows={2} /></div>
-              <div><label className="block text-sm font-medium mb-1 text-gray-700 dark:text-gray-300">Phone</label><Input value={formData.phone || ''} onChange={e => updateField('phone', e.target.value)} /></div>
-              <div><label className="block text-sm font-medium mb-1 text-gray-700 dark:text-gray-300">Email</label><Input value={formData.email || ''} onChange={e => updateField('email', e.target.value)} /></div>
-              <div><label className="block text-sm font-medium mb-1 text-gray-700 dark:text-gray-300">Instagram</label><Input value={formData.social_links?.instagram || ''} onChange={e => updateField('social_links', { ...formData.social_links, instagram: e.target.value })} /></div>
-              <div><label className="block text-sm font-medium mb-1 text-gray-700 dark:text-gray-300">Facebook</label><Input value={formData.social_links?.facebook || ''} onChange={e => updateField('social_links', { ...formData.social_links, facebook: e.target.value })} /></div>
-              <div><label className="block text-sm font-medium mb-1 text-gray-700 dark:text-gray-300">LinkedIn</label><Input value={formData.social_links?.linkedin || ''} onChange={e => updateField('social_links', { ...formData.social_links, linkedin: e.target.value })} /></div>
-              <div><label className="block text-sm font-medium mb-1 text-gray-700 dark:text-gray-300">YouTube</label><Input value={formData.social_links?.youtube || ''} onChange={e => updateField('social_links', { ...formData.social_links, youtube: e.target.value })} /></div>
+              <div className="col-span-full"><label className="block text-sm font-medium mb-1 text-gray-700 dark:text-zinc-400">Description</label><textarea value={formData.company_description_en || ''} onChange={e => updateField('company_description_en', e.target.value)} className="w-full text-sm p-2 rounded-md border border-gray-300 dark:border-zinc-700 bg-white dark:bg-[#0A0A0A] text-gray-900 dark:text-white" rows={2} /></div>
+              <div><label className="block text-sm font-medium mb-1 text-gray-700 dark:text-zinc-400">Phone</label><Input value={formData.phone || ''} onChange={e => updateField('phone', e.target.value)} /></div>
+              <div><label className="block text-sm font-medium mb-1 text-gray-700 dark:text-zinc-400">Email</label><Input value={formData.email || ''} onChange={e => updateField('email', e.target.value)} /></div>
+              <div><label className="block text-sm font-medium mb-1 text-gray-700 dark:text-zinc-400">Instagram</label><Input value={formData.social_links?.instagram || ''} onChange={e => updateField('social_links', { ...formData.social_links, instagram: e.target.value })} /></div>
+              <div><label className="block text-sm font-medium mb-1 text-gray-700 dark:text-zinc-400">Facebook</label><Input value={formData.social_links?.facebook || ''} onChange={e => updateField('social_links', { ...formData.social_links, facebook: e.target.value })} /></div>
+              <div><label className="block text-sm font-medium mb-1 text-gray-700 dark:text-zinc-400">LinkedIn</label><Input value={formData.social_links?.linkedin || ''} onChange={e => updateField('social_links', { ...formData.social_links, linkedin: e.target.value })} /></div>
+              <div><label className="block text-sm font-medium mb-1 text-gray-700 dark:text-zinc-400">YouTube</label><Input value={formData.social_links?.youtube || ''} onChange={e => updateField('social_links', { ...formData.social_links, youtube: e.target.value })} /></div>
             </div>
           </div>
         )
@@ -614,8 +614,8 @@ function SectionEditor({ sectionKey, data, onSave }: { sectionKey: string, data:
         return (
           <div className="space-y-4">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              <div><label className="block text-sm font-medium mb-1 text-gray-700 dark:text-gray-300">Heading (EN)</label><Input value={formData.heading_en || ''} onChange={e => updateField('heading_en', e.target.value)} /></div>
-              <div><label className="block text-sm font-medium mb-1 text-gray-700 dark:text-gray-300">Heading (AR)</label><Input value={formData.heading_ar || ''} onChange={e => updateField('heading_ar', e.target.value)} dir="rtl" /></div>
+              <div><label className="block text-sm font-medium mb-1 text-gray-700 dark:text-zinc-400">Heading (EN)</label><Input value={formData.heading_en || ''} onChange={e => updateField('heading_en', e.target.value)} /></div>
+              <div><label className="block text-sm font-medium mb-1 text-gray-700 dark:text-zinc-400">Heading (AR)</label><Input value={formData.heading_ar || ''} onChange={e => updateField('heading_ar', e.target.value)} dir="rtl" /></div>
             </div>
             <ArrayEditor items={formData.positions || []} onChange={v => updateField('positions', v)} fields={[{ key: 'title', label: 'Title' }, { key: 'department', label: 'Department' }, { key: 'location', label: 'Location' }, { key: 'type', label: 'Type' }, { key: 'description', label: 'Description', type: 'textarea' }, { key: 'requirements', label: 'Requirements', type: 'array' }]} />
           </div>
@@ -626,12 +626,12 @@ function SectionEditor({ sectionKey, data, onSave }: { sectionKey: string, data:
           return (
             <div className="space-y-4">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <div><label className="block text-sm font-medium mb-1 text-gray-700 dark:text-gray-300">Title</label><Input value={formData.title || ''} onChange={e => updateField('title', e.target.value)} /></div>
-                <div><label className="block text-sm font-medium mb-1 text-gray-700 dark:text-gray-300">Hero Subtitle</label><Input value={formData.hero_subtitle || ''} onChange={e => updateField('hero_subtitle', e.target.value)} /></div>
+                <div><label className="block text-sm font-medium mb-1 text-gray-700 dark:text-zinc-400">Title</label><Input value={formData.title || ''} onChange={e => updateField('title', e.target.value)} /></div>
+                <div><label className="block text-sm font-medium mb-1 text-gray-700 dark:text-zinc-400">Hero Subtitle</label><Input value={formData.hero_subtitle || ''} onChange={e => updateField('hero_subtitle', e.target.value)} /></div>
               </div>
-              <h4 className="text-sm font-semibold text-gray-700 dark:text-gray-300">Features</h4>
+              <h4 className="text-sm font-semibold text-gray-700 dark:text-zinc-400">Features</h4>
               <ArrayEditor items={formData.features || []} onChange={v => updateField('features', v)} fields={[{ key: 'icon', label: 'Icon' }, { key: 'title', label: 'Title' }, { key: 'desc', label: 'Description' }]} />
-              {formData.faqs && (<><h4 className="text-sm font-semibold text-gray-700 dark:text-gray-300">FAQs</h4><ArrayEditor items={formData.faqs || []} onChange={v => updateField('faqs', v)} fields={[{ key: 'q', label: 'Question' }, { key: 'a', label: 'Answer', type: 'textarea' }]} /></>)}
+              {formData.faqs && (<><h4 className="text-sm font-semibold text-gray-700 dark:text-zinc-400">FAQs</h4><ArrayEditor items={formData.faqs || []} onChange={v => updateField('faqs', v)} fields={[{ key: 'q', label: 'Question' }, { key: 'a', label: 'Answer', type: 'textarea' }]} /></>)}
             </div>
           )
         }
@@ -644,17 +644,17 @@ function SectionEditor({ sectionKey, data, onSave }: { sectionKey: string, data:
     <div className="space-y-4">
       {renderFields()}
       {!sectionKey.startsWith('page_solutions_') && !sectionKey.startsWith('page_geo_') && !sectionKey.startsWith('page_') && (
-        <div className="flex justify-end pt-4 border-t border-gray-200 dark:border-gray-700">
+        <div className="flex justify-end pt-4 border-t border-gray-200 dark:border-zinc-800">
           <Button onClick={() => onSave(formData)} data-testid={`save-${sectionKey}`}><Save className="h-4 w-4 mr-2" /> Save Changes</Button>
         </div>
       )}
       {(sectionKey.startsWith('page_') && !sectionKey.startsWith('page_solutions_') && !sectionKey.startsWith('page_geo_') && !sectionKey.startsWith('page_about') && !sectionKey.startsWith('page_contact') && !sectionKey.startsWith('page_consultation') && !sectionKey.startsWith('page_experience')) && (
-        <div className="flex justify-end pt-4 border-t border-gray-200 dark:border-gray-700">
+        <div className="flex justify-end pt-4 border-t border-gray-200 dark:border-zinc-800">
           <Button onClick={() => onSave(formData)} data-testid={`save-${sectionKey}`}><Save className="h-4 w-4 mr-2" /> Save Changes</Button>
         </div>
       )}
       {(sectionKey === 'page_about' || sectionKey === 'page_contact' || sectionKey === 'page_consultation' || sectionKey === 'page_experience_centre' || sectionKey === 'site_footer' || sectionKey === 'careers_positions' || sectionKey.startsWith('homepage_') || sectionKey.startsWith('service_')) && (
-        <div className="flex justify-end pt-4 border-t border-gray-200 dark:border-gray-700">
+        <div className="flex justify-end pt-4 border-t border-gray-200 dark:border-zinc-800">
           <Button onClick={() => onSave(formData)} data-testid={`save-${sectionKey}`}><Save className="h-4 w-4 mr-2" /> Save Changes</Button>
         </div>
       )}
@@ -698,17 +698,17 @@ function SeoMetaEditor({ data, onSave, pageKey }: { data: any, onSave: (data: an
     <div className="space-y-4">
       {/* Live Preview */}
       <div className="border border-[#C9A962]/30 rounded-lg overflow-hidden" data-testid="seo-preview-card">
-        <div className="flex border-b border-gray-200 dark:border-gray-700">
+        <div className="flex border-b border-gray-200 dark:border-zinc-800">
           <button
             onClick={() => setPreviewTab('google')}
-            className={`flex-1 px-4 py-2.5 text-xs font-semibold tracking-wide transition-colors ${previewTab === 'google' ? 'bg-white dark:bg-gray-900 text-[#C9A962] border-b-2 border-[#C9A962]' : 'bg-gray-50 dark:bg-gray-800 text-gray-500 hover:text-gray-700 dark:hover:text-gray-300'}`}
+            className={`flex-1 px-4 py-2.5 text-xs font-semibold tracking-wide transition-colors ${previewTab === 'google' ? 'bg-white dark:bg-[#0A0A0A] text-[#C9A962] border-b-2 border-[#C9A962]' : 'bg-gray-50 dark:bg-[#171717] text-gray-500 hover:text-gray-700 dark:hover:text-gray-300'}`}
             data-testid="preview-tab-google"
           >
             Google Preview
           </button>
           <button
             onClick={() => setPreviewTab('social')}
-            className={`flex-1 px-4 py-2.5 text-xs font-semibold tracking-wide transition-colors ${previewTab === 'social' ? 'bg-white dark:bg-gray-900 text-[#C9A962] border-b-2 border-[#C9A962]' : 'bg-gray-50 dark:bg-gray-800 text-gray-500 hover:text-gray-700 dark:hover:text-gray-300'}`}
+            className={`flex-1 px-4 py-2.5 text-xs font-semibold tracking-wide transition-colors ${previewTab === 'social' ? 'bg-white dark:bg-[#0A0A0A] text-[#C9A962] border-b-2 border-[#C9A962]' : 'bg-gray-50 dark:bg-[#171717] text-gray-500 hover:text-gray-700 dark:hover:text-gray-300'}`}
             data-testid="preview-tab-social"
           >
             Social Card Preview
@@ -716,14 +716,14 @@ function SeoMetaEditor({ data, onSave, pageKey }: { data: any, onSave: (data: an
         </div>
 
         {previewTab === 'google' && (
-          <div className="p-4 bg-white dark:bg-gray-900" data-testid="google-serp-preview">
+          <div className="p-4 bg-white dark:bg-[#0A0A0A]" data-testid="google-serp-preview">
             <p className="text-xs text-gray-400 mb-3 uppercase tracking-wider font-medium">Search Result Preview</p>
             <div className="max-w-xl">
-              <p className="text-sm text-gray-500 dark:text-gray-400 mb-0.5 truncate">{pageUrl}</p>
+              <p className="text-sm text-gray-500 dark:text-zinc-500 mb-0.5 truncate">{pageUrl}</p>
               <h3 className="text-lg text-blue-700 dark:text-blue-400 font-normal leading-snug mb-0.5 line-clamp-1 cursor-pointer hover:underline">
                 {previewTitle.length > 60 ? previewTitle.slice(0, 60) + '...' : previewTitle}
               </h3>
-              <p className="text-sm text-gray-600 dark:text-gray-400 leading-relaxed line-clamp-2">
+              <p className="text-sm text-gray-600 dark:text-zinc-500 leading-relaxed line-clamp-2">
                 {previewDesc.length > 160 ? previewDesc.slice(0, 160) + '...' : previewDesc}
               </p>
             </div>
@@ -739,42 +739,42 @@ function SeoMetaEditor({ data, onSave, pageKey }: { data: any, onSave: (data: an
         )}
 
         {previewTab === 'social' && (
-          <div className="p-4 bg-white dark:bg-gray-900" data-testid="social-card-preview">
+          <div className="p-4 bg-white dark:bg-[#0A0A0A]" data-testid="social-card-preview">
             <p className="text-xs text-gray-400 mb-3 uppercase tracking-wider font-medium">Social Card Preview</p>
-            <div className="max-w-md border border-gray-200 dark:border-gray-700 rounded-lg overflow-hidden">
+            <div className="max-w-md border border-gray-200 dark:border-zinc-800 rounded-lg overflow-hidden">
               {previewOgImage ? (
-                <div className="aspect-[1.91/1] bg-gray-100 dark:bg-gray-800 relative">
+                <div className="aspect-[1.91/1] bg-gray-100 dark:bg-[#171717] relative">
                   <img src={previewOgImage} alt="OG" className="w-full h-full object-cover" onError={e => { (e.target as HTMLImageElement).style.display = 'none' }} />
                   <div className="absolute inset-0 flex items-center justify-center text-gray-400 text-xs pointer-events-none">
                     {!previewOgImage && 'No image set'}
                   </div>
                 </div>
               ) : (
-                <div className="aspect-[1.91/1] bg-gray-100 dark:bg-gray-800 flex items-center justify-center">
+                <div className="aspect-[1.91/1] bg-gray-100 dark:bg-[#171717] flex items-center justify-center">
                   <div className="text-center text-gray-400">
                     <Image className="h-8 w-8 mx-auto mb-1 opacity-40" />
                     <p className="text-xs">No OG image set</p>
                   </div>
                 </div>
               )}
-              <div className="p-3 bg-gray-50 dark:bg-gray-800">
+              <div className="p-3 bg-gray-50 dark:bg-[#171717]">
                 <p className="text-[10px] text-gray-400 uppercase tracking-wider mb-0.5">{pageUrl}</p>
                 <p className="text-sm font-semibold text-gray-900 dark:text-white leading-tight line-clamp-1">{previewOgTitle}</p>
-                <p className="text-xs text-gray-500 dark:text-gray-400 mt-0.5 line-clamp-2">{previewOgDesc}</p>
+                <p className="text-xs text-gray-500 dark:text-zinc-500 mt-0.5 line-clamp-2">{previewOgDesc}</p>
               </div>
             </div>
           </div>
         )}
       </div>
 
-      <div className="border border-gray-200 dark:border-gray-700 rounded-lg p-4">
+      <div className="border border-gray-200 dark:border-zinc-800 rounded-lg p-4">
         <h4 className="text-sm font-bold mb-3 text-[#C9A962]">Meta Tags</h4>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
           <div className="col-span-full">
             <label className="text-xs text-gray-500">Meta Title{isGlobal ? ' (default for all pages)' : ''}</label>
             <Input value={formData.title || ''} onChange={e => update('title', e.target.value)} placeholder="Page Title | LEXA Smart Home" data-testid="seo-title" />
             <div className="flex items-center gap-2 mt-1">
-              <div className="flex-1 h-1.5 bg-gray-100 dark:bg-gray-800 rounded-full overflow-hidden">
+              <div className="flex-1 h-1.5 bg-gray-100 dark:bg-[#171717] rounded-full overflow-hidden">
                 <div className={`h-full rounded-full transition-all ${titleLen === 0 ? 'w-0' : titleLen <= 60 ? 'bg-emerald-400' : 'bg-red-400'}`} style={{ width: `${Math.min((titleLen / 60) * 100, 100)}%` }} />
               </div>
               <p className={`text-xs ${charCountColor(titleLen, 30, 60)}`}>{titleLen}/60</p>
@@ -782,9 +782,9 @@ function SeoMetaEditor({ data, onSave, pageKey }: { data: any, onSave: (data: an
           </div>
           <div className="col-span-full">
             <label className="text-xs text-gray-500">Meta Description</label>
-            <textarea value={formData.description || ''} onChange={e => update('description', e.target.value)} placeholder="A compelling description for search results..." className="w-full text-sm p-2 rounded-md border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-900 text-gray-900 dark:text-white" rows={2} data-testid="seo-description" />
+            <textarea value={formData.description || ''} onChange={e => update('description', e.target.value)} placeholder="A compelling description for search results..." className="w-full text-sm p-2 rounded-md border border-gray-300 dark:border-zinc-700 bg-white dark:bg-[#0A0A0A] text-gray-900 dark:text-white" rows={2} data-testid="seo-description" />
             <div className="flex items-center gap-2 mt-1">
-              <div className="flex-1 h-1.5 bg-gray-100 dark:bg-gray-800 rounded-full overflow-hidden">
+              <div className="flex-1 h-1.5 bg-gray-100 dark:bg-[#171717] rounded-full overflow-hidden">
                 <div className={`h-full rounded-full transition-all ${descLen === 0 ? 'w-0' : descLen <= 160 ? 'bg-emerald-400' : 'bg-red-400'}`} style={{ width: `${Math.min((descLen / 160) * 100, 100)}%` }} />
               </div>
               <p className={`text-xs ${charCountColor(descLen, 70, 160)}`}>{descLen}/160</p>
@@ -797,18 +797,18 @@ function SeoMetaEditor({ data, onSave, pageKey }: { data: any, onSave: (data: an
         </div>
       </div>
 
-      <div className="border border-gray-200 dark:border-gray-700 rounded-lg p-4">
+      <div className="border border-gray-200 dark:border-zinc-800 rounded-lg p-4">
         <h4 className="text-sm font-bold mb-3 text-[#C9A962]">Open Graph (Social Sharing)</h4>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
           <div className="col-span-full"><label className="text-xs text-gray-500">OG Title (defaults to Meta Title)</label><Input value={formData.og_title || ''} onChange={e => update('og_title', e.target.value)} /></div>
-          <div className="col-span-full"><label className="text-xs text-gray-500">OG Description</label><textarea value={formData.og_description || ''} onChange={e => update('og_description', e.target.value)} className="w-full text-sm p-2 rounded-md border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-900 text-gray-900 dark:text-white" rows={2} /></div>
+          <div className="col-span-full"><label className="text-xs text-gray-500">OG Description</label><textarea value={formData.og_description || ''} onChange={e => update('og_description', e.target.value)} className="w-full text-sm p-2 rounded-md border border-gray-300 dark:border-zinc-700 bg-white dark:bg-[#0A0A0A] text-gray-900 dark:text-white" rows={2} /></div>
           <div><label className="text-xs text-gray-500">OG Image URL</label><Input value={formData.og_image || ''} onChange={e => update('og_image', e.target.value)} /></div>
           <div><label className="text-xs text-gray-500">OG Type</label><Input value={formData.og_type || 'website'} onChange={e => update('og_type', e.target.value)} /></div>
         </div>
       </div>
 
       {isGlobal && (
-        <div className="border border-gray-200 dark:border-gray-700 rounded-lg p-4">
+        <div className="border border-gray-200 dark:border-zinc-800 rounded-lg p-4">
           <h4 className="text-sm font-bold mb-3 text-[#C9A962]">Global Settings</h4>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
             <div><label className="text-xs text-gray-500">Site Name</label><Input value={formData.site_name || ''} onChange={e => update('site_name', e.target.value)} /></div>
@@ -820,13 +820,13 @@ function SeoMetaEditor({ data, onSave, pageKey }: { data: any, onSave: (data: an
         </div>
       )}
 
-      <div className="border border-gray-200 dark:border-gray-700 rounded-lg p-4">
+      <div className="border border-gray-200 dark:border-zinc-800 rounded-lg p-4">
         <h4 className="text-sm font-bold mb-3 text-[#C9A962]">Advanced</h4>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
           <div><label className="text-xs text-gray-500">Canonical URL Override</label><Input value={formData.canonical_url || ''} onChange={e => update('canonical_url', e.target.value)} placeholder="Leave empty for auto-generated" /></div>
           <div>
             <label className="text-xs text-gray-500">Robots</label>
-            <select value={formData.robots || 'index, follow'} onChange={e => update('robots', e.target.value)} className="w-full text-sm p-2 rounded-md border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-900 text-gray-900 dark:text-white">
+            <select value={formData.robots || 'index, follow'} onChange={e => update('robots', e.target.value)} className="w-full text-sm p-2 rounded-md border border-gray-300 dark:border-zinc-700 bg-white dark:bg-[#0A0A0A] text-gray-900 dark:text-white">
               <option value="index, follow">Index, Follow (default)</option>
               <option value="noindex, follow">No Index, Follow</option>
               <option value="index, nofollow">Index, No Follow</option>
@@ -836,7 +836,7 @@ function SeoMetaEditor({ data, onSave, pageKey }: { data: any, onSave: (data: an
         </div>
       </div>
 
-      <div className="flex justify-end pt-4 border-t border-gray-200 dark:border-gray-700">
+      <div className="flex justify-end pt-4 border-t border-gray-200 dark:border-zinc-800">
         <Button onClick={() => onSave(formData)} data-testid="save-seo"><Save className="h-4 w-4 mr-2" /> Save SEO Settings</Button>
       </div>
     </div>
@@ -850,46 +850,46 @@ function GeoPageEditor({ data, onSave }: { data: any, onSave: (data: any) => voi
 
   return (
     <div className="space-y-6">
-      <div className="border border-gray-200 dark:border-gray-700 rounded-lg p-4">
+      <div className="border border-gray-200 dark:border-zinc-800 rounded-lg p-4">
         <h4 className="text-sm font-bold mb-3 text-[#C9A962]">Page Header</h4>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
           <div><label className="text-xs text-gray-500">Location Name</label><Input value={formData.name || ''} onChange={e => update('name', e.target.value)} /></div>
           <div><label className="text-xs text-gray-500">Region</label><Input value={formData.region || ''} onChange={e => update('region', e.target.value)} /></div>
-          <div className="col-span-full"><label className="text-xs text-gray-500">Description</label><textarea value={formData.description || ''} onChange={e => update('description', e.target.value)} className="w-full text-sm p-2 rounded-md border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-900 text-gray-900 dark:text-white" rows={2} /></div>
+          <div className="col-span-full"><label className="text-xs text-gray-500">Description</label><textarea value={formData.description || ''} onChange={e => update('description', e.target.value)} className="w-full text-sm p-2 rounded-md border border-gray-300 dark:border-zinc-700 bg-white dark:bg-[#0A0A0A] text-gray-900 dark:text-white" rows={2} /></div>
           <div><label className="text-xs text-gray-500">Hero Image</label><Input value={formData.hero_image || ''} onChange={e => update('hero_image', e.target.value)} /></div>
           <div><label className="text-xs text-gray-500">Hero Title</label><Input value={formData.hero_title || ''} onChange={e => update('hero_title', e.target.value)} /></div>
         </div>
       </div>
 
-      <div className="border border-gray-200 dark:border-gray-700 rounded-lg p-4">
+      <div className="border border-gray-200 dark:border-zinc-800 rounded-lg p-4">
         <h4 className="text-sm font-bold mb-3 text-[#C9A962]">Communities/Areas</h4>
         <ArrayEditor items={formData.communities || []} onChange={v => update('communities', v)} fields={[
           { key: 'name', label: 'Name' }, { key: 'type', label: 'Type' }, { key: 'price', label: 'Price Range' }
         ]} />
       </div>
 
-      <div className="border border-gray-200 dark:border-gray-700 rounded-lg p-4">
+      <div className="border border-gray-200 dark:border-zinc-800 rounded-lg p-4">
         <h4 className="text-sm font-bold mb-3 text-[#C9A962]">Services Offered</h4>
         <ArrayEditor items={formData.services || []} onChange={v => update('services', v)} fields={[
           { key: 'icon', label: 'Icon' }, { key: 'title', label: 'Title' }, { key: 'description', label: 'Description' }
         ]} />
       </div>
 
-      <div className="border border-gray-200 dark:border-gray-700 rounded-lg p-4">
+      <div className="border border-gray-200 dark:border-zinc-800 rounded-lg p-4">
         <h4 className="text-sm font-bold mb-3 text-[#C9A962]">FAQs</h4>
         <ArrayEditor items={formData.faqs || []} onChange={v => update('faqs', v)} fields={[
           { key: 'question', label: 'Question' }, { key: 'answer', label: 'Answer', type: 'textarea' }
         ]} />
       </div>
 
-      <div className="border border-gray-200 dark:border-gray-700 rounded-lg p-4">
+      <div className="border border-gray-200 dark:border-zinc-800 rounded-lg p-4">
         <h4 className="text-sm font-bold mb-3 text-[#C9A962]">Stats</h4>
         <ArrayEditor items={formData.stats || []} onChange={v => update('stats', v)} fields={[
           { key: 'number', label: 'Number' }, { key: 'label', label: 'Label' }
         ]} />
       </div>
 
-      <div className="flex justify-end pt-4 border-t border-gray-200 dark:border-gray-700">
+      <div className="flex justify-end pt-4 border-t border-gray-200 dark:border-zinc-800">
         <Button onClick={() => onSave(formData)} data-testid="save-geo-page"><Save className="h-4 w-4 mr-2" /> Save Changes</Button>
       </div>
     </div>
@@ -1001,7 +1001,7 @@ export default function CMSPage() {
       <div className="flex items-center justify-between">
         <div>
           <h1 className="text-2xl font-bold text-gray-900 dark:text-white">Content Management</h1>
-          <p className="text-sm text-gray-500 dark:text-gray-400 mt-1">Manage all {totalPages} dynamic content sections across the website</p>
+          <p className="text-sm text-gray-500 dark:text-zinc-500 mt-1">Manage all {totalPages} dynamic content sections across the website</p>
         </div>
         <div className="flex gap-2">
           {(activeCategory === 'solutions') && (
@@ -1017,7 +1017,7 @@ export default function CMSPage() {
       </div>
 
       {/* Category Tabs */}
-      <div className="flex flex-wrap gap-2 border-b border-gray-200 dark:border-gray-700 pb-3">
+      <div className="flex flex-wrap gap-2 border-b border-gray-200 dark:border-zinc-800 pb-3">
         {CATEGORIES.map(cat => {
           const count = CMS_SECTIONS.filter(s => s.category === cat.id).length
           const Icon = cat.icon
@@ -1025,7 +1025,7 @@ export default function CMSPage() {
             <button
               key={cat.id}
               onClick={() => { setActiveCategory(cat.id); setExpanded(null) }}
-              className={`flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-medium transition-colors ${activeCategory === cat.id ? 'bg-[#C9A962] text-white' : 'bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400 hover:bg-gray-200 dark:hover:bg-gray-700'}`}
+              className={`flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-medium transition-colors ${activeCategory === cat.id ? 'bg-[#C9A962] text-white' : 'bg-gray-100 dark:bg-[#171717] text-gray-600 dark:text-zinc-500 hover:bg-gray-200 dark:hover:bg-[#171717]'}`}
               data-testid={`tab-${cat.id}`}
             >
               <Icon className="h-4 w-4" />
@@ -1063,9 +1063,9 @@ export default function CMSPage() {
             const isExpanded = expanded === section.key
             const hasData = sections[section.key] != null
             return (
-              <div key={section.key} className="bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 rounded-xl overflow-hidden" data-testid={`cms-section-${section.key}`}>
+              <div key={section.key} className="bg-white dark:bg-[#0A0A0A] border border-gray-200 dark:border-zinc-800 rounded-xl overflow-hidden" data-testid={`cms-section-${section.key}`}>
                 <button
-                  className="w-full flex items-center gap-3 p-4 text-left hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors"
+                  className="w-full flex items-center gap-3 p-4 text-left hover:bg-gray-50 dark:hover:bg-[#171717] transition-colors"
                   onClick={() => setExpanded(isExpanded ? null : section.key)}
                   data-testid={`toggle-${section.key}`}
                 >
@@ -1075,13 +1075,13 @@ export default function CMSPage() {
                       <h3 className="font-semibold text-gray-900 dark:text-white truncate">{section.label}</h3>
                       {hasData && <span className="inline-block w-2 h-2 rounded-full bg-green-500 flex-shrink-0" title="Has CMS data" />}
                     </div>
-                    <p className="text-xs text-gray-500 dark:text-gray-400 truncate">{section.description}</p>
+                    <p className="text-xs text-gray-500 dark:text-zinc-500 truncate">{section.description}</p>
                   </div>
                   {saving === section.key && <RefreshCw className="h-4 w-4 animate-spin text-[#C9A962]" />}
                   {isExpanded ? <ChevronDown className="h-5 w-5 text-gray-400" /> : <ChevronRight className="h-5 w-5 text-gray-400" />}
                 </button>
                 {isExpanded && (
-                  <div className="px-4 pb-4 border-t border-gray-100 dark:border-gray-800 pt-4">
+                  <div className="px-4 pb-4 border-t border-gray-100 dark:border-zinc-800 pt-4">
                     <SectionEditor
                       sectionKey={section.key}
                       data={sections[section.key] || {}}

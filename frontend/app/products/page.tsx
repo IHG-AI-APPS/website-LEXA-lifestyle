@@ -41,7 +41,7 @@ export default function ProductsPage() {
   return (
     <div className="min-h-screen bg-white pt-20">
       {/* Hero */}
-      <section className="py-20 bg-gray-50 dark:bg-gray-800">
+      <section className="py-20 bg-gray-50 dark:bg-[#171717]">
         <div className="container mx-auto px-4 sm:px-8 lg:px-16">
           <div className="max-w-7xl mx-auto">
             <motion.div
@@ -59,7 +59,7 @@ export default function ProductsPage() {
                 <span className="text-transparent bg-clip-text metallic-gradient">EQUIPMENT</span>
               </h1>
               <div className="h-px w-32 bg-gradient-to-r from-platinum to-transparent mb-8" />
-              <p className="text-xl text-gray-600 dark:text-gray-400 font-normal leading-relaxed">
+              <p className="text-xl text-gray-600 dark:text-zinc-500 font-normal leading-relaxed">
                 Explore our comprehensive product catalog featuring equipment from the world&apos;s most prestigious smart home brands.
               </p>
             </motion.div>
@@ -79,7 +79,7 @@ export default function ProductsPage() {
               className="text-center mb-16"
             >
               <h2 className="text-3xl sm:text-5xl font-semibold mb-6">Product Categories</h2>
-              <p className="text-lg text-gray-600 dark:text-gray-400 font-normal max-w-2xl mx-auto">
+              <p className="text-lg text-gray-600 dark:text-zinc-500 font-normal max-w-2xl mx-auto">
                 Browse by equipment type to find the perfect components for your system.
               </p>
             </motion.div>
@@ -106,7 +106,7 @@ export default function ProductsPage() {
                         </div>
                         <div className="p-4">
                           <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-2">{category.name}</h3>
-                          <p className="text-xs text-gray-500 dark:text-gray-400 line-clamp-3 leading-relaxed">{category.description}</p>
+                          <p className="text-xs text-gray-500 dark:text-zinc-500 line-clamp-3 leading-relaxed">{category.description}</p>
                           <div className="mt-3 flex items-center gap-1.5 text-[#C9A962] text-xs font-medium">
                             Browse <ArrowRight className="w-3.5 h-3.5" />
                           </div>
@@ -121,9 +121,9 @@ export default function ProductsPage() {
             {/* Desktop: Grid */}
             <div className="hidden md:grid grid-cols-2 gap-8">
               {loading ? (
-                <div className="col-span-2 text-center py-12 text-gray-600 dark:text-gray-400">Loading products...</div>
+                <div className="col-span-2 text-center py-12 text-gray-600 dark:text-zinc-500">Loading products...</div>
               ) : products.length === 0 ? (
-                <div className="col-span-2 text-center py-12 text-gray-600 dark:text-gray-400">No products available.</div>
+                <div className="col-span-2 text-center py-12 text-gray-600 dark:text-zinc-500">No products available.</div>
               ) : (
                 products.map((category: any, index: number) => (
                   <motion.div
@@ -134,7 +134,7 @@ export default function ProductsPage() {
                     viewport={{ once: true }}
                   >
                     <Link href={`/products/${category.slug}`}>
-                      <div className="group h-full bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 hover:border-charcoal transition-all">
+                      <div className="group h-full bg-white dark:bg-[#171717] border border-gray-200 dark:border-zinc-800 hover:border-charcoal transition-all">
                         {/* Image */}
                         <div className="relative h-[250px] overflow-hidden">
                           <SafeImage
@@ -157,11 +157,11 @@ export default function ProductsPage() {
 
                         {/* Content */}
                         <div className="p-8">
-                          <h3 className="text-2xl font-semibold group-hover:text-gray-600 dark:text-gray-400 transition-colors mb-4">
+                          <h3 className="text-2xl font-semibold group-hover:text-gray-600 dark:text-zinc-500 transition-colors mb-4">
                             {category.name}
                           </h3>
 
-                          <p className="text-base text-gray-600 dark:text-gray-400 mb-6 leading-relaxed">
+                          <p className="text-base text-gray-600 dark:text-zinc-500 mb-6 leading-relaxed">
                             {category.description}
                           </p>
 
@@ -199,7 +199,7 @@ export default function ProductsPage() {
               <p className="text-xl text-gray-400 mb-10">
                 Our experts will specify the ideal equipment for your requirements and budget.
               </p>
-              <Button size="lg" className="bg-white hover:bg-gray-100 dark:bg-gray-800 text-charcoal px-12" onClick={() => setShowConsultationForm(true)}>
+              <Button size="lg" className="bg-white hover:bg-gray-100 dark:bg-[#171717] text-charcoal px-12" onClick={() => setShowConsultationForm(true)}>
                 Get Equipment Specification
               </Button>
             </motion.div>

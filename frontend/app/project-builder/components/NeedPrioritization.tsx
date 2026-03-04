@@ -289,7 +289,7 @@ export default function NeedPrioritization({
               <p className="text-xs md:text-sm uppercase tracking-[0.2em] md:tracking-[0.3em] text-gray-500 mb-3 md:mb-4">
                 Understanding What Matters Most
               </p>
-              <p className="text-gray-600 dark:text-gray-400 text-base md:text-lg max-w-3xl mx-auto leading-relaxed">
+              <p className="text-gray-600 dark:text-zinc-500 text-base md:text-lg max-w-3xl mx-auto leading-relaxed">
                 Not all features are created equal. Let&apos;s help you distinguish between 
                 what you absolutely need versus what would be nice to have.
               </p>
@@ -305,7 +305,7 @@ export default function NeedPrioritization({
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.3 + index * 0.1 }}
-                    className="bg-white border-2 border-gray-200 dark:border-gray-700 rounded-xl md:rounded-2xl p-5 md:p-8 hover:border-gray-400 hover:shadow-xl transition-all duration-300"
+                    className="bg-white border-2 border-gray-200 dark:border-zinc-800 rounded-xl md:rounded-2xl p-5 md:p-8 hover:border-gray-400 hover:shadow-xl transition-all duration-300"
                   >
                     <div className="flex items-start gap-3 md:gap-4">
                       <div className={`flex-shrink-0 w-10 h-10 md:w-14 md:h-14 bg-gradient-to-br ${tier.color} rounded-xl md:rounded-2xl flex items-center justify-center`}>
@@ -315,12 +315,12 @@ export default function NeedPrioritization({
                         <h3 className="text-lg md:text-2xl font-bold text-gray-900 dark:text-white mb-1 md:mb-2">
                           {tier.label}
                         </h3>
-                        <p className="text-gray-600 dark:text-gray-400 text-xs md:text-sm mb-2 md:mb-3">
+                        <p className="text-gray-600 dark:text-zinc-500 text-xs md:text-sm mb-2 md:mb-3">
                           {tier.description}
                         </p>
                         <div className="bg-gray-50 rounded-lg p-2 md:p-3 mb-2 md:mb-3">
                           <p className="text-[10px] md:text-xs text-gray-500 font-medium mb-1">EXAMPLES:</p>
-                          <p className="text-xs md:text-sm text-gray-700 dark:text-gray-300">{tier.examples}</p>
+                          <p className="text-xs md:text-sm text-gray-700 dark:text-zinc-400">{tier.examples}</p>
                         </div>
                         <div className="flex items-start gap-2">
                           <Info className="w-3 h-3 md:w-4 md:h-4 text-gray-400 flex-shrink-0 mt-0.5" />
@@ -340,13 +340,13 @@ export default function NeedPrioritization({
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.8 }}
-              className="bg-gray-50 border border-gray-200 dark:border-gray-700 rounded-xl md:rounded-2xl p-5 md:p-8 mb-8 md:mb-12"
+              className="bg-gray-50 border border-gray-200 dark:border-zinc-800 rounded-xl md:rounded-2xl p-5 md:p-8 mb-8 md:mb-12"
             >
               <h3 className="text-lg md:text-xl font-bold text-gray-900 dark:text-white mb-3 md:mb-4 flex items-center gap-2 md:gap-3">
-                <Sparkles className="w-5 h-5 md:w-6 md:h-6 text-gray-700 dark:text-gray-300" />
+                <Sparkles className="w-5 h-5 md:w-6 md:h-6 text-gray-700 dark:text-zinc-400" />
                 Why This Matters
               </h3>
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6 text-xs md:text-sm text-gray-600 dark:text-gray-400">
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6 text-xs md:text-sm text-gray-600 dark:text-zinc-500">
                 <div>
                   <div className="font-semibold text-gray-900 dark:text-white mb-1 md:mb-2">Budget Optimization</div>
                   <p>Invest where it matters most, save where you can phase later</p>
@@ -397,11 +397,11 @@ export default function NeedPrioritization({
               </h2>
               
               {/* Mobile instructions */}
-              <p className="md:hidden text-gray-600 dark:text-gray-400 text-sm">
+              <p className="md:hidden text-gray-600 dark:text-zinc-500 text-sm">
                 Tap a feature below, then tap a category to add it
               </p>
               {/* Desktop instructions */}
-              <p className="hidden md:block text-gray-600 dark:text-gray-400 text-base">
+              <p className="hidden md:block text-gray-600 dark:text-zinc-500 text-base">
                 Based on your project, drag each feature into the tier that best represents its priority
               </p>
               
@@ -429,7 +429,7 @@ export default function NeedPrioritization({
 
             {/* MOBILE ONLY: Feature Selection Grid at Top */}
             {uncategorized.length > 0 && (
-              <div className="md:hidden bg-white border-2 border-gray-300 dark:border-gray-600 rounded-xl p-4 mb-6">
+              <div className="md:hidden bg-white border-2 border-gray-300 dark:border-zinc-700 rounded-xl p-4 mb-6">
                 <h3 className="font-bold text-gray-900 dark:text-white mb-3 flex items-center gap-2 text-sm">
                   <Hand className="w-4 h-4 text-[#C9A962]" />
                   <span>Select a Feature</span>
@@ -453,7 +453,7 @@ export default function NeedPrioritization({
                             ? 'bg-[#C9A962] text-white border-2 border-[#C9A962] shadow-lg scale-[1.02]' 
                             : aiRec
                               ? 'bg-amber-50 border-2 border-amber-300 hover:border-amber-400'
-                              : 'bg-gray-100 dark:bg-gray-800 border-2 border-gray-200 dark:border-gray-700 hover:border-gray-400 active:scale-95'
+                              : 'bg-gray-100 dark:bg-[#171717] border-2 border-gray-200 dark:border-zinc-800 hover:border-gray-400 active:scale-95'
                         }`}
                       >
                         {aiRec && !isSelected && (
@@ -498,7 +498,7 @@ export default function NeedPrioritization({
                     className={`border-2 border-dashed rounded-xl md:rounded-2xl p-4 md:p-6 min-h-[180px] md:min-h-[400px] transition-all cursor-pointer ${
                       selectedFeature 
                         ? 'border-[#C9A962]/50 bg-[#C9A962]/5 hover:bg-[#C9A962]/10 hover:border-[#C9A962]' 
-                        : 'border-gray-300 dark:border-gray-600 bg-gray-50 hover:border-gray-400'
+                        : 'border-gray-300 dark:border-zinc-700 bg-gray-50 hover:border-gray-400'
                     }`}
                   >
                     <div className="flex items-center gap-2 md:gap-3 mb-3 md:mb-6">
@@ -525,12 +525,12 @@ export default function NeedPrioritization({
                             key={featureId}
                             draggable
                             onDragStart={() => setDraggedFeature(featureId)}
-                            className="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg md:rounded-xl p-2 md:p-4 md:cursor-move hover:shadow-lg transition-shadow group"
+                            className="bg-white dark:bg-[#171717] border border-gray-200 dark:border-zinc-800 rounded-lg md:rounded-xl p-2 md:p-4 md:cursor-move hover:shadow-lg transition-shadow group"
                           >
                             <div className="flex items-center gap-2 md:gap-3">
                               {/* Grip icon - desktop only */}
                               <GripVertical className="hidden md:block w-4 h-4 text-gray-400" />
-                              <FeatureIcon className="w-4 h-4 md:w-5 md:h-5 text-gray-600 dark:text-gray-400 flex-shrink-0" />
+                              <FeatureIcon className="w-4 h-4 md:w-5 md:h-5 text-gray-600 dark:text-zinc-500 flex-shrink-0" />
                               <div className="flex-1 min-w-0">
                                 <div className="text-xs md:text-sm font-medium text-gray-900 dark:text-white truncate">{feature.name}</div>
                               </div>
@@ -571,7 +571,7 @@ export default function NeedPrioritization({
 
             {/* DESKTOP ONLY: Uncategorized Features at bottom */}
             {uncategorized.length > 0 && (
-              <div className="hidden md:block bg-white border-2 border-gray-300 dark:border-gray-600 rounded-2xl p-6 mb-8">
+              <div className="hidden md:block bg-white border-2 border-gray-300 dark:border-zinc-700 rounded-2xl p-6 mb-8">
                 <h3 className="font-bold text-gray-900 dark:text-white mb-4 flex items-center gap-2">
                   <span className="text-gray-500">Uncategorized Features</span>
                   <span className="text-sm font-normal text-gray-500">({uncategorized.length} remaining)</span>
@@ -592,7 +592,7 @@ export default function NeedPrioritization({
                         className={`relative border rounded-xl p-4 cursor-move hover:shadow-lg transition-all ${
                           aiRec 
                             ? 'bg-amber-50 border-amber-300 hover:bg-amber-100' 
-                            : 'bg-gray-100 dark:bg-gray-800 border-gray-300 dark:border-gray-600 hover:bg-white'
+                            : 'bg-gray-100 dark:bg-[#171717] border-gray-300 dark:border-zinc-700 hover:bg-white'
                         }`}
                       >
                         {aiRec && (
@@ -601,7 +601,7 @@ export default function NeedPrioritization({
                           </span>
                         )}
                         <div className="flex flex-col items-center text-center gap-2">
-                          <FeatureIcon className="w-6 h-6 text-gray-600 dark:text-gray-400" />
+                          <FeatureIcon className="w-6 h-6 text-gray-600 dark:text-zinc-500" />
                           <div className="text-xs font-medium text-gray-900 dark:text-white">{feature.name}</div>
                         </div>
                       </div>
@@ -647,7 +647,7 @@ export default function NeedPrioritization({
               <h2 className="text-2xl md:text-4xl font-bold text-gray-900 dark:text-white mb-2 md:mb-4">
                 Your Priority Framework
               </h2>
-              <p className="text-gray-600 dark:text-gray-400 text-sm md:text-base">
+              <p className="text-gray-600 dark:text-zinc-500 text-sm md:text-base">
                 Here&apos;s how your needs are prioritized. The AI will use this to optimize your proposals.
               </p>
             </div>
@@ -659,7 +659,7 @@ export default function NeedPrioritization({
                 if (features.length === 0) return null
 
                 return (
-                  <div key={tier.id} className="bg-white border-2 border-gray-200 dark:border-gray-700 rounded-xl md:rounded-2xl p-5 md:p-8">
+                  <div key={tier.id} className="bg-white border-2 border-gray-200 dark:border-zinc-800 rounded-xl md:rounded-2xl p-5 md:p-8">
                     <div className="flex items-center gap-3 md:gap-4 mb-4 md:mb-6">
                       <div className={`w-10 h-10 md:w-12 md:h-12 bg-gradient-to-br ${tier.color} rounded-lg md:rounded-xl flex items-center justify-center`}>
                         <Icon className="w-5 h-5 md:w-6 md:h-6 text-white" />
@@ -678,7 +678,7 @@ export default function NeedPrioritization({
 
                         return (
                           <div key={featureId} className="flex items-center gap-2 md:gap-3 bg-gray-50 rounded-lg p-3 md:p-4">
-                            <FeatureIcon className="w-4 h-4 md:w-5 md:h-5 text-gray-600 dark:text-gray-400 flex-shrink-0" />
+                            <FeatureIcon className="w-4 h-4 md:w-5 md:h-5 text-gray-600 dark:text-zinc-500 flex-shrink-0" />
                             <span className="text-xs md:text-sm font-medium text-gray-900 dark:text-white">{feature.name}</span>
                           </div>
                         )

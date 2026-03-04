@@ -177,7 +177,7 @@ export default function SmartApartmentPackagesPage() {
 
   return (
     <>
-      <div className="min-h-screen bg-white dark:bg-gray-950 pt-20" data-testid="smart-apartment-packages-page">
+      <div className="min-h-screen bg-white dark:bg-[#050505] pt-20" data-testid="smart-apartment-packages-page">
         {/* Hero Section */}
         <section className="relative overflow-hidden bg-[#0A0A0A] dark:bg-[#050505] text-white py-16 lg:py-24">
           <div className="container mx-auto px-5 sm:px-8 lg:px-16 relative z-10">
@@ -218,11 +218,11 @@ export default function SmartApartmentPackagesPage() {
         </section>
 
         {/* Apartment Size Selector */}
-        <section id="packages" className="py-12 bg-white border-b border-gray-200 dark:border-gray-700">
+        <section id="packages" className="py-12 bg-white border-b border-gray-200 dark:border-zinc-800">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
             <div className="text-center mb-8">
               <h2 className="text-2xl sm:text-3xl font-bold mb-2 text-gray-900 dark:text-white">Select Your Apartment Size</h2>
-              <p className="text-gray-600 dark:text-gray-400">Choose your apartment type to see tailored pricing</p>
+              <p className="text-gray-600 dark:text-zinc-500">Choose your apartment type to see tailored pricing</p>
             </div>
             <div className="flex flex-wrap justify-center gap-3">
               {apartmentSizes.map((size) => (
@@ -232,7 +232,7 @@ export default function SmartApartmentPackagesPage() {
                   className={`px-6 py-3 border-2 rounded-lg font-semibold transition-all ${
                     selectedSize === size.id
                       ? 'border-[#C9A962] bg-[#C9A962]/10 text-[#C9A962]'
-                      : 'border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-900 text-gray-700 dark:text-gray-300 hover:border-[#C9A962]/50'
+                      : 'border-gray-200 dark:border-zinc-800 bg-white dark:bg-[#0A0A0A] text-gray-700 dark:text-zinc-400 hover:border-[#C9A962]/50'
                   }`}
                 >
                   <span className="mr-2">{size.icon}</span>
@@ -244,7 +244,7 @@ export default function SmartApartmentPackagesPage() {
         </section>
 
         {/* Package Comparison */}
-        <section className="py-20 bg-gray-50 dark:bg-gray-900">
+        <section className="py-20 bg-gray-50 dark:bg-[#0A0A0A]">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
               {packages.map((pkg) => {
@@ -279,20 +279,20 @@ export default function SmartApartmentPackagesPage() {
                         <div className="text-sm text-gray-500">Starting price</div>
                       </div>
 
-                      <p className="text-sm text-gray-600 dark:text-gray-400 mb-6">{pkg.description}</p>
+                      <p className="text-sm text-gray-600 dark:text-zinc-500 mb-6">{pkg.description}</p>
 
                       <div className="space-y-3 mb-6">
                         {pkg.features.map((feature) => (
                           <div key={feature} className="flex items-start gap-2">
                             <CheckCircle2 className="h-5 w-5 text-[#C9A962] flex-shrink-0 mt-0.5" />
-                            <span className="text-sm text-gray-700 dark:text-gray-300">{feature}</span>
+                            <span className="text-sm text-gray-700 dark:text-zinc-400">{feature}</span>
                           </div>
                         ))}
                       </div>
 
-                      <div className="border-t border-gray-200 dark:border-gray-700 pt-4 mb-6">
+                      <div className="border-t border-gray-200 dark:border-zinc-800 pt-4 mb-6">
                         <div className="text-xs text-gray-500">Ideal for:</div>
-                        <div className="text-sm font-semibold text-gray-700 dark:text-gray-300">{pkg.ideal}</div>
+                        <div className="text-sm font-semibold text-gray-700 dark:text-zinc-400">{pkg.ideal}</div>
                       </div>
 
                       <Button
@@ -300,7 +300,7 @@ export default function SmartApartmentPackagesPage() {
                         className={`w-full ${
                           pkg.popular
                             ? 'bg-[#C9A962] hover:bg-[#C9A962]/90 text-gray-900 font-semibold'
-                            : 'bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 text-gray-900'
+                            : 'bg-gray-100 dark:bg-[#171717] hover:bg-gray-200 text-gray-900'
                         }`}
                       >
                         Get Quote
@@ -326,7 +326,7 @@ export default function SmartApartmentPackagesPage() {
               <h2 className="text-3xl sm:text-4xl font-bold mb-4 text-gray-900 dark:text-white">
                 Choose Your Ecosystem
               </h2>
-              <p className="text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
+              <p className="text-lg text-gray-600 dark:text-zinc-500 max-w-2xl mx-auto">
                 All packages support three leading smart home ecosystems
               </p>
             </motion.div>
@@ -345,12 +345,12 @@ export default function SmartApartmentPackagesPage() {
                     <Wifi className="h-5 w-5 text-[#C9A962]" />
                     <h3 className="text-xl font-bold text-gray-900 dark:text-white">{eco.name}</h3>
                   </div>
-                  <p className="text-gray-600 dark:text-gray-400 mb-4">{eco.description}</p>
+                  <p className="text-gray-600 dark:text-zinc-500 mb-4">{eco.description}</p>
                   <div className="space-y-2 mb-4">
                     {eco.features.map((feature) => (
                       <div key={feature} className="flex items-start gap-2">
                         <CheckCircle2 className="h-4 w-4 text-[#C9A962] flex-shrink-0 mt-0.5" />
-                        <span className="text-sm text-gray-700 dark:text-gray-300">{feature}</span>
+                        <span className="text-sm text-gray-700 dark:text-zinc-400">{feature}</span>
                       </div>
                     ))}
                   </div>
@@ -390,11 +390,11 @@ export default function SmartApartmentPackagesPage() {
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.6, delay: 0.2 }}
                     viewport={{ once: true }}
-                    className="bg-white dark:bg-gray-800 p-8 text-center"
+                    className="bg-white dark:bg-[#171717] p-8 text-center"
                   >
                     <Icon className="h-12 w-12 mx-auto mb-4 text-[#C9A962]" />
                     <h3 className="text-xl font-bold mb-2 text-gray-900 dark:text-white">{benefit.title}</h3>
-                    <p className="text-gray-600 dark:text-gray-400">{benefit.desc}</p>
+                    <p className="text-gray-600 dark:text-zinc-500">{benefit.desc}</p>
                   </motion.div>
                 )
               })}
@@ -497,7 +497,7 @@ export default function SmartApartmentPackagesPage() {
         </section>
 
         {/* Pricing Disclaimer */}
-        <PricingDisclaimer variant="minimal" className="bg-gray-50 dark:bg-gray-900" />
+        <PricingDisclaimer variant="minimal" className="bg-gray-50 dark:bg-[#0A0A0A]" />
       </div>
 
       <ConsultationForm 

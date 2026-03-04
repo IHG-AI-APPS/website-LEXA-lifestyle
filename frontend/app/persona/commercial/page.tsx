@@ -89,7 +89,7 @@ export default function CommercialPage() {
   ]
 
   return (
-    <div className="min-h-screen bg-white dark:bg-gray-950 pt-20">
+    <div className="min-h-screen bg-white dark:bg-[#050505] pt-20">
       {/* Hero */}
       <section className="relative overflow-hidden bg-[#0A0A0A] dark:bg-[#050505] text-white py-16 lg:py-24">
         <div className="container mx-auto px-5 sm:px-8 lg:px-16">
@@ -161,7 +161,7 @@ export default function CommercialPage() {
               className="text-center mb-16"
             >
               <h2 className="text-4xl font-semibold mb-4">Commercial Automation Benefits</h2>
-              <p className="text-lg text-gray-600 dark:text-gray-400 max-w-3xl mx-auto">
+              <p className="text-lg text-gray-600 dark:text-zinc-500 max-w-3xl mx-auto">
                 Drive efficiency, security, and employee satisfaction with intelligent building systems
               </p>
             </motion.div>
@@ -178,11 +178,11 @@ export default function CommercialPage() {
                     transition={{ duration: 0.2 }}
                     className="text-center"
                   >
-                    <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-gray-100 dark:bg-gray-800 mb-6">
+                    <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-gray-100 dark:bg-[#171717] mb-6">
                       <Icon size={32} className="text-charcoal" />
                     </div>
                     <h3 className="text-xl font-semibold mb-3">{benefit.title}</h3>
-                    <p className="text-gray-600 dark:text-gray-400">{benefit.description}</p>
+                    <p className="text-gray-600 dark:text-zinc-500">{benefit.description}</p>
                   </motion.div>
                 )
               })}
@@ -202,7 +202,7 @@ export default function CommercialPage() {
               className="text-center mb-16"
             >
               <h2 className="text-4xl font-semibold mb-4">Commercial Solutions</h2>
-              <p className="text-lg text-gray-600 dark:text-gray-400 max-w-3xl mx-auto">
+              <p className="text-lg text-gray-600 dark:text-zinc-500 max-w-3xl mx-auto">
                 Industry-specific automation for every commercial environment
               </p>
             </motion.div>
@@ -229,12 +229,12 @@ export default function CommercialPage() {
                           whileInView={{ opacity: 1, y: 0 }}
                           viewport={{ once: true }}
                           transition={{ delay: itemIndex * 0.05 }}
-                          className="bg-white dark:bg-gray-800 p-6 border border-gray-200 dark:border-gray-700 hover:border-charcoal transition-all hover:shadow-lg"
+                          className="bg-white dark:bg-[#171717] p-6 border border-gray-200 dark:border-zinc-800 hover:border-charcoal transition-all hover:shadow-lg"
                         >
                           <h4 className="text-lg font-semibold mb-2 group-hover:text-charcoal transition-colors">
                             {item.name}
                           </h4>
-                          <p className="text-sm text-gray-600 dark:text-gray-400 mb-3">{item.description}</p>
+                          <p className="text-sm text-gray-600 dark:text-zinc-500 mb-3">{item.description}</p>
                           <div className="flex items-center text-sm text-charcoal font-medium">
                             Learn More <ArrowRight size={16} className="ml-2 group-hover:translate-x-1 transition-transform" />
                           </div>
@@ -302,7 +302,7 @@ export default function CommercialPage() {
               </p>
               <Button
                 size="lg"
-                className="bg-white text-black hover:bg-gray-100 dark:bg-gray-800"
+                className="bg-white text-black hover:bg-gray-100 dark:bg-[#171717]"
                 onClick={() => setShowConsultationForm(true)}
               >
                 Schedule Consultation

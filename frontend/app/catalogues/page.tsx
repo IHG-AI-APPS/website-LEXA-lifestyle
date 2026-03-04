@@ -53,7 +53,7 @@ export default function CataloguesPage() {
   const filteredCategories = activeCategory ? [activeCategory] : categories
 
   return (
-    <div className="min-h-screen bg-white dark:bg-gray-950 pt-24" data-testid="catalogues-page">
+    <div className="min-h-screen bg-white dark:bg-[#050505] pt-24" data-testid="catalogues-page">
       {/* Hero */}
       <section className="relative overflow-hidden bg-[#0A0A0A] dark:bg-[#050505] text-white">
         {/* Hero Background Image */}
@@ -90,7 +90,7 @@ export default function CataloguesPage() {
       </section>
 
       {/* Category Filter */}
-      <section className="py-5 bg-white dark:bg-gray-950 border-b border-gray-200 dark:border-gray-800 sticky top-[72px] z-30">
+      <section className="py-5 bg-white dark:bg-[#050505] border-b border-gray-200 dark:border-zinc-800 sticky top-[72px] z-30">
         <div className="container mx-auto px-5 sm:px-8 lg:px-16">
           <div className="max-w-7xl mx-auto flex flex-wrap gap-2">
             <button
@@ -99,7 +99,7 @@ export default function CataloguesPage() {
               className={`px-4 py-2 text-xs font-semibold rounded-full uppercase tracking-wider transition-all ${
                 activeCategory === null
                   ? 'bg-gray-900 dark:bg-white text-white dark:text-gray-900'
-                  : 'bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400 hover:bg-gray-200 dark:hover:bg-gray-700'
+                  : 'bg-gray-100 dark:bg-[#171717] text-gray-600 dark:text-zinc-500 hover:bg-gray-200 dark:hover:bg-[#171717]'
               }`}
             >
               All ({catalogues.length})
@@ -115,7 +115,7 @@ export default function CataloguesPage() {
                   className={`px-4 py-2 text-xs font-semibold rounded-full uppercase tracking-wider transition-all ${
                     activeCategory === cat.key
                       ? 'bg-[#C9A962] text-gray-900'
-                      : 'bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400 hover:bg-gray-200 dark:hover:bg-gray-700'
+                      : 'bg-gray-100 dark:bg-[#171717] text-gray-600 dark:text-zinc-500 hover:bg-gray-200 dark:hover:bg-[#171717]'
                   }`}
                 >
                   {cat.label} ({count})
@@ -127,19 +127,19 @@ export default function CataloguesPage() {
       </section>
 
       {/* Catalogues Grid */}
-      <section className="py-12 bg-white dark:bg-gray-950" data-testid="catalogues-grid">
+      <section className="py-12 bg-white dark:bg-[#050505]" data-testid="catalogues-grid">
         <div className="container mx-auto px-5 sm:px-8 lg:px-16">
           <div className="max-w-7xl mx-auto space-y-14">
             {loading ? (
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
                 {[...Array(6)].map((_, i) => (
-                  <div key={i} className="animate-pulse bg-gray-100 dark:bg-gray-900 rounded-xl h-72" />
+                  <div key={i} className="animate-pulse bg-gray-100 dark:bg-[#0A0A0A] rounded-xl h-72" />
                 ))}
               </div>
             ) : catalogues.length === 0 ? (
               <div className="text-center py-20">
                 <BookOpen size={48} className="text-gray-300 dark:text-gray-700 mx-auto mb-4" />
-                <p className="text-gray-500 dark:text-gray-400 text-lg">No catalogues available yet</p>
+                <p className="text-gray-500 dark:text-zinc-500 text-lg">No catalogues available yet</p>
                 <p className="text-gray-400 dark:text-gray-600 text-sm mt-1">Check back soon for our latest documents</p>
               </div>
             ) : (
@@ -175,7 +175,7 @@ export default function CataloguesPage() {
                           target="_blank"
                           data-testid={`catalogue-card-${cat.slug}`}
                         >
-                          <div className="group bg-white dark:bg-gray-900 rounded-xl border border-gray-200 dark:border-gray-800 hover:border-[#C9A962]/50 hover:shadow-lg transition-all overflow-hidden h-full">
+                          <div className="group bg-white dark:bg-[#0A0A0A] rounded-xl border border-gray-200 dark:border-zinc-800 hover:border-[#C9A962]/50 hover:shadow-lg transition-all overflow-hidden h-full">
                             {/* Thumbnail */}
                             <div className="relative aspect-[4/3] bg-gradient-to-br from-gray-100 to-gray-200 dark:from-gray-800 dark:to-gray-900 overflow-hidden">
                               {cat.thumbnail ? (
@@ -207,7 +207,7 @@ export default function CataloguesPage() {
                                 {cat.title}
                               </h3>
                               {cat.description && (
-                                <p className="text-xs text-gray-500 dark:text-gray-400 mt-1 line-clamp-2">{cat.description}</p>
+                                <p className="text-xs text-gray-500 dark:text-zinc-500 mt-1 line-clamp-2">{cat.description}</p>
                               )}
                               <div className="flex items-center gap-3 mt-3 text-[10px] text-gray-400 uppercase tracking-wider">
                                 <span>{info.label}</span>

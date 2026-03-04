@@ -113,12 +113,12 @@ export default function BrandDetailPage({ params }: { params: { slug: string } }
 
   if (loading) {
     return (
-      <div className="min-h-screen bg-white dark:bg-gray-950 pt-20">
+      <div className="min-h-screen bg-white dark:bg-[#050505] pt-20">
         <div className="container mx-auto px-4 py-8">
           <div className="animate-pulse">
-            <div className="h-[480px] bg-gray-200 dark:bg-gray-800 mb-8" />
-            <div className="h-10 bg-gray-200 dark:bg-gray-800 rounded w-1/3 mb-4" />
-            <div className="h-4 bg-gray-100 dark:bg-gray-900 rounded w-2/3 mb-8" />
+            <div className="h-[480px] bg-gray-200 dark:bg-[#171717] mb-8" />
+            <div className="h-10 bg-gray-200 dark:bg-[#171717] rounded w-1/3 mb-4" />
+            <div className="h-4 bg-gray-100 dark:bg-[#0A0A0A] rounded w-2/3 mb-8" />
           </div>
         </div>
       </div>
@@ -142,7 +142,7 @@ export default function BrandDetailPage({ params }: { params: { slug: string } }
   const validProducts = (brand.products || []).filter(p => p.name)
 
   return (
-    <div className="min-h-screen bg-white dark:bg-gray-950 pt-20" data-testid="brand-detail-page">
+    <div className="min-h-screen bg-white dark:bg-[#050505] pt-20" data-testid="brand-detail-page">
       {/* Hero — Split Layout */}
       <section className="relative overflow-hidden bg-[#0A0A0A] dark:bg-[#050505] text-white">
         <div className="grid grid-cols-1 lg:grid-cols-2 min-h-[480px]">
@@ -204,22 +204,22 @@ export default function BrandDetailPage({ params }: { params: { slug: string } }
       </section>
 
       {/* Brand Info + Key Features */}
-      <section className="py-16 lg:py-20 bg-white dark:bg-gray-950">
+      <section className="py-16 lg:py-20 bg-white dark:bg-[#050505]">
         <div className="container mx-auto px-5 sm:px-8 lg:px-16">
           <div className="max-w-6xl mx-auto">
             <div className="grid grid-cols-1 lg:grid-cols-5 gap-12">
               <div className="lg:col-span-3">
                 <span className="text-xs uppercase tracking-widest text-[#C9A962] font-semibold">About {brand.name}</span>
                 <h2 className="text-2xl sm:text-3xl font-bold mt-2 mb-6 text-gray-900 dark:text-white">Brand Overview</h2>
-                <p className="text-base text-gray-600 dark:text-gray-300 leading-relaxed mb-8">{brand.long_description || brand.description}</p>
+                <p className="text-base text-gray-600 dark:text-zinc-400 leading-relaxed mb-8">{brand.long_description || brand.description}</p>
 
                 {brand.key_features && brand.key_features.length > 0 && (
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                     {brand.key_features.map((feature, i) => (
                       <motion.div key={i} initial={{ opacity: 0, y: 10 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.25, delay: i * 0.03 }}
-                        className="flex items-start gap-3 p-3 rounded-lg bg-gray-50 dark:bg-gray-900 border border-gray-100 dark:border-gray-800 hover:border-[#C9A962]/40 transition-colors">
+                        className="flex items-start gap-3 p-3 rounded-lg bg-gray-50 dark:bg-[#0A0A0A] border border-gray-100 dark:border-zinc-800 hover:border-[#C9A962]/40 transition-colors">
                         <CheckCircle2 size={16} className="text-[#C9A962] flex-shrink-0 mt-0.5" />
-                        <span className="text-sm text-gray-700 dark:text-gray-300">{feature}</span>
+                        <span className="text-sm text-gray-700 dark:text-zinc-400">{feature}</span>
                       </motion.div>
                     ))}
                   </div>
@@ -228,7 +228,7 @@ export default function BrandDetailPage({ params }: { params: { slug: string } }
 
               <div className="lg:col-span-2">
                 <div className="sticky top-28 space-y-5">
-                  <div className="bg-gray-900 dark:bg-gray-800 text-white rounded-xl p-6">
+                  <div className="bg-gray-900 dark:bg-[#171717] text-white rounded-xl p-6">
                     <h3 className="text-lg font-semibold mb-4">Brand Details</h3>
                     <div className="space-y-4">
                       {brand.country && (
@@ -269,7 +269,7 @@ export default function BrandDetailPage({ params }: { params: { slug: string } }
 
       {/* Feature Cards */}
       {featureCards.length > 0 && (
-        <section className="py-16 lg:py-20 bg-gray-50 dark:bg-gray-900" data-testid="feature-cards-section">
+        <section className="py-16 lg:py-20 bg-gray-50 dark:bg-[#0A0A0A]" data-testid="feature-cards-section">
           <div className="container mx-auto px-5 sm:px-8 lg:px-16">
             <div className="max-w-6xl mx-auto">
               <div className="text-center mb-12">
@@ -281,18 +281,18 @@ export default function BrandDetailPage({ params }: { params: { slug: string } }
                   const IconComp = featureCardIcons[i] || Sparkles
                   return (
                     <motion.div key={i} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.3, delay: i * 0.1 }}
-                      className="bg-white dark:bg-gray-950 rounded-xl overflow-hidden border border-gray-100 dark:border-gray-800 hover:shadow-lg transition-shadow group">
+                      className="bg-white dark:bg-[#050505] rounded-xl overflow-hidden border border-gray-100 dark:border-zinc-800 hover:shadow-lg transition-shadow group">
                       <div className="h-1 bg-gradient-to-r from-[#C9A962] to-[#C9A962]/30" />
                       <div className="p-7">
                         <div className="w-11 h-11 rounded-lg bg-gray-900 dark:bg-[#C9A962] flex items-center justify-center mb-5 group-hover:bg-[#C9A962] transition-colors">
                           <IconComp className="text-white dark:text-gray-900 group-hover:text-gray-900 transition-colors" size={20} />
                         </div>
                         <h3 className="text-lg font-bold mb-2 text-gray-900 dark:text-white">{card.title}</h3>
-                        <p className="text-sm text-gray-600 dark:text-gray-400 mb-5 leading-relaxed">{card.description}</p>
+                        <p className="text-sm text-gray-600 dark:text-zinc-500 mb-5 leading-relaxed">{card.description}</p>
                         {card.benefits?.length > 0 && (
                           <ul className="space-y-2">
                             {card.benefits.map((b, j) => (
-                              <li key={j} className="flex items-start gap-2 text-sm text-gray-700 dark:text-gray-300">
+                              <li key={j} className="flex items-start gap-2 text-sm text-gray-700 dark:text-zinc-400">
                                 <CheckCircle2 size={14} className="text-[#C9A962] flex-shrink-0 mt-0.5" /> {b}
                               </li>
                             ))}
@@ -310,7 +310,7 @@ export default function BrandDetailPage({ params }: { params: { slug: string } }
 
       {/* Products */}
       {validProducts.length > 0 && (
-        <section className="py-16 lg:py-20 bg-white dark:bg-gray-950" data-testid="products-section">
+        <section className="py-16 lg:py-20 bg-white dark:bg-[#050505]" data-testid="products-section">
           <div className="container mx-auto px-5 sm:px-8 lg:px-16">
             <div className="max-w-6xl mx-auto">
               <div className="text-center mb-12">
@@ -322,7 +322,7 @@ export default function BrandDetailPage({ params }: { params: { slug: string } }
                   const hasProductImage = product.image && product.image.trim() !== ''
                   return (
                     <motion.div key={i} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.3, delay: i * 0.08 }}
-                      className="bg-gray-50 dark:bg-gray-900 rounded-xl overflow-hidden border border-gray-100 dark:border-gray-800 hover:shadow-lg transition-shadow group">
+                      className="bg-gray-50 dark:bg-[#0A0A0A] rounded-xl overflow-hidden border border-gray-100 dark:border-zinc-800 hover:shadow-lg transition-shadow group">
                       {hasProductImage ? (
                         <div className="relative aspect-[4/3]">
                           <SafeImage src={product.image} alt={product.name} fill className="object-cover group-hover:scale-105 transition-transform duration-500" sizes="(max-width: 768px) 100vw, 33vw" />
@@ -337,7 +337,7 @@ export default function BrandDetailPage({ params }: { params: { slug: string } }
                       )}
                       <div className="p-5">
                         <h3 className="text-base font-bold mb-1 text-gray-900 dark:text-white">{product.name}</h3>
-                        <p className="text-sm text-gray-600 dark:text-gray-400 mb-3">{product.description}</p>
+                        <p className="text-sm text-gray-600 dark:text-zinc-500 mb-3">{product.description}</p>
                         {product.price_range && (
                           <p className="text-sm font-semibold text-[#C9A962]"><ShoppingBag size={14} className="inline mr-1" />{product.price_range}</p>
                         )}
@@ -353,7 +353,7 @@ export default function BrandDetailPage({ params }: { params: { slug: string } }
 
       {/* Related Solutions */}
       {relatedSolutions.length > 0 && (
-        <section className="py-16 lg:py-20 bg-gray-50 dark:bg-gray-900" data-testid="solutions-section">
+        <section className="py-16 lg:py-20 bg-gray-50 dark:bg-[#0A0A0A]" data-testid="solutions-section">
           <div className="container mx-auto px-5 sm:px-8 lg:px-16">
             <div className="max-w-6xl mx-auto">
               <div className="text-center mb-12">
@@ -363,7 +363,7 @@ export default function BrandDetailPage({ params }: { params: { slug: string } }
               <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
                 {relatedSolutions.map((sol, i) => (
                   <motion.div key={sol.slug} initial={{ opacity: 0, scale: 0.95 }} whileInView={{ opacity: 1, scale: 1 }} viewport={{ once: true }} transition={{ duration: 0.3, delay: i * 0.05 }}>
-                    <Link href={`/solutions/${sol.slug}`} className="group block relative rounded-xl overflow-hidden bg-gray-100 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 hover:border-[#C9A962]/60 hover:shadow-xl transition-all" data-testid={`sol-card-${sol.slug}`}>
+                    <Link href={`/solutions/${sol.slug}`} className="group block relative rounded-xl overflow-hidden bg-gray-100 dark:bg-[#171717] border border-gray-200 dark:border-zinc-800 hover:border-[#C9A962]/60 hover:shadow-xl transition-all" data-testid={`sol-card-${sol.slug}`}>
                       <div className="relative aspect-[4/3]">
                         <SafeImage src={sol.image} alt={sol.title} fill className="object-cover group-hover:scale-105 transition-transform duration-500" sizes="(max-width: 768px) 50vw, 25vw" />
                         <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
@@ -383,7 +383,7 @@ export default function BrandDetailPage({ params }: { params: { slug: string } }
 
       {/* Inspirations Gallery */}
       {galleryImages.length > 0 && (
-        <section className="py-16 lg:py-20 bg-white dark:bg-gray-950" data-testid="inspirations-section">
+        <section className="py-16 lg:py-20 bg-white dark:bg-[#050505]" data-testid="inspirations-section">
           <div className="container mx-auto px-5 sm:px-8 lg:px-16">
             <div className="max-w-6xl mx-auto">
               <div className="text-center mb-12">
@@ -434,7 +434,7 @@ export default function BrandDetailPage({ params }: { params: { slug: string } }
 
       {/* Other Brands */}
       {otherBrands.length > 0 && (
-        <section className="py-16 lg:py-20 bg-white dark:bg-gray-950">
+        <section className="py-16 lg:py-20 bg-white dark:bg-[#050505]">
           <div className="container mx-auto px-5 sm:px-8 lg:px-16">
             <div className="max-w-6xl mx-auto">
               <div className="text-center mb-12">
@@ -443,7 +443,7 @@ export default function BrandDetailPage({ params }: { params: { slug: string } }
               </div>
               <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
                 {otherBrands.map((b) => (
-                  <Link key={b.slug} href={`/brands/${b.slug}`} className="group flex flex-col items-center justify-center p-5 h-24 rounded-xl bg-gray-50 dark:bg-gray-900 border border-gray-200 dark:border-gray-800 hover:border-[#C9A962]/60 hover:shadow-md transition-all" data-testid={`other-brand-${b.slug}`}>
+                  <Link key={b.slug} href={`/brands/${b.slug}`} className="group flex flex-col items-center justify-center p-5 h-24 rounded-xl bg-gray-50 dark:bg-[#0A0A0A] border border-gray-200 dark:border-zinc-800 hover:border-[#C9A962]/60 hover:shadow-md transition-all" data-testid={`other-brand-${b.slug}`}>
                     <span className="text-base font-bold text-gray-800 dark:text-gray-200 group-hover:text-[#C9A962] transition-colors tracking-wide">{b.name}</span>
                     <span className="text-[10px] text-gray-400 uppercase tracking-widest mt-1">{b.categories?.[0] || 'Partner'}</span>
                   </Link>

@@ -141,10 +141,10 @@ export default function MustHaveSelection({
       <div className="max-w-4xl mx-auto px-4 py-12">
         <div className="animate-pulse">
           <div className="h-8 bg-gray-200 rounded w-1/3 mb-4 mx-auto"></div>
-          <div className="h-4 bg-gray-100 dark:bg-gray-800 rounded w-1/2 mb-8 mx-auto"></div>
+          <div className="h-4 bg-gray-100 dark:bg-[#171717] rounded w-1/2 mb-8 mx-auto"></div>
           <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
             {[...Array(6)].map((_, i) => (
-              <div key={i} className="h-24 bg-gray-100 dark:bg-gray-800 rounded-lg"></div>
+              <div key={i} className="h-24 bg-gray-100 dark:bg-[#171717] rounded-lg"></div>
             ))}
           </div>
         </div>
@@ -176,7 +176,7 @@ export default function MustHaveSelection({
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.2 }}
-          className="text-gray-600 dark:text-gray-400"
+          className="text-gray-600 dark:text-zinc-500"
         >
           Select the essential features that are absolute requirements for your smart home.
         </motion.p>
@@ -194,7 +194,7 @@ export default function MustHaveSelection({
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.1 + catIndex * 0.05 }}
-              className="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-2xl p-6"
+              className="bg-white dark:bg-[#171717] border border-gray-200 dark:border-zinc-800 rounded-2xl p-6"
             >
               {/* Category Header */}
               <div className="flex items-center justify-between mb-4">
@@ -231,7 +231,7 @@ export default function MustHaveSelection({
                       className={`flex items-start gap-3 p-4 rounded-xl border-2 text-left transition-all ${
                         isSelected
                           ? 'border-red-500 bg-red-50'
-                          : 'border-gray-200 dark:border-gray-700 hover:border-gray-300 dark:border-gray-600 bg-white'
+                          : 'border-gray-200 dark:border-zinc-800 hover:border-gray-300 dark:border-zinc-700 bg-white'
                       }`}
                     >
                       {/* Checkbox */}
@@ -263,7 +263,7 @@ export default function MustHaveSelection({
       </div>
 
       {/* Bottom Navigation */}
-      <div className="sticky bottom-0 bg-white border-t border-gray-200 dark:border-gray-700 p-4 -mx-4">
+      <div className="sticky bottom-0 bg-white border-t border-gray-200 dark:border-zinc-800 p-4 -mx-4">
         <div className="max-w-4xl mx-auto flex items-center justify-between">
           <Button variant="outline" onClick={onBack}>
             <ChevronLeft className="w-4 h-4 mr-1" />

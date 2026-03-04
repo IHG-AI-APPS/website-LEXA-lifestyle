@@ -17,15 +17,15 @@ export default function ClientLogos() {
   const duplicatedClients = [...clients, ...clients, ...clients]
 
   return (
-    <section className="py-24 bg-white border-y border-gray-200 dark:border-gray-700 overflow-hidden">
+    <section className="py-24 bg-white border-y border-gray-200 dark:border-zinc-800 overflow-hidden">
       <div className="container mx-auto px-4 md:px-8 max-w-7xl mb-12">
-        <span className="text-xs md:text-sm tracking-[0.2em] uppercase text-gray-600 dark:text-gray-400 font-bold block mb-6">
+        <span className="text-xs md:text-sm tracking-[0.2em] uppercase text-gray-600 dark:text-zinc-500 font-bold block mb-6">
           Trusted By
         </span>
         <h2 className="text-4xl md:text-5xl font-heading font-semibold tracking-tight text-black">
           WHO WE WORK WITH
         </h2>
-        <p className="text-base md:text-lg text-gray-600 dark:text-gray-400 mt-6 max-w-3xl">
+        <p className="text-base md:text-lg text-gray-600 dark:text-zinc-500 mt-6 max-w-3xl">
           Our valued clients span entertainment, cultural destinations, theme parks, corporate, and more.
         </p>
       </div>

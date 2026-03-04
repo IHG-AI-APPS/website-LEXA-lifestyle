@@ -319,12 +319,12 @@ export default function CommandPalette() {
       {/* Trigger Button - shown in header */}
       <button
         onClick={() => setOpen(true)}
-        className="hidden md:flex items-center gap-2 px-3 py-1.5 text-sm text-gray-500 dark:text-gray-400 bg-gray-100 dark:bg-gray-800 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 rounded-lg transition-colors"
+        className="hidden md:flex items-center gap-2 px-3 py-1.5 text-sm text-gray-500 dark:text-zinc-500 bg-gray-100 dark:bg-[#171717] hover:bg-gray-200 dark:hover:bg-[#171717] rounded-lg transition-colors"
         data-testid="command-palette-trigger"
       >
         <Search className="w-4 h-4" />
         <span>Search...</span>
-        <kbd className="hidden lg:inline-flex items-center gap-1 px-1.5 py-0.5 text-xs bg-white dark:bg-gray-700 border border-gray-200 dark:border-gray-700 dark:border-gray-600 rounded">
+        <kbd className="hidden lg:inline-flex items-center gap-1 px-1.5 py-0.5 text-xs bg-white dark:bg-gray-700 border border-gray-200 dark:border-zinc-800 dark:border-zinc-700 rounded">
           ⌘K
         </kbd>
       </button>
@@ -351,10 +351,10 @@ export default function CommandPalette() {
               className="fixed top-[20%] left-1/2 -translate-x-1/2 w-full max-w-xl z-50"
             >
               <Command
-                className="bg-white dark:bg-gray-900 rounded-xl shadow-2xl border border-gray-200 dark:border-gray-700 dark:border-gray-700 overflow-hidden"
+                className="bg-white dark:bg-[#0A0A0A] rounded-xl shadow-2xl border border-gray-200 dark:border-zinc-800 overflow-hidden"
                 loop
               >
-                <div className="flex items-center gap-3 px-4 py-3 border-b border-gray-200 dark:border-gray-700 dark:border-gray-700">
+                <div className="flex items-center gap-3 px-4 py-3 border-b border-gray-200 dark:border-zinc-800">
                   <Search className="w-5 h-5 text-gray-400" />
                   <Command.Input
                     value={search}
@@ -363,7 +363,7 @@ export default function CommandPalette() {
                     className="flex-1 text-base outline-none placeholder:text-gray-400 bg-transparent dark:text-white"
                     data-testid="command-palette-input"
                   />
-                  <kbd className="px-2 py-1 text-xs text-gray-400 bg-gray-100 dark:bg-gray-800 dark:bg-gray-800 rounded">
+                  <kbd className="px-2 py-1 text-xs text-gray-400 bg-gray-100 dark:bg-[#171717] rounded">
                     ESC
                   </kbd>
                 </div>
@@ -383,14 +383,14 @@ export default function CommandPalette() {
                           key={command.id}
                           value={command.title}
                           onSelect={command.action}
-                          className="flex items-center gap-3 px-3 py-2 rounded-lg cursor-pointer hover:bg-gray-100 dark:bg-gray-800 dark:hover:bg-gray-800 data-[selected=true]:bg-gray-100 dark:bg-gray-800 dark:data-[selected=true]:bg-gray-800"
+                          className="flex items-center gap-3 px-3 py-2 rounded-lg cursor-pointer hover:bg-gray-100 dark:bg-[#171717] dark:hover:bg-[#171717] data-[selected=true]:bg-gray-100 dark:bg-[#171717] dark:data-[selected=true]:bg-gray-800"
                           data-testid={`command-${command.id}`}
                         >
-                          <div className="flex items-center justify-center w-8 h-8 bg-gray-100 dark:bg-gray-800 dark:bg-gray-800 rounded-lg text-gray-600 dark:text-gray-400 dark:text-gray-400">
+                          <div className="flex items-center justify-center w-8 h-8 bg-gray-100 dark:bg-[#171717] rounded-lg text-gray-600 dark:text-zinc-500">
                             {command.icon}
                           </div>
                           <div className="flex-1">
-                            <div className="text-sm font-medium text-gray-900 dark:text-white dark:text-white">
+                            <div className="text-sm font-medium text-gray-900 dark:text-white">
                               {command.title}
                             </div>
                             {command.description && (
@@ -414,17 +414,17 @@ export default function CommandPalette() {
                           key={command.id}
                           value={command.title}
                           onSelect={command.action}
-                          className="flex items-center gap-3 px-3 py-2 rounded-lg cursor-pointer hover:bg-gray-100 dark:bg-gray-800 dark:hover:bg-gray-800 data-[selected=true]:bg-gray-100 dark:bg-gray-800 dark:data-[selected=true]:bg-gray-800"
+                          className="flex items-center gap-3 px-3 py-2 rounded-lg cursor-pointer hover:bg-gray-100 dark:bg-[#171717] dark:hover:bg-[#171717] data-[selected=true]:bg-gray-100 dark:bg-[#171717] dark:data-[selected=true]:bg-gray-800"
                         >
                           <div className="flex items-center justify-center w-8 h-8 bg-blue-50 dark:bg-blue-900/30 rounded-lg text-blue-600 dark:text-blue-400">
                             {command.icon}
                           </div>
                           <div className="flex-1">
-                            <div className="text-sm font-medium text-gray-900 dark:text-white dark:text-white">
+                            <div className="text-sm font-medium text-gray-900 dark:text-white">
                               {command.title}
                             </div>
                             {command.description && (
-                              <div className="text-xs text-gray-500 dark:text-gray-400">
+                              <div className="text-xs text-gray-500 dark:text-zinc-500">
                                 {command.description}
                               </div>
                             )}
@@ -444,17 +444,17 @@ export default function CommandPalette() {
                           key={command.id}
                           value={command.title}
                           onSelect={command.action}
-                          className="flex items-center gap-3 px-3 py-2 rounded-lg cursor-pointer hover:bg-gray-100 dark:bg-gray-800 dark:hover:bg-gray-800 data-[selected=true]:bg-gray-100 dark:bg-gray-800 dark:data-[selected=true]:bg-gray-800"
+                          className="flex items-center gap-3 px-3 py-2 rounded-lg cursor-pointer hover:bg-gray-100 dark:bg-[#171717] dark:hover:bg-[#171717] data-[selected=true]:bg-gray-100 dark:bg-[#171717] dark:data-[selected=true]:bg-gray-800"
                         >
                           <div className="flex items-center justify-center w-8 h-8 bg-green-50 dark:bg-green-900/30 rounded-lg text-green-600 dark:text-green-400">
                             {command.icon}
                           </div>
                           <div className="flex-1">
-                            <div className="text-sm font-medium text-gray-900 dark:text-white dark:text-white">
+                            <div className="text-sm font-medium text-gray-900 dark:text-white">
                               {command.title}
                             </div>
                             {command.description && (
-                              <div className="text-xs text-gray-500 dark:text-gray-400">
+                              <div className="text-xs text-gray-500 dark:text-zinc-500">
                                 {command.description}
                               </div>
                             )}
@@ -474,17 +474,17 @@ export default function CommandPalette() {
                           key={command.id}
                           value={command.title}
                           onSelect={command.action}
-                          className="flex items-center gap-3 px-3 py-2 rounded-lg cursor-pointer hover:bg-gray-100 dark:bg-gray-800 dark:hover:bg-gray-800 data-[selected=true]:bg-gray-100 dark:bg-gray-800 dark:data-[selected=true]:bg-gray-800"
+                          className="flex items-center gap-3 px-3 py-2 rounded-lg cursor-pointer hover:bg-gray-100 dark:bg-[#171717] dark:hover:bg-[#171717] data-[selected=true]:bg-gray-100 dark:bg-[#171717] dark:data-[selected=true]:bg-gray-800"
                         >
                           <div className="flex items-center justify-center w-8 h-8 bg-purple-50 dark:bg-purple-900/30 rounded-lg text-purple-600 dark:text-purple-400">
                             {command.icon}
                           </div>
                           <div className="flex-1">
-                            <div className="text-sm font-medium text-gray-900 dark:text-white dark:text-white">
+                            <div className="text-sm font-medium text-gray-900 dark:text-white">
                               {command.title}
                             </div>
                             {command.description && (
-                              <div className="text-xs text-gray-500 dark:text-gray-400">
+                              <div className="text-xs text-gray-500 dark:text-zinc-500">
                                 {command.description}
                               </div>
                             )}
@@ -504,13 +504,13 @@ export default function CommandPalette() {
                           key={command.id}
                           value={command.title}
                           onSelect={command.action}
-                          className="flex items-center gap-3 px-3 py-2 rounded-lg cursor-pointer hover:bg-gray-100 dark:bg-gray-800 dark:hover:bg-gray-800 data-[selected=true]:bg-gray-100 dark:bg-gray-800 dark:data-[selected=true]:bg-gray-800"
+                          className="flex items-center gap-3 px-3 py-2 rounded-lg cursor-pointer hover:bg-gray-100 dark:bg-[#171717] dark:hover:bg-[#171717] data-[selected=true]:bg-gray-100 dark:bg-[#171717] dark:data-[selected=true]:bg-gray-800"
                         >
                           <div className="flex items-center justify-center w-8 h-8 bg-orange-50 dark:bg-orange-900/30 rounded-lg text-orange-600 dark:text-orange-400">
                             {command.icon}
                           </div>
                           <div className="flex-1">
-                            <div className="text-sm font-medium text-gray-900 dark:text-white dark:text-white">
+                            <div className="text-sm font-medium text-gray-900 dark:text-white">
                               {command.title}
                             </div>
                             {command.description && (
@@ -525,14 +525,14 @@ export default function CommandPalette() {
                   )}
                 </Command.List>
 
-                <div className="flex items-center justify-between px-4 py-2 border-t border-gray-200 dark:border-gray-700 dark:border-gray-700 bg-gray-50 dark:bg-gray-800 text-xs text-gray-500 dark:text-gray-400">
+                <div className="flex items-center justify-between px-4 py-2 border-t border-gray-200 dark:border-zinc-800 bg-gray-50 dark:bg-[#171717] text-xs text-gray-500 dark:text-zinc-500">
                   <div className="flex items-center gap-4">
                     <span className="flex items-center gap-1">
-                      <kbd className="px-1.5 py-0.5 bg-white dark:bg-gray-800 border rounded">↑↓</kbd>
+                      <kbd className="px-1.5 py-0.5 bg-white dark:bg-[#171717] border rounded">↑↓</kbd>
                       Navigate
                     </span>
                     <span className="flex items-center gap-1">
-                      <kbd className="px-1.5 py-0.5 bg-white dark:bg-gray-800 border rounded">↵</kbd>
+                      <kbd className="px-1.5 py-0.5 bg-white dark:bg-[#171717] border rounded">↵</kbd>
                       Select
                     </span>
                   </div>

@@ -197,10 +197,10 @@ export default function PackageBuilderPage() {
         <div className="container mx-auto px-4 py-12">
           <div className="animate-pulse max-w-5xl mx-auto">
             <div className="h-10 bg-gray-200 rounded w-1/2 mb-4 mx-auto"></div>
-            <div className="h-4 bg-gray-100 dark:bg-gray-800 rounded w-1/3 mb-8 mx-auto"></div>
+            <div className="h-4 bg-gray-100 dark:bg-[#171717] rounded w-1/3 mb-8 mx-auto"></div>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               {[...Array(3)].map((_, i) => (
-                <div key={i} className="bg-gray-100 dark:bg-gray-800 rounded-2xl h-64"></div>
+                <div key={i} className="bg-gray-100 dark:bg-[#171717] rounded-2xl h-64"></div>
               ))}
             </div>
           </div>
@@ -215,13 +215,13 @@ export default function PackageBuilderPage() {
       <div className="border-b bg-white sticky top-16 sm:top-18 md:top-20 z-40">
         <div className="container mx-auto px-4 py-6">
           <div className="flex items-center justify-between max-w-6xl mx-auto">
-            <Link href="/packages" className="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:text-white">
+            <Link href="/packages" className="text-gray-600 dark:text-zinc-500 hover:text-gray-900 dark:text-white">
               ← Back to Packages
             </Link>
             
             {selectedTier && (
               <div className="text-right">
-                <p className="text-sm text-gray-600 dark:text-gray-400">Estimated Total</p>
+                <p className="text-sm text-gray-600 dark:text-zinc-500">Estimated Total</p>
                 <p className="text-2xl font-bold text-[#C9A962]">
                   AED {(calculateTotal() / 1000).toFixed(0)}K
                 </p>
@@ -245,7 +245,7 @@ export default function PackageBuilderPage() {
               <h2 className="text-4xl font-bold text-gray-900 dark:text-white mb-4 text-center">
                 Build Your Smart Home Package
               </h2>
-              <p className="text-lg text-gray-600 dark:text-gray-400 mb-8 text-center">
+              <p className="text-lg text-gray-600 dark:text-zinc-500 mb-8 text-center">
                 Step 1: Select your property type
               </p>
               
@@ -316,7 +316,7 @@ export default function PackageBuilderPage() {
             >
               <button
                 onClick={() => setStep(1)}
-                className="mb-6 flex items-center gap-2 text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:text-white"
+                className="mb-6 flex items-center gap-2 text-gray-600 dark:text-zinc-500 hover:text-gray-900 dark:text-white"
               >
                 <ArrowLeft className="h-5 w-5" />
                 Change property type
@@ -325,7 +325,7 @@ export default function PackageBuilderPage() {
               <h2 className="text-4xl font-bold text-gray-900 dark:text-white mb-4 text-center">
                 Choose Your Package
               </h2>
-              <p className="text-lg text-gray-600 dark:text-gray-400 mb-12 text-center">
+              <p className="text-lg text-gray-600 dark:text-zinc-500 mb-12 text-center">
                 Step 2: {propertyType.title}
               </p>
 
@@ -336,7 +336,7 @@ export default function PackageBuilderPage() {
                     className={`relative rounded-2xl border-2 p-8 transition-all ${
                       tier.recommended 
                         ? 'border-[#C9A962] shadow-2xl scale-105' 
-                        : 'border-gray-200 dark:border-gray-700 hover:border-[#C9A962]'
+                        : 'border-gray-200 dark:border-zinc-800 hover:border-[#C9A962]'
                     }`}
                   >
                     {tier.badge && (
@@ -347,12 +347,12 @@ export default function PackageBuilderPage() {
 
                     <div className="text-center mb-8">
                       <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-2">{tier.tier_name}</h3>
-                      <p className="text-gray-600 dark:text-gray-400 mb-6">{tier.tier_subtitle}</p>
+                      <p className="text-gray-600 dark:text-zinc-500 mb-6">{tier.tier_subtitle}</p>
                       <div className="mb-4">
                         <span className="text-5xl font-bold text-gray-900 dark:text-white">
                           {(tier.base_price_aed / 1000).toFixed(0)}K
                         </span>
-                        <span className="text-gray-600 dark:text-gray-400 ml-1">AED</span>
+                        <span className="text-gray-600 dark:text-zinc-500 ml-1">AED</span>
                       </div>
                       <p className="text-sm text-gray-500">{tier.typical_rooms_count}</p>
                     </div>
@@ -370,7 +370,7 @@ export default function PackageBuilderPage() {
                       className={`w-full py-4 rounded-lg font-bold transition-all ${
                         tier.recommended
                           ? 'bg-[#C9A962]/50 text-white hover:bg-[#C9A962] shadow-lg'
-                          : 'bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-white hover:bg-gray-200'
+                          : 'bg-gray-100 dark:bg-[#171717] text-gray-900 dark:text-white hover:bg-gray-200'
                       }`}
                     >
                       Select {tier.tier_name}
@@ -392,7 +392,7 @@ export default function PackageBuilderPage() {
             >
               <button
                 onClick={() => setStep(2)}
-                className="mb-6 flex items-center gap-2 text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:text-white"
+                className="mb-6 flex items-center gap-2 text-gray-600 dark:text-zinc-500 hover:text-gray-900 dark:text-white"
               >
                 <ArrowLeft className="h-5 w-5" />
                 Change tier
@@ -401,7 +401,7 @@ export default function PackageBuilderPage() {
               <h2 className="text-4xl font-bold text-gray-900 dark:text-white mb-4 text-center">
                 Choose Your Control System
               </h2>
-              <p className="text-lg text-gray-600 dark:text-gray-400 mb-2 text-center">
+              <p className="text-lg text-gray-600 dark:text-zinc-500 mb-2 text-center">
                 Step 3: Select the automation platform
               </p>
               <p className="text-sm text-gray-500 mb-8 text-center">
@@ -417,7 +417,7 @@ export default function PackageBuilderPage() {
                     <div
                       key={system.id}
                       onClick={() => selectControlSystem(system)}
-                      className="group relative rounded-2xl border-2 border-gray-200 dark:border-gray-700 p-6 cursor-pointer hover:border-[#C9A962] hover:shadow-xl transition-all bg-white"
+                      className="group relative rounded-2xl border-2 border-gray-200 dark:border-zinc-800 p-6 cursor-pointer hover:border-[#C9A962] hover:shadow-xl transition-all bg-white"
                     >
                       {system.featured && (
                         <div className="absolute -top-3 left-6 px-3 py-1 bg-[#C9A962] text-white text-xs font-bold rounded-full">
@@ -438,7 +438,7 @@ export default function PackageBuilderPage() {
                         <p className="text-sm text-[#C9A962] font-semibold mb-3">
                           {system.tagline}
                         </p>
-                        <p className="text-sm text-gray-600 dark:text-gray-400 mb-4 line-clamp-3">
+                        <p className="text-sm text-gray-600 dark:text-zinc-500 mb-4 line-clamp-3">
                           {system.description}
                         </p>
                       </div>
@@ -459,7 +459,7 @@ export default function PackageBuilderPage() {
                           <p className="text-xs text-gray-500 mb-1">Best For</p>
                           <div className="flex flex-wrap gap-1">
                             {system.best_for?.slice(0, 2).map((use: string, idx: number) => (
-                              <span key={idx} className="text-xs text-gray-700 dark:text-gray-300">
+                              <span key={idx} className="text-xs text-gray-700 dark:text-zinc-400">
                                 {use}{idx < 1 ? ',' : ''}
                               </span>
                             ))}
@@ -468,7 +468,7 @@ export default function PackageBuilderPage() {
 
                         <div>
                           <p className="text-xs text-gray-500 mb-1">Key Features</p>
-                          <ul className="text-xs text-gray-600 dark:text-gray-400 space-y-1">
+                          <ul className="text-xs text-gray-600 dark:text-zinc-500 space-y-1">
                             {system.features?.slice(0, 3).map((feature: string, idx: number) => (
                               <li key={idx} className="flex items-start gap-1">
                                 <Check className="h-3 w-3 text-green-600 mt-0.5 flex-shrink-0" />
@@ -479,7 +479,7 @@ export default function PackageBuilderPage() {
                         </div>
                       </div>
 
-                      <div className="pt-4 border-t border-gray-200 dark:border-gray-700">
+                      <div className="pt-4 border-t border-gray-200 dark:border-zinc-800">
                         <p className="text-xs text-gray-500 mb-1">Price Range</p>
                         <p className="font-bold text-gray-900 dark:text-white">
                           {system.price_range_aed ? (
@@ -490,7 +490,7 @@ export default function PackageBuilderPage() {
                         </p>
                       </div>
 
-                      <button className="mt-4 w-full px-6 py-3 bg-gray-100 dark:bg-gray-800 group-hover:bg-[#C9A962] text-gray-900 dark:text-white group-hover:text-white rounded-lg font-bold transition-all">
+                      <button className="mt-4 w-full px-6 py-3 bg-gray-100 dark:bg-[#171717] group-hover:bg-[#C9A962] text-gray-900 dark:text-white group-hover:text-white rounded-lg font-bold transition-all">
                         Select {system.name}
                       </button>
                     </div>
@@ -510,7 +510,7 @@ export default function PackageBuilderPage() {
             >
               <button
                 onClick={() => setStep(3)}
-                className="mb-6 flex items-center gap-2 text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:text-white"
+                className="mb-6 flex items-center gap-2 text-gray-600 dark:text-zinc-500 hover:text-gray-900 dark:text-white"
               >
                 <ArrowLeft className="h-5 w-5" />
                 Change control system
@@ -519,7 +519,7 @@ export default function PackageBuilderPage() {
               <h2 className="text-4xl font-bold text-gray-900 dark:text-white mb-4 text-center">
                 Customize Your Package
               </h2>
-              <p className="text-lg text-gray-600 dark:text-gray-400 mb-2 text-center">
+              <p className="text-lg text-gray-600 dark:text-zinc-500 mb-2 text-center">
                 Step 4: Add optional enhancements and upgrades
               </p>
               <p className="text-sm text-gray-500 mb-8 text-center">
@@ -540,7 +540,7 @@ export default function PackageBuilderPage() {
                   if (applicableItems.length === 0) return null
 
                   return (
-                    <div key={category} className="bg-white dark:bg-gray-800 rounded-2xl border-2 border-gray-200 dark:border-gray-700 p-6">
+                    <div key={category} className="bg-white dark:bg-[#171717] rounded-2xl border-2 border-gray-200 dark:border-zinc-800 p-6">
                       <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-4 flex items-center gap-2">
                         {category}
                         <span className="text-sm font-normal text-gray-500">
@@ -562,7 +562,7 @@ export default function PackageBuilderPage() {
                                   ? 'border-[#C9A962] bg-[#C9A962]/5 shadow-lg' 
                                   : isAiRecommended
                                     ? 'border-amber-300 bg-amber-50/50 hover:border-amber-400'
-                                    : 'border-gray-200 dark:border-gray-700 hover:border-gray-400'
+                                    : 'border-gray-200 dark:border-zinc-800 hover:border-gray-400'
                               }`}
                             >
                               {/* AI Recommended Badge */}
@@ -586,7 +586,7 @@ export default function PackageBuilderPage() {
                                   </h4>
                                 </div>
                                 
-                                <p className="text-sm text-gray-600 dark:text-gray-400 mb-3">
+                                <p className="text-sm text-gray-600 dark:text-zinc-500 mb-3">
                                   {item.description}
                                 </p>
 
@@ -602,7 +602,7 @@ export default function PackageBuilderPage() {
                                 )}
                               </div>
 
-                              <div className="flex items-center justify-between pt-3 border-t border-gray-200 dark:border-gray-700">
+                              <div className="flex items-center justify-between pt-3 border-t border-gray-200 dark:border-zinc-800">
                                 <span className={`text-xs px-2 py-1 rounded ${
                                   item.type === 'upgrade' 
                                     ? 'bg-[#C9A962]/10 text-[#A68B4B]' 
@@ -626,7 +626,7 @@ export default function PackageBuilderPage() {
               <div className="flex justify-center gap-4">
                 <button
                   onClick={() => setStep(5)}
-                  className="px-8 py-4 bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 rounded-xl hover:bg-gray-200 font-bold text-lg"
+                  className="px-8 py-4 bg-gray-100 dark:bg-[#171717] text-gray-700 dark:text-zinc-400 rounded-xl hover:bg-gray-200 font-bold text-lg"
                 >
                   Skip Enhancements
                 </button>
@@ -652,7 +652,7 @@ export default function PackageBuilderPage() {
             >
               <button
                 onClick={() => setStep(4)}
-                className="mb-6 flex items-center gap-2 text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:text-white"
+                className="mb-6 flex items-center gap-2 text-gray-600 dark:text-zinc-500 hover:text-gray-900 dark:text-white"
               >
                 <ArrowLeft className="h-5 w-5" />
                 Back to enhancements
@@ -661,7 +661,7 @@ export default function PackageBuilderPage() {
               <h2 className="text-4xl font-bold text-gray-900 dark:text-white mb-4 text-center">
                 Choose Your Brands
               </h2>
-              <p className="text-lg text-gray-600 dark:text-gray-400 mb-2 text-center">
+              <p className="text-lg text-gray-600 dark:text-zinc-500 mb-2 text-center">
                 Step 5: Select preferred equipment brands
               </p>
               {selectedControlSystem && (
@@ -705,12 +705,12 @@ export default function PackageBuilderPage() {
                     const defaultOption = category.options?.[0] || null
                     
                     return (
-                      <div key={category.id} className="bg-white dark:bg-gray-800 rounded-2xl border-2 border-gray-200 dark:border-gray-700 p-6">
+                      <div key={category.id} className="bg-white dark:bg-[#171717] rounded-2xl border-2 border-gray-200 dark:border-zinc-800 p-6">
                         <div className="mb-6">
                           <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-2">
                             {category.product_type}
                           </h3>
-                          <p className="text-sm text-gray-600 dark:text-gray-400">{category.description}</p>
+                          <p className="text-sm text-gray-600 dark:text-zinc-500">{category.description}</p>
                         </div>
 
                         <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
@@ -730,7 +730,7 @@ export default function PackageBuilderPage() {
                                 className={`relative rounded-xl border-2 p-5 cursor-pointer transition-all ${
                                   isSelected
                                     ? 'border-[#C9A962] bg-[#C9A962]/5 shadow-lg' 
-                                    : 'border-gray-200 dark:border-gray-700 hover:border-gray-400'
+                                    : 'border-gray-200 dark:border-zinc-800 hover:border-gray-400'
                                 }`}
                               >
                                 {isSelected && (
@@ -749,7 +749,7 @@ export default function PackageBuilderPage() {
                                   <h4 className="font-bold text-lg text-gray-900 dark:text-white mb-1">
                                     {option.brand}
                                   </h4>
-                                  <p className="text-sm text-gray-600 dark:text-gray-400 mb-3">{option.model}</p>
+                                  <p className="text-sm text-gray-600 dark:text-zinc-500 mb-3">{option.model}</p>
 
                                   <ul className="text-xs text-gray-500 space-y-1">
                                     {option.features.slice(0, 3).map((feature: string, fidx: number) => (
@@ -761,7 +761,7 @@ export default function PackageBuilderPage() {
                                   </ul>
                                 </div>
 
-                                <div className="pt-3 border-t border-gray-200 dark:border-gray-700 text-center">
+                                <div className="pt-3 border-t border-gray-200 dark:border-zinc-800 text-center">
                                   <span className={`font-bold text-lg ${
                                     option.price_adjustment === 0 
                                       ? 'text-green-600' 
@@ -784,7 +784,7 @@ export default function PackageBuilderPage() {
               <div className="flex justify-center gap-4">
                 <button
                   onClick={() => setStep(6)}
-                  className="px-8 py-4 bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 rounded-xl hover:bg-gray-200 font-bold text-lg"
+                  className="px-8 py-4 bg-gray-100 dark:bg-[#171717] text-gray-700 dark:text-zinc-400 rounded-xl hover:bg-gray-200 font-bold text-lg"
                 >
                   Use Default Brands
                 </button>
@@ -810,7 +810,7 @@ export default function PackageBuilderPage() {
             >
               <button
                 onClick={() => setStep(5)}
-                className="mb-6 flex items-center gap-2 text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:text-white"
+                className="mb-6 flex items-center gap-2 text-gray-600 dark:text-zinc-500 hover:text-gray-900 dark:text-white"
               >
                 <ArrowLeft className="h-5 w-5" />
                 Back to brand selection
@@ -819,7 +819,7 @@ export default function PackageBuilderPage() {
               <h2 className="text-4xl font-bold text-gray-900 dark:text-white mb-4 text-center">
                 Add Specialty Rooms
               </h2>
-              <p className="text-lg text-gray-600 dark:text-gray-400 mb-2 text-center">
+              <p className="text-lg text-gray-600 dark:text-zinc-500 mb-2 text-center">
                 Step 6: Customize your package
               </p>
               {selectedTier.included_specialty_count > 0 && (
@@ -841,7 +841,7 @@ export default function PackageBuilderPage() {
                       className={`relative rounded-xl border-2 p-6 cursor-pointer transition-all ${
                         isSelected 
                           ? 'border-[#C9A962] bg-[#C9A962]/5 shadow-lg' 
-                          : 'border-gray-200 dark:border-gray-700 hover:border-gray-400'
+                          : 'border-gray-200 dark:border-zinc-800 hover:border-gray-400'
                       }`}
                     >
                       {isSelected && (
@@ -862,7 +862,7 @@ export default function PackageBuilderPage() {
                       </div>
 
                       <h4 className="font-bold text-gray-900 dark:text-white mb-2">{room.name}</h4>
-                      <p className="text-sm text-gray-600 dark:text-gray-400 mb-4 line-clamp-2">{room.description}</p>
+                      <p className="text-sm text-gray-600 dark:text-zinc-500 mb-4 line-clamp-2">{room.description}</p>
                       
                       <div className="flex items-center justify-between">
                         <span className={`font-bold ${isIncluded ? 'text-green-600' : 'text-gray-900'}`}>
@@ -898,7 +898,7 @@ export default function PackageBuilderPage() {
               <h2 className="text-4xl font-bold text-gray-900 dark:text-white mb-4 text-center">
                 Your Custom Package
               </h2>
-              <p className="text-lg text-gray-600 dark:text-gray-400 mb-12 text-center">
+              <p className="text-lg text-gray-600 dark:text-zinc-500 mb-12 text-center">
                 Review and request your quote
               </p>
 
@@ -907,12 +907,12 @@ export default function PackageBuilderPage() {
                 <div>
                   <div className="bg-gradient-to-br from-gray-50 to-gray-100 dark:from-gray-800 dark:to-gray-900 rounded-2xl p-8 space-y-6">
                     <div>
-                      <p className="text-sm text-gray-600 dark:text-gray-400 mb-1">Property Type</p>
+                      <p className="text-sm text-gray-600 dark:text-zinc-500 mb-1">Property Type</p>
                       <p className="text-xl font-bold text-gray-900 dark:text-white">{propertyType?.title}</p>
                     </div>
 
                     <div className="pt-4 border-t">
-                      <p className="text-sm text-gray-600 dark:text-gray-400 mb-1">Package Tier</p>
+                      <p className="text-sm text-gray-600 dark:text-zinc-500 mb-1">Package Tier</p>
                       <p className="text-xl font-bold text-gray-900 dark:text-white">{selectedTier?.tier_name}</p>
                       <p className="text-lg text-[#C9A962] font-semibold">
                         AED {(selectedTier?.base_price_aed / 1000).toFixed(0)}K
@@ -921,7 +921,7 @@ export default function PackageBuilderPage() {
 
                     {selectedControlSystem && (
                       <div className="pt-4 border-t">
-                        <p className="text-sm text-gray-600 dark:text-gray-400 mb-1">Control System</p>
+                        <p className="text-sm text-gray-600 dark:text-zinc-500 mb-1">Control System</p>
                         <p className="text-lg font-bold text-gray-900 dark:text-white">{selectedControlSystem?.name}</p>
                         <p className="text-xs text-gray-500">{selectedControlSystem?.tagline}</p>
                       </div>
@@ -929,12 +929,12 @@ export default function PackageBuilderPage() {
 
                     {selectedEnhancements.length > 0 && (
                       <div className="pt-4 border-t">
-                        <p className="text-sm text-gray-600 dark:text-gray-400 mb-3">
+                        <p className="text-sm text-gray-600 dark:text-zinc-500 mb-3">
                           Enhancements & Upgrades ({selectedEnhancements.length})
                         </p>
                         {selectedEnhancements.map((enhancement) => (
                           <div key={enhancement.id} className="flex justify-between items-center py-2">
-                            <span className="text-sm text-gray-700 dark:text-gray-300">{enhancement.name}</span>
+                            <span className="text-sm text-gray-700 dark:text-zinc-400">{enhancement.name}</span>
                             <span className="text-sm font-bold text-gray-900 dark:text-white">
                               +AED {(enhancement.base_price_aed / 1000).toFixed(0)}K
                             </span>
@@ -945,12 +945,12 @@ export default function PackageBuilderPage() {
 
                     {Object.keys(selectedBrands).length > 0 && (
                       <div className="pt-4 border-t">
-                        <p className="text-sm text-gray-600 dark:text-gray-400 mb-3">
+                        <p className="text-sm text-gray-600 dark:text-zinc-500 mb-3">
                           Brand Customizations ({Object.keys(selectedBrands).length})
                         </p>
                         {Object.values(selectedBrands).map((brand: any, idx: number) => (
                           <div key={idx} className="flex justify-between items-center py-2">
-                            <span className="text-sm text-gray-700 dark:text-gray-300">{brand.brand} - {brand.model}</span>
+                            <span className="text-sm text-gray-700 dark:text-zinc-400">{brand.brand} - {brand.model}</span>
                             <span className={`text-sm font-bold ${
                               brand.price_adjustment === 0 ? 'text-green-600' : 'text-gray-900'
                             }`}>
@@ -967,14 +967,14 @@ export default function PackageBuilderPage() {
 
                     {selectedRooms.length > 0 && (
                       <div className="pt-4 border-t">
-                        <p className="text-sm text-gray-600 dark:text-gray-400 mb-3">
+                        <p className="text-sm text-gray-600 dark:text-zinc-500 mb-3">
                           Specialty Rooms ({selectedRooms.length})
                         </p>
                         {selectedRooms.map((room, idx) => {
                           const isIncluded = idx < (selectedTier?.included_specialty_count || 0)
                           return (
                             <div key={room.slug} className="flex justify-between items-center py-2">
-                              <span className="text-sm text-gray-700 dark:text-gray-300">{room.name}</span>
+                              <span className="text-sm text-gray-700 dark:text-zinc-400">{room.name}</span>
                               <span className={`text-sm font-bold ${isIncluded ? 'text-green-600' : 'text-gray-900'}`}>
                                 {isIncluded ? 'Included' : `+AED ${(room.base_price_aed / 1000).toFixed(0)}K`}
                               </span>
@@ -1002,56 +1002,56 @@ export default function PackageBuilderPage() {
                 <div>
                   <div className="space-y-6">
                     <div>
-                      <label className="block text-sm font-bold text-gray-700 dark:text-gray-300 mb-2">
+                      <label className="block text-sm font-bold text-gray-700 dark:text-zinc-400 mb-2">
                         Full Name *
                       </label>
                       <input
                         type="text"
                         value={contactInfo.name}
                         onChange={(e) => setContactInfo({...contactInfo, name: e.target.value})}
-                        className="w-full px-4 py-4 border-2 border-gray-300 dark:border-gray-600 rounded-xl focus:ring-2 focus:ring-[#C9A962] focus:border-transparent text-lg"
+                        className="w-full px-4 py-4 border-2 border-gray-300 dark:border-zinc-700 rounded-xl focus:ring-2 focus:ring-[#C9A962] focus:border-transparent text-lg"
                         placeholder="John Smith"
                         required
                       />
                     </div>
 
                     <div>
-                      <label className="block text-sm font-bold text-gray-700 dark:text-gray-300 mb-2">
+                      <label className="block text-sm font-bold text-gray-700 dark:text-zinc-400 mb-2">
                         Email *
                       </label>
                       <input
                         type="email"
                         value={contactInfo.email}
                         onChange={(e) => setContactInfo({...contactInfo, email: e.target.value})}
-                        className="w-full px-4 py-4 border-2 border-gray-300 dark:border-gray-600 rounded-xl focus:ring-2 focus:ring-[#C9A962] focus:border-transparent text-lg"
+                        className="w-full px-4 py-4 border-2 border-gray-300 dark:border-zinc-700 rounded-xl focus:ring-2 focus:ring-[#C9A962] focus:border-transparent text-lg"
                         placeholder="john@example.com"
                         required
                       />
                     </div>
 
                     <div>
-                      <label className="block text-sm font-bold text-gray-700 dark:text-gray-300 mb-2">
+                      <label className="block text-sm font-bold text-gray-700 dark:text-zinc-400 mb-2">
                         Phone Number *
                       </label>
                       <input
                         type="tel"
                         value={contactInfo.phone}
                         onChange={(e) => setContactInfo({...contactInfo, phone: e.target.value})}
-                        className="w-full px-4 py-4 border-2 border-gray-300 dark:border-gray-600 rounded-xl focus:ring-2 focus:ring-[#C9A962] focus:border-transparent text-lg"
+                        className="w-full px-4 py-4 border-2 border-gray-300 dark:border-zinc-700 rounded-xl focus:ring-2 focus:ring-[#C9A962] focus:border-transparent text-lg"
                         placeholder="+971 50 123 4567"
                         required
                       />
                     </div>
 
                     <div>
-                      <label className="block text-sm font-bold text-gray-700 dark:text-gray-300 mb-2">
+                      <label className="block text-sm font-bold text-gray-700 dark:text-zinc-400 mb-2">
                         Project Timeline & Notes
                       </label>
                       <textarea
                         value={contactInfo.message}
                         onChange={(e) => setContactInfo({...contactInfo, message: e.target.value})}
                         rows={5}
-                        className="w-full px-4 py-4 border-2 border-gray-300 dark:border-gray-600 rounded-xl focus:ring-2 focus:ring-[#C9A962] focus:border-transparent text-lg"
+                        className="w-full px-4 py-4 border-2 border-gray-300 dark:border-zinc-700 rounded-xl focus:ring-2 focus:ring-[#C9A962] focus:border-transparent text-lg"
                         placeholder="Tell us about your project timeline, specific requirements, or any questions..."
                       />
                     </div>
@@ -1138,16 +1138,16 @@ export default function PackageBuilderPage() {
               <h2 className="text-4xl font-bold text-gray-900 dark:text-white mb-4">
                 Quote Request Submitted! 🎉
               </h2>
-              <p className="text-xl text-gray-600 dark:text-gray-400 mb-8">
+              <p className="text-xl text-gray-600 dark:text-zinc-500 mb-8">
                 Thank you for choosing LEXA. Our team will review your custom package and contact you within 24 hours with a detailed quote.
               </p>
 
               <div className="bg-[#C9A962]/5 rounded-2xl p-8 mb-8">
-                <p className="text-gray-600 dark:text-gray-400 mb-2">Your Selected Package</p>
+                <p className="text-gray-600 dark:text-zinc-500 mb-2">Your Selected Package</p>
                 <p className="text-3xl font-bold text-gray-900 dark:text-white mb-1">{propertyType?.title}</p>
                 <p className="text-2xl font-bold text-[#C9A962]">{selectedTier?.tier_name} Tier</p>
                 <div className="mt-4 pt-4 border-t border-[#C9A962]/20">
-                  <p className="text-gray-600 dark:text-gray-400 mb-1">Estimated Investment</p>
+                  <p className="text-gray-600 dark:text-zinc-500 mb-1">Estimated Investment</p>
                   <p className="text-4xl font-bold text-gray-900 dark:text-white">AED {(calculateTotal() / 1000).toFixed(0)}K</p>
                 </div>
               </div>
@@ -1161,7 +1161,7 @@ export default function PackageBuilderPage() {
                 </button>
                 <button
                   onClick={() => window.location.reload()}
-                  className="px-8 py-4 bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-white rounded-xl hover:bg-gray-200 font-bold text-lg"
+                  className="px-8 py-4 bg-gray-100 dark:bg-[#171717] text-gray-900 dark:text-white rounded-xl hover:bg-gray-200 font-bold text-lg"
                 >
                   Calculate Another Quote
                 </button>

@@ -60,7 +60,7 @@ export default function FAQPage() {
   const totalFAQs = filteredCategories.reduce((sum, cat) => sum + cat.faqs.length, 0)
 
   return (
-    <div className="min-h-screen bg-white dark:bg-gray-950 pt-20" data-testid="faq-page">
+    <div className="min-h-screen bg-white dark:bg-[#050505] pt-20" data-testid="faq-page">
       {/* Hero */}
       <section className="relative overflow-hidden bg-[#0A0A0A] dark:bg-[#050505] text-white py-16 lg:py-24">
         {/* Hero Background Image */}
@@ -84,7 +84,7 @@ export default function FAQPage() {
       </section>
 
       {/* FAQ Content */}
-      <section className="py-16 lg:py-20 bg-white dark:bg-gray-950">
+      <section className="py-16 lg:py-20 bg-white dark:bg-[#050505]">
         <div className="container mx-auto px-5 sm:px-8 lg:px-16 max-w-4xl">
           {loading ? (
             <div className="space-y-6">{[1, 2, 3].map(i => (<div key={i} className="animate-pulse"><div className="h-6 bg-gray-200 rounded w-48 mb-4" /><div className="h-14 bg-gray-100 rounded mb-3" /><div className="h-14 bg-gray-100 rounded" /></div>))}</div>
@@ -102,7 +102,7 @@ export default function FAQPage() {
                     <div className="w-1 h-5 bg-[#C9A962] rounded-full" />
                     {category.name}
                   </h2>
-                  <div className="rounded-xl border border-gray-200 dark:border-gray-800 overflow-hidden divide-y divide-gray-200 dark:divide-gray-800">
+                  <div className="rounded-xl border border-gray-200 dark:border-zinc-800 overflow-hidden divide-y divide-gray-200 dark:divide-gray-800">
                     {category.faqs.map((faq, faqIdx) => {
                       const key = `${catIdx}-${faqIdx}`
                       const isOpen = openItems[key]
@@ -114,7 +114,7 @@ export default function FAQPage() {
                           </button>
                           {isOpen && (
                             <div className="px-5 pb-4">
-                              <p className="text-gray-600 dark:text-gray-400 text-sm leading-relaxed">{faq.answer}</p>
+                              <p className="text-gray-600 dark:text-zinc-500 text-sm leading-relaxed">{faq.answer}</p>
                             </div>
                           )}
                         </div>

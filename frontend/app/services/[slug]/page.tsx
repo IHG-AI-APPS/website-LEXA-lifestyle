@@ -124,7 +124,7 @@ export default function ServiceDetailPage() {
 
   if (loading) {
     return (
-      <div className="min-h-screen bg-white dark:bg-gray-950 pt-20">
+      <div className="min-h-screen bg-white dark:bg-[#050505] pt-20">
         <div className="container mx-auto px-4 py-8">
           <div className="animate-pulse">
             <div className="h-64 bg-gray-200 rounded-xl mb-8" />
@@ -140,7 +140,7 @@ export default function ServiceDetailPage() {
     return (
       <div className="min-h-screen flex flex-col items-center justify-center px-6">
         <h1 className="text-4xl font-bold mb-4">Service Not Found</h1>
-        <p className="text-gray-600 dark:text-gray-400 mb-8">The service you&apos;re looking for doesn&apos;t exist.</p>
+        <p className="text-gray-600 dark:text-zinc-500 mb-8">The service you&apos;re looking for doesn&apos;t exist.</p>
         <Link href="/services"><Button variant="outline">View All Services</Button></Link>
       </div>
     )
@@ -158,7 +158,7 @@ export default function ServiceDetailPage() {
   const allFaqs = service.faqs || service.faq || []
 
   return (
-    <div className="min-h-screen bg-white dark:bg-gray-950 pt-20">
+    <div className="min-h-screen bg-white dark:bg-[#050505] pt-20">
       {/* Hero — Split Layout */}
       <section className="relative overflow-hidden bg-[#0A0A0A] dark:bg-[#050505] text-white">
         <div className="grid grid-cols-1 lg:grid-cols-2 min-h-[480px]">
@@ -194,7 +194,7 @@ export default function ServiceDetailPage() {
       </section>
 
       {/* Service Overview — Content + Features */}
-      <section className="py-16 lg:py-20 bg-white dark:bg-gray-950">
+      <section className="py-16 lg:py-20 bg-white dark:bg-[#050505]">
         <div className="container mx-auto px-5 sm:px-8 lg:px-16">
           <div className="max-w-6xl mx-auto">
             <div className="grid grid-cols-1 lg:grid-cols-5 gap-12">
@@ -203,7 +203,7 @@ export default function ServiceDetailPage() {
                 <h2 className="text-2xl sm:text-3xl font-bold mt-2 mb-6 text-gray-900 dark:text-white">
                   {service.title}
                 </h2>
-                <p className="text-base text-gray-600 dark:text-gray-300 leading-relaxed mb-8">
+                <p className="text-base text-gray-600 dark:text-zinc-400 leading-relaxed mb-8">
                   {service.long_description || service.description}
                 </p>
 
@@ -211,9 +211,9 @@ export default function ServiceDetailPage() {
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                     {service.features.map((feature, i) => (
                       <motion.div key={i} initial={{ opacity: 0, y: 10 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.25, delay: i * 0.03 }}
-                        className="flex items-start gap-3 p-3 rounded-lg bg-gray-50 dark:bg-gray-900 border border-gray-100 dark:border-gray-800 hover:border-[#C9A962]/40 transition-colors">
+                        className="flex items-start gap-3 p-3 rounded-lg bg-gray-50 dark:bg-[#0A0A0A] border border-gray-100 dark:border-zinc-800 hover:border-[#C9A962]/40 transition-colors">
                         <CheckCircle2 size={16} className="text-[#C9A962] flex-shrink-0 mt-0.5" />
-                        <span className="text-sm text-gray-700 dark:text-gray-300">{feature}</span>
+                        <span className="text-sm text-gray-700 dark:text-zinc-400">{feature}</span>
                       </motion.div>
                     ))}
                   </div>
@@ -222,7 +222,7 @@ export default function ServiceDetailPage() {
 
               <div className="lg:col-span-2">
                 <div className="sticky top-28 space-y-5">
-                  <div className="bg-gray-900 dark:bg-gray-800 text-white rounded-xl p-6">
+                  <div className="bg-gray-900 dark:bg-[#171717] text-white rounded-xl p-6">
                     <h3 className="text-lg font-semibold mb-4">Why Choose LEXA?</h3>
                     <div className="space-y-4">
                       {(service.why_choose || [
@@ -268,7 +268,7 @@ export default function ServiceDetailPage() {
 
       {/* Feature Cards — What You Get */}
       {featureCards.length > 0 && (
-        <section className="py-16 lg:py-20 bg-gray-50 dark:bg-gray-900" data-testid="feature-cards-section">
+        <section className="py-16 lg:py-20 bg-gray-50 dark:bg-[#0A0A0A]" data-testid="feature-cards-section">
           <div className="container mx-auto px-5 sm:px-8 lg:px-16">
             <div className="max-w-6xl mx-auto">
               <div className="text-center mb-12">
@@ -280,18 +280,18 @@ export default function ServiceDetailPage() {
                   const IconComp = featureCardIcons[i] || Sparkles
                   return (
                     <motion.div key={i} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.3, delay: i * 0.1 }}
-                      className="bg-white dark:bg-gray-950 rounded-xl overflow-hidden border border-gray-100 dark:border-gray-800 hover:shadow-lg transition-shadow group">
+                      className="bg-white dark:bg-[#050505] rounded-xl overflow-hidden border border-gray-100 dark:border-zinc-800 hover:shadow-lg transition-shadow group">
                       <div className="h-1 bg-gradient-to-r from-[#C9A962] to-[#C9A962]/30" />
                       <div className="p-7">
                         <div className="w-11 h-11 rounded-lg bg-gray-900 dark:bg-[#C9A962] flex items-center justify-center mb-5 group-hover:bg-[#C9A962] transition-colors">
                           <IconComp className="text-white dark:text-gray-900 group-hover:text-gray-900 transition-colors" size={20} />
                         </div>
                         <h3 className="text-lg font-bold mb-2 text-gray-900 dark:text-white">{card.title}</h3>
-                        <p className="text-sm text-gray-600 dark:text-gray-400 mb-5 leading-relaxed">{card.description}</p>
+                        <p className="text-sm text-gray-600 dark:text-zinc-500 mb-5 leading-relaxed">{card.description}</p>
                         {card.benefits?.length > 0 && (
                           <ul className="space-y-2">
                             {card.benefits.map((b, j) => (
-                              <li key={j} className="flex items-start gap-2 text-sm text-gray-700 dark:text-gray-300">
+                              <li key={j} className="flex items-start gap-2 text-sm text-gray-700 dark:text-zinc-400">
                                 <CheckCircle2 size={14} className="text-[#C9A962] flex-shrink-0 mt-0.5" /> {b}
                               </li>
                             ))}
@@ -309,7 +309,7 @@ export default function ServiceDetailPage() {
 
       {/* Process Section */}
       {service.process_steps && service.process_steps.length > 0 && (
-        <section className="bg-white dark:bg-gray-950 py-16 lg:py-20">
+        <section className="bg-white dark:bg-[#050505] py-16 lg:py-20">
           <div className="max-w-7xl mx-auto px-6">
             <div className="text-center mb-8">
               <span className="text-xs uppercase tracking-widest text-[#C9A962] font-semibold">How We Work</span>
@@ -325,20 +325,20 @@ export default function ServiceDetailPage() {
 
       {/* Solutions We Deploy — Image-based clickable cards */}
       {productSolutions.length > 0 && (
-        <section className="py-16 lg:py-20 bg-white dark:bg-gray-950" data-testid="solutions-section">
+        <section className="py-16 lg:py-20 bg-white dark:bg-[#050505]" data-testid="solutions-section">
           <div className="container mx-auto px-5 sm:px-8 lg:px-16">
             <div className="max-w-6xl mx-auto">
               <div className="text-center mb-12">
                 <span className="text-xs uppercase tracking-widest text-[#C9A962] font-semibold">Solutions & Systems</span>
                 <h2 className="text-2xl sm:text-3xl font-bold mt-2 text-gray-900 dark:text-white">Solutions We Deploy</h2>
-                <p className="text-sm text-gray-500 dark:text-gray-400 mt-2 max-w-2xl mx-auto">
+                <p className="text-sm text-gray-500 dark:text-zinc-500 mt-2 max-w-2xl mx-auto">
                   Explore the smart systems and technologies we integrate as part of this service
                 </p>
               </div>
               <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
                 {productSolutions.map((sol, i) => (
                   <motion.div key={sol.slug} initial={{ opacity: 0, scale: 0.95 }} whileInView={{ opacity: 1, scale: 1 }} viewport={{ once: true }} transition={{ duration: 0.3, delay: i * 0.05 }}>
-                    <Link href={`/solutions/${sol.slug}`} className="group block relative rounded-xl overflow-hidden bg-gray-100 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 hover:border-[#C9A962]/60 hover:shadow-xl transition-all" data-testid={`solution-card-${sol.slug}`}>
+                    <Link href={`/solutions/${sol.slug}`} className="group block relative rounded-xl overflow-hidden bg-gray-100 dark:bg-[#171717] border border-gray-200 dark:border-zinc-800 hover:border-[#C9A962]/60 hover:shadow-xl transition-all" data-testid={`solution-card-${sol.slug}`}>
                       <div className="relative aspect-[4/3]">
                         <SafeImage src={sol.image} alt={sol.title} fill className="object-cover group-hover:scale-105 transition-transform duration-500" sizes="(max-width: 768px) 50vw, 25vw" />
                         <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
@@ -360,7 +360,7 @@ export default function ServiceDetailPage() {
 
       {/* Brands */}
       {service.brands && service.brands.length > 0 && (
-        <section className="py-16 lg:py-20 bg-gray-50 dark:bg-gray-900" data-testid="brands-section">
+        <section className="py-16 lg:py-20 bg-gray-50 dark:bg-[#0A0A0A]" data-testid="brands-section">
           <div className="container mx-auto px-5 sm:px-8 lg:px-16">
             <div className="max-w-5xl mx-auto">
               <div className="text-center mb-12">
@@ -371,7 +371,7 @@ export default function ServiceDetailPage() {
                 {service.brands.map((brand, i) => (
                   <motion.div key={i} initial={{ opacity: 0, y: 10 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.2, delay: i * 0.04 }}>
                     <Link href={`/brands/${brand.toLowerCase().replace(/\s+/g, '-')}`}
-                      className="group flex flex-col items-center justify-center p-5 h-24 rounded-xl bg-white dark:bg-gray-950 border border-gray-200 dark:border-gray-800 hover:border-[#C9A962]/60 hover:shadow-md transition-all">
+                      className="group flex flex-col items-center justify-center p-5 h-24 rounded-xl bg-white dark:bg-[#050505] border border-gray-200 dark:border-zinc-800 hover:border-[#C9A962]/60 hover:shadow-md transition-all">
                       <span className="text-base font-bold text-gray-800 dark:text-gray-200 group-hover:text-[#C9A962] transition-colors tracking-wide">{brand}</span>
                       <span className="text-[10px] text-gray-400 uppercase tracking-widest mt-1">Partner</span>
                     </Link>
@@ -385,7 +385,7 @@ export default function ServiceDetailPage() {
 
       {/* Inspirations Gallery */}
       {galleryImages.length > 0 && (
-        <section className="py-16 lg:py-20 bg-white dark:bg-gray-950" data-testid="inspirations-section">
+        <section className="py-16 lg:py-20 bg-white dark:bg-[#050505]" data-testid="inspirations-section">
           <div className="container mx-auto px-5 sm:px-8 lg:px-16">
             <div className="max-w-6xl mx-auto">
               <div className="text-center mb-12">
@@ -410,7 +410,7 @@ export default function ServiceDetailPage() {
 
       {/* Deliverables */}
       {service.deliverables && service.deliverables.length > 0 && (
-        <section className="py-16 lg:py-20 bg-gray-50 dark:bg-gray-900">
+        <section className="py-16 lg:py-20 bg-gray-50 dark:bg-[#0A0A0A]">
           <div className="container mx-auto px-5 sm:px-8 lg:px-16">
             <div className="max-w-6xl mx-auto">
               <div className="text-center mb-12">
@@ -420,9 +420,9 @@ export default function ServiceDetailPage() {
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
                 {service.deliverables.map((item, i) => (
                   <motion.div key={i} initial={{ opacity: 0, y: 10 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.2, delay: i * 0.03 }}
-                    className="flex items-start gap-3 p-4 bg-white dark:bg-gray-950 rounded-lg border border-gray-100 dark:border-gray-800 hover:border-[#C9A962]/40 transition-colors">
+                    className="flex items-start gap-3 p-4 bg-white dark:bg-[#050505] rounded-lg border border-gray-100 dark:border-zinc-800 hover:border-[#C9A962]/40 transition-colors">
                     <CheckCircle2 size={16} className="text-[#C9A962] flex-shrink-0 mt-0.5" />
-                    <span className="text-sm text-gray-700 dark:text-gray-300">{item}</span>
+                    <span className="text-sm text-gray-700 dark:text-zinc-400">{item}</span>
                   </motion.div>
                 ))}
               </div>
@@ -433,7 +433,7 @@ export default function ServiceDetailPage() {
 
       {/* Case Studies */}
       {service.case_studies && service.case_studies.length > 0 && (
-        <section className="py-16 lg:py-20 bg-white dark:bg-gray-950">
+        <section className="py-16 lg:py-20 bg-white dark:bg-[#050505]">
           <div className="container mx-auto px-5 sm:px-8 lg:px-16">
             <div className="max-w-5xl mx-auto">
               <div className="text-center mb-12">
@@ -443,17 +443,17 @@ export default function ServiceDetailPage() {
               <div className="space-y-6">
                 {service.case_studies.map((study, i) => (
                   <motion.div key={i} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
-                    className="bg-gray-50 dark:bg-gray-900 p-7 rounded-xl border border-gray-100 dark:border-gray-800">
+                    className="bg-gray-50 dark:bg-[#0A0A0A] p-7 rounded-xl border border-gray-100 dark:border-zinc-800">
                     <h3 className="text-lg font-bold mb-4 text-gray-900 dark:text-white">{study.title}</h3>
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                       {study.challenge && (
-                        <div><p className="text-xs uppercase tracking-widest text-[#C9A962] font-semibold mb-1">Challenge</p><p className="text-sm text-gray-600 dark:text-gray-400">{study.challenge}</p></div>
+                        <div><p className="text-xs uppercase tracking-widest text-[#C9A962] font-semibold mb-1">Challenge</p><p className="text-sm text-gray-600 dark:text-zinc-500">{study.challenge}</p></div>
                       )}
                       {study.solution && (
-                        <div><p className="text-xs uppercase tracking-widest text-[#C9A962] font-semibold mb-1">Solution</p><p className="text-sm text-gray-600 dark:text-gray-400">{study.solution}</p></div>
+                        <div><p className="text-xs uppercase tracking-widest text-[#C9A962] font-semibold mb-1">Solution</p><p className="text-sm text-gray-600 dark:text-zinc-500">{study.solution}</p></div>
                       )}
                       {study.result && (
-                        <div><p className="text-xs uppercase tracking-widest text-[#C9A962] font-semibold mb-1">Result</p><p className="text-sm text-gray-700 dark:text-gray-300 font-medium">{study.result}</p></div>
+                        <div><p className="text-xs uppercase tracking-widest text-[#C9A962] font-semibold mb-1">Result</p><p className="text-sm text-gray-700 dark:text-zinc-400 font-medium">{study.result}</p></div>
                       )}
                     </div>
                   </motion.div>
@@ -466,7 +466,7 @@ export default function ServiceDetailPage() {
 
       {/* FAQ */}
       {allFaqs.length > 0 && (
-        <section className="py-16 lg:py-20 bg-gray-50 dark:bg-gray-900">
+        <section className="py-16 lg:py-20 bg-gray-50 dark:bg-[#0A0A0A]">
           <div className="container mx-auto px-5 sm:px-8 lg:px-16">
             <div className="max-w-4xl mx-auto">
               <div className="text-center mb-12">
@@ -475,9 +475,9 @@ export default function ServiceDetailPage() {
               </div>
               <div className="space-y-4">
                 {allFaqs.map((faq, i) => (
-                  <div key={i} className="bg-white dark:bg-gray-950 p-6 rounded-xl border border-gray-100 dark:border-gray-800">
+                  <div key={i} className="bg-white dark:bg-[#050505] p-6 rounded-xl border border-gray-100 dark:border-zinc-800">
                     <h3 className="text-base font-semibold mb-2 text-gray-900 dark:text-white">{faq.question}</h3>
-                    <p className="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">{faq.answer}</p>
+                    <p className="text-sm text-gray-600 dark:text-zinc-500 leading-relaxed">{faq.answer}</p>
                   </div>
                 ))}
               </div>

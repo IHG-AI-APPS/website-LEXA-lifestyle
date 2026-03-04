@@ -61,13 +61,13 @@ export default function ProductCategories() {
     <section className="py-24 md:py-32 bg-white">
       <div className="container mx-auto px-4 md:px-8 max-w-7xl">
         <div className="mb-16">
-          <span className="text-xs md:text-sm tracking-[0.2em] uppercase text-gray-600 dark:text-gray-400 font-bold block mb-6">
+          <span className="text-xs md:text-sm tracking-[0.2em] uppercase text-gray-600 dark:text-zinc-500 font-bold block mb-6">
             Product Catalog
           </span>
           <h2 className="text-4xl md:text-5xl font-heading font-semibold tracking-tight text-black mb-6">
             CATEGORIES
           </h2>
-          <p className="text-base md:text-lg text-gray-600 dark:text-gray-400 max-w-2xl">
+          <p className="text-base md:text-lg text-gray-600 dark:text-zinc-500 max-w-2xl">
             Browse by equipment type to find the perfect components for your system.
           </p>
         </div>
@@ -82,7 +82,7 @@ export default function ProductCategories() {
               transition={{ duration: 0.6, delay: index * 0.1 }}
             >
               <Link href={`/products?category=${category.slug}`} className="group block">
-                <div className="relative h-64 overflow-hidden mb-4 bg-gray-100 dark:bg-gray-800">
+                <div className="relative h-64 overflow-hidden mb-4 bg-gray-100 dark:bg-[#171717]">
                   <SafeImage
                     src={category.image}
                     alt={category.name}
@@ -96,7 +96,7 @@ export default function ProductCategories() {
                     </h3>
                   </div>
                 </div>
-                <p className="text-sm text-gray-600 dark:text-gray-400 group-hover:text-black transition-colors">
+                <p className="text-sm text-gray-600 dark:text-zinc-500 group-hover:text-black transition-colors">
                   {category.description}
                 </p>
               </Link>

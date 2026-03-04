@@ -62,7 +62,7 @@ export default function ProofBar() {
                   className="group"
                 >
                   <div className="flex items-center gap-6 py-6 border-b border-gray-800 group-hover:border-gray-700 transition-colors duration-300">
-                    <span className="text-xs text-gray-600 dark:text-gray-400 font-mono tracking-wider w-8">
+                    <span className="text-xs text-gray-600 dark:text-zinc-500 font-mono tracking-wider w-8">
                       {String(index + 1).padStart(2, '0')}
                     </span>
                     <span className="text-2xl font-medium text-white tracking-wide group-hover:text-gray-300 transition-colors duration-300">

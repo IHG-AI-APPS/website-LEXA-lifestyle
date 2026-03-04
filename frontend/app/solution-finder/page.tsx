@@ -239,7 +239,7 @@ export default function SolutionFinderPage() {
       {!showResults ? (
         <>
           {/* Header */}
-          <section className="py-12 bg-gray-50 border-b border-gray-200 dark:border-gray-700">
+          <section className="py-12 bg-gray-50 border-b border-gray-200 dark:border-zinc-800">
             <div className="container mx-auto px-5 sm:px-8 lg:px-16">
               <div className="max-w-4xl mx-auto">
                 <div className="flex items-center justify-between mb-6">
@@ -295,7 +295,7 @@ export default function SolutionFinderPage() {
                       {currentQuestion.question}
                     </h2>
                     {currentQuestion.subtitle && (
-                      <p className="text-xl text-gray-600 dark:text-gray-400 mb-12">
+                      <p className="text-xl text-gray-600 dark:text-zinc-500 mb-12">
                         {currentQuestion.subtitle}
                       </p>
                     )}
@@ -309,7 +309,7 @@ export default function SolutionFinderPage() {
                           className={`p-6 border-2 text-left transition-all duration-300 ${
                             currentAnswer === answer.value
                               ? 'border-charcoal bg-gray-50'
-                              : 'border-gray-200 dark:border-gray-700 hover:border-gray-400'
+                              : 'border-gray-200 dark:border-zinc-800 hover:border-gray-400'
                           }`}
                         >
                           <div className="flex items-start gap-4">
@@ -319,7 +319,7 @@ export default function SolutionFinderPage() {
                             <div className="flex-1">
                               <div className="font-medium text-lg mb-1">{answer.label}</div>
                               {answer.description && (
-                                <div className="text-sm text-gray-600 dark:text-gray-400">{answer.description}</div>
+                                <div className="text-sm text-gray-600 dark:text-zinc-500">{answer.description}</div>
                               )}
                             </div>
                             {currentAnswer === answer.value && (
@@ -366,7 +366,7 @@ export default function SolutionFinderPage() {
         /* Results Page */
         <>
           {/* Results Header */}
-          <section className="py-20 bg-gray-50 dark:bg-gray-800">
+          <section className="py-20 bg-gray-50 dark:bg-[#171717]">
             <div className="container mx-auto px-5 sm:px-8 lg:px-16">
               <div className="max-w-6xl mx-auto text-center">
                 <motion.div
@@ -386,7 +386,7 @@ export default function SolutionFinderPage() {
 
                   <div className="h-px w-32 bg-gradient-to-r from-platinum to-transparent mx-auto mb-8" />
 
-                  <p className="text-xl text-gray-600 dark:text-gray-400 font-normal max-w-2xl mx-auto">
+                  <p className="text-xl text-gray-600 dark:text-zinc-500 font-normal max-w-2xl mx-auto">
                     Based on your answers, here are the smart living solutions we recommend for you.
                   </p>
                 </motion.div>
@@ -407,7 +407,7 @@ export default function SolutionFinderPage() {
                       transition={{ duration: 0.6, delay: 0.2 }}
                     >
                       <Link href={`/solutions/${rec.solution.slug}`}>
-                        <div className="group border-2 border-gray-200 dark:border-gray-700 hover:border-charcoal transition-all duration-300 overflow-hidden">
+                        <div className="group border-2 border-gray-200 dark:border-zinc-800 hover:border-charcoal transition-all duration-300 overflow-hidden">
                           {/* Image */}
                           <div className="relative h-64 overflow-hidden">
                             <SafeImage
@@ -431,7 +431,7 @@ export default function SolutionFinderPage() {
                             <h3 className="text-2xl font-semibold mb-3">
                               {rec.solution.title}
                             </h3>
-                            <p className="text-gray-600 dark:text-gray-400 mb-4">
+                            <p className="text-gray-600 dark:text-zinc-500 mb-4">
                               {rec.solution.description}
                             </p>
 
@@ -469,9 +469,9 @@ export default function SolutionFinderPage() {
                   transition={{ delay: 0.6 }}
                   className="text-center space-y-6"
                 >
-                  <div className="glass border border-gray-200 dark:border-gray-700 p-8">
+                  <div className="glass border border-gray-200 dark:border-zinc-800 p-8">
                     <h3 className="text-2xl font-semibold mb-4">Ready to get started?</h3>
-                    <p className="text-gray-600 dark:text-gray-400 mb-6">
+                    <p className="text-gray-600 dark:text-zinc-500 mb-6">
                       Book a free consultation with our experts to discuss your personalized smart living solution.
                     </p>
                     <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -485,7 +485,7 @@ export default function SolutionFinderPage() {
                       <Button
                         size="lg"
                         variant="outline"
-                        className="border-gray-300 dark:border-gray-600 px-10 py-6"
+                        className="border-gray-300 dark:border-zinc-700 px-10 py-6"
                         onClick={handleRestart}
                       >
                         Retake Quiz

@@ -86,7 +86,7 @@ export default function LexaEvolvesPage() {
 
   return (
     <>
-      <div className="min-h-screen bg-white dark:bg-gray-950 pt-20" data-testid="lexa-evolves-page">
+      <div className="min-h-screen bg-white dark:bg-[#050505] pt-20" data-testid="lexa-evolves-page">
         {/* Hero Section */}
         <section className="relative overflow-hidden bg-[#0A0A0A] dark:bg-[#050505] text-white py-16 lg:py-24">
           <div className="container mx-auto px-5 sm:px-8 lg:px-16 relative z-10">
@@ -110,7 +110,7 @@ export default function LexaEvolvesPage() {
         </section>
 
         {/* Evolution Stages */}
-        <section className="py-20 bg-gray-50 dark:bg-gray-800">
+        <section className="py-20 bg-gray-50 dark:bg-[#171717]">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -122,7 +122,7 @@ export default function LexaEvolvesPage() {
               <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4 text-[#1A1A1A] dark:text-white">
                 Four Stages of Evolution
               </h2>
-              <p className="text-base sm:text-lg text-gray-600 dark:text-gray-400 max-w-3xl mx-auto">
+              <p className="text-base sm:text-lg text-gray-600 dark:text-zinc-500 max-w-3xl mx-auto">
                 Your smart home journey, from foundation to full intelligence
               </p>
             </motion.div>
@@ -135,7 +135,7 @@ export default function LexaEvolvesPage() {
                   whileInView={{ opacity: 1, x: 0 }}
                   transition={{ duration: 0.6, delay: 0.2 }}
                   viewport={{ once: true }}
-                  className="bg-white dark:bg-gray-800 p-8 border-2 border-gray-200 dark:border-gray-700 hover:border-[#B8983F] transition-all"
+                  className="bg-white dark:bg-[#171717] p-8 border-2 border-gray-200 dark:border-zinc-800 hover:border-[#B8983F] transition-all"
                 >
                   <div className="flex items-start gap-6">
                     <div className="flex-shrink-0">
@@ -150,16 +150,16 @@ export default function LexaEvolvesPage() {
                           {stage.stage}
                         </span>
                       </div>
-                      <p className="text-gray-600 dark:text-gray-400 mb-4">{stage.description}</p>
+                      <p className="text-gray-600 dark:text-zinc-500 mb-4">{stage.description}</p>
                       <div className="grid grid-cols-2 md:grid-cols-4 gap-3 mb-4">
                         {stage.features.map((feature) => (
                           <div key={feature} className="flex items-start gap-2">
                             <CheckCircle2 className="h-4 w-4 text-[#B8983F] flex-shrink-0 mt-0.5" />
-                            <span className="text-sm text-gray-700 dark:text-gray-300">{feature}</span>
+                            <span className="text-sm text-gray-700 dark:text-zinc-400">{feature}</span>
                           </div>
                         ))}
                       </div>
-                      <div className="inline-block px-4 py-2 bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 text-sm font-semibold">
+                      <div className="inline-block px-4 py-2 bg-gray-100 dark:bg-[#171717] text-gray-700 dark:text-zinc-400 text-sm font-semibold">
                         Investment: {stage.investment}
                       </div>
                     </div>
@@ -203,7 +203,7 @@ export default function LexaEvolvesPage() {
                       </div>
                       <div>
                         <h3 className="text-xl font-bold mb-2 text-[#1A1A1A] dark:text-white">{benefit.title}</h3>
-                        <p className="text-gray-600 dark:text-gray-400">{benefit.description}</p>
+                        <p className="text-gray-600 dark:text-zinc-500">{benefit.description}</p>
                       </div>
                     </div>
                   </motion.div>
@@ -214,7 +214,7 @@ export default function LexaEvolvesPage() {
         </section>
 
         {/* Timeline */}
-        <section className="py-20 bg-gray-50 dark:bg-gray-800">
+        <section className="py-20 bg-gray-50 dark:bg-[#171717]">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -236,7 +236,7 @@ export default function LexaEvolvesPage() {
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: 0.2 }}
                   viewport={{ once: true }}
-                  className="bg-white dark:bg-gray-800 p-6 text-center border-2 border-gray-200 dark:border-gray-700"
+                  className="bg-white dark:bg-[#171717] p-6 text-center border-2 border-gray-200 dark:border-zinc-800"
                 >
                   <div className="text-3xl font-bold text-[#B8983F] mb-2">{milestone.year}</div>
                   <div className="text-lg font-semibold text-[#1A1A1A] dark:text-white mb-2">{milestone.focus}</div>
@@ -267,7 +267,7 @@ export default function LexaEvolvesPage() {
               <Button
                 size="lg"
                 onClick={() => setShowConsultationForm(true)}
-                className="bg-white text-[#1A1A1A] dark:text-white hover:bg-gray-100 dark:bg-gray-800 px-8 py-6 text-sm font-semibold uppercase tracking-wider"
+                className="bg-white text-[#1A1A1A] dark:text-white hover:bg-gray-100 dark:bg-[#171717] px-8 py-6 text-sm font-semibold uppercase tracking-wider"
               >
                 Plan Your Journey
                 <ArrowRight className="ml-2 h-4 w-4" />

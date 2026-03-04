@@ -119,11 +119,11 @@ export default function SmartRecommendations({
               </span>
             </div>
             <div>
-              <h2 className="text-lg font-bold text-gray-900 dark:text-white dark:text-white flex items-center gap-2">
+              <h2 className="text-lg font-bold text-gray-900 dark:text-white flex items-center gap-2">
                 {language === 'ar' ? 'مُقترح لك' : 'Recommended for You'}
                 <span className="text-lg">{clusterIcons[interestCluster] || '💡'}</span>
               </h2>
-              <p className="text-sm text-gray-500 dark:text-gray-400">
+              <p className="text-sm text-gray-500 dark:text-zinc-500">
                 {message || (language === 'ar' ? 'بناءً على اهتماماتك' : 'Based on your interests')}
               </p>
             </div>
@@ -150,7 +150,7 @@ export default function SmartRecommendations({
                   transition={{ delay: index * 0.1 }}
                 >
                   <Link href={`/solutions/${rec.slug}`}>
-                    <div className="group relative bg-white dark:bg-gray-800 rounded-xl overflow-hidden shadow-sm hover:shadow-lg transition-all duration-300 border border-gray-100 dark:border-gray-800 dark:border-gray-700">
+                    <div className="group relative bg-white dark:bg-[#171717] rounded-xl overflow-hidden shadow-sm hover:shadow-lg transition-all duration-300 border border-gray-100 dark:border-zinc-800">
                       <div className="relative h-24 overflow-hidden">
                         <SafeImage
                           src={getImageUrl(rec.image)}
@@ -183,7 +183,7 @@ export default function SmartRecommendations({
                   transition={{ delay: index * 0.1 }}
                 >
                   <Link href={`/solutions/${rec.slug}`}>
-                    <div className="group relative bg-white dark:bg-gray-800 rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100 dark:border-gray-800 dark:border-gray-700 h-full">
+                    <div className="group relative bg-white dark:bg-[#171717] rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100 dark:border-zinc-800 h-full">
                       {/* Confidence Badge */}
                       <div className="absolute top-3 right-3 z-10 px-2 py-1 bg-[#C9A962]/90 backdrop-blur-sm rounded-full text-[10px] font-bold text-[#1A1A1A]">
                         {Math.round(rec.confidence * 100)}% match
@@ -204,10 +204,10 @@ export default function SmartRecommendations({
                         <span className="text-[10px] uppercase tracking-wider text-[#C9A962] font-semibold">
                           {rec.category}
                         </span>
-                        <h3 className="font-bold text-gray-900 dark:text-white dark:text-white text-sm mt-1 mb-2 group-hover:text-[#C9A962] transition-colors line-clamp-1">
+                        <h3 className="font-bold text-gray-900 dark:text-white text-sm mt-1 mb-2 group-hover:text-[#C9A962] transition-colors line-clamp-1">
                           {rec.title}
                         </h3>
-                        <p className="text-xs text-gray-500 dark:text-gray-400 line-clamp-2 mb-3">
+                        <p className="text-xs text-gray-500 dark:text-zinc-500 line-clamp-2 mb-3">
                           {rec.description}
                         </p>
                         <div className="flex items-center gap-1.5 text-xs text-gray-400 dark:text-gray-500">
@@ -237,7 +237,7 @@ export default function SmartRecommendations({
                   className="flex-shrink-0 w-72 snap-start"
                 >
                   <Link href={`/solutions/${rec.slug}`}>
-                    <div className="group relative bg-white dark:bg-gray-800 rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100 dark:border-gray-800 dark:border-gray-700">
+                    <div className="group relative bg-white dark:bg-[#171717] rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100 dark:border-zinc-800">
                       {/* AI Badge */}
                       <div className="absolute top-3 left-3 z-10 flex items-center gap-1.5 px-2.5 py-1 bg-black/70 backdrop-blur-sm rounded-full">
                         <Sparkles className="h-3 w-3 text-[#C9A962]" />
@@ -258,26 +258,26 @@ export default function SmartRecommendations({
                         
                         {/* Category chip on image */}
                         <div className="absolute bottom-3 left-3">
-                          <span className="px-2.5 py-1 bg-white/90 dark:bg-gray-900/90 backdrop-blur-sm rounded-md text-[10px] font-semibold text-gray-700 dark:text-gray-300 dark:text-gray-300 uppercase tracking-wider">
+                          <span className="px-2.5 py-1 bg-white/90 dark:bg-[#0A0A0A]/90 backdrop-blur-sm rounded-md text-[10px] font-semibold text-gray-700 dark:text-zinc-400 uppercase tracking-wider">
                             {rec.category}
                           </span>
                         </div>
                       </div>
                       
                       <div className="p-4">
-                        <h3 className="font-bold text-gray-900 dark:text-white dark:text-white text-base mb-2 group-hover:text-[#C9A962] transition-colors line-clamp-1">
+                        <h3 className="font-bold text-gray-900 dark:text-white text-base mb-2 group-hover:text-[#C9A962] transition-colors line-clamp-1">
                           {rec.title}
                         </h3>
-                        <p className="text-sm text-gray-500 dark:text-gray-400 line-clamp-2 mb-3">
+                        <p className="text-sm text-gray-500 dark:text-zinc-500 line-clamp-2 mb-3">
                           {rec.description}
                         </p>
                         
                         {/* Recommendation reason */}
-                        <div className="flex items-center gap-2 pt-3 border-t border-gray-100 dark:border-gray-800 dark:border-gray-700">
+                        <div className="flex items-center gap-2 pt-3 border-t border-gray-100 dark:border-zinc-800">
                           <div className="p-1.5 bg-[#E8DCC8]/20 dark:bg-[#E8DCC8]/10 rounded-md">
                             <Lightbulb className="h-3.5 w-3.5 text-[#C9A962]" />
                           </div>
-                          <span className="text-xs text-gray-500 dark:text-gray-400 line-clamp-1">
+                          <span className="text-xs text-gray-500 dark:text-zinc-500 line-clamp-1">
                             {rec.reason}
                           </span>
                         </div>

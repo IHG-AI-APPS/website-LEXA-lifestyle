@@ -245,8 +245,8 @@ export default function CalculatorCardsSection() {
           transition={{ duration: 0.6, delay: 0.5 }}
           className="text-center mt-10"
         >
-          <p className="text-sm text-gray-500 dark:text-gray-400">
-            Need expert guidance? <Link href="/consultation" className="text-[#1A1A1A] dark:text-white dark:text-white font-semibold hover:underline">Schedule a consultation</Link> with our team
+          <p className="text-sm text-gray-500 dark:text-zinc-500">
+            Need expert guidance? <Link href="/consultation" className="text-[#1A1A1A] dark:text-white font-semibold hover:underline">Schedule a consultation</Link> with our team
           </p>
         </motion.div>
       </div>

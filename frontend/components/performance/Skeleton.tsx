@@ -60,7 +60,7 @@ export default function Skeleton({
  */
 export function CardSkeleton({ className = '' }: { className?: string }) {
   return (
-    <div className={`bg-white dark:bg-gray-800 rounded-2xl overflow-hidden shadow-sm ${className}`}>
+    <div className={`bg-white dark:bg-[#171717] rounded-2xl overflow-hidden shadow-sm ${className}`}>
       <Skeleton variant="image" className="w-full h-48" />
       <div className="p-6 space-y-3">
         <Skeleton variant="text" width="60%" />
@@ -100,7 +100,7 @@ export function GridSkeleton({
  */
 export function HeroSkeleton() {
   return (
-    <div className="relative h-[70vh] bg-gray-100 dark:bg-gray-800 animate-pulse">
+    <div className="relative h-[70vh] bg-gray-100 dark:bg-[#171717] animate-pulse">
       <div className="absolute inset-0 flex flex-col items-center justify-center space-y-6 px-4">
         <Skeleton variant="text" width={200} height={12} />
         <Skeleton variant="text" width={400} height={48} className="max-w-full" />
@@ -119,9 +119,9 @@ export function HeroSkeleton() {
  */
 export function TableSkeleton({ rows = 5 }: { rows?: number }) {
   return (
-    <div className="bg-white dark:bg-gray-800 rounded-xl shadow-sm overflow-hidden">
+    <div className="bg-white dark:bg-[#171717] rounded-xl shadow-sm overflow-hidden">
       {/* Header */}
-      <div className="border-b border-gray-100 dark:border-gray-800 p-4">
+      <div className="border-b border-gray-100 dark:border-zinc-800 p-4">
         <div className="flex gap-4">
           {Array.from({ length: 5 }).map((_, i) => (
             <Skeleton key={i} variant="text" width={`${Math.random() * 20 + 10}%`} height={16} />
@@ -177,7 +177,7 @@ export function LoadingSpinner({ size = 'md', className = '' }: { size?: 'sm' | 
   
   return (
     <div 
-      className={`${sizeClasses[size]} border-gray-200 dark:border-gray-700 border-t-[#C9A962] rounded-full animate-spin ${className}`}
+      className={`${sizeClasses[size]} border-gray-200 dark:border-zinc-800 border-t-[#C9A962] rounded-full animate-spin ${className}`}
     />
   )
 }
@@ -187,10 +187,10 @@ export function LoadingSpinner({ size = 'md', className = '' }: { size?: 'sm' | 
  */
 export function PageLoader() {
   return (
-    <div className="fixed inset-0 bg-white dark:bg-gray-900 z-50 flex items-center justify-center">
+    <div className="fixed inset-0 bg-white dark:bg-[#0A0A0A] z-50 flex items-center justify-center">
       <div className="text-center space-y-4">
         <div className="relative">
-          <div className="w-16 h-16 border-4 border-gray-100 dark:border-gray-800 rounded-full animate-pulse" />
+          <div className="w-16 h-16 border-4 border-gray-100 dark:border-zinc-800 rounded-full animate-pulse" />
           <div className="absolute inset-0 flex items-center justify-center">
             <LoadingSpinner size="lg" />
           </div>

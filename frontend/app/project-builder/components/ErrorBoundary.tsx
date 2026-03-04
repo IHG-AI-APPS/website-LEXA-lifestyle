@@ -46,7 +46,7 @@ export default class ErrorBoundary extends Component<Props, State> {
 
       return (
         <div className="min-h-screen flex items-center justify-center bg-gray-50 px-4">
-          <div className="max-w-md w-full bg-white dark:bg-gray-800 rounded-lg shadow-lg p-8 text-center">
+          <div className="max-w-md w-full bg-white dark:bg-[#171717] rounded-lg shadow-lg p-8 text-center">
             <div className="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-4">
               <AlertTriangle className="w-8 h-8 text-red-600" />
             </div>
@@ -55,13 +55,13 @@ export default class ErrorBoundary extends Component<Props, State> {
               Something went wrong
             </h2>
             
-            <p className="text-gray-600 dark:text-gray-400 mb-6">
+            <p className="text-gray-600 dark:text-zinc-500 mb-6">
               We encountered an unexpected error. Don&apos;t worry, your progress has been saved.
             </p>
             
             {this.state.error && (
-              <div className="bg-gray-100 dark:bg-gray-800 rounded p-4 mb-6 text-left">
-                <p className="text-xs font-mono text-gray-700 dark:text-gray-300">
+              <div className="bg-gray-100 dark:bg-[#171717] rounded p-4 mb-6 text-left">
+                <p className="text-xs font-mono text-gray-700 dark:text-zinc-400">
                   {this.state.error.message}
                 </p>
               </div>

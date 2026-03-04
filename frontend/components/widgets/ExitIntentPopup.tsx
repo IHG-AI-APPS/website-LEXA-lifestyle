@@ -203,12 +203,12 @@ export default function ExitIntentPopup() {
             exit={{ opacity: 0, scale: 0.9, y: 20 }}
             className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-4 overflow-y-auto"
           >
-            <div className="bg-white dark:bg-gray-900 rounded-xl shadow-2xl overflow-hidden w-full max-w-sm sm:max-w-md mx-auto my-auto relative">
+            <div className="bg-white dark:bg-[#0A0A0A] rounded-xl shadow-2xl overflow-hidden w-full max-w-sm sm:max-w-md mx-auto my-auto relative">
               {/* Close button */}
               <button
                 onClick={close}
                 data-testid="exit-popup-close"
-                className="absolute top-3 right-3 p-1.5 text-gray-400 hover:text-gray-600 dark:text-gray-400 dark:hover:text-gray-300 hover:bg-gray-100 dark:bg-gray-800 dark:hover:bg-gray-800 rounded-full z-10 transition-colors"
+                className="absolute top-3 right-3 p-1.5 text-gray-400 hover:text-gray-600 dark:text-zinc-500 dark:hover:text-gray-300 hover:bg-gray-100 dark:bg-[#171717] dark:hover:bg-[#171717] rounded-full z-10 transition-colors"
               >
                 <X className="w-4 h-4" />
               </button>
@@ -233,7 +233,7 @@ export default function ExitIntentPopup() {
                       {variant.benefits.slice(0, 3).map((item, i) => (
                         <li key={i} className="flex items-start gap-2">
                           <CheckCircle className="w-4 h-4 text-green-500 flex-shrink-0 mt-0.5" />
-                          <span className="text-gray-700 dark:text-gray-300 dark:text-gray-300 text-xs sm:text-sm">{item}</span>
+                          <span className="text-gray-700 dark:text-zinc-400 text-xs sm:text-sm">{item}</span>
                         </li>
                       ))}
                     </ul>
@@ -276,7 +276,7 @@ export default function ExitIntentPopup() {
                     <CheckCircle className="w-6 h-6 sm:w-7 sm:h-7 text-green-500" />
                   </motion.div>
                   <h3 className="text-lg sm:text-xl font-bold text-gray-800 dark:text-gray-200 dark:text-white mb-1">You're All Set!</h3>
-                  <p className="text-gray-600 dark:text-gray-400 dark:text-gray-400 text-xs sm:text-sm">{variant.success_message}</p>
+                  <p className="text-gray-600 dark:text-zinc-500 text-xs sm:text-sm">{variant.success_message}</p>
                 </div>
               )}
             </div>

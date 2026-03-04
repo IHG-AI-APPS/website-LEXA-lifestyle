@@ -52,7 +52,7 @@ export default function NewsPage() {
   const otherNews = news.filter(n => !n.featured)
 
   return (
-    <div className="min-h-screen bg-white dark:bg-gray-950 pt-20" data-testid="news-page">
+    <div className="min-h-screen bg-white dark:bg-[#050505] pt-20" data-testid="news-page">
       {/* Hero */}
       <section className="relative overflow-hidden bg-[#0A0A0A] dark:bg-[#050505] text-white py-16 lg:py-24">
         <div className="container mx-auto px-5 sm:px-8 lg:px-16 relative z-10">
@@ -70,7 +70,7 @@ export default function NewsPage() {
 
       {/* Featured News */}
       {featuredNews && (
-        <section className="py-16 bg-white border-b border-gray-100 dark:border-gray-800 dark:border-gray-800">
+        <section className="py-16 bg-white border-b border-gray-100 dark:border-zinc-800">
           <div className="container mx-auto px-6 lg:px-12 max-w-7xl">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -78,7 +78,7 @@ export default function NewsPage() {
               transition={{ duration: 0.8, delay: 0.2 }}
               className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center"
             >
-              <div className="relative h-96 lg:h-[500px] overflow-hidden bg-gray-100 dark:bg-gray-800 rounded-lg">
+              <div className="relative h-96 lg:h-[500px] overflow-hidden bg-gray-100 dark:bg-[#171717] rounded-lg">
                 <SafeImage
                   src={featuredNews.image}
                   alt={featuredNews.title}
@@ -97,7 +97,7 @@ export default function NewsPage() {
                   <Calendar size={16} strokeWidth={1.5} />
                   <time>{new Date(featuredNews.published_date).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })}</time>
                 </div>
-                <p className="text-gray-600 dark:text-gray-400 leading-relaxed mb-8">
+                <p className="text-gray-600 dark:text-zinc-500 leading-relaxed mb-8">
                   {featuredNews.excerpt}
                 </p>
                 <Link
@@ -126,7 +126,7 @@ export default function NewsPage() {
                 transition={{ duration: 0.6, delay: 0.2 }}
               >
                 <Link href={`/news/${article.slug}`} className="group block">
-                  <div className="relative h-64 overflow-hidden bg-gray-100 dark:bg-gray-800 rounded-lg mb-6">
+                  <div className="relative h-64 overflow-hidden bg-gray-100 dark:bg-[#171717] rounded-lg mb-6">
                     <SafeImage
                       src={article.image}
                       alt={article.title}
@@ -141,13 +141,13 @@ export default function NewsPage() {
                   <h3 className="text-xl font-bold text-[#1A1A1A] dark:text-white mb-3 group-hover:text-[#9F8B65] transition-colors">
                     {article.title}
                   </h3>
-                  <p className="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">
+                  <p className="text-sm text-gray-600 dark:text-zinc-500 leading-relaxed">
                     {article.excerpt}
                   </p>
                   {article.tags && article.tags.length > 0 && (
                     <div className="flex flex-wrap gap-2 mt-4">
                       {article.tags.map(tag => (
-                        <span key={tag} className="text-xs text-gray-500 border border-gray-200 dark:border-gray-700 px-2 py-1 rounded">
+                        <span key={tag} className="text-xs text-gray-500 border border-gray-200 dark:border-zinc-800 px-2 py-1 rounded">
                           {tag}
                         </span>
                       ))}

@@ -19,9 +19,9 @@ const fallback = {
 
 function renderContent(text: string) {
   return text.split('\n').map((line, i) => {
-    if (line.startsWith('- ')) return <li key={i} className="text-gray-600 dark:text-gray-400">{line.replace(/^- /, '')}</li>
+    if (line.startsWith('- ')) return <li key={i} className="text-gray-600 dark:text-zinc-500">{line.replace(/^- /, '')}</li>
     if (line.trim() === '') return <br key={i} />
-    return <p key={i} className="text-gray-600 dark:text-gray-400 leading-relaxed mb-2">{line}</p>
+    return <p key={i} className="text-gray-600 dark:text-zinc-500 leading-relaxed mb-2">{line}</p>
   })
 }
 
@@ -35,7 +35,7 @@ export default function TermsContent() {
   const sections = cms?.sections?.length ? cms.sections : fallback.sections
 
   return (
-    <div className="min-h-screen bg-white dark:bg-gray-950 pt-20" data-testid="terms-page">
+    <div className="min-h-screen bg-white dark:bg-[#050505] pt-20" data-testid="terms-page">
       {/* Hero */}
       <section className="relative overflow-hidden bg-[#0A0A0A] dark:bg-[#050505] text-white py-16 lg:py-24">
         <div className="container mx-auto px-5 sm:px-8 lg:px-16 relative z-10">
@@ -48,11 +48,11 @@ export default function TermsContent() {
       </section>
 
       {/* Content */}
-      <section className="py-16 lg:py-20 bg-white dark:bg-gray-950">
+      <section className="py-16 lg:py-20 bg-white dark:bg-[#050505]">
         <div className="container mx-auto px-5 sm:px-8 lg:px-16">
           <div className="max-w-4xl mx-auto">
-            <p className="text-base text-gray-600 dark:text-gray-400 leading-relaxed mb-4">{intro}</p>
-            <p className="text-base text-gray-600 dark:text-gray-400 leading-relaxed mb-10">{intro2}</p>
+            <p className="text-base text-gray-600 dark:text-zinc-500 leading-relaxed mb-4">{intro}</p>
+            <p className="text-base text-gray-600 dark:text-zinc-500 leading-relaxed mb-10">{intro2}</p>
             {sections.map((s: any, i: number) => (
               <div key={i} className="mb-10">
                 <h2 className="text-xl font-bold text-gray-900 dark:text-white mb-4">{s.heading}</h2>
@@ -63,7 +63,7 @@ export default function TermsContent() {
                 </div>
               </div>
             ))}
-            <div className="mt-8 p-5 bg-gray-50 dark:bg-gray-900 rounded-xl border border-gray-100 dark:border-gray-800">
+            <div className="mt-8 p-5 bg-gray-50 dark:bg-[#0A0A0A] rounded-xl border border-gray-100 dark:border-zinc-800">
               <p className="text-xs text-gray-500">Last updated: {lastUpdated}</p>
             </div>
           </div>

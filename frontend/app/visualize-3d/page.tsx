@@ -46,7 +46,7 @@ export default function Visualize3DPage() {
                 <Eye className="text-[#C9A962]" size={28} />
               </div>
               <h3 className="font-bold text-lg mb-2">Better Understanding</h3>
-              <p className="text-gray-600 dark:text-gray-400 text-sm">
+              <p className="text-gray-600 dark:text-zinc-500 text-sm">
                 See exactly how devices will look and function in your space
               </p>
             </div>
@@ -56,7 +56,7 @@ export default function Visualize3DPage() {
                 <Lightbulb className="text-[#C9A962] dark:text-[#C9A962]" size={28} />
               </div>
               <h3 className="font-bold text-lg mb-2">Design Confidence</h3>
-              <p className="text-gray-600 dark:text-gray-400 text-sm">
+              <p className="text-gray-600 dark:text-zinc-500 text-sm">
                 Make informed decisions about device placement and aesthetics
               </p>
             </div>
@@ -66,7 +66,7 @@ export default function Visualize3DPage() {
                 <Zap className="text-green-600 dark:text-green-400" size={28} />
               </div>
               <h3 className="font-bold text-lg mb-2">Interactive Experience</h3>
-              <p className="text-gray-600 dark:text-gray-400 text-sm">
+              <p className="text-gray-600 dark:text-zinc-500 text-sm">
                 Click, zoom, and explore every detail of the smart home setup
               </p>
             </div>
@@ -76,7 +76,7 @@ export default function Visualize3DPage() {
                 <Sparkles className="text-[#C9A962]" size={28} />
               </div>
               <h3 className="font-bold text-lg mb-2">Realistic Preview</h3>
-              <p className="text-gray-600 dark:text-gray-400 text-sm">
+              <p className="text-gray-600 dark:text-zinc-500 text-sm">
                 Photorealistic rendering shows true-to-life integration
               </p>
             </div>
@@ -114,10 +114,10 @@ export default function Visualize3DPage() {
                 <div className={`h-32 bg-gradient-to-br ${room.gradient}`} />
                 <div className="p-6">
                   <h3 className="text-xl font-bold mb-2">{room.title}</h3>
-                  <p className="text-gray-600 dark:text-gray-400 text-sm mb-4">{room.description}</p>
+                  <p className="text-gray-600 dark:text-zinc-500 text-sm mb-4">{room.description}</p>
                   <div className="space-y-2">
                     {room.devices.map((device, i) => (
-                      <div key={i} className="flex items-center gap-2 text-sm text-gray-700 dark:text-gray-300">
+                      <div key={i} className="flex items-center gap-2 text-sm text-gray-700 dark:text-zinc-400">
                         <div className="w-2 h-2 bg-green-500 rounded-full" />
                         {device}
                       </div>

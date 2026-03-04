@@ -39,7 +39,7 @@ export default function ContactPage() {
   ]
 
   return (
-    <div className="min-h-screen bg-white dark:bg-gray-950 pt-20" data-testid="contact-page">
+    <div className="min-h-screen bg-white dark:bg-[#050505] pt-20" data-testid="contact-page">
       {/* Hero */}
       <section className="relative overflow-hidden bg-[#0A0A0A] dark:bg-[#050505] text-white py-16 lg:py-24">
         {/* Hero Background Image */}
@@ -57,7 +57,7 @@ export default function ContactPage() {
       </section>
 
       {/* Contact Info Bar */}
-      <section className="py-10 bg-gray-50 dark:bg-gray-900 border-b border-gray-200 dark:border-gray-800">
+      <section className="py-10 bg-gray-50 dark:bg-[#0A0A0A] border-b border-gray-200 dark:border-zinc-800">
         <div className="container mx-auto px-5 sm:px-8 lg:px-16">
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-5xl mx-auto">
             {contactInfo.map((info, i) => {
@@ -67,7 +67,7 @@ export default function ContactPage() {
                   <Icon className="h-5 w-5 text-[#C9A962] flex-shrink-0 mt-0.5" />
                   <div>
                     <h3 className="font-semibold text-gray-900 dark:text-white text-sm mb-0.5">{info.title}</h3>
-                    <p className="text-sm text-gray-600 dark:text-gray-400 whitespace-pre-line">{info.value}</p>
+                    <p className="text-sm text-gray-600 dark:text-zinc-500 whitespace-pre-line">{info.value}</p>
                   </div>
                 </div>
               )
@@ -78,7 +78,7 @@ export default function ContactPage() {
       </section>
 
       {/* Contact Form + Quick Links */}
-      <section className="py-16 lg:py-20 bg-white dark:bg-gray-950">
+      <section className="py-16 lg:py-20 bg-white dark:bg-[#050505]">
         <div className="container mx-auto px-5 sm:px-8 lg:px-16">
           <div className="max-w-6xl mx-auto">
             <div className="grid grid-cols-1 lg:grid-cols-5 gap-12">
@@ -91,20 +91,20 @@ export default function ContactPage() {
                   <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="bg-green-50 dark:bg-green-900/20 p-8 rounded-xl border border-green-200 dark:border-green-800 text-center">
                     <CheckCircle2 className="h-12 w-12 text-green-500 mx-auto mb-4" />
                     <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-2">Message Sent!</h3>
-                    <p className="text-sm text-gray-600 dark:text-gray-400 mb-4">We&apos;ll get back to you within 24 hours.</p>
+                    <p className="text-sm text-gray-600 dark:text-zinc-500 mb-4">We&apos;ll get back to you within 24 hours.</p>
                     <Button variant="outline" onClick={() => setSubmitStatus('idle')}>Send Another</Button>
                   </motion.div>
                 ) : (
                   <form onSubmit={handleSubmit} className="space-y-5" data-testid="contact-form">
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                      <div><label className="text-sm font-medium text-gray-700 dark:text-gray-300 mb-1 block">Name</label><Input value={formData.name} onChange={e => setFormData(p => ({ ...p, name: e.target.value }))} placeholder="Your name" required data-testid="contact-name" /></div>
-                      <div><label className="text-sm font-medium text-gray-700 dark:text-gray-300 mb-1 block">Email</label><Input type="email" value={formData.email} onChange={e => setFormData(p => ({ ...p, email: e.target.value }))} placeholder="your@email.com" required data-testid="contact-email" /></div>
+                      <div><label className="text-sm font-medium text-gray-700 dark:text-zinc-400 mb-1 block">Name</label><Input value={formData.name} onChange={e => setFormData(p => ({ ...p, name: e.target.value }))} placeholder="Your name" required data-testid="contact-name" /></div>
+                      <div><label className="text-sm font-medium text-gray-700 dark:text-zinc-400 mb-1 block">Email</label><Input type="email" value={formData.email} onChange={e => setFormData(p => ({ ...p, email: e.target.value }))} placeholder="your@email.com" required data-testid="contact-email" /></div>
                     </div>
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                      <div><label className="text-sm font-medium text-gray-700 dark:text-gray-300 mb-1 block">Phone</label><Input type="tel" value={formData.phone} onChange={e => setFormData(p => ({ ...p, phone: e.target.value }))} placeholder="+971 50 XXX XXXX" data-testid="contact-phone" /></div>
-                      <div><label className="text-sm font-medium text-gray-700 dark:text-gray-300 mb-1 block">Subject</label><Input value={formData.subject} onChange={e => setFormData(p => ({ ...p, subject: e.target.value }))} placeholder="How can we help?" data-testid="contact-subject" /></div>
+                      <div><label className="text-sm font-medium text-gray-700 dark:text-zinc-400 mb-1 block">Phone</label><Input type="tel" value={formData.phone} onChange={e => setFormData(p => ({ ...p, phone: e.target.value }))} placeholder="+971 50 XXX XXXX" data-testid="contact-phone" /></div>
+                      <div><label className="text-sm font-medium text-gray-700 dark:text-zinc-400 mb-1 block">Subject</label><Input value={formData.subject} onChange={e => setFormData(p => ({ ...p, subject: e.target.value }))} placeholder="How can we help?" data-testid="contact-subject" /></div>
                     </div>
-                    <div><label className="text-sm font-medium text-gray-700 dark:text-gray-300 mb-1 block">Message</label><Textarea value={formData.message} onChange={e => setFormData(p => ({ ...p, message: e.target.value }))} placeholder="Tell us about your project..." rows={5} required data-testid="contact-message" /></div>
+                    <div><label className="text-sm font-medium text-gray-700 dark:text-zinc-400 mb-1 block">Message</label><Textarea value={formData.message} onChange={e => setFormData(p => ({ ...p, message: e.target.value }))} placeholder="Tell us about your project..." rows={5} required data-testid="contact-message" /></div>
                     <Button type="submit" size="lg" className="bg-[#C9A962] text-gray-900 hover:bg-[#C9A962]/90 font-semibold w-full sm:w-auto" disabled={isSubmitting} data-testid="contact-submit">
                       {isSubmitting ? 'Sending...' : 'Send Message'} <Send className="ml-2" size={16} />
                     </Button>
@@ -116,7 +116,7 @@ export default function ContactPage() {
               {/* Sidebar */}
               <div className="lg:col-span-2">
                 <div className="sticky top-28 space-y-5">
-                  <div className="bg-gray-900 dark:bg-gray-800 text-white rounded-xl p-6">
+                  <div className="bg-gray-900 dark:bg-[#171717] text-white rounded-xl p-6">
                     <h3 className="text-lg font-semibold mb-4">Quick Connect</h3>
                     <div className="space-y-4">
                       <a href="https://wa.me/971503267227" target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 p-3 bg-white/10 rounded-lg hover:bg-white/15 transition-colors">
@@ -129,12 +129,12 @@ export default function ContactPage() {
                       </a>
                     </div>
                   </div>
-                  <Link href="/consultation" className="block p-6 bg-gray-50 dark:bg-gray-900 rounded-xl border border-gray-200 dark:border-gray-800 hover:border-[#C9A962]/60 transition-all group">
+                  <Link href="/consultation" className="block p-6 bg-gray-50 dark:bg-[#0A0A0A] rounded-xl border border-gray-200 dark:border-zinc-800 hover:border-[#C9A962]/60 transition-all group">
                     <h3 className="font-semibold text-gray-900 dark:text-white mb-1 group-hover:text-[#C9A962] transition-colors">Book a Consultation</h3>
                     <p className="text-sm text-gray-500">Free site visit or virtual meeting</p>
                     <span className="inline-flex items-center gap-1 text-xs text-[#C9A962] mt-2">Learn more <ArrowRight size={12} /></span>
                   </Link>
-                  <Link href="/experience-centre" className="block p-6 bg-gray-50 dark:bg-gray-900 rounded-xl border border-gray-200 dark:border-gray-800 hover:border-[#C9A962]/60 transition-all group">
+                  <Link href="/experience-centre" className="block p-6 bg-gray-50 dark:bg-[#0A0A0A] rounded-xl border border-gray-200 dark:border-zinc-800 hover:border-[#C9A962]/60 transition-all group">
                     <h3 className="font-semibold text-gray-900 dark:text-white mb-1 group-hover:text-[#C9A962] transition-colors">Visit Our Showroom</h3>
                     <p className="text-sm text-gray-500">5,000+ sq ft experience centre</p>
                     <span className="inline-flex items-center gap-1 text-xs text-[#C9A962] mt-2">Book visit <ArrowRight size={12} /></span>

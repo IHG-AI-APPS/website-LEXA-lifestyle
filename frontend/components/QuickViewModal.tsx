@@ -103,7 +103,7 @@ export default function QuickViewModal({ isOpen, onClose, item }: QuickViewProps
 
             {/* Image */}
             {item.image && (
-              <div className="relative w-full aspect-[16/10] bg-gray-100 dark:bg-gray-800">
+              <div className="relative w-full aspect-[16/10] bg-gray-100 dark:bg-[#171717]">
                 <SafeImage
                   src={item.image}
                   alt={item.title}
@@ -135,7 +135,7 @@ export default function QuickViewModal({ isOpen, onClose, item }: QuickViewProps
 
               {/* Location */}
               {item.location && (
-                <div className="flex items-center gap-1.5 text-sm text-gray-500 dark:text-gray-400 mb-3">
+                <div className="flex items-center gap-1.5 text-sm text-gray-500 dark:text-zinc-500 mb-3">
                   <MapPin size={14} className="text-[#C9A962]" />
                   <span>{item.location}</span>
                 </div>
@@ -143,7 +143,7 @@ export default function QuickViewModal({ isOpen, onClose, item }: QuickViewProps
 
               {/* Description */}
               {item.description && (
-                <p className="text-sm text-gray-600 dark:text-gray-400 leading-relaxed mb-4 line-clamp-3">
+                <p className="text-sm text-gray-600 dark:text-zinc-500 leading-relaxed mb-4 line-clamp-3">
                   {item.description}
                 </p>
               )}
@@ -157,7 +157,7 @@ export default function QuickViewModal({ isOpen, onClose, item }: QuickViewProps
                   </div>
                   <div className="flex flex-wrap gap-1.5">
                     {item.systems.slice(0, 6).map((tag) => (
-                      <span key={tag} className="text-xs px-2 py-1 bg-gray-100 dark:bg-white/5 text-gray-600 dark:text-gray-400 rounded-full border border-gray-200 dark:border-white/10">
+                      <span key={tag} className="text-xs px-2 py-1 bg-gray-100 dark:bg-white/5 text-gray-600 dark:text-zinc-500 rounded-full border border-gray-200 dark:border-white/10">
                         {tag}
                       </span>
                     ))}
@@ -176,7 +176,7 @@ export default function QuickViewModal({ isOpen, onClose, item }: QuickViewProps
                   </div>
                   <div className="flex flex-wrap gap-1.5">
                     {item.features.slice(0, 5).map((f) => (
-                      <span key={f} className="text-xs px-2 py-1 bg-gray-100 dark:bg-white/5 text-gray-600 dark:text-gray-400 rounded-full border border-gray-200 dark:border-white/10">
+                      <span key={f} className="text-xs px-2 py-1 bg-gray-100 dark:bg-white/5 text-gray-600 dark:text-zinc-500 rounded-full border border-gray-200 dark:border-white/10">
                         {f}
                       </span>
                     ))}
@@ -199,7 +199,7 @@ export default function QuickViewModal({ isOpen, onClose, item }: QuickViewProps
                   className={`flex-1 flex items-center justify-center gap-2 py-2.5 text-xs font-medium rounded-full border transition-all ${
                     copied
                       ? 'bg-[#C9A962]/10 text-[#C9A962] border-[#C9A962]/30'
-                      : 'bg-gray-100 dark:bg-white/5 text-gray-600 dark:text-gray-400 border-gray-200 dark:border-white/10 hover:border-[#C9A962]/50 hover:text-[#C9A962]'
+                      : 'bg-gray-100 dark:bg-white/5 text-gray-600 dark:text-zinc-500 border-gray-200 dark:border-white/10 hover:border-[#C9A962]/50 hover:text-[#C9A962]'
                   }`}
                   data-testid="quickview-copy-link"
                 >

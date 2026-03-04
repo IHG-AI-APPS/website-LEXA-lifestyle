@@ -52,11 +52,11 @@ export default function ProjectsPage() {
       <div className="min-h-screen bg-white dark:bg-[#050505] pt-20">
         <div className="container mx-auto px-5 sm:px-8 lg:px-16 py-8">
           <div className="animate-pulse">
-            <div className="h-8 bg-gray-200 dark:bg-gray-800 rounded w-1/4 mb-6"></div>
+            <div className="h-8 bg-gray-200 dark:bg-[#171717] rounded w-1/4 mb-6"></div>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              <div className="h-64 bg-gray-200 dark:bg-gray-800 rounded"></div>
-              <div className="h-64 bg-gray-200 dark:bg-gray-800 rounded"></div>
-              <div className="h-64 bg-gray-200 dark:bg-gray-800 rounded"></div>
+              <div className="h-64 bg-gray-200 dark:bg-[#171717] rounded"></div>
+              <div className="h-64 bg-gray-200 dark:bg-[#171717] rounded"></div>
+              <div className="h-64 bg-gray-200 dark:bg-[#171717] rounded"></div>
             </div>
           </div>
         </div>
@@ -99,14 +99,14 @@ export default function ProjectsPage() {
                 className={`px-6 py-2.5 text-sm font-medium tracking-wide uppercase transition-all duration-300 rounded-full ${
                   filter === f
                     ? 'bg-[#C9A962] text-white'
-                    : 'bg-gray-100 dark:bg-white/5 text-gray-700 dark:text-gray-300 border border-gray-200 dark:border-white/10 hover:border-[#C9A962]/50 hover:text-[#C9A962]'
+                    : 'bg-gray-100 dark:bg-white/5 text-gray-700 dark:text-zinc-400 border border-gray-200 dark:border-white/10 hover:border-[#C9A962]/50 hover:text-[#C9A962]'
                 }`}
               >
                 {f === 'all' ? 'All Projects' : f}
               </button>
             ))}
           </div>
-          <p className="text-center text-sm text-gray-500 dark:text-gray-400 mt-4" data-testid="projects-count">
+          <p className="text-center text-sm text-gray-500 dark:text-zinc-500 mt-4" data-testid="projects-count">
             {filteredProjects.length} project{filteredProjects.length !== 1 ? 's' : ''}
           </p>
         </div>
@@ -170,13 +170,13 @@ export default function ProjectsPage() {
                   <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-2 group-hover:text-[#C9A962] transition-colors" data-testid={`project-title-${index}`}>
                     {project.title}
                   </h3>
-                  <div className="flex items-center gap-1 text-sm text-gray-500 dark:text-gray-400 mb-3">
+                  <div className="flex items-center gap-1 text-sm text-gray-500 dark:text-zinc-500 mb-3">
                     <MapPin size={14} className="text-[#C9A962]" />
                     <span>{project.location}</span>
                   </div>
                   <div className="flex flex-wrap gap-2">
                     {project.systems?.slice(0, 4).map((system: string) => (
-                      <span key={system} className="text-xs px-2 py-1 bg-gray-100 dark:bg-white/5 text-gray-600 dark:text-gray-400 rounded-full border border-gray-200 dark:border-white/10">
+                      <span key={system} className="text-xs px-2 py-1 bg-gray-100 dark:bg-white/5 text-gray-600 dark:text-zinc-500 rounded-full border border-gray-200 dark:border-white/10">
                         {system}
                       </span>
                     ))}
@@ -194,7 +194,7 @@ export default function ProjectsPage() {
           {filteredProjects.length === 0 && (
             <div className="text-center py-16">
               <Layers className="w-12 h-12 text-gray-300 dark:text-gray-600 mx-auto mb-4" />
-              <p className="text-gray-500 dark:text-gray-400 text-lg">No projects found in this category.</p>
+              <p className="text-gray-500 dark:text-zinc-500 text-lg">No projects found in this category.</p>
             </div>
           )}
         </div>

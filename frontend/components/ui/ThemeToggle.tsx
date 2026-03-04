@@ -38,7 +38,7 @@ export function ThemeToggle({ className = '', variant = 'default' }: ThemeToggle
   return (
     <button
       onClick={toggleTheme}
-      className={`relative flex items-center gap-2 px-3 py-2 rounded-full bg-gray-100 dark:bg-gray-800 transition-all duration-300 hover:shadow-md ${className}`}
+      className={`relative flex items-center gap-2 px-3 py-2 rounded-full bg-gray-100 dark:bg-[#171717] transition-all duration-300 hover:shadow-md ${className}`}
       aria-label={`Switch to ${theme === 'light' ? 'dark' : 'light'} mode`}
       data-testid="theme-toggle"
     >

@@ -11,7 +11,7 @@ export default function Step1ProjectType({ projectTypes, selectedType, onSelect 
     <div className="space-y-6">
       <div className="text-center mb-8">
         <h2 className="text-3xl font-bold mb-3">Select Your Project Type</h2>
-        <p className="text-gray-600 dark:text-gray-400 dark:text-gray-400">
+        <p className="text-gray-600 dark:text-zinc-500">
           Choose the category that best describes your property
         </p>
       </div>
@@ -24,7 +24,7 @@ export default function Step1ProjectType({ projectTypes, selectedType, onSelect 
             className={`p-6 border-2 rounded-xl text-left transition-all transform hover:scale-105 ${
               selectedType === type.id
                 ? 'border-black bg-gray-50 shadow-lg'
-                : 'border-gray-200 dark:border-gray-700 hover:border-gray-400'
+                : 'border-gray-200 dark:border-zinc-800 hover:border-gray-400'
             }`}
           >
             <type.icon
@@ -32,7 +32,7 @@ export default function Step1ProjectType({ projectTypes, selectedType, onSelect 
               className={selectedType === type.id ? 'text-black mb-4' : 'text-gray-400 mb-4'}
             />
             <h3 className="text-xl font-bold mb-2">{type.label}</h3>
-            <p className="text-gray-600 dark:text-gray-400 text-sm">{type.description}</p>
+            <p className="text-gray-600 dark:text-zinc-500 text-sm">{type.description}</p>
           </button>
         ))}
       </div>

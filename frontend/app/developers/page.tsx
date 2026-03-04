@@ -141,7 +141,7 @@ export default function DevelopersPage() {
   const selectedResourceData = resources.find(r => r.id === selectedResource)
 
   return (
-    <div className="min-h-screen bg-white dark:bg-gray-950 pt-20" data-testid="developers-page">
+    <div className="min-h-screen bg-white dark:bg-[#050505] pt-20" data-testid="developers-page">
       {/* Hero Section */}
       <section className="relative overflow-hidden bg-[#0A0A0A] dark:bg-[#050505] text-white py-16 lg:py-24">
         {/* Hero Background Image */}
@@ -172,7 +172,7 @@ export default function DevelopersPage() {
         <div className="container mx-auto px-5 sm:px-8 lg:px-16">
           <div className="max-w-4xl mx-auto text-center mb-16">
             <h2 className="text-4xl sm:text-5xl font-bold mb-4 ">Smart Homes = Value-Add, Not Expense</h2>
-            <p className="text-xl text-gray-600 dark:text-gray-400">
+            <p className="text-xl text-gray-600 dark:text-zinc-500">
               Turn automation into a sales advantage
             </p>
           </div>
@@ -186,7 +186,7 @@ export default function DevelopersPage() {
             >
               <TrendingUp size={40} className="text-black mb-4" />
               <h3 className="text-2xl font-bold mb-2">10-15% Sales Premium</h3>
-              <p className="text-gray-700 dark:text-gray-300">
+              <p className="text-gray-700 dark:text-zinc-400">
                 Smart-ready units command higher prices and sell faster
               </p>
             </motion.div>
@@ -200,7 +200,7 @@ export default function DevelopersPage() {
             >
               <Clock size={40} className="text-[#C9A962] mb-4" />
               <h3 className="text-2xl font-bold mb-2">Reduce Support Calls</h3>
-              <p className="text-gray-700 dark:text-gray-300">
+              <p className="text-gray-700 dark:text-zinc-400">
                 Proper documentation = fewer post-handover issues
               </p>
             </motion.div>
@@ -214,7 +214,7 @@ export default function DevelopersPage() {
             >
               <Award size={40} className="text-[#C9A962] mb-4" />
               <h3 className="text-2xl font-bold mb-2">Market Differentiation</h3>
-              <p className="text-gray-700 dark:text-gray-300">
+              <p className="text-gray-700 dark:text-zinc-400">
                 Smart-Ready badge sets you apart from competition
               </p>
             </motion.div>
@@ -228,7 +228,7 @@ export default function DevelopersPage() {
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-16">
               <h2 className="text-4xl sm:text-5xl font-bold mb-4 ">Developer Resources</h2>
-              <p className="text-xl text-gray-600 dark:text-gray-400">
+              <p className="text-xl text-gray-600 dark:text-zinc-500">
                 Everything you need to add smart-home value
               </p>
             </div>
@@ -245,14 +245,14 @@ export default function DevelopersPage() {
                 >
                   <button
                     onClick={() => handleResourceClick(resource.id)}
-                    className="w-full bg-white border-2 border-gray-200 dark:border-gray-700 rounded-2xl p-8 hover:border-[#C9A962] hover:shadow-2xl transition-all transform hover:scale-105 text-left"
+                    className="w-full bg-white border-2 border-gray-200 dark:border-zinc-800 rounded-2xl p-8 hover:border-[#C9A962] hover:shadow-2xl transition-all transform hover:scale-105 text-left"
                   >
                     <div className="inline-flex items-center justify-center w-16 h-16 mb-6 rounded-full bg-[#C9A962]/10">
                       <resource.icon size={32} className="text-[#C9A962]" />
                     </div>
 
                     <h3 className="text-xl font-bold mb-2">{resource.title}</h3>
-                    <p className="text-gray-600 dark:text-gray-400 mb-4">{resource.description}</p>
+                    <p className="text-gray-600 dark:text-zinc-500 mb-4">{resource.description}</p>
 
                     <div className="text-black font-semibold group-hover:underline">
                       Request Access →
@@ -278,7 +278,7 @@ export default function DevelopersPage() {
             <Button
               size="lg"
               onClick={() => setSelectedResource('unit-packages')}
-              className="bg-white text-black hover:bg-gray-100 dark:bg-gray-800 px-10 py-7 text-lg font-semibold uppercase tracking-widest"
+              className="bg-white text-black hover:bg-gray-100 dark:bg-[#171717] px-10 py-7 text-lg font-semibold uppercase tracking-widest"
             >
               Get Started
             </Button>
@@ -292,7 +292,7 @@ export default function DevelopersPage() {
           <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
-            className="bg-white dark:bg-gray-800 rounded-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto"
+            className="bg-white dark:bg-[#171717] rounded-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto"
           >
             {showSuccess ? (
               <div className="p-12 text-center">
@@ -300,10 +300,10 @@ export default function DevelopersPage() {
                   <Check size={40} className="text-green-600" />
                 </div>
                 <h2 className="text-3xl font-bold mb-4">Request Received!</h2>
-                <p className="text-xl text-gray-700 dark:text-gray-300 mb-2">
+                <p className="text-xl text-gray-700 dark:text-zinc-400 mb-2">
                   Our development partnerships team will send you the requested resources and schedule a call to discuss your project.
                 </p>
-                <p className="text-gray-600 dark:text-gray-400">
+                <p className="text-gray-600 dark:text-zinc-500">
                   Check your email at <strong>{formData.email}</strong>
                 </p>
               </div>
@@ -321,13 +321,13 @@ export default function DevelopersPage() {
                 </div>
 
                 <form aria-label="Form" onSubmit={handleSubmit} className="p-8 space-y-6">
-                  <p className="text-gray-700 dark:text-gray-300 bg-gray-50 border-l-4 border-black p-4 rounded">
+                  <p className="text-gray-700 dark:text-zinc-400 bg-gray-50 border-l-4 border-black p-4 rounded">
                     Fill in your details and our partnerships team will send you comprehensive resources tailored to your development.
                   </p>
 
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div>
-                      <label className="block text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">
+                      <label className="block text-sm font-semibold text-gray-700 dark:text-zinc-400 mb-2">
                         Full Name *
                       </label>
                       <Input
@@ -340,7 +340,7 @@ export default function DevelopersPage() {
                     </div>
 
                     <div>
-                      <label className="block text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">
+                      <label className="block text-sm font-semibold text-gray-700 dark:text-zinc-400 mb-2">
                         Company Name *
                       </label>
                       <Input
@@ -355,7 +355,7 @@ export default function DevelopersPage() {
 
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div>
-                      <label className="block text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">
+                      <label className="block text-sm font-semibold text-gray-700 dark:text-zinc-400 mb-2">
                         Email Address *
                       </label>
                       <Input
@@ -368,7 +368,7 @@ export default function DevelopersPage() {
                     </div>
 
                     <div>
-                      <label className="block text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">
+                      <label className="block text-sm font-semibold text-gray-700 dark:text-zinc-400 mb-2">
                         Phone Number *
                       </label>
                       <Input
@@ -382,7 +382,7 @@ export default function DevelopersPage() {
                   </div>
 
                   <div>
-                    <label className="block text-sm font-semibold text-gray-700 dark:text-gray-300 mb-3">
+                    <label className="block text-sm font-semibold text-gray-700 dark:text-zinc-400 mb-3">
                       Project Scale *
                     </label>
                     <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
@@ -394,7 +394,7 @@ export default function DevelopersPage() {
                           className={`p-3 border-2 rounded-lg text-sm font-medium transition-all ${
                             formData.project_scale === scale.label
                               ? 'border-black bg-gray-50 text-black'
-                              : 'border-gray-200 dark:border-gray-700 hover:border-gray-400'
+                              : 'border-gray-200 dark:border-zinc-800 hover:border-gray-400'
                           }`}
                         >
                           {scale.label}
@@ -404,7 +404,7 @@ export default function DevelopersPage() {
                   </div>
 
                   <div>
-                    <label className="block text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">
+                    <label className="block text-sm font-semibold text-gray-700 dark:text-zinc-400 mb-2">
                       Number of Units (Optional)
                     </label>
                     <Input
@@ -416,7 +416,7 @@ export default function DevelopersPage() {
                   </div>
 
                   <div>
-                    <label className="block text-sm font-semibold text-gray-700 dark:text-gray-300 mb-3">
+                    <label className="block text-sm font-semibold text-gray-700 dark:text-zinc-400 mb-3">
                       Project Timeline *
                     </label>
                     <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
@@ -428,7 +428,7 @@ export default function DevelopersPage() {
                           className={`p-3 border-2 rounded-lg text-sm font-medium transition-all ${
                             formData.timeline === timeline.label
                               ? 'border-black bg-gray-50 text-black'
-                              : 'border-gray-200 dark:border-gray-700 hover:border-gray-400'
+                              : 'border-gray-200 dark:border-zinc-800 hover:border-gray-400'
                           }`}
                         >
                           {timeline.label}
@@ -438,7 +438,7 @@ export default function DevelopersPage() {
                   </div>
 
                   <div>
-                    <label className="block text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">
+                    <label className="block text-sm font-semibold text-gray-700 dark:text-zinc-400 mb-2">
                       Project Details (Optional)
                     </label>
                     <Textarea
