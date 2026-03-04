@@ -29,6 +29,13 @@ Complete website overhaul: premium "Dark Luxury" design, 100% dynamic content, a
 - **"View All" button**: Links to /testimonials for full testimonial page
 - **Dramatically reduced footprint** from previous large 3-column layout
 
+### Persona Pages Redesign (Mar 2026)
+- All 4 persona pages (homeowner, architect, developer, commercial) completely redesigned
+- Image-driven layout: 85vh fullscreen hero + 4 alternating image/text showcase sections + CTA section
+- 8 new AI-generated images: luxury villa interior, architecture studio, villa compound, hotel lobby, cinema room, smart lighting bedroom, outdoor pool, security systems
+- Each page has unique hero tagline and contextual solution links
+- Consistent dark luxury theme with charcoal/gold palette
+
 ### Footer Logo Fix (Mar 2026)
 - Footer LEXA logo now matches header logo size (144x56px at lg breakpoint)
 
