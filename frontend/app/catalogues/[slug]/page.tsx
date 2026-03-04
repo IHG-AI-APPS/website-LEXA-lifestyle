@@ -90,7 +90,7 @@ export default function CatalogueViewerPage() {
       </div>
 
       {/* Flipbook Area */}
-      <div className="pt-16 pb-8 flex items-center justify-center min-h-screen">
+      <div className="pt-20 pb-8 flex items-center justify-center min-h-screen">
         <PDFFlipbook pdfUrl={pdfUrl} title={catalogue.title} />
       </div>
     </div>
