@@ -24,8 +24,10 @@ Complete website overhaul: premium "Dark Luxury" design, 100% dynamic content, a
 - Glassmorphism info panels with badge, description, feature chips
 - Cinematic letterbox bars + gradient overlays
 - Floating gold particles (20 animated)
-- Navigation: dots, arrows, keyboard (← → ESC), auto-play (5s)
+- Navigation: dots, arrows, keyboard (left/right/ESC), auto-play (5s)
 - Fullscreen API + header auto-hide when tour active
+- **React Portal rendering** for correct fixed positioning (bypasses ancestor filter/transform issues)
+- Background-image approach for reliable image sizing across viewports
 
 **Procedural Ambient Sound Engine (Web Audio API):**
 - 6 unique soundscapes generated in real-time (zero audio files)
@@ -40,6 +42,11 @@ Complete website overhaul: premium "Dark Luxury" design, 100% dynamic content, a
 - Uses oscillators, filtered noise, LFO modulation, shimmer layers
 - Proper cleanup on component unmount
 
+### Virtual Tour Scaling Fix (Mar 2026)
+- **Root Cause**: Ancestor `filter: blur(0px)` created new containing block, causing `fixed inset-0` to inherit full page height (3064px) instead of viewport (768px)
+- **Fix**: Used `createPortal` to render tour directly in `document.body`, bypassing all ancestor CSS effects
+- **Additional**: Switched to CSS background-image approach for more reliable image sizing with Framer Motion transforms
+
 ## Admin Credentials
 - URL: `/admin/login`, Username: `admin`, Password: `lexa2026`
 
@@ -50,3 +57,5 @@ Complete website overhaul: premium "Dark Luxury" design, 100% dynamic content, a
 
 ## Remaining Backlog
 - "Compare Packages" side-by-side conversion feature
+- Refine Service Worker Caching with more advanced strategies
+- Client Logo Integration (TrustedBy component uses placeholder SVG)

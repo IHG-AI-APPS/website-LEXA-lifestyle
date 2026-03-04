@@ -1,6 +1,7 @@
 'use client'
 
 import { useState, useEffect, useCallback, useRef } from 'react'
+import { createPortal } from 'react-dom'
 import { motion, AnimatePresence } from 'framer-motion'
 import { ChevronLeft, ChevronRight, Maximize2, Minimize2, Volume2, VolumeX, Eye, X } from 'lucide-react'
 import { AmbientSoundEngine } from './AmbientSoundEngine'
@@ -203,12 +204,15 @@ export default function VirtualTour() {
     }
   }
 
+  const [mounted, setMounted] = useState(false)
+  useEffect(() => { setMounted(true) }, [])
+
   const zone = zones[activeZone]
 
   const imageVariants = {
-    enter: (dir: number) => ({ opacity: 0, scale: 1.03, x: dir > 0 ? 60 : -60 }),
+    enter: (dir: number) => ({ opacity: 0, scale: 1.01, x: dir > 0 ? 40 : -40 }),
     center: { opacity: 1, scale: 1, x: 0 },
-    exit: (dir: number) => ({ opacity: 0, scale: 0.97, x: dir > 0 ? -60 : 60 }),
+    exit: (dir: number) => ({ opacity: 0, scale: 0.99, x: dir > 0 ? -40 : 40 }),
   }
 
 
@@ -224,7 +228,8 @@ export default function VirtualTour() {
                   src={zones[0].image}
                   alt="Virtual Tour Preview"
                   className="absolute inset-0 w-full h-full object-cover"
-                  animate={{ scale: [1, 1.04], x: [0, -10] }}
+                  style={{ objectPosition: 'center 65%' }}
+                  animate={{ scale: [1, 1.03], x: [0, -6] }}
                   transition={{ duration: 12, repeat: Infinity, repeatType: 'reverse', ease: 'linear' }}
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-black/20" />
@@ -284,7 +289,7 @@ export default function VirtualTour() {
     )
   }
 
-  return (
+  const tourViewer = (
     <div
       ref={containerRef}
       className="fixed inset-0 z-[9999] bg-black"
@@ -302,13 +307,16 @@ export default function VirtualTour() {
           exit="exit"
           transition={{ duration: 0.8, ease: [0.25, 0.1, 0.25, 1] }}
         >
-          <motion.img
-            src={zone.image}
-            alt={zone.title}
-            className="absolute inset-0 w-full h-full object-cover"
+          <motion.div
+            className="absolute inset-0"
+            style={{
+              backgroundImage: `url(${zone.image})`,
+              backgroundSize: 'cover',
+              backgroundPosition: 'center 60%',
+            }}
             animate={{
-              scale: [1, 1.05],
-              x: zone.panDirection === 'left' ? [0, -15] : [0, 15],
+              scale: [1, 1.04],
+              x: zone.panDirection === 'left' ? [0, -10] : [0, 10],
             }}
             transition={{ duration: 15, ease: 'linear' }}
           />
@@ -526,4 +534,6 @@ export default function VirtualTour() {
       </motion.div>
     </div>
   )
+
+  return mounted ? createPortal(tourViewer, document.body) : null
 }
