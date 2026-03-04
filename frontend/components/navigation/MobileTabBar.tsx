@@ -37,7 +37,7 @@ export default function MobileTabBar() {
     <div className="fixed bottom-0 left-0 right-0 z-50 lg:hidden" data-testid="mobile-tab-bar">
       {/* Floating pill container */}
       <div className="px-4 pb-[env(safe-area-inset-bottom,8px)] pt-0">
-        <nav className="relative bg-[#0A0A0A]/95 backdrop-blur-2xl border border-white/[0.08] rounded-2xl shadow-[0_-4px_30px_rgba(0,0,0,0.6)] mx-auto max-w-sm">
+        <nav className="relative bg-[#0A0A0A]/95 backdrop-blur-2xl border border-white/[0.08] rounded-2xl shadow-[0_-4px_30px_rgba(0,0,0,0.6)] mx-auto max-w-sm" aria-label="Mobile navigation">
           <div className="flex justify-around items-stretch h-[64px]">
             {TABS.map((tab) => {
               const Icon = tab.icon

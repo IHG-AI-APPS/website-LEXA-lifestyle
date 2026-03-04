@@ -81,7 +81,8 @@ export default function ClientLayout({ children }: { children: React.ReactNode }
           {/* Skip to main content - Accessibility */}
           <a 
             href="#main-content" 
-            className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-[100] focus:bg-black focus:text-white focus:px-4 focus:py-2 focus:rounded"
+            className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[10000] focus:bg-[#C9A962] focus:text-[#050505] focus:px-6 focus:py-3 focus:text-xs focus:font-bold focus:tracking-[0.15em] focus:uppercase focus:outline-none focus:shadow-lg"
+            data-testid="skip-to-content"
           >
             Skip to main content
           </a>

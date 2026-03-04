@@ -84,9 +84,9 @@ export default function HomeownerPage() {
               <button
                 onClick={() => setShowForm(true)}
                 data-testid="homeowner-cta-consult"
-                className="group flex items-center gap-2 h-11 px-6 bg-[#C9A962] text-[#050505] text-xs font-bold tracking-[0.15em] uppercase hover:bg-[#D4B872] transition-colors"
+                className="group flex items-center gap-2 h-11 px-5 sm:px-6 bg-[#C9A962] text-[#050505] text-[11px] sm:text-xs font-bold tracking-[0.1em] sm:tracking-[0.15em] uppercase hover:bg-[#D4B872] transition-colors whitespace-nowrap"
               >
-                Private Design Session
+                Design Session
                 <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
               </button>
               <Link href="/experience-centre" className="text-xs tracking-[0.15em] uppercase text-white/40 hover:text-[#C9A962] transition-colors">

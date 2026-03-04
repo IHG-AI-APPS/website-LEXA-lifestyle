@@ -1356,3 +1356,43 @@ input[type="date"]::-webkit-datetime-edit-year-field {
   -ms-overflow-style: none;
   scrollbar-width: none;
 }
+
+
+/* ── Accessibility: Focus Visible ── */
+*:focus-visible {
+  outline: 2px solid #C9A962;
+  outline-offset: 2px;
+}
+
+/* Remove outline on mouse click but keep for keyboard */
+*:focus:not(:focus-visible) {
+  outline: none;
+}
+
+/* Reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* High contrast mode improvements */
+@media (prefers-contrast: high) {
+  .text-white\/50,
+  .text-white\/40,
+  .text-white\/60 {
+    color: rgba(255, 255, 255, 0.85) !important;
+  }
+  .text-zinc-500,
+  .text-zinc-600 {
+    color: rgba(255, 255, 255, 0.7) !important;
+  }
+  .border-zinc-800\/50 {
+    border-color: rgba(255, 255, 255, 0.3) !important;
+  }
+}
