@@ -110,7 +110,7 @@ export default function HeroCurator({ onPersonaClick }: HeroCuratorProps) {
         </div>
 
         {/* Quote — centered at bottom of video area */}
-        <div className="absolute inset-0 z-10 flex items-end justify-center pb-8 px-6">
+        <div className="absolute inset-0 z-10 flex items-end justify-center pb-10 sm:pb-8 px-6">
           <motion.p
             initial={{ opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0 }}
@@ -138,7 +138,7 @@ export default function HeroCurator({ onPersonaClick }: HeroCuratorProps) {
       </div>
 
       {/* CTA Band — pinned at bottom of hero viewport */}
-      <div className="relative z-20 w-full grid grid-cols-1 sm:grid-cols-2 flex-shrink-0" data-testid="hero-cta-band">
+      <div className="relative z-20 w-full grid grid-cols-1 sm:grid-cols-2 flex-shrink-0 pb-[76px] lg:pb-0" data-testid="hero-cta-band">
         <button
           onClick={handleFindSolution}
           data-testid="band-find-solution"

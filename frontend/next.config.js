@@ -177,6 +177,20 @@ const nextConfig = {
   // Headers for caching, security, and performance
   async headers() {
     return [
+      // Service Worker must never be cached
+      {
+        source: '/sw.js',
+        headers: [
+          {
+            key: 'Cache-Control',
+            value: 'no-cache, no-store, must-revalidate',
+          },
+          {
+            key: 'Service-Worker-Allowed',
+            value: '/',
+          },
+        ],
+      },
       // Cache static assets
       {
         source: '/:all*(svg|jpg|jpeg|png|webp|avif|gif|ico)',

@@ -42,10 +42,30 @@ export default function ClientLayout({ children }: { children: React.ReactNode }
     }
   }, [pathname, isAdminPage])
 
-  // Register service worker for static asset caching (prevents 429 rate limiting)
+  // Register service worker with forced update
   useEffect(() => {
     if ('serviceWorker' in navigator) {
-      navigator.serviceWorker.register('/sw.js').catch(() => {})
+      navigator.serviceWorker.register('/sw.js', { updateViaCache: 'none' })
+        .then((reg) => {
+          // Force check for updated SW immediately
+          reg.update()
+          // If a new SW is waiting, tell it to activate
+          if (reg.waiting) {
+            reg.waiting.postMessage('skipWaiting')
+          }
+          reg.addEventListener('updatefound', () => {
+            const newSW = reg.installing
+            if (newSW) {
+              newSW.addEventListener('statechange', () => {
+                if (newSW.state === 'activated') {
+                  // New SW activated — reload for fresh content
+                  window.location.reload()
+                }
+              })
+            }
+          })
+        })
+        .catch(() => {})
     }
   }, [])
 
