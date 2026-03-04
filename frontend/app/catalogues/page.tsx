@@ -53,7 +53,7 @@ export default function CataloguesPage() {
   const filteredCategories = activeCategory ? [activeCategory] : categories
 
   return (
-    <div className="min-h-screen bg-white dark:bg-gray-950 pt-20" data-testid="catalogues-page">
+    <div className="min-h-screen bg-white dark:bg-gray-950 pt-24" data-testid="catalogues-page">
       {/* Hero */}
       <section className="relative overflow-hidden bg-[#0A0A0A] dark:bg-[#050505] text-white">
         {/* Hero Background Image */}

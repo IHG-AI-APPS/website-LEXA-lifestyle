@@ -81,20 +81,20 @@ export default function PackagesPage() {
       </section>
 
       {/* Quick Tools Bar */}
-      <section className="py-4 border-b bg-white">
+      <section className="py-4 border-b bg-white dark:bg-gray-950 dark:border-gray-800">
         <div className="container mx-auto px-6 lg:px-12">
           <div className="max-w-7xl mx-auto">
             <div className="flex flex-wrap items-center gap-3">
-              <span className="text-sm text-gray-500">Tools:</span>
+              <span className="text-sm text-gray-500 dark:text-gray-400">Tools:</span>
               <Link href="/smart-home-quiz" className="inline-flex items-center gap-1.5 px-3 py-1.5 text-sm bg-[#C9A962]/5 text-[#A68B4B] rounded-full hover:bg-[#C9A962]/10 transition-colors">
                 <Brain className="h-3.5 w-3.5" />
                 AI Quiz
               </Link>
-              <Link href="/calculator" className="inline-flex items-center gap-1.5 px-3 py-1.5 text-sm bg-emerald-50 text-emerald-700 rounded-full hover:bg-emerald-100 transition-colors">
+              <Link href="/calculator" className="inline-flex items-center gap-1.5 px-3 py-1.5 text-sm bg-emerald-50 dark:bg-emerald-900/20 text-emerald-700 dark:text-emerald-400 rounded-full hover:bg-emerald-100 dark:hover:bg-emerald-900/30 transition-colors">
                 <Calculator className="h-3.5 w-3.5" />
                 Cost Calculator
               </Link>
-              <Link href="/roi-calculator" className="inline-flex items-center gap-1.5 px-3 py-1.5 text-sm bg-amber-50 text-amber-700 rounded-full hover:bg-amber-100 transition-colors">
+              <Link href="/roi-calculator" className="inline-flex items-center gap-1.5 px-3 py-1.5 text-sm bg-amber-50 dark:bg-amber-900/20 text-amber-700 dark:text-amber-400 rounded-full hover:bg-amber-100 dark:hover:bg-amber-900/30 transition-colors">
                 <TrendingUp className="h-3.5 w-3.5" />
                 ROI Calculator
               </Link>
@@ -121,7 +121,7 @@ export default function PackagesPage() {
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
                   {propertyPackages.map((pkg) => (
                     <Link key={pkg.slug} href={`/packages/${pkg.slug}`}>
-                      <div className="group h-full border border-gray-200 dark:border-gray-700 hover:border-gray-400 hover:shadow-md rounded-lg p-5 transition-all bg-white">
+                      <div className="group h-full border border-gray-200 dark:border-gray-700 hover:border-gray-400 hover:shadow-md rounded-lg p-5 transition-all bg-white dark:bg-gray-900">
                         <div className="flex items-start justify-between mb-3">
                           <div className="w-10 h-10 rounded-lg bg-gray-100 dark:bg-gray-800 flex items-center justify-center">
                             <Home className="h-5 w-5 text-gray-600 dark:text-gray-400" />
@@ -155,7 +155,7 @@ export default function PackagesPage() {
               
               <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
                 {apartmentTiers.map((tier) => (
-                  <Link key={tier.name} href="/packages/smart-apartment-packages">
+                  <Link key={tier.name} href={`/package-builder?property=smart-apartment-packages&tier=${tier.name.toLowerCase()}`} data-testid={`tier-${tier.name.toLowerCase()}`}>
                     <div className={`relative border-2 rounded-lg p-4 transition-all hover:shadow-md ${tier.popular ? 'border-amber-400 bg-amber-50' : 'border-gray-200 dark:border-gray-700 bg-white hover:border-gray-400'}`}>
                       {tier.popular && (
                         <span className="absolute -top-2 right-3 px-2 py-0.5 bg-amber-500 text-white text-xs font-bold rounded">

@@ -123,7 +123,7 @@ export default function BlogArticlePage({ params }: { params: { slug: string } }
                   <div className="w-8 h-8 rounded-full bg-gray-200 flex items-center justify-center">
                     <User size={16} className="text-gray-600 dark:text-gray-400" />
                   </div>
-                  <span className="font-medium text-gray-700 dark:text-gray-300">{article.author}</span>
+                  <span className="font-medium text-gray-700 dark:text-gray-300">{article.author && article.author !== 'Aura' ? article.author : 'LEXA Editorial'}</span>
                 </div>
                 <span className="text-gray-300">•</span>
                 <div className="flex items-center gap-1.5">
