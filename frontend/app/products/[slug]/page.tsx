@@ -1,13 +1,13 @@
 'use client'
 
-import { useState, useEffect, useCallback } from 'react'
-import { motion } from 'framer-motion'
+import { useState, useEffect, useCallback, useMemo } from 'react'
+import { motion, AnimatePresence } from 'framer-motion'
 import SafeImage from '@/components/ui/SafeImage'
 import Link from 'next/link'
 import { Button } from '@/components/ui/button'
 import { Breadcrumb } from '@/components/ui/breadcrumb'
 import ConsultationForm from '@/components/forms/ConsultationForm'
-import { ArrowLeft, ArrowRight, Tag, Layers } from 'lucide-react'
+import { ArrowLeft, ArrowRight, Tag, Layers, ChevronLeft, ChevronRight } from 'lucide-react'
 
 const BACKEND_URL = process.env.NEXT_PUBLIC_BACKEND_URL || ''
 const API = `${BACKEND_URL}/api`
@@ -33,12 +33,26 @@ export default function ProductDetailPage({ params }: { params: { slug: string }
   const [crossCategoryRecs, setCrossCategoryRecs] = useState<Product[]>([])
   const [loading, setLoading] = useState(true)
   const [showConsultationForm, setShowConsultationForm] = useState(false)
+  const [activeImageIndex, setActiveImageIndex] = useState(0)
 
   const resolveImageUrl = (img: string) => {
     if (!img) return ''
     if (img.startsWith('http')) return img
     return `${BACKEND_URL}${img}`
   }
+
+  // Combine primary image + gallery images into one array
+  const allImages = useMemo(() => {
+    if (!product) return []
+    const imgs: string[] = []
+    if (product.image) imgs.push(product.image)
+    if (product.images?.length) {
+      product.images.forEach(img => {
+        if (img && !imgs.includes(img)) imgs.push(img)
+      })
+    }
+    return imgs
+  }, [product])
 
   const fetchProduct = useCallback(async () => {
     try {
@@ -111,24 +125,83 @@ export default function ProductDetailPage({ params }: { params: { slug: string }
         <div className="container mx-auto px-4 sm:px-8 lg:px-16">
           <div className="max-w-7xl mx-auto">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16">
-              {/* Image */}
+              {/* Image Gallery */}
               <motion.div
                 initial={{ opacity: 0, x: -20 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.5 }}
               >
+                {/* Main Image */}
                 <div className="relative aspect-square bg-gray-50 dark:bg-zinc-900 rounded-xl overflow-hidden border border-gray-100 dark:border-zinc-800" data-testid="product-main-image">
-                  {product.image ? (
-                    <SafeImage
-                      src={resolveImageUrl(product.image)}
-                      alt={product.name}
-                      fill
-                      className="object-contain p-8"
-                    />
+                  {allImages.length > 0 ? (
+                    <AnimatePresence mode="wait">
+                      <motion.div
+                        key={activeImageIndex}
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        exit={{ opacity: 0 }}
+                        transition={{ duration: 0.2 }}
+                        className="absolute inset-0"
+                      >
+                        <SafeImage
+                          src={resolveImageUrl(allImages[activeImageIndex])}
+                          alt={product.name}
+                          fill
+                          className="object-contain p-8"
+                        />
+                      </motion.div>
+                    </AnimatePresence>
                   ) : (
                     <div className="absolute inset-0 flex items-center justify-center text-gray-300 dark:text-zinc-700">No Image</div>
                   )}
+                  {/* Navigation Arrows */}
+                  {allImages.length > 1 && (
+                    <>
+                      <button
+                        onClick={() => setActiveImageIndex(i => (i - 1 + allImages.length) % allImages.length)}
+                        className="absolute left-2 top-1/2 -translate-y-1/2 w-8 h-8 flex items-center justify-center bg-white/80 dark:bg-zinc-800/80 rounded-full shadow hover:bg-white dark:hover:bg-zinc-700 transition-colors"
+                        data-testid="gallery-prev"
+                      >
+                        <ChevronLeft className="w-4 h-4 text-gray-700 dark:text-zinc-300" />
+                      </button>
+                      <button
+                        onClick={() => setActiveImageIndex(i => (i + 1) % allImages.length)}
+                        className="absolute right-2 top-1/2 -translate-y-1/2 w-8 h-8 flex items-center justify-center bg-white/80 dark:bg-zinc-800/80 rounded-full shadow hover:bg-white dark:hover:bg-zinc-700 transition-colors"
+                        data-testid="gallery-next"
+                      >
+                        <ChevronRight className="w-4 h-4 text-gray-700 dark:text-zinc-300" />
+                      </button>
+                      <div className="absolute bottom-3 left-1/2 -translate-x-1/2 text-xs text-gray-500 dark:text-zinc-500 bg-white/80 dark:bg-zinc-900/80 px-2 py-0.5 rounded-full">
+                        {activeImageIndex + 1} / {allImages.length}
+                      </div>
+                    </>
+                  )}
                 </div>
+
+                {/* Thumbnail Strip */}
+                {allImages.length > 1 && (
+                  <div className="flex gap-2 mt-3 overflow-x-auto pb-1" data-testid="gallery-thumbnails">
+                    {allImages.map((img, index) => (
+                      <button
+                        key={index}
+                        onClick={() => setActiveImageIndex(index)}
+                        data-testid={`gallery-thumb-${index}`}
+                        className={`relative w-16 h-16 flex-shrink-0 rounded-lg overflow-hidden border-2 transition-all ${
+                          index === activeImageIndex
+                            ? 'border-[#C9A962] ring-1 ring-[#C9A962]/30'
+                            : 'border-gray-200 dark:border-zinc-800 hover:border-gray-300 dark:hover:border-zinc-700'
+                        }`}
+                      >
+                        <SafeImage
+                          src={resolveImageUrl(img)}
+                          alt={`${product.name} - Image ${index + 1}`}
+                          fill
+                          className="object-contain p-1"
+                        />
+                      </button>
+                    ))}
+                  </div>
+                )}
               </motion.div>
 
               {/* Info */}

@@ -1,13 +1,13 @@
 'use client'
 
-import { useEffect, useState, useCallback } from 'react'
+import { useEffect, useState, useCallback, useRef } from 'react'
 import SafeImage from '@/components/ui/SafeImage'
-import { Plus, Edit, Trash2, X, Search, ChevronLeft, ChevronRight } from 'lucide-react'
+import { Plus, Edit, Trash2, X, Search, ChevronLeft, ChevronRight, Download, Upload } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { Textarea } from '@/components/ui/textarea'
 import { createCatalogProduct, updateCatalogProduct, deleteCatalogProduct } from '@/lib/adminApi'
-import { ImageUpload } from '@/components/admin/ImageUpload'
+import { ImageUpload, MultiImageUpload } from '@/components/admin/ImageUpload'
 import { toast } from 'sonner'
 
 const BACKEND_URL = process.env.NEXT_PUBLIC_BACKEND_URL || ''
@@ -54,6 +54,8 @@ export default function CatalogAdminPage() {
   const [formData, setFormData] = useState<Partial<CatalogProduct>>(EMPTY_FORM)
   const [specsText, setSpecsText] = useState('')
   const [featuresText, setFeaturesText] = useState('')
+  const [importing, setImporting] = useState(false)
+  const importFileRef = useRef<HTMLInputElement>(null)
 
   const loadProducts = useCallback(async () => {
     setLoading(true)
@@ -138,6 +140,48 @@ export default function CatalogAdminPage() {
     return img.startsWith('http') ? img : `${BACKEND_URL}${img}`
   }
 
+  const handleExport = async () => {
+    try {
+      const resp = await fetch(`${API}/catalog/products/export`)
+      if (!resp.ok) throw new Error('Export failed')
+      const blob = await resp.blob()
+      const url = URL.createObjectURL(blob)
+      const a = document.createElement('a')
+      a.href = url
+      a.download = 'products_export.csv'
+      a.click()
+      URL.revokeObjectURL(url)
+      toast.success('Products exported successfully')
+    } catch {
+      toast.error('Failed to export products')
+    }
+  }
+
+  const handleImport = async (e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0]
+    if (!file) return
+    setImporting(true)
+    try {
+      const formData = new FormData()
+      formData.append('file', file)
+      const resp = await fetch(`${API}/catalog/products/import`, {
+        method: 'POST',
+        body: formData,
+      })
+      if (!resp.ok) throw new Error('Import failed')
+      const result = await resp.json()
+      toast.success(`Import complete: ${result.created} created, ${result.updated} updated${result.errors?.length ? `, ${result.errors.length} errors` : ''}`)
+      if (result.errors?.length) {
+        console.warn('Import errors:', result.errors)
+      }
+      loadProducts()
+    } catch {
+      toast.error('Failed to import products')
+    }
+    setImporting(false)
+    if (importFileRef.current) importFileRef.current.value = ''
+  }
+
   return (
     <div className="p-4 md:p-8">
       {/* Header */}
@@ -146,9 +190,25 @@ export default function CatalogAdminPage() {
           <h1 className="text-2xl md:text-3xl font-semibold" data-testid="catalog-admin-title">Product Catalog</h1>
           <p className="text-sm text-gray-500 mt-1">{total} products in catalog</p>
         </div>
-        <Button onClick={handleAdd} data-testid="add-product-btn">
-          <Plus className="mr-2" size={16} /> Add Product
-        </Button>
+        <div className="flex items-center gap-2">
+          <input
+            ref={importFileRef}
+            type="file"
+            accept=".csv"
+            onChange={handleImport}
+            className="hidden"
+            data-testid="import-file-input"
+          />
+          <Button variant="outline" size="sm" onClick={handleExport} data-testid="export-csv-btn">
+            <Download className="mr-1.5" size={14} /> Export CSV
+          </Button>
+          <Button variant="outline" size="sm" onClick={() => importFileRef.current?.click()} disabled={importing} data-testid="import-csv-btn">
+            <Upload className="mr-1.5" size={14} /> {importing ? 'Importing...' : 'Import CSV'}
+          </Button>
+          <Button onClick={handleAdd} data-testid="add-product-btn">
+            <Plus className="mr-2" size={16} /> Add Product
+          </Button>
+        </div>
       </div>
 
       {/* Filters */}
@@ -332,13 +392,25 @@ export default function CatalogAdminPage() {
 
               {/* Image */}
               <div className="space-y-4">
-                <h3 className="font-semibold text-sm uppercase tracking-wide text-gray-500">Image</h3>
+                <h3 className="font-semibold text-sm uppercase tracking-wide text-gray-500">Primary Image</h3>
                 <ImageUpload
                   value={formData.image || ''}
                   onChange={(url) => setFormData({ ...formData, image: url })}
                   label="Product Image"
                   category="products"
                   showPreview={true}
+                />
+              </div>
+
+              {/* Gallery Images */}
+              <div className="space-y-4">
+                <h3 className="font-semibold text-sm uppercase tracking-wide text-gray-500">Gallery Images</h3>
+                <MultiImageUpload
+                  values={formData.images || []}
+                  onChange={(urls) => setFormData({ ...formData, images: urls })}
+                  label="Additional Product Images"
+                  category="products"
+                  maxImages={10}
                 />
               </div>
 

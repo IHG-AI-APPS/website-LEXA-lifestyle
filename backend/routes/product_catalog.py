@@ -1,5 +1,6 @@
 """Product Catalog API routes - individual products with search, filter, pagination"""
-from fastapi import APIRouter, HTTPException, Query
+from fastapi import APIRouter, HTTPException, Query, UploadFile, File
+from fastapi.responses import StreamingResponse
 from motor.motor_asyncio import AsyncIOMotorClient
 from typing import List, Optional
 from models.product import Product, ProductCreate, ProductUpdate, ProductListResponse
@@ -10,6 +11,8 @@ import os
 import re
 import logging
 import math
+import csv
+import io
 
 router = APIRouter(prefix="/api/catalog", tags=["product-catalog"])
 logger = logging.getLogger(__name__)
@@ -282,6 +285,120 @@ async def get_featured_products(limit: int = Query(default=8, ge=1, le=20)):
     except Exception as e:
         logger.error(f"Featured products error: {str(e)}")
         raise HTTPException(status_code=500, detail="Failed to fetch featured products")
+
+
+@router.get("/products/export")
+async def export_products():
+    """Export all products as CSV"""
+    try:
+        products = await db.catalog_products.find({}, {"_id": 0}).sort([("name", 1)]).to_list(10000)
+
+        output = io.StringIO()
+        writer = csv.writer(output)
+        writer.writerow([
+            "name", "brand", "category", "sub_category", "description",
+            "image", "images", "specifications", "features",
+            "featured", "published", "slug"
+        ])
+
+        for p in products:
+            writer.writerow([
+                p.get("name", ""),
+                p.get("brand", ""),
+                p.get("category", ""),
+                p.get("sub_category", ""),
+                p.get("description", ""),
+                p.get("image", ""),
+                "|".join(p.get("images", [])),
+                "|".join(p.get("specifications", [])),
+                "|".join(p.get("features", [])),
+                str(p.get("featured", False)),
+                str(p.get("published", True)),
+                p.get("slug", ""),
+            ])
+
+        output.seek(0)
+        return StreamingResponse(
+            iter([output.getvalue()]),
+            media_type="text/csv",
+            headers={"Content-Disposition": "attachment; filename=products_export.csv"}
+        )
+    except Exception as e:
+        logger.error(f"Export error: {str(e)}")
+        raise HTTPException(status_code=500, detail="Failed to export products")
+
+
+@router.post("/products/import")
+async def import_products(file: UploadFile = File(...)):
+    """Import products from CSV. Matches existing products by slug for updates."""
+    try:
+        content = await file.read()
+        text = content.decode("utf-8-sig")
+        reader = csv.DictReader(io.StringIO(text))
+
+        created = 0
+        updated = 0
+        errors = []
+        now = datetime.now(timezone.utc).isoformat()
+
+        for row_num, row in enumerate(reader, start=2):
+            try:
+                name = row.get("name", "").strip()
+                brand = row.get("brand", "").strip()
+                category = row.get("category", "").strip()
+
+                if not name or not brand or not category:
+                    errors.append({"row": row_num, "error": "Missing required field (name, brand, or category)"})
+                    continue
+
+                slug = row.get("slug", "").strip() or slugify(name)
+                images_str = row.get("images", "").strip()
+                specs_str = row.get("specifications", "").strip()
+                features_str = row.get("features", "").strip()
+                featured_val = row.get("featured", "False").strip().lower() in ("true", "1", "yes")
+                published_val = row.get("published", "True").strip().lower() not in ("false", "0", "no")
+
+                product_data = {
+                    "name": name,
+                    "brand": brand,
+                    "brand_slug": slugify(brand),
+                    "category": category,
+                    "sub_category": row.get("sub_category", "").strip() or None,
+                    "description": row.get("description", "").strip(),
+                    "image": row.get("image", "").strip(),
+                    "images": [u.strip() for u in images_str.split("|") if u.strip()] if images_str else [],
+                    "specifications": [s.strip() for s in specs_str.split("|") if s.strip()] if specs_str else [],
+                    "features": [f.strip() for f in features_str.split("|") if f.strip()] if features_str else [],
+                    "featured": featured_val,
+                    "published": published_val,
+                    "updated_at": now,
+                }
+
+                existing = await db.catalog_products.find_one({"slug": slug})
+                if existing:
+                    await db.catalog_products.update_one({"slug": slug}, {"$set": product_data})
+                    updated += 1
+                else:
+                    product_data["id"] = str(uuid4())
+                    product_data["slug"] = slug
+                    product_data["created_at"] = now
+                    product_data["related_solutions"] = []
+                    await db.catalog_products.insert_one(product_data)
+                    created += 1
+
+            except Exception as row_err:
+                errors.append({"row": row_num, "error": str(row_err)})
+
+        return {
+            "success": True,
+            "created": created,
+            "updated": updated,
+            "errors": errors,
+            "total_processed": created + updated + len(errors),
+        }
+    except Exception as e:
+        logger.error(f"Import error: {str(e)}")
+        raise HTTPException(status_code=500, detail=f"Failed to import: {str(e)}")
 
 
 @router.get("/products/{slug}", response_model=Product)
