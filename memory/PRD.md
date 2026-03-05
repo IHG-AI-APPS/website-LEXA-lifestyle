@@ -11,55 +11,50 @@ Complete website overhaul for 100% dynamic content, a premium "Dark Luxury" desi
 
 ## What's Been Implemented
 
-### Product Catalog Feature (Complete)
+### Product Catalog (Complete)
 - **217 products** across 19 brands, 7 categories, 35 series
-- **All product images** downloaded to server (`/app/backend/uploads/products/`)
-- **Descriptions**: 217/217 (100%) - pulled from WP REST API + manual enrichment
-- **Specifications**: 208/217 (96%) - parsed from WP content into structured key:value format
-- **Features**: 160/217 (74%) - extracted bullet-point features
-- **Backend API**: `/api/catalog/products` with search, filter (category/brand/series/brand_slug), sort, pagination
-- **Frontend Catalog** (`/products`): Sidebar filters, search, sort, pagination, URL query params
-- **Frontend Detail** (`/products/[slug]`): Breadcrumb, image, description, KEY FEATURES bullets, SPECIFICATIONS table (two-column key:value), related products, CTA
-- **Brand Integration**: Brand detail pages fetch+display catalog products by `brand_slug`, organized by series
-- **Footer**: "Product Catalog" link added
+- All images stored locally on server
+- 100% descriptions, 96% specs, 74% features
+- Backend API at `/api/catalog/` with search, filter, sort, pagination, CRUD
+- Frontend catalog `/products` with sidebar filters, search, pagination
+- Product detail `/products/[slug]` with description, features bullets, specs table, related products
+- Brand detail pages show catalog products organized by series
+- "PRODUCTS" link in header and footer navigation
 
-### Data Enrichment Pipeline
-1. WP REST API bulk fetch (269 WP products → matched 205 to catalog)
-2. Smart parser: separates descriptions from specs, handles structured WP metadata
-3. Brand description templates for products with spec-only WP content
-4. Manual enrichment for remaining 14 products (Axxess cables, Artesania racks)
+### Admin Product Management (Complete - March 2026)
+- Admin CRUD at `/admin/catalog` with search, filter, pagination
+- Product table with image thumbnails, brand, category badge, series, data indicators (D/S/F)
+- Modal form for create/edit: name, slug, brand (autocomplete), category (dropdown), sub_category, image upload, description, specs (textarea, one per line), features (textarea, one per line), featured/published toggles
+- Delete with confirmation dialog
+- Toast notifications for all CRUD operations
+- "Product Catalog" nav item in admin sidebar
 
-### Previously Completed Features
-- Virtual Tour, Testimonials page, Service Worker v5, AI persona images
+### Previously Completed
+- Virtual Tour, Testimonials, Service Worker v5, AI persona images
 - Homepage CTA band, accessibility, client logos, tablet caching fix
 
 ## Architecture
 ```
-/app/backend/
-  routes/product_catalog.py     # Catalog API
-  models/product.py             # Product Pydantic models
-  seeds/seed_products.py        # Initial 217-product seed
-  seeds/enrich_products.py      # WP REST API enrichment
-  uploads/products/             # 218 product images
+/app/backend/routes/product_catalog.py    # Full CRUD API
+/app/backend/models/product.py            # Pydantic models
+/app/backend/seeds/seed_products.py       # 217-product seed
+/app/backend/seeds/enrich_products.py     # WP REST API enrichment
+/app/backend/uploads/products/            # 218 product images
 
-/app/frontend/
-  app/products/page.tsx         # Catalog with filters
-  app/products/[slug]/page.tsx  # Detail: desc + features + specs table
-  app/brands/[slug]/page.tsx    # Brand pages with catalog products
+/app/frontend/app/products/page.tsx       # Public catalog
+/app/frontend/app/products/[slug]/page.tsx # Product detail
+/app/frontend/app/admin/catalog/page.tsx  # Admin CRUD
+/app/frontend/lib/adminApi.ts             # CRUD API functions
 ```
 
 ## Test Status
-- iteration_82: Backend 13/13, Frontend 94% (fixed URL params)
-- iteration_83: Backend 14/14 (100%), Frontend 16/16 (100%)
-- iteration_84: Backend 12/13, Frontend 100% (14 missing descriptions → fixed)
-- Current: 217/217 descriptions, 208 specs, 160 features
+- iteration_85: Backend 11/11 (100%), Frontend 14/14 (100%) - Admin CRUD
+- iteration_83: Backend 14/14 (100%), Frontend 16/16 (100%) - Brand integration
+- iteration_82: Backend 13/13 (100%) - Catalog API
 
 ## Prioritized Backlog
-### P1
-- Admin UI for product CRUD management
-- Add "Products" link to header navigation
-
 ### P2
 - Compare Packages feature
 - Product recommendations engine
 - Advanced full-text search
+- Bulk import/export for products
