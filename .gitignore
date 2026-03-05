@@ -192,3 +192,7 @@ frontend/.next/cache/webpack/server-production/16.pack
 *.env
 *.env.*
 frontend/.next/cache/webpack/server-production/4.pack
+-e 
+# Environment files
+*.env
+*.env.*
