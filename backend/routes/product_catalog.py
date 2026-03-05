@@ -32,6 +32,7 @@ async def list_products(
     search: Optional[str] = None,
     category: Optional[str] = None,
     brand: Optional[str] = None,
+    brand_slug: Optional[str] = None,
     sub_category: Optional[str] = None,
     featured: Optional[bool] = None,
     sort: Optional[str] = Query(default="name_asc", regex="^(name_asc|name_desc|newest|oldest)$"),
@@ -53,7 +54,9 @@ async def list_products(
         if category:
             query["category"] = {"$regex": f"^{re.escape(category)}$", "$options": "i"}
 
-        if brand:
+        if brand_slug:
+            query["brand_slug"] = brand_slug
+        elif brand:
             query["brand"] = {"$regex": f"^{re.escape(brand)}$", "$options": "i"}
 
         if sub_category:

@@ -19,6 +19,17 @@ interface Product {
   price_range?: string
 }
 
+interface CatalogProduct {
+  id: string
+  slug: string
+  name: string
+  brand: string
+  category: string
+  sub_category?: string
+  image: string
+  description: string
+}
+
 interface FeatureCard {
   title: string
   description: string
@@ -74,6 +85,7 @@ export default function BrandDetailPage({ params }: { params: { slug: string } }
   const [brand, setBrand] = useState<BrandData | null>(null)
   const [otherBrands, setOtherBrands] = useState<BrandData[]>([])
   const [relatedSolutions, setRelatedSolutions] = useState<SolutionItem[]>([])
+  const [catalogProducts, setCatalogProducts] = useState<CatalogProduct[]>([])
   const [loading, setLoading] = useState(true)
   const { addItem } = useRecentlyViewed()
 
@@ -95,6 +107,16 @@ export default function BrandDetailPage({ params }: { params: { slug: string } }
           } catch { /* silent */ }
         }
       }
+
+      // Fetch catalog products for this brand
+      try {
+        const catRes = await fetch(`${API}/catalog/products?brand_slug=${params.slug}&page_size=100`)
+        if (catRes.ok) {
+          const catData = await catRes.json()
+          setCatalogProducts(catData.products || [])
+        }
+      } catch { /* silent */ }
+
       setLoading(false)
     } catch { setLoading(false) }
   }, [params.slug])
@@ -139,7 +161,6 @@ export default function BrandDetailPage({ params }: { params: { slug: string } }
   const galleryImages = (brand.gallery_images || []).filter((img: string) => img && img.trim() !== '' && !img.includes('unsplash.com'))
   const featureCards = (brand.feature_cards || []) as FeatureCard[]
   const featureCardIcons = [Monitor, Volume2, Cpu]
-  const validProducts = (brand.products || []).filter(p => p.name)
 
   return (
     <div className="min-h-screen bg-white dark:bg-[#050505] pt-20" data-testid="brand-detail-page">
@@ -314,43 +335,84 @@ export default function BrandDetailPage({ params }: { params: { slug: string } }
         </section>
       )}
 
-      {/* Products */}
-      {validProducts.length > 0 && (
+      {/* Catalog Products */}
+      {catalogProducts.length > 0 && (
         <section className="py-16 lg:py-20 bg-white dark:bg-[#050505]" data-testid="products-section">
           <div className="container mx-auto px-5 sm:px-8 lg:px-16">
             <div className="max-w-6xl mx-auto">
-              <div className="text-center mb-12">
-                <span className="text-xs uppercase tracking-widest text-[#C9A962] font-semibold">Top Products</span>
-                <h2 className="text-2xl sm:text-3xl font-bold mt-2 text-gray-900 dark:text-white">{brand.name} Products</h2>
+              <div className="flex items-center justify-between mb-10">
+                <div>
+                  <span className="text-xs uppercase tracking-widest text-[#C9A962] font-semibold">Product Catalog</span>
+                  <h2 className="text-2xl sm:text-3xl font-bold mt-2 text-gray-900 dark:text-white">{brand.name} Products</h2>
+                  <p className="text-sm text-gray-500 dark:text-zinc-500 mt-1">{catalogProducts.length} products available</p>
+                </div>
+                <Link href={`/products?brand=${encodeURIComponent(catalogProducts[0]?.brand || brand.name)}`}>
+                  <Button variant="outline" size="sm" className="hidden sm:flex" data-testid="view-all-products-btn">
+                    View All in Catalog <ArrowRight className="ml-1.5" size={14} />
+                  </Button>
+                </Link>
               </div>
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                {validProducts.map((product, i) => {
-                  const hasProductImage = product.image && product.image.trim() !== ''
-                  return (
-                    <motion.div key={i} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.3, delay: i * 0.08 }}
-                      className="bg-gray-50 dark:bg-[#0A0A0A] rounded-xl overflow-hidden border border-gray-100 dark:border-zinc-800 hover:shadow-lg transition-shadow group">
-                      {hasProductImage ? (
-                        <div className="relative aspect-[4/3]">
-                          <SafeImage src={product.image} alt={product.name} fill className="object-cover group-hover:scale-105 transition-transform duration-500" sizes="(max-width: 768px) 100vw, 33vw" />
-                        </div>
-                      ) : (
-                        <div className="aspect-[4/3] bg-gradient-to-br from-gray-100 to-gray-200 dark:from-gray-800 dark:to-gray-900 flex items-center justify-center">
-                          <div className="text-center">
-                            <ShoppingBag size={32} className="text-gray-300 dark:text-gray-600 mx-auto mb-2" />
-                            <span className="text-xs text-gray-400 font-medium">{brand.name}</span>
-                          </div>
-                        </div>
-                      )}
-                      <div className="p-5">
-                        <h3 className="text-base font-bold mb-1 text-gray-900 dark:text-white">{product.name}</h3>
-                        <p className="text-sm text-gray-600 dark:text-zinc-500 mb-3">{product.description}</p>
-                        {product.price_range && (
-                          <p className="text-sm font-semibold text-[#C9A962]"><ShoppingBag size={14} className="inline mr-1" />{product.price_range}</p>
-                        )}
+
+              {/* Group by sub_category */}
+              {(() => {
+                const grouped: Record<string, CatalogProduct[]> = {}
+                catalogProducts.forEach(p => {
+                  const key = p.sub_category || 'Other Products'
+                  if (!grouped[key]) grouped[key] = []
+                  grouped[key].push(p)
+                })
+                const entries = Object.entries(grouped).sort(([a], [b]) => a.localeCompare(b))
+
+                return entries.map(([seriesName, products]) => (
+                  <div key={seriesName} className="mb-10 last:mb-0">
+                    {entries.length > 1 && (
+                      <div className="flex items-center gap-2 mb-5">
+                        <div className="w-1 h-6 bg-[#C9A962] rounded-full" />
+                        <h3 className="text-base font-semibold text-gray-800 dark:text-zinc-200">{seriesName}</h3>
+                        <span className="text-xs text-gray-400 dark:text-zinc-600">({products.length})</span>
                       </div>
-                    </motion.div>
-                  )
-                })}
+                    )}
+                    <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
+                      {products.map((product, i) => (
+                        <motion.div key={product.id} initial={{ opacity: 0, y: 15 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.25, delay: Math.min(i * 0.04, 0.3) }}>
+                          <Link href={`/products/${product.slug}`} data-testid={`catalog-product-${product.slug}`}>
+                            <div className="group">
+                              <div className="relative aspect-square bg-gray-50 dark:bg-[#0A0A0A] rounded-lg overflow-hidden border border-gray-100 dark:border-zinc-800 group-hover:border-[#C9A962]/40 transition-colors">
+                                {product.image ? (
+                                  <SafeImage
+                                    src={product.image.startsWith('http') ? product.image : `${BACKEND_URL}${product.image}`}
+                                    alt={product.name}
+                                    fill
+                                    className="object-contain p-3 group-hover:scale-105 transition-transform duration-500"
+                                    sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw"
+                                  />
+                                ) : (
+                                  <div className="absolute inset-0 flex items-center justify-center">
+                                    <ShoppingBag size={24} className="text-gray-300 dark:text-zinc-700" />
+                                  </div>
+                                )}
+                                <div className="absolute top-1.5 left-1.5">
+                                  <span className="px-1.5 py-0.5 bg-white/90 dark:bg-zinc-900/90 backdrop-blur text-[9px] font-medium text-gray-500 dark:text-zinc-400 rounded">{product.category}</span>
+                                </div>
+                              </div>
+                              <div className="mt-2.5">
+                                <h4 className="text-sm font-medium text-gray-900 dark:text-white line-clamp-2 group-hover:text-[#C9A962] transition-colors">{product.name}</h4>
+                              </div>
+                            </div>
+                          </Link>
+                        </motion.div>
+                      ))}
+                    </div>
+                  </div>
+                ))
+              })()}
+
+              <div className="mt-8 text-center sm:hidden">
+                <Link href={`/products?brand=${encodeURIComponent(catalogProducts[0]?.brand || brand.name)}`}>
+                  <Button variant="outline" data-testid="view-all-products-btn-mobile">
+                    View All {brand.name} Products <ArrowRight className="ml-1.5" size={14} />
+                  </Button>
+                </Link>
               </div>
             </div>
           </div>

@@ -1,0 +1,90 @@
+{
+  "summary": "Brand-to-Product Mapping feature testing completed successfully. All API endpoints (14/14 passing) work correctly. Frontend displays products on brand pages with correct counts organized by series. All tested brand pages properly show/hide products section based on catalog_products availability.",
+  "backend_issues": {
+    "critical": [],
+    "minor": []
+  },
+  "frontend_issues": {
+    "ui_bugs": [],
+    "integration_issues": [],
+    "design_issues": []
+  },
+  "test_results": {
+    "backend_api_tests": {
+      "status": "PASS",
+      "total": 14,
+      "passed": 14,
+      "failed": 0,
+      "tests": [
+        "GET /api/catalog/products?brand_slug=borresen returns 18 Borresen products",
+        "GET /api/catalog/products?brand_slug=rotel returns 10 Rotel products",
+        "GET /api/catalog/products?brand_slug=bowers-wilkins returns 16 B&W products",
+        "GET /api/catalog/products?brand_slug=aavik returns 20 Aavik products",
+        "GET /api/catalog/products?brand_slug=sonos returns 9 Sonos products",
+        "GET /api/catalog/products?brand_slug=ansuz returns 0 products (correct - no catalog products)",
+        "GET /api/catalog/products?brand_slug=bang-olufsen returns 0 products (correct)",
+        "Borresen products have series/sub_category defined",
+        "Rotel products have series/sub_category defined",
+        "Borresen products all have images",
+        "Rotel products all have images",
+        "Product images accessible via GET request",
+        "GET /api/catalog/products/{slug} returns product detail",
+        "GET /api/catalog/products?brand=Borresen (by name) also returns 18 products"
+      ]
+    },
+    "frontend_ui_tests": {
+      "status": "PASS",
+      "tests": [
+        "/brands/borresen page shows 18 Borresen products - PASS",
+        "/brands/rotel page shows 10 Rotel products - PASS",
+        "/brands/bowers-wilkins page shows 16 B&W products - PASS",
+        "/brands/aavik page shows 20 Aavik products - PASS",
+        "/brands/sonos page shows 9 Sonos products - PASS",
+        "/brands/ansuz page correctly hides products section - PASS",
+        "Products organized by series (Borresen C/M/T/X Series shown) - PASS",
+        "Product cards have images loading correctly - PASS",
+        "Clicking product card navigates to /products/{slug} detail page - PASS",
+        "Product detail page shows image, breadcrumb, brand, tags - PASS",
+        "Products section header shows 'Product Catalog' label - PASS",
+        "Products section shows '{Brand} Products' title with count - PASS",
+        "Sidebar 'View {Brand} Products' button present - PASS",
+        "Sidebar button links to /products?brand={encodeURIComponent(brand.name)} - PASS",
+        "'View All in Catalog' button present in products section - PASS",
+        "Brands listing page shows 'View Products' links (37 found) - PASS"
+      ]
+    }
+  },
+  "test_report_links": [
+    "/app/backend/tests/test_brand_product_mapping.py",
+    "/app/test_reports/pytest/brand_product_mapping_results.xml"
+  ],
+  "action_items": [],
+  "critical_code_review_comments": [],
+  "updated_files": [
+    "/app/backend/tests/test_brand_product_mapping.py"
+  ],
+  "success_rate": {
+    "backend": "100%",
+    "frontend": "100%"
+  },
+  "seed_data_creation": "217 catalog_products with brand_slug field populated via migration script",
+  "retest_needed": false,
+  "should_main_agent_self_test": false,
+  "context_for_next_testing_agent": "Brand-to-product mapping fully working. Brand detail pages (/brands/{slug}) fetch products via /api/catalog/products?brand_slug={slug}. Products displayed organized by series. Brands without catalog products (ansuz, bang-olufsen) correctly hide products section. All 5 brand pages tested (borresen=18, rotel=10, bowers-wilkins=16, aavik=20, sonos=9).",
+  "features_verified": [
+    "/brands/borresen page shows 18 Borresen products with images organized by series",
+    "/brands/rotel page shows 10 Rotel products with images organized by series",
+    "/brands/bowers-wilkins page shows 16 B&W products with images",
+    "/brands/aavik page shows 20 Aavik products",
+    "/brands/sonos page shows 9 Sonos products",
+    "Product cards on brand pages link to /products/{slug} detail pages",
+    "Clicking a product card from brand page leads to product detail page with image",
+    "Sidebar 'View {Brand} Products' button links to /products?brand={encodeURIComponent(brand.name)}",
+    "'View All in Catalog' button on products section links to /products?brand=...",
+    "GET /api/catalog/products?brand_slug=borresen returns 18 products",
+    "GET /api/catalog/products?brand_slug=rotel returns 10 products",
+    "GET /api/catalog/products?brand_slug=bowers-wilkins returns 16 products",
+    "Brands that don't have catalog products don't show the products section",
+    "Products section header shows 'Product Catalog' label and '{Brand} Products' title with count"
+  ]
+}
