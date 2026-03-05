@@ -159,23 +159,48 @@ export default function ProductDetailPage({ params }: { params: { slug: string }
                 </div>
 
                 {product.description && (
-                  <p className="text-base text-gray-600 dark:text-zinc-400 leading-relaxed mb-6" data-testid="product-description">
+                  <p className="text-sm text-gray-600 dark:text-zinc-400 leading-relaxed mb-6" data-testid="product-description">
                     {product.description}
                   </p>
                 )}
 
-                {/* Specifications */}
-                {product.specifications && product.specifications.length > 0 && (
-                  <div className="mb-6">
-                    <h3 className="text-xs tracking-[0.2em] uppercase font-semibold text-gray-500 dark:text-zinc-400 mb-3">Specifications</h3>
+                {/* Features */}
+                {product.features && product.features.length > 0 && (
+                  <div className="mb-6" data-testid="product-features">
+                    <h3 className="text-xs tracking-[0.2em] uppercase font-semibold text-gray-500 dark:text-zinc-400 mb-3">Key Features</h3>
                     <ul className="space-y-2">
-                      {product.specifications.map((spec, i) => (
-                        <li key={i} className="flex items-start gap-2 text-sm text-gray-600 dark:text-zinc-400">
-                          <div className="w-1 h-1 bg-[#C9A962] rounded-full mt-2 flex-shrink-0" />
-                          {spec}
+                      {product.features.map((feat, i) => (
+                        <li key={i} className="flex items-start gap-2.5 text-sm text-gray-600 dark:text-zinc-400">
+                          <div className="w-1.5 h-1.5 bg-[#C9A962] rounded-full mt-1.5 flex-shrink-0" />
+                          {feat}
                         </li>
                       ))}
                     </ul>
+                  </div>
+                )}
+
+                {/* Specifications */}
+                {product.specifications && product.specifications.length > 0 && (
+                  <div className="mb-6" data-testid="product-specifications">
+                    <h3 className="text-xs tracking-[0.2em] uppercase font-semibold text-gray-500 dark:text-zinc-400 mb-3">Specifications</h3>
+                    <div className="border border-gray-100 dark:border-zinc-800 rounded-lg overflow-hidden">
+                      {product.specifications.map((spec, i) => {
+                        const parts = spec.split(':')
+                        const hasLabel = parts.length > 1 && parts[0].length < 40
+                        return (
+                          <div key={i} className={`flex text-sm ${i > 0 ? 'border-t border-gray-100 dark:border-zinc-800' : ''}`}>
+                            {hasLabel ? (
+                              <>
+                                <span className="w-2/5 px-3 py-2 bg-gray-50 dark:bg-zinc-900/50 text-gray-500 dark:text-zinc-500 font-medium flex-shrink-0">{parts[0].trim()}</span>
+                                <span className="flex-1 px-3 py-2 text-gray-700 dark:text-zinc-300">{parts.slice(1).join(':').trim()}</span>
+                              </>
+                            ) : (
+                              <span className="flex-1 px-3 py-2 text-gray-700 dark:text-zinc-300">{spec}</span>
+                            )}
+                          </div>
+                        )
+                      })}
+                    </div>
                   </div>
                 )}
 
