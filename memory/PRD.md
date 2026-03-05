@@ -19,7 +19,11 @@ Complete website overhaul for 100% dynamic content, a premium "Dark Luxury" desi
 - **Product Images**: All 217 product images downloaded from live site and stored on server at `/app/backend/uploads/products/`
 - **Frontend Catalog Page** (`/products`): Search, filter (category/brand/series), sort, pagination (24/page), URL query param support
 - **Frontend Detail Page** (`/products/[slug]`): Breadcrumb, large image, brand/category tags, related products, consultation CTA
-- **Brands Integration**: Brand cards show "View Products" link; brand detail pages have "View {Brand} Products" button
+- **Brand-to-Product Mapping**: Each brand detail page fetches and displays catalog products using `brand_slug` field
+  - Products organized by series/sub_category with gold accent bars and counts
+  - Brands without catalog products correctly hide the products section
+  - "View All in Catalog" button links to filtered product catalog
+- **Brands Integration**: Brand cards show "View Products" link; brand detail sidebar has "View {Brand} Products" button
 - **Footer**: "Product Catalog" link added to Company section
 - **Suspense Boundary**: Proper Next.js 14 handling for `useSearchParams()`
 
@@ -44,18 +48,26 @@ Complete website overhaul for 100% dynamic content, a premium "Dark Luxury" desi
 /app/frontend/
   app/products/page.tsx       # Product catalog with filters
   app/products/[slug]/page.tsx # Individual product detail
+  app/brands/[slug]/page.tsx  # Brand detail with catalog products
 ```
 
 ## Key Technical Decisions
 - Product images stored locally (not external URLs) for production reliability
+- `brand_slug` field added to each catalog product for efficient brand-page lookups
 - Separate `catalog_products` MongoDB collection (distinct from legacy `product_categories`)
 - API prefix `/api/catalog/` to avoid conflicts with existing `/api/products` endpoint
-- Suspense boundary for Next.js 14 `useSearchParams()` compatibility
+- Products organized by `sub_category` (series) on brand detail pages
+
+## Test Status
+- Backend: 14/14 API tests passing (100%)
+- Frontend: 16/16 UI tests passing (100%)
+- Test reports: `/app/test_reports/iteration_82.json`, `/app/test_reports/iteration_83.json`
 
 ## Prioritized Backlog
 ### P1 - Next Up
 - Admin UI for product management (CRUD interface in admin panel)
-- Product descriptions and specifications population (currently seeded without descriptions)
+- Product descriptions and specifications population
+- Header navigation update to include Products link
 
 ### P2 - Future
 - Compare Packages feature (previously scrapped, revisitable)
