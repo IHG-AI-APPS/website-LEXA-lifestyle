@@ -1,7 +1,7 @@
 # LEXA Lifestyle Website - Product Requirements Document
 
 ## Original Problem Statement
-Complete website overhaul for 100% dynamic content, a premium "Dark Luxury" design, and an app-like user experience. Major feature: comprehensive product catalog system with individual product pages, search/filter, and integration across the site.
+Complete website overhaul for 100% dynamic content, a premium "Dark Luxury" design, and an app-like user experience. Major feature: comprehensive product catalog system with individual product pages, search/filter, integration, admin CRUD, and smart recommendations.
 
 ## Core Requirements
 - Dark luxury aesthetic with gold (#C9A962) accents, dark and light mode
@@ -13,21 +13,27 @@ Complete website overhaul for 100% dynamic content, a premium "Dark Luxury" desi
 
 ### Product Catalog (Complete)
 - **217 products** across 19 brands, 7 categories, 35 series
-- All images stored locally on server
-- 100% descriptions, 96% specs, 74% features
+- All images stored locally, 100% descriptions, 96% specs, 74% features
 - Backend API at `/api/catalog/` with search, filter, sort, pagination, CRUD
-- Frontend catalog `/products` with sidebar filters, search, pagination
-- Product detail `/products/[slug]` with description, features bullets, specs table, related products
+- Frontend catalog `/products`, product detail `/products/[slug]`
 - Brand detail pages show catalog products organized by series
-- "PRODUCTS" link in header and footer navigation
+- "PRODUCTS" link in header and footer
 
-### Admin Product Management (Complete - March 2026)
+### Product Recommendations Engine (Complete - March 2026)
+- **Backend**: `/api/catalog/recommendations/{slug}` — tiered content-based recommendations:
+  - Tier 1: Same series (highest relevance)
+  - Tier 2: Same brand + category
+  - Tier 3: Same category (cross-brand)
+  - Tier 4: Featured products (fallback)
+  - Returns `_rec_reason` field for each recommendation
+- **Backend**: `/api/catalog/featured` — 8 curated diverse products for homepage
+- **Product Detail Pages**: "You May Also Like" (same-brand recs) + "Explore Other Brands" (cross-brand recs)
+- **Homepage**: "Featured Products" section with 8 curated products in a 4-column grid
+- 8 products marked as featured: Rotel Michi X5 S2, Borresen T5, Aavik I-880, Savant Touch 8, Leica Cine 1, Sonos Arc Ultra, E-electron DALI-2, Lifesmart Natur Switch
+
+### Admin Product Management (Complete)
 - Admin CRUD at `/admin/catalog` with search, filter, pagination
-- Product table with image thumbnails, brand, category badge, series, data indicators (D/S/F)
-- Modal form for create/edit: name, slug, brand (autocomplete), category (dropdown), sub_category, image upload, description, specs (textarea, one per line), features (textarea, one per line), featured/published toggles
-- Delete with confirmation dialog
-- Toast notifications for all CRUD operations
-- "Product Catalog" nav item in admin sidebar
+- Modal form with image upload, specs/features textareas, featured/published toggles
 
 ### Previously Completed
 - Virtual Tour, Testimonials, Service Worker v5, AI persona images
@@ -35,26 +41,25 @@ Complete website overhaul for 100% dynamic content, a premium "Dark Luxury" desi
 
 ## Architecture
 ```
-/app/backend/routes/product_catalog.py    # Full CRUD API
-/app/backend/models/product.py            # Pydantic models
+/app/backend/routes/product_catalog.py    # CRUD + recommendations + featured
+/app/backend/models/product.py
 /app/backend/seeds/seed_products.py       # 217-product seed
 /app/backend/seeds/enrich_products.py     # WP REST API enrichment
-/app/backend/uploads/products/            # 218 product images
 
 /app/frontend/app/products/page.tsx       # Public catalog
-/app/frontend/app/products/[slug]/page.tsx # Product detail
+/app/frontend/app/products/[slug]/page.tsx # Detail + recommendations
 /app/frontend/app/admin/catalog/page.tsx  # Admin CRUD
-/app/frontend/lib/adminApi.ts             # CRUD API functions
+/app/frontend/components/homepage/FeaturedProducts.tsx  # Homepage section
 ```
 
 ## Test Status
-- iteration_85: Backend 11/11 (100%), Frontend 14/14 (100%) - Admin CRUD
-- iteration_83: Backend 14/14 (100%), Frontend 16/16 (100%) - Brand integration
-- iteration_82: Backend 13/13 (100%) - Catalog API
+- iteration_86: Backend 13/13 (100%), Frontend 13/13 (100%) — Recommendations
+- iteration_85: Backend 11/11 (100%), Frontend 14/14 (100%) — Admin CRUD
+- iteration_83: Backend 14/14 (100%), Frontend 16/16 (100%) — Brand integration
 
 ## Prioritized Backlog
 ### P2
 - Compare Packages feature
-- Product recommendations engine
-- Advanced full-text search
+- Advanced full-text search with relevance scoring
 - Bulk import/export for products
+- Product image gallery (multiple images per product)
