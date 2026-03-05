@@ -302,13 +302,19 @@ export default function BrandsPage() {
                             )}
 
                             {brand.featured && (
-                              <div className="mt-3 pt-3 border-t border-gray-100 dark:border-zinc-800">
+                              <div className="mt-3 pt-3 border-t border-gray-100 dark:border-zinc-800 flex items-center justify-between">
                                 <span className="inline-flex items-center gap-1 text-[10px] uppercase tracking-wider font-semibold text-[#C9A962]">
                                   <Star size={10} fill="currentColor" />
                                   Featured Partner
                                 </span>
                               </div>
                             )}
+
+                            <div className="mt-2 pt-2 border-t border-gray-100 dark:border-zinc-800">
+                              <span className="text-[11px] text-gray-400 dark:text-zinc-500 group-hover:text-[#C9A962] transition-colors flex items-center gap-1">
+                                View Products <ChevronRight size={12} />
+                              </span>
+                            </div>
                           </div>
                         </Link>
                       ))}

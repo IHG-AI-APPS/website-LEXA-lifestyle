@@ -143,6 +143,7 @@ export default function Footer() {
                     { name: 'About Us', href: '/about' },
                     { name: 'Why LEXA', href: '/why-lexa' },
                     { name: 'Our Projects', href: '/projects' },
+                    { name: 'Product Catalog', href: '/products' },
                     { name: 'Brands We Carry', href: '/brands' },
                     { name: 'Experience Centre', href: '/experience-centre' },
                     { name: 'Contact Us', href: '/contact' }

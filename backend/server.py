@@ -24,7 +24,7 @@ from middleware.security_headers import SecurityHeadersMiddleware
 from utils.cache import cache, cached
 
 # Import route modules
-from routes import public_api, content, bookings, submissions, calculator, brands_products, admin_content, packages, package_inquiry, intelligence, admin_extended_content, admin_arabic_pages, patches, ai_recommendations, project_builder, smart_home_features, pricing, admin_solutions_services, ai_chatbot, lead_enhancement, seo_enhancement, uploads, analytics, schedule_visit, smart_recommendations, geo_pages, tracking_settings, sales_intelligence, locations, catalogues, regression_tests, admin_whatsapp
+from routes import public_api, content, bookings, submissions, calculator, brands_products, admin_content, packages, package_inquiry, intelligence, admin_extended_content, admin_arabic_pages, patches, ai_recommendations, project_builder, smart_home_features, pricing, admin_solutions_services, ai_chatbot, lead_enhancement, seo_enhancement, uploads, analytics, schedule_visit, smart_recommendations, geo_pages, tracking_settings, sales_intelligence, locations, catalogues, regression_tests, admin_whatsapp, product_catalog
 
 ROOT_DIR = Path(__file__).parent
 load_dotenv(ROOT_DIR / '.env')
@@ -2034,6 +2034,7 @@ app.include_router(locations.router)  # Dynamic location pages
 app.include_router(catalogues.router)  # Catalogues
 app.include_router(regression_tests.router)  # Nightly regression test results
 app.include_router(admin_whatsapp.router)  # WhatsApp/Interakt admin management
+app.include_router(product_catalog.router)  # Product catalog
 
 # --- Frontend Rebuild Endpoints ---
 _rebuild_status = {"running": False, "last_result": None, "last_time": None, "log": ""}

@@ -260,6 +260,12 @@ export default function BrandDetailPage({ params }: { params: { slug: string } }
                   <Button size="lg" className="w-full bg-[#C9A962] text-gray-900 hover:bg-[#C9A962]/90 font-semibold" onClick={() => setShowConsultationForm(true)} data-testid="sidebar-cta">
                     Request {brand.name} Quote
                   </Button>
+                  <Link href={`/products?brand=${encodeURIComponent(brand.name)}`} className="block">
+                    <Button size="lg" variant="outline" className="w-full" data-testid="view-brand-products">
+                      <ShoppingBag size={16} className="mr-2" />
+                      View {brand.name} Products
+                    </Button>
+                  </Link>
                 </div>
               </div>
             </div>

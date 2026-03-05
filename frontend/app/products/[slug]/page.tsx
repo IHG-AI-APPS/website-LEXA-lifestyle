@@ -5,72 +5,80 @@ import { motion } from 'framer-motion'
 import SafeImage from '@/components/ui/SafeImage'
 import Link from 'next/link'
 import { Button } from '@/components/ui/button'
-import { Badge } from '@/components/ui/badge'
 import { Breadcrumb } from '@/components/ui/breadcrumb'
 import ConsultationForm from '@/components/forms/ConsultationForm'
-import RelatedItemsCarousel from '@/components/sections/RelatedItemsCarousel'
-import { ArrowLeft, CheckCircle } from 'lucide-react'
-import { useCms } from '@/hooks/useCms'
+import { ArrowLeft, ArrowRight, Tag, Layers } from 'lucide-react'
 
-const BACKEND_URL = process.env.NEXT_PUBLIC_BACKEND_URL || 'http://localhost:8001'
+const BACKEND_URL = process.env.NEXT_PUBLIC_BACKEND_URL || ''
 const API = `${BACKEND_URL}/api`
 
-export default function ProductDetailPage({ params }: { params: { slug: string } }) {
-  const cms = useCms('page_products_detail', null)
+interface Product {
+  id: string
+  slug: string
+  name: string
+  brand: string
+  category: string
+  sub_category?: string
+  description: string
+  image: string
+  images: string[]
+  specifications: string[]
+  features: string[]
+  related_solutions: string[]
+}
 
-  const [showConsultationForm, setShowConsultationForm] = useState(false)
-  const [product, setProduct] = useState<any>(null)
-  const [otherProducts, setOtherProducts] = useState<any[]>([])
+export default function ProductDetailPage({ params }: { params: { slug: string } }) {
+  const [product, setProduct] = useState<Product | null>(null)
+  const [relatedProducts, setRelatedProducts] = useState<Product[]>([])
   const [loading, setLoading] = useState(true)
+  const [showConsultationForm, setShowConsultationForm] = useState(false)
+
+  const resolveImageUrl = (img: string) => {
+    if (!img) return ''
+    if (img.startsWith('http')) return img
+    return `${BACKEND_URL}${img}`
+  }
 
   const fetchProduct = useCallback(async () => {
     try {
-      const response = await fetch(`${API}/products/${params.slug}`)
-      if (response.ok) {
-        const data = await response.json()
+      const resp = await fetch(`${API}/catalog/products/${params.slug}`)
+      if (resp.ok) {
+        const data = await resp.json()
         setProduct(data)
+
+        // Fetch related products from same brand
+        const relResp = await fetch(`${API}/catalog/products?brand=${encodeURIComponent(data.brand)}&page_size=5`)
+        if (relResp.ok) {
+          const relData = await relResp.json()
+          setRelatedProducts(relData.products.filter((p: Product) => p.slug !== params.slug).slice(0, 4))
+        }
       }
-      setLoading(false)
-    } catch (error) {
-      console.error('Error fetching product:', error)
-      setLoading(false)
+    } catch (e) {
+      console.error('Error fetching product:', e)
     }
+    setLoading(false)
   }, [params.slug])
 
-  const fetchOtherProducts = useCallback(async () => {
-    try {
-      const response = await fetch(`${API}/products`)
-      if (response.ok) {
-        const data = await response.json()
-        const filtered = data.filter((p: any) => p.slug !== params.slug).slice(0, 4)
-        setOtherProducts(filtered)
-      }
-    } catch (error) {
-      console.error('Error fetching other products:', error)
-    }
-  }, [params.slug])
-
-  useEffect(() => {
-    fetchProduct()
-    fetchOtherProducts()
-  }, [fetchProduct, fetchOtherProducts])
+  useEffect(() => { fetchProduct() }, [fetchProduct])
 
   if (loading) {
     return (
-      <div className="min-h-screen bg-white pt-20 flex items-center justify-center">
-        <div className="text-gray-600 dark:text-zinc-500">Loading...</div>
+      <div className="min-h-screen bg-white dark:bg-[#0A0A0A] pt-20 flex items-center justify-center">
+        <div className="animate-pulse text-center">
+          <div className="w-12 h-12 border-2 border-[#C9A962] border-t-transparent rounded-full animate-spin mx-auto" />
+        </div>
       </div>
     )
   }
 
   if (!product) {
     return (
-      <div className="min-h-screen bg-white pt-20 flex items-center justify-center">
-        <div className="text-center">
-          <h2 className="text-3xl font-semibold mb-6">Product Category Not Found</h2>
+      <div className="min-h-screen bg-white dark:bg-[#0A0A0A] pt-20 flex items-center justify-center">
+        <div className="text-center" data-testid="product-not-found">
+          <h2 className="text-2xl font-semibold text-gray-900 dark:text-white mb-4">Product Not Found</h2>
           <Link href="/products">
-            <Button variant="outline" size="lg">
-              <ArrowLeft className="mr-2" size={20} />
+            <Button variant="outline" data-testid="back-to-products-btn">
+              <ArrowLeft className="mr-2 w-4 h-4" />
               Back to Products
             </Button>
           </Link>
@@ -80,179 +88,173 @@ export default function ProductDetailPage({ params }: { params: { slug: string }
   }
 
   return (
-    <div className="min-h-screen bg-white pt-20">
-      {/* Breadcrumb Navigation */}
-      <div className="container mx-auto px-5 sm:px-8 lg:px-16">
-        <Breadcrumb 
+    <div className="min-h-screen bg-white dark:bg-[#0A0A0A] pt-20">
+      {/* Breadcrumb */}
+      <div className="container mx-auto px-4 sm:px-8 lg:px-16 pt-2">
+        <Breadcrumb
           items={[
             { label: 'Products', href: '/products' },
+            { label: product.brand, href: `/products?brand=${encodeURIComponent(product.brand)}` },
             { label: product.name }
-          ]} 
+          ]}
         />
       </div>
 
-      {/* Hero */}
-      <section className="relative h-[500px] overflow-hidden">
-        <SafeImage
-          src={product.image}
-          alt={product.name}
-          fill
-          className="object-cover grayscale-[20%]"
-        />
-        <div className="absolute inset-0 bg-gradient-to-t from-charcoal/90 via-charcoal/60 to-charcoal/30" />
-        
-        <div className="absolute inset-0 flex items-center justify-center">
-          <div className="text-center text-white max-w-4xl mx-auto px-8">
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-            >
-              {product.icon && (
-                <div className="text-7xl mb-6">{product.icon}</div>
-              )}
-              <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6">{product.name}</h1>
-              <p className="text-xl text-gray-200 mb-6 leading-relaxed">
-                {product.description}
-              </p>
-              {product.featured && (
-                <Badge className="bg-yellow-500 text-black hover:bg-yellow-400 text-base px-4 py-2">
-                  ⭐ Featured Category
-                </Badge>
-              )}
-            </motion.div>
-          </div>
-        </div>
-      </section>
-
-      {/* Product Details */}
-      <section className="py-20">
-        <div className="container mx-auto px-5 sm:px-8 lg:px-16">
+      {/* Product Detail */}
+      <section className="py-8 md:py-12">
+        <div className="container mx-auto px-4 sm:px-8 lg:px-16">
           <div className="max-w-7xl mx-auto">
-            <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
-              {/* Main Content - Specifications */}
-              <div className="lg:col-span-2">
-                <motion.div
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6 }}
-                  className="border border-gray-200 dark:border-zinc-800 p-12 mb-8"
-                >
-                  <h2 className="text-4xl font-semibold mb-6">Key Specifications</h2>
-                  <div className="h-px w-24 bg-gradient-to-r from-charcoal to-transparent mb-8" />
-                  <div className="space-y-4">
-                    {product.specifications.map((spec: string, index: number) => (
-                      <div key={index} className="flex items-start gap-3">
-                        <CheckCircle size={24} className="text-charcoal mt-1 flex-shrink-0" strokeWidth={1.5} />
-                        <p className="text-lg text-gray-700 dark:text-zinc-400">{spec}</p>
-                      </div>
-                    ))}
-                  </div>
-                </motion.div>
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16">
+              {/* Image */}
+              <motion.div
+                initial={{ opacity: 0, x: -20 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.5 }}
+              >
+                <div className="relative aspect-square bg-gray-50 dark:bg-zinc-900 rounded-xl overflow-hidden border border-gray-100 dark:border-zinc-800" data-testid="product-main-image">
+                  {product.image ? (
+                    <SafeImage
+                      src={resolveImageUrl(product.image)}
+                      alt={product.name}
+                      fill
+                      className="object-contain p-8"
+                    />
+                  ) : (
+                    <div className="absolute inset-0 flex items-center justify-center text-gray-300 dark:text-zinc-700">No Image</div>
+                  )}
+                </div>
+              </motion.div>
 
-                {/* Related Solutions */}
-                {product.related_solutions && product.related_solutions.length > 0 && (
-                  <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.6, delay: 0.2 }}
-                    className="border border-gray-200 dark:border-zinc-800 p-12"
-                  >
-                    <h2 className="text-4xl font-semibold mb-6">Related Solutions</h2>
-                    <div className="h-px w-24 bg-gradient-to-r from-charcoal to-transparent mb-8" />
-                    <div className="flex flex-wrap gap-3">
-                      {product.related_solutions.map((solution: string) => (
-                        <Link key={solution} href={`/solutions/${solution}`}>
-                          <div className="px-6 py-3 border border-gray-300 dark:border-zinc-700 hover:border-charcoal hover:bg-gray-50 transition-all cursor-pointer">
-                            <span className="font-medium capitalize">{solution.replace(/-/g, ' ')}</span>
-                          </div>
-                        </Link>
-                      ))}
-                    </div>
-                  </motion.div>
-                )}
-              </div>
-
-              {/* Sidebar - Brands */}
-              <div className="lg:col-span-1">
-                <motion.div
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6, delay: 0.1 }}
-                  className="border border-gray-200 dark:border-zinc-800 p-8 sticky top-24"
+              {/* Info */}
+              <motion.div
+                initial={{ opacity: 0, x: 20 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.5, delay: 0.1 }}
+                className="flex flex-col justify-center"
+              >
+                {/* Brand */}
+                <Link
+                  href={`/products?brand=${encodeURIComponent(product.brand)}`}
+                  className="inline-flex items-center gap-1.5 text-[#C9A962] text-xs tracking-[0.2em] uppercase font-semibold hover:underline mb-3"
+                  data-testid="product-brand-link"
                 >
-                  <h3 className="text-2xl font-semibold mb-4">Available Brands</h3>
-                  <div className="h-px w-16 bg-gradient-to-r from-charcoal to-transparent mb-6" />
-                  <p className="text-sm text-gray-600 dark:text-zinc-500 mb-6">
-                    We carry {product.brands.length} premium brands in this category
+                  {product.brand}
+                </Link>
+
+                {/* Name */}
+                <h1 className="text-3xl sm:text-4xl font-bold tracking-tight text-gray-900 dark:text-white mb-4" data-testid="product-name">
+                  {product.name}
+                </h1>
+
+                {/* Tags */}
+                <div className="flex flex-wrap gap-2 mb-6">
+                  <span className="inline-flex items-center gap-1 px-3 py-1 bg-gray-100 dark:bg-zinc-800 rounded-full text-xs text-gray-600 dark:text-zinc-400">
+                    <Tag className="w-3 h-3" /> {product.category}
+                  </span>
+                  {product.sub_category && (
+                    <span className="inline-flex items-center gap-1 px-3 py-1 bg-gray-100 dark:bg-zinc-800 rounded-full text-xs text-gray-600 dark:text-zinc-400">
+                      <Layers className="w-3 h-3" /> {product.sub_category}
+                    </span>
+                  )}
+                </div>
+
+                {product.description && (
+                  <p className="text-base text-gray-600 dark:text-zinc-400 leading-relaxed mb-6" data-testid="product-description">
+                    {product.description}
                   </p>
-                  <div className="space-y-3 max-h-96 overflow-y-auto">
-                    {product.brands.map((brand: string) => (
-                      <div
-                        key={brand}
-                        className="p-4 border border-gray-200 dark:border-zinc-800 hover:border-charcoal hover:bg-gray-50 transition-all"
-                      >
-                        <p className="font-medium">{brand}</p>
-                      </div>
-                    ))}
+                )}
+
+                {/* Specifications */}
+                {product.specifications && product.specifications.length > 0 && (
+                  <div className="mb-6">
+                    <h3 className="text-xs tracking-[0.2em] uppercase font-semibold text-gray-500 dark:text-zinc-400 mb-3">Specifications</h3>
+                    <ul className="space-y-2">
+                      {product.specifications.map((spec, i) => (
+                        <li key={i} className="flex items-start gap-2 text-sm text-gray-600 dark:text-zinc-400">
+                          <div className="w-1 h-1 bg-[#C9A962] rounded-full mt-2 flex-shrink-0" />
+                          {spec}
+                        </li>
+                      ))}
+                    </ul>
                   </div>
-                  <div className="mt-8">
-                    <Link href="/brands">
-                      <Button variant="outline" className="w-full" size="lg">
-                        View All Brands
-                      </Button>
-                    </Link>
-                  </div>
-                </motion.div>
-              </div>
+                )}
+
+                {/* CTA */}
+                <div className="flex flex-col sm:flex-row gap-3 mt-2">
+                  <Button
+                    className="bg-[#C9A962] hover:bg-[#b8994f] text-white px-8"
+                    size="lg"
+                    onClick={() => setShowConsultationForm(true)}
+                    data-testid="product-inquiry-btn"
+                  >
+                    Enquire About This Product
+                  </Button>
+                  <Link href="/products">
+                    <Button variant="outline" size="lg" className="w-full sm:w-auto" data-testid="browse-more-btn">
+                      Browse More Products
+                    </Button>
+                  </Link>
+                </div>
+              </motion.div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* CTA */}
-      <section className="py-20 bg-charcoal">
-        <div className="container mx-auto px-5 sm:px-8 lg:px-16">
-          <div className="max-w-4xl mx-auto text-center">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-              viewport={{ once: true }}
-            >
-              <h2 className="text-5xl font-semibold text-white mb-6">
-                Need {product.name}?
-              </h2>
-              <p className="text-xl text-gray-400 mb-10">
-                Let our experts recommend the perfect products for your requirements.
-              </p>
-              <Button 
-                size="lg" 
-                className="bg-white hover:bg-gray-100 dark:bg-[#171717] text-charcoal px-12"
-                onClick={() => setShowConsultationForm(true)}
-              >
-                Get Product Recommendation
-              </Button>
-            </motion.div>
+      {/* Related Products */}
+      {relatedProducts.length > 0 && (
+        <section className="py-12 border-t border-gray-100 dark:border-zinc-800/50">
+          <div className="container mx-auto px-4 sm:px-8 lg:px-16">
+            <div className="max-w-7xl mx-auto">
+              <div className="flex items-center justify-between mb-8">
+                <h2 className="text-xl font-semibold text-gray-900 dark:text-white" data-testid="related-products-title">
+                  More from {product.brand}
+                </h2>
+                <Link href={`/products?brand=${encodeURIComponent(product.brand)}`} className="text-sm text-[#C9A962] hover:underline flex items-center gap-1">
+                  View All <ArrowRight className="w-3.5 h-3.5" />
+                </Link>
+              </div>
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
+                {relatedProducts.map((rp, index) => (
+                  <Link key={rp.id} href={`/products/${rp.slug}`} data-testid={`related-product-${index}`}>
+                    <div className="group">
+                      <div className="relative aspect-square bg-gray-50 dark:bg-zinc-900 rounded-lg overflow-hidden border border-gray-100 dark:border-zinc-800 group-hover:border-[#C9A962]/30 transition-colors">
+                        {rp.image ? (
+                          <SafeImage src={resolveImageUrl(rp.image)} alt={rp.name} fill className="object-contain p-4 group-hover:scale-105 transition-transform duration-500" />
+                        ) : (
+                          <div className="absolute inset-0 flex items-center justify-center text-gray-300 dark:text-zinc-700 text-xs">No Image</div>
+                        )}
+                      </div>
+                      <div className="mt-2.5">
+                        <p className="text-[10px] text-[#C9A962] font-medium tracking-wide uppercase">{rp.brand}</p>
+                        <h3 className="text-xs font-medium text-gray-900 dark:text-white mt-0.5 line-clamp-2 group-hover:text-[#C9A962] transition-colors">{rp.name}</h3>
+                      </div>
+                    </div>
+                  </Link>
+                ))}
+              </div>
+            </div>
           </div>
+        </section>
+      )}
+
+      {/* CTA Section */}
+      <section className="py-16 bg-[#0A0A0A]">
+        <div className="container mx-auto px-4 sm:px-8 lg:px-16 text-center">
+          <h2 className="text-2xl md:text-3xl font-semibold text-white mb-4">Need Product Recommendations?</h2>
+          <p className="text-gray-400 mb-8 max-w-lg mx-auto">
+            Our experts will specify the ideal equipment for your requirements and budget.
+          </p>
+          <Button
+            className="bg-[#C9A962] hover:bg-[#b8994f] text-white px-10"
+            size="lg"
+            onClick={() => setShowConsultationForm(true)}
+            data-testid="cta-consultation-btn"
+          >
+            Get Expert Recommendation
+          </Button>
         </div>
       </section>
-
-      {/* Other Products */}
-      {otherProducts.length > 0 && (
-        <RelatedItemsCarousel
-          items={otherProducts.map(p => ({
-            id: p.id,
-            slug: p.slug,
-            title: p.name,
-            name: p.name,
-            image: p.image,
-            description: p.description
-          }))}
-          title="Other Products"
-          basePath="/products"
-        />
-      )}
 
       <ConsultationForm isOpen={showConsultationForm} onClose={() => setShowConsultationForm(false)} />
     </div>
