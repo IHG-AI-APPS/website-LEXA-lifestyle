@@ -19,6 +19,41 @@ client = AsyncIOMotorClient(mongo_url)
 db = client[os.environ.get('DB_NAME', 'lexa_lifestyle')]
 
 
+async def ensure_search_index():
+    """Create weighted text index for relevance-scored search."""
+    collection = db.catalog_products
+    try:
+        # Drop old unweighted text index if exists
+        indexes = await collection.index_information()
+        for idx_name, idx_info in indexes.items():
+            if idx_info.get("textIndexVersion"):
+                weights = idx_info.get("weights", {})
+                # Only recreate if weights aren't set properly
+                if weights.get("name") != 10 or weights.get("brand") != 5:
+                    await collection.drop_index(idx_name)
+                    logger.info(f"Dropped old text index: {idx_name}")
+                else:
+                    logger.info("Weighted text index already exists")
+                    return
+        # Create new weighted text index
+        from pymongo import TEXT
+        await collection.create_index(
+            [
+                ("name", TEXT),
+                ("brand", TEXT),
+                ("sub_category", TEXT),
+                ("category", TEXT),
+                ("description", TEXT),
+            ],
+            weights={"name": 10, "brand": 5, "sub_category": 3, "category": 3, "description": 1},
+            name="weighted_text_search",
+            default_language="english",
+        )
+        logger.info("Created weighted text search index")
+    except Exception as e:
+        logger.error(f"Error creating search index: {e}")
+
+
 def slugify(text: str) -> str:
     text = text.lower().strip()
     text = re.sub(r'[^\w\s-]', '', text)
@@ -35,21 +70,29 @@ async def list_products(
     brand_slug: Optional[str] = None,
     sub_category: Optional[str] = None,
     featured: Optional[bool] = None,
-    sort: Optional[str] = Query(default="name_asc", regex="^(name_asc|name_desc|newest|oldest)$"),
+    sort: Optional[str] = Query(default="name_asc", regex="^(name_asc|name_desc|newest|oldest|relevance)$"),
     page: int = Query(default=1, ge=1),
     page_size: int = Query(default=24, ge=1, le=100),
 ):
-    """List products with search, filter, sort, and pagination"""
+    """List products with search, filter, sort, and pagination.
+    When sort=relevance and search is provided, uses MongoDB text search with weighted scoring.
+    """
     try:
         query = {"published": True}
+        use_text_search = sort == "relevance" and search and search.strip()
 
-        if search:
-            query["$or"] = [
-                {"name": {"$regex": search, "$options": "i"}},
-                {"brand": {"$regex": search, "$options": "i"}},
-                {"description": {"$regex": search, "$options": "i"}},
-                {"category": {"$regex": search, "$options": "i"}},
-            ]
+        if search and search.strip():
+            if use_text_search:
+                query["$text"] = {"$search": search.strip()}
+            else:
+                escaped = re.escape(search.strip())
+                query["$or"] = [
+                    {"name": {"$regex": escaped, "$options": "i"}},
+                    {"brand": {"$regex": escaped, "$options": "i"}},
+                    {"description": {"$regex": escaped, "$options": "i"}},
+                    {"category": {"$regex": escaped, "$options": "i"}},
+                    {"sub_category": {"$regex": escaped, "$options": "i"}},
+                ]
 
         if category:
             query["category"] = {"$regex": f"^{re.escape(category)}$", "$options": "i"}
@@ -65,22 +108,49 @@ async def list_products(
         if featured is not None:
             query["featured"] = featured
 
-        # Sorting
-        sort_map = {
-            "name_asc": [("name", 1)],
-            "name_desc": [("name", -1)],
-            "newest": [("created_at", -1)],
-            "oldest": [("created_at", 1)],
-        }
-        sort_spec = sort_map.get(sort, [("name", 1)])
-
-        # Count total
-        total = await db.catalog_products.count_documents(query)
-        total_pages = math.ceil(total / page_size) if total > 0 else 1
-
-        # Fetch page
         skip = (page - 1) * page_size
-        products = await db.catalog_products.find(query, {"_id": 0}).sort(sort_spec).skip(skip).limit(page_size).to_list(page_size)
+
+        if use_text_search:
+            # Text search with relevance scoring
+            projection = {"_id": 0, "score": {"$meta": "textScore"}}
+            sort_spec = [("score", {"$meta": "textScore"})]
+
+            total = await db.catalog_products.count_documents(query)
+
+            if total == 0:
+                # Fallback to regex for partial matches
+                query.pop("$text", None)
+                escaped = re.escape(search.strip())
+                query["$or"] = [
+                    {"name": {"$regex": escaped, "$options": "i"}},
+                    {"brand": {"$regex": escaped, "$options": "i"}},
+                    {"description": {"$regex": escaped, "$options": "i"}},
+                    {"category": {"$regex": escaped, "$options": "i"}},
+                    {"sub_category": {"$regex": escaped, "$options": "i"}},
+                ]
+                total = await db.catalog_products.count_documents(query)
+                total_pages = math.ceil(total / page_size) if total > 0 else 1
+                products = await db.catalog_products.find(query, {"_id": 0}).sort([("name", 1)]).skip(skip).limit(page_size).to_list(page_size)
+            else:
+                total_pages = math.ceil(total / page_size) if total > 0 else 1
+                products = await db.catalog_products.find(query, projection).sort(sort_spec).skip(skip).limit(page_size).to_list(page_size)
+                # Strip the score field before returning
+                for p in products:
+                    p.pop("score", None)
+        else:
+            # Standard sorting
+            sort_map = {
+                "name_asc": [("name", 1)],
+                "name_desc": [("name", -1)],
+                "newest": [("created_at", -1)],
+                "oldest": [("created_at", 1)],
+                "relevance": [("name", 1)],  # fallback when no search
+            }
+            sort_spec = sort_map.get(sort, [("name", 1)])
+
+            total = await db.catalog_products.count_documents(query)
+            total_pages = math.ceil(total / page_size) if total > 0 else 1
+            products = await db.catalog_products.find(query, {"_id": 0}).sort(sort_spec).skip(skip).limit(page_size).to_list(page_size)
 
         return ProductListResponse(
             products=products,

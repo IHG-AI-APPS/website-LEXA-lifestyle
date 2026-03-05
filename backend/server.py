@@ -2106,6 +2106,9 @@ app.add_middleware(
 async def startup_db():
     """Initialize admin user on startup"""
     await init_admin()
+    # Create weighted text search index for product catalog
+    from routes.product_catalog import ensure_search_index
+    await ensure_search_index()
     logger.info("✅ Admin initialization complete")
 
 @app.on_event("shutdown")

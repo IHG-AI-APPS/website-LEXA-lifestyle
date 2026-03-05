@@ -36,6 +36,7 @@ interface ProductsResponse {
 }
 
 const SORT_OPTIONS = [
+  { value: 'relevance', label: 'Relevance', searchOnly: true },
   { value: 'name_asc', label: 'Name A - Z' },
   { value: 'name_desc', label: 'Name Z - A' },
   { value: 'newest', label: 'Newest First' },
@@ -121,6 +122,7 @@ function ProductCatalogContent() {
   const [selectedBrand, setSelectedBrand] = useState<string | null>(initialBrand)
   const [selectedSeries, setSelectedSeries] = useState<string | null>(null)
   const [sort, setSort] = useState('name_asc')
+  const [userChangedSort, setUserChangedSort] = useState(false)
   const [showSortDropdown, setShowSortDropdown] = useState(false)
 
   const [categories, setCategories] = useState<FilterData[]>([])
@@ -140,6 +142,16 @@ function ProductCatalogContent() {
     const timer = setTimeout(() => setDebouncedSearch(search), 400)
     return () => clearTimeout(timer)
   }, [search])
+
+  // Auto-switch to relevance sort when search is active
+  useEffect(() => {
+    if (debouncedSearch && !userChangedSort) {
+      setSort('relevance')
+    } else if (!debouncedSearch && sort === 'relevance') {
+      setSort('name_asc')
+      setUserChangedSort(false)
+    }
+  }, [debouncedSearch])
 
   // Fetch filter data
   useEffect(() => {
@@ -201,6 +213,7 @@ function ProductCatalogContent() {
     setSearch('')
     setDebouncedSearch('')
     setSort('name_asc')
+    setUserChangedSort(false)
   }
 
   const activeFilterCount = [selectedCategory, selectedBrand, selectedSeries].filter(Boolean).length
@@ -299,10 +312,13 @@ function ProductCatalogContent() {
                     exit={{ opacity: 0, y: -5 }}
                     className="absolute right-0 top-full mt-1 w-44 bg-white dark:bg-zinc-900 border border-gray-200 dark:border-zinc-800 rounded-lg shadow-lg z-40 overflow-hidden"
                   >
-                    {SORT_OPTIONS.map(opt => (
+                    {SORT_OPTIONS
+                      .filter(opt => !opt.searchOnly || debouncedSearch)
+                      .map(opt => (
                       <button
                         key={opt.value}
-                        onClick={() => { setSort(opt.value); setShowSortDropdown(false) }}
+                        onClick={() => { setSort(opt.value); setUserChangedSort(true); setShowSortDropdown(false) }}
+                        data-testid={`sort-option-${opt.value}`}
                         className={`w-full text-left px-4 py-2.5 text-sm transition-colors ${
                           sort === opt.value ? 'bg-[#C9A962]/10 text-[#C9A962]' : 'text-gray-600 dark:text-zinc-400 hover:bg-gray-50 dark:hover:bg-zinc-800'
                         }`}
