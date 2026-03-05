@@ -22,6 +22,14 @@ Complete website overhaul for 100% dynamic content, a premium "Dark Luxury" desi
 - **Frontend**: "Relevance" option hidden in dropdown when no search term is active
 - Test: iteration_87 — Backend 15/16 (94%), Frontend 100%
 
+### Bulk Import/Export & Product Image Gallery (Complete - March 2026)
+- **CSV Export**: `GET /api/catalog/products/export` — downloads all products as CSV with pipe-separated multi-value fields
+- **CSV Import**: `POST /api/catalog/products/import` — creates/updates products from CSV, matching by slug
+- **Admin UI**: Export CSV & Import CSV buttons in `/admin/catalog` header
+- **Image Gallery**: Multi-image support with interactive gallery on product detail page (thumbnail strip, navigation arrows, image counter)
+- **Admin Gallery Upload**: MultiImageUpload component in product edit form (up to 10 images per product)
+- Test: iteration_88 — Backend 100% (11/11), Frontend 100%
+
 - **217 products** across 19 brands, 7 categories, 35 series
 - All images stored locally, 100% descriptions, 96% specs, 74% features
 - Backend API at `/api/catalog/` with search, filter, sort, pagination, CRUD
@@ -69,5 +77,3 @@ Complete website overhaul for 100% dynamic content, a premium "Dark Luxury" desi
 ## Prioritized Backlog
 ### P2
 - Compare Packages feature
-- Bulk import/export for products
-- Product image gallery (multiple images per product)
