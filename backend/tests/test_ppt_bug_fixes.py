@@ -7,7 +7,7 @@ import requests
 import os
 
 # Backend URL from environment
-BASE_URL = os.environ.get('REACT_APP_BACKEND_URL', 'https://product-showcase-410.preview.emergentagent.com')
+BASE_URL = os.environ.get('REACT_APP_BACKEND_URL', 'https://catalog-search-5.preview.emergentagent.com')
 
 # Admin credentials
 ADMIN_USERNAME = "admin"
