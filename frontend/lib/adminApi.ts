@@ -391,3 +391,34 @@ export async function reorderServices(items: {id: string, priority: number}[]) {
   return response.json()
 }
 
+
+// Catalog Product Management (individual products)
+export async function createCatalogProduct(product: any) {
+  const response = await fetch(`${BACKEND_URL}/api/catalog/products`, {
+    method: 'POST',
+    headers: getAuthHeaders(),
+    body: JSON.stringify(product)
+  })
+  if (!response.ok) throw new Error('Failed to create catalog product')
+  return response.json()
+}
+
+export async function updateCatalogProduct(id: string, product: any) {
+  const response = await fetch(`${BACKEND_URL}/api/catalog/products/${id}`, {
+    method: 'PUT',
+    headers: getAuthHeaders(),
+    body: JSON.stringify(product)
+  })
+  if (!response.ok) throw new Error('Failed to update catalog product')
+  return response.json()
+}
+
+export async function deleteCatalogProduct(id: string) {
+  const response = await fetch(`${BACKEND_URL}/api/catalog/products/${id}`, {
+    method: 'DELETE',
+    headers: getAuthHeaders()
+  })
+  if (!response.ok) throw new Error('Failed to delete catalog product')
+  return response.json()
+}
+
