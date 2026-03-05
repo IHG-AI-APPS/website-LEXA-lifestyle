@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useEffect, useCallback, useRef } from 'react'
+import { useState, useEffect, useCallback, useRef, Suspense } from 'react'
 import { useSearchParams } from 'next/navigation'
 import { motion, AnimatePresence } from 'framer-motion'
 import SafeImage from '@/components/ui/SafeImage'
@@ -94,6 +94,14 @@ function FilterSection({ title, items, selected, onSelect, isOpen, onToggle }: {
 }
 
 export default function ProductCatalogPage() {
+  return (
+    <Suspense fallback={<div className="min-h-screen bg-white dark:bg-[#0A0A0A] pt-20 flex items-center justify-center"><div className="w-8 h-8 border-2 border-[#C9A962] border-t-transparent rounded-full animate-spin" /></div>}>
+      <ProductCatalogContent />
+    </Suspense>
+  )
+}
+
+function ProductCatalogContent() {
   const searchParams = useSearchParams()
   
   // Initialize state from URL params

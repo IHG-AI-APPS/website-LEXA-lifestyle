@@ -1,92 +1,63 @@
 # LEXA Lifestyle Website - Product Requirements Document
 
 ## Original Problem Statement
-Complete website overhaul: premium "Dark Luxury" design, 100% dynamic content, app-like UX, site-wide color consistency, custom AI imagery, immersive interactive experiences with ambient sound.
+Complete website overhaul for 100% dynamic content, a premium "Dark Luxury" design, and an app-like user experience. The latest major feature request is a comprehensive product catalog system with individual product pages, search/filter, and integration across the site.
 
-## Core Architecture
-- **Frontend**: Next.js (production mode `next start`)
-- **Backend**: FastAPI with MongoDB
-- **Theme**: Dark Charcoal (#050505, #0A0A0A, #171717) + Gold (#C9A962)
-- **Images**: 100% custom AI-generated (zero stock photos)
+## Core Requirements
+- Dark luxury aesthetic with gold (#C9A962) accents on charcoal backgrounds
+- Supports both dark and light mode themes
+- Full-stack: Next.js 14 frontend + FastAPI backend + MongoDB
+- Dynamic content managed via admin panel
+- Multi-language support (English/Arabic)
+- Responsive design for all devices
 
 ## What's Been Implemented
 
-### All Audit Fixes (P0/P1/P2) — 23 items complete
-### Dark Charcoal Color Overhaul — 100+ files, zero blue tint
-### Gold Shimmer Micro-Animations — hero, CTAs, badges
-### Service Worker v4 — network-first CMS, SWR APIs, offline page
-### 39+ Custom AI Images — all stock photos replaced site-wide
+### Product Catalog Feature (Completed - March 2026)
+- **Backend API**: Full CRUD at `/api/catalog/products`, `/api/catalog/categories`, `/api/catalog/brands`, `/api/catalog/series`
+- **Database**: 217 products seeded across 19 brands, 7 categories, 35 series in `catalog_products` collection
+- **Product Images**: All 217 product images downloaded from live site and stored on server at `/app/backend/uploads/products/`
+- **Frontend Catalog Page** (`/products`): Search, filter (category/brand/series), sort, pagination (24/page), URL query param support
+- **Frontend Detail Page** (`/products/[slug]`): Breadcrumb, large image, brand/category tags, related products, consultation CTA
+- **Brands Integration**: Brand cards show "View Products" link; brand detail pages have "View {Brand} Products" button
+- **Footer**: "Product Catalog" link added to Company section
+- **Suspense Boundary**: Proper Next.js 14 handling for `useSearchParams()`
 
-### Hero Redesign (Mar 2026)
-- **Minimal cinematic hero**: Full-screen video background with AI-generated luxury interior poster/fallback
-- **Single quote**: "Where technology meets luxury" — no headings, no CTAs, no clutter
-- **Navigation preserved**: Full header navigation visible on top
-- **Video rotation**: Existing Sora 2 clips with crossfade transitions
-- **CMS-driven**: Quote, video clips configurable from backend
+### Previously Completed Features
+- Virtual Tour with createPortal fix for CSS stacking contexts
+- Full Testimonials page at `/testimonials`
+- Service Worker v5 with advanced caching
+- AI-generated imagery for persona pages
+- Homepage CTA band and hero optimization
+- Tablet view caching fix via sw.js no-cache headers
+- Accessibility enhancements (focus-visible, ARIA landmarks)
+- Client logo text-based brand integration
 
-### Testimonials Compact Redesign (Mar 2026)
-- **4-column single row**: Compact cards with star ratings, 2-line truncated quotes, author info
-- **"View All" button**: Links to /testimonials for full testimonial page
-- **Dramatically reduced footprint** from previous large 3-column layout
+## Architecture
+```
+/app/backend/
+  routes/product_catalog.py   # Catalog API (search/filter/pagination/CRUD)
+  models/product.py           # Product Pydantic models
+  seeds/seed_products.py      # Seed script (217 products from live site)
+  uploads/products/           # 218 product images stored locally
 
-### Persona Pages Redesign (Mar 2026)
-- All 4 persona pages (homeowner, architect, developer, commercial) completely redesigned
-- Image-driven layout: 85vh fullscreen hero + 4 alternating image/text showcase sections + CTA section
-- 8 new AI-generated images: luxury villa interior, architecture studio, villa compound, hotel lobby, cinema room, smart lighting bedroom, outdoor pool, security systems
-- Each page has unique hero tagline and contextual solution links
-- Consistent dark luxury theme with charcoal/gold palette
+/app/frontend/
+  app/products/page.tsx       # Product catalog with filters
+  app/products/[slug]/page.tsx # Individual product detail
+```
 
-### Footer Logo Fix (Mar 2026)
-- Footer LEXA logo now matches header logo size (144x56px at lg breakpoint)
+## Key Technical Decisions
+- Product images stored locally (not external URLs) for production reliability
+- Separate `catalog_products` MongoDB collection (distinct from legacy `product_categories`)
+- API prefix `/api/catalog/` to avoid conflicts with existing `/api/products` endpoint
+- Suspense boundary for Next.js 14 `useSearchParams()` compatibility
 
-### Interactive Virtual Tour with Ambient Sound
-- 6 curated zones with Ken Burns effects, glassmorphism panels, ambient sound
-- **Portal rendering** (createPortal) for correct fixed positioning
-- Background-image approach for reliable sizing with Framer Motion transforms
+## Prioritized Backlog
+### P1 - Next Up
+- Admin UI for product management (CRUD interface in admin panel)
+- Product descriptions and specifications population (currently seeded without descriptions)
 
-### Virtual Tour Scaling Fix (Mar 2026)
-- Root cause: ancestor `filter: blur(0px)` broke `fixed` positioning
-- Fix: `createPortal` to render in `document.body`
-
-### Header/Footer Navigation Update (Mar 2026)
-- Moved "Catalogues" from header navigation to footer "Quick Links"
-- Added golden CTA band below hero: "Find Your Perfect Solution" + "View Projects" equally divided
-
-### Testimonials Full Page (Mar 2026)
-- Created /testimonials page with cinematic hero, featured 3-col cards with client photos, and compact "More Reviews" grid
-- Merges API testimonials with fallback data (no duplicates)
-- Linked from homepage "View All" button
-- CTA section links to Experience Centre and Projects
-
-## Admin Credentials
-- URL: `/admin/login`, Username: `admin`, Password: `lexa2026`
-
-## Critical Notes
-- DO NOT modify `start` script in `package.json`
-- DO NOT re-add blue-tinted colors
-- Production mode: `npx next build` + `sudo supervisorctl restart frontend`
-- Emergent LLM Key balance is LOW — user needs to top up for video generation (Profile → Universal Key → Add Balance)
-
-### Client Logo Integration (Mar 2026)
-- Replaced placeholder SVGs with clean text-based brand wordmarks in TrustedInUAE and ClientLogos components
-- Technology partners: Control4, Crestron, Lutron, Sonos, Samsung, Sony
-- UAE Developers: Emaar, Nakheel, DAMAC, Sobha Realty, Meraas, Dubai Holding
-- Certifications: Control4 Diamond Dealer, Crestron Certified, CEDIA, KNX
-- Stats: 500+ villas, 15+ years, 50+ projects, 98% satisfaction
-
-### Service Worker v5 (Mar 2026)
-- External image caching (AI-generated images on emergentagent.com CDN) — dedicated IMAGE_CACHE
-- Navigation preload enabled for faster page transitions
-- API prefetching on install (solutions, services, testimonials, brands)
-- Video range-request passthrough (no caching, native browser handling)
-- Periodic stale API cleanup (30 min intervals)
-- Cache size limits: 200 static, 80 images, 120 API entries
-- Version messaging support (getVersion)
-- 4 dedicated caches: static-v5, images-v1, api-v3, offline-v2
-
-## Remaining Backlog
-- Generate new custom AI hero video (needs Emergent LLM Key balance top-up for Sora 2)
-- "Compare Packages" side-by-side conversion feature
-- Refine Service Worker Caching with more advanced strategies
-- Client Logo Integration (TrustedBy component uses placeholder SVG)
-- Create /testimonials full page (linked from "View All" button)
+### P2 - Future
+- Compare Packages feature (previously scrapped, revisitable)
+- Product recommendations engine
+- Advanced product search (full-text with relevance scoring)
