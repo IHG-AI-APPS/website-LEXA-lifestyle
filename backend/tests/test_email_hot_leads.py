@@ -17,7 +17,7 @@ import os
 import ast
 import sys
 
-BASE_URL = os.environ.get('REACT_APP_BACKEND_URL', 'https://luxury-tour-staging.preview.emergentagent.com')
+BASE_URL = os.environ.get('REACT_APP_BACKEND_URL', 'https://product-showcase-410.preview.emergentagent.com')
 
 
 @pytest.fixture(scope="module")
