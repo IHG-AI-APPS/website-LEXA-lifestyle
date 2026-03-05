@@ -20,6 +20,7 @@ const TrustedInUAE = dynamic(() => import('@/components/sections/TrustedInUAE').
   loading: () => <div className="h-[300px] bg-[#050505]" />
 })
 const Testimonials = dynamic(() => import('@/components/sections/Testimonials').catch(() => ({ default: Noop })))
+const FeaturedProducts = dynamic(() => import('@/components/homepage/FeaturedProducts').catch(() => ({ default: Noop })))
 
 export default function HomePage() {
   const cms = useCms('page_homepage', null)
@@ -39,6 +40,8 @@ export default function HomePage() {
       <TetrisProjects />
       
       <TrustedInUAE variant="full" showStats={true} />
+      
+      <FeaturedProducts />
       
       <Testimonials />
       

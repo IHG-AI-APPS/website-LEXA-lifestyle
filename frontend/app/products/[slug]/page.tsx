@@ -30,6 +30,7 @@ interface Product {
 export default function ProductDetailPage({ params }: { params: { slug: string } }) {
   const [product, setProduct] = useState<Product | null>(null)
   const [relatedProducts, setRelatedProducts] = useState<Product[]>([])
+  const [crossCategoryRecs, setCrossCategoryRecs] = useState<Product[]>([])
   const [loading, setLoading] = useState(true)
   const [showConsultationForm, setShowConsultationForm] = useState(false)
 
@@ -46,11 +47,16 @@ export default function ProductDetailPage({ params }: { params: { slug: string }
         const data = await resp.json()
         setProduct(data)
 
-        // Fetch related products from same brand
-        const relResp = await fetch(`${API}/catalog/products?brand=${encodeURIComponent(data.brand)}&page_size=5`)
-        if (relResp.ok) {
-          const relData = await relResp.json()
-          setRelatedProducts(relData.products.filter((p: Product) => p.slug !== params.slug).slice(0, 4))
+        // Fetch smart recommendations
+        const recResp = await fetch(`${API}/catalog/recommendations/${params.slug}?limit=8`)
+        if (recResp.ok) {
+          const recData = await recResp.json()
+          const recs = recData.recommendations || []
+          // Split: first 4 = "You May Also Like" (same series/brand), rest = cross-category
+          const sameBrand = recs.filter((r: any) => r.brand === data.brand).slice(0, 4)
+          const crossCat = recs.filter((r: any) => r.brand !== data.brand).slice(0, 4)
+          setRelatedProducts(sameBrand.length > 0 ? sameBrand : recs.slice(0, 4))
+          setCrossCategoryRecs(crossCat)
         }
       }
     } catch (e) {
@@ -226,15 +232,18 @@ export default function ProductDetailPage({ params }: { params: { slug: string }
         </div>
       </section>
 
-      {/* Related Products */}
+      {/* You May Also Like */}
       {relatedProducts.length > 0 && (
         <section className="py-12 border-t border-gray-100 dark:border-zinc-800/50">
           <div className="container mx-auto px-4 sm:px-8 lg:px-16">
             <div className="max-w-7xl mx-auto">
               <div className="flex items-center justify-between mb-8">
-                <h2 className="text-xl font-semibold text-gray-900 dark:text-white" data-testid="related-products-title">
-                  More from {product.brand}
-                </h2>
+                <div>
+                  <span className="text-[10px] uppercase tracking-[0.2em] text-[#C9A962] font-semibold">Recommended</span>
+                  <h2 className="text-xl font-semibold text-gray-900 dark:text-white mt-1" data-testid="related-products-title">
+                    You May Also Like
+                  </h2>
+                </div>
                 <Link href={`/products?brand=${encodeURIComponent(product.brand)}`} className="text-sm text-[#C9A962] hover:underline flex items-center gap-1">
                   View All <ArrowRight className="w-3.5 h-3.5" />
                 </Link>
@@ -244,6 +253,46 @@ export default function ProductDetailPage({ params }: { params: { slug: string }
                   <Link key={rp.id} href={`/products/${rp.slug}`} data-testid={`related-product-${index}`}>
                     <div className="group">
                       <div className="relative aspect-square bg-gray-50 dark:bg-zinc-900 rounded-lg overflow-hidden border border-gray-100 dark:border-zinc-800 group-hover:border-[#C9A962]/30 transition-colors">
+                        {rp.image ? (
+                          <SafeImage src={resolveImageUrl(rp.image)} alt={rp.name} fill className="object-contain p-4 group-hover:scale-105 transition-transform duration-500" />
+                        ) : (
+                          <div className="absolute inset-0 flex items-center justify-center text-gray-300 dark:text-zinc-700 text-xs">No Image</div>
+                        )}
+                      </div>
+                      <div className="mt-2.5">
+                        <p className="text-[10px] text-[#C9A962] font-medium tracking-wide uppercase">{rp.brand}</p>
+                        <h3 className="text-xs font-medium text-gray-900 dark:text-white mt-0.5 line-clamp-2 group-hover:text-[#C9A962] transition-colors">{rp.name}</h3>
+                      </div>
+                    </div>
+                  </Link>
+                ))}
+              </div>
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/* Explore Other Categories */}
+      {crossCategoryRecs.length > 0 && (
+        <section className="py-12 border-t border-gray-100 dark:border-zinc-800/50 bg-gray-50/50 dark:bg-zinc-900/20">
+          <div className="container mx-auto px-4 sm:px-8 lg:px-16">
+            <div className="max-w-7xl mx-auto">
+              <div className="flex items-center justify-between mb-8">
+                <div>
+                  <span className="text-[10px] uppercase tracking-[0.2em] text-gray-400 dark:text-zinc-500 font-semibold">Discover</span>
+                  <h2 className="text-xl font-semibold text-gray-900 dark:text-white mt-1" data-testid="cross-category-title">
+                    Explore Other Brands
+                  </h2>
+                </div>
+                <Link href="/products" className="text-sm text-[#C9A962] hover:underline flex items-center gap-1">
+                  Browse All <ArrowRight className="w-3.5 h-3.5" />
+                </Link>
+              </div>
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
+                {crossCategoryRecs.map((rp, index) => (
+                  <Link key={rp.id} href={`/products/${rp.slug}`} data-testid={`cross-rec-${index}`}>
+                    <div className="group">
+                      <div className="relative aspect-square bg-white dark:bg-zinc-900 rounded-lg overflow-hidden border border-gray-100 dark:border-zinc-800 group-hover:border-[#C9A962]/30 transition-colors">
                         {rp.image ? (
                           <SafeImage src={resolveImageUrl(rp.image)} alt={rp.name} fill className="object-contain p-4 group-hover:scale-105 transition-transform duration-500" />
                         ) : (

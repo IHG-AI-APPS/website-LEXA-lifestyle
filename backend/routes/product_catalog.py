@@ -94,6 +94,126 @@ async def list_products(
         raise HTTPException(status_code=500, detail="Failed to fetch products")
 
 
+@router.get("/recommendations/{slug}")
+async def get_recommendations(slug: str, limit: int = Query(default=8, ge=1, le=20)):
+    """Get smart product recommendations for a given product.
+    Priority: 1) Same series  2) Same brand+category  3) Same category  4) Featured
+    """
+    try:
+        product = await db.catalog_products.find_one({"slug": slug, "published": True}, {"_id": 0})
+        if not product:
+            raise HTTPException(status_code=404, detail="Product not found")
+
+        recs = []
+        seen = {product["id"]}
+
+        # Tier 1: Same series (highest relevance)
+        if product.get("sub_category"):
+            tier1 = await db.catalog_products.find(
+                {"sub_category": product["sub_category"], "published": True, "id": {"$nin": list(seen)}},
+                {"_id": 0}
+            ).limit(limit).to_list(limit)
+            for p in tier1:
+                if p["id"] not in seen:
+                    p["_rec_reason"] = f"Same series: {product['sub_category']}"
+                    recs.append(p)
+                    seen.add(p["id"])
+
+        # Tier 2: Same brand + category
+        if len(recs) < limit:
+            remaining = limit - len(recs)
+            tier2 = await db.catalog_products.find(
+                {"brand": product["brand"], "category": product["category"], "published": True, "id": {"$nin": list(seen)}},
+                {"_id": 0}
+            ).limit(remaining).to_list(remaining)
+            for p in tier2:
+                if p["id"] not in seen:
+                    p["_rec_reason"] = f"Same brand & category"
+                    recs.append(p)
+                    seen.add(p["id"])
+
+        # Tier 3: Same category, different brand
+        if len(recs) < limit:
+            remaining = limit - len(recs)
+            tier3 = await db.catalog_products.find(
+                {"category": product["category"], "published": True, "id": {"$nin": list(seen)}},
+                {"_id": 0}
+            ).limit(remaining).to_list(remaining)
+            for p in tier3:
+                if p["id"] not in seen:
+                    p["_rec_reason"] = "Similar category"
+                    recs.append(p)
+                    seen.add(p["id"])
+
+        # Tier 4: Featured products fallback
+        if len(recs) < limit:
+            remaining = limit - len(recs)
+            tier4 = await db.catalog_products.find(
+                {"featured": True, "published": True, "id": {"$nin": list(seen)}},
+                {"_id": 0}
+            ).limit(remaining).to_list(remaining)
+            for p in tier4:
+                if p["id"] not in seen:
+                    p["_rec_reason"] = "Featured product"
+                    recs.append(p)
+                    seen.add(p["id"])
+
+        return {"product": slug, "recommendations": recs[:limit]}
+    except HTTPException:
+        raise
+    except Exception as e:
+        logger.error(f"Recommendations error: {str(e)}")
+        raise HTTPException(status_code=500, detail="Failed to get recommendations")
+
+
+@router.get("/featured")
+async def get_featured_products(limit: int = Query(default=8, ge=1, le=20)):
+    """Get featured/curated products for homepage display.
+    Returns a diverse mix across categories and brands.
+    """
+    try:
+        # First try featured products
+        featured = await db.catalog_products.find(
+            {"featured": True, "published": True},
+            {"_id": 0}
+        ).limit(limit).to_list(limit)
+
+        if len(featured) >= limit:
+            return {"products": featured[:limit]}
+
+        # If not enough featured, pick diverse products across categories
+        pipeline = [
+            {"$match": {"published": True, "image": {"$ne": ""}, "image": {"$exists": True}}},
+            {"$sort": {"image": -1}},
+            {"$group": {
+                "_id": "$category",
+                "products": {"$push": {
+                    "id": "$id", "slug": "$slug", "name": "$name",
+                    "brand": "$brand", "category": "$category",
+                    "sub_category": "$sub_category", "image": "$image",
+                    "description": "$description",
+                }}
+            }},
+            {"$project": {
+                "category": "$_id",
+                "sample": {"$slice": ["$products", 2]}
+            }}
+        ]
+        categories = await db.catalog_products.aggregate(pipeline).to_list(20)
+
+        seen = {p["id"] for p in featured}
+        for cat in categories:
+            for p in cat.get("sample", []):
+                if p["id"] not in seen and len(featured) < limit:
+                    featured.append(p)
+                    seen.add(p["id"])
+
+        return {"products": featured[:limit]}
+    except Exception as e:
+        logger.error(f"Featured products error: {str(e)}")
+        raise HTTPException(status_code=500, detail="Failed to fetch featured products")
+
+
 @router.get("/products/{slug}", response_model=Product)
 async def get_product(slug: str):
     """Get a single product by slug"""
