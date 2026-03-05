@@ -12,6 +12,16 @@ Complete website overhaul for 100% dynamic content, a premium "Dark Luxury" desi
 ## What's Been Implemented
 
 ### Product Catalog (Complete)
+
+### Advanced Full-Text Search with Relevance Scoring (Complete - March 2026)
+- **Backend**: Weighted MongoDB text index (name:10, brand:5, sub_category:3, category:3, description:1)
+- **Backend**: `sort=relevance` option uses `$text` search with `$meta: textScore` ranking
+- **Backend**: Partial word fallback to regex when $text returns no results
+- **Frontend**: "Relevance" sort auto-activates when user types a search term
+- **Frontend**: Sort reverts to "Name A-Z" when search is cleared
+- **Frontend**: "Relevance" option hidden in dropdown when no search term is active
+- Test: iteration_87 — Backend 15/16 (94%), Frontend 100%
+
 - **217 products** across 19 brands, 7 categories, 35 series
 - All images stored locally, 100% descriptions, 96% specs, 74% features
 - Backend API at `/api/catalog/` with search, filter, sort, pagination, CRUD
@@ -19,8 +29,7 @@ Complete website overhaul for 100% dynamic content, a premium "Dark Luxury" desi
 - Brand detail pages show catalog products organized by series
 - "PRODUCTS" link in header and footer
 
-### Product Recommendations Engine (Complete - March 2026)
-- **Backend**: `/api/catalog/recommendations/{slug}` — tiered content-based recommendations:
+### Product Recommendations Engine (Complete - March 2026)- **Backend**: `/api/catalog/recommendations/{slug}` — tiered content-based recommendations:
   - Tier 1: Same series (highest relevance)
   - Tier 2: Same brand + category
   - Tier 3: Same category (cross-brand)
@@ -60,6 +69,5 @@ Complete website overhaul for 100% dynamic content, a premium "Dark Luxury" desi
 ## Prioritized Backlog
 ### P2
 - Compare Packages feature
-- Advanced full-text search with relevance scoring
 - Bulk import/export for products
 - Product image gallery (multiple images per product)
