@@ -116,7 +116,7 @@ export default function VideoGallery({
             <div key={video.id} className="group">
               <VideoPlayer
                 videoUrl={video.video_url}
-                thumbnailUrl={video.thumbnail_url || 'https://files.ihgbrands.com/lexa/migrated/162fd60e556d6189.png'}
+                thumbnailUrl={video.thumbnail_url || 'https://files.ihgbrands.com/lexa/migrated/162fd60e556d6189.webp'}
                 title={video.title}
                 duration={video.duration || undefined}
                 className="aspect-video"

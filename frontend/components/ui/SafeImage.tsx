@@ -65,12 +65,18 @@ export default function SafeImage({
   const validSrc = getValidSrc(imgSrc)
   const isCdn = typeof validSrc === 'string' && validSrc.includes('files.ihgbrands.com')
 
+  // Auto-upgrade to WebP URL for CDN images (PNG/JPG → WebP)
+  const optimizedSrc = isCdn && typeof validSrc === 'string'
+    ? validSrc.replace(/\.(png|jpg|jpeg)$/i, '.webp')
+    : validSrc
+
   return (
     <Image
       {...props}
-      src={validSrc}
+      src={optimizedSrc}
       alt={alt}
       unoptimized={isCdn}
+      loading={props.priority ? undefined : 'lazy'}
       className={`${className || ''} ${loaded ? '' : 'opacity-0'}`}
       style={{
         ...props.style,
@@ -79,7 +85,15 @@ export default function SafeImage({
         filter: loaded ? 'blur(0)' : 'blur(4px)',
       }}
       sizes={props.sizes || (props.fill ? '(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw' : undefined)}
-      onError={handleError}
+      onError={() => {
+        // If WebP fails, fallback to original URL, then to fallback image
+        if (!hasError && optimizedSrc !== validSrc) {
+          setImgSrc(validSrc as string)
+        } else if (!hasError) {
+          setHasError(true)
+          setImgSrc(fallbackSrc)
+        }
+      }}
       onLoad={() => setLoaded(true)}
     />
   )

@@ -134,7 +134,7 @@ export default function IntelligencePage() {
         <section className="relative overflow-hidden bg-[#0A0A0A] dark:bg-[#050505] text-white py-20 sm:py-32">
         {/* Hero Background Image */}
         <div className="absolute inset-0">
-          <div style={{backgroundImage: "url(https://files.ihgbrands.com/lexa/migrated/e140dabebe23fa16.png)"}} className="absolute inset-0 bg-cover bg-center opacity-80" />
+          <div style={{backgroundImage: "url(https://files.ihgbrands.com/lexa/migrated/e140dabebe23fa16.webp)"}} className="absolute inset-0 bg-cover bg-center opacity-80" />
           <div className="absolute inset-0 bg-gradient-to-t from-[#0A0A0A]/80 via-[#0A0A0A]/40 to-transparent" />
         </div>
           <div className="absolute inset-0 opacity-10">

@@ -56,7 +56,7 @@ const pageData: GeoPageData = {
     }
   ],
   "ctaTitle": "Ready to Automate Your Abu Dhabi Home?",
-  "heroImage": "https://files.ihgbrands.com/lexa/migrated/e24c1460208302ff.png",
+  "heroImage": "https://files.ihgbrands.com/lexa/migrated/e24c1460208302ff.webp",
   "ctaSubtitle": "Schedule a free consultation with our Abu Dhabi smart home experts.",
   "services": [
     {

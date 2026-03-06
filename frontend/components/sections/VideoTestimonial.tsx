@@ -9,7 +9,7 @@ const testimonial = {
   name: 'Kris Fade',
   role: 'Radio Host | Entrepreneur | TV Personality',
   quote: 'LEXA turned my home into a smart luxury experience. The lighting, the automation — it\'s next-level living. Smooth process, amazing team. They nailed it!',
-  image: 'https://files.ihgbrands.com/lexa/migrated/28b67688c620f88d.png',
+  image: 'https://files.ihgbrands.com/lexa/migrated/28b67688c620f88d.webp',
   videoUrl: '#' // Placeholder for actual video
 }
 

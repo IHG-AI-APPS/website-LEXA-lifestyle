@@ -56,7 +56,7 @@ const pageData: GeoPageData = {
     }
   ],
   "ctaTitle": "Ready to Automate Your Saadiyat Villa?",
-  "heroImage": "https://files.ihgbrands.com/lexa/migrated/0f7beb1c1383a32c.png",
+  "heroImage": "https://files.ihgbrands.com/lexa/migrated/0f7beb1c1383a32c.webp",
   "services": [
     {
       "icon": "Lightbulb",

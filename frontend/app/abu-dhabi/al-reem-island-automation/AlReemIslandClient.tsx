@@ -56,7 +56,7 @@ const pageData: GeoPageData = {
     }
   ],
   "ctaTitle": "Ready to Automate Your Al Reem Apartment?",
-  "heroImage": "https://files.ihgbrands.com/lexa/migrated/4d8329d492af65cd.png",
+  "heroImage": "https://files.ihgbrands.com/lexa/migrated/4d8329d492af65cd.webp",
   "services": [
     {
       "icon": "Lightbulb",

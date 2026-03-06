@@ -56,7 +56,7 @@ const pageData: GeoPageData = {
     }
   ],
   "ctaTitle": "Ready to Automate Your Palm Jumeirah Home?",
-  "heroImage": "https://files.ihgbrands.com/lexa/migrated/10250d9b8890d3f8.png",
+  "heroImage": "https://files.ihgbrands.com/lexa/migrated/10250d9b8890d3f8.webp",
   "ctaSubtitle": "Schedule a free consultation with our Palm Jumeirah smart home specialists.",
   "services": [
     {

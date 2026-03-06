@@ -116,7 +116,7 @@ export default function ArchitectResourcePortalPage() {
       <section className="relative min-h-[70vh] flex items-center justify-center">
         <div className="absolute inset-0 z-0">
           <SafeImage
-            src="https://files.ihgbrands.com/lexa/migrated/08685f945f724707.png"
+            src="https://files.ihgbrands.com/lexa/migrated/08685f945f724707.webp"
             alt="Architecture workspace"
             fill
             className="object-cover"
@@ -391,9 +391,9 @@ export default function ArchitectResourcePortalPage() {
 
             <div className="grid md:grid-cols-3 gap-6">
               {[
-                { name: 'Palm Jumeirah Villa', firm: 'Studio X Architects', systems: '12 integrated systems', image: 'https://files.ihgbrands.com/lexa/migrated/10250d9b8890d3f8.png' },
-                { name: 'Emirates Hills Estate', firm: 'Design Atelier', systems: '15 integrated systems', image: 'https://files.ihgbrands.com/lexa/migrated/1e9213f0b8af343f.png' },
-                { name: 'Downtown Penthouse', firm: 'Modern Design Co.', systems: '9 integrated systems', image: 'https://files.ihgbrands.com/lexa/migrated/26de8d3830a0a28c.png' }
+                { name: 'Palm Jumeirah Villa', firm: 'Studio X Architects', systems: '12 integrated systems', image: 'https://files.ihgbrands.com/lexa/migrated/10250d9b8890d3f8.webp' },
+                { name: 'Emirates Hills Estate', firm: 'Design Atelier', systems: '15 integrated systems', image: 'https://files.ihgbrands.com/lexa/migrated/1e9213f0b8af343f.webp' },
+                { name: 'Downtown Penthouse', firm: 'Modern Design Co.', systems: '9 integrated systems', image: 'https://files.ihgbrands.com/lexa/migrated/26de8d3830a0a28c.webp' }
               ].map((project, index) => (
                 <motion.div
                   key={project.name}

@@ -43,7 +43,7 @@ const FALLBACK_SOLUTIONS = [
     title: 'Luxury Home Cinema',
     subtitle: 'Private Theatre Experiences',
     description: 'Dolby Atmos, acoustic design, and bespoke seating.',
-    image: 'https://files.ihgbrands.com/lexa/migrated/753cbe457d2b1dcc.png',
+    image: 'https://files.ihgbrands.com/lexa/migrated/753cbe457d2b1dcc.webp',
     slug: 'luxury-home-cinema-dubai',
     icon: 'Film',
     theme: 'dark'
@@ -52,7 +52,7 @@ const FALLBACK_SOLUTIONS = [
     title: 'Smart Residential Living',
     subtitle: 'Complete Home Automation',
     description: 'Lighting, climate, security, and entertainment unified.',
-    image: 'https://files.ihgbrands.com/lexa/migrated/5a12821038cb9fa3.png',
+    image: 'https://files.ihgbrands.com/lexa/migrated/5a12821038cb9fa3.webp',
     slug: 'smart-home',
     icon: 'Home',
     theme: 'light'
@@ -61,7 +61,7 @@ const FALLBACK_SOLUTIONS = [
     title: 'Outdoor Living',
     subtitle: 'Smart Gardens & Pools',
     description: 'Automated outdoor entertainment.',
-    image: 'https://files.ihgbrands.com/lexa/migrated/ddf36dbc25c37067.png',
+    image: 'https://files.ihgbrands.com/lexa/migrated/ddf36dbc25c37067.webp',
     slug: 'outdoor-automation',
     icon: 'Trees',
     theme: 'dark'
@@ -70,7 +70,7 @@ const FALLBACK_SOLUTIONS = [
     title: 'Security & Access',
     subtitle: 'Smart Protection',
     description: 'AI-powered monitoring and access control.',
-    image: 'https://files.ihgbrands.com/lexa/migrated/8e7ad27d3a88e7ea.png',
+    image: 'https://files.ihgbrands.com/lexa/migrated/8e7ad27d3a88e7ea.webp',
     slug: 'security',
     icon: 'Shield',
     theme: 'light'
@@ -192,7 +192,7 @@ export default function SolutionsBentoGrid() {
             {solutions.map((solution, index) => {
               const iconName = solution.icon || 'Home'
               const Icon = ICON_MAP[iconName] || Home
-              const imageUrl = solution.hero_image || solution.image || 'https://files.ihgbrands.com/lexa/migrated/5a12821038cb9fa3.png'
+              const imageUrl = solution.hero_image || solution.image || 'https://files.ihgbrands.com/lexa/migrated/5a12821038cb9fa3.webp'
               
               return (
                 <Link
@@ -230,7 +230,7 @@ export default function SolutionsBentoGrid() {
             const iconName = solution.icon || 'Home'
             const Icon = ICON_MAP[iconName] || Home
             const theme = solution.theme || (index % 2 === 0 ? 'dark' : 'light')
-            const imageUrl = solution.hero_image || solution.image || 'https://files.ihgbrands.com/lexa/migrated/5a12821038cb9fa3.png'
+            const imageUrl = solution.hero_image || solution.image || 'https://files.ihgbrands.com/lexa/migrated/5a12821038cb9fa3.webp'
             
             return (
               <motion.div

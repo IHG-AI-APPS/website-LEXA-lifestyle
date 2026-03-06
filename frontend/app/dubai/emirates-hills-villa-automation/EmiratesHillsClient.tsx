@@ -52,7 +52,7 @@ const pageData: GeoPageData = {
     }
   ],
   "ctaTitle": "Ready to Automate Your Emirates Hills Villa?",
-  "heroImage": "https://files.ihgbrands.com/lexa/migrated/1e9213f0b8af343f.png",
+  "heroImage": "https://files.ihgbrands.com/lexa/migrated/1e9213f0b8af343f.webp",
   "faqs": [
     {
       "question": "How much does Emirates Hills villa automation cost?",

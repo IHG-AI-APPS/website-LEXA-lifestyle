@@ -35,11 +35,11 @@ const DEFAULT_HIGHLIGHTS = [
 ]
 
 const DEFAULT_GALLERY = [
-  { src: 'https://files.ihgbrands.com/lexa/migrated/0641eef46c96198d.png', title: 'Smart Home Showcase', zone: 'Main Hall' },
-  { src: 'https://files.ihgbrands.com/lexa/migrated/add489a013a13706.png', title: 'Home Cinema Experience', zone: 'Theater Zone' },
-  { src: 'https://files.ihgbrands.com/lexa/migrated/8e8a1e890ec79775.png', title: 'Audio Listening Room', zone: 'Hi-Fi Zone' },
-  { src: 'https://files.ihgbrands.com/lexa/migrated/c46836f176dba77d.png', title: 'Lighting Design Studio', zone: 'Lighting Zone' },
-  { src: 'https://files.ihgbrands.com/lexa/migrated/f5e4fceb477845f7.png', title: 'Security Command Center', zone: 'Security Zone' }
+  { src: 'https://files.ihgbrands.com/lexa/migrated/0641eef46c96198d.webp', title: 'Smart Home Showcase', zone: 'Main Hall' },
+  { src: 'https://files.ihgbrands.com/lexa/migrated/add489a013a13706.webp', title: 'Home Cinema Experience', zone: 'Theater Zone' },
+  { src: 'https://files.ihgbrands.com/lexa/migrated/8e8a1e890ec79775.webp', title: 'Audio Listening Room', zone: 'Hi-Fi Zone' },
+  { src: 'https://files.ihgbrands.com/lexa/migrated/c46836f176dba77d.webp', title: 'Lighting Design Studio', zone: 'Lighting Zone' },
+  { src: 'https://files.ihgbrands.com/lexa/migrated/f5e4fceb477845f7.webp', title: 'Security Command Center', zone: 'Security Zone' }
 ]
 
 export default function ExperienceCentreCTA() {

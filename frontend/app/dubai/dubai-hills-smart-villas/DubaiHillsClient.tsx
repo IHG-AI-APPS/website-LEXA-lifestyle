@@ -52,7 +52,7 @@ const pageData: GeoPageData = {
     }
   ],
   "ctaTitle": "Ready to Automate Your Dubai Hills Villa?",
-  "heroImage": "https://files.ihgbrands.com/lexa/migrated/c3150c09e1acb0f6.png",
+  "heroImage": "https://files.ihgbrands.com/lexa/migrated/c3150c09e1acb0f6.webp",
   "faqs": [
     {
       "question": "How much does Dubai Hills villa automation cost?",

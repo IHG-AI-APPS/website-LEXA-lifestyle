@@ -52,7 +52,7 @@ const pageData: GeoPageData = {
     }
   ],
   "ctaTitle": "Transform Your Marina Home",
-  "heroImage": "https://files.ihgbrands.com/lexa/migrated/997eba18d3897afd.png",
+  "heroImage": "https://files.ihgbrands.com/lexa/migrated/997eba18d3897afd.webp",
   "ctaSubtitle": "Join hundreds of Dubai Marina residents enjoying smart home living.",
   "services": [
     {

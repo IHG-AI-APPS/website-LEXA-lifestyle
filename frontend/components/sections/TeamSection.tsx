@@ -7,13 +7,13 @@ interface TeamMember {
 }
 
 const teamMembers: TeamMember[] = [
-  { name: 'Althaf Ali', role: 'Co-Founder', image: 'https://files.ihgbrands.com/lexa/migrated/28b67688c620f88d.png' },
-  { name: 'Munir Taher', role: 'Co-Founder', image: 'https://files.ihgbrands.com/lexa/migrated/ec9afb366796afe8.png' },
-  { name: 'Shahnawaz Sheikh', role: 'Business Head', image: 'https://files.ihgbrands.com/lexa/migrated/04cfad6343e74c55.png' },
-  { name: 'Mohammad Salih', role: 'Project Head', image: 'https://files.ihgbrands.com/lexa/migrated/c53459892ffdeaf4.png' },
-  { name: 'Sri Harish', role: 'Junior Automation Engineer', image: 'https://files.ihgbrands.com/lexa/migrated/a7f8e411c92d5554.png' },
-  { name: 'Maria Ralota', role: 'Admin & Sales Coordinator', image: 'https://files.ihgbrands.com/lexa/migrated/aaa77e6aff30338c.png' },
-  { name: 'Shibili Zahir', role: 'Operations Executive', image: 'https://files.ihgbrands.com/lexa/migrated/1ba1b4da39f32a90.png' },
+  { name: 'Althaf Ali', role: 'Co-Founder', image: 'https://files.ihgbrands.com/lexa/migrated/28b67688c620f88d.webp' },
+  { name: 'Munir Taher', role: 'Co-Founder', image: 'https://files.ihgbrands.com/lexa/migrated/ec9afb366796afe8.webp' },
+  { name: 'Shahnawaz Sheikh', role: 'Business Head', image: 'https://files.ihgbrands.com/lexa/migrated/04cfad6343e74c55.webp' },
+  { name: 'Mohammad Salih', role: 'Project Head', image: 'https://files.ihgbrands.com/lexa/migrated/c53459892ffdeaf4.webp' },
+  { name: 'Sri Harish', role: 'Junior Automation Engineer', image: 'https://files.ihgbrands.com/lexa/migrated/a7f8e411c92d5554.webp' },
+  { name: 'Maria Ralota', role: 'Admin & Sales Coordinator', image: 'https://files.ihgbrands.com/lexa/migrated/aaa77e6aff30338c.webp' },
+  { name: 'Shibili Zahir', role: 'Operations Executive', image: 'https://files.ihgbrands.com/lexa/migrated/1ba1b4da39f32a90.webp' },
 ]
 
 export default function TeamSection() {

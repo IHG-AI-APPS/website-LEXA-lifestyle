@@ -52,7 +52,7 @@ const pageData: GeoPageData = {
     }
   ],
   "ctaTitle": "Ready for Smart JBR Living?",
-  "heroImage": "https://files.ihgbrands.com/lexa/migrated/35dfaffafb049567.png",
+  "heroImage": "https://files.ihgbrands.com/lexa/migrated/35dfaffafb049567.webp",
   "ctaSubtitle": "Book a free consultation and discover how we can transform your JBR apartment.",
   "services": [
     {

@@ -20,10 +20,10 @@ const DEFAULT_FEATURED = {
 }
 
 const DEFAULT_TOOLS = [
-  { icon: 'Package', title: 'Package Builder', description: 'Design your complete smart home package step-by-step with live pricing', href: '/package-builder', cta: 'Build Your Package', image: 'https://files.ihgbrands.com/lexa/migrated/dcab59953a728c26.png' },
-  { icon: 'Sparkles', title: 'Specialty Rooms', description: 'Explore 22 premium specialty room automation solutions', href: '/specialty-rooms', cta: 'Explore Rooms', image: 'https://files.ihgbrands.com/lexa/migrated/0b68184f5a17e574.png' },
-  { icon: 'Calculator', title: 'Cost Calculator', description: 'Quick estimate your smart home investment', href: '/calculator', cta: 'Calculate Cost', image: 'https://files.ihgbrands.com/lexa/migrated/15b3e05a88e43115.png' },
-  { icon: 'TrendingUp', title: 'ROI Calculator', description: 'Analyze your return on investment over time', href: '/roi-calculator', cta: 'Calculate ROI', image: 'https://files.ihgbrands.com/lexa/migrated/2c1974d7588491e8.png' }
+  { icon: 'Package', title: 'Package Builder', description: 'Design your complete smart home package step-by-step with live pricing', href: '/package-builder', cta: 'Build Your Package', image: 'https://files.ihgbrands.com/lexa/migrated/dcab59953a728c26.webp' },
+  { icon: 'Sparkles', title: 'Specialty Rooms', description: 'Explore 22 premium specialty room automation solutions', href: '/specialty-rooms', cta: 'Explore Rooms', image: 'https://files.ihgbrands.com/lexa/migrated/0b68184f5a17e574.webp' },
+  { icon: 'Calculator', title: 'Cost Calculator', description: 'Quick estimate your smart home investment', href: '/calculator', cta: 'Calculate Cost', image: 'https://files.ihgbrands.com/lexa/migrated/15b3e05a88e43115.webp' },
+  { icon: 'TrendingUp', title: 'ROI Calculator', description: 'Analyze your return on investment over time', href: '/roi-calculator', cta: 'Calculate ROI', image: 'https://files.ihgbrands.com/lexa/migrated/2c1974d7588491e8.webp' }
 ]
 
 const GRADIENTS = [

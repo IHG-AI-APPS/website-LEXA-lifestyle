@@ -6,11 +6,11 @@ import Link from 'next/link'
 import { ArrowRight } from 'lucide-react'
 import ConsultationForm from '@/components/forms/ConsultationForm'
 
-const HERO_IMG = 'https://files.ihgbrands.com/lexa/migrated/9128ee4657c19bff.png'
+const HERO_IMG = 'https://files.ihgbrands.com/lexa/migrated/9128ee4657c19bff.webp'
 
 const showcases = [
   {
-    image: 'https://files.ihgbrands.com/lexa/migrated/083ddbd93fdf1883.png',
+    image: 'https://files.ihgbrands.com/lexa/migrated/083ddbd93fdf1883.webp',
     label: 'Hospitality',
     title: 'Guest Experience',
     description: 'Smart room automation, intelligent lighting, and climate control that elevate the guest journey from check-in to check-out.',
@@ -20,7 +20,7 @@ const showcases = [
     ],
   },
   {
-    image: 'https://files.ihgbrands.com/lexa/migrated/026172905abb74cf.png',
+    image: 'https://files.ihgbrands.com/lexa/migrated/026172905abb74cf.webp',
     label: 'Corporate',
     title: 'Intelligent Workspaces',
     description: 'Boardroom AV, meeting room automation, and digital signage for productive, modern work environments.',
@@ -30,7 +30,7 @@ const showcases = [
     ],
   },
   {
-    image: 'https://files.ihgbrands.com/lexa/migrated/43ed51fed9c48ea2.png',
+    image: 'https://files.ihgbrands.com/lexa/migrated/43ed51fed9c48ea2.webp',
     label: 'Retail & F&B',
     title: 'Atmosphere On Demand',
     description: 'Background music, mood lighting, and digital displays that create memorable brand experiences.',
@@ -40,7 +40,7 @@ const showcases = [
     ],
   },
   {
-    image: 'https://files.ihgbrands.com/lexa/migrated/75bc3731c4191546.png',
+    image: 'https://files.ihgbrands.com/lexa/migrated/75bc3731c4191546.webp',
     label: 'Infrastructure',
     title: 'Enterprise Grade',
     description: 'Robust network infrastructure, centralized management, and scalable systems built for commercial demands.',

@@ -131,7 +131,7 @@ export default function DeveloperToolkitPage() {
       <section className="relative min-h-[70vh] flex items-center justify-center">
         <div className="absolute inset-0 z-0">
           <SafeImage
-            src="https://files.ihgbrands.com/lexa/migrated/86b7ccb604054115.png"
+            src="https://files.ihgbrands.com/lexa/migrated/86b7ccb604054115.webp"
             alt="Luxury development"
             fill
             className="object-cover"

@@ -52,7 +52,7 @@ const pageData: GeoPageData = {
     }
   ],
   "ctaTitle": "Ready to Automate Your Downtown Residence?",
-  "heroImage": "https://files.ihgbrands.com/lexa/migrated/26de8d3830a0a28c.png",
+  "heroImage": "https://files.ihgbrands.com/lexa/migrated/26de8d3830a0a28c.webp",
   "faqs": [
     {
       "question": "How much does Downtown Dubai apartment automation cost?",

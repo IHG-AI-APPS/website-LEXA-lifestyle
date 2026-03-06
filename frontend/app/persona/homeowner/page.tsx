@@ -6,11 +6,11 @@ import Link from 'next/link'
 import { ArrowRight } from 'lucide-react'
 import ConsultationForm from '@/components/forms/ConsultationForm'
 
-const HERO_IMG = 'https://files.ihgbrands.com/lexa/migrated/ff63df2cbb04eccb.png'
+const HERO_IMG = 'https://files.ihgbrands.com/lexa/migrated/ff63df2cbb04eccb.webp'
 
 const showcases = [
   {
-    image: 'https://files.ihgbrands.com/lexa/migrated/083ddbd93fdf1883.png',
+    image: 'https://files.ihgbrands.com/lexa/migrated/083ddbd93fdf1883.webp',
     label: 'Lighting & Atmosphere',
     title: 'Set the Mood',
     description: 'Scene-based lighting that adapts to your lifestyle. From morning energize to evening wind-down.',
@@ -20,7 +20,7 @@ const showcases = [
     ],
   },
   {
-    image: 'https://files.ihgbrands.com/lexa/migrated/026172905abb74cf.png',
+    image: 'https://files.ihgbrands.com/lexa/migrated/026172905abb74cf.webp',
     label: 'Entertainment',
     title: 'Private Cinema',
     description: 'Immersive home theater and multi-room audio, designed for cinematic experiences at home.',
@@ -30,7 +30,7 @@ const showcases = [
     ],
   },
   {
-    image: 'https://files.ihgbrands.com/lexa/migrated/43ed51fed9c48ea2.png',
+    image: 'https://files.ihgbrands.com/lexa/migrated/43ed51fed9c48ea2.webp',
     label: 'Security & Safety',
     title: 'Total Peace of Mind',
     description: 'Real-time monitoring, smart locks, and intelligent surveillance — always in control.',
@@ -40,7 +40,7 @@ const showcases = [
     ],
   },
   {
-    image: 'https://files.ihgbrands.com/lexa/migrated/75bc3731c4191546.png',
+    image: 'https://files.ihgbrands.com/lexa/migrated/75bc3731c4191546.webp',
     label: 'Outdoor Living',
     title: 'Beyond Four Walls',
     description: 'Pools, gardens, and patios with intelligent automation for seamless outdoor luxury.',

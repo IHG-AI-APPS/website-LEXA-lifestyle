@@ -248,7 +248,7 @@ export default function ServicesMegaMenu({ isOpen, onClose, onMouseEnter, onMous
                   >
                     <div className="relative h-full min-h-[300px] overflow-hidden rounded-xl border border-white/10">
                       <SafeImage
-                        src="https://files.ihgbrands.com/lexa/migrated/1e73b304fe06264b.png"
+                        src="https://files.ihgbrands.com/lexa/migrated/1e73b304fe06264b.webp"
                         alt="Full-Service Smart Home Integration"
                         fill
                         sizes="(max-width: 1024px) 50vw, 25vw"

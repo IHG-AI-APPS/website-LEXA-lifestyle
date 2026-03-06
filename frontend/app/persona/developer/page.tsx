@@ -6,11 +6,11 @@ import Link from 'next/link'
 import { ArrowRight } from 'lucide-react'
 import ConsultationForm from '@/components/forms/ConsultationForm'
 
-const HERO_IMG = 'https://files.ihgbrands.com/lexa/migrated/1750c8ba4687e5e7.png'
+const HERO_IMG = 'https://files.ihgbrands.com/lexa/migrated/1750c8ba4687e5e7.webp'
 
 const showcases = [
   {
-    image: 'https://files.ihgbrands.com/lexa/migrated/ff63df2cbb04eccb.png',
+    image: 'https://files.ihgbrands.com/lexa/migrated/ff63df2cbb04eccb.webp',
     label: 'Villa Automation',
     title: 'Premium Specs, Standard',
     description: 'Pre-wire and automate entire villa communities. Smart home as a standard feature, not an upgrade.',
@@ -20,7 +20,7 @@ const showcases = [
     ],
   },
   {
-    image: 'https://files.ihgbrands.com/lexa/migrated/083ddbd93fdf1883.png',
+    image: 'https://files.ihgbrands.com/lexa/migrated/083ddbd93fdf1883.webp',
     label: 'Lighting & AV',
     title: 'Differentiate Your Product',
     description: 'Smart lighting, cinema rooms, and whole-home audio that elevate your development above competitors.',
@@ -30,7 +30,7 @@ const showcases = [
     ],
   },
   {
-    image: 'https://files.ihgbrands.com/lexa/migrated/43ed51fed9c48ea2.png',
+    image: 'https://files.ihgbrands.com/lexa/migrated/43ed51fed9c48ea2.webp',
     label: 'Security & Infrastructure',
     title: 'Built-In Intelligence',
     description: 'Enterprise-grade network infrastructure, CCTV, and access control — integrated from ground-up.',
@@ -40,7 +40,7 @@ const showcases = [
     ],
   },
   {
-    image: 'https://files.ihgbrands.com/lexa/migrated/75bc3731c4191546.png',
+    image: 'https://files.ihgbrands.com/lexa/migrated/75bc3731c4191546.webp',
     label: 'Outdoor & Landscape',
     title: 'Complete Lifestyle Package',
     description: 'Pool automation, landscape lighting, and outdoor entertainment systems for the full luxury experience.',

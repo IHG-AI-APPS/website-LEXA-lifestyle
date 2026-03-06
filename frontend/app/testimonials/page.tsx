@@ -21,7 +21,7 @@ interface Testimonial {
   featured?: boolean
 }
 
-const HERO_IMG = 'https://files.ihgbrands.com/lexa/migrated/ff63df2cbb04eccb.png'
+const HERO_IMG = 'https://files.ihgbrands.com/lexa/migrated/ff63df2cbb04eccb.webp'
 
 const fallbackTestimonials: Testimonial[] = [
   {
@@ -29,7 +29,7 @@ const fallbackTestimonials: Testimonial[] = [
     name: 'Kris Fade',
     role: 'Radio Host & Entrepreneur',
     testimonial: 'LEXA turned my home into a smart luxury experience. The lighting, the automation — it\'s next-level living. Every room has its own personality now, and I can control everything from my phone.',
-    image: 'https://files.ihgbrands.com/lexa/migrated/ec9afb366796afe8.png',
+    image: 'https://files.ihgbrands.com/lexa/migrated/ec9afb366796afe8.webp',
     rating: 5,
     featured: true,
   },
@@ -38,7 +38,7 @@ const fallbackTestimonials: Testimonial[] = [
     name: 'Akash Kanjwani',
     role: 'CEO, Sky View Real Estate',
     testimonial: 'LEXA nailed the design and delivery. Lumibright lighting turned our Harmony villa into a mood you can live in. The team understood our vision from day one and delivered beyond expectations.',
-    image: 'https://files.ihgbrands.com/lexa/migrated/04cfad6343e74c55.png',
+    image: 'https://files.ihgbrands.com/lexa/migrated/04cfad6343e74c55.webp',
     rating: 5,
     featured: true,
   },
@@ -47,7 +47,7 @@ const fallbackTestimonials: Testimonial[] = [
     name: 'Vikram Shroff',
     role: 'Executive Director, UPL',
     testimonial: 'They run a very professional high-end business. The quality of their work makes me realize their philosophy of customer satisfaction. From consultation to final handover, everything was seamless.',
-    image: 'https://files.ihgbrands.com/lexa/migrated/c53459892ffdeaf4.png',
+    image: 'https://files.ihgbrands.com/lexa/migrated/c53459892ffdeaf4.webp',
     rating: 5,
     featured: true,
   },

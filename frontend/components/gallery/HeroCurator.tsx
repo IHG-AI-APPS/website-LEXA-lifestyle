@@ -17,7 +17,7 @@ const HERO_CLIPS = [
   '/videos/hero/05_cinema_room.mp4',
 ]
 
-const FALLBACK_IMAGE = 'https://files.ihgbrands.com/lexa/migrated/9bb2c417db1b83a5.png'
+const FALLBACK_IMAGE = 'https://files.ihgbrands.com/lexa/migrated/9bb2c417db1b83a5.webp'
 
 const MAX_VIDEO_ERRORS = 3
 

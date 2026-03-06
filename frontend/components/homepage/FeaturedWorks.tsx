@@ -51,7 +51,7 @@ export default function FeaturedWorks() {
             >
               <Link href={`/projects/${project.slug || project.id}`}>
                 <SafeImage
-                  src={project.image || 'https://files.ihgbrands.com/lexa/migrated/162fd60e556d6189.png'}
+                  src={project.image || 'https://files.ihgbrands.com/lexa/migrated/162fd60e556d6189.webp'}
                   alt={project.title}
                   fill
                   className="object-cover transition-transform duration-700 group-hover:scale-105"

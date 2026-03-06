@@ -6,11 +6,11 @@ import Link from 'next/link'
 import { ArrowRight } from 'lucide-react'
 import ConsultationForm from '@/components/forms/ConsultationForm'
 
-const HERO_IMG = 'https://files.ihgbrands.com/lexa/migrated/96c7721cf6ca3415.png'
+const HERO_IMG = 'https://files.ihgbrands.com/lexa/migrated/96c7721cf6ca3415.webp'
 
 const showcases = [
   {
-    image: 'https://files.ihgbrands.com/lexa/migrated/083ddbd93fdf1883.png',
+    image: 'https://files.ihgbrands.com/lexa/migrated/083ddbd93fdf1883.webp',
     label: 'Lighting Design',
     title: 'Design With Light',
     description: 'Integrate scene-based lighting seamlessly into your architectural vision. From concept to commissioning.',
@@ -20,7 +20,7 @@ const showcases = [
     ],
   },
   {
-    image: 'https://files.ihgbrands.com/lexa/migrated/026172905abb74cf.png',
+    image: 'https://files.ihgbrands.com/lexa/migrated/026172905abb74cf.webp',
     label: 'AV Integration',
     title: 'Invisible Technology',
     description: 'Hidden speakers, concealed screens, and architectural AV solutions that preserve your design intent.',
@@ -30,7 +30,7 @@ const showcases = [
     ],
   },
   {
-    image: 'https://files.ihgbrands.com/lexa/migrated/43ed51fed9c48ea2.png',
+    image: 'https://files.ihgbrands.com/lexa/migrated/43ed51fed9c48ea2.webp',
     label: 'Smart Systems',
     title: 'Unified Control',
     description: 'One platform for lighting, HVAC, security, and AV. Clean interfaces that complement your interiors.',
@@ -40,7 +40,7 @@ const showcases = [
     ],
   },
   {
-    image: 'https://files.ihgbrands.com/lexa/migrated/75bc3731c4191546.png',
+    image: 'https://files.ihgbrands.com/lexa/migrated/75bc3731c4191546.webp',
     label: 'Outdoor Spaces',
     title: 'Landscape Intelligence',
     description: 'Smart irrigation, landscape lighting, and pool automation that extends the design language outdoors.',

@@ -26,7 +26,7 @@ export default function LuxuryHomeCinemaDubaiPage() {
       <section className="relative min-h-[70vh] flex items-center justify-center pt-20">
         <div className="absolute inset-0 z-0">
           <SafeImage
-            src="https://files.ihgbrands.com/lexa/migrated/6f991b329d248fcc.png"
+            src="https://files.ihgbrands.com/lexa/migrated/6f991b329d248fcc.webp"
             alt="Luxury Home Cinema Dubai"
             fill
             className="object-cover opacity-80"

@@ -84,7 +84,7 @@ export default function TetrisProjects() {
               >
                 <Link href={`/projects/${project.slug || project.id}`} className="group relative block h-[260px] overflow-hidden rounded-2xl">
                   <SafeImage
-                    src={project.image || 'https://files.ihgbrands.com/lexa/migrated/162fd60e556d6189.png'}
+                    src={project.image || 'https://files.ihgbrands.com/lexa/migrated/162fd60e556d6189.webp'}
                     alt={project.title}
                     fill
                     sizes="80vw"
@@ -152,7 +152,7 @@ function ProjectCard({ project, gridClass, index }: { project: Project; gridClas
         {/* Image */}
         <div className="relative h-full w-full overflow-hidden">
           <SafeImage
-            src={project.image || 'https://files.ihgbrands.com/lexa/migrated/162fd60e556d6189.png'}
+            src={project.image || 'https://files.ihgbrands.com/lexa/migrated/162fd60e556d6189.webp'}
             alt={project.title}
             fill
             sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
