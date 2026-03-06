@@ -36,9 +36,18 @@ Complete website overhaul for 100% dynamic content, a premium "Dark Luxury" desi
 - **Emergent CDN**: All `static.prod-images.emergentagent.com` URLs replaced with `files.ihgbrands.com/lexa/` URLs
 - **New Uploads**: Use SFTP (paramiko) to store files on remote server, return CDN URLs
 - **CDN URLs**: `https://files.ihgbrands.com/lexa/{category}/{filename}`
-- **Admin File Manager**: Full-featured file management at `/admin/images` — 735 files, search, category filters, grid/list views, detail panel with URL/size/type/date
+- **Admin File Manager**: Full-featured file management at `/admin/images` — 735+ files, search, category filters, grid/list views, detail panel with URL/size/type/date
 - **Server-side Cache**: File listing cached for 5 min to avoid SFTP latency
 - Test: iteration_89 (initial migration) + iteration_90 (full validation) — Backend 100%, Frontend 100%
+
+### Image Performance Optimization (Complete - March 2026)
+- **WebP Conversion**: 390 PNG/JPG files batch-converted to WebP (93% size reduction, 527MB saved)
+- **Auto WebP Upgrade**: SafeImage component auto-upgrades CDN .png/.jpg URLs to .webp with fallback chain
+- **Lazy Loading**: All below-fold images use loading="lazy" (96% of images)
+- **Nginx Cache**: 1-year max-age + immutable headers, gzip, etag, open_file_cache
+- **Cloudflare Edge**: cf-cache-status: HIT for global edge caching
+- **DB + Source**: 926 DB documents + 120 frontend source URLs updated to .webp
+- Test: iteration_91 — Backend 100% (14/14), Frontend 100%
 
 - **217 products** across 19 brands, 7 categories, 35 series
 - All images stored locally, 100% descriptions, 96% specs, 74% features
