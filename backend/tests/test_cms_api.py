@@ -9,7 +9,7 @@ import pytest
 import requests
 import os
 
-BASE_URL = os.environ.get('REACT_APP_BACKEND_URL', 'https://catalog-search-5.preview.emergentagent.com').rstrip('/')
+BASE_URL = os.environ.get('REACT_APP_BACKEND_URL', 'https://package-builder-fix.preview.emergentagent.com').rstrip('/')
 
 # CMS Section keys to test
 CMS_SECTIONS = [

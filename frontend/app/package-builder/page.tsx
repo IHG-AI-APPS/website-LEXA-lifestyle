@@ -210,10 +210,10 @@ export default function PackageBuilderPage() {
   }
 
   return (
-    <div className="min-h-screen bg-white dark:bg-[#050505]">
+    <div className="min-h-screen bg-white dark:bg-[#050505] pt-20 md:pt-24">
       {/* Header - Below main navigation */}
       <div className="border-b bg-white dark:bg-[#050505] sticky top-16 sm:top-18 md:top-20 z-40">
-        <div className="container mx-auto px-4 py-4">
+        <div className="container mx-auto px-4 py-3">
           <div className="flex items-center justify-between max-w-6xl mx-auto">
             <Link href="/packages" className="text-gray-600 dark:text-zinc-500 hover:text-gray-900 dark:hover:text-white transition-colors">
               &larr; Back to Packages
@@ -231,7 +231,7 @@ export default function PackageBuilderPage() {
         </div>
       </div>
 
-      <div className="container mx-auto px-4 py-8 mt-2">
+      <div className="container mx-auto px-4 pt-6 pb-8">
         <AnimatePresence mode="wait">
           {/* Step 1: Property Type */}
           {step === 1 && (

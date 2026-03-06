@@ -35,13 +35,24 @@ function BrandLogo({ brand, size = 'md' }: { brand: any; size?: 'sm' | 'md' }) {
   const hasLogo = brand.logo && brand.logo.trim() !== ''
   const dims = size === 'sm' ? 'w-12 h-12' : 'w-16 h-16'
   const textSize = size === 'sm' ? 'text-xs' : 'text-sm'
+  const imgSize = size === 'sm' ? 40 : 56
 
   if (hasLogo) {
     return (
       <div className={`${dims} flex-shrink-0 bg-white rounded-lg border border-gray-200 dark:border-zinc-800 flex items-center justify-center p-1.5 overflow-hidden`}>
-        <div className="relative w-full h-full">
-          <SafeImage src={brand.logo} alt={brand.name} fill className="object-contain" />
-        </div>
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img
+          src={brand.logo}
+          alt={brand.name}
+          width={imgSize}
+          height={imgSize}
+          className="w-full h-full object-contain"
+          loading="lazy"
+          onError={(e) => {
+            // Hide the image on error and let parent show initials
+            (e.target as HTMLImageElement).style.display = 'none'
+          }}
+        />
       </div>
     )
   }
@@ -149,9 +160,9 @@ export default function BrandsPage() {
                 <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-8 gap-3">
                   {featuredBrands.map((brand) => (
                     <Link key={brand.slug} href={`/brands/${brand.slug}`} data-testid={`featured-${brand.slug}`}>
-                      <div className="group flex flex-col items-center justify-center text-center p-4 h-24 rounded-xl bg-white dark:bg-[#171717] border border-gray-200 dark:border-zinc-800 hover:border-[#C9A962]/50 hover:shadow-md transition-all">
+                      <div className="group flex flex-col items-center text-center p-4 rounded-xl bg-white dark:bg-[#171717] border border-gray-200 dark:border-zinc-800 hover:border-[#C9A962]/50 hover:shadow-md transition-all">
                         <BrandLogo brand={brand} size="sm" />
-                        <span className="text-[11px] font-medium text-gray-600 dark:text-zinc-400 mt-2 truncate w-full group-hover:text-[#C9A962] transition-colors">
+                        <span className="text-xs font-semibold text-gray-800 dark:text-white mt-3 text-center leading-snug group-hover:text-[#C9A962] transition-colors">
                           {brand.name}
                         </span>
                       </div>
