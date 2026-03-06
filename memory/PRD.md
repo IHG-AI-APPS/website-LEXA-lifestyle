@@ -42,12 +42,14 @@ Complete website overhaul for 100% dynamic content, a premium "Dark Luxury" desi
 
 ### Image Performance Optimization (Complete - March 2026)
 - **WebP Conversion**: 390 PNG/JPG files batch-converted to WebP (93% size reduction, 527MB saved)
-- **Auto WebP Upgrade**: SafeImage component auto-upgrades CDN .png/.jpg URLs to .webp with fallback chain
-- **Lazy Loading**: All below-fold images use loading="lazy" (96% of images)
+- **Unsplash Migration**: 164 Unsplash URLs downloaded as WebP, uploaded to CDN, DB updated
+- **Local Image Migration**: Logo, hero images, etc. uploaded to CDN at /lexa/site/
+- **Auto WebP Upgrade**: SafeImage + OptimizedImage components auto-upgrade CDN .png/.jpg URLs to .webp with fallback
+- **Lazy Loading**: All below-fold images use loading="lazy"
 - **Nginx Cache**: 1-year max-age + immutable headers, gzip, etag, open_file_cache
 - **Cloudflare Edge**: cf-cache-status: HIT for global edge caching
-- **DB + Source**: 926 DB documents + 120 frontend source URLs updated to .webp
-- Test: iteration_91 — Backend 100% (14/14), Frontend 100%
+- **Package Builder Fix**: Sticky "Back to Packages" bar no longer overlaps content
+- Test: iteration_91 + iteration_92 — Backend 100%, Frontend 100%
 
 - **217 products** across 19 brands, 7 categories, 35 series
 - All images stored locally, 100% descriptions, 96% specs, 74% features
