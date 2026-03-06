@@ -1,0 +1,66 @@
+{
+  "summary": "Tested remote storage migration from local to external server (files.ihgbrands.com). All backend APIs working correctly - uploads go to remote via SFTP, products return CDN URLs. Frontend displays images through Next.js optimization proxy. Admin catalog image upload form functional.",
+  "backend_issues": {
+    "critical": [],
+    "minor": []
+  },
+  "frontend_issues": {
+    "ui_bugs": [],
+    "integration_issues": [],
+    "design_issues": []
+  },
+  "test_report_links": [
+    "/app/backend/tests/test_remote_storage_migration.py",
+    "/app/test_reports/pytest/remote_storage_migration_results.xml"
+  ],
+  "action_items": [],
+  "critical_code_review_comments": [],
+  "updated_files": [
+    "/app/backend/tests/test_remote_storage_migration.py"
+  ],
+  "success_rate": {
+    "backend": "100% (12/12 tests passed)",
+    "frontend": "100%"
+  },
+  "test_credentials": {
+    "admin_url": "/admin/login",
+    "admin_username": "admin",
+    "admin_password": "lexa2026"
+  },
+  "seed_data_creation": "Created 3 test image files during backend upload tests - all cleaned up via DELETE API",
+  "retest_needed": false,
+  "main_agent_can_self_test": true,
+  "context_for_next_testing_agent": "Remote storage migration complete. 283 files migrated to /var/lexa/ on remote server (178.128.28.178). 231 DB documents updated with CDN URLs. New uploads use SFTP (paramiko). CDN URL format: https://files.ihgbrands.com/lexa/{category}/{filename}. Next.js image optimization proxies CDN URLs via /_next/image. Legacy local file serving preserved as fallback at /api/uploads/files/{category}/{filename}.",
+  "tested_features": {
+    "backend": [
+      "POST /api/uploads/image - uploads to remote via SFTP, returns CDN URL ✓",
+      "POST /api/uploads/image - default category 'images' works ✓",
+      "POST /api/uploads/image - rejects invalid file types (400) ✓",
+      "GET /api/catalog/products - returns products with CDN image URLs ✓",
+      "GET /api/catalog/products/{slug} - returns product with CDN image URL ✓",
+      "CDN images accessible with CORS headers and 30-day cache ✓",
+      "GET /api/uploads/files/{category}/{filename} - legacy file serving fallback ✓",
+      "DELETE /api/uploads/files/{category}/{filename} - deletes from remote ✓",
+      "GET /api/catalogues - returns catalogues with CDN PDF URLs ✓",
+      "GET /api/brands - returns brands data ✓"
+    ],
+    "frontend": [
+      "/products page loads product images from CDN via Next.js image optimization ✓",
+      "/products/[slug] detail page shows product image from CDN ✓",
+      "Homepage loads with featured sections ✓",
+      "/brands page loads (shows 37 Premium Brands) ✓",
+      "/admin/catalog - product list shows image thumbnails ✓",
+      "/admin/catalog - Add Product form has PRIMARY IMAGE section with Upload/URL buttons ✓",
+      "/admin/catalog - Add Product form has GALLERY IMAGES section with Upload Images/Add URL buttons ✓",
+      "/admin/catalog - drag-and-drop upload zone present ✓"
+    ]
+  },
+  "cdn_migration_details": {
+    "remote_server": "178.128.28.178 (files.ihgbrands.com)",
+    "remote_path": "/var/lexa",
+    "cdn_url_format": "https://files.ihgbrands.com/lexa/{category}/{filename}",
+    "files_migrated": 283,
+    "db_documents_updated": 231,
+    "collections_updated": ["catalog_products (217)", "catalogues (5)", "news (2)", "brands (2)", "product_categories (2)", "services (4)"]
+  }
+}
