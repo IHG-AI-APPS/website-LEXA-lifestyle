@@ -63,12 +63,14 @@ export default function SafeImage({
   }
 
   const validSrc = getValidSrc(imgSrc)
+  const isCdn = typeof validSrc === 'string' && validSrc.includes('files.ihgbrands.com')
 
   return (
     <Image
       {...props}
       src={validSrc}
       alt={alt}
+      unoptimized={isCdn}
       className={`${className || ''} ${loaded ? '' : 'opacity-0'}`}
       style={{
         ...props.style,
