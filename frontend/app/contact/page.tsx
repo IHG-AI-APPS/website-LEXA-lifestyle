@@ -44,7 +44,7 @@ export default function ContactPage() {
       <section className="relative overflow-hidden bg-[#0A0A0A] dark:bg-[#050505] text-white py-16 lg:py-24">
         {/* Hero Background Image */}
         <div className="absolute inset-0">
-          <div style={{backgroundImage: "url(https://static.prod-images.emergentagent.com/jobs/9a576253-3f34-4de3-9ad4-57e7617524d7/images/93e2cb20a4bf3455803f00d92ef39a29903a10c0fe8bba995a3d5a174f11373e.png)"}} className="absolute inset-0 bg-cover bg-center opacity-80" />
+          <div style={{backgroundImage: "url(https://files.ihgbrands.com/lexa/migrated/215aa53d0e1a3fbd.png)"}} className="absolute inset-0 bg-cover bg-center opacity-80" />
           <div className="absolute inset-0 bg-gradient-to-t from-[#0A0A0A]/80 via-[#0A0A0A]/40 to-transparent" />
         </div>
         <div className="container mx-auto px-5 sm:px-8 lg:px-16 relative z-10">

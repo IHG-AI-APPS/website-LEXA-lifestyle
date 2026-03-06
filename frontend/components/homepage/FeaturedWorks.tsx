@@ -51,7 +51,7 @@ export default function FeaturedWorks() {
             >
               <Link href={`/projects/${project.slug || project.id}`}>
                 <SafeImage
-                  src={project.image || 'https://static.prod-images.emergentagent.com/jobs/9a576253-3f34-4de3-9ad4-57e7617524d7/images/f50336749d63e39e010d02db9c43eee9a19c0d799c1e9c0c91e84a4f2b8eb347.png'}
+                  src={project.image || 'https://files.ihgbrands.com/lexa/migrated/162fd60e556d6189.png'}
                   alt={project.title}
                   fill
                   className="object-cover transition-transform duration-700 group-hover:scale-105"

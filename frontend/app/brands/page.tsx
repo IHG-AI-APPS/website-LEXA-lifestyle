@@ -99,7 +99,7 @@ export default function BrandsPage() {
       <section className="relative overflow-hidden bg-[#0A0A0A] dark:bg-[#050505] text-white">
         {/* Hero Background Image */}
         <div className="absolute inset-0">
-          <div style={{backgroundImage: "url(https://static.prod-images.emergentagent.com/jobs/9a576253-3f34-4de3-9ad4-57e7617524d7/images/e50d69f604abca478053403fb12ad5b8026c9ff4bf49192cfaa9c087b4094899.png)"}} className="absolute inset-0 bg-cover bg-center opacity-80" />
+          <div style={{backgroundImage: "url(https://files.ihgbrands.com/lexa/migrated/a3b546f210cfd4cb.png)"}} className="absolute inset-0 bg-cover bg-center opacity-80" />
           <div className="absolute inset-0 bg-gradient-to-t from-[#0A0A0A]/80 via-[#0A0A0A]/40 to-transparent" />
         </div>
         <div className="absolute inset-0 opacity-[0.03]" style={{ backgroundImage: 'radial-gradient(circle at 1px 1px, white 1px, transparent 0)', backgroundSize: '40px 40px' }} />

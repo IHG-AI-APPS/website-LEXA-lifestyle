@@ -6,11 +6,11 @@ import Link from 'next/link'
 import { ArrowRight } from 'lucide-react'
 import ConsultationForm from '@/components/forms/ConsultationForm'
 
-const HERO_IMG = 'https://static.prod-images.emergentagent.com/jobs/59b913a4-054a-445e-b4e4-478e2f863a3e/images/02cf709158b3f2e77ff464028efc218e9ff896861d984b4d615bed84f4585475.png'
+const HERO_IMG = 'https://files.ihgbrands.com/lexa/migrated/1750c8ba4687e5e7.png'
 
 const showcases = [
   {
-    image: 'https://static.prod-images.emergentagent.com/jobs/59b913a4-054a-445e-b4e4-478e2f863a3e/images/9fe4839f1e265ed1b971e8350f3c62dc71f5fccb3f04e285da5639e08173a04a.png',
+    image: 'https://files.ihgbrands.com/lexa/migrated/ff63df2cbb04eccb.png',
     label: 'Villa Automation',
     title: 'Premium Specs, Standard',
     description: 'Pre-wire and automate entire villa communities. Smart home as a standard feature, not an upgrade.',
@@ -20,7 +20,7 @@ const showcases = [
     ],
   },
   {
-    image: 'https://static.prod-images.emergentagent.com/jobs/59b913a4-054a-445e-b4e4-478e2f863a3e/images/2b760b43cd3f6e5a3ccdb6ecb49bd12ad5e536a08a4739c705f5749495d92bd9.png',
+    image: 'https://files.ihgbrands.com/lexa/migrated/083ddbd93fdf1883.png',
     label: 'Lighting & AV',
     title: 'Differentiate Your Product',
     description: 'Smart lighting, cinema rooms, and whole-home audio that elevate your development above competitors.',
@@ -30,7 +30,7 @@ const showcases = [
     ],
   },
   {
-    image: 'https://static.prod-images.emergentagent.com/jobs/59b913a4-054a-445e-b4e4-478e2f863a3e/images/0fc00c111ed94684d005e986b1be25964e14babf4f51cf609f6d39f8918e96a2.png',
+    image: 'https://files.ihgbrands.com/lexa/migrated/43ed51fed9c48ea2.png',
     label: 'Security & Infrastructure',
     title: 'Built-In Intelligence',
     description: 'Enterprise-grade network infrastructure, CCTV, and access control — integrated from ground-up.',
@@ -40,7 +40,7 @@ const showcases = [
     ],
   },
   {
-    image: 'https://static.prod-images.emergentagent.com/jobs/59b913a4-054a-445e-b4e4-478e2f863a3e/images/8aa01c5e657737d456924397ccac796d22ab20e2bc69224c8a17c64e22485d35.png',
+    image: 'https://files.ihgbrands.com/lexa/migrated/75bc3731c4191546.png',
     label: 'Outdoor & Landscape',
     title: 'Complete Lifestyle Package',
     description: 'Pool automation, landscape lighting, and outdoor entertainment systems for the full luxury experience.',

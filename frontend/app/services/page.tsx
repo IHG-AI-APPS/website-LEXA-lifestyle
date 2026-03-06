@@ -119,7 +119,7 @@ export default function ServicesPage() {
       <section className="relative overflow-hidden bg-[#0A0A0A] dark:bg-[#050505] text-white py-16 lg:py-24">
         {/* Hero Background Image */}
         <div className="absolute inset-0">
-          <div style={{backgroundImage: "url(https://static.prod-images.emergentagent.com/jobs/9a576253-3f34-4de3-9ad4-57e7617524d7/images/93a1919db2f40ad0bc3c5a5049ea54088e0b20ff6fced377ae0d206d55cd0dcc.png)"}} className="absolute inset-0 bg-cover bg-center opacity-80" />
+          <div style={{backgroundImage: "url(https://files.ihgbrands.com/lexa/migrated/66a7f9649e0c76be.png)"}} className="absolute inset-0 bg-cover bg-center opacity-80" />
           <div className="absolute inset-0 bg-gradient-to-t from-[#0A0A0A]/80 via-[#0A0A0A]/40 to-transparent" />
         </div>
         <div className="container mx-auto px-5 sm:px-8 lg:px-16 relative z-10">

@@ -56,7 +56,7 @@ const pageData: GeoPageData = {
     }
   ],
   "ctaTitle": "Ready to Automate Your Yas Island Home?",
-  "heroImage": "https://static.prod-images.emergentagent.com/jobs/9a576253-3f34-4de3-9ad4-57e7617524d7/images/c94ce9f65e90ac863965ff29f25062f54f3fac1b12e7e27e5c485294c470a6bc.png",
+  "heroImage": "https://files.ihgbrands.com/lexa/migrated/2078064b4e7c49e8.png",
   "services": [
     {
       "icon": "Lightbulb",

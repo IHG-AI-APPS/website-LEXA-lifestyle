@@ -52,7 +52,7 @@ const pageData: GeoPageData = {
     }
   ],
   "ctaTitle": "Ready to Automate Your Dubai Hills Villa?",
-  "heroImage": "https://static.prod-images.emergentagent.com/jobs/9a576253-3f34-4de3-9ad4-57e7617524d7/images/92b193b92d97fdb1208efba6fa4c7eacc900e57b889be5816cb9568c2524e192.png",
+  "heroImage": "https://files.ihgbrands.com/lexa/migrated/c3150c09e1acb0f6.png",
   "faqs": [
     {
       "question": "How much does Dubai Hills villa automation cost?",

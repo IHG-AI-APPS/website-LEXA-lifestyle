@@ -58,7 +58,7 @@ export default function CataloguesPage() {
       <section className="relative overflow-hidden bg-[#0A0A0A] dark:bg-[#050505] text-white">
         {/* Hero Background Image */}
         <div className="absolute inset-0">
-          <div style={{backgroundImage: "url(https://static.prod-images.emergentagent.com/jobs/9a576253-3f34-4de3-9ad4-57e7617524d7/images/a0bfb5c07f372b4041210558fefe555c68a97973719fc8ffcf2cd37b8ed23295.png)"}} className="absolute inset-0 bg-cover bg-center opacity-80" />
+          <div style={{backgroundImage: "url(https://files.ihgbrands.com/lexa/migrated/820257d84dd0e8d8.png)"}} className="absolute inset-0 bg-cover bg-center opacity-80" />
           <div className="absolute inset-0 bg-gradient-to-t from-[#0A0A0A]/80 via-[#0A0A0A]/40 to-transparent" />
         </div>
         <div className="absolute inset-0 opacity-[0.03]" style={{ backgroundImage: 'radial-gradient(circle at 1px 1px, white 1px, transparent 0)', backgroundSize: '40px 40px' }} />

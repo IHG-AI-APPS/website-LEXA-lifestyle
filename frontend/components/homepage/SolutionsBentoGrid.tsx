@@ -43,7 +43,7 @@ const FALLBACK_SOLUTIONS = [
     title: 'Luxury Home Cinema',
     subtitle: 'Private Theatre Experiences',
     description: 'Dolby Atmos, acoustic design, and bespoke seating.',
-    image: 'https://static.prod-images.emergentagent.com/jobs/9a576253-3f34-4de3-9ad4-57e7617524d7/images/14bda4364129415663f1943a6e802b58725e25b08c852e41e66e988c494c88bf.png',
+    image: 'https://files.ihgbrands.com/lexa/migrated/753cbe457d2b1dcc.png',
     slug: 'luxury-home-cinema-dubai',
     icon: 'Film',
     theme: 'dark'
@@ -52,7 +52,7 @@ const FALLBACK_SOLUTIONS = [
     title: 'Smart Residential Living',
     subtitle: 'Complete Home Automation',
     description: 'Lighting, climate, security, and entertainment unified.',
-    image: 'https://static.prod-images.emergentagent.com/jobs/9a576253-3f34-4de3-9ad4-57e7617524d7/images/c193135e35f6c6dd1fee05e1d3bafc72a4e032d72f082166de6964f10cad6852.png',
+    image: 'https://files.ihgbrands.com/lexa/migrated/5a12821038cb9fa3.png',
     slug: 'smart-home',
     icon: 'Home',
     theme: 'light'
@@ -61,7 +61,7 @@ const FALLBACK_SOLUTIONS = [
     title: 'Outdoor Living',
     subtitle: 'Smart Gardens & Pools',
     description: 'Automated outdoor entertainment.',
-    image: 'https://static.prod-images.emergentagent.com/jobs/9a576253-3f34-4de3-9ad4-57e7617524d7/images/936068f0524b9c9cc532513f25129e8f74338526303d701c7365d259f7061105.png',
+    image: 'https://files.ihgbrands.com/lexa/migrated/ddf36dbc25c37067.png',
     slug: 'outdoor-automation',
     icon: 'Trees',
     theme: 'dark'
@@ -70,7 +70,7 @@ const FALLBACK_SOLUTIONS = [
     title: 'Security & Access',
     subtitle: 'Smart Protection',
     description: 'AI-powered monitoring and access control.',
-    image: 'https://static.prod-images.emergentagent.com/jobs/9a576253-3f34-4de3-9ad4-57e7617524d7/images/05f4bf4952a204db5059f7a7cf1f6ef493dfc5149a3e330e23d22fbf2272eb52.png',
+    image: 'https://files.ihgbrands.com/lexa/migrated/8e7ad27d3a88e7ea.png',
     slug: 'security',
     icon: 'Shield',
     theme: 'light'
@@ -192,7 +192,7 @@ export default function SolutionsBentoGrid() {
             {solutions.map((solution, index) => {
               const iconName = solution.icon || 'Home'
               const Icon = ICON_MAP[iconName] || Home
-              const imageUrl = solution.hero_image || solution.image || 'https://static.prod-images.emergentagent.com/jobs/9a576253-3f34-4de3-9ad4-57e7617524d7/images/c193135e35f6c6dd1fee05e1d3bafc72a4e032d72f082166de6964f10cad6852.png'
+              const imageUrl = solution.hero_image || solution.image || 'https://files.ihgbrands.com/lexa/migrated/5a12821038cb9fa3.png'
               
               return (
                 <Link
@@ -230,7 +230,7 @@ export default function SolutionsBentoGrid() {
             const iconName = solution.icon || 'Home'
             const Icon = ICON_MAP[iconName] || Home
             const theme = solution.theme || (index % 2 === 0 ? 'dark' : 'light')
-            const imageUrl = solution.hero_image || solution.image || 'https://static.prod-images.emergentagent.com/jobs/9a576253-3f34-4de3-9ad4-57e7617524d7/images/c193135e35f6c6dd1fee05e1d3bafc72a4e032d72f082166de6964f10cad6852.png'
+            const imageUrl = solution.hero_image || solution.image || 'https://files.ihgbrands.com/lexa/migrated/5a12821038cb9fa3.png'
             
             return (
               <motion.div

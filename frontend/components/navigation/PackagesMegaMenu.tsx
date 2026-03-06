@@ -441,7 +441,7 @@ export default function PackagesMegaMenu({ isOpen, onClose, onMouseEnter, onMous
                   >
                     <div className="relative h-full min-h-[300px] overflow-hidden rounded-xl border border-blue-500/30">
                       <SafeImage
-                        src="https://static.prod-images.emergentagent.com/jobs/41733178-a8fe-49c4-9ba7-b7e286387ff3/images/4e47357100177921752dba2a28d4e110241f2656fd6da5dab8147bc239f44123.png"
+                        src="https://files.ihgbrands.com/lexa/migrated/8aabca6ef0bf865a.png"
                         alt="Smart Luxury Villa Packages"
                         fill
                         sizes="(max-width: 1024px) 50vw, 25vw"

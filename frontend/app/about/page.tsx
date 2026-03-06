@@ -41,7 +41,7 @@ export default function AboutPage() {
       <section className="relative overflow-hidden bg-[#0A0A0A] dark:bg-[#050505] text-white pt-12 pb-20">
         {/* Background Image */}
         <div className="absolute inset-0">
-          <SafeImage src="https://static.prod-images.emergentagent.com/jobs/9a576253-3f34-4de3-9ad4-57e7617524d7/images/68c828f25b0cc3122f3c65c09ee7c970b0bec9800e1bf159e31833ccf16e406f.png" alt="LEXA Lifestyle" fill className="object-cover opacity-40" priority sizes="100vw" />
+          <SafeImage src="https://files.ihgbrands.com/lexa/migrated/1d7d3488a25bdc62.png" alt="LEXA Lifestyle" fill className="object-cover opacity-40" priority sizes="100vw" />
           <div className="absolute inset-0 bg-gradient-to-t from-[#0A0A0A]/80 via-[#0A0A0A]/40 to-transparent" />
         </div>
 

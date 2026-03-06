@@ -56,7 +56,7 @@ const pageData: GeoPageData = {
     }
   ],
   "ctaTitle": "Ready to Automate Your Abu Dhabi Home?",
-  "heroImage": "https://static.prod-images.emergentagent.com/jobs/9a576253-3f34-4de3-9ad4-57e7617524d7/images/aa050ad967624aec6a6fff9737847108a778fcad4cce6d986add2183ca3193d4.png",
+  "heroImage": "https://files.ihgbrands.com/lexa/migrated/e24c1460208302ff.png",
   "ctaSubtitle": "Schedule a free consultation with our Abu Dhabi smart home experts.",
   "services": [
     {

@@ -25,7 +25,7 @@ const fallbackTestimonials: Testimonial[] = [
     name: 'Kris Fade',
     role: 'Radio Host & Entrepreneur',
     testimonial: 'LEXA turned my home into a smart luxury experience. The lighting, the automation — it\'s next-level living.',
-    image: 'https://static.prod-images.emergentagent.com/jobs/9a576253-3f34-4de3-9ad4-57e7617524d7/images/81113236aea1d470de7f5dc2060093ba48905134dfadb518d9ea0899ccc1f7c1.png',
+    image: 'https://files.ihgbrands.com/lexa/migrated/ec9afb366796afe8.png',
     rating: 5
   },
   {
@@ -33,7 +33,7 @@ const fallbackTestimonials: Testimonial[] = [
     name: 'Akash Kanjwani',
     role: 'CEO, Sky View Real Estate',
     testimonial: 'LEXA nailed the design and delivery. Lumibright lighting turned our Harmony villa into a mood you can live in.',
-    image: 'https://static.prod-images.emergentagent.com/jobs/9a576253-3f34-4de3-9ad4-57e7617524d7/images/ba0a4f880b7032b40af93c3055859acb1fb26773462280bb5ad5467e3948ff2c.png',
+    image: 'https://files.ihgbrands.com/lexa/migrated/04cfad6343e74c55.png',
     rating: 5
   },
   {
@@ -41,7 +41,7 @@ const fallbackTestimonials: Testimonial[] = [
     name: 'Vikram Shroff',
     role: 'Executive Director, UPL',
     testimonial: 'They run a very professional high-end business. The quality of their work makes me realize their philosophy of customer satisfaction.',
-    image: 'https://static.prod-images.emergentagent.com/jobs/9a576253-3f34-4de3-9ad4-57e7617524d7/images/0f48dc4796cf6b760fd9f06e1e885bdbd444fc6b167916d39b612ed77ab9839d.png',
+    image: 'https://files.ihgbrands.com/lexa/migrated/c53459892ffdeaf4.png',
     rating: 5
   },
   {

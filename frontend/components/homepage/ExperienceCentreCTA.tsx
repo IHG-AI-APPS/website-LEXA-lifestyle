@@ -35,11 +35,11 @@ const DEFAULT_HIGHLIGHTS = [
 ]
 
 const DEFAULT_GALLERY = [
-  { src: 'https://static.prod-images.emergentagent.com/jobs/9a576253-3f34-4de3-9ad4-57e7617524d7/images/612beb91b87e9b41f962da6eb8b91f5cf254e933d63cb3ef71ace28718b4eefa.png', title: 'Smart Home Showcase', zone: 'Main Hall' },
-  { src: 'https://static.prod-images.emergentagent.com/jobs/9a576253-3f34-4de3-9ad4-57e7617524d7/images/dacc01ae1dc53730f34dd34f41895419010586a0427c0ebf9fc72d8a4b27d191.png', title: 'Home Cinema Experience', zone: 'Theater Zone' },
-  { src: 'https://static.prod-images.emergentagent.com/jobs/9a576253-3f34-4de3-9ad4-57e7617524d7/images/035579baf2abef1ae0e1155e16b4bf57655af2910a4df976de3b3022006d5f2c.png', title: 'Audio Listening Room', zone: 'Hi-Fi Zone' },
-  { src: 'https://static.prod-images.emergentagent.com/jobs/9a576253-3f34-4de3-9ad4-57e7617524d7/images/5da0e02776639111ed41adb48faaffd2c8968eaddda2ce0f3ba1dac514f0b82d.png', title: 'Lighting Design Studio', zone: 'Lighting Zone' },
-  { src: 'https://static.prod-images.emergentagent.com/jobs/9a576253-3f34-4de3-9ad4-57e7617524d7/images/cb41cf96a1bc018c222eb01f157f17fcd8d38fb84548fa77c8e27fabe2305b7c.png', title: 'Security Command Center', zone: 'Security Zone' }
+  { src: 'https://files.ihgbrands.com/lexa/migrated/0641eef46c96198d.png', title: 'Smart Home Showcase', zone: 'Main Hall' },
+  { src: 'https://files.ihgbrands.com/lexa/migrated/add489a013a13706.png', title: 'Home Cinema Experience', zone: 'Theater Zone' },
+  { src: 'https://files.ihgbrands.com/lexa/migrated/8e8a1e890ec79775.png', title: 'Audio Listening Room', zone: 'Hi-Fi Zone' },
+  { src: 'https://files.ihgbrands.com/lexa/migrated/c46836f176dba77d.png', title: 'Lighting Design Studio', zone: 'Lighting Zone' },
+  { src: 'https://files.ihgbrands.com/lexa/migrated/f5e4fceb477845f7.png', title: 'Security Command Center', zone: 'Security Zone' }
 ]
 
 export default function ExperienceCentreCTA() {

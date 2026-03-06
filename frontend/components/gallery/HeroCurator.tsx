@@ -17,7 +17,7 @@ const HERO_CLIPS = [
   '/videos/hero/05_cinema_room.mp4',
 ]
 
-const FALLBACK_IMAGE = 'https://static.prod-images.emergentagent.com/jobs/59b913a4-054a-445e-b4e4-478e2f863a3e/images/d79b3f3a9da4d6fe9696db86946af0ec4514d892e8b735a0e2d51fb0f2958d37.png'
+const FALLBACK_IMAGE = 'https://files.ihgbrands.com/lexa/migrated/9bb2c417db1b83a5.png'
 
 const MAX_VIDEO_ERRORS = 3
 

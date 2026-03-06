@@ -56,7 +56,7 @@ const pageData: GeoPageData = {
     }
   ],
   "ctaTitle": "Ready to Automate Your Al Reem Apartment?",
-  "heroImage": "https://static.prod-images.emergentagent.com/jobs/9a576253-3f34-4de3-9ad4-57e7617524d7/images/b3570c7015b31682071eb87950ebfdff9602a7f133b63d501cecb160fe9478c8.png",
+  "heroImage": "https://files.ihgbrands.com/lexa/migrated/4d8329d492af65cd.png",
   "services": [
     {
       "icon": "Lightbulb",

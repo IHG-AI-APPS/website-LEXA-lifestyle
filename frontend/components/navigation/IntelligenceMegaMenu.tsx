@@ -308,7 +308,7 @@ export default function IntelligenceMegaMenu({ isOpen, onClose, onMouseEnter, on
                   >
                     <div className="relative h-full min-h-[300px] overflow-hidden rounded-xl border border-white/10">
                       <SafeImage
-                        src="https://static.prod-images.emergentagent.com/jobs/41733178-a8fe-49c4-9ba7-b7e286387ff3/images/17b4faffd2a04800e723195293e85edcef2995893a936d192034cabd003c7b89.png"
+                        src="https://files.ihgbrands.com/lexa/migrated/22dd6837f91bbd23.png"
                         alt="Building Intelligence & AI Analytics"
                         fill
                         sizes="(max-width: 1024px) 50vw, 25vw"

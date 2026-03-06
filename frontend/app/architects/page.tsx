@@ -144,7 +144,7 @@ export default function ArchitectsPage() {
       <section className="relative overflow-hidden bg-[#0A0A0A] dark:bg-[#050505] text-white py-16 lg:py-24">
         {/* Hero Background Image */}
         <div className="absolute inset-0">
-          <div style={{backgroundImage: "url(https://static.prod-images.emergentagent.com/jobs/9a576253-3f34-4de3-9ad4-57e7617524d7/images/aa7685f53dc77a4816cb6a99d9a3fa57ed4245a5fa96357c624e2b807af6df10.png)"}} className="absolute inset-0 bg-cover bg-center opacity-80" />
+          <div style={{backgroundImage: "url(https://files.ihgbrands.com/lexa/migrated/08685f945f724707.png)"}} className="absolute inset-0 bg-cover bg-center opacity-80" />
           <div className="absolute inset-0 bg-gradient-to-t from-[#0A0A0A]/80 via-[#0A0A0A]/40 to-transparent" />
         </div>
         <div className="container mx-auto px-5 sm:px-8 lg:px-16 relative z-10">

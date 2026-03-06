@@ -42,7 +42,8 @@ import {
   BookOpen,
   ShieldCheck,
   MessageCircle,
-  ShoppingBag
+  ShoppingBag,
+  ImageIcon
 } from 'lucide-react'
 import { verifyToken, logout } from '@/lib/adminApi'
 
@@ -79,6 +80,7 @@ const navigation = [
   { name: 'Locations', href: '/admin/locations', icon: MapPin },
   { name: 'Submissions', href: '/admin/submissions', icon: MessageSquare },
   { name: 'Product Catalog', href: '/admin/catalog', icon: ShoppingBag },
+  { name: 'File Manager', href: '/admin/images', icon: ImageIcon },
   { name: 'WhatsApp', href: '/admin/whatsapp', icon: MessageCircle },
   { name: 'SEO Tools', href: '/admin/seo', icon: Search },
   { name: 'Activity Logs', href: '/admin/logs', icon: Clock },

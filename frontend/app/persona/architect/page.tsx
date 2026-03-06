@@ -6,11 +6,11 @@ import Link from 'next/link'
 import { ArrowRight } from 'lucide-react'
 import ConsultationForm from '@/components/forms/ConsultationForm'
 
-const HERO_IMG = 'https://static.prod-images.emergentagent.com/jobs/59b913a4-054a-445e-b4e4-478e2f863a3e/images/ff101bf118d1ff358b480dff06f9a26bcc64286e415cfed4ffe1d0d916f10e41.png'
+const HERO_IMG = 'https://files.ihgbrands.com/lexa/migrated/96c7721cf6ca3415.png'
 
 const showcases = [
   {
-    image: 'https://static.prod-images.emergentagent.com/jobs/59b913a4-054a-445e-b4e4-478e2f863a3e/images/2b760b43cd3f6e5a3ccdb6ecb49bd12ad5e536a08a4739c705f5749495d92bd9.png',
+    image: 'https://files.ihgbrands.com/lexa/migrated/083ddbd93fdf1883.png',
     label: 'Lighting Design',
     title: 'Design With Light',
     description: 'Integrate scene-based lighting seamlessly into your architectural vision. From concept to commissioning.',
@@ -20,7 +20,7 @@ const showcases = [
     ],
   },
   {
-    image: 'https://static.prod-images.emergentagent.com/jobs/59b913a4-054a-445e-b4e4-478e2f863a3e/images/6fa45225683f61aba71458062924256e7eec1058d92c4ae334f474c0f58c30a6.png',
+    image: 'https://files.ihgbrands.com/lexa/migrated/026172905abb74cf.png',
     label: 'AV Integration',
     title: 'Invisible Technology',
     description: 'Hidden speakers, concealed screens, and architectural AV solutions that preserve your design intent.',
@@ -30,7 +30,7 @@ const showcases = [
     ],
   },
   {
-    image: 'https://static.prod-images.emergentagent.com/jobs/59b913a4-054a-445e-b4e4-478e2f863a3e/images/0fc00c111ed94684d005e986b1be25964e14babf4f51cf609f6d39f8918e96a2.png',
+    image: 'https://files.ihgbrands.com/lexa/migrated/43ed51fed9c48ea2.png',
     label: 'Smart Systems',
     title: 'Unified Control',
     description: 'One platform for lighting, HVAC, security, and AV. Clean interfaces that complement your interiors.',
@@ -40,7 +40,7 @@ const showcases = [
     ],
   },
   {
-    image: 'https://static.prod-images.emergentagent.com/jobs/59b913a4-054a-445e-b4e4-478e2f863a3e/images/8aa01c5e657737d456924397ccac796d22ab20e2bc69224c8a17c64e22485d35.png',
+    image: 'https://files.ihgbrands.com/lexa/migrated/75bc3731c4191546.png',
     label: 'Outdoor Spaces',
     title: 'Landscape Intelligence',
     description: 'Smart irrigation, landscape lighting, and pool automation that extends the design language outdoors.',

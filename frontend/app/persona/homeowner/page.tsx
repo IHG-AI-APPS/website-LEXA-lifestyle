@@ -6,11 +6,11 @@ import Link from 'next/link'
 import { ArrowRight } from 'lucide-react'
 import ConsultationForm from '@/components/forms/ConsultationForm'
 
-const HERO_IMG = 'https://static.prod-images.emergentagent.com/jobs/59b913a4-054a-445e-b4e4-478e2f863a3e/images/9fe4839f1e265ed1b971e8350f3c62dc71f5fccb3f04e285da5639e08173a04a.png'
+const HERO_IMG = 'https://files.ihgbrands.com/lexa/migrated/ff63df2cbb04eccb.png'
 
 const showcases = [
   {
-    image: 'https://static.prod-images.emergentagent.com/jobs/59b913a4-054a-445e-b4e4-478e2f863a3e/images/2b760b43cd3f6e5a3ccdb6ecb49bd12ad5e536a08a4739c705f5749495d92bd9.png',
+    image: 'https://files.ihgbrands.com/lexa/migrated/083ddbd93fdf1883.png',
     label: 'Lighting & Atmosphere',
     title: 'Set the Mood',
     description: 'Scene-based lighting that adapts to your lifestyle. From morning energize to evening wind-down.',
@@ -20,7 +20,7 @@ const showcases = [
     ],
   },
   {
-    image: 'https://static.prod-images.emergentagent.com/jobs/59b913a4-054a-445e-b4e4-478e2f863a3e/images/6fa45225683f61aba71458062924256e7eec1058d92c4ae334f474c0f58c30a6.png',
+    image: 'https://files.ihgbrands.com/lexa/migrated/026172905abb74cf.png',
     label: 'Entertainment',
     title: 'Private Cinema',
     description: 'Immersive home theater and multi-room audio, designed for cinematic experiences at home.',
@@ -30,7 +30,7 @@ const showcases = [
     ],
   },
   {
-    image: 'https://static.prod-images.emergentagent.com/jobs/59b913a4-054a-445e-b4e4-478e2f863a3e/images/0fc00c111ed94684d005e986b1be25964e14babf4f51cf609f6d39f8918e96a2.png',
+    image: 'https://files.ihgbrands.com/lexa/migrated/43ed51fed9c48ea2.png',
     label: 'Security & Safety',
     title: 'Total Peace of Mind',
     description: 'Real-time monitoring, smart locks, and intelligent surveillance — always in control.',
@@ -40,7 +40,7 @@ const showcases = [
     ],
   },
   {
-    image: 'https://static.prod-images.emergentagent.com/jobs/59b913a4-054a-445e-b4e4-478e2f863a3e/images/8aa01c5e657737d456924397ccac796d22ab20e2bc69224c8a17c64e22485d35.png',
+    image: 'https://files.ihgbrands.com/lexa/migrated/75bc3731c4191546.png',
     label: 'Outdoor Living',
     title: 'Beyond Four Walls',
     description: 'Pools, gardens, and patios with intelligent automation for seamless outdoor luxury.',

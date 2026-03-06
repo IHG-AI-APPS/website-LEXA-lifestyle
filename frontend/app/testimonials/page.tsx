@@ -21,7 +21,7 @@ interface Testimonial {
   featured?: boolean
 }
 
-const HERO_IMG = 'https://static.prod-images.emergentagent.com/jobs/59b913a4-054a-445e-b4e4-478e2f863a3e/images/9fe4839f1e265ed1b971e8350f3c62dc71f5fccb3f04e285da5639e08173a04a.png'
+const HERO_IMG = 'https://files.ihgbrands.com/lexa/migrated/ff63df2cbb04eccb.png'
 
 const fallbackTestimonials: Testimonial[] = [
   {
@@ -29,7 +29,7 @@ const fallbackTestimonials: Testimonial[] = [
     name: 'Kris Fade',
     role: 'Radio Host & Entrepreneur',
     testimonial: 'LEXA turned my home into a smart luxury experience. The lighting, the automation — it\'s next-level living. Every room has its own personality now, and I can control everything from my phone.',
-    image: 'https://static.prod-images.emergentagent.com/jobs/9a576253-3f34-4de3-9ad4-57e7617524d7/images/81113236aea1d470de7f5dc2060093ba48905134dfadb518d9ea0899ccc1f7c1.png',
+    image: 'https://files.ihgbrands.com/lexa/migrated/ec9afb366796afe8.png',
     rating: 5,
     featured: true,
   },
@@ -38,7 +38,7 @@ const fallbackTestimonials: Testimonial[] = [
     name: 'Akash Kanjwani',
     role: 'CEO, Sky View Real Estate',
     testimonial: 'LEXA nailed the design and delivery. Lumibright lighting turned our Harmony villa into a mood you can live in. The team understood our vision from day one and delivered beyond expectations.',
-    image: 'https://static.prod-images.emergentagent.com/jobs/9a576253-3f34-4de3-9ad4-57e7617524d7/images/ba0a4f880b7032b40af93c3055859acb1fb26773462280bb5ad5467e3948ff2c.png',
+    image: 'https://files.ihgbrands.com/lexa/migrated/04cfad6343e74c55.png',
     rating: 5,
     featured: true,
   },
@@ -47,7 +47,7 @@ const fallbackTestimonials: Testimonial[] = [
     name: 'Vikram Shroff',
     role: 'Executive Director, UPL',
     testimonial: 'They run a very professional high-end business. The quality of their work makes me realize their philosophy of customer satisfaction. From consultation to final handover, everything was seamless.',
-    image: 'https://static.prod-images.emergentagent.com/jobs/9a576253-3f34-4de3-9ad4-57e7617524d7/images/0f48dc4796cf6b760fd9f06e1e885bdbd444fc6b167916d39b612ed77ab9839d.png',
+    image: 'https://files.ihgbrands.com/lexa/migrated/c53459892ffdeaf4.png',
     rating: 5,
     featured: true,
   },

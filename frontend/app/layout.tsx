@@ -81,9 +81,8 @@ export default function RootLayout({
         <link rel="alternate" hrefLang="x-default" href="https://lexalifestyle.com" />
         
         {/* DNS Prefetch for external domains */}
-        <link rel="dns-prefetch" href="https://static.prod-images.emergentagent.com" />
+        <link rel="dns-prefetch" href="https://files.ihgbrands.com" />
         <link rel="dns-prefetch" href="https://images.pexels.com" />
-        <link rel="dns-prefetch" href="https://static.prod-images.emergentagent.com" />
         
         {/* Preconnect for critical resources */}
         <link rel="preconnect" href={process.env.NEXT_PUBLIC_BACKEND_URL || ''} crossOrigin="anonymous" />

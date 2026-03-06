@@ -116,7 +116,7 @@ export default function ArchitectResourcePortalPage() {
       <section className="relative min-h-[70vh] flex items-center justify-center">
         <div className="absolute inset-0 z-0">
           <SafeImage
-            src="https://static.prod-images.emergentagent.com/jobs/9a576253-3f34-4de3-9ad4-57e7617524d7/images/aa7685f53dc77a4816cb6a99d9a3fa57ed4245a5fa96357c624e2b807af6df10.png"
+            src="https://files.ihgbrands.com/lexa/migrated/08685f945f724707.png"
             alt="Architecture workspace"
             fill
             className="object-cover"
@@ -391,9 +391,9 @@ export default function ArchitectResourcePortalPage() {
 
             <div className="grid md:grid-cols-3 gap-6">
               {[
-                { name: 'Palm Jumeirah Villa', firm: 'Studio X Architects', systems: '12 integrated systems', image: 'https://static.prod-images.emergentagent.com/jobs/9a576253-3f34-4de3-9ad4-57e7617524d7/images/7b80becec3b7117413bfec12bbd5f51efe246978603b5afc48698dc2a2af36c1.png' },
-                { name: 'Emirates Hills Estate', firm: 'Design Atelier', systems: '15 integrated systems', image: 'https://static.prod-images.emergentagent.com/jobs/9a576253-3f34-4de3-9ad4-57e7617524d7/images/62d43cba6589d11595604f8eb5a5612d5de0c231512a8ad4e0d58f8f69756c2f.png' },
-                { name: 'Downtown Penthouse', firm: 'Modern Design Co.', systems: '9 integrated systems', image: 'https://static.prod-images.emergentagent.com/jobs/9a576253-3f34-4de3-9ad4-57e7617524d7/images/039ef87abc0eff1156299d3b56c34c5bd5198adaba104a28b23e7fe48db8a2cd.png' }
+                { name: 'Palm Jumeirah Villa', firm: 'Studio X Architects', systems: '12 integrated systems', image: 'https://files.ihgbrands.com/lexa/migrated/10250d9b8890d3f8.png' },
+                { name: 'Emirates Hills Estate', firm: 'Design Atelier', systems: '15 integrated systems', image: 'https://files.ihgbrands.com/lexa/migrated/1e9213f0b8af343f.png' },
+                { name: 'Downtown Penthouse', firm: 'Modern Design Co.', systems: '9 integrated systems', image: 'https://files.ihgbrands.com/lexa/migrated/26de8d3830a0a28c.png' }
               ].map((project, index) => (
                 <motion.div
                   key={project.name}

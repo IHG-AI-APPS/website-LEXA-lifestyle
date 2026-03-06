@@ -208,3 +208,75 @@ async def delete_uploaded_file(category: str, filename: str):
     except Exception as e:
         logger.error(f"Failed to delete file: {str(e)}")
         raise HTTPException(status_code=500, detail=f"Failed to delete file: {str(e)}")
+
+
+import time as _time
+
+_file_cache = {"data": None, "timestamp": 0}
+_CACHE_TTL = 300  # 5 minutes
+
+
+@router.get("/management/list")
+async def list_all_images(refresh: bool = False):
+    """List all files on the remote server with metadata (cached for 5 min)"""
+    import paramiko
+    from utils.remote_storage import REMOTE_HOST, REMOTE_USER, REMOTE_PASS, REMOTE_BASE_PATH, CDN_BASE_URL
+
+    now = _time.time()
+    if not refresh and _file_cache["data"] and (now - _file_cache["timestamp"]) < _CACHE_TTL:
+        return _file_cache["data"]
+
+    try:
+        ssh = paramiko.SSHClient()
+        ssh.set_missing_host_key_policy(paramiko.AutoAddPolicy())
+        ssh.connect(REMOTE_HOST, username=REMOTE_USER, password=REMOTE_PASS, timeout=15)
+        sftp = ssh.open_sftp()
+
+        images = []
+        categories = []
+
+        def scan_dir(path, category):
+            try:
+                entries = sftp.listdir_attr(path)
+                for entry in entries:
+                    full_path = f"{path}/{entry.filename}"
+                    if entry.filename.startswith('.'):
+                        continue
+                    if hasattr(entry, 'st_mode') and (entry.st_mode & 0o40000):
+                        categories.append(entry.filename)
+                        scan_dir(full_path, entry.filename)
+                    else:
+                        ext = entry.filename.split('.')[-1].lower() if '.' in entry.filename else ''
+                        mime_map = {
+                            'jpg': 'image/jpeg', 'jpeg': 'image/jpeg', 'png': 'image/png',
+                            'webp': 'image/webp', 'gif': 'image/gif', 'svg': 'image/svg+xml',
+                            'pdf': 'application/pdf', 'mp4': 'video/mp4',
+                        }
+                        images.append({
+                            "filename": entry.filename,
+                            "category": category,
+                            "url": f"{CDN_BASE_URL}/{category}/{entry.filename}",
+                            "size": entry.st_size,
+                            "modified": entry.st_mtime,
+                            "content_type": mime_map.get(ext, 'application/octet-stream'),
+                            "extension": ext,
+                        })
+            except Exception as e:
+                logger.error(f"Error scanning {path}: {e}")
+
+        scan_dir(REMOTE_BASE_PATH, "")
+        sftp.close()
+        ssh.close()
+
+        result = {
+            "images": sorted(images, key=lambda x: x.get('modified', 0), reverse=True),
+            "categories": sorted(set(categories)),
+            "total": len(images),
+            "total_size": sum(i["size"] for i in images),
+        }
+        _file_cache["data"] = result
+        _file_cache["timestamp"] = now
+        return result
+    except Exception as e:
+        logger.error(f"List images error: {str(e)}")
+        raise HTTPException(status_code=500, detail=f"Failed to list images: {str(e)}")

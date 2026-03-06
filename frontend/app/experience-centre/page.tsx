@@ -14,12 +14,12 @@ import VirtualTour from '@/components/experience/VirtualTour'
 const BACKEND_URL = process.env.NEXT_PUBLIC_BACKEND_URL || 'http://localhost:8001'
 
 const facilities = [
-  { id: 1, title: 'Smart Home Showcase', description: 'Experience the latest in home automation, lighting control, and intelligent living systems.', image: 'https://static.prod-images.emergentagent.com/jobs/9a576253-3f34-4de3-9ad4-57e7617524d7/images/612beb91b87e9b41f962da6eb8b91f5cf254e933d63cb3ef71ace28718b4eefa.png', features: ['Voice Control', 'Automated Lighting', 'Climate Management'] },
-  { id: 2, title: 'Home Cinema Experience', description: 'State-of-the-art home theater with premium acoustics and immersive 4K projection.', image: 'https://static.prod-images.emergentagent.com/jobs/9a576253-3f34-4de3-9ad4-57e7617524d7/images/dacc01ae1dc53730f34dd34f41895419010586a0427c0ebf9fc72d8a4b27d191.png', features: ['Dolby Atmos', '4K Projection', 'Acoustic Treatment'] },
-  { id: 3, title: 'Premium Brand Gallery', description: 'Explore luxury brands and cutting-edge technology solutions from world-leading manufacturers.', image: 'https://static.prod-images.emergentagent.com/jobs/9a576253-3f34-4de3-9ad4-57e7617524d7/images/e50d69f604abca478053403fb12ad5b8026c9ff4bf49192cfaa9c087b4094899.png', features: ['32+ Brands', 'Live Demos', 'Expert Consultation'] },
-  { id: 4, title: 'Audio & Multi-Room Systems', description: 'High-fidelity audio solutions with multi-room capabilities and wireless streaming.', image: 'https://static.prod-images.emergentagent.com/jobs/9a576253-3f34-4de3-9ad4-57e7617524d7/images/035579baf2abef1ae0e1155e16b4bf57655af2910a4df976de3b3022006d5f2c.png', features: ['Hi-Fi Systems', 'Multi-Room Audio', 'Streaming Integration'] },
-  { id: 5, title: 'Lighting Design Studio', description: 'Sophisticated lighting control systems showcasing ambiance and energy efficiency.', image: 'https://static.prod-images.emergentagent.com/jobs/9a576253-3f34-4de3-9ad4-57e7617524d7/images/5da0e02776639111ed41adb48faaffd2c8968eaddda2ce0f3ba1dac514f0b82d.png', features: ['Scene Control', 'Circadian Lighting', 'Energy Monitoring'] },
-  { id: 6, title: 'Security & Surveillance', description: 'Advanced security systems with facial recognition, access control, and monitoring.', image: 'https://static.prod-images.emergentagent.com/jobs/9a576253-3f34-4de3-9ad4-57e7617524d7/images/cb41cf96a1bc018c222eb01f157f17fcd8d38fb84548fa77c8e27fabe2305b7c.png', features: ['Facial Recognition', 'Access Control', '24/7 Monitoring'] },
+  { id: 1, title: 'Smart Home Showcase', description: 'Experience the latest in home automation, lighting control, and intelligent living systems.', image: 'https://files.ihgbrands.com/lexa/migrated/0641eef46c96198d.png', features: ['Voice Control', 'Automated Lighting', 'Climate Management'] },
+  { id: 2, title: 'Home Cinema Experience', description: 'State-of-the-art home theater with premium acoustics and immersive 4K projection.', image: 'https://files.ihgbrands.com/lexa/migrated/add489a013a13706.png', features: ['Dolby Atmos', '4K Projection', 'Acoustic Treatment'] },
+  { id: 3, title: 'Premium Brand Gallery', description: 'Explore luxury brands and cutting-edge technology solutions from world-leading manufacturers.', image: 'https://files.ihgbrands.com/lexa/migrated/a3b546f210cfd4cb.png', features: ['32+ Brands', 'Live Demos', 'Expert Consultation'] },
+  { id: 4, title: 'Audio & Multi-Room Systems', description: 'High-fidelity audio solutions with multi-room capabilities and wireless streaming.', image: 'https://files.ihgbrands.com/lexa/migrated/8e8a1e890ec79775.png', features: ['Hi-Fi Systems', 'Multi-Room Audio', 'Streaming Integration'] },
+  { id: 5, title: 'Lighting Design Studio', description: 'Sophisticated lighting control systems showcasing ambiance and energy efficiency.', image: 'https://files.ihgbrands.com/lexa/migrated/c46836f176dba77d.png', features: ['Scene Control', 'Circadian Lighting', 'Energy Monitoring'] },
+  { id: 6, title: 'Security & Surveillance', description: 'Advanced security systems with facial recognition, access control, and monitoring.', image: 'https://files.ihgbrands.com/lexa/migrated/f5e4fceb477845f7.png', features: ['Facial Recognition', 'Access Control', '24/7 Monitoring'] },
 ]
 
 const timeSlots = ['9:00 AM', '10:00 AM', '11:00 AM', '12:00 PM', '1:00 PM', '2:00 PM', '3:00 PM', '4:00 PM', '5:00 PM']
@@ -54,7 +54,7 @@ export default function ExperienceCentrePage() {
       <section className="relative overflow-hidden bg-[#0A0A0A] dark:bg-[#050505] text-white pt-12 pb-20">
         {/* Background Image */}
         <div className="absolute inset-0">
-          <SafeImage src="https://static.prod-images.emergentagent.com/jobs/9a576253-3f34-4de3-9ad4-57e7617524d7/images/e651c0e1edce8aa3e657988056077e392f0fcb6ca51392950f6ecd0ddb43ee3b.png" alt="LEXA Experience Centre" fill className="object-cover opacity-40" priority sizes="100vw" />
+          <SafeImage src="https://files.ihgbrands.com/lexa/migrated/625dd79059eb6676.png" alt="LEXA Experience Centre" fill className="object-cover opacity-40" priority sizes="100vw" />
           <div className="absolute inset-0 bg-gradient-to-t from-[#0A0A0A]/80 via-[#0A0A0A]/40 to-transparent" />
         </div>
 

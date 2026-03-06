@@ -20,10 +20,10 @@ const DEFAULT_FEATURED = {
 }
 
 const DEFAULT_TOOLS = [
-  { icon: 'Package', title: 'Package Builder', description: 'Design your complete smart home package step-by-step with live pricing', href: '/package-builder', cta: 'Build Your Package', image: 'https://static.prod-images.emergentagent.com/jobs/9a576253-3f34-4de3-9ad4-57e7617524d7/images/34114c11b56578c5728056ef0bafd361d7b6dfdf4079276238e92eb92e359bf3.png' },
-  { icon: 'Sparkles', title: 'Specialty Rooms', description: 'Explore 22 premium specialty room automation solutions', href: '/specialty-rooms', cta: 'Explore Rooms', image: 'https://static.prod-images.emergentagent.com/jobs/9a576253-3f34-4de3-9ad4-57e7617524d7/images/8c306d4666df9606b080e5b49c3ce8e43077e359e8ad1927590e99204f5d77a0.png' },
-  { icon: 'Calculator', title: 'Cost Calculator', description: 'Quick estimate your smart home investment', href: '/calculator', cta: 'Calculate Cost', image: 'https://static.prod-images.emergentagent.com/jobs/9a576253-3f34-4de3-9ad4-57e7617524d7/images/d31fedcd0e70d8772764a98e900ed47531dca3ee168cf97ef1660b6fc784eff4.png' },
-  { icon: 'TrendingUp', title: 'ROI Calculator', description: 'Analyze your return on investment over time', href: '/roi-calculator', cta: 'Calculate ROI', image: 'https://static.prod-images.emergentagent.com/jobs/9a576253-3f34-4de3-9ad4-57e7617524d7/images/51e373474986a413a866bd26c89a1ffcc41170b89684d36885bac73bdc1b02ce.png' }
+  { icon: 'Package', title: 'Package Builder', description: 'Design your complete smart home package step-by-step with live pricing', href: '/package-builder', cta: 'Build Your Package', image: 'https://files.ihgbrands.com/lexa/migrated/dcab59953a728c26.png' },
+  { icon: 'Sparkles', title: 'Specialty Rooms', description: 'Explore 22 premium specialty room automation solutions', href: '/specialty-rooms', cta: 'Explore Rooms', image: 'https://files.ihgbrands.com/lexa/migrated/0b68184f5a17e574.png' },
+  { icon: 'Calculator', title: 'Cost Calculator', description: 'Quick estimate your smart home investment', href: '/calculator', cta: 'Calculate Cost', image: 'https://files.ihgbrands.com/lexa/migrated/15b3e05a88e43115.png' },
+  { icon: 'TrendingUp', title: 'ROI Calculator', description: 'Analyze your return on investment over time', href: '/roi-calculator', cta: 'Calculate ROI', image: 'https://files.ihgbrands.com/lexa/migrated/2c1974d7588491e8.png' }
 ]
 
 const GRADIENTS = [
