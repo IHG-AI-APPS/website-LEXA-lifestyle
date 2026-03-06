@@ -125,7 +125,7 @@ export default function Header() {
 
   // Logo logic: use white logo on dark backgrounds, black logo on light backgrounds
   const useDarkLogo = shouldUseDarkText && theme !== 'dark'
-  const logoSrc = useDarkLogo ? "/lexa-black.png" : "/lexa-white.png"
+  const logoSrc = useDarkLogo ? "https://files.ihgbrands.com/lexa/site/lexa-black.webp" : "https://files.ihgbrands.com/lexa/site/lexa-white.webp"
 
   const navigation = [
     { name: t('nav.brands'), href: '/brands' },

@@ -101,7 +101,7 @@ export default function FinalCTA() {
                 className="relative h-[500px] lg:h-[600px] overflow-hidden"
               >
                 <SafeImage
-                  src="/images/premium/technology/tech-1.jpg"
+                  src="https://files.ihgbrands.com/lexa/site/images/premium/technology/tech-1.webp"
                   alt="LEXA Experience Center"
                   fill
                   className="object-cover grayscale-[20%]"

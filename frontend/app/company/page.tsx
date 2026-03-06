@@ -54,7 +54,7 @@ export default function CompanyPage() {
                 className="relative h-[500px]"
               >
                 <SafeImage
-                  src="/images/premium/hero/hero-1.jpg"
+                  src="https://files.ihgbrands.com/lexa/site/images/premium/hero/hero-1.webp"
                   alt="LEXA Lifestyle"
                   fill
                   className="object-cover grayscale-[20%]"

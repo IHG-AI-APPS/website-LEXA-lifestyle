@@ -36,7 +36,7 @@ export default function Footer() {
             <Link href="/">
               <div className="relative w-28 h-11 sm:w-28 sm:h-12 lg:w-36 lg:h-14">
                 <SafeImage 
-                  src="/lexa-white.png" 
+                  src="https://files.ihgbrands.com/lexa/site/lexa-white.webp" 
                   alt="LEXA Lifestyle" 
                   fill
                   className="object-contain object-left"

@@ -122,7 +122,7 @@ export default function AIChatWidget() {
         title="Chat with AURA"
       >
         <Image
-          src="/images/aura-avatar.png"
+          src="https://files.ihgbrands.com/lexa/site/images/aura-avatar.webp"
           alt="AURA - Smart Home Consultant"
           width={56}
           height={56}
@@ -146,7 +146,7 @@ export default function AIChatWidget() {
               <div className="flex items-center gap-3">
                 <div className="w-11 h-11 rounded-full overflow-hidden ring-2 ring-[#C9A962]/50 flex-shrink-0">
                   <Image
-                    src="/images/aura-avatar.png"
+                    src="https://files.ihgbrands.com/lexa/site/images/aura-avatar.webp"
                     alt="AURA"
                     width={44}
                     height={44}
@@ -175,7 +175,7 @@ export default function AIChatWidget() {
                 <div className="text-center py-6">
                   <div className="w-20 h-20 mx-auto mb-4 rounded-full overflow-hidden ring-2 ring-[#C9A962]/30">
                     <Image
-                      src="/images/aura-avatar.png"
+                      src="https://files.ihgbrands.com/lexa/site/images/aura-avatar.webp"
                       alt="AURA"
                       width={80}
                       height={80}
@@ -221,7 +221,7 @@ export default function AIChatWidget() {
                         <User className="w-4 h-4 text-white" />
                       ) : (
                         <Image
-                          src="/images/aura-avatar.png"
+                          src="https://files.ihgbrands.com/lexa/site/images/aura-avatar.webp"
                           alt="AURA"
                           width={28}
                           height={28}

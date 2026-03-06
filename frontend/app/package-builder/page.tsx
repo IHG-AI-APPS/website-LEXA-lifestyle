@@ -212,11 +212,11 @@ export default function PackageBuilderPage() {
   return (
     <div className="min-h-screen bg-white dark:bg-[#050505]">
       {/* Header - Below main navigation */}
-      <div className="border-b bg-white sticky top-16 sm:top-18 md:top-20 z-40">
-        <div className="container mx-auto px-4 py-6">
+      <div className="border-b bg-white dark:bg-[#050505] sticky top-16 sm:top-18 md:top-20 z-40">
+        <div className="container mx-auto px-4 py-4">
           <div className="flex items-center justify-between max-w-6xl mx-auto">
-            <Link href="/packages" className="text-gray-600 dark:text-zinc-500 hover:text-gray-900 dark:text-white">
-              ← Back to Packages
+            <Link href="/packages" className="text-gray-600 dark:text-zinc-500 hover:text-gray-900 dark:hover:text-white transition-colors">
+              &larr; Back to Packages
             </Link>
             
             {selectedTier && (
@@ -231,7 +231,7 @@ export default function PackageBuilderPage() {
         </div>
       </div>
 
-      <div className="container mx-auto px-4 py-12">
+      <div className="container mx-auto px-4 py-8 mt-2">
         <AnimatePresence mode="wait">
           {/* Step 1: Property Type */}
           {step === 1 && (

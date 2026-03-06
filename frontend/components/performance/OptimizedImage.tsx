@@ -104,6 +104,8 @@ export default function OptimizedImage({
           )}
           placeholder="blur"
           blurDataURL={lowQualitySrc || DEFAULT_BLUR}
+          unoptimized={typeof imageSrc === 'string' && imageSrc.includes('files.ihgbrands.com')}
+          loading="lazy"
           onLoad={() => setIsLoaded(true)}
           onError={() => {
             setHasError(true)

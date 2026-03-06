@@ -65,8 +65,8 @@ export default function RootLayout({
         {/* Favicon & App Icons */}
         <link rel="icon" href="/favicon.ico" sizes="32x32" />
         <link rel="icon" href="/favicon.ico" type="image/x-icon" />
-        <link rel="apple-touch-icon" href="/lexa-black.png" />
-        <link rel="apple-touch-icon" sizes="180x180" href="/lexa-black.png" />
+        <link rel="apple-touch-icon" href="https://files.ihgbrands.com/lexa/site/lexa-black.webp" />
+        <link rel="apple-touch-icon" sizes="180x180" href="https://files.ihgbrands.com/lexa/site/lexa-black.webp" />
         
         {/* PWA Manifest */}
         <link rel="manifest" href="/manifest.json" />

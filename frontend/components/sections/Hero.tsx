@@ -106,7 +106,7 @@ export default function Hero() {
               {/* Large Image */}
               <div className="lg:col-span-2 relative h-[500px] lg:h-[600px] overflow-hidden group">
                 <SafeImage
-                  src="/images/premium/hero/hero-1.jpg"
+                  src="https://files.ihgbrands.com/lexa/site/images/premium/hero/hero-1.webp"
                   alt="Luxury smart living"
                   fill
                   priority
@@ -121,7 +121,7 @@ export default function Hero() {
               <div className="space-y-6">
                 <div className="relative h-[240px] lg:h-[280px] overflow-hidden group">
                   <SafeImage
-                    src="/images/premium/hero/hero-2.jpg"
+                    src="https://files.ihgbrands.com/lexa/site/images/premium/hero/hero-2.webp"
                     alt="Smart automation"
                     fill
                     className="object-cover transition-transform duration-700 group-hover:scale-105 grayscale-[20%]"

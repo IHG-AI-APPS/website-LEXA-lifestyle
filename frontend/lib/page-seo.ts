@@ -23,7 +23,7 @@ export function generatePageMetadata({
   title,
   description,
   keywords = [],
-  image = '/og-image.jpg',
+  image = 'https://files.ihgbrands.com/lexa/site/og-image.webp',
   path,
   type = 'website',
   publishedTime,
