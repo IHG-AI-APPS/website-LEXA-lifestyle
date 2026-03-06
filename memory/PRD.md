@@ -32,11 +32,13 @@ Complete website overhaul for 100% dynamic content, a premium "Dark Luxury" desi
 
 ### External File Storage Migration (Complete - March 2026)
 - **Remote Server**: All files migrated from local to `files.ihgbrands.com` (178.128.28.178:/var/lexa/)
-- **Migration**: 283 files uploaded via rsync, 231 database documents updated across 6 collections
+- **Migration**: 735 files uploaded (580 MB), 231+ database documents updated, 54 frontend files updated (120 URL replacements)
+- **Emergent CDN**: All `static.prod-images.emergentagent.com` URLs replaced with `files.ihgbrands.com/lexa/` URLs
 - **New Uploads**: Use SFTP (paramiko) to store files on remote server, return CDN URLs
 - **CDN URLs**: `https://files.ihgbrands.com/lexa/{category}/{filename}`
-- **Legacy Fallback**: Local file serving preserved at `/api/uploads/files/{category}/{filename}`
-- Test: iteration_89 — Backend 100% (12/12), Frontend 100%
+- **Admin File Manager**: Full-featured file management at `/admin/images` — 735 files, search, category filters, grid/list views, detail panel with URL/size/type/date
+- **Server-side Cache**: File listing cached for 5 min to avoid SFTP latency
+- Test: iteration_89 (initial migration) + iteration_90 (full validation) — Backend 100%, Frontend 100%
 
 - **217 products** across 19 brands, 7 categories, 35 series
 - All images stored locally, 100% descriptions, 96% specs, 74% features
