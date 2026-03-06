@@ -30,6 +30,14 @@ Complete website overhaul for 100% dynamic content, a premium "Dark Luxury" desi
 - **Admin Gallery Upload**: MultiImageUpload component in product edit form (up to 10 images per product)
 - Test: iteration_88 — Backend 100% (11/11), Frontend 100%
 
+### External File Storage Migration (Complete - March 2026)
+- **Remote Server**: All files migrated from local to `files.ihgbrands.com` (178.128.28.178:/var/lexa/)
+- **Migration**: 283 files uploaded via rsync, 231 database documents updated across 6 collections
+- **New Uploads**: Use SFTP (paramiko) to store files on remote server, return CDN URLs
+- **CDN URLs**: `https://files.ihgbrands.com/lexa/{category}/{filename}`
+- **Legacy Fallback**: Local file serving preserved at `/api/uploads/files/{category}/{filename}`
+- Test: iteration_89 — Backend 100% (12/12), Frontend 100%
+
 - **217 products** across 19 brands, 7 categories, 35 series
 - All images stored locally, 100% descriptions, 96% specs, 74% features
 - Backend API at `/api/catalog/` with search, filter, sort, pagination, CRUD
