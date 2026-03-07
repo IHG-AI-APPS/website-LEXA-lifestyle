@@ -85,27 +85,41 @@ export default function BookingModal({ isOpen, onClose, submissionId, customerNa
     setMounted(true)
   }, [])
 
+  // Prevent body scroll when modal is open
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = 'hidden'
+    } else {
+      document.body.style.overflow = ''
+    }
+    return () => {
+      document.body.style.overflow = ''
+    }
+  }, [isOpen])
+
   const modalContent = (
     <AnimatePresence>
       {isOpen && (
-        <>
+        <div 
+          className="fixed inset-0 flex items-center justify-center p-4"
+          style={{ zIndex: 9999 }}
+        >
           {/* Backdrop */}
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             onClick={handleClose}
-            className="fixed inset-0 bg-black/50 backdrop-blur-sm"
-            style={{ zIndex: 9998 }}
+            className="absolute inset-0 bg-black/50 backdrop-blur-sm"
           />
 
-          {/* Modal - fixed to viewport center */}
+          {/* Modal */}
           <motion.div
             initial={{ opacity: 0, scale: 0.95, y: 20 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.95, y: 20 }}
-            className="fixed left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 bg-white dark:bg-[#171717] rounded-2xl shadow-2xl max-w-2xl w-[calc(100%-2rem)] max-h-[90vh] overflow-y-auto"
-            style={{ zIndex: 9999 }}
+            className="relative bg-white dark:bg-[#171717] rounded-2xl shadow-2xl w-full max-w-2xl max-h-[90vh] overflow-y-auto"
+            onClick={(e) => e.stopPropagation()}
           >
               {/* Header */}
               <div className="bg-gradient-to-r from-black to-gray-800 text-white p-6 flex items-center justify-between sticky top-0">
@@ -339,7 +353,7 @@ export default function BookingModal({ isOpen, onClose, submissionId, customerNa
                 )}
               </div>
           </motion.div>
-        </>
+        </div>
       )}
     </AnimatePresence>
   )

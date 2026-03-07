@@ -39,9 +39,10 @@ A premium smart home solutions website with dynamic content management, product 
   - Files: `SmoothScrollProvider.tsx`, `ClientLayout.tsx`
 
 - **Fixed:** Modals appearing off-screen on long pages
-  - Issue: Modals with `fixed` positioning were inheriting incorrect stacking context from parent elements
-  - Solution: Used React Portal (`createPortal`) to render modals directly to document.body with explicit viewport centering using `fixed left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2`
-  - Files: `ConsultationForm.tsx`, `ScheduleVisitModal.tsx`, `QuickViewModal.tsx`, `BookingModal.tsx`, `PersonaModal.tsx`
+  - Issue: Modals with `fixed` positioning were inheriting incorrect stacking context from parent elements, and transform-based centering (`-translate-x-1/2 -translate-y-1/2`) was being overridden by framer-motion
+  - Solution: Used flex container wrapper (`fixed inset-0 flex items-center justify-center`) with portal to document.body, and added body scroll lock
+  - Files: `ConsultationForm.tsx`, `ScheduleVisitModal.tsx`, `QuickViewModal.tsx`, `BookingModal.tsx`, `PersonaModal.tsx`, `ExitIntentPopup.tsx`
+  - Pattern: Wrapper div with flex centering + absolute backdrop + relative modal content
 
 #### March 6, 2026
 - **Fixed:** Brand names partially hidden in Featured Partners section

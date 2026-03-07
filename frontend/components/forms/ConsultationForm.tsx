@@ -26,10 +26,21 @@ export default function ConsultationForm({ isOpen, onClose, defaultPersona }: Co
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle')
 
-  // Mount check for portal
   useEffect(() => {
     setMounted(true)
   }, [])
+
+  // Prevent body scroll when modal is open
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = 'hidden'
+    } else {
+      document.body.style.overflow = ''
+    }
+    return () => {
+      document.body.style.overflow = ''
+    }
+  }, [isOpen])
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
@@ -37,7 +48,6 @@ export default function ConsultationForm({ isOpen, onClose, defaultPersona }: Co
     setSubmitStatus('idle')
 
     try {
-      // Capture page context
       const contextData = {
         ...formData,
         pageUrl: typeof window !== 'undefined' ? window.location.href : '',
@@ -76,56 +86,58 @@ export default function ConsultationForm({ isOpen, onClose, defaultPersona }: Co
   const modalContent = (
     <AnimatePresence>
       {isOpen && (
-        <>
-          {/* Backdrop - fixed to viewport */}
+        <div 
+          className="fixed inset-0 flex items-center justify-center p-4"
+          style={{ zIndex: 9999 }}
+        >
+          {/* Backdrop */}
           <motion.div
-            className="fixed inset-0 bg-black/80 backdrop-blur-sm"
-            style={{ zIndex: 9998 }}
+            className="absolute inset-0 bg-black/80 backdrop-blur-sm"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             onClick={onClose}
           />
 
-          {/* Modal - fixed to viewport center */}
+          {/* Modal */}
           <motion.div
-            className="fixed left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 bg-white max-w-lg w-[calc(100%-2rem)] max-h-[90vh] overflow-y-auto rounded-lg shadow-2xl"
-            style={{ zIndex: 9999 }}
-            initial={{ opacity: 0, scale: 0.95 }}
-            animate={{ opacity: 1, scale: 1 }}
-            exit={{ opacity: 0, scale: 0.95 }}
+            className="relative bg-white w-full max-w-lg max-h-[85vh] overflow-y-auto rounded-lg shadow-2xl"
+            initial={{ opacity: 0, scale: 0.95, y: 20 }}
+            animate={{ opacity: 1, scale: 1, y: 0 }}
+            exit={{ opacity: 0, scale: 0.95, y: 20 }}
             transition={{ duration: 0.2 }}
+            onClick={(e) => e.stopPropagation()}
           >
             {/* Close Button */}
             <button
               onClick={onClose}
-              className="absolute top-4 right-4 text-gray-600 dark:text-zinc-500 hover:text-lexa-black transition-colors z-10"
+              className="absolute top-4 right-4 text-gray-500 hover:text-gray-700 transition-colors z-10"
               aria-label="Close modal"
             >
               <X size={24} />
             </button>
 
             {/* Content */}
-            <div className="p-8 sm:p-10">
-              <h2 className="text-3xl font-bold text-lexa-black mb-2">
+            <div className="p-6 sm:p-8">
+              <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-2">
                 BOOK A CONSULTATION
               </h2>
-              <p className="text-gray-600 dark:text-zinc-500 mb-8">
+              <p className="text-gray-600 mb-6">
                 Share your vision, and we&apos;ll create a tailored smart living solution for you.
               </p>
 
               {submitStatus === 'success' ? (
-                <div className="py-12 text-center">
-                  <div className="text-6xl mb-4">✓</div>
-                  <h3 className="text-2xl font-bold text-accent mb-2">Thank You!</h3>
-                  <p className="text-gray-600 dark:text-zinc-500">
+                <div className="py-8 text-center">
+                  <div className="text-5xl mb-4">✓</div>
+                  <h3 className="text-xl font-bold text-green-600 mb-2">Thank You!</h3>
+                  <p className="text-gray-600">
                     We&apos;ve received your consultation request. Our team will contact you shortly.
                   </p>
                 </div>
               ) : (
-                <form onSubmit={handleSubmit} className="space-y-6">
+                <form onSubmit={handleSubmit} className="space-y-4">
                   <div>
-                    <label htmlFor="name" className="block text-sm font-medium text-gray-700 dark:text-zinc-400 mb-2">
+                    <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">
                       Full Name *
                     </label>
                     <Input
@@ -137,11 +149,12 @@ export default function ConsultationForm({ isOpen, onClose, defaultPersona }: Co
                       onChange={handleChange}
                       placeholder="Enter your full name"
                       data-testid="consultation-name-input"
+                      className="w-full"
                     />
                   </div>
 
                   <div>
-                    <label htmlFor="email" className="block text-sm font-medium text-gray-700 dark:text-zinc-400 mb-2">
+                    <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">
                       Email Address *
                     </label>
                     <Input
@@ -153,11 +166,12 @@ export default function ConsultationForm({ isOpen, onClose, defaultPersona }: Co
                       onChange={handleChange}
                       placeholder="your.email@example.com"
                       data-testid="consultation-email-input"
+                      className="w-full"
                     />
                   </div>
 
                   <div>
-                    <label htmlFor="phone" className="block text-sm font-medium text-gray-700 dark:text-zinc-400 mb-2">
+                    <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-1">
                       Phone Number *
                     </label>
                     <Input
@@ -169,11 +183,12 @@ export default function ConsultationForm({ isOpen, onClose, defaultPersona }: Co
                       onChange={handleChange}
                       placeholder="+971 XX XXX XXXX"
                       data-testid="consultation-phone-input"
+                      className="w-full"
                     />
                   </div>
 
                   <div>
-                    <label htmlFor="message" className="block text-sm font-medium text-gray-700 dark:text-zinc-400 mb-2">
+                    <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-1">
                       Tell us about your project (Optional)
                     </label>
                     <Textarea
@@ -183,11 +198,12 @@ export default function ConsultationForm({ isOpen, onClose, defaultPersona }: Co
                       onChange={handleChange}
                       placeholder="Describe your vision, project type, timeline, or any specific requirements..."
                       data-testid="consultation-message-input"
+                      className="w-full min-h-[80px]"
                     />
                   </div>
 
                   {submitStatus === 'error' && (
-                    <div className="p-4 bg-red-50 border border-red-200 text-red-700 text-sm">
+                    <div className="p-3 bg-red-50 border border-red-200 rounded text-red-700 text-sm">
                       Failed to submit. Please try again or contact us directly at sales@lexalifestyle.com
                     </div>
                   )}
@@ -209,12 +225,11 @@ export default function ConsultationForm({ isOpen, onClose, defaultPersona }: Co
               )}
             </div>
           </motion.div>
-        </>
+        </div>
       )}
     </AnimatePresence>
   )
 
-  // Use portal to render at document body to avoid any CSS inheritance issues
   if (!mounted) return null
   return createPortal(modalContent, document.body)
 }

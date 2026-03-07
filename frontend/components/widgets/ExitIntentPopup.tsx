@@ -185,14 +185,17 @@ export default function ExitIntentPopup() {
   return (
     <AnimatePresence>
       {isVisible && (
-        <>
+        <div 
+          className="fixed inset-0 flex items-center justify-center p-3 sm:p-4"
+          style={{ zIndex: 9999 }}
+        >
           {/* Backdrop */}
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             onClick={close}
-            className="fixed inset-0 bg-black/60 backdrop-blur-sm z-50"
+            className="absolute inset-0 bg-black/60 backdrop-blur-sm"
           />
 
           {/* Popup */}
@@ -201,9 +204,9 @@ export default function ExitIntentPopup() {
             initial={{ opacity: 0, scale: 0.9, y: 20 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.9, y: 20 }}
-            className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-4 overflow-y-auto"
+            className="relative bg-white dark:bg-[#0A0A0A] rounded-xl shadow-2xl overflow-hidden w-full max-w-sm sm:max-w-md max-h-[90vh] overflow-y-auto"
+            onClick={(e) => e.stopPropagation()}
           >
-            <div className="bg-white dark:bg-[#0A0A0A] rounded-xl shadow-2xl overflow-hidden w-full max-w-sm sm:max-w-md mx-auto my-auto relative">
               {/* Close button */}
               <button
                 onClick={close}
@@ -279,9 +282,8 @@ export default function ExitIntentPopup() {
                   <p className="text-gray-600 dark:text-zinc-500 text-xs sm:text-sm">{variant.success_message}</p>
                 </div>
               )}
-            </div>
           </motion.div>
-        </>
+        </div>
       )}
     </AnimatePresence>
   )
