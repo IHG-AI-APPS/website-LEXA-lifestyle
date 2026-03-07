@@ -207,7 +207,13 @@ export async function getProjects(type?: string, limit?: number): Promise<Projec
   if (limit) params.append('limit', limit.toString())
   
   const url = `${BACKEND_URL}/api/projects${params.toString() ? `?${params}` : ''}`
-  const response = await fetch(url)
+  const response = await fetch(url, {
+    cache: 'no-store',
+    headers: {
+      'Cache-Control': 'no-cache',
+      'Pragma': 'no-cache'
+    }
+  })
   if (!response.ok) {
     throw new Error('Failed to fetch projects')
   }

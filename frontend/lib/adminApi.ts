@@ -28,6 +28,8 @@ const getAuthHeaders = () => {
   const token = getToken()
   return {
     'Content-Type': 'application/json',
+    'Cache-Control': 'no-cache',
+    'Pragma': 'no-cache',
     ...(token && { 'Authorization': `Bearer ${token}` })
   }
 }
