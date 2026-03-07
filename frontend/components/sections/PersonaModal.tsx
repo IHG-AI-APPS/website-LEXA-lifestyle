@@ -53,23 +53,26 @@ export default function PersonaModal({ isOpen, onClose }: PersonaModalProps) {
   const modalContent = (
     <AnimatePresence>
       {isOpen && (
-        <div className="fixed inset-0 z-[9998] flex items-center justify-center p-4" data-testid="persona-modal">
-          {/* Backdrop */}
+        <>
+          {/* Backdrop - fixed to viewport */}
           <motion.div
-            className="absolute inset-0 bg-black/80 backdrop-blur-sm"
+            className="fixed inset-0 bg-black/80 backdrop-blur-sm"
+            style={{ zIndex: 9998 }}
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             onClick={onClose}
           />
 
-          {/* Modal */}
+          {/* Modal - fixed to viewport center */}
           <motion.div
-            className="relative bg-[#0A0A0A] border border-zinc-800 max-w-5xl w-full max-h-[90vh] overflow-y-auto"
+            className="fixed left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 bg-[#0A0A0A] border border-zinc-800 max-w-5xl w-[calc(100%-2rem)] max-h-[90vh] overflow-y-auto rounded-lg"
+            style={{ zIndex: 9999 }}
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
             exit={{ opacity: 0, scale: 0.95 }}
             transition={{ duration: 0.2 }}
+            data-testid="persona-modal"
           >
             {/* Close Button */}
             <button
@@ -136,7 +139,7 @@ export default function PersonaModal({ isOpen, onClose }: PersonaModalProps) {
               </div>
             </div>
           </motion.div>
-        </div>
+        </>
       )}
     </AnimatePresence>
   )

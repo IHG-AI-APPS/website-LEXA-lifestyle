@@ -1,6 +1,7 @@
 'use client'
 
 import { useEffect, useCallback, useState } from 'react'
+import { createPortal } from 'react-dom'
 import { motion, AnimatePresence } from 'framer-motion'
 import SafeImage from '@/components/ui/SafeImage'
 import Link from 'next/link'
@@ -26,6 +27,11 @@ interface QuickViewProps {
 
 export default function QuickViewModal({ isOpen, onClose, item }: QuickViewProps) {
   const [copied, setCopied] = useState(false)
+  const [mounted, setMounted] = useState(false)
+
+  useEffect(() => {
+    setMounted(true)
+  }, [])
 
   const handleEscape = useCallback((e: KeyboardEvent) => {
     if (e.key === 'Escape') onClose()
@@ -63,7 +69,7 @@ export default function QuickViewModal({ isOpen, onClose, item }: QuickViewProps
 
   if (!item) return null
 
-  return (
+  const modalContent = (
     <AnimatePresence>
       {isOpen && (
         <>
@@ -73,7 +79,8 @@ export default function QuickViewModal({ isOpen, onClose, item }: QuickViewProps
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.2 }}
-            className="fixed inset-0 z-50 bg-black/60 backdrop-blur-sm"
+            className="fixed inset-0 bg-black/60 backdrop-blur-sm"
+            style={{ zIndex: 9998 }}
             onClick={onClose}
             data-testid="quickview-backdrop"
           />
@@ -84,7 +91,8 @@ export default function QuickViewModal({ isOpen, onClose, item }: QuickViewProps
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: 100 }}
             transition={{ type: 'spring', damping: 25, stiffness: 300 }}
-            className="fixed inset-x-0 bottom-0 sm:inset-auto sm:top-1/2 sm:left-1/2 sm:-translate-x-1/2 sm:-translate-y-1/2 z-50 w-full sm:w-[90vw] sm:max-w-lg max-h-[85vh] overflow-hidden rounded-t-2xl sm:rounded-2xl bg-white dark:bg-[#111] border border-gray-200 dark:border-white/10 shadow-2xl"
+            className="fixed inset-x-0 bottom-0 sm:inset-auto sm:top-1/2 sm:left-1/2 sm:-translate-x-1/2 sm:-translate-y-1/2 w-full sm:w-[90vw] sm:max-w-lg max-h-[85vh] overflow-hidden rounded-t-2xl sm:rounded-2xl bg-white dark:bg-[#111] border border-gray-200 dark:border-white/10 shadow-2xl"
+            style={{ zIndex: 9999 }}
             data-testid="quickview-modal"
           >
             {/* Drag handle (mobile) */}
@@ -223,4 +231,7 @@ export default function QuickViewModal({ isOpen, onClose, item }: QuickViewProps
       )}
     </AnimatePresence>
   )
+
+  if (!mounted) return null
+  return createPortal(modalContent, document.body)
 }

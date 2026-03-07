@@ -1,6 +1,7 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
+import { createPortal } from 'react-dom'
 import { motion, AnimatePresence } from 'framer-motion'
 import { X, Calendar, Clock, MapPin, Video, CheckCircle2, Phone, Mail, User, MessageSquare, Send, Loader2 } from 'lucide-react'
 import { Button } from '@/components/ui/button'
@@ -17,6 +18,7 @@ export default function BookingModal({ isOpen, onClose, submissionId, customerNa
   const [bookingType, setBookingType] = useState<'site-visit' | 'experience-center' | 'video-call'>('site-visit')
   const [step, setStep] = useState<'select' | 'form' | 'success'>('select')
   const [isSubmitting, setIsSubmitting] = useState(false)
+  const [mounted, setMounted] = useState(false)
   const [formData, setFormData] = useState({
     name: customerName || '',
     email: customerEmail || '',
@@ -78,9 +80,12 @@ export default function BookingModal({ isOpen, onClose, submissionId, customerNa
     onClose()
   }
 
-  if (!isOpen) return null
+  // Mount check for portal
+  useEffect(() => {
+    setMounted(true)
+  }, [])
 
-  return (
+  const modalContent = (
     <AnimatePresence>
       {isOpen && (
         <>
@@ -90,17 +95,18 @@ export default function BookingModal({ isOpen, onClose, submissionId, customerNa
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             onClick={handleClose}
-            className="fixed inset-0 bg-black/50 backdrop-blur-sm z-50"
+            className="fixed inset-0 bg-black/50 backdrop-blur-sm"
+            style={{ zIndex: 9998 }}
           />
 
-          {/* Modal */}
+          {/* Modal - fixed to viewport center */}
           <motion.div
             initial={{ opacity: 0, scale: 0.95, y: 20 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.95, y: 20 }}
-            className="fixed inset-0 z-50 flex items-center justify-center p-4"
+            className="fixed left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 bg-white dark:bg-[#171717] rounded-2xl shadow-2xl max-w-2xl w-[calc(100%-2rem)] max-h-[90vh] overflow-y-auto"
+            style={{ zIndex: 9999 }}
           >
-            <div className="bg-white dark:bg-[#171717] rounded-2xl shadow-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto">
               {/* Header */}
               <div className="bg-gradient-to-r from-black to-gray-800 text-white p-6 flex items-center justify-between sticky top-0">
                 <div>
@@ -332,10 +338,12 @@ export default function BookingModal({ isOpen, onClose, submissionId, customerNa
                   </div>
                 )}
               </div>
-            </div>
           </motion.div>
         </>
       )}
     </AnimatePresence>
   )
+
+  if (!mounted) return null
+  return createPortal(modalContent, document.body)
 }

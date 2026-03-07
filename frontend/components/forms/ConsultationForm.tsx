@@ -1,6 +1,7 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
+import { createPortal } from 'react-dom'
 import { X } from 'lucide-react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Button } from '@/components/ui/button'
@@ -14,6 +15,7 @@ interface ConsultationFormProps {
 }
 
 export default function ConsultationForm({ isOpen, onClose, defaultPersona }: ConsultationFormProps) {
+  const [mounted, setMounted] = useState(false)
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -23,6 +25,11 @@ export default function ConsultationForm({ isOpen, onClose, defaultPersona }: Co
   })
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle')
+
+  // Mount check for portal
+  useEffect(() => {
+    setMounted(true)
+  }, [])
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
@@ -66,22 +73,24 @@ export default function ConsultationForm({ isOpen, onClose, defaultPersona }: Co
     setFormData({ ...formData, [e.target.name]: e.target.value })
   }
 
-  return (
+  const modalContent = (
     <AnimatePresence>
       {isOpen && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
-          {/* Backdrop */}
+        <>
+          {/* Backdrop - fixed to viewport */}
           <motion.div
-            className="absolute inset-0 bg-black/80 backdrop-blur-sm"
+            className="fixed inset-0 bg-black/80 backdrop-blur-sm"
+            style={{ zIndex: 9998 }}
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             onClick={onClose}
           />
 
-          {/* Modal */}
+          {/* Modal - fixed to viewport center */}
           <motion.div
-            className="relative bg-white max-w-lg w-full max-h-[90vh] overflow-y-auto"
+            className="fixed left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 bg-white max-w-lg w-[calc(100%-2rem)] max-h-[90vh] overflow-y-auto rounded-lg shadow-2xl"
+            style={{ zIndex: 9999 }}
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
             exit={{ opacity: 0, scale: 0.95 }}
@@ -200,8 +209,12 @@ export default function ConsultationForm({ isOpen, onClose, defaultPersona }: Co
               )}
             </div>
           </motion.div>
-        </div>
+        </>
       )}
     </AnimatePresence>
   )
+
+  // Use portal to render at document body to avoid any CSS inheritance issues
+  if (!mounted) return null
+  return createPortal(modalContent, document.body)
 }

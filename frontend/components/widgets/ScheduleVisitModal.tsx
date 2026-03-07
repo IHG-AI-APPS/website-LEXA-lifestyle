@@ -1,6 +1,7 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
+import { createPortal } from 'react-dom'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Calendar, X, Clock, User, Mail, Phone, MessageSquare, Download, CheckCircle } from 'lucide-react'
 import { Button } from '@/components/ui/button'
@@ -128,26 +129,34 @@ export default function ScheduleVisitModal({
     }
   }
 
-  return (
+  // Mount check for portal
+  const [mounted, setMounted] = useState(false)
+  useEffect(() => {
+    setMounted(true)
+  }, [])
+
+  const modalContent = (
     <AnimatePresence>
       {isOpen && (
         <>
-          {/* Backdrop */}
+          {/* Backdrop - fixed to viewport */}
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 bg-black/60 backdrop-blur-sm z-50"
+            className="fixed inset-0 bg-black/60 backdrop-blur-sm"
+            style={{ zIndex: 9998 }}
             onClick={handleClose}
           />
           
-          {/* Modal */}
+          {/* Modal - fixed to viewport center */}
           <motion.div
             initial={{ opacity: 0, scale: 0.95, y: 20 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.95, y: 20 }}
             transition={{ type: 'spring', damping: 25, stiffness: 300 }}
-            className="fixed inset-x-4 sm:inset-x-auto sm:left-1/2 top-1/2 sm:-translate-x-1/2 -translate-y-1/2 w-[calc(100%-2rem)] sm:w-full max-w-sm sm:max-w-md mx-auto bg-white dark:bg-[#0A0A0A] rounded-xl shadow-2xl z-50 overflow-hidden max-h-[85vh] overflow-y-auto"
+            className="fixed left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[calc(100%-2rem)] max-w-sm sm:max-w-md bg-white dark:bg-[#0A0A0A] rounded-xl shadow-2xl overflow-hidden max-h-[85vh] overflow-y-auto"
+            style={{ zIndex: 9999 }}
           >
             {/* Header - Compact */}
             <div className="relative bg-gradient-to-r from-[#1A1A1A] to-[#2a2a2a] dark:from-[#E8DCC8] dark:to-[#d4c4a8] p-4 text-white dark:text-[#1A1A1A]">
@@ -364,4 +373,8 @@ export default function ScheduleVisitModal({
       )}
     </AnimatePresence>
   )
+
+  // Use portal to render at document body
+  if (!mounted) return null
+  return createPortal(modalContent, document.body)
 }
