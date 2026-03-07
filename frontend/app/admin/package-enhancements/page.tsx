@@ -308,11 +308,11 @@ export default function PackageEnhancementsAdmin() {
 
       {/* Form Modal */}
       {showForm && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
-          <div>
-            <div className="fixed inset-0 bg-black/50" onClick={() => setShowForm(false)} />
+        <div className="fixed inset-0 z-50 overflow-y-auto">
+          <div className="fixed inset-0 bg-black/50" onClick={() => setShowForm(false)} />
+          <div className="flex min-h-full items-start justify-center py-8 px-4">
             <div className="relative bg-white rounded-lg w-full max-w-2xl">
-              <div className="flex items-center justify-between p-4 border-b">
+              <div className="flex items-center justify-between p-4 border-b rounded-t-lg">
                 <h2 className="text-lg font-semibold">
                   {editingId ? 'Edit Enhancement' : 'Add Enhancement'}
                 </h2>
@@ -321,7 +321,7 @@ export default function PackageEnhancementsAdmin() {
                 </button>
               </div>
             
-            <form onSubmit={handleSubmit} className="p-6 space-y-4 max-h-[70vh] overflow-y-auto">
+            <form onSubmit={handleSubmit} className="p-6 space-y-4">
               <div className="grid grid-cols-2 gap-4">
                 <div>
                   <label className="block text-sm font-medium mb-1">Name *</label>

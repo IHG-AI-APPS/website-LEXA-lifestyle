@@ -245,11 +245,11 @@ export default function AdminCataloguesPage() {
 
       {/* Form Modal */}
       {showForm && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4" data-testid="catalogue-form-modal">
-          <div>
-            <div className="fixed inset-0 bg-black/50" onClick={() => setShowForm(false)} />
-            <div className="relative bg-white rounded-xl w-full max-w-2xl max-h-[90vh] overflow-y-auto">
-              <div className="sticky top-0 bg-white border-b px-6 py-4 flex items-center justify-between z-10">
+        <div className="fixed inset-0 z-50 overflow-y-auto" data-testid="catalogue-form-modal">
+          <div className="fixed inset-0 bg-black/50" onClick={() => setShowForm(false)} />
+          <div className="flex min-h-full items-start justify-center py-8 px-4">
+            <div className="relative bg-white rounded-xl w-full max-w-2xl">
+              <div className="sticky top-0 bg-white border-b px-6 py-4 flex items-center justify-between z-10 rounded-t-xl">
                 <h2 className="text-lg font-bold">{isEditing ? 'Edit Catalogue' : 'Add New Catalogue'}</h2>
                 <Button variant="ghost" size="sm" onClick={() => setShowForm(false)}><X size={18} /></Button>
               </div>

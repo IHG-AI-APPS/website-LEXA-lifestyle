@@ -263,11 +263,11 @@ export default function ProductCategoriesAdmin() {
 
       {/* Form Modal */}
       {showForm && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
-          <div>
-            <div className="fixed inset-0 bg-black/50" onClick={() => setShowForm(false)} />
+        <div className="fixed inset-0 z-50 overflow-y-auto">
+          <div className="fixed inset-0 bg-black/50" onClick={() => setShowForm(false)} />
+          <div className="flex min-h-full items-start justify-center py-8 px-4">
             <div className="relative bg-white rounded-lg w-full max-w-lg">
-              <div className="flex items-center justify-between p-4 border-b">
+              <div className="flex items-center justify-between p-4 border-b rounded-t-lg">
                 <h2 className="text-lg font-semibold">
                   {editingId ? 'Edit Category' : 'Add Category'}
                 </h2>
