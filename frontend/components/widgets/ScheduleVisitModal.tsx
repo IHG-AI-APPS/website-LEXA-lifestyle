@@ -153,6 +153,8 @@ export default function ScheduleVisitModal({
         <div 
           className="fixed inset-0 flex items-center justify-center p-4"
           style={{ zIndex: 9999 }}
+          onClick={handleClose}
+          onWheel={(e) => e.stopPropagation()}
         >
           {/* Backdrop */}
           <motion.div
@@ -160,7 +162,6 @@ export default function ScheduleVisitModal({
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             className="absolute inset-0 bg-black/60 backdrop-blur-sm"
-            onClick={handleClose}
           />
           
           {/* Modal */}
@@ -171,6 +172,7 @@ export default function ScheduleVisitModal({
             transition={{ type: 'spring', damping: 25, stiffness: 300 }}
             className="relative w-full max-w-sm sm:max-w-md bg-white dark:bg-[#0A0A0A] rounded-xl shadow-2xl overflow-hidden max-h-[85vh] overflow-y-auto"
             onClick={(e) => e.stopPropagation()}
+            onWheel={(e) => e.stopPropagation()}
           >
             {/* Header - Compact */}
             <div className="relative bg-gradient-to-r from-[#1A1A1A] to-[#2a2a2a] dark:from-[#E8DCC8] dark:to-[#d4c4a8] p-4 text-white dark:text-[#1A1A1A]">

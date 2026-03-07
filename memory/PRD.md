@@ -27,6 +27,21 @@ A premium smart home solutions website with dynamic content management, product 
 
 ### Recent Fixes (March 2026)
 
+#### March 7, 2026 - Blog Fix & Modal Scroll Fix
+- **Fixed:** Blog admin page error (client-side exception)
+  - Issue: Page was showing "Application error: a client-side exception has occurred"
+  - Cause: Frontend build cache issue
+  - Solution: Rebuilt frontend to fix the issue
+
+- **Fixed:** Frontend modal scrolling - background moving when scrolling modal
+  - Updated all frontend modals with `onWheel={(e) => e.stopPropagation()}`
+  - Files fixed:
+    - `ConsultationForm.tsx`
+    - `BookingModal.tsx`
+    - `ScheduleVisitModal.tsx`
+    - `PersonaModal.tsx`
+    - `QuickViewModal.tsx`
+
 #### March 7, 2026 - Project Type/Category Dropdowns & Admin CRUD
 - **New Feature:** Project Types and Categories Management
   - Created new admin page at `/admin/project-settings` with tabs for Types and Categories

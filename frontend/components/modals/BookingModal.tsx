@@ -103,13 +103,14 @@ export default function BookingModal({ isOpen, onClose, submissionId, customerNa
         <div 
           className="fixed inset-0 flex items-center justify-center p-4"
           style={{ zIndex: 9999 }}
+          onClick={handleClose}
+          onWheel={(e) => e.stopPropagation()}
         >
           {/* Backdrop */}
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            onClick={handleClose}
             className="absolute inset-0 bg-black/50 backdrop-blur-sm"
           />
 
@@ -120,6 +121,7 @@ export default function BookingModal({ isOpen, onClose, submissionId, customerNa
             exit={{ opacity: 0, scale: 0.95, y: 20 }}
             className="relative bg-white dark:bg-[#171717] rounded-2xl shadow-2xl w-full max-w-2xl max-h-[90vh] overflow-y-auto"
             onClick={(e) => e.stopPropagation()}
+            onWheel={(e) => e.stopPropagation()}
           >
               {/* Header */}
               <div className="bg-gradient-to-r from-black to-gray-800 text-white p-6 flex items-center justify-between sticky top-0">

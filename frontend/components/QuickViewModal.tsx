@@ -75,6 +75,8 @@ export default function QuickViewModal({ isOpen, onClose, item }: QuickViewProps
         <div 
           className="fixed inset-0 flex items-end sm:items-center justify-center"
           style={{ zIndex: 9999 }}
+          onClick={onClose}
+          onWheel={(e) => e.stopPropagation()}
         >
           {/* Backdrop */}
           <motion.div
@@ -83,7 +85,6 @@ export default function QuickViewModal({ isOpen, onClose, item }: QuickViewProps
             exit={{ opacity: 0 }}
             transition={{ duration: 0.2 }}
             className="absolute inset-0 bg-black/60 backdrop-blur-sm"
-            onClick={onClose}
             data-testid="quickview-backdrop"
           />
 
@@ -96,6 +97,7 @@ export default function QuickViewModal({ isOpen, onClose, item }: QuickViewProps
             className="relative w-full sm:w-[90vw] sm:max-w-lg max-h-[85vh] overflow-hidden rounded-t-2xl sm:rounded-2xl bg-white dark:bg-[#111] border border-gray-200 dark:border-white/10 shadow-2xl sm:m-4"
             data-testid="quickview-modal"
             onClick={(e) => e.stopPropagation()}
+            onWheel={(e) => e.stopPropagation()}
           >
             {/* Drag handle (mobile) */}
             <div className="sm:hidden flex justify-center pt-3 pb-1">

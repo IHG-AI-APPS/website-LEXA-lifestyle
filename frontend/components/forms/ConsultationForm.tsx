@@ -89,6 +89,8 @@ export default function ConsultationForm({ isOpen, onClose, defaultPersona }: Co
         <div 
           className="fixed inset-0 flex items-center justify-center p-4"
           style={{ zIndex: 9999 }}
+          onClick={onClose}
+          onWheel={(e) => e.stopPropagation()}
         >
           {/* Backdrop */}
           <motion.div
@@ -96,7 +98,6 @@ export default function ConsultationForm({ isOpen, onClose, defaultPersona }: Co
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            onClick={onClose}
           />
 
           {/* Modal */}
@@ -107,6 +108,7 @@ export default function ConsultationForm({ isOpen, onClose, defaultPersona }: Co
             exit={{ opacity: 0, scale: 0.95, y: 20 }}
             transition={{ duration: 0.2 }}
             onClick={(e) => e.stopPropagation()}
+            onWheel={(e) => e.stopPropagation()}
           >
             {/* Close Button */}
             <button

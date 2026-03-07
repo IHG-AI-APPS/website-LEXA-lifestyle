@@ -18,6 +18,18 @@ export default function PersonaModal({ isOpen, onClose }: PersonaModalProps) {
 
   useEffect(() => { setMounted(true) }, [])
 
+  // Prevent body scroll when modal is open
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = 'hidden'
+    } else {
+      document.body.style.overflow = ''
+    }
+    return () => {
+      document.body.style.overflow = ''
+    }
+  }, [isOpen])
+
   const personas = [
     {
       title: 'HOMEOWNER',
@@ -56,6 +68,8 @@ export default function PersonaModal({ isOpen, onClose }: PersonaModalProps) {
         <div 
           className="fixed inset-0 flex items-center justify-center p-4"
           style={{ zIndex: 9999 }}
+          onClick={onClose}
+          onWheel={(e) => e.stopPropagation()}
         >
           {/* Backdrop */}
           <motion.div
@@ -63,7 +77,6 @@ export default function PersonaModal({ isOpen, onClose }: PersonaModalProps) {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            onClick={onClose}
           />
 
           {/* Modal */}
@@ -75,6 +88,7 @@ export default function PersonaModal({ isOpen, onClose }: PersonaModalProps) {
             transition={{ duration: 0.2 }}
             data-testid="persona-modal"
             onClick={(e) => e.stopPropagation()}
+            onWheel={(e) => e.stopPropagation()}
           >
             {/* Close Button */}
             <button
