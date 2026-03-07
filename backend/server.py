@@ -354,15 +354,17 @@ class Service(BaseModel):
 
 class Project(BaseModel):
     model_config = ConfigDict(extra="ignore")
-    id: str
+    id: str = Field(default_factory=lambda: str(uuid.uuid4()))
     slug: Optional[str] = None  # Made optional for backward compatibility with existing data
     title: str
     location: str
     type: str
     year: str
-    image: str
+    image: Optional[str] = None  # Made optional - can be uploaded after creation
     systems: List[str] = []
     description: Optional[str] = None
+    published: bool = True  # Default to published
+    featured: bool = False  # Default to not featured
     # Extended fields for Admin CMS
     category: Optional[str] = None
     video_url: Optional[str] = None
@@ -1047,6 +1049,8 @@ async def update_project(project_id: str, project: Project, user: dict = Depends
     """Update an existing project"""
     try:
         project_dict = project.model_dump()
+        # Preserve the original ID
+        project_dict['id'] = project_id
         # Also update 'images' field for backward compatibility with frontend
         if 'gallery' in project_dict:
             project_dict['images'] = project_dict['gallery']
