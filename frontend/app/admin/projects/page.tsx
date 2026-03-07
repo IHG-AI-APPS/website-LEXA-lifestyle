@@ -199,10 +199,17 @@ export default function ProjectsAdminPage() {
   }
 
   const handleDelete = async (id: string) => {
-    if (!confirm('Are you sure you want to delete this project?')) return
+    const confirmed = window.confirm('Are you sure you want to delete this project?')
+    if (!confirmed) return
+    
     setDeleting(id)
     try {
+      console.log('Deleting project:', id)
       await deleteProject(id)
+      console.log('Delete successful, refreshing list...')
+      // Force refresh the projects list
+      setProjects(prev => prev.filter(p => p.id !== id))
+      // Also reload from server to ensure consistency
       await loadProjects()
     } catch (err) {
       console.error('Failed to delete project:', err)
