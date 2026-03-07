@@ -59,6 +59,7 @@ const navigation = [
   { name: 'Solutions', href: '/admin/solutions', icon: Package },
   { name: 'Services', href: '/admin/services', icon: Settings },
   { name: 'Projects', href: '/admin/projects', icon: FolderKanban },
+  { name: 'Project Settings', href: '/admin/project-settings', icon: Settings },
   { name: 'Articles', href: '/admin/articles', icon: FileText },
   { name: 'Blog', href: '/admin/blog', icon: FileText },
   { name: 'News', href: '/admin/news', icon: Newspaper },

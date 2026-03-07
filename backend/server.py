@@ -389,6 +389,27 @@ class Project(BaseModel):
     brands: List[dict] = []
     products: List[dict] = []
 
+
+# Project Type model for managing project types
+class ProjectType(BaseModel):
+    model_config = ConfigDict(extra="ignore")
+    id: str = Field(default_factory=lambda: str(uuid.uuid4()))
+    name: str
+    slug: str
+    description: Optional[str] = None
+    order: int = 0
+    is_active: bool = True
+
+# Project Category model for managing project categories  
+class ProjectCategory(BaseModel):
+    model_config = ConfigDict(extra="ignore")
+    id: str = Field(default_factory=lambda: str(uuid.uuid4()))
+    name: str
+    slug: str
+    description: Optional[str] = None
+    order: int = 0
+    is_active: bool = True
+
 class Testimonial(BaseModel):
     model_config = ConfigDict(extra="ignore")
     id: str
@@ -1073,6 +1094,118 @@ async def patch_project(project_id: str, updates: Dict[str, Any], user: dict = D
     except Exception as e:
         logger.error(f"Patch project error: {str(e)}")
         raise HTTPException(status_code=500, detail="Failed to patch project")
+
+
+# ============= PROJECT TYPES MANAGEMENT =============
+
+@api_router.get("/project-types")
+async def get_project_types():
+    """Get all project types"""
+    try:
+        types = await db.project_types.find({}, {"_id": 0}).sort("order", 1).to_list(100)
+        return types
+    except Exception as e:
+        logger.error(f"Get project types error: {str(e)}")
+        return []
+
+@api_router.post("/admin/project-types")
+async def create_project_type(project_type: ProjectType, user: dict = Depends(verify_token)):
+    """Create a new project type"""
+    try:
+        type_dict = project_type.model_dump()
+        await db.project_types.insert_one(type_dict)
+        return {"message": "Project type created successfully", "id": project_type.id}
+    except Exception as e:
+        logger.error(f"Create project type error: {str(e)}")
+        raise HTTPException(status_code=500, detail="Failed to create project type")
+
+@api_router.put("/admin/project-types/{type_id}")
+async def update_project_type(type_id: str, project_type: ProjectType, user: dict = Depends(verify_token)):
+    """Update an existing project type"""
+    try:
+        type_dict = project_type.model_dump()
+        result = await db.project_types.update_one(
+            {"id": type_id},
+            {"$set": type_dict}
+        )
+        if result.matched_count == 0:
+            raise HTTPException(status_code=404, detail="Project type not found")
+        return {"message": "Project type updated successfully"}
+    except HTTPException:
+        raise
+    except Exception as e:
+        logger.error(f"Update project type error: {str(e)}")
+        raise HTTPException(status_code=500, detail="Failed to update project type")
+
+@api_router.delete("/admin/project-types/{type_id}")
+async def delete_project_type(type_id: str, user: dict = Depends(verify_token)):
+    """Delete a project type"""
+    try:
+        result = await db.project_types.delete_one({"id": type_id})
+        if result.deleted_count == 0:
+            raise HTTPException(status_code=404, detail="Project type not found")
+        return {"message": "Project type deleted successfully"}
+    except HTTPException:
+        raise
+    except Exception as e:
+        logger.error(f"Delete project type error: {str(e)}")
+        raise HTTPException(status_code=500, detail="Failed to delete project type")
+
+# ============= PROJECT CATEGORIES MANAGEMENT =============
+
+@api_router.get("/project-categories")
+async def get_project_categories():
+    """Get all project categories"""
+    try:
+        categories = await db.project_categories.find({}, {"_id": 0}).sort("order", 1).to_list(100)
+        return categories
+    except Exception as e:
+        logger.error(f"Get project categories error: {str(e)}")
+        return []
+
+@api_router.post("/admin/project-categories")
+async def create_project_category(category: ProjectCategory, user: dict = Depends(verify_token)):
+    """Create a new project category"""
+    try:
+        cat_dict = category.model_dump()
+        await db.project_categories.insert_one(cat_dict)
+        return {"message": "Project category created successfully", "id": category.id}
+    except Exception as e:
+        logger.error(f"Create project category error: {str(e)}")
+        raise HTTPException(status_code=500, detail="Failed to create project category")
+
+@api_router.put("/admin/project-categories/{category_id}")
+async def update_project_category(category_id: str, category: ProjectCategory, user: dict = Depends(verify_token)):
+    """Update an existing project category"""
+    try:
+        cat_dict = category.model_dump()
+        result = await db.project_categories.update_one(
+            {"id": category_id},
+            {"$set": cat_dict}
+        )
+        if result.matched_count == 0:
+            raise HTTPException(status_code=404, detail="Project category not found")
+        return {"message": "Project category updated successfully"}
+    except HTTPException:
+        raise
+    except Exception as e:
+        logger.error(f"Update project category error: {str(e)}")
+        raise HTTPException(status_code=500, detail="Failed to update project category")
+
+@api_router.delete("/admin/project-categories/{category_id}")
+async def delete_project_category(category_id: str, user: dict = Depends(verify_token)):
+    """Delete a project category"""
+    try:
+        result = await db.project_categories.delete_one({"id": category_id})
+        if result.deleted_count == 0:
+            raise HTTPException(status_code=404, detail="Project category not found")
+        return {"message": "Project category deleted successfully"}
+    except HTTPException:
+        raise
+    except Exception as e:
+        logger.error(f"Delete project category error: {str(e)}")
+        raise HTTPException(status_code=500, detail="Failed to delete project category")
+
 
 # ============= ADMIN - ARTICLES MANAGEMENT =============
 

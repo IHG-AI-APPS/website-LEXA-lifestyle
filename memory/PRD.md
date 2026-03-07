@@ -27,6 +27,19 @@ A premium smart home solutions website with dynamic content management, product 
 
 ### Recent Fixes (March 2026)
 
+#### March 7, 2026 - Project Type/Category Dropdowns & Admin CRUD
+- **New Feature:** Project Types and Categories Management
+  - Created new admin page at `/admin/project-settings` with tabs for Types and Categories
+  - Full CRUD functionality for both Project Types and Categories
+  - Backend API endpoints: `/api/project-types`, `/api/project-categories`
+  - Admin API endpoints: `/api/admin/project-types/*`, `/api/admin/project-categories/*`
+  - Seeded with initial data: Residential, Commercial, Villa (types) and Residential, Smart Villa, Penthouse (categories)
+
+- **Updated:** Project form now uses dropdowns instead of input fields for Type and Category
+  - Type dropdown populated from `project_types` collection
+  - Category dropdown populated from `project_categories` collection
+  - Files updated: `/app/frontend/app/admin/projects/page.tsx`
+
 #### March 7, 2026 - Modal Refactoring & Button/Text Visibility Fix
 - **Fixed (P0):** All admin panel modals refactored to use reusable Modal component
   - Issue: Modals across the admin panel had inconsistent behavior - off-center, not scrollable, cut off content

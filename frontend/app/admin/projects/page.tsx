@@ -5,12 +5,26 @@ import { Plus, Edit, Trash2 } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { getProjects, type Project } from '@/lib/api'
-import { createProject, updateProject, deleteProject } from '@/lib/adminApi'
+import { createProject, updateProject, deleteProject, getProjectTypes, getProjectCategories } from '@/lib/adminApi'
 import { ImageUpload, MultiImageUpload } from '@/components/admin/ImageUpload'
 import Modal from '@/components/ui/Modal'
 
+interface ProjectTypeOption {
+  id: string
+  name: string
+  slug: string
+}
+
+interface ProjectCategoryOption {
+  id: string
+  name: string
+  slug: string
+}
+
 export default function ProjectsAdminPage() {
   const [projects, setProjects] = useState<Project[]>([])
+  const [projectTypes, setProjectTypes] = useState<ProjectTypeOption[]>([])
+  const [projectCategories, setProjectCategories] = useState<ProjectCategoryOption[]>([])
   const [loading, setLoading] = useState(true)
   const [showForm, setShowForm] = useState(false)
   const [editingId, setEditingId] = useState<string | null>(null)
@@ -43,7 +57,21 @@ export default function ProjectsAdminPage() {
 
   useEffect(() => {
     loadProjects()
+    loadTypesAndCategories()
   }, [])
+
+  const loadTypesAndCategories = async () => {
+    try {
+      const [types, categories] = await Promise.all([
+        getProjectTypes(),
+        getProjectCategories()
+      ])
+      setProjectTypes(types || [])
+      setProjectCategories(categories || [])
+    } catch (err) {
+      console.error('Failed to load types/categories:', err)
+    }
+  }
 
   const loadProjects = async () => {
     try {
@@ -285,12 +313,25 @@ export default function ProjectsAdminPage() {
               <div className="grid grid-cols-2 gap-4">
                 <div>
                   <label className="block text-sm font-medium mb-1">Type *</label>
-                  <Input
+                  <select
                     required
                     value={formData.type}
                     onChange={(e) => setFormData({ ...formData, type: e.target.value })}
-                    placeholder="e.g., Residential, Commercial"
-                  />
+                    className="w-full h-12 border border-gray-300 dark:border-zinc-700 bg-white dark:bg-zinc-900 text-gray-900 dark:text-white px-4 py-2 text-sm rounded-md focus:outline-none focus:ring-2 focus:ring-accent"
+                  >
+                    <option value="">Select Type</option>
+                    {projectTypes.map((type) => (
+                      <option key={type.id} value={type.name}>{type.name}</option>
+                    ))}
+                    {/* Allow custom input if no types exist yet */}
+                    {projectTypes.length === 0 && (
+                      <>
+                        <option value="Residential">Residential</option>
+                        <option value="Commercial">Commercial</option>
+                        <option value="Villa">Villa</option>
+                      </>
+                    )}
+                  </select>
                 </div>
 
                 <div>
@@ -333,11 +374,24 @@ export default function ProjectsAdminPage() {
               <div className="grid grid-cols-2 gap-4">
                 <div>
                   <label className="block text-sm font-medium mb-1">Category</label>
-                  <Input
+                  <select
                     value={formData.category || ''}
                     onChange={(e) => setFormData({ ...formData, category: e.target.value })}
-                    placeholder="e.g., Smart Villa, Penthouse"
-                  />
+                    className="w-full h-12 border border-gray-300 dark:border-zinc-700 bg-white dark:bg-zinc-900 text-gray-900 dark:text-white px-4 py-2 text-sm rounded-md focus:outline-none focus:ring-2 focus:ring-accent"
+                  >
+                    <option value="">Select Category</option>
+                    {projectCategories.map((cat) => (
+                      <option key={cat.id} value={cat.name}>{cat.name}</option>
+                    ))}
+                    {/* Allow custom input if no categories exist yet */}
+                    {projectCategories.length === 0 && (
+                      <>
+                        <option value="Residential">Residential</option>
+                        <option value="Smart Villa">Smart Villa</option>
+                        <option value="Penthouse">Penthouse</option>
+                      </>
+                    )}
+                  </select>
                 </div>
                 <div>
                   <label className="block text-sm font-medium mb-1">Video URL</label>

@@ -422,3 +422,76 @@ export async function deleteCatalogProduct(id: string) {
   return response.json()
 }
 
+
+// Project Types Management
+export async function getProjectTypes() {
+  const response = await fetch(`${BACKEND_URL}/api/project-types`)
+  if (!response.ok) return []
+  return response.json()
+}
+
+export async function createProjectType(projectType: any) {
+  const response = await fetch(`${BACKEND_URL}/api/admin/project-types`, {
+    method: 'POST',
+    headers: getAuthHeaders(),
+    body: JSON.stringify(projectType)
+  })
+  if (!response.ok) throw new Error('Failed to create project type')
+  return response.json()
+}
+
+export async function updateProjectType(id: string, projectType: any) {
+  const response = await fetch(`${BACKEND_URL}/api/admin/project-types/${id}`, {
+    method: 'PUT',
+    headers: getAuthHeaders(),
+    body: JSON.stringify(projectType)
+  })
+  if (!response.ok) throw new Error('Failed to update project type')
+  return response.json()
+}
+
+export async function deleteProjectType(id: string) {
+  const response = await fetch(`${BACKEND_URL}/api/admin/project-types/${id}`, {
+    method: 'DELETE',
+    headers: getAuthHeaders()
+  })
+  if (!response.ok) throw new Error('Failed to delete project type')
+  return response.json()
+}
+
+// Project Categories Management
+export async function getProjectCategories() {
+  const response = await fetch(`${BACKEND_URL}/api/project-categories`)
+  if (!response.ok) return []
+  return response.json()
+}
+
+export async function createProjectCategory(category: any) {
+  const response = await fetch(`${BACKEND_URL}/api/admin/project-categories`, {
+    method: 'POST',
+    headers: getAuthHeaders(),
+    body: JSON.stringify(category)
+  })
+  if (!response.ok) throw new Error('Failed to create project category')
+  return response.json()
+}
+
+export async function updateProjectCategory(id: string, category: any) {
+  const response = await fetch(`${BACKEND_URL}/api/admin/project-categories/${id}`, {
+    method: 'PUT',
+    headers: getAuthHeaders(),
+    body: JSON.stringify(category)
+  })
+  if (!response.ok) throw new Error('Failed to update project category')
+  return response.json()
+}
+
+export async function deleteProjectCategory(id: string) {
+  const response = await fetch(`${BACKEND_URL}/api/admin/project-categories/${id}`, {
+    method: 'DELETE',
+    headers: getAuthHeaders()
+  })
+  if (!response.ok) throw new Error('Failed to delete project category')
+  return response.json()
+}
+
