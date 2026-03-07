@@ -1,12 +1,13 @@
 'use client'
 
 import { useState, useEffect } from 'react'
-import { Plus, Edit2, Trash2, X, Play, Video, ExternalLink } from 'lucide-react'
+import { Plus, Edit2, Trash2, Play, Video, ExternalLink } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { Textarea } from '@/components/ui/textarea'
 import { ImageUpload } from '@/components/admin/ImageUpload'
 import { toast } from 'sonner'
+import Modal from '@/components/ui/Modal'
 
 const API_URL = process.env.NEXT_PUBLIC_BACKEND_URL || ''
 
@@ -297,19 +298,13 @@ export default function VideosAdmin() {
       </div>
 
       {/* Form Modal */}
-      {showForm && (
-        <div className="fixed inset-0 bg-black/50 z-50 flex items-start justify-center overflow-y-auto py-8">
-          <div className="bg-white rounded-lg w-full max-w-2xl mx-4 my-auto">
-            <div className="flex items-center justify-between p-4 border-b">
-              <h2 className="text-lg font-semibold">
-                {editingId ? 'Edit Video' : 'Add Video'}
-              </h2>
-              <button onClick={() => setShowForm(false)}>
-                <X className="w-5 h-5" />
-              </button>
-            </div>
-            
-            <form onSubmit={handleSubmit} className="p-6 space-y-6 max-h-[70vh] overflow-y-auto">
+      <Modal
+        isOpen={showForm}
+        onClose={() => setShowForm(false)}
+        title={editingId ? 'Edit Video' : 'Add Video'}
+        size="lg"
+      >
+            <form onSubmit={handleSubmit} className="space-y-6">
               <div>
                 <label className="block text-sm font-medium mb-1">Title *</label>
                 <Input
@@ -409,9 +404,7 @@ export default function VideosAdmin() {
                 </Button>
               </div>
             </form>
-          </div>
-        </div>
-      )}
+      </Modal>
     </div>
   )
 }

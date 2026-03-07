@@ -1,11 +1,12 @@
 'use client'
 
 import { useState, useEffect } from 'react'
-import { Plus, Edit2, Trash2, Save, X, Star } from 'lucide-react'
+import { Plus, Edit2, Trash2, Save, Star } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { ImageUpload } from '@/components/admin/ImageUpload'
 import { toast } from 'sonner'
+import Modal from '@/components/ui/Modal'
 
 const API_URL = process.env.NEXT_PUBLIC_BACKEND_URL || ''
 
@@ -183,17 +184,12 @@ export default function TestimonialsAdmin() {
           ))}
         </div>
 
-        {(editingItem || showAddModal) && (
-          <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4">
-            <div className="bg-white max-w-2xl w-full max-h-[90vh] overflow-y-auto p-6">
-              <div className="flex justify-between items-center mb-6">
-                <h2 className="text-2xl font-bold text-[#1A1A1A]">
-                  {editingItem?.id === 'new' ? 'Add' : 'Edit'} Testimonial
-                </h2>
-                <button onClick={() => { setEditingItem(null); setShowAddModal(false); }}>
-                  <X className="w-5 h-5" />
-                </button>
-              </div>
+        <Modal
+          isOpen={editingItem !== null || showAddModal}
+          onClose={() => { setEditingItem(null); setShowAddModal(false); }}
+          title={editingItem?.id === 'new' ? 'Add Testimonial' : 'Edit Testimonial'}
+          size="lg"
+        >
               {editingItem && (
                 <div className="space-y-4">
                   <div>
@@ -251,9 +247,7 @@ export default function TestimonialsAdmin() {
                   </Button>
                 </div>
               )}
-            </div>
-          </div>
-        )}
+        </Modal>
       </div>
     </div>
   )

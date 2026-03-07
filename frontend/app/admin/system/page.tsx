@@ -9,6 +9,7 @@ import {
   Wifi, HardDrive, Clock, TrendingUp, Package, Bug,
   RefreshCw, AlertTriangle, Hammer, Loader2
 } from 'lucide-react'
+import Modal from '@/components/ui/Modal'
 
 interface SystemHealth {
   status: 'healthy' | 'warning' | 'error'
@@ -470,10 +471,12 @@ export default function SystemPage() {
       </div>
 
       {/* Bug Report Modal */}
-      {showBugReport && (
-        <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 p-4">
-          <div className="bg-white max-w-lg w-full p-6 rounded-lg">
-            <h2 className="text-xl font-bold mb-4">Report a Bug</h2>
+      <Modal
+        isOpen={showBugReport}
+        onClose={() => setShowBugReport(false)}
+        title="Report a Bug"
+        size="md"
+      >
             <div className="space-y-4">
               <div>
                 <label className="block text-sm font-medium mb-1">Issue Title</label>
@@ -509,9 +512,7 @@ export default function SystemPage() {
                 </button>
               </div>
             </div>
-          </div>
-        </div>
-      )}
+      </Modal>
     </div>
   )
 }

@@ -2,13 +2,14 @@
 
 import { useEffect, useState, useCallback, useRef } from 'react'
 import SafeImage from '@/components/ui/SafeImage'
-import { Plus, Edit, Trash2, X, Search, ChevronLeft, ChevronRight, Download, Upload } from 'lucide-react'
+import { Plus, Edit, Trash2, Search, ChevronLeft, ChevronRight, Download, Upload } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { Textarea } from '@/components/ui/textarea'
 import { createCatalogProduct, updateCatalogProduct, deleteCatalogProduct } from '@/lib/adminApi'
 import { ImageUpload, MultiImageUpload } from '@/components/admin/ImageUpload'
 import { toast } from 'sonner'
+import Modal from '@/components/ui/Modal'
 
 const BACKEND_URL = process.env.NEXT_PUBLIC_BACKEND_URL || ''
 const API = `${BACKEND_URL}/api`
@@ -321,16 +322,13 @@ export default function CatalogAdminPage() {
       </div>
 
       {/* Form Modal */}
-      {showForm && (
-        <div className="fixed inset-0 z-50 overflow-y-auto">
-          <div className="fixed inset-0 bg-black/50" onClick={() => setShowForm(false)} />
-          <div className="flex min-h-full items-start justify-center py-8 px-4">
-            <div className="relative bg-white rounded-lg max-w-3xl w-full">
-              <div className="p-5 border-b flex justify-between items-center sticky top-0 bg-white z-10 rounded-t-lg">
-                <h2 className="text-xl font-semibold" data-testid="form-title">{editingId ? 'Edit Product' : 'Add Product'}</h2>
-                <button onClick={() => setShowForm(false)}><X size={20} /></button>
-              </div>
-            <form onSubmit={handleSubmit} className="p-5 space-y-5">
+      <Modal
+        isOpen={showForm}
+        onClose={() => setShowForm(false)}
+        title={editingId ? 'Edit Product' : 'Add Product'}
+        size="lg"
+      >
+            <form onSubmit={handleSubmit} className="space-y-5">
               {/* Basic Info */}
               <div className="space-y-4">
                 <h3 className="font-semibold text-sm uppercase tracking-wide text-gray-500">Basic Info</h3>
@@ -469,10 +467,7 @@ export default function CatalogAdminPage() {
                 <Button type="submit" data-testid="form-submit">{editingId ? 'Save Changes' : 'Create Product'}</Button>
               </div>
             </form>
-          </div>
-          </div>
-        </div>
-      )}
+      </Modal>
     </div>
   )
 }

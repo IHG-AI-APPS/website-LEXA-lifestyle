@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from 'react'
 import SafeImage from '@/components/ui/SafeImage'
-import { Plus, Edit, Trash2, X, ChevronDown, ChevronUp, Save, Search, Package, Star, Eye } from 'lucide-react'
+import { Plus, Edit, Trash2, ChevronDown, ChevronUp, Save, Search, Package, Star, Eye } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { Textarea } from '@/components/ui/textarea'
@@ -16,6 +16,7 @@ import {
 } from '@/lib/adminApi'
 import { toast } from 'sonner'
 import { ImageUpload } from '@/components/admin/ImageUpload'
+import Modal from '@/components/ui/Modal'
 
 interface FeatureCard {
   title: string
@@ -414,18 +415,13 @@ export default function SolutionsAdminPage() {
       </div>
 
       {/* Form Modal */}
-      {showForm && (
-        <div className="fixed inset-0 z-50 overflow-y-auto">
-          <div className="fixed inset-0 bg-black/50" onClick={() => setShowForm(false)} />
-          <div className="flex min-h-full items-start justify-center py-8 px-4">
-            <div className="relative bg-white rounded-lg max-w-4xl w-full">
-              <div className="p-6 border-b flex justify-between items-center sticky top-0 bg-white z-10 rounded-t-lg">
-                <h2 className="text-2xl font-semibold">{editingId ? 'Edit Solution' : 'Add Solution'}</h2>
-                <button onClick={() => setShowForm(false)}>
-                  <X size={24} />
-                </button>
-              </div>
-            <form onSubmit={handleSubmit} className="p-6 space-y-6">
+      <Modal
+        isOpen={showForm}
+        onClose={() => setShowForm(false)}
+        title={editingId ? 'Edit Solution' : 'Add Solution'}
+        size="xl"
+      >
+            <form onSubmit={handleSubmit} className="space-y-6">
               {/* Basic Info */}
               <div className="border-b pb-6">
                 <h3 className="font-semibold mb-4 text-lg">Basic Information</h3>
@@ -870,15 +866,12 @@ export default function SolutionsAdminPage() {
                 )}
               </div>
 
-              <div className="flex gap-2 pt-4 border-t sticky bottom-0 bg-white py-4">
+              <div className="flex gap-2 pt-4 border-t">
                 <Button type="submit" className="flex-1">{editingId ? 'Update Solution' : 'Create Solution'}</Button>
                 <Button type="button" variant="outline" onClick={() => setShowForm(false)}>Cancel</Button>
               </div>
             </form>
-          </div>
-          </div>
-        </div>
-      )}
+      </Modal>
 
       {/* Solutions List */}
       <div className="bg-white rounded-lg border">

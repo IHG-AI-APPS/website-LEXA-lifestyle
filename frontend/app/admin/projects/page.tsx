@@ -1,12 +1,13 @@
 'use client'
 
 import { useEffect, useState } from 'react'
-import { Plus, Edit, Trash2, X } from 'lucide-react'
+import { Plus, Edit, Trash2 } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { getProjects, type Project } from '@/lib/api'
 import { createProject, updateProject, deleteProject } from '@/lib/adminApi'
 import { ImageUpload, MultiImageUpload } from '@/components/admin/ImageUpload'
+import Modal from '@/components/ui/Modal'
 
 export default function ProjectsAdminPage() {
   const [projects, setProjects] = useState<Project[]>([])
@@ -246,29 +247,21 @@ export default function ProjectsAdminPage() {
       </div>
 
       {/* Form Modal */}
-      {showForm && (
-        <div className="fixed inset-0 z-50 overflow-y-auto">
-          <div className="fixed inset-0 bg-black/50" onClick={() => setShowForm(false)} />
-          <div className="flex min-h-full items-start justify-center py-8 px-4">
-            <div className="relative bg-white w-full max-w-2xl p-8 rounded-lg shadow-xl">
-              <div className="flex justify-between items-center mb-6">
-                <h2 className="text-2xl font-semibold">
-                  {editingId ? 'Edit Project' : 'Add Project'}
-                </h2>
-                <button onClick={() => setShowForm(false)}>
-                  <X size={24} />
-                </button>
-              </div>
-
-            <form onSubmit={handleSubmit} className="space-y-4">
-              <div>
-                <label className="block text-sm font-medium mb-1">Title *</label>
-                <Input
-                  required
-                  value={formData.title}
-                  onChange={(e) => setFormData({ ...formData, title: e.target.value })}
-                />
-              </div>
+      <Modal
+        isOpen={showForm}
+        onClose={() => setShowForm(false)}
+        title={editingId ? 'Edit Project' : 'Add Project'}
+        size="lg"
+      >
+        <form onSubmit={handleSubmit} className="space-y-4">
+          <div>
+            <label className="block text-sm font-medium mb-1">Title *</label>
+            <Input
+              required
+              value={formData.title}
+              onChange={(e) => setFormData({ ...formData, title: e.target.value })}
+            />
+          </div>
 
               <div>
                 <label className="block text-sm font-medium mb-1">Slug * (for URL)</label>
@@ -494,10 +487,7 @@ export default function ProjectsAdminPage() {
                 </Button>
               </div>
             </form>
-            </div>
-          </div>
-        </div>
-      )}
+      </Modal>
     </div>
   )
 }

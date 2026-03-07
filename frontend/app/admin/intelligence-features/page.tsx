@@ -1,10 +1,11 @@
 'use client'
 
 import { useState, useEffect } from 'react'
-import { Plus, Edit2, Trash2, Star, Save, X, GripVertical, TrendingUp } from 'lucide-react'
+import { Plus, Edit2, Trash2, Star, Save, GripVertical, TrendingUp } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { Textarea } from '@/components/ui/textarea'
+import Modal from '@/components/ui/Modal'
 
 interface IntelligenceFeature {
   id: string
@@ -335,15 +336,14 @@ export default function IntelligenceFeaturesAdmin() {
       </div>
 
       {/* Edit/Add Modal would go here - keeping it simple for now */}
-      {editingFeature && (
-        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4">
-          <div className="bg-white max-w-2xl w-full max-h-[90vh] overflow-y-auto p-6 border-2 border-gray-200">
-            <div className="flex justify-between items-center mb-6">
-              <h2 className="text-2xl font-bold text-[#1A1A1A]">Edit Feature</h2>
-              <button onClick={() => setEditingFeature(null)} className="p-2 hover:bg-gray-100">
-                <X className="w-5 h-5" />
-              </button>
-            </div>
+      <Modal
+        isOpen={!!editingFeature}
+        onClose={() => setEditingFeature(null)}
+        title="Edit Feature"
+        size="lg"
+      >
+        {editingFeature && (
+          <>
             <p className="text-sm text-gray-600 mb-4">
               Feature ID: {editingFeature.id}
             </p>
@@ -357,9 +357,9 @@ export default function IntelligenceFeaturesAdmin() {
             >
               Close
             </Button>
-          </div>
-        </div>
-      )}
+          </>
+        )}
+      </Modal>
 
       {/* Add New Feature Modal */}
       {showAddModal && (
@@ -510,15 +510,12 @@ function AddFeatureModal({
   }
 
   return (
-    <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4">
-      <div className="bg-white max-w-3xl w-full max-h-[90vh] overflow-y-auto p-6 border-2 border-gray-200">
-        <div className="flex justify-between items-center mb-6">
-          <h2 className="text-2xl font-bold text-[#1A1A1A]">Add New Intelligence Feature</h2>
-          <button onClick={onClose} className="p-2 hover:bg-gray-100 rounded">
-            <X className="w-5 h-5" />
-          </button>
-        </div>
-
+    <Modal
+      isOpen={true}
+      onClose={onClose}
+      title="Add New Intelligence Feature"
+      size="xl"
+    >
         {error && (
           <div className="mb-4 p-3 bg-red-50 border border-red-200 text-red-700 text-sm rounded">
             {error}
@@ -842,7 +839,6 @@ function AddFeatureModal({
             )}
           </Button>
         </div>
-      </div>
-    </div>
+    </Modal>
   )
 }

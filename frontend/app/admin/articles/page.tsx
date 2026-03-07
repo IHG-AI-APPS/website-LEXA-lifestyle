@@ -1,12 +1,13 @@
 'use client'
 
 import { useEffect, useState } from 'react'
-import { Plus, Edit, Trash2, X } from 'lucide-react'
+import { Plus, Edit, Trash2 } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { getArticles, type Article } from '@/lib/api'
 import { createArticle, updateArticle, deleteArticle } from '@/lib/adminApi'
 import { ImageUpload } from '@/components/admin/ImageUpload'
+import Modal from '@/components/ui/Modal'
 
 export default function ArticlesAdminPage() {
   const [articles, setArticles] = useState<Article[]>([])
@@ -190,20 +191,12 @@ export default function ArticlesAdminPage() {
       </div>
 
       {/* Form Modal */}
-      {showForm && (
-        <div className="fixed inset-0 z-50 overflow-y-auto">
-          <div className="fixed inset-0 bg-black/50" onClick={() => setShowForm(false)} />
-          <div className="flex min-h-full items-start justify-center py-8 px-4">
-            <div className="relative bg-white w-full max-w-3xl p-8 rounded-lg shadow-xl">
-              <div className="flex justify-between items-center mb-6">
-                <h2 className="text-2xl font-semibold">
-                  {editingId ? 'Edit Article' : 'Add Article'}
-                </h2>
-                <button onClick={() => setShowForm(false)}>
-                  <X size={24} />
-                </button>
-              </div>
-
+      <Modal
+        isOpen={showForm}
+        onClose={() => setShowForm(false)}
+        title={editingId ? 'Edit Article' : 'Add Article'}
+        size="lg"
+      >
             <form onSubmit={handleSubmit} className="space-y-4">
               <div>
                 <label className="block text-sm font-medium mb-1">Title *</label>
@@ -320,10 +313,7 @@ export default function ArticlesAdminPage() {
                 </Button>
               </div>
             </form>
-          </div>
-          </div>
-        </div>
-      )}
+      </Modal>
     </div>
   )
 }

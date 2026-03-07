@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from 'react'
 import SafeImage from '@/components/ui/SafeImage'
-import { Plus, Edit, Trash2, X } from 'lucide-react'
+import { Plus, Edit, Trash2 } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { Textarea } from '@/components/ui/textarea'
@@ -10,6 +10,7 @@ import { Checkbox } from '@/components/ui/checkbox'
 import { createProduct, updateProduct, deleteProduct } from '@/lib/adminApi'
 import { ImageUpload } from '@/components/admin/ImageUpload'
 import { toast } from 'sonner'
+import Modal from '@/components/ui/Modal'
 
 const BACKEND_URL = process.env.NEXT_PUBLIC_BACKEND_URL || ''
 
@@ -160,18 +161,13 @@ export default function ProductsAdminPage() {
       </div>
 
       {/* Form Modal */}
-      {showForm && (
-        <div className="fixed inset-0 z-50 overflow-y-auto">
-          <div className="fixed inset-0 bg-black/50" onClick={() => setShowForm(false)} />
-          <div className="flex min-h-full items-start justify-center py-8 px-4">
-            <div className="relative bg-white rounded-lg max-w-3xl w-full">
-              <div className="p-6 border-b flex justify-between items-center sticky top-0 bg-white z-10 rounded-t-lg">
-                <h2 className="text-2xl font-semibold">{editingId ? 'Edit Product Category' : 'Add Category'}</h2>
-                <button onClick={() => setShowForm(false)}>
-                  <X size={24} />
-                </button>
-              </div>
-            <form onSubmit={handleSubmit} className="p-6 space-y-4">
+      <Modal
+        isOpen={showForm}
+        onClose={() => setShowForm(false)}
+        title={editingId ? 'Edit Product Category' : 'Add Category'}
+        size="lg"
+      >
+            <form onSubmit={handleSubmit} className="space-y-4">
               <div className="grid grid-cols-2 gap-4">
                 <div>
                   <label className="block text-sm font-medium mb-1">Category Name *</label>
@@ -267,10 +263,7 @@ export default function ProductsAdminPage() {
                 <Button type="button" variant="outline" onClick={() => setShowForm(false)}>Cancel</Button>
               </div>
             </form>
-          </div>
-          </div>
-        </div>
-      )}
+      </Modal>
 
       {/* Products List */}
       <div className="bg-white rounded-lg border">

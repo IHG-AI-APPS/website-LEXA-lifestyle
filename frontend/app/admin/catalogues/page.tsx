@@ -4,8 +4,9 @@ import { useState, useEffect, useRef } from 'react'
 import { getCatalogues, createCatalogue, updateCatalogue, deleteCatalogue } from '@/lib/adminApi'
 import { Input } from '@/components/ui/input'
 import { Button } from '@/components/ui/button'
-import { Plus, Pencil, Trash2, X, Upload, FileText, BookOpen, ExternalLink } from 'lucide-react'
+import { Plus, Pencil, Trash2, Upload, FileText, BookOpen, ExternalLink } from 'lucide-react'
 import { ImageUpload } from '@/components/admin/ImageUpload'
+import Modal from '@/components/ui/Modal'
 
 const BACKEND_URL = process.env.NEXT_PUBLIC_BACKEND_URL || ''
 
@@ -244,17 +245,13 @@ export default function AdminCataloguesPage() {
       )}
 
       {/* Form Modal */}
-      {showForm && (
-        <div className="fixed inset-0 z-50 overflow-y-auto" data-testid="catalogue-form-modal">
-          <div className="fixed inset-0 bg-black/50" onClick={() => setShowForm(false)} />
-          <div className="flex min-h-full items-start justify-center py-8 px-4">
-            <div className="relative bg-white rounded-xl w-full max-w-2xl">
-              <div className="sticky top-0 bg-white border-b px-6 py-4 flex items-center justify-between z-10 rounded-t-xl">
-                <h2 className="text-lg font-bold">{isEditing ? 'Edit Catalogue' : 'Add New Catalogue'}</h2>
-                <Button variant="ghost" size="sm" onClick={() => setShowForm(false)}><X size={18} /></Button>
-              </div>
-
-            <div className="p-6 space-y-5">
+      <Modal
+        isOpen={showForm}
+        onClose={() => setShowForm(false)}
+        title={isEditing ? 'Edit Catalogue' : 'Add New Catalogue'}
+        size="lg"
+      >
+            <div className="space-y-5">
               {/* PDF Upload */}
               <div className="border-2 border-dashed border-gray-200 rounded-xl p-6 text-center bg-gray-50">
                 {formData.pdf_url ? (
@@ -397,10 +394,7 @@ export default function AdminCataloguesPage() {
                 <Button variant="outline" onClick={() => setShowForm(false)}>Cancel</Button>
               </div>
             </div>
-          </div>
-          </div>
-        </div>
-      )}
+      </Modal>
     </div>
   )
 }

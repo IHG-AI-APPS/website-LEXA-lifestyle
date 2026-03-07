@@ -1,12 +1,13 @@
 'use client'
 
 import { useState, useEffect } from 'react'
-import { Plus, Edit2, Trash2, X, Layers, Search } from 'lucide-react'
+import { Plus, Edit2, Trash2, Layers, Search } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { Textarea } from '@/components/ui/textarea'
 import { ImageUpload } from '@/components/admin/ImageUpload'
 import { toast } from 'sonner'
+import Modal from '@/components/ui/Modal'
 
 const API_URL = process.env.NEXT_PUBLIC_BACKEND_URL || ''
 
@@ -262,21 +263,13 @@ export default function ProductCategoriesAdmin() {
       </div>
 
       {/* Form Modal */}
-      {showForm && (
-        <div className="fixed inset-0 z-50 overflow-y-auto">
-          <div className="fixed inset-0 bg-black/50" onClick={() => setShowForm(false)} />
-          <div className="flex min-h-full items-start justify-center py-8 px-4">
-            <div className="relative bg-white rounded-lg w-full max-w-lg">
-              <div className="flex items-center justify-between p-4 border-b rounded-t-lg">
-                <h2 className="text-lg font-semibold">
-                  {editingId ? 'Edit Category' : 'Add Category'}
-                </h2>
-                <button onClick={() => setShowForm(false)}>
-                  <X className="w-5 h-5" />
-                </button>
-              </div>
-            
-            <form onSubmit={handleSubmit} className="p-6 space-y-4">
+      <Modal
+        isOpen={showForm}
+        onClose={() => setShowForm(false)}
+        title={editingId ? 'Edit Category' : 'Add Category'}
+        size="md"
+      >
+            <form onSubmit={handleSubmit} className="space-y-4">
               <div>
                 <label className="block text-sm font-medium mb-1">Name *</label>
                 <Input
@@ -357,10 +350,7 @@ export default function ProductCategoriesAdmin() {
                 </Button>
               </div>
             </form>
-          </div>
-          </div>
-        </div>
-      )}
+      </Modal>
     </div>
   )
 }
