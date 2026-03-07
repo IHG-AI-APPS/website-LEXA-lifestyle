@@ -1,9 +1,30 @@
 'use client'
 
-import { useEffect } from 'react'
+import { useEffect, createContext, useContext, useRef, useCallback } from 'react'
 import Lenis from 'lenis'
 
+interface SmoothScrollContextType {
+  scrollToTop: () => void
+}
+
+const SmoothScrollContext = createContext<SmoothScrollContextType>({ scrollToTop: () => {} })
+
+export function useSmoothScroll() {
+  return useContext(SmoothScrollContext)
+}
+
 export function SmoothScrollProvider({ children }: { children: React.ReactNode }) {
+  const lenisRef = useRef<Lenis | null>(null)
+
+  const scrollToTop = useCallback(() => {
+    if (lenisRef.current) {
+      lenisRef.current.scrollTo(0, { immediate: true })
+    } else {
+      // Fallback for when Lenis isn't ready
+      window.scrollTo(0, 0)
+    }
+  }, [])
+
   useEffect(() => {
     const lenis = new Lenis({
       duration: 0.8,
@@ -12,6 +33,8 @@ export function SmoothScrollProvider({ children }: { children: React.ReactNode }
       smoothWheel: true,
       touchMultiplier: 1.5,
     })
+    
+    lenisRef.current = lenis
 
     let rafId: number
     function raf(time: number) {
@@ -23,8 +46,13 @@ export function SmoothScrollProvider({ children }: { children: React.ReactNode }
     return () => {
       cancelAnimationFrame(rafId)
       lenis.destroy()
+      lenisRef.current = null
     }
   }, [])
 
-  return <>{children}</>
+  return (
+    <SmoothScrollContext.Provider value={{ scrollToTop }}>
+      {children}
+    </SmoothScrollContext.Provider>
+  )
 }

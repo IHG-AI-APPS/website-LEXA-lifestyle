@@ -33,6 +33,15 @@ A premium smart home solutions website with dynamic content management, product 
   - Solution: Added inline `backgroundColor: '#ffffff'` to logo containers
   - File: `/app/frontend/app/brands/page.tsx`
 
+- **Fixed:** Page navigation not scrolling to top
+  - Issue: Lenis smooth scroll library was intercepting window.scrollTo
+  - Solution: Updated SmoothScrollProvider with context API to expose scrollToTop function
+  - Files: `SmoothScrollProvider.tsx`, `ClientLayout.tsx`
+
+- **Fixed:** Modals appearing off-screen on long pages
+  - Verified all modals use `fixed inset-0 flex items-center justify-center` for viewport centering
+  - Modals now appear centered in visible viewport regardless of scroll position
+
 #### March 6, 2026
 - **Fixed:** Brand names partially hidden in Featured Partners section
   - Increased card height and improved text visibility

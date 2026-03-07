@@ -8,7 +8,7 @@ import MobileTabBar from '@/components/navigation/MobileTabBar'
 import CommandPalette from '@/components/navigation/CommandPalette'
 import FloatingContactButton from '@/components/ui/floating-contact'
 import WhatsAppEnhanced from '@/components/conversion/WhatsAppEnhanced'
-import { SmoothScrollProvider } from '@/components/providers/SmoothScrollProvider'
+import { SmoothScrollProvider, useSmoothScroll } from '@/components/providers/SmoothScrollProvider'
 import { LanguageProvider } from '@/components/providers/LanguageProvider'
 import { ThemeProvider } from '@/contexts/ThemeContext'
 import { Toaster } from 'sonner'
@@ -27,20 +27,24 @@ const PullToRefresh = dynamic(() => import('@/components/mobile/PullToRefresh'),
 const ConsultationFormLazy = dynamic(() => import('@/components/forms/ConsultationForm').catch(() => ({ default: Noop })), { ssr: false })
 const MobileQuickActions = dynamic(() => import('@/components/mobile/MobileQuickActions'), { ssr: false })
 
-export default function ClientLayout({ children }: { children: React.ReactNode }) {
+// Inner component that uses the scroll context
+function ClientLayoutInner({ children }: { children: React.ReactNode }) {
   const pathname = usePathname()
   const router = useRouter()
+  const { scrollToTop } = useSmoothScroll()
   const isAdminPage = pathname?.startsWith('/admin')
   const [showConsultation, setShowConsultation] = useState(false)
 
-  // Track page views (excluding admin pages)
+  // Track page views and scroll to top on route change (excluding admin pages)
   useEffect(() => {
     if (!isAdminPage && pathname) {
       trackPageView(pathname)
-      // Scroll to top on route change
-      window.scrollTo(0, 0)
+      // Scroll to top on route change - using both methods for reliability
+      scrollToTop()
+      // Also use native scroll as fallback
+      window.scrollTo({ top: 0, left: 0, behavior: 'instant' })
     }
-  }, [pathname, isAdminPage])
+  }, [pathname, isAdminPage, scrollToTop])
 
   // Register service worker with forced update
   useEffect(() => {
@@ -75,48 +79,56 @@ export default function ClientLayout({ children }: { children: React.ReactNode }
   }, [router])
 
   return (
+    <>
+      {/* Skip to main content - Accessibility */}
+      <a 
+        href="#main-content" 
+        className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[10000] focus:bg-[#C9A962] focus:text-[#050505] focus:px-6 focus:py-3 focus:text-xs focus:font-bold focus:tracking-[0.15em] focus:uppercase focus:outline-none focus:shadow-lg"
+        data-testid="skip-to-content"
+      >
+        Skip to main content
+      </a>
+      {!isAdminPage && <Header />}
+      {!isAdminPage ? (
+        <PullToRefresh onRefresh={handleRefresh}>
+          <main id="main-content" role="main" aria-label="Main content" className="pb-20 lg:pb-0">{children}</main>
+        </PullToRefresh>
+      ) : (
+        <main id="main-content" role="main" aria-label="Main content">{children}</main>
+      )}
+      {!isAdminPage && <Footer />}
+      {!isAdminPage && <MobileTabBar />}
+      {!isAdminPage && <CommandPalette />}
+      {!isAdminPage && <FloatingContactButton />}
+      {!isAdminPage && <WhatsAppEnhanced />}
+      {!isAdminPage && <AIChatWidget />}
+      {!isAdminPage && <MobileQuickActions onBookConsultation={() => setShowConsultation(true)} />}
+      {!isAdminPage && <SocialProofWidget />}
+      {!isAdminPage && <ExitIntentPopup />}
+      {!isAdminPage && <CookieConsent />}
+      {!isAdminPage && <LinkPrefetcher />}
+      {!isAdminPage && <ScheduleVisitButton />}
+      {showConsultation && <ConsultationFormLazy isOpen={showConsultation} onClose={() => setShowConsultation(false)} />}
+      <Toaster 
+        position="top-right"
+        toastOptions={{
+          style: {
+            background: '#1A1A1A',
+            color: '#fff',
+            border: '1px solid #333',
+          },
+        }}
+      />
+    </>
+  )
+}
+
+export default function ClientLayout({ children }: { children: React.ReactNode }) {
+  return (
     <ThemeProvider>
       <LanguageProvider>
         <SmoothScrollProvider>
-          {/* Skip to main content - Accessibility */}
-          <a 
-            href="#main-content" 
-            className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[10000] focus:bg-[#C9A962] focus:text-[#050505] focus:px-6 focus:py-3 focus:text-xs focus:font-bold focus:tracking-[0.15em] focus:uppercase focus:outline-none focus:shadow-lg"
-            data-testid="skip-to-content"
-          >
-            Skip to main content
-          </a>
-          {!isAdminPage && <Header />}
-          {!isAdminPage ? (
-            <PullToRefresh onRefresh={handleRefresh}>
-              <main id="main-content" role="main" aria-label="Main content" className="pb-20 lg:pb-0">{children}</main>
-            </PullToRefresh>
-          ) : (
-            <main id="main-content" role="main" aria-label="Main content">{children}</main>
-          )}
-          {!isAdminPage && <Footer />}
-          {!isAdminPage && <MobileTabBar />}
-          {!isAdminPage && <CommandPalette />}
-          {!isAdminPage && <FloatingContactButton />}
-          {!isAdminPage && <WhatsAppEnhanced />}
-          {!isAdminPage && <AIChatWidget />}
-          {!isAdminPage && <MobileQuickActions onBookConsultation={() => setShowConsultation(true)} />}
-          {!isAdminPage && <SocialProofWidget />}
-          {!isAdminPage && <ExitIntentPopup />}
-          {!isAdminPage && <CookieConsent />}
-          {!isAdminPage && <LinkPrefetcher />}
-          {!isAdminPage && <ScheduleVisitButton />}
-          {showConsultation && <ConsultationFormLazy isOpen={showConsultation} onClose={() => setShowConsultation(false)} />}
-          <Toaster 
-            position="top-right"
-            toastOptions={{
-              style: {
-                background: '#1A1A1A',
-                color: '#fff',
-                border: '1px solid #333',
-              },
-            }}
-          />
+          <ClientLayoutInner>{children}</ClientLayoutInner>
         </SmoothScrollProvider>
       </LanguageProvider>
     </ThemeProvider>
