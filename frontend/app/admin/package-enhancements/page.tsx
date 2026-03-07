@@ -308,8 +308,8 @@ export default function PackageEnhancementsAdmin() {
 
       {/* Form Modal */}
       {showForm && (
-        <div className="fixed inset-0 z-50 overflow-y-auto">
-          <div className="flex min-h-full items-center justify-center p-4">
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
+          <div>
             <div className="fixed inset-0 bg-black/50" onClick={() => setShowForm(false)} />
             <div className="relative bg-white rounded-lg w-full max-w-2xl">
               <div className="flex items-center justify-between p-4 border-b">

@@ -68,30 +68,41 @@ export default function PackageBuilderPage() {
     fetchData()
   }, [])
   
-  // Handle pre-selection from URL params
+  // Handle pre-selection from URL params - consolidated initialization
   useEffect(() => {
     if (!initialized && propertyTypes.length > 0 && preSelectedProperty) {
       const property = propertyTypes.find(p => p.slug === preSelectedProperty)
       if (property) {
-        // Auto-select the property
+        // Auto-select the property and tier in one go
         selectPropertyType(property.slug).then(() => {
-          setInitialized(true)
+          if (preSelectedTier) {
+            // Wait for property data to be loaded, then auto-select tier
+            const checkAndSelectTier = () => {
+              // The tier data comes from the property
+              setTimeout(() => {
+                setInitialized(true)
+              }, 100)
+            }
+            checkAndSelectTier()
+          } else {
+            setInitialized(true)
+          }
         })
       }
     }
   }, [propertyTypes, preSelectedProperty, initialized])
   
-  // Auto-select tier after property is loaded
+  // Auto-select tier after property is fully loaded (separate from initialization)
   useEffect(() => {
-    if (initialized && propertyType && preSelectedTier && step === 2) {
-      const tier = propertyType.tiers?.find((t: any) => t.tier_level === preSelectedTier)
+    if (initialized && propertyType && propertyType.tiers && preSelectedTier && step === 2) {
+      const tier = propertyType.tiers.find((t: any) => t.tier_level === preSelectedTier)
       if (tier) {
+        // Directly set the tier without animation delay
         setSelectedTier(tier)
-        // Move to next step (control system selection)
-        setTimeout(() => setStep(3), 500)
+        setStep(3)
       }
     }
-  }, [initialized, propertyType, preSelectedTier, step])
+  }, [initialized, propertyType?.tiers, preSelectedTier, step])
 
   const fetchData = async () => {
     try {
