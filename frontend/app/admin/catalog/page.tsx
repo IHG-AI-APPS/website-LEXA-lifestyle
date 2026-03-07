@@ -322,12 +322,14 @@ export default function CatalogAdminPage() {
 
       {/* Form Modal */}
       {showForm && (
-        <div className="fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center p-4">
-          <div className="bg-white rounded-lg max-w-3xl w-full max-h-[90vh] overflow-y-auto">
-            <div className="p-5 border-b flex justify-between items-center sticky top-0 bg-white z-10">
-              <h2 className="text-xl font-semibold" data-testid="form-title">{editingId ? 'Edit Product' : 'Add Product'}</h2>
-              <button onClick={() => setShowForm(false)}><X size={20} /></button>
-            </div>
+        <div className="fixed inset-0 z-50 overflow-y-auto">
+          <div className="flex min-h-full items-center justify-center p-4">
+            <div className="fixed inset-0 bg-black/50" onClick={() => setShowForm(false)} />
+            <div className="relative bg-white rounded-lg max-w-3xl w-full max-h-[90vh] overflow-y-auto">
+              <div className="p-5 border-b flex justify-between items-center sticky top-0 bg-white z-10">
+                <h2 className="text-xl font-semibold" data-testid="form-title">{editingId ? 'Edit Product' : 'Add Product'}</h2>
+                <button onClick={() => setShowForm(false)}><X size={20} /></button>
+              </div>
             <form onSubmit={handleSubmit} className="p-5 space-y-5">
               {/* Basic Info */}
               <div className="space-y-4">
@@ -467,6 +469,7 @@ export default function CatalogAdminPage() {
                 <Button type="submit" data-testid="form-submit">{editingId ? 'Save Changes' : 'Create Product'}</Button>
               </div>
             </form>
+          </div>
           </div>
         </div>
       )}

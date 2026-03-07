@@ -247,16 +247,18 @@ export default function ProjectsAdminPage() {
 
       {/* Form Modal */}
       {showForm && (
-        <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 p-4">
-          <div className="bg-white w-full max-w-2xl max-h-[90vh] overflow-y-auto p-8">
-            <div className="flex justify-between items-center mb-6">
-              <h2 className="text-2xl font-semibold">
-                {editingId ? 'Edit Project' : 'Add Project'}
-              </h2>
-              <button onClick={() => setShowForm(false)}>
-                <X size={24} />
-              </button>
-            </div>
+        <div className="fixed inset-0 z-50 overflow-y-auto">
+          <div className="flex min-h-full items-center justify-center p-4">
+            <div className="fixed inset-0 bg-black/50" onClick={() => setShowForm(false)} />
+            <div className="relative bg-white w-full max-w-2xl max-h-[90vh] overflow-y-auto p-8 rounded-lg shadow-xl">
+              <div className="flex justify-between items-center mb-6">
+                <h2 className="text-2xl font-semibold">
+                  {editingId ? 'Edit Project' : 'Add Project'}
+                </h2>
+                <button onClick={() => setShowForm(false)}>
+                  <X size={24} />
+                </button>
+              </div>
 
             <form onSubmit={handleSubmit} className="space-y-4">
               <div>
@@ -492,6 +494,7 @@ export default function ProjectsAdminPage() {
                 </Button>
               </div>
             </form>
+          </div>
           </div>
         </div>
       )}

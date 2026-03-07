@@ -161,14 +161,16 @@ export default function ProductsAdminPage() {
 
       {/* Form Modal */}
       {showForm && (
-        <div className="fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center p-4">
-          <div className="bg-white rounded-lg max-w-3xl w-full max-h-[90vh] overflow-y-auto">
-            <div className="p-6 border-b flex justify-between items-center">
-              <h2 className="text-2xl font-semibold">{editingId ? 'Edit Product Category' : 'Add Category'}</h2>
-              <button onClick={() => setShowForm(false)}>
-                <X size={24} />
-              </button>
-            </div>
+        <div className="fixed inset-0 z-50 overflow-y-auto">
+          <div className="flex min-h-full items-center justify-center p-4">
+            <div className="fixed inset-0 bg-black/50" onClick={() => setShowForm(false)} />
+            <div className="relative bg-white rounded-lg max-w-3xl w-full max-h-[90vh] overflow-y-auto">
+              <div className="p-6 border-b flex justify-between items-center sticky top-0 bg-white z-10">
+                <h2 className="text-2xl font-semibold">{editingId ? 'Edit Product Category' : 'Add Category'}</h2>
+                <button onClick={() => setShowForm(false)}>
+                  <X size={24} />
+                </button>
+              </div>
             <form onSubmit={handleSubmit} className="p-6 space-y-4">
               <div className="grid grid-cols-2 gap-4">
                 <div>
@@ -265,6 +267,7 @@ export default function ProductsAdminPage() {
                 <Button type="button" variant="outline" onClick={() => setShowForm(false)}>Cancel</Button>
               </div>
             </form>
+          </div>
           </div>
         </div>
       )}

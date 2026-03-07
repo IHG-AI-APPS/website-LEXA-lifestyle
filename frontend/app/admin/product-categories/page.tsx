@@ -263,16 +263,18 @@ export default function ProductCategoriesAdmin() {
 
       {/* Form Modal */}
       {showForm && (
-        <div className="fixed inset-0 bg-black/50 z-50 flex items-center justify-center overflow-y-auto py-8">
-          <div className="bg-white rounded-lg w-full max-w-lg mx-4">
-            <div className="flex items-center justify-between p-4 border-b">
-              <h2 className="text-lg font-semibold">
-                {editingId ? 'Edit Category' : 'Add Category'}
-              </h2>
-              <button onClick={() => setShowForm(false)}>
-                <X className="w-5 h-5" />
-              </button>
-            </div>
+        <div className="fixed inset-0 z-50 overflow-y-auto">
+          <div className="flex min-h-full items-center justify-center p-4">
+            <div className="fixed inset-0 bg-black/50" onClick={() => setShowForm(false)} />
+            <div className="relative bg-white rounded-lg w-full max-w-lg">
+              <div className="flex items-center justify-between p-4 border-b">
+                <h2 className="text-lg font-semibold">
+                  {editingId ? 'Edit Category' : 'Add Category'}
+                </h2>
+                <button onClick={() => setShowForm(false)}>
+                  <X className="w-5 h-5" />
+                </button>
+              </div>
             
             <form onSubmit={handleSubmit} className="p-6 space-y-4">
               <div>
@@ -355,6 +357,7 @@ export default function ProductCategoriesAdmin() {
                 </Button>
               </div>
             </form>
+          </div>
           </div>
         </div>
       )}

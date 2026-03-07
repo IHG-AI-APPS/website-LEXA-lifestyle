@@ -415,14 +415,16 @@ export default function SolutionsAdminPage() {
 
       {/* Form Modal */}
       {showForm && (
-        <div className="fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center p-4">
-          <div className="bg-white rounded-lg max-w-4xl w-full max-h-[90vh] overflow-y-auto">
-            <div className="p-6 border-b flex justify-between items-center sticky top-0 bg-white z-10">
-              <h2 className="text-2xl font-semibold">{editingId ? 'Edit Solution' : 'Add Solution'}</h2>
-              <button onClick={() => setShowForm(false)}>
-                <X size={24} />
-              </button>
-            </div>
+        <div className="fixed inset-0 z-50 overflow-y-auto">
+          <div className="flex min-h-full items-center justify-center p-4">
+            <div className="fixed inset-0 bg-black/50" onClick={() => setShowForm(false)} />
+            <div className="relative bg-white rounded-lg max-w-4xl w-full max-h-[90vh] overflow-y-auto">
+              <div className="p-6 border-b flex justify-between items-center sticky top-0 bg-white z-10">
+                <h2 className="text-2xl font-semibold">{editingId ? 'Edit Solution' : 'Add Solution'}</h2>
+                <button onClick={() => setShowForm(false)}>
+                  <X size={24} />
+                </button>
+              </div>
             <form onSubmit={handleSubmit} className="p-6 space-y-6">
               {/* Basic Info */}
               <div className="border-b pb-6">
@@ -873,6 +875,7 @@ export default function SolutionsAdminPage() {
                 <Button type="button" variant="outline" onClick={() => setShowForm(false)}>Cancel</Button>
               </div>
             </form>
+          </div>
           </div>
         </div>
       )}

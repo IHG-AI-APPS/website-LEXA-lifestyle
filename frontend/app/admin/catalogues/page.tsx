@@ -245,12 +245,14 @@ export default function AdminCataloguesPage() {
 
       {/* Form Modal */}
       {showForm && (
-        <div className="fixed inset-0 bg-black/50 z-50 flex items-center justify-center p-4" data-testid="catalogue-form-modal">
-          <div className="bg-white rounded-xl w-full max-w-2xl max-h-[90vh] overflow-y-auto">
-            <div className="sticky top-0 bg-white border-b px-6 py-4 flex items-center justify-between z-10">
-              <h2 className="text-lg font-bold">{isEditing ? 'Edit Catalogue' : 'Add New Catalogue'}</h2>
-              <Button variant="ghost" size="sm" onClick={() => setShowForm(false)}><X size={18} /></Button>
-            </div>
+        <div className="fixed inset-0 z-50 overflow-y-auto" data-testid="catalogue-form-modal">
+          <div className="flex min-h-full items-center justify-center p-4">
+            <div className="fixed inset-0 bg-black/50" onClick={() => setShowForm(false)} />
+            <div className="relative bg-white rounded-xl w-full max-w-2xl max-h-[90vh] overflow-y-auto">
+              <div className="sticky top-0 bg-white border-b px-6 py-4 flex items-center justify-between z-10">
+                <h2 className="text-lg font-bold">{isEditing ? 'Edit Catalogue' : 'Add New Catalogue'}</h2>
+                <Button variant="ghost" size="sm" onClick={() => setShowForm(false)}><X size={18} /></Button>
+              </div>
 
             <div className="p-6 space-y-5">
               {/* PDF Upload */}
@@ -395,6 +397,7 @@ export default function AdminCataloguesPage() {
                 <Button variant="outline" onClick={() => setShowForm(false)}>Cancel</Button>
               </div>
             </div>
+          </div>
           </div>
         </div>
       )}
