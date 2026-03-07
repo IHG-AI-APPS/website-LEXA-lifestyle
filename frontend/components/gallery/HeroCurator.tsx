@@ -69,7 +69,7 @@ export default function HeroCurator({ onPersonaClick }: HeroCuratorProps) {
     ? (language === 'ar' ? cmsData.quote_ar : cmsData.quote_en)
     : (language === 'ar'
       ? 'حيث تلتقي التكنولوجيا بالفخامة'
-      : 'Where technology meets ')
+      : 'Where technology meets luxury ')
 
   const handleFindSolution = () => {
     if (onPersonaClick) onPersonaClick()
