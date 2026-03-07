@@ -1,0 +1,102 @@
+[2026-02-20 12:38:55] ============================================================
+[2026-02-20 12:38:55] LEXA HERO VIDEO RETRY - STARTING
+[2026-02-20 12:38:55] Clips to retry: 4
+[2026-02-20 12:38:55] ============================================================
+[2026-02-20 12:38:55] 
+--- RETRY CLIP 1/4 ---
+[2026-02-20 12:38:55] Starting generation: 03_material_details
+[2026-02-20 12:38:55] Prompt: Cinematic close-up of luxury interior materials, brushed brass light fixture detail, white marble su...
+Video generation initiated with ID: video_699855e00cc481939eb318a84f64f58d0faf086eb9f95d9f
+Waiting for video generation to complete (ID: video_699855e00cc481939eb318a84f64f58d0faf086eb9f95d9f)...
+Still processing... (0s elapsed, status: in_progress, progress: 0%)
+Still processing... (10s elapsed, status: queued, progress: 0%)
+Still processing... (23s elapsed, status: in_progress, progress: 40%)
+Still processing... (38s elapsed, status: in_progress, progress: 47%)
+Still processing... (55s elapsed, status: in_progress, progress: 62%)
+Still processing... (76s elapsed, status: in_progress, progress: 75%)
+Still processing... (101s elapsed, status: in_progress, progress: 90%)
+Still processing... (132s elapsed, status: in_progress, progress: 99%)
+Error in video generation: {'code': 'moderation_blocked', 'message': 'Your request was blocked by our moderation system.'}
+[2026-02-20 12:41:38] FAILED: 03_material_details - No video bytes returned
+[2026-02-20 12:41:43] 
+--- RETRY CLIP 2/4 ---
+[2026-02-20 12:41:43] Starting generation: 04_smart_interface
+[2026-02-20 12:41:43] Prompt: Modern minimalist smart home control panel on elegant wall, person's hand touching sleek touchscreen...
+Video generation initiated with ID: video_6998568897fc819182b8ef7a2ea3a1ec0168b822fb025a90
+Waiting for video generation to complete (ID: video_6998568897fc819182b8ef7a2ea3a1ec0168b822fb025a90)...
+Still processing... (0s elapsed, status: in_progress, progress: 0%)
+Still processing... (10s elapsed, status: queued, progress: 0%)
+Still processing... (23s elapsed, status: queued, progress: 0%)
+Still processing... (37s elapsed, status: in_progress, progress: 47%)
+Still processing... (55s elapsed, status: in_progress, progress: 55%)
+Still processing... (76s elapsed, status: in_progress, progress: 69%)
+Still processing... (102s elapsed, status: in_progress, progress: 87%)
+Still processing... (132s elapsed, status: in_progress, progress: 99%)
+Error in video generation: {'code': 'moderation_blocked', 'message': 'Your request was blocked by our moderation system.'}
+[2026-02-20 12:44:27] FAILED: 04_smart_interface - No video bytes returned
+[2026-02-20 12:44:32] 
+--- RETRY CLIP 3/4 ---
+[2026-02-20 12:44:32] Starting generation: 05_cinema_room
+[2026-02-20 12:44:32] Prompt: Elegant private screening room interior, comfortable designer seating arrangement, indirect ambient ...
+Video generation initiated with ID: video_69985730d5f48190b2560b6245bd1249036a8e9f2e3712b0
+Waiting for video generation to complete (ID: video_69985730d5f48190b2560b6245bd1249036a8e9f2e3712b0)...
+Still processing... (0s elapsed, status: in_progress, progress: 0%)
+Still processing... (10s elapsed, status: queued, progress: 0%)
+Still processing... (23s elapsed, status: in_progress, progress: 10%)
+Still processing... (37s elapsed, status: in_progress, progress: 47%)
+Still processing... (55s elapsed, status: in_progress, progress: 63%)
+Still processing... (76s elapsed, status: in_progress, progress: 75%)
+Still processing... (101s elapsed, status: in_progress, progress: 90%)
+Still processing... (132s elapsed, status: in_progress, progress: 99%)
+Video generation completed!
+No URL in response, constructed download URL: https://integrations.emergentagent.com/llm/openai/v1/videos/video_69985730d5f48190b2560b6245bd1249036a8e9f2e3712b0/content
+Video ready at: https://integrations.emergentagent.com/llm/openai/v1/videos/video_69985730d5f48190b2560b6245bd1249036a8e9f2e3712b0/content
+Downloading video from: https://integrations.emergentagent.com/llm/openai/v1/videos/video_69985730d5f48190b2560b6245bd1249036a8e9f2e3712b0/content
+Final download URL: https://integrations.emergentagent.com/llm/openai/v1/videos/video_69985730d5f48190b2560b6245bd1249036a8e9f2e3712b0/content
+Initial response status: 200
+Content-Type: video/mp4
+Content-Length: 2318805
+Downloaded 2318805 bytes
+Video saved to: /app/frontend/public/videos/hero/05_cinema_room.mp4
+[2026-02-20 12:47:18] SUCCESS: 05_cinema_room saved (165.7s)
+[2026-02-20 12:47:23] 
+--- RETRY CLIP 4/4 ---
+[2026-02-20 12:47:23] Starting generation: 07_night_exterior
+[2026-02-20 12:47:23] Prompt: Modern architectural villa exterior at night, warm interior lighting visible through large glass win...
+Video generation initiated with ID: video_699857dc0738819891f593ed13c0f1130f11c4d0d72348ec
+Waiting for video generation to complete (ID: video_699857dc0738819891f593ed13c0f1130f11c4d0d72348ec)...
+Still processing... (0s elapsed, status: in_progress, progress: 0%)
+Still processing... (10s elapsed, status: queued, progress: 0%)
+Still processing... (23s elapsed, status: in_progress, progress: 40%)
+Still processing... (38s elapsed, status: in_progress, progress: 45%)
+Still processing... (55s elapsed, status: in_progress, progress: 61%)
+Still processing... (76s elapsed, status: in_progress, progress: 75%)
+Still processing... (102s elapsed, status: in_progress, progress: 87%)
+Still processing... (132s elapsed, status: in_progress, progress: 90%)
+Still processing... (162s elapsed, status: in_progress, progress: 90%)
+Still processing... (193s elapsed, status: in_progress, progress: 90%)
+Still processing... (224s elapsed, status: in_progress, progress: 90%)
+Still processing... (254s elapsed, status: in_progress, progress: 90%)
+Still processing... (284s elapsed, status: in_progress, progress: 90%)
+Still processing... (315s elapsed, status: in_progress, progress: 90%)
+Still processing... (345s elapsed, status: in_progress, progress: 90%)
+Still processing... (375s elapsed, status: in_progress, progress: 90%)
+Still processing... (406s elapsed, status: in_progress, progress: 90%)
+Still processing... (436s elapsed, status: in_progress, progress: 90%)
+Still processing... (467s elapsed, status: in_progress, progress: 90%)
+Still processing... (497s elapsed, status: in_progress, progress: 90%)
+Still processing... (528s elapsed, status: in_progress, progress: 90%)
+Still processing... (559s elapsed, status: in_progress, progress: 90%)
+Still processing... (589s elapsed, status: in_progress, progress: 90%)
+Timeout: Video generation did not complete within 600 seconds
+[2026-02-20 12:57:43] FAILED: 07_night_exterior - No video bytes returned
+[2026-02-20 12:57:43] 
+============================================================
+[2026-02-20 12:57:43] RETRY COMPLETE - SUMMARY
+[2026-02-20 12:57:43] ============================================================
+[2026-02-20 12:57:43]   03_material_details: FAILED
+[2026-02-20 12:57:43]   04_smart_interface: FAILED
+[2026-02-20 12:57:43]   05_cinema_room: OK
+[2026-02-20 12:57:43]   07_night_exterior: FAILED
+[2026-02-20 12:57:43] 
+Retry Total: 1/4 clips generated

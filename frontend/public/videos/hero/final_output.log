@@ -1,0 +1,82 @@
+[2026-02-20 12:59:15] ==================================================
+[2026-02-20 12:59:15] FINAL RETRY - 3 CLIPS
+[2026-02-20 12:59:15] ==================================================
+[2026-02-20 12:59:15] 
+--- CLIP 1/3 ---
+[2026-02-20 12:59:15] Starting: 03_details
+Video generation initiated with ID: video_69985aa458d48191a19c1aa5b536c98d03acd468aad45c9c
+Waiting for video generation to complete (ID: video_69985aa458d48191a19c1aa5b536c98d03acd468aad45c9c)...
+Still processing... (0s elapsed, status: in_progress, progress: 0%)
+Still processing... (10s elapsed, status: queued, progress: 0%)
+Still processing... (23s elapsed, status: in_progress, progress: 10%)
+Still processing... (38s elapsed, status: in_progress, progress: 56%)
+Still processing... (55s elapsed, status: in_progress, progress: 70%)
+Still processing... (77s elapsed, status: in_progress, progress: 82%)
+Still processing... (102s elapsed, status: in_progress, progress: 90%)
+Still processing... (132s elapsed, status: in_progress, progress: 99%)
+Video generation completed!
+No URL in response, constructed download URL: https://integrations.emergentagent.com/llm/openai/v1/videos/video_69985aa458d48191a19c1aa5b536c98d03acd468aad45c9c/content
+Video ready at: https://integrations.emergentagent.com/llm/openai/v1/videos/video_69985aa458d48191a19c1aa5b536c98d03acd468aad45c9c/content
+Downloading video from: https://integrations.emergentagent.com/llm/openai/v1/videos/video_69985aa458d48191a19c1aa5b536c98d03acd468aad45c9c/content
+Final download URL: https://integrations.emergentagent.com/llm/openai/v1/videos/video_69985aa458d48191a19c1aa5b536c98d03acd468aad45c9c/content
+Initial response status: 200
+Content-Type: video/mp4
+Content-Length: 1902944
+Downloaded 1902944 bytes
+Video saved to: /app/frontend/public/videos/hero/03_details.mp4
+[2026-02-20 13:02:02] SUCCESS: 03_details (166.6s)
+[2026-02-20 13:02:05] 
+--- CLIP 2/3 ---
+[2026-02-20 13:02:05] Starting: 04_living_tech
+Video generation initiated with ID: video_69985b4d5e3c8190838f4b7114087fe007d68b4ef0b80f9a
+Waiting for video generation to complete (ID: video_69985b4d5e3c8190838f4b7114087fe007d68b4ef0b80f9a)...
+Still processing... (0s elapsed, status: in_progress, progress: 0%)
+Still processing... (10s elapsed, status: queued, progress: 0%)
+Still processing... (23s elapsed, status: in_progress, progress: 40%)
+Still processing... (37s elapsed, status: in_progress, progress: 56%)
+Still processing... (55s elapsed, status: in_progress, progress: 63%)
+Still processing... (76s elapsed, status: in_progress, progress: 81%)
+Still processing... (102s elapsed, status: in_progress, progress: 90%)
+Still processing... (132s elapsed, status: in_progress, progress: 99%)
+Video generation completed!
+No URL in response, constructed download URL: https://integrations.emergentagent.com/llm/openai/v1/videos/video_69985b4d5e3c8190838f4b7114087fe007d68b4ef0b80f9a/content
+Video ready at: https://integrations.emergentagent.com/llm/openai/v1/videos/video_69985b4d5e3c8190838f4b7114087fe007d68b4ef0b80f9a/content
+Downloading video from: https://integrations.emergentagent.com/llm/openai/v1/videos/video_69985b4d5e3c8190838f4b7114087fe007d68b4ef0b80f9a/content
+Final download URL: https://integrations.emergentagent.com/llm/openai/v1/videos/video_69985b4d5e3c8190838f4b7114087fe007d68b4ef0b80f9a/content
+Initial response status: 200
+Content-Type: video/mp4
+Content-Length: 2123843
+Downloaded 2123843 bytes
+Video saved to: /app/frontend/public/videos/hero/04_living_tech.mp4
+[2026-02-20 13:04:50] SUCCESS: 04_living_tech (165.3s)
+[2026-02-20 13:04:53] 
+--- CLIP 3/3 ---
+[2026-02-20 13:04:53] Starting: 07_villa_night
+Video generation initiated with ID: video_69985bf6381c81988333d6c9288deef30f1b4bde2e15f1de
+Waiting for video generation to complete (ID: video_69985bf6381c81988333d6c9288deef30f1b4bde2e15f1de)...
+Still processing... (0s elapsed, status: in_progress, progress: 0%)
+Still processing... (10s elapsed, status: queued, progress: 0%)
+Still processing... (23s elapsed, status: in_progress, progress: 40%)
+Still processing... (38s elapsed, status: in_progress, progress: 46%)
+Still processing... (55s elapsed, status: in_progress, progress: 62%)
+Still processing... (76s elapsed, status: in_progress, progress: 75%)
+Still processing... (102s elapsed, status: in_progress, progress: 90%)
+Still processing... (132s elapsed, status: in_progress, progress: 99%)
+Video generation completed!
+No URL in response, constructed download URL: https://integrations.emergentagent.com/llm/openai/v1/videos/video_69985bf6381c81988333d6c9288deef30f1b4bde2e15f1de/content
+Video ready at: https://integrations.emergentagent.com/llm/openai/v1/videos/video_69985bf6381c81988333d6c9288deef30f1b4bde2e15f1de/content
+Downloading video from: https://integrations.emergentagent.com/llm/openai/v1/videos/video_69985bf6381c81988333d6c9288deef30f1b4bde2e15f1de/content
+Final download URL: https://integrations.emergentagent.com/llm/openai/v1/videos/video_69985bf6381c81988333d6c9288deef30f1b4bde2e15f1de/content
+Initial response status: 200
+Content-Type: video/mp4
+Content-Length: 2411656
+Downloaded 2411656 bytes
+Video saved to: /app/frontend/public/videos/hero/07_villa_night.mp4
+[2026-02-20 13:07:39] SUCCESS: 07_villa_night (166.4s)
+[2026-02-20 13:07:39] 
+==================================================
+[2026-02-20 13:07:39] FINAL SUMMARY
+[2026-02-20 13:07:39]   03_details: OK
+[2026-02-20 13:07:39]   04_living_tech: OK
+[2026-02-20 13:07:39]   07_villa_night: OK
+[2026-02-20 13:07:39] Success: 3/3

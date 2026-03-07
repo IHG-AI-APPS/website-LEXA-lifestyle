@@ -1,0 +1,203 @@
+[2026-02-20 13:20:33] ============================================================
+[2026-02-20 13:20:33] LEXA HERO VIDEO V2 - SMART HOME AUTOMATION
+[2026-02-20 13:20:33] Generating 8 clips
+[2026-02-20 13:20:33] ============================================================
+[2026-02-20 13:20:33] 
+========================================
+[2026-02-20 13:20:33] CLIP 1/8
+[2026-02-20 13:20:33] ========================================
+[2026-02-20 13:20:33] Generating: v2_01_lights_on
+[2026-02-20 13:20:33] Scene: Dramatic shot of luxury living room, elegant ceiling lights slowly turning on on...
+Video generation initiated with ID: video_69985fa200e88190bc0ae9cd1043787f0f89bfcaf29bbf24
+Waiting for video generation to complete (ID: video_69985fa200e88190bc0ae9cd1043787f0f89bfcaf29bbf24)...
+Still processing... (0s elapsed, status: in_progress, progress: 0%)
+Still processing... (10s elapsed, status: queued, progress: 0%)
+Still processing... (22s elapsed, status: in_progress, progress: 10%)
+Still processing... (37s elapsed, status: in_progress, progress: 49%)
+Still processing... (55s elapsed, status: in_progress, progress: 73%)
+Still processing... (76s elapsed, status: in_progress, progress: 90%)
+Still processing... (101s elapsed, status: in_progress, progress: 99%)
+Video generation completed!
+No URL in response, constructed download URL: https://integrations.emergentagent.com/llm/openai/v1/videos/video_69985fa200e88190bc0ae9cd1043787f0f89bfcaf29bbf24/content
+Video ready at: https://integrations.emergentagent.com/llm/openai/v1/videos/video_69985fa200e88190bc0ae9cd1043787f0f89bfcaf29bbf24/content
+Downloading video from: https://integrations.emergentagent.com/llm/openai/v1/videos/video_69985fa200e88190bc0ae9cd1043787f0f89bfcaf29bbf24/content
+Final download URL: https://integrations.emergentagent.com/llm/openai/v1/videos/video_69985fa200e88190bc0ae9cd1043787f0f89bfcaf29bbf24/content
+Initial response status: 200
+Content-Type: video/mp4
+Content-Length: 1501944
+Downloaded 1501944 bytes
+Video saved to: /app/frontend/public/videos/hero-v2/v2_01_lights_on.mp4
+[2026-02-20 13:22:49] SUCCESS: v2_01_lights_on (135.4s)
+[2026-02-20 13:22:52] 
+========================================
+[2026-02-20 13:22:52] CLIP 2/8
+[2026-02-20 13:22:52] ========================================
+[2026-02-20 13:22:52] Generating: v2_02_shades_open
+[2026-02-20 13:22:52] Scene: Motorized window blinds slowly opening in luxury bedroom, morning sunlight gradu...
+Video generation initiated with ID: video_6998602d5798819396df54076405f4630bc54f4dd4a6fa03
+Waiting for video generation to complete (ID: video_6998602d5798819396df54076405f4630bc54f4dd4a6fa03)...
+Still processing... (0s elapsed, status: in_progress, progress: 0%)
+Still processing... (10s elapsed, status: queued, progress: 0%)
+Still processing... (23s elapsed, status: queued, progress: 0%)
+Still processing... (38s elapsed, status: in_progress, progress: 51%)
+Still processing... (55s elapsed, status: in_progress, progress: 63%)
+Still processing... (77s elapsed, status: in_progress, progress: 84%)
+Still processing... (102s elapsed, status: in_progress, progress: 99%)
+Video generation completed!
+No URL in response, constructed download URL: https://integrations.emergentagent.com/llm/openai/v1/videos/video_6998602d5798819396df54076405f4630bc54f4dd4a6fa03/content
+Video ready at: https://integrations.emergentagent.com/llm/openai/v1/videos/video_6998602d5798819396df54076405f4630bc54f4dd4a6fa03/content
+Downloading video from: https://integrations.emergentagent.com/llm/openai/v1/videos/video_6998602d5798819396df54076405f4630bc54f4dd4a6fa03/content
+Final download URL: https://integrations.emergentagent.com/llm/openai/v1/videos/video_6998602d5798819396df54076405f4630bc54f4dd4a6fa03/content
+Initial response status: 200
+Content-Type: video/mp4
+Content-Length: 1490049
+Downloaded 1490049 bytes
+Video saved to: /app/frontend/public/videos/hero-v2/v2_02_shades_open.mp4
+[2026-02-20 13:25:09] SUCCESS: v2_02_shades_open (137.0s)
+[2026-02-20 13:25:12] 
+========================================
+[2026-02-20 13:25:12] CLIP 3/8
+[2026-02-20 13:25:12] ========================================
+[2026-02-20 13:25:12] Generating: v2_03_tv_reveal
+[2026-02-20 13:25:12] Scene: Large luxury television slowly rising from elegant cabinet in modern living room...
+Video generation initiated with ID: video_699860b85a7c8190a9584a7bc537674d03062d471198c525
+Waiting for video generation to complete (ID: video_699860b85a7c8190a9584a7bc537674d03062d471198c525)...
+Still processing... (0s elapsed, status: in_progress, progress: 0%)
+Still processing... (10s elapsed, status: queued, progress: 0%)
+Still processing... (23s elapsed, status: in_progress, progress: 10%)
+Still processing... (37s elapsed, status: in_progress, progress: 52%)
+Still processing... (55s elapsed, status: in_progress, progress: 75%)
+Still processing... (76s elapsed, status: in_progress, progress: 90%)
+Error in video generation: {'code': 'moderation_blocked', 'message': 'Your request was blocked by our moderation system.'}
+[2026-02-20 13:26:54] FAILED: v2_03_tv_reveal - No video returned
+[2026-02-20 13:26:57] 
+========================================
+[2026-02-20 13:26:57] CLIP 4/8
+[2026-02-20 13:26:57] ========================================
+[2026-02-20 13:26:57] Generating: v2_04_speaker_system
+[2026-02-20 13:26:57] Scene: High-end floor standing speakers in luxury music room, soft indicator lights glo...
+Video generation initiated with ID: video_69986121b5d48190929d42b439d18d4f03c62e4dff53eb66
+Waiting for video generation to complete (ID: video_69986121b5d48190929d42b439d18d4f03c62e4dff53eb66)...
+Still processing... (0s elapsed, status: in_progress, progress: 0%)
+Still processing... (10s elapsed, status: queued, progress: 0%)
+Still processing... (23s elapsed, status: in_progress, progress: 40%)
+Still processing... (37s elapsed, status: in_progress, progress: 64%)
+Still processing... (55s elapsed, status: in_progress, progress: 75%)
+Still processing... (76s elapsed, status: in_progress, progress: 90%)
+Video generation completed!
+No URL in response, constructed download URL: https://integrations.emergentagent.com/llm/openai/v1/videos/video_69986121b5d48190929d42b439d18d4f03c62e4dff53eb66/content
+Video ready at: https://integrations.emergentagent.com/llm/openai/v1/videos/video_69986121b5d48190929d42b439d18d4f03c62e4dff53eb66/content
+Downloading video from: https://integrations.emergentagent.com/llm/openai/v1/videos/video_69986121b5d48190929d42b439d18d4f03c62e4dff53eb66/content
+Final download URL: https://integrations.emergentagent.com/llm/openai/v1/videos/video_69986121b5d48190929d42b439d18d4f03c62e4dff53eb66/content
+Initial response status: 200
+Content-Type: video/mp4
+Content-Length: 1239406
+Downloaded 1239406 bytes
+Video saved to: /app/frontend/public/videos/hero-v2/v2_04_speaker_system.mp4
+[2026-02-20 13:28:41] SUCCESS: v2_04_speaker_system (103.8s)
+[2026-02-20 13:28:44] 
+========================================
+[2026-02-20 13:28:44] CLIP 5/8
+[2026-02-20 13:28:44] ========================================
+[2026-02-20 13:28:44] Generating: v2_05_cinema_experience
+[2026-02-20 13:28:44] Scene: Private home theater room transforming, ceiling lights dimming slowly, large pro...
+Video generation initiated with ID: video_6998618c982c8190880cfb73bcf23e73098ad8a13cef84da
+Waiting for video generation to complete (ID: video_6998618c982c8190880cfb73bcf23e73098ad8a13cef84da)...
+Still processing... (0s elapsed, status: in_progress, progress: 0%)
+Still processing... (10s elapsed, status: queued, progress: 0%)
+Still processing... (23s elapsed, status: in_progress, progress: 40%)
+Still processing... (38s elapsed, status: in_progress, progress: 52%)
+Still processing... (55s elapsed, status: in_progress, progress: 75%)
+Still processing... (76s elapsed, status: in_progress, progress: 90%)
+Still processing... (102s elapsed, status: in_progress, progress: 99%)
+Video generation completed!
+No URL in response, constructed download URL: https://integrations.emergentagent.com/llm/openai/v1/videos/video_6998618c982c8190880cfb73bcf23e73098ad8a13cef84da/content
+Video ready at: https://integrations.emergentagent.com/llm/openai/v1/videos/video_6998618c982c8190880cfb73bcf23e73098ad8a13cef84da/content
+Downloading video from: https://integrations.emergentagent.com/llm/openai/v1/videos/video_6998618c982c8190880cfb73bcf23e73098ad8a13cef84da/content
+Final download URL: https://integrations.emergentagent.com/llm/openai/v1/videos/video_6998618c982c8190880cfb73bcf23e73098ad8a13cef84da/content
+Initial response status: 200
+Content-Type: video/mp4
+Content-Length: 1675005
+Downloaded 1675005 bytes
+Video saved to: /app/frontend/public/videos/hero-v2/v2_05_cinema_experience.mp4
+[2026-02-20 13:30:58] SUCCESS: v2_05_cinema_experience (134.7s)
+[2026-02-20 13:31:01] 
+========================================
+[2026-02-20 13:31:01] CLIP 6/8
+[2026-02-20 13:31:01] ========================================
+[2026-02-20 13:31:01] Generating: v2_06_touch_panel
+[2026-02-20 13:31:01] Scene: Elegant hand touching sleek wall-mounted smart home control panel, modern touchs...
+Video generation initiated with ID: video_69986216c1bc8198ab02d390430d73820d79ecbdc58d8e49
+Waiting for video generation to complete (ID: video_69986216c1bc8198ab02d390430d73820d79ecbdc58d8e49)...
+Still processing... (0s elapsed, status: in_progress, progress: 0%)
+Still processing... (10s elapsed, status: queued, progress: 0%)
+Still processing... (23s elapsed, status: in_progress, progress: 10%)
+Still processing... (38s elapsed, status: in_progress, progress: 53%)
+Still processing... (55s elapsed, status: in_progress, progress: 77%)
+Still processing... (77s elapsed, status: in_progress, progress: 87%)
+Still processing... (102s elapsed, status: in_progress, progress: 90%)
+Still processing... (132s elapsed, status: in_progress, progress: 90%)
+Still processing... (163s elapsed, status: in_progress, progress: 90%)
+Still processing... (193s elapsed, status: in_progress, progress: 90%)
+Still processing... (223s elapsed, status: in_progress, progress: 90%)
+Still processing... (254s elapsed, status: in_progress, progress: 90%)
+Still processing... (284s elapsed, status: in_progress, progress: 90%)
+Still processing... (315s elapsed, status: in_progress, progress: 90%)
+Still processing... (345s elapsed, status: in_progress, progress: 90%)
+Still processing... (376s elapsed, status: in_progress, progress: 90%)
+Still processing... (406s elapsed, status: in_progress, progress: 90%)
+Still processing... (436s elapsed, status: in_progress, progress: 90%)
+Still processing... (467s elapsed, status: in_progress, progress: 90%)
+Still processing... (497s elapsed, status: in_progress, progress: 90%)
+Still processing... (528s elapsed, status: in_progress, progress: 90%)
+Still processing... (558s elapsed, status: in_progress, progress: 90%)
+Still processing... (589s elapsed, status: in_progress, progress: 90%)
+Timeout: Video generation did not complete within 600 seconds
+[2026-02-20 13:41:22] FAILED: v2_06_touch_panel - No video returned
+[2026-02-20 13:41:25] 
+========================================
+[2026-02-20 13:41:25] CLIP 7/8
+[2026-02-20 13:41:25] ========================================
+[2026-02-20 13:41:25] Generating: v2_07_outdoor_living
+[2026-02-20 13:41:25] Scene: Luxury outdoor terrace at sunset, landscape lighting activating along pathways, ...
+Video generation initiated with ID: video_699864862dec81989d3f2d535a5b239a02d4ae83432a41d9
+Waiting for video generation to complete (ID: video_699864862dec81989d3f2d535a5b239a02d4ae83432a41d9)...
+Still processing... (0s elapsed, status: in_progress, progress: 0%)
+Still processing... (10s elapsed, status: queued, progress: 0%)
+Still processing... (23s elapsed, status: in_progress, progress: 10%)
+Still processing... (38s elapsed, status: in_progress, progress: 52%)
+Still processing... (55s elapsed, status: in_progress, progress: 75%)
+Still processing... (77s elapsed, status: in_progress, progress: 90%)
+Error in video generation: {'code': 'moderation_blocked', 'message': 'Your request was blocked by our moderation system.'}
+[2026-02-20 13:43:08] FAILED: v2_07_outdoor_living - No video returned
+[2026-02-20 13:43:11] 
+========================================
+[2026-02-20 13:43:11] CLIP 8/8
+[2026-02-20 13:43:11] ========================================
+[2026-02-20 13:43:11] Generating: v2_08_whole_home
+[2026-02-20 13:43:11] Scene: Wide shot of modern luxury home at dusk, windows glowing warmly from inside, ext...
+Video generation initiated with ID: video_699864f06f5c8198834976d857f788d40798af813813b72a
+Waiting for video generation to complete (ID: video_699864f06f5c8198834976d857f788d40798af813813b72a)...
+Still processing... (0s elapsed, status: in_progress, progress: 0%)
+Still processing... (10s elapsed, status: queued, progress: 0%)
+Still processing... (23s elapsed, status: in_progress, progress: 40%)
+Still processing... (39s elapsed, status: in_progress, progress: 64%)
+Still processing... (57s elapsed, status: in_progress, progress: 75%)
+Still processing... (78s elapsed, status: in_progress, progress: 90%)
+Error in video generation: {'code': 'moderation_blocked', 'message': 'Your request was blocked by our moderation system.'}
+[2026-02-20 13:44:56] FAILED: v2_08_whole_home - No video returned
+[2026-02-20 13:44:56] 
+============================================================
+[2026-02-20 13:44:56] GENERATION COMPLETE
+[2026-02-20 13:44:56] ============================================================
+[2026-02-20 13:44:56]   ✓ v2_01_lights_on
+[2026-02-20 13:44:56]   ✓ v2_02_shades_open
+[2026-02-20 13:44:56]   ✗ v2_03_tv_reveal
+[2026-02-20 13:44:56]   ✓ v2_04_speaker_system
+[2026-02-20 13:44:56]   ✓ v2_05_cinema_experience
+[2026-02-20 13:44:56]   ✗ v2_06_touch_panel
+[2026-02-20 13:44:56]   ✗ v2_07_outdoor_living
+[2026-02-20 13:44:56]   ✗ v2_08_whole_home
+[2026-02-20 13:44:56] 
+Total: 4/8 clips generated
+[2026-02-20 13:44:56] Output: /app/frontend/public/videos/hero-v2

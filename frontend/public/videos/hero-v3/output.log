@@ -1,0 +1,100 @@
+[2026-02-20 14:46:29] ============================================================
+[2026-02-20 14:46:29] LEXA HERO V3 - DARK LUXURY THEME
+[2026-02-20 14:46:29] Dramatic Architectural Lighting
+[2026-02-20 14:46:29] Generating 7 clips
+[2026-02-20 14:46:29] ============================================================
+[2026-02-20 14:46:29] 
+========================================
+[2026-02-20 14:46:29] CLIP 1/7
+[2026-02-20 14:46:29] ========================================
+[2026-02-20 14:46:29] Generating: v3_01_dramatic_entrance
+[2026-02-20 14:46:29] Scene: Dramatic luxury villa foyer at night, statement chandelier slowly illuminating, ...
+Video generation initiated with ID: video_699873c64ba481909018a34e919ebe650b4afb1b9a799866
+Waiting for video generation to complete (ID: video_699873c64ba481909018a34e919ebe650b4afb1b9a799866)...
+Still processing... (0s elapsed, status: in_progress, progress: 0%)
+Still processing... (10s elapsed, status: queued, progress: 0%)
+Still processing... (23s elapsed, status: in_progress, progress: 10%)
+Still processing... (37s elapsed, status: in_progress, progress: 51%)
+Still processing... (55s elapsed, status: in_progress, progress: 58%)
+Still processing... (76s elapsed, status: in_progress, progress: 71%)
+Still processing... (101s elapsed, status: in_progress, progress: 88%)
+Still processing... (132s elapsed, status: in_progress, progress: 99%)
+Video generation completed!
+No URL in response, constructed download URL: https://integrations.emergentagent.com/llm/openai/v1/videos/video_699873c64ba481909018a34e919ebe650b4afb1b9a799866/content
+Video ready at: https://integrations.emergentagent.com/llm/openai/v1/videos/video_699873c64ba481909018a34e919ebe650b4afb1b9a799866/content
+Downloading video from: https://integrations.emergentagent.com/llm/openai/v1/videos/video_699873c64ba481909018a34e919ebe650b4afb1b9a799866/content
+Final download URL: https://integrations.emergentagent.com/llm/openai/v1/videos/video_699873c64ba481909018a34e919ebe650b4afb1b9a799866/content
+Initial response status: 200
+Content-Type: video/mp4
+Content-Length: 2254435
+Downloaded 2254435 bytes
+Video saved to: /app/frontend/public/videos/hero-v3/v3_01_dramatic_entrance.mp4
+[2026-02-20 14:49:15] SUCCESS: v3_01_dramatic_entrance (165.2s)
+[2026-02-20 14:49:18] 
+========================================
+[2026-02-20 14:49:18] CLIP 2/7
+[2026-02-20 14:49:18] ========================================
+[2026-02-20 14:49:18] Generating: v3_02_living_ambiance
+[2026-02-20 14:49:18] Scene: Dark luxury living room with layered lighting activating, recessed ceiling light...
+Error initiating video generation: 400 Client Error: Bad Request for url: https://integrations.emergentagent.com/llm/openai/v1/videos
+Response content: {"error":{"code":"insufficient_balance","message":"insufficient balance, please recharge to generate","type":"insufficient_balance"}}
+[2026-02-20 14:49:18] FAILED: v3_02_living_ambiance
+[2026-02-20 14:49:21] 
+========================================
+[2026-02-20 14:49:21] CLIP 3/7
+[2026-02-20 14:49:21] ========================================
+[2026-02-20 14:49:21] Generating: v3_03_savant_panel
+[2026-02-20 14:49:21] Scene: Elegant Savant-style smart home control panel on dark wall, sleek glass touchscr...
+Error initiating video generation: 400 Client Error: Bad Request for url: https://integrations.emergentagent.com/llm/openai/v1/videos
+Response content: {"error":{"code":"insufficient_balance","message":"insufficient balance, please recharge to generate","type":"insufficient_balance"}}
+[2026-02-20 14:49:21] FAILED: v3_03_savant_panel
+[2026-02-20 14:49:24] 
+========================================
+[2026-02-20 14:49:24] CLIP 4/7
+[2026-02-20 14:49:24] ========================================
+[2026-02-20 14:49:24] Generating: v3_04_speaker_lounge
+[2026-02-20 14:49:24] Scene: Audiophile listening room with dramatic lighting, high-end floor standing speake...
+Error initiating video generation: 400 Client Error: Bad Request for url: https://integrations.emergentagent.com/llm/openai/v1/videos
+Response content: {"error":{"code":"insufficient_balance","message":"insufficient balance, please recharge to generate","type":"insufficient_balance"}}
+[2026-02-20 14:49:24] FAILED: v3_04_speaker_lounge
+[2026-02-20 14:49:27] 
+========================================
+[2026-02-20 14:49:27] CLIP 5/7
+[2026-02-20 14:49:27] ========================================
+[2026-02-20 14:49:27] Generating: v3_05_cinema_palace
+[2026-02-20 14:49:27] Scene: Ultra-luxury private cinema room, plush theater seating in deep burgundy leather...
+Error initiating video generation: 400 Client Error: Bad Request for url: https://integrations.emergentagent.com/llm/openai/v1/videos
+Response content: {"error":{"code":"insufficient_balance","message":"insufficient balance, please recharge to generate","type":"insufficient_balance"}}
+[2026-02-20 14:49:27] FAILED: v3_05_cinema_palace
+[2026-02-20 14:49:30] 
+========================================
+[2026-02-20 14:49:30] CLIP 6/7
+[2026-02-20 14:49:30] ========================================
+[2026-02-20 14:49:30] Generating: v3_06_outdoor_gazebo
+[2026-02-20 14:49:30] Scene: Luxury outdoor gazebo at twilight, elegant pergola with string lights, large out...
+Error initiating video generation: 400 Client Error: Bad Request for url: https://integrations.emergentagent.com/llm/openai/v1/videos
+Response content: {"error":{"code":"insufficient_balance","message":"insufficient balance, please recharge to generate","type":"insufficient_balance"}}
+[2026-02-20 14:49:30] FAILED: v3_06_outdoor_gazebo
+[2026-02-20 14:49:33] 
+========================================
+[2026-02-20 14:49:33] CLIP 7/7
+[2026-02-20 14:49:33] ========================================
+[2026-02-20 14:49:33] Generating: v3_07_master_suite
+[2026-02-20 14:49:33] Scene: Luxury master bedroom with motorized curtains opening to night cityscape, indire...
+Error initiating video generation: 400 Client Error: Bad Request for url: https://integrations.emergentagent.com/llm/openai/v1/videos
+Response content: {"error":{"code":"insufficient_balance","message":"insufficient balance, please recharge to generate","type":"insufficient_balance"}}
+[2026-02-20 14:49:33] FAILED: v3_07_master_suite
+[2026-02-20 14:49:33] 
+============================================================
+[2026-02-20 14:49:33] GENERATION COMPLETE
+[2026-02-20 14:49:33] ============================================================
+[2026-02-20 14:49:33]   ✓ v3_01_dramatic_entrance
+[2026-02-20 14:49:33]   ✗ v3_02_living_ambiance
+[2026-02-20 14:49:33]   ✗ v3_03_savant_panel
+[2026-02-20 14:49:33]   ✗ v3_04_speaker_lounge
+[2026-02-20 14:49:33]   ✗ v3_05_cinema_palace
+[2026-02-20 14:49:33]   ✗ v3_06_outdoor_gazebo
+[2026-02-20 14:49:33]   ✗ v3_07_master_suite
+[2026-02-20 14:49:33] 
+Total: 1/7 clips generated
+[2026-02-20 14:49:33] Output: /app/frontend/public/videos/hero-v3
