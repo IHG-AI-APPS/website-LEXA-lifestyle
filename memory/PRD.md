@@ -27,31 +27,30 @@ A premium smart home solutions website with dynamic content management, product 
 
 ### Recent Fixes (March 2026)
 
-#### March 7, 2026 - Modal Refactoring & Package Builder Fix
+#### March 7, 2026 - Modal Refactoring & Button/Text Visibility Fix
 - **Fixed (P0):** All admin panel modals refactored to use reusable Modal component
   - Issue: Modals across the admin panel had inconsistent behavior - off-center, not scrollable, cut off content
-  - Solution: Created centralized `Modal` component at `/app/frontend/components/ui/Modal.tsx` with:
-    - React Portal for proper z-index management
-    - AnimatePresence for smooth animations
-    - Backdrop blur effect with proper scroll locking
-    - ESC key handler
-    - Internal content scrolling (prevents background scroll)
-    - Configurable sizes: sm, md, lg, xl, full
-  - Refactored 20+ admin pages to use the new Modal component
+  - Solution: Created centralized `Modal` component at `/app/frontend/components/ui/Modal.tsx`
+
+- **Fixed (P0):** Admin Panel Button and Text Visibility Issues
+  - Issue: Action buttons (Edit/Delete) had invisible icons on dark backgrounds
+  - Cause: `outline` variant in Button component used black border/text on dark backgrounds
+  - Solution: Updated `Button`, `Input`, `Textarea`, and `Checkbox` components with proper dark mode support
+  - Files updated:
+    - `/app/frontend/components/ui/button.tsx` - Updated outline variant with gray borders and proper dark mode colors
+    - `/app/frontend/components/ui/input.tsx` - Added dark mode background and text colors
+    - `/app/frontend/components/ui/textarea.tsx` - Added dark mode support
+    - `/app/frontend/components/ui/checkbox.tsx` - Added dark mode border and checked state colors
 
 - **Fixed:** Package Builder tier change not working
   - Issue: When navigating with URL params (e.g., `?property=luxury-villas-mansions&tier=enhanced`), clicking "Change tier" wouldn't navigate back to tier selection
-  - Cause: useEffect was re-triggering on step change, forcing user back to step 3
-  - Solution: Added `tierAutoSelected` flag to prevent re-triggering after initial auto-selection
-  - File: `/app/frontend/app/package-builder/page.tsx`
+  - Solution: Added `tierAutoSelected` flag to prevent useEffect from re-triggering after initial auto-selection
 
 - **Fixed:** Modal scrolling - background was moving when scrolling modal content
-  - Issue: When scrolling inside modal, background page would also scroll
-  - Solution: Updated Modal component with `onWheel stopPropagation`, fixed header, and internal overflow-y-auto content area
+  - Solution: Updated Modal component with proper scroll containment
   
 - **Verified:** All Admin Panel CRUD operations working correctly
   - Projects: 19 items, Brands: 37 items, Articles: 53 items
-  - All data preserved during refactoring
 
 - **Fixed:** Brand logos not visible in dark mode
   - Issue: Logo images with dark content on transparent background invisible on dark cards

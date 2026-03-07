@@ -18,8 +18,8 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
     const variants = {
       primary: "bg-black text-white shadow-depth-lg hover:shadow-float-lg hover:-translate-y-1 active:translate-y-0 active:shadow-depth",
       secondary: "bg-accent text-black shadow-depth-lg hover:shadow-glow hover:-translate-y-1 active:translate-y-0 active:shadow-depth",
-      outline: "border-2 border-black text-black hover:bg-black hover:text-white shadow-depth hover:shadow-float hover:-translate-y-1",
-      ghost: "text-black hover:bg-gray-100 hover:shadow-depth-sm"
+      outline: "border-2 border-gray-300 dark:border-zinc-600 text-gray-700 dark:text-zinc-300 hover:bg-gray-100 dark:hover:bg-zinc-800 hover:border-gray-400 dark:hover:border-zinc-500 shadow-sm hover:shadow",
+      ghost: "text-black dark:text-white hover:bg-gray-100 dark:hover:bg-zinc-800 hover:shadow-depth-sm"
     }
     
     const sizes = {
