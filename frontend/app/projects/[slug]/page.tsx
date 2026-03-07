@@ -122,7 +122,13 @@ export default function ProjectDetailPage() {
     )
   }
 
-  const allImages = project.images.length > 0 ? project.images : [project.image]
+  const allImages = project.images.length > 0 ? project.images : (project.image ? [project.image] : [])
+  
+  // Determine the best hero image:
+  // 1. If gallery/images array has items, prefer the first one (typically higher quality)
+  // 2. Fall back to the main image field
+  // 3. Use a placeholder if neither exists
+  const heroImage = allImages.length > 0 ? allImages[0] : project.image
 
   return (
     <div className="min-h-screen bg-white dark:bg-[#050505]" data-testid="project-detail-page">
@@ -130,7 +136,7 @@ export default function ProjectDetailPage() {
       <section className="pt-20">
         <div className="relative w-full aspect-[21/9] md:aspect-[3/1] bg-gray-900">
           <SafeImage
-            src={project.image}
+            src={heroImage || project.image}
             alt={project.title}
             fill
             className="object-cover"

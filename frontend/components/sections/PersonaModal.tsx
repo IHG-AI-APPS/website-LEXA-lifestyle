@@ -1,11 +1,9 @@
 'use client'
 
 import { useRouter } from 'next/navigation'
-import { X } from 'lucide-react'
-import { motion, AnimatePresence } from 'framer-motion'
+import { motion } from 'framer-motion'
 import { Button } from '@/components/ui/button'
-import { useState, useEffect } from 'react'
-import { createPortal } from 'react-dom'
+import Modal from '@/components/ui/Modal'
 
 interface PersonaModalProps {
   isOpen: boolean
@@ -14,21 +12,6 @@ interface PersonaModalProps {
 
 export default function PersonaModal({ isOpen, onClose }: PersonaModalProps) {
   const router = useRouter()
-  const [mounted, setMounted] = useState(false)
-
-  useEffect(() => { setMounted(true) }, [])
-
-  // Prevent body scroll when modal is open
-  useEffect(() => {
-    if (isOpen) {
-      document.body.style.overflow = 'hidden'
-    } else {
-      document.body.style.overflow = ''
-    }
-    return () => {
-      document.body.style.overflow = ''
-    }
-  }, [isOpen])
 
   const personas = [
     {
@@ -62,104 +45,63 @@ export default function PersonaModal({ isOpen, onClose }: PersonaModalProps) {
     onClose()
   }
 
-  const modalContent = (
-    <AnimatePresence>
-      {isOpen && (
-        <div 
-          className="fixed inset-0 flex items-center justify-center p-4"
-          style={{ zIndex: 9999 }}
-          onClick={onClose}
-          onWheel={(e) => e.stopPropagation()}
-        >
-          {/* Backdrop */}
-          <motion.div
-            className="absolute inset-0 bg-black/80 backdrop-blur-sm"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-          />
+  return (
+    <Modal 
+      isOpen={isOpen} 
+      onClose={onClose} 
+      title="HOW CAN WE HELP YOU?"
+      size="full"
+    >
+      <div data-testid="persona-modal">
+        <p className="text-zinc-400 text-center mb-10 text-base">
+          Choose the option that best describes you, or explore everything we offer
+        </p>
 
-          {/* Modal */}
-          <motion.div
-            className="relative bg-[#0A0A0A] border border-zinc-800 w-full max-w-5xl max-h-[90vh] overflow-y-auto rounded-lg"
-            initial={{ opacity: 0, scale: 0.95 }}
-            animate={{ opacity: 1, scale: 1 }}
-            exit={{ opacity: 0, scale: 0.95 }}
-            transition={{ duration: 0.2 }}
-            data-testid="persona-modal"
-            onClick={(e) => e.stopPropagation()}
-            onWheel={(e) => e.stopPropagation()}
-          >
-            {/* Close Button */}
-            <button
-              onClick={onClose}
-              className="absolute top-4 right-4 text-white hover:text-[#C9A962] transition-colors z-10"
-              aria-label="Close modal"
-              data-testid="persona-modal-close"
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-6">
+          {personas.map((persona, index) => (
+            <motion.div
+              key={persona.title}
+              className="group relative h-64 cursor-pointer overflow-hidden rounded-lg"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: index * 0.1 }}
+              onClick={() => handlePersonaClick(persona.href)}
+              data-testid={`persona-card-${index}`}
             >
-              <X size={28} />
-            </button>
+              {/* Background Image */}
+              <div
+                className="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-110"
+                style={{ backgroundImage: `url(${persona.image})` }}
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent" />
 
-            {/* Content */}
-            <div className="p-8 sm:p-12">
-              <h2 className="text-3xl sm:text-4xl font-bold text-white mb-3 text-center">
-                HOW CAN WE HELP YOU?
-              </h2>
-              <p className="text-zinc-400 text-center mb-10 text-base">
-                Choose the option that best describes you, or explore everything we offer
-              </p>
-
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-6">
-                {personas.map((persona, index) => (
-                  <motion.div
-                    key={persona.title}
-                    className="group relative h-64 cursor-pointer overflow-hidden rounded-lg"
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: index * 0.1 }}
-                    onClick={() => handlePersonaClick(persona.href)}
-                    data-testid={`persona-card-${index}`}
-                  >
-                    {/* Background Image */}
-                    <div
-                      className="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-110"
-                      style={{ backgroundImage: `url(${persona.image})` }}
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent" />
-
-                    {/* Content */}
-                    <div className="relative h-full flex flex-col justify-end p-6">
-                      <h3 className="text-2xl font-bold text-white mb-2">{persona.title}</h3>
-                      <p className="text-gray-300 text-sm mb-4">{persona.description}</p>
-                      <Button
-                        size="sm"
-                        variant="outline"
-                        className="w-fit bg-transparent text-white border-white hover:bg-[#C9A962] hover:text-[#050505] hover:border-[#C9A962]"
-                      >
-                        EXPLORE
-                      </Button>
-                    </div>
-                  </motion.div>
-                ))}
-              </div>
-
-              {/* Skip Option */}
-              <div className="text-center pt-4 border-t border-zinc-800">
-                <button
-                  onClick={onClose}
-                  className="text-zinc-500 hover:text-white text-sm transition-colors underline decoration-dotted underline-offset-4"
-                  data-testid="persona-skip"
+              {/* Content */}
+              <div className="relative h-full flex flex-col justify-end p-6">
+                <h3 className="text-2xl font-bold text-white mb-2">{persona.title}</h3>
+                <p className="text-gray-300 text-sm mb-4">{persona.description}</p>
+                <Button
+                  size="sm"
+                  variant="outline"
+                  className="w-fit bg-transparent text-white border-white hover:bg-[#C9A962] hover:text-[#050505] hover:border-[#C9A962]"
                 >
-                  Skip for now, I&apos;ll explore on my own
-                </button>
+                  EXPLORE
+                </Button>
               </div>
-            </div>
-          </motion.div>
+            </motion.div>
+          ))}
         </div>
-      )}
-    </AnimatePresence>
-  )
 
-  if (!mounted) return null
-  return createPortal(modalContent, document.body)
+        {/* Skip Option */}
+        <div className="text-center pt-4 border-t border-zinc-800">
+          <button
+            onClick={onClose}
+            className="text-zinc-500 hover:text-white text-sm transition-colors underline decoration-dotted underline-offset-4"
+            data-testid="persona-skip"
+          >
+            Skip for now, I&apos;ll explore on my own
+          </button>
+        </div>
+      </div>
+    </Modal>
+  )
 }

@@ -5,7 +5,7 @@ import { createPortal } from 'react-dom'
 import { motion, AnimatePresence } from 'framer-motion'
 import SafeImage from '@/components/ui/SafeImage'
 import Link from 'next/link'
-import { X, MapPin, Calendar, ArrowRight, Layers, Link2, Check } from 'lucide-react'
+import { X, MapPin, ArrowRight, Layers, Link2, Check } from 'lucide-react'
 
 interface QuickViewProps {
   isOpen: boolean
@@ -67,16 +67,15 @@ export default function QuickViewModal({ isOpen, onClose, item }: QuickViewProps
     }
   }, [isOpen, handleEscape])
 
-  if (!item) return null
+  if (!item || !mounted) return null
 
+  // QuickViewModal keeps its custom implementation for special slide-up mobile behavior
   const modalContent = (
     <AnimatePresence>
       {isOpen && (
         <div 
-          className="fixed inset-0 flex items-end sm:items-center justify-center"
-          style={{ zIndex: 9999 }}
+          className="fixed inset-0 z-[9999] flex items-end sm:items-center justify-center"
           onClick={onClose}
-          onWheel={(e) => e.stopPropagation()}
         >
           {/* Backdrop */}
           <motion.div
@@ -94,7 +93,7 @@ export default function QuickViewModal({ isOpen, onClose, item }: QuickViewProps
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: 100 }}
             transition={{ type: 'spring', damping: 25, stiffness: 300 }}
-            className="relative w-full sm:w-[90vw] sm:max-w-lg max-h-[85vh] overflow-hidden rounded-t-2xl sm:rounded-2xl bg-white dark:bg-[#111] border border-gray-200 dark:border-white/10 shadow-2xl sm:m-4"
+            className="relative w-full sm:w-[90vw] sm:max-w-lg max-h-[85vh] overflow-hidden rounded-t-2xl sm:rounded-2xl bg-white dark:bg-zinc-900 border border-gray-200 dark:border-white/10 shadow-2xl sm:m-4"
             data-testid="quickview-modal"
             onClick={(e) => e.stopPropagation()}
             onWheel={(e) => e.stopPropagation()}
@@ -115,7 +114,7 @@ export default function QuickViewModal({ isOpen, onClose, item }: QuickViewProps
 
             {/* Image */}
             {item.image && (
-              <div className="relative w-full aspect-[16/10] bg-gray-100 dark:bg-[#171717]">
+              <div className="relative w-full aspect-[16/10] bg-gray-100 dark:bg-zinc-800">
                 <SafeImage
                   src={item.image}
                   alt={item.title}
@@ -147,7 +146,7 @@ export default function QuickViewModal({ isOpen, onClose, item }: QuickViewProps
 
               {/* Location */}
               {item.location && (
-                <div className="flex items-center gap-1.5 text-sm text-gray-500 dark:text-zinc-500 mb-3">
+                <div className="flex items-center gap-1.5 text-sm text-gray-500 dark:text-zinc-400 mb-3">
                   <MapPin size={14} className="text-[#C9A962]" />
                   <span>{item.location}</span>
                 </div>
@@ -155,7 +154,7 @@ export default function QuickViewModal({ isOpen, onClose, item }: QuickViewProps
 
               {/* Description */}
               {item.description && (
-                <p className="text-sm text-gray-600 dark:text-zinc-500 leading-relaxed mb-4 line-clamp-3">
+                <p className="text-sm text-gray-600 dark:text-zinc-400 leading-relaxed mb-4 line-clamp-3">
                   {item.description}
                 </p>
               )}
@@ -169,7 +168,7 @@ export default function QuickViewModal({ isOpen, onClose, item }: QuickViewProps
                   </div>
                   <div className="flex flex-wrap gap-1.5">
                     {item.systems.slice(0, 6).map((tag) => (
-                      <span key={tag} className="text-xs px-2 py-1 bg-gray-100 dark:bg-white/5 text-gray-600 dark:text-zinc-500 rounded-full border border-gray-200 dark:border-white/10">
+                      <span key={tag} className="text-xs px-2 py-1 bg-gray-100 dark:bg-white/5 text-gray-600 dark:text-zinc-400 rounded-full border border-gray-200 dark:border-white/10">
                         {tag}
                       </span>
                     ))}
@@ -188,7 +187,7 @@ export default function QuickViewModal({ isOpen, onClose, item }: QuickViewProps
                   </div>
                   <div className="flex flex-wrap gap-1.5">
                     {item.features.slice(0, 5).map((f) => (
-                      <span key={f} className="text-xs px-2 py-1 bg-gray-100 dark:bg-white/5 text-gray-600 dark:text-zinc-500 rounded-full border border-gray-200 dark:border-white/10">
+                      <span key={f} className="text-xs px-2 py-1 bg-gray-100 dark:bg-white/5 text-gray-600 dark:text-zinc-400 rounded-full border border-gray-200 dark:border-white/10">
                         {f}
                       </span>
                     ))}
@@ -211,7 +210,7 @@ export default function QuickViewModal({ isOpen, onClose, item }: QuickViewProps
                   className={`flex-1 flex items-center justify-center gap-2 py-2.5 text-xs font-medium rounded-full border transition-all ${
                     copied
                       ? 'bg-[#C9A962]/10 text-[#C9A962] border-[#C9A962]/30'
-                      : 'bg-gray-100 dark:bg-white/5 text-gray-600 dark:text-zinc-500 border-gray-200 dark:border-white/10 hover:border-[#C9A962]/50 hover:text-[#C9A962]'
+                      : 'bg-gray-100 dark:bg-white/5 text-gray-600 dark:text-zinc-400 border-gray-200 dark:border-white/10 hover:border-[#C9A962]/50 hover:text-[#C9A962]'
                   }`}
                   data-testid="quickview-copy-link"
                 >
@@ -236,6 +235,5 @@ export default function QuickViewModal({ isOpen, onClose, item }: QuickViewProps
     </AnimatePresence>
   )
 
-  if (!mounted) return null
   return createPortal(modalContent, document.body)
 }

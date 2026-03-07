@@ -65,10 +65,9 @@ export default function SafeImage({
   const validSrc = getValidSrc(imgSrc)
   const isCdn = typeof validSrc === 'string' && validSrc.includes('files.ihgbrands.com')
 
-  // Auto-upgrade to WebP URL for CDN images (PNG/JPG → WebP)
-  const optimizedSrc = isCdn && typeof validSrc === 'string'
-    ? validSrc.replace(/\.(png|jpg|jpeg)$/i, '.webp')
-    : validSrc
+  // Use the original URL without WebP conversion
+  // CDN images are already optimized and may not have WebP versions
+  const optimizedSrc = validSrc
 
   return (
     <Image
@@ -77,19 +76,10 @@ export default function SafeImage({
       alt={alt}
       unoptimized={isCdn}
       loading={props.priority ? undefined : 'lazy'}
-      className={`${className || ''} ${loaded ? '' : 'opacity-0'}`}
-      style={{
-        ...props.style,
-        transition: 'opacity 0.5s cubic-bezier(0.16, 1, 0.3, 1), filter 0.5s cubic-bezier(0.16, 1, 0.3, 1)',
-        opacity: loaded ? 1 : 0,
-        filter: loaded ? 'blur(0)' : 'blur(4px)',
-      }}
+      className={className || ''}
       sizes={props.sizes || (props.fill ? '(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw' : undefined)}
       onError={() => {
-        // If WebP fails, fallback to original URL, then to fallback image
-        if (!hasError && optimizedSrc !== validSrc) {
-          setImgSrc(validSrc as string)
-        } else if (!hasError) {
+        if (!hasError) {
           setHasError(true)
           setImgSrc(fallbackSrc)
         }

@@ -1,0 +1,88 @@
+{
+  "summary": "Modal refactoring testing - All main site modals (ConsultationForm, PersonaModal, ScheduleVisitModal, QuickViewModal) verified working correctly after rebuild. Build was stale and required fresh rebuild.",
+  "backend_issues": {
+    "critical": [],
+    "minor": []
+  },
+  "frontend_issues": {
+    "ui_bugs": [],
+    "integration_issues": [],
+    "design_issues": []
+  },
+  "test_report_links": [
+    "/app/test_reports/iteration_94.json"
+  ],
+  "action_items": [
+    "NOTE: Build was stale - the source code in ConsultationForm.tsx correctly used Modal component, but the built JS had old code with custom modal implementation. After `yarn build`, all modals work correctly.",
+    "ExitIntentPopup was not manually tested (triggers on mouse leaving page top) but code review confirms it uses Modal component correctly"
+  ],
+  "critical_code_review_comments": [
+    "Modal.tsx implementation is correct with proper ESC handling, backdrop click, scroll lock, and data-testid attributes",
+    "All modal consumers (ConsultationForm, BookingModal, PersonaModal, ScheduleVisitModal, ExitIntentPopup) correctly import and use the Modal component",
+    "QuickViewModal intentionally keeps custom implementation for mobile slide-up behavior as documented"
+  ],
+  "updated_files": [
+    "None - only performed rebuild to fix stale cache"
+  ],
+  "success_rate": {
+    "backend": "N/A - Frontend only testing",
+    "frontend": "100% (16/16 modal tests passed after rebuild)"
+  },
+  "test_credentials": {},
+  "seed_data_creation": "None",
+  "retest_needed": false,
+  "main_agent_can_self_test": true,
+  "context_for_next_testing_agent": "All modals refactored to use reusable Modal component are working correctly. Modal features verified: open/close via X button, ESC key, backdrop click. All modals have data-testid='modal-close-button' for the close button. QuickViewModal keeps its own implementation for mobile slide-up behavior.",
+  "tested_features": {
+    "ConsultationForm_Modal": {
+      "opens": "PASS",
+      "form_fields_exist": "PASS (name, email, phone, message, submit button)",
+      "has_data_testid_close": "PASS",
+      "x_button_closes": "PASS",
+      "esc_closes": "PASS",
+      "backdrop_closes": "PASS"
+    },
+    "PersonaModal": {
+      "opens": "PASS",
+      "persona_cards": "PASS (4 cards: Homeowner, Architect, Developer, Commercial)",
+      "has_skip_button": "PASS",
+      "has_data_testid_close": "PASS",
+      "esc_closes": "PASS"
+    },
+    "ScheduleVisitModal": {
+      "opens": "PASS",
+      "has_data_testid_close": "PASS",
+      "date_selection": "PASS (visual confirmation)",
+      "time_selection": "Available after date selection"
+    },
+    "QuickViewModal": {
+      "opens": "PASS",
+      "has_close_button": "PASS (data-testid='quickview-close')",
+      "esc_closes": "PASS",
+      "shows_project_details": "PASS (title, location, systems tags)"
+    },
+    "BookingModal": {
+      "status": "Not directly tested - ScheduleVisitModal tested instead",
+      "code_review": "PASS - uses Modal component correctly"
+    },
+    "ExitIntentPopup": {
+      "status": "Not manually tested - triggers on mouse exit intent",
+      "code_review": "PASS - uses Modal component correctly"
+    }
+  },
+  "modal_component_features_verified": [
+    "React Portal (renders in document.body)",
+    "AnimatePresence for smooth open/close animations",
+    "ESC key handler (document.addEventListener keydown)",
+    "Body scroll lock (overflow: hidden when open)",
+    "Backdrop click to close",
+    "Configurable sizes (sm, md, lg, xl, full)",
+    "data-testid='modal-close-button' for automation"
+  ],
+  "build_issue_identified": {
+    "issue": "Stale build was serving old ConsultationForm code with custom modal implementation",
+    "evidence": "Built JS in .next/static/chunks had 'absolute top-4 right-4' close button class instead of Modal component's 'p-1 rounded-lg' class",
+    "resolution": "Ran 'rm -rf .next && yarn build' to rebuild",
+    "after_rebuild": "All modals correctly use Modal component with data-testid='modal-close-button'"
+  }
+}

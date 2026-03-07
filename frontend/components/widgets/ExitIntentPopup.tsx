@@ -1,10 +1,11 @@
 'use client'
 
 import { useState, useEffect } from 'react'
-import { motion, AnimatePresence } from 'framer-motion'
-import { X, Gift, CheckCircle, ArrowRight, Percent, BookOpen } from 'lucide-react'
+import { motion } from 'framer-motion'
+import { Gift, CheckCircle, ArrowRight, Percent, BookOpen } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
+import Modal from '@/components/ui/Modal'
 
 const API_URL = process.env.NEXT_PUBLIC_BACKEND_URL || process.env.NEXT_PUBLIC_BACKEND_URL || ''
 
@@ -183,108 +184,80 @@ export default function ExitIntentPopup() {
   const gradientClass = getVariantGradient(variant.id)
 
   return (
-    <AnimatePresence>
-      {isVisible && (
-        <div 
-          className="fixed inset-0 flex items-center justify-center p-3 sm:p-4"
-          style={{ zIndex: 9999 }}
-        >
-          {/* Backdrop */}
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            onClick={close}
-            className="absolute inset-0 bg-black/60 backdrop-blur-sm"
-          />
+    <Modal
+      isOpen={isVisible}
+      onClose={close}
+      showCloseButton={true}
+      size="sm"
+    >
+      <div data-testid="exit-intent-popup">
+        {!isSubmitted ? (
+          <>
+            {/* Header */}
+            <div className={`-mx-6 -mt-6 mb-4 bg-gradient-to-r ${gradientClass} px-4 py-4 sm:py-5 text-white text-center rounded-t-xl`}>
+              <div className="w-10 h-10 sm:w-12 sm:h-12 mx-auto mb-2 rounded-full bg-white/20 flex items-center justify-center">
+                <IconComponent className="w-5 h-5 sm:w-6 sm:h-6" />
+              </div>
+              <h2 className="text-lg sm:text-xl font-bold mb-1">{variant.headline}</h2>
+              <p className="text-white/90 text-xs sm:text-sm">{variant.subheadline}</p>
+              <div className="mt-2 inline-block px-2 py-0.5 bg-white/20 rounded-full text-xs">
+                {variant.offer_badge}
+              </div>
+            </div>
 
-          {/* Popup */}
-          <motion.div
-            data-testid="exit-intent-popup"
-            initial={{ opacity: 0, scale: 0.9, y: 20 }}
-            animate={{ opacity: 1, scale: 1, y: 0 }}
-            exit={{ opacity: 0, scale: 0.9, y: 20 }}
-            className="relative bg-white dark:bg-[#0A0A0A] rounded-xl shadow-2xl overflow-hidden w-full max-w-sm sm:max-w-md max-h-[90vh] overflow-y-auto"
-            onClick={(e) => e.stopPropagation()}
-          >
-              {/* Close button */}
-              <button
-                onClick={close}
-                data-testid="exit-popup-close"
-                className="absolute top-3 right-3 p-1.5 text-gray-400 hover:text-gray-600 dark:text-zinc-500 dark:hover:text-gray-300 hover:bg-gray-100 dark:bg-[#171717] dark:hover:bg-[#171717] rounded-full z-10 transition-colors"
-              >
-                <X className="w-4 h-4" />
-              </button>
+            {/* Content */}
+            <div>
+              <ul className="space-y-1.5 sm:space-y-2 mb-3 sm:mb-4">
+                {variant.benefits.slice(0, 3).map((item, i) => (
+                  <li key={i} className="flex items-start gap-2">
+                    <CheckCircle className="w-4 h-4 text-green-500 flex-shrink-0 mt-0.5" />
+                    <span className="text-gray-700 dark:text-zinc-300 text-xs sm:text-sm">{item}</span>
+                  </li>
+                ))}
+              </ul>
 
-              {!isSubmitted ? (
-                <>
-                  {/* Header - Compact */}
-                  <div className={`bg-gradient-to-r ${gradientClass} px-4 py-4 sm:py-5 text-white text-center`}>
-                    <div className="w-10 h-10 sm:w-12 sm:h-12 mx-auto mb-2 rounded-full bg-white/20 flex items-center justify-center">
-                      <IconComponent className="w-5 h-5 sm:w-6 sm:h-6" />
-                    </div>
-                    <h2 className="text-lg sm:text-xl font-bold mb-1">{variant.headline}</h2>
-                    <p className="text-white/90 text-xs sm:text-sm">{variant.subheadline}</p>
-                    <div className="mt-2 inline-block px-2 py-0.5 bg-white/20 rounded-full text-xs">
-                      {variant.offer_badge}
-                    </div>
-                  </div>
+              <form onSubmit={handleSubmit} className="space-y-2 sm:space-y-3">
+                <Input
+                  type="email"
+                  placeholder="Enter your email"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  required
+                  data-testid="exit-popup-email"
+                  className="h-9 sm:h-10 text-sm"
+                />
+                <Button
+                  type="submit"
+                  disabled={isSubmitting}
+                  data-testid="exit-popup-submit"
+                  className={`w-full h-9 sm:h-10 bg-gradient-to-r ${gradientClass} hover:opacity-90 text-white font-semibold text-xs sm:text-sm`}
+                >
+                  {isSubmitting ? 'Submitting...' : (
+                    <>{variant.cta_text}<ArrowRight className="w-3 h-3 ml-1" /></>
+                  )}
+                </Button>
+              </form>
 
-                  {/* Content - Compact */}
-                  <div className="p-3 sm:p-4">
-                    <ul className="space-y-1.5 sm:space-y-2 mb-3 sm:mb-4">
-                      {variant.benefits.slice(0, 3).map((item, i) => (
-                        <li key={i} className="flex items-start gap-2">
-                          <CheckCircle className="w-4 h-4 text-green-500 flex-shrink-0 mt-0.5" />
-                          <span className="text-gray-700 dark:text-zinc-400 text-xs sm:text-sm">{item}</span>
-                        </li>
-                      ))}
-                    </ul>
-
-                    <form onSubmit={handleSubmit} className="space-y-2 sm:space-y-3">
-                      <Input
-                        type="email"
-                        placeholder="Enter your email"
-                        value={email}
-                        onChange={(e) => setEmail(e.target.value)}
-                        required
-                        data-testid="exit-popup-email"
-                        className="h-9 sm:h-10 text-sm"
-                      />
-                      <Button
-                        type="submit"
-                        disabled={isSubmitting}
-                        data-testid="exit-popup-submit"
-                        className={`w-full h-9 sm:h-10 bg-gradient-to-r ${gradientClass} hover:opacity-90 text-white font-semibold text-xs sm:text-sm`}
-                      >
-                        {isSubmitting ? 'Submitting...' : (
-                          <>{variant.cta_text}<ArrowRight className="w-3 h-3 ml-1" /></>
-                        )}
-                      </Button>
-                    </form>
-
-                    <p className="text-center text-[10px] text-gray-400 mt-2">
-                      No spam, ever.
-                    </p>
-                  </div>
-                </>
-              ) : (
-                /* Success State - Compact */
-                <div className="p-4 sm:p-6 text-center">
-                  <motion.div
-                    initial={{ scale: 0 }}
-                    animate={{ scale: 1 }}
-                    className="w-12 h-12 sm:w-14 sm:h-14 mx-auto mb-3 rounded-full bg-green-100 flex items-center justify-center"
-                  >
-                    <CheckCircle className="w-6 h-6 sm:w-7 sm:h-7 text-green-500" />
-                  </motion.div>
-                  <h3 className="text-lg sm:text-xl font-bold text-gray-800 dark:text-gray-200 dark:text-white mb-1">You're All Set!</h3>
-                  <p className="text-gray-600 dark:text-zinc-500 text-xs sm:text-sm">{variant.success_message}</p>
-                </div>
-              )}
-          </motion.div>
-        </div>
-      )}
-    </AnimatePresence>
+              <p className="text-center text-[10px] text-gray-400 dark:text-zinc-500 mt-2">
+                No spam, ever.
+              </p>
+            </div>
+          </>
+        ) : (
+          /* Success State */
+          <div className="py-4 sm:py-6 text-center">
+            <motion.div
+              initial={{ scale: 0 }}
+              animate={{ scale: 1 }}
+              className="w-12 h-12 sm:w-14 sm:h-14 mx-auto mb-3 rounded-full bg-green-100 dark:bg-green-900/30 flex items-center justify-center"
+            >
+              <CheckCircle className="w-6 h-6 sm:w-7 sm:h-7 text-green-500" />
+            </motion.div>
+            <h3 className="text-lg sm:text-xl font-bold text-gray-800 dark:text-white mb-1">You're All Set!</h3>
+            <p className="text-gray-600 dark:text-zinc-400 text-xs sm:text-sm">{variant.success_message}</p>
+          </div>
+        )}
+      </div>
+    </Modal>
   )
 }
