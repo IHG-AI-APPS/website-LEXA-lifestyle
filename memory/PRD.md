@@ -96,6 +96,25 @@ A premium smart home solutions website with dynamic content management, product 
   - Files: `ConsultationForm.tsx`, `ScheduleVisitModal.tsx`, `QuickViewModal.tsx`, `BookingModal.tsx`, `PersonaModal.tsx`, `ExitIntentPopup.tsx`
   - Pattern: Wrapper div with flex centering + absolute backdrop + relative modal content
 
+#### March 7, 2026 - Main Site Modal Refactoring (P1 Task Completed)
+- **Refactored (P1):** All main site modals now use the reusable Modal component
+  - Previously: Each modal had its own implementation with createPortal, scroll lock, backdrop, etc.
+  - After: All modals use centralized `Modal` component for consistency and maintainability
+  - Files refactored:
+    - `/app/frontend/components/forms/ConsultationForm.tsx` - Uses Modal component
+    - `/app/frontend/components/modals/BookingModal.tsx` - Uses Modal component  
+    - `/app/frontend/components/sections/PersonaModal.tsx` - Uses Modal component
+    - `/app/frontend/components/widgets/ScheduleVisitModal.tsx` - Uses Modal component
+    - `/app/frontend/components/widgets/ExitIntentPopup.tsx` - Uses Modal component
+    - `/app/frontend/components/QuickViewModal.tsx` - Keeps custom implementation for mobile slide-up behavior
+  - Modal features verified (100% pass rate):
+    - ESC key closes modal
+    - Backdrop click closes modal
+    - X button closes modal
+    - Body scroll lock prevents background scrolling
+    - Proper z-index and portal rendering
+    - data-testid attributes for automation testing
+
 #### March 6, 2026
 - **Fixed:** Brand names partially hidden in Featured Partners section
   - Increased card height and improved text visibility
