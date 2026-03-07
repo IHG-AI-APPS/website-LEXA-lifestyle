@@ -495,3 +495,53 @@ export async function deleteProjectCategory(id: string) {
   return response.json()
 }
 
+// Team Members CRUD
+export interface TeamMember {
+  id: string
+  name: string
+  role: string
+  image: string
+  bio?: string
+  linkedin?: string
+  email?: string
+  order: number
+  is_active: boolean
+}
+
+export async function getTeamMembers() {
+  const response = await fetch(`${BACKEND_URL}/api/admin/team-members`, {
+    headers: getAuthHeaders()
+  })
+  if (!response.ok) throw new Error('Failed to fetch team members')
+  return response.json()
+}
+
+export async function createTeamMember(member: TeamMember) {
+  const response = await fetch(`${BACKEND_URL}/api/admin/team-members`, {
+    method: 'POST',
+    headers: getAuthHeaders(),
+    body: JSON.stringify(member)
+  })
+  if (!response.ok) throw new Error('Failed to create team member')
+  return response.json()
+}
+
+export async function updateTeamMember(id: string, member: TeamMember) {
+  const response = await fetch(`${BACKEND_URL}/api/admin/team-members/${id}`, {
+    method: 'PUT',
+    headers: getAuthHeaders(),
+    body: JSON.stringify(member)
+  })
+  if (!response.ok) throw new Error('Failed to update team member')
+  return response.json()
+}
+
+export async function deleteTeamMember(id: string) {
+  const response = await fetch(`${BACKEND_URL}/api/admin/team-members/${id}`, {
+    method: 'DELETE',
+    headers: getAuthHeaders()
+  })
+  if (!response.ok) throw new Error('Failed to delete team member')
+  return response.json()
+}
+

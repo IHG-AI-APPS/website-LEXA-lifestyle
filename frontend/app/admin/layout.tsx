@@ -35,6 +35,7 @@ import {
   Navigation,
   User,
   ChevronDown,
+  ChevronRight,
   BarChart3,
   FlaskConical,
   MapPin,
@@ -43,52 +44,103 @@ import {
   ShieldCheck,
   MessageCircle,
   ShoppingBag,
-  ImageIcon
+  ImageIcon,
+  UsersRound
 } from 'lucide-react'
 import { verifyToken, logout } from '@/lib/adminApi'
 
-const navigation = [
-  { name: 'Dashboard', href: '/admin/dashboard', icon: LayoutDashboard },
-  { name: 'Sales Intelligence', href: '/admin/sales-dashboard', icon: TrendingUp },
-  { name: 'Analytics', href: '/admin/analytics', icon: BarChart3 },
-  { name: 'Tracking Pixels', href: '/admin/tracking', icon: Activity },
-  { name: 'A/B Testing', href: '/admin/ab-testing', icon: FlaskConical },
-  { name: 'Pricing Management', href: '/admin/pricing', icon: DollarSign },
-  { name: 'All Leads', href: '/admin/leads', icon: Users },
-  { name: 'Smart Home Leads', href: '/admin/smart-home-leads', icon: Zap },
-  { name: 'Solutions', href: '/admin/solutions', icon: Package },
-  { name: 'Services', href: '/admin/services', icon: Settings },
-  { name: 'Projects', href: '/admin/projects', icon: FolderKanban },
-  { name: 'Project Settings', href: '/admin/project-settings', icon: Settings },
-  { name: 'Articles', href: '/admin/articles', icon: FileText },
-  { name: 'Blog', href: '/admin/blog', icon: FileText },
-  { name: 'News', href: '/admin/news', icon: Newspaper },
-  { name: 'Brands', href: '/admin/brands', icon: Tag },
-  { name: 'Catalogues', href: '/admin/catalogues', icon: BookOpen },
-  { name: 'Products', href: '/admin/products', icon: Box },
-  { name: 'Product Categories', href: '/admin/product-categories', icon: Layers },
-  { name: 'Intelligence Features', href: '/admin/intelligence-features', icon: Brain },
-  { name: 'Control Systems', href: '/admin/intelligence-systems', icon: Cpu },
-  { name: 'Testimonials', href: '/admin/testimonials', icon: Star },
-  { name: 'Videos', href: '/admin/videos', icon: Video },
-  { name: 'FAQs', href: '/admin/faqs', icon: HelpCircle },
-  { name: 'Mega Menu', href: '/admin/mega-menu', icon: Navigation },
-  { name: 'Property Packages', href: '/admin/property-packages', icon: Home },
-  { name: 'Package Enhancements', href: '/admin/package-enhancements', icon: Sparkles },
-  { name: 'Specialty Rooms', href: '/admin/specialty-rooms', icon: DoorOpen },
-  { name: 'Arabic Pages', href: '/admin/arabic-pages', icon: Globe },
-  { name: 'Geo Pages (SEO)', href: '/admin/geo-pages', icon: MapPin },
-  { name: 'Locations', href: '/admin/locations', icon: MapPin },
-  { name: 'Submissions', href: '/admin/submissions', icon: MessageSquare },
-  { name: 'Product Catalog', href: '/admin/catalog', icon: ShoppingBag },
-  { name: 'File Manager', href: '/admin/images', icon: ImageIcon },
-  { name: 'WhatsApp', href: '/admin/whatsapp', icon: MessageCircle },
-  { name: 'SEO Tools', href: '/admin/seo', icon: Search },
-  { name: 'Activity Logs', href: '/admin/logs', icon: Clock },
-  { name: 'CMS / Page Content', href: '/admin/cms', icon: FileText },
-  { name: 'System Health', href: '/admin/system', icon: Activity },
-  { name: 'API Test Results', href: '/admin/test-results', icon: ShieldCheck },
+// Grouped navigation structure
+const navigationGroups = [
+  {
+    title: 'Overview',
+    items: [
+      { name: 'Dashboard', href: '/admin/dashboard', icon: LayoutDashboard },
+      { name: 'Sales Intelligence', href: '/admin/sales-dashboard', icon: TrendingUp },
+      { name: 'Analytics', href: '/admin/analytics', icon: BarChart3 },
+    ]
+  },
+  {
+    title: 'Leads & CRM',
+    items: [
+      { name: 'All Leads', href: '/admin/leads', icon: Users },
+      { name: 'Smart Home Leads', href: '/admin/smart-home-leads', icon: Zap },
+      { name: 'Submissions', href: '/admin/submissions', icon: MessageSquare },
+      { name: 'WhatsApp', href: '/admin/whatsapp', icon: MessageCircle },
+    ]
+  },
+  {
+    title: 'Content',
+    items: [
+      { name: 'Projects', href: '/admin/projects', icon: FolderKanban },
+      { name: 'Project Settings', href: '/admin/project-settings', icon: Settings },
+      { name: 'Articles', href: '/admin/articles', icon: FileText },
+      { name: 'Blog', href: '/admin/blog', icon: FileText },
+      { name: 'News', href: '/admin/news', icon: Newspaper },
+      { name: 'Videos', href: '/admin/videos', icon: Video },
+      { name: 'Testimonials', href: '/admin/testimonials', icon: Star },
+      { name: 'FAQs', href: '/admin/faqs', icon: HelpCircle },
+    ]
+  },
+  {
+    title: 'Products & Services',
+    items: [
+      { name: 'Solutions', href: '/admin/solutions', icon: Package },
+      { name: 'Services', href: '/admin/services', icon: Settings },
+      { name: 'Brands', href: '/admin/brands', icon: Tag },
+      { name: 'Products', href: '/admin/products', icon: Box },
+      { name: 'Product Categories', href: '/admin/product-categories', icon: Layers },
+      { name: 'Catalogues', href: '/admin/catalogues', icon: BookOpen },
+      { name: 'Product Catalog', href: '/admin/catalog', icon: ShoppingBag },
+    ]
+  },
+  {
+    title: 'Smart Home Systems',
+    items: [
+      { name: 'Intelligence Features', href: '/admin/intelligence-features', icon: Brain },
+      { name: 'Control Systems', href: '/admin/intelligence-systems', icon: Cpu },
+      { name: 'Property Packages', href: '/admin/property-packages', icon: Home },
+      { name: 'Package Enhancements', href: '/admin/package-enhancements', icon: Sparkles },
+      { name: 'Specialty Rooms', href: '/admin/specialty-rooms', icon: DoorOpen },
+      { name: 'Pricing Management', href: '/admin/pricing', icon: DollarSign },
+    ]
+  },
+  {
+    title: 'Website',
+    items: [
+      { name: 'Team Members', href: '/admin/team-members', icon: UsersRound },
+      { name: 'Mega Menu', href: '/admin/mega-menu', icon: Navigation },
+      { name: 'CMS / Page Content', href: '/admin/cms', icon: FileText },
+      { name: 'File Manager', href: '/admin/images', icon: ImageIcon },
+    ]
+  },
+  {
+    title: 'SEO & Localization',
+    items: [
+      { name: 'SEO Tools', href: '/admin/seo', icon: Search },
+      { name: 'Geo Pages (SEO)', href: '/admin/geo-pages', icon: MapPin },
+      { name: 'Locations', href: '/admin/locations', icon: MapPin },
+      { name: 'Arabic Pages', href: '/admin/arabic-pages', icon: Globe },
+    ]
+  },
+  {
+    title: 'Marketing & Testing',
+    items: [
+      { name: 'A/B Testing', href: '/admin/ab-testing', icon: FlaskConical },
+      { name: 'Tracking Pixels', href: '/admin/tracking', icon: Activity },
+    ]
+  },
+  {
+    title: 'System',
+    items: [
+      { name: 'Activity Logs', href: '/admin/logs', icon: Clock },
+      { name: 'System Health', href: '/admin/system', icon: Activity },
+      { name: 'API Test Results', href: '/admin/test-results', icon: ShieldCheck },
+    ]
+  },
 ]
+
+// Flatten for backward compatibility
+const navigation = navigationGroups.flatMap(g => g.items)
 
 export default function AdminLayout({ children }: { children: React.ReactNode }) {
   const router = useRouter()
@@ -96,6 +148,11 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
   const [loading, setLoading] = useState(true)
   const [sidebarOpen, setSidebarOpen] = useState(false)
   const [profileOpen, setProfileOpen] = useState(false)
+  const [collapsedGroups, setCollapsedGroups] = useState<Record<string, boolean>>({})
+
+  const toggleGroup = (title: string) => {
+    setCollapsedGroups(prev => ({ ...prev, [title]: !prev[title] }))
+  }
 
   useEffect(() => {
     const checkAuth = async () => {
@@ -158,26 +215,56 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
             </div>
           </div>
 
-          {/* Navigation - SCROLLABLE */}
-          <nav className="flex-1 p-3 space-y-1 overflow-y-auto scrollbar-thin scrollbar-thumb-gray-600 scrollbar-track-transparent">
-            {navigation.map((item) => {
-              const Icon = item.icon
-              const isActive = pathname === item.href
+          {/* Navigation - SCROLLABLE with Groups */}
+          <nav className="flex-1 p-3 space-y-2 overflow-y-auto scrollbar-thin scrollbar-thumb-gray-600 scrollbar-track-transparent">
+            {navigationGroups.map((group) => {
+              const isCollapsed = collapsedGroups[group.title]
+              const hasActiveItem = group.items.some(item => pathname === item.href)
+              
               return (
-                <Link
-                  key={item.name}
-                  href={item.href}
-                  className={`
-                    flex items-center gap-3 px-3 py-2.5 rounded text-sm transition-colors
-                    ${isActive 
-                      ? 'bg-white text-charcoal' 
-                      : 'text-gray-300 hover:bg-gray-700 hover:text-white'
-                    }
-                  `}
-                >
-                  <Icon size={18} />
-                  <span className="font-medium">{item.name}</span>
-                </Link>
+                <div key={group.title} className="mb-1">
+                  {/* Group Header */}
+                  <button
+                    onClick={() => toggleGroup(group.title)}
+                    className={`
+                      flex items-center justify-between w-full px-3 py-2 text-xs font-semibold uppercase tracking-wider
+                      ${hasActiveItem ? 'text-gold' : 'text-gray-500'}
+                      hover:text-gray-300 transition-colors
+                    `}
+                  >
+                    <span>{group.title}</span>
+                    <ChevronRight 
+                      size={14} 
+                      className={`transition-transform duration-200 ${!isCollapsed ? 'rotate-90' : ''}`}
+                    />
+                  </button>
+                  
+                  {/* Group Items */}
+                  {!isCollapsed && (
+                    <div className="space-y-0.5 mt-1">
+                      {group.items.map((item) => {
+                        const Icon = item.icon
+                        const isActive = pathname === item.href
+                        return (
+                          <Link
+                            key={item.name}
+                            href={item.href}
+                            className={`
+                              flex items-center gap-3 px-3 py-2 rounded text-sm transition-colors ml-1
+                              ${isActive 
+                                ? 'bg-white text-charcoal' 
+                                : 'text-gray-300 hover:bg-gray-700 hover:text-white'
+                              }
+                            `}
+                          >
+                            <Icon size={16} />
+                            <span className="font-medium">{item.name}</span>
+                          </Link>
+                        )
+                      })}
+                    </div>
+                  )}
+                </div>
               )
             })}
           </nav>

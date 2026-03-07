@@ -1,7 +1,7 @@
 'use client'
 
 import { useEffect, useState } from 'react'
-import { Plus, Edit, Trash2 } from 'lucide-react'
+import { Plus, Edit, Trash2, Loader2 } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { getProjects, type Project } from '@/lib/api'
@@ -26,6 +26,8 @@ export default function ProjectsAdminPage() {
   const [projectTypes, setProjectTypes] = useState<ProjectTypeOption[]>([])
   const [projectCategories, setProjectCategories] = useState<ProjectCategoryOption[]>([])
   const [loading, setLoading] = useState(true)
+  const [saving, setSaving] = useState(false)
+  const [deleting, setDeleting] = useState<string | null>(null)
   const [showForm, setShowForm] = useState(false)
   const [editingId, setEditingId] = useState<string | null>(null)
   const [formData, setFormData] = useState<Partial<Project>>({
@@ -179,6 +181,7 @@ export default function ProjectsAdminPage() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
+    setSaving(true)
     try {
       if (editingId) {
         await updateProject(editingId, formData as Project)
@@ -189,18 +192,23 @@ export default function ProjectsAdminPage() {
       setShowForm(false)
     } catch (err) {
       console.error('Failed to save project:', err)
-      alert('Failed to save project')
+      alert('Failed to save project. Please try again.')
+    } finally {
+      setSaving(false)
     }
   }
 
   const handleDelete = async (id: string) => {
     if (!confirm('Are you sure you want to delete this project?')) return
+    setDeleting(id)
     try {
       await deleteProject(id)
       await loadProjects()
     } catch (err) {
       console.error('Failed to delete project:', err)
-      alert('Failed to delete project')
+      alert('Failed to delete project. Please try again.')
+    } finally {
+      setDeleting(null)
     }
   }
 
@@ -258,14 +266,20 @@ export default function ProjectsAdminPage() {
                   <button 
                     onClick={() => handleEdit(project)}
                     className="text-blue-600 hover:text-blue-800 mr-3"
+                    disabled={deleting === project.id}
                   >
                     <Edit size={16} className="inline" />
                   </button>
                   <button 
                     onClick={() => handleDelete(project.id)}
-                    className="text-red-600 hover:text-red-800"
+                    className="text-red-600 hover:text-red-800 disabled:opacity-50"
+                    disabled={deleting === project.id}
                   >
-                    <Trash2 size={16} className="inline" />
+                    {deleting === project.id ? (
+                      <Loader2 size={16} className="inline animate-spin" />
+                    ) : (
+                      <Trash2 size={16} className="inline" />
+                    )}
                   </button>
                 </td>
               </tr>
@@ -528,14 +542,26 @@ export default function ProjectsAdminPage() {
               </div>
 
               <div className="flex gap-4 pt-4">
-                <Button type="submit" className="bg-charcoal hover:bg-charcoal-light text-white flex-1">
-                  {editingId ? 'Update' : 'Create'} Project
+                <Button 
+                  type="submit" 
+                  className="bg-charcoal hover:bg-charcoal-light text-white flex-1"
+                  disabled={saving}
+                >
+                  {saving ? (
+                    <>
+                      <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+                      Saving...
+                    </>
+                  ) : (
+                    `${editingId ? 'Update' : 'Create'} Project`
+                  )}
                 </Button>
                 <Button 
                   type="button"
                   onClick={() => setShowForm(false)}
                   variant="outline"
                   className="flex-1"
+                  disabled={saving}
                 >
                   Cancel
                 </Button>

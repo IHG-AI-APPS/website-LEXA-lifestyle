@@ -412,6 +412,20 @@ class ProjectCategory(BaseModel):
     order: int = 0
     is_active: bool = True
 
+# Team Member model for managing team members
+class TeamMember(BaseModel):
+    model_config = ConfigDict(extra="ignore")
+    id: str = Field(default_factory=lambda: str(uuid.uuid4()))
+    name: str
+    role: str
+    image: str = ""
+    bio: Optional[str] = None
+    linkedin: Optional[str] = None
+    email: Optional[str] = None
+    order: int = 0
+    is_active: bool = True
+    created_at: datetime = Field(default_factory=lambda: datetime.now(timezone.utc))
+
 class Testimonial(BaseModel):
     model_config = ConfigDict(extra="ignore")
     id: str
@@ -1209,6 +1223,78 @@ async def delete_project_category(category_id: str, user: dict = Depends(verify_
     except Exception as e:
         logger.error(f"Delete project category error: {str(e)}")
         raise HTTPException(status_code=500, detail="Failed to delete project category")
+
+
+# ============= ADMIN - TEAM MEMBERS MANAGEMENT =============
+
+@api_router.get("/team-members")
+async def get_team_members():
+    """Get all active team members (public)"""
+    try:
+        members = await db.team_members.find({"is_active": True}).sort("order", 1).to_list(100)
+        for m in members:
+            m.pop("_id", None)
+        return members
+    except Exception as e:
+        logger.error(f"Get team members error: {str(e)}")
+        return []
+
+@api_router.get("/admin/team-members")
+async def get_all_team_members(user: dict = Depends(verify_token)):
+    """Get all team members (admin)"""
+    try:
+        members = await db.team_members.find({}).sort("order", 1).to_list(100)
+        for m in members:
+            m.pop("_id", None)
+        return members
+    except Exception as e:
+        logger.error(f"Get team members error: {str(e)}")
+        raise HTTPException(status_code=500, detail="Failed to fetch team members")
+
+@api_router.post("/admin/team-members")
+async def create_team_member(member: TeamMember, user: dict = Depends(verify_token)):
+    """Create a new team member"""
+    try:
+        member_dict = member.model_dump()
+        member_dict['created_at'] = datetime.now(timezone.utc).isoformat()
+        await db.team_members.insert_one(member_dict)
+        return {"message": "Team member created successfully", "id": member.id}
+    except Exception as e:
+        logger.error(f"Create team member error: {str(e)}")
+        raise HTTPException(status_code=500, detail="Failed to create team member")
+
+@api_router.put("/admin/team-members/{member_id}")
+async def update_team_member(member_id: str, member: TeamMember, user: dict = Depends(verify_token)):
+    """Update an existing team member"""
+    try:
+        member_dict = member.model_dump()
+        member_dict['id'] = member_id
+        result = await db.team_members.update_one(
+            {"id": member_id},
+            {"$set": member_dict}
+        )
+        if result.matched_count == 0:
+            raise HTTPException(status_code=404, detail="Team member not found")
+        return {"message": "Team member updated successfully"}
+    except HTTPException:
+        raise
+    except Exception as e:
+        logger.error(f"Update team member error: {str(e)}")
+        raise HTTPException(status_code=500, detail="Failed to update team member")
+
+@api_router.delete("/admin/team-members/{member_id}")
+async def delete_team_member(member_id: str, user: dict = Depends(verify_token)):
+    """Delete a team member"""
+    try:
+        result = await db.team_members.delete_one({"id": member_id})
+        if result.deleted_count == 0:
+            raise HTTPException(status_code=404, detail="Team member not found")
+        return {"message": "Team member deleted successfully"}
+    except HTTPException:
+        raise
+    except Exception as e:
+        logger.error(f"Delete team member error: {str(e)}")
+        raise HTTPException(status_code=500, detail="Failed to delete team member")
 
 
 # ============= ADMIN - ARTICLES MANAGEMENT =============
