@@ -1,100 +1,82 @@
-# LEXA Lifestyle Website - Product Requirements Document
+# LEXA Smart Home - Product Requirements Document
 
-## Original Problem Statement
-Complete website overhaul for 100% dynamic content, a premium "Dark Luxury" design, and an app-like user experience. Major feature: comprehensive product catalog system with individual product pages, search/filter, integration, admin CRUD, and smart recommendations.
+## Project Overview
+A premium smart home solutions website with dynamic content management, product catalog, package builder, and admin panel.
 
-## Core Requirements
-- Dark luxury aesthetic with gold (#C9A962) accents, dark and light mode
-- Full-stack: Next.js 14 frontend + FastAPI backend + MongoDB
-- Dynamic content managed via admin panel
-- Responsive design for all devices
+## Core Features Implemented
 
-## What's Been Implemented
+### External Storage & CDN Migration ✅
+- All images migrated to `files.ihgbrands.com/lexa/`
+- SFTP-based file uploads via `paramiko`
+- WebP image optimization (>90% size reduction)
+- Nginx caching and compression configured
 
-### Product Catalog (Complete)
+### Admin Panel ✅
+- Dashboard with analytics
+- Product catalog management (CRUD)
+- Brand management with logo uploads
+- File Manager at `/admin/files`
+- CSV import/export for products
 
-### Advanced Full-Text Search with Relevance Scoring (Complete - March 2026)
-- **Backend**: Weighted MongoDB text index (name:10, brand:5, sub_category:3, category:3, description:1)
-- **Backend**: `sort=relevance` option uses `$text` search with `$meta: textScore` ranking
-- **Backend**: Partial word fallback to regex when $text returns no results
-- **Frontend**: "Relevance" sort auto-activates when user types a search term
-- **Frontend**: Sort reverts to "Name A-Z" when search is cleared
-- **Frontend**: "Relevance" option hidden in dropdown when no search term is active
-- Test: iteration_87 — Backend 15/16 (94%), Frontend 100%
+### Frontend Features ✅
+- Package Builder with customization
+- Product catalog with advanced search
+- Brand pages with category filtering
+- Solution pages
+- Multi-image product galleries
 
-### Bulk Import/Export & Product Image Gallery (Complete - March 2026)
-- **CSV Export**: `GET /api/catalog/products/export` — downloads all products as CSV with pipe-separated multi-value fields
-- **CSV Import**: `POST /api/catalog/products/import` — creates/updates products from CSV, matching by slug
-- **Admin UI**: Export CSV & Import CSV buttons in `/admin/catalog` header
-- **Image Gallery**: Multi-image support with interactive gallery on product detail page (thumbnail strip, navigation arrows, image counter)
-- **Admin Gallery Upload**: MultiImageUpload component in product edit form (up to 10 images per product)
-- Test: iteration_88 — Backend 100% (11/11), Frontend 100%
+### Recent Fixes (March 2026)
 
-### External File Storage Migration (Complete - March 2026)
-- **Remote Server**: All files migrated from local to `files.ihgbrands.com` (178.128.28.178:/var/lexa/)
-- **Migration**: 735 files uploaded (580 MB), 231+ database documents updated, 54 frontend files updated (120 URL replacements)
-- **Emergent CDN**: All `static.prod-images.emergentagent.com` URLs replaced with `files.ihgbrands.com/lexa/` URLs
-- **New Uploads**: Use SFTP (paramiko) to store files on remote server, return CDN URLs
-- **CDN URLs**: `https://files.ihgbrands.com/lexa/{category}/{filename}`
-- **Admin File Manager**: Full-featured file management at `/admin/images` — 735+ files, search, category filters, grid/list views, detail panel with URL/size/type/date
-- **Server-side Cache**: File listing cached for 5 min to avoid SFTP latency
-- Test: iteration_89 (initial migration) + iteration_90 (full validation) — Backend 100%, Frontend 100%
+#### March 7, 2026
+- **Fixed:** Brand logos not visible in dark mode
+  - Issue: Logo images with dark content on transparent background invisible on dark cards
+  - Solution: Added inline `backgroundColor: '#ffffff'` to logo containers
+  - File: `/app/frontend/app/brands/page.tsx`
 
-### Image Performance Optimization (Complete - March 2026)
-- **WebP Conversion**: 390 PNG/JPG files batch-converted to WebP (93% size reduction, 527MB saved)
-- **Unsplash Migration**: 164 Unsplash URLs downloaded as WebP, uploaded to CDN, DB updated
-- **Local Image Migration**: Logo, hero images, etc. uploaded to CDN at /lexa/site/
-- **Auto WebP Upgrade**: SafeImage + OptimizedImage components auto-upgrade CDN .png/.jpg URLs to .webp with fallback
-- **Lazy Loading**: All below-fold images use loading="lazy"
-- **Nginx Cache**: 1-year max-age + immutable headers, gzip, etag, open_file_cache
-- **Cloudflare Edge**: cf-cache-status: HIT for global edge caching
-- **Package Builder Fix**: Sticky "Back to Packages" bar no longer overlaps content
-- Test: iteration_91 + iteration_92 — Backend 100%, Frontend 100%
+#### March 6, 2026
+- **Fixed:** Brand names partially hidden in Featured Partners section
+  - Increased card height and improved text visibility
+  - Changed text color to `dark:text-white` for better contrast
 
-- **217 products** across 19 brands, 7 categories, 35 series
-- All images stored locally, 100% descriptions, 96% specs, 74% features
-- Backend API at `/api/catalog/` with search, filter, sort, pagination, CRUD
-- Frontend catalog `/products`, product detail `/products/[slug]`
-- Brand detail pages show catalog products organized by series
-- "PRODUCTS" link in header and footer
-
-### Product Recommendations Engine (Complete - March 2026)- **Backend**: `/api/catalog/recommendations/{slug}` — tiered content-based recommendations:
-  - Tier 1: Same series (highest relevance)
-  - Tier 2: Same brand + category
-  - Tier 3: Same category (cross-brand)
-  - Tier 4: Featured products (fallback)
-  - Returns `_rec_reason` field for each recommendation
-- **Backend**: `/api/catalog/featured` — 8 curated diverse products for homepage
-- **Product Detail Pages**: "You May Also Like" (same-brand recs) + "Explore Other Brands" (cross-brand recs)
-- **Homepage**: "Featured Products" section with 8 curated products in a 4-column grid
-- 8 products marked as featured: Rotel Michi X5 S2, Borresen T5, Aavik I-880, Savant Touch 8, Leica Cine 1, Sonos Arc Ultra, E-electron DALI-2, Lifesmart Natur Switch
-
-### Admin Product Management (Complete)
-- Admin CRUD at `/admin/catalog` with search, filter, pagination
-- Modal form with image upload, specs/features textareas, featured/published toggles
-
-### Previously Completed
-- Virtual Tour, Testimonials, Service Worker v5, AI persona images
-- Homepage CTA band, accessibility, client logos, tablet caching fix
+## Known Data Issues
+- Most brands have empty `logo` field in database
+- Bang & Olufsen has wrong logo (shows LEXA logo instead)
+- Users should upload correct logos via Admin Panel
 
 ## Architecture
+
 ```
-/app/backend/routes/product_catalog.py    # CRUD + recommendations + featured
-/app/backend/models/product.py
-/app/backend/seeds/seed_products.py       # 217-product seed
-/app/backend/seeds/enrich_products.py     # WP REST API enrichment
-
-/app/frontend/app/products/page.tsx       # Public catalog
-/app/frontend/app/products/[slug]/page.tsx # Detail + recommendations
-/app/frontend/app/admin/catalog/page.tsx  # Admin CRUD
-/app/frontend/components/homepage/FeaturedProducts.tsx  # Homepage section
+/app
+├── backend/
+│   ├── main.py
+│   ├── admin_api.py
+│   ├── core/storage.py (SFTP management)
+│   └── routes/
+├── frontend/
+│   ├── app/(main)/
+│   │   ├── brands/page.tsx (brand listing)
+│   │   └── package-builder/page.tsx
+│   └── app/(admin)/
+│       └── files/page.tsx (File Manager)
 ```
 
-## Test Status
-- iteration_86: Backend 13/13 (100%), Frontend 13/13 (100%) — Recommendations
-- iteration_85: Backend 11/11 (100%), Frontend 14/14 (100%) — Admin CRUD
-- iteration_83: Backend 14/14 (100%), Frontend 16/16 (100%) — Brand integration
+## API Endpoints
+- `GET /api/brands` - List all brands
+- `GET /api/admin/files` - List SFTP files
+- `POST /api/upload/image` - Upload to SFTP
 
-## Prioritized Backlog
-### P2
+## External Integrations
+- SFTP Server: `files.ihgbrands.com`
+- Gemini Nano Banana (Image Gen)
+- OpenAI GPT (AURA chatbot)
+- WhatsApp/Interakt
+- Gmail SMTP, Google Maps
+
+## Backlog (P1)
 - Compare Packages feature
+- Additional brand logos upload
+- Performance optimization
+
+## Credentials
+- Admin: `/admin/login` - admin / lexa2026
+- SFTP: 178.128.28.178 - root / IhG@1HGB$2026$W3b

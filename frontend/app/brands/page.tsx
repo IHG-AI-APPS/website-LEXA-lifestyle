@@ -39,7 +39,10 @@ function BrandLogo({ brand, size = 'md' }: { brand: any; size?: 'sm' | 'md' }) {
 
   if (hasLogo) {
     return (
-      <div className={`${dims} flex-shrink-0 bg-white rounded-lg border border-gray-200 dark:border-zinc-800 flex items-center justify-center p-1.5 overflow-hidden`}>
+      <div 
+        className={`${dims} flex-shrink-0 rounded-lg border border-gray-200 dark:border-zinc-700 flex items-center justify-center p-1.5 overflow-hidden`}
+        style={{ backgroundColor: '#ffffff' }}
+      >
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
           src={brand.logo}
