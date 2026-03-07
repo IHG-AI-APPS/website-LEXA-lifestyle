@@ -1,6 +1,6 @@
 'use client'
 
-import { useEffect, useCallback } from 'react'
+import { useEffect, useCallback, useRef } from 'react'
 import { createPortal } from 'react-dom'
 import { X } from 'lucide-react'
 import { motion, AnimatePresence } from 'framer-motion'
@@ -30,11 +30,27 @@ export default function Modal({
   size = 'md',
   showCloseButton = true 
 }: ModalProps) {
+  const contentRef = useRef<HTMLDivElement>(null)
   
   // Handle ESC key
   const handleEscape = useCallback((e: KeyboardEvent) => {
     if (e.key === 'Escape') onClose()
   }, [onClose])
+
+  // Handle wheel event to prevent background scrolling
+  const handleWheel = useCallback((e: WheelEvent) => {
+    const content = contentRef.current
+    if (!content) return
+    
+    const { scrollTop, scrollHeight, clientHeight } = content
+    const atTop = scrollTop === 0 && e.deltaY < 0
+    const atBottom = scrollTop + clientHeight >= scrollHeight && e.deltaY > 0
+    
+    // Only prevent default if we're not at a scroll boundary
+    if (!atTop && !atBottom) {
+      e.stopPropagation()
+    }
+  }, [])
 
   useEffect(() => {
     if (isOpen) {
@@ -52,54 +68,58 @@ export default function Modal({
   return createPortal(
     <AnimatePresence>
       {isOpen && (
-        <div className="fixed inset-0 z-[9999] overflow-y-auto">
-          {/* Backdrop */}
+        <div 
+          className="fixed inset-0 z-[9999] flex items-center justify-center p-4"
+          onClick={onClose}
+        >
+          {/* Backdrop - fixed, covers entire screen */}
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.2 }}
             className="fixed inset-0 bg-black/60 backdrop-blur-sm"
-            onClick={onClose}
           />
           
-          {/* Modal Container */}
-          <div className="flex min-h-full items-start justify-center p-4 pt-12 pb-20">
-            <motion.div
-              initial={{ opacity: 0, scale: 0.95, y: -20 }}
-              animate={{ opacity: 1, scale: 1, y: 0 }}
-              exit={{ opacity: 0, scale: 0.95, y: -20 }}
-              transition={{ duration: 0.2, ease: 'easeOut' }}
-              className={`relative w-full ${sizeClasses[size]} bg-white dark:bg-zinc-900 rounded-xl shadow-2xl`}
-              onClick={(e) => e.stopPropagation()}
-            >
-              {/* Header */}
-              {(title || showCloseButton) && (
-                <div className="flex items-center justify-between px-6 py-4 border-b border-gray-200 dark:border-zinc-800">
-                  {title && (
-                    <h2 className="text-xl font-semibold text-gray-900 dark:text-white">
-                      {title}
-                    </h2>
-                  )}
-                  {showCloseButton && (
-                    <button
-                      onClick={onClose}
-                      className="p-1 rounded-lg text-gray-500 hover:text-gray-700 dark:text-zinc-400 dark:hover:text-white hover:bg-gray-100 dark:hover:bg-zinc-800 transition-colors"
-                      aria-label="Close modal"
-                      data-testid="modal-close-button"
-                    >
-                      <X size={20} />
-                    </button>
-                  )}
-                </div>
-              )}
-              
-              {/* Content */}
-              <div className="p-6">
-                {children}
+          {/* Modal - centered, with internal scrolling */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.95, y: -20 }}
+            animate={{ opacity: 1, scale: 1, y: 0 }}
+            exit={{ opacity: 0, scale: 0.95, y: -20 }}
+            transition={{ duration: 0.2, ease: 'easeOut' }}
+            className={`relative w-full ${sizeClasses[size]} bg-white dark:bg-zinc-900 rounded-xl shadow-2xl max-h-[90vh] flex flex-col`}
+            onClick={(e) => e.stopPropagation()}
+          >
+            {/* Header - Fixed at top */}
+            {(title || showCloseButton) && (
+              <div className="flex-shrink-0 flex items-center justify-between px-6 py-4 border-b border-gray-200 dark:border-zinc-800">
+                {title && (
+                  <h2 className="text-xl font-semibold text-gray-900 dark:text-white">
+                    {title}
+                  </h2>
+                )}
+                {showCloseButton && (
+                  <button
+                    onClick={onClose}
+                    className="p-1 rounded-lg text-gray-500 hover:text-gray-700 dark:text-zinc-400 dark:hover:text-white hover:bg-gray-100 dark:hover:bg-zinc-800 transition-colors ml-auto"
+                    aria-label="Close modal"
+                    data-testid="modal-close-button"
+                  >
+                    <X size={20} />
+                  </button>
+                )}
               </div>
-            </motion.div>
-          </div>
+            )}
+            
+            {/* Content - Scrollable */}
+            <div 
+              ref={contentRef}
+              className="flex-1 overflow-y-auto p-6"
+              onWheel={(e) => e.stopPropagation()}
+            >
+              {children}
+            </div>
+          </motion.div>
         </div>
       )}
     </AnimatePresence>,

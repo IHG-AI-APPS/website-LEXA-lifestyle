@@ -44,6 +44,7 @@ export default function PackageBuilderPage() {
   const [specialtyRooms, setSpecialtyRooms] = useState<any[]>([])
   const [loading, setLoading] = useState(true)
   const [initialized, setInitialized] = useState(false)
+  const [tierAutoSelected, setTierAutoSelected] = useState(false)
   
   // AI Recommendations state
   const [showQuiz, setShowQuiz] = useState(true)
@@ -93,16 +94,19 @@ export default function PackageBuilderPage() {
   }, [propertyTypes, preSelectedProperty, initialized])
   
   // Auto-select tier after property is fully loaded (separate from initialization)
+  // Only run ONCE during initial load, not when user manually changes steps
   useEffect(() => {
-    if (initialized && propertyType && propertyType.tiers && preSelectedTier && step === 2) {
+    if (initialized && !tierAutoSelected && propertyType && propertyType.tiers && preSelectedTier && step === 2) {
       const tier = propertyType.tiers.find((t: any) => t.tier_level === preSelectedTier)
       if (tier) {
         // Directly set the tier without animation delay
         setSelectedTier(tier)
         setStep(3)
+        setTierAutoSelected(true) // Mark as auto-selected, won't trigger again
       }
     }
-  }, [initialized, propertyType?.tiers, preSelectedTier, step])
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [initialized, propertyType?.tiers, preSelectedTier, step, tierAutoSelected])
 
   const fetchData = async () => {
     try {

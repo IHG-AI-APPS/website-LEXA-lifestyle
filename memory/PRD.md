@@ -27,22 +27,27 @@ A premium smart home solutions website with dynamic content management, product 
 
 ### Recent Fixes (March 2026)
 
-#### March 7, 2026 - Modal Refactoring Complete
+#### March 7, 2026 - Modal Refactoring & Package Builder Fix
 - **Fixed (P0):** All admin panel modals refactored to use reusable Modal component
   - Issue: Modals across the admin panel had inconsistent behavior - off-center, not scrollable, cut off content
   - Solution: Created centralized `Modal` component at `/app/frontend/components/ui/Modal.tsx` with:
     - React Portal for proper z-index management
     - AnimatePresence for smooth animations
-    - Backdrop blur effect
+    - Backdrop blur effect with proper scroll locking
     - ESC key handler
-    - Body scroll lock when open
+    - Internal content scrolling (prevents background scroll)
     - Configurable sizes: sm, md, lg, xl, full
-  - Refactored pages:
-    - `/admin/projects`, `/admin/brands`, `/admin/articles`, `/admin/news`
-    - `/admin/catalogues`, `/admin/products`, `/admin/solutions`, `/admin/services`
-    - `/admin/videos`, `/admin/testimonials`, `/admin/blog`, `/admin/catalog`
-    - `/admin/specialty-rooms`, `/admin/package-enhancements`, `/admin/property-packages`
-    - `/admin/product-categories`, `/admin/leads`, `/admin/system`, `/admin/intelligence-features`
+  - Refactored 20+ admin pages to use the new Modal component
+
+- **Fixed:** Package Builder tier change not working
+  - Issue: When navigating with URL params (e.g., `?property=luxury-villas-mansions&tier=enhanced`), clicking "Change tier" wouldn't navigate back to tier selection
+  - Cause: useEffect was re-triggering on step change, forcing user back to step 3
+  - Solution: Added `tierAutoSelected` flag to prevent re-triggering after initial auto-selection
+  - File: `/app/frontend/app/package-builder/page.tsx`
+
+- **Fixed:** Modal scrolling - background was moving when scrolling modal content
+  - Issue: When scrolling inside modal, background page would also scroll
+  - Solution: Updated Modal component with `onWheel stopPropagation`, fixed header, and internal overflow-y-auto content area
   
 - **Verified:** All Admin Panel CRUD operations working correctly
   - Projects: 19 items, Brands: 37 items, Articles: 53 items
