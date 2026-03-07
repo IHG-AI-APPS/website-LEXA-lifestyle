@@ -115,6 +115,44 @@ A premium smart home solutions website with dynamic content management, product 
     - Proper z-index and portal rendering
     - data-testid attributes for automation testing
 
+#### March 7, 2026 - Team Members CRUD & Admin Panel Restructure
+- **New Feature (P1):** Team Members CRUD Module
+  - Backend API endpoints:
+    - `GET /api/team-members` - Public endpoint for active team members
+    - `GET /api/admin/team-members` - Admin endpoint for all team members
+    - `POST /api/admin/team-members` - Create team member
+    - `PUT /api/admin/team-members/{id}` - Update team member
+    - `DELETE /api/admin/team-members/{id}` - Delete team member
+  - Admin page: `/app/frontend/app/admin/team-members/page.tsx`
+  - Features: Name, Role, Photo upload, Bio, LinkedIn, Email, Display order, Active toggle
+  - Files created/modified:
+    - `/app/backend/server.py` - Added TeamMember model and API endpoints
+    - `/app/frontend/lib/adminApi.ts` - Added TeamMember API functions
+    - `/app/frontend/app/admin/team-members/page.tsx` - New admin page
+    - `/app/frontend/components/sections/TeamSection.tsx` - Now fetches dynamically from API
+
+- **Improved (P1):** Admin Panel Sidebar Restructured
+  - Organized into 9 logical groups:
+    1. Overview (Dashboard, Sales Intelligence, Analytics)
+    2. Leads & CRM (All Leads, Smart Home Leads, Submissions, WhatsApp)
+    3. Content (Projects, Project Settings, Articles, Blog, News, Videos, Testimonials, FAQs)
+    4. Products & Services (Solutions, Services, Brands, Products, etc.)
+    5. Smart Home Systems (Intelligence Features, Control Systems, Packages, etc.)
+    6. Website (Team Members, Mega Menu, CMS, File Manager)
+    7. SEO & Localization (SEO Tools, Geo Pages, Locations, Arabic Pages)
+    8. Marketing & Testing (A/B Testing, Tracking Pixels)
+    9. System (Activity Logs, System Health, API Test Results)
+  - Collapsible groups with chevron indicators
+  - Active group highlighting
+  - File: `/app/frontend/app/admin/layout.tsx`
+
+- **Fixed (P1):** Project CRUD Performance & Delete Issues
+  - Added loading states (saving/deleting spinners) to provide feedback during operations
+  - Delete button shows spinner and disables during operation
+  - Save button shows "Saving..." with spinner
+  - Verified all CRUD operations work correctly via API testing (100% pass rate)
+  - File: `/app/frontend/app/admin/projects/page.tsx`
+
 #### March 6, 2026
 - **Fixed:** Brand names partially hidden in Featured Partners section
   - Increased card height and improved text visibility
