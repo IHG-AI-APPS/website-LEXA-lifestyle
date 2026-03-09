@@ -27,6 +27,18 @@ const PullToRefresh = dynamic(() => import('@/components/mobile/PullToRefresh'),
 const ConsultationFormLazy = dynamic(() => import('@/components/forms/ConsultationForm').catch(() => ({ default: Noop })), { ssr: false })
 const MobileQuickActions = dynamic(() => import('@/components/mobile/MobileQuickActions'), { ssr: false })
 
+// Initial loading screen component
+function InitialLoadingScreen() {
+  return (
+    <div className="fixed inset-0 z-[99999] bg-[#050505] flex items-center justify-center">
+      <div className="text-center">
+        <div className="w-16 h-16 border-2 border-[#C9A962] border-t-transparent rounded-full animate-spin mx-auto mb-4" />
+        <p className="text-[#C9A962] text-sm tracking-widest uppercase">Loading</p>
+      </div>
+    </div>
+  )
+}
+
 // Inner component that uses the scroll context
 function ClientLayoutInner({ children }: { children: React.ReactNode }) {
   const pathname = usePathname()
@@ -36,6 +48,12 @@ function ClientLayoutInner({ children }: { children: React.ReactNode }) {
   const isCatalogueViewer = pathname?.startsWith('/catalogues/') && pathname !== '/catalogues'
   const hideMainLayout = isAdminPage || isCatalogueViewer
   const [showConsultation, setShowConsultation] = useState(false)
+  const [isHydrated, setIsHydrated] = useState(false)
+
+  // Mark as hydrated after initial render
+  useEffect(() => {
+    setIsHydrated(true)
+  }, [])
 
   // Track page views and scroll to top on route change (excluding admin pages)
   useEffect(() => {
@@ -79,6 +97,11 @@ function ClientLayoutInner({ children }: { children: React.ReactNode }) {
     router.refresh()
     await new Promise(resolve => setTimeout(resolve, 800))
   }, [router])
+
+  // Show loading screen until hydrated (prevents header/footer flash)
+  if (!isHydrated) {
+    return <InitialLoadingScreen />
+  }
 
   return (
     <>
