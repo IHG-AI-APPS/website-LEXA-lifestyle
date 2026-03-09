@@ -36,7 +36,9 @@ const defaultFormData = {
   category: 'smart-home',
   author: 'LEXA Team',
   tags: [] as string[],
-  published: true
+  published: true,
+  read_time: 5,
+  published_date: new Date().toISOString().split('T')[0]
 }
 
 export default function BlogAdmin() {
@@ -115,8 +117,11 @@ export default function BlogAdmin() {
           'Authorization': `Bearer ${token}`
         },
         body: JSON.stringify({
+          id: editingId || `blog-${Date.now()}`,
           ...formData,
-          featured_image: formData.image || formData.featured_image
+          featured_image: formData.image || formData.featured_image,
+          read_time: formData.read_time || 5,
+          published_date: formData.published_date || new Date().toISOString().split('T')[0]
         })
       })
 
@@ -149,7 +154,9 @@ export default function BlogAdmin() {
       category: post.category || 'smart-home',
       author: post.author || 'LEXA Team',
       tags: post.tags || [],
-      published: post.published !== false
+      published: post.published !== false,
+      read_time: (post as any).read_time || 5,
+      published_date: (post as any).published_date || new Date().toISOString().split('T')[0]
     })
     setEditingId(post.id)
     setShowForm(true)
