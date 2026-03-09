@@ -290,19 +290,6 @@ export default function Header() {
             </nav>
 
             <div className="hidden lg:flex items-center gap-3 xl:gap-4 ml-6 xl:ml-8 2xl:ml-10">
-              <Button
-                size="default"
-                variant="outline"
-                className={`px-4 xl:px-5 py-2 text-xs font-semibold uppercase tracking-wider btn-magnetic ${
-                  shouldUseDarkText
-                    ? 'border-2 border-[#1A1A1A] dark:border-gray-300 dark:border-zinc-700 text-[#1A1A1A] dark:text-white dark:text-gray-200 hover:bg-[#1A1A1A] dark:hover:bg-gray-200 hover:text-white dark:hover:text-gray-900'
-                    : 'border-2 border-white text-white hover:bg-white hover:text-[#1A1A1A]'
-                }`}
-                onClick={() => setShowConsultationForm(true)}
-                data-testid="header-book-consultation-btn"
-              >
-                {language === 'ar' ? 'احجز استشارة' : 'Book Consultation'}
-              </Button>
               <ThemeToggle 
                 variant="compact" 
                 className={shouldUseDarkText ? 'text-gray-700 dark:text-zinc-400 hover:text-[#1A1A1A]' : 'text-white hover:text-white'}
@@ -436,18 +423,6 @@ export default function Header() {
                   </span>
                   <ThemeToggle variant="compact" className="text-gray-700 dark:text-zinc-400" />
                 </motion.div>
-                
-                <div className="pt-4 px-4">
-                  <Button
-                    className="w-full bg-[#1A1A1A] dark:bg-[#E8DCC8] hover:bg-[#1A1A1A]/90 dark:hover:bg-[#E8DCC8]/90 text-white dark:text-[#1A1A1A] dark:text-white uppercase tracking-wider"
-                    onClick={() => {
-                      setShowConsultationForm(true)
-                      setIsMobileMenuOpen(false)
-                    }}
-                  >
-                    {t('header.cta')}
-                  </Button>
-                </div>
               </motion.nav>
             )}
           </AnimatePresence>
