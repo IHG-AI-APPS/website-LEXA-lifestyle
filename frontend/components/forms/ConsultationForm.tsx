@@ -5,6 +5,7 @@ import Modal from '@/components/ui/Modal'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { Textarea } from '@/components/ui/textarea'
+import { useSiteSettings } from '@/hooks/useSiteSettings'
 
 interface ConsultationFormProps {
   isOpen: boolean
@@ -13,6 +14,7 @@ interface ConsultationFormProps {
 }
 
 export default function ConsultationForm({ isOpen, onClose, defaultPersona }: ConsultationFormProps) {
+  const { settings } = useSiteSettings()
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -153,7 +155,7 @@ export default function ConsultationForm({ isOpen, onClose, defaultPersona }: Co
 
           {submitStatus === 'error' && (
             <div className="p-3 bg-red-50 dark:bg-red-900/20 border border-red-200 dark:border-red-800 rounded text-red-700 dark:text-red-400 text-sm">
-              Failed to submit. Please try again or contact us directly at sales@lexalifestyle.com
+              Failed to submit. Please try again or contact us directly at {settings.contact_email || 'sales@lexalifestyle.com'}
             </div>
           )}
 

@@ -7,7 +7,7 @@ import requests
 import os
 import json
 
-BASE_URL = os.environ.get('REACT_APP_BACKEND_URL', 'https://project-sync-test-1.preview.emergentagent.com')
+BASE_URL = os.environ.get('REACT_APP_BACKEND_URL', 'https://cms-integration-dev.preview.emergentagent.com')
 
 class TestHealthAndPublicAPI:
     """Health check and public API endpoints"""

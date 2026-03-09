@@ -1,16 +1,36 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { usePathname } from 'next/navigation'
 import { MessageCircle, X, Globe, Film, Building2, Moon, Home, ArrowRight, Zap, HardHat, Eye, Sparkles } from 'lucide-react'
 import { motion, AnimatePresence } from 'framer-motion'
 
+const API_URL = process.env.NEXT_PUBLIC_BACKEND_URL || ''
+
 export default function WhatsAppEnhanced() {
   const [isOpen, setIsOpen] = useState(false)
   const [isArabic, setIsArabic] = useState(false)
+  const [whatsappNumber, setWhatsappNumber] = useState(process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || '971503267228')
   const pathname = usePathname()
-  
-  const whatsappNumber = process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || '971501234567'
+
+  // Fetch WhatsApp number from site settings
+  useEffect(() => {
+    async function fetchSettings() {
+      try {
+        const response = await fetch(`${API_URL}/api/site-settings`)
+        if (response.ok) {
+          const data = await response.json()
+          if (data.social_whatsapp) {
+            // Remove all non-numeric characters
+            setWhatsappNumber(data.social_whatsapp.replace(/[^0-9]/g, ''))
+          }
+        }
+      } catch (error) {
+        console.error('Failed to fetch WhatsApp number:', error)
+      }
+    }
+    fetchSettings()
+  }, [])
   
   // Enhanced context-aware script selection
   const getContextualScripts = () => {

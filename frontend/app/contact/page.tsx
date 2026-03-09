@@ -9,10 +9,12 @@ import Link from 'next/link'
 import { Phone, Mail, MapPin, Clock, MessageCircle, Send, ArrowRight, CheckCircle2 } from 'lucide-react'
 import { useLanguage } from '@/contexts/LanguageContext'
 import { useCms } from '@/hooks/useCms'
+import { useSiteSettings } from '@/hooks/useSiteSettings'
 
 export default function ContactPage() {
   const { t, language } = useLanguage()
   const cms = useCms('page_contact', null) as any
+  const { settings } = useSiteSettings()
   const [formData, setFormData] = useState({ name: '', email: '', phone: '', subject: '', message: '' })
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle')
@@ -31,10 +33,16 @@ export default function ContactPage() {
     finally { setIsSubmitting(false) }
   }
 
+  // Use dynamic settings with fallbacks
+  const phoneNumber = settings.contact_phone || '+971 50 326 7228'
+  const emailAddress = settings.contact_email || 'info@lexalifestyle.com'
+  const officeAddress = settings.contact_address || 'Al Quoz 1, Sheikh Zayed Road\n3rd Interchange, Dubai, UAE'
+  const phoneClean = phoneNumber.replace(/\s/g, '')
+
   const contactInfo = [
-    { icon: Phone, title: 'Phone', value: '+971 50 326 7227', link: 'tel:+971503267227' },
-    { icon: Mail, title: 'Email', value: 'info@lexalifestyle.com', link: 'mailto:info@lexalifestyle.com' },
-    { icon: MapPin, title: 'Office', value: 'Al Quoz 1, Sheikh Zayed Road\n3rd Interchange, Dubai, UAE', link: 'https://maps.google.com/?q=Al+Quoz+1+Dubai' },
+    { icon: Phone, title: 'Phone', value: phoneNumber, link: `tel:${phoneClean}` },
+    { icon: Mail, title: 'Email', value: emailAddress, link: `mailto:${emailAddress}` },
+    { icon: MapPin, title: 'Office', value: officeAddress, link: 'https://maps.google.com/?q=Al+Quoz+1+Dubai' },
     { icon: Clock, title: 'Hours', value: 'Sat-Thu: 9AM-6PM\nFri: 10AM-4PM' },
   ]
 
@@ -119,13 +127,15 @@ export default function ContactPage() {
                   <div className="bg-gray-900 dark:bg-[#171717] text-white rounded-xl p-6">
                     <h3 className="text-lg font-semibold mb-4">Quick Connect</h3>
                     <div className="space-y-4">
-                      <a href="https://wa.me/971503267227" target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 p-3 bg-white/10 rounded-lg hover:bg-white/15 transition-colors">
-                        <MessageCircle className="h-5 w-5 text-green-400" />
-                        <div><p className="text-sm font-medium">WhatsApp</p><p className="text-xs text-gray-400">Chat with us instantly</p></div>
-                      </a>
-                      <a href="tel:+971503267227" className="flex items-center gap-3 p-3 bg-white/10 rounded-lg hover:bg-white/15 transition-colors">
+                      {settings.social_whatsapp && (
+                        <a href={`https://wa.me/${settings.social_whatsapp.replace(/[^0-9]/g, '')}`} target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 p-3 bg-white/10 rounded-lg hover:bg-white/15 transition-colors">
+                          <MessageCircle className="h-5 w-5 text-green-400" />
+                          <div><p className="text-sm font-medium">WhatsApp</p><p className="text-xs text-gray-400">Chat with us instantly</p></div>
+                        </a>
+                      )}
+                      <a href={`tel:${phoneClean}`} className="flex items-center gap-3 p-3 bg-white/10 rounded-lg hover:bg-white/15 transition-colors">
                         <Phone className="h-5 w-5 text-[#C9A962]" />
-                        <div><p className="text-sm font-medium">Call Us</p><p className="text-xs text-gray-400">+971 50 326 7227</p></div>
+                        <div><p className="text-sm font-medium">Call Us</p><p className="text-xs text-gray-400">{phoneNumber}</p></div>
                       </a>
                     </div>
                   </div>

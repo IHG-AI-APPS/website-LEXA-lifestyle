@@ -6,9 +6,13 @@ import SafeImage from '@/components/ui/SafeImage'
 import { Button } from '@/components/ui/button'
 import ConsultationForm from '@/components/forms/ConsultationForm'
 import { Phone, Mail, MapPin } from 'lucide-react'
+import { useSiteSettings } from '@/hooks/useSiteSettings'
 
 export default function FinalCTA() {
   const [showConsultationForm, setShowConsultationForm] = useState(false)
+  const { settings } = useSiteSettings()
+
+  const phoneClean = settings.contact_phone.replace(/\s/g, '')
 
   return (
     <>
@@ -45,8 +49,8 @@ export default function FinalCTA() {
                     <Phone className="text-platinum" size={20} strokeWidth={2} />
                     <div>
                       <div className="text-xs tracking-wider uppercase text-gray-500 mb-1">Call</div>
-                      <a href="tel:+971554452224" className="text-lg font-medium text-white hover:text-platinum transition-colors">
-                        +971 55 445 2224
+                      <a href={`tel:${phoneClean}`} className="text-lg font-medium text-white hover:text-platinum transition-colors">
+                        {settings.contact_phone}
                       </a>
                     </div>
                   </div>
@@ -55,8 +59,8 @@ export default function FinalCTA() {
                     <Mail className="text-platinum" size={20} strokeWidth={2} />
                     <div>
                       <div className="text-xs tracking-wider uppercase text-gray-500 mb-1">Email</div>
-                      <a href="mailto:sales@lexalifestyle.com" className="text-lg font-medium text-white hover:text-platinum transition-colors">
-                        sales@lexalifestyle.com
+                      <a href={`mailto:${settings.contact_email}`} className="text-lg font-medium text-white hover:text-platinum transition-colors">
+                        {settings.contact_email}
                       </a>
                     </div>
                   </div>
@@ -65,7 +69,7 @@ export default function FinalCTA() {
                     <MapPin className="text-platinum" size={20} strokeWidth={2} />
                     <div>
                       <div className="text-xs tracking-wider uppercase text-gray-500 mb-1">Visit</div>
-                      <p className="text-lg font-medium text-white">Al Quoz 1, Dubai, UAE</p>
+                      <p className="text-lg font-medium text-white">{settings.contact_address}</p>
                     </div>
                   </div>
                 </div>

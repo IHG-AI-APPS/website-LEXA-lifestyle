@@ -4,8 +4,14 @@ import { motion } from 'framer-motion'
 import { Button } from '@/components/ui/button'
 import { ArrowRight, Mail, Phone, MapPin, Clock } from 'lucide-react'
 import Link from 'next/link'
+import { useSiteSettings } from '@/hooks/useSiteSettings'
 
 export default function GalleryFooterCTA() {
+  const { settings } = useSiteSettings()
+
+  const phoneClean = settings.contact_phone.replace(/\s/g, '')
+  const whatsappClean = settings.social_whatsapp?.replace(/[^0-9]/g, '') || ''
+
   return (
     <section className="bg-[#F9F9F7] py-10 md:py-12 lg:py-14">
       <div className="content-container">
@@ -56,10 +62,12 @@ export default function GalleryFooterCTA() {
                     </div>
                     <div className="flex-1">
                       <div className="text-white/50 text-xs uppercase tracking-wider mb-1.5">Phone</div>
-                      <a href="tel:+97142670470" className="text-white text-sm sm:text-base hover:text-[#E8DCC8] transition-colors block">
-                        +971 42 670 470
+                      <a href={`tel:${phoneClean}`} className="text-white text-sm sm:text-base hover:text-[#E8DCC8] transition-colors block">
+                        {settings.contact_phone}
                       </a>
-                      <div className="text-white/40 text-xs sm:text-sm mt-1">WhatsApp: +971 52 178 2109</div>
+                      {whatsappClean && (
+                        <div className="text-white/40 text-xs sm:text-sm mt-1">WhatsApp: {settings.social_whatsapp}</div>
+                      )}
                     </div>
                   </div>
 
@@ -69,8 +77,8 @@ export default function GalleryFooterCTA() {
                     </div>
                     <div className="flex-1">
                       <div className="text-white/50 text-xs uppercase tracking-wider mb-1.5">Email</div>
-                      <a href="mailto:sales@lexalifestyle.com" className="text-white text-sm sm:text-base hover:text-[#E8DCC8] transition-colors break-all">
-                        sales@lexalifestyle.com
+                      <a href={`mailto:${settings.contact_email}`} className="text-white text-sm sm:text-base hover:text-[#E8DCC8] transition-colors break-all">
+                        {settings.contact_email}
                       </a>
                     </div>
                   </div>
@@ -81,10 +89,8 @@ export default function GalleryFooterCTA() {
                     </div>
                     <div className="flex-1">
                       <div className="text-white/50 text-xs uppercase tracking-wider mb-1.5">Address</div>
-                      <p className="text-white text-sm sm:text-base leading-relaxed">
-                        Al Quoz 1, Sheikh Zayed Road<br />
-                        3rd Interchange<br />
-                        Dubai, UAE
+                      <p className="text-white text-sm sm:text-base leading-relaxed whitespace-pre-line">
+                        {settings.contact_address}
                       </p>
                     </div>
                   </div>

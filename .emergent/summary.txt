@@ -1,159 +1,164 @@
 <analysis>**original_problem_statement:**
-The user's initial goal was a complete website overhaul for a premium Dark Luxury design.
+The user initiated this session with a series of feature requests and bug reports, primarily focused on making the website fully manageable through the admin panel and fixing persistent CRUD issues.
 
-More recently, the user's requests have focused on specific features and a series of persistent bugs:
-1.  **Project CRUD Instability (Highest Priority & Recurring):** The user has repeatedly reported that the Project Add, Edit, and especially Delete functions in the admin panel are not working reliably. Actions seem to take too long, and deletions do not reflect on the UI, causing major frustration.
-2.  **New Feature: Team Members CRUD:** The user requested a new CRUD module in the Admin Panel to dynamically manage team members, which should be displayed on the public-facing About page.
-3.  **Admin Panel Reorganization:** The user asked to restructure the Admin Panel sidebar menu to be more organized and user-friendly.
-4.  **Footer Layout Issues:** The user wanted to remove a Crafted with ♦ in Dubai line from the footer and fix a misplaced Search... button appearing below the footer.
-5.  **Content Loading Flash (FOUC):** The user reported that on page load, the header and footer appear first, with the main content loading in after a noticeable delay, creating a jarring user experience.
-6.  **Catalogue Page Layout Issue:** A large empty space was appearing below the header on catalogue pages.
-7.  **Blog Page Error:** The Add Blog page was crashing, preventing the user from adding new blog posts.
+**Feature Requests:**
+1.  **Site Settings Module:** A comprehensive settings page in the admin panel to manage:
+    *   Social media links.
+    *   Header and footer logos (separate light and dark versions).
+    *   Favicon.
+    *   Homepage content (hero text, images, videos).
+    *   A dedicated field for a WhatsApp number.
+    *   Two separate email fields: a general company email and an HR email for career applications.
+2.  **Dynamic Content:** All contact information (phone, emails) and settings managed in the admin panel should dynamically update across the entire public-facing website.
+3.  **Dynamic Careers Page:** An admin panel section to add, edit, and delete job openings, which should be displayed on the public Careers page.
+4.  **Product Images:** A request to find all products missing images and generate appropriate images for them.
+
+**Bug Reports:**
+1.  **Project & Blog CRUD:** Both Project and Blog CRUD functionalities in the admin panel were broken or unreliable. Adding a blog post resulted in a client-side exception.
+2.  **Project Frontend Display:** The user reported that projects were not showing up on the frontend.
+3.  **Project Card Button Issues:** The Quick View button on project cards had a flickering mouseover effect and would shift position on touch devices.
 
 **User's preferred language**: English
 
 **what currently exists?**
-The application is a full-stack project using Next.js for the frontend, FastAPI for the backend, and MongoDB as the database.
+The application is a full-stack project with a Next.js frontend, FastAPI backend, and MongoDB database.
 
-In this session, the agent successfully refactored all modals on the main public-facing site to use a new, robust, and reusable  component, enhancing consistency and maintainability.
+The agent successfully resolved the critical Project and Blog CRUD issues. For Projects, this involved creating a dedicated admin API endpoint to bypass a restrictive filter. For Blogs, the fix involved adding missing required fields to the frontend form, ensuring proper data submission, and fixing a server-side caching bug.
 
-The agent also implemented a full-stack Team Members CRUD module, complete with a backend API, a new admin management page, and a dynamic frontend About page section that fetches data from the new API. The admin panel sidebar was also successfully restructured into logical groups.
+A significant amount of work was done on new features. A full-stack Site Settings module was created, allowing management of logos, social media links, and contact information, complete with image upload functionality. A new Careers CRUD module was also built, making the job openings page fully dynamic.
 
-Several significant bugs were addressed:
-*   The content loading flash (FOUC) was resolved by implementing a full-page CSS-based loading screen.
-*   The layout issues on the catalogue and footer pages were fixed.
-*   The crash on the Add Blog admin page was resolved by making the shared  component SSR-safe.
-
-However, the most critical and recurring issue—the instability of the Project CRUD functionality in the admin panel—persists despite multiple investigation and fix attempts. While backend API tests with  show success, the frontend UI fails to update consistently, particularly after delete operations.
+To support dynamic content, the agent implemented a  and a  hook to make configuration data globally accessible. Several components, including the Footer and Contact page, were refactored to consume this data. Finally, the agent identified 114 products missing images, generated them, and updated the database.
 
 **Last working item**:
-    - Last item agent was working: Investigating and attempting to fix the Project CRUD functionality in the admin panel, which the user reported was still not working for adding, editing, and deleting projects. The agent simplified the delete confirmation flow by removing a confirmation modal and tested Add, Edit, and Delete.
+    - Last item agent was working: The agent was in the process of a large-scale refactoring task to make all contact information (phone numbers and emails) across the website dynamic. This involved searching for hardcoded values in various components and replacing them with data from the newly created  hook.
     - Status: IN PROGRESS
-    - Agent Testing Done: Y (API testing was successful; browser testing confirmed Add/Delete worked but the user still reports issues)
+    - Agent Testing Done: N
     - Which testing method agent to use? both
     - User Testing Done: N
 
 **All Pending/In progress Issue list**:
-  - Issue 1: Project CRUD in the admin panel is unreliable and appears broken to the user.
+  - Issue 1: Project card button shifts position on touch devices.
 
   **Issues Detail:**
   - **Issue 1:** 
-     - **Description (P0):** The user has repeatedly reported that Project Add, Edit, and Delete operations in the admin panel are not working. Deletions, in particular, do not update the UI, making it seem like the action failed. This is a high-priority, recurring issue causing significant user frustration.
-     - **Attempted fixes:** 
-        - Added loading states/spinners to buttons.
-        - Implemented a confirmation modal for deletion (later removed as a potential source of the problem).
-        - Added  headers to backend API endpoints to prevent stale data.
-        - Restarted services to clear in-memory cache.
-        - Verified the backend API works correctly via  and Playwright tests.
-        - The problem seems to be a disconnect between the successful backend operation and the frontend's state management/UI refresh.
+     - **Description (P0):** The user reported that on touch devices, the Quick View button on project cards moves to the right when touched. The agent previously fixed a mouseover *flickering* issue on desktop but did not address this touch-specific layout problem.
      - **Next debug checklist:**
-        1.  Thoroughly review the frontend code in .
-        2.  Focus on the  and  functions.
-        3.  Check the state update logic. Ensure  is being called correctly and is re-fetching fresh data after a mutation.
-        4.  Use browser developer tools to inspect network requests and console logs *during* an attempted deletion to see if the API call is being made and what the response is.
-        5.  Consider using a more robust state management library for mutations, like React Query ( is already a dependency), to handle caching, re-fetching, and UI updates automatically. The current manual  and state management is error-prone.
-     - **Why fix this issue and what will be achieved with the fix?** This is the most critical issue for the user. Fixing it will restore core functionality to the admin panel and resolve the user's primary source of frustration.
-     - **Status:** IN PROGRESS
-     - **Is recurring issue?** Y
-     - **Should Test frontend/backend/both after fix?** both
+        1.  Inspect .
+        2.  Review the CSS classes related to  and touch states ().
+        3.  The issue might be related to transform properties being applied on hover/touch that cause the layout shift.
+        4.  Test on a simulated touch device in the browser's developer tools to reproduce the behavior.
+     - **Why fix this issue and what will be achieved with the fix?** This fix will improve the user experience on mobile and touch-enabled devices, ensuring interactive elements behave predictably.
+     - **Status:** NOT STARTED
+     - **Is recurring issue?** N
+     - **Should Test frontend/backend/both after fix?** frontend
      - **Blocked on other issue:** None
 
 **In progress Task List**:
-  - None.
+  - Task 1: Complete dynamic content integration for all contact info.
+  
+  **Task Detail:**
+  - **Task 1:** 
+     - **Where to resume:** The agent has already updated several components. The next step is to perform a global search () for the old hardcoded phone number () and emails (, ) across the  directory. All remaining instances in components like , , , etc., must be replaced with dynamic data from the  hook.
+     - **What will be achieved with this?** This will complete a key user request, making all contact information on the website fully manageable from the Site Settings admin panel.
+     - **Status:** IN PROGRESS
+     - **Should Test frontend/backend/both after fix?** frontend
+     - **Blocked on something:** None
 
 **Upcoming and Future Tasks**
+- **Upcoming Tasks:**
+    - **Connect Header Logos (P1):** Refactor the  component () to use the  and  values from the  hook.
+    - **Connect Homepage Content (P1):** Refactor the main homepage () to fetch its hero title, subtitle, images, and videos from the Site Settings API via the  hook.
+    - **Implement Favicon Management (P2):** Update the main layout () to dynamically set the favicon URL based on the value in the Site Settings.
+
 - **Future Tasks:**
-    - **Compare Packages Feature:** A previously discussed feature to allow users to compare different smart home packages remains in the backlog.
-    - **Fix Brand Logo Data:** Address the incorrect/missing brand logo data in the database, which requires user input for the correct URLs.
-    - Consult  for other backlog items.
+    - **Compare Packages Feature:** A backlog item to allow users to compare different smart home packages.
+    - **Fix Brand Logo Data:** The  collection still contains some incorrect logo URLs that need to be updated.
 
 **Completed work in this session**
-- **Team Members CRUD (Feature):** Implemented a full-stack CRUD module for Team Members, including backend API, a new admin page (), and making the public About page dynamic.
-- **Admin Panel Sidebar Restructuring (Feature):** Reorganized the admin sidebar navigation into logical, collapsible groups for better usability ().
-- **Main Site Modal Refactor:** Refactored all public-facing modals (, , etc.) to use the reusable  component, improving code consistency and stability.
-- **FOUC/Loading Flash (Bug Fix):** Implemented a full-page, CSS-based loading screen that hides the page until it is fully hydrated, resolving the header/footer flash issue.
-- **Footer Layout (Bug Fix):** Removed the Crafted in Dubai text and the misplaced search button from the site-wide footer.
-- **Catalogue Page Layout (Bug Fix):** Fixed the layout on catalogue pages to prevent a double-header and extra spacing issue.
-- **Admin Blog Page Crash (Bug Fix):** Resolved a server-side rendering error on the  page by making the reusable  component SSR-safe.
-- **Project CRUD Performance (Improvement):** Added loading states (spinners) to save and delete buttons on the projects admin page for better user feedback.
+- **Project & Blog CRUD (Bug Fix):** Fixed critical issues preventing the creation and editing of projects and blogs from the admin panel.
+- **Product Image Generation (Feature):** Identified and generated images for 114 products that were missing them.
+- **Site Settings Module (Feature):** Implemented a new full-stack module for managing global website settings, including an admin page with image upload capabilities.
+- **Careers CRUD Module (Feature):** Built a new admin section for managing job openings and made the public careers page dynamic.
+- **Dynamic Content Framework (Feature):** Created a React Context () and hook () to make settings globally available.
+- **Initial Dynamic Content Integration:** Refactored the Footer, Contact page, and Careers page to use the new dynamic settings.
+- **Quick View Button Flicker (Bug Fix):** Resolved a CSS issue causing the project card's Quick View button to flicker on desktop hover.
 
 **Earlier issues found/mentioned but not fixed**
    - **Incorrect Brand Logo Data:** The  collection in the database has missing or incorrect  URLs. This requires coordination with the user to get the correct data.
 
 **Known issue recurrence from previous fork**
-  - **Recurrence in current session:** **Project CRUD functionality.** This has become the new primary recurring issue, reported multiple times by the user in this session.
+  - **Recurrence in current session:** **Project CRUD functionality.** This was a major recurring issue from the previous session that was investigated and finally resolved in this session.
   - **Recurrence count:** High.
-  - **Status:** IN PROGRESS.
+  - **Status:** RESOLVED.
 
 **Code Architecture**
 
 
 **Key Technical Concepts**
-- **Full-Stack Feature Implementation:** Built the Team Members feature from backend to frontend, including the database model, API endpoints, admin UI, and dynamic public page rendering.
-- **Admin Panel UI/UX Restructuring:** Reorganized the main navigation of the admin panel into logical, grouped sections to improve user experience.
-- **SSR/Hydration Bug Fixing:** Diagnosed and fixed a Flash of Unstyled Content (FOUC) and component crashes related to Server-Side Rendering by implementing a CSS-based pre-hydration loading screen and making components SSR-safe.
-- **Debugging State Management & Caching:** The session involved extensive debugging of a persistent frontend state issue, leading to the implementation of  headers and multiple refactoring attempts on the project management page.
+- **Dynamic Content Architecture:** A  and  custom hook were created to provide global, client-side access to website configuration, avoiding prop drilling and centralizing data fetching.
+- **Full-Stack Feature Development:** Created two new end-to-end features (Site Settings, Careers) with database models, FastAPI endpoints, and Next.js admin interfaces.
+- **Image Generation & Database Seeding:** Used an image generation tool to create a large batch of product images and programmatically updated the corresponding MongoDB documents.
+- **Robust CRUD Debugging:** Solved persistent CRUD issues by identifying mismatched data models between frontend and backend, fixing client-side form logic, and correcting server-side caching strategies.
 
 **key DB schema**
-  - **projects:** 
-  - **project_types:** 
-  - **project_categories:** 
-  - **team_members (new):** 
+  - **site_settings (new):** 
+  - **careers (new):** 
 
 **All files of reference**
-- : The source of the main recurring bug.
-- : The new admin page for Team Members CRUD.
-- : The file containing the restructured admin sidebar.
-- : Contains the new Team Members API and caching fixes for the Projects API.
-- : Contains the fix for the page loading flash (FOUC).
-- : The reusable modal component that was refactored and made SSR-safe.
+- : The core of the dynamic content solution.
+- : The admin UI for managing the new settings.
+- : Contains the API logic for site settings, careers, and the project CRUD fix.
+- : Contains the fix for the client-side blog creation error.
+- : File containing the CSS for the button with the pending touch issue.
+- : Homepage file that needs to be made dynamic.
+- : Header file that needs to be made dynamic.
 
 **Areas that need refactoring**:
-- The project admin page () needs a significant refactor. The current approach of manually managing fetch, state, and UI updates is proving unreliable. Migrating its data-fetching logic to  for mutations would likely solve the caching and state synchronization issues permanently.
+- A global search-and-replace is needed to eliminate all hardcoded contact information from the frontend and replace it with values from the  hook.
+- The  and  components need to be refactored to consume data from the  hook to become fully dynamic.
 
 **key api endpoints**
+-  (GET, PUT)
 -  (GET, POST)
--  (GET, PUT, DELETE)
--  (GET) - now with  headers
--  (DELETE)
+-  (PUT, DELETE)
+-  (POST)
+-  (GET)
 
 **Critical Info for New Agent**
-- **PRIORITIZE THE PROJECT CRUD BUG:** This is the #1 issue. The user is very frustrated. Do not move on to other tasks until this is definitively fixed and verified. The backend API is confirmed to be working. The problem is almost certainly in the frontend state management on the  page. Your first step should be to diagnose why the UI isn't updating after a successful API call.
-- **Consider a State Management Refactor:** The current manual  and  approach for the projects list is fragile. The most robust solution is to refactor the data fetching on that page to use  for mutations (e.g.,  function after a successful delete/update). This will handle revalidation and UI updates automatically and correctly.
-- **Communicate Clearly:** When you have a fix, clearly explain what the problem was (e.g., It was a frontend caching issue that prevented the list from refreshing) and provide simple, clear steps for the user to verify the fix (e.g., 1. Hard refresh the page. 2. Delete a project. 3. The list should update instantly.).
+- **PRIORITIZE DYNAMIC CONTENT:** The immediate priority is to finish the in-progress task of making all phone numbers and emails dynamic across the site. Use  to find all hardcoded instances and replace them with the  hook. This is a user-blocking feature.
+- **CONNECT THE REMAINING COMPONENTS:** After the contact info is dynamic, the next logical steps are to connect the  (for logos) and the  (for hero content) to the Site Settings context. This will fulfill the user's core request for a fully manageable site.
+- **ADDRESS THE TOUCH ISSUE:** Don't forget the pending bug with the project card button on touch devices. It's a small but important UI polish that the user explicitly mentioned.
 
 **documents and test reports created in this job**
-  - 
-  - 
-  -  (Updated)
+-  (Updated with Site Settings and Careers features)
 
 **Last 10 User Messages and any pending HUMAN messages** 
- - **LATEST:** why the project crud in admin panel still adding and editing and deleting issue ? please fix it (STATUS: IN PROGRESS)
- - cant add blog this error occurs, can you check all the admin panel crud operations there is a lot of errors like these (STATUS: Blog issue RESOLVED, Project CRUD still IN PROGRESS)
- - still project edit is not working also delete is not working why its happening like this a lot of time (STATUS: IN PROGRESS)
- - check a hard refresh you can see the footer and header is showing (STATUS: RESOLVED, full-page loader implemented)
- - check the catelogue page there is a space issue after header, why when we open the site showing the header and footer after some times the contents coming (STATUS: RESOLVED)
- - remove this from footer Crafted with ♦ in Dubai, why this Search... ⌘K in under footer? (STATUS: RESOLVED)
- - Updated Title 1eacd7ce project i deleted but still in admin panel (STATUS: Investigated, led to caching fixes, but user still reports issues)
- - i try to delete a project named TEST Project 354c86cc but its still showing in admin panel (STATUS: Investigated, led to caching fixes)
- - The Project Delete function is not working properly... We need a Team Members CRUD module... restructure the Admin Panel sidebar (STATUS: Team/Sidebar tasks DONE, Delete issue IN PROGRESS)
- - i have done some chnages by access the code in vs code, how the chnages will get reflected (STATUS: Responded with instructions)
+- **LATEST:** User requested that phone/email changes in admin should reflect everywhere, and that a separate HR email is needed for the careers form. (STATUS: IN PROGRESS)
+- User reported career page is not dynamic and has no admin section. (STATUS: RESOLVED)
+- User reported contact number changes not reflecting and WhatsApp field is missing. (STATUS: IN PROGRESS)
+- User asked why the site settings page was empty after it was created. (STATUS: RESOLVED, data was populated)
+- User asked why the data saved in settings was not appearing on the live site. (STATUS: Clarified, connection is in progress)
+- User requested to generate missing images for products. (STATUS: RESOLVED)
+- User reported a client-side exception when adding a blog. (STATUS: RESOLVED)
+- User reported projects were not showing on the frontend. (STATUS: Clarified, was an admin panel login issue)
+- User reported an issue with the project quick view button on mouseover. (STATUS: RESOLVED, but a related touch issue remains)
+- User requested the Site Settings feature. (STATUS: IN PROGRESS)
 
 **Project Health Check:**
-- **Broken:** The core admin functionality for managing projects is unreliable and effectively broken from the user's perspective.
-- **Mocked:** None.
+- **Broken:** No core functionality is currently broken.
+- **Mocked:** The  logos and  content are still effectively hardcoded, as they are not yet connected to the new Site Settings backend.
 
 **3rd Party Integrations**
-- No changes.
+- An image generation tool was used to create product images.
 
 **Testing status**
-  - Testing agent used after significant changes: YES
+  - Testing agent used after significant changes: YES (for Project and Blog CRUD)
   - Troubleshoot agent used after agent stuck in loop: NO
   - Test files created: []
-  - Known regressions: The Project CRUD functionality has regressed or was never fully fixed, despite multiple attempts.
+  - Known regressions: None in this session.
 
 **Credentials to test flow:**
-- Credentials for admin login can be found in  in the  function.
+- Admin login:  / 
 
 **What agent forgot to execute**
-- The agent did not forget to execute any requested tasks. However, the agent failed to permanently resolve the primary user-reported issue (Project CRUD), leading to a recurring loop of bug reports and attempted fixes.</analysis>
+- The agent addressed the mouseover flicker on the project card button but did not address the user's secondary report about the button shifting position on touch devices.</analysis>

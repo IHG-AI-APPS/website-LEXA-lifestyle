@@ -19,10 +19,12 @@ export interface SiteSettings {
   social_youtube: string
   social_tiktok: string
   social_whatsapp: string
-  // Contact
+  // Contact - Company
   contact_email: string
   contact_phone: string
   contact_address: string
+  // Contact - HR/Careers
+  hr_email: string
   // Homepage Hero
   hero_title: string
   hero_subtitle: string
@@ -55,8 +57,9 @@ const defaultSettings: SiteSettings = {
   social_tiktok: '',
   social_whatsapp: '',
   contact_email: 'info@lexalifestyle.com',
-  contact_phone: '+971 4 XXX XXXX',
+  contact_phone: '+971 50 326 7228',
   contact_address: 'Dubai, UAE',
+  hr_email: 'careers@lexalifestyle.com',
   hero_title: 'Transform Your Space Into an Intelligent Sanctuary',
   hero_subtitle: 'Experience the future of luxury living with LEXA cutting-edge smart home solutions.',
   hero_video_url: '',

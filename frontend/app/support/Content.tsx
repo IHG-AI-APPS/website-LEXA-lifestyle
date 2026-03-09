@@ -4,6 +4,7 @@ import Link from 'next/link'
 import { Button } from '@/components/ui/button'
 import { Phone, Clock, Shield, Wrench, CheckCircle2, AlertCircle, ArrowRight } from 'lucide-react'
 import { useCms } from '@/hooks/useCms'
+import { useSiteSettings } from '@/hooks/useSiteSettings'
 
 const ICON_MAP: Record<string, any> = { alert: AlertCircle, shield: Shield, wrench: Wrench }
 
@@ -34,13 +35,15 @@ const fallback = {
 
 export default function SupportContent() {
   const cms = useCms('page_support', fallback)
+  const { settings: siteSettings } = useSiteSettings()
 
   const badge = cms?.hero_badge || fallback.hero_badge
   const title = cms?.hero_title || fallback.hero_title
   const desc = cms?.hero_description || fallback.hero_description
-  const emergencyPhone = cms?.emergency_phone || fallback.emergency_phone
-  const whatsapp = cms?.whatsapp_number || fallback.whatsapp_number
-  const supportEmail = cms?.support_email || fallback.support_email
+  // Use site settings for contact info, with CMS fallback
+  const emergencyPhone = siteSettings.contact_phone || cms?.emergency_phone || fallback.emergency_phone
+  const whatsapp = siteSettings.social_whatsapp?.replace(/[^0-9]/g, '') || cms?.whatsapp_number || fallback.whatsapp_number
+  const supportEmail = siteSettings.contact_email || cms?.support_email || fallback.support_email
   const scenarios = cms?.emergency_scenarios?.length ? cms.emergency_scenarios : fallback.emergency_scenarios
   const benefits = cms?.amc_benefits?.length ? cms.amc_benefits : fallback.amc_benefits
   const ctaBadge = cms?.cta_badge || fallback.cta_badge

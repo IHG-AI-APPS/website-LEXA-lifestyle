@@ -6,6 +6,7 @@ import { Briefcase, Users, Award, MapPin, Mail, ArrowRight, ChevronDown, Chevron
 import { motion, AnimatePresence } from 'framer-motion'
 import { Button } from '@/components/ui/button'
 import { useCms } from '@/hooks/useCms'
+import { useSiteSettings } from '@/hooks/useSiteSettings'
 
 const expertiseAreas = [
   { icon: Home, title: 'Smart Home Automation', description: 'Control4, Crestron, Savant system design and programming', skills: ['System Design', 'Programming', 'Integration', 'Commissioning'] },
@@ -32,7 +33,11 @@ const openPositions = [
 
 export default function WorkWithUsPage() {
   const cms = useCms('page_work_with_us', null) as any
+  const { settings } = useSiteSettings()
   const [expandedJob, setExpandedJob] = useState<number | null>(null)
+  
+  // Use HR email from site settings
+  const hrEmail = settings.hr_email || 'careers@lexalifestyle.com'
 
   return (
     <div className="min-h-screen bg-white dark:bg-[#050505] pt-20" data-testid="work-with-us-page">
@@ -135,7 +140,7 @@ export default function WorkWithUsPage() {
                       <motion.div initial={{ height: 0, opacity: 0 }} animate={{ height: 'auto', opacity: 1 }} exit={{ height: 0, opacity: 0 }} className="border-t border-gray-100 dark:border-zinc-800 p-5 bg-gray-50 dark:bg-[#171717]/50">
                         <p className="text-sm text-gray-600 dark:text-zinc-500 mb-4">{job.description}</p>
                         <Button size="sm" className="bg-[#C9A962] text-gray-900 hover:bg-[#C9A962]/90 font-semibold" asChild>
-                          <a href={`mailto:careers@lexalifestyle.com?subject=Application: ${job.title}`}>Apply Now <ArrowRight className="ml-2" size={14} /></a>
+                          <a href={`mailto:${hrEmail}?subject=Application: ${job.title}`}>Apply Now <ArrowRight className="ml-2" size={14} /></a>
                         </Button>
                       </motion.div>
                     )}
@@ -155,7 +160,7 @@ export default function WorkWithUsPage() {
             <h2 className="text-3xl sm:text-4xl font-bold mt-3 mb-4">Send Us Your CV</h2>
             <p className="text-gray-400 mb-8 max-w-xl mx-auto">We&apos;re always looking for talented individuals. Send your CV and we&apos;ll keep you in mind.</p>
             <Button size="lg" className="bg-[#C9A962] text-gray-900 hover:bg-[#C9A962]/90 font-semibold px-8" asChild>
-              <a href="mailto:careers@lexalifestyle.com">Email Your CV <ArrowRight className="ml-2" size={18} /></a>
+              <a href={`mailto:${hrEmail}`}>Email Your CV <ArrowRight className="ml-2" size={18} /></a>
             </Button>
           </div>
         </div>

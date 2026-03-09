@@ -7,7 +7,7 @@ import requests
 import os
 
 # Backend URL from environment
-BASE_URL = os.environ.get('REACT_APP_BACKEND_URL', 'https://project-sync-test-1.preview.emergentagent.com')
+BASE_URL = os.environ.get('REACT_APP_BACKEND_URL', 'https://cms-integration-dev.preview.emergentagent.com')
 
 # Admin credentials
 ADMIN_USERNAME = "admin"

@@ -11,6 +11,7 @@ import { LanguageSwitcherCompact } from '@/components/ui/LanguageSwitcher'
 import { ThemeToggle } from '@/components/ui/ThemeToggle'
 import { useLanguage } from '@/contexts/LanguageContext'
 import { useTheme } from '@/contexts/ThemeContext'
+import { useSiteSettings } from '@/hooks/useSiteSettings'
 import dynamic from 'next/dynamic'
 
 const ConsultationForm = dynamic(() => import('@/components/forms/ConsultationForm'), { ssr: false })
@@ -23,6 +24,7 @@ const MobileMegaMenu = dynamic(() => import('@/components/navigation/MobileMegaM
 export default function Header() {
   const { t, language } = useLanguage()
   const { theme } = useTheme()
+  const { settings } = useSiteSettings()
   const [isScrolled, setIsScrolled] = useState(false)
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
   const [showConsultationForm, setShowConsultationForm] = useState(false)
@@ -125,7 +127,11 @@ export default function Header() {
 
   // Logo logic: use white logo on dark backgrounds, black logo on light backgrounds
   const useDarkLogo = shouldUseDarkText && theme !== 'dark'
-  const logoSrc = useDarkLogo ? "https://files.ihgbrands.com/lexa/site/lexa-black.webp" : "https://files.ihgbrands.com/lexa/site/lexa-white.webp"
+  const defaultDarkLogo = "https://files.ihgbrands.com/lexa/site/lexa-black.webp"
+  const defaultLightLogo = "https://files.ihgbrands.com/lexa/site/lexa-white.webp"
+  const logoSrc = useDarkLogo 
+    ? (settings.header_logo_dark || defaultDarkLogo) 
+    : (settings.header_logo_light || defaultLightLogo)
 
   const navigation = [
     { name: t('nav.brands'), href: '/brands' },

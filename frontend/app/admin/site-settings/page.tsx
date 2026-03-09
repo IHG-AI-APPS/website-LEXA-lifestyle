@@ -25,6 +25,7 @@ interface SiteSettings {
   contact_email: string
   contact_phone: string
   contact_address: string
+  hr_email: string
   // Homepage Hero
   hero_title: string
   hero_subtitle: string
@@ -59,6 +60,7 @@ const defaultSettings: SiteSettings = {
   contact_email: '',
   contact_phone: '',
   contact_address: '',
+  hr_email: '',
   hero_title: '',
   hero_subtitle: '',
   hero_video_url: '',
@@ -491,11 +493,11 @@ export default function SiteSettingsPage() {
           <div className="space-y-6">
             <h2 className="text-lg font-semibold text-gray-900 mb-4">Contact Information</h2>
             
-            <div className="grid grid-cols-1 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div>
                 <label className="block text-sm font-medium text-gray-700 mb-2">
                   <Mail size={16} className="inline mr-2" />
-                  Email Address
+                  Company Email (General Inquiries)
                 </label>
                 <input
                   type="email"
@@ -505,9 +507,26 @@ export default function SiteSettingsPage() {
                   className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                   data-testid="contact-email"
                 />
+                <p className="text-xs text-gray-500 mt-1">Used for general contact forms and inquiries</p>
               </div>
 
               <div>
+                <label className="block text-sm font-medium text-gray-700 mb-2">
+                  <Mail size={16} className="inline mr-2" />
+                  HR Email (Careers/Jobs)
+                </label>
+                <input
+                  type="email"
+                  value={settings.hr_email}
+                  onChange={(e) => handleChange('hr_email', e.target.value)}
+                  placeholder="careers@yourcompany.com"
+                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                  data-testid="hr-email"
+                />
+                <p className="text-xs text-gray-500 mt-1">Used for job applications and career inquiries</p>
+              </div>
+
+              <div className="md:col-span-2">
                 <label className="block text-sm font-medium text-gray-700 mb-2">
                   <Phone size={16} className="inline mr-2" />
                   Phone Number
@@ -516,13 +535,13 @@ export default function SiteSettingsPage() {
                   type="tel"
                   value={settings.contact_phone}
                   onChange={(e) => handleChange('contact_phone', e.target.value)}
-                  placeholder="+971 4 XXX XXXX"
+                  placeholder="+971 50 326 7228"
                   className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                   data-testid="contact-phone"
                 />
               </div>
 
-              <div>
+              <div className="md:col-span-2">
                 <label className="block text-sm font-medium text-gray-700 mb-2">
                   <MapPin size={16} className="inline mr-2" />
                   Address

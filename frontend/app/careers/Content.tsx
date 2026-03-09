@@ -5,6 +5,7 @@ import { useState, useEffect } from 'react'
 import { Button } from '@/components/ui/button'
 import { Briefcase, MapPin, Clock, ArrowRight, Loader2 } from 'lucide-react'
 import { useCms } from '@/hooks/useCms'
+import { useSiteSettings } from '@/hooks/useSiteSettings'
 
 const API_URL = process.env.NEXT_PUBLIC_BACKEND_URL || ''
 
@@ -19,30 +20,33 @@ interface JobPosition {
   is_active: boolean
 }
 
-const fallback = {
-  hero_title: 'Join Our Team',
-  hero_description: "Be part of a team that's redefining smart luxury living across the Middle East. We're looking for passionate individuals to shape the future of home automation and AV integration.",
-  benefits: [
-    { title: 'Innovation & Excellence', description: 'Work with cutting-edge technologies from world-leading brands like Savant, Crestron, Bowers & Wilkins, and Sony.' },
-    { title: 'Growth & Learning', description: 'Continuous training, certifications, and career development opportunities in smart home and AV technologies.' },
-    { title: 'Prestigious Projects', description: 'Work on high-end residential villas, luxury hotels, and commercial projects across Dubai and the UAE.' },
-  ],
-  how_to_apply_intro: "Interested in joining our team? We'd love to hear from you.",
-  how_to_apply_steps: [
-    'Review the open positions above',
-    'Prepare your CV/resume and portfolio (if applicable)',
-    'Send your application to careers@lexalifestyle.com',
-    'Include the position title in your email subject line',
-  ],
-  contact_email: 'careers@lexalifestyle.com',
-  contact_phone: '+971 42 670 470',
-  contact_address: 'Al Quoz 1, Sheikh Zayed Road, 3rd Interchange, Dubai, UAE',
-}
-
 export default function CareersContent() {
-  const cms = useCms('page_careers', fallback)
+  const cms = useCms('page_careers', null) as any
+  const { settings } = useSiteSettings()
   const [positions, setPositions] = useState<JobPosition[]>([])
   const [loading, setLoading] = useState(true)
+
+  // Dynamic contact info from settings
+  const hrEmail = settings.hr_email || 'careers@lexalifestyle.com'
+  const companyPhone = settings.contact_phone || '+971 50 326 7228'
+  const companyAddress = settings.contact_address || 'Al Quoz 1, Sheikh Zayed Road, 3rd Interchange, Dubai, UAE'
+
+  const fallback = {
+    hero_title: 'Join Our Team',
+    hero_description: "Be part of a team that's redefining smart luxury living across the Middle East. We're looking for passionate individuals to shape the future of home automation and AV integration.",
+    benefits: [
+      { title: 'Innovation & Excellence', description: 'Work with cutting-edge technologies from world-leading brands like Savant, Crestron, Bowers & Wilkins, and Sony.' },
+      { title: 'Growth & Learning', description: 'Continuous training, certifications, and career development opportunities in smart home and AV technologies.' },
+      { title: 'Prestigious Projects', description: 'Work on high-end residential villas, luxury hotels, and commercial projects across Dubai and the UAE.' },
+    ],
+    how_to_apply_intro: "Interested in joining our team? We'd love to hear from you.",
+    how_to_apply_steps: [
+      'Review the open positions above',
+      'Prepare your CV/resume and portfolio (if applicable)',
+      `Send your application to ${hrEmail}`,
+      'Include the position title in your email subject line',
+    ],
+  }
 
   useEffect(() => {
     async function fetchPositions() {
@@ -65,10 +69,12 @@ export default function CareersContent() {
   const heroDesc = cms?.hero_description || fallback.hero_description
   const benefits = cms?.benefits?.length ? cms.benefits : fallback.benefits
   const applyIntro = cms?.how_to_apply_intro || fallback.how_to_apply_intro
-  const applySteps = cms?.how_to_apply_steps?.length ? cms.how_to_apply_steps : fallback.how_to_apply_steps
-  const email = cms?.contact_email || fallback.contact_email
-  const phone = cms?.contact_phone || fallback.contact_phone
-  const address = cms?.contact_address || fallback.contact_address
+  const applySteps = [
+    'Review the open positions above',
+    'Prepare your CV/resume and portfolio (if applicable)',
+    `Send your application to ${hrEmail}`,
+    'Include the position title in your email subject line',
+  ]
 
   return (
     <div className="min-h-screen bg-white dark:bg-[#050505] pt-20" data-testid="careers-page">
@@ -116,7 +122,7 @@ export default function CareersContent() {
               <div className="text-center py-12 bg-white dark:bg-[#050505] rounded-xl border border-gray-100 dark:border-zinc-800">
                 <Briefcase className="w-12 h-12 text-gray-300 dark:text-zinc-600 mx-auto mb-4" />
                 <p className="text-gray-600 dark:text-zinc-400">No open positions at the moment.</p>
-                <p className="text-sm text-gray-500 dark:text-zinc-500 mt-2">Please check back later or send your CV to {email}</p>
+                <p className="text-sm text-gray-500 dark:text-zinc-500 mt-2">Please check back later or send your CV to <a href={`mailto:${hrEmail}`} className="text-[#C9A962] hover:underline">{hrEmail}</a></p>
               </div>
             ) : (
               <div className="space-y-4">
@@ -165,9 +171,9 @@ export default function CareersContent() {
             </ol>
             <div className="bg-gray-50 dark:bg-[#0A0A0A] p-6 rounded-xl border border-gray-100 dark:border-zinc-800">
               <h3 className="text-sm font-bold text-gray-900 dark:text-white mb-3">Contact Us</h3>
-              <p className="text-sm text-gray-600 dark:text-zinc-500 mb-1"><strong>Email:</strong> <a href={`mailto:${email}`} className="text-[#C9A962] hover:underline">{email}</a></p>
-              <p className="text-sm text-gray-600 dark:text-zinc-500 mb-1"><strong>Phone:</strong> <a href={`tel:${phone.replace(/\s/g, '')}`} className="text-[#C9A962] hover:underline">{phone}</a></p>
-              <p className="text-sm text-gray-600 dark:text-zinc-500"><strong>Address:</strong> {address}</p>
+              <p className="text-sm text-gray-600 dark:text-zinc-500 mb-1"><strong>Email:</strong> <a href={`mailto:${hrEmail}`} className="text-[#C9A962] hover:underline">{hrEmail}</a></p>
+              <p className="text-sm text-gray-600 dark:text-zinc-500 mb-1"><strong>Phone:</strong> <a href={`tel:${companyPhone.replace(/\s/g, '')}`} className="text-[#C9A962] hover:underline">{companyPhone}</a></p>
+              <p className="text-sm text-gray-600 dark:text-zinc-500"><strong>Address:</strong> {companyAddress}</p>
             </div>
           </div>
         </div>
