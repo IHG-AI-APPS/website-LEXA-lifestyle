@@ -98,6 +98,11 @@ export default function RootLayout({
           img { max-width: 100%; height: auto; }
           section { overflow: hidden; }
           [data-testid] { visibility: visible; }
+          /* Initial loading screen - hides layout until JS hydrates */
+          #initial-loader { position: fixed; inset: 0; z-index: 99999; background: #050505; display: flex; align-items: center; justify-content: center; transition: opacity 0.3s ease; }
+          #initial-loader.loaded { opacity: 0; pointer-events: none; }
+          #initial-loader .spinner { width: 48px; height: 48px; border: 2px solid #C9A962; border-top-color: transparent; border-radius: 50%; animation: spin 1s linear infinite; }
+          @keyframes spin { to { transform: rotate(360deg); } }
         ` }} />
         
         {/* Chunk load error recovery - auto-reload on stale chunks or 429 failures */}
@@ -150,6 +155,10 @@ export default function RootLayout({
         />
       </head>
       <body className={dmSans.className}>
+        {/* Initial loading screen - hidden by JS after hydration */}
+        <div id="initial-loader">
+          <div className="spinner"></div>
+        </div>
         <TrackingPixels />
         <ClientLayout>{children}</ClientLayout>
       </body>

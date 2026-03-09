@@ -27,18 +27,6 @@ const PullToRefresh = dynamic(() => import('@/components/mobile/PullToRefresh'),
 const ConsultationFormLazy = dynamic(() => import('@/components/forms/ConsultationForm').catch(() => ({ default: Noop })), { ssr: false })
 const MobileQuickActions = dynamic(() => import('@/components/mobile/MobileQuickActions'), { ssr: false })
 
-// Initial loading screen component
-function InitialLoadingScreen() {
-  return (
-    <div className="fixed inset-0 z-[99999] bg-[#050505] flex items-center justify-center">
-      <div className="text-center">
-        <div className="w-16 h-16 border-2 border-[#C9A962] border-t-transparent rounded-full animate-spin mx-auto mb-4" />
-        <p className="text-[#C9A962] text-sm tracking-widest uppercase">Loading</p>
-      </div>
-    </div>
-  )
-}
-
 // Inner component that uses the scroll context
 function ClientLayoutInner({ children }: { children: React.ReactNode }) {
   const pathname = usePathname()
@@ -50,9 +38,18 @@ function ClientLayoutInner({ children }: { children: React.ReactNode }) {
   const [showConsultation, setShowConsultation] = useState(false)
   const [isHydrated, setIsHydrated] = useState(false)
 
-  // Mark as hydrated after initial render
+  // Mark as hydrated after initial render and hide the loading screen
   useEffect(() => {
     setIsHydrated(true)
+    // Hide the initial loader
+    const loader = document.getElementById('initial-loader')
+    if (loader) {
+      loader.classList.add('loaded')
+      // Remove from DOM after animation
+      setTimeout(() => {
+        loader.remove()
+      }, 300)
+    }
   }, [])
 
   // Track page views and scroll to top on route change (excluding admin pages)
@@ -97,11 +94,6 @@ function ClientLayoutInner({ children }: { children: React.ReactNode }) {
     router.refresh()
     await new Promise(resolve => setTimeout(resolve, 800))
   }, [router])
-
-  // Show loading screen until hydrated (prevents header/footer flash)
-  if (!isHydrated) {
-    return <InitialLoadingScreen />
-  }
 
   return (
     <>
