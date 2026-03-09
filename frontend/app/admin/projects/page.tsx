@@ -28,6 +28,7 @@ export default function ProjectsAdminPage() {
   const [loading, setLoading] = useState(true)
   const [saving, setSaving] = useState(false)
   const [deleting, setDeleting] = useState<string | null>(null)
+  const [deleteConfirm, setDeleteConfirm] = useState<string | null>(null)
   const [showForm, setShowForm] = useState(false)
   const [editingId, setEditingId] = useState<string | null>(null)
   const [formData, setFormData] = useState<Partial<Project>>({
@@ -199,24 +200,30 @@ export default function ProjectsAdminPage() {
   }
 
   const handleDelete = async (id: string) => {
-    const confirmed = window.confirm('Are you sure you want to delete this project?')
-    if (!confirmed) return
-    
+    console.log('handleDelete called with id:', id)
     setDeleting(id)
     try {
-      console.log('Deleting project:', id)
       await deleteProject(id)
-      console.log('Delete successful, refreshing list...')
-      // Force refresh the projects list
+      console.log('Delete successful')
+      // Immediately update local state
       setProjects(prev => prev.filter(p => p.id !== id))
-      // Also reload from server to ensure consistency
+      // Also refresh from server
       await loadProjects()
     } catch (err) {
       console.error('Failed to delete project:', err)
       alert('Failed to delete project. Please try again.')
     } finally {
       setDeleting(null)
+      setDeleteConfirm(null)
     }
+  }
+
+  const confirmDelete = (id: string) => {
+    setDeleteConfirm(id)
+  }
+
+  const cancelDelete = () => {
+    setDeleteConfirm(null)
   }
 
   const handleArrayInput = (field: 'systems' | 'technical_specs' | 'gallery' | 'features' | 'results', value: string) => {
@@ -274,13 +281,15 @@ export default function ProjectsAdminPage() {
                     onClick={() => handleEdit(project)}
                     className="text-blue-600 hover:text-blue-800 mr-3"
                     disabled={deleting === project.id}
+                    data-testid={`edit-project-${project.id}`}
                   >
                     <Edit size={16} className="inline" />
                   </button>
                   <button 
-                    onClick={() => handleDelete(project.id)}
+                    onClick={() => confirmDelete(project.id)}
                     className="text-red-600 hover:text-red-800 disabled:opacity-50"
                     disabled={deleting === project.id}
+                    data-testid={`delete-project-${project.id}`}
                   >
                     {deleting === project.id ? (
                       <Loader2 size={16} className="inline animate-spin" />
@@ -574,6 +583,45 @@ export default function ProjectsAdminPage() {
                 </Button>
               </div>
             </form>
+      </Modal>
+
+      {/* Delete Confirmation Modal */}
+      <Modal
+        isOpen={deleteConfirm !== null}
+        onClose={cancelDelete}
+        title="Confirm Delete"
+        size="sm"
+      >
+        <div className="text-center py-4">
+          <p className="text-gray-600 dark:text-zinc-400 mb-6">
+            Are you sure you want to delete this project? This action cannot be undone.
+          </p>
+          <div className="flex gap-4">
+            <Button
+              onClick={cancelDelete}
+              variant="outline"
+              className="flex-1"
+              disabled={deleting !== null}
+            >
+              Cancel
+            </Button>
+            <Button
+              onClick={() => deleteConfirm && handleDelete(deleteConfirm)}
+              className="flex-1 bg-red-600 hover:bg-red-700 text-white"
+              disabled={deleting !== null}
+              data-testid="confirm-delete-btn"
+            >
+              {deleting ? (
+                <>
+                  <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+                  Deleting...
+                </>
+              ) : (
+                'Delete Project'
+              )}
+            </Button>
+          </div>
+        </div>
       </Modal>
     </div>
   )

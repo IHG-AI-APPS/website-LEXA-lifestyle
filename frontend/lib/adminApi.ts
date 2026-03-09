@@ -126,11 +126,22 @@ export async function updateProject(id: string, project: any) {
 }
 
 export async function deleteProject(id: string) {
+  console.log('deleteProject called with id:', id)
+  const headers = getAuthHeaders()
+  console.log('Auth headers:', headers.Authorization ? 'Token present' : 'NO TOKEN')
+  
   const response = await fetch(`${BACKEND_URL}/api/admin/projects/${id}`, {
     method: 'DELETE',
-    headers: getAuthHeaders()
+    headers
   })
-  if (!response.ok) throw new Error('Failed to delete project')
+  
+  console.log('Delete response status:', response.status)
+  
+  if (!response.ok) {
+    const errorText = await response.text()
+    console.error('Delete failed:', response.status, errorText)
+    throw new Error(`Failed to delete project: ${response.status} ${errorText}`)
+  }
   return response.json()
 }
 
