@@ -316,20 +316,7 @@ export default function CommandPalette() {
 
   return (
     <>
-      {/* Trigger Button - shown in header */}
-      <button
-        onClick={() => setOpen(true)}
-        className="hidden md:flex items-center gap-2 px-3 py-1.5 text-sm text-gray-500 dark:text-zinc-500 bg-gray-100 dark:bg-[#171717] hover:bg-gray-200 dark:hover:bg-[#171717] rounded-lg transition-colors"
-        data-testid="command-palette-trigger"
-      >
-        <Search className="w-4 h-4" />
-        <span>Search...</span>
-        <kbd className="hidden lg:inline-flex items-center gap-1 px-1.5 py-0.5 text-xs bg-white dark:bg-gray-700 border border-gray-200 dark:border-zinc-800 dark:border-zinc-700 rounded">
-          ⌘K
-        </kbd>
-      </button>
-
-      {/* Command Palette Modal */}
+      {/* Command Palette Modal - Trigger via ⌘K shortcut only */}
       <AnimatePresence>
         {open && (
           <>

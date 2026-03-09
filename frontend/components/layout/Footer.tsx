@@ -195,9 +195,6 @@ export default function Footer() {
               <Link href="/terms-of-service" className="hover:text-[#C9A962] transition-colors">Terms</Link>
               <Link href="/sitemap.xml" className="hover:text-[#C9A962] transition-colors">Sitemap</Link>
             </div>
-            <p className="flex items-center gap-2">
-              Crafted with <span className="text-[#C9A962]">♦</span> in Dubai
-            </p>
           </div>
         </div>
       </div>
