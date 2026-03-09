@@ -33,6 +33,8 @@ function ClientLayoutInner({ children }: { children: React.ReactNode }) {
   const router = useRouter()
   const { scrollToTop } = useSmoothScroll()
   const isAdminPage = pathname?.startsWith('/admin')
+  const isCatalogueViewer = pathname?.startsWith('/catalogues/') && pathname !== '/catalogues'
+  const hideMainLayout = isAdminPage || isCatalogueViewer
   const [showConsultation, setShowConsultation] = useState(false)
 
   // Track page views and scroll to top on route change (excluding admin pages)
@@ -88,26 +90,26 @@ function ClientLayoutInner({ children }: { children: React.ReactNode }) {
       >
         Skip to main content
       </a>
-      {!isAdminPage && <Header />}
-      {!isAdminPage ? (
+      {!hideMainLayout && <Header />}
+      {!hideMainLayout ? (
         <PullToRefresh onRefresh={handleRefresh}>
           <main id="main-content" role="main" aria-label="Main content" className="pb-20 lg:pb-0">{children}</main>
         </PullToRefresh>
       ) : (
         <main id="main-content" role="main" aria-label="Main content">{children}</main>
       )}
-      {!isAdminPage && <Footer />}
-      {!isAdminPage && <MobileTabBar />}
-      {!isAdminPage && <CommandPalette />}
-      {!isAdminPage && <FloatingContactButton />}
-      {!isAdminPage && <WhatsAppEnhanced />}
-      {!isAdminPage && <AIChatWidget />}
-      {!isAdminPage && <MobileQuickActions onBookConsultation={() => setShowConsultation(true)} />}
-      {!isAdminPage && <SocialProofWidget />}
-      {!isAdminPage && <ExitIntentPopup />}
-      {!isAdminPage && <CookieConsent />}
-      {!isAdminPage && <LinkPrefetcher />}
-      {!isAdminPage && <ScheduleVisitButton />}
+      {!hideMainLayout && <Footer />}
+      {!hideMainLayout && <MobileTabBar />}
+      {!hideMainLayout && <CommandPalette />}
+      {!hideMainLayout && <FloatingContactButton />}
+      {!hideMainLayout && <WhatsAppEnhanced />}
+      {!hideMainLayout && <AIChatWidget />}
+      {!hideMainLayout && <MobileQuickActions onBookConsultation={() => setShowConsultation(true)} />}
+      {!hideMainLayout && <SocialProofWidget />}
+      {!hideMainLayout && <ExitIntentPopup />}
+      {!hideMainLayout && <CookieConsent />}
+      {!hideMainLayout && <LinkPrefetcher />}
+      {!hideMainLayout && <ScheduleVisitButton />}
       {showConsultation && <ConsultationFormLazy isOpen={showConsultation} onClose={() => setShowConsultation(false)} />}
       <Toaster 
         position="top-right"
