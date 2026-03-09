@@ -1002,6 +1002,21 @@ async def patch_solution(solution_id: str, updates: Dict[str, Any], user: dict =
 
 # ============= ADMIN - PROJECTS MANAGEMENT =============
 
+@api_router.get("/admin/projects")
+async def admin_get_projects(
+    response: Response,
+    user: dict = Depends(verify_token)
+):
+    """Get ALL projects (including unpublished) for admin panel"""
+    # Prevent caching - always return fresh data
+    response.headers["Cache-Control"] = "no-cache, no-store, must-revalidate"
+    response.headers["Pragma"] = "no-cache"
+    response.headers["Expires"] = "0"
+    
+    # No filter - return all projects for admin
+    projects = await db.projects.find({}, {"_id": 0}).sort("year", -1).to_list(500)
+    return projects
+
 @api_router.get("/projects")
 async def get_projects(
     response: Response,

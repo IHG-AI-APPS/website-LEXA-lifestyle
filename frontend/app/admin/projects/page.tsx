@@ -4,8 +4,8 @@ import { useEffect, useState } from 'react'
 import { Plus, Edit, Trash2, Loader2 } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
-import { getProjects, type Project } from '@/lib/api'
-import { createProject, updateProject, deleteProject, getProjectTypes, getProjectCategories } from '@/lib/adminApi'
+import { type Project } from '@/lib/api'
+import { getAdminProjects, createProject, updateProject, deleteProject, getProjectTypes, getProjectCategories } from '@/lib/adminApi'
 import { ImageUpload, MultiImageUpload } from '@/components/admin/ImageUpload'
 import Modal from '@/components/ui/Modal'
 
@@ -28,7 +28,6 @@ export default function ProjectsAdminPage() {
   const [loading, setLoading] = useState(true)
   const [saving, setSaving] = useState(false)
   const [deleting, setDeleting] = useState<string | null>(null)
-  const [deleteConfirm, setDeleteConfirm] = useState<string | null>(null)
   const [showForm, setShowForm] = useState(false)
   const [editingId, setEditingId] = useState<string | null>(null)
   const [formData, setFormData] = useState<Partial<Project>>({
@@ -78,7 +77,8 @@ export default function ProjectsAdminPage() {
 
   const loadProjects = async () => {
     try {
-      const data = await getProjects()
+      // Use admin endpoint to get ALL projects (including unpublished)
+      const data = await getAdminProjects()
       // Ensure all projects have proper defaults and handle legacy field names
       const projectsWithDefaults = data.map((p: any) => ({
         ...p,
@@ -186,8 +186,10 @@ export default function ProjectsAdminPage() {
     try {
       if (editingId) {
         await updateProject(editingId, formData as Project)
+        alert('Project updated successfully!')
       } else {
         await createProject(formData as Project)
+        alert('Project created successfully!')
       }
       await loadProjects()
       setShowForm(false)
@@ -200,30 +202,28 @@ export default function ProjectsAdminPage() {
   }
 
   const handleDelete = async (id: string) => {
-    console.log('handleDelete called with id:', id)
+    // Simple confirm dialog
+    if (!window.confirm('Are you sure you want to delete this project? This cannot be undone.')) {
+      return
+    }
+    
     setDeleting(id)
     try {
       await deleteProject(id)
-      console.log('Delete successful')
-      // Immediately update local state
+      // Immediately update local state for instant feedback
       setProjects(prev => prev.filter(p => p.id !== id))
-      // Also refresh from server
+      // Also reload from server to ensure data consistency
       await loadProjects()
+      // Show success message
+      alert('Project deleted successfully!')
     } catch (err) {
       console.error('Failed to delete project:', err)
       alert('Failed to delete project. Please try again.')
+      // Reload to get fresh data
+      await loadProjects()
     } finally {
       setDeleting(null)
-      setDeleteConfirm(null)
     }
-  }
-
-  const confirmDelete = (id: string) => {
-    setDeleteConfirm(id)
-  }
-
-  const cancelDelete = () => {
-    setDeleteConfirm(null)
   }
 
   const handleArrayInput = (field: 'systems' | 'technical_specs' | 'gallery' | 'features' | 'results', value: string) => {
@@ -286,7 +286,7 @@ export default function ProjectsAdminPage() {
                     <Edit size={16} className="inline" />
                   </button>
                   <button 
-                    onClick={() => confirmDelete(project.id)}
+                    onClick={() => handleDelete(project.id)}
                     className="text-red-600 hover:text-red-800 disabled:opacity-50"
                     disabled={deleting === project.id}
                     data-testid={`delete-project-${project.id}`}
@@ -583,45 +583,6 @@ export default function ProjectsAdminPage() {
                 </Button>
               </div>
             </form>
-      </Modal>
-
-      {/* Delete Confirmation Modal */}
-      <Modal
-        isOpen={deleteConfirm !== null}
-        onClose={cancelDelete}
-        title="Confirm Delete"
-        size="sm"
-      >
-        <div className="text-center py-4">
-          <p className="text-gray-600 dark:text-zinc-400 mb-6">
-            Are you sure you want to delete this project? This action cannot be undone.
-          </p>
-          <div className="flex gap-4">
-            <Button
-              onClick={cancelDelete}
-              variant="outline"
-              className="flex-1"
-              disabled={deleting !== null}
-            >
-              Cancel
-            </Button>
-            <Button
-              onClick={() => deleteConfirm && handleDelete(deleteConfirm)}
-              className="flex-1 bg-red-600 hover:bg-red-700 text-white"
-              disabled={deleting !== null}
-              data-testid="confirm-delete-btn"
-            >
-              {deleting ? (
-                <>
-                  <Loader2 className="mr-2 h-4 w-4 animate-spin" />
-                  Deleting...
-                </>
-              ) : (
-                'Delete Project'
-              )}
-            </Button>
-          </div>
-        </div>
       </Modal>
     </div>
   )

@@ -12,7 +12,7 @@ import uuid
 
 BASE_URL = os.environ.get('REACT_APP_BACKEND_URL', '').rstrip('/')
 if not BASE_URL:
-    BASE_URL = "https://modal-refactor-prod.preview.emergentagent.com"
+    BASE_URL = "https://project-sync-test-1.preview.emergentagent.com"
 
 # Test credentials
 ADMIN_USERNAME = "admin"

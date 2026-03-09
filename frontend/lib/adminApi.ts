@@ -105,6 +105,15 @@ export async function deleteSolution(id: string) {
 }
 
 // Projects Management
+export async function getAdminProjects() {
+  const response = await fetch(`${BACKEND_URL}/api/admin/projects`, {
+    headers: getAuthHeaders(),
+    cache: 'no-store'
+  })
+  if (!response.ok) throw new Error('Failed to fetch projects')
+  return response.json()
+}
+
 export async function createProject(project: any) {
   const response = await fetch(`${BACKEND_URL}/api/admin/projects`, {
     method: 'POST',

@@ -9,7 +9,7 @@ import pytest
 import requests
 import os
 
-BASE_URL = os.environ.get('REACT_APP_BACKEND_URL', 'https://modal-refactor-prod.preview.emergentagent.com').rstrip('/')
+BASE_URL = os.environ.get('REACT_APP_BACKEND_URL', 'https://project-sync-test-1.preview.emergentagent.com').rstrip('/')
 
 # CMS Section keys to test
 CMS_SECTIONS = [
