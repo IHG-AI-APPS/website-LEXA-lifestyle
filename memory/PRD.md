@@ -115,6 +115,26 @@ A premium smart home solutions website with dynamic content management, product 
     - Proper z-index and portal rendering
     - data-testid attributes for automation testing
 
+#### March 9, 2026 - Dynamic Content Integration Complete ✅
+- **Completed (P0):** Full dynamic content integration for contact information
+  - All contact info (phone, email, HR email, social links) now managed from Site Settings admin panel
+  - Components updated to use `useSiteSettings()` hook:
+    - `Header.tsx` - Dynamic header logos (header_logo_light/dark)
+    - `Footer.tsx` - Dynamic social links and footer logo
+    - `ConsultationForm.tsx` - Dynamic contact email in error messages
+    - `FinalCTA.tsx` - Dynamic phone, email, address
+    - `GalleryFooterCTA.tsx` - Dynamic contact info
+    - `work-with-us/page.tsx` - Dynamic HR email for job applications
+    - `careers/Content.tsx` - Dynamic HR email, company phone, address
+    - `support/Content.tsx` - Dynamic emergency phone, WhatsApp, support email
+  - API: `/api/site-settings` provides all settings from `site_settings` collection
+
+- **Fixed (P1):** Project card Quick View button shifting on touch devices
+  - **Root Cause:** Button used `inset-x-0 mx-auto w-fit` which caused layout shifts
+  - **Solution:** Changed to `left-1/2 -translate-x-1/2` for stable centering
+  - Files fixed: `/app/frontend/app/projects/page.tsx`, `/app/frontend/app/blog/page.tsx`
+  - Added `active:bg-[#C9A962] active:text-white` for consistent touch feedback
+
 #### March 9, 2026 - Project CRUD & Blog CRUD Critical Bug Fixes (RESOLVED)
 - **Fixed (P0 - RECURRING CRITICAL):** Admin Projects CRUD not working reliably
   - **Root Cause:** Admin page was using public `/api/projects` endpoint which filters by `published=True`
@@ -215,6 +235,8 @@ A premium smart home solutions website with dynamic content management, product 
 - Gmail SMTP, Google Maps
 
 ## Backlog (P1)
+- Connect Homepage hero content (title, subtitle, images, video) to Site Settings
+- Implement dynamic favicon management from Site Settings
 - Compare Packages feature
 - Additional brand logos upload (Note: Most brands have empty `logo` field in database)
 - Performance optimization
