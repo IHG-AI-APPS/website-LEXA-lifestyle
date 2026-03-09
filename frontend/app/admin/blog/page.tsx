@@ -26,7 +26,7 @@ interface BlogPost {
   created_at: string
 }
 
-const defaultFormData = {
+const getDefaultFormData = () => ({
   title: '',
   slug: '',
   excerpt: '',
@@ -39,14 +39,14 @@ const defaultFormData = {
   published: true,
   read_time: 5,
   published_date: new Date().toISOString().split('T')[0]
-}
+})
 
 export default function BlogAdmin() {
   const [posts, setPosts] = useState<BlogPost[]>([])
   const [loading, setLoading] = useState(true)
   const [showForm, setShowForm] = useState(false)
   const [editingId, setEditingId] = useState<string | null>(null)
-  const [formData, setFormData] = useState(defaultFormData)
+  const [formData, setFormData] = useState(getDefaultFormData())
   const [searchQuery, setSearchQuery] = useState('')
   const [saving, setSaving] = useState(false)
 
@@ -110,29 +110,42 @@ export default function BlogAdmin() {
       
       const method = editingId ? 'PUT' : 'POST'
       
+      // Ensure slug is generated if empty
+      const slug = formData.slug || generateSlug(formData.title) || `blog-${Date.now()}`
+      const articleId = editingId || `blog-${Date.now()}`
+      
+      const payload = {
+        id: articleId,
+        title: formData.title,
+        slug: slug,
+        excerpt: formData.excerpt || '',
+        content: formData.content,
+        image: formData.image || 'https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=800',
+        category: formData.category || 'smart-home',
+        author: formData.author || 'LEXA Team',
+        tags: formData.tags || [],
+        read_time: formData.read_time || 5,
+        published_date: formData.published_date || new Date().toISOString().split('T')[0]
+      }
+      
       const response = await fetch(url, {
         method,
         headers: {
           'Content-Type': 'application/json',
           'Authorization': `Bearer ${token}`
         },
-        body: JSON.stringify({
-          id: editingId || `blog-${Date.now()}`,
-          ...formData,
-          featured_image: formData.image || formData.featured_image,
-          read_time: formData.read_time || 5,
-          published_date: formData.published_date || new Date().toISOString().split('T')[0]
-        })
+        body: JSON.stringify(payload)
       })
 
       if (response.ok) {
         toast.success(editingId ? 'Blog post updated!' : 'Blog post created!')
         setShowForm(false)
         setEditingId(null)
-        setFormData(defaultFormData)
-        fetchPosts()
+        setFormData(getDefaultFormData())
+        await fetchPosts()
       } else {
         const error = await response.json()
+        console.error('API Error:', error)
         toast.error(error.detail || 'Failed to save')
       }
     } catch (error) {
@@ -214,7 +227,7 @@ export default function BlogAdmin() {
         </div>
         <Button 
           onClick={() => {
-            setFormData(defaultFormData)
+            setFormData(getDefaultFormData())
             setEditingId(null)
             setShowForm(true)
           }}
