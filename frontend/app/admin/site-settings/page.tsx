@@ -1,7 +1,7 @@
 'use client'
 
-import { useState, useEffect } from 'react'
-import { Save, Upload, Globe, Image, Link2, Mail, Phone, MapPin, FileImage, Video, Type, Loader2 } from 'lucide-react'
+import { useState, useEffect, useRef } from 'react'
+import { Save, Upload, Globe, Image, Link2, Mail, Phone, MapPin, FileImage, Video, Type, Loader2, X, Check } from 'lucide-react'
 import { toast } from 'sonner'
 
 const API_URL = process.env.NEXT_PUBLIC_BACKEND_URL || ''
@@ -74,6 +74,153 @@ const defaultSettings: SiteSettings = {
   about_section_image: ''
 }
 
+// Image Upload Component
+function ImageUploader({ 
+  value, 
+  onChange, 
+  label, 
+  category = 'logos',
+  previewBg = 'light'
+}: { 
+  value: string
+  onChange: (url: string) => void
+  label: string
+  category?: string
+  previewBg?: 'light' | 'dark'
+}) {
+  const [uploading, setUploading] = useState(false)
+  const [showUrlInput, setShowUrlInput] = useState(false)
+  const fileInputRef = useRef<HTMLInputElement>(null)
+
+  const handleFileUpload = async (e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0]
+    if (!file) return
+
+    // Validate file type
+    const allowedTypes = ['image/jpeg', 'image/png', 'image/gif', 'image/webp', 'image/svg+xml']
+    if (!allowedTypes.includes(file.type)) {
+      toast.error('Invalid file type. Please upload an image (JPG, PNG, GIF, WebP, SVG)')
+      return
+    }
+
+    // Validate file size (max 10MB)
+    if (file.size > 10 * 1024 * 1024) {
+      toast.error('File too large. Maximum size is 10MB')
+      return
+    }
+
+    setUploading(true)
+    try {
+      const formData = new FormData()
+      formData.append('file', file)
+      formData.append('category', category)
+
+      const response = await fetch(`${API_URL}/api/uploads/image`, {
+        method: 'POST',
+        body: formData
+      })
+
+      if (response.ok) {
+        const data = await response.json()
+        onChange(data.url)
+        toast.success('Image uploaded successfully!')
+      } else {
+        const error = await response.json()
+        toast.error(error.detail || 'Failed to upload image')
+      }
+    } catch (error) {
+      console.error('Upload error:', error)
+      toast.error('Failed to upload image')
+    } finally {
+      setUploading(false)
+      if (fileInputRef.current) {
+        fileInputRef.current.value = ''
+      }
+    }
+  }
+
+  const handleRemove = () => {
+    onChange('')
+  }
+
+  return (
+    <div className="space-y-2">
+      <label className="block text-sm font-medium text-gray-700">{label}</label>
+      
+      {/* Preview */}
+      {value && (
+        <div className={`relative inline-block p-4 rounded-lg ${previewBg === 'dark' ? 'bg-gray-800' : 'bg-white border border-gray-200'}`}>
+          <img 
+            src={value} 
+            alt="Preview" 
+            className="h-16 max-w-[200px] object-contain"
+            onError={(e) => {
+              (e.target as HTMLImageElement).src = '/images/placeholder.png'
+            }}
+          />
+          <button
+            type="button"
+            onClick={handleRemove}
+            className="absolute -top-2 -right-2 p-1 bg-red-500 text-white rounded-full hover:bg-red-600 transition-colors"
+          >
+            <X size={14} />
+          </button>
+        </div>
+      )}
+
+      {/* Upload Options */}
+      <div className="flex flex-wrap gap-2">
+        <input
+          ref={fileInputRef}
+          type="file"
+          accept="image/*"
+          onChange={handleFileUpload}
+          className="hidden"
+        />
+        
+        <button
+          type="button"
+          onClick={() => fileInputRef.current?.click()}
+          disabled={uploading}
+          className="flex items-center gap-2 px-3 py-2 text-sm bg-blue-600 text-white rounded-lg hover:bg-blue-700 disabled:opacity-50 transition-colors"
+        >
+          {uploading ? (
+            <>
+              <Loader2 size={16} className="animate-spin" />
+              Uploading...
+            </>
+          ) : (
+            <>
+              <Upload size={16} />
+              Upload Image
+            </>
+          )}
+        </button>
+
+        <button
+          type="button"
+          onClick={() => setShowUrlInput(!showUrlInput)}
+          className="flex items-center gap-2 px-3 py-2 text-sm border border-gray-300 text-gray-700 rounded-lg hover:bg-gray-50 transition-colors"
+        >
+          <Link2 size={16} />
+          {showUrlInput ? 'Hide URL Input' : 'Enter URL'}
+        </button>
+      </div>
+
+      {/* URL Input */}
+      {showUrlInput && (
+        <input
+          type="url"
+          value={value}
+          onChange={(e) => onChange(e.target.value)}
+          placeholder="https://example.com/image.png"
+          className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+        />
+      )}
+    </div>
+  )
+}
+
 export default function SiteSettingsPage() {
   const [settings, setSettings] = useState<SiteSettings>(defaultSettings)
   const [loading, setLoading] = useState(true)
@@ -89,12 +236,14 @@ export default function SiteSettingsPage() {
       const token = localStorage.getItem('admin_token')
       const response = await fetch(`${API_URL}/api/admin/site-settings`, {
         headers: {
-          'Authorization': `Bearer ${token}`
+          'Authorization': `Bearer ${token}`,
+          'Cache-Control': 'no-cache'
         }
       })
       if (response.ok) {
         const data = await response.json()
-        setSettings({ ...defaultSettings, ...data })
+        // Merge with defaults to ensure all fields exist
+        setSettings(prev => ({ ...defaultSettings, ...data }))
       }
     } catch (error) {
       console.error('Error fetching settings:', error)
@@ -171,12 +320,12 @@ export default function SiteSettingsPage() {
 
       {/* Tabs */}
       <div className="border-b border-gray-200">
-        <nav className="flex gap-4">
+        <nav className="flex gap-4 overflow-x-auto">
           {tabs.map(tab => (
             <button
               key={tab.id}
               onClick={() => setActiveTab(tab.id as typeof activeTab)}
-              className={`flex items-center gap-2 px-4 py-3 border-b-2 font-medium text-sm transition-colors ${
+              className={`flex items-center gap-2 px-4 py-3 border-b-2 font-medium text-sm transition-colors whitespace-nowrap ${
                 activeTab === tab.id
                   ? 'border-blue-600 text-blue-600'
                   : 'border-transparent text-gray-500 hover:text-gray-700'
@@ -194,91 +343,51 @@ export default function SiteSettingsPage() {
       <div className="bg-white rounded-lg shadow p-6">
         {/* Logos & Favicon Tab */}
         {activeTab === 'logos' && (
-          <div className="space-y-6">
+          <div className="space-y-8">
             <h2 className="text-lg font-semibold text-gray-900 mb-4">Logos & Favicon</h2>
             
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">
-                  Header Logo (Light/White) - For dark backgrounds
-                </label>
-                <input
-                  type="text"
-                  value={settings.header_logo_light}
-                  onChange={(e) => handleChange('header_logo_light', e.target.value)}
-                  placeholder="https://example.com/logo-white.png"
-                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-                  data-testid="header-logo-light"
-                />
-                {settings.header_logo_light && (
-                  <div className="mt-2 p-4 bg-gray-800 rounded-lg">
-                    <img src={settings.header_logo_light} alt="Light Logo Preview" className="h-12 object-contain" />
-                  </div>
-                )}
-              </div>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              <ImageUploader
+                value={settings.header_logo_light}
+                onChange={(url) => handleChange('header_logo_light', url)}
+                label="Header Logo (Light/White) - For dark backgrounds"
+                category="logos"
+                previewBg="dark"
+              />
 
-              <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">
-                  Header Logo (Dark/Black) - For light backgrounds
-                </label>
-                <input
-                  type="text"
-                  value={settings.header_logo_dark}
-                  onChange={(e) => handleChange('header_logo_dark', e.target.value)}
-                  placeholder="https://example.com/logo-dark.png"
-                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-                  data-testid="header-logo-dark"
-                />
-                {settings.header_logo_dark && (
-                  <div className="mt-2 p-4 bg-white border rounded-lg">
-                    <img src={settings.header_logo_dark} alt="Dark Logo Preview" className="h-12 object-contain" />
-                  </div>
-                )}
-              </div>
+              <ImageUploader
+                value={settings.header_logo_dark}
+                onChange={(url) => handleChange('header_logo_dark', url)}
+                label="Header Logo (Dark/Black) - For light backgrounds"
+                category="logos"
+                previewBg="light"
+              />
 
-              <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">
-                  Footer Logo (Light/White)
-                </label>
-                <input
-                  type="text"
-                  value={settings.footer_logo_light}
-                  onChange={(e) => handleChange('footer_logo_light', e.target.value)}
-                  placeholder="https://example.com/footer-logo-white.png"
-                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-                  data-testid="footer-logo-light"
-                />
-              </div>
+              <ImageUploader
+                value={settings.footer_logo_light}
+                onChange={(url) => handleChange('footer_logo_light', url)}
+                label="Footer Logo (Light/White)"
+                category="logos"
+                previewBg="dark"
+              />
 
-              <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">
-                  Footer Logo (Dark/Black)
-                </label>
-                <input
-                  type="text"
-                  value={settings.footer_logo_dark}
-                  onChange={(e) => handleChange('footer_logo_dark', e.target.value)}
-                  placeholder="https://example.com/footer-logo-dark.png"
-                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-                  data-testid="footer-logo-dark"
-                />
-              </div>
+              <ImageUploader
+                value={settings.footer_logo_dark}
+                onChange={(url) => handleChange('footer_logo_dark', url)}
+                label="Footer Logo (Dark/Black)"
+                category="logos"
+                previewBg="light"
+              />
+            </div>
 
-              <div className="md:col-span-2">
-                <label className="block text-sm font-medium text-gray-700 mb-2">
-                  <FileImage size={16} className="inline mr-2" />
-                  Favicon URL
-                </label>
-                <input
-                  type="text"
-                  value={settings.favicon}
-                  onChange={(e) => handleChange('favicon', e.target.value)}
-                  placeholder="https://example.com/favicon.ico"
-                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-                  data-testid="favicon"
-                />
-                <p className="text-xs text-gray-500 mt-1">Recommended: 32x32 or 64x64 pixels, .ico or .png format</p>
-              </div>
+            <div className="pt-4 border-t">
+              <ImageUploader
+                value={settings.favicon}
+                onChange={(url) => handleChange('favicon', url)}
+                label="Favicon (32x32 or 64x64 pixels, .ico or .png)"
+                category="logos"
+                previewBg="light"
+              />
             </div>
           </div>
         )}
@@ -480,20 +589,13 @@ export default function SiteSettingsPage() {
                       />
                     </div>
 
-                    <div>
-                      <label className="block text-sm font-medium text-gray-700 mb-2">
-                        <Image size={16} className="inline mr-2" />
-                        Hero Background Image
-                      </label>
-                      <input
-                        type="url"
-                        value={settings.hero_image}
-                        onChange={(e) => handleChange('hero_image', e.target.value)}
-                        placeholder="https://example.com/hero-bg.jpg"
-                        className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-                        data-testid="hero-image"
-                      />
-                    </div>
+                    <ImageUploader
+                      value={settings.hero_image}
+                      onChange={(url) => handleChange('hero_image', url)}
+                      label="Hero Background Image"
+                      category="hero"
+                      previewBg="dark"
+                    />
                   </div>
 
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -580,17 +682,13 @@ export default function SiteSettingsPage() {
                     />
                   </div>
 
-                  <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">Section Image URL</label>
-                    <input
-                      type="url"
-                      value={settings.about_section_image}
-                      onChange={(e) => handleChange('about_section_image', e.target.value)}
-                      placeholder="https://example.com/about-image.jpg"
-                      className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-                      data-testid="about-section-image"
-                    />
-                  </div>
+                  <ImageUploader
+                    value={settings.about_section_image}
+                    onChange={(url) => handleChange('about_section_image', url)}
+                    label="About Section Image"
+                    category="images"
+                    previewBg="light"
+                  />
                 </div>
               </div>
             </div>
