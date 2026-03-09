@@ -1,9 +1,23 @@
 'use client'
 
 import Link from 'next/link'
+import { useState, useEffect } from 'react'
 import { Button } from '@/components/ui/button'
-import { Briefcase, MapPin, Clock, ArrowRight } from 'lucide-react'
+import { Briefcase, MapPin, Clock, ArrowRight, Loader2 } from 'lucide-react'
 import { useCms } from '@/hooks/useCms'
+
+const API_URL = process.env.NEXT_PUBLIC_BACKEND_URL || ''
+
+interface JobPosition {
+  id: string
+  title: string
+  department: string
+  location: string
+  type: string
+  description?: string
+  experience_level?: string
+  is_active: boolean
+}
 
 const fallback = {
   hero_title: 'Join Our Team',
@@ -12,13 +26,6 @@ const fallback = {
     { title: 'Innovation & Excellence', description: 'Work with cutting-edge technologies from world-leading brands like Savant, Crestron, Bowers & Wilkins, and Sony.' },
     { title: 'Growth & Learning', description: 'Continuous training, certifications, and career development opportunities in smart home and AV technologies.' },
     { title: 'Prestigious Projects', description: 'Work on high-end residential villas, luxury hotels, and commercial projects across Dubai and the UAE.' },
-  ],
-  positions: [
-    { title: 'Smart Home Systems Engineer', department: 'Engineering', location: 'Dubai, UAE', type: 'Full-time' },
-    { title: 'Audio-Visual Integration Specialist', department: 'Technical', location: 'Dubai, UAE', type: 'Full-time' },
-    { title: 'Project Manager - Smart Living', department: 'Operations', location: 'Dubai, UAE', type: 'Full-time' },
-    { title: 'Sales Consultant - Luxury Automation', department: 'Sales', location: 'Dubai, UAE', type: 'Full-time' },
-    { title: 'Home Cinema Design Specialist', department: 'Design', location: 'Dubai, UAE', type: 'Full-time' },
   ],
   how_to_apply_intro: "Interested in joining our team? We'd love to hear from you.",
   how_to_apply_steps: [
@@ -34,11 +41,29 @@ const fallback = {
 
 export default function CareersContent() {
   const cms = useCms('page_careers', fallback)
+  const [positions, setPositions] = useState<JobPosition[]>([])
+  const [loading, setLoading] = useState(true)
+
+  useEffect(() => {
+    async function fetchPositions() {
+      try {
+        const response = await fetch(`${API_URL}/api/careers`)
+        if (response.ok) {
+          const data = await response.json()
+          setPositions(data)
+        }
+      } catch (error) {
+        console.error('Error fetching positions:', error)
+      } finally {
+        setLoading(false)
+      }
+    }
+    fetchPositions()
+  }, [])
 
   const heroTitle = cms?.hero_title || fallback.hero_title
   const heroDesc = cms?.hero_description || fallback.hero_description
   const benefits = cms?.benefits?.length ? cms.benefits : fallback.benefits
-  const positions = cms?.positions?.length ? cms.positions : fallback.positions
   const applyIntro = cms?.how_to_apply_intro || fallback.how_to_apply_intro
   const applySteps = cms?.how_to_apply_steps?.length ? cms.how_to_apply_steps : fallback.how_to_apply_steps
   const email = cms?.contact_email || fallback.contact_email
@@ -82,27 +107,43 @@ export default function CareersContent() {
           <div className="max-w-5xl mx-auto">
             <span className="text-xs uppercase tracking-widest text-[#C9A962] font-semibold">Opportunities</span>
             <h2 className="text-2xl sm:text-3xl font-bold mt-2 mb-8 text-gray-900 dark:text-white">Open Positions</h2>
-            <div className="space-y-4">
-              {positions.map((job: any, i: number) => (
-                <div key={i} className="bg-white dark:bg-[#050505] p-5 rounded-xl border border-gray-100 dark:border-zinc-800 hover:border-[#C9A962]/40 transition-colors" data-testid={`position-${i}`}>
-                  <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
-                    <div>
-                      <h3 className="text-base font-bold text-gray-900 dark:text-white mb-2">{job.title}</h3>
-                      <div className="flex flex-wrap gap-4 text-xs text-gray-500">
-                        <span className="flex items-center gap-1"><Briefcase size={14} />{job.department}</span>
-                        <span className="flex items-center gap-1"><MapPin size={14} />{job.location}</span>
-                        <span className="flex items-center gap-1"><Clock size={14} />{job.type}</span>
+            
+            {loading ? (
+              <div className="flex justify-center py-12">
+                <Loader2 className="w-8 h-8 animate-spin text-[#C9A962]" />
+              </div>
+            ) : positions.length === 0 ? (
+              <div className="text-center py-12 bg-white dark:bg-[#050505] rounded-xl border border-gray-100 dark:border-zinc-800">
+                <Briefcase className="w-12 h-12 text-gray-300 dark:text-zinc-600 mx-auto mb-4" />
+                <p className="text-gray-600 dark:text-zinc-400">No open positions at the moment.</p>
+                <p className="text-sm text-gray-500 dark:text-zinc-500 mt-2">Please check back later or send your CV to {email}</p>
+              </div>
+            ) : (
+              <div className="space-y-4">
+                {positions.map((job, i) => (
+                  <div key={job.id} className="bg-white dark:bg-[#050505] p-5 rounded-xl border border-gray-100 dark:border-zinc-800 hover:border-[#C9A962]/40 transition-colors" data-testid={`position-${i}`}>
+                    <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+                      <div>
+                        <h3 className="text-base font-bold text-gray-900 dark:text-white mb-2">{job.title}</h3>
+                        <div className="flex flex-wrap gap-4 text-xs text-gray-500">
+                          <span className="flex items-center gap-1"><Briefcase size={14} />{job.department}</span>
+                          <span className="flex items-center gap-1"><MapPin size={14} />{job.location}</span>
+                          <span className="flex items-center gap-1"><Clock size={14} />{job.type}</span>
+                          {job.experience_level && (
+                            <span className="px-2 py-0.5 bg-[#C9A962]/10 text-[#C9A962] rounded-full">{job.experience_level}</span>
+                          )}
+                        </div>
                       </div>
+                      <Link href={`/contact?position=${encodeURIComponent(job.title)}`}>
+                        <Button size="sm" className="bg-[#C9A962] text-gray-900 hover:bg-[#C9A962]/90 font-semibold">
+                          Apply Now <ArrowRight className="ml-1" size={14} />
+                        </Button>
+                      </Link>
                     </div>
-                    <Link href="/contact">
-                      <Button size="sm" className="bg-[#C9A962] text-gray-900 hover:bg-[#C9A962]/90 font-semibold">
-                        Apply Now <ArrowRight className="ml-1" size={14} />
-                      </Button>
-                    </Link>
                   </div>
-                </div>
-              ))}
-            </div>
+                ))}
+              </div>
+            )}
           </div>
         </div>
       </section>

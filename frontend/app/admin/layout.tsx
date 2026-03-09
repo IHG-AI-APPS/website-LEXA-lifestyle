@@ -45,7 +45,8 @@ import {
   MessageCircle,
   ShoppingBag,
   ImageIcon,
-  UsersRound
+  UsersRound,
+  Briefcase
 } from 'lucide-react'
 import { verifyToken, logout } from '@/lib/adminApi'
 
@@ -109,6 +110,7 @@ const navigationGroups = [
     items: [
       { name: 'Site Settings', href: '/admin/site-settings', icon: Settings },
       { name: 'Team Members', href: '/admin/team-members', icon: UsersRound },
+      { name: 'Careers/Jobs', href: '/admin/careers', icon: Briefcase },
       { name: 'Mega Menu', href: '/admin/mega-menu', icon: Navigation },
       { name: 'CMS / Page Content', href: '/admin/cms', icon: FileText },
       { name: 'File Manager', href: '/admin/images', icon: ImageIcon },

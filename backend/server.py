@@ -1858,6 +1858,82 @@ async def update_site_settings(settings: Dict[str, Any], request: Request, user:
         logger.error(f"Update site settings error: {str(e)}")
         raise HTTPException(status_code=500, detail="Failed to update site settings")
 
+# ============= CAREERS/JOBS MANAGEMENT =============
+
+@api_router.get("/careers")
+async def get_careers(active_only: bool = True):
+    """Get all job positions (public)"""
+    try:
+        query = {"is_active": True} if active_only else {}
+        careers = await db.careers.find(query, {"_id": 0}).sort("posted_date", -1).to_list(100)
+        return careers
+    except Exception as e:
+        logger.error(f"Get careers error: {str(e)}")
+        raise HTTPException(status_code=500, detail="Failed to fetch careers")
+
+@api_router.get("/careers/{job_id}")
+async def get_career(job_id: str):
+    """Get a specific job position"""
+    try:
+        career = await db.careers.find_one({"id": job_id}, {"_id": 0})
+        if not career:
+            raise HTTPException(status_code=404, detail="Job position not found")
+        return career
+    except HTTPException:
+        raise
+    except Exception as e:
+        logger.error(f"Get career error: {str(e)}")
+        raise HTTPException(status_code=500, detail="Failed to fetch career")
+
+@api_router.post("/admin/careers")
+async def create_career(job: Dict[str, Any], user: dict = Depends(verify_token)):
+    """Create a new job position"""
+    try:
+        if not job.get("id"):
+            job["id"] = f"job-{datetime.now().timestamp():.0f}"
+        job["created_at"] = datetime.now(timezone.utc).isoformat()
+        job["created_by"] = user.get("username")
+        
+        await db.careers.insert_one(job)
+        return {"message": "Job position created successfully", "id": job["id"]}
+    except Exception as e:
+        logger.error(f"Create career error: {str(e)}")
+        raise HTTPException(status_code=500, detail="Failed to create job position")
+
+@api_router.put("/admin/careers/{job_id}")
+async def update_career(job_id: str, job: Dict[str, Any], user: dict = Depends(verify_token)):
+    """Update a job position"""
+    try:
+        job["updated_at"] = datetime.now(timezone.utc).isoformat()
+        job["updated_by"] = user.get("username")
+        
+        result = await db.careers.update_one(
+            {"id": job_id},
+            {"$set": job}
+        )
+        if result.matched_count == 0:
+            raise HTTPException(status_code=404, detail="Job position not found")
+        return {"message": "Job position updated successfully"}
+    except HTTPException:
+        raise
+    except Exception as e:
+        logger.error(f"Update career error: {str(e)}")
+        raise HTTPException(status_code=500, detail="Failed to update job position")
+
+@api_router.delete("/admin/careers/{job_id}")
+async def delete_career(job_id: str, user: dict = Depends(verify_token)):
+    """Delete a job position"""
+    try:
+        result = await db.careers.delete_one({"id": job_id})
+        if result.deleted_count == 0:
+            raise HTTPException(status_code=404, detail="Job position not found")
+        return {"message": "Job position deleted successfully"}
+    except HTTPException:
+        raise
+    except Exception as e:
+        logger.error(f"Delete career error: {str(e)}")
+        raise HTTPException(status_code=500, detail="Failed to delete job position")
+
 # ============= SETTINGS MANAGEMENT =============
 
 @api_router.get("/settings/{key}")

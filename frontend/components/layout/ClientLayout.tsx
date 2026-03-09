@@ -11,6 +11,7 @@ import WhatsAppEnhanced from '@/components/conversion/WhatsAppEnhanced'
 import { SmoothScrollProvider, useSmoothScroll } from '@/components/providers/SmoothScrollProvider'
 import { LanguageProvider } from '@/components/providers/LanguageProvider'
 import { ThemeProvider } from '@/contexts/ThemeContext'
+import { SiteSettingsProvider } from '@/hooks/useSiteSettings'
 import { Toaster } from 'sonner'
 import dynamic from 'next/dynamic'
 import { trackPageView } from '@/hooks/useAnalytics'
@@ -143,11 +144,13 @@ function ClientLayoutInner({ children }: { children: React.ReactNode }) {
 export default function ClientLayout({ children }: { children: React.ReactNode }) {
   return (
     <ThemeProvider>
-      <LanguageProvider>
-        <SmoothScrollProvider>
-          <ClientLayoutInner>{children}</ClientLayoutInner>
-        </SmoothScrollProvider>
-      </LanguageProvider>
+      <SiteSettingsProvider>
+        <LanguageProvider>
+          <SmoothScrollProvider>
+            <ClientLayoutInner>{children}</ClientLayoutInner>
+          </SmoothScrollProvider>
+        </LanguageProvider>
+      </SiteSettingsProvider>
     </ThemeProvider>
   )
 }
