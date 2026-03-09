@@ -115,6 +115,14 @@ A premium smart home solutions website with dynamic content management, product 
     - Proper z-index and portal rendering
     - data-testid attributes for automation testing
 
+#### March 9, 2026 - File Upload Security Restrictions ✅
+- **Security Enhancement:** Implemented strict file upload validation
+  - **Allowed extensions:** jpg, jpeg, png, webp, pdf
+  - **Blocked extensions:** php, exe, js, sh, bat, cmd, ps1, vbs, jar, py, rb, pl, cgi, asp, aspx, jsp, htaccess, html, htm, svg
+  - Added `validate_file_security()` function that checks both file extension AND content-type
+  - Logs warning for blocked upload attempts
+  - File: `/app/backend/routes/uploads.py`
+
 #### March 9, 2026 - Google Maps Embed Management ✅
 - **New Feature (P0):** Google Maps Embed Code management in Admin Panel
   - Added `google_maps_embed` field to Site Settings > Contact Info tab

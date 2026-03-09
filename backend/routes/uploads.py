@@ -18,10 +18,60 @@ router = APIRouter(prefix="/api/uploads", tags=["uploads"])
 
 # Local upload dir (fallback for serving legacy files)
 UPLOAD_DIR = "/app/backend/uploads"
-ALLOWED_IMAGE_TYPES = ["image/jpeg", "image/png", "image/gif", "image/webp", "image/svg+xml"]
-ALLOWED_DOC_TYPES = ["application/pdf", "application/msword", "application/vnd.openxmlformats-officedocument.wordprocessingml.document"]
+
+# ============================================
+# FILE UPLOAD SECURITY CONFIGURATION
+# ============================================
+
+# ALLOWED file extensions (whitelist)
+ALLOWED_EXTENSIONS = {"jpg", "jpeg", "png", "webp", "pdf"}
+
+# BLOCKED file extensions (blacklist) - dangerous files
+BLOCKED_EXTENSIONS = {"php", "exe", "js", "sh", "bat", "cmd", "ps1", "vbs", "jar", "py", "rb", "pl", "cgi", "asp", "aspx", "jsp", "htaccess", "html", "htm", "svg"}
+
+# Content-type mappings for allowed files
+ALLOWED_IMAGE_TYPES = ["image/jpeg", "image/png", "image/webp"]
+ALLOWED_DOC_TYPES = ["application/pdf"]
+ALL_ALLOWED_CONTENT_TYPES = ALLOWED_IMAGE_TYPES + ALLOWED_DOC_TYPES
+
 MAX_FILE_SIZE = 10 * 1024 * 1024  # 10MB
 MAX_PDF_SIZE = 50 * 1024 * 1024  # 50MB for PDFs
+
+
+def validate_file_security(filename: str, content_type: str) -> tuple[bool, str]:
+    """
+    Validate file for security - checks both extension and content type.
+    Returns (is_valid, error_message)
+    """
+    if not filename or "." not in filename:
+        return False, "Invalid filename - must have an extension"
+    
+    # Get file extension (lowercase)
+    ext = filename.rsplit(".", 1)[-1].lower()
+    
+    # Check against blocked extensions first
+    if ext in BLOCKED_EXTENSIONS:
+        logger.warning(f"BLOCKED file upload attempt: {filename} (extension: {ext})")
+        return False, f"File type .{ext} is not allowed for security reasons"
+    
+    # Check against allowed extensions
+    if ext not in ALLOWED_EXTENSIONS:
+        return False, f"File type .{ext} is not allowed. Allowed types: {', '.join(sorted(ALLOWED_EXTENSIONS))}"
+    
+    # Validate content-type matches extension
+    expected_types = {
+        "jpg": ["image/jpeg"],
+        "jpeg": ["image/jpeg"],
+        "png": ["image/png"],
+        "webp": ["image/webp"],
+        "pdf": ["application/pdf"]
+    }
+    
+    if ext in expected_types and content_type not in expected_types[ext]:
+        logger.warning(f"Content-type mismatch: {filename} claims {content_type} but has .{ext} extension")
+        return False, f"File content does not match extension .{ext}"
+    
+    return True, ""
 
 # Ensure local dirs exist (for serving legacy files)
 os.makedirs(f"{UPLOAD_DIR}/images", exist_ok=True)
@@ -37,10 +87,16 @@ async def upload_image(
 ):
     """Upload an image file to remote storage"""
     try:
+        # Security validation - check extension and content-type
+        is_valid, error_msg = validate_file_security(file.filename, file.content_type)
+        if not is_valid:
+            raise HTTPException(status_code=400, detail=error_msg)
+        
+        # Additional check: only allow image types for this endpoint
         if file.content_type not in ALLOWED_IMAGE_TYPES:
             raise HTTPException(
                 status_code=400,
-                detail=f"Invalid file type. Allowed: {', '.join(ALLOWED_IMAGE_TYPES)}"
+                detail=f"Invalid image type. Allowed: JPG, PNG, WebP"
             )
 
         content = await file.read()
@@ -51,7 +107,8 @@ async def upload_image(
                 detail=f"File too large. Maximum size: {MAX_FILE_SIZE // (1024*1024)}MB"
             )
 
-        file_ext = file.filename.split(".")[-1] if "." in file.filename else "jpg"
+        # Use only the validated extension
+        file_ext = file.filename.rsplit(".", 1)[-1].lower()
         unique_filename = f"{uuid.uuid4().hex[:12]}_{datetime.now().strftime('%Y%m%d%H%M%S')}.{file_ext}"
 
         # Upload to remote server
@@ -83,6 +140,11 @@ async def upload_pdf(
 ):
     """Upload a PDF document to remote storage"""
     try:
+        # Security validation - check extension and content-type
+        is_valid, error_msg = validate_file_security(file.filename, file.content_type)
+        if not is_valid:
+            raise HTTPException(status_code=400, detail=error_msg)
+        
         if file.content_type != "application/pdf":
             raise HTTPException(status_code=400, detail="Only PDF files are allowed")
 
@@ -123,8 +185,14 @@ async def upload_multiple_images(
 
     for file in files:
         try:
+            # Security validation - check extension and content-type
+            is_valid, error_msg = validate_file_security(file.filename, file.content_type)
+            if not is_valid:
+                errors.append({"filename": file.filename, "error": error_msg})
+                continue
+            
             if file.content_type not in ALLOWED_IMAGE_TYPES:
-                errors.append({"filename": file.filename, "error": "Invalid file type"})
+                errors.append({"filename": file.filename, "error": "Invalid image type. Allowed: JPG, PNG, WebP"})
                 continue
 
             content = await file.read()
@@ -133,7 +201,7 @@ async def upload_multiple_images(
                 errors.append({"filename": file.filename, "error": "File too large"})
                 continue
 
-            file_ext = file.filename.split(".")[-1] if "." in file.filename else "jpg"
+            file_ext = file.filename.rsplit(".", 1)[-1].lower()
             unique_filename = f"{uuid.uuid4().hex[:12]}_{datetime.now().strftime('%Y%m%d%H%M%S')}.{file_ext}"
 
             file_url = upload_to_remote(content, category, unique_filename)
