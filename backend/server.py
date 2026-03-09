@@ -1327,8 +1327,8 @@ async def create_article(article: Article, user: dict = Depends(verify_token)):
         article_dict = article.model_dump()
         await db.articles.insert_one(article_dict)
         
-        # Invalidate articles cache
-        await cache.delete("articles:cat=None:limit=None")
+        # Invalidate all articles cache keys
+        await cache.delete_prefix("articles:")
         
         return {"message": "Article created successfully", "id": article.id}
     except Exception as e:
@@ -1346,6 +1346,10 @@ async def update_article(article_id: str, article: Article, user: dict = Depends
         )
         if result.matched_count == 0:
             raise HTTPException(status_code=404, detail="Article not found")
+        
+        # Invalidate all articles cache keys
+        await cache.delete_prefix("articles:")
+        
         return {"message": "Article updated successfully"}
     except HTTPException:
         raise
@@ -1360,6 +1364,10 @@ async def delete_article(article_id: str, user: dict = Depends(verify_token)):
         result = await db.articles.delete_one({"id": article_id})
         if result.deleted_count == 0:
             raise HTTPException(status_code=404, detail="Article not found")
+        
+        # Invalidate all articles cache keys
+        await cache.delete_prefix("articles:")
+        
         return {"message": "Article deleted successfully"}
     except HTTPException:
         raise
@@ -1375,7 +1383,7 @@ async def patch_article(article_id: str, updates: Dict[str, Any], user: dict = D
         updates.pop("id", None)
         if not updates:
             raise HTTPException(status_code=400, detail="No fields to update")
-        await cache.delete("articles:cat=None:limit=None")
+        await cache.delete_prefix("articles:")
         result = await db.articles.update_one({"id": article_id}, {"$set": updates})
         if result.matched_count == 0:
             raise HTTPException(status_code=404, detail="Article not found")

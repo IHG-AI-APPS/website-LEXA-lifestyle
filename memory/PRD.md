@@ -115,25 +115,27 @@ A premium smart home solutions website with dynamic content management, product 
     - Proper z-index and portal rendering
     - data-testid attributes for automation testing
 
-#### March 9, 2026 - Project CRUD Critical Bug Fix (RESOLVED)
+#### March 9, 2026 - Project CRUD & Blog CRUD Critical Bug Fixes (RESOLVED)
 - **Fixed (P0 - RECURRING CRITICAL):** Admin Projects CRUD not working reliably
-  - **Root Cause:** Admin page was using public `/api/projects` endpoint which filters by `published=True`, causing issues with unpublished projects and potential caching problems
-  - **Solution:** 
-    1. Created new admin-specific endpoint `GET /api/admin/projects` that returns ALL projects without any filtering
-    2. Updated `getAdminProjects()` function in `/app/frontend/lib/adminApi.ts`
-    3. Changed `loadProjects()` in admin page to use `getAdminProjects()` instead of public `getProjects()`
-    4. Added no-cache headers to prevent stale data
-  - **Testing Results:** 100% pass rate (11/11 backend tests, full frontend verification)
-  - Files modified:
-    - `/app/backend/server.py` - Added `admin_get_projects` endpoint at line 1005-1019
-    - `/app/frontend/lib/adminApi.ts` - Added `getAdminProjects()` function
-    - `/app/frontend/app/admin/projects/page.tsx` - Changed from `getProjects()` to `getAdminProjects()`
-  - **Verification:** User should verify by:
+  - **Root Cause:** Admin page was using public `/api/projects` endpoint which filters by `published=True`
+  - **Solution:** Created new admin-specific endpoint `GET /api/admin/projects` that returns ALL projects without filtering
+  - Files modified: `/app/backend/server.py`, `/app/frontend/lib/adminApi.ts`, `/app/frontend/app/admin/projects/page.tsx`
+
+- **Fixed (P0):** Blog/Articles CRUD not working - validation errors
+  - **Root Cause:** Blog form was missing required fields: `id`, `read_time`, `published_date`
+  - **Solution:** Added missing fields to form submission in `/app/frontend/app/admin/blog/page.tsx`
+  - Now generates unique id (`blog-{timestamp}`), sets default read_time (5), and published_date (today)
+
+- **Fixed (LOW):** Cache invalidation for articles
+  - **Issue:** Newly created articles not appearing in list due to cache key mismatch
+  - **Solution:** Added `delete_prefix()` method to cache and updated article CRUD to clear all `articles:*` cache keys
+  - Files modified: `/app/backend/utils/cache.py`, `/app/backend/server.py`
+
+- **Testing Results:** 100% pass rate for both Project and Blog CRUD operations
+  - User verification steps:
     1. Login to admin panel at `/admin/login`
-    2. Navigate to Projects page
-    3. Add a new project → should appear immediately in list
-    4. Edit a project → changes should save and reflect immediately
-    5. Delete a project → should be removed from list immediately
+    2. Navigate to Projects → Add/Edit/Delete should work immediately
+    3. Navigate to Blog → Add/Edit/Delete should work immediately
 
 #### March 7, 2026 - Team Members CRUD & Admin Panel Restructure
 - **New Feature (P1):** Team Members CRUD Module

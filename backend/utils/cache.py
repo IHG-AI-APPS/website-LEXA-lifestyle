@@ -48,6 +48,15 @@ class SimpleCache:
                 del self._cache[key]
                 logger.debug(f"Cache DELETE: {key}")
     
+    async def delete_prefix(self, prefix: str):
+        """Delete all keys starting with a prefix"""
+        async with self._lock:
+            keys_to_delete = [k for k in self._cache.keys() if k.startswith(prefix)]
+            for key in keys_to_delete:
+                del self._cache[key]
+            if keys_to_delete:
+                logger.debug(f"Cache DELETE PREFIX '{prefix}': {len(keys_to_delete)} keys removed")
+    
     async def clear(self):
         """Clear all cache"""
         async with self._lock:
