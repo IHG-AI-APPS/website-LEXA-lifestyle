@@ -115,6 +115,14 @@ A premium smart home solutions website with dynamic content management, product 
     - Proper z-index and portal rendering
     - data-testid attributes for automation testing
 
+#### March 9, 2026 - Google Maps Embed Management ✅
+- **New Feature (P0):** Google Maps Embed Code management in Admin Panel
+  - Added `google_maps_embed` field to Site Settings > Contact Info tab
+  - Includes live preview of the map when URL is entered
+  - Contact page dynamically uses the saved embed URL with fallback
+  - Instructions provided on how to get embed URL from Google Maps
+  - Files modified: `/app/frontend/app/admin/site-settings/page.tsx`, `/app/frontend/hooks/useSiteSettings.tsx`, `/app/frontend/app/contact/page.tsx`
+
 #### March 9, 2026 - Dynamic Content Integration Complete ✅
 - **Completed (P0):** Full dynamic content integration for contact information
   - All contact info (phone, email, HR email, social links) now managed from Site Settings admin panel
