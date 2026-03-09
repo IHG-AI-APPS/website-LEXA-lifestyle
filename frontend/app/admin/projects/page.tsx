@@ -80,7 +80,7 @@ export default function ProjectsAdminPage() {
       // Use admin endpoint to get ALL projects (including unpublished)
       const data = await getAdminProjects()
       // Ensure all projects have proper defaults and handle legacy field names
-      const projectsWithDefaults = data.map((p: any) => ({
+      const projectsWithDefaults = (Array.isArray(data) ? data : []).map((p: any) => ({
         ...p,
         slug: p.slug || p.id || '',
         title: p.title || '',
@@ -110,6 +110,8 @@ export default function ProjectsAdminPage() {
       setProjects(projectsWithDefaults)
     } catch (err) {
       console.error('Failed to load projects:', err)
+      // Set empty array on error to avoid undefined state
+      setProjects([])
     } finally {
       setLoading(false)
     }
@@ -267,39 +269,47 @@ export default function ProjectsAdminPage() {
             </tr>
           </thead>
           <tbody className="bg-white divide-y divide-gray-200">
-            {projects.map((project) => (
-              <tr key={project.id} className="hover:bg-gray-50">
-                <td className="px-6 py-4">
-                  <div className="font-medium">{project.title}</div>
-                  <div className="text-sm text-gray-600">{project.systems.join(', ')}</div>
-                </td>
-                <td className="px-6 py-4 text-sm">{project.location}</td>
-                <td className="px-6 py-4 text-sm">{project.type}</td>
-                <td className="px-6 py-4 text-sm">{project.year}</td>
-                <td className="px-6 py-4 text-right text-sm">
-                  <button 
-                    onClick={() => handleEdit(project)}
-                    className="text-blue-600 hover:text-blue-800 mr-3"
-                    disabled={deleting === project.id}
-                    data-testid={`edit-project-${project.id}`}
-                  >
-                    <Edit size={16} className="inline" />
-                  </button>
-                  <button 
-                    onClick={() => handleDelete(project.id)}
-                    className="text-red-600 hover:text-red-800 disabled:opacity-50"
-                    disabled={deleting === project.id}
-                    data-testid={`delete-project-${project.id}`}
-                  >
-                    {deleting === project.id ? (
-                      <Loader2 size={16} className="inline animate-spin" />
-                    ) : (
-                      <Trash2 size={16} className="inline" />
-                    )}
-                  </button>
+            {projects.length === 0 ? (
+              <tr>
+                <td colSpan={5} className="px-6 py-12 text-center text-gray-500">
+                  No projects found. Click "Add Project" to create one.
                 </td>
               </tr>
-            ))}
+            ) : (
+              projects.map((project) => (
+                <tr key={project.id} className="hover:bg-gray-50">
+                  <td className="px-6 py-4">
+                    <div className="font-medium">{project.title}</div>
+                    <div className="text-sm text-gray-600">{project.systems.join(', ')}</div>
+                  </td>
+                  <td className="px-6 py-4 text-sm">{project.location}</td>
+                  <td className="px-6 py-4 text-sm">{project.type}</td>
+                  <td className="px-6 py-4 text-sm">{project.year}</td>
+                  <td className="px-6 py-4 text-right text-sm">
+                    <button 
+                      onClick={() => handleEdit(project)}
+                      className="text-blue-600 hover:text-blue-800 mr-3"
+                      disabled={deleting === project.id}
+                      data-testid={`edit-project-${project.id}`}
+                    >
+                      <Edit size={16} className="inline" />
+                    </button>
+                    <button 
+                      onClick={() => handleDelete(project.id)}
+                      className="text-red-600 hover:text-red-800 disabled:opacity-50"
+                      disabled={deleting === project.id}
+                      data-testid={`delete-project-${project.id}`}
+                    >
+                      {deleting === project.id ? (
+                        <Loader2 size={16} className="inline animate-spin" />
+                      ) : (
+                        <Trash2 size={16} className="inline" />
+                      )}
+                    </button>
+                  </td>
+                </tr>
+              ))
+            )}
           </tbody>
         </table>
       </div>
