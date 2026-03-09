@@ -1,4 +1,4 @@
-from fastapi import FastAPI, APIRouter, HTTPException, Query, Depends, Request
+from fastapi import FastAPI, APIRouter, HTTPException, Query, Depends, Request, Response
 from fastapi.security import HTTPBearer, HTTPAuthorizationCredentials
 from fastapi.responses import StreamingResponse
 from dotenv import load_dotenv
@@ -1004,11 +1004,17 @@ async def patch_solution(solution_id: str, updates: Dict[str, Any], user: dict =
 
 @api_router.get("/projects")
 async def get_projects(
+    response: Response,
     featured: Optional[bool] = None,
     category: Optional[str] = None,
     limit: int = 100
 ):
     """Get all published projects"""
+    # Prevent caching - always return fresh data
+    response.headers["Cache-Control"] = "no-cache, no-store, must-revalidate"
+    response.headers["Pragma"] = "no-cache"
+    response.headers["Expires"] = "0"
+    
     query = {"published": True}
     
     if featured is not None:
