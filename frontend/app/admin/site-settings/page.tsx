@@ -26,6 +26,7 @@ interface SiteSettings {
   contact_phone: string
   contact_address: string
   hr_email: string
+  google_maps_embed: string
   // Homepage Hero
   hero_title: string
   hero_subtitle: string
@@ -61,6 +62,7 @@ const defaultSettings: SiteSettings = {
   contact_phone: '',
   contact_address: '',
   hr_email: '',
+  google_maps_embed: '',
   hero_title: '',
   hero_subtitle: '',
   hero_video_url: '',
@@ -554,6 +556,39 @@ export default function SiteSettingsPage() {
                   className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent resize-none"
                   data-testid="contact-address"
                 />
+              </div>
+
+              <div className="md:col-span-2">
+                <label className="block text-sm font-medium text-gray-700 mb-2">
+                  <MapPin size={16} className="inline mr-2" />
+                  Google Maps Embed Code
+                </label>
+                <textarea
+                  value={settings.google_maps_embed}
+                  onChange={(e) => handleChange('google_maps_embed', e.target.value)}
+                  placeholder='Paste the Google Maps embed URL here (e.g., https://www.google.com/maps/embed?pb=...)'
+                  rows={4}
+                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent resize-none font-mono text-sm"
+                  data-testid="google-maps-embed"
+                />
+                <p className="text-xs text-gray-500 mt-1">
+                  Get the embed URL from Google Maps: Share → Embed a map → Copy the src URL from the iframe code
+                </p>
+                {settings.google_maps_embed && (
+                  <div className="mt-3 border border-gray-200 rounded-lg overflow-hidden">
+                    <p className="text-xs text-gray-500 bg-gray-50 px-3 py-1 border-b">Map Preview</p>
+                    <iframe
+                      src={settings.google_maps_embed}
+                      width="100%"
+                      height="200"
+                      style={{ border: 0 }}
+                      allowFullScreen
+                      loading="lazy"
+                      referrerPolicy="no-referrer-when-downgrade"
+                      title="Google Maps Preview"
+                    />
+                  </div>
+                )}
               </div>
             </div>
           </div>
