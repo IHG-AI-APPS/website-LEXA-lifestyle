@@ -159,7 +159,7 @@ export default function ProjectsPage() {
                         href: `/projects/${project.slug || project.id}`
                       })
                     }}
-                    className="absolute bottom-4 left-1/2 -translate-x-1/2 px-5 py-2 bg-white/95 dark:bg-black/80 backdrop-blur-sm text-gray-900 dark:text-white text-xs font-medium tracking-wider uppercase rounded-full opacity-100 sm:opacity-0 sm:group-hover:opacity-100 transition-opacity duration-300 hover:bg-[#C9A962] hover:text-white z-10"
+                    className="absolute bottom-4 inset-x-0 mx-auto w-fit px-5 py-2 bg-white/95 dark:bg-black/80 backdrop-blur-sm text-gray-900 dark:text-white text-xs font-medium tracking-wider uppercase rounded-full opacity-100 sm:opacity-0 sm:group-hover:opacity-100 transition-opacity duration-300 hover:bg-[#C9A962] hover:text-white z-10"
                     data-testid={`quickview-btn-${index}`}
                   >
                     Quick View

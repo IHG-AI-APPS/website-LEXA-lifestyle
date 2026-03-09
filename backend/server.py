@@ -489,6 +489,44 @@ class Brand(BaseModel):
     feature_cards: List[dict] = []  # Feature category cards [{title, description, benefits[]}]
     related_solutions: List[str] = []  # Related solution slugs
 
+class SiteSettings(BaseModel):
+    """Site-wide settings for logos, social links, favicon, and homepage content"""
+    model_config = ConfigDict(extra="ignore")
+    # Logos
+    header_logo_light: Optional[str] = None  # Logo for light mode/dark background
+    header_logo_dark: Optional[str] = None   # Logo for dark mode/light background
+    footer_logo_light: Optional[str] = None
+    footer_logo_dark: Optional[str] = None
+    favicon: Optional[str] = None
+    # Social Media Links
+    social_facebook: Optional[str] = None
+    social_instagram: Optional[str] = None
+    social_twitter: Optional[str] = None
+    social_linkedin: Optional[str] = None
+    social_youtube: Optional[str] = None
+    social_tiktok: Optional[str] = None
+    social_whatsapp: Optional[str] = None
+    # Contact Info
+    contact_email: Optional[str] = None
+    contact_phone: Optional[str] = None
+    contact_address: Optional[str] = None
+    # Homepage Content
+    hero_title: Optional[str] = None
+    hero_subtitle: Optional[str] = None
+    hero_video_url: Optional[str] = None
+    hero_image: Optional[str] = None
+    hero_cta_text: Optional[str] = None
+    hero_cta_link: Optional[str] = None
+    # SEO
+    site_name: Optional[str] = None
+    site_description: Optional[str] = None
+    # Additional homepage sections
+    featured_projects_title: Optional[str] = None
+    featured_projects_subtitle: Optional[str] = None
+    about_section_title: Optional[str] = None
+    about_section_content: Optional[str] = None
+    about_section_image: Optional[str] = None
+
 class ProductCategory(BaseModel):
     model_config = ConfigDict(extra="ignore")
     id: str
@@ -1706,6 +1744,119 @@ async def get_admin_stats(user: dict = Depends(verify_token)):
     except Exception as e:
         logger.error(f"Get stats error: {str(e)}")
         raise HTTPException(status_code=500, detail="Failed to fetch stats")
+
+# ============= ADMIN - SITE SETTINGS =============
+
+@api_router.get("/site-settings")
+async def get_site_settings():
+    """Get site settings (public - for header/footer)"""
+    try:
+        settings = await db.site_settings.find_one({}, {"_id": 0})
+        if not settings:
+            # Return default settings
+            return {
+                "header_logo_light": "/images/lexa-logo-white.png",
+                "header_logo_dark": "/images/lexa-logo.png",
+                "footer_logo_light": "/images/lexa-logo-white.png",
+                "footer_logo_dark": "/images/lexa-logo.png",
+                "favicon": "/favicon.ico",
+                "social_instagram": "https://instagram.com/lexalifestyle",
+                "social_facebook": "https://facebook.com/lexalifestyle",
+                "social_linkedin": "https://linkedin.com/company/lexalifestyle",
+                "social_youtube": "",
+                "social_twitter": "",
+                "social_tiktok": "",
+                "social_whatsapp": "",
+                "contact_email": "info@lexalifestyle.com",
+                "contact_phone": "+971 4 XXX XXXX",
+                "contact_address": "Dubai, UAE",
+                "hero_title": "Transform Your Space Into an Intelligent Sanctuary",
+                "hero_subtitle": "Experience the future of luxury living with LEXA's cutting-edge smart home solutions.",
+                "hero_video_url": "",
+                "hero_image": "",
+                "site_name": "LEXA Lifestyle",
+                "site_description": "Premium Smart Home Automation Solutions"
+            }
+        return settings
+    except Exception as e:
+        logger.error(f"Get site settings error: {str(e)}")
+        raise HTTPException(status_code=500, detail="Failed to fetch site settings")
+
+@api_router.get("/admin/site-settings")
+async def get_admin_site_settings(user: dict = Depends(verify_token)):
+    """Get site settings for admin panel"""
+    try:
+        settings = await db.site_settings.find_one({}, {"_id": 0})
+        if not settings:
+            # Return default settings
+            settings = {
+                "header_logo_light": "/images/lexa-logo-white.png",
+                "header_logo_dark": "/images/lexa-logo.png",
+                "footer_logo_light": "/images/lexa-logo-white.png",
+                "footer_logo_dark": "/images/lexa-logo.png",
+                "favicon": "/favicon.ico",
+                "social_instagram": "",
+                "social_facebook": "",
+                "social_linkedin": "",
+                "social_youtube": "",
+                "social_twitter": "",
+                "social_tiktok": "",
+                "social_whatsapp": "",
+                "contact_email": "info@lexalifestyle.com",
+                "contact_phone": "+971 4 XXX XXXX",
+                "contact_address": "Dubai, UAE",
+                "hero_title": "Transform Your Space Into an Intelligent Sanctuary",
+                "hero_subtitle": "Experience the future of luxury living with LEXA's cutting-edge smart home solutions.",
+                "hero_video_url": "",
+                "hero_image": "",
+                "hero_cta_text": "Explore Solutions",
+                "hero_cta_link": "/solutions",
+                "site_name": "LEXA Lifestyle",
+                "site_description": "Premium Smart Home Automation Solutions",
+                "featured_projects_title": "Our Portfolio",
+                "featured_projects_subtitle": "Explore our latest smart home transformations",
+                "about_section_title": "About LEXA",
+                "about_section_content": "",
+                "about_section_image": ""
+            }
+        return settings
+    except Exception as e:
+        logger.error(f"Get admin site settings error: {str(e)}")
+        raise HTTPException(status_code=500, detail="Failed to fetch site settings")
+
+@api_router.put("/admin/site-settings")
+async def update_site_settings(settings: Dict[str, Any], request: Request, user: dict = Depends(verify_token)):
+    """Update site settings (admin only)"""
+    try:
+        # Add timestamp
+        settings["updated_at"] = datetime.now(timezone.utc).isoformat()
+        settings["updated_by"] = user.get('username')
+        
+        # Update or insert
+        await db.site_settings.update_one(
+            {},
+            {"$set": settings},
+            upsert=True
+        )
+        
+        # Invalidate cache
+        await cache.delete("site_settings")
+        
+        # Log the action
+        await log_admin_action(
+            action="update",
+            resource="site_settings",
+            details="Updated site settings",
+            username=user.get('username'),
+            ip=get_client_ip(request),
+            status="success"
+        )
+        
+        logger.info(f"Site settings updated by {user.get('username')}")
+        return {"message": "Site settings updated successfully"}
+    except Exception as e:
+        logger.error(f"Update site settings error: {str(e)}")
+        raise HTTPException(status_code=500, detail="Failed to update site settings")
 
 # ============= SETTINGS MANAGEMENT =============
 
