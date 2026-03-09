@@ -1,6 +1,6 @@
 'use client'
 
-import { useEffect, useCallback, useRef } from 'react'
+import { useEffect, useCallback, useRef, useState } from 'react'
 import { createPortal } from 'react-dom'
 import { X } from 'lucide-react'
 import { motion, AnimatePresence } from 'framer-motion'
@@ -31,26 +31,17 @@ export default function Modal({
   showCloseButton = true 
 }: ModalProps) {
   const contentRef = useRef<HTMLDivElement>(null)
+  const [mounted, setMounted] = useState(false)
   
+  // Ensure component is mounted (client-side only)
+  useEffect(() => {
+    setMounted(true)
+  }, [])
+
   // Handle ESC key
   const handleEscape = useCallback((e: KeyboardEvent) => {
     if (e.key === 'Escape') onClose()
   }, [onClose])
-
-  // Handle wheel event to prevent background scrolling
-  const handleWheel = useCallback((e: WheelEvent) => {
-    const content = contentRef.current
-    if (!content) return
-    
-    const { scrollTop, scrollHeight, clientHeight } = content
-    const atTop = scrollTop === 0 && e.deltaY < 0
-    const atBottom = scrollTop + clientHeight >= scrollHeight && e.deltaY > 0
-    
-    // Only prevent default if we're not at a scroll boundary
-    if (!atTop && !atBottom) {
-      e.stopPropagation()
-    }
-  }, [])
 
   useEffect(() => {
     if (isOpen) {
@@ -63,7 +54,8 @@ export default function Modal({
     }
   }, [isOpen, handleEscape])
 
-  if (typeof window === 'undefined') return null
+  // Don't render on server or before mount
+  if (!mounted) return null
 
   return createPortal(
     <AnimatePresence>

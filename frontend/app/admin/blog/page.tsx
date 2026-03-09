@@ -186,11 +186,11 @@ export default function BlogAdmin() {
     return (
       <div className="py-8">
         <div className="animate-pulse">
-          <div className="h-8 bg-gray-200 rounded w-1/4 mb-4"></div>
+          <div className="h-8 bg-gray-200 dark:bg-zinc-800 rounded w-1/4 mb-4"></div>
           <div className="space-y-3">
-            <div className="h-12 bg-gray-100 rounded"></div>
-            <div className="h-12 bg-gray-100 rounded"></div>
-            <div className="h-12 bg-gray-100 rounded"></div>
+            <div className="h-12 bg-gray-100 dark:bg-zinc-800 rounded"></div>
+            <div className="h-12 bg-gray-100 dark:bg-zinc-800 rounded"></div>
+            <div className="h-12 bg-gray-100 dark:bg-zinc-800 rounded"></div>
           </div>
         </div>
       </div>
@@ -202,8 +202,8 @@ export default function BlogAdmin() {
       {/* Header */}
       <div className="flex justify-between items-center mb-6">
         <div>
-          <h1 className="text-2xl font-bold text-gray-900">Blog Management</h1>
-          <p className="text-gray-600 text-sm mt-1">Create and manage blog posts</p>
+          <h1 className="text-2xl font-bold text-gray-900 dark:text-white">Blog Management</h1>
+          <p className="text-gray-600 dark:text-zinc-400 text-sm mt-1">Create and manage blog posts</p>
         </div>
         <Button 
           onClick={() => {
@@ -211,7 +211,7 @@ export default function BlogAdmin() {
             setEditingId(null)
             setShowForm(true)
           }}
-          className="bg-[#1A1A1A] hover:bg-[#2A2A2A]"
+          className="bg-[#1A1A1A] hover:bg-[#2A2A2A] text-white"
         >
           <Plus className="w-4 h-4 mr-2" />
           Add Blog Post
@@ -220,21 +220,21 @@ export default function BlogAdmin() {
 
       {/* Stats */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
-        <div className="bg-white p-4 rounded-lg border">
-          <div className="text-2xl font-bold text-gray-900">{posts.length}</div>
-          <div className="text-sm text-gray-500">Total Posts</div>
+        <div className="bg-white dark:bg-zinc-900 p-4 rounded-lg border dark:border-zinc-800">
+          <div className="text-2xl font-bold text-gray-900 dark:text-white">{posts.length}</div>
+          <div className="text-sm text-gray-500 dark:text-zinc-400">Total Posts</div>
         </div>
-        <div className="bg-white p-4 rounded-lg border">
+        <div className="bg-white dark:bg-zinc-900 p-4 rounded-lg border dark:border-zinc-800">
           <div className="text-2xl font-bold text-green-600">
             {posts.filter(p => p.published !== false).length}
           </div>
-          <div className="text-sm text-gray-500">Published</div>
+          <div className="text-sm text-gray-500 dark:text-zinc-400">Published</div>
         </div>
-        <div className="bg-white p-4 rounded-lg border">
+        <div className="bg-white dark:bg-zinc-900 p-4 rounded-lg border dark:border-zinc-800">
           <div className="text-2xl font-bold text-amber-600">
             {posts.filter(p => p.published === false).length}
           </div>
-          <div className="text-sm text-gray-500">Drafts</div>
+          <div className="text-sm text-gray-500 dark:text-zinc-400">Drafts</div>
         </div>
       </div>
 
@@ -250,20 +250,20 @@ export default function BlogAdmin() {
       </div>
 
       {/* Posts Table */}
-      <div className="bg-white rounded-lg border overflow-hidden">
+      <div className="bg-white dark:bg-zinc-900 rounded-lg border dark:border-zinc-800 overflow-hidden">
         <table className="w-full">
-          <thead className="bg-gray-50 border-b">
+          <thead className="bg-gray-50 dark:bg-zinc-800 border-b dark:border-zinc-700">
             <tr>
-              <th className="px-4 py-3 text-left text-xs font-semibold text-gray-600 uppercase">Post</th>
-              <th className="px-4 py-3 text-left text-xs font-semibold text-gray-600 uppercase">Category</th>
-              <th className="px-4 py-3 text-left text-xs font-semibold text-gray-600 uppercase">Status</th>
-              <th className="px-4 py-3 text-left text-xs font-semibold text-gray-600 uppercase">Date</th>
-              <th className="px-4 py-3 text-left text-xs font-semibold text-gray-600 uppercase">Actions</th>
+              <th className="px-4 py-3 text-left text-xs font-semibold text-gray-600 dark:text-zinc-300 uppercase">Post</th>
+              <th className="px-4 py-3 text-left text-xs font-semibold text-gray-600 dark:text-zinc-300 uppercase">Category</th>
+              <th className="px-4 py-3 text-left text-xs font-semibold text-gray-600 dark:text-zinc-300 uppercase">Status</th>
+              <th className="px-4 py-3 text-left text-xs font-semibold text-gray-600 dark:text-zinc-300 uppercase">Date</th>
+              <th className="px-4 py-3 text-left text-xs font-semibold text-gray-600 dark:text-zinc-300 uppercase">Actions</th>
             </tr>
           </thead>
-          <tbody className="divide-y divide-gray-200">
+          <tbody className="divide-y divide-gray-200 dark:divide-zinc-800">
             {filteredPosts.map((post) => (
-              <tr key={post.id} className="hover:bg-gray-50">
+              <tr key={post.id} className="hover:bg-gray-50 dark:hover:bg-zinc-800">
                 <td className="px-4 py-4">
                   <div className="flex items-center gap-3">
                     {(post.image || post.featured_image) && (
@@ -274,26 +274,26 @@ export default function BlogAdmin() {
                       />
                     )}
                     <div>
-                      <div className="font-medium text-gray-900">{post.title}</div>
-                      <div className="text-xs text-gray-500">/{post.slug}</div>
+                      <div className="font-medium text-gray-900 dark:text-white">{post.title}</div>
+                      <div className="text-xs text-gray-500 dark:text-zinc-500">/{post.slug}</div>
                     </div>
                   </div>
                 </td>
                 <td className="px-4 py-4">
-                  <span className="px-2 py-1 text-xs bg-gray-100 rounded">
+                  <span className="px-2 py-1 text-xs bg-gray-100 dark:bg-zinc-800 text-gray-700 dark:text-zinc-300 rounded">
                     {post.category || 'Uncategorized'}
                   </span>
                 </td>
                 <td className="px-4 py-4">
                   <span className={`px-2 py-1 text-xs rounded ${
                     post.published !== false
-                      ? 'bg-green-100 text-green-700'
-                      : 'bg-amber-100 text-amber-700'
+                      ? 'bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-400'
+                      : 'bg-amber-100 dark:bg-amber-900/30 text-amber-700 dark:text-amber-400'
                   }`}>
                     {post.published !== false ? 'Published' : 'Draft'}
                   </span>
                 </td>
-                <td className="px-4 py-4 text-sm text-gray-600">
+                <td className="px-4 py-4 text-sm text-gray-600 dark:text-zinc-400">
                   {post.created_at ? new Date(post.created_at).toLocaleDateString() : 'N/A'}
                 </td>
                 <td className="px-4 py-4">
@@ -301,21 +301,21 @@ export default function BlogAdmin() {
                     <a
                       href={`/blog/${post.slug}`}
                       target="_blank"
-                      className="p-1.5 hover:bg-gray-100 rounded"
+                      className="p-1.5 hover:bg-gray-100 dark:hover:bg-zinc-800 rounded"
                       title="View"
                     >
-                      <Eye className="w-4 h-4 text-gray-600" />
+                      <Eye className="w-4 h-4 text-gray-600 dark:text-zinc-400" />
                     </a>
                     <button 
                       onClick={() => handleEdit(post)}
-                      className="p-1.5 hover:bg-gray-100 rounded"
+                      className="p-1.5 hover:bg-gray-100 dark:hover:bg-zinc-800 rounded"
                       title="Edit"
                     >
                       <Edit2 className="w-4 h-4 text-blue-600" />
                     </button>
                     <button 
                       onClick={() => handleDelete(post.id)}
-                      className="p-1.5 hover:bg-gray-100 rounded"
+                      className="p-1.5 hover:bg-gray-100 dark:hover:bg-zinc-800 rounded"
                       title="Delete"
                     >
                       <Trash2 className="w-4 h-4 text-red-600" />
@@ -326,7 +326,7 @@ export default function BlogAdmin() {
             ))}
             {filteredPosts.length === 0 && (
               <tr>
-                <td colSpan={5} className="px-4 py-12 text-center text-gray-500">
+                <td colSpan={5} className="px-4 py-12 text-center text-gray-500 dark:text-zinc-500">
                   {searchQuery ? 'No posts match your search' : 'No blog posts yet. Click "Add Blog Post" to create one.'}
                 </td>
               </tr>
@@ -345,7 +345,7 @@ export default function BlogAdmin() {
             <form onSubmit={handleSubmit} className="space-y-6">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div>
-                  <label className="block text-sm font-medium mb-1">Title *</label>
+                  <label className="block text-sm font-medium mb-1 text-gray-700 dark:text-zinc-300">Title *</label>
                   <Input
                     required
                     value={formData.title}
@@ -354,7 +354,7 @@ export default function BlogAdmin() {
                   />
                 </div>
                 <div>
-                  <label className="block text-sm font-medium mb-1">Slug</label>
+                  <label className="block text-sm font-medium mb-1 text-gray-700 dark:text-zinc-300">Slug</label>
                   <Input
                     value={formData.slug}
                     onChange={(e) => setFormData({ ...formData, slug: e.target.value })}
@@ -364,7 +364,7 @@ export default function BlogAdmin() {
               </div>
 
               <div>
-                <label className="block text-sm font-medium mb-1">Excerpt</label>
+                <label className="block text-sm font-medium mb-1 text-gray-700 dark:text-zinc-300">Excerpt</label>
                 <Textarea
                   value={formData.excerpt}
                   onChange={(e) => setFormData({ ...formData, excerpt: e.target.value })}
@@ -374,7 +374,7 @@ export default function BlogAdmin() {
               </div>
 
               <div>
-                <label className="block text-sm font-medium mb-1">Content *</label>
+                <label className="block text-sm font-medium mb-1 text-gray-700 dark:text-zinc-300">Content *</label>
                 <Textarea
                   required
                   value={formData.content}
@@ -395,11 +395,11 @@ export default function BlogAdmin() {
 
               <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                 <div>
-                  <label className="block text-sm font-medium mb-1">Category</label>
+                  <label className="block text-sm font-medium mb-1 text-gray-700 dark:text-zinc-300">Category</label>
                   <select
                     value={formData.category}
                     onChange={(e) => setFormData({ ...formData, category: e.target.value })}
-                    className="w-full px-3 py-2 border rounded-lg"
+                    className="w-full px-3 py-2 border dark:border-zinc-700 rounded-lg bg-white dark:bg-zinc-800 text-gray-900 dark:text-white"
                   >
                     <option value="smart-home">Smart Home</option>
                     <option value="automation">Automation</option>
@@ -412,14 +412,14 @@ export default function BlogAdmin() {
                   </select>
                 </div>
                 <div>
-                  <label className="block text-sm font-medium mb-1">Author</label>
+                  <label className="block text-sm font-medium mb-1 text-gray-700 dark:text-zinc-300">Author</label>
                   <Input
                     value={formData.author}
                     onChange={(e) => setFormData({ ...formData, author: e.target.value })}
                   />
                 </div>
                 <div>
-                  <label className="block text-sm font-medium mb-1">Tags (comma separated)</label>
+                  <label className="block text-sm font-medium mb-1 text-gray-700 dark:text-zinc-300">Tags (comma separated)</label>
                   <Input
                     value={formData.tags.join(', ')}
                     onChange={(e) => setFormData({ 
@@ -439,11 +439,11 @@ export default function BlogAdmin() {
                   onChange={(e) => setFormData({ ...formData, published: e.target.checked })}
                   className="w-4 h-4"
                 />
-                <label htmlFor="published" className="text-sm">Publish immediately</label>
+                <label htmlFor="published" className="text-sm text-gray-700 dark:text-zinc-300">Publish immediately</label>
               </div>
 
-              <div className="flex gap-3 pt-4 border-t">
-                <Button type="submit" disabled={saving} className="bg-[#1A1A1A] hover:bg-[#2A2A2A]">
+              <div className="flex gap-3 pt-4 border-t dark:border-zinc-800">
+                <Button type="submit" disabled={saving} className="bg-[#1A1A1A] hover:bg-[#2A2A2A] text-white">
                   {saving ? 'Saving...' : (editingId ? 'Update Post' : 'Create Post')}
                 </Button>
                 <Button type="button" variant="outline" onClick={() => setShowForm(false)}>
