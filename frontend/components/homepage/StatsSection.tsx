@@ -70,9 +70,13 @@ export default function StatsSection() {
 
   if (loading) {
     return (
-      <section className="py-16 md:py-20 bg-white dark:bg-[#050505]">
-        <div className="px-6 md:px-12 lg:px-24">
-          <div className="text-center dark:text-zinc-500">Loading...</div>
+      <section className="py-8 md:py-10 bg-gray-50 dark:bg-[#050505] border-y border-gray-200 dark:border-white/5">
+        <div className="content-container">
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
+            {[...Array(4)].map((_, i) => (
+              <div key={i} className="h-24 bg-gray-100 dark:bg-neutral-900 animate-pulse rounded-xl" />
+            ))}
+          </div>
         </div>
       </section>
     )

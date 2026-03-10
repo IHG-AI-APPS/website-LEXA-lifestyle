@@ -39,20 +39,9 @@ function ClientLayoutInner({ children }: { children: React.ReactNode }) {
   const [showConsultation, setShowConsultation] = useState(false)
   const [isHydrated, setIsHydrated] = useState(false)
 
-  // Mark as hydrated after initial render to show content and hide splash screen
+  // Mark as hydrated after initial render
   useEffect(() => {
     setIsHydrated(true)
-    // Delay hiding splash screen to allow page content to render
-    const timer = setTimeout(() => {
-      const splash = document.getElementById('splash-screen')
-      if (splash) {
-        splash.classList.add('fade-out')
-        setTimeout(() => {
-          splash.remove()
-        }, 400)
-      }
-    }, 500) // Wait 500ms for dynamic imports to start loading
-    return () => clearTimeout(timer)
   }, [])
 
   // Track page views and scroll to top on route change (excluding admin pages)

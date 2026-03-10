@@ -88,7 +88,8 @@ export default function HeroCurator({ onPersonaClick }: HeroCuratorProps) {
 
   return (
     <section
-      className="relative h-[100dvh] w-full overflow-hidden bg-[#050505] flex flex-col"
+      className="relative w-full overflow-hidden bg-[#050505] flex flex-col"
+      style={{ height: '100dvh', minHeight: '100vh' }}
       data-testid="hero-section"
       aria-label="Hero"
     >

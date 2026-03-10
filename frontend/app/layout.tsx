@@ -104,11 +104,10 @@ export default function RootLayout({
           img { max-width: 100%; height: auto; }
           section { overflow: hidden; }
           [data-testid] { visibility: visible; }
-          /* Splash screen overlay */
-          #splash-screen { position: fixed; inset: 0; z-index: 99999; background: #050505; display: flex; align-items: center; justify-content: center; transition: opacity 0.4s ease-out; }
-          #splash-screen.fade-out { opacity: 0; pointer-events: none; }
-          #splash-screen .loader { width: 40px; height: 40px; border: 2px solid #C9A962; border-top-color: transparent; border-radius: 50%; animation: spin 0.8s linear infinite; }
-          @keyframes spin { to { transform: rotate(360deg); } }
+          /* Ensure main content takes full height to push footer down */
+          main { min-height: 100vh; }
+          /* Smooth fade-in for content (no double loading) */
+          #layout-wrapper { transition: opacity 0.2s ease-out; }
         ` }} />
         
         {/* Chunk load error recovery - auto-reload on stale chunks or 429 failures */}
@@ -161,10 +160,6 @@ export default function RootLayout({
         />
       </head>
       <body className={dmSans.className}>
-        {/* Splash screen - covers everything during initial load/hydration */}
-        <div id="splash-screen">
-          <div className="loader"></div>
-        </div>
         <TrackingPixels />
         <ClientLayout>{children}</ClientLayout>
       </body>
