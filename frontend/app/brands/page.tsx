@@ -37,11 +37,11 @@ function BrandLogo({ brand, size = 'md' }: { brand: any; size?: 'sm' | 'md' }) {
   const textSize = size === 'sm' ? 'text-xs' : 'text-sm'
   const imgSize = size === 'sm' ? 40 : 56
 
-  // Show actual logo with white background if available
+  // Show actual logo with invert filter in dark mode
   if (hasLogo) {
     return (
       <div 
-        className={`${dims} flex-shrink-0 rounded-lg flex items-center justify-center p-1.5 overflow-hidden bg-white`}
+        className={`${dims} flex-shrink-0 rounded-lg flex items-center justify-center p-1.5 overflow-hidden`}
       >
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
@@ -49,7 +49,7 @@ function BrandLogo({ brand, size = 'md' }: { brand: any; size?: 'sm' | 'md' }) {
           alt={brand.name}
           width={imgSize}
           height={imgSize}
-          className="w-full h-full object-contain"
+          className="w-full h-full object-contain dark:invert dark:brightness-200"
           loading="lazy"
         />
       </div>
