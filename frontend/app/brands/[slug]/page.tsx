@@ -171,7 +171,7 @@ export default function BrandDetailPage({ params }: { params: { slug: string } }
             <motion.div initial={{ opacity: 0, x: -30 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.6 }}>
               <div className="flex items-center gap-3 mb-5">
                 {hasLogo ? (
-                  <div className="p-3 rounded-lg">
+                  <div className="p-3 rounded-lg bg-gray-100 dark:bg-transparent">
                     {/* eslint-disable-next-line @next/next/no-img-element */}
                     <img 
                       src={brand.logo} 

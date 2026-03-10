@@ -37,11 +37,11 @@ function BrandLogo({ brand, size = 'md' }: { brand: any; size?: 'sm' | 'md' }) {
   const textSize = size === 'sm' ? 'text-xs' : 'text-sm'
   const imgSize = size === 'sm' ? 40 : 56
 
-  // Show actual logo with filter in dark mode
+  // Show actual logo with proper visibility
   if (hasLogo) {
     return (
       <div 
-        className={`${dims} flex-shrink-0 rounded-lg flex items-center justify-center p-1.5 overflow-hidden`}
+        className={`${dims} flex-shrink-0 rounded-lg flex items-center justify-center p-1.5 overflow-hidden bg-gray-100 dark:bg-transparent`}
       >
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
