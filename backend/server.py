@@ -1725,6 +1725,7 @@ async def create_product_series(series: Dict[str, Any], user: dict = Depends(ver
             "category": series.get("category", ""),
             "image": series.get("image", ""),
             "featured": series.get("featured", False),
+            "active": series.get("active", True),
             "order": series.get("order", 0),
             "created_at": datetime.now(timezone.utc).isoformat(),
             "updated_at": datetime.now(timezone.utc).isoformat()

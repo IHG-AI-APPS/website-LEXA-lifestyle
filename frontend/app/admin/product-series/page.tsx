@@ -21,6 +21,7 @@ interface ProductSeries {
   category: string
   image: string
   featured: boolean
+  active: boolean
   order: number
   created_at?: string
   updated_at?: string
@@ -39,6 +40,7 @@ const defaultFormData: Partial<ProductSeries> = {
   category: '',
   image: '',
   featured: false,
+  active: true,
   order: 0
 }
 
@@ -152,6 +154,7 @@ export default function ProductSeriesAdmin() {
       category: series.category || '',
       image: series.image || '',
       featured: series.featured || false,
+      active: series.active !== false,
       order: series.order || 0
     })
     setEditingId(series.id)
@@ -336,11 +339,13 @@ export default function ProductSeriesAdmin() {
                     </td>
                     <td className="px-6 py-4">
                       <div className="flex gap-1 flex-wrap">
+                        {series.active !== false ? (
+                          <span className="px-2 py-1 bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-400 text-xs rounded">Active</span>
+                        ) : (
+                          <span className="px-2 py-1 bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400 text-xs rounded">Inactive</span>
+                        )}
                         {series.featured && (
                           <span className="px-2 py-1 bg-yellow-100 dark:bg-yellow-900/30 text-yellow-700 dark:text-yellow-400 text-xs rounded">Featured</span>
-                        )}
-                        {catalogMatch && (
-                          <span className="px-2 py-1 bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-400 text-xs rounded">Active</span>
                         )}
                       </div>
                     </td>
@@ -464,13 +469,23 @@ export default function ProductSeriesAdmin() {
                 placeholder="0"
               />
             </div>
-            <div className="flex items-center pt-6">
-              <Checkbox
-                id="featured"
-                checked={formData.featured}
-                onCheckedChange={(checked) => setFormData({ ...formData, featured: checked as boolean })}
-              />
-              <label htmlFor="featured" className="ml-2 text-sm font-medium text-gray-900 dark:text-white">Featured Series</label>
+            <div className="flex flex-col gap-3 pt-6">
+              <div className="flex items-center">
+                <Checkbox
+                  id="active"
+                  checked={formData.active}
+                  onCheckedChange={(checked) => setFormData({ ...formData, active: checked as boolean })}
+                />
+                <label htmlFor="active" className="ml-2 text-sm font-medium text-gray-900 dark:text-white">Active</label>
+              </div>
+              <div className="flex items-center">
+                <Checkbox
+                  id="featured"
+                  checked={formData.featured}
+                  onCheckedChange={(checked) => setFormData({ ...formData, featured: checked as boolean })}
+                />
+                <label htmlFor="featured" className="ml-2 text-sm font-medium text-gray-900 dark:text-white">Featured Series</label>
+              </div>
             </div>
           </div>
 
