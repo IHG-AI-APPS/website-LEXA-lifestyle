@@ -8,6 +8,8 @@ import { Button } from '@/components/ui/button'
 import { useCms } from '@/hooks/useCms'
 import { useSiteSettings } from '@/hooks/useSiteSettings'
 
+const BACKEND_URL = process.env.NEXT_PUBLIC_BACKEND_URL || ''
+
 const expertiseAreas = [
   { icon: Home, title: 'Smart Home Automation', description: 'Control4, Crestron, Savant system design and programming', skills: ['System Design', 'Programming', 'Integration', 'Commissioning'] },
   { icon: Lightbulb, title: 'Lighting Control', description: 'Lutron, Ketra, Philips Dynalite lighting design and installation', skills: ['Lutron RadioRA 3', 'Homeworks QSX', 'Circadian Design', 'DMX'] },
@@ -24,20 +26,46 @@ const benefits = [
   { icon: Clock, title: 'Work-Life Balance', desc: 'Flexible schedules and generous leave' },
 ]
 
-const openPositions = [
-  { title: 'Smart Home Programmer', type: 'Full-time', location: 'Dubai', experience: '3-5 years', department: 'Technical', description: 'Design and program Control4, Crestron, and Savant automation systems for luxury residential projects across UAE.' },
-  { title: 'AV Installation Technician', type: 'Full-time', location: 'Dubai', experience: '2-4 years', department: 'Installation', description: 'Install and commission high-end audio-visual systems in luxury residences, commercial spaces, and marine vessels.' },
-  { title: 'Project Manager - Smart Home', type: 'Full-time', location: 'Dubai', experience: '5-8 years', department: 'Management', description: 'Manage end-to-end delivery of smart home and AV projects from design through to handover and support.' },
-  { title: 'Sales Engineer', type: 'Full-time', location: 'Dubai / Abu Dhabi', experience: '3-5 years', department: 'Sales', description: 'Drive revenue growth through consultative selling of smart home and AV solutions to HNW clients.' },
-]
+interface Career {
+  id: string
+  title: string
+  location: string
+  type: string
+  description: string
+  department?: string
+  experience?: string
+  active: boolean
+}
 
 export default function WorkWithUsPage() {
   const cms = useCms('page_work_with_us', null) as any
   const { settings } = useSiteSettings()
   const [expandedJob, setExpandedJob] = useState<number | null>(null)
+  const [openPositions, setOpenPositions] = useState<Career[]>([])
+  const [loading, setLoading] = useState(true)
   
   // Use HR email from site settings
   const hrEmail = settings.hr_email || 'careers@lexalifestyle.com'
+
+  // Fetch careers from API
+  useEffect(() => {
+    const fetchCareers = async () => {
+      try {
+        const response = await fetch(`${BACKEND_URL}/api/careers`)
+        if (response.ok) {
+          const data = await response.json()
+          // Filter only active careers
+          const activeCareers = data.filter((c: Career) => c.active !== false)
+          setOpenPositions(activeCareers)
+        }
+      } catch (error) {
+        console.error('Failed to fetch careers:', error)
+      } finally {
+        setLoading(false)
+      }
+    }
+    fetchCareers()
+  }, [])
 
   return (
     <div className="min-h-screen bg-white dark:bg-[#050505] pt-20" data-testid="work-with-us-page">
@@ -120,34 +148,51 @@ export default function WorkWithUsPage() {
               <span className="text-xs uppercase tracking-widest text-[#C9A962] font-semibold">Join Us</span>
               <h2 className="text-2xl sm:text-3xl font-bold mt-2 text-gray-900 dark:text-white">Open Positions</h2>
             </div>
-            <div className="space-y-4">
-              {openPositions.map((job, i) => (
-                <motion.div key={i} initial={{ opacity: 0, y: 10 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.3, delay: i * 0.05 }}
-                  className="rounded-xl border border-gray-200 dark:border-zinc-800 bg-white dark:bg-[#0A0A0A] overflow-hidden" data-testid={`job-card-${i}`}>
-                  <button onClick={() => setExpandedJob(expandedJob === i ? null : i)} className="w-full flex items-center justify-between p-5 text-left hover:bg-gray-50 dark:hover:bg-[#171717]/50 transition-colors">
-                    <div className="flex-1">
-                      <h3 className="font-bold text-gray-900 dark:text-white text-sm">{job.title}</h3>
-                      <div className="flex flex-wrap items-center gap-3 mt-1 text-xs text-gray-500">
-                        <span className="flex items-center gap-1"><Briefcase size={12} />{job.type}</span>
-                        <span className="flex items-center gap-1"><MapPin size={12} />{job.location}</span>
-                        <span className="flex items-center gap-1"><Clock size={12} />{job.experience}</span>
+            
+            {loading ? (
+              <div className="text-center py-10">
+                <div className="animate-spin w-8 h-8 border-2 border-[#C9A962] border-t-transparent rounded-full mx-auto mb-3"></div>
+                <p className="text-sm text-gray-500">Loading positions...</p>
+              </div>
+            ) : openPositions.length === 0 ? (
+              <div className="text-center py-10 bg-gray-50 dark:bg-[#0A0A0A] rounded-xl border border-gray-200 dark:border-zinc-800">
+                <Briefcase className="w-12 h-12 mx-auto mb-3 text-gray-300 dark:text-zinc-600" />
+                <h3 className="font-semibold text-gray-700 dark:text-zinc-400 mb-2">No Open Positions</h3>
+                <p className="text-sm text-gray-500 dark:text-zinc-500 mb-4">We don&apos;t have any openings right now, but we&apos;re always looking for talent.</p>
+                <Button size="sm" className="bg-[#C9A962] text-gray-900 hover:bg-[#C9A962]/90 font-semibold" asChild>
+                  <a href={`mailto:${hrEmail}?subject=General Application`}>Send Your CV <ArrowRight className="ml-2" size={14} /></a>
+                </Button>
+              </div>
+            ) : (
+              <div className="space-y-4">
+                {openPositions.map((job, i) => (
+                  <motion.div key={job.id || i} initial={{ opacity: 0, y: 10 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.3, delay: i * 0.05 }}
+                    className="rounded-xl border border-gray-200 dark:border-zinc-800 bg-white dark:bg-[#0A0A0A] overflow-hidden" data-testid={`job-card-${i}`}>
+                    <button onClick={() => setExpandedJob(expandedJob === i ? null : i)} className="w-full flex items-center justify-between p-5 text-left hover:bg-gray-50 dark:hover:bg-[#171717]/50 transition-colors">
+                      <div className="flex-1">
+                        <h3 className="font-bold text-gray-900 dark:text-white text-sm">{job.title}</h3>
+                        <div className="flex flex-wrap items-center gap-3 mt-1 text-xs text-gray-500">
+                          <span className="flex items-center gap-1"><Briefcase size={12} />{job.type}</span>
+                          <span className="flex items-center gap-1"><MapPin size={12} />{job.location}</span>
+                          {job.experience && <span className="flex items-center gap-1"><Clock size={12} />{job.experience}</span>}
+                        </div>
                       </div>
-                    </div>
-                    {expandedJob === i ? <ChevronUp className="h-5 w-5 text-gray-400" /> : <ChevronDown className="h-5 w-5 text-gray-400" />}
-                  </button>
-                  <AnimatePresence>
-                    {expandedJob === i && (
-                      <motion.div initial={{ height: 0, opacity: 0 }} animate={{ height: 'auto', opacity: 1 }} exit={{ height: 0, opacity: 0 }} className="border-t border-gray-100 dark:border-zinc-800 p-5 bg-gray-50 dark:bg-[#171717]/50">
-                        <p className="text-sm text-gray-600 dark:text-zinc-500 mb-4">{job.description}</p>
-                        <Button size="sm" className="bg-[#C9A962] text-gray-900 hover:bg-[#C9A962]/90 font-semibold" asChild>
-                          <a href={`mailto:${hrEmail}?subject=Application: ${job.title}`}>Apply Now <ArrowRight className="ml-2" size={14} /></a>
-                        </Button>
-                      </motion.div>
-                    )}
-                  </AnimatePresence>
-                </motion.div>
-              ))}
-            </div>
+                      {expandedJob === i ? <ChevronUp className="h-5 w-5 text-gray-400" /> : <ChevronDown className="h-5 w-5 text-gray-400" />}
+                    </button>
+                    <AnimatePresence>
+                      {expandedJob === i && (
+                        <motion.div initial={{ height: 0, opacity: 0 }} animate={{ height: 'auto', opacity: 1 }} exit={{ height: 0, opacity: 0 }} className="border-t border-gray-100 dark:border-zinc-800 p-5 bg-gray-50 dark:bg-[#171717]/50">
+                          <p className="text-sm text-gray-600 dark:text-zinc-500 mb-4">{job.description}</p>
+                          <Button size="sm" className="bg-[#C9A962] text-gray-900 hover:bg-[#C9A962]/90 font-semibold" asChild>
+                            <a href={`mailto:${hrEmail}?subject=Application: ${job.title}`}>Apply Now <ArrowRight className="ml-2" size={14} /></a>
+                          </Button>
+                        </motion.div>
+                      )}
+                    </AnimatePresence>
+                  </motion.div>
+                ))}
+              </div>
+            )}
           </div>
         </div>
       </section>
