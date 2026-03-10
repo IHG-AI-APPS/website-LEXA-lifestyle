@@ -35,8 +35,28 @@ function BrandLogo({ brand, size = 'md' }: { brand: any; size?: 'sm' | 'md' }) {
   const hasLogo = brand.logo && brand.logo.trim() !== ''
   const dims = size === 'sm' ? 'w-12 h-12' : 'w-16 h-16'
   const textSize = size === 'sm' ? 'text-xs' : 'text-sm'
+  const imgSize = size === 'sm' ? 40 : 56
 
-  // Always show initials for consistency - logo images have data quality issues
+  // Show actual logo with white background if available
+  if (hasLogo) {
+    return (
+      <div 
+        className={`${dims} flex-shrink-0 rounded-lg flex items-center justify-center p-1.5 overflow-hidden bg-white`}
+      >
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img
+          src={brand.logo}
+          alt={brand.name}
+          width={imgSize}
+          height={imgSize}
+          className="w-full h-full object-contain"
+          loading="lazy"
+        />
+      </div>
+    )
+  }
+
+  // Fallback to initials if no logo
   const initials = brand.name.split(' ').map((w: string) => w[0]).join('').substring(0, 2).toUpperCase()
   const cat = brand.categories?.[0] || ''
   const style = getStyle(cat)
