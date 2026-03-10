@@ -44,7 +44,7 @@ export default function RelatedSolutions({ solutions, currentSlug }: RelatedSolu
   }
 
   return (
-    <section className="py-20 bg-gradient-to-b from-white to-gray-50">
+    <section className="py-20 bg-white dark:bg-[#0a0a0a]">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="text-center mb-12">
@@ -102,7 +102,7 @@ export default function RelatedSolutions({ solutions, currentSlug }: RelatedSolu
                       
                       {/* Category Badge */}
                       <div className="absolute top-4 right-4">
-                        <div className="bg-white/90 backdrop-blur-sm px-3 py-1.5 rounded-full flex items-center gap-2">
+                        <div className="bg-white/90 dark:bg-zinc-800/90 backdrop-blur-sm px-3 py-1.5 rounded-full flex items-center gap-2">
                           <Icon className="h-4 w-4 text-[#C9A962]" />
                           <span className="text-xs font-semibold text-gray-900 dark:text-white">
                             {solution.category}

@@ -1,164 +1,178 @@
 <analysis>**original_problem_statement:**
-The user initiated this session with a series of feature requests and bug reports, primarily focused on making the website fully manageable through the admin panel and fixing persistent CRUD issues.
+The user initiated the session with several requests: making the website fully manageable through the admin panel, fixing CRUD bugs, generating missing product images, and addressing UI bugs on project cards.
 
-**Feature Requests:**
-1.  **Site Settings Module:** A comprehensive settings page in the admin panel to manage:
-    *   Social media links.
-    *   Header and footer logos (separate light and dark versions).
-    *   Favicon.
-    *   Homepage content (hero text, images, videos).
-    *   A dedicated field for a WhatsApp number.
-    *   Two separate email fields: a general company email and an HR email for career applications.
-2.  **Dynamic Content:** All contact information (phone, emails) and settings managed in the admin panel should dynamically update across the entire public-facing website.
-3.  **Dynamic Careers Page:** An admin panel section to add, edit, and delete job openings, which should be displayed on the public Careers page.
-4.  **Product Images:** A request to find all products missing images and generate appropriate images for them.
-
-**Bug Reports:**
-1.  **Project & Blog CRUD:** Both Project and Blog CRUD functionalities in the admin panel were broken or unreliable. Adding a blog post resulted in a client-side exception.
-2.  **Project Frontend Display:** The user reported that projects were not showing up on the frontend.
-3.  **Project Card Button Issues:** The Quick View button on project cards had a flickering mouseover effect and would shift position on touch devices.
+Throughout the session, the user added more requests:
+- Adding a dynamic Google Maps embed feature, managed from the admin panel.
+- Implementing security restrictions for file uploads to allow only specific file types (jpg, png, pdf, webp) and block potentially harmful ones.
+- Removing the Book Consultation button from the website header.
+- Creating a comprehensive deployment guide and an automation script for a DigitalOcean Linux server.
+- Making several hardcoded sections dynamic: the work-with-us page's job listings, and two separate statistics sections on the homepage.
+- A major focus of the session became fixing widespread text and UI element visibility issues in dark mode across both the public-facing website and the admin panel, which the user reported iteratively. This also included setting the light theme as the default and adding a theme toggle to the admin panel.
 
 **User's preferred language**: English
 
 **what currently exists?**
-The application is a full-stack project with a Next.js frontend, FastAPI backend, and MongoDB database.
-
-The agent successfully resolved the critical Project and Blog CRUD issues. For Projects, this involved creating a dedicated admin API endpoint to bypass a restrictive filter. For Blogs, the fix involved adding missing required fields to the frontend form, ensuring proper data submission, and fixing a server-side caching bug.
-
-A significant amount of work was done on new features. A full-stack Site Settings module was created, allowing management of logos, social media links, and contact information, complete with image upload functionality. A new Careers CRUD module was also built, making the job openings page fully dynamic.
-
-To support dynamic content, the agent implemented a  and a  hook to make configuration data globally accessible. Several components, including the Footer and Contact page, were refactored to consume this data. Finally, the agent identified 114 products missing images, generated them, and updated the database.
+The application is a full-stack project using Next.js, FastAPI, and MongoDB. A significant portion of the website's content is now dynamic and manageable via the admin panel, including Site Settings, Careers, and Homepage Statistics. Backend file uploads are now secured with a whitelist/blacklist of file types. The UI has been updated to remove the header's Book Consultation button, set 'light' as the default theme, and add a theme toggle to the admin panel. Numerous dark mode visibility issues have been patched across many pages and components. A deployment guide () and a setup script () have been created.
 
 **Last working item**:
-    - Last item agent was working: The agent was in the process of a large-scale refactoring task to make all contact information (phone numbers and emails) across the website dynamic. This involved searching for hardcoded values in various components and replacing them with data from the newly created  hook.
+    - Last item agent was working: The agent was addressing a user report that the Related Solutions heading was invisible on the solutions page when in dark mode.
     - Status: IN PROGRESS
     - Agent Testing Done: N
-    - Which testing method agent to use? both
+    - Which testing method agent to use? screenshot tool for the specific fix, followed by a frontend testing agent for a full dark mode audit.
     - User Testing Done: N
 
 **All Pending/In progress Issue list**:
-  - Issue 1: Project card button shifts position on touch devices.
-
+  - Issue 1: Related Solutions heading is not visible in dark mode. (P0)
+  - Issue 2: Comprehensive dark mode review needed. (P0)
+  - Issue 3: Project card button shifts position on touch devices. (P1)
+  
   **Issues Detail:**
   - **Issue 1:** 
-     - **Description (P0):** The user reported that on touch devices, the Quick View button on project cards moves to the right when touched. The agent previously fixed a mouseover *flickering* issue on desktop but did not address this touch-specific layout problem.
+     - **Description:** The user provided a screenshot showing the Related Solutions heading is black text on a dark background, making it invisible.
+     - **Next debug checklist:**
+        1.  The agent correctly identified the issue is likely in the  component.
+        2.  Inspect .
+        3.  The heading element within this component needs a  or similar class.
+        4.  Fix the styling and verify with a screenshot in dark mode.
+     - **Why fix this issue and what will be achieved with the fix?** To resolve the immediate UI bug reported by the user and improve the dark mode experience.
+     - **Status:** IN PROGRESS
+     - **Is recurring issue?** Y (Part of a larger pattern of dark mode issues).
+     - **Should Test frontend/backend/both after fix?** frontend
+     - **Blocked on other issue:** None
+
+  - **Issue 2:** 
+     - **Description:** The user has repeatedly found text, icons, and form inputs that are invisible or unusable in dark mode. This indicates that a systematic review is needed, as fixing issues one by one is inefficient and frustrating for the user.
+     - **Next debug checklist:**
+        1.  After fixing the current issue, propose a full-site dark mode audit to the user.
+        2.  Methodically go through every page and component in the application.
+        3.  Use  to search for common anti-patterns like , , ,  that do not have corresponding  variants.
+        4.  Call the frontend testing agent to specifically test for UI visibility and contrast issues in dark mode across the entire application.
+     - **Why fix this issue and what will be achieved with the fix?** This will proactively resolve all remaining visibility bugs, provide a consistent and professional user experience, and prevent the user from having to report these issues individually.
+     - **Status:** NOT STARTED
+     - **Is recurring issue?** Y
+     - **Should Test frontend/backend/both after fix?** frontend
+     - **Blocked on other issue:** Issue 1
+
+  - **Issue 3:** 
+     - **Description:** From the initial handoff, the Quick View button on project cards reportedly shifts position on touch devices. An earlier fix addressed general centering, but the specific touch-related behavior was not explicitly verified.
      - **Next debug checklist:**
         1.  Inspect .
-        2.  Review the CSS classes related to  and touch states ().
-        3.  The issue might be related to transform properties being applied on hover/touch that cause the layout shift.
-        4.  Test on a simulated touch device in the browser's developer tools to reproduce the behavior.
-     - **Why fix this issue and what will be achieved with the fix?** This fix will improve the user experience on mobile and touch-enabled devices, ensuring interactive elements behave predictably.
+        2.  Use browser developer tools to simulate a touch device.
+        3.  Tap the Quick View button and observe if there is any layout shift.
+        4.  Review CSS properties related to  or  states that might be causing a  or  change.
+     - **Why fix this issue and what will be achieved with the fix?** This will fix a lingering UI bug and improve mobile/touch usability.
      - **Status:** NOT STARTED
      - **Is recurring issue?** N
      - **Should Test frontend/backend/both after fix?** frontend
      - **Blocked on other issue:** None
 
 **In progress Task List**:
-  - Task 1: Complete dynamic content integration for all contact info.
-  
-  **Task Detail:**
-  - **Task 1:** 
-     - **Where to resume:** The agent has already updated several components. The next step is to perform a global search () for the old hardcoded phone number () and emails (, ) across the  directory. All remaining instances in components like , , , etc., must be replaced with dynamic data from the  hook.
-     - **What will be achieved with this?** This will complete a key user request, making all contact information on the website fully manageable from the Site Settings admin panel.
-     - **Status:** IN PROGRESS
-     - **Should Test frontend/backend/both after fix?** frontend
-     - **Blocked on something:** None
+  - None.
 
 **Upcoming and Future Tasks**
 - **Upcoming Tasks:**
-    - **Connect Header Logos (P1):** Refactor the  component () to use the  and  values from the  hook.
-    - **Connect Homepage Content (P1):** Refactor the main homepage () to fetch its hero title, subtitle, images, and videos from the Site Settings API via the  hook.
-    - **Implement Favicon Management (P2):** Update the main layout () to dynamically set the favicon URL based on the value in the Site Settings.
+    - **Connect Homepage Content (P1):** Refactor the main homepage () to use hero title, subtitle, images, and videos from the Site Settings API via the  hook.
+    - **Implement Favicon Management (P2):** Update the main layout () to dynamically set the favicon URL from the Site Settings data.
 
 - **Future Tasks:**
     - **Compare Packages Feature:** A backlog item to allow users to compare different smart home packages.
-    - **Fix Brand Logo Data:** The  collection still contains some incorrect logo URLs that need to be updated.
+    - **Fix Brand Logo Data:** The  collection contains incorrect logo URLs that need updating, likely requiring user input.
 
 **Completed work in this session**
-- **Project & Blog CRUD (Bug Fix):** Fixed critical issues preventing the creation and editing of projects and blogs from the admin panel.
-- **Product Image Generation (Feature):** Identified and generated images for 114 products that were missing them.
-- **Site Settings Module (Feature):** Implemented a new full-stack module for managing global website settings, including an admin page with image upload capabilities.
-- **Careers CRUD Module (Feature):** Built a new admin section for managing job openings and made the public careers page dynamic.
-- **Dynamic Content Framework (Feature):** Created a React Context () and hook () to make settings globally available.
-- **Initial Dynamic Content Integration:** Refactored the Footer, Contact page, and Careers page to use the new dynamic settings.
-- **Quick View Button Flicker (Bug Fix):** Resolved a CSS issue causing the project card's Quick View button to flicker on desktop hover.
+- **Dynamic Content & UI:**
+  - Made all hardcoded contact info (phone, emails) dynamic using  hook.
+  - Made Header logos dynamic.
+  - Removed Book Consultation button from the  component.
+  - Made the  page fully dynamic, fetching job listings from the API.
+- **New Admin Features:**
+  - Implemented dynamic Google Maps embed code management in Site Settings.
+  - Created a new Homepage Statistics admin page () to manage two separate stats sections on the homepage and linked it in the admin sidebar.
+- **Security:**
+  - Implemented file upload security in the backend () to validate file extensions and MIME types.
+- **Dark Mode Overhaul:**
+  - Set the default theme to 'light' across the application.
+  - Added a theme toggle button to the admin panel layout.
+  - Fixed a large number of dark mode visibility issues on the admin  page,  page, and numerous public-facing pages (, , , ) and components.
+- **Deployment:**
+  - Created a  guide and a  script for deploying to a DigitalOcean server.
 
 **Earlier issues found/mentioned but not fixed**
    - **Incorrect Brand Logo Data:** The  collection in the database has missing or incorrect  URLs. This requires coordination with the user to get the correct data.
 
 **Known issue recurrence from previous fork**
-  - **Recurrence in current session:** **Project CRUD functionality.** This was a major recurring issue from the previous session that was investigated and finally resolved in this session.
-  - **Recurrence count:** High.
-  - **Status:** RESOLVED.
+  - **Dark Mode UI Bugs:** This became a major recurring issue in the current session. The user repeatedly found UI elements that were invisible or had poor contrast in dark mode, indicating a systemic lack of  utility classes in the codebase.
+  - **Recurrence count:** High
+  - **Status:** IN PROGRESS (multiple patches applied, but a full audit is still needed).
 
 **Code Architecture**
 
 
 **Key Technical Concepts**
-- **Dynamic Content Architecture:** A  and  custom hook were created to provide global, client-side access to website configuration, avoiding prop drilling and centralizing data fetching.
-- **Full-Stack Feature Development:** Created two new end-to-end features (Site Settings, Careers) with database models, FastAPI endpoints, and Next.js admin interfaces.
-- **Image Generation & Database Seeding:** Used an image generation tool to create a large batch of product images and programmatically updated the corresponding MongoDB documents.
-- **Robust CRUD Debugging:** Solved persistent CRUD issues by identifying mismatched data models between frontend and backend, fixing client-side form logic, and correcting server-side caching strategies.
+- **Systematic Dark Mode Implementation:** Utilized TailwindCSS  variants extensively to patch UI visibility issues. The core problem was a lack of dark mode considerations in the initial styling.
+- **Dynamic Admin Panel Extension:** Added a new Homepage Statistics management page to the admin area, demonstrating how to extend the site's dynamic capabilities.
+- **Backend File Upload Security:** Implemented validation checks on the server-side for both file extensions and MIME types to enhance security.
 
 **key DB schema**
-  - **site_settings (new):** 
-  - **careers (new):** 
+  - **site_settings:** Extended with .
+  - **settings:** A generic collection used to store new dynamic data, including  and .
 
 **All files of reference**
-- : The core of the dynamic content solution.
-- : The admin UI for managing the new settings.
-- : Contains the API logic for site settings, careers, and the project CRUD fix.
-- : Contains the fix for the client-side blog creation error.
-- : File containing the CSS for the button with the pending touch issue.
-- : Homepage file that needs to be made dynamic.
-- : Header file that needs to be made dynamic.
+- : Contains the Related Solutions heading that is the current high-priority bug.
+- : Was heavily modified for dark mode and serves as a good example of the required fixes.
+- : The new file containing the upload validation logic.
+- : The new admin page for managing stats.
+- : Example of converting a static page to a dynamic one.
+- : The deployment guide created for the user.
 
 **Areas that need refactoring**:
-- A global search-and-replace is needed to eliminate all hardcoded contact information from the frontend and replace it with values from the  hook.
-- The  and  components need to be refactored to consume data from the  hook to become fully dynamic.
+- A comprehensive, site-wide audit for dark mode compliance is required. Many components were patched, but others likely have similar issues. Applying  variants systematically will prevent future one-off bug reports.
 
 **key api endpoints**
--  (GET, PUT)
--  (GET, POST)
--  (PUT, DELETE)
--  (POST)
--  (GET)
+-  (POST): Modified to include security validation.
+-  (POST): Modified to include security validation.
+-  (POST): Modified to include security validation.
+-  (GET, PUT): New endpoints for managing hero stats.
+-  (GET, PUT): New endpoints for managing homepage stats section.
 
 **Critical Info for New Agent**
-- **PRIORITIZE DYNAMIC CONTENT:** The immediate priority is to finish the in-progress task of making all phone numbers and emails dynamic across the site. Use  to find all hardcoded instances and replace them with the  hook. This is a user-blocking feature.
-- **CONNECT THE REMAINING COMPONENTS:** After the contact info is dynamic, the next logical steps are to connect the  (for logos) and the  (for hero content) to the Site Settings context. This will fulfill the user's core request for a fully manageable site.
-- **ADDRESS THE TOUCH ISSUE:** Don't forget the pending bug with the project card button on touch devices. It's a small but important UI polish that the user explicitly mentioned.
+- **PRIORITIZE DARK MODE:** The user's primary frustration is with the broken dark mode UI. Your first action should be to fix the Related Solutions heading. Your second action should be to propose and execute a full-site audit for any remaining dark mode visibility issues to resolve this recurring problem once and for all.
+- **Verify Touch Issue:** After handling the dark mode issues, verify the project card button's touch behavior mentioned in the pending issues.
+- **Follow Up on Dynamic Content:** Once the UI is stable, you can proceed with the remaining dynamic content tasks (Homepage Hero, Favicon).
 
 **documents and test reports created in this job**
--  (Updated with Site Settings and Careers features)
+- 
+- 
+-  (From Google Maps feature test)
+-  (From dynamic contact info test)
 
 **Last 10 User Messages and any pending HUMAN messages** 
-- **LATEST:** User requested that phone/email changes in admin should reflect everywhere, and that a separate HR email is needed for the careers form. (STATUS: IN PROGRESS)
-- User reported career page is not dynamic and has no admin section. (STATUS: RESOLVED)
-- User reported contact number changes not reflecting and WhatsApp field is missing. (STATUS: IN PROGRESS)
-- User asked why the site settings page was empty after it was created. (STATUS: RESOLVED, data was populated)
-- User asked why the data saved in settings was not appearing on the live site. (STATUS: Clarified, connection is in progress)
-- User requested to generate missing images for products. (STATUS: RESOLVED)
-- User reported a client-side exception when adding a blog. (STATUS: RESOLVED)
-- User reported projects were not showing on the frontend. (STATUS: Clarified, was an admin panel login issue)
-- User reported an issue with the project quick view button on mouseover. (STATUS: RESOLVED, but a related touch issue remains)
-- User requested the Site Settings feature. (STATUS: IN PROGRESS)
+- User reported Related Solutions text is not visible in dark mode. (IN PROGRESS)
+- User reported Related Projects heading is black and not visible in dark mode. (RESOLVED)
+- User reported package cards have text visibility issues in dark mode. (RESOLVED)
+- User reported a brand logo is not visible in dark mode on its specific page. (RESOLVED)
+- User reported white badges on cards and white input fields in the admin panel are not visible in dark mode. (RESOLVED)
+- User reported text and icons in a specific component are invisible in dark mode. (RESOLVED)
+- User reported text visibility issues in the Complete Your Project section on a service page in dark mode. (RESOLVED)
+- User requested that the website use the light theme by default and that all dark mode text visibility issues be fixed. They also requested a theme toggle for the admin panel and pointed out that icon dropdowns were invisible in dark mode on the new stats admin page. (RESOLVED)
+- User pointed out additional stats on the homepage that also needed to be made dynamic. (RESOLVED)
+- User reported that the work-with-us page seemed to show static data, and asked for clarification on where to edit homepage statistics and Trusted by logos. (RESOLVED)
 
 **Project Health Check:**
-- **Broken:** No core functionality is currently broken.
-- **Mocked:** The  logos and  content are still effectively hardcoded, as they are not yet connected to the new Site Settings backend.
+- **Broken:** Several UI components still have visibility/usability issues in dark mode, requiring a full audit.
+- **Mocked:** The main homepage's hero content (title, subtitle, images, video) and the site's favicon are still hardcoded and not connected to the Site Settings backend.
 
 **3rd Party Integrations**
-- An image generation tool was used to create product images.
+- No new 3rd party integrations were added in this session.
 
 **Testing status**
-  - Testing agent used after significant changes: YES (for Project and Blog CRUD)
+  - Testing agent used after significant changes: YES, for the Google Maps and dynamic content features early in the session.
   - Troubleshoot agent used after agent stuck in loop: NO
   - Test files created: []
-  - Known regressions: None in this session.
+  - Known regressions: Numerous UI regressions in dark mode were discovered and fixed throughout the session. More likely exist.
 
 **Credentials to test flow:**
 - Admin login:  / 
 
 **What agent forgot to execute**
-- The agent addressed the mouseover flicker on the project card button but did not address the user's secondary report about the button shifting position on touch devices.</analysis>
+- The agent has not yet implemented the dynamic homepage hero content (title, images, etc.) or the dynamic favicon, which were part of the original plan from the previous handoff.
+- The agent has not explicitly verified that the touch-device-specific bug with the project card button shifting has been resolved. A fix was applied for general centering, but the touch behavior itself was not confirmed.</analysis>
