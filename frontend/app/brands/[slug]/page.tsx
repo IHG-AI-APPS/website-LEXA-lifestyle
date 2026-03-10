@@ -171,9 +171,9 @@ export default function BrandDetailPage({ params }: { params: { slug: string } }
             <motion.div initial={{ opacity: 0, x: -30 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.6 }}>
               <div className="flex items-center gap-3 mb-5">
                 {hasLogo ? (
-                  <div className="bg-white p-3 rounded-lg">
+                  <div className="bg-white dark:bg-[#1A1A1A] p-3 rounded-lg border border-gray-200 dark:border-zinc-700">
                     <div className="relative w-24 h-10">
-                      <SafeImage src={brand.logo} alt={brand.name} fill className="object-contain" />
+                      <SafeImage src={brand.logo} alt={brand.name} fill className="object-contain dark:brightness-0 dark:invert" />
                     </div>
                   </div>
                 ) : (

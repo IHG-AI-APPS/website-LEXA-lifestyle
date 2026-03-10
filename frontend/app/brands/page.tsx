@@ -40,8 +40,7 @@ function BrandLogo({ brand, size = 'md' }: { brand: any; size?: 'sm' | 'md' }) {
   if (hasLogo) {
     return (
       <div 
-        className={`${dims} flex-shrink-0 rounded-lg border border-gray-200 dark:border-zinc-700 flex items-center justify-center p-1.5 overflow-hidden`}
-        style={{ backgroundColor: '#ffffff' }}
+        className={`${dims} flex-shrink-0 rounded-lg border border-gray-200 dark:border-zinc-700 flex items-center justify-center p-1.5 overflow-hidden bg-white dark:bg-[#1A1A1A]`}
       >
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
@@ -49,7 +48,7 @@ function BrandLogo({ brand, size = 'md' }: { brand: any; size?: 'sm' | 'md' }) {
           alt={brand.name}
           width={imgSize}
           height={imgSize}
-          className="w-full h-full object-contain"
+          className="w-full h-full object-contain dark:brightness-0 dark:invert"
           loading="lazy"
           onError={(e) => {
             // Hide the image on error and let parent show initials
