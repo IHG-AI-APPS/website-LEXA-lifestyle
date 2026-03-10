@@ -5,6 +5,7 @@ import { motion } from 'framer-motion'
 import { ArrowRight, Users } from 'lucide-react'
 import Link from 'next/link'
 import { useLanguage } from '@/contexts/LanguageContext'
+import { useSiteSettings } from '@/hooks/useSiteSettings'
 
 interface HeroCuratorProps {
   onPersonaClick?: () => void
@@ -12,17 +13,18 @@ interface HeroCuratorProps {
 
 const BACKEND_URL = process.env.NEXT_PUBLIC_BACKEND_URL || ''
 
-const HERO_CLIPS = [
+const DEFAULT_HERO_CLIPS = [
   '/videos/hero-v3/v3_01_dramatic_entrance.mp4',
   '/videos/hero/05_cinema_room.mp4',
 ]
 
-const FALLBACK_IMAGE = 'https://files.ihgbrands.com/lexa/migrated/9bb2c417db1b83a5.webp'
+const DEFAULT_FALLBACK_IMAGE = 'https://files.ihgbrands.com/lexa/migrated/9bb2c417db1b83a5.webp'
 
 const MAX_VIDEO_ERRORS = 3
 
 export default function HeroCurator({ onPersonaClick }: HeroCuratorProps) {
   const { language } = useLanguage()
+  const { settings, loading: settingsLoading } = useSiteSettings()
   const [currentClip, setCurrentClip] = useState(0)
   const [isFading, setIsFading] = useState(false)
   const [isLoaded, setIsLoaded] = useState(false)
@@ -38,7 +40,12 @@ export default function HeroCurator({ onPersonaClick }: HeroCuratorProps) {
       .catch(() => {})
   }, [])
 
-  const heroClips = cmsData?.video_clips?.length ? cmsData.video_clips.slice(0, 3) : HERO_CLIPS
+  // Use video from Site Settings if available, otherwise fall back to CMS or defaults
+  const heroVideoUrl = settings.hero_video_url || ''
+  const heroClips = heroVideoUrl ? [heroVideoUrl] : (cmsData?.video_clips?.length ? cmsData.video_clips.slice(0, 3) : DEFAULT_HERO_CLIPS)
+  
+  // Use fallback image from Site Settings if available
+  const FALLBACK_IMAGE = settings.hero_image || DEFAULT_FALLBACK_IMAGE
 
   const handleVideoEnd = useCallback(() => {
     setIsFading(true)
@@ -67,9 +74,13 @@ export default function HeroCurator({ onPersonaClick }: HeroCuratorProps) {
 
   const quote = cmsData?.quote
     ? (language === 'ar' ? cmsData.quote_ar : cmsData.quote_en)
-    : (language === 'ar'
+    : (settings.hero_subtitle || (language === 'ar'
       ? 'حيث تلتقي التكنولوجيا بالفخامة'
-      : 'Where technology meets luxury ')
+      : 'Where technology meets luxury '))
+  
+  // Get CTA text and link from Site Settings with fallbacks
+  const ctaText = settings.hero_cta_text || 'Find Your Perfect Solution'
+  const ctaLink = settings.hero_cta_link || '/solutions'
 
   const handleFindSolution = () => {
     if (onPersonaClick) onPersonaClick()
@@ -147,12 +158,12 @@ export default function HeroCurator({ onPersonaClick }: HeroCuratorProps) {
           className="group flex items-center justify-center gap-3 py-3.5 sm:py-4 bg-gradient-to-r from-[#C9A962] to-[#E8D5A3] text-[#050505] text-xs sm:text-sm font-bold tracking-[0.2em] uppercase transition-all duration-300 hover:from-[#D4B872] hover:to-[#F0E0B5] cursor-pointer"
         >
           <Users size={16} strokeWidth={2} />
-          Find Your Perfect Solution
+          {ctaText}
           <ArrowRight size={14} className="transition-transform duration-300 group-hover:translate-x-1" />
         </button>
 
         <Link
-          href="/projects"
+          href={ctaLink}
           data-testid="band-view-projects"
           aria-label="View our completed smart home projects"
           className="group flex items-center justify-center gap-3 py-3.5 sm:py-4 bg-gradient-to-r from-[#B89A52] to-[#C9A962] text-[#050505] text-xs sm:text-sm font-bold tracking-[0.2em] uppercase transition-all duration-300 hover:from-[#C9A962] hover:to-[#D4B872] border-l border-[#050505]/10"

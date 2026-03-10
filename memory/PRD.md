@@ -115,6 +115,18 @@ A premium smart home solutions website with dynamic content management, product 
     - Proper z-index and portal rendering
     - data-testid attributes for automation testing
 
+#### March 10, 2026 - Homepage Hero Dynamic Integration ✅
+- **Connected:** Homepage Hero Section to Site Settings
+  - **File Modified:** `/app/frontend/components/gallery/HeroCurator.tsx`
+  - **Fields now dynamic:**
+    - `hero_subtitle` - The quote text displayed over the video
+    - `hero_video_url` - Custom video URL (falls back to CMS or default)
+    - `hero_image` - Fallback background image
+    - `hero_cta_text` - Primary CTA button text
+    - `hero_cta_link` - CTA button navigation link
+  - **Admin panel location:** Site Settings → Homepage tab → Hero Section
+  - **Testing:** Verified via screenshot - dynamic values displayed correctly
+
 #### March 10, 2026 - Dark Mode Visibility Audit & Fix ✅
 - **Fixed (P0):** "Related Solutions" heading invisible in dark mode
   - **Issue:** Section used `bg-gradient-to-b from-white to-gray-50` which doesn't have proper dark mode override
@@ -274,7 +286,6 @@ A premium smart home solutions website with dynamic content management, product 
 - Gmail SMTP, Google Maps
 
 ## Backlog (P1)
-- Connect Homepage hero content (title, subtitle, images, video) to Site Settings
 - Implement dynamic favicon management from Site Settings
 - Compare Packages feature
 - Additional brand logos upload (Note: Most brands have empty `logo` field in database)
@@ -284,6 +295,7 @@ A premium smart home solutions website with dynamic content management, product 
 - Incorrect Brand Logo Data - Database has missing/incorrect logo URLs for some brands
 
 ## Completed in Recent Sessions
+- ✅ Homepage Hero connected to Site Settings (title, subtitle, video, image, CTA)
 - ✅ Dark mode visibility audit - All pages verified working
 - ✅ "Related Solutions" heading visibility fixed
 - ✅ Project card Quick View button touch stability verified
