@@ -46,9 +46,12 @@ import {
   ShoppingBag,
   ImageIcon,
   UsersRound,
-  Briefcase
+  Briefcase,
+  Sun,
+  Moon
 } from 'lucide-react'
 import { verifyToken, logout } from '@/lib/adminApi'
+import { useTheme } from '@/contexts/ThemeContext'
 
 // Grouped navigation structure
 const navigationGroups = [
@@ -153,6 +156,7 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
   const [sidebarOpen, setSidebarOpen] = useState(false)
   const [profileOpen, setProfileOpen] = useState(false)
   const [collapsedGroups, setCollapsedGroups] = useState<Record<string, boolean>>({})
+  const { theme, toggleTheme } = useTheme()
 
   const toggleGroup = (title: string) => {
     setCollapsedGroups(prev => ({ ...prev, [title]: !prev[title] }))
@@ -292,6 +296,13 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
               
               {profileOpen && (
                 <div className="absolute bottom-full left-0 right-0 mb-2 bg-gray-800 rounded-lg shadow-lg overflow-hidden">
+                  <button
+                    onClick={toggleTheme}
+                    className="flex items-center gap-3 px-4 py-3 text-sm text-gray-300 hover:bg-gray-700 hover:text-white transition-colors w-full"
+                  >
+                    {theme === 'dark' ? <Sun size={16} /> : <Moon size={16} />}
+                    {theme === 'dark' ? 'Light Mode' : 'Dark Mode'}
+                  </button>
                   <Link 
                     href="/admin/settings"
                     className="flex items-center gap-3 px-4 py-3 text-sm text-gray-300 hover:bg-gray-700 hover:text-white transition-colors"
@@ -316,24 +327,34 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
       {/* Main Content */}
       <div className="lg:pl-64">
         {/* Top Bar */}
-        <div className="sticky top-0 z-30 bg-white border-b border-gray-200 px-6 py-4">
+        <div className="sticky top-0 z-30 bg-white dark:bg-[#0A0A0A] border-b border-gray-200 dark:border-zinc-800 px-6 py-4">
           <div className="flex items-center justify-between">
             <button
               onClick={() => setSidebarOpen(true)}
-              className="lg:hidden"
+              className="lg:hidden text-gray-700 dark:text-gray-300"
             >
               <Menu size={24} />
             </button>
-            <div className="text-sm text-gray-600">
-              <a href="/" target="_blank" className="hover:text-charcoal transition-colors">
-                View Website →
-              </a>
+            <div className="flex items-center gap-4">
+              {/* Theme Toggle in Top Bar */}
+              <button
+                onClick={toggleTheme}
+                className="p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-zinc-800 transition-colors text-gray-600 dark:text-gray-400"
+                title={theme === 'dark' ? 'Switch to Light Mode' : 'Switch to Dark Mode'}
+              >
+                {theme === 'dark' ? <Sun size={18} /> : <Moon size={18} />}
+              </button>
+              <div className="text-sm text-gray-600 dark:text-gray-400">
+                <a href="/" target="_blank" className="hover:text-charcoal dark:hover:text-white transition-colors">
+                  View Website →
+                </a>
+              </div>
             </div>
           </div>
         </div>
 
         {/* Page Content */}
-        <div className="p-6">
+        <div className="p-6 bg-gray-50 dark:bg-[#050505] min-h-[calc(100vh-65px)]">
           {children}
         </div>
       </div>
