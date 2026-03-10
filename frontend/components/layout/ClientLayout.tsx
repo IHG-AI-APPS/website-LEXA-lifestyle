@@ -39,18 +39,20 @@ function ClientLayoutInner({ children }: { children: React.ReactNode }) {
   const [showConsultation, setShowConsultation] = useState(false)
   const [isHydrated, setIsHydrated] = useState(false)
 
-  // Mark as hydrated after initial render and hide the loading screen
+  // Mark as hydrated after initial render to show content and hide splash screen
   useEffect(() => {
     setIsHydrated(true)
-    // Hide the initial loader
-    const loader = document.getElementById('initial-loader')
-    if (loader) {
-      loader.classList.add('loaded')
-      // Remove from DOM after animation
-      setTimeout(() => {
-        loader.remove()
-      }, 300)
-    }
+    // Delay hiding splash screen to allow page content to render
+    const timer = setTimeout(() => {
+      const splash = document.getElementById('splash-screen')
+      if (splash) {
+        splash.classList.add('fade-out')
+        setTimeout(() => {
+          splash.remove()
+        }, 400)
+      }
+    }, 500) // Wait 500ms for dynamic imports to start loading
+    return () => clearTimeout(timer)
   }, [])
 
   // Track page views and scroll to top on route change (excluding admin pages)
@@ -97,7 +99,7 @@ function ClientLayoutInner({ children }: { children: React.ReactNode }) {
   }, [router])
 
   return (
-    <>
+    <div id="layout-wrapper">
       {/* Skip to main content - Accessibility */}
       <a 
         href="#main-content" 
@@ -109,7 +111,7 @@ function ClientLayoutInner({ children }: { children: React.ReactNode }) {
       {!hideMainLayout && <Header />}
       {!hideMainLayout ? (
         <PullToRefresh onRefresh={handleRefresh}>
-          <main id="main-content" role="main" aria-label="Main content" className="pb-20 lg:pb-0">{children}</main>
+          <main id="main-content" role="main" aria-label="Main content" className="pb-20 lg:pb-0 min-h-screen">{children}</main>
         </PullToRefresh>
       ) : (
         <main id="main-content" role="main" aria-label="Main content">{children}</main>
@@ -137,7 +139,7 @@ function ClientLayoutInner({ children }: { children: React.ReactNode }) {
           },
         }}
       />
-    </>
+    </div>
   )
 }
 

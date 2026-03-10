@@ -51,6 +51,12 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning className={`dark ${outfit.variable} ${dmSans.variable} ${tajawal.variable} ${notoArabic.variable}`}>
       <head>
+        {/* BLOCKING SCRIPT - Runs before anything else renders. Prevents FOUC */}
+        <script dangerouslySetInnerHTML={{ __html: `
+          (function(){
+            document.documentElement.classList.add('dark');
+          })();
+        ` }} />
         {/* Theme blocking script — runs BEFORE first paint to prevent white flash */}
         <script dangerouslySetInnerHTML={{ __html: `
           (function() {
@@ -89,7 +95,7 @@ export default function RootLayout({
         
         {/* CRITICAL INLINE CSS - Dark-first: ALWAYS dark bg, never white flash */}
         <style dangerouslySetInnerHTML={{ __html: `
-          html, body { background: #050505 !important; color: #fff; margin: 0; padding: 0; font-family: system-ui, -apple-system, sans-serif; }
+          html, body { background: #050505 !important; color: #fff; margin: 0; padding: 0; font-family: system-ui, -apple-system, sans-serif; min-height: 100vh; }
           html:not(.dark) body { background: #fff !important; color: #111; }
           .sr-only, [class*="sr-only"], a[href="#main-content"] { position: absolute !important; width: 1px !important; height: 1px !important; overflow: hidden !important; clip: rect(0,0,0,0) !important; white-space: nowrap !important; }
           header { position: fixed; top: 0; left: 0; right: 0; z-index: 50; background: rgba(5,5,5,0.95); }
@@ -98,10 +104,10 @@ export default function RootLayout({
           img { max-width: 100%; height: auto; }
           section { overflow: hidden; }
           [data-testid] { visibility: visible; }
-          /* Initial loading screen - hides layout until JS hydrates */
-          #initial-loader { position: fixed; inset: 0; z-index: 99999; background: #050505; display: flex; align-items: center; justify-content: center; transition: opacity 0.3s ease; }
-          #initial-loader.loaded { opacity: 0; pointer-events: none; }
-          #initial-loader .spinner { width: 48px; height: 48px; border: 2px solid #C9A962; border-top-color: transparent; border-radius: 50%; animation: spin 1s linear infinite; }
+          /* Splash screen overlay */
+          #splash-screen { position: fixed; inset: 0; z-index: 99999; background: #050505; display: flex; align-items: center; justify-content: center; transition: opacity 0.4s ease-out; }
+          #splash-screen.fade-out { opacity: 0; pointer-events: none; }
+          #splash-screen .loader { width: 40px; height: 40px; border: 2px solid #C9A962; border-top-color: transparent; border-radius: 50%; animation: spin 0.8s linear infinite; }
           @keyframes spin { to { transform: rotate(360deg); } }
         ` }} />
         
@@ -155,9 +161,9 @@ export default function RootLayout({
         />
       </head>
       <body className={dmSans.className}>
-        {/* Initial loading screen - hidden by JS after hydration */}
-        <div id="initial-loader">
-          <div className="spinner"></div>
+        {/* Splash screen - covers everything during initial load/hydration */}
+        <div id="splash-screen">
+          <div className="loader"></div>
         </div>
         <TrackingPixels />
         <ClientLayout>{children}</ClientLayout>

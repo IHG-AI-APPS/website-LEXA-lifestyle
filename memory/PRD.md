@@ -115,6 +115,15 @@ A premium smart home solutions website with dynamic content management, product 
     - Proper z-index and portal rendering
     - data-testid attributes for automation testing
 
+#### March 10, 2026 - Page Loading Improvement ✅
+- **Fixed:** Added splash screen to prevent layout flash during page hydration
+  - Created a loading overlay with gold spinner matching brand colors
+  - Splash screen covers entire viewport with z-index 99999
+  - Delayed fade-out (500ms) to allow content to settle before revealing
+  - Added `min-h-screen` to main content area to prevent footer from appearing at top
+  - Files modified: `/app/frontend/app/layout.tsx`, `/app/frontend/components/layout/ClientLayout.tsx`
+- **Note:** Some brief content flash may still occur on slower connections or cold cache due to Next.js SSR behavior
+
 #### March 10, 2026 - Button Text Standardization & Video Upload Feature ✅
 - **Fixed (P0):** Button text sizes standardized for better visual consistency
   - **File Modified:** `/app/frontend/components/ui/button.tsx`
