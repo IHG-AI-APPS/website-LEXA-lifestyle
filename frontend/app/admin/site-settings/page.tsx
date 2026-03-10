@@ -149,11 +149,11 @@ function ImageUploader({
 
   return (
     <div className="space-y-2">
-      <label className="block text-sm font-medium text-gray-700">{label}</label>
+      <label className="block text-sm font-medium text-gray-700 dark:text-zinc-300">{label}</label>
       
       {/* Preview */}
       {value && (
-        <div className={`relative inline-block p-4 rounded-lg ${previewBg === 'dark' ? 'bg-gray-800' : 'bg-white border border-gray-200'}`}>
+        <div className={`relative inline-block p-4 rounded-lg ${previewBg === 'dark' ? 'bg-gray-800' : 'bg-white dark:bg-[#0F0F0F] border border-gray-200 dark:border-zinc-700'}`}>
           <img 
             src={value} 
             alt="Preview" 
@@ -186,7 +186,7 @@ function ImageUploader({
           type="button"
           onClick={() => fileInputRef.current?.click()}
           disabled={uploading}
-          className="flex items-center gap-2 px-3 py-2 text-sm bg-blue-600 text-white rounded-lg hover:bg-blue-700 disabled:opacity-50 transition-colors"
+          className="flex items-center gap-2 px-3 py-2 text-sm bg-blue-600 dark:bg-[#C9A962] text-white dark:text-black rounded-lg hover:bg-blue-700 dark:hover:bg-[#B8984F] disabled:opacity-50 transition-colors"
         >
           {uploading ? (
             <>
@@ -204,7 +204,7 @@ function ImageUploader({
         <button
           type="button"
           onClick={() => setShowUrlInput(!showUrlInput)}
-          className="flex items-center gap-2 px-3 py-2 text-sm border border-gray-300 text-gray-700 rounded-lg hover:bg-gray-50 transition-colors"
+          className="flex items-center gap-2 px-3 py-2 text-sm border border-gray-300 dark:border-zinc-700 text-gray-700 dark:text-zinc-300 rounded-lg hover:bg-gray-50 dark:hover:bg-[#171717] transition-colors"
         >
           <Link2 size={16} />
           {showUrlInput ? 'Hide URL Input' : 'Enter URL'}
@@ -218,7 +218,7 @@ function ImageUploader({
           value={value}
           onChange={(e) => onChange(e.target.value)}
           placeholder="https://example.com/image.png"
-          className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+          className="w-full px-4 py-2 border border-gray-300 dark:border-zinc-700 rounded-lg focus:ring-2 focus:ring-blue-500 dark:focus:ring-[#C9A962] focus:border-transparent bg-white dark:bg-[#0F0F0F] text-gray-900 dark:text-white placeholder-gray-400 dark:placeholder-zinc-500"
         />
       )}
     </div>
@@ -299,7 +299,7 @@ export default function SiteSettingsPage() {
   if (loading) {
     return (
       <div className="flex items-center justify-center h-64">
-        <Loader2 className="w-8 h-8 animate-spin text-blue-600" />
+        <Loader2 className="w-8 h-8 animate-spin text-blue-600 dark:text-[#C9A962]" />
       </div>
     )
   }
@@ -308,13 +308,13 @@ export default function SiteSettingsPage() {
     <div className="space-y-6">
       <div className="flex items-center justify-between">
         <div>
-          <h1 className="text-2xl font-bold text-gray-900">Site Settings</h1>
-          <p className="text-gray-600 mt-1">Manage your website's global settings</p>
+          <h1 className="text-2xl font-bold text-gray-900 dark:text-white">Site Settings</h1>
+          <p className="text-gray-600 dark:text-zinc-400 mt-1">Manage your website's global settings</p>
         </div>
         <button
           onClick={handleSave}
           disabled={saving}
-          className="flex items-center gap-2 px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 disabled:opacity-50 transition-colors"
+          className="flex items-center gap-2 px-4 py-2 bg-blue-600 dark:bg-[#C9A962] text-white dark:text-black rounded-lg hover:bg-blue-700 dark:hover:bg-[#B8984F] disabled:opacity-50 transition-colors"
           data-testid="save-settings-btn"
         >
           {saving ? <Loader2 size={18} className="animate-spin" /> : <Save size={18} />}
@@ -323,7 +323,7 @@ export default function SiteSettingsPage() {
       </div>
 
       {/* Tabs */}
-      <div className="border-b border-gray-200">
+      <div className="border-b border-gray-200 dark:border-zinc-700">
         <nav className="flex gap-4 overflow-x-auto">
           {tabs.map(tab => (
             <button
@@ -331,8 +331,8 @@ export default function SiteSettingsPage() {
               onClick={() => setActiveTab(tab.id as typeof activeTab)}
               className={`flex items-center gap-2 px-4 py-3 border-b-2 font-medium text-sm transition-colors whitespace-nowrap ${
                 activeTab === tab.id
-                  ? 'border-blue-600 text-blue-600'
-                  : 'border-transparent text-gray-500 hover:text-gray-700'
+                  ? 'border-blue-600 dark:border-[#C9A962] text-blue-600 dark:text-[#C9A962]'
+                  : 'border-transparent text-gray-500 dark:text-zinc-400 hover:text-gray-700 dark:hover:text-white'
               }`}
               data-testid={`tab-${tab.id}`}
             >
@@ -344,11 +344,11 @@ export default function SiteSettingsPage() {
       </div>
 
       {/* Tab Content */}
-      <div className="bg-white rounded-lg shadow p-6">
+      <div className="bg-white dark:bg-[#171717] rounded-lg shadow dark:shadow-none dark:border dark:border-zinc-800 p-6">
         {/* Logos & Favicon Tab */}
         {activeTab === 'logos' && (
           <div className="space-y-8">
-            <h2 className="text-lg font-semibold text-gray-900 mb-4">Logos & Favicon</h2>
+            <h2 className="text-lg font-semibold text-gray-900 dark:text-white mb-4">Logos & Favicon</h2>
             
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               <ImageUploader
@@ -384,7 +384,7 @@ export default function SiteSettingsPage() {
               />
             </div>
 
-            <div className="pt-4 border-t">
+            <div className="pt-4 border-t dark:border-zinc-700">
               <ImageUploader
                 value={settings.favicon}
                 onChange={(url) => handleChange('favicon', url)}
@@ -399,92 +399,92 @@ export default function SiteSettingsPage() {
         {/* Social Media Tab */}
         {activeTab === 'social' && (
           <div className="space-y-6">
-            <h2 className="text-lg font-semibold text-gray-900 mb-4">Social Media Links</h2>
+            <h2 className="text-lg font-semibold text-gray-900 dark:text-white mb-4">Social Media Links</h2>
             
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">Facebook</label>
+                <label className="block text-sm font-medium text-gray-700 dark:text-zinc-300 mb-2">Facebook</label>
                 <input
                   type="url"
                   value={settings.social_facebook}
                   onChange={(e) => handleChange('social_facebook', e.target.value)}
                   placeholder="https://facebook.com/yourpage"
-                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                  className="w-full px-4 py-2 border border-gray-300 dark:border-zinc-700 rounded-lg focus:ring-2 focus:ring-blue-500 dark:focus:ring-[#C9A962] focus:border-transparent bg-white dark:bg-[#0F0F0F] text-gray-900 dark:text-white placeholder-gray-400 dark:placeholder-zinc-500"
                   data-testid="social-facebook"
                 />
               </div>
 
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">Instagram</label>
+                <label className="block text-sm font-medium text-gray-700 dark:text-zinc-300 mb-2">Instagram</label>
                 <input
                   type="url"
                   value={settings.social_instagram}
                   onChange={(e) => handleChange('social_instagram', e.target.value)}
                   placeholder="https://instagram.com/yourpage"
-                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                  className="w-full px-4 py-2 border border-gray-300 dark:border-zinc-700 rounded-lg focus:ring-2 focus:ring-blue-500 dark:focus:ring-[#C9A962] focus:border-transparent bg-white dark:bg-[#0F0F0F] text-gray-900 dark:text-white placeholder-gray-400 dark:placeholder-zinc-500"
                   data-testid="social-instagram"
                 />
               </div>
 
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">Twitter / X</label>
+                <label className="block text-sm font-medium text-gray-700 dark:text-zinc-300 mb-2">Twitter / X</label>
                 <input
                   type="url"
                   value={settings.social_twitter}
                   onChange={(e) => handleChange('social_twitter', e.target.value)}
                   placeholder="https://twitter.com/yourpage"
-                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                  className="w-full px-4 py-2 border border-gray-300 dark:border-zinc-700 rounded-lg focus:ring-2 focus:ring-blue-500 dark:focus:ring-[#C9A962] focus:border-transparent bg-white dark:bg-[#0F0F0F] text-gray-900 dark:text-white placeholder-gray-400 dark:placeholder-zinc-500"
                   data-testid="social-twitter"
                 />
               </div>
 
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">LinkedIn</label>
+                <label className="block text-sm font-medium text-gray-700 dark:text-zinc-300 mb-2">LinkedIn</label>
                 <input
                   type="url"
                   value={settings.social_linkedin}
                   onChange={(e) => handleChange('social_linkedin', e.target.value)}
                   placeholder="https://linkedin.com/company/yourcompany"
-                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                  className="w-full px-4 py-2 border border-gray-300 dark:border-zinc-700 rounded-lg focus:ring-2 focus:ring-blue-500 dark:focus:ring-[#C9A962] focus:border-transparent bg-white dark:bg-[#0F0F0F] text-gray-900 dark:text-white placeholder-gray-400 dark:placeholder-zinc-500"
                   data-testid="social-linkedin"
                 />
               </div>
 
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">YouTube</label>
+                <label className="block text-sm font-medium text-gray-700 dark:text-zinc-300 mb-2">YouTube</label>
                 <input
                   type="url"
                   value={settings.social_youtube}
                   onChange={(e) => handleChange('social_youtube', e.target.value)}
                   placeholder="https://youtube.com/@yourchannel"
-                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                  className="w-full px-4 py-2 border border-gray-300 dark:border-zinc-700 rounded-lg focus:ring-2 focus:ring-blue-500 dark:focus:ring-[#C9A962] focus:border-transparent bg-white dark:bg-[#0F0F0F] text-gray-900 dark:text-white placeholder-gray-400 dark:placeholder-zinc-500"
                   data-testid="social-youtube"
                 />
               </div>
 
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">TikTok</label>
+                <label className="block text-sm font-medium text-gray-700 dark:text-zinc-300 mb-2">TikTok</label>
                 <input
                   type="url"
                   value={settings.social_tiktok}
                   onChange={(e) => handleChange('social_tiktok', e.target.value)}
                   placeholder="https://tiktok.com/@yourpage"
-                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                  className="w-full px-4 py-2 border border-gray-300 dark:border-zinc-700 rounded-lg focus:ring-2 focus:ring-blue-500 dark:focus:ring-[#C9A962] focus:border-transparent bg-white dark:bg-[#0F0F0F] text-gray-900 dark:text-white placeholder-gray-400 dark:placeholder-zinc-500"
                   data-testid="social-tiktok"
                 />
               </div>
 
               <div className="md:col-span-2">
-                <label className="block text-sm font-medium text-gray-700 mb-2">WhatsApp Number</label>
+                <label className="block text-sm font-medium text-gray-700 dark:text-zinc-300 mb-2">WhatsApp Number</label>
                 <input
                   type="text"
                   value={settings.social_whatsapp}
                   onChange={(e) => handleChange('social_whatsapp', e.target.value)}
                   placeholder="+971501234567 (include country code)"
-                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                  className="w-full px-4 py-2 border border-gray-300 dark:border-zinc-700 rounded-lg focus:ring-2 focus:ring-blue-500 dark:focus:ring-[#C9A962] focus:border-transparent bg-white dark:bg-[#0F0F0F] text-gray-900 dark:text-white placeholder-gray-400 dark:placeholder-zinc-500"
                   data-testid="social-whatsapp"
                 />
-                <p className="text-xs text-gray-500 mt-1">Enter full phone number with country code for WhatsApp chat link</p>
+                <p className="text-xs text-gray-500 dark:text-zinc-400 mt-1">Enter full phone number with country code for WhatsApp chat link</p>
               </div>
             </div>
           </div>
@@ -493,11 +493,11 @@ export default function SiteSettingsPage() {
         {/* Contact Info Tab */}
         {activeTab === 'contact' && (
           <div className="space-y-6">
-            <h2 className="text-lg font-semibold text-gray-900 mb-4">Contact Information</h2>
+            <h2 className="text-lg font-semibold text-gray-900 dark:text-white mb-4">Contact Information</h2>
             
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">
+                <label className="block text-sm font-medium text-gray-700 dark:text-zinc-300 mb-2">
                   <Mail size={16} className="inline mr-2" />
                   Company Email (General Inquiries)
                 </label>
@@ -506,14 +506,14 @@ export default function SiteSettingsPage() {
                   value={settings.contact_email}
                   onChange={(e) => handleChange('contact_email', e.target.value)}
                   placeholder="info@yourcompany.com"
-                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                  className="w-full px-4 py-2 border border-gray-300 dark:border-zinc-700 rounded-lg focus:ring-2 focus:ring-blue-500 dark:focus:ring-[#C9A962] focus:border-transparent bg-white dark:bg-[#0F0F0F] text-gray-900 dark:text-white placeholder-gray-400 dark:placeholder-zinc-500"
                   data-testid="contact-email"
                 />
-                <p className="text-xs text-gray-500 mt-1">Used for general contact forms and inquiries</p>
+                <p className="text-xs text-gray-500 dark:text-zinc-400 mt-1">Used for general contact forms and inquiries</p>
               </div>
 
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">
+                <label className="block text-sm font-medium text-gray-700 dark:text-zinc-300 mb-2">
                   <Mail size={16} className="inline mr-2" />
                   HR Email (Careers/Jobs)
                 </label>
@@ -522,14 +522,14 @@ export default function SiteSettingsPage() {
                   value={settings.hr_email}
                   onChange={(e) => handleChange('hr_email', e.target.value)}
                   placeholder="careers@yourcompany.com"
-                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                  className="w-full px-4 py-2 border border-gray-300 dark:border-zinc-700 rounded-lg focus:ring-2 focus:ring-blue-500 dark:focus:ring-[#C9A962] focus:border-transparent bg-white dark:bg-[#0F0F0F] text-gray-900 dark:text-white placeholder-gray-400 dark:placeholder-zinc-500"
                   data-testid="hr-email"
                 />
-                <p className="text-xs text-gray-500 mt-1">Used for job applications and career inquiries</p>
+                <p className="text-xs text-gray-500 dark:text-zinc-400 mt-1">Used for job applications and career inquiries</p>
               </div>
 
               <div className="md:col-span-2">
-                <label className="block text-sm font-medium text-gray-700 mb-2">
+                <label className="block text-sm font-medium text-gray-700 dark:text-zinc-300 mb-2">
                   <Phone size={16} className="inline mr-2" />
                   Phone Number
                 </label>
@@ -538,13 +538,13 @@ export default function SiteSettingsPage() {
                   value={settings.contact_phone}
                   onChange={(e) => handleChange('contact_phone', e.target.value)}
                   placeholder="+971 50 326 7228"
-                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                  className="w-full px-4 py-2 border border-gray-300 dark:border-zinc-700 rounded-lg focus:ring-2 focus:ring-blue-500 dark:focus:ring-[#C9A962] focus:border-transparent bg-white dark:bg-[#0F0F0F] text-gray-900 dark:text-white placeholder-gray-400 dark:placeholder-zinc-500"
                   data-testid="contact-phone"
                 />
               </div>
 
               <div className="md:col-span-2">
-                <label className="block text-sm font-medium text-gray-700 mb-2">
+                <label className="block text-sm font-medium text-gray-700 dark:text-zinc-300 mb-2">
                   <MapPin size={16} className="inline mr-2" />
                   Address
                 </label>
@@ -553,13 +553,13 @@ export default function SiteSettingsPage() {
                   onChange={(e) => handleChange('contact_address', e.target.value)}
                   placeholder="Enter your business address"
                   rows={3}
-                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent resize-none"
+                  className="w-full px-4 py-2 border border-gray-300 dark:border-zinc-700 rounded-lg focus:ring-2 focus:ring-blue-500 dark:focus:ring-[#C9A962] focus:border-transparent resize-none bg-white dark:bg-[#0F0F0F] text-gray-900 dark:text-white placeholder-gray-400 dark:placeholder-zinc-500"
                   data-testid="contact-address"
                 />
               </div>
 
               <div className="md:col-span-2">
-                <label className="block text-sm font-medium text-gray-700 mb-2">
+                <label className="block text-sm font-medium text-gray-700 dark:text-zinc-300 mb-2">
                   <MapPin size={16} className="inline mr-2" />
                   Google Maps Embed Code
                 </label>
@@ -571,7 +571,7 @@ export default function SiteSettingsPage() {
                   className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent resize-none font-mono text-sm"
                   data-testid="google-maps-embed"
                 />
-                <p className="text-xs text-gray-500 mt-1">
+                <p className="text-xs text-gray-500 dark:text-zinc-400 mt-1">
                   Get the embed URL from Google Maps: Share → Embed a map → Copy the src URL from the iframe code
                 </p>
                 {settings.google_maps_embed && (
@@ -597,39 +597,39 @@ export default function SiteSettingsPage() {
         {/* Homepage Tab */}
         {activeTab === 'homepage' && (
           <div className="space-y-6">
-            <h2 className="text-lg font-semibold text-gray-900 mb-4">Homepage Content</h2>
+            <h2 className="text-lg font-semibold text-gray-900 dark:text-white mb-4">Homepage Content</h2>
             
             <div className="space-y-6">
               <div className="p-4 bg-gray-50 rounded-lg">
                 <h3 className="font-medium text-gray-900 mb-4">Hero Section</h3>
                 <div className="grid grid-cols-1 gap-4">
                   <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">Hero Title</label>
+                    <label className="block text-sm font-medium text-gray-700 dark:text-zinc-300 mb-2">Hero Title</label>
                     <input
                       type="text"
                       value={settings.hero_title}
                       onChange={(e) => handleChange('hero_title', e.target.value)}
                       placeholder="Transform Your Space Into an Intelligent Sanctuary"
-                      className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                      className="w-full px-4 py-2 border border-gray-300 dark:border-zinc-700 rounded-lg focus:ring-2 focus:ring-blue-500 dark:focus:ring-[#C9A962] focus:border-transparent bg-white dark:bg-[#0F0F0F] text-gray-900 dark:text-white placeholder-gray-400 dark:placeholder-zinc-500"
                       data-testid="hero-title"
                     />
                   </div>
 
                   <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">Hero Subtitle</label>
+                    <label className="block text-sm font-medium text-gray-700 dark:text-zinc-300 mb-2">Hero Subtitle</label>
                     <textarea
                       value={settings.hero_subtitle}
                       onChange={(e) => handleChange('hero_subtitle', e.target.value)}
                       placeholder="Experience the future of luxury living..."
                       rows={2}
-                      className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent resize-none"
+                      className="w-full px-4 py-2 border border-gray-300 dark:border-zinc-700 rounded-lg focus:ring-2 focus:ring-blue-500 dark:focus:ring-[#C9A962] focus:border-transparent resize-none bg-white dark:bg-[#0F0F0F] text-gray-900 dark:text-white placeholder-gray-400 dark:placeholder-zinc-500"
                       data-testid="hero-subtitle"
                     />
                   </div>
 
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <div>
-                      <label className="block text-sm font-medium text-gray-700 mb-2">
+                      <label className="block text-sm font-medium text-gray-700 dark:text-zinc-300 mb-2">
                         <Video size={16} className="inline mr-2" />
                         Hero Video URL
                       </label>
@@ -638,7 +638,7 @@ export default function SiteSettingsPage() {
                         value={settings.hero_video_url}
                         onChange={(e) => handleChange('hero_video_url', e.target.value)}
                         placeholder="https://example.com/hero-video.mp4"
-                        className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                        className="w-full px-4 py-2 border border-gray-300 dark:border-zinc-700 rounded-lg focus:ring-2 focus:ring-blue-500 dark:focus:ring-[#C9A962] focus:border-transparent bg-white dark:bg-[#0F0F0F] text-gray-900 dark:text-white placeholder-gray-400 dark:placeholder-zinc-500"
                         data-testid="hero-video-url"
                       />
                     </div>
@@ -654,25 +654,25 @@ export default function SiteSettingsPage() {
 
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <div>
-                      <label className="block text-sm font-medium text-gray-700 mb-2">CTA Button Text</label>
+                      <label className="block text-sm font-medium text-gray-700 dark:text-zinc-300 mb-2">CTA Button Text</label>
                       <input
                         type="text"
                         value={settings.hero_cta_text}
                         onChange={(e) => handleChange('hero_cta_text', e.target.value)}
                         placeholder="Explore Solutions"
-                        className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                        className="w-full px-4 py-2 border border-gray-300 dark:border-zinc-700 rounded-lg focus:ring-2 focus:ring-blue-500 dark:focus:ring-[#C9A962] focus:border-transparent bg-white dark:bg-[#0F0F0F] text-gray-900 dark:text-white placeholder-gray-400 dark:placeholder-zinc-500"
                         data-testid="hero-cta-text"
                       />
                     </div>
 
                     <div>
-                      <label className="block text-sm font-medium text-gray-700 mb-2">CTA Button Link</label>
+                      <label className="block text-sm font-medium text-gray-700 dark:text-zinc-300 mb-2">CTA Button Link</label>
                       <input
                         type="text"
                         value={settings.hero_cta_link}
                         onChange={(e) => handleChange('hero_cta_link', e.target.value)}
                         placeholder="/solutions"
-                        className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                        className="w-full px-4 py-2 border border-gray-300 dark:border-zinc-700 rounded-lg focus:ring-2 focus:ring-blue-500 dark:focus:ring-[#C9A962] focus:border-transparent bg-white dark:bg-[#0F0F0F] text-gray-900 dark:text-white placeholder-gray-400 dark:placeholder-zinc-500"
                         data-testid="hero-cta-link"
                       />
                     </div>
@@ -684,25 +684,25 @@ export default function SiteSettingsPage() {
                 <h3 className="font-medium text-gray-900 mb-4">Featured Projects Section</h3>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">Section Title</label>
+                    <label className="block text-sm font-medium text-gray-700 dark:text-zinc-300 mb-2">Section Title</label>
                     <input
                       type="text"
                       value={settings.featured_projects_title}
                       onChange={(e) => handleChange('featured_projects_title', e.target.value)}
                       placeholder="Our Portfolio"
-                      className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                      className="w-full px-4 py-2 border border-gray-300 dark:border-zinc-700 rounded-lg focus:ring-2 focus:ring-blue-500 dark:focus:ring-[#C9A962] focus:border-transparent bg-white dark:bg-[#0F0F0F] text-gray-900 dark:text-white placeholder-gray-400 dark:placeholder-zinc-500"
                       data-testid="featured-projects-title"
                     />
                   </div>
 
                   <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">Section Subtitle</label>
+                    <label className="block text-sm font-medium text-gray-700 dark:text-zinc-300 mb-2">Section Subtitle</label>
                     <input
                       type="text"
                       value={settings.featured_projects_subtitle}
                       onChange={(e) => handleChange('featured_projects_subtitle', e.target.value)}
                       placeholder="Explore our latest smart home transformations"
-                      className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                      className="w-full px-4 py-2 border border-gray-300 dark:border-zinc-700 rounded-lg focus:ring-2 focus:ring-blue-500 dark:focus:ring-[#C9A962] focus:border-transparent bg-white dark:bg-[#0F0F0F] text-gray-900 dark:text-white placeholder-gray-400 dark:placeholder-zinc-500"
                       data-testid="featured-projects-subtitle"
                     />
                   </div>
@@ -713,25 +713,25 @@ export default function SiteSettingsPage() {
                 <h3 className="font-medium text-gray-900 mb-4">About Section</h3>
                 <div className="grid grid-cols-1 gap-4">
                   <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">Section Title</label>
+                    <label className="block text-sm font-medium text-gray-700 dark:text-zinc-300 mb-2">Section Title</label>
                     <input
                       type="text"
                       value={settings.about_section_title}
                       onChange={(e) => handleChange('about_section_title', e.target.value)}
                       placeholder="About LEXA"
-                      className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                      className="w-full px-4 py-2 border border-gray-300 dark:border-zinc-700 rounded-lg focus:ring-2 focus:ring-blue-500 dark:focus:ring-[#C9A962] focus:border-transparent bg-white dark:bg-[#0F0F0F] text-gray-900 dark:text-white placeholder-gray-400 dark:placeholder-zinc-500"
                       data-testid="about-section-title"
                     />
                   </div>
 
                   <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">Section Content</label>
+                    <label className="block text-sm font-medium text-gray-700 dark:text-zinc-300 mb-2">Section Content</label>
                     <textarea
                       value={settings.about_section_content}
                       onChange={(e) => handleChange('about_section_content', e.target.value)}
                       placeholder="Enter about section content..."
                       rows={4}
-                      className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent resize-none"
+                      className="w-full px-4 py-2 border border-gray-300 dark:border-zinc-700 rounded-lg focus:ring-2 focus:ring-blue-500 dark:focus:ring-[#C9A962] focus:border-transparent resize-none bg-white dark:bg-[#0F0F0F] text-gray-900 dark:text-white placeholder-gray-400 dark:placeholder-zinc-500"
                       data-testid="about-section-content"
                     />
                   </div>
@@ -752,33 +752,33 @@ export default function SiteSettingsPage() {
         {/* SEO Tab */}
         {activeTab === 'seo' && (
           <div className="space-y-6">
-            <h2 className="text-lg font-semibold text-gray-900 mb-4">SEO Settings</h2>
+            <h2 className="text-lg font-semibold text-gray-900 dark:text-white mb-4">SEO Settings</h2>
             
             <div className="grid grid-cols-1 gap-6">
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">Site Name</label>
+                <label className="block text-sm font-medium text-gray-700 dark:text-zinc-300 mb-2">Site Name</label>
                 <input
                   type="text"
                   value={settings.site_name}
                   onChange={(e) => handleChange('site_name', e.target.value)}
                   placeholder="LEXA Lifestyle"
-                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                  className="w-full px-4 py-2 border border-gray-300 dark:border-zinc-700 rounded-lg focus:ring-2 focus:ring-blue-500 dark:focus:ring-[#C9A962] focus:border-transparent bg-white dark:bg-[#0F0F0F] text-gray-900 dark:text-white placeholder-gray-400 dark:placeholder-zinc-500"
                   data-testid="site-name"
                 />
-                <p className="text-xs text-gray-500 mt-1">Used in browser tab titles and search results</p>
+                <p className="text-xs text-gray-500 dark:text-zinc-400 mt-1">Used in browser tab titles and search results</p>
               </div>
 
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">Site Description</label>
+                <label className="block text-sm font-medium text-gray-700 dark:text-zinc-300 mb-2">Site Description</label>
                 <textarea
                   value={settings.site_description}
                   onChange={(e) => handleChange('site_description', e.target.value)}
                   placeholder="Premium Smart Home Automation Solutions"
                   rows={3}
-                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent resize-none"
+                  className="w-full px-4 py-2 border border-gray-300 dark:border-zinc-700 rounded-lg focus:ring-2 focus:ring-blue-500 dark:focus:ring-[#C9A962] focus:border-transparent resize-none bg-white dark:bg-[#0F0F0F] text-gray-900 dark:text-white placeholder-gray-400 dark:placeholder-zinc-500"
                   data-testid="site-description"
                 />
-                <p className="text-xs text-gray-500 mt-1">Used in search engine results (keep under 160 characters)</p>
+                <p className="text-xs text-gray-500 dark:text-zinc-400 mt-1">Used in search engine results (keep under 160 characters)</p>
               </div>
             </div>
           </div>
