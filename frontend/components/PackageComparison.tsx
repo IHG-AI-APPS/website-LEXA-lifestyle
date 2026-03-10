@@ -21,7 +21,7 @@ export default function PackageComparison({ packages, title = "Our Packages" }: 
   return (
     <div className="py-16 bg-gray-50 dark:bg-[#171717]">
       <div className="max-w-7xl mx-auto px-4">
-        <h2 className="text-3xl md:text-4xl font-heading font-bold text-center mb-12">
+        <h2 className="text-3xl md:text-4xl font-heading font-bold text-center mb-12 text-gray-900 dark:text-white">
           {title}
         </h2>
 
@@ -35,23 +35,23 @@ export default function PackageComparison({ packages, title = "Our Packages" }: 
               viewport={{ once: true }}
               className={`relative bg-white dark:bg-[#0A0A0A] rounded-lg overflow-hidden ${
                 pkg.popular 
-                  ? 'border-4 border-[#E8DCC8] shadow-2xl scale-105' 
-                  : 'border-2 border-gray-200'
+                  ? 'border-4 border-[#E8DCC8] dark:border-[#C9A962] shadow-2xl scale-105' 
+                  : 'border-2 border-gray-200 dark:border-zinc-700'
               }`}
             >
               {/* Popular Badge */}
               {pkg.popular && (
-                <div className="absolute top-0 right-0 bg-[#E8DCC8] text-black text-xs font-bold px-4 py-1 rounded-bl-lg">
+                <div className="absolute top-0 right-0 bg-[#E8DCC8] dark:bg-[#C9A962] text-black text-xs font-bold px-4 py-1 rounded-bl-lg">
                   MOST POPULAR
                 </div>
               )}
 
               {/* Package Header */}
-              <div className={`p-6 ${pkg.popular ? 'bg-gradient-to-br from-[#1A1A1A] to-[#2A2A2A]' : 'bg-gray-100'}`}>
-                <h3 className={`text-2xl font-bold mb-2 ${pkg.popular ? 'text-white' : 'text-[#1A1A1A]'}`}>
+              <div className={`p-6 ${pkg.popular ? 'bg-gradient-to-br from-[#1A1A1A] to-[#2A2A2A]' : 'bg-gray-100 dark:bg-[#171717]'}`}>
+                <h3 className={`text-2xl font-bold mb-2 ${pkg.popular ? 'text-white' : 'text-[#1A1A1A] dark:text-white'}`}>
                   {pkg.tier}
                 </h3>
-                <div className={`text-3xl font-bold ${pkg.popular ? 'text-[#E8DCC8]' : 'text-[#1A1A1A]'}`}>
+                <div className={`text-3xl font-bold ${pkg.popular ? 'text-[#E8DCC8]' : 'text-[#1A1A1A] dark:text-[#C9A962]'}`}>
                   {pkg.price_range}
                 </div>
               </div>
@@ -61,8 +61,8 @@ export default function PackageComparison({ packages, title = "Our Packages" }: 
                 <ul className="space-y-3">
                   {pkg.features.map((feature, fIndex) => (
                     <li key={fIndex} className="flex items-start gap-3">
-                      <CheckCircle2 className="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" />
-                      <span className="text-sm text-gray-700 dark:text-zinc-400">{feature}</span>
+                      <CheckCircle2 className="w-5 h-5 text-green-600 dark:text-green-500 flex-shrink-0 mt-0.5" />
+                      <span className="text-sm text-gray-700 dark:text-zinc-300">{feature}</span>
                     </li>
                   ))}
                 </ul>
@@ -70,8 +70,8 @@ export default function PackageComparison({ packages, title = "Our Packages" }: 
                 {/* CTA Button */}
                 <button className={`w-full mt-6 py-3 rounded-lg font-semibold transition ${
                   pkg.popular
-                    ? 'bg-[#E8DCC8] text-black hover:bg-[#d4c8b4]'
-                    : 'bg-gray-900 text-white hover:bg-gray-800'
+                    ? 'bg-[#E8DCC8] dark:bg-[#C9A962] text-black hover:bg-[#d4c8b4] dark:hover:bg-[#B8984F]'
+                    : 'bg-gray-900 dark:bg-[#C9A962] text-white dark:text-black hover:bg-gray-800 dark:hover:bg-[#B8984F]'
                 }`}>
                   Get Quote
                 </button>

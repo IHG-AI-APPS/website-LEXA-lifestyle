@@ -33,7 +33,7 @@ export default function ClientLogos() {
           className="text-center mb-12"
         >
           <div className="section-label mb-4">TRUSTED PARTNERS</div>
-          <h2 className="h2 text-[#1A1A1A]">Who We Work With</h2>
+          <h2 className="h2 text-[#1A1A1A] dark:text-white">Who We Work With</h2>
         </motion.div>
       </div>
 

@@ -99,7 +99,7 @@ export default function SolutionsPage() {
         </div>
       </section>
 
-      <section className="py-16 md:py-20">
+      <section className="py-16 md:py-20 bg-white dark:bg-[#050505]">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
           
           {/* Residential Solutions */}
@@ -112,11 +112,11 @@ export default function SolutionsPage() {
                 viewport={{ once: true }}
                 className="mb-12"
               >
-                <span className="text-xs tracking-[0.3em] uppercase text-gray-400 mb-2 block">
+                <span className="text-xs tracking-[0.3em] uppercase text-gray-400 dark:text-zinc-500 mb-2 block">
                   {language === 'ar' ? 'الفئة' : 'Category'}
                 </span>
-                <h2 className="text-3xl md:text-4xl font-bold mb-2">{categoryConfig.residential.title}</h2>
-                <p className="text-lg text-gray-600 dark:text-zinc-500">{categoryConfig.residential.subtitle}</p>
+                <h2 className="text-3xl md:text-4xl font-bold mb-2 text-gray-900 dark:text-white">{categoryConfig.residential.title}</h2>
+                <p className="text-lg text-gray-600 dark:text-zinc-400">{categoryConfig.residential.subtitle}</p>
               </motion.div>
 
               <div className="space-y-2">
@@ -129,23 +129,23 @@ export default function SolutionsPage() {
                     viewport={{ once: true }}
                   >
                     <Link href={`/solutions/${solution.slug}`}>
-                      <div className="group py-8 border-b border-gray-200 dark:border-zinc-800 hover:border-gray-400 dark:hover:border-gray-500 transition-all duration-300">
+                      <div className="group py-8 border-b border-gray-200 dark:border-zinc-800 hover:border-gray-400 dark:hover:border-zinc-600 transition-all duration-300">
                         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
                           <div className="lg:col-span-1">
-                            <span className="text-4xl font-semibold text-gray-300 group-hover:text-black transition-colors">
+                            <span className="text-4xl font-semibold text-gray-300 dark:text-zinc-700 group-hover:text-black dark:group-hover:text-[#C9A962] transition-colors">
                               {String(index + 1).padStart(2, '0')}
                             </span>
                           </div>
                           <div className="lg:col-span-4">
-                            <div className="text-xs tracking-[0.3em] uppercase text-gray-400 mb-2">
+                            <div className="text-xs tracking-[0.3em] uppercase text-gray-400 dark:text-zinc-500 mb-2">
                               {solution.category}
                             </div>
-                            <h3 className="text-3xl sm:text-4xl font-semibold tracking-[-0.02em]">
+                            <h3 className="text-3xl sm:text-4xl font-semibold tracking-[-0.02em] text-gray-900 dark:text-white">
                               {solution.title}
                             </h3>
                           </div>
                           <div className="lg:col-span-5">
-                            <p className="text-gray-600 dark:text-zinc-500 leading-relaxed">
+                            <p className="text-gray-600 dark:text-zinc-400 leading-relaxed">
                               {solution.description}
                             </p>
                           </div>
@@ -170,7 +170,7 @@ export default function SolutionsPage() {
                               </button>
                               <ArrowUpRight
                               size={28}
-                              className="text-black group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform duration-300"
+                              className="text-black dark:text-white group-hover:translate-x-1 group-hover:-translate-y-1 group-hover:text-[#C9A962] transition-all duration-300"
                               strokeWidth={2}
                             />
                           </div>
@@ -196,8 +196,8 @@ export default function SolutionsPage() {
                 <span className="text-xs tracking-[0.3em] uppercase text-gray-400 mb-2 block">
                   {language === 'ar' ? 'الفئة' : 'Category'}
                 </span>
-                <h2 className="text-3xl md:text-4xl font-bold mb-2">{categoryConfig.commercial.title}</h2>
-                <p className="text-lg text-gray-600 dark:text-zinc-500">{categoryConfig.commercial.subtitle}</p>
+                <h2 className="text-3xl md:text-4xl font-bold mb-2 text-gray-900 dark:text-white">{categoryConfig.commercial.title}</h2>
+                <p className="text-lg text-gray-600 dark:text-zinc-400">{categoryConfig.commercial.subtitle}</p>
               </motion.div>
 
               <div className="space-y-2">
@@ -210,23 +210,23 @@ export default function SolutionsPage() {
                     viewport={{ once: true }}
                   >
                     <Link href={`/solutions/${solution.slug}`}>
-                      <div className="group py-8 border-b border-gray-200 dark:border-zinc-800 hover:border-gray-400 dark:hover:border-gray-500 transition-all duration-300">
+                      <div className="group py-8 border-b border-gray-200 dark:border-zinc-800 hover:border-gray-400 dark:hover:border-zinc-600 transition-all duration-300">
                         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
                           <div className="lg:col-span-1">
-                            <span className="text-4xl font-semibold text-gray-300 group-hover:text-black transition-colors">
+                            <span className="text-4xl font-semibold text-gray-300 dark:text-zinc-700 group-hover:text-black dark:group-hover:text-[#C9A962] transition-colors">
                               {String(index + 1).padStart(2, '0')}
                             </span>
                           </div>
                           <div className="lg:col-span-4">
-                            <div className="text-xs tracking-[0.3em] uppercase text-gray-400 mb-2">
+                            <div className="text-xs tracking-[0.3em] uppercase text-gray-400 dark:text-zinc-500 mb-2">
                               {solution.category}
                             </div>
-                            <h3 className="text-3xl sm:text-4xl font-semibold tracking-[-0.02em]">
+                            <h3 className="text-3xl sm:text-4xl font-semibold tracking-[-0.02em] text-gray-900 dark:text-white">
                               {solution.title}
                             </h3>
                           </div>
                           <div className="lg:col-span-5">
-                            <p className="text-gray-600 dark:text-zinc-500 leading-relaxed">
+                            <p className="text-gray-600 dark:text-zinc-400 leading-relaxed">
                               {solution.description}
                             </p>
                           </div>
@@ -251,7 +251,7 @@ export default function SolutionsPage() {
                               </button>
                               <ArrowUpRight
                               size={28}
-                              className="text-black group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform duration-300"
+                              className="text-black dark:text-white group-hover:translate-x-1 group-hover:-translate-y-1 group-hover:text-[#C9A962] transition-all duration-300"
                               strokeWidth={2}
                             />
                           </div>
@@ -277,8 +277,8 @@ export default function SolutionsPage() {
                 <span className="text-xs tracking-[0.3em] uppercase text-gray-400 mb-2 block">
                   {language === 'ar' ? 'الفئة' : 'Category'}
                 </span>
-                <h2 className="text-3xl md:text-4xl font-bold mb-2">{categoryConfig.specialized.title}</h2>
-                <p className="text-lg text-gray-600 dark:text-zinc-500">{categoryConfig.specialized.subtitle}</p>
+                <h2 className="text-3xl md:text-4xl font-bold mb-2 text-gray-900 dark:text-white">{categoryConfig.specialized.title}</h2>
+                <p className="text-lg text-gray-600 dark:text-zinc-400">{categoryConfig.specialized.subtitle}</p>
               </motion.div>
 
               <div className="space-y-2">
@@ -291,23 +291,23 @@ export default function SolutionsPage() {
                     viewport={{ once: true }}
                   >
                     <Link href={`/solutions/${solution.slug}`}>
-                      <div className="group py-8 border-b border-gray-200 dark:border-zinc-800 hover:border-gray-400 dark:hover:border-gray-500 transition-all duration-300">
+                      <div className="group py-8 border-b border-gray-200 dark:border-zinc-800 hover:border-gray-400 dark:hover:border-zinc-600 transition-all duration-300">
                         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
                           <div className="lg:col-span-1">
-                            <span className="text-4xl font-semibold text-gray-300 group-hover:text-black transition-colors">
+                            <span className="text-4xl font-semibold text-gray-300 dark:text-zinc-700 group-hover:text-black dark:group-hover:text-[#C9A962] transition-colors">
                               {String(index + 1).padStart(2, '0')}
                             </span>
                           </div>
                           <div className="lg:col-span-4">
-                            <div className="text-xs tracking-[0.3em] uppercase text-gray-400 mb-2">
+                            <div className="text-xs tracking-[0.3em] uppercase text-gray-400 dark:text-zinc-500 mb-2">
                               {solution.category}
                             </div>
-                            <h3 className="text-3xl sm:text-4xl font-semibold tracking-[-0.02em]">
+                            <h3 className="text-3xl sm:text-4xl font-semibold tracking-[-0.02em] text-gray-900 dark:text-white">
                               {solution.title}
                             </h3>
                           </div>
                           <div className="lg:col-span-5">
-                            <p className="text-gray-600 dark:text-zinc-500 leading-relaxed">
+                            <p className="text-gray-600 dark:text-zinc-400 leading-relaxed">
                               {solution.description}
                             </p>
                           </div>
@@ -332,7 +332,7 @@ export default function SolutionsPage() {
                               </button>
                               <ArrowUpRight
                               size={28}
-                              className="text-black group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform duration-300"
+                              className="text-black dark:text-white group-hover:translate-x-1 group-hover:-translate-y-1 group-hover:text-[#C9A962] transition-all duration-300"
                               strokeWidth={2}
                             />
                           </div>
@@ -372,23 +372,23 @@ export default function SolutionsPage() {
                     viewport={{ once: true }}
                   >
                     <Link href={`/solutions/${solution.slug}`}>
-                      <div className="group py-8 border-b border-gray-200 dark:border-zinc-800 hover:border-gray-400 dark:hover:border-gray-500 transition-all duration-300">
+                      <div className="group py-8 border-b border-gray-200 dark:border-zinc-800 hover:border-gray-400 dark:hover:border-zinc-600 transition-all duration-300">
                         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
                           <div className="lg:col-span-1">
-                            <span className="text-4xl font-semibold text-gray-300 group-hover:text-black transition-colors">
+                            <span className="text-4xl font-semibold text-gray-300 dark:text-zinc-700 group-hover:text-black dark:group-hover:text-[#C9A962] transition-colors">
                               {String(index + 1).padStart(2, '0')}
                             </span>
                           </div>
                           <div className="lg:col-span-4">
-                            <div className="text-xs tracking-[0.3em] uppercase text-gray-400 mb-2">
+                            <div className="text-xs tracking-[0.3em] uppercase text-gray-400 dark:text-zinc-500 mb-2">
                               {solution.category}
                             </div>
-                            <h3 className="text-3xl sm:text-4xl font-semibold tracking-[-0.02em]">
+                            <h3 className="text-3xl sm:text-4xl font-semibold tracking-[-0.02em] text-gray-900 dark:text-white">
                               {solution.title}
                             </h3>
                           </div>
                           <div className="lg:col-span-5">
-                            <p className="text-gray-600 dark:text-zinc-500 leading-relaxed">
+                            <p className="text-gray-600 dark:text-zinc-400 leading-relaxed">
                               {solution.description}
                             </p>
                           </div>
@@ -413,7 +413,7 @@ export default function SolutionsPage() {
                               </button>
                               <ArrowUpRight
                               size={28}
-                              className="text-black group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform duration-300"
+                              className="text-black dark:text-white group-hover:translate-x-1 group-hover:-translate-y-1 group-hover:text-[#C9A962] transition-all duration-300"
                               strokeWidth={2}
                             />
                           </div>

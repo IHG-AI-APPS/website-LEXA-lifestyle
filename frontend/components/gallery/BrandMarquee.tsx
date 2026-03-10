@@ -41,7 +41,7 @@ export default function BrandMarquee() {
           className="mb-8"
         >
           <div className="section-label mb-4">TRUSTED BY</div>
-          <h2 className="h2 text-[#1A1A1A]">Premium Partners</h2>
+          <h2 className="h2 text-[#1A1A1A] dark:text-white">Premium Partners</h2>
         </motion.div>
 
         {/* Marquee - Contained within content area */}

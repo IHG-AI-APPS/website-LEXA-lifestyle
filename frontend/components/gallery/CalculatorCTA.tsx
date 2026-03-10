@@ -22,17 +22,17 @@ export default function CalculatorCTA() {
           >
             <div className="mb-6">
               <div className="flex items-center gap-3 mb-2">
-                <Calculator className="h-8 w-8 text-[#E8DCC8]" />
-                <span className="section-label text-[#1A1A1A]">INVESTMENT CALCULATOR</span>
+                <Calculator className="h-8 w-8 text-[#E8DCC8] dark:text-[#C9A962]" />
+                <span className="section-label text-[#1A1A1A] dark:text-white">INVESTMENT CALCULATOR</span>
               </div>
-              <div className="w-20 h-0.5 bg-gradient-to-r from-[#E8DCC8] to-transparent"></div>
+              <div className="w-20 h-0.5 bg-gradient-to-r from-[#E8DCC8] dark:from-[#C9A962] to-transparent"></div>
             </div>
 
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-heading font-bold text-[#1A1A1A] dark:text-white mb-4 leading-tight">
               Calculate Your Investment
             </h2>
 
-            <p className="text-base md:text-lg text-[#2A2A2A] leading-relaxed mb-10 max-w-lg">
+            <p className="text-base md:text-lg text-[#2A2A2A] dark:text-zinc-400 leading-relaxed mb-10 max-w-lg">
               Instant quotes for your luxury smart home. Transparent pricing, personalized to your vision.
             </p>
 
@@ -40,7 +40,7 @@ export default function CalculatorCTA() {
               <Button
                 size="lg"
                 onClick={() => router.push('/calculator')}
-                className="bg-[#1A1A1A] text-white uppercase tracking-widest hover:bg-[#1A1A1A]/90 rounded-none px-10 py-6 text-sm font-medium transition-all"
+                className="bg-[#1A1A1A] dark:bg-[#C9A962] text-white dark:text-black uppercase tracking-widest hover:bg-[#1A1A1A]/90 dark:hover:bg-[#B8984F] rounded-none px-10 py-6 text-sm font-medium transition-all"
               >
                 Calculate Now
                 <ArrowRight className="ml-2 h-4 w-4" />
@@ -50,7 +50,7 @@ export default function CalculatorCTA() {
                 <Button
                   size="lg"
                   variant="outline"
-                  className="border-black/20 text-[#1A1A1A] dark:text-white uppercase tracking-widest hover:bg-[#1A1A1A] hover:text-white rounded-none px-10 py-6 text-sm font-medium transition-all"
+                  className="border-black/20 dark:border-zinc-700 text-[#1A1A1A] dark:text-white uppercase tracking-widest hover:bg-[#1A1A1A] dark:hover:bg-[#C9A962] hover:text-white dark:hover:text-black rounded-none px-10 py-6 text-sm font-medium transition-all"
                 >
                   View Sample Projects
                 </Button>
