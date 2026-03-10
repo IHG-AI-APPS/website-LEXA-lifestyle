@@ -14,7 +14,7 @@ import time
 import random
 import string
 
-BASE_URL = os.environ.get('REACT_APP_BACKEND_URL', 'https://full-stack-refine.preview.emergentagent.com').rstrip('/')
+BASE_URL = os.environ.get('REACT_APP_BACKEND_URL', 'https://admin-studio-7.preview.emergentagent.com').rstrip('/')
 
 # Generate unique test key to avoid conflicts
 TEST_KEY_PREFIX = 'TEST_seed_' + ''.join(random.choices(string.ascii_lowercase, k=6)) + '_'

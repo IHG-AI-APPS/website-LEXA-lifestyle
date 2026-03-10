@@ -12,7 +12,7 @@ import uuid
 
 BASE_URL = os.environ.get('REACT_APP_BACKEND_URL', '').rstrip('/')
 if not BASE_URL:
-    BASE_URL = "https://full-stack-refine.preview.emergentagent.com"
+    BASE_URL = "https://admin-studio-7.preview.emergentagent.com"
 
 # Test credentials
 ADMIN_USERNAME = "admin"

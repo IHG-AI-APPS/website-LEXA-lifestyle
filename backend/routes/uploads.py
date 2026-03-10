@@ -174,6 +174,76 @@ async def upload_pdf(
         raise HTTPException(status_code=500, detail=f"Upload failed: {str(e)}")
 
 
+# ============================================
+# VIDEO UPLOAD CONFIGURATION
+# ============================================
+
+ALLOWED_VIDEO_EXTENSIONS = {"mp4", "webm", "mov"}
+ALLOWED_VIDEO_TYPES = ["video/mp4", "video/webm", "video/quicktime"]
+MAX_VIDEO_SIZE = 100 * 1024 * 1024  # 100MB for videos
+
+
+@router.post("/video")
+async def upload_video(
+    file: UploadFile = File(...),
+    category: Optional[str] = Form(default="videos")
+):
+    """Upload a video file to remote storage"""
+    try:
+        if not file.filename or "." not in file.filename:
+            raise HTTPException(status_code=400, detail="Invalid filename - must have an extension")
+        
+        # Get file extension (lowercase)
+        ext = file.filename.rsplit(".", 1)[-1].lower()
+        
+        # Check allowed video extensions
+        if ext not in ALLOWED_VIDEO_EXTENSIONS:
+            raise HTTPException(
+                status_code=400, 
+                detail=f"Invalid video type. Allowed: {', '.join(sorted(ALLOWED_VIDEO_EXTENSIONS))}"
+            )
+        
+        # Validate content type
+        if file.content_type not in ALLOWED_VIDEO_TYPES:
+            raise HTTPException(
+                status_code=400,
+                detail=f"Invalid video content type. Allowed: MP4, WebM, MOV"
+            )
+
+        content = await file.read()
+
+        if len(content) > MAX_VIDEO_SIZE:
+            raise HTTPException(
+                status_code=400,
+                detail=f"Video too large. Maximum size: {MAX_VIDEO_SIZE // (1024*1024)}MB"
+            )
+
+        unique_filename = f"{uuid.uuid4().hex[:12]}_{datetime.now().strftime('%Y%m%d%H%M%S')}.{ext}"
+
+        # Upload to remote server
+        file_url = upload_to_remote(content, category, unique_filename)
+
+        logger.info(f"Video uploaded: {file_url}")
+
+        return {
+            "success": True,
+            "url": file_url,
+            "filename": unique_filename,
+            "original_filename": file.filename,
+            "size": len(content),
+            "content_type": file.content_type,
+            "category": category
+        }
+
+    except HTTPException:
+        raise
+    except Exception as e:
+        logger.error(f"Video upload failed: {str(e)}")
+        raise HTTPException(status_code=500, detail=f"Video upload failed: {str(e)}")
+
+
+
+
 @router.post("/multiple")
 async def upload_multiple_images(
     files: list[UploadFile] = File(...),

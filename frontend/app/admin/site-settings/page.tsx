@@ -1,7 +1,7 @@
 'use client'
 
 import { useState, useEffect, useRef } from 'react'
-import { Save, Upload, Globe, Image, Link2, Mail, Phone, MapPin, FileImage, Video, Type, Loader2, X, Check } from 'lucide-react'
+import { Save, Upload, Globe, Image, Link2, Mail, Phone, MapPin, FileImage, Video, Type, Loader2, X, Check, Play, Film } from 'lucide-react'
 import { toast } from 'sonner'
 
 const API_URL = process.env.NEXT_PUBLIC_BACKEND_URL || ''
@@ -221,6 +221,190 @@ function ImageUploader({
           className="w-full px-4 py-2 border border-gray-300 dark:border-zinc-700 rounded-lg focus:ring-2 focus:ring-blue-500 dark:focus:ring-[#C9A962] focus:border-transparent bg-white dark:bg-[#0F0F0F] text-gray-900 dark:text-white placeholder-gray-400 dark:placeholder-zinc-500"
         />
       )}
+    </div>
+  )
+}
+
+// Video Upload Component with Preview
+function VideoUploader({ 
+  value, 
+  onChange, 
+  label 
+}: { 
+  value: string
+  onChange: (url: string) => void
+  label: string
+}) {
+  const [uploading, setUploading] = useState(false)
+  const [showUrlInput, setShowUrlInput] = useState(false)
+  const [uploadProgress, setUploadProgress] = useState(0)
+  const fileInputRef = useRef<HTMLInputElement>(null)
+
+  const handleFileUpload = async (e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0]
+    if (!file) return
+
+    // Validate file type
+    const allowedTypes = ['video/mp4', 'video/webm', 'video/quicktime']
+    if (!allowedTypes.includes(file.type)) {
+      toast.error('Invalid file type. Please upload a video (MP4, WebM, MOV)')
+      return
+    }
+
+    // Validate file size (max 100MB)
+    if (file.size > 100 * 1024 * 1024) {
+      toast.error('Video too large. Maximum size is 100MB')
+      return
+    }
+
+    setUploading(true)
+    setUploadProgress(0)
+    
+    try {
+      const formData = new FormData()
+      formData.append('file', file)
+      formData.append('category', 'videos')
+
+      // Simulated progress (actual progress requires XHR)
+      const progressInterval = setInterval(() => {
+        setUploadProgress(prev => Math.min(prev + 10, 90))
+      }, 500)
+
+      const response = await fetch(`${API_URL}/api/uploads/video`, {
+        method: 'POST',
+        body: formData
+      })
+
+      clearInterval(progressInterval)
+      setUploadProgress(100)
+
+      if (response.ok) {
+        const data = await response.json()
+        onChange(data.url)
+        toast.success('Video uploaded successfully!')
+      } else {
+        const error = await response.json()
+        toast.error(error.detail || 'Failed to upload video')
+      }
+    } catch (error) {
+      console.error('Upload error:', error)
+      toast.error('Failed to upload video')
+    } finally {
+      setUploading(false)
+      setUploadProgress(0)
+      if (fileInputRef.current) {
+        fileInputRef.current.value = ''
+      }
+    }
+  }
+
+  const handleRemove = () => {
+    onChange('')
+  }
+
+  const getVideoThumbnail = (url: string) => {
+    // For video URLs, we'll use the video element itself for preview
+    return url
+  }
+
+  return (
+    <div className="space-y-3">
+      <label className="block text-sm font-medium text-gray-700 dark:text-zinc-300">{label}</label>
+      
+      {/* Video Preview */}
+      {value && (
+        <div className="relative bg-gray-900 dark:bg-black rounded-lg overflow-hidden">
+          <video 
+            src={value}
+            className="w-full max-h-[300px] object-contain"
+            controls
+            preload="metadata"
+            data-testid="hero-video-preview"
+          >
+            Your browser does not support the video tag.
+          </video>
+          <button
+            type="button"
+            onClick={handleRemove}
+            className="absolute top-2 right-2 p-2 bg-red-500/90 text-white rounded-full hover:bg-red-600 transition-colors shadow-lg"
+            data-testid="remove-video-btn"
+          >
+            <X size={16} />
+          </button>
+          <div className="absolute bottom-2 left-2 px-3 py-1 bg-black/70 text-white text-xs rounded-full flex items-center gap-1">
+            <Play size={12} />
+            Current Hero Video
+          </div>
+        </div>
+      )}
+
+      {/* Upload Progress */}
+      {uploading && (
+        <div className="space-y-2">
+          <div className="flex items-center gap-2 text-sm text-gray-600 dark:text-zinc-400">
+            <Loader2 size={16} className="animate-spin" />
+            Uploading video... {uploadProgress}%
+          </div>
+          <div className="w-full bg-gray-200 dark:bg-zinc-700 rounded-full h-2">
+            <div 
+              className="bg-blue-600 dark:bg-[#C9A962] h-2 rounded-full transition-all duration-300"
+              style={{ width: `${uploadProgress}%` }}
+            />
+          </div>
+        </div>
+      )}
+
+      {/* Upload Options */}
+      {!uploading && (
+        <div className="flex flex-wrap gap-2">
+          <input
+            ref={fileInputRef}
+            type="file"
+            accept="video/mp4,video/webm,video/quicktime"
+            onChange={handleFileUpload}
+            className="hidden"
+            data-testid="video-file-input"
+          />
+          
+          <button
+            type="button"
+            onClick={() => fileInputRef.current?.click()}
+            disabled={uploading}
+            className="flex items-center gap-2 px-4 py-2.5 text-xs bg-blue-600 dark:bg-[#C9A962] text-white dark:text-black rounded-lg hover:bg-blue-700 dark:hover:bg-[#B8984F] disabled:opacity-50 transition-colors font-medium"
+            data-testid="upload-video-btn"
+          >
+            <Film size={16} />
+            Upload Video
+          </button>
+
+          <button
+            type="button"
+            onClick={() => setShowUrlInput(!showUrlInput)}
+            className="flex items-center gap-2 px-4 py-2.5 text-xs border border-gray-300 dark:border-zinc-700 text-gray-700 dark:text-zinc-300 rounded-lg hover:bg-gray-50 dark:hover:bg-[#171717] transition-colors font-medium"
+            data-testid="toggle-url-input-btn"
+          >
+            <Link2 size={16} />
+            {showUrlInput ? 'Hide URL Input' : 'Enter URL'}
+          </button>
+        </div>
+      )}
+
+      {/* URL Input */}
+      {showUrlInput && !uploading && (
+        <input
+          type="url"
+          value={value}
+          onChange={(e) => onChange(e.target.value)}
+          placeholder="https://example.com/hero-video.mp4"
+          className="w-full px-4 py-2 border border-gray-300 dark:border-zinc-700 rounded-lg focus:ring-2 focus:ring-blue-500 dark:focus:ring-[#C9A962] focus:border-transparent bg-white dark:bg-[#0F0F0F] text-gray-900 dark:text-white placeholder-gray-400 dark:placeholder-zinc-500"
+          data-testid="video-url-input"
+        />
+      )}
+
+      {/* Help text */}
+      <p className="text-xs text-gray-500 dark:text-zinc-400">
+        Supported formats: MP4, WebM, MOV. Max size: 100MB. For best results, use H.264 encoded MP4.
+      </p>
     </div>
   )
 }
@@ -627,26 +811,17 @@ export default function SiteSettingsPage() {
                     />
                   </div>
 
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                    <div>
-                      <label className="block text-sm font-medium text-gray-700 dark:text-zinc-300 mb-2">
-                        <Video size={16} className="inline mr-2" />
-                        Hero Video URL
-                      </label>
-                      <input
-                        type="url"
-                        value={settings.hero_video_url}
-                        onChange={(e) => handleChange('hero_video_url', e.target.value)}
-                        placeholder="https://example.com/hero-video.mp4"
-                        className="w-full px-4 py-2 border border-gray-300 dark:border-zinc-700 rounded-lg focus:ring-2 focus:ring-blue-500 dark:focus:ring-[#C9A962] focus:border-transparent bg-white dark:bg-[#0F0F0F] text-gray-900 dark:text-white placeholder-gray-400 dark:placeholder-zinc-500"
-                        data-testid="hero-video-url"
-                      />
-                    </div>
+                  <div className="grid grid-cols-1 gap-4">
+                    <VideoUploader
+                      value={settings.hero_video_url}
+                      onChange={(url) => handleChange('hero_video_url', url)}
+                      label="Hero Video"
+                    />
 
                     <ImageUploader
                       value={settings.hero_image}
                       onChange={(url) => handleChange('hero_image', url)}
-                      label="Hero Background Image"
+                      label="Hero Background Image (Fallback)"
                       category="hero"
                       previewBg="dark"
                     />
