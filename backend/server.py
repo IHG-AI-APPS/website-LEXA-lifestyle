@@ -1952,6 +1952,23 @@ async def get_setting(key: str):
                         {"icon": "Globe", "value": 50, "suffix": "+", "label": "Markets Served"},
                         {"icon": "Users", "value": 1000, "suffix": "s", "label": "Satisfied Customers"}
                     ]
+                },
+                "hero_stats": {
+                    "key": "hero_stats",
+                    "value": [
+                        {"icon": "Shield", "value": "15+", "label": "Years"},
+                        {"icon": "CheckCircle", "value": "500+", "label": "Projects"},
+                        {"icon": "Star", "value": "4.9", "label": "Rating"}
+                    ]
+                },
+                "trust_badges_stats": {
+                    "key": "trust_badges_stats",
+                    "value": [
+                        {"icon": "Building2", "value": "500+", "label": "Projects Completed"},
+                        {"icon": "Users", "value": "15+", "label": "Years Experience"},
+                        {"icon": "Star", "value": "4.9", "label": "Client Rating"},
+                        {"icon": "Award", "value": "32+", "label": "Premium Brands"}
+                    ]
                 }
             }
             if key in defaults:

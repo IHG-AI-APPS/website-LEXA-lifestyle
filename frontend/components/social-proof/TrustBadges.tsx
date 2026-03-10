@@ -1,14 +1,36 @@
 'use client'
 
+import { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
-import { Shield, Award, Clock, Users, Star, CheckCircle, Building2 } from 'lucide-react'
+import { Shield, Award, Clock, Users, Star, CheckCircle, Building2, TrendingUp, Globe } from 'lucide-react'
 import SafeImage from '@/components/ui/SafeImage'
 
-const stats = [
-  { icon: Building2, value: '500+', label: 'Projects Completed' },
-  { icon: Users, value: '15+', label: 'Years Experience' },
-  { icon: Star, value: '4.9', label: 'Client Rating' },
-  { icon: Award, value: '32+', label: 'Premium Brands' },
+const BACKEND_URL = process.env.NEXT_PUBLIC_BACKEND_URL || ''
+
+// Icon mapping for dynamic icons
+const iconMap: { [key: string]: any } = {
+  Building2,
+  Users,
+  Star,
+  Award,
+  Shield,
+  Clock,
+  CheckCircle,
+  TrendingUp,
+  Globe
+}
+
+const defaultStats = [
+  { icon: 'Building2', value: '500+', label: 'Projects Completed' },
+  { icon: 'Users', value: '15+', label: 'Years Experience' },
+  { icon: 'Star', value: '4.9', label: 'Client Rating' },
+  { icon: 'Award', value: '32+', label: 'Premium Brands' },
+]
+
+const defaultCompactStats = [
+  { icon: 'Shield', value: '15+', label: 'Years' },
+  { icon: 'CheckCircle', value: '500+', label: 'Projects' },
+  { icon: 'Star', value: '4.9', label: 'Rating' },
 ]
 
 const certifications = [
@@ -35,22 +57,48 @@ export default function TrustBadges({
   showClients = false,
   className = ''
 }: TrustBadgesProps) {
+  const [stats, setStats] = useState(defaultStats)
+  const [compactStats, setCompactStats] = useState(defaultCompactStats)
+
+  useEffect(() => {
+    const fetchStats = async () => {
+      try {
+        // Fetch hero stats (for compact variant)
+        const heroResponse = await fetch(`${BACKEND_URL}/api/settings/hero_stats`)
+        if (heroResponse.ok) {
+          const heroData = await heroResponse.json()
+          if (heroData.value && Array.isArray(heroData.value)) {
+            setCompactStats(heroData.value)
+          }
+        }
+
+        // Fetch trust badges stats (for full variant)
+        const badgesResponse = await fetch(`${BACKEND_URL}/api/settings/trust_badges_stats`)
+        if (badgesResponse.ok) {
+          const badgesData = await badgesResponse.json()
+          if (badgesData.value && Array.isArray(badgesData.value)) {
+            setStats(badgesData.value)
+          }
+        }
+      } catch (error) {
+        console.error('Failed to fetch stats:', error)
+      }
+    }
+    fetchStats()
+  }, [])
   
   if (variant === 'compact') {
     return (
       <div className={`flex items-center justify-center gap-6 py-4 ${className}`} data-testid="trust-badges-compact">
-        <div className="flex items-center gap-2 text-sm text-gray-600 dark:text-neutral-400">
-          <Shield className="w-4 h-4 text-[#C9A962]" />
-          <span>15+ Years</span>
-        </div>
-        <div className="flex items-center gap-2 text-sm text-gray-600 dark:text-neutral-400">
-          <CheckCircle className="w-4 h-4 text-[#C9A962]" />
-          <span>500+ Projects</span>
-        </div>
-        <div className="flex items-center gap-2 text-sm text-gray-600 dark:text-neutral-400">
-          <Star className="w-4 h-4 text-[#C9A962]" />
-          <span>4.9 Rating</span>
-        </div>
+        {compactStats.map((stat, index) => {
+          const Icon = iconMap[stat.icon] || Shield
+          return (
+            <div key={index} className="flex items-center gap-2 text-sm text-gray-600 dark:text-neutral-400">
+              <Icon className="w-4 h-4 text-[#C9A962]" />
+              <span>{stat.value} {stat.label}</span>
+            </div>
+          )
+        })}
       </div>
     )
   }
@@ -60,20 +108,23 @@ export default function TrustBadges({
       <div className="container mx-auto px-4">
         {/* Stats Row */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-12">
-          {stats.map((stat, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: index * 0.1 }}
-              className="text-center"
-            >
-              <stat.icon className="w-8 h-8 text-[#C9A962] mx-auto mb-2" />
-              <div className="text-3xl font-bold text-gray-900 dark:text-white">{stat.value}</div>
-              <div className="text-sm text-gray-600 dark:text-zinc-500">{stat.label}</div>
-            </motion.div>
-          ))}
+          {stats.map((stat, index) => {
+            const Icon = iconMap[stat.icon] || Award
+            return (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.1 }}
+                className="text-center"
+              >
+                <Icon className="w-8 h-8 text-[#C9A962] mx-auto mb-2" />
+                <div className="text-3xl font-bold text-gray-900 dark:text-white">{stat.value}</div>
+                <div className="text-sm text-gray-600 dark:text-zinc-500">{stat.label}</div>
+              </motion.div>
+            )
+          })}
         </div>
 
         {/* Certifications */}

@@ -109,6 +109,7 @@ const navigationGroups = [
     title: 'Website',
     items: [
       { name: 'Site Settings', href: '/admin/site-settings', icon: Settings },
+      { name: 'Homepage Stats', href: '/admin/stats-settings', icon: TrendingUp },
       { name: 'Team Members', href: '/admin/team-members', icon: UsersRound },
       { name: 'Careers/Jobs', href: '/admin/careers', icon: Briefcase },
       { name: 'Mega Menu', href: '/admin/mega-menu', icon: Navigation },
