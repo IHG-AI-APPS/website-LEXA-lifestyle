@@ -35,30 +35,8 @@ function BrandLogo({ brand, size = 'md' }: { brand: any; size?: 'sm' | 'md' }) {
   const hasLogo = brand.logo && brand.logo.trim() !== ''
   const dims = size === 'sm' ? 'w-12 h-12' : 'w-16 h-16'
   const textSize = size === 'sm' ? 'text-xs' : 'text-sm'
-  const imgSize = size === 'sm' ? 40 : 56
 
-  if (hasLogo) {
-    return (
-      <div 
-        className={`${dims} flex-shrink-0 rounded-lg border border-gray-200 dark:border-zinc-700 flex items-center justify-center p-1.5 overflow-hidden bg-white dark:bg-[#1A1A1A]`}
-      >
-        {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img
-          src={brand.logo}
-          alt={brand.name}
-          width={imgSize}
-          height={imgSize}
-          className="w-full h-full object-contain dark:brightness-0 dark:invert"
-          loading="lazy"
-          onError={(e) => {
-            // Hide the image on error and let parent show initials
-            (e.target as HTMLImageElement).style.display = 'none'
-          }}
-        />
-      </div>
-    )
-  }
-
+  // Always show initials for consistency - logo images have data quality issues
   const initials = brand.name.split(' ').map((w: string) => w[0]).join('').substring(0, 2).toUpperCase()
   const cat = brand.categories?.[0] || ''
   const style = getStyle(cat)
