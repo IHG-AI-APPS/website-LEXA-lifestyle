@@ -51,10 +51,17 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning className={`dark ${outfit.variable} ${dmSans.variable} ${tajawal.variable} ${notoArabic.variable}`}>
       <head>
-        {/* BLOCKING SCRIPT - Runs before anything else renders. Prevents FOUC */}
+        {/* BLOCKING SCRIPT - Must run before any paint to prevent flash */}
         <script dangerouslySetInnerHTML={{ __html: `
           (function(){
+            // Force dark mode immediately
             document.documentElement.classList.add('dark');
+            document.documentElement.style.background = '#050505';
+            // Create a style element to hide content until hydrated
+            var s = document.createElement('style');
+            s.id = 'initial-hide';
+            s.textContent = '#layout-wrapper { visibility: hidden !important; } body { background: #050505 !important; }';
+            document.head.appendChild(s);
           })();
         ` }} />
         {/* Theme blocking script — runs BEFORE first paint to prevent white flash */}
@@ -95,8 +102,12 @@ export default function RootLayout({
         
         {/* CRITICAL INLINE CSS - Dark-first: ALWAYS dark bg, never white flash */}
         <style dangerouslySetInnerHTML={{ __html: `
-          html, body { background: #050505 !important; color: #fff; margin: 0; padding: 0; font-family: system-ui, -apple-system, sans-serif; min-height: 100vh; }
+          html { background: #050505 !important; }
+          body { background: #050505 !important; color: #fff; margin: 0; padding: 0; font-family: system-ui, -apple-system, sans-serif; min-height: 100vh; }
           html:not(.dark) body { background: #fff !important; color: #111; }
+          /* Hide ALL content until hydrated - prevents header/footer flash */
+          #layout-wrapper { visibility: hidden; }
+          #layout-wrapper.hydrated { visibility: visible; }
           .sr-only, [class*="sr-only"], a[href="#main-content"] { position: absolute !important; width: 1px !important; height: 1px !important; overflow: hidden !important; clip: rect(0,0,0,0) !important; white-space: nowrap !important; }
           header { position: fixed; top: 0; left: 0; right: 0; z-index: 50; background: rgba(5,5,5,0.95); }
           footer svg { width: 16px !important; height: 16px !important; max-width: 16px !important; max-height: 16px !important; }
@@ -104,10 +115,8 @@ export default function RootLayout({
           img { max-width: 100%; height: auto; }
           section { overflow: hidden; }
           [data-testid] { visibility: visible; }
-          /* Ensure main content takes full height to push footer down */
+          /* Ensure main content takes full height */
           main { min-height: 100vh; }
-          /* Smooth fade-in for content (no double loading) */
-          #layout-wrapper { transition: opacity 0.2s ease-out; }
         ` }} />
         
         {/* Chunk load error recovery - auto-reload on stale chunks or 429 failures */}

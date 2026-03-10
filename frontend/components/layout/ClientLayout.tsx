@@ -42,6 +42,11 @@ function ClientLayoutInner({ children }: { children: React.ReactNode }) {
   // Mark as hydrated after initial render
   useEffect(() => {
     setIsHydrated(true)
+    // Remove the initial hide style
+    const initialHide = document.getElementById('initial-hide')
+    if (initialHide) {
+      initialHide.remove()
+    }
   }, [])
 
   // Track page views and scroll to top on route change (excluding admin pages)
@@ -88,7 +93,7 @@ function ClientLayoutInner({ children }: { children: React.ReactNode }) {
   }, [router])
 
   return (
-    <div id="layout-wrapper">
+    <div id="layout-wrapper" className={isHydrated ? 'hydrated' : ''}>
       {/* Skip to main content - Accessibility */}
       <a 
         href="#main-content" 
@@ -100,7 +105,7 @@ function ClientLayoutInner({ children }: { children: React.ReactNode }) {
       {!hideMainLayout && <Header />}
       {!hideMainLayout ? (
         <PullToRefresh onRefresh={handleRefresh}>
-          <main id="main-content" role="main" aria-label="Main content" className="pb-20 lg:pb-0 min-h-screen">{children}</main>
+          <main id="main-content" role="main" aria-label="Main content" className="pb-20 lg:pb-0" style={{ minHeight: '100vh' }}>{children}</main>
         </PullToRefresh>
       ) : (
         <main id="main-content" role="main" aria-label="Main content">{children}</main>
