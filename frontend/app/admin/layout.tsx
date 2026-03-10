@@ -93,6 +93,7 @@ const navigationGroups = [
       { name: 'Brands', href: '/admin/brands', icon: Tag },
       { name: 'Products', href: '/admin/products', icon: Box },
       { name: 'Product Categories', href: '/admin/product-categories', icon: Layers },
+      { name: 'Product Series', href: '/admin/product-series', icon: Layers },
       { name: 'Catalogues', href: '/admin/catalogues', icon: BookOpen },
       { name: 'Product Catalog', href: '/admin/catalog', icon: ShoppingBag },
     ]

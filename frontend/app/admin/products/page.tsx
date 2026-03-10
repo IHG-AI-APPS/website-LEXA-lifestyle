@@ -72,6 +72,7 @@ export default function ProductsAdminPage() {
   const [series, setSeries] = useState<FilterOption[]>([])
   const [adminBrands, setAdminBrands] = useState<{name: string, id: string}[]>([])
   const [productCategories, setProductCategories] = useState<{name: string, id: string, slug: string}[]>([])
+  const [adminSeries, setAdminSeries] = useState<{name: string, id: string, brand?: string}[]>([])
 
   // Load filter options on mount
   useEffect(() => {
@@ -81,7 +82,8 @@ export default function ProductsAdminPage() {
       fetch(`${BACKEND_URL}/api/catalog/series`).then(r => r.json()),
       fetch(`${BACKEND_URL}/api/brands`).then(r => r.json()).catch(() => []),
       fetch(`${BACKEND_URL}/api/products`).then(r => r.json()).catch(() => []),
-    ]).then(([cats, brnds, srs, adminBrnds, prodCats]) => {
+      fetch(`${BACKEND_URL}/api/product-series`).then(r => r.json()).catch(() => []),
+    ]).then(([cats, brnds, srs, adminBrnds, prodCats, adminSrs]) => {
       setCategories(cats || [])
       setBrands(brnds || [])
       setSeries(srs || [])
@@ -89,6 +91,8 @@ export default function ProductsAdminPage() {
       setAdminBrands((adminBrnds || []).map((b: any) => ({ name: b.name, id: b.id })))
       // Product categories from admin panel
       setProductCategories((prodCats || []).map((c: any) => ({ name: c.name, id: c.id, slug: c.slug })))
+      // Admin-defined series
+      setAdminSeries((adminSrs || []).map((s: any) => ({ name: s.name, id: s.id, brand: s.brand })))
     }).catch(console.error)
   }, [])
 
@@ -354,9 +358,24 @@ export default function ProductsAdminPage() {
                   className="w-full h-10 px-3 pr-8 text-sm border border-gray-200 dark:border-zinc-700 rounded-md bg-white dark:bg-zinc-900 text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-[#C9A962] appearance-none"
                 >
                   <option value="">No Series</option>
-                  {series.map(s => (
-                    <option key={s.name} value={s.name}>{s.name} ({s.count})</option>
-                  ))}
+                  {/* Admin-defined series first */}
+                  {adminSeries.length > 0 && (
+                    <optgroup label="Defined Series">
+                      {adminSeries.map(s => (
+                        <option key={`admin-${s.id}`} value={s.name}>
+                          {s.name}{s.brand ? ` (${s.brand})` : ''}
+                        </option>
+                      ))}
+                    </optgroup>
+                  )}
+                  {/* Series from existing products */}
+                  {series.length > 0 && (
+                    <optgroup label="From Products">
+                      {series.filter(s => !adminSeries.some(as => as.name === s.name)).map(s => (
+                        <option key={s.name} value={s.name}>{s.name} ({s.count})</option>
+                      ))}
+                    </optgroup>
+                  )}
                   <option value="__custom__">+ Add New Series</option>
                 </select>
                 <ChevronDown className="absolute right-2 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400 pointer-events-none" />

@@ -1698,6 +1698,75 @@ async def patch_product_category(product_id: str, updates: Dict[str, Any], user:
         logger.error(f"Patch product error: {str(e)}")
         raise HTTPException(status_code=500, detail="Failed to patch product category")
 
+
+# ============= ADMIN - PRODUCT SERIES MANAGEMENT =============
+
+@api_router.get("/product-series")
+async def get_product_series():
+    """Get all product series definitions"""
+    try:
+        series = await db.product_series.find({}, {"_id": 0}).sort([("name", 1)]).to_list(100)
+        return series
+    except Exception as e:
+        logger.error(f"Get product series error: {str(e)}")
+        raise HTTPException(status_code=500, detail="Failed to fetch product series")
+
+@api_router.post("/admin/product-series")
+async def create_product_series(series: Dict[str, Any], user: dict = Depends(verify_token)):
+    """Create a new product series"""
+    try:
+        series_id = series.get("id") or f"series-{uuid.uuid4().hex[:8]}"
+        series_data = {
+            "id": series_id,
+            "name": series.get("name", ""),
+            "slug": series.get("slug", series.get("name", "").lower().replace(" ", "-")),
+            "description": series.get("description", ""),
+            "brand": series.get("brand", ""),
+            "category": series.get("category", ""),
+            "image": series.get("image", ""),
+            "featured": series.get("featured", False),
+            "order": series.get("order", 0),
+            "created_at": datetime.now(timezone.utc).isoformat(),
+            "updated_at": datetime.now(timezone.utc).isoformat()
+        }
+        await db.product_series.insert_one(series_data)
+        series_data.pop("_id", None)
+        return {"message": "Series created successfully", "series": series_data}
+    except Exception as e:
+        logger.error(f"Create series error: {str(e)}")
+        raise HTTPException(status_code=500, detail="Failed to create series")
+
+@api_router.put("/admin/product-series/{series_id}")
+async def update_product_series(series_id: str, series: Dict[str, Any], user: dict = Depends(verify_token)):
+    """Update an existing product series"""
+    try:
+        series.pop("_id", None)
+        series["updated_at"] = datetime.now(timezone.utc).isoformat()
+        result = await db.product_series.update_one({"id": series_id}, {"$set": series})
+        if result.matched_count == 0:
+            raise HTTPException(status_code=404, detail="Series not found")
+        return {"message": "Series updated successfully"}
+    except HTTPException:
+        raise
+    except Exception as e:
+        logger.error(f"Update series error: {str(e)}")
+        raise HTTPException(status_code=500, detail="Failed to update series")
+
+@api_router.delete("/admin/product-series/{series_id}")
+async def delete_product_series(series_id: str, user: dict = Depends(verify_token)):
+    """Delete a product series"""
+    try:
+        result = await db.product_series.delete_one({"id": series_id})
+        if result.deleted_count == 0:
+            raise HTTPException(status_code=404, detail="Series not found")
+        return {"message": "Series deleted successfully"}
+    except HTTPException:
+        raise
+    except Exception as e:
+        logger.error(f"Delete series error: {str(e)}")
+        raise HTTPException(status_code=500, detail="Failed to delete series")
+
+
 # ============= ADMIN - FORM SUBMISSIONS VIEWER =============
 
 @api_router.get("/admin/submissions/consultations")
