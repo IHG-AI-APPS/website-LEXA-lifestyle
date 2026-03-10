@@ -115,6 +115,33 @@ A premium smart home solutions website with dynamic content management, product 
     - Proper z-index and portal rendering
     - data-testid attributes for automation testing
 
+#### March 10, 2026 - Button Text Standardization & Video Upload Feature ✅
+- **Fixed (P0):** Button text sizes standardized for better visual consistency
+  - **File Modified:** `/app/frontend/components/ui/button.tsx`
+  - **Previous sizes:** default: `text-sm`, sm: `text-xs`, lg: `text-base`
+  - **New sizes:** default: `text-xs h-10`, sm: `text-[11px] h-9`, lg: `text-sm h-12`
+  - Buttons now have smaller, more balanced text proportional to their overall size
+  - All button variants (primary, secondary, outline, ghost) maintain proper visual hierarchy
+
+- **New Feature (P0):** Hero Video Upload in Admin Panel
+  - **Backend:** Added video upload endpoint at `/api/uploads/video`
+    - Accepts: MP4, WebM, MOV files
+    - Max file size: 100MB
+    - Content-type validation for security
+    - Files stored via SFTP remote storage
+    - **File Modified:** `/app/backend/routes/uploads.py` (lines 175-240)
+  
+  - **Frontend:** Created VideoUploader component in Site Settings
+    - Location: Admin > Site Settings > Homepage tab
+    - Features:
+      - "Upload Video" button for direct file upload
+      - "Enter URL" toggle for manual URL entry
+      - Video preview with native HTML5 player controls
+      - Remove video button on preview
+      - Help text showing supported formats and size limit
+    - **File Modified:** `/app/frontend/app/admin/site-settings/page.tsx`
+    - **Testing:** 100% pass rate (9/9 backend tests, all frontend elements verified)
+
 #### March 10, 2026 - Product Series Management Page ✅
 - **Created:** New admin page at `/admin/product-series` for managing product series
   - **Backend:** Added CRUD endpoints in `/app/backend/server.py`:
@@ -331,11 +358,15 @@ A premium smart home solutions website with dynamic content management, product 
 - Compare Packages feature
 - Additional brand logos upload (Note: Most brands have empty `logo` field in database)
 - Performance optimization
+- Fix project card button shift on touch devices (low priority, not reproducible in simulator)
 
 ## Backlog (P2)
 - Incorrect Brand Logo Data - Database has missing/incorrect logo URLs for some brands
 
 ## Completed in Recent Sessions
+- ✅ Button text sizes standardized across all pages (March 10, 2026)
+- ✅ Hero Video upload feature in admin Site Settings (March 10, 2026)
+- ✅ Video preview in admin panel with controls (March 10, 2026)
 - ✅ Homepage Hero connected to Site Settings (title, subtitle, video, image, CTA)
 - ✅ Dark mode visibility audit - All pages verified working
 - ✅ "Related Solutions" heading visibility fixed
