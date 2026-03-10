@@ -96,10 +96,12 @@ export function SiteSettingsProvider({ children }: { children: ReactNode }) {
 
   const fetchSettings = async () => {
     try {
-      const response = await fetch(`${API_URL}/api/site-settings`, {
+      // Add timestamp to bust cache
+      const response = await fetch(`${API_URL}/api/site-settings?_t=${Date.now()}`, {
         cache: 'no-store',
         headers: {
-          'Cache-Control': 'no-cache'
+          'Cache-Control': 'no-cache, no-store, must-revalidate',
+          'Pragma': 'no-cache'
         }
       })
       if (response.ok) {

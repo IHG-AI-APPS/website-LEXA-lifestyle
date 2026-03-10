@@ -115,6 +115,20 @@ A premium smart home solutions website with dynamic content management, product 
     - Proper z-index and portal rendering
     - data-testid attributes for automation testing
 
+#### March 10, 2026 - Page Loading & Video Caching Fix ✅
+- **Fixed:** Double loading issue on fresh page visits
+  - Hero component now waits for site settings API before showing video
+  - Single loading spinner shown until settings are ready
+  - Removed conflicting splash screens and body animations
+- **Fixed:** Old video showing on first visit  
+  - Added cache-busting timestamp to site settings API calls (`?_t=Date.now()`)
+  - Added `Cache-Control: no-cache, no-store, must-revalidate` headers
+  - Added `isReady` state to prevent loading DEFAULT_HERO_CLIPS before settings arrive
+- **Files Modified:**
+  - `/app/frontend/components/gallery/HeroCurator.tsx` - Added isReady state, loading spinner
+  - `/app/frontend/hooks/useSiteSettings.tsx` - Cache-busting for fresh data
+  - `/app/frontend/app/layout.tsx` - Simplified CSS, removed conflicting animations
+
 #### March 10, 2026 - Page Loading Improvement ✅
 - **Fixed:** Added splash screen to prevent layout flash during page hydration
   - Created a loading overlay with gold spinner matching brand colors

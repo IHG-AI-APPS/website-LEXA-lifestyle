@@ -29,6 +29,7 @@ export default function HeroCurator({ onPersonaClick }: HeroCuratorProps) {
   const [isFading, setIsFading] = useState(false)
   const [isLoaded, setIsLoaded] = useState(false)
   const [videoFailed, setVideoFailed] = useState(false)
+  const [isReady, setIsReady] = useState(false)
   const videoRef = useRef<HTMLVideoElement>(null)
   const errorCountRef = useRef(0)
   const [cmsData, setCmsData] = useState<any>(null)
@@ -39,6 +40,15 @@ export default function HeroCurator({ onPersonaClick }: HeroCuratorProps) {
       .then(d => { if (d?.value) setCmsData(d.value) })
       .catch(() => {})
   }, [])
+
+  // Wait for settings to load before determining video source
+  useEffect(() => {
+    if (!settingsLoading) {
+      // Small delay to ensure smooth transition
+      const timer = setTimeout(() => setIsReady(true), 100)
+      return () => clearTimeout(timer)
+    }
+  }, [settingsLoading])
 
   // Use video from Site Settings if available, otherwise fall back to CMS or defaults
   const heroVideoUrl = settings.hero_video_url || ''
@@ -65,12 +75,12 @@ export default function HeroCurator({ onPersonaClick }: HeroCuratorProps) {
   }, [heroClips.length])
 
   useEffect(() => {
-    if (videoRef.current && !videoFailed) {
+    if (videoRef.current && !videoFailed && isReady) {
       setIsLoaded(false)
       videoRef.current.load()
       videoRef.current.play().catch(() => {})
     }
-  }, [currentClip, videoFailed])
+  }, [currentClip, videoFailed, isReady])
 
   const quote = cmsData?.quote
     ? (language === 'ar' ? cmsData.quote_ar : cmsData.quote_en)
@@ -96,7 +106,12 @@ export default function HeroCurator({ onPersonaClick }: HeroCuratorProps) {
       {/* Video / Fallback — fills available space */}
       <div className="relative flex-1">
         <div className="absolute inset-0">
-          {!videoFailed ? (
+          {/* Show loading state until settings are ready */}
+          {!isReady ? (
+            <div className="h-full w-full bg-[#050505] flex items-center justify-center">
+              <div className="w-10 h-10 border-2 border-[#C9A962] border-t-transparent rounded-full animate-spin" />
+            </div>
+          ) : !videoFailed ? (
             <video
               ref={videoRef}
               className={`h-full w-full object-cover transition-opacity duration-700 ${isFading ? 'opacity-0' : isLoaded ? 'opacity-100' : 'opacity-0'}`}
