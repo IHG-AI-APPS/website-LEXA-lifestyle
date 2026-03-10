@@ -57,12 +57,12 @@ export default function ProcessWheel({ steps }: ProcessWheelProps) {
                 </div>
 
                 {/* Step Title */}
-                <h3 className="text-lg font-bold text-center mb-3 min-h-[3rem] flex items-center justify-center">
+                <h3 className="text-lg font-bold text-center mb-3 min-h-[3rem] flex items-center justify-center text-gray-900 dark:text-white">
                   {step.title}
                 </h3>
 
                 {/* Step Description */}
-                <p className="text-sm text-gray-600 dark:text-zinc-500 text-center leading-relaxed">
+                <p className="text-sm text-gray-600 dark:text-zinc-400 text-center leading-relaxed">
                   {step.description}
                 </p>
               </div>

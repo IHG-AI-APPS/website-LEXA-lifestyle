@@ -26,16 +26,16 @@ export default function SolutionsPreview() {
 
   if (loading) {
     return (
-      <section className="relative py-32 bg-white">
+      <section className="relative py-32 bg-white dark:bg-[#050505]">
         <div className="container mx-auto px-8 lg:px-16">
-          <div className="text-center text-gray-400">Loading solutions...</div>
+          <div className="text-center text-gray-400 dark:text-zinc-500">Loading solutions...</div>
         </div>
       </section>
     )
   }
 
   return (
-    <section className="relative py-32 bg-white" data-testid="solutions-preview-section">
+    <section className="relative py-32 bg-white dark:bg-[#050505]" data-testid="solutions-preview-section">
       <div className="container mx-auto px-8 lg:px-16">
         <div className="max-w-7xl mx-auto">
           {/* Header */}
@@ -46,10 +46,10 @@ export default function SolutionsPreview() {
             viewport={{ once: true }}
             className="mb-20"
           >
-            <span className="text-xs tracking-[0.5em] uppercase text-gray-400 font-medium mb-6 block">
+            <span className="text-xs tracking-[0.5em] uppercase text-gray-400 dark:text-zinc-500 font-medium mb-6 block">
               Integrated Solutions
             </span>
-            <h2 className="text-7xl sm:text-8xl lg:text-9xl font-semibold tracking-[-0.04em] leading-[0.9] mb-6">
+            <h2 className="text-7xl sm:text-8xl lg:text-9xl font-semibold tracking-[-0.04em] leading-[0.9] mb-6 text-gray-900 dark:text-white">
               DESIGNED FOR
               <br />
               <span className="text-transparent bg-clip-text metallic-gradient">PERFECTION</span>
@@ -91,19 +91,19 @@ export default function SolutionsPreview() {
                           {/* Tags */}
                           <div className="flex gap-4">
                             {solution.tags.slice(0, 3).map((tag) => (
-                              <span key={tag} className="text-xs font-mono tracking-wider text-gray-400 uppercase">
+                              <span key={tag} className="text-xs font-mono tracking-wider text-gray-400 dark:text-zinc-500 uppercase">
                                 {tag}
                               </span>
                             ))}
                           </div>
 
                           {/* Subtitle */}
-                          <div className="text-sm tracking-[0.3em] uppercase text-gray-400 font-medium">
+                          <div className="text-sm tracking-[0.3em] uppercase text-gray-400 dark:text-zinc-500 font-medium">
                             {solution.category}
                           </div>
 
                           {/* Title */}
-                          <h3 className="text-5xl sm:text-6xl font-semibold tracking-[-0.02em] leading-tight">
+                          <h3 className="text-5xl sm:text-6xl font-semibold tracking-[-0.02em] leading-tight text-gray-900 dark:text-white">
                             {solution.title}
                           </h3>
 
@@ -111,12 +111,12 @@ export default function SolutionsPreview() {
                           <div className="h-px w-16 bg-gradient-to-r from-platinum to-transparent" />
 
                           {/* Description */}
-                          <p className="text-lg text-gray-600 dark:text-zinc-500 leading-relaxed font-light max-w-md">
+                          <p className="text-lg text-gray-600 dark:text-zinc-400 leading-relaxed font-light max-w-md">
                             {solution.description}
                           </p>
 
                           {/* Arrow */}
-                          <div className="flex items-center gap-3 text-charcoal group-hover:gap-5 transition-all duration-300">
+                          <div className="flex items-center gap-3 text-charcoal dark:text-white group-hover:gap-5 group-hover:text-[#C9A962] transition-all duration-300">
                             <span className="text-sm font-medium">Explore Solution</span>
                             <ArrowUpRight size={20} strokeWidth={2} />
                           </div>
@@ -139,7 +139,7 @@ export default function SolutionsPreview() {
           >
             <Link
               href="/solutions"
-              className="inline-block px-10 py-5 border border-gray-300 dark:border-zinc-700 hover:border-charcoal hover:bg-gray-50 text-charcoal text-sm font-medium tracking-wide transition-all duration-300"
+              className="inline-block px-10 py-5 border border-gray-300 dark:border-zinc-700 hover:border-charcoal dark:hover:border-[#C9A962] hover:bg-gray-50 dark:hover:bg-[#171717] text-charcoal dark:text-white text-sm font-medium tracking-wide transition-all duration-300"
             >
               View All Solutions
             </Link>

@@ -23,7 +23,7 @@ export default function FeaturedWorks() {
   }, [])
 
   return (
-    <section className="py-24 md:py-32 bg-[#F9F9F7]">
+    <section className="py-24 md:py-32 bg-[#F9F9F7] dark:bg-[#0A0A0A]">
       <div className="px-6 md:px-12 lg:px-24">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -34,7 +34,7 @@ export default function FeaturedWorks() {
         >
           <div className="section-label mb-4">PORTFOLIO</div>
           <h2 className="h2 text-[#1A1A1A] dark:text-white mb-6">Featured Works</h2>
-          <p className="text-base text-gray-600 dark:text-zinc-500 max-w-2xl">
+          <p className="text-base text-gray-600 dark:text-zinc-400 max-w-2xl">
             Showcasing our finest luxury smart living installations across the region.
           </p>
         </motion.div>
@@ -73,7 +73,7 @@ export default function FeaturedWorks() {
         </div>
 
         <div className="text-center mt-12">
-          <Link href="/projects" className="inline-flex items-center gap-2 text-sm uppercase tracking-wider text-[#1A1A1A] dark:text-white hover:text-[#E8DCC8] transition-colors">
+          <Link href="/projects" className="inline-flex items-center gap-2 text-sm uppercase tracking-wider text-[#1A1A1A] dark:text-white hover:text-[#C9A962] transition-colors">
             View All Projects
             <ArrowUpRight className="h-4 w-4" />
           </Link>

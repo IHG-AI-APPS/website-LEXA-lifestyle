@@ -57,7 +57,7 @@ export default function SwissServices() {
           className="mb-8 sm:mb-10 text-center md:text-left"
         >
           <div className="section-label mb-3">WHAT WE DO</div>
-          <h2 className="h2 text-[#1A1A1A]">
+          <h2 className="h2 text-[#1A1A1A] dark:text-white">
             Our Services
           </h2>
         </motion.div>
@@ -73,16 +73,16 @@ export default function SwissServices() {
               transition={{ duration: 0.6, delay: index * 0.05 }}
               onHoverStart={() => setHoveredIndex(index)}
               onHoverEnd={() => setHoveredIndex(null)}
-              className="group relative bg-[#F9F9F7] p-6 transition-all hover:bg-[#1A1A1A]"
+              className="group relative bg-[#F9F9F7] dark:bg-[#171717] p-6 transition-all hover:bg-[#1A1A1A] dark:hover:bg-[#C9A962]"
             >
               <Link href="/services" className="block">
-                <span className="font-mono text-sm text-[#1A1A1A] dark:text-white opacity-30 group-hover:text-white/40 transition-colors">
+                <span className="font-mono text-sm text-[#1A1A1A] dark:text-zinc-400 opacity-30 group-hover:text-white/40 dark:group-hover:text-black/40 transition-colors">
                   {String(index + 1).padStart(2, '0')}
                 </span>
-                <h3 className="h4 text-[#1A1A1A] dark:text-white mt-3 mb-2 group-hover:text-white transition-colors">
+                <h3 className="h4 text-[#1A1A1A] dark:text-white mt-3 mb-2 group-hover:text-white dark:group-hover:text-black transition-colors">
                   {service.name || service.title}
                 </h3>
-                <p className="text-sm text-[#4A4A4A] group-hover:text-white/70 transition-colors">
+                <p className="text-sm text-[#4A4A4A] dark:text-zinc-400 group-hover:text-white/70 dark:group-hover:text-black/70 transition-colors">
                   {service.description}
                 </p>
               </Link>
