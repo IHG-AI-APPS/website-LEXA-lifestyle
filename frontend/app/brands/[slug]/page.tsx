@@ -172,9 +172,12 @@ export default function BrandDetailPage({ params }: { params: { slug: string } }
               <div className="flex items-center gap-3 mb-5">
                 {hasLogo ? (
                   <div className="p-3 rounded-lg">
-                    <div className="relative w-24 h-12">
-                      <SafeImage src={brand.logo} alt={brand.name} fill className="object-contain dark:invert dark:brightness-200" />
-                    </div>
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img 
+                      src={brand.logo} 
+                      alt={brand.name} 
+                      className="w-28 h-14 object-contain logo-dark-mode"
+                    />
                   </div>
                 ) : (
                   <BrandInitials name={brand.name} />

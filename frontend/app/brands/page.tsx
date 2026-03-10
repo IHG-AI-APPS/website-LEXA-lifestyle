@@ -37,7 +37,7 @@ function BrandLogo({ brand, size = 'md' }: { brand: any; size?: 'sm' | 'md' }) {
   const textSize = size === 'sm' ? 'text-xs' : 'text-sm'
   const imgSize = size === 'sm' ? 40 : 56
 
-  // Show actual logo with invert filter in dark mode
+  // Show actual logo with filter in dark mode
   if (hasLogo) {
     return (
       <div 
@@ -49,7 +49,7 @@ function BrandLogo({ brand, size = 'md' }: { brand: any; size?: 'sm' | 'md' }) {
           alt={brand.name}
           width={imgSize}
           height={imgSize}
-          className="w-full h-full object-contain dark:invert dark:brightness-200"
+          className="w-full h-full object-contain logo-dark-mode"
           loading="lazy"
         />
       </div>

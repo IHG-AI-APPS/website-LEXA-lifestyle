@@ -254,6 +254,11 @@
     box-shadow: 0 10px 40px rgb(232 220 200 / 0.15);
   }
   
+  /* Brand Logo Dark Mode Filter */
+  .dark .logo-dark-mode {
+    filter: brightness(0) invert(1);
+  }
+  
   /* 🌟 Elevation Utilities */
   .elevation-1 { box-shadow: var(--elevation-1); }
   .elevation-2 { box-shadow: var(--elevation-2); }
@@ -1395,4 +1400,9 @@ input[type="date"]::-webkit-datetime-edit-year-field {
   .border-zinc-800\/50 {
     border-color: rgba(255, 255, 255, 0.3) !important;
   }
+}
+
+/* Brand Logo Dark Mode Filter - Outside @layer for higher specificity */
+.dark .logo-dark-mode {
+  filter: brightness(0) invert(1) !important;
 }
