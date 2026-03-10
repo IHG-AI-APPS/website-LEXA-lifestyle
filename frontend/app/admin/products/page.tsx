@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from 'react'
 import SafeImage from '@/components/ui/SafeImage'
-import { Plus, Edit, Trash2, Search, ExternalLink } from 'lucide-react'
+import { Plus, Edit, Trash2, Search, ExternalLink, ChevronDown } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { Textarea } from '@/components/ui/textarea'
@@ -33,6 +33,11 @@ interface Product {
   updated_at?: string
 }
 
+interface FilterOption {
+  name: string
+  count: number
+}
+
 const defaultFormData: Partial<Product> = {
   name: '',
   brand: '',
@@ -60,6 +65,32 @@ export default function ProductsAdminPage() {
   const [totalProducts, setTotalProducts] = useState(0)
   const [saving, setSaving] = useState(false)
   const pageSize = 20
+
+  // Filter options for dropdowns
+  const [categories, setCategories] = useState<FilterOption[]>([])
+  const [brands, setBrands] = useState<FilterOption[]>([])
+  const [series, setSeries] = useState<FilterOption[]>([])
+  const [adminBrands, setAdminBrands] = useState<{name: string, id: string}[]>([])
+  const [productCategories, setProductCategories] = useState<{name: string, id: string, slug: string}[]>([])
+
+  // Load filter options on mount
+  useEffect(() => {
+    Promise.all([
+      fetch(`${BACKEND_URL}/api/catalog/categories`).then(r => r.json()),
+      fetch(`${BACKEND_URL}/api/catalog/brands`).then(r => r.json()),
+      fetch(`${BACKEND_URL}/api/catalog/series`).then(r => r.json()),
+      fetch(`${BACKEND_URL}/api/brands`).then(r => r.json()).catch(() => []),
+      fetch(`${BACKEND_URL}/api/products`).then(r => r.json()).catch(() => []),
+    ]).then(([cats, brnds, srs, adminBrnds, prodCats]) => {
+      setCategories(cats || [])
+      setBrands(brnds || [])
+      setSeries(srs || [])
+      // Admin-defined brands for dropdown
+      setAdminBrands((adminBrnds || []).map((b: any) => ({ name: b.name, id: b.id })))
+      // Product categories from admin panel
+      setProductCategories((prodCats || []).map((c: any) => ({ name: c.name, id: c.id, slug: c.slug })))
+    }).catch(console.error)
+  }, [])
 
   useEffect(() => {
     loadProducts()
@@ -126,6 +157,16 @@ export default function ProductsAdminPage() {
       if (response.ok) {
         toast.success(editingId ? 'Product updated!' : 'Product created!')
         await loadProducts()
+        // Reload filter options in case new brand/category/series was added
+        Promise.all([
+          fetch(`${BACKEND_URL}/api/catalog/categories`).then(r => r.json()),
+          fetch(`${BACKEND_URL}/api/catalog/brands`).then(r => r.json()),
+          fetch(`${BACKEND_URL}/api/catalog/series`).then(r => r.json()),
+        ]).then(([cats, brnds, srs]) => {
+          setCategories(cats || [])
+          setBrands(brnds || [])
+          setSeries(srs || [])
+        }).catch(console.error)
         setShowForm(false)
         setEditingId(null)
         setFormData(defaultFormData)
@@ -213,7 +254,7 @@ export default function ProductsAdminPage() {
         <form onSubmit={handleSubmit} className="space-y-4 max-h-[70vh] overflow-y-auto pr-2">
           <div className="grid grid-cols-2 gap-4">
             <div>
-              <label className="block text-sm font-medium mb-1">Product Name *</label>
+              <label className="block text-sm font-medium mb-1 text-gray-900 dark:text-white">Product Name *</label>
               <Input
                 value={formData.name}
                 onChange={(e) => setFormData({ ...formData, name: e.target.value })}
@@ -222,33 +263,113 @@ export default function ProductsAdminPage() {
               />
             </div>
             <div>
-              <label className="block text-sm font-medium mb-1">Brand *</label>
-              <Input
-                value={formData.brand}
-                onChange={(e) => setFormData({ ...formData, brand: e.target.value })}
-                required
-                placeholder="Brand name"
-              />
+              <label className="block text-sm font-medium mb-1 text-gray-900 dark:text-white">Brand *</label>
+              <div className="relative">
+                <select
+                  value={formData.brand || ''}
+                  onChange={(e) => setFormData({ ...formData, brand: e.target.value })}
+                  required
+                  className="w-full h-10 px-3 pr-8 text-sm border border-gray-200 dark:border-zinc-700 rounded-md bg-white dark:bg-zinc-900 text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-[#C9A962] appearance-none"
+                >
+                  <option value="">Select Brand</option>
+                  {/* Admin-defined brands first */}
+                  {adminBrands.length > 0 && (
+                    <optgroup label="Defined Brands">
+                      {adminBrands.map(b => (
+                        <option key={`admin-${b.id}`} value={b.name}>{b.name}</option>
+                      ))}
+                    </optgroup>
+                  )}
+                  {/* Catalog brands (from existing products) */}
+                  {brands.length > 0 && (
+                    <optgroup label="From Products">
+                      {brands.filter(b => !adminBrands.some(ab => ab.name === b.name)).map(b => (
+                        <option key={b.name} value={b.name}>{b.name} ({b.count})</option>
+                      ))}
+                    </optgroup>
+                  )}
+                  <option value="__custom__">+ Add New Brand</option>
+                </select>
+                <ChevronDown className="absolute right-2 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400 pointer-events-none" />
+              </div>
+              {formData.brand === '__custom__' && (
+                <Input
+                  value=""
+                  onChange={(e) => setFormData({ ...formData, brand: e.target.value })}
+                  placeholder="Enter new brand name"
+                  className="mt-2"
+                  autoFocus
+                />
+              )}
             </div>
           </div>
 
           <div className="grid grid-cols-2 gap-4">
             <div>
-              <label className="block text-sm font-medium mb-1">Category *</label>
-              <Input
-                value={formData.category}
-                onChange={(e) => setFormData({ ...formData, category: e.target.value })}
-                required
-                placeholder="e.g., Audio, Lighting, Security"
-              />
+              <label className="block text-sm font-medium mb-1 text-gray-900 dark:text-white">Category *</label>
+              <div className="relative">
+                <select
+                  value={formData.category || ''}
+                  onChange={(e) => setFormData({ ...formData, category: e.target.value })}
+                  required
+                  className="w-full h-10 px-3 pr-8 text-sm border border-gray-200 dark:border-zinc-700 rounded-md bg-white dark:bg-zinc-900 text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-[#C9A962] appearance-none"
+                >
+                  <option value="">Select Category</option>
+                  {/* Admin-defined product categories first */}
+                  {productCategories.length > 0 && (
+                    <optgroup label="Defined Categories">
+                      {productCategories.map(c => (
+                        <option key={`admin-${c.id}`} value={c.name}>{c.name}</option>
+                      ))}
+                    </optgroup>
+                  )}
+                  {/* Catalog categories (from existing products) */}
+                  {categories.length > 0 && (
+                    <optgroup label="From Products">
+                      {categories.filter(c => !productCategories.some(pc => pc.name === c.name)).map(c => (
+                        <option key={c.name} value={c.name}>{c.name} ({c.count})</option>
+                      ))}
+                    </optgroup>
+                  )}
+                  <option value="__custom__">+ Add New Category</option>
+                </select>
+                <ChevronDown className="absolute right-2 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400 pointer-events-none" />
+              </div>
+              {formData.category === '__custom__' && (
+                <Input
+                  value=""
+                  onChange={(e) => setFormData({ ...formData, category: e.target.value })}
+                  placeholder="Enter new category name"
+                  className="mt-2"
+                  autoFocus
+                />
+              )}
             </div>
             <div>
-              <label className="block text-sm font-medium mb-1">Sub Category / Series</label>
-              <Input
-                value={formData.sub_category || ''}
-                onChange={(e) => setFormData({ ...formData, sub_category: e.target.value })}
-                placeholder="e.g., Soundbar, Ceiling Speaker"
-              />
+              <label className="block text-sm font-medium mb-1 text-gray-900 dark:text-white">Series / Sub Category</label>
+              <div className="relative">
+                <select
+                  value={formData.sub_category || ''}
+                  onChange={(e) => setFormData({ ...formData, sub_category: e.target.value === '__none__' ? '' : e.target.value })}
+                  className="w-full h-10 px-3 pr-8 text-sm border border-gray-200 dark:border-zinc-700 rounded-md bg-white dark:bg-zinc-900 text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-[#C9A962] appearance-none"
+                >
+                  <option value="">No Series</option>
+                  {series.map(s => (
+                    <option key={s.name} value={s.name}>{s.name} ({s.count})</option>
+                  ))}
+                  <option value="__custom__">+ Add New Series</option>
+                </select>
+                <ChevronDown className="absolute right-2 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400 pointer-events-none" />
+              </div>
+              {formData.sub_category === '__custom__' && (
+                <Input
+                  value=""
+                  onChange={(e) => setFormData({ ...formData, sub_category: e.target.value })}
+                  placeholder="Enter new series name"
+                  className="mt-2"
+                  autoFocus
+                />
+              )}
             </div>
           </div>
 
@@ -261,7 +382,7 @@ export default function ProductsAdminPage() {
           />
 
           <div>
-            <label className="block text-sm font-medium mb-1">Description</label>
+            <label className="block text-sm font-medium mb-1 text-gray-900 dark:text-white">Description</label>
             <Textarea
               value={formData.description}
               onChange={(e) => setFormData({ ...formData, description: e.target.value })}
@@ -271,7 +392,7 @@ export default function ProductsAdminPage() {
           </div>
 
           <div>
-            <label className="block text-sm font-medium mb-1">Specifications (one per line)</label>
+            <label className="block text-sm font-medium mb-1 text-gray-900 dark:text-white">Specifications (one per line)</label>
             <Textarea
               value={formData.specifications?.join('\n')}
               onChange={(e) => handleArrayInput('specifications', e.target.value)}
@@ -281,7 +402,7 @@ export default function ProductsAdminPage() {
           </div>
 
           <div>
-            <label className="block text-sm font-medium mb-1">Features (one per line)</label>
+            <label className="block text-sm font-medium mb-1 text-gray-900 dark:text-white">Features (one per line)</label>
             <Textarea
               value={formData.features?.join('\n')}
               onChange={(e) => handleArrayInput('features', e.target.value)}

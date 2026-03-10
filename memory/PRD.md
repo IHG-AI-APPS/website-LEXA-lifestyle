@@ -115,6 +115,18 @@ A premium smart home solutions website with dynamic content management, product 
     - Proper z-index and portal rendering
     - data-testid attributes for automation testing
 
+#### March 10, 2026 - Products Admin Form Enhancement ✅
+- **Enhanced:** Product Add/Edit form now uses dropdowns instead of plain text inputs
+  - **Brand dropdown:** Shows "Defined Brands" (from admin/brands page) + "From Products" (from catalog)
+  - **Category dropdown:** Shows "Defined Categories" (from admin/product-categories) + "From Products" (from catalog)
+  - **Series dropdown:** Shows all existing series from product data with product counts
+  - All dropdowns have "+ Add New" option for creating new values inline
+- **File Modified:** `/app/frontend/app/admin/products/page.tsx`
+- **API Integration:**
+  - `/api/brands` - Admin-defined brands
+  - `/api/products` - Admin-defined product categories
+  - `/api/catalog/categories`, `/api/catalog/brands`, `/api/catalog/series` - Aggregated from product data
+
 #### March 10, 2026 - Admin Products & Categories Fix ✅
 - **Fixed:** Admin Products page now displays actual products (217) from `/api/catalog/products`
   - **File Modified:** `/app/frontend/app/admin/products/page.tsx`
