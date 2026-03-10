@@ -58,16 +58,16 @@ const categories = [
 
 export default function ProductCategories() {
   return (
-    <section className="py-24 md:py-32 bg-white">
+    <section className="py-24 md:py-32 bg-white dark:bg-[#050505]">
       <div className="container mx-auto px-4 md:px-8 max-w-7xl">
         <div className="mb-16">
-          <span className="text-xs md:text-sm tracking-[0.2em] uppercase text-gray-600 dark:text-zinc-500 font-bold block mb-6">
+          <span className="text-xs md:text-sm tracking-[0.2em] uppercase text-gray-600 dark:text-zinc-400 font-bold block mb-6">
             Product Catalog
           </span>
-          <h2 className="text-4xl md:text-5xl font-heading font-semibold tracking-tight text-black mb-6">
+          <h2 className="text-4xl md:text-5xl font-heading font-semibold tracking-tight text-black dark:text-white mb-6">
             CATEGORIES
           </h2>
-          <p className="text-base md:text-lg text-gray-600 dark:text-zinc-500 max-w-2xl">
+          <p className="text-base md:text-lg text-gray-600 dark:text-zinc-400 max-w-2xl">
             Browse by equipment type to find the perfect components for your system.
           </p>
         </div>
@@ -96,7 +96,7 @@ export default function ProductCategories() {
                     </h3>
                   </div>
                 </div>
-                <p className="text-sm text-gray-600 dark:text-zinc-500 group-hover:text-black transition-colors">
+                <p className="text-sm text-gray-600 dark:text-zinc-400 group-hover:text-black dark:group-hover:text-[#C9A962] transition-colors">
                   {category.description}
                 </p>
               </Link>
@@ -107,7 +107,7 @@ export default function ProductCategories() {
         <div className="mt-12 text-center">
           <Link
             href="/products"
-            className="inline-flex items-center gap-2 bg-black text-white px-8 py-4 font-bold uppercase tracking-widest hover:bg-gray-800 transition-colors"
+            className="inline-flex items-center gap-2 bg-black dark:bg-[#C9A962] text-white dark:text-black px-8 py-4 font-bold uppercase tracking-widest hover:bg-gray-800 dark:hover:bg-[#B8984F] transition-colors"
           >
             View All Products
             <ArrowRight size={16} strokeWidth={3} />

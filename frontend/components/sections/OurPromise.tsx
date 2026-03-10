@@ -41,7 +41,7 @@ export default function OurPromise() {
     <section className="py-24 md:py-32 bg-gray-50 dark:bg-[#0A0A0A]">
       <div className="container mx-auto px-4 md:px-8 max-w-7xl">
         <div className="mb-16 text-center">
-          <span className="text-xs md:text-sm tracking-[0.2em] uppercase text-gray-600 dark:text-zinc-500 font-bold block mb-6">
+          <span className="text-xs md:text-sm tracking-[0.2em] uppercase text-gray-600 dark:text-zinc-400 font-bold block mb-6">
             Why Choose LEXA
           </span>
           <h2 className="text-4xl md:text-5xl font-heading font-semibold tracking-tight text-black dark:text-white">
@@ -65,7 +65,7 @@ export default function OurPromise() {
               <h3 className="text-xl font-heading font-semibold text-black dark:text-white mb-4">
                 {promise.title}
               </h3>
-              <p className="text-sm text-gray-600 dark:text-zinc-500 leading-relaxed">
+              <p className="text-sm text-gray-600 dark:text-zinc-400 leading-relaxed">
                 {promise.description}
               </p>
             </motion.div>

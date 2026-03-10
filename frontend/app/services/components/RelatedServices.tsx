@@ -44,7 +44,7 @@ export default function RelatedServices({ services, currentSlug }: RelatedServic
   }
 
   return (
-    <section className="py-20 bg-gradient-to-b from-gray-50 to-white">
+    <section className="py-20 bg-gradient-to-b from-gray-50 to-white dark:from-[#0A0A0A] dark:to-[#050505]">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="text-center mb-12">
@@ -54,13 +54,13 @@ export default function RelatedServices({ services, currentSlug }: RelatedServic
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <span className="text-sm font-semibold uppercase tracking-wider text-gray-600 dark:text-zinc-500 mb-2 block">
+            <span className="text-sm font-semibold uppercase tracking-wider text-gray-600 dark:text-zinc-400 mb-2 block">
               Complete Your Project
             </span>
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 dark:text-white mb-4">
               Related Services
             </h2>
-            <p className="text-lg text-gray-600 dark:text-zinc-500 max-w-2xl mx-auto">
+            <p className="text-lg text-gray-600 dark:text-zinc-400 max-w-2xl mx-auto">
               End-to-end support for your smart home journey
             </p>
           </motion.div>
@@ -83,7 +83,7 @@ export default function RelatedServices({ services, currentSlug }: RelatedServic
                   href={`/services/${service.slug}`}
                   className="group block h-full card-lift"
                 >
-                  <div className="relative h-full overflow-hidden rounded-2xl bg-white elevation-2 hover:elevation-4 transition-all duration-300">
+                  <div className="relative h-full overflow-hidden rounded-2xl bg-white dark:bg-[#171717] elevation-2 hover:elevation-4 transition-all duration-300 border border-gray-100 dark:border-zinc-800">
                     {/* Image Poster */}
                     <div className="relative h-64 overflow-hidden">
                       {service.image ? (
@@ -103,14 +103,14 @@ export default function RelatedServices({ services, currentSlug }: RelatedServic
                       {/* Icon Badge */}
                       <div className="absolute top-4 right-4">
                         <div className="bg-white/90 backdrop-blur-sm p-3 rounded-full">
-                          <Icon className="h-5 w-5 text-gray-900 dark:text-white" />
+                          <Icon className="h-5 w-5 text-gray-900" />
                         </div>
                       </div>
 
                       {/* Category */}
                       {service.category && (
                         <div className="absolute top-4 left-4">
-                          <span className="bg-white/90 backdrop-blur-sm px-3 py-1.5 rounded-full text-xs font-semibold text-gray-900 dark:text-white">
+                          <span className="bg-white/90 backdrop-blur-sm px-3 py-1.5 rounded-full text-xs font-semibold text-gray-900">
                             {service.category}
                           </span>
                         </div>
@@ -118,7 +118,7 @@ export default function RelatedServices({ services, currentSlug }: RelatedServic
 
                       {/* Title at Bottom */}
                       <div className="absolute bottom-0 left-0 right-0 p-6">
-                        <h3 className="text-2xl font-bold text-white mb-2 group-hover:text-gray-300 transition-colors">
+                        <h3 className="text-2xl font-bold text-white mb-2 group-hover:text-gray-200 transition-colors">
                           {service.title}
                         </h3>
                       </div>
@@ -127,7 +127,7 @@ export default function RelatedServices({ services, currentSlug }: RelatedServic
                     {/* Content Section */}
                     <div className="p-6">
                       {/* Description */}
-                      <p className="text-sm text-gray-600 dark:text-zinc-500 mb-4 line-clamp-3">
+                      <p className="text-sm text-gray-600 dark:text-zinc-300 mb-4 line-clamp-3">
                         {service.description}
                       </p>
 
@@ -137,7 +137,7 @@ export default function RelatedServices({ services, currentSlug }: RelatedServic
                           {service.tags.slice(0, 3).map((tag) => (
                             <span
                               key={tag}
-                              className="text-xs px-2 py-1 bg-gray-100 dark:bg-[#171717] text-gray-700 dark:text-zinc-400 rounded-full"
+                              className="text-xs px-2 py-1 bg-gray-100 dark:bg-[#0F0F0F] text-gray-700 dark:text-zinc-300 rounded-full"
                             >
                               {tag}
                             </span>
@@ -146,11 +146,11 @@ export default function RelatedServices({ services, currentSlug }: RelatedServic
                       )}
 
                       {/* CTA */}
-                      <div className="flex items-center justify-between pt-4 border-t border-gray-100 dark:border-zinc-800">
-                        <span className="text-sm font-semibold text-gray-700 dark:text-zinc-400 group-hover:text-black transition-colors">
+                      <div className="flex items-center justify-between pt-4 border-t border-gray-100 dark:border-zinc-700">
+                        <span className="text-sm font-semibold text-gray-700 dark:text-zinc-300 group-hover:text-[#C9A962] transition-colors">
                           Learn More
                         </span>
-                        <ArrowRight className="h-5 w-5 text-gray-700 dark:text-zinc-400 group-hover:translate-x-2 transition-transform" />
+                        <ArrowRight className="h-5 w-5 text-gray-700 dark:text-zinc-300 group-hover:translate-x-2 group-hover:text-[#C9A962] transition-all" />
                       </div>
                     </div>
                   </div>
@@ -170,7 +170,7 @@ export default function RelatedServices({ services, currentSlug }: RelatedServic
         >
           <Link
             href="/services"
-            className="inline-flex items-center gap-2 px-8 py-4 bg-black text-white font-semibold rounded-full btn-magnetic elevation-3"
+            className="inline-flex items-center gap-2 px-8 py-4 bg-black dark:bg-[#C9A962] text-white dark:text-black font-semibold rounded-full btn-magnetic elevation-3 hover:bg-gray-800 dark:hover:bg-[#B8984F] transition-colors"
           >
             <span>View All Services</span>
             <ArrowRight className="h-5 w-5" />

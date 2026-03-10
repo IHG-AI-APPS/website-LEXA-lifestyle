@@ -32,7 +32,7 @@ export default function Workflow() {
   ]
 
   return (
-    <section className="relative py-32 bg-gray-50" data-testid="workflow-section">
+    <section className="relative py-32 bg-gray-50 dark:bg-[#0A0A0A]" data-testid="workflow-section">
       <div className="container mx-auto px-8 lg:px-16">
         <div className="max-w-7xl mx-auto">
           {/* Header */}
@@ -43,10 +43,10 @@ export default function Workflow() {
             viewport={{ once: true }}
             className="mb-20"
           >
-            <span className="text-xs tracking-[0.5em] uppercase text-gray-400 font-medium mb-6 block">
+            <span className="text-xs tracking-[0.5em] uppercase text-gray-400 dark:text-zinc-500 font-medium mb-6 block">
               Our Process
             </span>
-            <h2 className="text-7xl sm:text-8xl lg:text-9xl font-semibold tracking-[-0.04em] leading-[0.9] mb-6">
+            <h2 className="text-7xl sm:text-8xl lg:text-9xl font-semibold tracking-[-0.04em] leading-[0.9] mb-6 text-gray-900 dark:text-white">
               SEAMLESS
               <br />
               <span className="text-transparent bg-clip-text metallic-gradient">DELIVERY</span>
@@ -67,22 +67,22 @@ export default function Workflow() {
               >
                 {/* Number Circle */}
                 <div className="relative mb-8">
-                  <div className="w-full aspect-square border border-gray-300 dark:border-zinc-700 group-hover:border-charcoal transition-colors duration-300 flex items-center justify-center">
-                    <span className="text-5xl font-semibold tracking-tight group-hover:scale-110 transition-transform duration-300">
+                  <div className="w-full aspect-square border border-gray-300 dark:border-zinc-700 group-hover:border-charcoal dark:group-hover:border-[#C9A962] transition-colors duration-300 flex items-center justify-center">
+                    <span className="text-5xl font-semibold tracking-tight text-gray-900 dark:text-white group-hover:scale-110 transition-transform duration-300">
                       {step.number}
                     </span>
                   </div>
                   {/* Connection line */}
                   {index < steps.length - 1 && (
-                    <div className="absolute top-1/2 left-full w-8 h-px bg-gray-300 hidden lg:block" />
+                    <div className="absolute top-1/2 left-full w-8 h-px bg-gray-300 dark:bg-zinc-700 hidden lg:block" />
                   )}
                 </div>
 
                 {/* Title */}
-                <h3 className="text-xl font-semibold mb-3 tracking-tight">{step.title}</h3>
+                <h3 className="text-xl font-semibold mb-3 tracking-tight text-gray-900 dark:text-white">{step.title}</h3>
 
                 {/* Description */}
-                <p className="text-sm text-gray-600 dark:text-zinc-500 leading-relaxed font-light">
+                <p className="text-sm text-gray-600 dark:text-zinc-400 leading-relaxed font-light">
                   {step.description}
                 </p>
               </motion.div>
@@ -102,13 +102,13 @@ export default function Workflow() {
               >
                 {/* Number */}
                 <div className="flex-shrink-0 w-20 h-20 border border-gray-300 dark:border-zinc-700 flex items-center justify-center">
-                  <span className="text-3xl font-semibold tracking-tight">{step.number}</span>
+                  <span className="text-3xl font-semibold tracking-tight text-gray-900 dark:text-white">{step.number}</span>
                 </div>
 
                 {/* Content */}
                 <div className="flex-1 pt-2">
-                  <h3 className="text-2xl font-semibold mb-3 tracking-tight">{step.title}</h3>
-                  <p className="text-sm text-gray-600 dark:text-zinc-500 leading-relaxed font-light">
+                  <h3 className="text-2xl font-semibold mb-3 tracking-tight text-gray-900 dark:text-white">{step.title}</h3>
+                  <p className="text-sm text-gray-600 dark:text-zinc-400 leading-relaxed font-light">
                     {step.description}
                   </p>
                 </div>
@@ -124,10 +124,10 @@ export default function Workflow() {
             viewport={{ once: true }}
             className="mt-20 text-center"
           >
-            <p className="text-lg text-gray-600 dark:text-zinc-500 font-light mb-8 max-w-2xl mx-auto">
+            <p className="text-lg text-gray-600 dark:text-zinc-400 font-light mb-8 max-w-2xl mx-auto">
               Every project follows our proven methodology, ensuring predictable outcomes and exceptional results.
             </p>
-            <button className="px-10 py-5 border border-gray-300 dark:border-zinc-700 hover:border-charcoal hover:bg-gray-100 dark:bg-[#171717] text-charcoal text-sm font-medium tracking-wide transition-all duration-300">
+            <button className="px-10 py-5 border border-gray-300 dark:border-zinc-700 hover:border-charcoal dark:hover:border-[#C9A962] hover:bg-gray-100 dark:hover:bg-[#171717] text-charcoal dark:text-white text-sm font-medium tracking-wide transition-all duration-300">
               Learn More About Our Process
             </button>
           </motion.div>

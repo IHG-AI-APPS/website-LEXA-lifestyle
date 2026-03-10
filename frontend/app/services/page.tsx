@@ -99,13 +99,13 @@ export default function ServicesPage() {
 
   if (loading) {
     return (
-      <div className="min-h-screen bg-white dark:bg-[#0A0A0A] pt-20">
+      <div className="min-h-screen bg-white dark:bg-[#050505] pt-20">
         <div className="container mx-auto px-4 py-8 max-w-7xl">
           <div className="animate-pulse space-y-4">
-            <div className="h-8 bg-gray-200 rounded w-1/4"></div>
+            <div className="h-8 bg-gray-200 dark:bg-zinc-800 rounded w-1/4"></div>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              <div className="h-40 bg-gray-200 rounded"></div>
-              <div className="h-40 bg-gray-200 rounded"></div>
+              <div className="h-40 bg-gray-200 dark:bg-zinc-800 rounded"></div>
+              <div className="h-40 bg-gray-200 dark:bg-zinc-800 rounded"></div>
             </div>
           </div>
         </div>
@@ -142,7 +142,7 @@ export default function ServicesPage() {
       </section>
 
       {/* Services by Category Groups */}
-      <section className="py-16 md:py-20">
+      <section className="py-16 md:py-20 bg-white dark:bg-[#050505]">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
           
           {Object.entries(categoryGroups).map(([groupKey, groupConfig]) => {
@@ -159,13 +159,13 @@ export default function ServicesPage() {
                   viewport={{ once: true }}
                   className="mb-12"
                 >
-                  <span className="text-xs tracking-[0.3em] uppercase text-gray-400 mb-2 block">
+                  <span className="text-xs tracking-[0.3em] uppercase text-gray-400 dark:text-zinc-500 mb-2 block">
                     {language === 'ar' ? 'الفئة' : 'Category'}
                   </span>
-                  <h2 className="text-3xl md:text-4xl font-bold mb-2">
+                  <h2 className="text-3xl md:text-4xl font-bold mb-2 text-gray-900 dark:text-white">
                     {language === 'ar' ? groupConfig.titleAr : groupConfig.title}
                   </h2>
-                  <p className="text-lg text-gray-600 dark:text-zinc-500">
+                  <p className="text-lg text-gray-600 dark:text-zinc-400">
                     {language === 'ar' ? groupConfig.subtitleAr : groupConfig.subtitle}
                   </p>
                 </motion.div>
@@ -180,30 +180,30 @@ export default function ServicesPage() {
                       viewport={{ once: true }}
                     >
                       <Link href={`/services/${service.slug}`}>
-                        <div className="group py-8 border-b border-gray-200 dark:border-zinc-800 hover:border-gray-400 transition-all duration-300">
+                        <div className="group py-8 border-b border-gray-200 dark:border-zinc-800 hover:border-gray-400 dark:hover:border-zinc-600 transition-all duration-300">
                           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
                             <div className="lg:col-span-1">
-                              <span className="text-4xl font-semibold text-gray-300 group-hover:text-black transition-colors">
+                              <span className="text-4xl font-semibold text-gray-300 dark:text-zinc-600 group-hover:text-black dark:group-hover:text-[#C9A962] transition-colors">
                                 {String(index + 1).padStart(2, '0')}
                               </span>
                             </div>
                             <div className="lg:col-span-4">
-                              <div className="text-xs tracking-[0.3em] uppercase text-gray-400 mb-2">
+                              <div className="text-xs tracking-[0.3em] uppercase text-gray-400 dark:text-zinc-500 mb-2">
                                 {service.category}
                               </div>
-                              <h3 className="text-3xl sm:text-4xl font-semibold tracking-[-0.02em]">
+                              <h3 className="text-3xl sm:text-4xl font-semibold tracking-[-0.02em] text-gray-900 dark:text-white">
                                 {service.title}
                               </h3>
                             </div>
                             <div className="lg:col-span-5">
-                              <p className="text-gray-600 dark:text-zinc-500 leading-relaxed">
+                              <p className="text-gray-600 dark:text-zinc-400 leading-relaxed">
                                 {service.description}
                               </p>
                             </div>
                             <div className="lg:col-span-2 flex justify-end">
                               <ArrowUpRight
                                 size={28}
-                                className="text-black group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform duration-300"
+                                className="text-black dark:text-white group-hover:translate-x-1 group-hover:-translate-y-1 group-hover:text-[#C9A962] transition-all duration-300"
                                 strokeWidth={2}
                               />
                             </div>
@@ -227,13 +227,13 @@ export default function ServicesPage() {
                 viewport={{ once: true }}
                 className="mb-12"
               >
-                <span className="text-xs tracking-[0.3em] uppercase text-gray-400 mb-2 block">
+                <span className="text-xs tracking-[0.3em] uppercase text-gray-400 dark:text-zinc-500 mb-2 block">
                   {language === 'ar' ? 'الفئة' : 'Category'}
                 </span>
-                <h2 className="text-3xl md:text-4xl font-bold mb-2">
+                <h2 className="text-3xl md:text-4xl font-bold mb-2 text-gray-900 dark:text-white">
                   {language === 'ar' ? 'خدمات أخرى' : 'Other Services'}
                 </h2>
-                <p className="text-lg text-gray-600 dark:text-zinc-500">
+                <p className="text-lg text-gray-600 dark:text-zinc-400">
                   {language === 'ar' ? 'خدمات متخصصة إضافية نقدمها' : 'Additional specialized services we offer'}
                 </p>
               </motion.div>
@@ -248,30 +248,30 @@ export default function ServicesPage() {
                     viewport={{ once: true }}
                   >
                     <Link href={`/services/${service.slug}`}>
-                      <div className="group py-8 border-b border-gray-200 dark:border-zinc-800 hover:border-gray-400 transition-all duration-300">
+                      <div className="group py-8 border-b border-gray-200 dark:border-zinc-800 hover:border-gray-400 dark:hover:border-zinc-600 transition-all duration-300">
                         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
                           <div className="lg:col-span-1">
-                            <span className="text-4xl font-semibold text-gray-300 group-hover:text-black transition-colors">
+                            <span className="text-4xl font-semibold text-gray-300 dark:text-zinc-600 group-hover:text-black dark:group-hover:text-[#C9A962] transition-colors">
                               {String(index + 1).padStart(2, '0')}
                             </span>
                           </div>
                           <div className="lg:col-span-4">
-                            <div className="text-xs tracking-[0.3em] uppercase text-gray-400 mb-2">
+                            <div className="text-xs tracking-[0.3em] uppercase text-gray-400 dark:text-zinc-500 mb-2">
                               {service.category || 'New Service'}
                             </div>
-                            <h3 className="text-3xl sm:text-4xl font-semibold tracking-[-0.02em]">
+                            <h3 className="text-3xl sm:text-4xl font-semibold tracking-[-0.02em] text-gray-900 dark:text-white">
                               {service.title}
                             </h3>
                           </div>
                           <div className="lg:col-span-5">
-                            <p className="text-gray-600 dark:text-zinc-500 leading-relaxed">
+                            <p className="text-gray-600 dark:text-zinc-400 leading-relaxed">
                               {service.description}
                             </p>
                           </div>
                           <div className="lg:col-span-2 flex justify-end">
                             <ArrowUpRight
                               size={28}
-                              className="text-black group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform duration-300"
+                              className="text-black dark:text-white group-hover:translate-x-1 group-hover:-translate-y-1 group-hover:text-[#C9A962] transition-all duration-300"
                               strokeWidth={2}
                             />
                           </div>
