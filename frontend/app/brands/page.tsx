@@ -81,7 +81,10 @@ export default function BrandsPage() {
   const [searchQuery, setSearchQuery] = useState('')
 
   useEffect(() => {
-    fetch(`${API}/brands`)
+    fetch(`${API}/brands?_t=${Date.now()}`, {
+      cache: 'no-store',
+      headers: { 'Cache-Control': 'no-cache' }
+    })
       .then(r => r.json())
       .then(data => { setBrands(data); setLoading(false) })
       .catch(() => setLoading(false))

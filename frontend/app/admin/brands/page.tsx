@@ -91,7 +91,13 @@ export default function BrandsAdminPage() {
 
   const loadBrands = async () => {
     try {
-      const response = await fetch(`${BACKEND_URL}/api/brands`)
+      const response = await fetch(`${BACKEND_URL}/api/brands?_t=${Date.now()}`, {
+        cache: 'no-store',
+        headers: {
+          'Cache-Control': 'no-cache, no-store, must-revalidate',
+          'Pragma': 'no-cache'
+        }
+      })
       const data = await response.json()
       // Ensure each brand has all fields with proper defaults
       const brandsWithDefaults = data.map((b: any, index: number) => ({

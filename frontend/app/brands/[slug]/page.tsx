@@ -91,7 +91,10 @@ export default function BrandDetailPage({ params }: { params: { slug: string } }
 
   const fetchBrand = useCallback(async () => {
     try {
-      const response = await fetch(`${API}/brands/${params.slug}`)
+      const response = await fetch(`${API}/brands/${params.slug}?_t=${Date.now()}`, {
+        cache: 'no-store',
+        headers: { 'Cache-Control': 'no-cache' }
+      })
       if (response.ok) {
         const data = await response.json()
         setBrand(data)
@@ -123,7 +126,10 @@ export default function BrandDetailPage({ params }: { params: { slug: string } }
 
   const fetchOtherBrands = useCallback(async () => {
     try {
-      const response = await fetch(`${API}/brands`)
+      const response = await fetch(`${API}/brands?_t=${Date.now()}`, {
+        cache: 'no-store',
+        headers: { 'Cache-Control': 'no-cache' }
+      })
       if (response.ok) {
         const data = await response.json()
         setOtherBrands(data.filter((b: BrandData) => b.slug !== params.slug).slice(0, 8))

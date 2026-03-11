@@ -1504,6 +1504,8 @@ async def create_brand(brand: Brand, user: dict = Depends(verify_token)):
     try:
         brand_dict = brand.model_dump()
         await db.brands.insert_one(brand_dict)
+        # Clear brands cache
+        await cache.delete_prefix("brands:")
         return {"message": "Brand created successfully", "id": brand.id}
     except Exception as e:
         logger.error(f"Create brand error: {str(e)}")
@@ -1520,6 +1522,8 @@ async def update_brand(brand_id: str, brand: Brand, user: dict = Depends(verify_
         )
         if result.matched_count == 0:
             raise HTTPException(status_code=404, detail="Brand not found")
+        # Clear brands cache to ensure fresh data is fetched
+        await cache.delete_prefix("brands:")
         return {"message": "Brand updated successfully"}
     except HTTPException:
         raise
@@ -1534,6 +1538,8 @@ async def delete_brand(brand_id: str, user: dict = Depends(verify_token)):
         result = await db.brands.delete_one({"id": brand_id})
         if result.deleted_count == 0:
             raise HTTPException(status_code=404, detail="Brand not found")
+        # Clear brands cache
+        await cache.delete_prefix("brands:")
         return {"message": "Brand deleted successfully"}
     except HTTPException:
         raise
@@ -1552,6 +1558,8 @@ async def patch_brand(brand_id: str, updates: Dict[str, Any], user: dict = Depen
         result = await db.brands.update_one({"id": brand_id}, {"$set": updates})
         if result.matched_count == 0:
             raise HTTPException(status_code=404, detail="Brand not found")
+        # Clear brands cache
+        await cache.delete_prefix("brands:")
         return {"message": "Brand patched successfully"}
     except HTTPException:
         raise
