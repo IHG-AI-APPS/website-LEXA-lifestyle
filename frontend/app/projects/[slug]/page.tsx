@@ -85,6 +85,12 @@ export default function ProjectDetailPage() {
   const openLightbox = (index: number) => {
     setLightboxIndex(index)
     setLightboxOpen(true)
+    document.body.style.overflow = 'hidden'
+  }
+
+  const closeLightbox = () => {
+    setLightboxOpen(false)
+    document.body.style.overflow = ''
   }
 
   const nextImage = () => {
@@ -458,9 +464,9 @@ export default function ProjectDetailPage() {
 
       {/* Lightbox */}
       {lightboxOpen && (
-        <div className="fixed inset-0 z-50 bg-black">
+        <div className="fixed inset-0 z-[100] bg-black overflow-hidden" style={{ height: '100vh', maxHeight: '100vh' }}>
           <button
-            onClick={() => setLightboxOpen(false)}
+            onClick={closeLightbox}
             className="absolute top-4 right-4 z-10 w-10 h-10 bg-white/10 hover:bg-white/20 rounded-full flex items-center justify-center text-white transition-colors"
             data-testid="lightbox-close"
           >
@@ -485,8 +491,9 @@ export default function ProjectDetailPage() {
             <ChevronRight className="h-6 w-6" />
           </button>
           
-          <div className="w-full h-full flex items-center justify-center p-4">
-            <div className="relative w-full h-full max-w-6xl max-h-[90vh]">
+          {/* Main image area */}
+          <div className="absolute inset-0 top-12 bottom-24 flex items-center justify-center p-4">
+            <div className="relative w-full h-full max-w-6xl">
               <SafeImage
                 src={allImages[lightboxIndex]}
                 alt={`${project.title} - Image ${lightboxIndex + 1}`}
@@ -496,8 +503,9 @@ export default function ProjectDetailPage() {
             </div>
           </div>
 
-          <div className="absolute bottom-0 left-0 right-0 bg-black/80 p-3">
-            <div className="flex gap-2 overflow-x-auto justify-center">
+          {/* Thumbnail strip - fixed at bottom */}
+          <div className="absolute bottom-0 left-0 right-0 h-20 bg-black/90 border-t border-white/10 px-4 py-2">
+            <div className="h-full flex gap-2 overflow-x-auto items-center justify-center scrollbar-thin scrollbar-thumb-white/20">
               {allImages.map((img, idx) => (
                 <button
                   key={idx}
