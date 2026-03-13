@@ -63,13 +63,14 @@ export default function BrandMarquee() {
             {duplicatedBrands.map((brand, index) => (
               <div
                 key={`${brand.id}-${index}`}
-                className="flex-shrink-0 grayscale transition-all hover:grayscale-0 relative w-[120px] h-16"
+                className="flex-shrink-0 transition-all relative w-[120px] h-16"
               >
-                <SafeImage
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
                   src={brand.logo || 'https://via.placeholder.com/120x60?text=Brand'}
                   alt={brand.name}
-                  fill
-                  className="object-contain opacity-60 transition-opacity hover:opacity-100"
+                  className="w-full h-full object-contain opacity-60 transition-opacity hover:opacity-100"
+                  style={{ filter: 'brightness(0) invert(1)', WebkitFilter: 'brightness(0) invert(1)' }}
                 />
               </div>
             ))}

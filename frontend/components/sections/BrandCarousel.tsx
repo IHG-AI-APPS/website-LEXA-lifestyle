@@ -59,13 +59,14 @@ export default function BrandCarousel() {
           {duplicatedBrands.map((brand, index) => (
             <div
               key={`${brand.id}-${index}`}
-              className="flex-shrink-0 w-32 h-24 relative grayscale opacity-50 hover:grayscale-0 hover:opacity-100 transition-all duration-500 dark:invert dark:brightness-200"
+              className="flex-shrink-0 w-32 h-24 relative opacity-60 hover:opacity-100 transition-all duration-500"
             >
-              <SafeImage
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
                 src={brand.logo}
                 alt={brand.name}
-                fill
-                className="object-contain"
+                className="w-full h-full object-contain"
+                style={{ filter: 'brightness(0) invert(1)', WebkitFilter: 'brightness(0) invert(1)' }}
               />
             </div>
           ))}

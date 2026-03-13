@@ -54,12 +54,13 @@ export default function CuratedBrands() {
               transition={{ duration: 0.6, delay: index * 0.1 }}
               className="flex items-center justify-center"
             >
-              <div className="relative w-full h-20 grayscale opacity-50 hover:grayscale-0 hover:opacity-100 transition-all duration-500">
-                <SafeImage
+              <div className="relative w-full h-20 opacity-60 hover:opacity-100 transition-all duration-500">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
                   src={brand.logo}
                   alt={brand.name}
-                  fill
-                  className="object-contain"
+                  className="w-full h-full object-contain"
+                  style={{ filter: 'brightness(0) invert(1)', WebkitFilter: 'brightness(0) invert(1)' }}
                 />
               </div>
             </motion.div>

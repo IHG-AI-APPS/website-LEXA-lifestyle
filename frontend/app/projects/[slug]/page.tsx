@@ -392,16 +392,24 @@ export default function ProjectDetailPage() {
                       {project.brands.slice(0, 6).map((brand, idx) => (
                         <div key={idx} className="flex items-center gap-3">
                           {brand.logo ? (
-                            <div className="relative w-12 h-12 bg-gray-50 dark:bg-white/5 rounded flex items-center justify-center p-1">
-                              <SafeImage src={brand.logo} alt={brand.name} width={40} height={40} className="object-contain" />
+                            <div className="relative w-12 h-12 rounded flex items-center justify-center p-1">
+                              {/* eslint-disable-next-line @next/next/no-img-element */}
+                              <img 
+                                src={brand.logo} 
+                                alt={brand.name} 
+                                width={40} 
+                                height={40} 
+                                className="object-contain"
+                                style={{ filter: 'brightness(0) invert(1)', WebkitFilter: 'brightness(0) invert(1)' }}
+                              />
                             </div>
                           ) : (
-                            <div className="w-12 h-12 bg-gray-100 dark:bg-white/5 rounded flex items-center justify-center">
+                            <div className="w-12 h-12 bg-white/5 rounded flex items-center justify-center">
                               <span className="text-xs font-bold text-gray-400">{brand.name.substring(0, 2).toUpperCase()}</span>
                             </div>
                           )}
                           <div>
-                            <p className="text-sm font-medium text-gray-900 dark:text-white">{brand.name}</p>
+                            <p className="text-sm font-medium text-white">{brand.name}</p>
                             {brand.category && <p className="text-xs text-gray-400">{brand.category}</p>}
                           </div>
                         </div>

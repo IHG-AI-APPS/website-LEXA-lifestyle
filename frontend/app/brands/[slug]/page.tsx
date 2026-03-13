@@ -177,12 +177,13 @@ export default function BrandDetailPage({ params }: { params: { slug: string } }
             <motion.div initial={{ opacity: 0, x: -30 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.6 }}>
               <div className="flex items-center gap-3 mb-5">
                 {hasLogo ? (
-                  <div className="p-3 rounded-lg bg-gray-100 dark:bg-transparent">
+                  <div className="p-3 rounded-lg">
                     {/* eslint-disable-next-line @next/next/no-img-element */}
                     <img 
                       src={brand.logo} 
                       alt={brand.name} 
-                      className="w-28 h-14 object-contain logo-dark-mode"
+                      className="w-28 h-14 object-contain"
+                      style={{ filter: 'brightness(0) invert(1)', WebkitFilter: 'brightness(0) invert(1)' }}
                     />
                   </div>
                 ) : (
