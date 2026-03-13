@@ -124,6 +124,12 @@
     overflow-x: hidden;
   }
 
+  /* Brand Logo White - Converts ANY logo to white regardless of original color */
+  .brand-logo-white {
+    filter: brightness(0) invert(1) !important;
+    -webkit-filter: brightness(0) invert(1) !important;
+  }
+
   /* Responsive container padding for mobile */
   @media (max-width: 640px) {
     .container {

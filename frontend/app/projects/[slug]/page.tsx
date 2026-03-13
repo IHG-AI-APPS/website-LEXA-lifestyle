@@ -399,8 +399,7 @@ export default function ProjectDetailPage() {
                                 alt={brand.name} 
                                 width={40} 
                                 height={40} 
-                                className="object-contain"
-                                style={{ filter: 'brightness(0) invert(1)', WebkitFilter: 'brightness(0) invert(1)' }}
+                                className="object-contain brand-logo-white"
                               />
                             </div>
                           ) : (

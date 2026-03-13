@@ -182,8 +182,7 @@ export default function BrandDetailPage({ params }: { params: { slug: string } }
                     <img 
                       src={brand.logo} 
                       alt={brand.name} 
-                      className="w-28 h-14 object-contain"
-                      style={{ filter: 'brightness(0) invert(1)', WebkitFilter: 'brightness(0) invert(1)' }}
+                      className="w-28 h-14 object-contain brand-logo-white"
                     />
                   </div>
                 ) : (

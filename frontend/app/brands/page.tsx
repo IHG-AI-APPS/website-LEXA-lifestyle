@@ -161,8 +161,7 @@ function VisualBrandCard({ brand }: { brand: any }) {
               <img
                 src={brand.logo}
                 alt={brand.name}
-                className="max-w-full max-h-full object-contain drop-shadow-2xl"
-                style={{ filter: 'brightness(0) invert(1)', WebkitFilter: 'brightness(0) invert(1)' }}
+                className="max-w-full max-h-full object-contain drop-shadow-2xl brand-logo-white"
                 loading="lazy"
               />
             </div>
@@ -342,13 +341,12 @@ export default function BrandsPage() {
                         whileHover={{ y: -4, scale: 1.02 }}
                       >
                         {brand.logo ? (
-                          <div className="w-16 h-16 flex items-center justify-center">
+                          <div className="w-16 h-16 flex items-center justify-center p-1">
                             {/* eslint-disable-next-line @next/next/no-img-element */}
                             <img
                               src={brand.logo}
                               alt={brand.name}
-                              className="max-w-full max-h-full object-contain opacity-70 group-hover:opacity-100 transition-opacity"
-                              style={{ filter: 'brightness(0) invert(1)', WebkitFilter: 'brightness(0) invert(1)' }}
+                              className="max-w-full max-h-full object-contain brand-logo-white"
                               loading="lazy"
                             />
                           </div>

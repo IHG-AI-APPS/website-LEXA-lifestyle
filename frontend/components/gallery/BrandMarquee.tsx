@@ -69,8 +69,7 @@ export default function BrandMarquee() {
                 <img
                   src={brand.logo || 'https://via.placeholder.com/120x60?text=Brand'}
                   alt={brand.name}
-                  className="w-full h-full object-contain opacity-60 transition-opacity hover:opacity-100"
-                  style={{ filter: 'brightness(0) invert(1)', WebkitFilter: 'brightness(0) invert(1)' }}
+                  className="w-full h-full object-contain opacity-60 transition-opacity hover:opacity-100 brand-logo-white"
                 />
               </div>
             ))}

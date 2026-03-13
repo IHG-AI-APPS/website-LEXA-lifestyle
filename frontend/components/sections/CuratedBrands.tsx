@@ -59,8 +59,7 @@ export default function CuratedBrands() {
                 <img
                   src={brand.logo}
                   alt={brand.name}
-                  className="w-full h-full object-contain"
-                  style={{ filter: 'brightness(0) invert(1)', WebkitFilter: 'brightness(0) invert(1)' }}
+                  className="w-full h-full object-contain brand-logo-white"
                 />
               </div>
             </motion.div>
