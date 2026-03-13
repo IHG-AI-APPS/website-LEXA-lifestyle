@@ -179,7 +179,7 @@ export default function Header() {
             </Link>
 
             <nav 
-              className="hidden lg:flex items-center gap-8 xl:gap-10"
+              className="hidden lg:flex items-center gap-6 xl:gap-7"
               role="navigation"
               aria-label="Main navigation"
             >
@@ -191,7 +191,7 @@ export default function Header() {
               >
                 <Link
                   href="/solutions"
-                  className={`text-[13px] font-medium uppercase tracking-[0.12em] transition-colors duration-300 flex items-center gap-1.5 whitespace-nowrap ${
+                  className={`text-[12px] font-medium uppercase tracking-[0.1em] transition-colors duration-300 flex items-center gap-1 whitespace-nowrap ${
                     shouldUseDarkText
                       ? 'text-zinc-600 dark:text-zinc-400 hover:text-[#1A1A1A] dark:hover:text-white'
                       : 'text-white/80 hover:text-white'
@@ -201,7 +201,7 @@ export default function Header() {
                   }}
                 >
                   {t('nav.solutions')}
-                  <ChevronDown className={`h-3.5 w-3.5 transition-transform ${solutionsMenuOpen ? 'rotate-180' : ''}`} />
+                  <ChevronDown className={`h-3 w-3 transition-transform ${solutionsMenuOpen ? 'rotate-180' : ''}`} />
                 </Link>
               </div>
 
@@ -213,7 +213,7 @@ export default function Header() {
               >
                 <Link
                   href="/services"
-                  className={`text-[13px] font-medium uppercase tracking-[0.12em] transition-colors duration-300 flex items-center gap-1.5 whitespace-nowrap ${
+                  className={`text-[12px] font-medium uppercase tracking-[0.1em] transition-colors duration-300 flex items-center gap-1 whitespace-nowrap ${
                     shouldUseDarkText
                       ? 'text-zinc-600 dark:text-zinc-400 hover:text-[#1A1A1A] dark:hover:text-white'
                       : 'text-white/80 hover:text-white'
@@ -223,14 +223,61 @@ export default function Header() {
                   }}
                 >
                   {t('nav.services')}
-                  <ChevronDown className={`h-3.5 w-3.5 transition-transform ${servicesMenuOpen ? 'rotate-180' : ''}`} />
+                  <ChevronDown className={`h-3 w-3 transition-transform ${servicesMenuOpen ? 'rotate-180' : ''}`} />
                 </Link>
               </div>
+
+              {/* Intelligence with Mega Menu */}
+              <div 
+                onMouseEnter={openIntelligenceMenu}
+                onMouseLeave={closeIntelligenceMenu}
+                className="relative"
+              >
+                <Link
+                  href="/intelligence"
+                  className={`text-[12px] font-medium uppercase tracking-[0.1em] transition-colors duration-300 flex items-center gap-1 whitespace-nowrap ${
+                    shouldUseDarkText
+                      ? 'text-zinc-600 dark:text-zinc-400 hover:text-[#1A1A1A] dark:hover:text-white'
+                      : 'text-white/80 hover:text-white'
+                  }`}
+                  style={{
+                    textShadow: !shouldUseDarkText ? '0 2px 4px rgba(0,0,0,0.3)' : 'none'
+                  }}
+                >
+                  {language === 'ar' ? 'الذكاء' : 'Intelligence'}
+                  <ChevronDown className={`h-3 w-3 transition-transform ${intelligenceMenuOpen ? 'rotate-180' : ''}`} />
+                </Link>
+              </div>
+
+              {/* Packages with Mega Menu */}
+              <div 
+                onMouseEnter={openPackagesMenu}
+                onMouseLeave={closePackagesMenu}
+                className="relative"
+              >
+                <Link
+                  href="/packages"
+                  className={`text-[12px] font-medium uppercase tracking-[0.1em] transition-colors duration-300 flex items-center gap-1 whitespace-nowrap ${
+                    shouldUseDarkText
+                      ? 'text-zinc-600 dark:text-zinc-400 hover:text-[#1A1A1A] dark:hover:text-white'
+                      : 'text-white/80 hover:text-white'
+                  }`}
+                  style={{
+                    textShadow: !shouldUseDarkText ? '0 2px 4px rgba(0,0,0,0.3)' : 'none'
+                  }}
+                >
+                  {language === 'ar' ? 'الباقات' : 'Packages'}
+                  <ChevronDown className={`h-3 w-3 transition-transform ${packagesMenuOpen ? 'rotate-180' : ''}`} />
+                </Link>
+              </div>
+
+              {/* Divider */}
+              <div className={`h-4 w-px ${shouldUseDarkText ? 'bg-zinc-300 dark:bg-zinc-700' : 'bg-white/20'}`} />
 
               {/* Brands - Simple link */}
               <Link
                 href="/brands"
-                className={`text-[13px] font-medium uppercase tracking-[0.12em] transition-colors duration-300 whitespace-nowrap ${
+                className={`text-[12px] font-medium uppercase tracking-[0.1em] transition-colors duration-300 whitespace-nowrap ${
                   shouldUseDarkText
                     ? 'text-zinc-600 dark:text-zinc-400 hover:text-[#1A1A1A] dark:hover:text-white'
                     : 'text-white/80 hover:text-white'
@@ -242,10 +289,25 @@ export default function Header() {
                 {t('nav.brands')}
               </Link>
 
+              {/* Products - Simple link */}
+              <Link
+                href="/products"
+                className={`text-[12px] font-medium uppercase tracking-[0.1em] transition-colors duration-300 whitespace-nowrap ${
+                  shouldUseDarkText
+                    ? 'text-zinc-600 dark:text-zinc-400 hover:text-[#1A1A1A] dark:hover:text-white'
+                    : 'text-white/80 hover:text-white'
+                }`}
+                style={{
+                  textShadow: !shouldUseDarkText ? '0 2px 4px rgba(0,0,0,0.3)' : 'none'
+                }}
+              >
+                Products
+              </Link>
+
               {/* Projects - Simple link */}
               <Link
                 href="/projects"
-                className={`text-[13px] font-medium uppercase tracking-[0.12em] transition-colors duration-300 whitespace-nowrap ${
+                className={`text-[12px] font-medium uppercase tracking-[0.1em] transition-colors duration-300 whitespace-nowrap ${
                   shouldUseDarkText
                     ? 'text-zinc-600 dark:text-zinc-400 hover:text-[#1A1A1A] dark:hover:text-white'
                     : 'text-white/80 hover:text-white'
@@ -260,7 +322,7 @@ export default function Header() {
               {/* Experience - Simple link */}
               <Link
                 href="/experience-centre"
-                className={`text-[13px] font-medium uppercase tracking-[0.12em] transition-colors duration-300 whitespace-nowrap ${
+                className={`text-[12px] font-medium uppercase tracking-[0.1em] transition-colors duration-300 whitespace-nowrap ${
                   shouldUseDarkText
                     ? 'text-zinc-600 dark:text-zinc-400 hover:text-[#1A1A1A] dark:hover:text-white'
                     : 'text-white/80 hover:text-white'
