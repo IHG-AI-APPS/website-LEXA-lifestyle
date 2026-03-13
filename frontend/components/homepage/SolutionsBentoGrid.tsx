@@ -147,17 +147,17 @@ export default function SolutionsBentoGrid() {
 
   if (loading) {
     return (
-      <section className="bg-white dark:bg-[#050505] py-10 md:py-12">
-        <div className="content-container">
-          <div className="mb-10 md:mb-12 text-center">
-            <span className="mb-3 inline-block rounded-full bg-black px-4 py-1.5 text-xs font-bold uppercase tracking-widest text-white">
-              Solutions
-            </span>
-            <h2 className="h2 mb-4">Technology That Transforms Spaces</h2>
+      <section className="bg-[#0A0A0A] py-24 md:py-32">
+        <div className="max-w-[1600px] mx-auto px-6 md:px-12 lg:px-20">
+          <div className="mb-12 md:mb-16">
+            <div className="text-xs uppercase tracking-[0.3em] text-[#C9A962] mb-4">Our Solutions</div>
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-light text-white tracking-tight">
+              Technology That Transforms
+            </h2>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-4 auto-rows-fr gap-3 md:gap-4 max-h-[800px]">
+          <div className="grid grid-cols-1 md:grid-cols-4 auto-rows-fr gap-5 lg:gap-6">
             {[...Array(4)].map((_, i) => (
-              <div key={i} className={`${GRID_CLASSES[i]} bg-gray-100 dark:bg-neutral-900 animate-pulse rounded-xl`} />
+              <div key={i} className={`${GRID_CLASSES[i]} bg-[#111] border border-white/5 animate-pulse`} />
             ))}
           </div>
         </div>
@@ -166,24 +166,30 @@ export default function SolutionsBentoGrid() {
   }
 
   return (
-    <section className="bg-white dark:bg-[#050505] py-10 md:py-12">
-      <div className="content-container">
+    <section className="bg-[#0A0A0A] py-24 md:py-32" data-testid="solutions-grid">
+      <div className="max-w-[1600px] mx-auto px-6 md:px-12 lg:px-20">
         {/* Section Header */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="mb-10 md:mb-12 text-center"
+          className="mb-12 md:mb-16"
         >
-          <span className="mb-3 inline-block rounded-full bg-[#C9A962]/10 border border-[#C9A962]/30 px-4 py-1.5 text-xs font-bold uppercase tracking-widest text-[#C9A962]">
-            Solutions
-          </span>
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 dark:text-white mb-4 font-heading">
-            Technology That Transforms Spaces
-          </h2>
-          <p className="text-base md:text-lg text-gray-600 dark:text-neutral-400 max-w-2xl mx-auto">
-            From private cinemas to complete home automation, discover our flagship solutions.
-          </p>
+          <div className="flex items-end justify-between gap-8">
+            <div>
+              <div className="text-xs uppercase tracking-[0.3em] text-[#C9A962] mb-4">Our Solutions</div>
+              <h2 className="text-4xl md:text-5xl lg:text-6xl font-light text-white tracking-tight">
+                Technology That Transforms
+              </h2>
+            </div>
+            <Link 
+              href="/solutions"
+              className="hidden md:flex items-center gap-2 text-white/60 text-sm uppercase tracking-[0.15em] hover:text-[#C9A962] transition-colors"
+            >
+              All Solutions
+              <ArrowRight size={16} />
+            </Link>
+          </div>
         </motion.div>
 
         {/* Mobile: Swipeable Carousel */}
@@ -225,11 +231,10 @@ export default function SolutionsBentoGrid() {
         </div>
 
         {/* Desktop: Bento Grid */}
-        <div className="hidden md:grid grid-cols-4 auto-rows-fr gap-3 md:gap-4 max-h-[800px]">
+        <div className="hidden md:grid grid-cols-4 auto-rows-fr gap-5 lg:gap-6">
           {solutions.map((solution, index) => {
             const iconName = solution.icon || 'Home'
             const Icon = ICON_MAP[iconName] || Home
-            const theme = solution.theme || (index % 2 === 0 ? 'dark' : 'light')
             const imageUrl = solution.hero_image || solution.image || 'https://files.ihgbrands.com/lexa/migrated/5a12821038cb9fa3.webp'
             
             return (
@@ -243,7 +248,7 @@ export default function SolutionsBentoGrid() {
               >
                 <Link
                   href={`/solutions/${solution.slug}`}
-                  className="group relative block h-full overflow-hidden rounded-lg md:rounded-xl border border-gray-200 dark:border-zinc-800 transition-all hover:border-[#E8DCC8] hover:shadow-xl"
+                  className="group relative block h-full overflow-hidden border border-white/5 transition-all hover:border-[#C9A962]/30"
                   data-testid={`solution-${index}`}
                 >
                   {/* Background Image */}
@@ -257,38 +262,24 @@ export default function SolutionsBentoGrid() {
                       loading={index === 0 ? 'eager' : 'lazy'}
                       priority={index === 0}
                     />
-                    <div className={`absolute inset-0 ${
-                      theme === 'dark' 
-                        ? 'bg-gradient-to-t from-black via-black/70 to-black/30' 
-                        : 'bg-gradient-to-t from-white via-white/80 to-white/20'
-                    }`} />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black via-black/70 to-black/30" />
                   </div>
 
                   {/* Content */}
-                  <div className="relative h-full flex flex-col justify-end p-5 md:p-6">
+                  <div className="relative h-full flex flex-col justify-end p-6 md:p-8">
                     <div className="mb-3">
-                      <Icon className={`h-8 w-8 md:h-9 md:w-9 mb-3 ${
-                        theme === 'dark' ? 'text-[#E8DCC8]' : 'text-black'
-                      }`} />
+                      <Icon className="h-8 w-8 md:h-10 md:w-10 mb-4 text-[#C9A962]" />
                     </div>
                     
-                    <span className={`text-xs font-semibold uppercase tracking-wider mb-2 block ${
-                      theme === 'dark' ? 'text-[#E8DCC8]' : 'text-gray-700'
-                    }`}>
+                    <span className="text-xs font-semibold uppercase tracking-wider mb-2 block text-[#C9A962]">
                       {solution.subtitle || solution.tagline || 'Smart Solution'}
                     </span>
                     
-                    <h3 className={`text-xl md:text-2xl font-bold mb-2 transition-colors ${
-                      theme === 'dark' 
-                        ? 'text-white group-hover:text-[#E8DCC8]' 
-                        : 'text-black group-hover:text-[#1A1A1A]'
-                    }`}>
+                    <h3 className="text-xl md:text-2xl font-semibold text-white mb-2 transition-colors group-hover:text-[#C9A962]">
                       {solution.title}
                     </h3>
                     
-                    <p className={`text-sm leading-relaxed ${
-                      theme === 'dark' ? 'text-white/80' : 'text-gray-700'
-                    }`}>
+                    <p className="text-sm text-white/60 leading-relaxed line-clamp-2">
                       {solution.short_description || solution.description || ''}
                     </p>
                   </div>
@@ -298,21 +289,19 @@ export default function SolutionsBentoGrid() {
           })}
         </div>
 
-        {/* View All Link */}
+        {/* Mobile View All Link */}
         <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
-          className="mt-8 md:mt-10 text-center"
+          className="mt-10 text-center md:hidden"
         >
           <Link 
             href="/solutions"
-            className="inline-flex items-center gap-2 text-sm font-semibold text-[#C9A962] hover:text-[#E8DCC8] transition-colors"
+            className="inline-flex items-center gap-2 text-sm text-[#C9A962] hover:text-white transition-colors"
           >
             View All Solutions
-            <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-            </svg>
+            <ArrowRight size={16} />
           </Link>
         </motion.div>
       </div>

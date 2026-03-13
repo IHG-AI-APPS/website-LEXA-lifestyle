@@ -117,8 +117,8 @@ export default function ExperienceCentreCTA() {
   }
 
   return (
-    <section className="bg-[#1A1A1A] dark:bg-[#050505] py-12 md:py-16 overflow-hidden">
-      <div className="content-container">
+    <section className="bg-[#111] py-24 md:py-32 overflow-hidden" data-testid="experience-cta">
+      <div className="max-w-[1600px] mx-auto px-6 md:px-12 lg:px-20">
         <div className="max-w-6xl mx-auto">
           {/* Main Grid */}
           <div className="grid lg:grid-cols-5 gap-6 lg:gap-8">

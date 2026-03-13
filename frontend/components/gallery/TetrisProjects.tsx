@@ -38,11 +38,11 @@ export default function TetrisProjects() {
 
   if (loading) {
     return (
-      <section className="bg-gray-50 dark:bg-[#050505] py-10 md:py-12" data-testid="tetris-projects-loading">
-        <div className="content-container">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+      <section className="bg-[#050505] py-24 md:py-32" data-testid="tetris-projects-loading">
+        <div className="max-w-[1600px] mx-auto px-6 md:px-12 lg:px-20">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 lg:gap-6">
             {[1, 2, 3, 4].map((i) => (
-              <div key={i} className="h-[380px] animate-pulse bg-gray-100 dark:bg-neutral-900 rounded-lg" />
+              <div key={i} className="h-[320px] animate-pulse bg-[#111] border border-white/5" />
             ))}
           </div>
         </div>
@@ -51,23 +51,31 @@ export default function TetrisProjects() {
   }
 
   return (
-    <section className="bg-gray-50 dark:bg-[#050505] py-10 md:py-12">
-      <div className="content-container">
-        {/* Section Header - Compact */}
+    <section className="bg-[#050505] py-24 md:py-32" data-testid="featured-projects">
+      <div className="max-w-[1600px] mx-auto px-6 md:px-12 lg:px-20">
+        {/* Section Header - Minimal */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="mb-10 text-center"
+          className="mb-12 md:mb-16"
         >
-          <div className="text-[10px] font-semibold uppercase tracking-[0.3em] text-[#C9A962] mb-3">OUR PORTFOLIO</div>
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 dark:text-white mb-4 font-heading">
-            Featured Projects
-          </h2>
-          <p className="text-base text-gray-600 dark:text-neutral-400 max-w-xl mx-auto">
-            A curated collection of distinguished projects across the region.
-          </p>
+          <div className="flex items-end justify-between gap-8">
+            <div>
+              <div className="text-xs uppercase tracking-[0.3em] text-[#C9A962] mb-4">Our Portfolio</div>
+              <h2 className="text-4xl md:text-5xl lg:text-6xl font-light text-white tracking-tight">
+                Featured Projects
+              </h2>
+            </div>
+            <Link 
+              href="/projects"
+              className="hidden md:flex items-center gap-2 text-white/60 text-sm uppercase tracking-[0.15em] hover:text-[#C9A962] transition-colors"
+            >
+              View All
+              <ArrowUpRight size={16} />
+            </Link>
+          </div>
         </motion.div>
 
         {/* Mobile: Horizontal Scroll */}
@@ -108,7 +116,7 @@ export default function TetrisProjects() {
         </div>
 
         {/* Desktop: Grid */}
-        <div className="hidden md:grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-5">
+        <div className="hidden md:grid grid-cols-2 lg:grid-cols-4 gap-5 lg:gap-6">
           {projects.map((project, index) => (
             <ProjectCard 
               key={project.id} 
@@ -119,12 +127,12 @@ export default function TetrisProjects() {
           ))}
         </div>
 
-        {/* View All Link */}
+        {/* Mobile View All Link */}
         <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
-          className="mt-12 text-center"
+          className="mt-10 text-center md:hidden"
         >
           <Link 
             href="/projects"
