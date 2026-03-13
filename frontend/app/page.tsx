@@ -18,6 +18,12 @@ const TetrisProjects = dynamic(() => import('@/components/gallery/TetrisProjects
 const SolutionsBentoGrid = dynamic(() => import('@/components/homepage/SolutionsBentoGrid').catch(() => ({ default: Noop })), {
   ssr: false
 })
+const CalculatorCardsSection = dynamic(() => import('@/components/homepage/CalculatorCardsSection').catch(() => ({ default: Noop })), {
+  ssr: false
+})
+const Testimonials = dynamic(() => import('@/components/sections/Testimonials').catch(() => ({ default: Noop })), {
+  ssr: false
+})
 const ExperienceCentreCTA = dynamic(() => import('@/components/homepage/ExperienceCentreCTA').catch(() => ({ default: Noop })))
 
 // Animation variants for smooth entrance effects
@@ -109,9 +115,9 @@ function ValueProposition() {
             className="grid grid-cols-2 gap-5 md:gap-6"
           >
             {[
-              { number: '500+', label: 'Villas Automated' },
+              { number: '500+', label: 'Projects Completed' },
               { number: '15+', label: 'Years Experience' },
-              { number: '50+', label: 'Developer Projects' },
+              { number: '30+', label: 'Developer Projects' },
               { number: '98%', label: 'Client Satisfaction' },
             ].map((stat, idx) => (
               <motion.div 
@@ -216,6 +222,16 @@ export default function HomePage() {
       {/* Solutions Overview - Simplified grid */}
       <AnimatedSection delay={0.1}>
         <SolutionsBentoGrid />
+      </AnimatedSection>
+      
+      {/* Smart Tools - Calculator cards */}
+      <AnimatedSection delay={0.1}>
+        <CalculatorCardsSection />
+      </AnimatedSection>
+      
+      {/* Testimonials - Social proof */}
+      <AnimatedSection delay={0.1}>
+        <Testimonials />
       </AnimatedSection>
       
       {/* CTA - Experience Centre */}

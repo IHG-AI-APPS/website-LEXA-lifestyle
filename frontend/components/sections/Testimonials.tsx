@@ -69,30 +69,30 @@ export default function Testimonials() {
   }, [])
 
   return (
-    <section className="py-12 md:py-16 bg-white dark:bg-[#050505] border-t border-gray-100 dark:border-zinc-800/50" data-testid="testimonials-section">
-      <div className="container mx-auto px-5 sm:px-8 lg:px-16 max-w-7xl">
+    <section className="py-24 md:py-32 bg-[#050505]" data-testid="testimonials-section">
+      <div className="max-w-[1600px] mx-auto px-6 md:px-12 lg:px-20">
         {/* Header row */}
-        <div className="flex items-center justify-between mb-8">
+        <div className="flex items-center justify-between mb-12 md:mb-16">
           <div>
-            <span className="text-[10px] tracking-[0.2em] uppercase text-[#C9A962] font-semibold">
+            <div className="text-xs uppercase tracking-[0.3em] text-[#C9A962] mb-4">
               Client Feedback
-            </span>
-            <h2 className="text-lg sm:text-xl font-bold text-gray-900 dark:text-white mt-1">
+            </div>
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-light text-white tracking-tight">
               What Our Clients Say
             </h2>
           </div>
           <Link
             href="/testimonials"
-            className="flex items-center gap-1.5 text-xs tracking-[0.1em] uppercase text-gray-500 dark:text-zinc-500 hover:text-[#C9A962] dark:hover:text-[#C9A962] transition-colors"
+            className="hidden md:flex items-center gap-2 text-sm uppercase tracking-[0.15em] text-white/60 hover:text-[#C9A962] transition-colors"
             data-testid="view-all-testimonials"
           >
             View All
-            <ArrowRight size={12} />
+            <ArrowRight size={16} />
           </Link>
         </div>
 
         {/* 4-column compact testimonials */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 lg:gap-6">
           {testimonials.slice(0, 4).map((t, i) => (
             <motion.div
               key={t.id}
@@ -100,7 +100,7 @@ export default function Testimonials() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.4, delay: i * 0.08 }}
-              className="bg-gray-50 dark:bg-[#0A0A0A] border border-gray-100 dark:border-zinc-800/50 p-5 hover:border-gray-300 dark:hover:border-zinc-700 transition-colors"
+              className="bg-[#111] border border-white/5 p-6 hover:border-[#C9A962]/20 transition-colors"
               data-testid={`testimonial-card-${i}`}
             >
               {/* Stars */}
@@ -113,24 +113,35 @@ export default function Testimonials() {
               )}
 
               {/* Quote — truncated to 2 lines */}
-              <p className="text-sm text-gray-600 dark:text-zinc-400 leading-relaxed line-clamp-2 mb-4">
+              <p className="text-sm text-white/70 leading-relaxed line-clamp-3 mb-4">
                 &ldquo;{t.testimonial || t.content}&rdquo;
               </p>
 
               {/* Author */}
               <div className="flex items-center gap-3">
                 {t.image && (
-                  <div className="relative w-8 h-8 rounded-full overflow-hidden flex-shrink-0">
+                  <div className="relative w-10 h-10 rounded-full overflow-hidden flex-shrink-0 border border-white/10">
                     <SafeImage src={t.image} alt={t.name} fill className="object-cover" />
                   </div>
                 )}
                 <div className="min-w-0">
-                  <div className="text-xs font-semibold text-gray-900 dark:text-white truncate">{t.name}</div>
-                  <div className="text-[10px] text-gray-500 dark:text-zinc-600 truncate">{t.role}</div>
+                  <div className="text-sm font-medium text-white truncate">{t.name}</div>
+                  <div className="text-xs text-white/40 truncate">{t.role}</div>
                 </div>
               </div>
             </motion.div>
           ))}
+        </div>
+
+        {/* Mobile View All Link */}
+        <div className="mt-10 text-center md:hidden">
+          <Link
+            href="/testimonials"
+            className="inline-flex items-center gap-2 text-sm text-[#C9A962] hover:text-white transition-colors"
+          >
+            View All Testimonials
+            <ArrowRight size={16} />
+          </Link>
         </div>
       </div>
     </section>
