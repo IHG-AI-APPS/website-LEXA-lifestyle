@@ -11,31 +11,43 @@ import { Award, ChevronRight, Star, ArrowRight, Search, ExternalLink } from 'luc
 const BACKEND_URL = process.env.NEXT_PUBLIC_BACKEND_URL || ''
 const API = `${BACKEND_URL}/api`
 
-// Brand feature images from lexalifestyle.com - mapped by brand slug or name
+// Brand feature images from lexalifestyle.com - properly mapped by brand name
 const BRAND_FEATURE_IMAGES: Record<string, string> = {
   'aavik': 'https://lexalifestyle.com/wp-content/uploads/2025/08/Feature-image-aavik.webp',
+  'aavik acoustics': 'https://lexalifestyle.com/wp-content/uploads/2025/08/Feature-image-aavik.webp',
   'ansuz': 'https://lexalifestyle.com/wp-content/uploads/2025/08/Feature-image-ansuz-1.webp',
+  'ansuz acoustics': 'https://lexalifestyle.com/wp-content/uploads/2025/08/Feature-image-ansuz-1.webp',
   'anthem': 'https://lexalifestyle.com/wp-content/uploads/2025/08/FEATURE-IMAGE-antem.webp',
+  'anthem av': 'https://lexalifestyle.com/wp-content/uploads/2025/08/FEATURE-IMAGE-antem.webp',
   'artesania': 'https://lexalifestyle.com/wp-content/uploads/2025/08/Feature-image-artesania-1.webp',
+  'artesania audio': 'https://lexalifestyle.com/wp-content/uploads/2025/08/Feature-image-artesania-1.webp',
   'awol': 'https://lexalifestyle.com/wp-content/uploads/2025/08/FEATURE-IMAGE-AWOL.webp',
+  'awol vision': 'https://lexalifestyle.com/wp-content/uploads/2025/08/FEATURE-IMAGE-AWOL.webp',
   'axxess': 'https://lexalifestyle.com/wp-content/uploads/2025/08/Feature-image-AXXESS.webp',
   'borresen': 'https://lexalifestyle.com/wp-content/uploads/2025/08/Feature-image-borresen.webp',
-  'bowers-wilkins': 'https://lexalifestyle.com/wp-content/uploads/2025/08/Feature-image-BW.webp',
+  'børresen': 'https://lexalifestyle.com/wp-content/uploads/2025/08/Feature-image-borresen.webp',
+  'bowers & wilkins': 'https://lexalifestyle.com/wp-content/uploads/2025/08/Feature-image-BW.webp',
+  'bowers': 'https://lexalifestyle.com/wp-content/uploads/2025/08/Feature-image-BW.webp',
+  'b&w': 'https://lexalifestyle.com/wp-content/uploads/2025/08/Feature-image-BW.webp',
   'brightluxx': 'https://lexalifestyle.com/wp-content/uploads/2025/10/vagnn5knyysiuycaomfj.webp',
   'chamsys': 'https://lexalifestyle.com/wp-content/uploads/2025/08/FEATURE-IMAGE-CHAMSYS-2.webp',
   'desroch': 'https://lexalifestyle.com/wp-content/uploads/2025/10/FEATURE-IMAGE-DESROCH-1.webp',
   'eelectron': 'https://lexalifestyle.com/wp-content/uploads/2025/09/FEATURE-IMAGE-EELECTRON.webp',
+  'e-electron': 'https://lexalifestyle.com/wp-content/uploads/2025/09/FEATURE-IMAGE-EELECTRON.webp',
   'epson': 'https://lexalifestyle.com/wp-content/uploads/2025/08/FEATURE-IMAGE-EPSON-1.webp',
   'k-array': 'https://lexalifestyle.com/wp-content/uploads/2025/08/Feature-image-array.webp',
   'kef': 'https://lexalifestyle.com/wp-content/uploads/2025/08/Feature-image-kef.webp',
   'leica': 'https://lexalifestyle.com/wp-content/uploads/2025/10/Featured-image.webp',
   'lexa': 'https://lexalifestyle.com/wp-content/uploads/2025/08/Feature-image-lexa.webp',
+  'lexa lifestyle': 'https://lexalifestyle.com/wp-content/uploads/2025/08/Feature-image-lexa.webp',
   'lifesmart': 'https://lexalifestyle.com/wp-content/uploads/2025/09/FEATURE-IMAGE-LIFE-SMART-1.webp',
   'lumibright': 'https://lexalifestyle.com/wp-content/uploads/2025/09/1.webp',
   'lumitronix': 'https://lexalifestyle.com/wp-content/uploads/2025/10/Feature-image-lumitronix-01-scaled.webp',
   'magna': 'https://lexalifestyle.com/wp-content/uploads/2025/08/FEATURE-IMAGE-MAGNA.webp',
+  'magna audio': 'https://lexalifestyle.com/wp-content/uploads/2025/08/FEATURE-IMAGE-MAGNA.webp',
   'marantz': 'https://lexalifestyle.com/wp-content/uploads/2025/08/FEATURE-IMAGE-MARANTZ.webp',
   'milan': 'https://lexalifestyle.com/wp-content/uploads/2025/08/FEATURE-IMAGE-MILAN-1.webp',
+  'milan screen': 'https://lexalifestyle.com/wp-content/uploads/2025/08/FEATURE-IMAGE-MILAN-1.webp',
   'nakymatone': 'https://lexalifestyle.com/wp-content/uploads/2025/08/FEATURE-IMAGE-nakymatone.webp',
   'near': 'https://lexalifestyle.com/wp-content/uploads/2025/08/FEATURE-IMAGE-NEAR.webp',
   'qbus': 'https://lexalifestyle.com/wp-content/uploads/2025/10/Feature-image-qbus.webp',
@@ -46,7 +58,13 @@ const BRAND_FEATURE_IMAGES: Record<string, string> = {
   'sony': 'https://lexalifestyle.com/wp-content/uploads/2025/08/Feature-image-SONY.webp',
   'tridonic': 'https://lexalifestyle.com/wp-content/uploads/2025/10/FEATURE-IMAGE-TRIDONIC.webp',
   'valerion': 'https://lexalifestyle.com/wp-content/uploads/2025/10/Feature-image-valerion-01-1-scaled.webp',
-  'bang-olufsen': 'https://lexalifestyle.com/wp-content/uploads/2025/08/Feature-image-BW.webp',
+  // Additional mappings for common variations
+  'bang & olufsen': 'https://lexalifestyle.com/wp-content/uploads/2025/08/Feature-image-borresen.webp',
+  'bang': 'https://lexalifestyle.com/wp-content/uploads/2025/08/Feature-image-borresen.webp',
+  'b&o': 'https://lexalifestyle.com/wp-content/uploads/2025/08/Feature-image-borresen.webp',
+  'control4': 'https://lexalifestyle.com/wp-content/uploads/2025/09/FEATURE-IMAGE-SAVANT-2.webp',
+  'crestron': 'https://lexalifestyle.com/wp-content/uploads/2025/09/FEATURE-IMAGE-SAVANT-2.webp',
+  'lutron': 'https://lexalifestyle.com/wp-content/uploads/2025/08/Feature-image-lexa.webp',
 }
 
 // Helper to find feature image for a brand
@@ -89,7 +107,7 @@ const categoryStyles: Record<string, { accent: string; bg: string }> = {
 
 const getStyle = (category: string) => categoryStyles[category] || { accent: '#C9A962', bg: 'rgba(201,169,98,0.1)' }
 
-// Visual Brand Card Component with Feature Image and Logo Overlay
+// Visual Brand Card Component with Feature Image and Large White Logo
 function VisualBrandCard({ brand }: { brand: any }) {
   const featureImage = getFeatureImage(brand)
   const hasLogo = brand.logo && brand.logo.trim() !== ''
@@ -99,7 +117,7 @@ function VisualBrandCard({ brand }: { brand: any }) {
   return (
     <Link href={`/brands/${brand.slug}`} data-testid={`brand-card-${brand.slug}`}>
       <motion.div
-        className="group relative overflow-hidden rounded-2xl bg-[#0A0A0A] h-[320px] cursor-pointer"
+        className="group relative overflow-hidden rounded-2xl bg-[#0A0A0A] h-[380px] cursor-pointer"
         whileHover={{ y: -4 }}
         transition={{ duration: 0.3 }}
       >
@@ -112,8 +130,8 @@ function VisualBrandCard({ brand }: { brand: any }) {
               fill
               className="object-cover transition-transform duration-700 group-hover:scale-105"
             />
-            {/* Gradient Overlay */}
-            <div className="absolute inset-0 bg-gradient-to-t from-black via-black/60 to-black/20" />
+            {/* Dark Gradient Overlay for better logo visibility */}
+            <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/50 to-black/30" />
           </div>
         ) : (
           /* Fallback gradient if no image */
@@ -135,58 +153,48 @@ function VisualBrandCard({ brand }: { brand: any }) {
           </div>
         )}
         
-        {/* Logo - Centered at Top */}
-        <div className="absolute top-6 left-0 right-0 flex justify-center z-10">
+        {/* Large Logo - Centered, White color to blend with background */}
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-10 transition-all duration-500 group-hover:scale-110 group-hover:-translate-y-[55%]">
           {hasLogo ? (
-            <div className="w-24 h-24 bg-white/95 dark:bg-white/90 rounded-xl p-3 shadow-2xl flex items-center justify-center backdrop-blur-sm">
+            <div className="w-40 h-32 flex items-center justify-center">
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
                 src={brand.logo}
                 alt={brand.name}
-                className="w-full h-full object-contain"
+                className="w-full h-full object-contain drop-shadow-2xl"
+                style={{ filter: 'brightness(0) invert(1)' }}
                 loading="lazy"
               />
             </div>
           ) : (
-            <div 
-              className="w-24 h-24 rounded-xl flex items-center justify-center shadow-2xl backdrop-blur-sm"
-              style={{ background: style.bg, border: `2px solid ${style.accent}` }}
-            >
-              <span className="text-2xl font-bold" style={{ color: style.accent }}>
-                {brand.name.split(' ').map((w: string) => w[0]).join('').substring(0, 2).toUpperCase()}
+            <div className="w-40 h-32 flex items-center justify-center">
+              <span className="text-5xl font-bold text-white/90 tracking-wider drop-shadow-2xl">
+                {brand.name.split(' ').map((w: string) => w[0]).join('').substring(0, 3).toUpperCase()}
               </span>
             </div>
           )}
         </div>
         
-        {/* Content at Bottom */}
-        <div className="absolute bottom-0 left-0 right-0 p-5 z-10">
+        {/* Content at Bottom - Revealed more on hover */}
+        <div className="absolute bottom-0 left-0 right-0 p-5 z-10 transform transition-transform duration-500 group-hover:translate-y-0 translate-y-2">
           {/* Brand Name */}
-          <h3 className="text-lg font-bold text-white mb-1 group-hover:text-[#C9A962] transition-colors">
+          <h3 className="text-xl font-bold text-white mb-1 group-hover:text-[#C9A962] transition-colors">
             {brand.name}
           </h3>
           
           {/* Tagline */}
           {brand.tagline && (
-            <p className="text-xs text-white/70 italic mb-3 line-clamp-1">{brand.tagline}</p>
-          )}
-          
-          {/* Description */}
-          {brand.description && (
-            <p className="text-xs text-white/60 line-clamp-2 mb-4 leading-relaxed">
-              {brand.description}
-            </p>
+            <p className="text-sm text-white/80 italic mb-2 line-clamp-1">{brand.tagline}</p>
           )}
           
           {/* Categories */}
-          <div className="flex flex-wrap gap-1.5 mb-4">
+          <div className="flex flex-wrap gap-1.5 mb-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
             {brand.categories?.slice(0, 3).map((catName: string) => {
               const catStyle = getStyle(catName)
               return (
                 <span
                   key={catName}
-                  className="text-[10px] px-2.5 py-1 rounded-full font-semibold uppercase tracking-wide"
-                  style={{ background: `${catStyle.accent}30`, color: catStyle.accent }}
+                  className="text-[10px] px-2.5 py-1 rounded-full font-semibold uppercase tracking-wide bg-white/10 text-white/90"
                 >
                   {catName}
                 </span>
@@ -195,7 +203,7 @@ function VisualBrandCard({ brand }: { brand: any }) {
           </div>
           
           {/* View More Button */}
-          <div className="flex items-center gap-2 text-[#C9A962] text-xs font-semibold uppercase tracking-wider group-hover:gap-3 transition-all">
+          <div className="flex items-center gap-2 text-[#C9A962] text-xs font-semibold uppercase tracking-wider opacity-0 group-hover:opacity-100 transition-all duration-300 group-hover:gap-3">
             <span>View More</span>
             <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
           </div>
