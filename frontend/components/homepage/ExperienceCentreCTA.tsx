@@ -156,80 +156,77 @@ export default function ExperienceCentreCTA() {
                 </AnimatePresence>
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent" />
                 
-                {/* Gallery Navigation Arrows */}
+                {/* Gallery Navigation Arrows - Mobile visible */}
                 <button
                   onClick={prevImage}
-                  className="absolute left-3 top-1/2 -translate-y-1/2 w-10 h-10 bg-black/40 backdrop-blur-sm border border-white/20 flex items-center justify-center text-white opacity-0 group-hover:opacity-100 transition-opacity hover:bg-black/60"
+                  className="absolute left-2 md:left-3 top-1/2 -translate-y-1/2 w-8 h-8 md:w-10 md:h-10 bg-black/50 backdrop-blur-sm border border-white/20 flex items-center justify-center text-white md:opacity-0 md:group-hover:opacity-100 transition-opacity hover:bg-black/60"
                   aria-label="Previous image"
                 >
-                  <ChevronLeft className="h-5 w-5" />
+                  <ChevronLeft className="h-4 w-4 md:h-5 md:w-5" />
                 </button>
                 <button
                   onClick={nextImage}
-                  className="absolute right-3 top-1/2 -translate-y-1/2 w-10 h-10 bg-black/40 backdrop-blur-sm border border-white/20 flex items-center justify-center text-white opacity-0 group-hover:opacity-100 transition-opacity hover:bg-black/60"
+                  className="absolute right-2 md:right-3 top-1/2 -translate-y-1/2 w-8 h-8 md:w-10 md:h-10 bg-black/50 backdrop-blur-sm border border-white/20 flex items-center justify-center text-white md:opacity-0 md:group-hover:opacity-100 transition-opacity hover:bg-black/60"
                   aria-label="Next image"
                 >
-                  <ChevronRight className="h-5 w-5" />
+                  <ChevronRight className="h-4 w-4 md:h-5 md:w-5" />
                 </button>
 
-                {/* Sneak Peek Badge with Photo Counter */}
-                <div className="absolute top-4 left-4 flex items-center gap-3">
-                  <div className="flex items-center gap-2 bg-black/40 backdrop-blur-md border border-white/20 px-3 py-1.5">
-                    <Camera className="h-3.5 w-3.5 text-[#E8DCC8]" />
-                    <span className="text-white text-xs uppercase tracking-wider">Sneak Peek</span>
-                  </div>
-                  <div className="flex items-center gap-1.5 bg-[#E8DCC8] px-2.5 py-1.5" data-testid="photo-counter">
-                    <span className="text-[#1A1A1A] dark:text-white text-xs font-bold">{currentImage + 1}/{galleryImages.length}</span>
-                    <span className="text-[#1A1A1A]/70 text-xs">photos</span>
+                {/* Sneak Peek Badge with Photo Counter - Mobile optimized */}
+                <div className="absolute top-3 left-3 md:top-4 md:left-4 flex flex-col md:flex-row items-start md:items-center gap-2 md:gap-3">
+                  <div className="flex items-center gap-2 bg-black/50 backdrop-blur-md border border-white/20 px-2.5 py-1 md:px-3 md:py-1.5">
+                    <Camera className="h-3 w-3 md:h-3.5 md:w-3.5 text-[#E8DCC8]" />
+                    <span className="text-white text-[10px] md:text-xs uppercase tracking-wider">Sneak Peek</span>
                   </div>
                 </div>
                 
-                {/* Virtual Tour Button */}
+                {/* Virtual Tour Button - Mobile optimized */}
                 <Link 
                   href="/experience-centre"
-                  className="absolute top-4 right-4 flex items-center gap-2 bg-white/10 backdrop-blur-md border border-white/20 px-4 py-2 text-white text-xs uppercase tracking-wider hover:bg-white/20 transition-colors"
+                  className="absolute top-3 right-3 md:top-4 md:right-4 flex items-center gap-1.5 md:gap-2 bg-white/10 backdrop-blur-md border border-white/20 px-2.5 py-1.5 md:px-4 md:py-2 text-white text-[10px] md:text-xs uppercase tracking-wider hover:bg-white/20 transition-colors"
                 >
-                  <Play className="h-3.5 w-3.5" />
-                  Virtual Tour
+                  <Play className="h-3 w-3 md:h-3.5 md:w-3.5" />
+                  <span className="hidden xs:inline">Virtual Tour</span>
+                  <span className="xs:hidden">Tour</span>
                 </Link>
 
-                {/* Current Zone Indicator */}
+                {/* Current Zone Indicator - Positioned below badges on mobile */}
                 <motion.div
                   key={`zone-${currentImage}`}
                   initial={{ opacity: 0, y: 10 }}
                   animate={{ opacity: 1, y: 0 }}
-                  className="absolute top-4 left-1/2 -translate-x-1/2 bg-[#E8DCC8] text-[#1A1A1A] dark:text-white px-4 py-1.5 text-xs font-bold uppercase tracking-wider"
+                  className="absolute top-14 left-3 md:top-4 md:left-1/2 md:-translate-x-1/2 bg-[#E8DCC8] text-[#1A1A1A] px-3 py-1 md:px-4 md:py-1.5 text-[10px] md:text-xs font-bold uppercase tracking-wider"
                 >
                   {galleryImages[currentImage].zone}
                 </motion.div>
 
-                {/* Content Overlay */}
-                <div className="absolute bottom-0 left-0 right-0 p-5 md:p-6">
-                  <div className="text-[#E8DCC8] text-xs uppercase tracking-[0.2em] mb-2">
+                {/* Content Overlay - Mobile optimized */}
+                <div className="absolute bottom-0 left-0 right-0 p-4 md:p-6">
+                  <div className="text-[#E8DCC8] text-[10px] md:text-xs uppercase tracking-[0.2em] mb-1.5 md:mb-2">
                     Visit Our Showroom
                   </div>
-                  <h2 className="text-2xl md:text-3xl font-bold text-white mb-1">
+                  <h2 className="text-xl md:text-3xl font-bold text-white mb-1">
                     LEXA Experience Centre
                   </h2>
                   <motion.p
                     key={`title-${currentImage}`}
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
-                    className="text-white/90 text-sm mb-3"
+                    className="text-white/90 text-xs md:text-sm mb-3"
                   >
                     {galleryImages[currentImage].title}
                   </motion.p>
                   
-                  {/* Highlights */}
-                  <div className="flex gap-4 md:gap-6">
+                  {/* Highlights - Mobile grid layout */}
+                  <div className="grid grid-cols-3 gap-2 md:flex md:gap-6">
                     {highlights.map((item: any, i: number) => {
                       const IconComp = ICON_MAP[item.icon] || Sparkles
                       return (
-                        <div key={i} className="flex items-center gap-2">
-                          <IconComp className="h-4 w-4 text-[#E8DCC8]" />
+                        <div key={i} className="flex flex-col md:flex-row items-start md:items-center gap-1 md:gap-2">
+                          <IconComp className="h-3.5 w-3.5 md:h-4 md:w-4 text-[#E8DCC8]" />
                           <div>
-                            <div className="text-white text-sm font-medium">{item.label}</div>
-                            <div className="text-white/50 text-xs">{item.desc}</div>
+                            <div className="text-white text-xs md:text-sm font-medium leading-tight">{item.label}</div>
+                            <div className="text-white/50 text-[10px] md:text-xs">{item.desc}</div>
                           </div>
                         </div>
                       )
@@ -237,9 +234,9 @@ export default function ExperienceCentreCTA() {
                   </div>
                 </div>
 
-                {/* Gallery Dots */}
-                <div className="absolute bottom-4 right-4 flex gap-1.5">
-                  {galleryImages.map((_, idx) => (
+                {/* Gallery Dots - Mobile optimized position */}
+                <div className="absolute bottom-3 right-3 md:bottom-4 md:right-4 flex gap-1">
+                  {galleryImages.map((_, idx: number) => (
                     <button
                       key={idx}
                       onClick={() => {
@@ -257,20 +254,20 @@ export default function ExperienceCentreCTA() {
                 </div>
               </div>
 
-              {/* Location Bar */}
-              <div className="bg-[#252525] p-4 flex flex-wrap items-center justify-between gap-4">
-                <div className="flex items-center gap-3">
-                  <MapPin className="h-4 w-4 text-[#E8DCC8]" />
+              {/* Location Bar - Mobile optimized */}
+              <div className="bg-[#252525] p-3 md:p-4 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+                <div className="flex items-center gap-2.5 md:gap-3">
+                  <MapPin className="h-4 w-4 text-[#E8DCC8] flex-shrink-0" />
                   <div>
                     <div className="text-white text-sm font-medium">{address}</div>
-                    <div className="text-white/50 text-xs">{addressDetail}</div>
+                    <div className="text-white/50 text-[11px] md:text-xs">{addressDetail}</div>
                   </div>
                 </div>
                 <a 
                   href="https://maps.google.com/?q=Al+Quoz+1+Sheikh+Zayed+Road+Dubai"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-[#E8DCC8] text-xs uppercase tracking-wider hover:text-white transition-colors flex items-center gap-1"
+                  className="text-[#E8DCC8] text-[11px] md:text-xs uppercase tracking-wider hover:text-white transition-colors flex items-center gap-1 ml-6 sm:ml-0"
                 >
                   Get Directions
                   <ArrowRight className="h-3 w-3" />
