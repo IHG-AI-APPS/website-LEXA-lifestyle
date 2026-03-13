@@ -10,6 +10,7 @@ import { type Solution, type Project } from '@/lib/api'
 import RelatedItemsCarousel from '@/components/sections/RelatedItemsCarousel'
 import RelatedSolutions from '../components/RelatedSolutions'
 import { useRecentlyViewed } from '@/hooks/useRecentlyViewed'
+import QuoteModal from '@/components/modals/QuoteModal'
 
 interface SolutionClientProps {
   solution: Solution
@@ -441,6 +442,14 @@ export default function SolutionClient({
       )}
 
       <RelatedSolutions solutions={otherSolutions} currentSlug={solution.slug} />
+
+      {/* Quote Modal */}
+      <QuoteModal
+        isOpen={showContactForm}
+        onClose={() => setShowContactForm(false)}
+        solutionTitle={solution.title}
+        solutionSlug={solution.slug}
+      />
     </div>
   )
 }
