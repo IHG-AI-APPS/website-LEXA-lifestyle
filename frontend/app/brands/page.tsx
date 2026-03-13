@@ -153,21 +153,21 @@ function VisualBrandCard({ brand }: { brand: any }) {
           </div>
         )}
         
-        {/* Large Logo - Centered, White color to blend with background */}
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-10 transition-all duration-500 group-hover:scale-110 group-hover:-translate-y-[55%]">
+        {/* Large Logo - Absolutely Centered */}
+        <div className="absolute inset-0 flex items-center justify-center z-10 transition-all duration-500 group-hover:scale-110">
           {hasLogo ? (
-            <div className="w-40 h-32 flex items-center justify-center">
+            <div className="w-44 h-36 flex items-center justify-center p-2">
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
                 src={brand.logo}
                 alt={brand.name}
-                className="w-full h-full object-contain drop-shadow-2xl"
-                style={{ filter: 'brightness(0) invert(1)' }}
+                className="max-w-full max-h-full object-contain drop-shadow-2xl"
+                style={{ filter: 'brightness(0) invert(1)', WebkitFilter: 'brightness(0) invert(1)' }}
                 loading="lazy"
               />
             </div>
           ) : (
-            <div className="w-40 h-32 flex items-center justify-center">
+            <div className="w-44 h-36 flex items-center justify-center">
               <span className="text-5xl font-bold text-white/90 tracking-wider drop-shadow-2xl">
                 {brand.name.split(' ').map((w: string) => w[0]).join('').substring(0, 3).toUpperCase()}
               </span>
@@ -175,8 +175,8 @@ function VisualBrandCard({ brand }: { brand: any }) {
           )}
         </div>
         
-        {/* Content at Bottom - Revealed more on hover */}
-        <div className="absolute bottom-0 left-0 right-0 p-5 z-10 transform transition-transform duration-500 group-hover:translate-y-0 translate-y-2">
+        {/* Content at Bottom */}
+        <div className="absolute bottom-0 left-0 right-0 p-5 z-20">
           {/* Brand Name */}
           <h3 className="text-xl font-bold text-white mb-1 group-hover:text-[#C9A962] transition-colors">
             {brand.name}
@@ -187,23 +187,20 @@ function VisualBrandCard({ brand }: { brand: any }) {
             <p className="text-sm text-white/80 italic mb-2 line-clamp-1">{brand.tagline}</p>
           )}
           
-          {/* Categories */}
-          <div className="flex flex-wrap gap-1.5 mb-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-            {brand.categories?.slice(0, 3).map((catName: string) => {
-              const catStyle = getStyle(catName)
-              return (
-                <span
-                  key={catName}
-                  className="text-[10px] px-2.5 py-1 rounded-full font-semibold uppercase tracking-wide bg-white/10 text-white/90"
-                >
-                  {catName}
-                </span>
-              )
-            })}
+          {/* Categories - Always visible */}
+          <div className="flex flex-wrap gap-1.5 mb-3">
+            {brand.categories?.slice(0, 3).map((catName: string) => (
+              <span
+                key={catName}
+                className="text-[10px] px-2.5 py-1 rounded-full font-semibold uppercase tracking-wide bg-white/10 text-white/90"
+              >
+                {catName}
+              </span>
+            ))}
           </div>
           
           {/* View More Button */}
-          <div className="flex items-center gap-2 text-[#C9A962] text-xs font-semibold uppercase tracking-wider opacity-0 group-hover:opacity-100 transition-all duration-300 group-hover:gap-3">
+          <div className="flex items-center gap-2 text-[#C9A962] text-xs font-semibold uppercase tracking-wider group-hover:gap-3 transition-all">
             <span>View More</span>
             <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
           </div>
@@ -255,7 +252,16 @@ export default function BrandsPage() {
       .catch(() => setLoading(false))
   }, [])
 
-  const featuredBrands = brands.filter((b: any) => b.featured)
+  // Specific featured brands list (in order)
+  const FEATURED_BRAND_SLUGS = ['savant', 'borresen', 'aavik', 'lexa', 'e-electron', 'artesania', 'sonos', 'sony']
+  
+  const featuredBrands = FEATURED_BRAND_SLUGS
+    .map(slug => brands.find((b: any) => 
+      b.slug?.toLowerCase() === slug || 
+      b.name?.toLowerCase().includes(slug) ||
+      b.id?.toLowerCase() === slug
+    ))
+    .filter(Boolean)
 
   const brandsByCategory = brands.reduce((acc: Record<string, any[]>, brand) => {
     const cat = brand.categories?.[0] || 'Other'
@@ -313,27 +319,48 @@ export default function BrandsPage() {
         </div>
       </section>
 
-      {/* Featured Brands Strip */}
+      {/* Featured Brands Strip - Premium Design */}
       {featuredBrands.length > 0 && (
-        <section className="py-10 bg-gray-50 dark:bg-[#0A0A0A] border-b border-gray-200 dark:border-zinc-800" data-testid="featured-brands">
+        <section className="py-12 bg-gradient-to-b from-[#0A0A0A] to-[#050505] border-b border-zinc-800/50" data-testid="featured-brands">
           <div className="container mx-auto px-5 sm:px-8 lg:px-16">
             <div className="max-w-7xl mx-auto">
-              <div className="flex items-center gap-3 mb-6">
+              <div className="flex items-center justify-center gap-3 mb-8">
+                <div className="h-px flex-1 bg-gradient-to-r from-transparent to-[#C9A962]/30" />
                 <Star className="text-[#C9A962]" size={16} fill="currentColor" />
                 <span className="text-xs uppercase tracking-widest text-[#C9A962] font-semibold">Featured Partners</span>
+                <Star className="text-[#C9A962]" size={16} fill="currentColor" />
+                <div className="h-px flex-1 bg-gradient-to-l from-transparent to-[#C9A962]/30" />
               </div>
               {loading ? (
                 <div className="text-center py-8 text-gray-500">Loading...</div>
               ) : (
-                <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-8 gap-3">
+                <div className="grid grid-cols-4 md:grid-cols-8 gap-4">
                   {featuredBrands.map((brand) => (
                     <Link key={brand.slug} href={`/brands/${brand.slug}`} data-testid={`featured-${brand.slug}`}>
-                      <div className="group flex flex-col items-center text-center p-4 rounded-xl bg-white dark:bg-[#171717] border border-gray-200 dark:border-zinc-800 hover:border-[#C9A962]/50 hover:shadow-md transition-all">
-                        <BrandLogo brand={brand} size="sm" />
-                        <span className="text-xs font-semibold text-gray-800 dark:text-white mt-3 text-center leading-snug group-hover:text-[#C9A962] transition-colors">
+                      <motion.div 
+                        className="group flex flex-col items-center justify-center p-5 rounded-xl bg-[#111] border border-zinc-800 hover:border-[#C9A962]/50 transition-all aspect-square"
+                        whileHover={{ y: -4, scale: 1.02 }}
+                      >
+                        {brand.logo ? (
+                          <div className="w-16 h-16 flex items-center justify-center">
+                            {/* eslint-disable-next-line @next/next/no-img-element */}
+                            <img
+                              src={brand.logo}
+                              alt={brand.name}
+                              className="max-w-full max-h-full object-contain opacity-70 group-hover:opacity-100 transition-opacity"
+                              style={{ filter: 'brightness(0) invert(1)', WebkitFilter: 'brightness(0) invert(1)' }}
+                              loading="lazy"
+                            />
+                          </div>
+                        ) : (
+                          <span className="text-2xl font-bold text-white/70 group-hover:text-white transition-colors">
+                            {brand.name.substring(0, 2).toUpperCase()}
+                          </span>
+                        )}
+                        <span className="text-[10px] font-medium text-zinc-500 mt-3 text-center uppercase tracking-wider group-hover:text-[#C9A962] transition-colors">
                           {brand.name}
                         </span>
-                      </div>
+                      </motion.div>
                     </Link>
                   ))}
                 </div>
