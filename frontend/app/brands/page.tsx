@@ -6,10 +6,68 @@ import SafeImage from '@/components/ui/SafeImage'
 import Link from 'next/link'
 import { Button } from '@/components/ui/button'
 import ConsultationForm from '@/components/forms/ConsultationForm'
-import { Award, ChevronRight, Star, ArrowRight, Search } from 'lucide-react'
+import { Award, ChevronRight, Star, ArrowRight, Search, ExternalLink } from 'lucide-react'
 
 const BACKEND_URL = process.env.NEXT_PUBLIC_BACKEND_URL || ''
 const API = `${BACKEND_URL}/api`
+
+// Brand feature images from lexalifestyle.com - mapped by brand slug or name
+const BRAND_FEATURE_IMAGES: Record<string, string> = {
+  'aavik': 'https://lexalifestyle.com/wp-content/uploads/2025/08/Feature-image-aavik.webp',
+  'ansuz': 'https://lexalifestyle.com/wp-content/uploads/2025/08/Feature-image-ansuz-1.webp',
+  'anthem': 'https://lexalifestyle.com/wp-content/uploads/2025/08/FEATURE-IMAGE-antem.webp',
+  'artesania': 'https://lexalifestyle.com/wp-content/uploads/2025/08/Feature-image-artesania-1.webp',
+  'awol': 'https://lexalifestyle.com/wp-content/uploads/2025/08/FEATURE-IMAGE-AWOL.webp',
+  'axxess': 'https://lexalifestyle.com/wp-content/uploads/2025/08/Feature-image-AXXESS.webp',
+  'borresen': 'https://lexalifestyle.com/wp-content/uploads/2025/08/Feature-image-borresen.webp',
+  'bowers-wilkins': 'https://lexalifestyle.com/wp-content/uploads/2025/08/Feature-image-BW.webp',
+  'brightluxx': 'https://lexalifestyle.com/wp-content/uploads/2025/10/vagnn5knyysiuycaomfj.webp',
+  'chamsys': 'https://lexalifestyle.com/wp-content/uploads/2025/08/FEATURE-IMAGE-CHAMSYS-2.webp',
+  'desroch': 'https://lexalifestyle.com/wp-content/uploads/2025/10/FEATURE-IMAGE-DESROCH-1.webp',
+  'eelectron': 'https://lexalifestyle.com/wp-content/uploads/2025/09/FEATURE-IMAGE-EELECTRON.webp',
+  'epson': 'https://lexalifestyle.com/wp-content/uploads/2025/08/FEATURE-IMAGE-EPSON-1.webp',
+  'k-array': 'https://lexalifestyle.com/wp-content/uploads/2025/08/Feature-image-array.webp',
+  'kef': 'https://lexalifestyle.com/wp-content/uploads/2025/08/Feature-image-kef.webp',
+  'leica': 'https://lexalifestyle.com/wp-content/uploads/2025/10/Featured-image.webp',
+  'lexa': 'https://lexalifestyle.com/wp-content/uploads/2025/08/Feature-image-lexa.webp',
+  'lifesmart': 'https://lexalifestyle.com/wp-content/uploads/2025/09/FEATURE-IMAGE-LIFE-SMART-1.webp',
+  'lumibright': 'https://lexalifestyle.com/wp-content/uploads/2025/09/1.webp',
+  'lumitronix': 'https://lexalifestyle.com/wp-content/uploads/2025/10/Feature-image-lumitronix-01-scaled.webp',
+  'magna': 'https://lexalifestyle.com/wp-content/uploads/2025/08/FEATURE-IMAGE-MAGNA.webp',
+  'marantz': 'https://lexalifestyle.com/wp-content/uploads/2025/08/FEATURE-IMAGE-MARANTZ.webp',
+  'milan': 'https://lexalifestyle.com/wp-content/uploads/2025/08/FEATURE-IMAGE-MILAN-1.webp',
+  'nakymatone': 'https://lexalifestyle.com/wp-content/uploads/2025/08/FEATURE-IMAGE-nakymatone.webp',
+  'near': 'https://lexalifestyle.com/wp-content/uploads/2025/08/FEATURE-IMAGE-NEAR.webp',
+  'qbus': 'https://lexalifestyle.com/wp-content/uploads/2025/10/Feature-image-qbus.webp',
+  'rotel': 'https://lexalifestyle.com/wp-content/uploads/2025/08/Feature-image-rotel.webp',
+  'russound': 'https://lexalifestyle.com/wp-content/uploads/2025/08/FEATURE-IMAGE-RUSSOUND.webp',
+  'savant': 'https://lexalifestyle.com/wp-content/uploads/2025/09/FEATURE-IMAGE-SAVANT-2.webp',
+  'sonos': 'https://lexalifestyle.com/wp-content/uploads/2025/08/Feature-image-sonos.webp',
+  'sony': 'https://lexalifestyle.com/wp-content/uploads/2025/08/Feature-image-SONY.webp',
+  'tridonic': 'https://lexalifestyle.com/wp-content/uploads/2025/10/FEATURE-IMAGE-TRIDONIC.webp',
+  'valerion': 'https://lexalifestyle.com/wp-content/uploads/2025/10/Feature-image-valerion-01-1-scaled.webp',
+  'bang-olufsen': 'https://lexalifestyle.com/wp-content/uploads/2025/08/Feature-image-BW.webp',
+}
+
+// Helper to find feature image for a brand
+const getFeatureImage = (brand: any): string | null => {
+  // First check if brand has hero_image
+  if (brand.hero_image && brand.hero_image.trim()) return brand.hero_image
+  
+  // Check by slug
+  const slug = brand.slug?.toLowerCase()
+  if (slug && BRAND_FEATURE_IMAGES[slug]) return BRAND_FEATURE_IMAGES[slug]
+  
+  // Check by partial name match
+  const nameLower = brand.name?.toLowerCase() || ''
+  for (const [key, url] of Object.entries(BRAND_FEATURE_IMAGES)) {
+    if (nameLower.includes(key) || key.includes(nameLower.split(' ')[0])) {
+      return url
+    }
+  }
+  
+  return null
+}
 
 const categoryStyles: Record<string, { accent: string; bg: string }> = {
   'Audio': { accent: '#8B5CF6', bg: 'rgba(139,92,246,0.1)' },
@@ -31,44 +89,143 @@ const categoryStyles: Record<string, { accent: string; bg: string }> = {
 
 const getStyle = (category: string) => categoryStyles[category] || { accent: '#C9A962', bg: 'rgba(201,169,98,0.1)' }
 
+// Visual Brand Card Component with Feature Image and Logo Overlay
+function VisualBrandCard({ brand }: { brand: any }) {
+  const featureImage = getFeatureImage(brand)
+  const hasLogo = brand.logo && brand.logo.trim() !== ''
+  const cat = brand.categories?.[0] || ''
+  const style = getStyle(cat)
+  
+  return (
+    <Link href={`/brands/${brand.slug}`} data-testid={`brand-card-${brand.slug}`}>
+      <motion.div
+        className="group relative overflow-hidden rounded-2xl bg-[#0A0A0A] h-[320px] cursor-pointer"
+        whileHover={{ y: -4 }}
+        transition={{ duration: 0.3 }}
+      >
+        {/* Feature Image Background */}
+        {featureImage ? (
+          <div className="absolute inset-0">
+            <SafeImage
+              src={featureImage}
+              alt={brand.name}
+              fill
+              className="object-cover transition-transform duration-700 group-hover:scale-105"
+            />
+            {/* Gradient Overlay */}
+            <div className="absolute inset-0 bg-gradient-to-t from-black via-black/60 to-black/20" />
+          </div>
+        ) : (
+          /* Fallback gradient if no image */
+          <div 
+            className="absolute inset-0"
+            style={{ 
+              background: `linear-gradient(135deg, ${style.bg} 0%, #0A0A0A 50%, ${style.bg} 100%)` 
+            }}
+          />
+        )}
+        
+        {/* Featured Badge */}
+        {brand.featured && (
+          <div className="absolute top-4 right-4 z-10">
+            <span className="inline-flex items-center gap-1 px-3 py-1 bg-[#C9A962] text-black text-[10px] font-bold uppercase tracking-wider rounded-full">
+              <Star size={10} fill="currentColor" />
+              Featured
+            </span>
+          </div>
+        )}
+        
+        {/* Logo - Centered at Top */}
+        <div className="absolute top-6 left-0 right-0 flex justify-center z-10">
+          {hasLogo ? (
+            <div className="w-24 h-24 bg-white/95 dark:bg-white/90 rounded-xl p-3 shadow-2xl flex items-center justify-center backdrop-blur-sm">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src={brand.logo}
+                alt={brand.name}
+                className="w-full h-full object-contain"
+                loading="lazy"
+              />
+            </div>
+          ) : (
+            <div 
+              className="w-24 h-24 rounded-xl flex items-center justify-center shadow-2xl backdrop-blur-sm"
+              style={{ background: style.bg, border: `2px solid ${style.accent}` }}
+            >
+              <span className="text-2xl font-bold" style={{ color: style.accent }}>
+                {brand.name.split(' ').map((w: string) => w[0]).join('').substring(0, 2).toUpperCase()}
+              </span>
+            </div>
+          )}
+        </div>
+        
+        {/* Content at Bottom */}
+        <div className="absolute bottom-0 left-0 right-0 p-5 z-10">
+          {/* Brand Name */}
+          <h3 className="text-lg font-bold text-white mb-1 group-hover:text-[#C9A962] transition-colors">
+            {brand.name}
+          </h3>
+          
+          {/* Tagline */}
+          {brand.tagline && (
+            <p className="text-xs text-white/70 italic mb-3 line-clamp-1">{brand.tagline}</p>
+          )}
+          
+          {/* Description */}
+          {brand.description && (
+            <p className="text-xs text-white/60 line-clamp-2 mb-4 leading-relaxed">
+              {brand.description}
+            </p>
+          )}
+          
+          {/* Categories */}
+          <div className="flex flex-wrap gap-1.5 mb-4">
+            {brand.categories?.slice(0, 3).map((catName: string) => {
+              const catStyle = getStyle(catName)
+              return (
+                <span
+                  key={catName}
+                  className="text-[10px] px-2.5 py-1 rounded-full font-semibold uppercase tracking-wide"
+                  style={{ background: `${catStyle.accent}30`, color: catStyle.accent }}
+                >
+                  {catName}
+                </span>
+              )
+            })}
+          </div>
+          
+          {/* View More Button */}
+          <div className="flex items-center gap-2 text-[#C9A962] text-xs font-semibold uppercase tracking-wider group-hover:gap-3 transition-all">
+            <span>View More</span>
+            <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
+          </div>
+        </div>
+      </motion.div>
+    </Link>
+  )
+}
+
+// Simple Brand Logo for Featured Section
 function BrandLogo({ brand, size = 'md' }: { brand: any; size?: 'sm' | 'md' }) {
   const hasLogo = brand.logo && brand.logo.trim() !== ''
   const dims = size === 'sm' ? 'w-12 h-12' : 'w-16 h-16'
   const textSize = size === 'sm' ? 'text-xs' : 'text-sm'
-  const imgSize = size === 'sm' ? 40 : 56
+  const cat = brand.categories?.[0] || ''
+  const style = getStyle(cat)
 
-  // Show actual logo with proper visibility
   if (hasLogo) {
     return (
-      <div 
-        className={`${dims} flex-shrink-0 rounded-lg flex items-center justify-center p-1.5 overflow-hidden bg-gray-100 dark:bg-transparent`}
-      >
+      <div className={`${dims} flex-shrink-0 rounded-lg flex items-center justify-center p-1.5 overflow-hidden bg-white dark:bg-white/90`}>
         {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img
-          src={brand.logo}
-          alt={brand.name}
-          width={imgSize}
-          height={imgSize}
-          className="w-full h-full object-contain logo-dark-mode"
-          loading="lazy"
-        />
+        <img src={brand.logo} alt={brand.name} className="w-full h-full object-contain" loading="lazy" />
       </div>
     )
   }
 
-  // Fallback to initials if no logo
   const initials = brand.name.split(' ').map((w: string) => w[0]).join('').substring(0, 2).toUpperCase()
-  const cat = brand.categories?.[0] || ''
-  const style = getStyle(cat)
-
   return (
-    <div
-      className={`${dims} flex-shrink-0 rounded-lg flex items-center justify-center`}
-      style={{ background: style.bg, border: `1px solid ${style.accent}30` }}
-    >
-      <span className={`${textSize} font-bold tracking-wide`} style={{ color: style.accent }}>
-        {initials}
-      </span>
+    <div className={`${dims} flex-shrink-0 rounded-lg flex items-center justify-center`} style={{ background: style.bg, border: `1px solid ${style.accent}` }}>
+      <span className={`${textSize} font-bold`} style={{ color: style.accent }}>{initials}</span>
     </div>
   )
 }
@@ -240,9 +397,9 @@ export default function BrandsPage() {
         <div className="container mx-auto px-5 sm:px-8 lg:px-16">
           <div className="max-w-7xl mx-auto space-y-14">
             {loading ? (
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
-                {[...Array(8)].map((_, i) => (
-                  <div key={i} className="animate-pulse bg-gray-100 dark:bg-[#0A0A0A] rounded-xl h-36" />
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                {[...Array(6)].map((_, i) => (
+                  <div key={i} className="animate-pulse bg-[#0A0A0A] rounded-2xl h-[320px]" />
                 ))}
               </div>
             ) : (
@@ -275,62 +432,9 @@ export default function BrandsPage() {
                       </div>
                     </div>
 
-                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
                       {categoryBrands.map((brand: any) => (
-                        <Link key={brand.slug} href={`/brands/${brand.slug}`} data-testid={`brand-card-${brand.slug}`}>
-                          <div className="group bg-white dark:bg-[#0A0A0A] rounded-xl border border-gray-200 dark:border-zinc-800 hover:border-[#C9A962]/50 hover:shadow-lg transition-all p-5 h-full">
-                            <div className="flex items-start gap-4">
-                              <BrandLogo brand={brand} />
-                              <div className="flex-1 min-w-0">
-                                <h4 className="font-semibold text-gray-900 dark:text-white group-hover:text-[#C9A962] transition-colors truncate text-sm">
-                                  {brand.name}
-                                </h4>
-                                {brand.tagline && (
-                                  <p className="text-xs text-gray-400 italic truncate mt-0.5">{brand.tagline}</p>
-                                )}
-                                <div className="flex flex-wrap gap-1 mt-2">
-                                  {brand.categories?.slice(0, 2).map((cat: string) => {
-                                    const catStyle = getStyle(cat)
-                                    return (
-                                      <span
-                                        key={cat}
-                                        className="text-[10px] px-2 py-0.5 rounded-full font-medium"
-                                        style={{ background: catStyle.bg, color: catStyle.accent }}
-                                      >
-                                        {cat}
-                                      </span>
-                                    )
-                                  })}
-                                </div>
-                              </div>
-                              <ChevronRight
-                                className="text-gray-300 dark:text-gray-600 group-hover:text-[#C9A962] transition-colors flex-shrink-0 mt-1"
-                                size={18}
-                              />
-                            </div>
-
-                            {brand.description && (
-                              <p className="text-xs text-gray-500 dark:text-zinc-500 mt-3 line-clamp-2 leading-relaxed">
-                                {brand.description}
-                              </p>
-                            )}
-
-                            {brand.featured && (
-                              <div className="mt-3 pt-3 border-t border-gray-100 dark:border-zinc-800 flex items-center justify-between">
-                                <span className="inline-flex items-center gap-1 text-[10px] uppercase tracking-wider font-semibold text-[#C9A962]">
-                                  <Star size={10} fill="currentColor" />
-                                  Featured Partner
-                                </span>
-                              </div>
-                            )}
-
-                            <div className="mt-2 pt-2 border-t border-gray-100 dark:border-zinc-800">
-                              <span className="text-[11px] text-gray-400 dark:text-zinc-500 group-hover:text-[#C9A962] transition-colors flex items-center gap-1">
-                                View Products <ChevronRight size={12} />
-                              </span>
-                            </div>
-                          </div>
-                        </Link>
+                        <VisualBrandCard key={brand.slug} brand={brand} />
                       ))}
                     </div>
                   </motion.div>
