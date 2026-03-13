@@ -387,6 +387,14 @@ A premium smart home solutions website with dynamic content management, product 
 - Incorrect Brand Logo Data - Database has missing/incorrect logo URLs for some brands
 
 ## Completed in Recent Sessions
+- ✅ Brand Logo Visibility Fix - CSS solution implemented (March 13, 2026)
+  - Added `.brand-logo-white` class using `mix-blend-mode: screen` + `brightness(1.5)`
+  - This makes black backgrounds transparent while keeping white logos visible
+  - Applied to all brand logo displays: /brands page, project pages, homepage carousels
+  - Note: Some brand logos remain invisible due to corrupted/poor-quality image data in database
+    - Affected brands: Børresen, Aavik, E-Electron, Artesania Audio (files are ~2-4KB, appear as solid black)
+    - Working brands: Savant, Lexa, Sonos, Sony, B&O, Bowers & Wilkins (proper white-on-black logos)
+  - Recommendation: User should re-upload correct logo files via Admin Panel > Brands
 - ✅ Button text sizes standardized across all pages (March 10, 2026)
 - ✅ Hero Video upload feature in admin Site Settings (March 10, 2026)
 - ✅ Video preview in admin panel with controls (March 10, 2026)

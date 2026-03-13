@@ -124,10 +124,13 @@
     overflow-x: hidden;
   }
 
-  /* Brand Logo White - Converts ANY logo to white regardless of original color */
+  /* Brand Logo White - For logos on dark backgrounds
+     Uses mix-blend-mode: screen to make black backgrounds transparent
+     Black becomes invisible, white stays visible
+     Added brightness filter to make logos more vivid */
   .brand-logo-white {
-    filter: brightness(0) invert(1) !important;
-    -webkit-filter: brightness(0) invert(1) !important;
+    mix-blend-mode: screen;
+    filter: brightness(1.5);
   }
 
   /* Responsive container padding for mobile */
