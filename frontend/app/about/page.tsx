@@ -25,14 +25,6 @@ export default function AboutPage() {
     { icon: Target, title: 'Client-Centric Delivery', description: 'We communicate clearly, meet timelines, and stay accountable from concept to completion.' },
   ]
 
-  const milestones = cmsData?.milestones?.length ? cmsData.milestones.map((m: any) => ({ year: m.year, title: language === 'ar' ? m.title_ar : m.title_en, description: language === 'ar' ? (m.description_ar || m.description_en) : m.description_en })) : [
-    { year: '2005', title: 'Founded in Dubai', description: 'Started with a vision to elevate smart living in the UAE' },
-    { year: '2010', title: 'Experience Center', description: 'Opened 60,000 sq ft showroom showcasing integrated systems' },
-    { year: '2015', title: '500 Projects', description: 'Milestone achievement across residential and commercial sectors' },
-    { year: '2020', title: 'Regional Expansion', description: 'Extended services across GCC markets' },
-    { year: '2025', title: '1,000+ Projects', description: 'Trusted partner for luxury developments and high-end residences' },
-  ]
-
   const partners = cmsData?.partners?.length ? cmsData.partners : ['Crestron', 'Lutron', 'Control4', 'Savant', 'Bang & Olufsen', 'Sonos', 'Bowers & Wilkins', 'Nest']
 
   return (
@@ -74,7 +66,7 @@ export default function AboutPage() {
       <section className="py-10 bg-gray-50 dark:bg-[#0A0A0A] border-b border-gray-200 dark:border-zinc-800">
         <div className="container mx-auto px-5 sm:px-8 lg:px-16">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-5xl mx-auto text-center">
-            {[{ value: '1,000+', label: 'Projects Delivered' }, { value: '20+', label: 'Years Experience' }, { value: '32+', label: 'Brand Partners' }, { value: '4.9/5', label: 'Client Rating' }].map((stat, i) => (
+            {[{ value: '500+', label: 'Projects Completed' }, { value: '15+', label: 'Years Experience' }, { value: '30+', label: 'Developer Projects' }, { value: '4.9/5', label: 'Client Rating' }].map((stat, i) => (
               <div key={i}><p className="text-2xl font-bold text-[#C9A962]">{stat.value}</p><p className="text-xs text-gray-500 dark:text-zinc-500 uppercase tracking-wider mt-1">{stat.label}</p></div>
             ))}
           </div>
@@ -103,28 +95,6 @@ export default function AboutPage() {
                   </motion.div>
                 )
               })}
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Journey / Timeline */}
-      <section className="py-16 lg:py-20 bg-[#0A0A0A] dark:bg-[#050505] text-white" data-testid="journey-section">
-        <div className="container mx-auto px-5 sm:px-8 lg:px-16">
-          <div className="max-w-4xl mx-auto">
-            <span className="text-xs uppercase tracking-widest text-[#C9A962] font-semibold">Our Journey</span>
-            <h2 className="text-2xl sm:text-3xl font-bold mt-2 mb-10">Two Decades of Innovation</h2>
-            <div className="space-y-8">
-              {milestones.map((milestone, i) => (
-                <motion.div key={i} initial={{ opacity: 0, x: -20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.4, delay: i * 0.1 }}
-                  className="flex gap-8 items-start border-b border-gray-800 pb-8">
-                  <span className="text-3xl font-bold text-[#C9A962] min-w-[80px]">{milestone.year}</span>
-                  <div>
-                    <h3 className="text-lg font-semibold mb-1">{milestone.title}</h3>
-                    <p className="text-sm text-gray-400">{milestone.description}</p>
-                  </div>
-                </motion.div>
-              ))}
             </div>
           </div>
         </div>
