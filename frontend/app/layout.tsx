@@ -96,8 +96,12 @@ export default function RootLayout({
         {/* DNS Prefetch for external domains */}
         <link rel="dns-prefetch" href="https://files.ihgbrands.com" />
         <link rel="dns-prefetch" href="https://images.pexels.com" />
+        <link rel="dns-prefetch" href="https://images.unsplash.com" />
         
         {/* Preconnect for critical resources */}
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link rel="preconnect" href="https://files.ihgbrands.com" crossOrigin="anonymous" />
         <link rel="preconnect" href={process.env.NEXT_PUBLIC_BACKEND_URL || ''} crossOrigin="anonymous" />
         
         {/* CRITICAL INLINE CSS - Dark-first: ALWAYS dark bg, never white flash */}
