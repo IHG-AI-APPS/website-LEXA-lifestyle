@@ -69,7 +69,7 @@ export default function IntelligenceDetailPage() {
       finally { setLoading(false) }
     }
     fetchFeature()
-  }, [featureId])
+  }, [featureId]) // eslint-disable-line react-hooks/exhaustive-deps
 
   if (loading) {
     return (

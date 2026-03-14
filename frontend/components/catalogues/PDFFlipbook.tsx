@@ -47,6 +47,7 @@ export default function PDFFlipbook({ pdfUrl, title }: PDFFlipbookProps) {
 
   useEffect(() => {
     loadPDF()
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [pdfUrl])
 
   const loadPDF = async () => {

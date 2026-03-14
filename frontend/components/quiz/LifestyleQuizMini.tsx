@@ -97,7 +97,7 @@ export default function LifestyleQuizMini({ onComplete, onSkip }: LifestyleQuizP
       </div>
       
       <p className="text-sm text-gray-600 dark:text-zinc-500 mb-4">
-        Select up to 3 priorities and we'll highlight features that match your lifestyle
+        Select up to 3 priorities and we&apos;ll highlight features that match your lifestyle
       </p>
 
       <div className="grid grid-cols-2 sm:grid-cols-3 gap-2 mb-4">

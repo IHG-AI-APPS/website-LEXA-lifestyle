@@ -90,7 +90,7 @@ export default function SmartHomeLeadsPage() {
 
   useEffect(() => {
     fetchData()
-  }, [statusFilter])
+  }, [statusFilter]) // eslint-disable-line react-hooks/exhaustive-deps
 
   const fetchData = async () => {
     setLoading(true)

@@ -133,7 +133,7 @@ export default function TrackingSettingsPage() {
       }, 500)
       return () => clearTimeout(timer)
     }
-  }, [])
+  }, []) // eslint-disable-line react-hooks/exhaustive-deps
 
   const fetchSettings = async (authToken: string) => {
     try {

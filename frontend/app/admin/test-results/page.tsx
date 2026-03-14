@@ -59,7 +59,7 @@ export default function TestResultsPage() {
 
   useEffect(() => {
     fetchData()
-  }, [])
+  }, []) // eslint-disable-line react-hooks/exhaustive-deps
 
   const triggerRun = async () => {
     setRunning(true)

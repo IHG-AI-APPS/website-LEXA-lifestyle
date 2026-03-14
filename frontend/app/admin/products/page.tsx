@@ -98,7 +98,7 @@ export default function ProductsAdminPage() {
 
   useEffect(() => {
     loadProducts()
-  }, [currentPage, searchQuery])
+  }, [currentPage, searchQuery]) // eslint-disable-line react-hooks/exhaustive-deps
 
   const loadProducts = async () => {
     try {

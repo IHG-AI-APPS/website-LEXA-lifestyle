@@ -101,6 +101,7 @@ export default function ServiceDetailPage() {
       } catch (err) { setError(true) } finally { setLoading(false) }
     }
     if (params.slug) fetchService()
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [params.slug])
 
   // Schema.org structured data

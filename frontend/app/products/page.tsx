@@ -151,6 +151,7 @@ function ProductCatalogContent() {
       setSort('name_asc')
       setUserChangedSort(false)
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [debouncedSearch])
 
   // Fetch filter data

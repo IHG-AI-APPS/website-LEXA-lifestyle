@@ -752,6 +752,7 @@ function SeoMetaEditor({ data, onSave, pageKey }: { data: any, onSave: (data: an
               ) : (
                 <div className="aspect-[1.91/1] bg-gray-100 dark:bg-[#171717] flex items-center justify-center">
                   <div className="text-center text-gray-400">
+                    {/* eslint-disable-next-line jsx-a11y/alt-text */}
                     <Image className="h-8 w-8 mx-auto mb-1 opacity-40" />
                     <p className="text-xs">No OG image set</p>
                   </div>

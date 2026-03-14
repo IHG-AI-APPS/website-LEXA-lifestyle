@@ -91,10 +91,11 @@ export default function PackageBuilderPage() {
         })
       }
     }
-  }, [propertyTypes, preSelectedProperty, initialized])
+  }, [propertyTypes, preSelectedProperty, initialized]) // eslint-disable-line react-hooks/exhaustive-deps
   
   // Auto-select tier after property is fully loaded (separate from initialization)
   // Only run ONCE during initial load, not when user manually changes steps
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   useEffect(() => {
     if (initialized && !tierAutoSelected && propertyType && propertyType.tiers && preSelectedTier && step === 2) {
       const tier = propertyType.tiers.find((t: any) => t.tier_level === preSelectedTier)

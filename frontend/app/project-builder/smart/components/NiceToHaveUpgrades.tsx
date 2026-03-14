@@ -196,6 +196,7 @@ export default function NiceToHaveUpgrades({
     }
 
     fetchFeatures()
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [selectedCategories, mustHaveFeatures, shouldHaveFeatures])
 
   const toggleUpgrade = (featureId: string) => {

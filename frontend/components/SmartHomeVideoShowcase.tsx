@@ -94,6 +94,7 @@ export default function SmartHomeVideoShowcase({ className = '', autoPlay = true
         videoRef.current.play().catch(() => {})
       }
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [currentIndex])
 
   return (

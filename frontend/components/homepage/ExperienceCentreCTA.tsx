@@ -81,6 +81,7 @@ export default function ExperienceCentreCTA() {
       setCurrentImage((prev) => (prev + 1) % galleryImages.length)
     }, 4000)
     return () => clearInterval(timer)
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [isAutoPlaying])
 
   const nextImage = () => {

@@ -79,14 +79,14 @@ export default function AIChatWidget() {
       
       setMessages(prev => [...prev, { 
         role: 'assistant', 
-        content: data.response || "I'm here to help! Could you tell me more about your smart home needs?"
+        content: data.response || "I&apos;m here to help! Could you tell me more about your smart home needs?"
       }])
       setLeadScore(data.lead_score || 0)
     } catch (error) {
       console.error('Chat error:', error)
       setMessages(prev => [...prev, { 
         role: 'assistant', 
-        content: "I apologize, but I'm having trouble connecting. Please try our Smart Project Builder or contact us via WhatsApp!"
+        content: "I apologize, but I&apos;m having trouble connecting. Please try our Smart Project Builder or contact us via WhatsApp!"
       }])
     } finally {
       setIsLoading(false)
@@ -183,7 +183,7 @@ export default function AIChatWidget() {
                       unoptimized
                     />
                   </div>
-                  <h4 className="font-semibold text-gray-800 dark:text-gray-200 mb-1" data-testid="aura-welcome-title">Hi, I'm AURA</h4>
+                  <h4 className="font-semibold text-gray-800 dark:text-gray-200 mb-1" data-testid="aura-welcome-title">Hi, I&apos;m AURA</h4>
                   <p className="text-sm text-gray-500 dark:text-zinc-500 mb-5">
                     Your personal smart home consultant. How can I help you today?
                   </p>

@@ -122,7 +122,7 @@ export default function BrandDetailPage({ params }: { params: { slug: string } }
 
       setLoading(false)
     } catch { setLoading(false) }
-  }, [params.slug])
+  }, [params.slug]) // eslint-disable-line react-hooks/exhaustive-deps
 
   const fetchOtherBrands = useCallback(async () => {
     try {

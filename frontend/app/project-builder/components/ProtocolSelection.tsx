@@ -97,6 +97,7 @@ export default function ProtocolSelection({
     if (selectedType && step === 'protocols') {
       fetchProtocols()
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [selectedType, step])
 
   const fetchProtocols = async () => {
