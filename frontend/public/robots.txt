@@ -6,13 +6,32 @@
 User-agent: *
 Allow: /
 
-# Sitemap location
+# Sitemaps
 Sitemap: https://lexalifestyle.com/sitemap.xml
+Sitemap: https://lexalifestyle.com/sitemap-images.xml
+Sitemap: https://lexalifestyle.com/sitemap-videos.xml
 
 # Allow all major search engines
 User-agent: Googlebot
 Allow: /
 Crawl-delay: 1
+
+# Google Images crawler - explicitly allow
+User-agent: Googlebot-Image
+Allow: /
+Allow: /*.jpg$
+Allow: /*.jpeg$
+Allow: /*.png$
+Allow: /*.webp$
+Allow: /*.gif$
+Allow: /*.svg$
+
+# Google Video crawler - explicitly allow
+User-agent: Googlebot-Video
+Allow: /
+Allow: /*.mp4$
+Allow: /*.webm$
+Allow: /*.mov$
 
 User-agent: Bingbot
 Allow: /
@@ -37,31 +56,37 @@ Crawl-delay: 2
 # AI Crawlers - Allow for AI-powered search and assistants
 User-agent: GPTBot
 Allow: /
+Allow: /llms.txt
 Disallow: /admin/
 Disallow: /api/
 
 User-agent: ChatGPT-User
 Allow: /
+Allow: /llms.txt
 Disallow: /admin/
 Disallow: /api/
 
 User-agent: Google-Extended
 Allow: /
+Allow: /llms.txt
 Disallow: /admin/
 Disallow: /api/
 
 User-agent: PerplexityBot
 Allow: /
+Allow: /llms.txt
 Disallow: /admin/
 Disallow: /api/
 
 User-agent: ClaudeBot
 Allow: /
+Allow: /llms.txt
 Disallow: /admin/
 Disallow: /api/
 
 User-agent: anthropic-ai
 Allow: /
+Allow: /llms.txt
 Disallow: /admin/
 Disallow: /api/
 

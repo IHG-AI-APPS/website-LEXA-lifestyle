@@ -241,7 +241,7 @@ const nextConfig = {
           },
           {
             key: 'Permissions-Policy',
-            value: 'camera=(), microphone=(), geolocation=(self)'
+            value: 'camera=(), microphone=(), geolocation=(self), payment=(self)'
           },
           {
             key: 'Strict-Transport-Security',
@@ -250,6 +250,10 @@ const nextConfig = {
           {
             key: 'X-Frame-Options',
             value: 'SAMEORIGIN'
+          },
+          {
+            key: 'Content-Security-Policy',
+            value: "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.googletagmanager.com https://www.google-analytics.com https://connect.facebook.net https://snap.licdn.com https://static.hotjar.com https://script.hotjar.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; img-src 'self' data: blob: https: http:; font-src 'self' https://fonts.gstatic.com data:; connect-src 'self' https: wss:; media-src 'self' https: blob:; frame-src 'self' https://www.youtube.com https://www.google.com https://player.vimeo.com; object-src 'none'; base-uri 'self'; form-action 'self' https:; frame-ancestors 'self'; upgrade-insecure-requests"
           },
         ],
       },
