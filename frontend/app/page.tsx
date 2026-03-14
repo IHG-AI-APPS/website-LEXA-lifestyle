@@ -7,6 +7,7 @@ import Link from 'next/link'
 import { ArrowRight } from 'lucide-react'
 import HeroCurator from '@/components/gallery/HeroCurator'
 import PersonaModal from '@/components/sections/PersonaModal'
+import { TrustBadges } from '@/components/trust/TrustBadges'
 
 const Noop = () => null
 
@@ -207,6 +208,9 @@ export default function HomePage() {
     <div className="bg-[#050505]" style={{ minHeight: '100vh' }} data-testid="homepage">
       {/* Hero - Full viewport with video */}
       <HeroCurator onPersonaClick={() => setShowPersonaModal(true)} />
+      
+      {/* Trust Badges - Social proof bar */}
+      <TrustBadges variant="horizontal" />
       
       {/* Brand Trust - Minimal logo marquee */}
       <BrandTrust />
