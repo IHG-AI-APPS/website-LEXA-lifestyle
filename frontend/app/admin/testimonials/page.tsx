@@ -18,6 +18,14 @@ interface Testimonial {
   testimonial: string
   rating: number
   image: string | null
+  project_type?: string
+  featured?: boolean
+  // Video fields
+  is_video?: boolean
+  video_url?: string
+  video_thumbnail?: string
+  video_duration?: string
+  location?: string
 }
 
 export default function TestimonialsAdmin() {
@@ -47,7 +55,12 @@ export default function TestimonialsAdmin() {
           rating: t.rating || 5,
           image: t.image || '',
           project_type: t.project_type || '',
-          featured: t.featured || false
+          featured: t.featured || false,
+          is_video: t.is_video || false,
+          video_url: t.video_url || '',
+          video_thumbnail: t.video_thumbnail || '',
+          video_duration: t.video_duration || '',
+          location: t.location || ''
         }))
         setTestimonials(testimonialsWithDefaults)
       }
@@ -238,6 +251,59 @@ export default function TestimonialsAdmin() {
                     category="testimonials"
                     showPreview={true}
                   />
+                  
+                  {/* Video Testimonial Section */}
+                  <div className="border-t pt-4 mt-4">
+                    <div className="flex items-center gap-2 mb-4">
+                      <input
+                        type="checkbox"
+                        id="is_video"
+                        checked={editingItem.is_video || false}
+                        onChange={(e) => setEditingItem({ ...editingItem, is_video: e.target.checked })}
+                        className="w-4 h-4"
+                      />
+                      <label htmlFor="is_video" className="text-sm font-medium text-[#C9A962]">Video Testimonial</label>
+                    </div>
+                    
+                    {editingItem.is_video && (
+                      <div className="space-y-4 bg-gray-50 p-4 rounded-lg">
+                        <div>
+                          <label className="block text-sm font-medium mb-2">Video URL (YouTube, Vimeo, or direct)</label>
+                          <Input
+                            value={editingItem.video_url || ''}
+                            onChange={(e) => setEditingItem({ ...editingItem, video_url: e.target.value })}
+                            placeholder="https://youtube.com/watch?v=... or https://vimeo.com/..."
+                          />
+                        </div>
+                        <ImageUpload
+                          value={editingItem.video_thumbnail || ''}
+                          onChange={(url) => setEditingItem({ ...editingItem, video_thumbnail: url })}
+                          label="Video Thumbnail"
+                          category="testimonials"
+                          showPreview={true}
+                        />
+                        <div className="grid grid-cols-2 gap-4">
+                          <div>
+                            <label className="block text-sm font-medium mb-2">Duration</label>
+                            <Input
+                              value={editingItem.video_duration || ''}
+                              onChange={(e) => setEditingItem({ ...editingItem, video_duration: e.target.value })}
+                              placeholder="2:30"
+                            />
+                          </div>
+                          <div>
+                            <label className="block text-sm font-medium mb-2">Location</label>
+                            <Input
+                              value={editingItem.location || ''}
+                              onChange={(e) => setEditingItem({ ...editingItem, location: e.target.value })}
+                              placeholder="Palm Jumeirah, Dubai"
+                            />
+                          </div>
+                        </div>
+                      </div>
+                    )}
+                  </div>
+
                   <Button
                     onClick={() => saveItem(editingItem)}
                     className="w-full bg-[#1A1A1A] hover:bg-[#2A2A2A] text-white"

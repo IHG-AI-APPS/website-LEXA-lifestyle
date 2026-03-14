@@ -133,6 +133,12 @@ class Testimonial(BaseModel):
     image: Optional[str] = None
     project_type: Optional[str] = None
     featured: bool = False
+    # Video testimonial fields
+    video_url: Optional[str] = None  # YouTube, Vimeo, or direct video URL
+    video_thumbnail: Optional[str] = None  # Custom thumbnail for video
+    is_video: bool = False  # Flag to identify video testimonials
+    video_duration: Optional[str] = None  # e.g., "2:30"
+    location: Optional[str] = None  # e.g., "Palm Jumeirah, Dubai"
     
     @model_validator(mode='after')
     def ensure_content(self):
