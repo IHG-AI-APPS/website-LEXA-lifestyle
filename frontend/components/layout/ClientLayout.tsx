@@ -27,6 +27,7 @@ const ScheduleVisitButton = dynamic(() => import('@/components/widgets/ScheduleV
 const PullToRefresh = dynamic(() => import('@/components/mobile/PullToRefresh'), { ssr: false })
 const ConsultationFormLazy = dynamic(() => import('@/components/forms/ConsultationForm').catch(() => ({ default: Noop })), { ssr: false })
 const MobileQuickActions = dynamic(() => import('@/components/mobile/MobileQuickActions'), { ssr: false })
+const DynamicFavicon = dynamic(() => import('@/components/seo/DynamicFavicon').catch(() => ({ default: Noop })), { ssr: false })
 
 // Inner component that uses the scroll context
 function ClientLayoutInner({ children }: { children: React.ReactNode }) {
@@ -144,6 +145,7 @@ function ClientLayoutInner({ children }: { children: React.ReactNode }) {
       {!hideMainLayout && <CookieConsent />}
       {!hideMainLayout && <LinkPrefetcher />}
       {!hideMainLayout && <ScheduleVisitButton />}
+      <DynamicFavicon />
       {showConsultation && <ConsultationFormLazy isOpen={showConsultation} onClose={() => setShowConsultation(false)} />}
       <Toaster 
         position="top-right"

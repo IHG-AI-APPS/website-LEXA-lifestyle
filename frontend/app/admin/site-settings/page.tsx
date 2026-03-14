@@ -245,7 +245,32 @@ function VideoUploader({
   const [uploading, setUploading] = useState(false)
   const [showUrlInput, setShowUrlInput] = useState(false)
   const [uploadProgress, setUploadProgress] = useState(0)
+  const [videoDuration, setVideoDuration] = useState<string>('')
+  const [selectedFile, setSelectedFile] = useState<{ name: string; size: string } | null>(null)
   const fileInputRef = useRef<HTMLInputElement>(null)
+  const videoRef = useRef<HTMLVideoElement>(null)
+
+  // Format duration from seconds to MM:SS
+  const formatDuration = (seconds: number): string => {
+    const mins = Math.floor(seconds / 60)
+    const secs = Math.floor(seconds % 60)
+    return `${mins}:${secs.toString().padStart(2, '0')}`
+  }
+
+  // Format file size
+  const formatFileSize = (bytes: number): string => {
+    if (bytes < 1024 * 1024) {
+      return `${(bytes / 1024).toFixed(1)} KB`
+    }
+    return `${(bytes / (1024 * 1024)).toFixed(1)} MB`
+  }
+
+  // Handle video metadata loaded
+  const handleVideoLoaded = () => {
+    if (videoRef.current) {
+      setVideoDuration(formatDuration(videoRef.current.duration))
+    }
+  }
 
   const handleFileUpload = async (e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0]
@@ -263,6 +288,9 @@ function VideoUploader({
       toast.error('Video too large. Maximum size is 100MB')
       return
     }
+
+    // Show file info
+    setSelectedFile({ name: file.name, size: formatFileSize(file.size) })
 
     setUploading(true)
     setUploadProgress(0)
@@ -299,6 +327,7 @@ function VideoUploader({
     } finally {
       setUploading(false)
       setUploadProgress(0)
+      setSelectedFile(null)
       if (fileInputRef.current) {
         fileInputRef.current.value = ''
       }
@@ -307,6 +336,7 @@ function VideoUploader({
 
   const handleRemove = () => {
     onChange('')
+    setVideoDuration('')
   }
 
   const getVideoThumbnail = (url: string) => {
@@ -322,10 +352,12 @@ function VideoUploader({
       {value && (
         <div className="relative bg-gray-900 dark:bg-black rounded-lg overflow-hidden">
           <video 
+            ref={videoRef}
             src={value}
             className="w-full max-h-[300px] object-contain"
             controls
             preload="metadata"
+            onLoadedMetadata={handleVideoLoaded}
             data-testid="hero-video-preview"
           >
             Your browser does not support the video tag.
@@ -338,9 +370,16 @@ function VideoUploader({
           >
             <X size={16} />
           </button>
-          <div className="absolute bottom-2 left-2 px-3 py-1 bg-black/70 text-white text-xs rounded-full flex items-center gap-1">
-            <Play size={12} />
-            Current Hero Video
+          <div className="absolute bottom-2 left-2 flex items-center gap-2">
+            <span className="px-3 py-1 bg-black/70 text-white text-xs rounded-full flex items-center gap-1">
+              <Play size={12} />
+              Current Hero Video
+            </span>
+            {videoDuration && (
+              <span className="px-2 py-1 bg-[#C9A962]/90 text-black text-xs rounded-full font-medium" data-testid="video-duration">
+                {videoDuration}
+              </span>
+            )}
           </div>
         </div>
       )}
@@ -348,6 +387,11 @@ function VideoUploader({
       {/* Upload Progress */}
       {uploading && (
         <div className="space-y-2">
+          {selectedFile && (
+            <div className="text-sm text-gray-700 dark:text-zinc-300 font-medium">
+              {selectedFile.name} ({selectedFile.size})
+            </div>
+          )}
           <div className="flex items-center gap-2 text-sm text-gray-600 dark:text-zinc-400">
             <Loader2 size={16} className="animate-spin" />
             Uploading video... {uploadProgress}%
