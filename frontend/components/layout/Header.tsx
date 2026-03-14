@@ -469,6 +469,19 @@ export default function Header() {
                   </span>
                   <ThemeToggle variant="compact" className="text-gray-700 dark:text-zinc-400" />
                 </motion.div>
+
+                {/* Mobile Language Switcher */}
+                <motion.div
+                  initial={{ opacity: 0, x: -20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ delay: 0.4 }}
+                  className="px-4 py-3 flex items-center justify-between border-t border-gray-100 dark:border-zinc-800"
+                >
+                  <span className="text-sm font-medium text-gray-700 dark:text-zinc-400 uppercase tracking-wider">
+                    {language === 'ar' ? 'اللغة' : 'Language'}
+                  </span>
+                  <LanguageSwitcherCompact />
+                </motion.div>
               </motion.nav>
             )}
           </AnimatePresence>
