@@ -200,6 +200,7 @@ class Brand(BaseModel):
     website: Optional[str] = None
     categories: List[str] = []
     featured: bool = False
+    is_partner: bool = False  # Brand partner shown in homepage marquee
     country: Optional[str] = None
     year_established: Optional[str] = None
     tagline: Optional[str] = None

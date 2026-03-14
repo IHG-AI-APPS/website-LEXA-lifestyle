@@ -17,10 +17,10 @@ db = client[os.environ.get('DB_NAME', 'lexa_lifestyle')]
 
 
 @router.get("/brands", response_model=List[Brand])
-async def get_brands(category: Optional[str] = None, featured: Optional[bool] = None):
-    """Get all brands, optionally filtered by category or featured status. Sorted by priority (lower = first)"""
+async def get_brands(category: Optional[str] = None, featured: Optional[bool] = None, is_partner: Optional[bool] = None):
+    """Get all brands, optionally filtered by category, featured, or partner status. Sorted by priority (lower = first)"""
     try:
-        cache_key = f"brands:cat={category}:feat={featured}"
+        cache_key = f"brands:cat={category}:feat={featured}:partner={is_partner}"
         cached = await cache.get(cache_key)
         if cached is not None:
             return cached
@@ -29,6 +29,8 @@ async def get_brands(category: Optional[str] = None, featured: Optional[bool] = 
             query["categories"] = category
         if featured is not None:
             query["featured"] = featured
+        if is_partner is not None:
+            query["is_partner"] = is_partner
         brands = await db.brands.find(query, {"_id": 0}).sort([("priority", 1), ("name", 1)]).to_list(200)
         await cache.set(cache_key, brands, ttl_seconds=300)
         return brands

@@ -387,6 +387,19 @@ A premium smart home solutions website with dynamic content management, product 
 - Incorrect Brand Logo Data - Database has missing/incorrect logo URLs for some brands
 
 ## Completed in Recent Sessions
+- ✅ **Brand Partners Feature - Dynamic Homepage Marquee** (March 14, 2026)
+  - Added `is_partner` field to Brand model in backend
+  - Updated `/api/brands` endpoint to support `is_partner=true` filter
+  - Updated BrandMarquee component to fetch only partner brands
+  - Added "Brand Partner (Homepage)" checkbox in admin Brands page
+  - Shows "Partner" badge in gold color on admin brands list
+  - Set 8 brands as partners: Savant, LEXA Lifestyle, Børresen, Aavik, Lumibright, Artesania Audio, Lifesmart, Axxess
+  - Files modified:
+    - `/app/backend/models/content.py` - Added `is_partner: bool = False`
+    - `/app/backend/routes/brands_products.py` - Added is_partner filter
+    - `/app/frontend/components/gallery/BrandMarquee.tsx` - Fetches partner brands
+    - `/app/frontend/app/admin/brands/page.tsx` - Added is_partner UI
+
 - ✅ **Sunday Business Hours Added** (March 14, 2026)
   - Added `business_hours_sunday` field to Site Settings interface and defaults
   - Admin panel Site Settings > Contact tab now shows Sunday Hours input field

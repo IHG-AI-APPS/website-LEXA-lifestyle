@@ -8,6 +8,7 @@ interface Brand {
   id: string
   name: string
   logo: string
+  is_partner?: boolean
 }
 
 export default function BrandMarquee() {
@@ -16,11 +17,12 @@ export default function BrandMarquee() {
   useEffect(() => {
     const fetchBrands = async () => {
       try {
-        const response = await fetch(`${process.env.NEXT_PUBLIC_BACKEND_URL}/api/brands`)
+        // Fetch only partner brands for the homepage marquee
+        const response = await fetch(`${process.env.NEXT_PUBLIC_BACKEND_URL}/api/brands?is_partner=true`)
         const data = await response.json()
-        setBrands(data.slice(0, 12))
+        setBrands(data)
       } catch (error) {
-        console.error('Error fetching brands:', error)
+        console.error('Error fetching partner brands:', error)
       }
     }
 

@@ -30,6 +30,7 @@ interface Brand {
   website?: string
   categories: string[]
   featured: boolean
+  is_partner: boolean
   country?: string
   year_established?: string
   tagline?: string
@@ -69,6 +70,7 @@ export default function BrandsAdminPage() {
     website: '',
     categories: [],
     featured: false,
+    is_partner: false,
     country: '',
     year_established: '',
     tagline: '',
@@ -111,6 +113,7 @@ export default function BrandsAdminPage() {
         website: b.website || '',
         categories: b.categories || [],
         featured: b.featured || false,
+        is_partner: b.is_partner || false,
         country: b.country || '',
         year_established: b.year_established || '',
         tagline: b.tagline || '',
@@ -144,6 +147,7 @@ export default function BrandsAdminPage() {
       website: brand.website || '',
       categories: brand.categories || [],
       featured: brand.featured || false,
+      is_partner: brand.is_partner || false,
       country: brand.country || '',
       year_established: brand.year_established || '',
       tagline: brand.tagline || '',
@@ -172,6 +176,7 @@ export default function BrandsAdminPage() {
       website: '',
       categories: [],
       featured: false,
+      is_partner: false,
       country: '',
       year_established: '',
       tagline: '',
@@ -493,14 +498,22 @@ export default function BrandsAdminPage() {
                   />
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4">
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mt-4">
                   <div className="flex items-center space-x-2">
                     <Checkbox
                       id="featured"
                       checked={formData.featured}
                       onCheckedChange={(checked) => setFormData({ ...formData, featured: checked as boolean })}
                     />
-                    <label htmlFor="featured" className="text-sm font-medium">Featured Brand (shown prominently)</label>
+                    <label htmlFor="featured" className="text-sm font-medium">Featured Brand</label>
+                  </div>
+                  <div className="flex items-center space-x-2">
+                    <Checkbox
+                      id="is_partner"
+                      checked={formData.is_partner}
+                      onCheckedChange={(checked) => setFormData({ ...formData, is_partner: checked as boolean })}
+                    />
+                    <label htmlFor="is_partner" className="text-sm font-medium text-[#C9A962]">Brand Partner (Homepage)</label>
                   </div>
                   <div>
                     <label className="block text-sm font-medium mb-1">Display Priority</label>
@@ -744,9 +757,14 @@ export default function BrandsAdminPage() {
                     <span className="text-sm">{brand.products?.length || 0} products</span>
                   </td>
                   <td className="px-4 py-4 hidden sm:table-cell">
-                    {brand.featured && (
-                      <span className="px-2 py-1 bg-yellow-100 text-yellow-800 text-xs rounded">Featured</span>
-                    )}
+                    <div className="flex gap-1">
+                      {brand.is_partner && (
+                        <span className="px-2 py-1 bg-[#C9A962]/20 text-[#C9A962] text-xs rounded font-medium">Partner</span>
+                      )}
+                      {brand.featured && (
+                        <span className="px-2 py-1 bg-yellow-100 text-yellow-800 text-xs rounded">Featured</span>
+                      )}
+                    </div>
                   </td>
                   <td className="px-4 py-4 text-right">
                     <div className="flex gap-2 justify-end">
