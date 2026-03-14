@@ -387,6 +387,29 @@ A premium smart home solutions website with dynamic content management, product 
 - Incorrect Brand Logo Data - Database has missing/incorrect logo URLs for some brands
 
 ## Completed in Recent Sessions
+- ✅ **Video Testimonials Feature** (March 14, 2026)
+  - Added video testimonial fields to Testimonial model: `video_url`, `video_thumbnail`, `is_video`, `video_duration`, `location`
+  - Created new `VideoTestimonials.tsx` component with:
+    - Grid of video testimonial cards with thumbnails and play buttons
+    - Duration badges, project type badges (Villa Automation, Home Cinema, Smart Apartment)
+    - Client info with avatar, name, role, location with map pin
+    - 5-star ratings displayed
+    - Modal opens on click with video player (or "Video Coming Soon" placeholder)
+    - Modal has backdrop click and X button to close
+  - Added to About page only (user requested NOT on homepage)
+  - Admin panel at `/admin/testimonials` updated with:
+    - "Video Testimonial" checkbox toggle
+    - Video URL input (supports YouTube, Vimeo, or direct URLs)
+    - Video Thumbnail upload
+    - Duration and Location fields
+  - 3 placeholder video testimonials seeded with Unsplash thumbnails
+  - Files modified:
+    - `/app/backend/models/content.py` - Added video fields to Testimonial model (lines 137-141)
+    - `/app/frontend/components/testimonials/VideoTestimonials.tsx` - NEW component
+    - `/app/frontend/app/about/page.tsx` - Renders VideoTestimonials section
+    - `/app/frontend/app/admin/testimonials/page.tsx` - Added video fields to admin form
+  - Testing: 100% pass rate - all features verified working
+
 - ✅ **Brand Partners Feature - Dynamic Homepage Marquee** (March 14, 2026)
   - Added `is_partner` field to Brand model in backend
   - Updated `/api/brands` endpoint to support `is_partner=true` filter
