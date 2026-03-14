@@ -160,8 +160,9 @@ export default function AIChatWidget() {
                 </div>
                 <span className="ml-1 w-2 h-2 rounded-full bg-green-400 animate-pulse" />
               </div>
-              <button 
-                onClick={() => setIsOpen(false)}
+              <button
+              aria-label="Close chat"
+              onClick={() => setIsOpen(false)}
                 className="p-2 hover:bg-white/10 rounded-full transition-colors"
                 data-testid="ai-chat-close"
               >

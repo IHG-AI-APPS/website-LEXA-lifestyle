@@ -128,7 +128,7 @@ export default function PDFFlipbook({ pdfUrl, title }: PDFFlipbookProps) {
     return (
       <div className="flex flex-col items-center justify-center min-h-[60vh] gap-4" data-testid="flipbook-error">
         <p className="text-red-400">{error}</p>
-        <button onClick={loadPDF} className="px-4 py-2 bg-[#C9A962] text-gray-900 rounded-lg text-sm font-medium">
+        <button aria-label="Retry loading PDF" onClick={loadPDF} className="px-4 py-2 bg-[#C9A962] text-gray-900 rounded-lg text-sm font-medium">
           Retry
         </button>
       </div>

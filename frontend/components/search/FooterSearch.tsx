@@ -188,6 +188,7 @@ export default function FooterSearch() {
         />
         {query && (
           <button
+            aria-label="Clear search"
             onClick={() => {
               setQuery('')
               setResults([])

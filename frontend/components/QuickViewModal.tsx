@@ -106,6 +106,7 @@ export default function QuickViewModal({ isOpen, onClose, item }: QuickViewProps
             {/* Close button */}
             <button
               onClick={onClose}
+              aria-label="Close quick view"
               className="absolute top-3 right-3 z-10 w-8 h-8 flex items-center justify-center rounded-full bg-black/40 text-white hover:bg-black/60 transition-colors"
               data-testid="quickview-close"
             >
@@ -199,6 +200,7 @@ export default function QuickViewModal({ isOpen, onClose, item }: QuickViewProps
               <div className="flex items-center gap-2 mb-4">
                 <button
                   onClick={handleWhatsAppShare}
+                  aria-label="Share via WhatsApp"
                   className="flex-1 flex items-center justify-center gap-2 py-2.5 bg-[#25D366]/10 hover:bg-[#25D366]/20 text-[#25D366] text-xs font-medium rounded-full border border-[#25D366]/20 transition-colors"
                   data-testid="quickview-share-whatsapp"
                 >
@@ -207,6 +209,7 @@ export default function QuickViewModal({ isOpen, onClose, item }: QuickViewProps
                 </button>
                 <button
                   onClick={handleCopyLink}
+                  aria-label="Copy link to clipboard"
                   className={`flex-1 flex items-center justify-center gap-2 py-2.5 text-xs font-medium rounded-full border transition-all ${
                     copied
                       ? 'bg-[#C9A962]/10 text-[#C9A962] border-[#C9A962]/30'

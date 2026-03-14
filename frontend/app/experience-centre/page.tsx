@@ -211,7 +211,7 @@ export default function ExperienceCentrePage() {
           <motion.div initial={{ opacity: 0, scale: 0.95 }} animate={{ opacity: 1, scale: 1 }} className="bg-white dark:bg-[#0A0A0A] rounded-2xl max-w-lg w-full max-h-[90vh] overflow-y-auto p-8" onClick={e => e.stopPropagation()}>
             <div className="flex items-center justify-between mb-6">
               <h2 className="text-xl font-bold text-gray-900 dark:text-white">Book Your Visit</h2>
-              <button onClick={() => setShowBookingModal(false)} className="p-2 hover:bg-gray-100 dark:hover:bg-[#171717] rounded-lg"><X size={20} /></button>
+              <button aria-label="Close booking modal" onClick={() => setShowBookingModal(false)} className="p-2 hover:bg-gray-100 dark:hover:bg-[#171717] rounded-lg"><X size={20} /></button>
             </div>
 
             {bookingStep === 'date' && (
@@ -224,7 +224,7 @@ export default function ExperienceCentrePage() {
                   <label className="text-sm font-medium text-gray-700 dark:text-zinc-400 mb-2 block">Preferred Time</label>
                   <div className="grid grid-cols-3 gap-2">
                     {timeSlots.map(slot => (
-                      <button key={slot} onClick={() => setBookingData(p => ({ ...p, time: slot }))}
+                      <button key={slot} aria-label={`Select time ${slot}`} onClick={() => setBookingData(p => ({ ...p, time: slot }))}
                         className={`py-2 px-3 text-sm rounded-lg border transition-colors ${bookingData.time === slot ? 'bg-[#C9A962] text-gray-900 border-[#C9A962]' : 'border-gray-200 dark:border-zinc-800 hover:border-[#C9A962]/50'}`}>{slot}</button>
                     ))}
                   </div>
@@ -233,7 +233,7 @@ export default function ExperienceCentrePage() {
                   <label className="text-sm font-medium text-gray-700 dark:text-zinc-400 mb-2 block">Interests</label>
                   <div className="flex flex-wrap gap-2">
                     {['Automation', 'Cinema', 'Audio', 'Lighting', 'Security', 'Climate'].map(interest => (
-                      <button key={interest} onClick={() => handleInterestToggle(interest)}
+                      <button key={interest} aria-label={`Select interest: ${interest}`} onClick={() => handleInterestToggle(interest)}
                         className={`px-3 py-1.5 text-sm rounded-full border transition-colors ${bookingData.interests.includes(interest) ? 'bg-[#C9A962] text-gray-900 border-[#C9A962]' : 'border-gray-200 dark:border-zinc-800 hover:border-[#C9A962]/50'}`}>{interest}</button>
                     ))}
                   </div>

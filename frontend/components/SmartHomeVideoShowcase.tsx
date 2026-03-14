@@ -192,6 +192,7 @@ export default function SmartHomeVideoShowcase({ className = '', autoPlay = true
           {SMART_HOME_CLIPS.map((clip, index) => (
             <button
               key={index}
+              aria-label={`Play video ${index + 1}: ${clip.title || 'Smart home clip'}`}
               onClick={() => setCurrentIndex(index)}
               className={`relative flex-shrink-0 w-24 h-14 rounded-lg overflow-hidden transition-all ${
                 index === currentIndex
@@ -215,6 +216,7 @@ export default function SmartHomeVideoShowcase({ className = '', autoPlay = true
           {SMART_HOME_CLIPS.map((_, index) => (
             <button
               key={index}
+              aria-label={`Go to video ${index + 1}`}
               onClick={() => setCurrentIndex(index)}
               className={`w-2 h-2 rounded-full transition-all ${
                 index === currentIndex ? 'bg-[#C19A2E] w-6' : 'bg-white/40 hover:bg-white/60'

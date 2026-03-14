@@ -11,6 +11,7 @@ export default function LanguageToggle() {
     <div className="flex items-center gap-2 bg-white/10 backdrop-blur-sm rounded-full p-1 border border-white/20">
       <button
         onClick={() => setLanguage('en')}
+        aria-label="Switch to English"
         className={`
           px-3 py-1.5 rounded-full text-sm font-medium transition-all flex items-center gap-1.5
           ${language === 'en' 
@@ -24,6 +25,7 @@ export default function LanguageToggle() {
       </button>
       <button
         onClick={() => setLanguage('ar')}
+        aria-label="Switch to Arabic"
         className={`
           px-3 py-1.5 rounded-full text-sm font-medium transition-all
           ${language === 'ar' 
@@ -45,6 +47,7 @@ export function LanguageToggleDark() {
     <div className="flex items-center gap-2 bg-gray-100 dark:bg-[#171717] rounded-full p-1">
       <button
         onClick={() => setLanguage('en')}
+        aria-label="Switch to English"
         className={`
           px-3 py-1.5 rounded-full text-sm font-medium transition-all flex items-center gap-1.5
           ${language === 'en' 
@@ -58,6 +61,7 @@ export function LanguageToggleDark() {
       </button>
       <button
         onClick={() => setLanguage('ar')}
+        aria-label="Switch to Arabic"
         className={`
           px-3 py-1.5 rounded-full text-sm font-medium transition-all
           ${language === 'ar' 

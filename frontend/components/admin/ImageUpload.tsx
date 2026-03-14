@@ -220,7 +220,7 @@ export function ImageUpload({
           <div className="relative rounded-lg overflow-hidden border border-gray-200 dark:border-zinc-800 bg-gray-50">
             <img
               src={value}
-              alt="Preview"
+              alt="Uploaded image preview"
               className="w-full h-48 object-cover"
               onError={(e) => {
                 (e.target as HTMLImageElement).src = 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="%239CA3AF" stroke-width="1"%3E%3Crect x="3" y="3" width="18" height="18" rx="2"/%3E%3Cline x1="3" y1="21" x2="21" y2="3"/%3E%3C/svg%3E'
@@ -229,6 +229,7 @@ export function ImageUpload({
             <button
               type="button"
               onClick={clearImage}
+              aria-label="Remove image"
               className="absolute top-2 right-2 p-1.5 bg-red-500 text-white rounded-full hover:bg-red-600 transition-colors"
             >
               <X className="w-4 h-4" />
@@ -351,6 +352,7 @@ export function MultiImageUpload({
               <button
                 type="button"
                 onClick={() => removeImage(index)}
+                aria-label={`Remove image ${index + 1}`}
                 className="absolute top-1 right-1 p-1 bg-red-500 text-white rounded-full opacity-0 group-hover:opacity-100 transition-opacity"
               >
                 <X className="w-3 h-3" />

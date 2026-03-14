@@ -344,13 +344,13 @@ export default function Header() {
             </div>
 
             <button
+              aria-label="Toggle mobile menu"
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
               className={`lg:hidden p-2.5 rounded-xl transition-all duration-300 active:scale-95 ${
                 shouldUseDarkText 
                   ? 'text-charcoal hover:bg-gray-100 dark:text-white dark:hover:bg-white/10' 
                   : 'text-white hover:bg-white/10'
               }`}
-              aria-label="Toggle menu"
               data-testid="mobile-menu-toggle"
             >
               {isMobileMenuOpen ? <X size={22} strokeWidth={1.5} /> : <Menu size={22} strokeWidth={1.5} />}
