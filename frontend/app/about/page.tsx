@@ -25,7 +25,7 @@ export default function AboutPage() {
     { icon: Target, title: 'Client-Centric Delivery', description: 'We communicate clearly, meet timelines, and stay accountable from concept to completion.' },
   ]
 
-  const partners = cmsData?.partners?.length ? cmsData.partners : ['Crestron', 'Lutron', 'Control4', 'Savant', 'Bang & Olufsen', 'Sonos', 'Bowers & Wilkins', 'Nest']
+  const partners = cmsData?.partners?.length ? cmsData.partners : ['LEXA Habitat', 'Savant', 'Lifesmart', 'Aavik', 'Børresen Acoustics', 'Artesania Audio', 'Axxess', 'Lumibright']
 
   return (
     <div className="min-h-screen bg-white dark:bg-[#050505] pt-20" data-testid="about-page">
