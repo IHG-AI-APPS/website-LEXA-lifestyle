@@ -38,23 +38,38 @@ function ClientLayoutInner({ children }: { children: React.ReactNode }) {
   const hideMainLayout = isAdminPage || isCatalogueViewer
   const [showConsultation, setShowConsultation] = useState(false)
   const [isHydrated, setIsHydrated] = useState(false)
+  const [contentReady, setContentReady] = useState(false)
 
-  // Mark as hydrated after initial render - hide loader, show content
+  // Mark as hydrated after initial render
   useEffect(() => {
     setIsHydrated(true)
-    // Remove the initial hide style
-    const initialHide = document.getElementById('initial-hide')
-    if (initialHide) {
-      initialHide.remove()
-    }
-    // Fade out and remove the initial loader
-    const loader = document.getElementById('initial-page-loader')
-    if (loader) {
-      loader.style.opacity = '0'
-      loader.style.transition = 'opacity 0.3s ease-out'
-      setTimeout(() => loader.remove(), 300)
-    }
   }, [])
+
+  // Wait for content to be ready before hiding loader
+  useEffect(() => {
+    if (!isHydrated) return
+    
+    // Small delay to ensure dynamic imports and content are rendered
+    const timer = setTimeout(() => {
+      setContentReady(true)
+      
+      // Remove the initial hide style
+      const initialHide = document.getElementById('initial-hide')
+      if (initialHide) {
+        initialHide.remove()
+      }
+      
+      // Fade out and remove the initial loader
+      const loader = document.getElementById('initial-page-loader')
+      if (loader) {
+        loader.style.opacity = '0'
+        loader.style.transition = 'opacity 0.3s ease-out'
+        setTimeout(() => loader.remove(), 300)
+      }
+    }, 300) // Wait 300ms for dynamic content to load
+    
+    return () => clearTimeout(timer)
+  }, [isHydrated])
 
   // Track page views and scroll to top on route change (excluding admin pages)
   useEffect(() => {
@@ -100,7 +115,7 @@ function ClientLayoutInner({ children }: { children: React.ReactNode }) {
   }, [router])
 
   return (
-    <div id="layout-wrapper" className={isHydrated ? 'hydrated' : ''}>
+    <div id="layout-wrapper" className={contentReady ? 'hydrated' : ''}>
       {/* Skip to main content - Accessibility */}
       <a 
         href="#main-content" 

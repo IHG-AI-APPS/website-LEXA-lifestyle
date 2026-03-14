@@ -106,8 +106,15 @@ export default function RootLayout({
           body { background: #050505 !important; color: #fff; margin: 0; padding: 0; font-family: system-ui, -apple-system, sans-serif; min-height: 100vh; }
           html:not(.dark) body { background: #fff !important; color: #111; }
           /* Hide ALL content until hydrated - prevents header/footer flash */
-          #layout-wrapper { visibility: hidden; }
-          #layout-wrapper.hydrated { visibility: visible; }
+          #layout-wrapper { 
+            visibility: hidden; 
+            opacity: 0;
+          }
+          #layout-wrapper.hydrated { 
+            visibility: visible; 
+            opacity: 1;
+            transition: opacity 0.4s ease-out;
+          }
           /* Initial page loader - shows while content is loading */
           #initial-page-loader {
             position: fixed;
