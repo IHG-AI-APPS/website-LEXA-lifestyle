@@ -21,6 +21,7 @@ import {
 } from 'lucide-react'
 import Link from 'next/link'
 import SafeImage from '@/components/ui/SafeImage'
+import { useSiteSettings } from '@/hooks/useSiteSettings'
 
 const BACKEND_URL = process.env.NEXT_PUBLIC_BACKEND_URL || ''
 
@@ -56,6 +57,7 @@ export default function ExperienceCentreCTA() {
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle')
   const [cmsData, setCmsData] = useState<any>(null)
+  const { settings } = useSiteSettings()
 
   // Fetch CMS data
   useEffect(() => {
@@ -310,8 +312,8 @@ export default function ExperienceCentreCTA() {
                             <Clock className="h-4 w-4 text-[#E8DCC8]" />
                           </div>
                           <div>
-                            <div className="text-white text-sm">Sat - Thu: 9AM - 6PM</div>
-                            <div className="text-white/40 text-xs">Friday: 10AM - 4PM</div>
+                            <div className="text-white text-sm">{settings.business_hours_weekday || 'Sat-Thu: 9AM-6PM'}</div>
+                            <div className="text-white/40 text-xs">{settings.business_hours_friday || 'Fri: 10AM-4PM'}</div>
                           </div>
                         </div>
                       </div>

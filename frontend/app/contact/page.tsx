@@ -38,12 +38,16 @@ export default function ContactPage() {
   const emailAddress = settings.contact_email || 'info@lexalifestyle.com'
   const officeAddress = settings.contact_address || 'Al Quoz 1, Sheikh Zayed Road\n3rd Interchange, Dubai, UAE'
   const phoneClean = phoneNumber.replace(/\s/g, '')
+  
+  // Get business hours from settings
+  const hoursWeekday = settings.business_hours_weekday || 'Sat-Thu: 9AM-6PM'
+  const hoursFriday = settings.business_hours_friday || 'Fri: 10AM-4PM'
 
   const contactInfo = [
     { icon: Phone, title: 'Phone', value: phoneNumber, link: `tel:${phoneClean}` },
     { icon: Mail, title: 'Email', value: emailAddress, link: `mailto:${emailAddress}` },
     { icon: MapPin, title: 'Office', value: officeAddress, link: 'https://maps.google.com/?q=Al+Quoz+1+Dubai' },
-    { icon: Clock, title: 'Hours', value: 'Sat-Thu: 9AM-6PM\nFri: 10AM-4PM' },
+    { icon: Clock, title: 'Hours', value: `${hoursWeekday}\n${hoursFriday}` },
   ]
 
   return (

@@ -102,8 +102,8 @@ export default function GalleryFooterCTA() {
                     <div className="flex-1">
                       <div className="text-white/50 text-xs uppercase tracking-wider mb-1.5">Hours</div>
                       <p className="text-white text-sm sm:text-base">
-                        Sat - Thu: 9 AM - 6 PM<br />
-                        Friday: 10 AM - 4 PM
+                        {settings.business_hours_weekday || 'Sat-Thu: 9AM-6PM'}<br />
+                        {settings.business_hours_friday || 'Fri: 10AM-4PM'}
                       </p>
                     </div>
                   </div>
