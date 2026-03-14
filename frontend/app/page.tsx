@@ -25,9 +25,6 @@ const Testimonials = dynamic(() => import('@/components/sections/Testimonials').
   ssr: false
 })
 const ExperienceCentreCTA = dynamic(() => import('@/components/homepage/ExperienceCentreCTA').catch(() => ({ default: Noop })))
-const BrandPartners = dynamic(() => import('@/components/homepage/BrandPartners').catch(() => ({ default: Noop })), {
-  ssr: false
-})
 
 // Animation variants for smooth entrance effects
 const fadeInUp = {
@@ -213,9 +210,6 @@ export default function HomePage() {
       
       {/* Brand Trust - Minimal logo marquee */}
       <BrandTrust />
-      
-      {/* Brand Partners - Grid of partner brands */}
-      <BrandPartners />
       
       {/* Value Proposition - Statement section */}
       <ValueProposition />
