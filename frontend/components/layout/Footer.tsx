@@ -180,6 +180,28 @@ export default function Footer() {
                 </ul>
               </div>
 
+              {/* Areas We Serve */}
+              <div>
+                <h3 className="text-xs tracking-[0.2em] uppercase font-semibold text-white mb-5">Areas We Serve</h3>
+                <ul className="space-y-3">
+                  {[
+                    { name: 'Palm Jumeirah', href: '/areas/palm-jumeirah' },
+                    { name: 'Emirates Hills', href: '/areas/emirates-hills' },
+                    { name: 'Dubai Marina', href: '/areas/dubai-marina' },
+                    { name: 'Downtown Dubai', href: '/areas/downtown-dubai' },
+                    { name: 'Arabian Ranches', href: '/areas/arabian-ranches' },
+                    { name: 'Business Bay', href: '/areas/business-bay' },
+                  ].map((item, i) => (
+                    <li key={i}>
+                      <Link href={item.href} className="text-sm text-gray-300 hover:text-[#C9A962] transition-colors flex items-center gap-1 group">
+                        {item.name}
+                        <ArrowUpRight className="h-3 w-3 opacity-0 group-hover:opacity-100 transition-opacity" />
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
               {/* Quick Links */}
               <div>
                 <h3 className="text-xs tracking-[0.2em] uppercase font-semibold text-white mb-5">Quick Links</h3>

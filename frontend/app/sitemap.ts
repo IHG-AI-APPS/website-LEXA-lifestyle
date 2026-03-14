@@ -131,6 +131,18 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     'palm-jumeirah-smart-home'
   ]
 
+  // Area/Neighborhood landing pages (high priority for local SEO)
+  const areaPages = [
+    { slug: 'palm-jumeirah', priority: 0.90 },
+    { slug: 'emirates-hills', priority: 0.90 },
+    { slug: 'dubai-marina', priority: 0.90 },
+    { slug: 'downtown-dubai', priority: 0.90 },
+    { slug: 'arabian-ranches', priority: 0.85 },
+    { slug: 'jumeirah', priority: 0.85 },
+    { slug: 'business-bay', priority: 0.85 },
+    { slug: 'al-barari', priority: 0.80 },
+  ]
+
   // Personas
   const personas = [
     'homeowner',
@@ -209,6 +221,13 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       lastModified: new Date(),
       changeFrequency: 'weekly' as const,
       priority: 0.85
+    })),
+    // Area/Neighborhood pages (high priority for local SEO)
+    ...areaPages.map(({ slug, priority }) => ({
+      url: `${baseUrl}/areas/${slug}`,
+      lastModified: new Date(),
+      changeFrequency: 'weekly' as const,
+      priority
     })),
     ...solutions.map(solution => ({
       url: `${baseUrl}/solutions/${solution.slug}`,
