@@ -5,6 +5,20 @@
 /* Import RTL styles for Arabic language support */
 @import '../styles/rtl.css';
 
+/* Page loading transition */
+#layout-wrapper.hydrated > * {
+  animation: fadeIn 0.3s ease-out forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
 @layer base {
   :root {
     --background: 0 0% 100%;

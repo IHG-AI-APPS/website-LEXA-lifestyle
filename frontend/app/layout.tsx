@@ -57,10 +57,10 @@ export default function RootLayout({
             // Force dark mode immediately
             document.documentElement.classList.add('dark');
             document.documentElement.style.background = '#050505';
-            // Create a style element to hide content until hydrated
+            // Create a style element to hide ALL content until hydrated (only loader will show)
             var s = document.createElement('style');
             s.id = 'initial-hide';
-            s.textContent = '#layout-wrapper { visibility: hidden !important; } body { background: #050505 !important; }';
+            s.textContent = '#layout-wrapper:not(.hydrated) { visibility: hidden !important; } body { background: #050505 !important; }';
             document.head.appendChild(s);
           })();
         ` }} />
@@ -108,6 +108,51 @@ export default function RootLayout({
           /* Hide ALL content until hydrated - prevents header/footer flash */
           #layout-wrapper { visibility: hidden; }
           #layout-wrapper.hydrated { visibility: visible; }
+          /* Initial page loader - shows while content is loading */
+          #initial-page-loader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            z-index: 99999;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background: #050505;
+            gap: 24px;
+            pointer-events: all;
+          }
+          #initial-page-loader .logo {
+            font-size: 28px;
+            font-weight: 600;
+            letter-spacing: 0.35em;
+            color: white;
+          }
+          #initial-page-loader .bar {
+            width: 180px;
+            height: 2px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 2px;
+            overflow: hidden;
+          }
+          #initial-page-loader .bar-inner {
+            height: 100%;
+            width: 40%;
+            background: #C9A962;
+            animation: loadSlide 1s ease-in-out infinite;
+          }
+          @keyframes loadSlide {
+            0% { transform: translateX(-100%); }
+            100% { transform: translateX(400%); }
+          }
+          #initial-page-loader .text {
+            font-size: 10px;
+            text-transform: uppercase;
+            letter-spacing: 0.2em;
+            color: rgba(255,255,255,0.4);
+          }
           .sr-only, [class*="sr-only"], a[href="#main-content"] { position: absolute !important; width: 1px !important; height: 1px !important; overflow: hidden !important; clip: rect(0,0,0,0) !important; white-space: nowrap !important; }
           header { position: fixed; top: 0; left: 0; right: 0; z-index: 50; background: rgba(5,5,5,0.95); }
           footer svg { width: 16px !important; height: 16px !important; max-width: 16px !important; max-height: 16px !important; }
@@ -169,6 +214,12 @@ export default function RootLayout({
         />
       </head>
       <body className={dmSans.className}>
+        {/* Initial Page Loader - Pure HTML/CSS, shows while React hydrates */}
+        <div id="initial-page-loader">
+          <div className="logo">LEXA</div>
+          <div className="bar"><div className="bar-inner"></div></div>
+          <div className="text">Loading</div>
+        </div>
         <TrackingPixels />
         <ClientLayout>{children}</ClientLayout>
       </body>

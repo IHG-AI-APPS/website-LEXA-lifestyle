@@ -39,13 +39,20 @@ function ClientLayoutInner({ children }: { children: React.ReactNode }) {
   const [showConsultation, setShowConsultation] = useState(false)
   const [isHydrated, setIsHydrated] = useState(false)
 
-  // Mark as hydrated after initial render
+  // Mark as hydrated after initial render - hide loader, show content
   useEffect(() => {
     setIsHydrated(true)
     // Remove the initial hide style
     const initialHide = document.getElementById('initial-hide')
     if (initialHide) {
       initialHide.remove()
+    }
+    // Fade out and remove the initial loader
+    const loader = document.getElementById('initial-page-loader')
+    if (loader) {
+      loader.style.opacity = '0'
+      loader.style.transition = 'opacity 0.3s ease-out'
+      setTimeout(() => loader.remove(), 300)
     }
   }, [])
 
