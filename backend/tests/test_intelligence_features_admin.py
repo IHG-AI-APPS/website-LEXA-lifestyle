@@ -7,7 +7,7 @@ import requests
 import os
 import uuid
 
-BASE_URL = os.environ.get('REACT_APP_BACKEND_URL', 'https://admin-studio-7.preview.emergentagent.com')
+BASE_URL = os.environ.get('REACT_APP_BACKEND_URL', 'https://sunday-hours-update.preview.emergentagent.com')
 
 class TestIntelligenceFeaturesAdmin:
     """Test suite for Intelligence Features Admin API"""

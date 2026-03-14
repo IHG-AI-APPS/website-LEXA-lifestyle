@@ -387,6 +387,17 @@ A premium smart home solutions website with dynamic content management, product 
 - Incorrect Brand Logo Data - Database has missing/incorrect logo URLs for some brands
 
 ## Completed in Recent Sessions
+- ✅ **Sunday Business Hours Added** (March 14, 2026)
+  - Added `business_hours_sunday` field to Site Settings interface and defaults
+  - Admin panel Site Settings > Contact tab now shows Sunday Hours input field
+  - Contact page and Experience Centre CTA now display Sunday hours
+  - Default value: "Sun: Closed"
+  - Files modified:
+    - `/app/frontend/hooks/useSiteSettings.tsx` - Added interface field and default
+    - `/app/frontend/app/contact/page.tsx` - Displays Sunday hours in contact info bar
+    - `/app/frontend/components/homepage/ExperienceCentreCTA.tsx` - Shows Sunday hours in booking section
+    - Admin panel already had the field implemented
+
 - ✅ **Header Redesign - Cleaner Navigation** (March 13, 2026)
   - Reduced navigation items from 8+ to 5 key items: Solutions, Services, Brands, Projects, Experience
   - Increased spacing between nav items (gap-8 to gap-10)

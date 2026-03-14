@@ -30,6 +30,7 @@ interface SiteSettings {
   // Business Hours
   business_hours_weekday: string
   business_hours_friday: string
+  business_hours_sunday: string
   // Homepage Hero
   hero_title: string
   hero_subtitle: string
@@ -68,6 +69,7 @@ const defaultSettings: SiteSettings = {
   google_maps_embed: '',
   business_hours_weekday: 'Sat-Thu: 9AM-6PM',
   business_hours_friday: 'Fri: 10AM-4PM',
+  business_hours_sunday: 'Sun: Closed',
   hero_title: '',
   hero_subtitle: '',
   hero_video_url: '',
@@ -787,7 +789,7 @@ export default function SiteSettingsPage() {
                 <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
                 Business Hours
               </h3>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                 <div>
                   <label className="block text-sm font-medium text-gray-700 dark:text-zinc-300 mb-2">
                     Weekday Hours (Sat-Thu)
@@ -800,7 +802,6 @@ export default function SiteSettingsPage() {
                     className="w-full px-4 py-2 border border-gray-300 dark:border-zinc-700 rounded-lg focus:ring-2 focus:ring-blue-500 dark:focus:ring-[#C9A962] focus:border-transparent bg-white dark:bg-[#0F0F0F] text-gray-900 dark:text-white placeholder-gray-400 dark:placeholder-zinc-500"
                     data-testid="business-hours-weekday"
                   />
-                  <p className="text-xs text-gray-500 dark:text-zinc-400 mt-1">e.g., Sat-Thu: 9AM-6PM</p>
                 </div>
 
                 <div>
@@ -815,7 +816,20 @@ export default function SiteSettingsPage() {
                     className="w-full px-4 py-2 border border-gray-300 dark:border-zinc-700 rounded-lg focus:ring-2 focus:ring-blue-500 dark:focus:ring-[#C9A962] focus:border-transparent bg-white dark:bg-[#0F0F0F] text-gray-900 dark:text-white placeholder-gray-400 dark:placeholder-zinc-500"
                     data-testid="business-hours-friday"
                   />
-                  <p className="text-xs text-gray-500 dark:text-zinc-400 mt-1">e.g., Fri: 10AM-4PM</p>
+                </div>
+
+                <div>
+                  <label className="block text-sm font-medium text-gray-700 dark:text-zinc-300 mb-2">
+                    Sunday Hours
+                  </label>
+                  <input
+                    type="text"
+                    value={settings.business_hours_sunday}
+                    onChange={(e) => handleChange('business_hours_sunday', e.target.value)}
+                    placeholder="Sun: Closed"
+                    className="w-full px-4 py-2 border border-gray-300 dark:border-zinc-700 rounded-lg focus:ring-2 focus:ring-blue-500 dark:focus:ring-[#C9A962] focus:border-transparent bg-white dark:bg-[#0F0F0F] text-gray-900 dark:text-white placeholder-gray-400 dark:placeholder-zinc-500"
+                    data-testid="business-hours-sunday"
+                  />
                 </div>
               </div>
               
@@ -825,6 +839,7 @@ export default function SiteSettingsPage() {
                 <div className="text-gray-900 dark:text-white">
                   <p className="text-sm">{settings.business_hours_weekday || 'Sat-Thu: 9AM-6PM'}</p>
                   <p className="text-sm">{settings.business_hours_friday || 'Fri: 10AM-4PM'}</p>
+                  <p className="text-sm">{settings.business_hours_sunday || 'Sun: Closed'}</p>
                 </div>
               </div>
             </div>

@@ -314,6 +314,7 @@ export default function ExperienceCentreCTA() {
                           <div>
                             <div className="text-white text-sm">{settings.business_hours_weekday || 'Sat-Thu: 9AM-6PM'}</div>
                             <div className="text-white/40 text-xs">{settings.business_hours_friday || 'Fri: 10AM-4PM'}</div>
+                            <div className="text-white/40 text-xs">{settings.business_hours_sunday || 'Sun: Closed'}</div>
                           </div>
                         </div>
                       </div>

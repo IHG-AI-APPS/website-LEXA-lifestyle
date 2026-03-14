@@ -17,7 +17,7 @@ import os
 import ast
 import sys
 
-BASE_URL = os.environ.get('REACT_APP_BACKEND_URL', 'https://admin-studio-7.preview.emergentagent.com')
+BASE_URL = os.environ.get('REACT_APP_BACKEND_URL', 'https://sunday-hours-update.preview.emergentagent.com')
 
 
 @pytest.fixture(scope="module")

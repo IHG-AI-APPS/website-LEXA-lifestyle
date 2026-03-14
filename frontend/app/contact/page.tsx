@@ -42,12 +42,13 @@ export default function ContactPage() {
   // Get business hours from settings
   const hoursWeekday = settings.business_hours_weekday || 'Sat-Thu: 9AM-6PM'
   const hoursFriday = settings.business_hours_friday || 'Fri: 10AM-4PM'
+  const hoursSunday = settings.business_hours_sunday || 'Sun: Closed'
 
   const contactInfo = [
     { icon: Phone, title: 'Phone', value: phoneNumber, link: `tel:${phoneClean}` },
     { icon: Mail, title: 'Email', value: emailAddress, link: `mailto:${emailAddress}` },
     { icon: MapPin, title: 'Office', value: officeAddress, link: 'https://maps.google.com/?q=Al+Quoz+1+Dubai' },
-    { icon: Clock, title: 'Hours', value: `${hoursWeekday}\n${hoursFriday}` },
+    { icon: Clock, title: 'Hours', value: `${hoursWeekday}\n${hoursFriday}\n${hoursSunday}` },
   ]
 
   return (
