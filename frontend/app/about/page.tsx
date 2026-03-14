@@ -124,6 +124,13 @@ export default function AboutPage() {
         </div>
       </section>
 
+      {/* Video Testimonials */}
+      <VideoTestimonials 
+        title="What Our Clients Say in Motion"
+        subtitle="Watch real stories from homeowners who transformed their living spaces with LEXA"
+        limit={3}
+      />
+
       {/* Team */}
       <TeamSection />
 
