@@ -32,9 +32,9 @@
   },
   "scripts": {
     "dev": "next dev -p 3000",
-    "build": "next build && node -e \"const fs=require('fs'); const p='.next/server/font-manifest.json'; if(!fs.existsSync(p)){fs.mkdirSync('.next/server',{recursive:true});fs.writeFileSync(p,'[]');}\"",
-    "prestart": "node -e \"const fs=require('fs'); const p='.next/server/font-manifest.json'; if(!fs.existsSync(p)){fs.mkdirSync('.next/server',{recursive:true});fs.writeFileSync(p,'[]');}\"",
-    "start": "next start -p 3000",
+    "build": "next build && node -e \"const fs=require('fs'); const p='.next/server/font-manifest.json'; if(!fs.existsSync(p)){fs.mkdirSync('.next/server',{recursive:true});fs.writeFileSync(p,'[]');} const s='.next/standalone/server.js'; if(fs.existsSync(s)){fs.copyFileSync('.next/server/font-manifest.json','.next/standalone/.next/server/font-manifest.json');}\"",
+    "prestart": "node -e \"const fs=require('fs'); if(fs.existsSync('.next/standalone/server.js')){const p='.next/standalone/.next/server/font-manifest.json';if(!fs.existsSync(p)){fs.mkdirSync('.next/standalone/.next/server',{recursive:true});fs.writeFileSync(p,'[]');}}else{const p='.next/server/font-manifest.json';if(!fs.existsSync(p)){fs.mkdirSync('.next/server',{recursive:true});fs.writeFileSync(p,'[]');}}\"",
+    "start": "node -e \"const fs=require('fs');if(fs.existsSync('.next/standalone/server.js')){process.exit(require('child_process').spawnSync('node',['.next/standalone/server.js'],{stdio:'inherit',env:{...process.env,PORT:'3000',HOSTNAME:'0.0.0.0'}}).status||0);}else{process.exit(require('child_process').spawnSync('npx',['next','start','-p','3000'],{stdio:'inherit'}).status||0);}\"",
     "lint": "next lint"
   },
   "browserslist": {
