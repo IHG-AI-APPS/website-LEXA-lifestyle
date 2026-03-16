@@ -4,8 +4,12 @@ set -e
 
 cd /app/frontend
 
-if [ ! -f ".next/BUILD_ID" ]; then
-  echo "[LEXA] No production build found. Building..."
+# Check for critical build artifacts
+# The _error.js is a required file that Next.js needs for proper error handling
+if [ ! -f ".next/BUILD_ID" ] || [ ! -f ".next/server/pages/_error.js" ]; then
+  echo "[LEXA] Build missing or incomplete. Building..."
+  # Clean any partial build
+  rm -rf .next
   yarn build
   echo "[LEXA] Build complete."
 else
