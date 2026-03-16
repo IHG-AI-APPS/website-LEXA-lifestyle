@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
 import SafeImage from '@/components/ui/SafeImage'
 import { Button } from '@/components/ui/button'
@@ -12,12 +12,37 @@ import Link from 'next/link'
 import { useLanguage } from '@/contexts/LanguageContext'
 import { useCms } from '@/hooks/useCms'
 
+const API_URL = process.env.NEXT_PUBLIC_BACKEND_URL || ''
 const ICON_MAP: Record<string, any> = { Award, Users, Building, Target }
+
+interface PartnerBrand {
+  name: string
+  slug: string
+  logo?: string
+  is_partner: boolean
+}
 
 export default function AboutPage() {
   const { t, language } = useLanguage()
   const [showConsultationForm, setShowConsultationForm] = useState(false)
+  const [partnerBrands, setPartnerBrands] = useState<PartnerBrand[]>([])
   const cmsData = useCms<any>('page_about', null)
+
+  // Fetch brands marked as partners from the API
+  useEffect(() => {
+    const fetchPartnerBrands = async () => {
+      try {
+        const response = await fetch(`${API_URL}/api/brands?is_partner=true`)
+        if (response.ok) {
+          const brands = await response.json()
+          setPartnerBrands(brands)
+        }
+      } catch (error) {
+        console.error('Failed to fetch partner brands:', error)
+      }
+    }
+    fetchPartnerBrands()
+  }, [])
 
   const values = cmsData?.values?.length ? cmsData.values.map((v: any) => ({ icon: ICON_MAP[v.icon] || Award, title: language === 'ar' ? v.title_ar : v.title_en, description: language === 'ar' ? v.description_ar : v.description_en })) : [
     { icon: Award, title: 'Innovation with Purpose', description: 'We select and integrate technologies that genuinely improve comfort, control, and lifestyle.' },
@@ -25,8 +50,6 @@ export default function AboutPage() {
     { icon: Building, title: 'Uncompromising Quality', description: 'From brands we partner with to the cables behind the walls, we insist on long-term reliability.' },
     { icon: Target, title: 'Client-Centric Delivery', description: 'We communicate clearly, meet timelines, and stay accountable from concept to completion.' },
   ]
-
-  const partners = cmsData?.partners?.length ? cmsData.partners : ['LEXA Habitat', 'Savant', 'Lifesmart', 'Aavik', 'Børresen Acoustics', 'Artesania Audio', 'Axxess', 'Lumibright']
 
   return (
     <div className="min-h-screen bg-white dark:bg-[#050505] pt-20" data-testid="about-page">
@@ -109,17 +132,34 @@ export default function AboutPage() {
               <span className="text-xs uppercase tracking-widest text-[#C9A962] font-semibold">Certified Partners</span>
               <h2 className="text-2xl sm:text-3xl font-bold mt-2 text-gray-900 dark:text-white">Brand Partners</h2>
             </div>
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-              {partners.map((brand: string, i: number) => (
-                <motion.div key={i} initial={{ opacity: 0, y: 10 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.2, delay: i * 0.04 }} className="group">
-                  <Link href={`/brands/${brand.toLowerCase().replace(/\s+/g, '-').replace(/&/g, '')}`}
-                    className="flex flex-col items-center justify-center p-5 h-24 rounded-xl bg-gray-50 dark:bg-[#0A0A0A] border border-gray-200 dark:border-zinc-800 hover:border-[#C9A962]/60 hover:shadow-md transition-all">
-                    <span className="text-base font-bold text-gray-800 dark:text-gray-200 group-hover:text-[#C9A962] transition-colors">{brand}</span>
-                    <span className="text-[10px] text-gray-400 uppercase tracking-widest mt-1">Partner</span>
-                  </Link>
-                </motion.div>
-              ))}
-            </div>
+            {partnerBrands.length > 0 ? (
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+                {partnerBrands.map((brand, i) => (
+                  <motion.div key={brand.slug || i} initial={{ opacity: 0, y: 10 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.2, delay: i * 0.04 }} className="group">
+                    <Link href={`/brands/${brand.slug}`}
+                      className="flex flex-col items-center justify-center p-5 h-28 rounded-xl bg-gray-50 dark:bg-[#0A0A0A] border border-gray-200 dark:border-zinc-800 hover:border-[#C9A962]/60 hover:shadow-md transition-all">
+                      <div className="relative w-full h-10 mb-1 flex items-center justify-center">
+                        {brand.logo && (
+                          <SafeImage 
+                            src={brand.logo} 
+                            alt={brand.name} 
+                            fill 
+                            className="object-contain invert dark:invert-0 opacity-60 group-hover:opacity-100 transition-opacity" 
+                            sizes="(max-width: 768px) 120px, 160px"
+                          />
+                        )}
+                      </div>
+                      <span className="text-xs font-medium text-gray-500 dark:text-gray-400 group-hover:text-[#C9A962] transition-colors">{brand.name}</span>
+                      <span className="text-[10px] text-gray-400 uppercase tracking-widest mt-1">Partner</span>
+                    </Link>
+                  </motion.div>
+                ))}
+              </div>
+            ) : (
+              <div className="text-center text-gray-500 dark:text-zinc-500">
+                <p>Loading partners...</p>
+              </div>
+            )}
           </div>
         </div>
       </section>
