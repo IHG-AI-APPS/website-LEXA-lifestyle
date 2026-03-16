@@ -137,20 +137,20 @@ export default function AboutPage() {
                 {partnerBrands.map((brand, i) => (
                   <motion.div key={brand.slug || i} initial={{ opacity: 0, y: 10 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.2, delay: i * 0.04 }} className="group">
                     <Link href={`/brands/${brand.slug}`}
-                      className="flex flex-col items-center justify-center p-5 h-28 rounded-xl bg-gray-50 dark:bg-[#0A0A0A] border border-gray-200 dark:border-zinc-800 hover:border-[#C9A962]/60 hover:shadow-md transition-all">
+                      className="flex flex-col items-center justify-center p-5 h-28 rounded-xl bg-[#0A0A0A] dark:bg-white border border-zinc-800 dark:border-gray-200 hover:border-[#C9A962]/60 hover:shadow-md transition-all">
                       <div className="relative w-full h-10 mb-1 flex items-center justify-center">
                         {brand.logo && (
                           <SafeImage 
                             src={brand.logo} 
                             alt={brand.name} 
                             fill 
-                            className="object-contain invert dark:invert-0 opacity-60 group-hover:opacity-100 transition-opacity" 
+                            className="object-contain dark:invert opacity-80 group-hover:opacity-100 transition-opacity" 
                             sizes="(max-width: 768px) 120px, 160px"
                           />
                         )}
                       </div>
-                      <span className="text-xs font-medium text-gray-500 dark:text-gray-400 group-hover:text-[#C9A962] transition-colors">{brand.name}</span>
-                      <span className="text-[10px] text-gray-400 uppercase tracking-widest mt-1">Partner</span>
+                      <span className="text-xs font-medium text-gray-300 dark:text-gray-600 group-hover:text-[#C9A962] transition-colors">{brand.name}</span>
+                      <span className="text-[10px] text-gray-500 dark:text-gray-400 uppercase tracking-widest mt-1">Partner</span>
                     </Link>
                   </motion.div>
                 ))}
