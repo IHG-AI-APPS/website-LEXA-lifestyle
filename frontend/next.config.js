@@ -2,8 +2,8 @@
 const nextConfig = {
   reactStrictMode: true,
   
-  // Note: NOT using standalone output as deployment uses 'npx next start'
-  // output: 'standalone',
+  // Standalone output required by Emergent deployment
+  output: 'standalone',
   
   // Performance optimization
   compress: true,
