@@ -23,13 +23,14 @@ from middleware.security_headers import SecurityHeadersMiddleware
 # Import caching utility
 from utils.cache import cache, cached
 
-# Import route modules
-from routes import public_api, content, bookings, submissions, calculator, brands_products, admin_content, packages, package_inquiry, intelligence, admin_extended_content, admin_arabic_pages, patches, ai_recommendations, project_builder, smart_home_features, pricing, admin_solutions_services, ai_chatbot, lead_enhancement, seo_enhancement, uploads, analytics, schedule_visit, smart_recommendations, geo_pages, tracking_settings, sales_intelligence, locations, catalogues, regression_tests, admin_whatsapp, product_catalog
-
 ROOT_DIR = Path(__file__).parent
-# Load .env file but DON'T override existing environment variables (important for deployment)
+# Load .env file FIRST - before importing routes that need MONGO_URL
+# DON'T override existing environment variables (important for deployment)
 # In production, env vars are set by the container runtime
 load_dotenv(ROOT_DIR / '.env', override=False)
+
+# Import route modules AFTER load_dotenv so MONGO_URL is available
+from routes import public_api, content, bookings, submissions, calculator, brands_products, admin_content, packages, package_inquiry, intelligence, admin_extended_content, admin_arabic_pages, patches, ai_recommendations, project_builder, smart_home_features, pricing, admin_solutions_services, ai_chatbot, lead_enhancement, seo_enhancement, uploads, analytics, schedule_visit, smart_recommendations, geo_pages, tracking_settings, sales_intelligence, locations, catalogues, regression_tests, admin_whatsapp, product_catalog
 
 # Clean up stale git lock files on server startup
 def cleanup_git_locks():

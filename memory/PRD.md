@@ -31,6 +31,20 @@ A premium smart home solutions website with dynamic content management, product 
 
 ### Recent Fixes (March 2026)
 
+#### March 17, 2026 - Deployment Pipeline Fix (Session 3)
+- **Fixed (P0 - CRITICAL):** Route import order causing MONGO_URL to be undefined
+  - **Root Cause:** Routes were imported BEFORE `load_dotenv()` was called, so when route modules tried to create MongoDB connections, `MONGO_URL` wasn't set yet
+  - **Fix:** Moved route imports AFTER `load_dotenv()` call in server.py
+  - **Files Modified:** `/app/backend/server.py` - Reordered imports
+
+- **Fixed (P0):** MongoDB connection timeouts across all route files
+  - **Issue:** 30+ route files were creating MongoDB connections without timeouts, causing potential hangs in production
+  - **Fix:** Added `serverSelectionTimeoutMS=5000, connectTimeoutMS=5000` to ALL AsyncIOMotorClient calls
+  - **Files Modified:** All files in `/app/backend/routes/` that create MongoDB connections
+
+- **Added:** Shared database utility module
+  - Created `/app/backend/utils/database.py` for centralized connection management
+
 #### March 17, 2026 - Deployment Pipeline Fix (Session 2)
 - **Fixed (P0):** Backend startup issues causing HTTP 520 deployment failures
   - **Issue:** Backend hanging during startup, preventing health checks from passing

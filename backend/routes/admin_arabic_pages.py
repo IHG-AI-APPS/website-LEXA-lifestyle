@@ -14,7 +14,7 @@ logger = logging.getLogger(__name__)
 # MongoDB connection
 MONGO_URL = os.environ.get("MONGO_URL")
 DB_NAME = os.environ.get("DB_NAME", "lexa_lifestyle")
-client = AsyncIOMotorClient(MONGO_URL)
+client = AsyncIOMotorClient(MONGO_URL, serverSelectionTimeoutMS=5000, connectTimeoutMS=5000)
 db = client[DB_NAME]
 
 router = APIRouter(prefix="/api/admin/arabic-pages", tags=["admin-arabic-pages"])

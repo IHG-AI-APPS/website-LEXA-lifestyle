@@ -15,7 +15,7 @@ router = APIRouter(prefix="/api/package-inquiry", tags=["package-inquiry"])
 logger = logging.getLogger(__name__)
 
 mongo_url = os.environ.get('MONGO_URL')
-client = AsyncIOMotorClient(mongo_url)
+client = AsyncIOMotorClient(mongo_url, serverSelectionTimeoutMS=5000, connectTimeoutMS=5000)
 db = client[os.environ.get('DB_NAME', 'lexa_lifestyle')]
 
 

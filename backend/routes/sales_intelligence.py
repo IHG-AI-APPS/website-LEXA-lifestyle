@@ -26,7 +26,7 @@ SECRET_KEY = os.environ.get("JWT_SECRET_KEY", "lexa-smart-home-secret-key-2024")
 ALGORITHM = "HS256"
 
 mongo_url = os.environ.get('MONGO_URL')
-client = AsyncIOMotorClient(mongo_url)
+client = AsyncIOMotorClient(mongo_url, serverSelectionTimeoutMS=5000, connectTimeoutMS=5000)
 db = client[os.environ.get('DB_NAME', 'lexa_lifestyle')]
 
 

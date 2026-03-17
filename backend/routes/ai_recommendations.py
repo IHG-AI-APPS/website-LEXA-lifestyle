@@ -13,7 +13,7 @@ router = APIRouter()
 
 MONGO_URL = os.getenv('MONGO_URL', 'mongodb://localhost:27017')
 DB_NAME = os.getenv('DB_NAME', 'lexa_lifestyle')
-client = AsyncIOMotorClient(MONGO_URL)
+client = AsyncIOMotorClient(MONGO_URL, serverSelectionTimeoutMS=5000, connectTimeoutMS=5000)
 db = client[DB_NAME]
 
 

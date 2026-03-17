@@ -28,7 +28,7 @@ os.makedirs(BACKUPS_DIR, exist_ok=True)
 
 # Get database
 def get_db():
-    client = AsyncIOMotorClient(os.getenv('MONGO_URL'))
+    client = AsyncIOMotorClient(os.getenv('MONGO_URL'), serverSelectionTimeoutMS=5000, connectTimeoutMS=5000)
     return client[os.getenv('DB_NAME', 'smart_home_db')]
 
 @router.get("/")

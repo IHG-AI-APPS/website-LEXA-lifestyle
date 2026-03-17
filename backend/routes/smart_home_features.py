@@ -24,7 +24,7 @@ logger = logging.getLogger(__name__)
 # MongoDB connection
 mongo_url = os.environ.get('MONGO_URL')
 db_name = os.environ.get('DB_NAME', 'lexa_db')
-client = AsyncIOMotorClient(mongo_url)
+client = AsyncIOMotorClient(mongo_url, serverSelectionTimeoutMS=5000, connectTimeoutMS=5000)
 db = client[db_name]
 
 router = APIRouter(prefix="/api/smart-home", tags=["Smart Home Features"])
