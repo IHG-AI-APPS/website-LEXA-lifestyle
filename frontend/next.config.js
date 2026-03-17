@@ -99,10 +99,18 @@ const nextConfig = {
   // Source maps disabled in production for faster loading
   productionBrowserSourceMaps: false,
 
-  // Allow dev origins for preview environment
+  // Allow dev origins for preview environment - use wildcards for all Emergent domains
   allowedDevOrigins: [
-    'dynamic-content-hub-3.preview.emergentagent.com',
-    'dynamic-content-hub-3.cluster-0.preview.emergentcf.cloud',
+    'health-check-deploy-3.preview.emergentagent.com',
+    'health-check-deploy-3.cluster-5.preview.emergentcf.cloud',
+    '*.preview.emergentagent.com',
+    '*.preview.emergentcf.cloud',
+    '*.cluster-0.preview.emergentcf.cloud',
+    '*.cluster-1.preview.emergentcf.cloud',
+    '*.cluster-2.preview.emergentcf.cloud',
+    '*.cluster-3.preview.emergentcf.cloud',
+    '*.cluster-4.preview.emergentcf.cloud',
+    '*.cluster-5.preview.emergentcf.cloud',
   ],
   
   // Compiler optimizations
