@@ -91,5 +91,28 @@ if (!fs.existsSync(fontManifestStandalone)) {
   fs.writeFileSync(fontManifestStandalone, '[]');
 }
 
+// Step 5: Copy server files to frontend root for local development
+// This allows `yarn start` to work with `node server.js`
+const rootServerJs = 'server.js';
+const rootServerOriginal = 'server.original.js';
+const rootNextServerFiles = 'next-server-files';
+
+console.log('[POSTBUILD] Copying server files to frontend root...');
+
+// Copy server-launcher.js as server.js to root
+fs.copyFileSync(launcherSrc, rootServerJs);
+
+// Copy server.original.js to root
+if (fs.existsSync(renamedServer)) {
+  fs.copyFileSync(renamedServer, rootServerOriginal);
+}
+
+// Copy next-server-files to root
+if (fs.existsSync(rootNextServerFiles)) {
+  fs.rmSync(rootNextServerFiles, { recursive: true });
+}
+copyRecursiveSync(nextServerDir, rootNextServerFiles);
+
 console.log('[POSTBUILD] Done!');
 console.log('[POSTBUILD] Standalone contents:', fs.readdirSync(standaloneDir).join(', '));
+console.log('[POSTBUILD] Root contents:', fs.readdirSync('.').filter(f => f.startsWith('server') || f.includes('next-server')).join(', '));

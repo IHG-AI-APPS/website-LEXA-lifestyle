@@ -1,0 +1,253 @@
+{
+  "app/calculator/page.tsx -> @/components/FloorPlanUploader": {
+    "id": 19446,
+    "files": [
+      "static/chunks/vendor-ui-7af224925d8834fb.js",
+      "static/chunks/9446.396056f5dc9b42ca.js"
+    ]
+  },
+  "app/calculator/page.tsx -> @/components/TabbyWidget": {
+    "id": 905,
+    "files": [
+      "static/chunks/vendor-ui-7af224925d8834fb.js",
+      "static/chunks/905.d9c7f2559d00303e.js"
+    ]
+  },
+  "app/calculator/page.tsx -> @/components/modals/BookingModal": {
+    "id": 69239,
+    "files": [
+      "static/chunks/vendor-ui-7af224925d8834fb.js",
+      "static/chunks/9239.a7a5e45236c3f7cc.js"
+    ]
+  },
+  "app/calculator/page.tsx -> @/components/navigation/RelatedPagesNav": {
+    "id": 84211,
+    "files": [
+      "static/chunks/vendor-ui-7af224925d8834fb.js",
+      "static/chunks/4211.cbb8bc831c92c1f4.js"
+    ]
+  },
+  "app/calculator/page.tsx -> @/hooks/useAnalytics": {
+    "id": 19773,
+    "files": [
+      "static/chunks/9773.8a5e24f71aae105c.js"
+    ]
+  },
+  "app/catalogues/[slug]/page.tsx -> @/components/catalogues/PDFFlipbook": {
+    "id": 63329,
+    "files": [
+      "static/chunks/vendor-ui-7af224925d8834fb.js",
+      "static/chunks/9b0008ae.ea34245390ccc7c1.js",
+      "static/chunks/4966.6d59bca8c6a3e7df.js"
+    ]
+  },
+  "app/contact/page.tsx -> @/lib/api": {
+    "id": 29116,
+    "files": [
+      "static/chunks/9116.444d873897069f99.js"
+    ]
+  },
+  "app/page.tsx -> @/components/gallery/BrandMarquee": {
+    "id": 77698,
+    "files": [
+      "static/chunks/7698.f79f733673910336.js"
+    ]
+  },
+  "app/page.tsx -> @/components/gallery/TetrisProjects": {
+    "id": 32754,
+    "files": [
+      "static/chunks/vendor-ui-7af224925d8834fb.js",
+      "static/chunks/2754.6ce9ad094e20371b.js"
+    ]
+  },
+  "app/page.tsx -> @/components/homepage/CalculatorCardsSection": {
+    "id": 42032,
+    "files": [
+      "static/chunks/vendor-ui-7af224925d8834fb.js",
+      "static/chunks/2032.a1704214bb8f38c5.js"
+    ]
+  },
+  "app/page.tsx -> @/components/homepage/ExperienceCentreCTA": {
+    "id": 42040,
+    "files": [
+      "static/chunks/vendor-ui-7af224925d8834fb.js",
+      "static/chunks/2040.e58d39a978072dea.js"
+    ]
+  },
+  "app/page.tsx -> @/components/homepage/SolutionsBentoGrid": {
+    "id": 20605,
+    "files": [
+      "static/chunks/vendor-ui-7af224925d8834fb.js",
+      "static/chunks/605.5937d08ede6249ab.js"
+    ]
+  },
+  "app/page.tsx -> @/components/sections/Testimonials": {
+    "id": 43703,
+    "files": [
+      "static/chunks/3703.59031b3b3efb2812.js"
+    ]
+  },
+  "app/solutions/page.tsx -> @/components/mobile/SwipeCarousel": {
+    "id": 3691,
+    "files": [
+      "static/chunks/vendor-ui-7af224925d8834fb.js",
+      "static/chunks/4899.268cb26de3394ff5.js"
+    ]
+  },
+  "app/solutions/page.tsx -> @/components/widgets/RecentlyViewedSection": {
+    "id": 25679,
+    "files": [
+      "static/chunks/vendor-ui-7af224925d8834fb.js",
+      "static/chunks/5679.b458d5b17e8c0ac0.js"
+    ]
+  },
+  "components/FloorPlanUploader.tsx -> react-image-annotate": {
+    "id": 20719,
+    "files": [
+      "static/chunks/13b76428.8b9e718b0ae049b3.js",
+      "static/chunks/e2799680.1d7104d76701388f.js",
+      "static/chunks/1648.086f13cfadd6a3ab.js",
+      "static/chunks/8891.e0bf67c56723fdba.js",
+      "static/chunks/514.8884022276c8e636.js",
+      "static/chunks/1098.7cc8ac178d72547a.js",
+      "static/chunks/2153.a9f191d0fba05ea9.js",
+      "static/chunks/5001.cdf2b0ad548d2efb.js",
+      "static/chunks/4681.acb5f37e4d7c254b.js",
+      "static/chunks/1787.050223ff11ccf3e9.js",
+      "static/chunks/9000.cbd9755228cd225e.js",
+      "static/chunks/1666.6a7e9ca380a90d91.js",
+      "static/chunks/8729.6cd610e29ca88b83.js"
+    ]
+  },
+  "components/forms/ConsultationForm.tsx -> @/hooks/useAnalytics": {
+    "id": 19773,
+    "files": [
+      "static/chunks/9773.8a5e24f71aae105c.js"
+    ]
+  },
+  "components/forms/ConsultationForm.tsx -> @/lib/api": {
+    "id": 29116,
+    "files": [
+      "static/chunks/9116.444d873897069f99.js"
+    ]
+  },
+  "components/homepage/SolutionsBentoGrid.tsx -> @/components/mobile/SwipeCarousel": {
+    "id": 3691,
+    "files": [
+      "static/chunks/vendor-ui-7af224925d8834fb.js",
+      "static/chunks/4899.268cb26de3394ff5.js"
+    ]
+  },
+  "components/layout/ClientLayout.tsx -> @/components/forms/ConsultationForm": {
+    "id": 44945,
+    "files": [
+      "static/chunks/9454-0440d726d07c9e6c.js",
+      "static/chunks/4945.fb235b010d31eeaf.js"
+    ]
+  },
+  "components/layout/ClientLayout.tsx -> @/components/mobile/MobileQuickActions": {
+    "id": 23022,
+    "files": [
+      "static/chunks/vendor-ui-7af224925d8834fb.js",
+      "static/chunks/3022.38b74f929eaa827f.js"
+    ]
+  },
+  "components/layout/ClientLayout.tsx -> @/components/mobile/PullToRefresh": {
+    "id": 77034,
+    "files": [
+      "static/chunks/vendor-ui-7af224925d8834fb.js",
+      "static/chunks/5889.8e8ac41fb09ede1a.js"
+    ]
+  },
+  "components/layout/ClientLayout.tsx -> @/components/performance/LinkPrefetcher": {
+    "id": 32314,
+    "files": [
+      "static/chunks/8775.b0df5bf20a5eca2c.js"
+    ]
+  },
+  "components/layout/ClientLayout.tsx -> @/components/seo/DynamicFavicon": {
+    "id": 21958,
+    "files": [
+      "static/chunks/1958.01d9726c621d62f9.js"
+    ]
+  },
+  "components/layout/ClientLayout.tsx -> @/components/widgets/AIChatWidget": {
+    "id": 25291,
+    "files": [
+      "static/chunks/vendor-ui-7af224925d8834fb.js",
+      "static/chunks/5291.4df98646e5c795fd.js"
+    ]
+  },
+  "components/layout/ClientLayout.tsx -> @/components/widgets/CookieConsent": {
+    "id": 98854,
+    "files": [
+      "static/chunks/vendor-ui-7af224925d8834fb.js",
+      "static/chunks/8854.d3849b9102a33efd.js"
+    ]
+  },
+  "components/layout/ClientLayout.tsx -> @/components/widgets/ExitIntentPopup": {
+    "id": 75743,
+    "files": [
+      "static/chunks/vendor-ui-7af224925d8834fb.js",
+      "static/chunks/9454-0440d726d07c9e6c.js",
+      "static/chunks/5743.214744975ac00cc2.js"
+    ]
+  },
+  "components/layout/ClientLayout.tsx -> @/components/widgets/ScheduleVisitButton": {
+    "id": 29027,
+    "files": [
+      "static/chunks/vendor-ui-7af224925d8834fb.js",
+      "static/chunks/9454-0440d726d07c9e6c.js",
+      "static/chunks/9027.1d57806866bd0320.js"
+    ]
+  },
+  "components/layout/ClientLayout.tsx -> @/components/widgets/SocialProofWidget": {
+    "id": 55134,
+    "files": [
+      "static/chunks/vendor-ui-7af224925d8834fb.js",
+      "static/chunks/5134.5fe2a38e868dd4e0.js"
+    ]
+  },
+  "components/layout/Header.tsx -> @/components/forms/ConsultationForm": {
+    "id": 44945,
+    "files": [
+      "static/chunks/9454-0440d726d07c9e6c.js",
+      "static/chunks/4945.fb235b010d31eeaf.js"
+    ]
+  },
+  "components/layout/Header.tsx -> @/components/navigation/IntelligenceMegaMenu": {
+    "id": 37841,
+    "files": [
+      "static/chunks/vendor-ui-7af224925d8834fb.js",
+      "static/chunks/7841.5d5b599e7746a86e.js"
+    ]
+  },
+  "components/layout/Header.tsx -> @/components/navigation/MobileMegaMenu": {
+    "id": 95807,
+    "files": [
+      "static/chunks/vendor-ui-7af224925d8834fb.js",
+      "static/chunks/5807.b32311f0a3c8a686.js"
+    ]
+  },
+  "components/layout/Header.tsx -> @/components/navigation/PackagesMegaMenu": {
+    "id": 85714,
+    "files": [
+      "static/chunks/vendor-ui-7af224925d8834fb.js",
+      "static/chunks/5714.80bc8ff1939f0efc.js"
+    ]
+  },
+  "components/layout/Header.tsx -> @/components/navigation/ServicesMegaMenu": {
+    "id": 47631,
+    "files": [
+      "static/chunks/vendor-ui-7af224925d8834fb.js",
+      "static/chunks/7631.d6d94379683b7209.js"
+    ]
+  },
+  "components/layout/Header.tsx -> @/components/navigation/SolutionsMegaMenu": {
+    "id": 98282,
+    "files": [
+      "static/chunks/vendor-ui-7af224925d8834fb.js",
+      "static/chunks/8282.11ca401546192d57.js"
+    ]
+  }
+}
