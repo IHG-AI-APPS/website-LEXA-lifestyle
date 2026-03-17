@@ -31,6 +31,22 @@ A premium smart home solutions website with dynamic content management, product 
 
 ### Recent Fixes (March 2026)
 
+#### March 17, 2026 - Deployment Pipeline Fix
+- **Fixed (P0):** Production deployment failure for Next.js standalone builds
+  - **Root Cause:** Emergent deployment pipeline uses `cp -r .next/standalone/*` which doesn't copy hidden directories (`.next` inside standalone)
+  - **Solution:** 
+    1. Modified `postbuild.js` to copy server files to frontend root directory
+    2. Simplified `package.json` start script to: `"start": "node server.js"`
+    3. Custom `server-launcher.js` copies `next-server-files/` to `.next/` before starting
+  - **Files Modified:**
+    - `/app/frontend/scripts/postbuild.js` - Added Step 5 to copy server files to root
+    - `/app/frontend/package.json` - Simplified start script
+  - **Verification:** Frontend now runs correctly with standalone server in both preview and deployment environments
+
+- **Fixed:** Brand Partners section on About page
+  - Corrected filtering logic to display only brands marked as "Partner"
+  - Implemented dark background in light mode, white background in dark mode for better logo visibility
+
 #### March 14, 2026 - P1 Features Implementation
 - **Verified:** Brand/Service/Solution Landing Pages already exist at:
   - `/brands/[slug]` - Individual brand pages with full content
