@@ -27,27 +27,28 @@ from utils.cache import cache, cached
 from routes import public_api, content, bookings, submissions, calculator, brands_products, admin_content, packages, package_inquiry, intelligence, admin_extended_content, admin_arabic_pages, patches, ai_recommendations, project_builder, smart_home_features, pricing, admin_solutions_services, ai_chatbot, lead_enhancement, seo_enhancement, uploads, analytics, schedule_visit, smart_recommendations, geo_pages, tracking_settings, sales_intelligence, locations, catalogues, regression_tests, admin_whatsapp, product_catalog
 
 ROOT_DIR = Path(__file__).parent
-load_dotenv(ROOT_DIR / '.env')
+# Load .env file but DON'T override existing environment variables (important for deployment)
+# In production, env vars are set by the container runtime
+load_dotenv(ROOT_DIR / '.env', override=False)
 
 # Clean up stale git lock files on server startup
 def cleanup_git_locks():
     """Remove stale git lock files to prevent push failures"""
-    git_lock = Path("/app/.git/index.lock")
-    if git_lock.exists():
-        try:
+    # Skip in production - no git operations needed
+    if os.environ.get('DEPLOYMENT_ENV') == 'production':
+        return
+    
+    try:
+        git_lock = Path("/app/.git/index.lock")
+        if git_lock.exists():
             git_lock.unlink()
             print("🧹 Cleaned up stale git lock file")
-        except Exception:
-            pass
-    # Clean up any other git locks
-    for lock_file in Path("/app").rglob("*.lock"):
-        if ".git" in str(lock_file):
-            try:
-                lock_file.unlink()
-            except Exception:
-                pass
+    except Exception:
+        pass
 
-cleanup_git_locks()
+# Only run git cleanup in development
+if os.environ.get('DEPLOYMENT_ENV') != 'production':
+    cleanup_git_locks()
 
 # JWT Configuration
 SECRET_KEY = os.environ.get("JWT_SECRET_KEY")
@@ -70,9 +71,19 @@ DEFAULT_ADMIN_USERNAME = os.environ.get("ADMIN_USERNAME", "admin")
 DEFAULT_ADMIN_PASSWORD = os.environ.get("ADMIN_PASSWORD", "lexa2026")
 
 # MongoDB connection
-mongo_url = os.environ['MONGO_URL']
-client = AsyncIOMotorClient(mongo_url)
-db = client[os.environ['DB_NAME']]
+mongo_url = os.environ.get('MONGO_URL')
+if not mongo_url:
+    raise ValueError("MONGO_URL environment variable is required")
+
+db_name = os.environ.get('DB_NAME')
+if not db_name:
+    raise ValueError("DB_NAME environment variable is required")
+
+# Log connection info (without sensitive data)
+print(f"🔗 Connecting to MongoDB: {mongo_url[:20]}... DB: {db_name}")
+
+client = AsyncIOMotorClient(mongo_url, serverSelectionTimeoutMS=5000)
+db = client[db_name]
 
 app = FastAPI(title="LEXA Lifestyle API", version="2.0.0")
 
@@ -134,6 +145,17 @@ class ETagCacheMiddleware(BaseHTTPMiddleware):
         )
 
 app.add_middleware(ETagCacheMiddleware)
+
+# Root-level health endpoint for deployment health checks
+@app.get("/health")
+async def health_check():
+    """Health check endpoint for deployment monitoring"""
+    try:
+        await client.admin.command('ping')
+        return {"status": "healthy", "database": "connected", "timestamp": datetime.now(timezone.utc).isoformat()}
+    except Exception as e:
+        logger.error(f"Health check failed: {str(e)}")
+        return {"status": "unhealthy", "database": "disconnected", "error": str(e)}
 
 api_router = APIRouter(prefix="/api")
 
@@ -2679,11 +2701,19 @@ app.add_middleware(
 @app.on_event("startup")
 async def startup_db():
     """Initialize admin user on startup"""
-    await init_admin()
-    # Create weighted text search index for product catalog
-    from routes.product_catalog import ensure_search_index
-    await ensure_search_index()
-    logger.info("✅ Admin initialization complete")
+    try:
+        # Test MongoDB connection first
+        await client.admin.command('ping')
+        logger.info("✅ MongoDB connection successful")
+        
+        await init_admin()
+        # Create weighted text search index for product catalog
+        from routes.product_catalog import ensure_search_index
+        await ensure_search_index()
+        logger.info("✅ Admin initialization complete")
+    except Exception as e:
+        logger.error(f"❌ Startup error: {e}")
+        raise
 
 @app.on_event("shutdown")
 async def shutdown_db_client():

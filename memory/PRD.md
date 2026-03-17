@@ -31,7 +31,19 @@ A premium smart home solutions website with dynamic content management, product 
 
 ### Recent Fixes (March 2026)
 
-#### March 17, 2026 - Deployment Pipeline Fix
+#### March 17, 2026 - Deployment Pipeline Fix (Session 2)
+- **Fixed (P0):** Backend startup issues causing HTTP 520 deployment failures
+  - **Issue:** Backend hanging during startup, preventing health checks from passing
+  - **Fixes Applied:**
+    1. **Git lock cleanup** - Removed potentially hanging `rglob()` operation, skip in production
+    2. **MongoDB connection** - Added timeout (5s), validation, and connection logging
+    3. **Environment variables** - Added `override=False` to `load_dotenv()` to prevent local .env from overriding production secrets
+    4. **Health endpoint** - Added root-level `/health` endpoint for deployment health checks
+    5. **Startup error handling** - Added try-catch with MongoDB ping test and proper logging
+  - **Files Modified:**
+    - `/app/backend/server.py` - Lines 32-48 (git cleanup), 73-85 (MongoDB), 30 (dotenv), 149-158 (/health endpoint), 2690-2708 (startup)
+
+#### March 17, 2026 - Deployment Pipeline Fix (Session 1)
 - **Fixed (P0):** Production deployment failure for Next.js standalone builds
   - **Root Cause:** Emergent deployment pipeline uses `cp -r .next/standalone/*` which doesn't copy hidden directories (`.next` inside standalone)
   - **Solution:** 
