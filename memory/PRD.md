@@ -1,548 +1,65 @@
-# LEXA Smart Home - Product Requirements Document
+# LEXA Lifestyle - Smart Home Automation Platform
 
-## Project Overview
-A premium smart home solutions website with dynamic content management, product catalog, package builder, and admin panel.
+## Original Problem Statement
+Building a comprehensive smart home automation platform for LEXA Lifestyle, a luxury smart home company based in Dubai. The platform includes a Next.js frontend, FastAPI backend, and MongoDB database.
 
-## Core Features Implemented
+## Current Status: Deployment Fix In Progress
 
-### External Storage & CDN Migration ✅
-- All images migrated to `files.ihgbrands.com/lexa/`
-- SFTP-based file uploads via `paramiko`
-- WebP image optimization (>90% size reduction)
-- Nginx caching and compression configured
+### Recent Changes (March 17, 2026)
 
-### Admin Panel ✅
-- Dashboard with analytics
-- Product catalog management (CRUD)
-- Brand management with logo uploads
-- File Manager at `/admin/files`
-- CSV import/export for products
-- **Dynamic Favicon Management** - Upload/manage favicon from Site Settings
-- **Enhanced Video Upload** - Duration display, file info during upload
+#### NEXT_PUBLIC_BACKEND_URL Configuration Fix
+- **Issue:** `NEXT_PUBLIC_BACKEND_URL` was being derived from `REACT_APP_BACKEND_URL` in `next.config.js` env block
+- **Fix:** Removed env remapping - Next.js now reads `NEXT_PUBLIC_BACKEND_URL` directly from `.env` file
+- **Status:** Fixed and verified locally
 
-### Frontend Features ✅
-- Package Builder with customization
-- Product catalog with advanced search
-- Brand pages with category filtering
-- Solution pages
-- Multi-image product galleries
-- **Dynamic Favicon** - Automatically updates when changed in admin
-- **Video Testimonials** - Full-featured video testimonial section on About page
-
-### Recent Fixes (March 2026)
-
-#### March 17, 2026 - Deployment Pipeline Fix (Session 3)
-- **Fixed (P0 - CRITICAL):** Route import order causing MONGO_URL to be undefined
-  - **Root Cause:** Routes were imported BEFORE `load_dotenv()` was called, so when route modules tried to create MongoDB connections, `MONGO_URL` wasn't set yet
-  - **Fix:** Moved route imports AFTER `load_dotenv()` call in server.py
-  - **Files Modified:** `/app/backend/server.py` - Reordered imports
-
-- **Fixed (P0):** MongoDB connection timeouts across all route files
-  - **Issue:** 30+ route files were creating MongoDB connections without timeouts, causing potential hangs in production
-  - **Fix:** Added `serverSelectionTimeoutMS=5000, connectTimeoutMS=5000` to ALL AsyncIOMotorClient calls
-  - **Files Modified:** All files in `/app/backend/routes/` that create MongoDB connections
-
-- **Added:** Shared database utility module
-  - Created `/app/backend/utils/database.py` for centralized connection management
-
-#### March 17, 2026 - Deployment Pipeline Fix (Session 2)
-- **Fixed (P0):** Backend startup issues causing HTTP 520 deployment failures
-  - **Issue:** Backend hanging during startup, preventing health checks from passing
-  - **Fixes Applied:**
-    1. **Git lock cleanup** - Removed potentially hanging `rglob()` operation, skip in production
-    2. **MongoDB connection** - Added timeout (5s), validation, and connection logging
-    3. **Environment variables** - Added `override=False` to `load_dotenv()` to prevent local .env from overriding production secrets
-    4. **Health endpoint** - Added root-level `/health` endpoint for deployment health checks
-    5. **Startup error handling** - Added try-catch with MongoDB ping test and proper logging
-  - **Files Modified:**
-    - `/app/backend/server.py` - Lines 32-48 (git cleanup), 73-85 (MongoDB), 30 (dotenv), 149-158 (/health endpoint), 2690-2708 (startup)
-
-#### March 17, 2026 - Deployment Pipeline Fix (Session 1)
-- **Fixed (P0):** Production deployment failure for Next.js standalone builds
-  - **Root Cause:** Emergent deployment pipeline uses `cp -r .next/standalone/*` which doesn't copy hidden directories (`.next` inside standalone)
-  - **Solution:** 
-    1. Modified `postbuild.js` to copy server files to frontend root directory
-    2. Simplified `package.json` start script to: `"start": "node server.js"`
-    3. Custom `server-launcher.js` copies `next-server-files/` to `.next/` before starting
-  - **Files Modified:**
-    - `/app/frontend/scripts/postbuild.js` - Added Step 5 to copy server files to root
-    - `/app/frontend/package.json` - Simplified start script
-  - **Verification:** Frontend now runs correctly with standalone server in both preview and deployment environments
-
-- **Fixed:** Brand Partners section on About page
-  - Corrected filtering logic to display only brands marked as "Partner"
-  - Implemented dark background in light mode, white background in dark mode for better logo visibility
-
-#### March 14, 2026 - P1 Features Implementation
-- **Verified:** Brand/Service/Solution Landing Pages already exist at:
-  - `/brands/[slug]` - Individual brand pages with full content
-  - `/solutions/[slug]` - Solution-specific landing pages
-  - `/services/[slug]` - Service detail pages
-  
-- **Enhanced:** Dynamic Favicon Management
-  - Favicon field already existed in Site Settings admin panel
-  - Created `DynamicFavicon.tsx` client component to update favicon dynamically
-  - Integrated into `ClientLayout.tsx` - updates browser favicon when changed in admin
-  - Files: `/app/frontend/components/seo/DynamicFavicon.tsx`, `/app/frontend/components/layout/ClientLayout.tsx`
-
-- **Enhanced:** Hero Video Upload in Admin Panel
-  - Added video duration display (MM:SS format) on preview
-  - Added file name and size display during upload
-  - Better progress feedback with file info
-  - File: `/app/frontend/app/admin/site-settings/page.tsx` (VideoUploader component)
-
-- **Completed:** Video Testimonials with YouTube Placeholders
-  - Updated 3 video testimonials with relevant smart home YouTube videos
-  - Videos play in modal via YouTube embed
-  - Admin panel supports video URL management
-
-#### March 7, 2026 - Blog Fix & Modal Scroll Fix
-- **Fixed:** Blog admin page error (client-side exception)
-  - Issue: Page was showing "Application error: a client-side exception has occurred"
-  - Cause: Frontend build cache issue
-  - Solution: Rebuilt frontend to fix the issue
-
-- **Fixed:** Frontend modal scrolling - background moving when scrolling modal
-  - Updated all frontend modals with `onWheel={(e) => e.stopPropagation()}`
-  - Files fixed:
-    - `ConsultationForm.tsx`
-    - `BookingModal.tsx`
-    - `ScheduleVisitModal.tsx`
-    - `PersonaModal.tsx`
-    - `QuickViewModal.tsx`
-
-#### March 7, 2026 - Project Type/Category Dropdowns & Admin CRUD
-- **New Feature:** Project Types and Categories Management
-  - Created new admin page at `/admin/project-settings` with tabs for Types and Categories
-  - Full CRUD functionality for both Project Types and Categories
-  - Backend API endpoints: `/api/project-types`, `/api/project-categories`
-  - Admin API endpoints: `/api/admin/project-types/*`, `/api/admin/project-categories/*`
-  - Seeded with initial data: Residential, Commercial, Villa (types) and Residential, Smart Villa, Penthouse (categories)
-
-- **Updated:** Project form now uses dropdowns instead of input fields for Type and Category
-  - Type dropdown populated from `project_types` collection
-  - Category dropdown populated from `project_categories` collection
-  - Files updated: `/app/frontend/app/admin/projects/page.tsx`
-
-#### March 7, 2026 - Modal Refactoring & Button/Text Visibility Fix
-- **Fixed (P0):** All admin panel modals refactored to use reusable Modal component
-  - Issue: Modals across the admin panel had inconsistent behavior - off-center, not scrollable, cut off content
-  - Solution: Created centralized `Modal` component at `/app/frontend/components/ui/Modal.tsx`
-
-- **Fixed (P0):** Admin Panel Button and Text Visibility Issues
-  - Issue: Action buttons (Edit/Delete) had invisible icons on dark backgrounds
-  - Cause: `outline` variant in Button component used black border/text on dark backgrounds
-  - Solution: Updated `Button`, `Input`, `Textarea`, and `Checkbox` components with proper dark mode support
-  - Files updated:
-    - `/app/frontend/components/ui/button.tsx` - Updated outline variant with gray borders and proper dark mode colors
-    - `/app/frontend/components/ui/input.tsx` - Added dark mode background and text colors
-    - `/app/frontend/components/ui/textarea.tsx` - Added dark mode support
-    - `/app/frontend/components/ui/checkbox.tsx` - Added dark mode border and checked state colors
-
-- **Fixed:** Package Builder tier change not working
-  - Issue: When navigating with URL params (e.g., `?property=luxury-villas-mansions&tier=enhanced`), clicking "Change tier" wouldn't navigate back to tier selection
-  - Solution: Added `tierAutoSelected` flag to prevent useEffect from re-triggering after initial auto-selection
-
-- **Fixed:** Modal scrolling - background was moving when scrolling modal content
-  - Solution: Updated Modal component with proper scroll containment
-  
-- **Verified:** All Admin Panel CRUD operations working correctly
-  - Projects: 19 items, Brands: 37 items, Articles: 53 items
-
-- **Fixed:** Brand logos not visible in dark mode
-  - Issue: Logo images with dark content on transparent background invisible on dark cards
-  - Solution: Added inline `backgroundColor: '#ffffff'` to logo containers
-  - File: `/app/frontend/app/brands/page.tsx`
-
-- **Fixed:** Page navigation not scrolling to top
-  - Issue: Lenis smooth scroll library was intercepting window.scrollTo
-  - Solution: Updated SmoothScrollProvider with context API to expose scrollToTop function
-  - Files: `SmoothScrollProvider.tsx`, `ClientLayout.tsx`
-
-- **Fixed:** Modals appearing off-screen on long pages
-  - Issue: Modals with `fixed` positioning were inheriting incorrect stacking context from parent elements, and transform-based centering (`-translate-x-1/2 -translate-y-1/2`) was being overridden by framer-motion
-  - Solution: Used flex container wrapper (`fixed inset-0 flex items-center justify-center`) with portal to document.body, and added body scroll lock
-  - Files: `ConsultationForm.tsx`, `ScheduleVisitModal.tsx`, `QuickViewModal.tsx`, `BookingModal.tsx`, `PersonaModal.tsx`, `ExitIntentPopup.tsx`
-  - Pattern: Wrapper div with flex centering + absolute backdrop + relative modal content
-
-#### March 7, 2026 - Main Site Modal Refactoring (P1 Task Completed)
-- **Refactored (P1):** All main site modals now use the reusable Modal component
-  - Previously: Each modal had its own implementation with createPortal, scroll lock, backdrop, etc.
-  - After: All modals use centralized `Modal` component for consistency and maintainability
-  - Files refactored:
-    - `/app/frontend/components/forms/ConsultationForm.tsx` - Uses Modal component
-    - `/app/frontend/components/modals/BookingModal.tsx` - Uses Modal component  
-    - `/app/frontend/components/sections/PersonaModal.tsx` - Uses Modal component
-    - `/app/frontend/components/widgets/ScheduleVisitModal.tsx` - Uses Modal component
-    - `/app/frontend/components/widgets/ExitIntentPopup.tsx` - Uses Modal component
-    - `/app/frontend/components/QuickViewModal.tsx` - Keeps custom implementation for mobile slide-up behavior
-  - Modal features verified (100% pass rate):
-    - ESC key closes modal
-    - Backdrop click closes modal
-    - X button closes modal
-    - Body scroll lock prevents background scrolling
-    - Proper z-index and portal rendering
-    - data-testid attributes for automation testing
-
-#### March 10, 2026 - Page Loading & Video Caching Fix ✅
-- **Fixed:** Double loading issue on fresh page visits
-  - Hero component now waits for site settings API before showing video
-  - Single loading spinner shown until settings are ready
-  - Removed conflicting splash screens and body animations
-- **Fixed:** Old video showing on first visit  
-  - Added cache-busting timestamp to site settings API calls (`?_t=Date.now()`)
-  - Added `Cache-Control: no-cache, no-store, must-revalidate` headers
-  - Added `isReady` state to prevent loading DEFAULT_HERO_CLIPS before settings arrive
-- **Files Modified:**
-  - `/app/frontend/components/gallery/HeroCurator.tsx` - Added isReady state, loading spinner
-  - `/app/frontend/hooks/useSiteSettings.tsx` - Cache-busting for fresh data
-  - `/app/frontend/app/layout.tsx` - Simplified CSS, removed conflicting animations
-
-#### March 10, 2026 - Page Loading Improvement ✅
-- **Fixed:** Added splash screen to prevent layout flash during page hydration
-  - Created a loading overlay with gold spinner matching brand colors
-  - Splash screen covers entire viewport with z-index 99999
-  - Delayed fade-out (500ms) to allow content to settle before revealing
-  - Added `min-h-screen` to main content area to prevent footer from appearing at top
-  - Files modified: `/app/frontend/app/layout.tsx`, `/app/frontend/components/layout/ClientLayout.tsx`
-- **Note:** Some brief content flash may still occur on slower connections or cold cache due to Next.js SSR behavior
-
-#### March 10, 2026 - Button Text Standardization & Video Upload Feature ✅
-- **Fixed (P0):** Button text sizes standardized for better visual consistency
-  - **File Modified:** `/app/frontend/components/ui/button.tsx`
-  - **Previous sizes:** default: `text-sm`, sm: `text-xs`, lg: `text-base`
-  - **New sizes:** default: `text-xs h-10`, sm: `text-[11px] h-9`, lg: `text-sm h-12`
-  - Buttons now have smaller, more balanced text proportional to their overall size
-  - All button variants (primary, secondary, outline, ghost) maintain proper visual hierarchy
-
-- **New Feature (P0):** Hero Video Upload in Admin Panel
-  - **Backend:** Added video upload endpoint at `/api/uploads/video`
-    - Accepts: MP4, WebM, MOV files
-    - Max file size: 100MB
-    - Content-type validation for security
-    - Files stored via SFTP remote storage
-    - **File Modified:** `/app/backend/routes/uploads.py` (lines 175-240)
-  
-  - **Frontend:** Created VideoUploader component in Site Settings
-    - Location: Admin > Site Settings > Homepage tab
-    - Features:
-      - "Upload Video" button for direct file upload
-      - "Enter URL" toggle for manual URL entry
-      - Video preview with native HTML5 player controls
-      - Remove video button on preview
-      - Help text showing supported formats and size limit
-    - **File Modified:** `/app/frontend/app/admin/site-settings/page.tsx`
-    - **Testing:** 100% pass rate (9/9 backend tests, all frontend elements verified)
-
-#### March 10, 2026 - Product Series Management Page ✅
-- **Created:** New admin page at `/admin/product-series` for managing product series
-  - **Backend:** Added CRUD endpoints in `/app/backend/server.py`:
-    - `GET /api/product-series` - List all series
-    - `POST /api/admin/product-series` - Create series
-    - `PUT /api/admin/product-series/{id}` - Update series
-    - `DELETE /api/admin/product-series/{id}` - Delete series
-  - **Frontend:** Created `/app/frontend/app/admin/product-series/page.tsx`
-  - **Features:**
-    - Stats: Defined Series, In Use (from products), Featured, Undefined count
-    - Alert banner showing undefined series from products with one-click definition
-    - Full CRUD operations with image upload
-    - Fields: Name, Slug, Brand, Category, Image, Description, Order, Featured
-    - Admin sidebar link added under "Products & Services"
-- **Products Form Update:** Series dropdown now shows "Defined Series" + "From Products"
-
-#### March 10, 2026 - Products Admin Form Enhancement ✅
-- **Enhanced:** Product Add/Edit form now uses dropdowns instead of plain text inputs
-  - **Brand dropdown:** Shows "Defined Brands" (from admin/brands page) + "From Products" (from catalog)
-  - **Category dropdown:** Shows "Defined Categories" (from admin/product-categories) + "From Products" (from catalog)
-  - **Series dropdown:** Shows all existing series from product data with product counts
-  - All dropdowns have "+ Add New" option for creating new values inline
-- **File Modified:** `/app/frontend/app/admin/products/page.tsx`
-- **API Integration:**
-  - `/api/brands` - Admin-defined brands
-  - `/api/products` - Admin-defined product categories
-  - `/api/catalog/categories`, `/api/catalog/brands`, `/api/catalog/series` - Aggregated from product data
-
-#### March 10, 2026 - Admin Products & Categories Fix ✅
-- **Fixed:** Admin Products page now displays actual products (217) from `/api/catalog/products`
-  - **File Modified:** `/app/frontend/app/admin/products/page.tsx`
-  - Features: Search, Pagination (20/page), Add/Edit/Delete products
-  - Shows: Product name, Brand, Category, Sub-category, Status (Published/Draft/Featured)
-  
-- **Fixed:** Admin Product Categories page now displays categories (9) from `/api/products`
-  - **File Modified:** `/app/frontend/app/admin/product-categories/page.tsx`
-  - Features: Search, Stats cards (Total/Featured/Brands), Add/Edit/Delete categories
-  - Shows: Category name, icon, description, brands count, specs count, Featured badge
-
-- **Testing:** 100% pass rate on all CRUD operations and UI functionality
-
-#### March 10, 2026 - Homepage Hero Dynamic Integration ✅
-- **Connected:** Homepage Hero Section to Site Settings
-  - **File Modified:** `/app/frontend/components/gallery/HeroCurator.tsx`
-  - **Fields now dynamic:**
-    - `hero_subtitle` - The quote text displayed over the video
-    - `hero_video_url` - Custom video URL (falls back to CMS or default)
-    - `hero_image` - Fallback background image
-    - `hero_cta_text` - Primary CTA button text
-    - `hero_cta_link` - CTA button navigation link
-  - **Admin panel location:** Site Settings → Homepage tab → Hero Section
-  - **Testing:** Verified via screenshot - dynamic values displayed correctly
-
-#### March 10, 2026 - Dark Mode Visibility Audit & Fix ✅
-- **Fixed (P0):** "Related Solutions" heading invisible in dark mode
-  - **Issue:** Section used `bg-gradient-to-b from-white to-gray-50` which doesn't have proper dark mode override
-  - **Solution:** Changed to `bg-white dark:bg-[#0a0a0a]` for proper dark mode background
-  - **File:** `/app/frontend/app/solutions/components/RelatedSolutions.tsx` line 47
-  - The heading now uses white text (`dark:text-white`) on dark background in dark mode
-
-- **Verified (P0):** Comprehensive Dark Mode Audit - 100% Pass Rate
-  - Tested all key pages: Homepage, Solutions, Brands, Packages, Admin Panel
-  - Theme toggle working correctly (sun/moon icons in header)
-  - localStorage persistence using 'lexa-theme' key
-  - All headings, body text, cards, and form inputs visible in dark mode
-  - Testing agent verified all dark mode text colors:
-    - Headings: rgb(255, 255, 255) - white
-    - Body text: rgb(156, 163, 175) - gray-400
-    - Muted text: rgb(113, 113, 122) - zinc-500
-    - Gold accent: rgb(201, 169, 98) - #C9A962
-
-- **Verified (P1):** Quick View button on project cards - No Touch Shifting
-  - **Status:** Button position verified stable during touch interactions
-  - Position remains at `x: 129.5, y: 388.5` throughout touch events
-  - Button uses `left-1/2 -translate-x-1/2` centering which is stable
-
-#### March 9, 2026 - File Upload Security Restrictions ✅
-- **Security Enhancement:** Implemented strict file upload validation
-  - **Allowed extensions:** jpg, jpeg, png, webp, pdf
-  - **Blocked extensions:** php, exe, js, sh, bat, cmd, ps1, vbs, jar, py, rb, pl, cgi, asp, aspx, jsp, htaccess, html, htm, svg
-  - Added `validate_file_security()` function that checks both file extension AND content-type
-  - Logs warning for blocked upload attempts
-  - File: `/app/backend/routes/uploads.py`
-
-#### March 9, 2026 - Google Maps Embed Management ✅
-- **New Feature (P0):** Google Maps Embed Code management in Admin Panel
-  - Added `google_maps_embed` field to Site Settings > Contact Info tab
-  - Includes live preview of the map when URL is entered
-  - Contact page dynamically uses the saved embed URL with fallback
-  - Instructions provided on how to get embed URL from Google Maps
-  - Files modified: `/app/frontend/app/admin/site-settings/page.tsx`, `/app/frontend/hooks/useSiteSettings.tsx`, `/app/frontend/app/contact/page.tsx`
-
-#### March 9, 2026 - Dynamic Content Integration Complete ✅
-- **Completed (P0):** Full dynamic content integration for contact information
-  - All contact info (phone, email, HR email, social links) now managed from Site Settings admin panel
-  - Components updated to use `useSiteSettings()` hook:
-    - `Header.tsx` - Dynamic header logos (header_logo_light/dark)
-    - `Footer.tsx` - Dynamic social links and footer logo
-    - `ConsultationForm.tsx` - Dynamic contact email in error messages
-    - `FinalCTA.tsx` - Dynamic phone, email, address
-    - `GalleryFooterCTA.tsx` - Dynamic contact info
-    - `work-with-us/page.tsx` - Dynamic HR email for job applications
-    - `careers/Content.tsx` - Dynamic HR email, company phone, address
-    - `support/Content.tsx` - Dynamic emergency phone, WhatsApp, support email
-  - API: `/api/site-settings` provides all settings from `site_settings` collection
-
-- **Fixed (P1):** Project card Quick View button shifting on touch devices
-  - **Root Cause:** Button used `inset-x-0 mx-auto w-fit` which caused layout shifts
-  - **Solution:** Changed to `left-1/2 -translate-x-1/2` for stable centering
-  - Files fixed: `/app/frontend/app/projects/page.tsx`, `/app/frontend/app/blog/page.tsx`
-  - Added `active:bg-[#C9A962] active:text-white` for consistent touch feedback
-
-#### March 9, 2026 - Project CRUD & Blog CRUD Critical Bug Fixes (RESOLVED)
-- **Fixed (P0 - RECURRING CRITICAL):** Admin Projects CRUD not working reliably
-  - **Root Cause:** Admin page was using public `/api/projects` endpoint which filters by `published=True`
-  - **Solution:** Created new admin-specific endpoint `GET /api/admin/projects` that returns ALL projects without filtering
-  - Files modified: `/app/backend/server.py`, `/app/frontend/lib/adminApi.ts`, `/app/frontend/app/admin/projects/page.tsx`
-
-- **Fixed (P0):** Blog/Articles CRUD not working - validation errors
-  - **Root Cause:** Blog form was missing required fields: `id`, `read_time`, `published_date`
-  - **Solution:** Added missing fields to form submission in `/app/frontend/app/admin/blog/page.tsx`
-  - Now generates unique id (`blog-{timestamp}`), sets default read_time (5), and published_date (today)
-
-- **Fixed (LOW):** Cache invalidation for articles
-  - **Issue:** Newly created articles not appearing in list due to cache key mismatch
-  - **Solution:** Added `delete_prefix()` method to cache and updated article CRUD to clear all `articles:*` cache keys
-  - Files modified: `/app/backend/utils/cache.py`, `/app/backend/server.py`
-
-- **Testing Results:** 100% pass rate for both Project and Blog CRUD operations
-  - User verification steps:
-    1. Login to admin panel at `/admin/login`
-    2. Navigate to Projects → Add/Edit/Delete should work immediately
-    3. Navigate to Blog → Add/Edit/Delete should work immediately
-
-#### March 7, 2026 - Team Members CRUD & Admin Panel Restructure
-- **New Feature (P1):** Team Members CRUD Module
-  - Backend API endpoints:
-    - `GET /api/team-members` - Public endpoint for active team members
-    - `GET /api/admin/team-members` - Admin endpoint for all team members
-    - `POST /api/admin/team-members` - Create team member
-    - `PUT /api/admin/team-members/{id}` - Update team member
-    - `DELETE /api/admin/team-members/{id}` - Delete team member
-  - Admin page: `/app/frontend/app/admin/team-members/page.tsx`
-  - Features: Name, Role, Photo upload, Bio, LinkedIn, Email, Display order, Active toggle
-  - Files created/modified:
-    - `/app/backend/server.py` - Added TeamMember model and API endpoints
-    - `/app/frontend/lib/adminApi.ts` - Added TeamMember API functions
-    - `/app/frontend/app/admin/team-members/page.tsx` - New admin page
-    - `/app/frontend/components/sections/TeamSection.tsx` - Now fetches dynamically from API
-
-- **Improved (P1):** Admin Panel Sidebar Restructured
-  - Organized into 9 logical groups:
-    1. Overview (Dashboard, Sales Intelligence, Analytics)
-    2. Leads & CRM (All Leads, Smart Home Leads, Submissions, WhatsApp)
-    3. Content (Projects, Project Settings, Articles, Blog, News, Videos, Testimonials, FAQs)
-    4. Products & Services (Solutions, Services, Brands, Products, etc.)
-    5. Smart Home Systems (Intelligence Features, Control Systems, Packages, etc.)
-    6. Website (Team Members, Mega Menu, CMS, File Manager)
-    7. SEO & Localization (SEO Tools, Geo Pages, Locations, Arabic Pages)
-    8. Marketing & Testing (A/B Testing, Tracking Pixels)
-    9. System (Activity Logs, System Health, API Test Results)
-  - Collapsible groups with chevron indicators
-  - Active group highlighting
-  - File: `/app/frontend/app/admin/layout.tsx`
-
-- **Fixed (P1):** Project CRUD Performance & Delete Issues
-  - Added loading states (saving/deleting spinners) to provide feedback during operations
-  - Delete button shows spinner and disables during operation
-  - Save button shows "Saving..." with spinner
-  - Verified all CRUD operations work correctly via API testing (100% pass rate)
-  - File: `/app/frontend/app/admin/projects/page.tsx`
-
-#### March 6, 2026
-- **Fixed:** Brand names partially hidden in Featured Partners section
-  - Increased card height and improved text visibility
-  - Changed text color to `dark:text-white` for better contrast
-
-## Known Data Issues
-- Most brands have empty `logo` field in database
-- Bang & Olufsen has wrong logo (shows LEXA logo instead)
-- Users should upload correct logos via Admin Panel
+#### Previous Backend Fixes (from handoff)
+- Fixed import order in `server.py` (load env vars before route imports)
+- Added connection timeouts (`serverSelectionTimeoutMS=5000`) to all MongoDB clients
+- Added root `/health` endpoint for deployment health checks
+- Disabled blocking scripts in production
 
 ## Architecture
 
 ```
 /app
 ├── backend/
-│   ├── main.py
-│   ├── admin_api.py
-│   ├── core/storage.py (SFTP management)
-│   └── routes/
-├── frontend/
-│   ├── app/(main)/
-│   │   ├── brands/page.tsx (brand listing)
-│   │   └── package-builder/page.tsx
-│   └── app/(admin)/
-│       └── files/page.tsx (File Manager)
+│   ├── server.py           # FastAPI main application
+│   ├── routes/             # API route modules
+│   └── .env                # Backend environment variables
+└── frontend/
+    ├── app/                # Next.js app router pages
+    ├── components/         # React components
+    ├── lib/                # Utility libraries
+    ├── next.config.js      # Next.js configuration
+    └── .env                # Frontend environment variables
 ```
 
-## API Endpoints
-- `GET /api/brands` - List all brands
-- `GET /api/admin/files` - List SFTP files
-- `POST /api/upload/image` - Upload to SFTP
+## Key Environment Variables
 
-## External Integrations
-- SFTP Server: `files.ihgbrands.com`
-- Gemini Nano Banana (Image Gen)
-- OpenAI GPT (AURA chatbot)
-- WhatsApp/Interakt
-- Gmail SMTP, Google Maps
+### Frontend (.env)
+- `NEXT_PUBLIC_BACKEND_URL` - Backend API URL (read at build time)
+- `REACT_APP_BACKEND_URL` - Legacy variable (kept for compatibility)
 
-## Backlog (P1)
-- Implement dynamic favicon management from Site Settings
-- Compare Packages feature
-- Additional brand logos upload (Note: Most brands have empty `logo` field in database)
-- Performance optimization
-- Fix project card button shift on touch devices (low priority, not reproducible in simulator)
+### Backend (.env)
+- `MONGO_URL` - MongoDB connection string
+- `DB_NAME` - Database name
 
-## Backlog (P2)
-- Incorrect Brand Logo Data - Database has missing/incorrect logo URLs for some brands
+## Pending Tasks
 
-## Completed in Recent Sessions
-- ✅ **Video Testimonials Feature** (March 14, 2026)
-  - Added video testimonial fields to Testimonial model: `video_url`, `video_thumbnail`, `is_video`, `video_duration`, `location`
-  - Created new `VideoTestimonials.tsx` component with:
-    - Grid of video testimonial cards with thumbnails and play buttons
-    - Duration badges, project type badges (Villa Automation, Home Cinema, Smart Apartment)
-    - Client info with avatar, name, role, location with map pin
-    - 5-star ratings displayed
-    - Modal opens on click with video player (or "Video Coming Soon" placeholder)
-    - Modal has backdrop click and X button to close
-  - Added to About page only (user requested NOT on homepage)
-  - Admin panel at `/admin/testimonials` updated with:
-    - "Video Testimonial" checkbox toggle
-    - Video URL input (supports YouTube, Vimeo, or direct URLs)
-    - Video Thumbnail upload
-    - Duration and Location fields
-  - 3 placeholder video testimonials seeded with Unsplash thumbnails
-  - Files modified:
-    - `/app/backend/models/content.py` - Added video fields to Testimonial model (lines 137-141)
-    - `/app/frontend/components/testimonials/VideoTestimonials.tsx` - NEW component
-    - `/app/frontend/app/about/page.tsx` - Renders VideoTestimonials section
-    - `/app/frontend/app/admin/testimonials/page.tsx` - Added video fields to admin form
-  - Testing: 100% pass rate - all features verified working
+### P0 (Critical)
+- [ ] Verify deployment works with all fixes applied
 
-- ✅ **Brand Partners Feature - Dynamic Homepage Marquee** (March 14, 2026)
-  - Added `is_partner` field to Brand model in backend
-  - Updated `/api/brands` endpoint to support `is_partner=true` filter
-  - Updated BrandMarquee component to fetch only partner brands
-  - Added "Brand Partner (Homepage)" checkbox in admin Brands page
-  - Shows "Partner" badge in gold color on admin brands list
-  - Set 8 brands as partners: Savant, LEXA Lifestyle, Børresen, Aavik, Lumibright, Artesania Audio, Lifesmart, Axxess
-  - Files modified:
-    - `/app/backend/models/content.py` - Added `is_partner: bool = False`
-    - `/app/backend/routes/brands_products.py` - Added is_partner filter
-    - `/app/frontend/components/gallery/BrandMarquee.tsx` - Fetches partner brands
-    - `/app/frontend/app/admin/brands/page.tsx` - Added is_partner UI
+### P1 (High Priority)
+- [ ] Monitor deployment logs for successful backend startup
+- [ ] Confirm health checks pass in production
 
-- ✅ **Sunday Business Hours Added** (March 14, 2026)
-  - Added `business_hours_sunday` field to Site Settings interface and defaults
-  - Admin panel Site Settings > Contact tab now shows Sunday Hours input field
-  - Contact page and Experience Centre CTA now display Sunday hours
-  - Default value: "Sun: Closed"
-  - Files modified:
-    - `/app/frontend/hooks/useSiteSettings.tsx` - Added interface field and default
-    - `/app/frontend/app/contact/page.tsx` - Displays Sunday hours in contact info bar
-    - `/app/frontend/components/homepage/ExperienceCentreCTA.tsx` - Shows Sunday hours in booking section
-    - Admin panel already had the field implemented
+### P2 (Medium Priority)
+- [ ] Fix project card button shift on touch devices
+- [ ] Enhance ROI Calculator
 
-- ✅ **Header Redesign - Cleaner Navigation** (March 13, 2026)
-  - Reduced navigation items from 8+ to 5 key items: Solutions, Services, Brands, Projects, Experience
-  - Increased spacing between nav items (gap-8 to gap-10)
-  - Larger, more readable text (text-[13px] with tracking-[0.12em])
-  - Removed "Intelligence", "Packages", "Products" from main nav - moved to mega menus
-  - Wider container matching homepage (max-w-[1600px])
-- ✅ **Subtle Entrance Animations** (March 13, 2026)
-  - Added smooth fade-up animations to all homepage sections
-  - Staggered animation for stats grid (each stat animates in sequence)
-  - Hover effect on stat cards (border color change)
-  - Section wrapper component for consistent animation across dynamic components
-- ✅ **Homepage Redesign - World-Class Minimal Design** (March 13, 2026)
-  - Simplified from 9 sections to 6 key impactful sections
-  - Implemented consistent wide container layout (max-w-[1600px]) - NO more narrow content areas
-  - Sections: Hero → Brand Marquee → Value Proposition → Featured Projects → Solutions Grid → Experience CTA
-  - All sections now use consistent spacing (py-24 md:py-32) and wide padding (px-6 md:px-12 lg:px-20)
-  - Removed clutter: Deleted CalculatorCardsSection, TrustBadges, StatsSection, FeaturedProducts, Testimonials
-  - Responsive design verified on Desktop (1920px), Tablet (768px), and Mobile (390px)
-  - Components updated: page.tsx, TetrisProjects.tsx, SolutionsBentoGrid.tsx, BrandMarquee.tsx, ExperienceCentreCTA.tsx
-- ✅ Brand Logo Visibility Fix - CSS solution implemented (March 13, 2026)
-  - Added `.brand-logo-white` class using `mix-blend-mode: screen` + `brightness(1.5)`
-  - This makes black backgrounds transparent while keeping white logos visible
-  - Applied to all brand logo displays: /brands page, project pages, homepage carousels
-  - Note: Some brand logos remain invisible due to corrupted/poor-quality image data in database
-    - Affected brands: Børresen, Aavik, E-Electron, Artesania Audio (files are ~2-4KB, appear as solid black)
-    - Working brands: Savant, Lexa, Sonos, Sony, B&O, Bowers & Wilkins (proper white-on-black logos)
-  - Recommendation: User should re-upload correct logo files via Admin Panel > Brands
-- ✅ Button text sizes standardized across all pages (March 10, 2026)
-- ✅ Hero Video upload feature in admin Site Settings (March 10, 2026)
-- ✅ Video preview in admin panel with controls (March 10, 2026)
-- ✅ Homepage Hero connected to Site Settings (title, subtitle, video, image, CTA)
-- ✅ Dark mode visibility audit - All pages verified working
-- ✅ "Related Solutions" heading visibility fixed
-- ✅ Project card Quick View button touch stability verified
-- ✅ Dynamic content integration (contact info, logos, maps)
-- ✅ File upload security restrictions
-- ✅ Google Maps embed management
-- ✅ Careers page dynamic content
-- ✅ Homepage statistics management (admin panel)
+### P3 (Backlog)
+- [ ] Interactive Floor Plan Configurator
+- [ ] Compare Packages feature
 
-## Credentials
-- Admin: `/admin/login` - admin / lexa2026
-- SFTP: 178.128.28.178 - root / IhG@1HGB$2026$W3b
+## Test Credentials
+- Admin: `admin` / `lexa2026`

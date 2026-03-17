@@ -93,10 +93,8 @@ const nextConfig = {
     ],
   },
   
-  // Environment variables
-  env: {
-    NEXT_PUBLIC_BACKEND_URL: process.env.REACT_APP_BACKEND_URL || 'http://localhost:8001',
-  },
+  // Environment variables - NEXT_PUBLIC_* vars are read directly from .env
+  // No need to remap here - Next.js automatically exposes NEXT_PUBLIC_* to the browser
   
   // Source maps disabled in production for faster loading
   productionBrowserSourceMaps: false,

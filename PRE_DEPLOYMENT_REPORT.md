@@ -1,7 +1,7 @@
 # Pre-Deployment Quality Assurance Report
 **Date:** March 14, 2026  
 **Application:** LEXA Lifestyle - Smart Home Automation  
-**URL:** https://next-fix-1.preview.emergentagent.com
+**URL:** https://health-check-deploy-3.preview.emergentagent.com
 
 ---
 
