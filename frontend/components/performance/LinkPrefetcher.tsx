@@ -89,7 +89,7 @@ export default function LinkPrefetcher() {
       
       if (link) {
         const href = link.getAttribute('href')
-        if (href && !href.startsWith('/admin') && !href.startsWith('/api')) {
+        if (href && !href.startsWith('/lexa_admin@2026') && !href.startsWith('/api')) {
           prefetchRoute(href)
         }
       }

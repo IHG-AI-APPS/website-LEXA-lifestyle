@@ -62,7 +62,7 @@ export async function verifyToken() {
 
 export function logout() {
   removeToken()
-  window.location.href = '/admin/login'
+  window.location.href = '/lexa_admin@2026/login'
 }
 
 // Dashboard Stats

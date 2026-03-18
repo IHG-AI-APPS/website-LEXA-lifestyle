@@ -138,7 +138,7 @@
   "components/layout/ClientLayout.tsx -> @/components/mobile/MobileQuickActions": {
     "id": 23022,
     "files": [
-      "static/chunks/3022.2d49e8946579d977.js"
+      "static/chunks/432.2079d90b491fbafb.js"
     ]
   },
   "components/layout/ClientLayout.tsx -> @/components/mobile/PullToRefresh": {
@@ -151,7 +151,7 @@
   "components/layout/ClientLayout.tsx -> @/components/performance/LinkPrefetcher": {
     "id": 32314,
     "files": [
-      "static/chunks/8775.b0df5bf20a5eca2c.js"
+      "static/chunks/2314.9355557a1ff909ad.js"
     ]
   },
   "components/layout/ClientLayout.tsx -> @/components/seo/DynamicFavicon": {

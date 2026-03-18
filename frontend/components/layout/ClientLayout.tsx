@@ -34,7 +34,7 @@ function ClientLayoutInner({ children }: { children: React.ReactNode }) {
   const pathname = usePathname()
   const router = useRouter()
   const { scrollToTop } = useSmoothScroll()
-  const isAdminPage = pathname?.startsWith('/admin')
+  const isAdminPage = pathname?.startsWith('/lexa_admin@2026')
   const isCatalogueViewer = pathname?.startsWith('/catalogues/') && pathname !== '/catalogues'
   const hideMainLayout = isAdminPage || isCatalogueViewer
   const [showConsultation, setShowConsultation] = useState(false)
