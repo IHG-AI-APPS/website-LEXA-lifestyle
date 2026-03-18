@@ -99,18 +99,36 @@ const nextConfig = {
   // Source maps disabled in production for faster loading
   productionBrowserSourceMaps: false,
 
-  // Allow dev origins for preview environment - use wildcards for all Emergent domains
+  // Allow dev origins for all Emergent environments (preview, staging, production)
   allowedDevOrigins: [
-    'health-check-deploy-3.preview.emergentagent.com',
-    'health-check-deploy-3.cluster-5.preview.emergentcf.cloud',
+    // Production deployment domains
+    'health-check-deploy-3.emergent.host',
+    '*.emergent.host',
+    '*.deploy.emergentcf.cloud',
+    // Preview domains
     '*.preview.emergentagent.com',
     '*.preview.emergentcf.cloud',
+    // Cluster-specific domains (deployment uses various clusters)
     '*.cluster-0.preview.emergentcf.cloud',
     '*.cluster-1.preview.emergentcf.cloud',
     '*.cluster-2.preview.emergentcf.cloud',
     '*.cluster-3.preview.emergentcf.cloud',
     '*.cluster-4.preview.emergentcf.cloud',
     '*.cluster-5.preview.emergentcf.cloud',
+    '*.cluster-6.preview.emergentcf.cloud',
+    '*.cluster-7.preview.emergentcf.cloud',
+    '*.cluster-8.preview.emergentcf.cloud',
+    '*.cluster-9.preview.emergentcf.cloud',
+    '*.cluster-0.deploy.emergentcf.cloud',
+    '*.cluster-1.deploy.emergentcf.cloud',
+    '*.cluster-2.deploy.emergentcf.cloud',
+    '*.cluster-3.deploy.emergentcf.cloud',
+    '*.cluster-4.deploy.emergentcf.cloud',
+    '*.cluster-5.deploy.emergentcf.cloud',
+    '*.cluster-6.deploy.emergentcf.cloud',
+    '*.cluster-7.deploy.emergentcf.cloud',
+    '*.cluster-8.deploy.emergentcf.cloud',
+    '*.cluster-9.deploy.emergentcf.cloud',
   ],
   
   // Compiler optimizations
@@ -135,33 +153,13 @@ const nextConfig = {
   
   // Webpack optimizations
   webpack: (config, { isServer }) => {
-    // Optimize bundle size
+    // Client-side polyfills
     if (!isServer) {
       config.resolve.fallback = {
         ...config.resolve.fallback,
         fs: false,
         net: false,
         tls: false,
-      }
-      
-      // Merge chunks to reduce parallel request count (prevents 429 rate limiting)
-      config.optimization.splitChunks = {
-        ...config.optimization.splitChunks,
-        chunks: 'all',
-        minSize: 80000,     // Merge chunks under 80KB
-        maxSize: 500000,    // Allow chunks up to 500KB before splitting
-        maxInitialRequests: 12, // Limit initial parallel requests
-        maxAsyncRequests: 15,
-        cacheGroups: {
-          ...config.optimization.splitChunks?.cacheGroups,
-          // Merge all vendor libs into fewer chunks
-          vendorBundle: {
-            test: /[\\/]node_modules[\\/](framer-motion|lucide-react|@radix-ui)[\\/]/,
-            name: 'vendor-ui',
-            chunks: 'all',
-            priority: 30,
-          },
-        },
       }
     }
     return config
@@ -258,7 +256,7 @@ const nextConfig = {
           },
           {
             key: 'Content-Security-Policy',
-            value: "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.googletagmanager.com https://www.google-analytics.com https://connect.facebook.net https://snap.licdn.com https://static.hotjar.com https://script.hotjar.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; img-src 'self' data: blob: https: http:; font-src 'self' https://fonts.gstatic.com data:; connect-src 'self' https: wss:; media-src 'self' https: blob:; frame-src 'self' https://www.youtube.com https://www.google.com https://player.vimeo.com; object-src 'none'; base-uri 'self'; form-action 'self' https:; frame-ancestors 'self' https://app.emergent.sh https://*.emergent.sh https://*.emergentagent.com; upgrade-insecure-requests"
+            value: "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.googletagmanager.com https://www.google-analytics.com https://connect.facebook.net https://snap.licdn.com https://static.hotjar.com https://script.hotjar.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; img-src 'self' data: blob: https: http:; font-src 'self' https://fonts.gstatic.com data:; connect-src 'self' https: wss:; media-src 'self' https: blob:; frame-src 'self' https://www.youtube.com https://www.google.com https://player.vimeo.com; object-src 'none'; base-uri 'self'; form-action 'self' https:; frame-ancestors 'self' https://app.emergent.sh https://*.emergent.sh https://*.emergentagent.com https://*.emergent.host; upgrade-insecure-requests"
           },
         ],
       },
