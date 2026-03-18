@@ -175,27 +175,10 @@ export default function RootLayout({
           main { min-height: 100vh; }
         ` }} />
         
-        {/* Chunk load error recovery - auto-reload on stale chunks or 429 failures */}
+        {/* Chunk load error recovery - only reload on actual chunk load failures */}
         <script dangerouslySetInnerHTML={{ __html: `
-          var retryKey = 'css_retry';
-          function checkCSS() {
-            var sheets = document.styleSheets;
-            var hasCSS = false;
-            for (var i = 0; i < sheets.length; i++) {
-              if (sheets[i].href && sheets[i].href.includes('/_next/')) { hasCSS = true; break; }
-            }
-            if (!hasCSS && !sessionStorage.getItem(retryKey)) {
-              sessionStorage.setItem(retryKey, '1');
-              setTimeout(function() { window.location.reload(); }, 2000);
-            } else if (sessionStorage.getItem(retryKey)) {
-              sessionStorage.removeItem(retryKey);
-            }
-          }
-          if (document.readyState === 'complete') { checkCSS(); }
-          else { window.addEventListener('load', checkCSS); }
           window.addEventListener('error', function(e) {
             if (e.message && (
-              e.message.includes("Cannot read properties of undefined (reading 'call')") ||
               e.message.includes('Loading chunk') ||
               e.message.includes('ChunkLoadError') ||
               e.message.includes('Failed to fetch dynamically imported module')
