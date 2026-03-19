@@ -56,35 +56,35 @@
     "id": 32754,
     "files": [
       "static/chunks/3145-21ca1188ea04cf5d.js",
-      "static/chunks/2754.9aa7fd430597b8bb.js"
+      "static/chunks/2754.03ce36af95c7ce89.js"
     ]
   },
   "app/page.tsx -> @/components/homepage/CalculatorCardsSection": {
     "id": 42032,
     "files": [
       "static/chunks/3145-21ca1188ea04cf5d.js",
-      "static/chunks/2032.589a767e05f6f2e9.js"
+      "static/chunks/2032.760d967b980b22f2.js"
     ]
   },
   "app/page.tsx -> @/components/homepage/ExperienceCentreCTA": {
     "id": 42040,
     "files": [
       "static/chunks/3145-21ca1188ea04cf5d.js",
-      "static/chunks/2040.a958d4ccf350d27b.js"
+      "static/chunks/2040.511c8e12cfef94ac.js"
     ]
   },
   "app/page.tsx -> @/components/homepage/SolutionsBentoGrid": {
     "id": 20605,
     "files": [
       "static/chunks/3145-21ca1188ea04cf5d.js",
-      "static/chunks/605.d6a869e6f40c6908.js"
+      "static/chunks/605.054b4662d78b534a.js"
     ]
   },
   "app/page.tsx -> @/components/sections/Testimonials": {
     "id": 43703,
     "files": [
       "static/chunks/3145-21ca1188ea04cf5d.js",
-      "static/chunks/3703.3f75b820d4d4f742.js"
+      "static/chunks/3703.384d80e2ab70b084.js"
     ]
   },
   "app/solutions/page.tsx -> @/components/mobile/SwipeCarousel": {

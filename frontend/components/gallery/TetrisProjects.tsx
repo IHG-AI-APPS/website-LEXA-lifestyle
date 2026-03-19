@@ -38,11 +38,11 @@ export default function TetrisProjects() {
 
   if (loading) {
     return (
-      <section className="bg-[#050505] py-24 md:py-32" data-testid="tetris-projects-loading">
+      <section className="bg-gray-50 dark:bg-[#050505] py-24 md:py-32" data-testid="tetris-projects-loading">
         <div className="max-w-[1600px] mx-auto px-6 md:px-12 lg:px-20">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 lg:gap-6">
             {[1, 2, 3, 4].map((i) => (
-              <div key={i} className="h-[320px] animate-pulse bg-[#111] border border-white/5" />
+              <div key={i} className="h-[320px] animate-pulse bg-gray-200 dark:bg-[#111] border border-gray-200 dark:border-white/5" />
             ))}
           </div>
         </div>
@@ -51,7 +51,7 @@ export default function TetrisProjects() {
   }
 
   return (
-    <section className="bg-[#050505] py-24 md:py-32" data-testid="featured-projects">
+    <section className="bg-gray-50 dark:bg-[#050505] py-24 md:py-32" data-testid="featured-projects">
       <div className="max-w-[1600px] mx-auto px-6 md:px-12 lg:px-20">
         {/* Section Header - Minimal */}
         <motion.div
@@ -64,13 +64,13 @@ export default function TetrisProjects() {
           <div className="flex items-end justify-between gap-8">
             <div>
               <div className="text-xs uppercase tracking-[0.3em] text-[#C9A962] mb-4">Our Portfolio</div>
-              <h2 className="text-4xl md:text-5xl lg:text-6xl font-light text-white tracking-tight">
+              <h2 className="text-4xl md:text-5xl lg:text-6xl font-light text-gray-900 dark:text-white tracking-tight">
                 Featured Projects
               </h2>
             </div>
             <Link 
               href="/projects"
-              className="hidden md:flex items-center gap-2 text-white/60 text-sm uppercase tracking-[0.15em] hover:text-[#C9A962] transition-colors"
+              className="hidden md:flex items-center gap-2 text-gray-500 dark:text-white/60 text-sm uppercase tracking-[0.15em] hover:text-[#C9A962] transition-colors"
             >
               View All
               <ArrowUpRight size={16} />

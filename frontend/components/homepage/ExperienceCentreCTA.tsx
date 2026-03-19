@@ -120,7 +120,7 @@ export default function ExperienceCentreCTA() {
   }
 
   return (
-    <section className="bg-[#111] py-24 md:py-32 overflow-hidden" data-testid="experience-cta">
+    <section className="bg-gray-100 dark:bg-[#111] py-24 md:py-32 overflow-hidden" data-testid="experience-cta">
       <div className="max-w-[1600px] mx-auto px-6 md:px-12 lg:px-20">
         <div className="max-w-6xl mx-auto">
           {/* Main Grid */}

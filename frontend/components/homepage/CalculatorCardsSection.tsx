@@ -68,7 +68,7 @@ export default function CalculatorCardsSection() {
   }))
 
   return (
-    <section className="py-24 md:py-32 bg-[#0A0A0A]" data-testid="calculator-cards">
+    <section className="py-24 md:py-32 bg-gray-50 dark:bg-[#0A0A0A]" data-testid="calculator-cards">
       <div className="max-w-[1600px] mx-auto px-6 md:px-12 lg:px-20">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -78,10 +78,10 @@ export default function CalculatorCardsSection() {
           className="mb-12 md:mb-16"
         >
           <div className="text-xs uppercase tracking-[0.3em] text-[#C9A962] mb-4">Smart Tools</div>
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-light text-white tracking-tight mb-4">
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-light text-gray-900 dark:text-white tracking-tight mb-4">
             Planning & Design Tools
           </h2>
-          <p className="text-base md:text-lg text-white/60 max-w-2xl">
+          <p className="text-base md:text-lg text-gray-600 dark:text-white/60 max-w-2xl">
             Explore our tools to plan, calculate costs, and build your perfect smart home solution
           </p>
         </motion.div>

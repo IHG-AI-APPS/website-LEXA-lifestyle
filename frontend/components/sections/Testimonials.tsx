@@ -69,7 +69,7 @@ export default function Testimonials() {
   }, [])
 
   return (
-    <section className="py-24 md:py-32 bg-[#050505]" data-testid="testimonials-section">
+    <section className="py-24 md:py-32 bg-white dark:bg-[#050505]" data-testid="testimonials-section">
       <div className="max-w-[1600px] mx-auto px-6 md:px-12 lg:px-20">
         {/* Header row */}
         <div className="flex items-center justify-between mb-12 md:mb-16">
@@ -77,13 +77,13 @@ export default function Testimonials() {
             <div className="text-xs uppercase tracking-[0.3em] text-[#C9A962] mb-4">
               Client Feedback
             </div>
-            <h2 className="text-4xl md:text-5xl lg:text-6xl font-light text-white tracking-tight">
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-light text-gray-900 dark:text-white tracking-tight">
               What Our Clients Say
             </h2>
           </div>
           <Link
             href="/testimonials"
-            className="hidden md:flex items-center gap-2 text-sm uppercase tracking-[0.15em] text-white/60 hover:text-[#C9A962] transition-colors"
+            className="hidden md:flex items-center gap-2 text-sm uppercase tracking-[0.15em] text-gray-500 dark:text-white/60 hover:text-[#C9A962] transition-colors"
             data-testid="view-all-testimonials"
           >
             View All
@@ -100,7 +100,7 @@ export default function Testimonials() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.4, delay: i * 0.08 }}
-              className="bg-[#111] border border-white/5 p-6 hover:border-[#C9A962]/20 transition-colors"
+              className="bg-gray-50 dark:bg-[#111] border border-gray-200 dark:border-white/5 p-6 hover:border-[#C9A962]/40 dark:hover:border-[#C9A962]/20 transition-colors"
               data-testid={`testimonial-card-${i}`}
             >
               {/* Stars */}
@@ -113,20 +113,20 @@ export default function Testimonials() {
               )}
 
               {/* Quote — truncated to 2 lines */}
-              <p className="text-sm text-white/70 leading-relaxed line-clamp-3 mb-4">
+              <p className="text-sm text-gray-600 dark:text-white/70 leading-relaxed line-clamp-3 mb-4">
                 &ldquo;{t.testimonial || t.content}&rdquo;
               </p>
 
               {/* Author */}
               <div className="flex items-center gap-3">
                 {t.image && (
-                  <div className="relative w-10 h-10 rounded-full overflow-hidden flex-shrink-0 border border-white/10">
+                  <div className="relative w-10 h-10 rounded-full overflow-hidden flex-shrink-0 border border-gray-200 dark:border-white/10">
                     <SafeImage src={t.image} alt={t.name} fill className="object-cover" />
                   </div>
                 )}
                 <div className="min-w-0">
-                  <div className="text-sm font-medium text-white truncate">{t.name}</div>
-                  <div className="text-xs text-white/40 truncate">{t.role}</div>
+                  <div className="text-sm font-medium text-gray-900 dark:text-white truncate">{t.name}</div>
+                  <div className="text-xs text-gray-500 dark:text-white/40 truncate">{t.role}</div>
                 </div>
               </div>
             </motion.div>
@@ -137,7 +137,7 @@ export default function Testimonials() {
         <div className="mt-10 text-center md:hidden">
           <Link
             href="/testimonials"
-            className="inline-flex items-center gap-2 text-sm text-[#C9A962] hover:text-white transition-colors"
+            className="inline-flex items-center gap-2 text-sm text-[#C9A962] hover:text-gray-900 dark:hover:text-white transition-colors"
           >
             View All Testimonials
             <ArrowRight size={16} />

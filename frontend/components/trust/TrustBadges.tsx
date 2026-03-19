@@ -72,7 +72,7 @@ export function TrustBadges({ variant = 'horizontal', showAll = true }: TrustBad
 
   // Horizontal (default)
   return (
-    <div className="py-8 bg-gradient-to-r from-[#0A0A0A] via-[#111] to-[#0A0A0A] border-y border-zinc-800/50">
+    <div className="py-8 bg-gradient-to-r from-gray-50 via-gray-100 to-gray-50 dark:from-[#0A0A0A] dark:via-[#111] dark:to-[#0A0A0A] border-y border-gray-200 dark:border-zinc-800/50">
       <div className="max-w-[1400px] mx-auto px-6">
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6 md:gap-4">
           {displayBadges.map((badge, index) => (
@@ -83,8 +83,8 @@ export function TrustBadges({ variant = 'horizontal', showAll = true }: TrustBad
               <div className="w-12 h-12 rounded-full bg-[#C9A962]/10 flex items-center justify-center mb-3 group-hover:bg-[#C9A962]/20 transition-colors">
                 <badge.icon className="w-5 h-5 text-[#C9A962]" />
               </div>
-              <div className="text-lg font-bold text-white">{badge.label}</div>
-              <div className="text-xs text-zinc-500 mt-0.5">{badge.description}</div>
+              <div className="text-lg font-bold text-gray-900 dark:text-white">{badge.label}</div>
+              <div className="text-xs text-gray-500 dark:text-zinc-500 mt-0.5">{badge.description}</div>
             </div>
           ))}
         </div>

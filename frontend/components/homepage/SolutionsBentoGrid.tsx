@@ -147,17 +147,17 @@ export default function SolutionsBentoGrid() {
 
   if (loading) {
     return (
-      <section className="bg-[#0A0A0A] py-24 md:py-32">
+      <section className="bg-white dark:bg-[#0A0A0A] py-24 md:py-32">
         <div className="max-w-[1600px] mx-auto px-6 md:px-12 lg:px-20">
           <div className="mb-12 md:mb-16">
             <div className="text-xs uppercase tracking-[0.3em] text-[#C9A962] mb-4">Our Solutions</div>
-            <h2 className="text-4xl md:text-5xl lg:text-6xl font-light text-white tracking-tight">
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-light text-gray-900 dark:text-white tracking-tight">
               Technology That Transforms
             </h2>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-4 auto-rows-fr gap-5 lg:gap-6">
             {[...Array(4)].map((_, i) => (
-              <div key={i} className={`${GRID_CLASSES[i]} bg-[#111] border border-white/5 animate-pulse`} />
+              <div key={i} className={`${GRID_CLASSES[i]} bg-gray-100 dark:bg-[#111] border border-gray-200 dark:border-white/5 animate-pulse`} />
             ))}
           </div>
         </div>
@@ -166,7 +166,7 @@ export default function SolutionsBentoGrid() {
   }
 
   return (
-    <section className="bg-[#0A0A0A] py-24 md:py-32" data-testid="solutions-grid">
+    <section className="bg-white dark:bg-[#0A0A0A] py-24 md:py-32" data-testid="solutions-grid">
       <div className="max-w-[1600px] mx-auto px-6 md:px-12 lg:px-20">
         {/* Section Header */}
         <motion.div
@@ -178,13 +178,13 @@ export default function SolutionsBentoGrid() {
           <div className="flex items-end justify-between gap-8">
             <div>
               <div className="text-xs uppercase tracking-[0.3em] text-[#C9A962] mb-4">Our Solutions</div>
-              <h2 className="text-4xl md:text-5xl lg:text-6xl font-light text-white tracking-tight">
+              <h2 className="text-4xl md:text-5xl lg:text-6xl font-light text-gray-900 dark:text-white tracking-tight">
                 Technology That Transforms
               </h2>
             </div>
             <Link 
               href="/solutions"
-              className="hidden md:flex items-center gap-2 text-white/60 text-sm uppercase tracking-[0.15em] hover:text-[#C9A962] transition-colors"
+              className="hidden md:flex items-center gap-2 text-gray-500 dark:text-white/60 text-sm uppercase tracking-[0.15em] hover:text-[#C9A962] transition-colors"
             >
               All Solutions
               <ArrowRight size={16} />

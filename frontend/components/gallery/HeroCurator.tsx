@@ -98,7 +98,7 @@ export default function HeroCurator({ onPersonaClick }: HeroCuratorProps) {
 
   return (
     <section
-      className="relative w-full overflow-hidden bg-[#050505] flex flex-col"
+      className="relative w-full overflow-hidden bg-white dark:bg-[#050505] flex flex-col"
       style={{ height: '100dvh', minHeight: '100vh' }}
       data-testid="hero-section"
       aria-label="Hero"
@@ -108,7 +108,7 @@ export default function HeroCurator({ onPersonaClick }: HeroCuratorProps) {
         <div className="absolute inset-0">
           {/* Show loading state until settings are ready */}
           {!isReady ? (
-            <div className="h-full w-full bg-[#050505] flex items-center justify-center">
+            <div className="h-full w-full bg-gray-100 dark:bg-[#050505] flex items-center justify-center">
               <div className="w-10 h-10 border-2 border-[#C9A962] border-t-transparent rounded-full animate-spin" />
             </div>
           ) : !videoFailed ? (
@@ -133,8 +133,8 @@ export default function HeroCurator({ onPersonaClick }: HeroCuratorProps) {
           )}
 
           {/* Cinematic overlays */}
-          <div className="absolute inset-0 bg-gradient-to-t from-[#050505]/80 via-transparent to-[#050505]/30" />
-          <div className="absolute inset-0" style={{ background: 'radial-gradient(ellipse at center, transparent 50%, #050505 100%)' }} />
+          <div className="absolute inset-0 bg-gradient-to-t from-white/80 dark:from-[#050505]/80 via-transparent to-white/30 dark:to-[#050505]/30" />
+          <div className="absolute inset-0 dark:block hidden" style={{ background: 'radial-gradient(ellipse at center, transparent 50%, #050505 100%)' }} />
         </div>
 
         {/* Quote — centered at bottom of video area */}
@@ -143,7 +143,7 @@ export default function HeroCurator({ onPersonaClick }: HeroCuratorProps) {
             initial={{ opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1.2, delay: 0.8 }}
-            className={`text-sm sm:text-base tracking-[0.25em] uppercase text-white/50 font-light ${language === 'ar' ? 'font-arabic' : ''}`}
+            className={`text-sm sm:text-base tracking-[0.25em] uppercase text-gray-500 dark:text-white/50 font-light ${language === 'ar' ? 'font-arabic' : ''}`}
             data-testid="hero-quote"
           >
             {quote}
