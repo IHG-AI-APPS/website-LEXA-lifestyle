@@ -147,7 +147,7 @@ function ValueProposition() {
   )
 }
 
-// Simple Brand Trust Section with fade animation
+// Simple Brand Trust Section with fade animation - Always dark for white logos visibility
 function BrandTrust() {
   return (
     <motion.section 
@@ -155,7 +155,7 @@ function BrandTrust() {
       whileInView={{ opacity: 1 }}
       viewport={{ once: true }}
       transition={{ duration: 0.8 }}
-      className="bg-gray-50 dark:bg-[#0A0A0A] py-8 md:py-10 border-y border-gray-200 dark:border-white/5" 
+      className="bg-[#0A0A0A] py-8 md:py-10 border-y border-white/5" 
       data-testid="brand-trust"
     >
       <div className="max-w-[1600px] mx-auto px-6 md:px-12 lg:px-20">
@@ -166,12 +166,12 @@ function BrandTrust() {
           transition={{ duration: 0.5 }}
           className="flex items-center justify-between gap-8 mb-4"
         >
-          <span className="text-[10px] uppercase tracking-[0.3em] text-gray-400 dark:text-white/30">
+          <span className="text-[10px] uppercase tracking-[0.3em] text-white/30">
             Official Technology Partners
           </span>
           <Link 
             href="/brands" 
-            className="text-[10px] uppercase tracking-[0.2em] text-[#C9A962] hover:text-gray-900 dark:hover:text-white transition-colors"
+            className="text-[10px] uppercase tracking-[0.2em] text-[#C9A962] hover:text-white transition-colors"
           >
             View All Brands
           </Link>

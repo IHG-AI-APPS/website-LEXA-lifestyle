@@ -46,10 +46,10 @@ export default function ContactPage() {
   const hoursFriday = settings.business_hours_friday || 'Fri: 10AM-4PM'
   const hoursSunday = settings.business_hours_sunday || 'Sun: Closed'
 
-  // Build contact info array dynamically
+  // Build contact info array dynamically - combine phone numbers under one section
+  const phoneValue = phoneSecondary ? `${phoneNumber}\n${phoneSecondary}` : phoneNumber
   const contactInfo = [
-    { icon: Phone, title: 'Phone', value: phoneNumber, link: `tel:${phoneClean}` },
-    ...(phoneSecondary ? [{ icon: Phone, title: 'Secondary Phone', value: phoneSecondary, link: `tel:${phoneSecondaryClean}` }] : []),
+    { icon: Phone, title: 'Phone', value: phoneValue, link: `tel:${phoneClean}`, secondaryLink: phoneSecondary ? `tel:${phoneSecondaryClean}` : undefined },
     { icon: Mail, title: 'Email', value: emailAddress, link: `mailto:${emailAddress}` },
     { icon: MapPin, title: 'Office', value: officeAddress, link: 'https://maps.google.com/?q=Al+Quoz+1+Dubai' },
     { icon: Clock, title: 'Hours', value: `${hoursWeekday}\n${hoursFriday}\n${hoursSunday}` },
@@ -142,16 +142,18 @@ export default function ContactPage() {
                           <div><p className="text-sm font-medium">WhatsApp</p><p className="text-xs text-gray-400">Chat with us instantly</p></div>
                         </a>
                       )}
-                      <a href={`tel:${phoneClean}`} className="flex items-center gap-3 p-3 bg-white/10 rounded-lg hover:bg-white/15 transition-colors">
-                        <Phone className="h-5 w-5 text-[#C9A962]" />
-                        <div><p className="text-sm font-medium">Call Us</p><p className="text-xs text-gray-400">{phoneNumber}</p></div>
-                      </a>
-                      {phoneSecondary && (
-                        <a href={`tel:${phoneSecondaryClean}`} className="flex items-center gap-3 p-3 bg-white/10 rounded-lg hover:bg-white/15 transition-colors">
+                      <div className="p-3 bg-white/10 rounded-lg">
+                        <div className="flex items-center gap-3">
                           <Phone className="h-5 w-5 text-[#C9A962]" />
-                          <div><p className="text-sm font-medium">Secondary Line</p><p className="text-xs text-gray-400">{phoneSecondary}</p></div>
-                        </a>
-                      )}
+                          <p className="text-sm font-medium">Call Us</p>
+                        </div>
+                        <div className="mt-2 ml-8 space-y-1">
+                          <a href={`tel:${phoneClean}`} className="block text-xs text-gray-400 hover:text-white transition-colors">{phoneNumber}</a>
+                          {phoneSecondary && (
+                            <a href={`tel:${phoneSecondaryClean}`} className="block text-xs text-gray-400 hover:text-white transition-colors">{phoneSecondary}</a>
+                          )}
+                        </div>
+                      </div>
                     </div>
                   </div>
                   <Link href="/consultation" className="block p-6 bg-gray-50 dark:bg-[#0A0A0A] rounded-xl border border-gray-200 dark:border-zinc-800 hover:border-[#C9A962]/60 transition-all group">

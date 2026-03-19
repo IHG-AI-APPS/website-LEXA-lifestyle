@@ -132,9 +132,9 @@ export default function HeroCurator({ onPersonaClick }: HeroCuratorProps) {
             <img src={FALLBACK_IMAGE} alt="LEXA luxury smart home" className="h-full w-full object-cover" />
           )}
 
-          {/* Cinematic overlays */}
-          <div className="absolute inset-0 bg-gradient-to-t from-white/80 dark:from-[#050505]/80 via-transparent to-white/30 dark:to-[#050505]/30" />
-          <div className="absolute inset-0 dark:block hidden" style={{ background: 'radial-gradient(ellipse at center, transparent 50%, #050505 100%)' }} />
+          {/* Cinematic overlays - Always dark for video visibility */}
+          <div className="absolute inset-0 bg-gradient-to-t from-[#050505]/80 via-transparent to-[#050505]/30" />
+          <div className="absolute inset-0" style={{ background: 'radial-gradient(ellipse at center, transparent 50%, #050505 100%)' }} />
         </div>
 
         {/* Quote — centered at bottom of video area */}
