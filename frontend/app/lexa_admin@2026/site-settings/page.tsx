@@ -24,6 +24,7 @@ interface SiteSettings {
   // Contact
   contact_email: string
   contact_phone: string
+  contact_phone_secondary: string
   contact_address: string
   hr_email: string
   google_maps_embed: string
@@ -64,6 +65,7 @@ const defaultSettings: SiteSettings = {
   social_whatsapp: '',
   contact_email: '',
   contact_phone: '',
+  contact_phone_secondary: '',
   contact_address: '',
   hr_email: '',
   google_maps_embed: '',
@@ -763,10 +765,10 @@ export default function SiteSettingsPage() {
                 <p className="text-xs text-gray-500 dark:text-zinc-400 mt-1">Used for job applications and career inquiries</p>
               </div>
 
-              <div className="md:col-span-2">
+              <div>
                 <label className="block text-sm font-medium text-gray-700 dark:text-zinc-300 mb-2">
                   <Phone size={16} className="inline mr-2" />
-                  Phone Number
+                  Primary Phone Number
                 </label>
                 <input
                   type="tel"
@@ -776,6 +778,22 @@ export default function SiteSettingsPage() {
                   className="w-full px-4 py-2 border border-gray-300 dark:border-zinc-700 rounded-lg focus:ring-2 focus:ring-blue-500 dark:focus:ring-[#C9A962] focus:border-transparent bg-white dark:bg-[#0F0F0F] text-gray-900 dark:text-white placeholder-gray-400 dark:placeholder-zinc-500"
                   data-testid="contact-phone"
                 />
+              </div>
+
+              <div>
+                <label className="block text-sm font-medium text-gray-700 dark:text-zinc-300 mb-2">
+                  <Phone size={16} className="inline mr-2" />
+                  Secondary Phone Number
+                </label>
+                <input
+                  type="tel"
+                  value={settings.contact_phone_secondary}
+                  onChange={(e) => handleChange('contact_phone_secondary', e.target.value)}
+                  placeholder="+971 4 123 4567"
+                  className="w-full px-4 py-2 border border-gray-300 dark:border-zinc-700 rounded-lg focus:ring-2 focus:ring-blue-500 dark:focus:ring-[#C9A962] focus:border-transparent bg-white dark:bg-[#0F0F0F] text-gray-900 dark:text-white placeholder-gray-400 dark:placeholder-zinc-500"
+                  data-testid="contact-phone-secondary"
+                />
+                <p className="text-xs text-gray-500 dark:text-zinc-400 mt-1">Optional secondary contact number (e.g., landline or alternate mobile)</p>
               </div>
 
               <div className="md:col-span-2">

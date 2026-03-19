@@ -35,17 +35,21 @@ export default function ContactPage() {
 
   // Use dynamic settings with fallbacks
   const phoneNumber = settings.contact_phone || '+971 50 326 7228'
+  const phoneSecondary = settings.contact_phone_secondary || ''
   const emailAddress = settings.contact_email || 'info@lexalifestyle.com'
   const officeAddress = settings.contact_address || 'Al Quoz 1, Sheikh Zayed Road\n3rd Interchange, Dubai, UAE'
   const phoneClean = phoneNumber.replace(/\s/g, '')
+  const phoneSecondaryClean = phoneSecondary.replace(/\s/g, '')
   
   // Get business hours from settings
   const hoursWeekday = settings.business_hours_weekday || 'Sat-Thu: 9AM-6PM'
   const hoursFriday = settings.business_hours_friday || 'Fri: 10AM-4PM'
   const hoursSunday = settings.business_hours_sunday || 'Sun: Closed'
 
+  // Build contact info array dynamically
   const contactInfo = [
     { icon: Phone, title: 'Phone', value: phoneNumber, link: `tel:${phoneClean}` },
+    ...(phoneSecondary ? [{ icon: Phone, title: 'Secondary Phone', value: phoneSecondary, link: `tel:${phoneSecondaryClean}` }] : []),
     { icon: Mail, title: 'Email', value: emailAddress, link: `mailto:${emailAddress}` },
     { icon: MapPin, title: 'Office', value: officeAddress, link: 'https://maps.google.com/?q=Al+Quoz+1+Dubai' },
     { icon: Clock, title: 'Hours', value: `${hoursWeekday}\n${hoursFriday}\n${hoursSunday}` },
@@ -142,6 +146,12 @@ export default function ContactPage() {
                         <Phone className="h-5 w-5 text-[#C9A962]" />
                         <div><p className="text-sm font-medium">Call Us</p><p className="text-xs text-gray-400">{phoneNumber}</p></div>
                       </a>
+                      {phoneSecondary && (
+                        <a href={`tel:${phoneSecondaryClean}`} className="flex items-center gap-3 p-3 bg-white/10 rounded-lg hover:bg-white/15 transition-colors">
+                          <Phone className="h-5 w-5 text-[#C9A962]" />
+                          <div><p className="text-sm font-medium">Secondary Line</p><p className="text-xs text-gray-400">{phoneSecondary}</p></div>
+                        </a>
+                      )}
                     </div>
                   </div>
                   <Link href="/consultation" className="block p-6 bg-gray-50 dark:bg-[#0A0A0A] rounded-xl border border-gray-200 dark:border-zinc-800 hover:border-[#C9A962]/60 transition-all group">

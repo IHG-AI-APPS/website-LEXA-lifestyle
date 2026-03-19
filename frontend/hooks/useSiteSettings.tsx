@@ -22,6 +22,7 @@ export interface SiteSettings {
   // Contact - Company
   contact_email: string
   contact_phone: string
+  contact_phone_secondary: string
   contact_address: string
   // Contact - HR/Careers
   hr_email: string
@@ -64,6 +65,7 @@ const defaultSettings: SiteSettings = {
   social_whatsapp: '',
   contact_email: 'info@lexalifestyle.com',
   contact_phone: '+971 50 326 7228',
+  contact_phone_secondary: '',
   contact_address: 'Dubai, UAE',
   hr_email: 'careers@lexalifestyle.com',
   google_maps_embed: 'https://www.google.com/maps/embed?pb=!1m23!1m12!1m3!1d14446.357195020306!2d55.21490785!3d25.14957235!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m8!3e6!4m0!4m5!1s0x3e5f6bc640af2289%3A0xb82b68390913e17a!2sLexa%20Lifestyle%20LLC%2C%20SHEIKH%20ZAYED%20ROAD%20-%20Interchange%20No%203%20-%20Dubai!3m2!1d25.1471289!2d55.225220199999995!5e0!3m2!1sen!2sae!4v1772275497617!5m2!1sen!2sae',

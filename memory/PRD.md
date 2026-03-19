@@ -3,35 +3,39 @@
 ## Original Problem Statement
 Building a comprehensive smart home automation platform for LEXA Lifestyle, a luxury smart home company based in Dubai. The platform includes a Next.js frontend, FastAPI backend, and MongoDB database.
 
-## Current Status: Deployment Fixes Applied ✅
+## Current Status: Features Implemented ✅
 
-### Deployment Fixes (March 18, 2026)
+### Recent Changes (March 19, 2026)
 
-#### 1. Webpack Configuration Fix
-- **Issue:** Custom `splitChunks` webpack config caused `Cannot find module './chunks/vendor-chunks/lucide-react.js'` errors during static generation
-- **Fix:** Simplified webpack config to only include necessary client-side polyfills
-- **File:** `/app/frontend/next.config.js`
+#### Secondary Phone Number Feature
+- Added `contact_phone_secondary` field to SiteSettings interface
+- Updated admin Site Settings page with new field in Contact Info tab
+- Updated Contact page to display secondary phone in:
+  - Contact info cards
+  - Quick Connect sidebar section
+- Field is optional
 
-#### 2. AllowedDevOrigins Update
-- **Issue:** Next.js blocked requests from production deployment domains
-- **Fix:** Added comprehensive list of Emergent deployment domains:
-  - `*.emergent.host` (production)
-  - `*.deploy.emergentcf.cloud` (all cluster variants)
-  - `*.preview.emergentagent.com` / `*.preview.emergentcf.cloud`
+#### CSP Fixes
+- Added `googleads.g.doubleclick.net` to script-src
+- Added `www.googleadservices.com` to script-src
+- Added `static.cloudflareinsights.com` to script-src
+- Added `td.doubleclick.net` to frame-src
 
-#### 3. CSP Frame-Ancestors Update
-- **Issue:** Content Security Policy blocked iframe embedding on production
-- **Fix:** Added `https://*.emergent.host` to frame-ancestors directive
+#### Sitemap Fixes
+- Created `/sitemap_index.xml` route handler
+- Created `/sitemap-images.xml` route handler with Google Images namespace
+- Created `/sitemap-videos.xml` route handler with Google Video namespace
+- All sitemaps returning 200 status
 
-#### 4. Server.js Improvements
-- Added uncaught exception handler to prevent silent crashes
-- Improved error logging
+#### Admin Panel URL Change
+- Moved from `/admin` to `/lexa_admin@2026` for security
+- Old `/admin` URL returns 404
 
-### Previous Backend Fixes (from handoff)
-- Fixed import order in `server.py` (load env vars before route imports)
-- Added connection timeouts (`serverSelectionTimeoutMS=5000`) to all MongoDB clients
-- Added root `/health` endpoint for deployment health checks
-- Disabled blocking scripts in production
+### Previous Fixes
+- Removed double-loading CSS retry logic
+- Fixed X-Frame-Options for Emergent preview
+- Fixed webpack config for deployment
+- Updated allowedDevOrigins for all Emergent domains
 
 ## Architecture
 
@@ -42,49 +46,59 @@ Building a comprehensive smart home automation platform for LEXA Lifestyle, a lu
 │   ├── routes/             # API route modules
 │   └── .env                # Backend environment variables
 └── frontend/
-    ├── app/                # Next.js app router pages (280 pages)
+    ├── app/                # Next.js app router pages
+    │   ├── lexa_admin@2026/ # Admin panel (secured URL)
+    │   ├── contact/        # Contact page with secondary phone
+    │   ├── sitemap_index.xml/  # Sitemap index route
+    │   ├── sitemap-images.xml/ # Image sitemap route
+    │   └── sitemap-videos.xml/ # Video sitemap route
     ├── components/         # React components
-    ├── lib/                # Utility libraries
-    ├── next.config.js      # Next.js configuration (UPDATED)
-    ├── server.js           # Standalone server launcher (UPDATED)
+    ├── hooks/
+    │   └── useSiteSettings.tsx # Site settings with contact_phone_secondary
+    ├── next.config.js      # Next.js configuration (CSP updated)
     └── .env                # Frontend environment variables
 ```
 
 ## Key Environment Variables
 
 ### Frontend (.env)
-- `NEXT_PUBLIC_BACKEND_URL` - Backend API URL (read at build time)
-- `REACT_APP_BACKEND_URL` - Legacy variable (kept for compatibility)
+- `NEXT_PUBLIC_BACKEND_URL` - Backend API URL
+- `REACT_APP_BACKEND_URL` - Legacy variable
 
 ### Backend (.env)
 - `MONGO_URL` - MongoDB connection string
 - `DB_NAME` - Database name
 
+## Known Issues
+
+### Light Mode on Homepage
+The homepage uses hardcoded dark colors for luxury aesthetic. Light mode toggle exists but homepage sections don't respond to it. Would require significant refactoring to implement.
+
 ## Pending Tasks
 
 ### P0 (Critical)
-- [x] Fix deployment webpack errors ✅
-- [x] Update allowedDevOrigins ✅
-- [ ] Verify deployment works in production
+- [x] Fix CSP violations ✅
+- [x] Fix sitemap issues ✅
+- [x] Add secondary phone number ✅
+- [ ] Re-deploy to production
 
 ### P1 (High Priority)
-- [ ] Monitor deployment logs for successful startup
-- [ ] Confirm health checks pass in production
+- [ ] Implement light mode for homepage (if requested)
 
 ### P2 (Medium Priority)
-- [ ] Fix project card button shift on touch devices
-- [ ] Enhance ROI Calculator
+- [ ] ROI Calculator enhancements
+- [ ] Interactive Floor Plan Configurator
 
 ### P3 (Backlog)
-- [ ] Interactive Floor Plan Configurator
 - [ ] Compare Packages feature
 
 ## Test Credentials
-- Admin: `admin` / `lexa2026`
+- Admin URL: `/lexa_admin@2026`
+- Username: `admin`
+- Password: `lexa2026`
 
-## Deployment Checklist
-1. ✅ Build completes without errors
-2. ✅ Frontend serves correctly
-3. ✅ Backend health check passes
-4. ✅ Database connected
-5. ⏳ Production deployment verification pending
+## Sitemap URLs
+- Index: `https://lexalifestyle.com/sitemap_index.xml`
+- Main: `https://lexalifestyle.com/sitemap.xml`
+- Images: `https://lexalifestyle.com/sitemap-images.xml`
+- Videos: `https://lexalifestyle.com/sitemap-videos.xml`

@@ -1,12 +1,20 @@
 {
   "pages": {
-    "/(pages)/glossary/page": [
+    "/not-found": [
       "static/chunks/webpack-bbb770ae7ca4c61a.js",
       "static/chunks/fd9d1056-36f98fa9d93ecd3e.js",
       "static/chunks/2117-0708b2fca6443646.js",
       "static/chunks/main-app-9489574e24ce9cd8.js",
       "static/chunks/2148-ac8a3002e55dcd4c.js",
-      "static/chunks/app/(pages)/glossary/page-08213cbe79ff1441.js"
+      "static/chunks/2972-864c50ff9f16b931.js",
+      "static/chunks/app/not-found-bf4791c06ca47cf1.js"
+    ],
+    "/_not-found/page": [
+      "static/chunks/webpack-bbb770ae7ca4c61a.js",
+      "static/chunks/fd9d1056-36f98fa9d93ecd3e.js",
+      "static/chunks/2117-0708b2fca6443646.js",
+      "static/chunks/main-app-9489574e24ce9cd8.js",
+      "static/chunks/app/_not-found/page-fb59d2a26546ff16.js"
     ],
     "/layout": [
       "static/chunks/webpack-bbb770ae7ca4c61a.js",
@@ -24,7 +32,7 @@
       "static/chunks/7922-9390c5f259ce1500.js",
       "static/chunks/8565-4faf492daf8f33a6.js",
       "static/chunks/6076-48b51e8e5f5898b4.js",
-      "static/chunks/app/layout-832728ad7ba4dbf7.js"
+      "static/chunks/app/layout-ec4ef12068ed6593.js"
     ],
     "/template": [
       "static/chunks/webpack-bbb770ae7ca4c61a.js",
@@ -49,22 +57,6 @@
       "static/chunks/main-app-9489574e24ce9cd8.js",
       "static/chunks/app/loading-d0e996bbf3203018.js"
     ],
-    "/not-found": [
-      "static/chunks/webpack-bbb770ae7ca4c61a.js",
-      "static/chunks/fd9d1056-36f98fa9d93ecd3e.js",
-      "static/chunks/2117-0708b2fca6443646.js",
-      "static/chunks/main-app-9489574e24ce9cd8.js",
-      "static/chunks/2148-ac8a3002e55dcd4c.js",
-      "static/chunks/2972-864c50ff9f16b931.js",
-      "static/chunks/app/not-found-bf4791c06ca47cf1.js"
-    ],
-    "/_not-found/page": [
-      "static/chunks/webpack-bbb770ae7ca4c61a.js",
-      "static/chunks/fd9d1056-36f98fa9d93ecd3e.js",
-      "static/chunks/2117-0708b2fca6443646.js",
-      "static/chunks/main-app-9489574e24ce9cd8.js",
-      "static/chunks/app/_not-found/page-fb59d2a26546ff16.js"
-    ],
     "/(pages)/big-homes-break-smart/page": [
       "static/chunks/webpack-bbb770ae7ca4c61a.js",
       "static/chunks/fd9d1056-36f98fa9d93ecd3e.js",
@@ -73,6 +65,14 @@
       "static/chunks/2148-ac8a3002e55dcd4c.js",
       "static/chunks/2972-864c50ff9f16b931.js",
       "static/chunks/app/(pages)/big-homes-break-smart/page-914645c57a69b9fb.js"
+    ],
+    "/(pages)/glossary/page": [
+      "static/chunks/webpack-bbb770ae7ca4c61a.js",
+      "static/chunks/fd9d1056-36f98fa9d93ecd3e.js",
+      "static/chunks/2117-0708b2fca6443646.js",
+      "static/chunks/main-app-9489574e24ce9cd8.js",
+      "static/chunks/2148-ac8a3002e55dcd4c.js",
+      "static/chunks/app/(pages)/glossary/page-08213cbe79ff1441.js"
     ],
     "/(pages)/case-studies/page": [
       "static/chunks/webpack-bbb770ae7ca4c61a.js",
@@ -85,15 +85,6 @@
       "static/chunks/9292-d6b5b0a17e822ec4.js",
       "static/chunks/app/(pages)/case-studies/page-d060d43119ab16e6.js"
     ],
-    "/(pages)/villa-operating-model/page": [
-      "static/chunks/webpack-bbb770ae7ca4c61a.js",
-      "static/chunks/fd9d1056-36f98fa9d93ecd3e.js",
-      "static/chunks/2117-0708b2fca6443646.js",
-      "static/chunks/main-app-9489574e24ce9cd8.js",
-      "static/chunks/2148-ac8a3002e55dcd4c.js",
-      "static/chunks/2972-864c50ff9f16b931.js",
-      "static/chunks/app/(pages)/villa-operating-model/page-c3b36a32b96a1305.js"
-    ],
     "/(pages)/integrations/page": [
       "static/chunks/webpack-bbb770ae7ca4c61a.js",
       "static/chunks/fd9d1056-36f98fa9d93ecd3e.js",
@@ -102,6 +93,15 @@
       "static/chunks/2148-ac8a3002e55dcd4c.js",
       "static/chunks/2972-864c50ff9f16b931.js",
       "static/chunks/app/(pages)/integrations/page-2eb321b148d65a9f.js"
+    ],
+    "/(pages)/villa-operating-model/page": [
+      "static/chunks/webpack-bbb770ae7ca4c61a.js",
+      "static/chunks/fd9d1056-36f98fa9d93ecd3e.js",
+      "static/chunks/2117-0708b2fca6443646.js",
+      "static/chunks/main-app-9489574e24ce9cd8.js",
+      "static/chunks/2148-ac8a3002e55dcd4c.js",
+      "static/chunks/2972-864c50ff9f16b931.js",
+      "static/chunks/app/(pages)/villa-operating-model/page-c3b36a32b96a1305.js"
     ],
     "/(pages)/why-lexa/page": [
       "static/chunks/webpack-bbb770ae7ca4c61a.js",
@@ -122,7 +122,7 @@
       "static/chunks/2972-864c50ff9f16b931.js",
       "static/chunks/3145-21ca1188ea04cf5d.js",
       "static/chunks/7826-b1fa059fc20c39c8.js",
-      "static/chunks/app/about/page-f284d4d75eedb5af.js"
+      "static/chunks/app/about/page-a096b209f1112dfe.js"
     ],
     "/about/loading": [
       "static/chunks/webpack-bbb770ae7ca4c61a.js",
@@ -213,6 +213,16 @@
       "static/chunks/4741-5d76b8bbc07a3e1d.js",
       "static/chunks/app/analytics/page-d2c8e05aa7846c1e.js"
     ],
+    "/amc-packages/page": [
+      "static/chunks/webpack-bbb770ae7ca4c61a.js",
+      "static/chunks/fd9d1056-36f98fa9d93ecd3e.js",
+      "static/chunks/2117-0708b2fca6443646.js",
+      "static/chunks/main-app-9489574e24ce9cd8.js",
+      "static/chunks/2148-ac8a3002e55dcd4c.js",
+      "static/chunks/6137-55e8654b1ee641b1.js",
+      "static/chunks/7826-b1fa059fc20c39c8.js",
+      "static/chunks/app/amc-packages/page-b0b930978e7ae358.js"
+    ],
     "/ar-seo/[slug]/page": [
       "static/chunks/webpack-bbb770ae7ca4c61a.js",
       "static/chunks/fd9d1056-36f98fa9d93ecd3e.js",
@@ -231,28 +241,6 @@
       "static/chunks/3145-21ca1188ea04cf5d.js",
       "static/chunks/app/ar-seo/blog/[slug]/page-e4bb782e8d90eae3.js"
     ],
-    "/amc-packages/page": [
-      "static/chunks/webpack-bbb770ae7ca4c61a.js",
-      "static/chunks/fd9d1056-36f98fa9d93ecd3e.js",
-      "static/chunks/2117-0708b2fca6443646.js",
-      "static/chunks/main-app-9489574e24ce9cd8.js",
-      "static/chunks/2148-ac8a3002e55dcd4c.js",
-      "static/chunks/6137-55e8654b1ee641b1.js",
-      "static/chunks/7826-b1fa059fc20c39c8.js",
-      "static/chunks/app/amc-packages/page-27639393ae9b1c5a.js"
-    ],
-    "/bahrain/manama-smart-homes/page": [
-      "static/chunks/webpack-bbb770ae7ca4c61a.js",
-      "static/chunks/fd9d1056-36f98fa9d93ecd3e.js",
-      "static/chunks/2117-0708b2fca6443646.js",
-      "static/chunks/main-app-9489574e24ce9cd8.js",
-      "static/chunks/2148-ac8a3002e55dcd4c.js",
-      "static/chunks/6137-55e8654b1ee641b1.js",
-      "static/chunks/2972-864c50ff9f16b931.js",
-      "static/chunks/3145-21ca1188ea04cf5d.js",
-      "static/chunks/580-aeb854338aeba41a.js",
-      "static/chunks/app/bahrain/manama-smart-homes/page-593cace03097f910.js"
-    ],
     "/architects/page": [
       "static/chunks/webpack-bbb770ae7ca4c61a.js",
       "static/chunks/fd9d1056-36f98fa9d93ecd3e.js",
@@ -262,25 +250,6 @@
       "static/chunks/6137-55e8654b1ee641b1.js",
       "static/chunks/7105-c4d5eee1d3966089.js",
       "static/chunks/app/architects/page-35da4a8bc6a1b272.js"
-    ],
-    "/blog/[slug]/page": [
-      "static/chunks/webpack-bbb770ae7ca4c61a.js",
-      "static/chunks/fd9d1056-36f98fa9d93ecd3e.js",
-      "static/chunks/2117-0708b2fca6443646.js",
-      "static/chunks/main-app-9489574e24ce9cd8.js",
-      "static/chunks/2148-ac8a3002e55dcd4c.js",
-      "static/chunks/6137-55e8654b1ee641b1.js",
-      "static/chunks/2972-864c50ff9f16b931.js",
-      "static/chunks/3145-21ca1188ea04cf5d.js",
-      "static/chunks/8284-ff0a216b1a3ac7e0.js",
-      "static/chunks/app/blog/[slug]/page-ca602cc0d7ae5c92.js"
-    ],
-    "/blog/loading": [
-      "static/chunks/webpack-bbb770ae7ca4c61a.js",
-      "static/chunks/fd9d1056-36f98fa9d93ecd3e.js",
-      "static/chunks/2117-0708b2fca6443646.js",
-      "static/chunks/main-app-9489574e24ce9cd8.js",
-      "static/chunks/app/blog/loading-abe65f54f3b39533.js"
     ],
     "/blog/page": [
       "static/chunks/webpack-bbb770ae7ca4c61a.js",
@@ -294,6 +263,25 @@
       "static/chunks/4500-e3b77f927ebdb22c.js",
       "static/chunks/app/blog/page-855e9ffd67400c41.js"
     ],
+    "/blog/loading": [
+      "static/chunks/webpack-bbb770ae7ca4c61a.js",
+      "static/chunks/fd9d1056-36f98fa9d93ecd3e.js",
+      "static/chunks/2117-0708b2fca6443646.js",
+      "static/chunks/main-app-9489574e24ce9cd8.js",
+      "static/chunks/app/blog/loading-abe65f54f3b39533.js"
+    ],
+    "/blog/[slug]/page": [
+      "static/chunks/webpack-bbb770ae7ca4c61a.js",
+      "static/chunks/fd9d1056-36f98fa9d93ecd3e.js",
+      "static/chunks/2117-0708b2fca6443646.js",
+      "static/chunks/main-app-9489574e24ce9cd8.js",
+      "static/chunks/2148-ac8a3002e55dcd4c.js",
+      "static/chunks/6137-55e8654b1ee641b1.js",
+      "static/chunks/2972-864c50ff9f16b931.js",
+      "static/chunks/3145-21ca1188ea04cf5d.js",
+      "static/chunks/8284-ff0a216b1a3ac7e0.js",
+      "static/chunks/app/blog/[slug]/page-ca602cc0d7ae5c92.js"
+    ],
     "/brands/[slug]/page": [
       "static/chunks/webpack-bbb770ae7ca4c61a.js",
       "static/chunks/fd9d1056-36f98fa9d93ecd3e.js",
@@ -304,7 +292,7 @@
       "static/chunks/2972-864c50ff9f16b931.js",
       "static/chunks/3145-21ca1188ea04cf5d.js",
       "static/chunks/7826-b1fa059fc20c39c8.js",
-      "static/chunks/app/brands/[slug]/page-e7d135eab3192a15.js"
+      "static/chunks/app/brands/[slug]/page-f9aa04b182544b93.js"
     ],
     "/brands/loading": [
       "static/chunks/webpack-bbb770ae7ca4c61a.js",
@@ -323,7 +311,7 @@
       "static/chunks/2972-864c50ff9f16b931.js",
       "static/chunks/3145-21ca1188ea04cf5d.js",
       "static/chunks/7826-b1fa059fc20c39c8.js",
-      "static/chunks/app/brands/page-68fcc8ff75959c9a.js"
+      "static/chunks/app/brands/page-3e232c6352ebaf9c.js"
     ],
     "/calculator/page": [
       "static/chunks/webpack-bbb770ae7ca4c61a.js",
@@ -336,6 +324,15 @@
       "static/chunks/7074-8b8f1cf255772fd4.js",
       "static/chunks/app/calculator/page-d9af59c337c0d362.js"
     ],
+    "/careers/page": [
+      "static/chunks/webpack-bbb770ae7ca4c61a.js",
+      "static/chunks/fd9d1056-36f98fa9d93ecd3e.js",
+      "static/chunks/2117-0708b2fca6443646.js",
+      "static/chunks/main-app-9489574e24ce9cd8.js",
+      "static/chunks/6137-55e8654b1ee641b1.js",
+      "static/chunks/2972-864c50ff9f16b931.js",
+      "static/chunks/app/careers/page-7e28676097ba3ca6.js"
+    ],
     "/case-studies/[slug]/page": [
       "static/chunks/webpack-bbb770ae7ca4c61a.js",
       "static/chunks/fd9d1056-36f98fa9d93ecd3e.js",
@@ -346,16 +343,7 @@
       "static/chunks/2972-864c50ff9f16b931.js",
       "static/chunks/3145-21ca1188ea04cf5d.js",
       "static/chunks/7826-b1fa059fc20c39c8.js",
-      "static/chunks/app/case-studies/[slug]/page-578bdae2310e696d.js"
-    ],
-    "/careers/page": [
-      "static/chunks/webpack-bbb770ae7ca4c61a.js",
-      "static/chunks/fd9d1056-36f98fa9d93ecd3e.js",
-      "static/chunks/2117-0708b2fca6443646.js",
-      "static/chunks/main-app-9489574e24ce9cd8.js",
-      "static/chunks/6137-55e8654b1ee641b1.js",
-      "static/chunks/2972-864c50ff9f16b931.js",
-      "static/chunks/app/careers/page-e65b9eae4a680b68.js"
+      "static/chunks/app/case-studies/[slug]/page-087a79c089a30cf7.js"
     ],
     "/catalogues/page": [
       "static/chunks/webpack-bbb770ae7ca4c61a.js",
@@ -416,7 +404,7 @@
       "static/chunks/2148-ac8a3002e55dcd4c.js",
       "static/chunks/6137-55e8654b1ee641b1.js",
       "static/chunks/2972-864c50ff9f16b931.js",
-      "static/chunks/app/contact/page-76b62d08ca6a8025.js"
+      "static/chunks/app/contact/page-d8b4cfcded951ae0.js"
     ],
     "/contact/loading": [
       "static/chunks/webpack-bbb770ae7ca4c61a.js",
@@ -482,7 +470,7 @@
       "static/chunks/6137-55e8654b1ee641b1.js",
       "static/chunks/2972-864c50ff9f16b931.js",
       "static/chunks/7826-b1fa059fc20c39c8.js",
-      "static/chunks/app/digital-twin/page-2ed32995ba625aca.js"
+      "static/chunks/app/digital-twin/page-c35e0105043eefa9.js"
     ],
     "/dubai/downtown-dubai-penthouse-automation/page": [
       "static/chunks/webpack-bbb770ae7ca4c61a.js",
@@ -520,18 +508,6 @@
       "static/chunks/580-aeb854338aeba41a.js",
       "static/chunks/app/dubai/dubai-marina-smart-homes/page-5fced2982f09d32e.js"
     ],
-    "/dubai/jumeirah-beach-residence/page": [
-      "static/chunks/webpack-bbb770ae7ca4c61a.js",
-      "static/chunks/fd9d1056-36f98fa9d93ecd3e.js",
-      "static/chunks/2117-0708b2fca6443646.js",
-      "static/chunks/main-app-9489574e24ce9cd8.js",
-      "static/chunks/2148-ac8a3002e55dcd4c.js",
-      "static/chunks/6137-55e8654b1ee641b1.js",
-      "static/chunks/2972-864c50ff9f16b931.js",
-      "static/chunks/3145-21ca1188ea04cf5d.js",
-      "static/chunks/580-aeb854338aeba41a.js",
-      "static/chunks/app/dubai/jumeirah-beach-residence/page-4a5471c31aa89392.js"
-    ],
     "/dubai/emirates-hills-villa-automation/page": [
       "static/chunks/webpack-bbb770ae7ca4c61a.js",
       "static/chunks/fd9d1056-36f98fa9d93ecd3e.js",
@@ -543,6 +519,30 @@
       "static/chunks/3145-21ca1188ea04cf5d.js",
       "static/chunks/580-aeb854338aeba41a.js",
       "static/chunks/app/dubai/emirates-hills-villa-automation/page-a69252b07723d0ee.js"
+    ],
+    "/bahrain/manama-smart-homes/page": [
+      "static/chunks/webpack-bbb770ae7ca4c61a.js",
+      "static/chunks/fd9d1056-36f98fa9d93ecd3e.js",
+      "static/chunks/2117-0708b2fca6443646.js",
+      "static/chunks/main-app-9489574e24ce9cd8.js",
+      "static/chunks/2148-ac8a3002e55dcd4c.js",
+      "static/chunks/6137-55e8654b1ee641b1.js",
+      "static/chunks/2972-864c50ff9f16b931.js",
+      "static/chunks/3145-21ca1188ea04cf5d.js",
+      "static/chunks/580-aeb854338aeba41a.js",
+      "static/chunks/app/bahrain/manama-smart-homes/page-593cace03097f910.js"
+    ],
+    "/dubai/jumeirah-beach-residence/page": [
+      "static/chunks/webpack-bbb770ae7ca4c61a.js",
+      "static/chunks/fd9d1056-36f98fa9d93ecd3e.js",
+      "static/chunks/2117-0708b2fca6443646.js",
+      "static/chunks/main-app-9489574e24ce9cd8.js",
+      "static/chunks/2148-ac8a3002e55dcd4c.js",
+      "static/chunks/6137-55e8654b1ee641b1.js",
+      "static/chunks/2972-864c50ff9f16b931.js",
+      "static/chunks/3145-21ca1188ea04cf5d.js",
+      "static/chunks/580-aeb854338aeba41a.js",
+      "static/chunks/app/dubai/jumeirah-beach-residence/page-4a5471c31aa89392.js"
     ],
     "/dubai/palm-jumeirah-smart-homes/page": [
       "static/chunks/webpack-bbb770ae7ca4c61a.js",
@@ -556,7 +556,7 @@
       "static/chunks/580-aeb854338aeba41a.js",
       "static/chunks/app/dubai/palm-jumeirah-smart-homes/page-69268683f909774b.js"
     ],
-    "/enterprise-platform/page": [
+    "/faq/page": [
       "static/chunks/webpack-bbb770ae7ca4c61a.js",
       "static/chunks/fd9d1056-36f98fa9d93ecd3e.js",
       "static/chunks/2117-0708b2fca6443646.js",
@@ -564,20 +564,7 @@
       "static/chunks/2148-ac8a3002e55dcd4c.js",
       "static/chunks/6137-55e8654b1ee641b1.js",
       "static/chunks/2972-864c50ff9f16b931.js",
-      "static/chunks/7826-b1fa059fc20c39c8.js",
-      "static/chunks/app/enterprise-platform/page-94f93da3b341ab0c.js"
-    ],
-    "/egypt/cairo-smart-homes/page": [
-      "static/chunks/webpack-bbb770ae7ca4c61a.js",
-      "static/chunks/fd9d1056-36f98fa9d93ecd3e.js",
-      "static/chunks/2117-0708b2fca6443646.js",
-      "static/chunks/main-app-9489574e24ce9cd8.js",
-      "static/chunks/2148-ac8a3002e55dcd4c.js",
-      "static/chunks/6137-55e8654b1ee641b1.js",
-      "static/chunks/2972-864c50ff9f16b931.js",
-      "static/chunks/3145-21ca1188ea04cf5d.js",
-      "static/chunks/580-aeb854338aeba41a.js",
-      "static/chunks/app/egypt/cairo-smart-homes/page-bd0a970014e97323.js"
+      "static/chunks/app/faq/page-881b0c74a8c044ff.js"
     ],
     "/experience-centre/page": [
       "static/chunks/webpack-bbb770ae7ca4c61a.js",
@@ -589,26 +576,6 @@
       "static/chunks/3145-21ca1188ea04cf5d.js",
       "static/chunks/7826-b1fa059fc20c39c8.js",
       "static/chunks/app/experience-centre/page-4a343f5fe35230ee.js"
-    ],
-    "/faq/page": [
-      "static/chunks/webpack-bbb770ae7ca4c61a.js",
-      "static/chunks/fd9d1056-36f98fa9d93ecd3e.js",
-      "static/chunks/2117-0708b2fca6443646.js",
-      "static/chunks/main-app-9489574e24ce9cd8.js",
-      "static/chunks/2148-ac8a3002e55dcd4c.js",
-      "static/chunks/6137-55e8654b1ee641b1.js",
-      "static/chunks/2972-864c50ff9f16b931.js",
-      "static/chunks/app/faq/page-881b0c74a8c044ff.js"
-    ],
-    "/hidden-costs/page": [
-      "static/chunks/webpack-bbb770ae7ca4c61a.js",
-      "static/chunks/fd9d1056-36f98fa9d93ecd3e.js",
-      "static/chunks/2117-0708b2fca6443646.js",
-      "static/chunks/main-app-9489574e24ce9cd8.js",
-      "static/chunks/2148-ac8a3002e55dcd4c.js",
-      "static/chunks/6137-55e8654b1ee641b1.js",
-      "static/chunks/7826-b1fa059fc20c39c8.js",
-      "static/chunks/app/hidden-costs/page-6234ec395d10fdf2.js"
     ],
     "/fujairah/smart-homes/page": [
       "static/chunks/webpack-bbb770ae7ca4c61a.js",
@@ -630,6 +597,16 @@
       "static/chunks/2972-864c50ff9f16b931.js",
       "static/chunks/app/guides/how-to-install-smart-home-dubai/page-cbdab20fb36f1d66.js"
     ],
+    "/hidden-costs/page": [
+      "static/chunks/webpack-bbb770ae7ca4c61a.js",
+      "static/chunks/fd9d1056-36f98fa9d93ecd3e.js",
+      "static/chunks/2117-0708b2fca6443646.js",
+      "static/chunks/main-app-9489574e24ce9cd8.js",
+      "static/chunks/2148-ac8a3002e55dcd4c.js",
+      "static/chunks/6137-55e8654b1ee641b1.js",
+      "static/chunks/7826-b1fa059fc20c39c8.js",
+      "static/chunks/app/hidden-costs/page-385d6a1813d0a000.js"
+    ],
     "/home-intelligence-builder/page": [
       "static/chunks/webpack-bbb770ae7ca4c61a.js",
       "static/chunks/fd9d1056-36f98fa9d93ecd3e.js",
@@ -647,7 +624,7 @@
       "static/chunks/2972-864c50ff9f16b931.js",
       "static/chunks/7826-b1fa059fc20c39c8.js",
       "static/chunks/9024-4f2915ab11c21f51.js",
-      "static/chunks/app/intelligence/[id]/page-58beace556d72400.js"
+      "static/chunks/app/intelligence/[id]/page-5949bf82852475cf.js"
     ],
     "/intelligence/page": [
       "static/chunks/webpack-bbb770ae7ca4c61a.js",
@@ -658,7 +635,7 @@
       "static/chunks/6137-55e8654b1ee641b1.js",
       "static/chunks/2972-864c50ff9f16b931.js",
       "static/chunks/7826-b1fa059fc20c39c8.js",
-      "static/chunks/app/intelligence/page-7776e0932b178aeb.js"
+      "static/chunks/app/intelligence/page-fbc1e98c8fb589f6.js"
     ],
     "/investment-pricing/page": [
       "static/chunks/webpack-bbb770ae7ca4c61a.js",
@@ -669,19 +646,7 @@
       "static/chunks/6137-55e8654b1ee641b1.js",
       "static/chunks/2972-864c50ff9f16b931.js",
       "static/chunks/7826-b1fa059fc20c39c8.js",
-      "static/chunks/app/investment-pricing/page-dc5e5dffa357e606.js"
-    ],
-    "/kenya/nairobi-home-automation/page": [
-      "static/chunks/webpack-bbb770ae7ca4c61a.js",
-      "static/chunks/fd9d1056-36f98fa9d93ecd3e.js",
-      "static/chunks/2117-0708b2fca6443646.js",
-      "static/chunks/main-app-9489574e24ce9cd8.js",
-      "static/chunks/2148-ac8a3002e55dcd4c.js",
-      "static/chunks/6137-55e8654b1ee641b1.js",
-      "static/chunks/2972-864c50ff9f16b931.js",
-      "static/chunks/3145-21ca1188ea04cf5d.js",
-      "static/chunks/580-aeb854338aeba41a.js",
-      "static/chunks/app/kenya/nairobi-home-automation/page-d10da0cc335674ef.js"
+      "static/chunks/app/investment-pricing/page-9e9de96a956cea8b.js"
     ],
     "/jordan/amman-home-automation/page": [
       "static/chunks/webpack-bbb770ae7ca4c61a.js",
@@ -707,6 +672,18 @@
       "static/chunks/580-aeb854338aeba41a.js",
       "static/chunks/app/kuwait/kuwait-city-home-automation/page-592f18844e45494d.js"
     ],
+    "/kenya/nairobi-home-automation/page": [
+      "static/chunks/webpack-bbb770ae7ca4c61a.js",
+      "static/chunks/fd9d1056-36f98fa9d93ecd3e.js",
+      "static/chunks/2117-0708b2fca6443646.js",
+      "static/chunks/main-app-9489574e24ce9cd8.js",
+      "static/chunks/2148-ac8a3002e55dcd4c.js",
+      "static/chunks/6137-55e8654b1ee641b1.js",
+      "static/chunks/2972-864c50ff9f16b931.js",
+      "static/chunks/3145-21ca1188ea04cf5d.js",
+      "static/chunks/580-aeb854338aeba41a.js",
+      "static/chunks/app/kenya/nairobi-home-automation/page-d10da0cc335674ef.js"
+    ],
     "/lexa-evolves/page": [
       "static/chunks/webpack-bbb770ae7ca4c61a.js",
       "static/chunks/fd9d1056-36f98fa9d93ecd3e.js",
@@ -715,7 +692,7 @@
       "static/chunks/2148-ac8a3002e55dcd4c.js",
       "static/chunks/6137-55e8654b1ee641b1.js",
       "static/chunks/7826-b1fa059fc20c39c8.js",
-      "static/chunks/app/lexa-evolves/page-4c778e9da5cdc429.js"
+      "static/chunks/app/lexa-evolves/page-f12f11d72b2e290b.js"
     ],
     "/lebanon/beirut-smart-homes/page": [
       "static/chunks/webpack-bbb770ae7ca4c61a.js",
@@ -729,6 +706,17 @@
       "static/chunks/580-aeb854338aeba41a.js",
       "static/chunks/app/lebanon/beirut-smart-homes/page-6484bf986e76b181.js"
     ],
+    "/enterprise-platform/page": [
+      "static/chunks/webpack-bbb770ae7ca4c61a.js",
+      "static/chunks/fd9d1056-36f98fa9d93ecd3e.js",
+      "static/chunks/2117-0708b2fca6443646.js",
+      "static/chunks/main-app-9489574e24ce9cd8.js",
+      "static/chunks/2148-ac8a3002e55dcd4c.js",
+      "static/chunks/6137-55e8654b1ee641b1.js",
+      "static/chunks/2972-864c50ff9f16b931.js",
+      "static/chunks/7826-b1fa059fc20c39c8.js",
+      "static/chunks/app/enterprise-platform/page-d82305321d5df8ea.js"
+    ],
     "/locations/[slug]/page": [
       "static/chunks/webpack-bbb770ae7ca4c61a.js",
       "static/chunks/fd9d1056-36f98fa9d93ecd3e.js",
@@ -739,7 +727,7 @@
       "static/chunks/2972-864c50ff9f16b931.js",
       "static/chunks/3145-21ca1188ea04cf5d.js",
       "static/chunks/7826-b1fa059fc20c39c8.js",
-      "static/chunks/app/locations/[slug]/page-ec142c0136f61dce.js"
+      "static/chunks/app/locations/[slug]/page-33bdc9602eacf8ed.js"
     ],
     "/luxury-home-cinema-dubai/page": [
       "static/chunks/webpack-bbb770ae7ca4c61a.js",
@@ -783,6 +771,16 @@
       "static/chunks/3145-21ca1188ea04cf5d.js",
       "static/chunks/app/news/[slug]/page-df01d2cae0310dc9.js"
     ],
+    "/news/page": [
+      "static/chunks/webpack-bbb770ae7ca4c61a.js",
+      "static/chunks/fd9d1056-36f98fa9d93ecd3e.js",
+      "static/chunks/2117-0708b2fca6443646.js",
+      "static/chunks/main-app-9489574e24ce9cd8.js",
+      "static/chunks/2148-ac8a3002e55dcd4c.js",
+      "static/chunks/2972-864c50ff9f16b931.js",
+      "static/chunks/3145-21ca1188ea04cf5d.js",
+      "static/chunks/app/news/page-07e3d399e0e3f107.js"
+    ],
     "/nigeria/lagos-smart-homes/page": [
       "static/chunks/webpack-bbb770ae7ca4c61a.js",
       "static/chunks/fd9d1056-36f98fa9d93ecd3e.js",
@@ -794,28 +792,6 @@
       "static/chunks/3145-21ca1188ea04cf5d.js",
       "static/chunks/580-aeb854338aeba41a.js",
       "static/chunks/app/nigeria/lagos-smart-homes/page-cceff8a19c802862.js"
-    ],
-    "/news/page": [
-      "static/chunks/webpack-bbb770ae7ca4c61a.js",
-      "static/chunks/fd9d1056-36f98fa9d93ecd3e.js",
-      "static/chunks/2117-0708b2fca6443646.js",
-      "static/chunks/main-app-9489574e24ce9cd8.js",
-      "static/chunks/2148-ac8a3002e55dcd4c.js",
-      "static/chunks/2972-864c50ff9f16b931.js",
-      "static/chunks/3145-21ca1188ea04cf5d.js",
-      "static/chunks/app/news/page-07e3d399e0e3f107.js"
-    ],
-    "/oman/muscat-home-automation/page": [
-      "static/chunks/webpack-bbb770ae7ca4c61a.js",
-      "static/chunks/fd9d1056-36f98fa9d93ecd3e.js",
-      "static/chunks/2117-0708b2fca6443646.js",
-      "static/chunks/main-app-9489574e24ce9cd8.js",
-      "static/chunks/2148-ac8a3002e55dcd4c.js",
-      "static/chunks/6137-55e8654b1ee641b1.js",
-      "static/chunks/2972-864c50ff9f16b931.js",
-      "static/chunks/3145-21ca1188ea04cf5d.js",
-      "static/chunks/580-aeb854338aeba41a.js",
-      "static/chunks/app/oman/muscat-home-automation/page-acf571eb33ab8b01.js"
     ],
     "/package-builder/page": [
       "static/chunks/webpack-bbb770ae7ca4c61a.js",
@@ -829,6 +805,18 @@
       "static/chunks/7826-b1fa059fc20c39c8.js",
       "static/chunks/app/package-builder/page-0568af44eceebfe0.js"
     ],
+    "/oman/muscat-home-automation/page": [
+      "static/chunks/webpack-bbb770ae7ca4c61a.js",
+      "static/chunks/fd9d1056-36f98fa9d93ecd3e.js",
+      "static/chunks/2117-0708b2fca6443646.js",
+      "static/chunks/main-app-9489574e24ce9cd8.js",
+      "static/chunks/2148-ac8a3002e55dcd4c.js",
+      "static/chunks/6137-55e8654b1ee641b1.js",
+      "static/chunks/2972-864c50ff9f16b931.js",
+      "static/chunks/3145-21ca1188ea04cf5d.js",
+      "static/chunks/580-aeb854338aeba41a.js",
+      "static/chunks/app/oman/muscat-home-automation/page-acf571eb33ab8b01.js"
+    ],
     "/packages/[slug]/page": [
       "static/chunks/webpack-bbb770ae7ca4c61a.js",
       "static/chunks/fd9d1056-36f98fa9d93ecd3e.js",
@@ -840,7 +828,7 @@
       "static/chunks/3145-21ca1188ea04cf5d.js",
       "static/chunks/7826-b1fa059fc20c39c8.js",
       "static/chunks/6697-476c909112093ec8.js",
-      "static/chunks/app/packages/[slug]/page-2cc227343ad3e04c.js"
+      "static/chunks/app/packages/[slug]/page-2dc85e3c098cdcd8.js"
     ],
     "/packages/developer-packages/page": [
       "static/chunks/webpack-bbb770ae7ca4c61a.js",
@@ -869,7 +857,7 @@
       "static/chunks/6137-55e8654b1ee641b1.js",
       "static/chunks/2972-864c50ff9f16b931.js",
       "static/chunks/7826-b1fa059fc20c39c8.js",
-      "static/chunks/app/packages/smart-apartment-packages/page-1b468ce42b458b99.js"
+      "static/chunks/app/packages/smart-apartment-packages/page-56af0253160fdb04.js"
     ],
     "/page": [
       "static/chunks/webpack-bbb770ae7ca4c61a.js",
@@ -881,7 +869,7 @@
       "static/chunks/2972-864c50ff9f16b931.js",
       "static/chunks/7826-b1fa059fc20c39c8.js",
       "static/chunks/632-aed0b8b160a2803f.js",
-      "static/chunks/app/page-b38d716cb9522703.js"
+      "static/chunks/app/page-dfa94e04fdfe70f3.js"
     ],
     "/partners/architects/page": [
       "static/chunks/webpack-bbb770ae7ca4c61a.js",
@@ -903,6 +891,17 @@
       "static/chunks/3145-21ca1188ea04cf5d.js",
       "static/chunks/app/partners/developers/page-e8a30e19c38ba1a8.js"
     ],
+    "/persona/architect/page": [
+      "static/chunks/webpack-bbb770ae7ca4c61a.js",
+      "static/chunks/fd9d1056-36f98fa9d93ecd3e.js",
+      "static/chunks/2117-0708b2fca6443646.js",
+      "static/chunks/main-app-9489574e24ce9cd8.js",
+      "static/chunks/2148-ac8a3002e55dcd4c.js",
+      "static/chunks/6137-55e8654b1ee641b1.js",
+      "static/chunks/2972-864c50ff9f16b931.js",
+      "static/chunks/7826-b1fa059fc20c39c8.js",
+      "static/chunks/app/persona/architect/page-4a68db169cdacc44.js"
+    ],
     "/persona/commercial/page": [
       "static/chunks/webpack-bbb770ae7ca4c61a.js",
       "static/chunks/fd9d1056-36f98fa9d93ecd3e.js",
@@ -912,18 +911,7 @@
       "static/chunks/6137-55e8654b1ee641b1.js",
       "static/chunks/2972-864c50ff9f16b931.js",
       "static/chunks/7826-b1fa059fc20c39c8.js",
-      "static/chunks/app/persona/commercial/page-3891c79ddebe3a9b.js"
-    ],
-    "/persona/developer/page": [
-      "static/chunks/webpack-bbb770ae7ca4c61a.js",
-      "static/chunks/fd9d1056-36f98fa9d93ecd3e.js",
-      "static/chunks/2117-0708b2fca6443646.js",
-      "static/chunks/main-app-9489574e24ce9cd8.js",
-      "static/chunks/2148-ac8a3002e55dcd4c.js",
-      "static/chunks/6137-55e8654b1ee641b1.js",
-      "static/chunks/2972-864c50ff9f16b931.js",
-      "static/chunks/7826-b1fa059fc20c39c8.js",
-      "static/chunks/app/persona/developer/page-014df5116f77c5a7.js"
+      "static/chunks/app/persona/commercial/page-5abc4d8627aa7d00.js"
     ],
     "/persona/homeowner/page": [
       "static/chunks/webpack-bbb770ae7ca4c61a.js",
@@ -934,18 +922,7 @@
       "static/chunks/6137-55e8654b1ee641b1.js",
       "static/chunks/2972-864c50ff9f16b931.js",
       "static/chunks/7826-b1fa059fc20c39c8.js",
-      "static/chunks/app/persona/homeowner/page-32c7a9340774c095.js"
-    ],
-    "/persona/architect/page": [
-      "static/chunks/webpack-bbb770ae7ca4c61a.js",
-      "static/chunks/fd9d1056-36f98fa9d93ecd3e.js",
-      "static/chunks/2117-0708b2fca6443646.js",
-      "static/chunks/main-app-9489574e24ce9cd8.js",
-      "static/chunks/2148-ac8a3002e55dcd4c.js",
-      "static/chunks/6137-55e8654b1ee641b1.js",
-      "static/chunks/2972-864c50ff9f16b931.js",
-      "static/chunks/7826-b1fa059fc20c39c8.js",
-      "static/chunks/app/persona/architect/page-a801fe591a70c46c.js"
+      "static/chunks/app/persona/homeowner/page-f0df2cc7755d569b.js"
     ],
     "/platform-agnostic/page": [
       "static/chunks/webpack-bbb770ae7ca4c61a.js",
@@ -955,7 +932,7 @@
       "static/chunks/2148-ac8a3002e55dcd4c.js",
       "static/chunks/6137-55e8654b1ee641b1.js",
       "static/chunks/7826-b1fa059fc20c39c8.js",
-      "static/chunks/app/platform-agnostic/page-6fc44bd4500a0f39.js"
+      "static/chunks/app/platform-agnostic/page-be7d5b422a02d38c.js"
     ],
     "/privacy-policy/page": [
       "static/chunks/webpack-bbb770ae7ca4c61a.js",
@@ -963,6 +940,24 @@
       "static/chunks/2117-0708b2fca6443646.js",
       "static/chunks/main-app-9489574e24ce9cd8.js",
       "static/chunks/app/privacy-policy/page-0ec02a193b6062e6.js"
+    ],
+    "/persona/developer/page": [
+      "static/chunks/webpack-bbb770ae7ca4c61a.js",
+      "static/chunks/fd9d1056-36f98fa9d93ecd3e.js",
+      "static/chunks/2117-0708b2fca6443646.js",
+      "static/chunks/main-app-9489574e24ce9cd8.js",
+      "static/chunks/2148-ac8a3002e55dcd4c.js",
+      "static/chunks/6137-55e8654b1ee641b1.js",
+      "static/chunks/2972-864c50ff9f16b931.js",
+      "static/chunks/7826-b1fa059fc20c39c8.js",
+      "static/chunks/app/persona/developer/page-0803d7136e0dcd99.js"
+    ],
+    "/privacy/page": [
+      "static/chunks/webpack-bbb770ae7ca4c61a.js",
+      "static/chunks/fd9d1056-36f98fa9d93ecd3e.js",
+      "static/chunks/2117-0708b2fca6443646.js",
+      "static/chunks/main-app-9489574e24ce9cd8.js",
+      "static/chunks/app/privacy/page-37b2d9f327ecf0bd.js"
     ],
     "/process/page": [
       "static/chunks/webpack-bbb770ae7ca4c61a.js",
@@ -973,7 +968,7 @@
       "static/chunks/6137-55e8654b1ee641b1.js",
       "static/chunks/2972-864c50ff9f16b931.js",
       "static/chunks/7826-b1fa059fc20c39c8.js",
-      "static/chunks/app/process/page-812dc898ad188de1.js"
+      "static/chunks/app/process/page-3d6f8ada447ed671.js"
     ],
     "/products/[slug]/page": [
       "static/chunks/webpack-bbb770ae7ca4c61a.js",
@@ -985,7 +980,7 @@
       "static/chunks/2972-864c50ff9f16b931.js",
       "static/chunks/3145-21ca1188ea04cf5d.js",
       "static/chunks/7826-b1fa059fc20c39c8.js",
-      "static/chunks/app/products/[slug]/page-69d793e92c49d9d9.js"
+      "static/chunks/app/products/[slug]/page-8bd6907dc999b7ae.js"
     ],
     "/products/page": [
       "static/chunks/webpack-bbb770ae7ca4c61a.js",
@@ -1010,12 +1005,14 @@
       "static/chunks/2972-864c50ff9f16b931.js",
       "static/chunks/app/project-builder/page-1779eed2d9159eb4.js"
     ],
-    "/privacy/page": [
+    "/project-builder/resume/[sessionId]/page": [
       "static/chunks/webpack-bbb770ae7ca4c61a.js",
       "static/chunks/fd9d1056-36f98fa9d93ecd3e.js",
       "static/chunks/2117-0708b2fca6443646.js",
       "static/chunks/main-app-9489574e24ce9cd8.js",
-      "static/chunks/app/privacy/page-37b2d9f327ecf0bd.js"
+      "static/chunks/2148-ac8a3002e55dcd4c.js",
+      "static/chunks/6137-55e8654b1ee641b1.js",
+      "static/chunks/app/project-builder/resume/[sessionId]/page-b4754ba528e06fda.js"
     ],
     "/project-builder/smart/page": [
       "static/chunks/webpack-bbb770ae7ca4c61a.js",
@@ -1043,14 +1040,22 @@
       "static/chunks/7186-d23b77376dc2f966.js",
       "static/chunks/app/project-builder/start/page-41313d0d0452c229.js"
     ],
-    "/project-builder/resume/[sessionId]/page": [
+    "/projects/[slug]/page": [
       "static/chunks/webpack-bbb770ae7ca4c61a.js",
       "static/chunks/fd9d1056-36f98fa9d93ecd3e.js",
       "static/chunks/2117-0708b2fca6443646.js",
       "static/chunks/main-app-9489574e24ce9cd8.js",
-      "static/chunks/2148-ac8a3002e55dcd4c.js",
       "static/chunks/6137-55e8654b1ee641b1.js",
-      "static/chunks/app/project-builder/resume/[sessionId]/page-b4754ba528e06fda.js"
+      "static/chunks/2972-864c50ff9f16b931.js",
+      "static/chunks/3145-21ca1188ea04cf5d.js",
+      "static/chunks/app/projects/[slug]/page-06656a53ef9be5a1.js"
+    ],
+    "/projects/loading": [
+      "static/chunks/webpack-bbb770ae7ca4c61a.js",
+      "static/chunks/fd9d1056-36f98fa9d93ecd3e.js",
+      "static/chunks/2117-0708b2fca6443646.js",
+      "static/chunks/main-app-9489574e24ce9cd8.js",
+      "static/chunks/app/projects/loading-bcb4a8054223e7d1.js"
     ],
     "/projects/page": [
       "static/chunks/webpack-bbb770ae7ca4c61a.js",
@@ -1063,23 +1068,6 @@
       "static/chunks/7826-b1fa059fc20c39c8.js",
       "static/chunks/4500-e3b77f927ebdb22c.js",
       "static/chunks/app/projects/page-db1bfd769f3110ad.js"
-    ],
-    "/projects/loading": [
-      "static/chunks/webpack-bbb770ae7ca4c61a.js",
-      "static/chunks/fd9d1056-36f98fa9d93ecd3e.js",
-      "static/chunks/2117-0708b2fca6443646.js",
-      "static/chunks/main-app-9489574e24ce9cd8.js",
-      "static/chunks/app/projects/loading-bcb4a8054223e7d1.js"
-    ],
-    "/projects/[slug]/page": [
-      "static/chunks/webpack-bbb770ae7ca4c61a.js",
-      "static/chunks/fd9d1056-36f98fa9d93ecd3e.js",
-      "static/chunks/2117-0708b2fca6443646.js",
-      "static/chunks/main-app-9489574e24ce9cd8.js",
-      "static/chunks/6137-55e8654b1ee641b1.js",
-      "static/chunks/2972-864c50ff9f16b931.js",
-      "static/chunks/3145-21ca1188ea04cf5d.js",
-      "static/chunks/app/projects/[slug]/page-06656a53ef9be5a1.js"
     ],
     "/qatar/doha-smart-homes/page": [
       "static/chunks/webpack-bbb770ae7ca4c61a.js",
@@ -1105,17 +1093,6 @@
       "static/chunks/580-aeb854338aeba41a.js",
       "static/chunks/app/ras-al-khaimah/villa-automation/page-bfa98d93047e9e07.js"
     ],
-    "/resources/page": [
-      "static/chunks/webpack-bbb770ae7ca4c61a.js",
-      "static/chunks/fd9d1056-36f98fa9d93ecd3e.js",
-      "static/chunks/2117-0708b2fca6443646.js",
-      "static/chunks/main-app-9489574e24ce9cd8.js",
-      "static/chunks/2148-ac8a3002e55dcd4c.js",
-      "static/chunks/6137-55e8654b1ee641b1.js",
-      "static/chunks/2972-864c50ff9f16b931.js",
-      "static/chunks/3145-21ca1188ea04cf5d.js",
-      "static/chunks/app/resources/page-879bdc92debc3bcd.js"
-    ],
     "/resources/[slug]/page": [
       "static/chunks/webpack-bbb770ae7ca4c61a.js",
       "static/chunks/fd9d1056-36f98fa9d93ecd3e.js",
@@ -1126,6 +1103,17 @@
       "static/chunks/2972-864c50ff9f16b931.js",
       "static/chunks/3145-21ca1188ea04cf5d.js",
       "static/chunks/app/resources/[slug]/page-6b63b844fb8caaaa.js"
+    ],
+    "/resources/page": [
+      "static/chunks/webpack-bbb770ae7ca4c61a.js",
+      "static/chunks/fd9d1056-36f98fa9d93ecd3e.js",
+      "static/chunks/2117-0708b2fca6443646.js",
+      "static/chunks/main-app-9489574e24ce9cd8.js",
+      "static/chunks/2148-ac8a3002e55dcd4c.js",
+      "static/chunks/6137-55e8654b1ee641b1.js",
+      "static/chunks/2972-864c50ff9f16b931.js",
+      "static/chunks/3145-21ca1188ea04cf5d.js",
+      "static/chunks/app/resources/page-879bdc92debc3bcd.js"
     ],
     "/roi-calculator/page": [
       "static/chunks/webpack-bbb770ae7ca4c61a.js",
@@ -1139,18 +1127,6 @@
       "static/chunks/9239-c4b316f4e0bee84b.js",
       "static/chunks/app/roi-calculator/page-c8d26afa04efabf0.js"
     ],
-    "/saudi-arabia/dammam-villa-automation/page": [
-      "static/chunks/webpack-bbb770ae7ca4c61a.js",
-      "static/chunks/fd9d1056-36f98fa9d93ecd3e.js",
-      "static/chunks/2117-0708b2fca6443646.js",
-      "static/chunks/main-app-9489574e24ce9cd8.js",
-      "static/chunks/2148-ac8a3002e55dcd4c.js",
-      "static/chunks/6137-55e8654b1ee641b1.js",
-      "static/chunks/2972-864c50ff9f16b931.js",
-      "static/chunks/3145-21ca1188ea04cf5d.js",
-      "static/chunks/580-aeb854338aeba41a.js",
-      "static/chunks/app/saudi-arabia/dammam-villa-automation/page-7dd4b5ea7d0a6d1b.js"
-    ],
     "/saudi-arabia/jeddah-home-automation/page": [
       "static/chunks/webpack-bbb770ae7ca4c61a.js",
       "static/chunks/fd9d1056-36f98fa9d93ecd3e.js",
@@ -1163,7 +1139,7 @@
       "static/chunks/580-aeb854338aeba41a.js",
       "static/chunks/app/saudi-arabia/jeddah-home-automation/page-7c425b59141ca00a.js"
     ],
-    "/saudi-arabia/riyadh-smart-homes/page": [
+    "/saudi-arabia/dammam-villa-automation/page": [
       "static/chunks/webpack-bbb770ae7ca4c61a.js",
       "static/chunks/fd9d1056-36f98fa9d93ecd3e.js",
       "static/chunks/2117-0708b2fca6443646.js",
@@ -1173,7 +1149,7 @@
       "static/chunks/2972-864c50ff9f16b931.js",
       "static/chunks/3145-21ca1188ea04cf5d.js",
       "static/chunks/580-aeb854338aeba41a.js",
-      "static/chunks/app/saudi-arabia/riyadh-smart-homes/page-86c035205a10e3cc.js"
+      "static/chunks/app/saudi-arabia/dammam-villa-automation/page-7dd4b5ea7d0a6d1b.js"
     ],
     "/saudi-arabia/neom-smart-living/page": [
       "static/chunks/webpack-bbb770ae7ca4c61a.js",
@@ -1186,6 +1162,18 @@
       "static/chunks/3145-21ca1188ea04cf5d.js",
       "static/chunks/580-aeb854338aeba41a.js",
       "static/chunks/app/saudi-arabia/neom-smart-living/page-dab0b0a433441193.js"
+    ],
+    "/saudi-arabia/riyadh-smart-homes/page": [
+      "static/chunks/webpack-bbb770ae7ca4c61a.js",
+      "static/chunks/fd9d1056-36f98fa9d93ecd3e.js",
+      "static/chunks/2117-0708b2fca6443646.js",
+      "static/chunks/main-app-9489574e24ce9cd8.js",
+      "static/chunks/2148-ac8a3002e55dcd4c.js",
+      "static/chunks/6137-55e8654b1ee641b1.js",
+      "static/chunks/2972-864c50ff9f16b931.js",
+      "static/chunks/3145-21ca1188ea04cf5d.js",
+      "static/chunks/580-aeb854338aeba41a.js",
+      "static/chunks/app/saudi-arabia/riyadh-smart-homes/page-86c035205a10e3cc.js"
     ],
     "/services/page": [
       "static/chunks/webpack-bbb770ae7ca4c61a.js",
@@ -1227,6 +1215,17 @@
       "static/chunks/580-aeb854338aeba41a.js",
       "static/chunks/app/sharjah/smart-home-automation/page-b7eb98b696af71b2.js"
     ],
+    "/smart-home-quiz/page": [
+      "static/chunks/webpack-bbb770ae7ca4c61a.js",
+      "static/chunks/fd9d1056-36f98fa9d93ecd3e.js",
+      "static/chunks/2117-0708b2fca6443646.js",
+      "static/chunks/main-app-9489574e24ce9cd8.js",
+      "static/chunks/2148-ac8a3002e55dcd4c.js",
+      "static/chunks/6137-55e8654b1ee641b1.js",
+      "static/chunks/2972-864c50ff9f16b931.js",
+      "static/chunks/7826-b1fa059fc20c39c8.js",
+      "static/chunks/app/smart-home-quiz/page-c12f182d1823aca5.js"
+    ],
     "/solution-finder/page": [
       "static/chunks/webpack-bbb770ae7ca4c61a.js",
       "static/chunks/fd9d1056-36f98fa9d93ecd3e.js",
@@ -1238,17 +1237,6 @@
       "static/chunks/3145-21ca1188ea04cf5d.js",
       "static/chunks/7826-b1fa059fc20c39c8.js",
       "static/chunks/app/solution-finder/page-92442e18e27fd303.js"
-    ],
-    "/smart-home-quiz/page": [
-      "static/chunks/webpack-bbb770ae7ca4c61a.js",
-      "static/chunks/fd9d1056-36f98fa9d93ecd3e.js",
-      "static/chunks/2117-0708b2fca6443646.js",
-      "static/chunks/main-app-9489574e24ce9cd8.js",
-      "static/chunks/2148-ac8a3002e55dcd4c.js",
-      "static/chunks/6137-55e8654b1ee641b1.js",
-      "static/chunks/2972-864c50ff9f16b931.js",
-      "static/chunks/7826-b1fa059fc20c39c8.js",
-      "static/chunks/app/smart-home-quiz/page-c12f182d1823aca5.js"
     ],
     "/solutions/page": [
       "static/chunks/webpack-bbb770ae7ca4c61a.js",
@@ -1269,18 +1257,6 @@
       "static/chunks/main-app-9489574e24ce9cd8.js",
       "static/chunks/app/solutions/loading-13aa74dfa6a9a273.js"
     ],
-    "/specialty-rooms/[slug]/page": [
-      "static/chunks/webpack-bbb770ae7ca4c61a.js",
-      "static/chunks/fd9d1056-36f98fa9d93ecd3e.js",
-      "static/chunks/2117-0708b2fca6443646.js",
-      "static/chunks/main-app-9489574e24ce9cd8.js",
-      "static/chunks/2148-ac8a3002e55dcd4c.js",
-      "static/chunks/6137-55e8654b1ee641b1.js",
-      "static/chunks/2972-864c50ff9f16b931.js",
-      "static/chunks/3145-21ca1188ea04cf5d.js",
-      "static/chunks/7826-b1fa059fc20c39c8.js",
-      "static/chunks/app/specialty-rooms/[slug]/page-2f490a415861a609.js"
-    ],
     "/specialty-rooms/page": [
       "static/chunks/webpack-bbb770ae7ca4c61a.js",
       "static/chunks/fd9d1056-36f98fa9d93ecd3e.js",
@@ -1291,6 +1267,18 @@
       "static/chunks/3145-21ca1188ea04cf5d.js",
       "static/chunks/app/specialty-rooms/page-71f55f53fd87a862.js"
     ],
+    "/specialty-rooms/[slug]/page": [
+      "static/chunks/webpack-bbb770ae7ca4c61a.js",
+      "static/chunks/fd9d1056-36f98fa9d93ecd3e.js",
+      "static/chunks/2117-0708b2fca6443646.js",
+      "static/chunks/main-app-9489574e24ce9cd8.js",
+      "static/chunks/2148-ac8a3002e55dcd4c.js",
+      "static/chunks/6137-55e8654b1ee641b1.js",
+      "static/chunks/2972-864c50ff9f16b931.js",
+      "static/chunks/3145-21ca1188ea04cf5d.js",
+      "static/chunks/7826-b1fa059fc20c39c8.js",
+      "static/chunks/app/specialty-rooms/[slug]/page-f35a6c330c55364d.js"
+    ],
     "/support/page": [
       "static/chunks/webpack-bbb770ae7ca4c61a.js",
       "static/chunks/fd9d1056-36f98fa9d93ecd3e.js",
@@ -1298,7 +1286,7 @@
       "static/chunks/main-app-9489574e24ce9cd8.js",
       "static/chunks/6137-55e8654b1ee641b1.js",
       "static/chunks/2972-864c50ff9f16b931.js",
-      "static/chunks/app/support/page-432c5c1773d02706.js"
+      "static/chunks/app/support/page-d0b424ef853d1c83.js"
     ],
     "/terms-of-service/page": [
       "static/chunks/webpack-bbb770ae7ca4c61a.js",
@@ -1348,18 +1336,6 @@
       "static/chunks/580-aeb854338aeba41a.js",
       "static/chunks/app/uae/ajman/page-744da97a1bea56e5.js"
     ],
-    "/uae/dubai/page": [
-      "static/chunks/webpack-bbb770ae7ca4c61a.js",
-      "static/chunks/fd9d1056-36f98fa9d93ecd3e.js",
-      "static/chunks/2117-0708b2fca6443646.js",
-      "static/chunks/main-app-9489574e24ce9cd8.js",
-      "static/chunks/2148-ac8a3002e55dcd4c.js",
-      "static/chunks/6137-55e8654b1ee641b1.js",
-      "static/chunks/2972-864c50ff9f16b931.js",
-      "static/chunks/3145-21ca1188ea04cf5d.js",
-      "static/chunks/580-aeb854338aeba41a.js",
-      "static/chunks/app/uae/dubai/page-79f30d6cb8da04a2.js"
-    ],
     "/uae/sharjah/page": [
       "static/chunks/webpack-bbb770ae7ca4c61a.js",
       "static/chunks/fd9d1056-36f98fa9d93ecd3e.js",
@@ -1371,6 +1347,18 @@
       "static/chunks/3145-21ca1188ea04cf5d.js",
       "static/chunks/580-aeb854338aeba41a.js",
       "static/chunks/app/uae/sharjah/page-dc5f2da65623860f.js"
+    ],
+    "/uae/dubai/page": [
+      "static/chunks/webpack-bbb770ae7ca4c61a.js",
+      "static/chunks/fd9d1056-36f98fa9d93ecd3e.js",
+      "static/chunks/2117-0708b2fca6443646.js",
+      "static/chunks/main-app-9489574e24ce9cd8.js",
+      "static/chunks/2148-ac8a3002e55dcd4c.js",
+      "static/chunks/6137-55e8654b1ee641b1.js",
+      "static/chunks/2972-864c50ff9f16b931.js",
+      "static/chunks/3145-21ca1188ea04cf5d.js",
+      "static/chunks/580-aeb854338aeba41a.js",
+      "static/chunks/app/uae/dubai/page-79f30d6cb8da04a2.js"
     ],
     "/umm-al-quwain/home-automation/page": [
       "static/chunks/webpack-bbb770ae7ca4c61a.js",
@@ -1403,7 +1391,7 @@
       "static/chunks/6137-55e8654b1ee641b1.js",
       "static/chunks/3145-21ca1188ea04cf5d.js",
       "static/chunks/7826-b1fa059fc20c39c8.js",
-      "static/chunks/app/virtual-showroom/page-7049feb61e50da51.js"
+      "static/chunks/app/virtual-showroom/page-3ff3f573589fc975.js"
     ],
     "/visualize-3d/page": [
       "static/chunks/webpack-bbb770ae7ca4c61a.js",
@@ -1422,6 +1410,18 @@
       "static/chunks/6137-55e8654b1ee641b1.js",
       "static/chunks/2972-864c50ff9f16b931.js",
       "static/chunks/app/warranty/page-6671cd9e41af4a08.js"
+    ],
+    "/egypt/cairo-smart-homes/page": [
+      "static/chunks/webpack-bbb770ae7ca4c61a.js",
+      "static/chunks/fd9d1056-36f98fa9d93ecd3e.js",
+      "static/chunks/2117-0708b2fca6443646.js",
+      "static/chunks/main-app-9489574e24ce9cd8.js",
+      "static/chunks/2148-ac8a3002e55dcd4c.js",
+      "static/chunks/6137-55e8654b1ee641b1.js",
+      "static/chunks/2972-864c50ff9f16b931.js",
+      "static/chunks/3145-21ca1188ea04cf5d.js",
+      "static/chunks/580-aeb854338aeba41a.js",
+      "static/chunks/app/egypt/cairo-smart-homes/page-bd0a970014e97323.js"
     ],
     "/areas/[neighborhood]/page": [
       "static/chunks/webpack-bbb770ae7ca4c61a.js",
@@ -1482,6 +1482,15 @@
       "static/chunks/6137-55e8654b1ee641b1.js",
       "static/chunks/app/lexa_admin@2026/analytics/page-5f5be558824614b4.js"
     ],
+    "/lexa_admin@2026/arabic-pages/edit/[slug]/page": [
+      "static/chunks/webpack-bbb770ae7ca4c61a.js",
+      "static/chunks/fd9d1056-36f98fa9d93ecd3e.js",
+      "static/chunks/2117-0708b2fca6443646.js",
+      "static/chunks/main-app-9489574e24ce9cd8.js",
+      "static/chunks/6137-55e8654b1ee641b1.js",
+      "static/chunks/2972-864c50ff9f16b931.js",
+      "static/chunks/app/lexa_admin@2026/arabic-pages/edit/[slug]/page-c54e2eaeb701e022.js"
+    ],
     "/lexa_admin@2026/articles/page": [
       "static/chunks/webpack-bbb770ae7ca4c61a.js",
       "static/chunks/fd9d1056-36f98fa9d93ecd3e.js",
@@ -1493,14 +1502,14 @@
       "static/chunks/1409-89ce1bf11d3b147f.js",
       "static/chunks/app/lexa_admin@2026/articles/page-969d68f71e211847.js"
     ],
-    "/lexa_admin@2026/arabic-pages/edit/[slug]/page": [
+    "/lexa_admin@2026/arabic-pages/page": [
       "static/chunks/webpack-bbb770ae7ca4c61a.js",
       "static/chunks/fd9d1056-36f98fa9d93ecd3e.js",
       "static/chunks/2117-0708b2fca6443646.js",
       "static/chunks/main-app-9489574e24ce9cd8.js",
       "static/chunks/6137-55e8654b1ee641b1.js",
       "static/chunks/2972-864c50ff9f16b931.js",
-      "static/chunks/app/lexa_admin@2026/arabic-pages/edit/[slug]/page-c54e2eaeb701e022.js"
+      "static/chunks/app/lexa_admin@2026/arabic-pages/page-5575911441100e7c.js"
     ],
     "/lexa_admin@2026/blog/page": [
       "static/chunks/webpack-bbb770ae7ca4c61a.js",
@@ -1528,15 +1537,6 @@
       "static/chunks/8987-a6d32906677b94bb.js",
       "static/chunks/1409-89ce1bf11d3b147f.js",
       "static/chunks/app/lexa_admin@2026/brands/page-d0634a67155d3527.js"
-    ],
-    "/lexa_admin@2026/arabic-pages/page": [
-      "static/chunks/webpack-bbb770ae7ca4c61a.js",
-      "static/chunks/fd9d1056-36f98fa9d93ecd3e.js",
-      "static/chunks/2117-0708b2fca6443646.js",
-      "static/chunks/main-app-9489574e24ce9cd8.js",
-      "static/chunks/6137-55e8654b1ee641b1.js",
-      "static/chunks/2972-864c50ff9f16b931.js",
-      "static/chunks/app/lexa_admin@2026/arabic-pages/page-5575911441100e7c.js"
     ],
     "/lexa_admin@2026/careers/page": [
       "static/chunks/webpack-bbb770ae7ca4c61a.js",
@@ -1570,14 +1570,15 @@
       "static/chunks/1409-89ce1bf11d3b147f.js",
       "static/chunks/app/lexa_admin@2026/catalogues/page-3e5b19413449864b.js"
     ],
-    "/lexa_admin@2026/dashboard/page": [
+    "/lexa_admin@2026/cms/page": [
       "static/chunks/webpack-bbb770ae7ca4c61a.js",
       "static/chunks/fd9d1056-36f98fa9d93ecd3e.js",
       "static/chunks/2117-0708b2fca6443646.js",
       "static/chunks/main-app-9489574e24ce9cd8.js",
-      "static/chunks/2148-ac8a3002e55dcd4c.js",
-      "static/chunks/2972-864c50ff9f16b931.js",
-      "static/chunks/app/lexa_admin@2026/dashboard/page-272eaa22627ce7be.js"
+      "static/chunks/6137-55e8654b1ee641b1.js",
+      "static/chunks/4438-ef9066c992f1a341.js",
+      "static/chunks/8459-5637e73ab8d3249b.js",
+      "static/chunks/app/lexa_admin@2026/cms/page-ef225c27311149f3.js"
     ],
     "/lexa_admin@2026/faqs/page": [
       "static/chunks/webpack-bbb770ae7ca4c61a.js",
@@ -1587,6 +1588,15 @@
       "static/chunks/6137-55e8654b1ee641b1.js",
       "static/chunks/app/lexa_admin@2026/faqs/page-e9b285be1f73df8b.js"
     ],
+    "/lexa_admin@2026/dashboard/page": [
+      "static/chunks/webpack-bbb770ae7ca4c61a.js",
+      "static/chunks/fd9d1056-36f98fa9d93ecd3e.js",
+      "static/chunks/2117-0708b2fca6443646.js",
+      "static/chunks/main-app-9489574e24ce9cd8.js",
+      "static/chunks/2148-ac8a3002e55dcd4c.js",
+      "static/chunks/2972-864c50ff9f16b931.js",
+      "static/chunks/app/lexa_admin@2026/dashboard/page-272eaa22627ce7be.js"
+    ],
     "/lexa_admin@2026/geo-pages/page": [
       "static/chunks/webpack-bbb770ae7ca4c61a.js",
       "static/chunks/fd9d1056-36f98fa9d93ecd3e.js",
@@ -1595,6 +1605,16 @@
       "static/chunks/6137-55e8654b1ee641b1.js",
       "static/chunks/4438-ef9066c992f1a341.js",
       "static/chunks/app/lexa_admin@2026/geo-pages/page-1ec622050005e5bf.js"
+    ],
+    "/lexa_admin@2026/intelligence-features/page": [
+      "static/chunks/webpack-bbb770ae7ca4c61a.js",
+      "static/chunks/fd9d1056-36f98fa9d93ecd3e.js",
+      "static/chunks/2117-0708b2fca6443646.js",
+      "static/chunks/main-app-9489574e24ce9cd8.js",
+      "static/chunks/2148-ac8a3002e55dcd4c.js",
+      "static/chunks/6137-55e8654b1ee641b1.js",
+      "static/chunks/7826-b1fa059fc20c39c8.js",
+      "static/chunks/app/lexa_admin@2026/intelligence-features/page-6957797ae9cfad3c.js"
     ],
     "/lexa_admin@2026/images/page": [
       "static/chunks/webpack-bbb770ae7ca4c61a.js",
@@ -1607,34 +1627,6 @@
       "static/chunks/9070-fea1c0f34e89f3d2.js",
       "static/chunks/app/lexa_admin@2026/images/page-bde5094c77a179d9.js"
     ],
-    "/lexa_admin@2026/cms/page": [
-      "static/chunks/webpack-bbb770ae7ca4c61a.js",
-      "static/chunks/fd9d1056-36f98fa9d93ecd3e.js",
-      "static/chunks/2117-0708b2fca6443646.js",
-      "static/chunks/main-app-9489574e24ce9cd8.js",
-      "static/chunks/6137-55e8654b1ee641b1.js",
-      "static/chunks/4438-ef9066c992f1a341.js",
-      "static/chunks/8459-5637e73ab8d3249b.js",
-      "static/chunks/app/lexa_admin@2026/cms/page-ef225c27311149f3.js"
-    ],
-    "/lexa_admin@2026/intelligence-features/page": [
-      "static/chunks/webpack-bbb770ae7ca4c61a.js",
-      "static/chunks/fd9d1056-36f98fa9d93ecd3e.js",
-      "static/chunks/2117-0708b2fca6443646.js",
-      "static/chunks/main-app-9489574e24ce9cd8.js",
-      "static/chunks/2148-ac8a3002e55dcd4c.js",
-      "static/chunks/6137-55e8654b1ee641b1.js",
-      "static/chunks/7826-b1fa059fc20c39c8.js",
-      "static/chunks/app/lexa_admin@2026/intelligence-features/page-6957797ae9cfad3c.js"
-    ],
-    "/lexa_admin@2026/intelligence-systems/page": [
-      "static/chunks/webpack-bbb770ae7ca4c61a.js",
-      "static/chunks/fd9d1056-36f98fa9d93ecd3e.js",
-      "static/chunks/2117-0708b2fca6443646.js",
-      "static/chunks/main-app-9489574e24ce9cd8.js",
-      "static/chunks/6137-55e8654b1ee641b1.js",
-      "static/chunks/app/lexa_admin@2026/intelligence-systems/page-f3566c8428d74a0a.js"
-    ],
     "/lexa_admin@2026/leads/page": [
       "static/chunks/webpack-bbb770ae7ca4c61a.js",
       "static/chunks/fd9d1056-36f98fa9d93ecd3e.js",
@@ -1645,14 +1637,13 @@
       "static/chunks/7826-b1fa059fc20c39c8.js",
       "static/chunks/app/lexa_admin@2026/leads/page-e380521c53f27db7.js"
     ],
-    "/lexa_admin@2026/login/page": [
+    "/lexa_admin@2026/intelligence-systems/page": [
       "static/chunks/webpack-bbb770ae7ca4c61a.js",
       "static/chunks/fd9d1056-36f98fa9d93ecd3e.js",
       "static/chunks/2117-0708b2fca6443646.js",
       "static/chunks/main-app-9489574e24ce9cd8.js",
-      "static/chunks/2148-ac8a3002e55dcd4c.js",
       "static/chunks/6137-55e8654b1ee641b1.js",
-      "static/chunks/app/lexa_admin@2026/login/page-b04f615aba0291e8.js"
+      "static/chunks/app/lexa_admin@2026/intelligence-systems/page-f3566c8428d74a0a.js"
     ],
     "/lexa_admin@2026/locations/page": [
       "static/chunks/webpack-bbb770ae7ca4c61a.js",
@@ -1662,6 +1653,15 @@
       "static/chunks/6137-55e8654b1ee641b1.js",
       "static/chunks/4438-ef9066c992f1a341.js",
       "static/chunks/app/lexa_admin@2026/locations/page-d59bc99334570a72.js"
+    ],
+    "/lexa_admin@2026/login/page": [
+      "static/chunks/webpack-bbb770ae7ca4c61a.js",
+      "static/chunks/fd9d1056-36f98fa9d93ecd3e.js",
+      "static/chunks/2117-0708b2fca6443646.js",
+      "static/chunks/main-app-9489574e24ce9cd8.js",
+      "static/chunks/2148-ac8a3002e55dcd4c.js",
+      "static/chunks/6137-55e8654b1ee641b1.js",
+      "static/chunks/app/lexa_admin@2026/login/page-b04f615aba0291e8.js"
     ],
     "/lexa_admin@2026/logs/page": [
       "static/chunks/webpack-bbb770ae7ca4c61a.js",
@@ -1678,13 +1678,6 @@
       "static/chunks/main-app-9489574e24ce9cd8.js",
       "static/chunks/6137-55e8654b1ee641b1.js",
       "static/chunks/app/lexa_admin@2026/mega-menu/page-6fe72d5e7dedcce8.js"
-    ],
-    "/lexa_admin@2026/page": [
-      "static/chunks/webpack-bbb770ae7ca4c61a.js",
-      "static/chunks/fd9d1056-36f98fa9d93ecd3e.js",
-      "static/chunks/2117-0708b2fca6443646.js",
-      "static/chunks/main-app-9489574e24ce9cd8.js",
-      "static/chunks/app/lexa_admin@2026/page-f1c772b4dd830800.js"
     ],
     "/lexa_admin@2026/news/page": [
       "static/chunks/webpack-bbb770ae7ca4c61a.js",
@@ -1709,6 +1702,13 @@
       "static/chunks/4438-ef9066c992f1a341.js",
       "static/chunks/1409-89ce1bf11d3b147f.js",
       "static/chunks/app/lexa_admin@2026/package-enhancements/page-9bcf099c7865b278.js"
+    ],
+    "/lexa_admin@2026/page": [
+      "static/chunks/webpack-bbb770ae7ca4c61a.js",
+      "static/chunks/fd9d1056-36f98fa9d93ecd3e.js",
+      "static/chunks/2117-0708b2fca6443646.js",
+      "static/chunks/main-app-9489574e24ce9cd8.js",
+      "static/chunks/app/lexa_admin@2026/page-f1c772b4dd830800.js"
     ],
     "/lexa_admin@2026/patches/page": [
       "static/chunks/webpack-bbb770ae7ca4c61a.js",
@@ -1768,17 +1768,6 @@
       "static/chunks/1409-89ce1bf11d3b147f.js",
       "static/chunks/app/lexa_admin@2026/products/page-639607d79d7b8db5.js"
     ],
-    "/lexa_admin@2026/projects/page": [
-      "static/chunks/webpack-bbb770ae7ca4c61a.js",
-      "static/chunks/fd9d1056-36f98fa9d93ecd3e.js",
-      "static/chunks/2117-0708b2fca6443646.js",
-      "static/chunks/main-app-9489574e24ce9cd8.js",
-      "static/chunks/2148-ac8a3002e55dcd4c.js",
-      "static/chunks/6137-55e8654b1ee641b1.js",
-      "static/chunks/7826-b1fa059fc20c39c8.js",
-      "static/chunks/1409-89ce1bf11d3b147f.js",
-      "static/chunks/app/lexa_admin@2026/projects/page-44224893cc7257e4.js"
-    ],
     "/lexa_admin@2026/project-settings/page": [
       "static/chunks/webpack-bbb770ae7ca4c61a.js",
       "static/chunks/fd9d1056-36f98fa9d93ecd3e.js",
@@ -1789,6 +1778,17 @@
       "static/chunks/7826-b1fa059fc20c39c8.js",
       "static/chunks/4438-ef9066c992f1a341.js",
       "static/chunks/app/lexa_admin@2026/project-settings/page-18c04417b18a1ec8.js"
+    ],
+    "/lexa_admin@2026/projects/page": [
+      "static/chunks/webpack-bbb770ae7ca4c61a.js",
+      "static/chunks/fd9d1056-36f98fa9d93ecd3e.js",
+      "static/chunks/2117-0708b2fca6443646.js",
+      "static/chunks/main-app-9489574e24ce9cd8.js",
+      "static/chunks/2148-ac8a3002e55dcd4c.js",
+      "static/chunks/6137-55e8654b1ee641b1.js",
+      "static/chunks/7826-b1fa059fc20c39c8.js",
+      "static/chunks/1409-89ce1bf11d3b147f.js",
+      "static/chunks/app/lexa_admin@2026/projects/page-44224893cc7257e4.js"
     ],
     "/lexa_admin@2026/property-packages/page": [
       "static/chunks/webpack-bbb770ae7ca4c61a.js",
@@ -1802,23 +1802,6 @@
       "static/chunks/1409-89ce1bf11d3b147f.js",
       "static/chunks/app/lexa_admin@2026/property-packages/page-3c3c49f28a9389cc.js"
     ],
-    "/lexa_admin@2026/seo/images/page": [
-      "static/chunks/webpack-bbb770ae7ca4c61a.js",
-      "static/chunks/fd9d1056-36f98fa9d93ecd3e.js",
-      "static/chunks/2117-0708b2fca6443646.js",
-      "static/chunks/main-app-9489574e24ce9cd8.js",
-      "static/chunks/2148-ac8a3002e55dcd4c.js",
-      "static/chunks/3145-21ca1188ea04cf5d.js",
-      "static/chunks/app/lexa_admin@2026/seo/images/page-5f7bec70424ba8ee.js"
-    ],
-    "/lexa_admin@2026/seo/page": [
-      "static/chunks/webpack-bbb770ae7ca4c61a.js",
-      "static/chunks/fd9d1056-36f98fa9d93ecd3e.js",
-      "static/chunks/2117-0708b2fca6443646.js",
-      "static/chunks/main-app-9489574e24ce9cd8.js",
-      "static/chunks/2148-ac8a3002e55dcd4c.js",
-      "static/chunks/app/lexa_admin@2026/seo/page-d0ec86b8e5984066.js"
-    ],
     "/lexa_admin@2026/sales-dashboard/page": [
       "static/chunks/webpack-bbb770ae7ca4c61a.js",
       "static/chunks/fd9d1056-36f98fa9d93ecd3e.js",
@@ -1829,6 +1812,15 @@
       "static/chunks/7826-b1fa059fc20c39c8.js",
       "static/chunks/app/lexa_admin@2026/sales-dashboard/page-37dfafc8989f615f.js"
     ],
+    "/lexa_admin@2026/seo/images/page": [
+      "static/chunks/webpack-bbb770ae7ca4c61a.js",
+      "static/chunks/fd9d1056-36f98fa9d93ecd3e.js",
+      "static/chunks/2117-0708b2fca6443646.js",
+      "static/chunks/main-app-9489574e24ce9cd8.js",
+      "static/chunks/2148-ac8a3002e55dcd4c.js",
+      "static/chunks/3145-21ca1188ea04cf5d.js",
+      "static/chunks/app/lexa_admin@2026/seo/images/page-5f7bec70424ba8ee.js"
+    ],
     "/lexa_admin@2026/seo/meta-tags/page": [
       "static/chunks/webpack-bbb770ae7ca4c61a.js",
       "static/chunks/fd9d1056-36f98fa9d93ecd3e.js",
@@ -1836,6 +1828,14 @@
       "static/chunks/main-app-9489574e24ce9cd8.js",
       "static/chunks/2148-ac8a3002e55dcd4c.js",
       "static/chunks/app/lexa_admin@2026/seo/meta-tags/page-4dc306337e35612f.js"
+    ],
+    "/lexa_admin@2026/seo/page": [
+      "static/chunks/webpack-bbb770ae7ca4c61a.js",
+      "static/chunks/fd9d1056-36f98fa9d93ecd3e.js",
+      "static/chunks/2117-0708b2fca6443646.js",
+      "static/chunks/main-app-9489574e24ce9cd8.js",
+      "static/chunks/2148-ac8a3002e55dcd4c.js",
+      "static/chunks/app/lexa_admin@2026/seo/page-d0ec86b8e5984066.js"
     ],
     "/lexa_admin@2026/seo/redirects/page": [
       "static/chunks/webpack-bbb770ae7ca4c61a.js",
@@ -1860,13 +1860,32 @@
       "static/chunks/1409-89ce1bf11d3b147f.js",
       "static/chunks/app/lexa_admin@2026/services/page-ad978aebcc7fb38c.js"
     ],
+    "/lexa_admin@2026/settings/page": [
+      "static/chunks/webpack-bbb770ae7ca4c61a.js",
+      "static/chunks/fd9d1056-36f98fa9d93ecd3e.js",
+      "static/chunks/2117-0708b2fca6443646.js",
+      "static/chunks/main-app-9489574e24ce9cd8.js",
+      "static/chunks/2148-ac8a3002e55dcd4c.js",
+      "static/chunks/app/lexa_admin@2026/settings/page-cf16983d8a39ea7f.js"
+    ],
     "/lexa_admin@2026/site-settings/page": [
       "static/chunks/webpack-bbb770ae7ca4c61a.js",
       "static/chunks/fd9d1056-36f98fa9d93ecd3e.js",
       "static/chunks/2117-0708b2fca6443646.js",
       "static/chunks/main-app-9489574e24ce9cd8.js",
       "static/chunks/4438-ef9066c992f1a341.js",
-      "static/chunks/app/lexa_admin@2026/site-settings/page-8772dfcfc3b77ddb.js"
+      "static/chunks/app/lexa_admin@2026/site-settings/page-9bccc73a8004c1bf.js"
+    ],
+    "/lexa_admin@2026/smart-home-leads/page": [
+      "static/chunks/webpack-bbb770ae7ca4c61a.js",
+      "static/chunks/fd9d1056-36f98fa9d93ecd3e.js",
+      "static/chunks/2117-0708b2fca6443646.js",
+      "static/chunks/main-app-9489574e24ce9cd8.js",
+      "static/chunks/2148-ac8a3002e55dcd4c.js",
+      "static/chunks/6137-55e8654b1ee641b1.js",
+      "static/chunks/4438-ef9066c992f1a341.js",
+      "static/chunks/4256-8c4ec3a117638e55.js",
+      "static/chunks/app/lexa_admin@2026/smart-home-leads/page-857ef0674ba98dce.js"
     ],
     "/lexa_admin@2026/solutions/page": [
       "static/chunks/webpack-bbb770ae7ca4c61a.js",
@@ -1882,17 +1901,6 @@
       "static/chunks/9878-62ce148d7c921d88.js",
       "static/chunks/1409-89ce1bf11d3b147f.js",
       "static/chunks/app/lexa_admin@2026/solutions/page-0b879f50718f1e20.js"
-    ],
-    "/lexa_admin@2026/smart-home-leads/page": [
-      "static/chunks/webpack-bbb770ae7ca4c61a.js",
-      "static/chunks/fd9d1056-36f98fa9d93ecd3e.js",
-      "static/chunks/2117-0708b2fca6443646.js",
-      "static/chunks/main-app-9489574e24ce9cd8.js",
-      "static/chunks/2148-ac8a3002e55dcd4c.js",
-      "static/chunks/6137-55e8654b1ee641b1.js",
-      "static/chunks/4438-ef9066c992f1a341.js",
-      "static/chunks/4256-8c4ec3a117638e55.js",
-      "static/chunks/app/lexa_admin@2026/smart-home-leads/page-857ef0674ba98dce.js"
     ],
     "/lexa_admin@2026/specialty-rooms/page": [
       "static/chunks/webpack-bbb770ae7ca4c61a.js",
@@ -1916,26 +1924,6 @@
       "static/chunks/6331-83f22e0df2ac78b4.js",
       "static/chunks/app/lexa_admin@2026/stats-settings/page-9603a3b252ce6d3a.js"
     ],
-    "/lexa_admin@2026/submissions/page": [
-      "static/chunks/webpack-bbb770ae7ca4c61a.js",
-      "static/chunks/fd9d1056-36f98fa9d93ecd3e.js",
-      "static/chunks/2117-0708b2fca6443646.js",
-      "static/chunks/main-app-9489574e24ce9cd8.js",
-      "static/chunks/2148-ac8a3002e55dcd4c.js",
-      "static/chunks/app/lexa_admin@2026/submissions/page-db2ea1cc301a4982.js"
-    ],
-    "/lexa_admin@2026/testimonials/page": [
-      "static/chunks/webpack-bbb770ae7ca4c61a.js",
-      "static/chunks/fd9d1056-36f98fa9d93ecd3e.js",
-      "static/chunks/2117-0708b2fca6443646.js",
-      "static/chunks/main-app-9489574e24ce9cd8.js",
-      "static/chunks/2148-ac8a3002e55dcd4c.js",
-      "static/chunks/6137-55e8654b1ee641b1.js",
-      "static/chunks/7826-b1fa059fc20c39c8.js",
-      "static/chunks/4438-ef9066c992f1a341.js",
-      "static/chunks/1409-89ce1bf11d3b147f.js",
-      "static/chunks/app/lexa_admin@2026/testimonials/page-bbcd039e9b637762.js"
-    ],
     "/lexa_admin@2026/system/page": [
       "static/chunks/webpack-bbb770ae7ca4c61a.js",
       "static/chunks/fd9d1056-36f98fa9d93ecd3e.js",
@@ -1946,13 +1934,26 @@
       "static/chunks/4438-ef9066c992f1a341.js",
       "static/chunks/app/lexa_admin@2026/system/page-aa699c01870f3ed1.js"
     ],
-    "/lexa_admin@2026/settings/page": [
+    "/lexa_admin@2026/submissions/page": [
       "static/chunks/webpack-bbb770ae7ca4c61a.js",
       "static/chunks/fd9d1056-36f98fa9d93ecd3e.js",
       "static/chunks/2117-0708b2fca6443646.js",
       "static/chunks/main-app-9489574e24ce9cd8.js",
       "static/chunks/2148-ac8a3002e55dcd4c.js",
-      "static/chunks/app/lexa_admin@2026/settings/page-cf16983d8a39ea7f.js"
+      "static/chunks/app/lexa_admin@2026/submissions/page-db2ea1cc301a4982.js"
+    ],
+    "/lexa_admin@2026/team-members/page": [
+      "static/chunks/webpack-bbb770ae7ca4c61a.js",
+      "static/chunks/fd9d1056-36f98fa9d93ecd3e.js",
+      "static/chunks/2117-0708b2fca6443646.js",
+      "static/chunks/main-app-9489574e24ce9cd8.js",
+      "static/chunks/2148-ac8a3002e55dcd4c.js",
+      "static/chunks/6137-55e8654b1ee641b1.js",
+      "static/chunks/3145-21ca1188ea04cf5d.js",
+      "static/chunks/7826-b1fa059fc20c39c8.js",
+      "static/chunks/6346-1bd90c47314577a5.js",
+      "static/chunks/1409-89ce1bf11d3b147f.js",
+      "static/chunks/app/lexa_admin@2026/team-members/page-ddc5a4c75af7e225.js"
     ],
     "/lexa_admin@2026/tracking/page": [
       "static/chunks/webpack-bbb770ae7ca4c61a.js",
@@ -1960,6 +1961,18 @@
       "static/chunks/2117-0708b2fca6443646.js",
       "static/chunks/main-app-9489574e24ce9cd8.js",
       "static/chunks/app/lexa_admin@2026/tracking/page-8bbc610a34607e41.js"
+    ],
+    "/lexa_admin@2026/videos/page": [
+      "static/chunks/webpack-bbb770ae7ca4c61a.js",
+      "static/chunks/fd9d1056-36f98fa9d93ecd3e.js",
+      "static/chunks/2117-0708b2fca6443646.js",
+      "static/chunks/main-app-9489574e24ce9cd8.js",
+      "static/chunks/2148-ac8a3002e55dcd4c.js",
+      "static/chunks/6137-55e8654b1ee641b1.js",
+      "static/chunks/7826-b1fa059fc20c39c8.js",
+      "static/chunks/4438-ef9066c992f1a341.js",
+      "static/chunks/1409-89ce1bf11d3b147f.js",
+      "static/chunks/app/lexa_admin@2026/videos/page-03da4b8f7e58c56e.js"
     ],
     "/lexa_admin@2026/test-results/page": [
       "static/chunks/webpack-bbb770ae7ca4c61a.js",
@@ -1978,18 +1991,6 @@
       "static/chunks/6137-55e8654b1ee641b1.js",
       "static/chunks/app/lexa_admin@2026/whatsapp/page-032778764bc8fa5d.js"
     ],
-    "/lexa_admin@2026/videos/page": [
-      "static/chunks/webpack-bbb770ae7ca4c61a.js",
-      "static/chunks/fd9d1056-36f98fa9d93ecd3e.js",
-      "static/chunks/2117-0708b2fca6443646.js",
-      "static/chunks/main-app-9489574e24ce9cd8.js",
-      "static/chunks/2148-ac8a3002e55dcd4c.js",
-      "static/chunks/6137-55e8654b1ee641b1.js",
-      "static/chunks/7826-b1fa059fc20c39c8.js",
-      "static/chunks/4438-ef9066c992f1a341.js",
-      "static/chunks/1409-89ce1bf11d3b147f.js",
-      "static/chunks/app/lexa_admin@2026/videos/page-03da4b8f7e58c56e.js"
-    ],
     "/partner-with-us/page": [
       "static/chunks/webpack-bbb770ae7ca4c61a.js",
       "static/chunks/fd9d1056-36f98fa9d93ecd3e.js",
@@ -2005,19 +2006,6 @@
       "static/chunks/2117-0708b2fca6443646.js",
       "static/chunks/main-app-9489574e24ce9cd8.js",
       "static/chunks/app/partner-with-us/layout-f4e990d3c545be62.js"
-    ],
-    "/lexa_admin@2026/team-members/page": [
-      "static/chunks/webpack-bbb770ae7ca4c61a.js",
-      "static/chunks/fd9d1056-36f98fa9d93ecd3e.js",
-      "static/chunks/2117-0708b2fca6443646.js",
-      "static/chunks/main-app-9489574e24ce9cd8.js",
-      "static/chunks/2148-ac8a3002e55dcd4c.js",
-      "static/chunks/6137-55e8654b1ee641b1.js",
-      "static/chunks/3145-21ca1188ea04cf5d.js",
-      "static/chunks/7826-b1fa059fc20c39c8.js",
-      "static/chunks/6346-1bd90c47314577a5.js",
-      "static/chunks/1409-89ce1bf11d3b147f.js",
-      "static/chunks/app/lexa_admin@2026/team-members/page-ddc5a4c75af7e225.js"
     ],
     "/vendor-supplier/page": [
       "static/chunks/webpack-bbb770ae7ca4c61a.js",
@@ -2045,7 +2033,7 @@
       "static/chunks/2148-ac8a3002e55dcd4c.js",
       "static/chunks/6137-55e8654b1ee641b1.js",
       "static/chunks/7826-b1fa059fc20c39c8.js",
-      "static/chunks/app/work-with-us/page-7baa76758fc7da23.js"
+      "static/chunks/app/work-with-us/page-c3fb8b71de6bbda2.js"
     ],
     "/work-with-us/layout": [
       "static/chunks/webpack-bbb770ae7ca4c61a.js",
@@ -2053,6 +2041,18 @@
       "static/chunks/2117-0708b2fca6443646.js",
       "static/chunks/main-app-9489574e24ce9cd8.js",
       "static/chunks/app/work-with-us/layout-5f9804bdb2badf09.js"
+    ],
+    "/lexa_admin@2026/testimonials/page": [
+      "static/chunks/webpack-bbb770ae7ca4c61a.js",
+      "static/chunks/fd9d1056-36f98fa9d93ecd3e.js",
+      "static/chunks/2117-0708b2fca6443646.js",
+      "static/chunks/main-app-9489574e24ce9cd8.js",
+      "static/chunks/2148-ac8a3002e55dcd4c.js",
+      "static/chunks/6137-55e8654b1ee641b1.js",
+      "static/chunks/7826-b1fa059fc20c39c8.js",
+      "static/chunks/4438-ef9066c992f1a341.js",
+      "static/chunks/1409-89ce1bf11d3b147f.js",
+      "static/chunks/app/lexa_admin@2026/testimonials/page-bbcd039e9b637762.js"
     ],
     "/catalogues/[slug]/page": [
       "static/chunks/webpack-bbb770ae7ca4c61a.js",
