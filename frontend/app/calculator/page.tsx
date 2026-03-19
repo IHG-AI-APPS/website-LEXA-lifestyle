@@ -637,7 +637,7 @@ export default function IndustryCalculatorPage() {
                     </div>
                   )}
 
-                  <h2 className="text-3xl font-bold mb-8">Select Your Project Type</h2>
+                  <h2 className="text-3xl font-bold mb-8 text-gray-900 dark:text-white">Select Your Project Type</h2>
 
                   <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
                     {PROJECT_TYPES.map((type) => (
@@ -646,13 +646,13 @@ export default function IndustryCalculatorPage() {
                         onClick={() => setProjectType(type.id)}
                         className={`p-6 border-2 rounded-lg transition-all text-left ${
                           projectType === type.id
-                            ? 'border-black bg-gray-50 shadow-lg'
-                            : 'border-gray-200 dark:border-zinc-800 hover:border-gray-400'
+                            ? 'border-[#C9A962] bg-[#C9A962]/10 shadow-lg'
+                            : 'border-gray-200 dark:border-zinc-700 hover:border-gray-400 dark:hover:border-zinc-500 bg-white dark:bg-zinc-900'
                         }`}
                       >
-                        <type.icon className="w-10 h-10 mb-3" />
-                        <div className="font-semibold text-lg mb-1">{type.label}</div>
-                        <div className="text-sm text-gray-600 dark:text-zinc-500">{type.description}</div>
+                        <type.icon className="w-10 h-10 mb-3 text-gray-700 dark:text-zinc-300" />
+                        <div className="font-semibold text-lg mb-1 text-gray-900 dark:text-white">{type.label}</div>
+                        <div className="text-sm text-gray-600 dark:text-zinc-400">{type.description}</div>
                       </button>
                     ))}
                   </div>
@@ -689,7 +689,7 @@ export default function IndustryCalculatorPage() {
                   exit={{ opacity: 0, x: -20 }}
                   className="space-y-8"
                 >
-                  <h2 className="text-3xl font-bold mb-8">Select {currentProjectType.label} Type</h2>
+                  <h2 className="text-3xl font-bold mb-8 text-gray-900 dark:text-white">Select {currentProjectType.label} Type</h2>
 
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     {currentProjectType.subCategories.map((sub) => (
@@ -698,11 +698,11 @@ export default function IndustryCalculatorPage() {
                         onClick={() => setSubCategory(sub.id)}
                         className={`p-6 border-2 rounded-lg transition-all text-left ${
                           subCategory === sub.id
-                            ? 'border-black bg-gray-50 shadow-lg'
-                            : 'border-gray-200 dark:border-zinc-800 hover:border-gray-400'
+                            ? 'border-[#C9A962] bg-[#C9A962]/10 shadow-lg'
+                            : 'border-gray-200 dark:border-zinc-700 hover:border-gray-400 dark:hover:border-zinc-500 bg-white dark:bg-zinc-900'
                         }`}
                       >
-                        <div className="font-semibold text-lg">{sub.label}</div>
+                        <div className="font-semibold text-lg text-gray-900 dark:text-white">{sub.label}</div>
                       </button>
                     ))}
                   </div>
@@ -718,11 +718,11 @@ export default function IndustryCalculatorPage() {
                   exit={{ opacity: 0, x: -20 }}
                   className="space-y-8"
                 >
-                  <h2 className="text-3xl font-bold mb-8">Project Details</h2>
+                  <h2 className="text-3xl font-bold mb-8 text-gray-900 dark:text-white">Project Details</h2>
 
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div>
-                      <label className="block text-sm font-semibold uppercase tracking-wide mb-3">
+                      <label className="block text-sm font-semibold uppercase tracking-wide mb-3 text-gray-700 dark:text-zinc-300">
                         Total Area (sq ft) *
                       </label>
                       <Input
@@ -735,7 +735,7 @@ export default function IndustryCalculatorPage() {
                     </div>
 
                     <div>
-                      <label className="block text-sm font-semibold uppercase tracking-wide mb-3">
+                      <label className="block text-sm font-semibold uppercase tracking-wide mb-3 text-gray-700 dark:text-zinc-300">
                         Number of Rooms/Zones *
                       </label>
                       <Input
@@ -748,7 +748,7 @@ export default function IndustryCalculatorPage() {
                     </div>
 
                     <div>
-                      <label className="block text-sm font-semibold uppercase tracking-wide mb-3">
+                      <label className="block text-sm font-semibold uppercase tracking-wide mb-3 text-gray-700 dark:text-zinc-300">
                         Number of Floors
                       </label>
                       <Input
@@ -761,13 +761,13 @@ export default function IndustryCalculatorPage() {
                     </div>
 
                     <div>
-                      <label className="block text-sm font-semibold uppercase tracking-wide mb-3">
+                      <label className="block text-sm font-semibold uppercase tracking-wide mb-3 text-gray-700 dark:text-zinc-300">
                         Construction Stage *
                       </label>
                       <select
                         value={constructionStage}
                         onChange={(e) => setConstructionStage(e.target.value)}
-                        className="w-full border-2 border-gray-200 dark:border-zinc-800 px-4 py-3 rounded-lg text-base focus:outline-none focus:border-black"
+                        className="w-full border-2 border-gray-200 dark:border-zinc-700 px-4 py-3 rounded-lg text-base focus:outline-none focus:border-[#C9A962] bg-white dark:bg-zinc-900 text-gray-900 dark:text-white"
                       >
                         <option value="">Select stage</option>
                         <option value="new">New Construction</option>
@@ -788,7 +788,7 @@ export default function IndustryCalculatorPage() {
                   exit={{ opacity: 0, x: -20 }}
                   className="space-y-6"
                 >
-                  <h2 className="text-3xl font-bold mb-2">
+                  <h2 className="text-3xl font-bold mb-2 text-gray-900 dark:text-white">
                     Select Solutions ({Object.keys(selectedSolutions).length} selected)
                   </h2>
 
@@ -963,18 +963,18 @@ export default function IndustryCalculatorPage() {
                   exit={{ opacity: 0, x: -20 }}
                   className="space-y-8"
                 >
-                  <h2 className="text-3xl font-bold mb-6">Brand & Protocol Preferences</h2>
-                  <p className="text-gray-600 dark:text-zinc-500 mb-8">Optional: Select your preferred brands or skip this step</p>
+                  <h2 className="text-3xl font-bold mb-6 text-gray-900 dark:text-white">Brand & Protocol Preferences</h2>
+                  <p className="text-gray-600 dark:text-zinc-400 mb-8">Optional: Select your preferred brands or skip this step</p>
 
                   <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                     <div>
-                      <label className="block text-sm font-semibold uppercase tracking-wide mb-3">
+                      <label className="block text-sm font-semibold uppercase tracking-wide mb-3 text-gray-700 dark:text-zinc-300">
                         Control Platform
                       </label>
                       <select
                         value={controlPlatform}
                         onChange={(e) => setControlPlatform(e.target.value)}
-                        className="w-full border-2 border-gray-200 dark:border-zinc-800 px-4 py-3 rounded-lg focus:border-black"
+                        className="w-full border-2 border-gray-200 dark:border-zinc-700 px-4 py-3 rounded-lg focus:border-[#C9A962] bg-white dark:bg-zinc-900 text-gray-900 dark:text-white"
                       >
                         <option value="">Select platform</option>
                         {CONTROL_PLATFORMS.map(brand => (
@@ -984,13 +984,13 @@ export default function IndustryCalculatorPage() {
                     </div>
 
                     <div>
-                      <label className="block text-sm font-semibold uppercase tracking-wide mb-3">
+                      <label className="block text-sm font-semibold uppercase tracking-wide mb-3 text-gray-700 dark:text-zinc-300">
                         Security Brand
                       </label>
                       <select
                         value={securityBrand}
                         onChange={(e) => setSecurityBrand(e.target.value)}
-                        className="w-full border-2 border-gray-200 dark:border-zinc-800 px-4 py-3 rounded-lg focus:border-black"
+                        className="w-full border-2 border-gray-200 dark:border-zinc-700 px-4 py-3 rounded-lg focus:border-[#C9A962] bg-white dark:bg-zinc-900 text-gray-900 dark:text-white"
                       >
                         <option value="">Select brand</option>
                         {SECURITY_BRANDS.map(brand => (
@@ -1000,13 +1000,13 @@ export default function IndustryCalculatorPage() {
                     </div>
 
                     <div>
-                      <label className="block text-sm font-semibold uppercase tracking-wide mb-3">
+                      <label className="block text-sm font-semibold uppercase tracking-wide mb-3 text-gray-700 dark:text-zinc-300">
                         Lighting System
                       </label>
                       <select
                         value={lightingBrand}
                         onChange={(e) => setLightingBrand(e.target.value)}
-                        className="w-full border-2 border-gray-200 dark:border-zinc-800 px-4 py-3 rounded-lg focus:border-black"
+                        className="w-full border-2 border-gray-200 dark:border-zinc-700 px-4 py-3 rounded-lg focus:border-[#C9A962] bg-white dark:bg-zinc-900 text-gray-900 dark:text-white"
                       >
                         <option value="">Select system</option>
                         {LIGHTING_BRANDS.map(brand => (
@@ -1027,7 +1027,7 @@ export default function IndustryCalculatorPage() {
                   exit={{ opacity: 0, x: -20 }}
                   className="space-y-8"
                 >
-                  <h2 className="text-3xl font-bold mb-8">Timeline & Budget</h2>
+                  <h2 className="text-3xl font-bold mb-8 text-gray-900 dark:text-white">Timeline & Budget</h2>
 
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div>
@@ -1106,7 +1106,7 @@ export default function IndustryCalculatorPage() {
                   exit={{ opacity: 0, x: -20 }}
                   className="space-y-8"
                 >
-                  <h2 className="text-3xl font-bold mb-8">Location & Contact Details</h2>
+                  <h2 className="text-3xl font-bold mb-8 text-gray-900 dark:text-white">Location & Contact Details</h2>
 
                   <div className="space-y-6">
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -1401,7 +1401,7 @@ export default function IndustryCalculatorPage() {
 
                   {/* Cost Breakdown */}
                   <div className="bg-white border-2 border-gray-200 dark:border-zinc-800 rounded-lg p-6 mb-6">
-                    <h3 className="text-xl font-bold mb-4">Cost Breakdown</h3>
+                    <h3 className="text-xl font-bold mb-4 text-gray-900 dark:text-white">Cost Breakdown</h3>
                     <div className="space-y-3">
                       {breakdown.map((item, index) => (
                         <div key={index} className="flex justify-between items-center py-3 border-b border-gray-100 dark:border-zinc-800">
@@ -1419,7 +1419,7 @@ export default function IndustryCalculatorPage() {
 
                   {/* Next Steps */}
                   <div className="bg-[#C9A962]/5 border-2 border-[#C9A962]/20 rounded-lg p-6">
-                    <h3 className="text-xl font-bold mb-3">Next Steps</h3>
+                    <h3 className="text-xl font-bold mb-3 text-gray-900 dark:text-white">Next Steps</h3>
                     <ul className="space-y-2 text-gray-700 dark:text-zinc-400">
                       <li className="flex items-start gap-2">
                         <CheckCircle2 size={20} className="text-[#C9A962] mt-0.5 flex-shrink-0" />
