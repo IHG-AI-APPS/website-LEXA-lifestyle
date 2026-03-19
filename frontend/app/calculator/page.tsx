@@ -510,7 +510,7 @@ export default function IndustryCalculatorPage() {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-gray-50 to-white pt-20">
+    <div className="min-h-screen bg-gradient-to-b from-gray-50 to-white dark:from-zinc-950 dark:to-zinc-900 pt-20">
       {/* Header */}
       <section className="py-12 bg-gradient-to-br from-gray-900 via-gray-800 to-black text-white">
         <div className="container mx-auto px-4 sm:px-8 lg:px-16">
@@ -531,22 +531,22 @@ export default function IndustryCalculatorPage() {
       </section>
 
       {/* Progress Bar - Below main navigation */}
-      <div className="bg-white border-b sticky top-16 sm:top-18 md:top-20 z-40">
+      <div className="bg-white dark:bg-zinc-900 border-b border-gray-200 dark:border-zinc-800 sticky top-16 sm:top-18 md:top-20 z-40">
         <div className="container mx-auto px-4 sm:px-8 lg:px-16">
           <div className="max-w-6xl mx-auto py-4">
             <div className="flex items-center justify-between overflow-x-auto">
               {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((s) => (
                 <div key={s} className="flex items-center flex-1">
                   <div className={`w-8 h-8 rounded-full flex items-center justify-center text-xs font-semibold transition-all ${
-                    s === step ? 'bg-black text-white scale-110' : 
+                    s === step ? 'bg-[#C9A962] text-white scale-110' : 
                     s < step ? 'bg-green-500 text-white' : 
-                    'bg-gray-200 text-gray-500'
+                    'bg-gray-200 dark:bg-zinc-700 text-gray-500 dark:text-zinc-400'
                   }`}>
                     {s < step ? <CheckCircle2 size={16} /> : s}
                   </div>
                   {s < 10 && (
                     <div className={`h-1 flex-1 mx-1 transition-all ${
-                      s < step ? 'bg-green-500' : 'bg-gray-200'
+                      s < step ? 'bg-green-500' : 'bg-gray-200 dark:bg-zinc-700'
                     }`} />
                   )}
                 </div>

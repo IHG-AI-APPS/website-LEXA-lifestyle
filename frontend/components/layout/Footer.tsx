@@ -111,12 +111,12 @@ export default function Footer() {
 
           {/* Navigation Links */}
           <div className="lg:col-span-8">
-            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-6 lg:gap-8">
+            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4 lg:gap-6">
               
               {/* Solutions */}
               <div>
-                <h3 className="text-xs tracking-[0.2em] uppercase font-semibold text-white mb-5">Solutions</h3>
-                <ul className="space-y-3">
+                <h3 className="text-[10px] tracking-[0.15em] uppercase font-semibold text-white mb-4">Solutions</h3>
+                <ul className="space-y-2">
                   {[
                     { name: 'Home Theater', href: '/services/home-theater' },
                     { name: 'Home Cinema', href: '/services/home-cinema' },
@@ -126,9 +126,8 @@ export default function Footer() {
                     { name: 'All Solutions', href: '/solutions' }
                   ].map((item, i) => (
                     <li key={i}>
-                      <Link href={item.href} className="text-sm text-gray-300 hover:text-[#C9A962] transition-colors flex items-center gap-1 group">
+                      <Link href={item.href} className="text-xs text-gray-400 hover:text-[#C9A962] transition-colors">
                         {item.name}
-                        <ArrowUpRight className="h-3 w-3 opacity-0 group-hover:opacity-100 transition-opacity" />
                       </Link>
                     </li>
                   ))}
@@ -137,8 +136,8 @@ export default function Footer() {
 
               {/* Services */}
               <div>
-                <h3 className="text-xs tracking-[0.2em] uppercase font-semibold text-white mb-5">Services</h3>
-                <ul className="space-y-3">
+                <h3 className="text-[10px] tracking-[0.15em] uppercase font-semibold text-white mb-4">Services</h3>
+                <ul className="space-y-2">
                   {[
                     { name: 'Consultation & Design', href: '/services/consultation-design' },
                     { name: 'System Engineering', href: '/services/system-engineering-integration' },
@@ -148,9 +147,8 @@ export default function Footer() {
                     { name: 'All Services', href: '/services' }
                   ].map((item, i) => (
                     <li key={i}>
-                      <Link href={item.href} className="text-sm text-gray-300 hover:text-[#C9A962] transition-colors flex items-center gap-1 group">
+                      <Link href={item.href} className="text-xs text-gray-400 hover:text-[#C9A962] transition-colors">
                         {item.name}
-                        <ArrowUpRight className="h-3 w-3 opacity-0 group-hover:opacity-100 transition-opacity" />
                       </Link>
                     </li>
                   ))}
@@ -159,8 +157,8 @@ export default function Footer() {
 
               {/* Company */}
               <div>
-                <h3 className="text-xs tracking-[0.2em] uppercase font-semibold text-white mb-5">Company</h3>
-                <ul className="space-y-3">
+                <h3 className="text-[10px] tracking-[0.15em] uppercase font-semibold text-white mb-4">Company</h3>
+                <ul className="space-y-2">
                   {[
                     { name: 'About Us', href: '/about' },
                     { name: 'Why LEXA', href: '/why-lexa' },
@@ -171,9 +169,8 @@ export default function Footer() {
                     { name: 'Contact Us', href: '/contact' }
                   ].map((item, i) => (
                     <li key={i}>
-                      <Link href={item.href} className="text-sm text-gray-300 hover:text-[#C9A962] transition-colors flex items-center gap-1 group">
+                      <Link href={item.href} className="text-xs text-gray-400 hover:text-[#C9A962] transition-colors">
                         {item.name}
-                        <ArrowUpRight className="h-3 w-3 opacity-0 group-hover:opacity-100 transition-opacity" />
                       </Link>
                     </li>
                   ))}
@@ -182,8 +179,8 @@ export default function Footer() {
 
               {/* Areas We Serve */}
               <div>
-                <h3 className="text-xs tracking-[0.2em] uppercase font-semibold text-white mb-5">Areas We Serve</h3>
-                <ul className="space-y-3">
+                <h3 className="text-[10px] tracking-[0.15em] uppercase font-semibold text-white mb-4">Areas We Serve</h3>
+                <ul className="space-y-2">
                   {[
                     { name: 'Palm Jumeirah', href: '/areas/palm-jumeirah' },
                     { name: 'Emirates Hills', href: '/areas/emirates-hills' },
@@ -193,9 +190,8 @@ export default function Footer() {
                     { name: 'Business Bay', href: '/areas/business-bay' },
                   ].map((item, i) => (
                     <li key={i}>
-                      <Link href={item.href} className="text-sm text-gray-300 hover:text-[#C9A962] transition-colors flex items-center gap-1 group">
+                      <Link href={item.href} className="text-xs text-gray-400 hover:text-[#C9A962] transition-colors">
                         {item.name}
-                        <ArrowUpRight className="h-3 w-3 opacity-0 group-hover:opacity-100 transition-opacity" />
                       </Link>
                     </li>
                   ))}
@@ -204,8 +200,8 @@ export default function Footer() {
 
               {/* Quick Links */}
               <div>
-                <h3 className="text-xs tracking-[0.2em] uppercase font-semibold text-white mb-5">Quick Links</h3>
-                <ul className="space-y-3">
+                <h3 className="text-[10px] tracking-[0.15em] uppercase font-semibold text-white mb-4">Quick Links</h3>
+                <ul className="space-y-2">
                   {[
                     { name: 'Work With Us', href: '/work-with-us' },
                     { name: 'Partner Program', href: '/partner-with-us' },
@@ -216,9 +212,8 @@ export default function Footer() {
                     { name: 'Terms of Service', href: '/terms-of-service' }
                   ].map((item, i) => (
                     <li key={i}>
-                      <Link href={item.href} className="text-sm text-gray-300 hover:text-[#C9A962] transition-colors flex items-center gap-1 group">
+                      <Link href={item.href} className="text-xs text-gray-400 hover:text-[#C9A962] transition-colors">
                         {item.name}
-                        <ArrowUpRight className="h-3 w-3 opacity-0 group-hover:opacity-100 transition-opacity" />
                       </Link>
                     </li>
                   ))}
